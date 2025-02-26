@@ -1,0 +1,11 @@
+LICENSE.txt
+README.md
+setup.py
+docx2daisy/__init__.py
+docx2daisy/daisy_converter.py
+docx2daisy.egg-info/PKG-INFO
+docx2daisy.egg-info/SOURCES.txt
+docx2daisy.egg-info/dependency_links.txt
+docx2daisy.egg-info/requires.txt
+docx2daisy.egg-info/top_level.txt
+tests/test_convert.py
