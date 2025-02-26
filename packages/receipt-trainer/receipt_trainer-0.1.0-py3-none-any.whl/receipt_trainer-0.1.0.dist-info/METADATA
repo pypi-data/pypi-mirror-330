@@ -1,0 +1,116 @@
+Metadata-Version: 2.4
+Name: receipt_trainer
+Version: 0.1.0
+Summary: A package for training LayoutLM models on receipt data
+Author-email: Tyler Norlund <tnorlund@icloud.com>
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.8
+Requires-Dist: boto3>=1.26.0
+Requires-Dist: datasets>=2.12.0
+Requires-Dist: matplotlib>=3.7.0
+Requires-Dist: numpy>=1.24.0
+Requires-Dist: pulumi-aws>=6.0.0
+Requires-Dist: pulumi>=3.0.0
+Requires-Dist: scikit-learn>=1.3.0
+Requires-Dist: seaborn>=0.12.0
+Requires-Dist: torch>=2.0.0
+Requires-Dist: transformers>=4.30.0
+Requires-Dist: wandb>=0.15.0
+Provides-Extra: dev
+Requires-Dist: black>=22.0.0; extra == 'dev'
+Requires-Dist: flake8>=6.0.0; extra == 'dev'
+Requires-Dist: isort>=5.0.0; extra == 'dev'
+Requires-Dist: mypy>=1.0.0; extra == 'dev'
+Requires-Dist: pytest-cov>=4.0.0; extra == 'dev'
+Requires-Dist: pytest>=7.0.0; extra == 'dev'
+Description-Content-Type: text/markdown
+
+# Receipt Trainer
+
+A Python package for training LayoutLM models on receipt data, with support for DynamoDB data sources and SROIE dataset integration.
+
+## Features
+
+- Load and process receipt data from DynamoDB
+- Integrate with SROIE dataset
+- Train LayoutLM models for receipt information extraction
+- Track experiments with Weights & Biases
+- Handle AWS infrastructure with Pulumi
+
+## Installation
+
+```bash
+# Install from source
+pip install -e .
+
+# Install with development dependencies
+pip install -e ".[dev]"
+```
+
+## Usage
+
+```python
+from receipt_trainer import ReceiptTrainer
+
+# Initialize trainer
+trainer = ReceiptTrainer(
+    wandb_project="receipt-training",
+    model_name="microsoft/layoutlm-base-uncased",
+    data_config=DataConfig(
+        use_sroie=True,
+        env="prod"
+    )
+)
+
+# Load data
+dataset = trainer.load_data()
+
+# Train model
+trainer.train()
+```
+
+## Development
+
+```bash
+# Run tests
+pytest
+
+# Run tests with coverage
+pytest --cov
+
+# Format code
+black receipt_trainer tests
+isort receipt_trainer tests
+
+# Type checking
+mypy receipt_trainer
+```
+
+## Project Structure
+
+```
+receipt_trainer/
+├── pyproject.toml        # Package configuration
+├── README.md            # This file
+├── receipt_trainer/     # Package source
+│   ├── __init__.py     # Package initialization
+│   ├── trainer.py      # Main trainer class
+│   ├── config.py       # Configuration classes
+│   └── utils/          # Utility functions
+│       ├── __init__.py
+│       ├── data.py     # Data processing utilities
+│       └── aws.py      # AWS integration utilities
+├── tests/              # Test suite
+│   ├── __init__.py
+│   ├── conftest.py     # Test configuration
+│   ├── test_trainer.py # Unit tests
+│   └── test_integration.py # Integration tests
+└── examples/           # Usage examples
+    └── train_model.py  # Example training script
+```
+
+## License
+
+MIT 
