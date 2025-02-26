@@ -1,0 +1,16 @@
+Metadata-Version: 2.2
+Name: optweights
+Version: 0.1.0
+Summary: A package for optimizing weights
+Author: Floris Holstege
+Author-email: f.g.holstege@uva.nl
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3.9
+Requires-Python: >=3.9.12
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: requires-python
+Dynamic: summary
