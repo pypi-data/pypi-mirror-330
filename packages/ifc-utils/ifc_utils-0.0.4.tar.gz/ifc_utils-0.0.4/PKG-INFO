@@ -1,0 +1,20 @@
+Metadata-Version: 2.2
+Name: ifc_utils
+Version: 0.0.4
+Summary: Python library for working with IFCOpenshell
+Author-email: Kian Wee CHEN <chenkianwee@gmail.com>
+Project-URL: Homepage, https://github.com/chenkianwee/ifc_utils
+Project-URL: Bug Tracker, https://github.com/chenkianwee/ifc_utils/issues
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Operating System :: OS Independent
+Requires-Python: <3.13,>=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: geomie3d==0.0.10
+Requires-Dist: ifcopenshell==0.8.0
+Requires-Dist: lark==1.2.2
+Provides-Extra: viewer3d
+Requires-Dist: geomie3d[viewer3d]==0.0.10; extra == "viewer3d"
+
+# ifc_utils
