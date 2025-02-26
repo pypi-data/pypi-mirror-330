@@ -1,0 +1,24 @@
+Metadata-Version: 2.3
+Name: pykebab
+Version: 0.10.2
+Summary: 
+Author: Yangming Huang
+Author-email: leonmax@gmail.com
+Requires-Python: >=3.8.1,<4.0.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Provides-Extra: aws
+Provides-Extra: cli
+Provides-Extra: k8s
+Requires-Dist: boto3 (>=1.37.0,<2.0.0) ; extra == "aws"
+Requires-Dist: click (>=8.1.5,<9.0.0) ; extra == "cli"
+Requires-Dist: configparser (>=6.0.0,<7.0.0)
+Requires-Dist: deprecation (>=2.1.0,<3.0.0)
+Requires-Dist: kubernetes (>=27.2.0,<28.0.0) ; extra == "k8s"
+Requires-Dist: pydantic (>=2.0.3,<3.0.0)
+Requires-Dist: pyyaml (>=6.0.1,<7.0.0)
+Requires-Dist: setuptools (>=68,<71)
