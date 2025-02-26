@@ -1,0 +1,83 @@
+{
+  "name": "terminal-controller",
+  "version": "0.1.0",
+  "description": "A terminal controller MCP server for UVx",
+  "keywords": ["terminal", "command", "cli", "mcp", "uvx"],
+  "homepage": "https://github.com/GongRzhe/terminal-controller-uvx",
+  "license": "MIT",
+  "author": {
+    "name": "UVx Project",
+    "email": "info@uvx.org",
+    "url": "https://uvx.org"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GongRzhe/terminal-controller-uvx.git"
+  },
+  "entrypoint": "terminal_controller:main",
+  "requirements": ["mcp>=0.1.0"],
+  "python_version": ">=3.10",
+  "interfaces": ["mcp"],
+  "capabilities": [
+    "execute_terminal_commands",
+    "navigate_directories",
+    "list_files"
+  ],
+  "mcp": {
+    "server_id": "terminal-controller",
+    "tools": [
+      {
+        "name": "execute_command",
+        "description": "Execute terminal command and return results",
+        "parameters": {
+          "command": {
+            "type": "string",
+            "description": "Command line command to execute"
+          },
+          "timeout": {
+            "type": "integer",
+            "description": "Command timeout in seconds, default is 30 seconds",
+            "default": 30
+          }
+        }
+      },
+      {
+        "name": "get_command_history",
+        "description": "Get recent command execution history",
+        "parameters": {
+          "count": {
+            "type": "integer",
+            "description": "Number of recent commands to return",
+            "default": 10
+          }
+        }
+      },
+      {
+        "name": "get_current_directory",
+        "description": "Get current working directory",
+        "parameters": {}
+      },
+      {
+        "name": "change_directory",
+        "description": "Change current working directory",
+        "parameters": {
+          "path": {
+            "type": "string",
+            "description": "Directory path to switch to"
+          }
+        }
+      },
+      {
+        "name": "list_directory",
+        "description": "List files and subdirectories in the specified directory",
+        "parameters": {
+          "path": {
+            "type": "string",
+            "description": "Directory path to list contents, default is current directory",
+            "optional": true
+          }
+        }
+      }
+    ]
+  }
+}

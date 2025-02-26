@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "terminal-controller-uvx"
+version = "0.1.4"
+description = "A terminal controller MCP server for UVx"
+readme = "README.md"
+authors = [
+    {name = "UVx Project", email = "info@uvx.org"}
+]
+license = {text = "MIT"}
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+requires-python = ">=3.10"
+dependencies = [
+    "mcp>=0.1.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/GongRzhe/terminal-controller-uvx"
+Issues = "https://github.com/GongRzhe/terminal-controller-uvx/issues"
+
+[project.scripts]
+terminal-controller = "terminal_controller:main"
+
+[tool.setuptools]
+packages = ["terminal_controller_uvx"]
