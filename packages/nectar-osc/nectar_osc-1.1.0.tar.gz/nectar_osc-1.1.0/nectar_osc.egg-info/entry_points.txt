@@ -1,0 +1,16 @@
+[openstack.cli.extension]
+nectar = nectar_osc.plugin
+
+[openstack.nectar.v1]
+nectar flavor list = nectar_osc.rating:ListFlavors
+nectar mailout cleanup = nectar_osc.mailout:Cleanup
+nectar mailout instances = nectar_osc.mailout:Instances
+nectar mailout send = nectar_osc.mailout:Send
+nectar security instance delete = nectar_osc.security:DeleteInstance
+nectar security instance lock = nectar_osc.security:LockInstance
+nectar security instance unlock = nectar_osc.security:UnlockInstance
+nectar server securitygroups = nectar_osc.show:ShowSecuritygroups
+nectar server show = nectar_osc.show:ShowInstance
+
+[oslo.config.opts]
+nectar_osc = nectar_osc.config:list_opts
