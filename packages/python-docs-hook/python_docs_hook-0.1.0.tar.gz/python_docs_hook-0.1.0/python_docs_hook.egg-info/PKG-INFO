@@ -1,0 +1,11 @@
+Metadata-Version: 2.2
+Name: python-docs-hook
+Version: 0.1.0
+Summary: A pre-commit hook to generate Python documentation
+Home-page: https://github.com/geek-kb/python-docs-hook
+Author: Itai Ganot
+Author-email: lel@lel.bz
+Dynamic: author
+Dynamic: author-email
+Dynamic: home-page
+Dynamic: summary
