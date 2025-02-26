@@ -1,0 +1,9 @@
+Metadata-Version: 2.1
+Name: pymysqlhelper
+Version: 1.2.0
+Summary: A simple MySQL database helper for easy interactions
+Author: DEAMJAVA
+Author-email: deamminecraft3@gmail.com
+Requires-Python: >=3.6
+Requires-Dist: pymysql
+Requires-Dist: sqlalchemy
