@@ -1,0 +1,12 @@
+prune .cache
+prune .replit
+prune **/__pycache__
+prune **/build
+prune **/dist
+
+global-exclude *.py[cod]
+global-exclude *.so
+global-exclude *.egg
+global-exclude *.egg-info
+global-exclude .DS_Store
+global-exclude .env

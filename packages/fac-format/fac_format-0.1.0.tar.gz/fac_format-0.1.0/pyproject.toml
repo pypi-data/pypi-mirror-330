@@ -1,0 +1,38 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "fac-format"
+version = "0.1.0"
+authors = [
+  { name="FAC Format Developers" },
+]
+description = "A deliberately complicated and inefficient file format alternative to JSON"
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: File Formats",
+]
+dependencies = [
+    "build>=1.1.1",
+    "hatchling>=1.17.1",
+    "twine>=4.0.2",
+]
+
+[project.urls]
+"Homepage" = "https://replit.com/@replit/fac-format"
+"Bug Tracker" = "https://replit.com/@replit/fac-format/issues"
+
+[project.optional-dependencies]
+dev = [
+    "build>=1.1.1",
+    "hatchling>=1.17.1",
+    "twine>=4.0.2",
+]

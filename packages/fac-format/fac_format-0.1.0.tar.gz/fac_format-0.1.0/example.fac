@@ -1,0 +1,28 @@
+@begin/format@
+\note this is a sample FAC file with new syntax
+
+@value|name
+/content\|text|John Doe
+
+@value|age
+/content\|number|30
+
+@value|is_active
+/content\|boolean|true
+
+@list|hobbies
+|item\reading
+|item\gaming
+|item\coding
+/end\list
+
+@object|address
+@value|street
+/content\|text|123 Main St
+@value|city
+/content\|text|Springfield
+@value|zip
+/content\|number|12345
+/end\object
+
+@end/format@

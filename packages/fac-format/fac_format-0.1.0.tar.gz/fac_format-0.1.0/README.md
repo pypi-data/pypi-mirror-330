@@ -1,0 +1,117 @@
+# FAC Format - A Deliberately Complicated File Format
+
+FAC (Frustratingly Awful Configuration) is an intentionally complicated and inefficient alternative to JSON. It's designed to be hard to read, write, and parse - because sometimes we need to appreciate how good we have it with JSON!
+
+## Features
+
+- ❌ Not human-readable (by design!)
+- ❌ Unnecessarily complex syntax
+- ❌ Deliberately verbose
+- ✅ Python parser included
+- ✅ Converts to/from Python dictionaries
+
+## Installation
+
+```bash
+pip install fac-format
+```
+
+## Usage
+
+### Writing FAC Files
+
+```python
+from fac_parser import FacWriter
+
+data = {
+    "name": "John Doe",
+    "age": 30,
+    "hobbies": ["reading", "coding"]
+}
+
+writer = FacWriter()
+fac_content = writer.write(data)
+
+with open('output.fac', 'w') as f:
+    f.write(fac_content)
+```
+
+### Reading FAC Files
+
+```python
+from fac_parser import FacParser
+
+with open('input.fac', 'r') as f:
+    content = f.read()
+
+parser = FacParser()
+data = parser.parse(content)
+```
+
+## File Format Specification
+
+FAC uses a unique and deliberately complicated syntax:
+
+1. Files must start with `@begin/format@` and end with `@end/format@`
+2. Comments use `\note` prefix
+3. Values are declared using:
+   ```
+   @value|key_name
+   /content\|type|value
+   ```
+4. Lists are declared using:
+   ```
+   @list|list_name
+   |item\value1
+   |item\value2
+   /end\list
+   ```
+5. Objects are declared using:
+   ```
+   @object|object_name
+   @value|nested_key
+   /content\|type|value
+   /end\object
+   ```
+
+### Data Types
+
+- Text: `|text|value`
+- Numbers: `|number|value`
+- Booleans: `|boolean|true` or `|boolean|false`
+
+## Example FAC File
+
+```
+@begin/format@
+\note this is a sample FAC file
+
+@value|name
+/content\|text|John Doe
+
+@value|age
+/content\|number|30
+
+@list|hobbies
+|item\reading
+|item\coding
+/end\list
+
+@object|address
+@value|street
+/content\|text|123 Main St
+/end\object
+@end/format@
+```
+
+## Why Use FAC?
+
+You probably shouldn't! This format was created as a demonstration of how not to design a data format. It serves as an educational tool to appreciate the elegance and simplicity of formats like JSON, YAML, and TOML.
+
+## Contributing
+
+If you want to make FAC even worse (or better at being worse), feel free to contribute! Just remember: the more complicated and frustrating, the better.
+
+## License
+
+MIT License - Because even bad ideas should be free to share!
