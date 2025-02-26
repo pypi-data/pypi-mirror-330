@@ -1,0 +1,101 @@
+Metadata-Version: 2.4
+Name: casparser_isin
+Version: 2025.2.26
+Summary: ISIN database for casparser
+Project-URL: Homepage, https://github.com/codereverser/casparser-isin
+Author-email: Sandeep Somasekharan <codereverser@gmail.com>
+License-Expression: MIT
+License-File: LICENSE
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Python: ~=3.9
+Requires-Dist: packaging>=20.9
+Requires-Dist: rapidfuzz<4,>=3.12.0
+Description-Content-Type: text/markdown
+
+# CASParser-ISIN
+
+[![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
+[![GitHub](https://img.shields.io/github/license/codereverser/casparser)](https://github.com/codereverser/casparser/blob/main/LICENSE)
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/codereverser/casparser-isin/run-pytest.yml?branch=main)
+[![codecov](https://codecov.io/gh/codereverser/casparser-isin/branch/main/graph/badge.svg?token=MQ8ZEVTG1B)](https://codecov.io/gh/codereverser/casparser-isin)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/casparser-isin)
+
+ISIN Database for [casparser](https://github.com/codereverser/casparser).
+
+## Installation
+```bash
+pip install -U casparser-isin
+```
+
+## Usage
+
+### Mutual fund ISIN search
+
+```python
+from casparser_isin import MFISINDb
+with MFISINDb() as db:
+    scheme_data = db.isin_lookup("Axis Long Term Equity Fund - Growth",  # scheme name
+                                 "KFINTECH", # RTA
+                                 "128TSDGG", # Scheme RTA code
+                                 )
+print(scheme_data)
+```
+```
+SchemeData(name="axis long term equity fund - direct growth",
+           isin="INF846K01EW2",
+           amfi_code="120503",
+           score=100.0)
+```
+
+### Generic ISIN search
+
+```python
+from casparser_isin import ISINDb
+with ISINDb() as db:
+    isin_data = db.isin_lookup('INE009A01021')
+```
+
+```
+ISINData(
+    isin='INE009A01021',
+    name='INFOSYS LIMITED EQ FV RS 5',
+    issuer='INFOSYS LIMITED',
+    type='EQUITY SHARES',
+    status='ACTIVE'
+)
+```
+
+### 31-Jan-2018 NAV search
+
+The database also contains NAV values on 31-Jan-2018 for all funds, which can be used for
+taxable LTCG computation for units purchased before the same date.
+
+```
+from casparser_isin import MFISINDb
+with MFISINDb() as db:
+    nav = db.nav_lookup("INF846K01EW2")
+print(nav)
+```
+```
+Decimal('44.8938')
+```
+
+
+
+
+## Notes
+
+- casparser-isin is shipped with a local database which may get obsolete over time. The local
+database can be updated via the cli tool
+
+```shell
+casparser-isin --update
+```
+
+- casparser-isin will try to use the file provided by `CASPARSER_ISIN_DB` environment variable; if present, and the file exists
