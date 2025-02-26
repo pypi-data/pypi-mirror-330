@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "en2th-transliterator"
+version = "0.1.0"
+description = "A Python package for transliterating English text to Thai using a ByT5 model"
+readme = "README.md"
+authors = [
+    {name = "Thodsaporn Chay-intr", email = "t.chayintr@gmail.com"}
+]
+license = {text = "MIT"}
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Text Processing :: Linguistic",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+]
+keywords = ["thai", "transliteration", "nlp", "byt5", "transformers"]
+dependencies = [
+    "transformers>=4.0.0",
+    "torch>=1.7.0",
+    "numpy>=1.19.0",
+    "sentencepiece>=0.1.95",
+    "tqdm>=4.50.0",
+]
+requires-python = ">=3.6"
+
+[project.urls]
+"Homepage" = "https://github.com/tchayintr/en2th-transliterator"
+"Bug Tracker" = "https://github.com/tchayintr/en2th-transliterator/issues"
+
+[project.scripts]
+en2th-transliterate = "en2th_transliterator.cli:main"
+
+[tool.setuptools]
+packages = ["en2th_transliterator"]
+
+[tool.black]
+line-length = 88
+target-version = ['py38']

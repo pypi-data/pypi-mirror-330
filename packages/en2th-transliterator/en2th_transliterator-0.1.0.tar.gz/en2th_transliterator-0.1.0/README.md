@@ -1,0 +1,189 @@
+# En2Th Transliterator
+
+[![PyPI version](https://badge.fury.io/py/en2th-transliterator.svg)](https://badge.fury.io/py/en2th-transliterator)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+A Python package for transliterating English text to Thai using a **ByT5** model.
+
+## Features
+
+- **Byte-level processing**: More robust against spelling variations
+- **Beam search & sampling**: Allows fine-tuning of output quality
+- **Batch processing**: Efficient for large-scale transliteration
+- **Mixed precision (FP16)**: Faster inference on compatible GPUs
+- **Command-line interface**: Easy to use from the terminal
+- **Hugging Face integration**: Automatically downloads and caches the model
+
+## Installation
+
+You can install the package via pip:
+
+```bash
+pip install en2th-transliterator
+```
+
+## Usage
+
+### As a Python Package
+
+#### Basic Usage
+
+```python
+from en2th_transliterator import En2ThTransliterator
+
+# Initialize with the default model
+model = En2ThTransliterator()
+
+# Transliterate a single text
+thai_text = model.transliterate("hello")
+print(f"Thai: {thai_text}")
+```
+
+#### Advanced Usage
+
+```python
+from en2th_transliterator import En2ThTransliterator
+
+# Initialize with custom parameters
+model = En2ThTransliterator(
+    model_path=None,  # Use default HF model
+    max_length=50,
+    num_beams=5,
+    length_penalty=1.5,
+    verbose=True,
+    fp16=True  # Enable mixed precision
+)
+
+# Transliterate using sampling
+thai_text = model.transliterate(
+    "artificial intelligence",
+    temperature=0.8,
+    top_k=40,
+    top_p=0.95
+)
+print(f"Thai: {thai_text}")
+
+# Batch transliteration
+english_texts = ["computer", "keyboard", "mouse", "monitor"]
+thai_texts = model.batch_transliterate(
+    english_texts,
+    batch_size=2,
+    temperature=0.5
+)
+
+for eng, thai in zip(english_texts, thai_texts):
+    print(f"{eng} → {thai}")
+```
+
+### Command Line Interface
+
+#### Basic Usage
+```bash
+en2th-transliterate --text "hello"
+```
+
+#### Transliterate from a File
+```bash
+en2th-transliterate --file input.txt --output results.txt
+```
+
+#### Output in JSON Format
+```bash
+en2th-transliterate --file input.txt --format json --output results.json
+```
+
+#### Output in TSV Format
+```bash
+en2th-transliterate --file input.txt --format tsv --output results.tsv
+```
+
+#### Using Custom Parameters
+```bash
+en2th-transliterate --text "hello" --fp16 --temperature 0.7 --num-beams 5
+```
+
+## Model
+
+The package utilizes a **ByT5** model fine-tuned on English-to-Thai transliteration data. The model operates at the **byte level**, making it effective for handling various input variations and generating Thai text with high accuracy.
+
+This package uses the [yacht/byt5-base-en2th-transliterator](https://huggingface.co/yacht/byt5-base-en2th-transliterator) model from Hugging Face Hub.
+
+## Performance Optimization
+
+### FP16 Mixed Precision
+
+The package supports FP16 mixed precision for faster inference on compatible GPUs. This is enabled by default but can be disabled if needed:
+
+```python
+model = En2ThTransliterator(fp16=False)
+```
+
+Or from the command line:
+
+```bash
+en2th-transliterate --text "hello" --no-fp16
+```
+
+### Batch Processing
+
+For transliterating multiple texts, batch processing is more efficient:
+
+```python
+texts = ["hello", "world", "computer", "science"]
+results = model.batch_transliterate(texts, batch_size=4)
+```
+
+## Development
+
+### Setting Up Development Environment
+
+```bash
+# Clone the repository
+git clone https://github.com/tchayintr/en2th-transliterator.git
+cd en2th-transliterator
+
+# Install in development mode
+pip install -e .
+```
+
+### Running Tests
+
+```bash
+# Create a test script
+python test_package.py
+```
+
+### Building the Package
+
+```bash
+# Install build tools
+pip install build twine
+
+# Build the package
+python -m build
+
+# Upload to PyPI
+python -m twine upload dist/*
+```
+
+## License
+
+This project is licensed under the **MIT License** - see the LICENSE file for details.
+
+## Citation
+
+If you use this package in your research, please cite:
+
+```bibtex
+@software{en2th_transliterator,
+  author = {Thodsaporn Chay-intr},
+  title = {En2Th Transliterator: English to Thai Transliteration using ByT5},
+  year = {2025},
+  url = {https://github.com/tchayintr/en2th-transliterator}
+}
+```
+
+## Acknowledgements
+
+- This package uses the [ByT5](https://huggingface.co/google/byt5-base) architecture developed by Google Research
+- The model was fine-tuned on English-Thai transliteration data from [here](https://github.com/wannaphong/thai-english-transliteration-dictionary)
