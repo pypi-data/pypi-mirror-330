@@ -1,0 +1,25 @@
+Metadata-Version: 2.2
+Name: tencentcloud-dlc-jupyter
+Version: 1.2.3
+Summary: Tencentcloud DLC jupyter pulgin. Coding with elastic spark engines in jupyter.
+Author: Tencentcloud DLC Team.
+Maintainer-email: valuxzhao@tencent.com
+License: Apache License Version 2.0
+Platform: any
+Requires-Dist: ipython>=7.8.0
+Requires-Dist: numpy
+Requires-Dist: tornado>=4
+Requires-Dist: notebook>=4.2
+Requires-Dist: ipykernel>=4.2.2
+Requires-Dist: nose
+Requires-Dist: pandas
+Requires-Dist: requests
+Requires-Dist: ipywidgets
+Requires-Dist: matplotlib
+Requires-Dist: pyjwt
+Dynamic: author
+Dynamic: license
+Dynamic: maintainer-email
+Dynamic: platform
+Dynamic: requires-dist
+Dynamic: summary
