@@ -1,0 +1,24 @@
+Metadata-Version: 2.2
+Name: gbooks-upload
+Version: 0.7.1
+Summary: Simple cli tool and library to manage books in Google Play Books
+Author-email: Elliana May <me@mause.me>
+License: MIT
+Project-URL: repository, https://github.com/Mause/gbooks-upload
+Requires-Python: <4.0,>=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: tqdm>=4.67.1
+Requires-Dist: requests>=2.32.3
+Requires-Dist: google-api-python-client<3.0.0,>=2.99.0
+Requires-Dist: oauth2client<5.0.0,>=4.1.3
+Requires-Dist: rich-click<2.0.0,>=1.8.5
+Requires-Dist: platformdirs>=4.3.6
+Requires-Dist: uvloop>=0.21.0
+Requires-Dist: google-internal-apis>=0.4.0
+
+# Google Books Upload
+
+Simple CLI tool and library to manage books in Google Play Books
+
+In many ways an implementation of this: https://github.com/googleapis/googleapis.github.io/blob/bd37dbb7790827b0228d971e758fbcfc8a04b8e2/HowToRPC.md
