@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: ipumspy
+Version: 0.6.1
+Summary: A collection of tools for working with IPUMS data
+License: Mozilla Public License 2.0 (MPL 2.0)
+Author: Kevin H. Wilson
+Author-email: kevin_wilson@brown.edu
+Requires-Python: >=3.9,<4.0
+Classifier: License :: Other/Proprietary License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Provides-Extra: docs
+Requires-Dist: PyYAML (>=6.0.1,<7.0.0)
+Requires-Dist: click (>=8.0.0,<9.0.0)
+Requires-Dist: importlib-metadata (>=4.13.0,<5.0.0)
+Requires-Dist: numpy (>=2.0.0,<3.0.0)
+Requires-Dist: pandas (>=2.2.3,<3.0.0)
+Requires-Dist: pyarrow (>=18.1.0,<19.0.0)
+Requires-Dist: requests[use-chardet-on-py3] (>=2.26.0,<3.0.0)
