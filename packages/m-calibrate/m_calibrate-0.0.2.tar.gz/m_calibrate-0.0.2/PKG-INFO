@@ -1,0 +1,163 @@
+Metadata-Version: 2.2
+Name: m-calibrate
+Version: 0.0.2
+Summary: A multi-purpose calibration tool.
+Author: Carter Fendley
+License: MIT License
+        
+        Copyright (c) 2025 Carter Fendley
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE.
+Project-URL: Homepage, https://github.com/CarterFendley/mcal
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: kubernetes
+Requires-Dist: click
+Requires-Dist: oyaml
+Requires-Dist: jinja2
+Requires-Dist: pydantic
+Requires-Dist: toml
+Requires-Dist: timedelta
+Requires-Dist: pandas
+Requires-Dist: gql[all]
+Provides-Extra: dev
+Requires-Dist: pre-commit; extra == "dev"
+Requires-Dist: tox; extra == "dev"
+Requires-Dist: pytest; extra == "dev"
+Requires-Dist: pytest-cov; extra == "dev"
+Requires-Dist: pytest-benchmark; extra == "dev"
+Requires-Dist: pytest-unordered; extra == "dev"
+Provides-Extra: dask
+Requires-Dist: dask; extra == "dask"
+Requires-Dist: distributed; extra == "dask"
+Requires-Dist: dask-kubernetes; extra == "dask"
+Requires-Dist: prometheus-client; extra == "dask"
+Requires-Dist: pyarrow; extra == "dask"
+Requires-Dist: toolz==0.12.0; extra == "dask"
+Requires-Dist: lz4==4.3.3; extra == "dask"
+Requires-Dist: gcsfs; extra == "dask"
+Provides-Extra: docs
+Requires-Dist: mkdocs; extra == "docs"
+Provides-Extra: all
+Requires-Dist: m-calibrate[dask,dev,docs]; extra == "all"
+
+# Multi Calibrate
+
+A multi-purpose calibration tool.
+
+## Get Started
+
+```bash
+pip install m-calibrate
+
+mcal run <my_config.yml>
+```
+
+## Local setup
+
+```bash
+conda create --name mcal python
+conda activate mcal
+```
+
+```bash
+# Editable install
+python -m pip install -e .
+# Dev dependencies
+python -m pip install -e '.[dev]'
+# Docs dependencies
+python -m pip install -e '.[docs]'
+# All dependencies
+pip install -e '.[all]'
+```
+
+## Running tests
+
+```bash 
+python -m pytest --cov mcal
+python -m pytest --cov mcal --slow # With slow tests
+
+# Run full test suite across all versions
+# Note: Tox will run slow tests
+tox
+tox -m single_version
+```
+
+### Dev Kubernetes
+
+Install the following:
+- Kind
+- Kubectl
+- Helm
+
+Setup cluster
+
+```bash
+# Create kind cluster
+mcal dev cluster create
+# Configure KUBECONFIG to use created cluster
+$(mcal dev cluster setup)
+```
+
+Apply needed configurations
+
+```bash
+mcal dev cluster apply MetricsServer
+mcal dev cluster apply NRI
+mcal dev cluster apply DaskOperator
+```
+
+Delete cluster after finished
+```bash
+mcal dev cluster delete-all
+```
+
+### Releasing
+
+Update the version in `pyproject.toml`
+```
+version='X.Y.Z'
+```
+
+Create a git tag and push
+```
+git tag vX.Y.Z
+git push --tags
+```
+
+Then create a release via github.
+
+#### If you mess up and need to edit things
+
+Remove old tag and re-tag
+```
+git tag -d vX.Y.Z
+git tag vX.Y.Z
+
+git push -f --tags
+```
+
+Delete previous github release and re-create.
+
+# TODO:
+- Pixie?
+- Prometheus 
