@@ -1,0 +1,17 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+src/TorchPfaffian.egg-info/PKG-INFO
+src/TorchPfaffian.egg-info/SOURCES.txt
+src/TorchPfaffian.egg-info/dependency_links.txt
+src/TorchPfaffian.egg-info/requires.txt
+src/TorchPfaffian.egg-info/top_level.txt
+src/torch_pfaffian/__init__.py
+src/torch_pfaffian/__main__.py
+src/torch_pfaffian/utils.py
+src/torch_pfaffian/strategies/__init__.py
+src/torch_pfaffian/strategies/pfaffian_block_det.py
+src/torch_pfaffian/strategies/pfaffian_fdbpf.py
+src/torch_pfaffian/strategies/strategy.py
+tests/test_torch_pfaffian.py
