@@ -1,0 +1,83 @@
+Metadata-Version: 2.2
+Name: vtb-logger
+Version: 2.4.0
+Summary: A simple Python package
+Home-page: https://github.com/vtb-wanderers63/py-logging-module
+Author: VTB Wanderer DG
+Author-email: vtb.wanderers63@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Requires-Dist: confluent-kafka
+Requires-Dist: python-dotenv
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# Logger Module
+
+## Overview
+The `Logger` module is designed to produce logs for applications with flexible output options. It supports different log data formats and ensures structured logging for better observability.
+
+## Features
+- Supports multiple output destinations:
+  - **Stdout** (default)
+  - **File** (logs are stored in `app.log`)
+  - **Queue service** (S3 storage via Kafka)
+- Supports various log data formats:
+  - Space-separated key-value pairs: `key:value key:value`
+  - Comma-separated key-value pairs: `key:value, key:value`
+  - JSON or direct objects: `{key:value, key:value}`
+  - Quoted JSON-like objects: `'{key:value, key:value}'`
+- Default log fields included:
+  - **Timestamp** (ISO format)
+  - **Log level** (`INFO`, `WARN`, `DEBUG`, `ERROR`)
+
+## Installation
+```sh
+pip install vtb_logger
+```
+
+## Usage
+### Initializing the Logger
+```python
+from vtb_logger import Logger
+
+logger = Logger(service_id="my_system:my_service", log_type="file")
+```
+- `service_id`: Required when using `que` log type (Format: `<system-name>:<service-name>`)
+- `log_type`: Options are `stdout` (default), `file`, or `que`
+
+### Logging Messages
+```python
+logger.info(data="key1:value1 key2:value2")  # Space-separated
+logger.warn(data="key1:value1, key2:value2") # Comma-separated
+logger.debug(data='{"key1":"value1", "key2":"value2"}')  # JSON
+logger.error(data={"key1": "value1", "key2": "value2"})  # Direct object
+```
+
+## Required Environment Variables
+For queue-based logging, set the following:
+```sh
+export BOOTSTRAP_SERVER=<kafka_queue_connection>
+```
+
+## Implementation Details
+- **`__detect_data_format(data)`**: Identifies the log data format
+- **`__log_formatter(level, data)`**: Formats logs according to the identified data structure
+- **`__log_controller(log)`**: Routes logs to the appropriate destination (`stdout`, `file`, or `que`)
+
+## License
+This module is provided under the MIT License.
+
+---
+For more details, refer to the official documentation or contact support.
+
