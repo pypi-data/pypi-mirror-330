@@ -1,0 +1,27 @@
+Metadata-Version: 2.1
+Name: keras-model-hub
+Version: 0.0.8
+Summary: Model hub for Pytorch.
+Home-page: https://gitee.com/summry/keras-model-hub
+Author: summy
+Author-email: fkfkfk2024@2925.com
+License: UNKNOWN
+Keywords: keras,AI,Machine learning,Deep learning,tensorflow,model,hub
+Platform: UNKNOWN
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+Usage Sample
+''''''''''''
+
+.. code:: python
+
+        from keras_model_hub import TextCNN
+
+        model = Sequential([
+                Embedding(vocab_size, embed_dim, input_length=None, mask_zero=False),
+                TextCNN(num_classes, activation='softmax')
+	])
+
+
