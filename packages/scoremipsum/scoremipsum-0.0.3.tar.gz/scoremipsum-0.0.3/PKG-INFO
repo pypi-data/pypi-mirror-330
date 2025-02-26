@@ -1,0 +1,33 @@
+Metadata-Version: 2.4
+Name: scoremipsum
+Version: 0.0.3
+Summary: SCOREM - generate sportsball score data for testing and demos (aka scoremipsum)
+Keywords: scoremipsum,score,sports,sportsball,generation
+Author-email: Chuck Staples <cjstaples@gmail.com>
+Description-Content-Type: text/markdown
+License-Expression: MIT
+License-File: LICENSE
+Project-URL: Home, https://github.com/cjstaples/scorem-ipsum
+Project-URL: Issues, https://github.com/cjstaples/scorem-ipsum/issues
+
+# scorem-ipsum
+SCOREM-IPSUM -- Generate sports scores and statistics for use in data testing or as content filler
+
+# features (planned for initial review / v0.5 and release / v1.0)
+* scorem.sports()
+  * get list of supported sports (anyball, hockey, football)
+  * produce semi-realistic random scores appropriate to sport
+  * adjust initial generation to reduce incidence of ties
+  * produce game results object in JSON format 
+- 
+- get sample set of scores with minimal input - scorem.game()
+- get basic set of scores for any supported sport with a minimal call - scorem.game(sport_name)
+ 
+- # features (planned for release / v1.1)
+- support input parameter for sport
+- support input parameter for number of games
+ 
+# features (planned for release / v1.2)
+- run module via entry point
+- support schedule home / away values
+
