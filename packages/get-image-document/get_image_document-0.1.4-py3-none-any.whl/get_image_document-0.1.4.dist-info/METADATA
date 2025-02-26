@@ -1,0 +1,19 @@
+Metadata-Version: 2.3
+Name: get-image-document
+Version: 0.1.4
+Summary: 
+Author: jaytrairat
+Author-email: jay.trairat@gmail.com
+Requires-Python: >=3.9
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Dist: pillow (>=11.1.0,<12.0.0)
+Requires-Dist: python-docx (>=1.1.2,<2.0.0)
+Requires-Dist: tqdm (>=4.67.1,<5.0.0)
+Description-Content-Type: text/markdown
+
+
