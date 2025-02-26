@@ -1,0 +1,136 @@
+[project]
+name = "huntflow-base-metrics"
+version = "0.2.1"
+description = "Prometheus metrics for Huntflow services"
+authors = [
+    { name = "Developers huntflow", email = "developer@huntflow.ru" },
+]
+dependencies = [
+    "prometheus-client>=0.21.0",
+    "aiofiles>=24.1.0",
+    "types-aiofiles>=24.1.0.20240626",
+]
+requires-python = ">=3.8"
+readme = "README.md"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+]
+
+[project.license]
+text = "MIT"
+
+[build-system]
+requires = [
+    "pdm-backend",
+]
+build-backend = "pdm.backend"
+
+[tool.pdm]
+distribution = true
+
+[tool.pdm.scripts]
+lint = "ruff check"
+fmt = "ruff format ."
+
+[tool.ruff]
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".git-rewrite",
+    ".hg",
+    ".ipynb_checkpoints",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".pyenv",
+    ".pytest_cache",
+    ".pytype",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    ".vscode",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "site-packages",
+    "venv",
+]
+line-length = 100
+indent-width = 4
+target-version = "py38"
+
+[tool.ruff.lint]
+ignore = [
+    "E501",
+    "W191",
+]
+select = [
+    "B",
+    "C4",
+    "E",
+    "F",
+    "I",
+    "W",
+    "UP",
+]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
+docstring-code-format = false
+docstring-code-line-length = "dynamic"
+
+[tool.pytest.ini_options]
+pythonpath = [
+    ".",
+    "src",
+]
+testpaths = [
+    "tests",
+]
+filterwarnings = [
+    "ignore:.*litestar.contrib.attrs.AttrsSchemaPlugin*:DeprecationWarning",
+]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+
+[tool.mypy]
+mypy_path = "src"
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+python_version = "3.8"
+strict = false
+show_error_codes = true
+warn_unused_ignores = true
+
+[[tool.mypy.overrides]]
+module = "tests.*"
+disallow_untyped_defs = false
+disallow_incomplete_defs = true
+ignore_missing_imports = true
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3.4",
+    "pytest-asyncio>=0.24.0",
+    "httpx>=0.28.1",
+    "fastapi>=0.66.0",
+    "aiohttp>=3.10.11",
+    "litestar>=2.14.0",
+    "ruff>=0.7.1",
+    "mypy>=1.13.0",
+]
