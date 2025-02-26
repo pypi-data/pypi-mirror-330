@@ -1,0 +1,147 @@
+{
+    "report": "# Relatório de Análise do Projeto\n\n## Visão Geral\n- Total de arquivos: 26\n- Total de linhas de código: 903\n- Total de funções: 0\n- Total de classes: 0\n\n## Linguagens Utilizadas\n- Unknown: 26 arquivo(s)\n\n## Arquivos Analisados\n- busca.txt: 3 linhas (Unknown)\n- README.md: 4 linhas (Unknown)\n- .git\\config: 13 linhas (Unknown)\n- .git\\description: 1 linhas (Unknown)\n- .git\\HEAD: 1 linhas (Unknown)\n- .git\\packed-refs: 2 linhas (Unknown)\n- .git\\hooks\\applypatch-msg.sample: 15 linhas (Unknown)\n- .git\\hooks\\commit-msg.sample: 24 linhas (Unknown)\n- .git\\hooks\\fsmonitor-watchman.sample: 174 linhas (Unknown)\n- .git\\hooks\\post-update.sample: 8 linhas (Unknown)\n- .git\\hooks\\pre-applypatch.sample: 14 linhas (Unknown)\n- .git\\hooks\\pre-commit.sample: 49 linhas (Unknown)\n- .git\\hooks\\pre-merge-commit.sample: 13 linhas (Unknown)\n- .git\\hooks\\pre-push.sample: 53 linhas (Unknown)\n- .git\\hooks\\pre-rebase.sample: 169 linhas (Unknown)\n- .git\\hooks\\pre-receive.sample: 24 linhas (Unknown)\n- .git\\hooks\\prepare-commit-msg.sample: 42 linhas (Unknown)\n- .git\\hooks\\push-to-checkout.sample: 78 linhas (Unknown)\n- .git\\hooks\\sendemail-validate.sample: 77 linhas (Unknown)\n- .git\\hooks\\update.sample: 128 linhas (Unknown)\n- .git\\info\\exclude: 6 linhas (Unknown)\n- .git\\logs\\HEAD: 1 linhas (Unknown)\n- .git\\logs\\refs\\heads\\main: 1 linhas (Unknown)\n- .git\\logs\\refs\\remotes\\origin\\HEAD: 1 linhas (Unknown)\n- .git\\refs\\heads\\main: 1 linhas (Unknown)\n- .git\\refs\\remotes\\origin\\HEAD: 1 linhas (Unknown)\n\n## Sugestões de Melhoria (IA)\n\nErro na análise: 'NoneType' object has no attribute 'post'",
+    "metrics": {
+        "total_files": 26,
+        "total_lines": 903,
+        "total_functions": 0,
+        "total_classes": 0,
+        "languages": {
+            "Unknown": 26
+        },
+        "files": [
+            {
+                "path": "busca.txt",
+                "lines": 3,
+                "language": "Unknown"
+            },
+            {
+                "path": "README.md",
+                "lines": 4,
+                "language": "Unknown"
+            },
+            {
+                "path": ".git\\config",
+                "lines": 13,
+                "language": "Unknown"
+            },
+            {
+                "path": ".git\\description",
+                "lines": 1,
+                "language": "Unknown"
+            },
+            {
+                "path": ".git\\HEAD",
+                "lines": 1,
+                "language": "Unknown"
+            },
+            {
+                "path": ".git\\packed-refs",
+                "lines": 2,
+                "language": "Unknown"
+            },
+            {
+                "path": ".git\\hooks\\applypatch-msg.sample",
+                "lines": 15,
+                "language": "Unknown"
+            },
+            {
+                "path": ".git\\hooks\\commit-msg.sample",
+                "lines": 24,
+                "language": "Unknown"
+            },
+            {
+                "path": ".git\\hooks\\fsmonitor-watchman.sample",
+                "lines": 174,
+                "language": "Unknown"
+            },
+            {
+                "path": ".git\\hooks\\post-update.sample",
+                "lines": 8,
+                "language": "Unknown"
+            },
+            {
+                "path": ".git\\hooks\\pre-applypatch.sample",
+                "lines": 14,
+                "language": "Unknown"
+            },
+            {
+                "path": ".git\\hooks\\pre-commit.sample",
+                "lines": 49,
+                "language": "Unknown"
+            },
+            {
+                "path": ".git\\hooks\\pre-merge-commit.sample",
+                "lines": 13,
+                "language": "Unknown"
+            },
+            {
+                "path": ".git\\hooks\\pre-push.sample",
+                "lines": 53,
+                "language": "Unknown"
+            },
+            {
+                "path": ".git\\hooks\\pre-rebase.sample",
+                "lines": 169,
+                "language": "Unknown"
+            },
+            {
+                "path": ".git\\hooks\\pre-receive.sample",
+                "lines": 24,
+                "language": "Unknown"
+            },
+            {
+                "path": ".git\\hooks\\prepare-commit-msg.sample",
+                "lines": 42,
+                "language": "Unknown"
+            },
+            {
+                "path": ".git\\hooks\\push-to-checkout.sample",
+                "lines": 78,
+                "language": "Unknown"
+            },
+            {
+                "path": ".git\\hooks\\sendemail-validate.sample",
+                "lines": 77,
+                "language": "Unknown"
+            },
+            {
+                "path": ".git\\hooks\\update.sample",
+                "lines": 128,
+                "language": "Unknown"
+            },
+            {
+                "path": ".git\\info\\exclude",
+                "lines": 6,
+                "language": "Unknown"
+            },
+            {
+                "path": ".git\\logs\\HEAD",
+                "lines": 1,
+                "language": "Unknown"
+            },
+            {
+                "path": ".git\\logs\\refs\\heads\\main",
+                "lines": 1,
+                "language": "Unknown"
+            },
+            {
+                "path": ".git\\logs\\refs\\remotes\\origin\\HEAD",
+                "lines": 1,
+                "language": "Unknown"
+            },
+            {
+                "path": ".git\\refs\\heads\\main",
+                "lines": 1,
+                "language": "Unknown"
+            },
+            {
+                "path": ".git\\refs\\remotes\\origin\\HEAD",
+                "lines": 1,
+                "language": "Unknown"
+            }
+        ],
+        "ai_suggestions": [
+            "Erro na análise: 'NoneType' object has no attribute 'post'"
+        ]
+    }
+}
