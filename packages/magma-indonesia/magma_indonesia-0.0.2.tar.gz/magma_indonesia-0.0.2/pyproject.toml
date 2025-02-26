@@ -1,0 +1,66 @@
+[build-system]
+requires = ["flit_core>=3.4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name =  "magma-indonesia"
+version = "0.0.2"
+authors = [
+    {name = "Martanto", email = "martanto@live.com"},
+    {name = "Devy Kamil Syahbana", email = "devy.syahbana@gmail.com"},
+    {name = "Syarif Abdul Manaf", email = "riefmof@gmail.com"},
+]
+description = "MAGMA Indonesia python package."
+readme = "README.md"
+license = {file = "LICENSE"}
+keywords = ["volcano", "volcanology", "magma", "indonesia"]
+requires-python = ">=3.11"
+dependencies = [
+    "obspy>=1.4.0",
+    "openpyxl>=3.1.5",
+    "pandas>=2.2.2",
+    "numpy>=2.0.0",
+    "matplotlib>=3.9.0",
+    "questdb[dataframe]>=2.0.3",
+    "peewee>=3.17.5",
+    "click>=8.1.8",
+    "magma-auth",
+    "magma-converter",
+    "material-color",
+    "magma-database>=1.2.3",
+    "magma-converter>=1.0.0",
+    "magma-rsam>=1.0.0",
+    "magma-multigas>=1.3.1",
+    "fastapi[standard]",
+]
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+
+[project.optional-dependencies]
+base = [
+    "obspy",
+    "openpyxl",
+    "pandas",
+    "numpy",
+    "matplotlib",
+    "questdb[dataframe]",
+    "peewee",
+    "click",
+    "magma-converter",
+    "material-color",
+    "magma-database",
+    "magma-converter",
+    "magma-rsam",
+    "magma-multigas",
+]
+
+[project.scripts]
+magma = "magma_indonesia.cli:cli"
+
+[project.urls]
+Homepage = "https://github.com/martanto/magma-indonesia-python"
+Issues = "https://github.com/martanto/magma-indonesia-python/issues"
