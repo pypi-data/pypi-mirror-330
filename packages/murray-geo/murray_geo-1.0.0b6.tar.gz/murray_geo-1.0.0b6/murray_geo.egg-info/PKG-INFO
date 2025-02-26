@@ -1,0 +1,104 @@
+Metadata-Version: 2.2
+Name: murray-geo
+Version: 1.0.0b6
+Summary: A package for geographical incrementality testing
+Home-page: https://github.com/entropyx/murray
+Author: Entropy Team
+Author-email: dev@entropy.tech
+Project-URL: Entropy Homepage, https://entropy.tech/
+Project-URL: Documentation, https://entropy.tech/murray/
+Project-URL: Source Code, https://github.com/entropyx/murray
+Keywords: incrementality testing,geography,experiment analysis,causal inference
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pandas
+Requires-Dist: numpy
+Requires-Dist: scikit-learn
+Requires-Dist: cvxpy
+Requires-Dist: tqdm
+Requires-Dist: matplotlib
+Requires-Dist: seaborn
+Requires-Dist: plotly
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: project-url
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+
+
+
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/entropyx/murray/main/utils/Logo%20Entropy%20Dark%20Gray.png" width="550" height="auto">
+</p>
+
+
+# Murray
+
+Murray is a Python package for geographic incrementality testing that helps determine the true lift of marketing campaigns through advanced synthetic control methods. It generates heatmaps of Minimum Detectable Effects (MDE) across different configurations to optimize treatment selection, and provides impact analysis through counterfactual modeling.
+
+# Installation
+
+You can install Murray using pip:
+
+```bash
+pip install murray-geo
+```
+
+Also, you can download the package by downloading it from the GitHub repository:
+
+```bash
+pip install pip install git+https://github.com/entropyx/murray.git
+```
+
+
+# Prepare your data
+```python
+data = pd.DataFrame({
+'time': [...], # timestamps
+'location': [...], # location identifiers
+'Y': [...] # target metric values
+})
+```
+
+# Run analysis
+```python
+results = run_geo_analysis(
+    data = data,
+    excluded_locations = ['mexico city', 'mÃ©xico'],
+    maximum_treatment_percentage=0.30,
+    significance_level = 0.1,
+    deltas_range = (0.01, 0.3, 0.02),
+    periods_range = (5, 45, 5)
+)
+```
+# Run evaluation
+```python
+results = run_geo_evaluation(
+    data_input=data,
+    start_treatment='01-12-2024',
+    end_treatment='31-12-2024',
+    treatment_group=['durango','puebla','queretaro'], 
+    spend=10000)
+```
+
+
+# Documentation
+You can check the documentation [here](https://entropy.tech/murray/docs/Welcome%20to%20Murray)
