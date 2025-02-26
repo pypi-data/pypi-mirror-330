@@ -1,0 +1,13 @@
+README.md
+pyproject.toml
+src/AutoForge.egg-info/PKG-INFO
+src/AutoForge.egg-info/SOURCES.txt
+src/AutoForge.egg-info/dependency_links.txt
+src/AutoForge.egg-info/entry_points.txt
+src/AutoForge.egg-info/requires.txt
+src/AutoForge.egg-info/top_level.txt
+src/autoforge/__init__.py
+src/autoforge/__main__.py
+src/autoforge/auto_forge.py
+src/autoforge/filamentcolors_library.py
+src/autoforge/helper_functions.py
