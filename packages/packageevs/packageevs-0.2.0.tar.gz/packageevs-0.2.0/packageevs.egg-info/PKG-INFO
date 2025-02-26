@@ -1,0 +1,15 @@
+Metadata-Version: 2.2
+Name: packageevs
+Version: 0.2.0
+Summary: Add your description here
+Home-page: https://github.com/packageEVS
+Author: FlorianThoen
+Author-email: floiran.thoen@datarootsio.onmicrosoft.com
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: setuptools>=75.8.1
+Requires-Dist: twine>=6.1.0
+Requires-Dist: wheel>=0.45.1
+Dynamic: author
+Dynamic: author-email
+Dynamic: home-page
