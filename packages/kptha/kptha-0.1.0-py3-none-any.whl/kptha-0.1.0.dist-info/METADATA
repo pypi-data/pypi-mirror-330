@@ -1,0 +1,221 @@
+Metadata-Version: 2.1
+Name: kptha
+Version: 0.1.0
+Summary: Korean-based Python syntax translator | 한국어 파이썬 번역기
+Author: rainy58
+Author-email: yhg4908@kakao.com
+Project-URL: Issues, https://github.com/yhg4908/kpth/issues
+Project-URL: Repository, https://github.com/yhg4908/kpth
+Keywords: korea korean python kpy kpth 한국어 한국 파이썬
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# KPTH (korean Python Path)
+kpth는 파이썬의 문법을 한국어로 번역한 라이브러리입니다.
+
+해당 라이브러리는 실제 프로젝트에서 사용하기에는 어려움이 있습니다.
+
+## 사용법
+kpth는 `.kpy` 확장명을 사용합니다.(예: hello.kpy)
+
+해당 파일 안에서 프로그래밍을 진행하시면 됩니다(기본 파이썬 문법도 그대로 작동합니다.).
+
+## 실행
+실행을 하려면 아래 명령어를 사용합니다.
+```bash
+ㅋㅍ [파일명]
+```
+
+사용시 해당 파일에 코드가 정상적으로 실행됩니다.
+
+## 사용 예시
+```kpy
+출력("안녕, 세계!")
+```
+```bash
+~workspace$ ㅋㅍ hello.kpy
+안녕, 세계!
+```
+
+## 번영된 문법
+
+---
+
+### 파이썬 예약어 (Keywords)
+
+- **거짓** → `False`  
+- **참** → `True`  
+- **없음** → `None`  
+- **그리고** → `and`  
+- **또는** → `or`  
+- **아니다** → `not`  
+
+#### 조건/반복
+- **만약** → `if`  
+- **아니고만약** → `elif`  
+- **아니면** → `else`  
+- **동안** → `while`  
+- **각각** → `for`  
+- **안에** → `in`  
+- **중단** → `break`  
+- **계속** → `continue`  
+
+#### 예외 처리
+- **시도** → `try`  
+- **예외** → `except`  
+- **결국** → `finally`  
+- **발생** → `raise`  
+
+#### 함수/클래스/람다
+- **정의** → `def`  
+- **클래스** → `class`  
+- **람다** → `lambda`  
+- **반환** → `return`  
+- **넘어가기** → `pass`  
+
+#### 비동기 처리
+- **비동기** → `async`  
+- **기다림** → `await`  
+
+#### 패턴 매칭 (Python 3.10+)
+- **매칭** → `match`  
+- **경우** → `case`  
+
+#### 기타 키워드
+- **삭제** → `del`  
+- **전역** → `global`  
+- **비전역** → `nonlocal`  
+- **로서** → `as`  
+- **은** → `is`  
+- **에서** → `from`  
+- **불러오기** → `import`  
+- **단언** → `assert`  
+- **함께** → `with`  
+- **생성** → `yield`  
+
+---
+
+### 파이썬 내장 함수 (Built-in Functions)
+
+- **절댓값** → `abs`  
+- **모두참** → `all`  
+- **하나참** → `any`  
+- **아스키** → `ascii`  
+- **이진수** → `bin`  
+- **불리언** → `bool`  
+- **중단점** → `breakpoint`  
+- **바이트배열** → `bytearray`  
+- **바이트** → `bytes`  
+- **호출가능** → `callable`  
+- **문자** → `chr`  
+- **클래스메서드** → `classmethod`  
+- **컴파일** → `compile`  
+- **복소수** → `complex`  
+- **삭제속성** → `delattr`  
+- **사전** → `dict`  
+- **디렉터리** → `dir`  
+- **몫나머지** → `divmod`  
+- **열거** → `enumerate`  
+- **평가** → `eval`  
+- **실행** → `exec`  
+- **필터** → `filter`  
+- **실수** → `float`  
+- **형식** → `format`  
+- **고정집합** → `frozenset`  
+- **속성얻기** → `getattr`  
+- **전역변수** → `globals`  
+- **존재여부** → `hasattr`  
+- **해시** → `hash`  
+- **도움말** → `help`  
+- **16진수** → `hex`  
+- **객체ID** → `id`  
+- **입력** → `input`  
+- **정수** → `int`  
+- **인스턴스여부** → `isinstance`  
+- **서브클래스여부** → `issubclass`  
+- **반복자** → `iter`  
+- **길이** → `len`  
+- **리스트** → `list`  
+- **지역변수** → `locals`  
+- **맵** → `map`  
+- **최대값** → `max`  
+- **메모리뷰** → `memoryview`  
+- **최소값** → `min`  
+- **다음값** → `next`  
+- **객체** → `object`  
+- **8진수** → `oct`  
+- **열기** → `open`  
+- **유니코드값** → `ord`  
+- **거듭제곱** → `pow`  
+- **출력** → `print`  
+- **속성** → `property`  
+- **범위** → `range`  
+- **표현식** → `repr`  
+- **역순** → `reversed`  
+- **반올림** → `round`  
+- **집합** → `set`  
+- **설정속성** → `setattr`  
+- **슬라이스** → `slice`  
+- **정렬** → `sorted`  
+- **정적메서드** → `staticmethod`  
+- **문자열** → `str`  
+- **합계** → `sum`  
+- **슈퍼클래스** → `super`  
+- **튜플** → `tuple`  
+- **타입** → `type`  
+- **변수들** → `vars`  
+- **압축** → `zip`  
+- **모듈가져오기** → `__import__`  
+
+---
+
+### 파이썬 내장 예외 (Built-in Exceptions)
+
+- **예외** → `Exception`  
+- **중단예외** → `StopIteration`  
+- **비동기중단예외** → `StopAsyncIteration`  
+- **산술오류** → `ArithmeticError`  
+- **오버플로우오류** → `OverflowError`  
+- **영으로나눔오류** → `ZeroDivisionError`  
+- **부동소수점오류** → `FloatingPointError`  
+- **어트리뷰트오류** → `AttributeError`  
+- **버퍼오류** → `BufferError`  
+- **EOF오류** → `EOFError`  
+- **입출력오류** → `IOError`  
+- **파일존재오류** → `FileExistsError`  
+- **파일없음오류** → `FileNotFoundError`  
+- **허용되지않는오류** → `PermissionError`  
+- **프로세스찾을수없음오류** → `ProcessLookupError`  
+- **참조오류** → `ReferenceError`  
+- **메모리오류** → `MemoryError`  
+- **인덱스오류** → `IndexError`  
+- **키오류** → `KeyError`  
+- **값오류** → `ValueError`  
+- **타입오류** → `TypeError`  
+- **이름오류** → `NameError`  
+- **할당되지않은로컬오류** → `UnboundLocalError`  
+- **모듈없음오류** → `ModuleNotFoundError`  
+- **임포트오류** → `ImportError`  
+- **중단오류** → `InterruptedError`  
+- **시간초과오류** → `TimeoutError`  
+- **런타임오류** → `RuntimeError`  
+- **재귀오류** → `RecursionError`  
+- **낙찰오류** → `NotImplementedError`  
+- **부착오류** → `OSError`  
+- **환경오류** → `EnvironmentError`  
+- **차단된파이프오류** → `BrokenPipeError`  
+- **연결오류** → `ConnectionError`  
+- **연결거부오류** → `ConnectionRefusedError`  
+- **연결재설정오류** → `ConnectionResetError`  
+- **연결중단오류** → `ConnectionAbortedError`  
+- **차단된프로세스오류** → `BlockingIOError`  
+
+---
