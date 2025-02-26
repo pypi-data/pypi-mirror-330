@@ -1,0 +1,110 @@
+Metadata-Version: 2.2
+Name: unisql
+Version: 1.1.0
+Summary: SQL Database Wrapper
+Home-page: https://github.com/joumaico/unisql
+Author: Joumaico Maulas
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: aiosqlite
+Requires-Dist: asyncpg
+Requires-Dist: psycopg2-binary
+Requires-Dist: pymysql
+Dynamic: author
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# UniSQL: SQL Database Wrapper
+
+UniSQL is a software package that offers a unified interface for connecting to and interacting with various database engines, including SQLite, MySQL, and PostgreSQL. This package simplifies database management by abstracting the underlying complexities of each database engine, providing a consistent and user-friendly API for developers.
+
+## Installation
+
+```
+Dependencies:
+
+- Python 3.8, 3.9, 3.11, 3.12, 3.13
+
+Installation:
+
+$ pip install unisql
+```
+
+## Synchronous Connections
+
+For synchronous connections, use the following code:
+
+```python
+from unisql import connect
+
+# SQLite
+db = connect.sqlite("database.db")
+
+# MySQL
+db = connect.mysql(database="mydatabase", host="localhost", user="myuser", password="mypassword", port=3306)
+
+# PostgreSQL
+db = connect.postgresql(database="mydatabase", host="localhost", user="myuser", password="mypassword", port=5432)
+```
+
+## Asynchronous Connections (with asyncio)
+
+For asynchronous connections using asyncio, use the following code:
+
+```python
+from unisql.asyncio import connect
+
+# SQLite
+db = await connect.sqlite("database.db")
+
+# PostgreSQL
+db = await connect.postgresql(database="mydatabase", host="localhost", user="myuser", password="mypassword", port=5432)
+```
+
+> [!IMPORTANT]
+> Asynchronous connections are currently not supported for MySQL in this package.
+
+## Executing Queries
+
+After establishing a connection, you can execute queries using the query and value properties, and then call the fetch or execute methods.
+
+```python
+# Set the query and values
+query = "SELECT * FROM users WHERE name = ? AND email = ?;"
+value = ("John Doe", "john@example.com")
+
+# Fetch a single row
+result = db.fetch(query, value, multiple=False)
+
+# Fetch all rows
+results = db.fetch(query, value, multiple=True)
+
+# Execute an INSERT or UPDATE query at once
+query = "INSERT INTO users (name, email) VALUES (?, ?);"
+value = ("John Doe", "john@example.com")
+db.execute(query, value)
+
+# Execute an INSERT or UPDATE query at many
+value = [("Sam Smith", "sam@example.com"), ("Adam Page", "adam@example.com")]
+db.execute(query, value)
+```
+
+To close the connection:
+
+```python
+db.close()
+```

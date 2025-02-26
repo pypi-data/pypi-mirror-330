@@ -1,0 +1,15 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+src/unisql/__init__.py
+src/unisql/asyncio.py
+src/unisql/connect.py
+src/unisql/functions.py
+tests/test_async.py
+tests/test_unisql.py
+unisql.egg-info/PKG-INFO
+unisql.egg-info/SOURCES.txt
+unisql.egg-info/dependency_links.txt
+unisql.egg-info/requires.txt
+unisql.egg-info/top_level.txt
