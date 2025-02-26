@@ -1,0 +1,4 @@
+recursive-include config *.so *.yaml
+recursive-include logs *.so
+recursive-include modules *.so
+recursive-include * *.md *.json
