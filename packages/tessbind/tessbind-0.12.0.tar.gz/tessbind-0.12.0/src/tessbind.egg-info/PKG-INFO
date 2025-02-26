@@ -1,0 +1,60 @@
+Metadata-Version: 2.2
+Name: tessbind
+Version: 0.12.0
+Summary: Tesseract pybind11 bindings
+Author-email: Enno Richter <enno@nerdworks.de>
+License: Apache-2.0
+Project-URL: Documentation, https://tessbind.readthedocs.io/
+Project-URL: Bug Tracker, https://github.com/elohmeier/tessbind/issues
+Project-URL: Discussions, https://github.com/elohmeier/tessbind/discussions
+Project-URL: Changelog, https://github.com/elohmeier/tessbind/releases
+Classifier: Development Status :: 1 - Planning
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Topic :: Scientific/Engineering
+Classifier: Typing :: Typed
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: typing-extensions>=4.6; python_version < "3.11"
+Provides-Extra: dev
+Requires-Dist: pytest>=6; extra == "dev"
+Requires-Dist: pytest-cov>=3; extra == "dev"
+Provides-Extra: docs
+Requires-Dist: furo>=2023.08.17; extra == "docs"
+Requires-Dist: myst-parser>=0.13; extra == "docs"
+Requires-Dist: sphinx>=7.0; extra == "docs"
+Requires-Dist: sphinx-autodoc-typehints; extra == "docs"
+Requires-Dist: sphinx-copybutton; extra == "docs"
+Provides-Extra: test
+Requires-Dist: pytest>=6; extra == "test"
+Requires-Dist: pytest-cov>=3; extra == "test"
+
+# tessbind
+
+[![Actions Status][actions-badge]][actions-link]
+
+[![PyPI version][pypi-version]][pypi-link]
+[![PyPI platforms][pypi-platforms]][pypi-link]
+
+<!-- SPHINX-START -->
+
+<!-- prettier-ignore-start -->
+[actions-badge]:            https://github.com/elohmeier/tessbind/workflows/CI/badge.svg
+[actions-link]:             https://github.com/elohmeier/tessbind/actions
+[pypi-link]:                https://pypi.org/project/tessbind/
+[pypi-platforms]:           https://img.shields.io/pypi/pyversions/tessbind
+[pypi-version]:             https://img.shields.io/pypi/v/tessbind
+
+<!-- prettier-ignore-end -->

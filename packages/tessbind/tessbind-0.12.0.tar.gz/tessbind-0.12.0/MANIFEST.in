@@ -1,0 +1,13 @@
+graft src
+graft tests
+
+include LICENSE README.md pyproject.toml setup.py .git_archival.txt
+global-exclude __pycache__ *.py[cod] .venv
+
+include build_dependencies.sh
+
+# Include the build dependencies
+graft extern/leptonica
+graft extern/libpng
+graft extern/tesseract
+graft extern/zlib

@@ -1,0 +1,12 @@
+[submodule "extern/leptonica"]
+	path = extern/leptonica
+	url = https://github.com/DanBloomberg/leptonica.git
+[submodule "extern/tesseract"]
+	path = extern/tesseract
+	url = https://github.com/tesseract-ocr/tesseract.git
+[submodule "extern/libpng"]
+	path = extern/libpng
+	url = https://github.com/pnggroup/libpng.git
+[submodule "extern/zlib"]
+	path = extern/zlib
+	url = https://github.com/madler/zlib.git
