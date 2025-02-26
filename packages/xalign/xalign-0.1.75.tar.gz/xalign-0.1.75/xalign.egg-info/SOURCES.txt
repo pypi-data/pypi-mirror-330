@@ -1,0 +1,17 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+xalign/__init__.py
+xalign/ensembl.py
+xalign/file.py
+xalign/sra.py
+xalign/utils.py
+xalign.egg-info/PKG-INFO
+xalign.egg-info/SOURCES.txt
+xalign.egg-info/dependency_links.txt
+xalign.egg-info/requires.txt
+xalign.egg-info/top_level.txt
+xalign/data/config.json
+xalign/data/fasterq-dump.tar.gz
+xalign/data/fasterq.tar.gz
