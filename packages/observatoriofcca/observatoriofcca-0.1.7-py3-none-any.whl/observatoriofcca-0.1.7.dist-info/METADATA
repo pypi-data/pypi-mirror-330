@@ -1,0 +1,40 @@
+Metadata-Version: 2.1
+Name: observatoriofcca
+Version: 0.1.7
+Summary: API - Observatorio de gestión pública e inteligencia de mercados
+Home-page: https://sites.google.com/umich.mx/observatoriofcca
+Author: Rodolfo Lopez
+Author-email: 1803672F@umich.mx
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+Requires-Dist: requests
+
+# Observatorio FCCA
+
+## Observatorio de gestión pública e inteligencia de mercados
+
+El objetivo del mismo es proporcionar a la comunidad académica de la Facultad de Contaduría y Ciencias Administrativas, de la Universidad Michoacana de San Nicolás de Hidalgo y al público en general, información confiable, sistematizada y actualizada referente a los precios de mercado de granos, frutas y hortalizas.
+
+[La lista de productos y claves](https://app1.observatorio-fcca-umich.com/api/get_sniim_productos)
+
+```
+from observatoriofcca import sniimapp
+
+username = 'USUARIO'   
+password = 'PASSWORD'  
+
+client = sniimapp.sniimapp_precios(username=username,password=password)
+
+prices = client.get_sniim_precios(
+    product_key="FH-CD42", date_start="2024-02-01", date_end="2024-04-10"
+)
+
+print(prices)
+
+```
+
+
