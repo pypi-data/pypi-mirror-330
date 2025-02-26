@@ -1,0 +1,5 @@
+[console_scripts]
+pydefect_2d = pydefect_2d.cli.main:main
+pydefect_2d_plot = pydefect_2d.cli.main_plot_json:main
+pydefect_2d_util = pydefect_2d.cli.main_util:main
+
