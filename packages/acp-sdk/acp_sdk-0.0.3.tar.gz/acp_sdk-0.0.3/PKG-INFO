@@ -1,0 +1,46 @@
+Metadata-Version: 2.4
+Name: acp-sdk
+Version: 0.0.3
+Summary: Agent Communication Protocol SDK
+Project-URL: Homepage, https://github.com/i-am-bee/beeai
+Project-URL: Repository, https://github.com/i-am-bee/beeai
+Project-URL: Issues, https://github.com/i-am-bee/beeai/issues
+Author: IBM Corp., Anthropic, PBC
+License: MIT
+License-File: LICENSE
+Keywords: acp,git,llm
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Python: <4.0,>=3.10
+Requires-Dist: anyio>=4.5
+Requires-Dist: httpx-sse>=0.4
+Requires-Dist: httpx>=0.27
+Requires-Dist: opentelemetry-api>=1.0.0
+Requires-Dist: pydantic-settings>=2.5.2
+Requires-Dist: pydantic<3.0.0,>=2.7.2
+Requires-Dist: setuptools==75.8.0
+Requires-Dist: sse-starlette>=1.6.1
+Requires-Dist: starlette>=0.27
+Requires-Dist: uvicorn>=0.23.1
+Provides-Extra: cli
+Requires-Dist: python-dotenv>=1.0.0; extra == 'cli'
+Requires-Dist: typer>=0.12.4; extra == 'cli'
+Provides-Extra: rich
+Requires-Dist: rich>=13.9.4; extra == 'rich'
+Description-Content-Type: text/markdown
+
+# Agent Communication Protocol Python SDK
+
+## Disclaimer
+
+The current [MCP](https://modelcontextprotocol.io/) based implementation should be treated as temporary and exploratory. It's main purpose is to enable integration of various agents into the platform and to explore underlying protocols, transports and possible multi-agent patterns. In Q2 2025, we expect to rebuild the SDK from the ground up.
+
+## Overview
+
+The Agent Communication Protocol allows applications to use agents through a uniform interface. It is built on top of [Model Context Protocol](https://modelcontextprotocol.io/).
