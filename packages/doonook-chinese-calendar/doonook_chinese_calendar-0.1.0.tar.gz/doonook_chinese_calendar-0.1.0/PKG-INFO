@@ -1,0 +1,18 @@
+Metadata-Version: 2.3
+Name: doonook-chinese-calendar
+Version: 0.1.0
+Summary: 
+Author: Rex Xu
+Author-email: doonookltd@gmail.com
+Requires-Python: >=3.11
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Dist: fastapi (>=0.115.8,<0.116.0)
+Requires-Dist: pydantic-settings (>=2.8.0,<3.0.0)
+Requires-Dist: sqlalchemy (>=2.0.38,<3.0.0)
+Requires-Dist: sxtwl (>=2.0.7,<3.0.0)
+Description-Content-Type: text/markdown
+
+
