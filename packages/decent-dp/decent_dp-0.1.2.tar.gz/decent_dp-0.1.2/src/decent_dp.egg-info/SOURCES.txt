@@ -1,0 +1,14 @@
+LICENSE
+README.md
+pyproject.toml
+src/decent_dp/__init__.py
+src/decent_dp/ddp.py
+src/decent_dp/optim.py
+src/decent_dp/topo.py
+src/decent_dp/utils.py
+src/decent_dp.egg-info/PKG-INFO
+src/decent_dp.egg-info/SOURCES.txt
+src/decent_dp.egg-info/dependency_links.txt
+src/decent_dp.egg-info/requires.txt
+src/decent_dp.egg-info/top_level.txt
+tests/test.py

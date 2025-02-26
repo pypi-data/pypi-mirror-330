@@ -1,0 +1,5 @@
+torch>=2.1.0
+loguru>=0.7.0
+
+[test]
+tqdm>=4.66.0
