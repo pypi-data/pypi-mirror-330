@@ -1,0 +1,68 @@
+[project]
+name='m-calibrate'
+description='A multi-purpose calibration tool.'
+authors=[
+    { name = 'Carter Fendley' }
+]
+version='0.0.1'
+readme = "README.md"
+license = {file = "LICENSE"}
+classifiers=[
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent"
+]
+
+dependencies = [
+    "kubernetes",
+    "click",
+    "oyaml",
+    "jinja2",
+    "pydantic",
+    "toml",
+    "timedelta", # Built in timedelta sucks
+    "pandas",
+    "gql[all]"
+]
+
+[project.urls]
+Homepage = "https://github.com/CarterFendley/mcal"
+
+[tool.setuptools.packages.find]
+include = ["mcal*"]
+
+[tool.setuptools.package-data]
+mcal = ["files/**"]
+
+
+[project.entry-points."mcal.samplers"]
+samplers = "mcal.samplers:SAMPLERS"
+
+[project.scripts]
+mcal = "mcal.cli.main:mcal"
+
+[project.optional-dependencies]
+dev = [
+    "pre-commit",
+    "tox",
+    "pytest",
+    "pytest-cov",
+    "pytest-benchmark",
+    "pytest-unordered"
+]
+dask = [
+    "dask",
+    "distributed",
+    "dask-kubernetes",
+    "prometheus-client",
+    # db-benchmark
+    "pyarrow",
+    "toolz==0.12.0", # TODO: Hacky, just matching the current images
+    "lz4==4.3.3", # TODO: Hacky, just matching the current images
+    # dask-taxicab
+    "gcsfs"
+]
+docs = [
+    "mkdocs"
+]
+all = ["m-calibrate[dev, dask, docs]"]
