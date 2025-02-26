@@ -1,0 +1,2 @@
+[console_scripts]
+toutsurmoneau = toutsurmoneau.__main__:command_line
