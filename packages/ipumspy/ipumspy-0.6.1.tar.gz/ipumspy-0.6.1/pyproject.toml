@@ -1,0 +1,89 @@
+[tool.poetry]
+name = "ipumspy"
+version = "0.6.1"
+description = "A collection of tools for working with IPUMS data"
+authors = ["Kevin H. Wilson <kevin_wilson@brown.edu>",
+           "Renae Rodgers <rodge103@umn.edu>"]
+license = "Mozilla Public License 2.0 (MPL 2.0)"
+packages = [
+    { include = "ipumspy", from = "src" }
+]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+pandas = "^2.2.3"
+numpy = "^2.0.0"
+click = "^8.0.0"
+pyarrow = "^18.1.0"
+requests = {extras = ["use_chardet_on_py3"], version = "^2.26.0"}
+importlib-metadata = "^4.13.0"
+PyYAML = "^6.0.1"
+
+[tool.poetry.dev-dependencies]
+black = "^24.4.0"
+pylint = "^2.7.4"
+isort = "^5.8.0"
+mypy = "^1.0.1"
+
+[tool.poetry.group.test.dependencies]
+pytest = "^8.3.4"
+pytest-cov = "^4.0.0"
+python-dotenv = "^1.0.0"
+fastapi = "^0.109.2"
+uvicorn = {extras = ["standard"], version = "^0.20.0"}
+pytest-recording = "^0.12.2"
+vcrpy = "^4.2.1"
+
+[tool.poetry.group.docs]
+optional=true
+
+[tool.poetry.group.docs.dependencies]
+beautifulsoup4 = "^4.12.3"
+Sphinx = "^6.1.3"
+sphinx-autodoc-typehints = "^1.22.0"
+sphinx-copybutton = "^0.5.0"
+myst-parser = "^0.19.1"
+furo = "^2022.12.7"
+
+[tool.poetry.extras]
+docs = [
+    "beautifulsoup4",
+    "Sphinx",
+    "sphinx-autodoc-typehints",
+    "sphinx-copybutton",
+    "myst-parser",
+    "furo",
+]
+
+[tool.poetry.scripts]
+ipums = "ipumspy.cli:cli"
+
+[tool.isort]
+multi_line_output = 3
+include_trailing_comma = true
+force_grid_wrap = 0
+use_parentheses = true
+ensure_newline_before_comments = true
+line_length = 88
+
+[tool.pylint.basic]
+good-names = "i,j,k,ex,Run,_,df,pc"
+
+[tool.pylint.messages_control]
+disable = "C0330, C0326, R0912, R0913, R0914, R0915"
+
+[tool.pylint.format]
+max-line-length = "88"
+
+[tool.pytest.ini_options]
+markers = [ "slow: Run with --runslow",
+            "integration: Run with --runint" ]
+
+[tool.coverage.run]
+omit = [
+    "*/tests/*",
+]
+
+[build-system]
+requires = ["poetry>=1.4"]
+build-backend = "poetry.masonry.api"
