@@ -1,0 +1,42 @@
+Metadata-Version: 2.3
+Name: pdf-oralia
+Version: 0.4.0
+Summary: 
+Author: Bertrand Benjamin
+Author-email: benjamin.bertrand@opytex.org
+Requires-Python: >=3.10,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Dist: click (>=8.1.3,<9.0.0)
+Requires-Dist: openpyxl (>=3.0.10,<4.0.0)
+Requires-Dist: pandas (>=2.2.3,<3.0.0)
+Requires-Dist: pdfplumber (>=0.7.4,<0.8.0)
+Description-Content-Type: text/markdown
+
+# PDF AURALIA
+
+Extraction de fichiers de comptabilité en pdf vers xlsx.
+
+## Utilisation
+
+- Lancement sur un fichier pdf particulier
+
+  ```bash
+  pdf_oralia extract on <pdf_file> --dest <where to put producted files>
+  ```
+
+- Lancement sur tous les fichiers d'un repertoire (récursivement )
+
+  ```bash
+  pdf_oralia extract all --src <source folder> --dest <destination folder>
+  ```
+
+  Cette commande reproduira la structure du dossier source dans destination. Seul les fichiers non existants seront traités. Par default, les fichiers déjà produits ne seront pas écrasés.
+  On peut ajouter les options suivantes:
+
+  - `--force`: pour écraser les fichiers déjà traités
+  - `--only-plan`: pour voir quels fichiers pourraient être créé sans le faire.
+
