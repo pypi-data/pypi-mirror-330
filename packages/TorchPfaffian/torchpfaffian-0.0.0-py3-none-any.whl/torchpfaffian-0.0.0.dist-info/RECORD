@@ -1,0 +1,12 @@
+torch_pfaffian/__init__.py,sha256=N_UF_XbTXSWZ2KyW_WvpntoIc1EPiVcbnwTHRakyhW8,992
+torch_pfaffian/__main__.py,sha256=zfOuTGARDjp9yZtA-__9IwtpnCz8O1-NwLdqXv2fVJo,188
+torch_pfaffian/utils.py,sha256=PC7FmMvDw0VNFQd7ITv2JwayCWB7r_UOChk9OvDpzyE,223
+torch_pfaffian/strategies/__init__.py,sha256=05-0TZHX4vQOKfxDgSgfh0xlIv21C3usI4Mxb9wGguY,218
+torch_pfaffian/strategies/pfaffian_block_det.py,sha256=bSLpoh-c26QiQnZeqU4a6Tswt_CW9BsT8y6ZNc8Z2Z8,1485
+torch_pfaffian/strategies/pfaffian_fdbpf.py,sha256=89HclQDbNWgPicMg8_MQX_dJOA4rIe4zwb_L1rEf0Zw,1229
+torch_pfaffian/strategies/strategy.py,sha256=R_oRpcw1t7h0chb0Ffp44QxKH4vwAxB8CftMD8LLMag,515
+torchpfaffian-0.0.0.dist-info/LICENSE,sha256=tTCJoXjQqBG9FQGfDMXbgX28_Kn7Uxt1WX9KUsOLi1w,11345
+torchpfaffian-0.0.0.dist-info/METADATA,sha256=ZlSpxMrKBy3gYmuHh1bgSS5g7ho6DWc4vK1Uvk0IW8E,819
+torchpfaffian-0.0.0.dist-info/WHEEL,sha256=nn6H5-ilmfVryoAQl3ZQ2l8SH5imPWFpm1A5FgEuFV4,91
+torchpfaffian-0.0.0.dist-info/top_level.txt,sha256=bGA_ukQz_MY0wN52Xx918zverLkPzY-RRjTfUY9NO_A,15
+torchpfaffian-0.0.0.dist-info/RECORD,,
