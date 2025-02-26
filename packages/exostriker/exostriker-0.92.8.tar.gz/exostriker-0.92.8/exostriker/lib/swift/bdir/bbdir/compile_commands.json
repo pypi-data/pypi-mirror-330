@@ -1,0 +1,26 @@
+[
+  {
+    "directory": "/home/trifonov/exostriker/exostriker/lib/swift/bdir/bbdir",
+    "command": "gfortran -Iswift.cpython-313-x86_64-linux-gnu.so.p -I. -I.. -I/home/trifonov/.local/lib/python3.13/site-packages/numpy/_core/include -I/home/trifonov/.local/lib/python3.13/site-packages/numpy/f2py/src -I/home/trifonov/exostriker/exostriker/lib/swift -I/usr/include/python3.13 -I/usr/include/x86_64-linux-gnu/python3.13 -fvisibility=hidden -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -O3 -fPIC -Jswift.cpython-313-x86_64-linux-gnu.so.p -o swift.cpython-313-x86_64-linux-gnu.so.p/swift.f95.o -c ../swift.f95",
+    "file": "../swift.f95",
+    "output": "swift.cpython-313-x86_64-linux-gnu.so.p/swift.f95.o"
+  },
+  {
+    "directory": "/home/trifonov/exostriker/exostriker/lib/swift/bdir/bbdir",
+    "command": "cc -Iswift.cpython-313-x86_64-linux-gnu.so.p -I. -I.. -I/home/trifonov/.local/lib/python3.13/site-packages/numpy/_core/include -I/home/trifonov/.local/lib/python3.13/site-packages/numpy/f2py/src -I/home/trifonov/exostriker/exostriker/lib/swift -I/usr/include/python3.13 -I/usr/include/x86_64-linux-gnu/python3.13 -fvisibility=hidden -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O3 -fPIC -MD -MQ swift.cpython-313-x86_64-linux-gnu.so.p/swiftmodule.c.o -MF swift.cpython-313-x86_64-linux-gnu.so.p/swiftmodule.c.o.d -o swift.cpython-313-x86_64-linux-gnu.so.p/swiftmodule.c.o -c ../swiftmodule.c",
+    "file": "../swiftmodule.c",
+    "output": "swift.cpython-313-x86_64-linux-gnu.so.p/swiftmodule.c.o"
+  },
+  {
+    "directory": "/home/trifonov/exostriker/exostriker/lib/swift/bdir/bbdir",
+    "command": "gfortran -Iswift.cpython-313-x86_64-linux-gnu.so.p -I. -I.. -I/home/trifonov/.local/lib/python3.13/site-packages/numpy/_core/include -I/home/trifonov/.local/lib/python3.13/site-packages/numpy/f2py/src -I/home/trifonov/exostriker/exostriker/lib/swift -I/usr/include/python3.13 -I/usr/include/x86_64-linux-gnu/python3.13 -fvisibility=hidden -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -O3 -fPIC -Jswift.cpython-313-x86_64-linux-gnu.so.p -o swift.cpython-313-x86_64-linux-gnu.so.p/swift-f2pywrappers.f.o -c ../swift-f2pywrappers.f",
+    "file": "../swift-f2pywrappers.f",
+    "output": "swift.cpython-313-x86_64-linux-gnu.so.p/swift-f2pywrappers.f.o"
+  },
+  {
+    "directory": "/home/trifonov/exostriker/exostriker/lib/swift/bdir/bbdir",
+    "command": "cc -Iswift.cpython-313-x86_64-linux-gnu.so.p -I. -I.. -I/home/trifonov/.local/lib/python3.13/site-packages/numpy/_core/include -I/home/trifonov/.local/lib/python3.13/site-packages/numpy/f2py/src -I/home/trifonov/exostriker/exostriker/lib/swift -I/usr/include/python3.13 -I/usr/include/x86_64-linux-gnu/python3.13 -fvisibility=hidden -fdiagnostics-color=always -D_FILE_OFFSET_BITS=64 -Wall -Winvalid-pch -O3 -fPIC -MD -MQ swift.cpython-313-x86_64-linux-gnu.so.p/cdeb2de0c367bb9892e341d0aaea16de4f2c537f_.._.._f2py_src_fortranobject.c.o -MF swift.cpython-313-x86_64-linux-gnu.so.p/cdeb2de0c367bb9892e341d0aaea16de4f2c537f_.._.._f2py_src_fortranobject.c.o.d -o swift.cpython-313-x86_64-linux-gnu.so.p/cdeb2de0c367bb9892e341d0aaea16de4f2c537f_.._.._f2py_src_fortranobject.c.o -c /home/trifonov/.local/lib/python3.13/site-packages/numpy/f2py/src/fortranobject.c",
+    "file": "/home/trifonov/.local/lib/python3.13/site-packages/numpy/f2py/src/fortranobject.c",
+    "output": "swift.cpython-313-x86_64-linux-gnu.so.p/cdeb2de0c367bb9892e341d0aaea16de4f2c537f_.._.._f2py_src_fortranobject.c.o"
+  }
+]

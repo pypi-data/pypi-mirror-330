@@ -1,0 +1,89 @@
+[
+  {
+    "name": "python-3.13",
+    "type": "pkgconfig",
+    "version": "3.13",
+    "compile_args": [
+      "-I/usr/include/python3.13",
+      "-I/usr/include/x86_64-linux-gnu/python3.13"
+    ],
+    "link_args": [],
+    "include_directories": [],
+    "sources": [],
+    "extra_files": [],
+    "dependencies": [],
+    "depends": [],
+    "meson_variables": [
+      "py_dep"
+    ]
+  },
+  {
+    "name": "dep108888790868810600274241730086943609112",
+    "type": "internal",
+    "version": "0.1",
+    "compile_args": [],
+    "link_args": [],
+    "include_directories": [
+      "/home/trifonov/.local/lib/python3.13/site-packages/numpy/_core/include",
+      "/home/trifonov/.local/lib/python3.13/site-packages/numpy/_core/include"
+    ],
+    "sources": [],
+    "extra_files": [],
+    "dependencies": [],
+    "depends": [],
+    "meson_variables": [
+      "np_dep"
+    ]
+  },
+  {
+    "name": "quadmath",
+    "type": "library",
+    "version": "unknown",
+    "compile_args": [],
+    "link_args": [
+      "-lquadmath"
+    ],
+    "include_directories": [],
+    "sources": [],
+    "extra_files": [],
+    "dependencies": [],
+    "depends": [],
+    "meson_variables": [
+      "quadmath_dep"
+    ]
+  },
+  {
+    "name": "dep26331156923479046683939703203365142436",
+    "type": "internal",
+    "version": "0.1",
+    "compile_args": [],
+    "link_args": [
+      "-lswift"
+    ],
+    "include_directories": [],
+    "sources": [],
+    "extra_files": [],
+    "dependencies": [],
+    "depends": [],
+    "meson_variables": [
+      "swift"
+    ]
+  },
+  {
+    "name": "dep8766908782658837752752345359917199668",
+    "type": "internal",
+    "version": "0.1",
+    "compile_args": [],
+    "link_args": [
+      "-L/home/trifonov/exostriker/exostriker/lib/swift"
+    ],
+    "include_directories": [],
+    "sources": [],
+    "extra_files": [],
+    "dependencies": [],
+    "depends": [],
+    "meson_variables": [
+      "lib_dir_0"
+    ]
+  }
+]
