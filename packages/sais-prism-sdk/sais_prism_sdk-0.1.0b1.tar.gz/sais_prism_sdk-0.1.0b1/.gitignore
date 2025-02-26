@@ -1,0 +1,47 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+
+# Virtual Environment
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs and databases
+*.log
+*.sqlite
+logs/
+
+# Local development
+.env
+.env.local
+.env.development
+
+# Testing
+.coverage
+htmlcov/
+.pytest_cache/
+
+# Artifacts (from MEMORY)
+artifacts/
+
+# Dependency management
+Pipfile.lock
+poetry.lock
+
+# OS specific
+.DS_Store
+Thumbs.db
+
+fine_tuned_model/
