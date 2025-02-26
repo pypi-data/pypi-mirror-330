@@ -1,0 +1,10 @@
+Metadata-Version: 2.1
+Name: dmstockapi2
+Version: 0.3.5
+Home-page: 
+Author: James Liu
+Author-email: 
+License: Apache-2.0
+Requires-Dist: pandas >=2.2.2
+Requires-Dist: requests >=2.22.0
+
