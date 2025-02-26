@@ -1,0 +1,14 @@
+[console_scripts]
+add_sch2osmod = ifc2osmod.add_sch2osmod:main
+calc_massless_mat = ifc2osmod.calc_massless_mat:main
+epsql2csv = ifc2osmod.epsql2csv:main
+execute_osmod = ifc2osmod.execute_osmod:main
+extract_osmod_opq_constr = ifc2osmod.extract_osmod_opq_constr:main
+extract_osmod_smpl_glz_constr = ifc2osmod.extract_osmod_smpl_glz_constr:main
+freecad_custom_pset = ifc2osmod.freecad_custom_pset:main
+idf2osmod = ifc2osmod.idf2osmod:main
+idf_transition = ifc2osmod.idf_transition:main
+ifcarch2osmod = ifc2osmod.ifcarch2osmod:main
+osmod2ifcarch = ifc2osmod.osmod2ifcarch:main
+read_ifc_envlp_mat_pset = ifc2osmod.read_ifc_envlp_mat_pset:main
+read_ifc_mat_pset = ifc2osmod.read_ifc_mat_pset:main
