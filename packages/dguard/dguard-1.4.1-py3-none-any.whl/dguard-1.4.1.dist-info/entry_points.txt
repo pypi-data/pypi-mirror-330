@@ -1,0 +1,9 @@
+[console_scripts]
+dguard = dguard.interface.cli:main
+dguard_info = dguard.cli.info:main
+dguard_mean = dguard.bin.mean_csv:main
+dguard_metrics_merge = dguard.bin.compute_score_metrics_merge:main
+dguard_metrics_multi = dguard.bin.compute_score_metrics_multi:main
+dguard_plot = dguard.bin.plot:main
+dguard_plot_radar = dguard.bin.plot_radar:main
+
