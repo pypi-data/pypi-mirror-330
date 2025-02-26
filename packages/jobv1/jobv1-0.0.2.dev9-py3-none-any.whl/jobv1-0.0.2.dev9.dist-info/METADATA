@@ -1,0 +1,7 @@
+Metadata-Version: 2.1
+Name: jobv1
+Version: 0.0.2.dev9
+Summary: sdk in python for job-service
+Requires-Python: >=3.8
+Requires-Dist: bce-internal-sdk
+
