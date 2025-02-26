@@ -1,0 +1,4 @@
+[console_scripts]
+jupytercor=managecor.jupytercor:main
+managecor=managecor.cli:app
+
