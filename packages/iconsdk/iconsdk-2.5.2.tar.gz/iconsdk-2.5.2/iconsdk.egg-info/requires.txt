@@ -1,0 +1,9 @@
+eth-keyfile~=0.6.0
+coincurve~=18.0.0
+multimethod~=1.9.1
+requests~=2.32.0
+requests-mock~=1.10.0
+websocket-client~=1.5.1
+
+[tests]
+pytest~=7.2.1
