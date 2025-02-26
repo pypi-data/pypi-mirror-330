@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ifc_utils"
+version = "0.0.5"
+authors = [
+  { name="Kian Wee CHEN", email="chenkianwee@gmail.com" },
+]
+description = 'Python library for working with IFCOpenshell'
+readme = "README.md"
+requires-python = '>=3.10,<3.13'
+classifiers = ["License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+               "Programming Language :: Python :: 3.10",
+               "Operating System :: OS Independent"]
+dependencies = ['geomie3d==0.0.10',
+                'ifcopenshell==0.8.0',
+                'lark==1.2.2'
+                ]
+
+[project.optional-dependencies]
+viewer3d = ['geomie3d[viewer3d]==0.0.10']
+
+[project.urls]
+"Homepage" = "https://github.com/chenkianwee/ifc_utils"
+"Bug Tracker" = "https://github.com/chenkianwee/ifc_utils/issues"
