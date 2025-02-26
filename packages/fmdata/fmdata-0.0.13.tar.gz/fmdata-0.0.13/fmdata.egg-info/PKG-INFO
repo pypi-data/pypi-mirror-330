@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: fmdata
+Version: 0.0.13
+Summary: fmdata is a wrapper around the FileMaker Data API.
+Home-page: https://github.com/Fenix22/python-fmdata
+Author: Lorenzo De Siena
+Author-email: dev.lorenzo.desiena@gmail.com
+License: UNKNOWN
+Description: # python-fmdata
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.8
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Provides-Extra: cloud
