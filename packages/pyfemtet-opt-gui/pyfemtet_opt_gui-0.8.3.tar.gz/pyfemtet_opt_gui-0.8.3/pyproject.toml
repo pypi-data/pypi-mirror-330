@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "pyfemtet-opt-gui"
+version = "0.8.3"
+description = "GUI to build and run a script for pyfemtet.opt"
+authors = ["kazuma.naito <kazuma.naito@murata.com>"]
+license = "LGPL-3.0"
+readme = "README.md"
+repository = "https://github.com/pyfemtet/pyfemtet-opt-gui"
+
+[tool.poetry.scripts]
+pyfemtet-opt = 'pyfemtet_opt_gui.__main__:main'
+
+[tool.poetry.dependencies]
+python = ">=3.11, <3.13"
+pyside6 = "~6.7.1"
+pyfemtet = "^0.8.0"
+
+[tool.poetry-dynamic-versioning]
+enable = false
+
+[build-system]
+requires = ["poetry-core>=1.0.0", "poetry-dynamic-versioning>=1.0.0,<2.0.0"]
+build-backend = "poetry_dynamic_versioning.backend"
