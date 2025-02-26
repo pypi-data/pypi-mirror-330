@@ -1,0 +1,3 @@
+[console_scripts]
+bcp-download = rfc_kits.bcp_download:main
+rfc-download = rfc_kits.rfc_download:main

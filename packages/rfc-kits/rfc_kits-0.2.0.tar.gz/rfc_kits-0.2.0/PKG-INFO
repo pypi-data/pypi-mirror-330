@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: rfc-kits
+Version: 0.2.0
+Summary: Search, View and Download RFCs.
+Home-page: https://github.com/bondbox/rfc-kits
+Author: Mingzhe Zou
+Author-email: zoumingzhe@outlook.com
+License: MIT
+Project-URL: Source Code, https://github.com/bondbox/rfc-kits
+Project-URL: Bug Tracker, https://github.com/bondbox/issues
+Project-URL: Documentation, https://github.com/bondbox/rfc-kits
+Keywords: command-line,argparse,argcomplete
+Platform: any
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: xkits>=2.2.0
+
+# rfc-kits
+
+Search, View and Download RFCs.
