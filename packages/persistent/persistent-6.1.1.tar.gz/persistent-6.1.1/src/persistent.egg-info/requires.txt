@@ -1,0 +1,19 @@
+zope.deferredimport
+zope.interface
+
+[:platform_python_implementation == "CPython"]
+cffi
+
+[:platform_python_implementation == "CPython" and python_version >= "3.13a0"]
+cffi>=1.17.0rc1
+
+[docs]
+Sphinx
+repoze.sphinx.autointerface
+sphinx_rtd_theme
+
+[test]
+zope.testrunner
+manuel
+
+[testing]
