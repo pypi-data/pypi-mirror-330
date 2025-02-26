@@ -1,0 +1,38 @@
+Metadata-Version: 2.2
+Name: canadian-ham-exam
+Version: 1.0.1
+Summary: Practice test for the Canadian Amateur Radio exam
+Home-page: https://launchpad.net/canadian-ham-exam
+Author: Francois Marier
+Author-email: va7gpl@fmarier.org
+License: AGPL-3.0+
+Keywords: ham
+Classifier: Programming Language :: Python
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Console
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3.5
+License-File: LICENSE
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: license
+Dynamic: summary
+
+Canadian Ham Exam uses the official question bank from Industry Canada
+and allows aspiring hams to practice the section of their choice as
+they are learning the material for the exam.
+
+It requires a copy of the question bank, which can be downloaded
+free of charge from the Industry Canada website:
+https://www.ic.gc.ca/eic/site/025.nsf/eng/h_00004.html
+
+Both the basic and the advanced exams are supported, in English and
+French.
+
+.. _project page: https://launchpad.net/canadian-ham-exam

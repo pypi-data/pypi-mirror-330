@@ -1,0 +1,26 @@
+1.0.1 (2025-02-25)
+- Add support for new UTF-8 encoded text files.
+
+1.0.0 (2019-12-21)
+- Add support for the advanced exam (bug 1716257).
+- Add French translation (bug 1716273).
+- Mention skipped and missed questions in the summary (bug 1728497).
+- Support reading from the question bank zip file directly (bug 1852027).
+- Improve error messages for invalid ranges.
+
+0.2.0 (2019-01-26)
+- Pick questions according to their weight in the test (bug 1728498).
+- Avoid duplicate questions (bug 1728496).
+- Colorize error messages.
+- Colorize correct/incorrect answers (bug 1810595).
+- Add support for macOS.
+
+0.1.2 (2018-04-02)
+- Ignore invalid keypresses.
+
+0.1.1 (2017-10-07)
+- Don't require Enter when typing the answer.
+- Extend the section syntax to support list of ranges.
+
+0.1.0 (2017-09-10)
+- Initial public release

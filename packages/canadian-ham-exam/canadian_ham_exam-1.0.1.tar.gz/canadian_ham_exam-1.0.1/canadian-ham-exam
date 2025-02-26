@@ -1,0 +1,565 @@
+#!/usr/bin/env python3
+# -*- mode: python -*-
+"""
+Canadian Ham Exam - practice test for the Canadian Amateur Radio exam
+
+Canadian Ham Exam uses the official question bank from Industry Canada
+and allows aspiring hams to practice the section of their choice as
+they are learning the material for the exam.
+
+It requires a copy of the question bank, which can be downloaded
+free of charge from the Industry Canada website:
+
+  https://www.ic.gc.ca/eic/site/025.nsf/eng/h_00004.html
+
+Both the basic and the advanced exams are supported, in English and
+French.
+
+Copyright (C) 2017, 2018, 2019, 2025  Francois Marier <va7gpl@fmarier.org>
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as
+published by the Free Software Foundation, either version 3 of the
+License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <https://www.gnu.org/licenses/>.
+"""
+
+import argparse
+import codecs
+import os
+import random
+import sys
+import tty
+import zipfile
+
+VERSION = '1.0.1'
+
+SECTION_NAMES = {
+    'A': {
+        'en': {
+            # RIC-3:
+            #   https://www.ic.gc.ca/eic/site/smt-gst.nsf/eng/sf01008.html#s5.3
+            1: "Advanced Theory",
+            2: "Advanced Components and Circuits",
+            3: "Measurements",
+            4: "Power Supplies",
+            5: "Transmitters, Modulation and Processing",
+            6: "Receivers",
+            7: "Feedlines - Matching and Antenna Systems"
+        },
+        'fr': {
+            # CIR-3:
+            #   https://www.ic.gc.ca/eic/site/smt-gst.nsf/fra/sf01008.html#s5.3
+            1: "Théorie avancée",
+            2: "Notions avancées sur les composants et les circuits",
+            3: "Mesures",
+            4: "Alimentation",
+            5: "Émetteurs, modulation et traitement",
+            6: "Récepteurs",
+            7: "Descentes d'antenne - adaptation et systèmes d'antenne",
+        }
+    },
+    'B': {
+        'en': {
+            # RIC-3:
+            #   https://www.ic.gc.ca/eic/site/smt-gst.nsf/eng/sf01008.html#s5.1
+            1: "Regulations and Policies",
+            2: "Operating and Procedures",
+            3: "Station Assembly, Practice and Safety",
+            4: "Circuit Components",
+            5: "Basic Electronics and Theory",
+            6: "Feedlines and Antenna Systems",
+            7: "Radio Wave Propagation",
+            8: "Interference and Suppression"
+        },
+        'fr': {
+            # CIR-3:
+            #   https://www.ic.gc.ca/eic/site/smt-gst.nsf/fra/sf01008.html#s5.1
+            1: "Règlements et politiques",
+            2: "Exploitation et procédures",
+            3: "Montage d'une station, pratique et sécurité",
+            4: "Composants des circuits",
+            5: "Éléments et théorie de l'électronique",
+            6: "Descentes d'antenne et systèmes d'antenne",
+            7: "Propagation des ondes radioélectriques",
+            8: "Brouillage et suppression"
+        }
+    }
+}
+
+SECTION_WEIGHTS = {
+    'A': {
+        # RIC-3:
+        #   https://www.ic.gc.ca/eic/site/smt-gst.nsf/eng/sf01008.html#s5.3
+        1: 5,
+        2: 12,
+        3: 6,
+        4: 4,
+        5: 9,
+        6: 5,
+        7: 9,
+    },
+    'B': {
+        # RIC-3:
+        #   https://www.ic.gc.ca/eic/site/smt-gst.nsf/eng/sf01008.html#s5.1
+        1: 25,
+        2: 9,
+        3: 21,
+        4: 6,
+        5: 13,
+        6: 13,
+        7: 8,
+        8: 5
+    }
+}
+
+STRINGS = {
+    'en': {
+        'COMMAND_PROMPT': 'Answer (s to skip, q to quit):',
+        'CORRECT_ANSWER': 'Correct!',
+        'INCORRECT_ANSWER': 'The correct answer was (%s) %s',
+        'SKIPPED': 'Skipped (%s):',
+        'MISSED': 'Missed (%s):',
+        'SCORE': 'Final score: %s%% (%s / %s)',
+        'ERROR_INVALID_RANGE': '%s is not a valid range',
+        'ERROR_INVALID_NUMBER': '%s is not a valid number',
+        'ERROR_INVALID_SECTION': '%s is not a valid section number (1-%s)',
+        'ERROR_RANGE_NOT_ASCENDING': 'The range %s is not in ascending order',
+        'ERROR_FILE_NOT_FOUND': "Error: '%s' not found",
+        'ERROR_INVALID_FILE': "Error: '%s' is an invalid question file",
+        'DESCRIPTION': 'Practice test for the Canadian Amateur Radio exam',
+        'PARAM_FILE': 'the question file to use',
+        'PARAM_LANG': 'user interface language',
+        'PARAM_NUMBER': 'number of questions to display',
+        'PARAM_SECTIONS': 'sections to pull the questions from (%s)',
+        'PARAM_SECTIONS_EX': 'e.g. "1,2,4", "3-8", "1,4-7", or "*" for all',
+        'HELP_POSITIONAL_ARGS': 'positional arguments',
+        'HELP_OPTIONAL_ARGS': 'optional arguments',
+    },
+    'fr': {
+        'COMMAND_PROMPT': 'Réponse (s pour sauter, q pour quitter):',
+        'CORRECT_ANSWER': 'Exact !',
+        'INCORRECT_ANSWER': 'La bonne réponse était (%s) %s',
+        'SKIPPED': 'Sautée(s) (%s) :',
+        'MISSED': 'Ratée(s) (%s) :',
+        'SCORE': 'Score final : %s%% (%s / %s)',
+        'ERROR_INVALID_RANGE': "%s n'est pas une plage valide",
+        'ERROR_INVALID_NUMBER': "%s n'est pas un nombre valide",
+        'ERROR_INVALID_SECTION':
+        "%s n'est pas un numéro de section valide (1-%s)",
+        'ERROR_RANGE_NOT_ASCENDING':
+        "La plage %s n'est pas en ordre croissant",
+        'ERROR_FILE_NOT_FOUND': "Erreur : '%s' non trouvé",
+        'ERROR_INVALID_FILE':
+        "Erreur : '%s' n'est pas un fichier de questions valide",
+        'DESCRIPTION':
+        "Pratique de test pour l'examen de radio amateur canadien",
+        'PARAM_FILE': 'le fichier de questions à utiliser',
+        'PARAM_LANG': "la langue de l'interface utilisateur",
+        'PARAM_NUMBER': 'nombre de questions à afficher',
+        'PARAM_SECTIONS': 'liste des sections à utiliser (%s)',
+        'PARAM_SECTIONS_EX': 'ex. "1,2,4", "3-8", "1,4-7", ou "*" pour toutes',
+        'HELP_POSITIONAL_ARGS': 'arguments positionels',
+        'HELP_OPTIONAL_ARGS': 'arguments optionels',
+    }
+}
+
+INCORRECT = '\033[7m\033[91m'
+CORRECT = '\033[1m\033[92m'
+ERROR = '\033[1m\033[91m'
+ENDC = '\033[0m'
+
+questions = {
+    'A': {
+        1: [],
+        2: [],
+        3: [],
+        4: [],
+        5: [],
+        6: [],
+        7: [],
+    },
+    'B': {
+        1: [],
+        2: [],
+        3: [],
+        4: [],
+        5: [],
+        6: [],
+        7: [],
+        8: []
+    }
+}
+
+score = {
+    'correct': 0,
+    'incorrect': 0,
+    'total': 0
+}
+
+missed_questions = []
+skipped_questions = []
+
+
+def parse_id(out, question_id):
+    out['id'] = question_id.strip()
+    fields = out['id'].split('-')
+    out['level'] = fields[0]
+    out['section'] = int(fields[1])
+
+
+def parse_answers(out, lang, correct, incorrect):
+    out['answers'][lang] = [
+        correct.strip(),
+        incorrect[0].strip(),
+        incorrect[1].strip(),
+        incorrect[2].strip()
+    ]
+
+
+def parse_question(line):
+    fields = line.split(';')
+    question = {
+        'level': None,
+        'section': None,
+        'id': None,
+        'question': {
+            'en': fields[1].strip(),
+            'fr': fields[6].strip()
+        },
+        'answers': {
+            'en': None,
+            'fr': None
+        }
+    }
+    try:
+        parse_id(question, fields[0])
+    except ValueError:
+        return None
+    parse_answers(question, 'en', fields[2],
+                  (fields[3], fields[4], fields[5]))
+    parse_answers(question, 'fr', fields[7],
+                  (fields[8], fields[9], fields[10]))
+
+    questions[question['level']][question['section']].append(question)
+    return question['level']
+
+
+def parse_file(fh, must_decode):
+    level = None
+    first_line = True
+    for line in fh:
+        if first_line:
+            first_line = False
+            continue
+
+        if must_decode:
+            try:
+                line = codecs.decode(line, encoding='utf_8', errors='strict')
+            except UnicodeDecodeError:
+                line = codecs.decode(line, encoding='ISO-8859-1',
+                                     errors='strict')
+
+        new_level = parse_question(line)
+        if not new_level:
+            return None
+
+        if not level:
+            level = new_level
+        if level != new_level:
+            return None  # mix of basic and advanced in question file
+
+    return level
+
+
+def parse_questions(file):
+    level = None
+    if zipfile.is_zipfile(file):
+        with zipfile.ZipFile(file) as zipped_file:
+            for filename in ('amat_basic_quest_delim.txt',
+                             'amat_adv_quest_delim.txt'):
+                if filename in zipped_file.namelist():
+                    with zipped_file.open(filename) as fh:
+                        level = parse_file(fh, True)
+    else:
+        try:
+            with codecs.open(file, mode='r', encoding='utf_8') as fh:
+                level = parse_file(fh, False)
+        except UnicodeDecodeError:
+            with codecs.open(file, mode='r', encoding='ISO-8859-1') as fh:
+                level = parse_file(fh, False)
+
+    if not level:
+        return level
+
+    # Shuffle each section
+    for section in range(len(questions[level])):
+        random.shuffle(questions[level][section+1])
+
+    return level
+
+
+def random_question(level, sections):
+    section = 0
+    random.shuffle(sections)
+    while sections:
+        section = sections[0]
+        if len(questions[level][section]) >= 1:
+            break
+
+        # Remove empty section
+        sections.pop(0)
+        section = 0
+
+    if section == 0:
+        # All sections have run out of questions
+        return False
+
+    # Each section has already been shuffled, so we extract the first element
+    return questions[level][section].pop(0)
+
+
+def prompt_user(lang, prompt=True):
+    if prompt:
+        print(STRINGS[lang]['COMMAND_PROMPT'], flush=True, end=' ')
+
+    tty_settings = tty.tcgetattr(sys.stdin.fileno())
+    tty.setraw(sys.stdin.fileno())
+    s = sys.stdin.read(1).lower()
+    tty.tcsetattr(sys.stdin.fileno(), tty.TCSADRAIN, tty_settings)
+    tty.tcdrain(sys.stdin.fileno())
+
+    if s == 'q':
+        return 'q'
+    if s in ('\x03', '\x04'):  # ctrl+c, ctrl+d
+        return 'q'
+    if s == 's':
+        return 's'
+
+    answer = None
+    try:
+        answer = int(s)
+    except ValueError:
+        return prompt_user(lang, False)  # ignore keypress
+
+    sys.stdout.write('\n')
+    return answer
+
+
+def print_question(question, lang):
+    print(question['question'][lang])
+    print()
+
+    answers = list(range(4))
+    random.shuffle(answers)
+
+    j = 1
+    correct_answer = None
+    for i in answers:
+        print(f" ({j}) {question["answers"][lang][i]}")
+        if i == 0:
+            correct_answer = j
+        j += 1
+
+    print()
+    user_answer = prompt_user(lang)
+    if user_answer == 'q':
+        return False
+
+    print()
+    if user_answer == correct_answer:
+        score['correct'] += 1
+        print(CORRECT + STRINGS[lang]['CORRECT_ANSWER'] + ENDC)
+    else:
+        score['incorrect'] += 1
+        if user_answer == 's':
+            skipped_questions.append(question['id'])
+        else:
+            missed_questions.append(question['id'])
+            print(INCORRECT + STRINGS[lang]['INCORRECT_ANSWER'] %
+                  (correct_answer, question["answers"][lang][0]) + ENDC)
+    score['total'] += 1
+
+    return True
+
+
+def print_summary(lang):
+    if skipped_questions:
+        print(STRINGS[lang]['SKIPPED'] % len(skipped_questions))
+        for qid in sorted(skipped_questions):
+            print(f"- {qid}")
+        print()
+
+    if missed_questions:
+        print(STRINGS[lang]['MISSED'] % len(missed_questions))
+        for qid in sorted(missed_questions):
+            print(f"- {qid}")
+        print()
+
+    grade = 0
+    if score['total'] > 0:
+        grade = round((score['correct'] / score['total']) * 100)
+    print(STRINGS[lang]['SCORE'] % (grade, score['correct'], score['total']))
+
+
+def print_header(lang, question, question_number, total):
+    section_name = SECTION_NAMES[question['level']][lang][question['section']]
+    print(f"[{question_number}/{total}] {section_name} ({question['id']})")
+    print()
+
+
+def run_quiz(lang, level, number, sections):
+    if not number:
+        number = 100
+        if level == 'A':
+            number = 50
+    for i in range(number):
+        question = random_question(level, sections)
+        if not question:
+            # No more questions, quiz is over.
+            break
+
+        print_header(lang, question, i+1, number)
+        if not print_question(question, lang):
+            # User has terminated the quiz
+            print()
+            print()
+            break
+        print()
+
+    print_summary(lang)
+
+
+def parse_range(lang, param, level, section):
+    try:
+        (start, end) = section.split('-')
+    except ValueError:
+        (start, end) = (None, None)
+
+    if not start or not end:
+        print(ERROR + STRINGS[lang]['ERROR_INVALID_RANGE'] % param + ENDC,
+              file=sys.stderr)
+        return None
+
+    for i in (start, end):
+        try:
+            i = int(i)
+        except ValueError:
+            print(ERROR + STRINGS[lang]['ERROR_INVALID_NUMBER'] % i + ENDC,
+                  file=sys.stderr)
+            return None
+    start = int(start)
+    end = int(end)
+
+    section_count = len(questions[level])
+    if start not in range(1, section_count+1):
+        print(ERROR + STRINGS[lang]['ERROR_INVALID_SECTION']
+              % (start, section_count) + ENDC, file=sys.stderr)
+        return None
+    if end not in range(1, section_count+1):
+        print(ERROR + STRINGS[lang]['ERROR_INVALID_SECTION']
+              % (end, section_count) + ENDC, file=sys.stderr)
+        return None
+    if end < start:
+        print(ERROR + STRINGS[lang]['ERROR_RANGE_NOT_ASCENDING']
+              % section + ENDC, file=sys.stderr)
+        return None
+
+    return (start, end)
+
+
+def parse_sections_param(lang, level, param):
+    sections = []
+    section_count = len(questions[level])
+    if param == '*':
+        param = f"1-{section_count}"
+    for section in param.split(','):
+        if section.find('-') != -1:
+            r = parse_range(lang, param, level, section)
+            if not r:
+                return None
+            sections += list(range(r[0], r[1] + 1))
+        else:
+            try:
+                i = int(section)
+            except ValueError:
+                print(ERROR + STRINGS[lang]['ERROR_INVALID_NUMBER']
+                      % section + ENDC, file=sys.stderr)
+                return None
+
+            if i not in range(1, section_count+1):
+                print(ERROR + STRINGS[lang]['ERROR_INVALID_SECTION']
+                      % (section, section_count) + ENDC, file=sys.stderr)
+                return None
+            sections.append(i)
+
+    sections = list(set(sections))
+
+    # Add section weights by listing each section more than once
+    weights = []
+    for section in sections:
+        for i in range(SECTION_WEIGHTS[level][section]):
+            weights.append(section)
+    return weights
+
+
+def default_env_lang():
+    lang = 'en'
+    if 'LANG' in os.environ:
+        s = os.environ['LANG']
+        if s[0:2] == 'fr':
+            lang = 'fr'
+    return lang
+
+
+def main():
+    default_lang = default_env_lang()
+
+    parser = argparse.ArgumentParser(
+        description=STRINGS[default_lang]['DESCRIPTION'])
+    parser.add_argument('questions_txt', type=str, nargs='?',
+                        default='amat_basic_quest_delim.txt',
+                        help=STRINGS[default_lang]['PARAM_FILE'])
+    parser.add_argument('-l', '--language', dest='lang', type=str,
+                        choices=('en', 'fr'), default=default_lang,
+                        help=STRINGS[default_lang]['PARAM_LANG'])
+    parser.add_argument('-n', '--number', dest='number',
+                        type=int, default=None,
+                        help=STRINGS[default_lang]['PARAM_NUMBER'])
+    parser.add_argument('-s', '--sections', dest='sections',
+                        type=str, default="*",
+                        help=STRINGS[default_lang]['PARAM_SECTIONS'] %
+                        STRINGS[default_lang]['PARAM_SECTIONS_EX'])
+    parser.add_argument('-V', '--version', action='version',
+                        version=f"canadian-ham-exam {VERSION}")
+    # pylint: disable=W0212
+    parser._positionals.title = STRINGS[default_lang]['HELP_POSITIONAL_ARGS']
+    parser._optionals.title = STRINGS[default_lang]['HELP_OPTIONAL_ARGS']
+    args = parser.parse_args()
+
+    # Validate the parameters
+    if not os.path.isfile(args.questions_txt):
+        print(ERROR + STRINGS[args.lang]['ERROR_FILE_NOT_FOUND']
+              % args.questions_txt + ENDC, file=sys.stderr)
+        return 1
+    level = parse_questions(args.questions_txt)
+    if not level:
+        print(ERROR + STRINGS[args.lang]['ERROR_INVALID_FILE']
+              % args.questions_txt + ENDC, file=sys.stderr)
+        return 2
+    sections = parse_sections_param(args.lang, level, args.sections)
+    if not sections:
+        return 3
+
+    run_quiz(args.lang, level, args.number, sections)
+    return 0
+
+
+sys.exit(main())
