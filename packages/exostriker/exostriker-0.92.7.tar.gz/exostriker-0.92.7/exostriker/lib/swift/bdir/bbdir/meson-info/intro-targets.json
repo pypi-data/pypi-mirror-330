@@ -1,0 +1,117 @@
+[
+  {
+    "name": "swift.cpython-313-x86_64-linux-gnu",
+    "id": "swift.cpython-313-x86_64-linux-gnu.so@sha",
+    "type": "shared module",
+    "defined_in": "/home/trifonov/exostriker/exostriker/lib/swift/bdir/meson.build",
+    "filename": [
+      "/home/trifonov/exostriker/exostriker/lib/swift/bdir/bbdir/swift.cpython-313-x86_64-linux-gnu.so"
+    ],
+    "build_by_default": true,
+    "target_sources": [
+      {
+        "language": "fortran",
+        "machine": "host",
+        "compiler": [
+          "gfortran"
+        ],
+        "parameters": [
+          "-I/home/trifonov/exostriker/exostriker/lib/swift/bdir/bbdir/swift.cpython-313-x86_64-linux-gnu.so.p",
+          "-I/home/trifonov/exostriker/exostriker/lib/swift/bdir/bbdir",
+          "-I/home/trifonov/exostriker/exostriker/lib/swift/bdir",
+          "-I/home/trifonov/.local/lib/python3.13/site-packages/numpy/_core/include",
+          "-I/home/trifonov/.local/lib/python3.13/site-packages/numpy/f2py/src",
+          "-I/home/trifonov/exostriker/exostriker/lib/swift",
+          "-I/usr/include/python3.13",
+          "-I/usr/include/x86_64-linux-gnu/python3.13",
+          "-fvisibility=hidden",
+          "-fdiagnostics-color=always",
+          "-D_FILE_OFFSET_BITS=64",
+          "-Wall",
+          "-O3",
+          "-fPIC"
+        ],
+        "sources": [
+          "/home/trifonov/exostriker/exostriker/lib/swift/bdir/swift.f95",
+          "/home/trifonov/exostriker/exostriker/lib/swift/bdir/swift-f2pywrappers.f"
+        ],
+        "generated_sources": [],
+        "unity_sources": []
+      },
+      {
+        "language": "c",
+        "machine": "host",
+        "compiler": [
+          "cc"
+        ],
+        "parameters": [
+          "-I/home/trifonov/exostriker/exostriker/lib/swift/bdir/bbdir/swift.cpython-313-x86_64-linux-gnu.so.p",
+          "-I/home/trifonov/exostriker/exostriker/lib/swift/bdir/bbdir",
+          "-I/home/trifonov/exostriker/exostriker/lib/swift/bdir",
+          "-I/home/trifonov/.local/lib/python3.13/site-packages/numpy/_core/include",
+          "-I/home/trifonov/.local/lib/python3.13/site-packages/numpy/f2py/src",
+          "-I/home/trifonov/exostriker/exostriker/lib/swift",
+          "-I/usr/include/python3.13",
+          "-I/usr/include/x86_64-linux-gnu/python3.13",
+          "-fvisibility=hidden",
+          "-fdiagnostics-color=always",
+          "-D_FILE_OFFSET_BITS=64",
+          "-Wall",
+          "-Winvalid-pch",
+          "-O3",
+          "-fPIC"
+        ],
+        "sources": [
+          "/home/trifonov/exostriker/exostriker/lib/swift/bdir/swiftmodule.c",
+          "/home/trifonov/.local/lib/python3.13/site-packages/numpy/_core/include/../../f2py/src/fortranobject.c"
+        ],
+        "generated_sources": [],
+        "unity_sources": []
+      },
+      {
+        "linker": [
+          "cc"
+        ],
+        "parameters": [
+          "-L/usr/lib/gcc/x86_64-linux-gnu/13",
+          "-L/usr/lib/x86_64-linux-gnu",
+          "-L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu",
+          "-L/usr/lib",
+          "-L/usr/lib/gcc/x86_64-linux-gnu/13/../../../../lib",
+          "-L/lib/x86_64-linux-gnu",
+          "-L/lib/../lib",
+          "-L/usr/lib/../lib",
+          "-L/usr/lib/gcc/x86_64-linux-gnu/13/../../..",
+          "-L/lib",
+          "-Wl,--as-needed",
+          "-Wl,--allow-shlib-undefined",
+          "-Wl,-O1",
+          "-shared",
+          "-fPIC",
+          "-Wl,--start-group",
+          "-Wl,--start-group",
+          "-lquadmath",
+          "-lswift",
+          "-L/home/trifonov/exostriker/exostriker/lib/swift",
+          "-lgfortran",
+          "-lm",
+          "-Wl,--end-group",
+          "-Wl,--end-group"
+        ]
+      }
+    ],
+    "extra_files": [],
+    "subproject": null,
+    "dependencies": [
+      "python-3.13",
+      "quadmath",
+      "dep26331156923479046683939703203365142436",
+      "dep8766908782658837752752345359917199668"
+    ],
+    "depends": [],
+    "installed": true,
+    "install_filename": [
+      "/usr/local/lib/python3/dist-packages/swift.cpython-313-x86_64-linux-gnu.so"
+    ]
+  }
+]
