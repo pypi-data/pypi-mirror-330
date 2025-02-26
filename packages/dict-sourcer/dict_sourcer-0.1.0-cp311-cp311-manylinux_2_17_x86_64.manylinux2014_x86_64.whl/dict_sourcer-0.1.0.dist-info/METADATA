@@ -1,0 +1,51 @@
+Metadata-Version: 2.4
+Name: dict_sourcer
+Version: 0.1.0
+License-File: LICENSE
+Summary: A Python package for reducing mapping-like objects using reducer objects, implemented in Rust.
+Author: Your Name
+License: MIT
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown; charset=UTF-8; variant=GFM
+
+# event-sourcer
+
+## Example use
+
+```python
+from event_sourcer import reduce_dict
+
+class SumReducer:
+    def init(self):
+        return 0
+    def update(self, acc, value):
+        return acc + value
+    def finalize(self, acc):
+        return acc
+
+class AvgReducer:
+    def init(self):
+        return (0, 0)  # (total, count)
+    def update(self, acc, value):
+        total, count = acc
+        return (total + value, count + 1)
+    def finalize(self, acc):
+        total, count = acc
+        return total / count if count else None
+
+# Any object supporting __getitem__ will work; here we use dicts.
+def generate_objects():
+    yield {"a": 1, "b": 4}
+    yield {"a": 1, "c": 4}
+
+reducers = {
+    "a": SumReducer(),
+    "b": AvgReducer(),
+    "c": AvgReducer(),
+    "d": SumReducer(),
+}
+
+result = reduce_dict(generate_objects(), reducers)
+print(result)
+```
+

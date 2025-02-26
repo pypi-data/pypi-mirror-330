@@ -1,0 +1,3 @@
+from typing import Any, Dict, Iterable
+
+def reduce_dict(iterable: Iterable[Any], reducers: Dict[Any, Any]) -> Dict[Any, Any]: ...
