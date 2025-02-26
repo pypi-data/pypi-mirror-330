@@ -1,0 +1,39 @@
+Metadata-Version: 2.4
+Name: gitlab-async-client
+Version: 1.0.0
+Summary: A simple asyncronous gitlab http client
+Project-URL: Repository, https://github.com/Vladimir-Titov/gitlab-async-client
+Project-URL: Issues, https://github.com/Vladimir-Titov/gitlab-async-client/issues
+Author-email: vtitov <v.v.titov94@gmail.com>
+License-File: LICENSE
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python :: 3.12
+Requires-Python: >=3.12
+Requires-Dist: aiohttp>=3.11.11
+Requires-Dist: arrow>=1.3.0
+Requires-Dist: pydantic>=2.10.6
+Description-Content-Type: text/markdown
+
+[![package test](https://github.com/Vladimir-Titov/gitlab-async-client/actions/workflows/package-test.yml/badge.svg?branch=main)](https://github.com/Vladimir-Titov/gitlab-async-client/actions/workflows/package-test.yml)
+
+```
+import aiohttp
+import asyncio
+from gitlab_async_client.client import GitlabHTTPClient, GitlabAuthType
+
+async def main():
+    async with aiohttp.ClientSession() as session:
+        client = GitlabHTTPClient(
+            base_url="https://gitlab.com",
+            access_token="your_access_token",
+            session=session,
+            auth_type=GitlabAuthType.header
+        )
+
+        projects = await client.get_projects()
+        print(projects)
+
+
+asyncio.run(main())
+```
+

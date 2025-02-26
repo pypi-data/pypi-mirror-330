@@ -1,0 +1,41 @@
+[project]
+name = "gitlab-async-client"
+version = "1.0.0"
+description = "A simple asyncronous gitlab http client"
+readme = "README.md"
+authors = [
+    { name = "vtitov", email = "v.v.titov94@gmail.com" }
+]
+requires-python = ">=3.12"
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Programming Language :: Python :: 3.12"
+]
+dependencies = [
+    "aiohttp>=3.11.11",
+    "arrow>=1.3.0",
+    "pydantic>=2.10.6",
+]
+[project.urls]
+Repository = "https://github.com/Vladimir-Titov/gitlab-async-client"
+Issues = "https://github.com/Vladimir-Titov/gitlab-async-client/issues"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "aioresponses>=0.7.8",
+    "pytest>=8.3.4",
+    "pytest-asyncio>=0.25.2",
+]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+
+[tool.ruff.format]
+quote-style = "single"
+
+[tool.ruff.lint]
+ignore = ["F401"]
