@@ -1,0 +1,23 @@
+Metadata-Version: 2.2
+Name: cybermicrogrid
+Version: 0.1.0
+Summary: A library for simulating cyber-physical microgrids and training reinforcement learning agents for grid defense.
+Author: Your Name
+Author-email: your_email@example.com
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+License-File: LICENSE
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: torch
+Requires-Dist: networkx
+Requires-Dist: matplotlib
+Requires-Dist: seaborn
+Requires-Dist: scikit-learn
+Requires-Dist: pandapower
+Requires-Dist: torch-geometric
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: requires-dist
+Dynamic: summary
