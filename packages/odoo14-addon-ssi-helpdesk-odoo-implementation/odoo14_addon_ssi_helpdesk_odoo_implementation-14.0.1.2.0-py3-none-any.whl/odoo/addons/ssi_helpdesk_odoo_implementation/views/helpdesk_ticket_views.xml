@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2023 OpenSynergy Indonesia
+     Copyright 2023 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+
+<record id="helpdesk_ticket_view_search" model="ir.ui.view">
+    <field name="name">helpdesk_ticket - search</field>
+    <field name="model">helpdesk_ticket</field>
+    <field name="inherit_id" ref="ssi_helpdesk.helpdesk_ticket_view_search" />
+    <field name="arch" type="xml">
+        <data>
+            <xpath expr="//separator[@name='activity']" position="before">
+                <separator name="odoo_implementation" />
+                <filter
+                        name="is_odoo"
+                        string="Is Odoo Implementation"
+                        domain="[('odoo_implementation_id','!=',False)]"
+                    />
+                <filter
+                        name="is_not_odoo"
+                        string="Is Not Odoo Implementation"
+                        domain="[('odoo_implementation_id','=',False)]"
+                    />
+            </xpath>
+        </data>
+    </field>
+</record>
+
+<record id="helpdesk_ticket_view_tree" model="ir.ui.view">
+     <field name="name">helpdesk_ticket tree</field>
+     <field name="model">helpdesk_ticket</field>
+     <field name="inherit_id" ref="ssi_helpdesk.helpdesk_ticket_view_tree" />
+     <field name="mode">extension</field>
+     <field name="arch" type="xml">
+          <data>
+               <xpath expr="//field[@name='type_id']" position="after">
+                    <field name="odoo_implementation_id" optional="show" />
+               </xpath>
+          </data>
+     </field>
+</record>
+<record id="helpdesk_ticket_view_form" model="ir.ui.view">
+     <field name="name">helpdesk_ticket form</field>
+     <field name="model">helpdesk_ticket</field>
+     <field name="inherit_id" ref="ssi_helpdesk.helpdesk_ticket_view_form" />
+     <field name="mode">extension</field>
+     <field name="arch" type="xml">
+          <data>
+               <xpath expr="//field[@name='type_id']" position="after">
+                    <field
+                        name="odoo_implementation_id"
+                        domain="[('partner_id','=',commercial_partner_id)]"
+                    />
+                    <field name="odoo_version_id" />
+                    <field name="odoo_feature_id" />
+                    <field
+                        name="odoo_feature_issue_id"
+                        domain="[('feature_id','=',odoo_feature_id),('version_id','=',odoo_version_id)]"
+                    />
+               </xpath>
+          </data>
+     </field>
+</record>
+</odoo>
