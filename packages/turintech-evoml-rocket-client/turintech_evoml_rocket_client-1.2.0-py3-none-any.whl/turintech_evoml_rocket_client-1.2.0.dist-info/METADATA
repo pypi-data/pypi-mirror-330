@@ -1,0 +1,26 @@
+Metadata-Version: 2.2
+Name: turintech_evoml_rocket_client
+Version: 1.2.0
+Summary: Library with rocket client for the evoML platform.
+Author: Turing Intelligence Technology
+Author-email: contact@turintech.ai
+License: TURING INTELLIGENCE TECHNOLOGY LIMITED END-USER LICENCE
+License-File: LICENSE
+Requires-Dist: pydantic[dotenv]<2.0.0,>=1.10.12
+Requires-Dist: loguru<0.8.0,>=0.7.2
+Requires-Dist: requests<2.40.0,>=2.31.0
+Requires-Dist: turintech-evoml-api-models<4.0.0,>=3.0.1
+Requires-Dist: turintech-configuration<2.0.0,>=1.0.0
+Requires-Dist: turintech-data-types<2.0.0,>=1.0.0
+Requires-Dist: turintech-dtos<2.0.0,>=1.0.0
+Requires-Dist: turintech-exceptions<2.0.0,>=1.0.0
+Requires-Dist: turintech-logging<2.0.0,>=1.0.0
+Requires-Dist: turintech-pagination<2.0.0,>=1.0.0
+Requires-Dist: turintech-rest-clients<2.0.0,>=1.0.0
+Requires-Dist: turintech-utils<2.0.0,>=1.0.0
+Requires-Dist: turintech-platform<2.0.0,>=1.0.0
+Dynamic: author
+Dynamic: author-email
+Dynamic: license
+Dynamic: requires-dist
+Dynamic: summary
