@@ -1,0 +1,71 @@
+Metadata-Version: 2.2
+Name: ApiNyaEr
+Version: 2.1
+Summary: An Api Compile from another source
+Author: ErNewDev0
+License: GNU General Public License v3.0
+Project-URL: Issues, https://github.com/ErRickow/ApiNyaEr/issues
+Project-URL: Source, https://pypi.org/projects/ApiNyaEr 
+Project-URL: Community, https://t.me/Pamerdong
+Project-URL: Documentation, https://docs-apinyaer.rtfd.io
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: aiofiles
+Requires-Dist: pillow
+Requires-Dist: httpx
+Requires-Dist: beautifulsoup4
+Requires-Dist: aiohttp
+
+# ApiNyaEr
+
+A Python package that compiles and fetches data from multiple APIs into a unified format.
+
+## Features  
+- AI-powered capabilities  
+- Auto-generated images using Flux.1 Schennel  
+- And more!  
+
+📖 **See the full list of features in the [Documentation](#documentation)**
+
+## Installation
+
+**You can install this package using pip:**
+
+```bash
+pip3 install ApiNyaEr
+```
+
+**Or install directly from GitHub:**
+
+```bash
+pip install git+https://github.com/ErBots/ApiNyaEr
+```
+## Usage
+
+Don't forget to Import the package
+```bash
+from ApiNyaEr import apinya
+```
+Then call the function
+```py
+result = await apinya.erai("hellow, can u understand my hearth?")
+print(result)
+```
+## Documentation
+  - [Read The Docs](https://docs-apinyaer.rtfd.io)
+
+## Contribute  
+If you find a bug, please [open an issue](https://github.com/ErBots/ApiNyaEr/issues).  
+You can also contribute by submitting a pull request!
+
+# Migrating Project
+  - [Rest Apis](https://er-api.biz.id)
+  - [@er-npm/scraper](https://www.npmjs.com/package/@er-npm/scraper)
+
+> This Project is Licensed under [GNU General Public License](https://github.com/ErBots/ApiNyaEr/blob/Er/LICENSE)
