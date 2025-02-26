@@ -1,0 +1,16 @@
+LICENSE
+MANIFEST.in
+Makefile
+README.md
+pyproject.toml
+allocation_o2/__init__.py
+allocation_o2/__main__.py
+allocation_o2/allocation_o2.cpython-312-x86_64-linux-gnu.so
+allocation_o2/allocation_o2.so
+allocation_o2/allocator_factory.py
+allocation_o2/capital_allocator.py
+allocation_o2.egg-info/PKG-INFO
+allocation_o2.egg-info/SOURCES.txt
+allocation_o2.egg-info/dependency_links.txt
+allocation_o2.egg-info/requires.txt
+allocation_o2.egg-info/top_level.txt
