@@ -1,0 +1,35 @@
+[tool.poetry]
+name = "tay"
+version = "0.1.0"
+description = "Python library that provides interface for table formats such as csv, xlsx "
+authors = ["Gregory Bakhtin <greasha46@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/kra53n/tay"
+repository = "https://github.com/kra53n/tay"
+keywords = ["tay", "csv", "xlsx"]
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13"
+]
+packages = [
+    { include = "tay", from = "." },
+    { include = "tests", format = "sdist" },
+    { include = "poetry.lock", format = "sdist" }
+]
+
+[tool.poetry.dependencies]
+python = ">=3.8"
+openpyxl = "==3.1.5"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
