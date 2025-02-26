@@ -1,0 +1,25 @@
+[package]
+name = "mavdac"
+version = "0.1.4"
+edition = "2021"
+description = "MAVIS Differential Astrometric Calibrator"
+license = "MIT"
+repository = "https://github.com/jcranney/mavdac"
+readme = "../README.md"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[lib]
+name = "mavdac"
+crate-type = ["cdylib","rlib"]
+
+[dependencies]
+clap = "4.5.18"
+fitrs = "0.5.0"
+glob = "0.3.1"
+ndarray = "0.15.6"
+ndarray-inverse = "0.1.9"
+pyo3 = "0.23.5"
+rayon = "1.10.0"
+rustfft = "6.2.0"
+serde = { version = "1.0.210", features = ["derive"] }
+serde_yaml = "0.9.34"

@@ -1,0 +1,35 @@
+[build-system]
+requires = ["maturin>=1.7,<2.0"]
+build-backend = "maturin"
+
+[project]
+name = "mavdac"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Rust",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python :: Implementation :: PyPy",
+]
+dynamic = ["version"]
+dependencies = [
+    "numpy",
+]
+
+
+[tool.maturin]
+features = ["pyo3/extension-module"]
+
+[project.scripts]
+mavdac = "mavdac.__main__:__name__"
+
+# pyproject.toml
+[tool.pytest.ini_options]
+testpaths = [
+    "src/tests",
+]
+
+[tool.setuptools.package-data]
+"mavdac" = ["py.typed"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
