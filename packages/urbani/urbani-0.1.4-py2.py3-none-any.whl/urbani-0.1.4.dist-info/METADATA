@@ -1,0 +1,40 @@
+Metadata-Version: 2.1
+Name: urbani
+Version: 0.1.4
+Summary: URBAN-i API client library
+Home-page: https://github.com/urbanist-ai/urbani_api
+Author: Mohamed Ibrahim
+Author-email: contact@urban-i.ai
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: Other/Proprietary License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Requires-Dist: requests
+
+# Urbani API Client Library
+
+This is a client library for interacting with the URBAN-i API.
+
+```shell
+urbani/
+│
+├── urbani/
+│   ├── __init__.py
+│   ├── urbani.py
+│
+├── setup.py
+└── README.md
+```
+
+
+## Installation
+
+You can install the library using pip:
+
+```shell
+
+pip3 install urbani
+
+```
+
