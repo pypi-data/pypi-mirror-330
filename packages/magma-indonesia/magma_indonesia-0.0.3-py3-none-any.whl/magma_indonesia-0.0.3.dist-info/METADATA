@@ -1,0 +1,49 @@
+Metadata-Version: 2.4
+Name: magma-indonesia
+Version: 0.0.3
+Summary: MAGMA Indonesia python package.
+Keywords: volcano,volcanology,magma,indonesia
+Author-email: Martanto <martanto@live.com>, Devy Kamil Syahbana <devy.syahbana@gmail.com>, Syarif Abdul Manaf <riefmof@gmail.com>
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+License-File: LICENSE
+Requires-Dist: obspy>=1.4.0
+Requires-Dist: openpyxl>=3.1.5
+Requires-Dist: pandas>=2.2.2
+Requires-Dist: numpy>=2.0.0
+Requires-Dist: matplotlib>=3.9.0
+Requires-Dist: questdb[dataframe]>=2.0.3
+Requires-Dist: peewee>=3.17.5
+Requires-Dist: click>=8.1.8
+Requires-Dist: magma-auth
+Requires-Dist: magma-converter
+Requires-Dist: material-color
+Requires-Dist: magma-database>=1.2.3
+Requires-Dist: magma-converter>=1.0.0
+Requires-Dist: magma-rsam>=1.0.0
+Requires-Dist: magma-multigas>=1.3.1
+Requires-Dist: fastapi[standard]
+Requires-Dist: obspy ; extra == "base"
+Requires-Dist: openpyxl ; extra == "base"
+Requires-Dist: pandas ; extra == "base"
+Requires-Dist: numpy ; extra == "base"
+Requires-Dist: matplotlib ; extra == "base"
+Requires-Dist: questdb[dataframe] ; extra == "base"
+Requires-Dist: peewee ; extra == "base"
+Requires-Dist: click ; extra == "base"
+Requires-Dist: magma-converter ; extra == "base"
+Requires-Dist: material-color ; extra == "base"
+Requires-Dist: magma-database ; extra == "base"
+Requires-Dist: magma-converter ; extra == "base"
+Requires-Dist: magma-rsam ; extra == "base"
+Requires-Dist: magma-multigas ; extra == "base"
+Project-URL: Homepage, https://github.com/martanto/magma-indonesia-python
+Project-URL: Issues, https://github.com/martanto/magma-indonesia-python/issues
+Provides-Extra: base
+
+# MAGMA Indonesia
+MAGMA Indonesia python package
