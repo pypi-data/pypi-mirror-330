@@ -1,0 +1,15 @@
+{% extends "admin/change_form.html" %}
+{% load i18n %}
+
+{% block submit_buttons_bottom %}
+    {{ block.super }}
+    <div class="meta-og-help">
+        <h5>{% translate "Dynamic content" %}</h5>
+        <div class="help">{% translate "The key in the list will be replaced with the value described in the label." %}</div>
+        <ul>
+            {% for key, item in PAGE_META_OG_DYNAMIC_CONTENT.items %}
+                <li><code><strong>{{ key }}</strong></code> <span>{{ item.1 }}</span></li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

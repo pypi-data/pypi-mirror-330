@@ -1,0 +1,7 @@
+{% load django_meta_og %}
+{% for meta in django_meta_og %}{% spaceless %}
+    {% django_meta_og_dynamic_content meta.content as meta_content %}
+    {% if meta_content %}
+        <meta property="{{ meta.property }}" content="{{ meta_content }}" />
+    {% endif %}{% endspaceless %}
+{% endfor %}
