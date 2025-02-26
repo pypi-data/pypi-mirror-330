@@ -1,0 +1,4 @@
+[console_scripts]
+create_PV_diagram = make_moments.main:main_PV
+make_moments = make_moments.main:main_moments
+trace_moments = make_moments.main:main_trace_moments
