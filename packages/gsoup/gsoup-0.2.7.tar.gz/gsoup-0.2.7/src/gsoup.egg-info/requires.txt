@@ -1,0 +1,17 @@
+torch>=1.10
+numpy
+Pillow
+scipy
+opencv-python-headless
+OpenEXR>=3.3.0
+
+[build]
+build
+twine
+
+[dev]
+bumpver
+pytest
+
+[vis]
+polyscope
