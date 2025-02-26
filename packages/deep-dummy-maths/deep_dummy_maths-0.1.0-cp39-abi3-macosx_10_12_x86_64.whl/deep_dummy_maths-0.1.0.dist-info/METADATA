@@ -1,0 +1,62 @@
+Metadata-Version: 2.4
+Name: deep_dummy_maths
+Version: 0.1.0
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python
+Requires-Dist: maturin>=1.8.2
+License-File: LICENSE
+Summary: A dummy library for mathematical functions created by Deependu Jha.
+Keywords: maths,python,rust,maturin,pyo3
+Home-Page: https://github.com/deependujha/Deep-Dummy-Maths/
+Author: Deependu Jha <deependujha21@gmail.com>
+Author-email: deependujha <deependujha21@gmail.com>
+License: MIT
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown; charset=UTF-8; variant=GFM
+Project-URL: Source Code, https://github.com/deependujha/Deep-Dummy-Maths/
+
+# Deep-Dummy-Maths
+
+A dummy library for mathematical functions created by Deependu Jha.
+
+## Installation
+
+```bash
+pip install deep-dummy-maths
+```
+
+## Usage
+
+```python
+from deep_dummy_maths import my_sum, my_diff, my_pro, my_div, my_factorial, hello_from_bin
+
+my_sum(1, 2)  # Output: 3
+my_diff(1, 2)  # Output: -1
+my_pro(1, 2)  # Output: 0.5
+my_div(1, 2)  # Output: 0.5
+my_factorial(10)  # Output: 120
+hello_from_bin()
+```
+
+---
+
+## For future reference
+
+### Using **Poetry** with `src/`
+
+https://browniebroke.com/blog/convert-existing-poetry-to-src-layout/
+
+```toml
+[tool.poetry]
+# ... other metata
+packages = [
+     { include = "my_package" },
+     { include = "my_package", from = "src" },
+  ]
+
+
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+```
+
