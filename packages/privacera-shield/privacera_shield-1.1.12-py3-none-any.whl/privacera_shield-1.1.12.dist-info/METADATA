@@ -1,0 +1,22 @@
+Metadata-Version: 2.4
+Name: privacera_shield
+Version: 1.1.12
+Summary: Privacera AI Governance (PAIG) Shield Plugin Library
+Project-URL: Homepage, https://github.com/pypa/privacera_shield
+Project-URL: Bug Tracker, https://github.com/pypa/privacera_shield/issues
+Author-email: PAIG Shield <paig@privacera.com>
+License-File: LICENSE
+Classifier: License :: Other/Proprietary License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.8.1
+Requires-Dist: cryptography>=41.0.4
+Requires-Dist: privacera-shield-common==1.5.0
+Requires-Dist: urllib3>=2.0.6
+Description-Content-Type: text/markdown
+
+# Privacera AI Goverance Shield Library
+
+The `privacera_shield` library allows you to seamlessly integrate Privacera AI Governance into your Langchain projects. 
+
+Register an account with Privacera AI Governance at https://privacera.ai. 
