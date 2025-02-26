@@ -1,0 +1,53 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "yt-transcript"
+version = "0.1.4"
+description = "A command-line tool to fetch, cache, and summarize YouTube video transcripts"
+readme = "README.md"
+authors = [
+    {name = "Lawrence Wu"}
+]
+license = {text = "MIT"}
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+requires-python = ">=3.9"
+dependencies = [
+    "youtube_transcript_api",
+    "openai",
+    "requests",
+    "click",
+    "yt-dlp",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pre-commit",
+    "ruff",
+    "pytest",
+]
+
+[project.scripts]
+yt-transcript = "yt_transcript.cli:yt_transcript_cli"
+
+[tool.ruff]
+line-length = 88
+target-version = "py38"
+lint.select = ["E", "F", "I", "W", "N", "B", "C4", "UP", "ANN", "RUF"]
+lint.ignore = ["ANN001", "ANN002", "ANN003", "ANN101", "ANN102", "ANN201",
+"ANN202","ANN204", "ANN401",
+"E501", "RUF013", "RUF015", "B904"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "auto"
+
+[project.urls]
+"Homepage" = "https://github.com/lawwu/yt-transcript"
+"Bug Tracker" = "https://github.com/lawwu/yt-transcript/issues"
