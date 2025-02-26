@@ -1,0 +1,7 @@
+[tool.poetry]
+name = "GDReproduceConfigurationError"
+version = "0.1.0"
+description = "project description"
+
+[tool.poetry.dependencies]
+python = "^3.10"
