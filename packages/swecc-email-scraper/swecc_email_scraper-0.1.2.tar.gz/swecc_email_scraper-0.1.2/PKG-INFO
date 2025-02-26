@@ -1,0 +1,185 @@
+Metadata-Version: 2.4
+Name: swecc-email-scraper
+Version: 0.1.2
+Summary: A Python CLI tool for analyzing email data in mbox format
+Project-URL: Homepage, https://github.com/swecc/email-scraper
+Project-URL: Documentation, https://github.com/swecc/email-scraper#readme
+Project-URL: Issues, https://github.com/swecc/email-scraper/issues
+Author-email: SWECC Labs <swecc@uw.edu>
+License-Expression: MIT
+License-File: LICENSE
+Keywords: analysis,cli,email,mbox
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Python: >=3.10
+Requires-Dist: click
+Requires-Dist: rich
+Provides-Extra: dev
+Requires-Dist: black; extra == 'dev'
+Requires-Dist: build; extra == 'dev'
+Requires-Dist: mkdocs; extra == 'dev'
+Requires-Dist: mkdocs-material; extra == 'dev'
+Requires-Dist: mkdocstrings[python]; extra == 'dev'
+Requires-Dist: mypy; extra == 'dev'
+Requires-Dist: pre-commit; extra == 'dev'
+Requires-Dist: pytest; extra == 'dev'
+Requires-Dist: pytest-asyncio; extra == 'dev'
+Requires-Dist: ruff; extra == 'dev'
+Requires-Dist: twine; extra == 'dev'
+Requires-Dist: types-click; extra == 'dev'
+Requires-Dist: types-markdown; extra == 'dev'
+Requires-Dist: types-pyyaml; extra == 'dev'
+Requires-Dist: types-requests; extra == 'dev'
+Provides-Extra: docs
+Requires-Dist: mkdocs; extra == 'docs'
+Requires-Dist: mkdocs-material; extra == 'docs'
+Requires-Dist: mkdocstrings[python]; extra == 'docs'
+Provides-Extra: lint
+Requires-Dist: black; extra == 'lint'
+Requires-Dist: mypy; extra == 'lint'
+Requires-Dist: pre-commit; extra == 'lint'
+Requires-Dist: ruff; extra == 'lint'
+Requires-Dist: types-click; extra == 'lint'
+Requires-Dist: types-markdown; extra == 'lint'
+Requires-Dist: types-pyyaml; extra == 'lint'
+Requires-Dist: types-requests; extra == 'lint'
+Provides-Extra: test
+Requires-Dist: pytest; extra == 'test'
+Requires-Dist: pytest-asyncio; extra == 'test'
+Description-Content-Type: text/markdown
+
+# SWECC Email Scraper
+
+A Python CLI tool for analyzing email data in mbox format.
+
+## Features
+
+- 📧 Process mbox format email archives
+- 🔧 Unix-style pipeline architecture for flexible processing
+- 📊 Extendable framework for building analysis pipelines
+- Coming soon: More analysis processors...
+
+## Installation
+
+### From PyPI
+
+```bash
+pip install swecc-email-scraper
+```
+
+### From Source
+
+```bash
+git clone https://github.com/swecc-uw/swecc-email-scraper.git
+cd swecc-email-scraper
+pip install -e ".[dev]"  # Install with development dependencies
+
+# Run tests
+pytest
+```
+
+## Quick Start
+
+The tool uses Unix pipes to compose commands. Each command does one thing and can be combined with others:
+
+1. Basic usage - get email stats with example processor:
+```bash
+swecc-email-scraper read mailbox.mbox \
+  | swecc-email-scraper stats \
+  | swecc-email-scraper format -f json > results.json
+```
+
+2. List available processors:
+```bash
+swecc-email-scraper list-processors
+```
+
+3. List available output formats:
+```bash
+swecc-email-scraper list-formats
+```
+
+## Command Reference
+
+### Read Command
+Reads an mbox file and outputs email data as JSON:
+```bash
+swecc-email-scraper read input.mbox > emails.json
+```
+
+### Stats Command
+Processes email data from stdin and outputs statistics:
+```bash
+cat emails.json | swecc-email-scraper stats > stats.json
+```
+
+### Format Command
+Formats JSON data using the specified formatter:
+```bash
+cat stats.json \
+  | swecc-email-scraper format -f json \
+  > formatted.json
+```
+
+## Pipeline Examples
+
+1. Basic email statistics to terminal:
+```bash
+swecc-email-scraper read inbox.mbox \
+  | swecc-email-scraper stats \
+  | swecc-email-scraper format
+```
+
+2. Save analysis to a file:
+```bash
+swecc-email-scraper read inbox.mbox \
+  | swecc-email-scraper stats \
+  > analysis.json
+```
+
+3. Process with custom formatting:
+```bash
+swecc-email-scraper read inbox.mbox \
+  | swecc-email-scraper stats \
+  | swecc-email-scraper format -f json \
+  > analysis.json
+```
+
+4. Use with Unix tools:
+```bash
+# Filter emails before analysis
+swecc-email-scraper read inbox.mbox \
+  | jq 'map(select(.sender | contains("important")))' \
+  | swecc-email-scraper stats
+```
+
+## Extending the Tool
+
+The tool is designed to be easily extensible. See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed information on:
+
+- Creating custom processors
+- Adding new output formats
+- Contributing to the project
+- Development setup and guidelines
+
+## Architecture
+
+The tool uses a Unix pipeline architecture where:
+
+1. `read` command converts mbox files to JSON email data
+2. Processor commands (like `stats`) transform or analyze the data
+3. `format` command handles output formatting
+4. Standard Unix pipes (`|`) connect the components
+
+## License
+
+MIT License - See [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+Developed as part of SWECC Labs at the University of Washington.
