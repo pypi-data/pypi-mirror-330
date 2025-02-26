@@ -1,0 +1,11 @@
+qapp-common==0.0.8.2
+pennylane==0.37.0
+matplotlib
+PennyLane-Rigetti==0.36.0
+
+[dev]
+black
+bumpver
+isort
+pip-tools
+pytest
