@@ -1,0 +1,56 @@
+Metadata-Version: 2.1
+Name: scarabs
+Version: 0.0.3
+Summary: scarab: llm training paradigm
+Home-page: https://github.com/zhu2856061/scarabs
+Author: merlin
+Author-email: zhipeng19930220@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: loguru==0.7.3
+Requires-Dist: scikit-learn==1.6.0
+Requires-Dist: datasets>=2.16.1
+Requires-Dist: torch>=2.3.0
+Requires-Dist: transformers==4.47.1
+Requires-Dist: evaluate>=0.4.3
+Requires-Dist: einops==0.8.0
+Requires-Dist: sentencepiece>=0.2.0
+Requires-Dist: accelerate>=1.2.1
+Requires-Dist: peft>=0.7.1
+Requires-Dist: ipywidgets>=8.1.5
+Requires-Dist: tensorboardX==2.6.2.2
+Requires-Dist: torchinfo>=1.8.0
+Requires-Dist: prettytable>=3.12.0
+Requires-Dist: trl>=0.11.4
+
+## scarabs: a universal training framework
+
+#### core:
+  - Training of tabular data, For example, CTR used in recommendation systems
+  - Training of text data, For example, text classification
+  - Training of image data, For example, image classification
+  - Training of LLM, For example, llm pretrain
+
+#### very easy to use
+``` shell
+pip install scarabs
+```
+
+#### In detail
+
+1. Tabular Data
+You can refer to tabular_ctr in the examples folder
+
+2. Text Data
+You can refer to llm_classification in the examples folder
+
+3. LLM
+You can refer to llm_pretrain in the examples folder
+
+4. refer to github https://github.com/zhu2856061/scarabs
+
+#### todo
+use visdom 
