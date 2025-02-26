@@ -1,0 +1,8 @@
+# Meterdataset
+
+Dataset quick load. -> shareds
+
+数据集加载有很多不同的格式。shareds 将这些格式的共性提取出来，让不同的模型可以直接使用。但是，这个数据集中的数据，都是长条形状的，不是完整的仪表图片。
+
+- `with empty`
+- `verify`
