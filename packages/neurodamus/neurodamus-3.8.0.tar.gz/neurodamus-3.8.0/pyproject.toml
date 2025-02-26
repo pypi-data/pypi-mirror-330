@@ -1,0 +1,240 @@
+[build-system]
+requires = [
+    "hatchling",
+    "hatch-vcs",
+]
+build-backend = "hatchling.build"
+
+[project]
+name="neurodamus"
+authors = [
+    {name = "Blue Brain Project, EPFL"},
+]
+description = "A BBP Simulation Control application for NEURON"
+license = {file = "LICENSE.txt"}
+readme = "README.rst"
+dynamic = ["version"]
+dependencies = [
+    "h5py",
+    "docopt-ng",
+    "libsonata",
+    "psutil"
+]
+requires-python=">=3.9"
+
+[project.optional-dependencies]
+plotting=['matplotlib'] # only for Neurodamus HL API
+full=['scipy', 'morphio', 'NEURON']
+docs=['sphinx', 'sphinx-bluebrain-theme']
+
+[project.scripts]
+neurodamus = "neurodamus.commands:neurodamus"
+hocify = "neurodamus.commands:hocify"
+
+[project.urls]
+Homepage = "https://github.com/BlueBrain/neurodamus"
+Repository = "https://github.com/BlueBrain/neurodamus.git"
+Tracker = "https://github.com/BlueBrain/neurodamus/issues"
+
+[tool.hatch.build.targets.sdist]
+only-include = [
+    "neurodamus",
+]
+
+[tool.hatch.version]
+source = "vcs"
+
+[tool.hatch.version.raw-options]
+local_scheme = "no-local-version"
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = [
+    "--import-mode=importlib",
+    "-vv",
+    "-ra",
+]
+markers = ["slow: marks tests as slow"]
+
+[tool.flake8]
+exclude = [".*", "__pycache__", ".eggs", "*.egg", "build", "dist", "docs", "venv", "*.egg-info", "_benchmarks", "core", ".tox", "tests/simulations/ringtest/create_data.py"]
+extend-ignore = [
+    "E127",  # continuation line over-indented for visual indent
+    "E203",  # whitespace before ':'
+    "E221",  # multiple spaces before operator
+    "E226",  # missing whitespace around arithmetic operator
+    "E701",  # multiple statements on one line (colon)
+    "E731",  # do not assign a lambda expression, use a def
+    "PT001", # use @pytest.fixture over @pytest.fixture()
+    "PT023", # use @pytest.mark.foo over @pytest.mark.foo()
+    "W503",  # line break before binary operator
+    "W504",  # line break after binary operator
+]
+max-line-length = 100
+
+[tool.coverage.run]
+branch = false
+parallel = false
+relative_files = true
+source_pkgs = [
+    "neurodamus",
+]
+
+[tool.coverage.paths]
+source = [
+    "neurodamus/",
+    "*/site-packages/neurodamus"
+]
+
+[tool.coverage.report]
+show_missing = true
+precision = 0
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+preview = true
+select = ["ALL"]
+ignore = [
+    "COM812",  # Trailing comma (to have similar behavior to black)
+    "CPY001",  # Missing copyright notice at top of file
+    "D105",    # Missing docstring in magic method
+    "ISC001",  # single line implicit string concatenation (disabling suggested by ruff formatter)
+    "N802",    # function name should be lowercase
+    "PLE1205", # Too many arguments for `logging` format string
+    "RUF029",  # Function is declared `async`, but doesn't `await` or use `async` features.
+    "S104",    # Possible binding to all interfaces
+    "FIX002",  # Line contains TODO, consider resolving the issue
+    "TD",      # TODOs
+    "D415",    # First line should end with a period, question mark, or exclamation point
+    "S324",    # hashlib-insecure-hash-function
+    ### TODO: these are low priority to fix, but perhaps should be considered in the future
+    "ANN",     # Missing type annotation
+    "FBT002",  # Boolean default positional argument in function definition
+    "PTH",     # use of os.path, will move to pathlib at some point
+    "S101",    # Use of `assert` detected
+    ### TODO: remove rules temporarily ignored
+    "D205",    # missing-blank-line-after-summary
+    "D301",    # Use `r"""` if any backslashes in a docstring
+    "DOC201",  # `return` is not documented in docstring
+    "DOC402",  # `yield` is not documented in docstring
+    "DOC501",  # Raised exception missing from docstring
+    "LOG015",  # `info()` call on root logger
+    "FIX001", # line-contains-fixme
+
+    ### to be removed through: https://github.com/openbraininstitute/neurodamus/issues/47
+    "D102",   # undocumented-public-method
+    "TRY003", # raise-vanilla-args
+    "SLF001", # private-member-access
+    "EM101",  # raw-string-in-exception
+    "EM102",  # f-string-in-exception
+    "D107",   # undocumented-public-init
+    "PLC0415",# import-outside-top-level
+    "D101",   # undocumented-public-class
+    "RUF012", # mutable-class-default
+    "TRY002", # raise-vanilla-class
+    "N806",   # non-lowercase-variable-in-function
+    "D417",   # undocumented-param
+    "PLR6301",# no-self-use
+    "ARG002", # unused-method-argument
+    "ERA001", # commented-out-code
+    "G004",   # logging-f-string
+    "PLW1514",# unspecified-encoding
+    "FBT003", # boolean-positional-value-in-call
+    "PLR2004",# magic-value-comparison
+    "PLW2901",# redefined-loop-name
+    "C901",   # complex-structure
+    "UP031",  # printf-string-formatting
+    "G001",   # logging-string-format
+    "N803",   # invalid-argument-name
+    "RET504", # unnecessary-assign
+    "B904",   # raise-without-from-inside-except
+    "D100",   # undocumented-public-module
+    "T201",   # print
+    "N815",   # mixed-case-variable-in-class-scope
+    "D103",   # undocumented-public-function
+    "BLE001", # blind-except
+    "RET503", # implicit-return
+    "SIM108", # if-else-block-instead-of-if-exp
+    "ARG003", # unused-class-method-argument
+    "ARG005", # unused-lambda-argument
+    "N805",   # invalid-first-argument-name-for-method
+    "TRY401", # verbose-log-message
+    "S603",   # subprocess-without-shell-equals-true
+    "SIM115", # open-file-with-context-handler
+    "N801",   # invalid-class-name
+    "D106",   # undocumented-public-nested-class
+    "PLR0915",# too-many-statements
+    "FURB189",# subclass-builtin
+    "A005",   # stdlib-module-shadowing
+    "EM103",  # dot-format-in-exception
+    "E731",   # lambda-assignment
+    "PLR0912",# too-many-branches
+    "PLR0914",# too-many-locals
+    "S102",   # exec-builtin
+    "S403",   # suspicious-pickle-import
+    "S404",   # suspicious-subprocess-import
+    "SIM112", # uncapitalized-environment-variables
+    "N804",   # invalid-first-argument-name-for-class-method
+    "PERF203",# try-except-in-loop
+    "PGH004", # blanket-noqa
+    "PLC2801",# unnecessary-dunder-call
+    "FURB103",# write-whole-file
+    "FURB122",# for-loop-writes
+    "S301",   # suspicious-pickle-usage
+    "S606",   # start-process-with-no-shell
+    "B006",   # mutable-argument-default
+    "B019",   # cached-instance-method
+    "B027",   # empty-method-without-abstract-decorator
+    "A001",   # builtin-variable-shadowing
+    "INP001", # implicit-namespace-package
+    "PIE810", # multiple-starts-ends-with
+    "T203",   # p-print
+    "N818",   # error-suffix-on-exception-name
+    "PERF102",# incorrect-dict-iterator
+    "E741",   # ambiguous-variable-name
+    "D104",   # undocumented-public-package
+    "D212",   # multi-line-summary-first-line
+    "PLC0205",# single-string-slots
+    "PLE1141",# dict-iter-missing-items
+    "PLR0913",# too-many-arguments
+    "PLR0917",# too-many-positional-arguments
+    "PLR1702",# too-many-nested-blocks
+    "FURB101",# read-whole-file
+]
+
+[tool.ruff.lint.isort]
+known-local-folder = [
+    "neurodamus",
+]
+combine-as-imports = true
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*.py" = [
+    "ANN",     # Missing type annotation
+    "D",       # pydocstyle
+    "ERA001",  # Found commented-out code
+    "INP001",  # Missing `__init__.py`
+    "PLC2701", # Private name import from external module
+    "PLR2004", # magic value (constant) used in comparison (i.e. expected == 3)
+    "S101",    # Use of `assert` detected
+    "SLF001",  # private member access
+]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.lint.pylint]
+# Maximum number of arguments for function / method
+max-args = 12
+# Maximum number of locals for function / method body
+max-locals = 15
+# Maximum number of return / yield for function / method body
+max-returns = 6
+# Maximum number of branch for function / method body
+max-branches = 12
+# Maximum number of statements in function / method body
+max-statements = 50
+# Maximum number of public methods for a class (see R0904).
+max-public-methods = 60
