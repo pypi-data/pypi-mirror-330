@@ -1,0 +1,36 @@
+Metadata-Version: 2.1
+Name: dulrs
+Version: 0.0.2
+Summary: A Python package to generate heatmaps, lowrank, and sparsity from deep learning models.
+Home-page: https://github.com/Thomas-uestc/API
+Author: Fengyi_Wu
+Author-email: your_email@example.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Requires-Dist: torch
+Requires-Dist: torchvision
+Requires-Dist: numpy
+Requires-Dist: scipy
+Requires-Dist: opencv-python
+Requires-Dist: matplotlib
+Requires-Dist: pandas
+Requires-Dist: plotnine
+Requires-Dist: Pillow
+Requires-Dist: statistics
+Requires-Dist: torchvision
+
+自动提取神经网络的中间层特征 
+1.生成热力图
+2.计算低秩
+3.绘制低秩图
+4.计算稀疏
+
+支持 GPU 加速（可选）
+支持 .mat 格式（用于进一步分析）
+支持 .png 输出（用于可视化）
+可直接 import 在 Python 代码或 Jupyter Notebook 里使用
+
+
