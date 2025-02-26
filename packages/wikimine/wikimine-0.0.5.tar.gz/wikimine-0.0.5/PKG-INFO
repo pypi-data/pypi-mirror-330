@@ -1,0 +1,49 @@
+Metadata-Version: 2.4
+Name: wikimine
+Version: 0.0.5
+Project-URL: Documentation, https://github.com/dataset.sh/wikimine#readme
+Project-URL: Issues, https://github.com/dataset.sh/wikimine/issues
+Project-URL: Source, https://github.com/dataset.sh/wikimine
+Author-email: Hao Wu <haowu@dataset.sh>
+License-Expression: MIT
+License-File: LICENSE.txt
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Requires-Python: >=3.8
+Requires-Dist: click
+Requires-Dist: cmfn
+Requires-Dist: mwparserfromhell
+Requires-Dist: mwxml
+Requires-Dist: peewee
+Requires-Dist: pymongo
+Requires-Dist: tqdm
+Description-Content-Type: text/markdown
+
+# wikimine
+
+[![PyPI - Version](https://img.shields.io/pypi/v/wikimine.svg)](https://pypi.org/project/wikimine)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/wikimine.svg)](https://pypi.org/project/wikimine)
+
+-----
+
+## Table of Contents
+
+- [Installation](#installation)
+- [License](#license)
+
+## Installation
+
+```console
+pip install wikimine
+```
+
+## License
+
+`wikimine` is distributed under the terms of the [MIT](https://spdx.org/licenses/MIT.html) license.
