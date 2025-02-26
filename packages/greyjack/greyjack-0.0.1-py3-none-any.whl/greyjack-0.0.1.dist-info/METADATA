@@ -1,0 +1,73 @@
+Metadata-Version: 2.2
+Name: greyjack
+Version: 0.0.1
+Summary: GreyJack Solver is an AI constraint solver for Python (current version) built on top of Polars. It empowers you to solve a wide range of constraint optimization problems, including continuous, integer, and mixed-integer challenges.
+Author-email: "Egor Chnegov (CameleoGrey)" <cameleogrey@yandex.ru>
+Maintainer-email: "Egor Chnegov (CameleoGrey)" <cameleogrey@yandex.ru>
+License: MIT License
+        
+        Copyright (c) 2025 Egor Chnegov (CameleoGrey)
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE.
+Project-URL: Homepage, https://github.com/CameleoGrey/greyjack-solver-python
+Project-URL: Documentation, https://github.com/CameleoGrey/greyjack-solver-python
+Project-URL: Repository, https://github.com/CameleoGrey/greyjack-solver-python.git
+Project-URL: Issues, https://github.com/CameleoGrey/greyjack-solver-python/issues
+Keywords: greyjack,solver,optimization,polars,metaheuristic,genetic algorithm
+Classifier: Intended Audience :: Science/Research
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Topic :: Software Development
+Classifier: Topic :: Scientific/Engineering
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Operating System :: POSIX
+Classifier: Operating System :: Unix
+Classifier: Operating System :: MacOS
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy
+
+
+# Preview
+
+![](logos/greyjack-python-long-logo.png)
+
+_In optimum we trust._
+
+GreyJack Solver is an AI constraint solver for Python (current version) built on top of Polars. 
+It empowers you to solve a wide range of constraint optimization problems, including continuous, integer, and mixed-integer challenges.
+
+# Editions
+
+There are 2 editions of GreyJack Solver:
+
+- [Rust version](https://github.com/CameleoGrey/greyjack-solver-rust/) Ready to use, but there is still a lot of work to "complete" solver.
+- Python version (this repo, developing in progress...).
+
+# Common info
+
+Developing of Python version is in progress. Repo is public to bind repo name, pip package name and show, that there will be something more than only Rust version.
