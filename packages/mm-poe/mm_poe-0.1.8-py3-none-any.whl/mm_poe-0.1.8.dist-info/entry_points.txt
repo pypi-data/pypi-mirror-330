@@ -1,0 +1,2 @@
+[console_scripts]
+mm_poe = mm_poe.__main__:entry_point
