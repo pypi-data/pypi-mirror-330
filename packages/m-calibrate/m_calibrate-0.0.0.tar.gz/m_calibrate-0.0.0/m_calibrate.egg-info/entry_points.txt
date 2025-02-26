@@ -1,0 +1,5 @@
+[console_scripts]
+mcal = mcal.cli.main:mcal
+
+[mcal.samplers]
+samplers = mcal.samplers:SAMPLERS
