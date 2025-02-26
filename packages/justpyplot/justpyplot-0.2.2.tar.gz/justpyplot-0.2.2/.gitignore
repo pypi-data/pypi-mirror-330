@@ -1,0 +1,10 @@
+.venv/
+.vscode/
+dist/
+*.egg-info/
+*/**/__pycache__
+dist/justpyplot-0.0.9-py3-none-any.whl
+dist/justpyplot-0.0.9.tar.gz
+dist/justpyplot-0.1-py3-none-any.whl
+dist/justpyplot-0.1.tar.gz
+docs/_*
