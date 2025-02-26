@@ -1,0 +1,91 @@
+Metadata-Version: 2.1
+Name: streamlit-slb-gallery
+Version: 1.2.5
+Summary: Streamlit component that allows to display images and videos as gallery
+Home-page: 
+Author: Sharizan Redzuan
+Author-email: sredzuan@slb.com
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: streamlit>=1.39
+Provides-Extra: devel
+Requires-Dist: wheel; extra == "devel"
+Requires-Dist: pytest==7.4.0; extra == "devel"
+Requires-Dist: playwright==1.39.0; extra == "devel"
+Requires-Dist: requests==2.31.0; extra == "devel"
+Requires-Dist: pytest-playwright-snapshot==1.0; extra == "devel"
+Requires-Dist: pytest-rerunfailures==12.0; extra == "devel"
+
+# streamlit_slb_gallery
+
+Streamlit component that allows user display images and video gallery
+
+## Installation instructions
+
+```sh
+pip install streamlit_slb_gallery
+```
+
+## Release Notes
+
+1.0.10
+
+- Fix the gallery pagination. load details only for selected events per page
+
+  1.1.0
+
+- stable version and able to customize the height
+
+  1.1.1
+
+- fix date format for alert time to yyyy-MM-dd HH:mm:ss
+
+  1.1.2
+
+- fix date format for alert time to yyyy-MM-dd HH:mm:ss on missing seconds
+
+  1.1.3
+
+- fix date format for alert time to yyyy-MM-dd HH:mm:ss on missing seconds
+
+  1.1.4
+
+- Fix pagination issue
+
+  1.1.5
+
+- Fix time display and conversion
+
+  1.1.6
+
+- Update violation type display
+
+  1.1.7
+
+- Show event with no image available
+
+  1.1.8
+
+- sort the gallery by latest start time
+
+  1.2.0
+
+- Add support to filter by Camera ID
+
+  1.2.2
+
+- Fix bug for date filter
+
+  1.2.3
+
+- Fix the sort for the gallery
+
+  1.2.4
+
+- Fix the gallery sorting
+- Use CogniteSdk instead of direct query from API
+
+  1.2.5
+
+- Add indicator to show Reviewed events and valid/invalid events
