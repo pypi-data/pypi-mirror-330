@@ -1,0 +1,51 @@
+name: Python
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    paths:
+      - src/**
+      - .github/workflows/python.yml
+
+jobs:
+  tests:
+    permissions:
+      contents: read
+      id-token: write
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+          cache-dependency-glob: "uv.lock"
+      - name: Install dependencies
+        run: |
+          uv sync --all-groups --all-extras --no-extra prefect --locked
+      - name: Run lint
+        run: |
+          uv run ruff format --check src
+          uv run ruff check src
+          uv run pyright
+      - name: Run tests
+        run: |
+          uv run coverage run -m pytest --runxfail
+      - name: Generate coverage report
+        run: |
+          uv run coverage xml
+      - name: Upload coverage to Codecov (oidc)
+        uses: codecov/codecov-action@main
+        with:
+          # codecov doesn't have access to the repo yet :(
+          fail_ci_if_error: false
+          token: ${{ secrets.CODECOV_TOKEN }}
+          verbose: true
