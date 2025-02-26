@@ -1,0 +1,28 @@
+Metadata-Version: 2.1
+Name: seatable-api
+Version: 3.0.0
+Summary: Python client for SeaTable web api
+Home-page: https://github.com/seatable/seatable-api-python
+Author: seatable
+Author-email: support@seafile.com
+License: Apache Licence
+Platform: any
+Classifier: Programming Language :: Python
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: ply
+Requires-Dist: python-socketio >5
+Requires-Dist: python-dateutil
+Requires-Dist: requests
+
+# seatable-api-python
+
+Python client for SeaTable web api
+
+English document: <https://seatable.github.io/seatable-scripts/>
+
+Chinese document: <https://seatable.github.io/seatable-scripts-cn/>
+
+pypi: <https://pypi.org/project/seatable-api/>
+
+github: <https://github.com/seatable/seatable-api-python>
