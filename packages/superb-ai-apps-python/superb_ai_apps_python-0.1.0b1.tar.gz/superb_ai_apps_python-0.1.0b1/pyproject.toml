@@ -1,0 +1,36 @@
+[tool.poetry]
+name = "superb-ai-apps-python"
+version = "0.1.0b1"
+description = "Superb AI Apps Python SDK"
+authors = ["Solutions Engineering Team"]
+readme = "README.md"
+packages = [
+    { include = "spb_apps"},
+]
+
+[tool.poetry.dependencies]
+python = "^3.9, <3.13"
+black = "^25.1.0"
+superb-ai-label = "^0.22.2"
+superb-ai-curate = "^1.4.1.post1"
+zipfile-deflate64 = "^0.2.0"
+directory-tree = "^1.0.0"
+pillow = "^11.1.0"
+gql = "^3.5.1"
+requests-toolbelt = "^1.0.0"
+natsort = "^8.4.0"
+pytest = "^8.3.4"
+torch = { version = ">=2.0", optional = true }
+torchvision = { version = "*", optional = true }
+huggingface-hub = { version = "0.27.0", optional = true }
+
+
+[tool.poetry.extras]
+all = ["torch", "torchvision", "huggingface-hub"]
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.29.5"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
