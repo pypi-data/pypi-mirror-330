@@ -1,0 +1,216 @@
+Metadata-Version: 2.1
+Name: hawkins-agent-lib
+Version: 0.1.8
+Summary: A Python SDK for building AI agents with minimal code using Hawkins ecosystem with HawkinDB memory
+Home-page: https://github.com/hawkins-ai/hawkins-agent
+Author: Harish Santhanalakshmi Ganesan
+License: MIT
+Project-URL: Documentation, https://github.com/hawkins-ai/hawkins-agent#readme
+Project-URL: Source, https://github.com/hawkins-ai/hawkins-agent
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+Requires-Dist: aiohttp>=3.8.0
+Requires-Dist: build>=1.2.2.post1
+Requires-Dist: click>=8.1.8
+Requires-Dist: flask-login>=0.6.3
+Requires-Dist: flask-wtf>=1.2.2
+Requires-Dist: flask[async]>=3.1.0
+Requires-Dist: google-api-python-client>=2.156.0
+Requires-Dist: hawkins-rag>=0.1.0
+Requires-Dist: hawkinsdb>=1.0.1
+Requires-Dist: litellm>=1.0.0
+Requires-Dist: oauthlib>=3.2.2
+Requires-Dist: open-interpreter>=0.4.3
+Requires-Dist: openai>=1.58.1
+Requires-Dist: protobuf>=4.25.5
+Requires-Dist: psutil>=5.9.8
+Requires-Dist: pydantic>=2.9.2
+Requires-Dist: python-dotenv>=0.19.0
+Requires-Dist: serpapi>=0.1.5
+Requires-Dist: setuptools>=75.6.0
+Requires-Dist: streamlit>=1.42.2
+Requires-Dist: tavily-python>=0.5.0
+Requires-Dist: trafilatura>=2.0.0
+Requires-Dist: twilio>=9.4.5
+Requires-Dist: twine>=6.0.1
+Requires-Dist: watchdog>=3.0.0
+Requires-Dist: wheel>=0.45.1
+Provides-Extra: dev
+Requires-Dist: pytest>=7.0.0; extra == "dev"
+Requires-Dist: black>=22.0.0; extra == "dev"
+Requires-Dist: mypy>=1.0.0; extra == "dev"
+
+pip install hawkins-agent
+```
+
+Requires Python 3.11 or higher.
+
+## Quick Start
+
+Here's a simple example to get you started:
+
+```python
+from hawkins_agent import AgentBuilder
+from hawkins_agent.tools import WebSearchTool
+from hawkins_agent.mock import KnowledgeBase
+
+async def main():
+    # Create a knowledge base
+    kb = KnowledgeBase()
+
+    # Create agent with web search capabilities
+    agent = (AgentBuilder("researcher")
+            .with_model("gpt-4o")
+            .with_knowledge_base(kb)
+            .with_tool(WebSearchTool())
+            .build())
+
+    # Process a query
+    response = await agent.process("What are the latest developments in AI?")
+    print(response.message)
+
+if __name__ == "__main__":
+    import asyncio
+    asyncio.run(main())
+```
+
+## Advanced Usage
+
+### RAG-Enabled Knowledge Assistant
+
+Create an agent that can answer questions based on its knowledge base:
+
+```python
+from hawkins_agent import AgentBuilder
+from hawkins_agent.tools import RAGTool
+from hawkins_rag import HawkinsRAG
+
+# Initialize RAG system and tool
+rag = HawkinsRAG()
+rag_tool = RAGTool(knowledge_base=rag)
+
+# Create agent with RAG capabilities
+agent = (AgentBuilder("knowledge_assistant")
+        .with_model("gpt-4o")
+        .with_tool(rag_tool)
+        .build())
+
+# Add documents to knowledge base
+await rag_tool.add_document(
+    content="Document content...",
+    metadata={"topic": "AI", "source": "research_paper"}
+)
+
+# Query the knowledge base
+response = await agent.process("What are the key findings in the AI research?")
+print(response.message)
+```
+
+### Multi-Agent Workflow
+
+Create complex workflows with multiple specialized agents:
+
+```python
+from hawkins_agent import AgentBuilder, FlowManager, FlowStep
+from hawkins_agent.tools import WebSearchTool, WeatherTool
+
+# Create specialized agents
+research_agent = (AgentBuilder("researcher")
+                .with_model("gpt-4o")
+                .with_tool(WebSearchTool())
+                .build())
+
+writer_agent = (AgentBuilder("writer")
+              .with_model("gpt-4o")
+              .build())
+
+# Create flow manager
+flow = FlowManager()
+
+# Define workflow steps
+async def research_step(input_data, context):
+    query = input_data.get("topic")
+    result = await research_agent.process(f"Research this topic: {query}")
+    return {"research": result.message}
+
+async def writing_step(input_data, context):
+    research = context.get("research", {}).get("research")
+    result = await writer_agent.process(f"Write an article based on: {research}")
+    return {"article": result.message}
+
+# Add steps to flow
+flow.add_step(FlowStep(
+    name="research",
+    agent=research_agent,
+    process=research_step
+))
+
+flow.add_step(FlowStep(
+    name="writing",
+    agent=writer_agent,
+    process=writing_step,
+    requires=["research"]
+))
+
+# Execute flow
+results = await flow.execute({"topic": "AI trends in 2024"})
+```
+
+### Using Custom Tools
+
+Create your own tools by extending the BaseTool class:
+
+```python
+from hawkins_agent.tools.base import BaseTool
+from hawkins_agent.types import ToolResponse
+
+class CustomTool(BaseTool):
+    name = "custom_tool"
+    description = "A custom tool for specific tasks"
+
+    async def execute(self, query: str) -> ToolResponse:
+        try:
+            # Tool implementation here
+            result = await self._process(query)
+            return ToolResponse(success=True, result=result)
+        except Exception as e:
+            return ToolResponse(success=False, error=str(e))
+```
+
+## Documentation
+
+For more detailed documentation, see:
+- [Flow System Documentation](docs/flows.md)
+- [Custom Tools Guide](docs/custom_tools.md)
+- [Memory Management](docs/memory_management.md)
+- [API Reference](docs/api_reference.md)
+
+## Examples
+
+The `examples/` directory contains several example implementations:
+- `simple_agent.py`: Basic agent usage
+- `multi_agent_flow.py`: Complex multi-agent workflow
+- `tool_test.py`: Tool integration examples
+- `rag_agent_example.py`: Knowledge-based agent with RAG capabilities
+- `blog_writer_flow.py`: Content generation workflow
+- `maldives_trip_planner.py`: Travel planning agent system
+
+## Development
+
+To contribute to the project:
+
+1. Clone the repository
+2. Install development dependencies:
+```bash
+pip install -e .[dev]
+```
+3. Run tests:
+```bash
+pytest
