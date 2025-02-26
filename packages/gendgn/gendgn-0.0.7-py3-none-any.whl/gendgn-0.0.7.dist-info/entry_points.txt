@@ -1,0 +1,5 @@
+[console_scripts]
+batch_eval = gendgn.batch_eval:main
+exe_wwr_constr = gendgn.exe_wwr_constr:main
+pmtrz_wwr_constr = gendgn.pmtrz_wwr_constr:main
+sample_variants = gendgn.sample_variants:main
