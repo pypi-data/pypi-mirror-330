@@ -1,0 +1,10 @@
+typer~=0.13.1
+openai~=1.55.0
+srt~=3.5.3
+rich~=13.9.4
+
+[dev]
+coverage
+mypy
+pytest
+ruff
