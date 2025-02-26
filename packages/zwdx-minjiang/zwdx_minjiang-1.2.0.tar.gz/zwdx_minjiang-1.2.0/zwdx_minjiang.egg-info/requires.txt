@@ -1,0 +1,10 @@
+pyvisa>=1.13.0
+numpy>=1.25.1
+zerorpc>=0.6.3
+matplotlib>=3.7.2
+pandas>=2.0.3
+seaborn>=0.13.2
+scipy>=1.11.1
+ipympl>=0.9.4
+grpcio>=1.70.0
+protobuf>=5.27.2
