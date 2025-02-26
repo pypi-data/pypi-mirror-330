@@ -1,0 +1,23 @@
+[project]
+name = "get-image-document"
+version = "0.1.4"
+description = ""
+authors = [
+    {name = "jaytrairat",email = "jay.trairat@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "python-docx (>=1.1.2,<2.0.0)",
+    "pillow (>=11.1.0,<12.0.0)",
+    "tqdm (>=4.67.1,<5.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.poetry.plugins."console_scripts"]
+get-image-document="get_image_document.main:main"
