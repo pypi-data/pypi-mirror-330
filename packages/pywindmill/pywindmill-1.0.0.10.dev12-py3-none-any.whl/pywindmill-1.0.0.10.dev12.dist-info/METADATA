@@ -1,0 +1,31 @@
+Metadata-Version: 2.1
+Name: pywindmill
+Version: 1.0.0.10.dev12
+Summary: sdk in python for windmill client
+Home-page: https://console.cloud.baidu-int.com/devops/icode/repos/baidu/themis/windmill-train/tree/master
+Author: yangtingyu01
+Author-email: yangtingyu01@baidu.com
+License: MIT
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Python: >=3.6
+Requires-Dist: bce-python-sdk==0.8.87
+Requires-Dist: multidict==6.0.4
+Requires-Dist: windmill-artifact
+Requires-Dist: windmill-train
+Requires-Dist: windmill-workspace
+Requires-Dist: windmill-model==1.0.0.57.dev3
+Requires-Dist: windmill-compute==1.0.0.33.dev9
+Requires-Dist: windmill-endpoint==1.0.0.23.dev13
+Requires-Dist: windmill-usersetting
+Requires-Dist: windmill-device==1.0.0.17
+Requires-Dist: jobv1==0.0.2.dev8
+Requires-Dist: bce-internal-sdk
+Requires-Dist: pydantic
+Requires-Dist: pyyaml
+Requires-Dist: bcelogger
+Requires-Dist: flask
+
