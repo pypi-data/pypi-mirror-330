@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: gstly
+Version: 0.4.11
+Summary: Internal GStreamer libraries for BrainFrame
+License: Proprietary
+Author: Aotu
+Requires-Python: >=3.9,<4.0
+Classifier: License :: Other/Proprietary License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: PyGObject (>=3.34.0,<4.0.0)
+Requires-Dist: numpy (>=1.16,<2.0)
