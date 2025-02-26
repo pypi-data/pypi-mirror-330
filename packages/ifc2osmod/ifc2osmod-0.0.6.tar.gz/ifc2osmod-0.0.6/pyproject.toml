@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ifc2osmod"
+version = "0.0.6"
+authors = [
+  { name="Kian Wee CHEN", email="chenkianwee@gmail.com" },
+]
+description = 'Python-based command line tool for converting IFC files to Openstudio models'
+readme = "README.md"
+requires-python = ">=3.10,<3.13"
+classifiers = ["License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+               "Programming Language :: Python :: 3.10",
+               "Operating System :: OS Independent"]
+dependencies = ['ifc_utils==0.0.5',
+                'openstudio==3.8.0',
+                'ladybug-core==0.43.22',
+                'setuptools==75.8.0'
+                ]
+[project.optional-dependencies]
+viewer3d = ['ifc_utils[viewer3d]==0.0.5']
+
+[project.urls]
+"Homepage" = "https://github.com/chenkianwee/ifc2osmod"
+"Bug Tracker" = "https://github.com/chenkianwee/ifc2osmod/issues"
+
+[project.scripts]
+add_sch2osmod = "ifc2osmod.add_sch2osmod:main"
+calc_massless_mat = "ifc2osmod.calc_massless_mat:main"
+epsql2csv = "ifc2osmod.epsql2csv:main"
+execute_osmod = "ifc2osmod.execute_osmod:main"
+extract_osmod_opq_constr = "ifc2osmod.extract_osmod_opq_constr:main"
+extract_osmod_smpl_glz_constr = "ifc2osmod.extract_osmod_smpl_glz_constr:main"
+freecad_custom_pset = "ifc2osmod.freecad_custom_pset:main"
+idf_transition = "ifc2osmod.idf_transition:main"
+idf2osmod = "ifc2osmod.idf2osmod:main"
+ifcarch2osmod = "ifc2osmod.ifcarch2osmod:main"
+osmod2ifcarch = "ifc2osmod.osmod2ifcarch:main"
+read_ifc_envlp_mat_pset = "ifc2osmod.read_ifc_envlp_mat_pset:main"
+read_ifc_mat_pset = "ifc2osmod.read_ifc_mat_pset:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

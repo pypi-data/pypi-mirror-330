@@ -1,0 +1,7 @@
+ifc_utils==0.0.5
+openstudio==3.8.0
+ladybug-core==0.43.22
+setuptools==75.8.0
+
+[viewer3d]
+ifc_utils[viewer3d]==0.0.5
