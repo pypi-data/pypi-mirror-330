@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: pydefect-2d
+Version: 0.1.1
+Summary: Package for correcting defect formation energies and eigenvalues in two-dimensional materials
+Home-page: https://github.com/kumagai-group/pydefect_2d
+Author: Yu Kumagai
+Author-email: yukumagai@tohoku.ac.jp
+License: MIT license
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.10
+Classifier: License :: OSI Approved :: MIT License
+Requires-Dist: pydefect
+Requires-Dist: numpy
+Requires-Dist: monty
+Requires-Dist: pymatgen
+Requires-Dist: tabulate
+
+UNKNOWN
+
+
