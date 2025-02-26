@@ -1,0 +1,7 @@
+include README.md
+include LICENSE
+
+exclude test/*
+exclude experiments/*
+exclude benchmark/*
+recursive-exclude test/test_images *
