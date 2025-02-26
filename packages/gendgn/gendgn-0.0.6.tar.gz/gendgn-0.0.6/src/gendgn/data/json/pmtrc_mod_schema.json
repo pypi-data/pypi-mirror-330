@@ -1,0 +1,40 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "parametric_model_schema",
+    "description": "Schema to specify how to parametrize the IFC model",
+    "type": "object",
+    "properties": {
+      "exe_script": { "type": "string"},
+      "parameters": {
+        "type": "object",
+        "patternProperties": {
+            ".*": {
+                "type": "object",
+                "properties": {
+                    "range": {
+                        "type": "array",
+                        "items": {
+                            "type": "number"
+                        }
+                    }
+                }
+            }
+        }
+      },
+      "parameter_normalized_values": {
+        "type": "array",
+        "items": {
+            "type": "array",
+            "items": {"type": "number"}
+        }
+      },
+      "parameter_values": {
+        "type": "array",
+        "items": {
+            "type": "array",
+            "items": {"type": "number"}
+        }
+      }
+    },
+    "required": ["exe_script", "parameters"]
+}
