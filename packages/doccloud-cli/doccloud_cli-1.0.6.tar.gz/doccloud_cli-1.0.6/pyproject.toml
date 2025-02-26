@@ -1,0 +1,38 @@
+[tool.poetry]
+name = "doccloud-cli"
+version = "1.0.6"
+description = "A CLI for the DocumentCloud platform."
+authors = ["Noah Dangerfield <noah.dangerfield@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.scripts]
+doccloud-cli = "doccloud_cli.main:app"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+typer = "^0.15.1"
+python-documentcloud = "^4.4.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[project]
+name = "doccloud-cli"
+version = "1.0.6"
+authors = [
+  { name="Noah Dangerfield", email="noah.dangerfield@gmail.com" },
+]
+description = "A CLI for the DocumentCloud platform."
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "License :: OSI Approved :: MIT License",
+]
+
+[project.urls]
+Homepage = "https://github.com/leadbraw/doccloud-cli"
+Issues = "https://github.com/leadbraw/doccloud-cli/issues"
+
