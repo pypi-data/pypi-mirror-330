@@ -1,0 +1,17 @@
+requests
+fiona
+geopandas
+mapclassify
+pandas
+numpy
+scipy
+shapely
+networkx
+pillow
+matplotlib
+matplotlib-pyplot
+dataclasses
+typing
+
+[:python_version >= "3.12"]
+importlib-metadata
