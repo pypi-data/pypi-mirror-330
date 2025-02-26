@@ -1,0 +1,2 @@
+[console_scripts]
+parse_dose_instructions = dose_instruction_parser.__main__:main
