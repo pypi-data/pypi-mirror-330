@@ -1,0 +1,83 @@
+# pygridsio
+
+
+
+## Introduction
+
+This is a python submodule containing IO functionality for reading and writing .asc, .zmap and .nc grids.
+
+## Usage
+
+`from pygridsio.pygridsio import *`
+The standard grid class used throughout this project is an Xarray DataArray (see: https://xarray.dev/) with 2 dimensions: x and y.
+
+To read a grid file to this class use:
+`grid = read_grid(filename)`
+
+
+When writing out grids, you can write out grids to a netcdf raster (.nc) which can be read easily by xarray, or QGIS or ArcGIS, .asc and .zmap are also supported:
+`write_grid(grid,filename)`
+The code will discern which filetype to write out to by the file extension in filename.
+
+
+There is some plotting functionality built into pygridsio using the `pygridsio.grid_plotting` module:
+The method `pygridsio.grid_plotting.plot_grid` allows you to plot a custom Grid class, or xr.DataArray with multiple options. See the description of the method for more detail.
+The method `pygridsio.grid_plotting.plot_grid_comparison` Creates a plot comparing two grids values against eachother. See the description of the method for more detail.
+The method `pygridsio.grid_plotting.make_interactive_plot` Creates a interactive .html plot using plotly
+The method `pygridsio.grid_plotting.make_interactive_plot_with_map` Creates a interactive .html plot using plotly with a mapbox map underneath (not suitable for really large datasets)
+
+## Installation to Develop the code further
+
+### Anaconda
+#### Create/update anaconda environment
+The file `environment.yml` can be used to create a working development python environment with the needed packages.
+For this open an `Anaconda Prompt` and:
+
+`conda env create -f environment.yml`
+
+Or to update the existing anaconda environment (with an updated version of the`environment.yml`file :
+
+`conda env update -n pygridsio -f environment.yml`
+
+#### Export (updated) anaconda environment
+The `environment.yml` file needs to be updated when new packages are added:
+
+`conda env export --from-history -n pygridsio > environment.yml`
+
+#### Use anaconda environment in PyCharm
+To connect the anaconda environment to Pycharm you can go to `File` , `Settings`, `Project`, `Python Interpreter`, `add interpreter`, `add local interpreter`, `conda environment` and then select the environment you created using the above steps.
+
+### Poetry
+Poetry is becoming the new way to manage your python projects and dependencies. Install poetry here: https://python-poetry.org/docs/ 
+(note: if you can't run poetry from your terminal, ensure that the poetry.exe is in your environment variables).
+
+Then after cloning this repo to your local machine, run:
+`poetry install`
+
+Which will install a virtual environment in the gitlab repo. This can also be done using the Pycharm Python Interpreter interface.
+
+### Verify Installation
+You can verify the installation of the different python packages by running the tests stored in `tests`. 
+In pycharm: Right-click on the folder marked `tests` and click on `Run python tests in test`
+
+## publishing the project to gitlab
+To publish an updated version of the project to the pygridsio package registry I recommend using poetry.
+
+First configure the connection between poetry and the gitlab package registry:
+`poetry config repositories.gitlab_pygridsio https://YOURGITLABLOCATION/gitlab/api/v4/projects/17422/packages/pypi`
+
+Add your own personal access token details (https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html):
+`poetry publish --repository gitlab_pygridsio -u"token name" -p "token value"`
+
+Then you can build and publish the project as a new deployment in the package registry:
+`poetry build`
+`poetry publish`
+(make sure the version number you publish is unique)
+
+## How to import pygridsio into other python projects
+
+### Pip
+
+You can use pip to get the most up-to-date version of pygridsio:
+`pip install pygridsio`
+

@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "pygridsio"
+version = "0.3.10"
+description = "io utilities for reading in .asc and .zmap grids"
+authors = ["Brett <hen.brett@tno.nl>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+xarray = "^2024.9.0"
+pykrige = "^1.7.2"
+matplotlib = "^3.9.2"
+netcdf4 = "^1.7.2"
+geopandas = "^1.0.1"
+plotly = "^6.0.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
