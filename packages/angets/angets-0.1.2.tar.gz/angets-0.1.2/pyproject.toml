@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.package-data]
+angets = ["py.typed"]
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+testpaths = ["tests"]
+
+[tool.mypy]
+mypy_path = "src"
+check_untyped_defs = true
+
+[project]
+name = "angets"
+version = "0.1.2"
+authors = [
+    { name = "Ankhbold Batbaatar", email = "ankhasgreens@gmail.com" },
+]
+maintainers = [
+    { name = "Ankhbold Batbaatar", email = "ankhasgreens@gmail.com" },
+]
+description = "Angets (Ankha's Gets): Functions for user input."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+keywords = ["Ankha's Greens", "user input", "gets"]
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Build Tools",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Operating System :: OS Independent",
+    "Framework :: tox",
+    "Typing :: Typed",
+]
+
+[project.urls]
+Homepage = "https://github.com/FirstlyBoldly/Angets"
+Issues = "https://github.com/FirstlyBoldly/Angets/issues"
