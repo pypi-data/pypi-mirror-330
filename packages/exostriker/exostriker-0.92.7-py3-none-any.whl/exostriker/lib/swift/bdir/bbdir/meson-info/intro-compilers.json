@@ -1,0 +1,84 @@
+{
+  "host": {
+    "fortran": {
+      "id": "gcc",
+      "exelist": [
+        "gfortran"
+      ],
+      "linker_exelist": [
+        "gfortran"
+      ],
+      "file_suffixes": [
+        "f90",
+        "f95",
+        "f03",
+        "f08",
+        "f",
+        "for",
+        "ftn",
+        "fpp"
+      ],
+      "default_suffix": "f90",
+      "version": "13.3.0",
+      "full_version": "GNU Fortran (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0",
+      "linker_id": "ld.bfd"
+    },
+    "c": {
+      "id": "gcc",
+      "exelist": [
+        "cc"
+      ],
+      "linker_exelist": [
+        "cc"
+      ],
+      "file_suffixes": [
+        "c"
+      ],
+      "default_suffix": "c",
+      "version": "13.3.0",
+      "full_version": "cc (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0",
+      "linker_id": "ld.bfd"
+    }
+  },
+  "build": {
+    "fortran": {
+      "id": "gcc",
+      "exelist": [
+        "gfortran"
+      ],
+      "linker_exelist": [
+        "gfortran"
+      ],
+      "file_suffixes": [
+        "f90",
+        "f95",
+        "f03",
+        "f08",
+        "f",
+        "for",
+        "ftn",
+        "fpp"
+      ],
+      "default_suffix": "f90",
+      "version": "13.3.0",
+      "full_version": "GNU Fortran (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0",
+      "linker_id": "ld.bfd"
+    },
+    "c": {
+      "id": "gcc",
+      "exelist": [
+        "cc"
+      ],
+      "linker_exelist": [
+        "cc"
+      ],
+      "file_suffixes": [
+        "c"
+      ],
+      "default_suffix": "c",
+      "version": "13.3.0",
+      "full_version": "cc (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0",
+      "linker_id": "ld.bfd"
+    }
+  }
+}
