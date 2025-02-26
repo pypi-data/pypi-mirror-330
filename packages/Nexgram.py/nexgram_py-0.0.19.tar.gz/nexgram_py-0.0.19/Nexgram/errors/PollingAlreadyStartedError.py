@@ -1,0 +1,2 @@
+class PollingAlreadyStartedError(Exception):
+  pass
