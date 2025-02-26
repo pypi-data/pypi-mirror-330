@@ -1,0 +1,53 @@
+[project]
+name = "rye-easy"
+version = "0.1.21"
+description = "Rye Easy is a tool to help you manage your Python projects with Rye."
+authors = [
+    { name = "David Cho", email = "csi00700@gmail.com" }
+]
+dependencies = [
+    "pip>=25.0.1",
+]
+readme = "README.md"
+requires-python = ">= 3.8"
+
+[build-system]
+requires = ["hatchling==1.26.3"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = [
+    "autopep8>=2.3.2",
+    "autoflake>=2.3.1",
+    "isort>=6.0.0",
+    "black>=25.1.0",
+    "ruff>=0.9.7",
+]
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[project.scripts]
+rye_easy = "rye_easy:main"
+
+[tool.hatch.build]
+artifacts = [
+    "src/rye_easy/**/*.py",
+    "src/rye_easy/**/*.pyc"
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/rye_easy"]
+
+[tool.hatch.build.targets.sdist]
+exclude = ["tests*"]
+include = [
+    "src/rye_easy",
+    "pyproject.toml",
+    "README.md"
+]
+
+[project.urls]
+Homepage = "https://github.com/davidcho80/rye-easy"
+Repository = "https://github.com/davidcho80/rye-easy"
