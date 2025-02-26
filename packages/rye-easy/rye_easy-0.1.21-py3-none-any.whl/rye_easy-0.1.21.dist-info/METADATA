@@ -1,0 +1,20 @@
+Metadata-Version: 2.3
+Name: rye-easy
+Version: 0.1.21
+Summary: Rye Easy is a tool to help you manage your Python projects with Rye.
+Project-URL: Homepage, https://github.com/davidcho80/rye-easy
+Project-URL: Repository, https://github.com/davidcho80/rye-easy
+Author-email: David Cho <csi00700@gmail.com>
+Requires-Python: >=3.8
+Requires-Dist: pip>=25.0.1
+Description-Content-Type: text/markdown
+
+# rye-easy
+
+Rye Easy is a tool to help you manage your Python projects with Rye.
+
+## Installation
+
+```bash
+pip install rye-easy
+```
