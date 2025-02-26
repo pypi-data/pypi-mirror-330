@@ -1,0 +1,69 @@
+Metadata-Version: 2.2
+Name: coolprop-oop
+Version: 0.1.0
+Summary: Object-oriented wrapper for CoolProp thermodynamic properties
+Home-page: https://github.com/ryancoxrbc/coolprop_oop
+Author: Ryan Cox
+Author-email: your.email@example.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Scientific/Engineering :: Physics
+Classifier: Topic :: Scientific/Engineering :: Chemistry
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: CoolProp>=6.4.1
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# CoolProp-OOP
+
+An object-oriented wrapper for CoolProp thermodynamic properties.
+
+## Installation
+
+```bash
+pip install coolprop-oop
+```
+
+## Usage
+
+### Humid Air Properties
+
+```python
+from coolprop_oop import StateHA
+
+# Create a state for humid air
+state = StateHA(['P', 101325, 'T', 293.15, 'R', 0.5])
+
+# Access properties
+print(f"Temperature: {state.tempc}°C")
+print(f"Relative Humidity: {state.relhum * 100}%")
+print(f"Humidity Ratio: {state.humrat} kg/kg")
+```
+
+### Pure Fluid Properties
+
+```python
+from coolprop_oop import StatePROPS
+
+# Create a state for water
+state = StatePROPS(['P', 101325, 'T', 373.15, 'water'])
+
+# Access properties
+print(f"Temperature: {state.tempc}°C")
+print(f"Pressure: {state.press} Pa")
+print(f"Density: {state.dens} kg/m³")
+```
+
+## License
+
+MIT 
