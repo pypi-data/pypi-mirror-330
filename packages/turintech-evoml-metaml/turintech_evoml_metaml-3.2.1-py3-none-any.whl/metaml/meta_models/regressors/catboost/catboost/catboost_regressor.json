@@ -1,0 +1,181 @@
+{
+    "dependencies": [
+        "catboost"
+    ],
+    "constraintParameters": [
+        [
+            [
+                {
+                    "parameterName": "boost_from_average",
+                    "parameterType": "list",
+                    "minValue": null,
+                    "maxValue": null,
+                    "values": [
+                        "True"
+                    ]
+                },
+                {
+                    "parameterName": "model_shrink_rate",
+                    "parameterType": "list",
+                    "minValue": null,
+                    "maxValue": null,
+                    "values": [
+                        "None"
+                    ]
+                }
+            ],
+            [
+                {
+                    "parameterName": "boost_from_average",
+                    "parameterType": "list",
+                    "minValue": null,
+                    "maxValue": null,
+                    "values": [
+                        "False"
+                    ]
+                },
+                {
+                    "parameterName": "model_shrink_rate",
+                    "parameterType": "list",
+                    "minValue": 0.0,
+                    "maxValue": 0.999,
+                    "values": [
+                        "None"
+                    ]
+                }
+            ]
+        ],
+        [
+            [
+                {
+                    "parameterName": "boosting_type",
+                    "parameterType": "list",
+                    "minValue": null,
+                    "maxValue": null,
+                    "values": [
+                        "Plain"
+                    ]
+                },
+                {
+                    "parameterName": "approx_on_full_history",
+                    "parameterType": "list",
+                    "minValue": null,
+                    "maxValue": null,
+                    "values": [
+                        "False"
+                    ]
+                }
+            ],
+            [
+                {
+                    "parameterName": "boosting_type",
+                    "parameterType": "list",
+                    "minValue": null,
+                    "maxValue": null,
+                    "values": [
+                        "Ordered"
+                    ]
+                },
+                {
+                    "parameterName": "approx_on_full_history",
+                    "parameterType": "list",
+                    "minValue": null,
+                    "maxValue": null,
+                    "values": [
+                        "True",
+                        "False"
+                    ]
+                }
+            ]
+        ],
+        [
+            [
+                {
+                    "parameterName": "bootstrap_type",
+                    "parameterType": "list",
+                    "minValue": null,
+                    "maxValue": null,
+                    "values": [
+                        "Bayesian"
+                    ]
+                },
+                {
+                    "parameterName": "bagging_temperature",
+                    "parameterType": "list",
+                    "minValue": null,
+                    "maxValue": null,
+                    "values": [
+                        "None"
+                    ]
+                },
+                {
+                    "parameterName": "subsample",
+                    "parameterType": "list",
+                    "minValue": null,
+                    "maxValue": null,
+                    "values": [
+                        "None"
+                    ]
+                }
+            ],
+            [
+                {
+                    "parameterName": "bootstrap_type",
+                    "parameterType": "list",
+                    "minValue": null,
+                    "maxValue": null,
+                    "values": [
+                        "Bernoulli"
+                    ]
+                },
+                {
+                    "parameterName": "bagging_temperature",
+                    "parameterType": "list",
+                    "minValue": null,
+                    "maxValue": null,
+                    "values": [
+                        "None"
+                    ]
+                },
+                {
+                    "parameterName": "subsample",
+                    "parameterType": "list",
+                    "minValue": 0.4,
+                    "maxValue": 1.0,
+                    "values": [
+                        "None"
+                    ]
+                }
+            ],
+            [
+                {
+                    "parameterName": "bootstrap_type",
+                    "parameterType": "list",
+                    "minValue": null,
+                    "maxValue": null,
+                    "values": [
+                        "MVS"
+                    ]
+                },
+                {
+                    "parameterName": "bagging_temperature",
+                    "parameterType": "list",
+                    "minValue": 0.0,
+                    "maxValue": 1.0,
+                    "values": [
+                        "None"
+                    ]
+                },
+                {
+                    "parameterName": "subsample",
+                    "parameterType": "list",
+                    "minValue": 0.4,
+                    "maxValue": 1.0,
+                    "values": [
+                        "None"
+                    ]
+                }
+            ]
+        ]
+    ]
+}

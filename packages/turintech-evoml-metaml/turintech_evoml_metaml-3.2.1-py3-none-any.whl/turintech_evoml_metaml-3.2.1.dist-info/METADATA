@@ -1,0 +1,283 @@
+Metadata-Version: 2.2
+Name: turintech-evoml-metaml
+Version: 3.2.1
+Summary: Set of meta machine learning models by unifying the interface of different machine learning libraries based on the Scikit-learn API protocol
+Home-page: https://turintech.ai
+Author: Turing Intelligence Technology
+Author-email: contact@turintech.ai
+License: TURING INTELLIGENCE TECHNOLOGY LIMITED END-USER LICENCE
+Keywords: machine learning
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Python: >=3.9, <4
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: cython<=3.0.10; python_version >= "3.11"
+Requires-Dist: ruamel.yaml>=0.16.0
+Requires-Dist: scikit-learn<1.6.0,>=1.5.0
+Requires-Dist: numpy<3.0.0,>=1.22.4
+Requires-Dist: Cython>=0.28.0
+Requires-Dist: sklearn-contrib-lightning<1.0.0,>=0.6.1
+Requires-Dist: pandas<2.0,>=1.3.1
+Requires-Dist: pydantic<2.0.0,>=1.9.1
+Requires-Dist: optuna<=3.5.0
+Requires-Dist: portion<2.5.0,>=2.4.0
+Requires-Dist: networkx<3.4.0,>=3.1.0
+Requires-Dist: frozendict<3.0.0,>=2.3.8
+Provides-Extra: catboost-classifier
+Requires-Dist: catboost<2.0.0,>=1.2.2; extra == "catboost-classifier"
+Provides-Extra: nlp-sequence-classifier
+Requires-Dist: transformers<5.0.0,>=4.20.0; extra == "nlp-sequence-classifier"
+Requires-Dist: datasets<3.0.0,>=2.17.0; extra == "nlp-sequence-classifier"
+Requires-Dist: accelerate<0.33.0,>=0.18.0; extra == "nlp-sequence-classifier"
+Provides-Extra: intelex-logistic-regression-classifier
+Requires-Dist: scikit-learn<1.6.0,>=1.5.0; extra == "intelex-logistic-regression-classifier"
+Requires-Dist: scikit-learn-intelex<=2024.5.0; extra == "intelex-logistic-regression-classifier"
+Provides-Extra: intelex-random-forest-classifier
+Requires-Dist: scikit-learn<1.6.0,>=1.5.0; extra == "intelex-random-forest-classifier"
+Requires-Dist: scikit-learn-intelex<=2024.5.0; extra == "intelex-random-forest-classifier"
+Provides-Extra: intelex-svm-classifier
+Requires-Dist: scikit-learn<1.6.0,>=1.5.0; extra == "intelex-svm-classifier"
+Requires-Dist: scikit-learn-intelex<=2024.5.0; extra == "intelex-svm-classifier"
+Provides-Extra: lightgbm-classifier
+Requires-Dist: lightgbm<4.0.0,>=3.3.2; extra == "lightgbm-classifier"
+Provides-Extra: adagrad-classifier
+Requires-Dist: sklearn-contrib-lightning<1.0.0,>=0.6.1; extra == "adagrad-classifier"
+Provides-Extra: cd-classifier
+Requires-Dist: sklearn-contrib-lightning<1.0.0,>=0.6.1; extra == "cd-classifier"
+Provides-Extra: fista-classifier
+Requires-Dist: sklearn-contrib-lightning<1.0.0,>=0.6.1; extra == "fista-classifier"
+Provides-Extra: saga-classifier
+Requires-Dist: sklearn-contrib-lightning<1.0.0,>=0.6.1; extra == "saga-classifier"
+Provides-Extra: sdca-classifier
+Requires-Dist: sklearn-contrib-lightning<1.0.0,>=0.6.1; extra == "sdca-classifier"
+Provides-Extra: svrg-classifier
+Requires-Dist: sklearn-contrib-lightning<1.0.0,>=0.6.1; extra == "svrg-classifier"
+Provides-Extra: decision-tree-classifier
+Requires-Dist: scikit-learn<1.6.0,>=1.5.0; extra == "decision-tree-classifier"
+Provides-Extra: extra-trees-classifier
+Requires-Dist: scikit-learn<1.6.0,>=1.5.0; extra == "extra-trees-classifier"
+Provides-Extra: gaussian-naivebayes-classifier
+Requires-Dist: scikit-learn<1.6.0,>=1.5.0; extra == "gaussian-naivebayes-classifier"
+Provides-Extra: gaussian-process-classifier
+Requires-Dist: scikit-learn<1.6.0,>=1.5.0; extra == "gaussian-process-classifier"
+Provides-Extra: gradient-boosting-classifier
+Requires-Dist: scikit-learn<1.6.0,>=1.5.0; extra == "gradient-boosting-classifier"
+Provides-Extra: hist-gradient-boosting-classifier
+Requires-Dist: scikit-learn<1.6.0,>=1.5.0; extra == "hist-gradient-boosting-classifier"
+Provides-Extra: linear-discriminant-analysis-classifier
+Requires-Dist: scikit-learn<1.6.0,>=1.5.0; extra == "linear-discriminant-analysis-classifier"
+Provides-Extra: linearsvc-classifier
+Requires-Dist: scikit-learn<1.6.0,>=1.5.0; extra == "linearsvc-classifier"
+Provides-Extra: logistic-regression-classifier
+Requires-Dist: scikit-learn<1.6.0,>=1.5.0; extra == "logistic-regression-classifier"
+Provides-Extra: nearest-centroid-classifier
+Requires-Dist: scikit-learn<1.6.0,>=1.5.0; extra == "nearest-centroid-classifier"
+Provides-Extra: passive-aggressive-classifier
+Requires-Dist: scikit-learn<1.6.0,>=1.5.0; extra == "passive-aggressive-classifier"
+Provides-Extra: perceptron-classifier
+Requires-Dist: scikit-learn<1.6.0,>=1.5.0; extra == "perceptron-classifier"
+Provides-Extra: prior-dummy-classifier
+Requires-Dist: scikit-learn<1.6.0,>=1.5.0; extra == "prior-dummy-classifier"
+Provides-Extra: quadratic-discriminant-analysis-classifier
+Requires-Dist: scikit-learn<1.6.0,>=1.5.0; extra == "quadratic-discriminant-analysis-classifier"
+Provides-Extra: random-forest-classifier
+Requires-Dist: scikit-learn<1.6.0,>=1.5.0; extra == "random-forest-classifier"
+Provides-Extra: sgd-classifier
+Requires-Dist: scikit-learn<1.6.0,>=1.5.0; extra == "sgd-classifier"
+Provides-Extra: stratified-dummy-classifier
+Requires-Dist: scikit-learn<1.6.0,>=1.5.0; extra == "stratified-dummy-classifier"
+Provides-Extra: svm-classifier
+Requires-Dist: scikit-learn<1.6.0,>=1.5.0; extra == "svm-classifier"
+Provides-Extra: uniform-dummy-classifier
+Requires-Dist: scikit-learn<1.6.0,>=1.5.0; extra == "uniform-dummy-classifier"
+Provides-Extra: base-reduction-stacking-classifier
+Requires-Dist: scikit-learn<1.6.0,>=1.5.0; extra == "base-reduction-stacking-classifier"
+Requires-Dist: mrmr-selection>=0.2.6; extra == "base-reduction-stacking-classifier"
+Requires-Dist: polars>=0.18.0; extra == "base-reduction-stacking-classifier"
+Provides-Extra: feature-reduction-stacking-classifier
+Requires-Dist: scikit-learn<1.6.0,>=1.5.0; extra == "feature-reduction-stacking-classifier"
+Requires-Dist: mrmr-selection>=0.2.6; extra == "feature-reduction-stacking-classifier"
+Requires-Dist: polars>=0.18.0; extra == "feature-reduction-stacking-classifier"
+Provides-Extra: stacking-classifier
+Requires-Dist: scikit-learn<1.6.0,>=1.5.0; extra == "stacking-classifier"
+Provides-Extra: xgboost-classifier
+Requires-Dist: xgboost<=2.0.3,>=2.0.0; extra == "xgboost-classifier"
+Provides-Extra: linear-regression-forecaster
+Requires-Dist: darts<1.0.0; extra == "linear-regression-forecaster"
+Requires-Dist: scikit-learn<1.6.0,>=1.5.0; extra == "linear-regression-forecaster"
+Provides-Extra: nbeats-forecaster
+Requires-Dist: darts<1.0.0; extra == "nbeats-forecaster"
+Requires-Dist: tensorboardx<=2.6.2.2; extra == "nbeats-forecaster"
+Requires-Dist: holidays<=0.53; extra == "nbeats-forecaster"
+Provides-Extra: nixtla-arima-forecaster
+Requires-Dist: statsforecast<2.0.0,>=1.5.0; extra == "nixtla-arima-forecaster"
+Provides-Extra: nixtla-auto-arima-forecaster
+Requires-Dist: statsforecast<2.0.0,>=1.5.0; extra == "nixtla-auto-arima-forecaster"
+Provides-Extra: nixtla-auto-ces-forecaster
+Requires-Dist: statsforecast<2.0.0,>=1.5.0; extra == "nixtla-auto-ces-forecaster"
+Provides-Extra: nixtla-auto-ets-forecaster
+Requires-Dist: statsforecast<2.0.0,>=1.5.0; extra == "nixtla-auto-ets-forecaster"
+Provides-Extra: nixtla-auto-theta-forecaster
+Requires-Dist: statsforecast<2.0.0,>=1.5.0; extra == "nixtla-auto-theta-forecaster"
+Provides-Extra: nixtla-garch-forecaster
+Requires-Dist: statsforecast<2.0.0,>=1.5.0; extra == "nixtla-garch-forecaster"
+Provides-Extra: nixtla-historic-average-forecaster
+Requires-Dist: statsforecast<2.0.0,>=1.5.0; extra == "nixtla-historic-average-forecaster"
+Provides-Extra: nixtla-random-walk-with-drift-forecaster
+Requires-Dist: statsforecast<2.0.0,>=1.5.0; extra == "nixtla-random-walk-with-drift-forecaster"
+Provides-Extra: nixtla-seasonal-naive-forecaster
+Requires-Dist: statsforecast<2.0.0,>=1.5.0; extra == "nixtla-seasonal-naive-forecaster"
+Provides-Extra: nixtla-seasonal-window-average-forecaster
+Requires-Dist: statsforecast<2.0.0,>=1.5.0; extra == "nixtla-seasonal-window-average-forecaster"
+Provides-Extra: arima-forecaster
+Requires-Dist: sktime<=0.32.0,>0.24.0; extra == "arima-forecaster"
+Requires-Dist: pmdarima<2.1.0,>=1.8; python_version < "3.11" and extra == "arima-forecaster"
+Requires-Dist: pmdarima<2.1.0,>=2.0.2; python_version >= "3.11" and extra == "arima-forecaster"
+Provides-Extra: auto-arima-forecaster
+Requires-Dist: sktime<=0.32.0,>0.24.0; extra == "auto-arima-forecaster"
+Requires-Dist: pmdarima<2.1.0,>=1.8; python_version < "3.11" and extra == "auto-arima-forecaster"
+Requires-Dist: pmdarima<2.1.0,>=2.0.2; python_version >= "3.11" and extra == "auto-arima-forecaster"
+Provides-Extra: auto-ets-forecaster
+Requires-Dist: sktime<=0.32.0,>0.24.0; extra == "auto-ets-forecaster"
+Provides-Extra: naive-drift-forecaster
+Requires-Dist: sktime<=0.32.0,>0.24.0; extra == "naive-drift-forecaster"
+Provides-Extra: naive-last-forecaster
+Requires-Dist: sktime<=0.32.0,>0.24.0; extra == "naive-last-forecaster"
+Provides-Extra: naive-mean-forecaster
+Requires-Dist: sktime<=0.32.0,>0.24.0; extra == "naive-mean-forecaster"
+Provides-Extra: catboost-regressor
+Requires-Dist: catboost<2.0.0,>=1.2.2; extra == "catboost-regressor"
+Provides-Extra: nlp-sequence-regressor
+Requires-Dist: transformers<5.0.0,>=4.20.0; extra == "nlp-sequence-regressor"
+Requires-Dist: datasets<3.0.0,>=2.17.0; extra == "nlp-sequence-regressor"
+Provides-Extra: intelex-elastic-net-regressor
+Requires-Dist: scikit-learn<1.6.0,>=1.5.0; extra == "intelex-elastic-net-regressor"
+Requires-Dist: scikit-learn-intelex<=2024.5.0; extra == "intelex-elastic-net-regressor"
+Provides-Extra: intelex-linear-regressor
+Requires-Dist: scikit-learn<1.6.0,>=1.5.0; extra == "intelex-linear-regressor"
+Requires-Dist: scikit-learn-intelex<=2024.5.0; extra == "intelex-linear-regressor"
+Provides-Extra: intelex-random-forest-regressor
+Requires-Dist: scikit-learn<1.6.0,>=1.5.0; extra == "intelex-random-forest-regressor"
+Requires-Dist: scikit-learn-intelex<=2024.5.0; extra == "intelex-random-forest-regressor"
+Provides-Extra: intelex-svr-regressor
+Requires-Dist: scikit-learn<1.6.0,>=1.5.0; extra == "intelex-svr-regressor"
+Requires-Dist: scikit-learn-intelex<=2024.5.0; extra == "intelex-svr-regressor"
+Provides-Extra: lightgbm-regressor
+Requires-Dist: lightgbm<4.0.0,>=3.3.2; extra == "lightgbm-regressor"
+Provides-Extra: cd-regressor
+Requires-Dist: sklearn-contrib-lightning<1.0.0,>=0.6.1; extra == "cd-regressor"
+Provides-Extra: fista-regressor
+Requires-Dist: sklearn-contrib-lightning<1.0.0,>=0.6.1; extra == "fista-regressor"
+Provides-Extra: ard-regressor
+Requires-Dist: scikit-learn<1.6.0,>=1.5.0; extra == "ard-regressor"
+Provides-Extra: bayesian-ridge-regressor
+Requires-Dist: scikit-learn<1.6.0,>=1.5.0; extra == "bayesian-ridge-regressor"
+Provides-Extra: decision-tree-regressor
+Requires-Dist: scikit-learn<1.6.0,>=1.5.0; extra == "decision-tree-regressor"
+Provides-Extra: elastic-net-regressor
+Requires-Dist: scikit-learn<1.6.0,>=1.5.0; extra == "elastic-net-regressor"
+Provides-Extra: gradient-boosting-regressor
+Requires-Dist: scikit-learn<1.6.0,>=1.5.0; extra == "gradient-boosting-regressor"
+Provides-Extra: hist-gradient-boosting-regressor
+Requires-Dist: scikit-learn<1.6.0,>=1.5.0; extra == "hist-gradient-boosting-regressor"
+Provides-Extra: huber-regressor
+Requires-Dist: scikit-learn<1.6.0,>=1.5.0; extra == "huber-regressor"
+Provides-Extra: lasso-regressor
+Requires-Dist: scikit-learn<1.6.0,>=1.5.0; extra == "lasso-regressor"
+Provides-Extra: linear-regressor
+Requires-Dist: scikit-learn<1.6.0,>=1.5.0; extra == "linear-regressor"
+Provides-Extra: linearsvr-regressor
+Requires-Dist: scikit-learn<1.6.0,>=1.5.0; extra == "linearsvr-regressor"
+Provides-Extra: mean-dummy-regressor
+Requires-Dist: scikit-learn<1.6.0,>=1.5.0; extra == "mean-dummy-regressor"
+Provides-Extra: median-dummy-regressor
+Requires-Dist: scikit-learn<1.6.0,>=1.5.0; extra == "median-dummy-regressor"
+Provides-Extra: passive-aggressive-regressor
+Requires-Dist: scikit-learn<1.6.0,>=1.5.0; extra == "passive-aggressive-regressor"
+Provides-Extra: random-forest-regressor
+Requires-Dist: scikit-learn<1.6.0,>=1.5.0; extra == "random-forest-regressor"
+Provides-Extra: ridge-regressor
+Requires-Dist: scikit-learn<1.6.0,>=1.5.0; extra == "ridge-regressor"
+Provides-Extra: sgd-regressor
+Requires-Dist: scikit-learn<1.6.0,>=1.5.0; extra == "sgd-regressor"
+Provides-Extra: svr-regressor
+Requires-Dist: scikit-learn<1.6.0,>=1.5.0; extra == "svr-regressor"
+Provides-Extra: base-reduction-stacking-regressor
+Requires-Dist: scikit-learn<1.6.0,>=1.5.0; extra == "base-reduction-stacking-regressor"
+Requires-Dist: mrmr-selection>=0.2.6; extra == "base-reduction-stacking-regressor"
+Requires-Dist: polars>=0.18.0; extra == "base-reduction-stacking-regressor"
+Provides-Extra: feature-reduction-stacking-regressor
+Requires-Dist: scikit-learn<1.6.0,>=1.5.0; extra == "feature-reduction-stacking-regressor"
+Requires-Dist: mrmr-selection>=0.2.6; extra == "feature-reduction-stacking-regressor"
+Requires-Dist: polars>=0.18.0; extra == "feature-reduction-stacking-regressor"
+Provides-Extra: stacking-regressor
+Requires-Dist: scikit-learn<1.6.0,>=1.5.0; extra == "stacking-regressor"
+Provides-Extra: xgboost-regressor
+Requires-Dist: xgboost<=2.0.3,>=2.0.0; extra == "xgboost-regressor"
+Provides-Extra: all
+Requires-Dist: cython<=3.0.10; python_version >= "3.11" and extra == "all"
+Requires-Dist: ruamel.yaml>=0.16.0; extra == "all"
+Requires-Dist: scikit-learn<1.6.0,>=1.5.0; extra == "all"
+Requires-Dist: numpy<3.0.0,>=1.22.4; extra == "all"
+Requires-Dist: Cython>=0.28.0; extra == "all"
+Requires-Dist: sklearn-contrib-lightning<1.0.0,>=0.6.1; extra == "all"
+Requires-Dist: pandas<2.0,>=1.3.1; extra == "all"
+Requires-Dist: pydantic<2.0.0,>=1.9.1; extra == "all"
+Requires-Dist: optuna<=3.5.0; extra == "all"
+Requires-Dist: portion<2.5.0,>=2.4.0; extra == "all"
+Requires-Dist: networkx<3.4.0,>=3.1.0; extra == "all"
+Requires-Dist: frozendict<3.0.0,>=2.3.8; extra == "all"
+Requires-Dist: catboost<2.0.0,>=1.2.2; extra == "all"
+Requires-Dist: datasets<3.0.0,>=2.17.0; extra == "all"
+Requires-Dist: lightgbm<4.0.0,>=3.3.2; extra == "all"
+Requires-Dist: mrmr-selection>=0.2.6; extra == "all"
+Requires-Dist: polars>=0.18.0; extra == "all"
+Requires-Dist: pmdarima<2.1.0,>=1.8; python_version < "3.11" and extra == "all"
+Requires-Dist: pmdarima<2.1.0,>=2.0.2; python_version >= "3.11" and extra == "all"
+Requires-Dist: sktime<=0.32.0,>0.24.0; extra == "all"
+Requires-Dist: torch<3.0.0,>=1.3.1; extra == "all"
+Requires-Dist: transformers<5.0.0,>=4.20.0; extra == "all"
+Requires-Dist: umap-learn<1.0.0,>=0.5.3; extra == "all"
+Requires-Dist: xgboost<=2.0.3,>=2.0.0; extra == "all"
+Requires-Dist: darts<1.0.0; extra == "all"
+Requires-Dist: tensorboardx<=2.6.2.2; extra == "all"
+Requires-Dist: accelerate<0.33.0,>=0.18.0; extra == "all"
+Requires-Dist: holidays<=0.53; extra == "all"
+Requires-Dist: scikit-learn-intelex<=2024.5.0; extra == "all"
+Requires-Dist: statsforecast<2.0.0,>=1.5.0; extra == "all"
+Requires-Dist: cython<=3.0.10; python_version >= "3.11" and extra == "all"
+Requires-Dist: ruamel.yaml>=0.16.0; extra == "all"
+Requires-Dist: scikit-learn<1.6.0,>=1.5.0; extra == "all"
+Requires-Dist: numpy<3.0.0,>=1.22.4; extra == "all"
+Requires-Dist: Cython>=0.28.0; extra == "all"
+Requires-Dist: sklearn-contrib-lightning<1.0.0,>=0.6.1; extra == "all"
+Requires-Dist: pandas<2.0,>=1.3.1; extra == "all"
+Requires-Dist: pydantic<2.0.0,>=1.9.1; extra == "all"
+Requires-Dist: optuna<=3.5.0; extra == "all"
+Requires-Dist: portion<2.5.0,>=2.4.0; extra == "all"
+Requires-Dist: networkx<3.4.0,>=3.1.0; extra == "all"
+Requires-Dist: frozendict<3.0.0,>=2.3.8; extra == "all"
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: license
+Dynamic: provides-extra
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+Meta Machine Learning (MetaML) is a Python-based machine learning library built on top of various libraries such as:
+scikit-learn, fastai, lightGBM, lightning, catboost and others that will be added in the future. This project provides a
+set of meta machine learning models by unifying the interface of different machine learning libraries based on the
+Scikit-learn API protocol. The user does not need to know how to install and import those machine learning libraries, and
+does not need to change the code if they switch the library. Every model is unified into one single efficient API.
+
+Moreover, MetaML provides the verified and efficient machine learning hyper-parameters settings. This can help users
+better understand the model parameters and better tune the hyper-parameters.

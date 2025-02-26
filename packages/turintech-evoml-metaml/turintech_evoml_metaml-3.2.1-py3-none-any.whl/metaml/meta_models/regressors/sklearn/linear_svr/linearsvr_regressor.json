@@ -1,0 +1,50 @@
+{
+    "dependencies": [
+        "scikit-learn"
+    ],
+    "constraintParameters": [
+        [
+            [
+                {
+                    "parameterName": "dual",
+                    "parameterType": "list",
+                    "minValue": null,
+                    "maxValue": null,
+                    "values": [
+                        "False"
+                    ]
+                },
+                {
+                    "parameterName": "loss",
+                    "parameterType": "list",
+                    "minValue": null,
+                    "maxValue": null,
+                    "values": [
+                        "squared_epsilon_insensitive"
+                    ]
+                }
+            ],
+            [
+                {
+                    "parameterName": "dual",
+                    "parameterType": "list",
+                    "minValue": null,
+                    "maxValue": null,
+                    "values": [
+                        "True"
+                    ]
+                },
+                {
+                    "parameterName": "loss",
+                    "parameterType": "list",
+                    "minValue": null,
+                    "maxValue": null,
+                    "values": [
+                        "epsilon_insensitive",
+                        "squared_epsilon_insensitive"
+                    ]
+                }
+            ]
+        ]
+    ]
+}

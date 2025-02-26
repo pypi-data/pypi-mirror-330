@@ -1,0 +1,302 @@
+{
+    "dependencies": [
+        "scikit-learn"
+    ],
+    "constraintParameters": [
+        [
+            [
+                {
+                    "parameterName": "dual",
+                    "parameterType": "list",
+                    "minValue": null,
+                    "maxValue": null,
+                    "values": [
+                        "True"
+                    ]
+                },
+                {
+                    "parameterName": "penalty",
+                    "parameterType": "list",
+                    "minValue": null,
+                    "maxValue": null,
+                    "values": [
+                        "l2"
+                    ]
+                },
+                {
+                    "parameterName": "solver",
+                    "parameterType": "list",
+                    "minValue": null,
+                    "maxValue": null,
+                    "values": [
+                        "liblinear"
+                    ]
+                },
+                {
+                    "parameterName": "multi_class",
+                    "parameterType": "list",
+                    "minValue": null,
+                    "maxValue": null,
+                    "values": [
+                        "ovr",
+                        "auto"
+                    ]
+                },
+                {
+                    "parameterName": "l1_ratio",
+                    "parameterType": "list",
+                    "minValue": 0.0,
+                    "maxValue": 1.0,
+                    "values": [
+                        "None"
+                    ]
+                }
+            ],
+            [
+                {
+                    "parameterName": "dual",
+                    "parameterType": "list",
+                    "minValue": null,
+                    "maxValue": null,
+                    "values": [
+                        "False"
+                    ]
+                },
+                {
+                    "parameterName": "penalty",
+                    "parameterType": "list",
+                    "minValue": null,
+                    "maxValue": null,
+                    "values": [
+                        "l1"
+                    ]
+                },
+                {
+                    "parameterName": "solver",
+                    "parameterType": "list",
+                    "minValue": null,
+                    "maxValue": null,
+                    "values": [
+                        "saga"
+                    ]
+                },
+                {
+                    "parameterName": "multi_class",
+                    "parameterType": "list",
+                    "minValue": null,
+                    "maxValue": null,
+                    "values": [
+                        "ovr",
+                        "auto",
+                        "multinomial"
+                    ]
+                },
+                {
+                    "parameterName": "l1_ratio",
+                    "parameterType": "list",
+                    "minValue": 0.0,
+                    "maxValue": 1.0,
+                    "values": [
+                        "None"
+                    ]
+                }
+            ],
+            [
+                {
+                    "parameterName": "dual",
+                    "parameterType": "list",
+                    "minValue": null,
+                    "maxValue": null,
+                    "values": [
+                        "False"
+                    ]
+                },
+                {
+                    "parameterName": "penalty",
+                    "parameterType": "list",
+                    "minValue": null,
+                    "maxValue": null,
+                    "values": [
+                        "l1"
+                    ]
+                },
+                {
+                    "parameterName": "solver",
+                    "parameterType": "list",
+                    "minValue": null,
+                    "maxValue": null,
+                    "values": [
+                        "liblinear"
+                    ]
+                },
+                {
+                    "parameterName": "multi_class",
+                    "parameterType": "list",
+                    "minValue": null,
+                    "maxValue": null,
+                    "values": [
+                        "ovr",
+                        "auto"
+                    ]
+                },
+                {
+                    "parameterName": "l1_ratio",
+                    "parameterType": "list",
+                    "minValue": 0.0,
+                    "maxValue": 1.0,
+                    "values": [
+                        "None"
+                    ]
+                }
+            ],
+            [
+                {
+                    "parameterName": "dual",
+                    "parameterType": "list",
+                    "minValue": null,
+                    "maxValue": null,
+                    "values": [
+                        "False"
+                    ]
+                },
+                {
+                    "parameterName": "penalty",
+                    "parameterType": "list",
+                    "minValue": null,
+                    "maxValue": null,
+                    "values": [
+                        "elasticnet"
+                    ]
+                },
+                {
+                    "parameterName": "solver",
+                    "parameterType": "list",
+                    "minValue": null,
+                    "maxValue": null,
+                    "values": [
+                        "saga"
+                    ]
+                },
+                {
+                    "parameterName": "multi_class",
+                    "parameterType": "list",
+                    "minValue": null,
+                    "maxValue": null,
+                    "values": [
+                        "ovr",
+                        "auto",
+                        "multinomial"
+                    ]
+                },
+                {
+                    "parameterName": "l1_ratio",
+                    "parameterType": "list",
+                    "minValue": 0.0,
+                    "maxValue": 1.0,
+                    "values": []
+                }
+            ],
+            [
+                {
+                    "parameterName": "dual",
+                    "parameterType": "list",
+                    "minValue": null,
+                    "maxValue": null,
+                    "values": [
+                        "False"
+                    ]
+                },
+                {
+                    "parameterName": "penalty",
+                    "parameterType": "list",
+                    "minValue": null,
+                    "maxValue": null,
+                    "values": [
+                        "l2"
+                    ]
+                },
+                {
+                    "parameterName": "solver",
+                    "parameterType": "list",
+                    "minValue": null,
+                    "maxValue": null,
+                    "values": [
+                        "liblinear"
+                    ]
+                },
+                {
+                    "parameterName": "multi_class",
+                    "parameterType": "list",
+                    "minValue": null,
+                    "maxValue": null,
+                    "values": [
+                        "ovr",
+                        "auto"
+                    ]
+                },
+                {
+                    "parameterName": "l1_ratio",
+                    "parameterType": "list",
+                    "minValue": 0.0,
+                    "maxValue": 1.0,
+                    "values": [
+                        "None"
+                    ]
+                }
+            ],
+            [
+                {
+                    "parameterName": "dual",
+                    "parameterType": "list",
+                    "minValue": null,
+                    "maxValue": null,
+                    "values": [
+                        "False"
+                    ]
+                },
+                {
+                    "parameterName": "penalty",
+                    "parameterType": "list",
+                    "minValue": null,
+                    "maxValue": null,
+                    "values": [
+                        "l2",
+                        "None"
+                    ]
+                },
+                {
+                    "parameterName": "solver",
+                    "parameterType": "list",
+                    "minValue": null,
+                    "maxValue": null,
+                    "values": [
+                        "saga",
+                        "newton-cg",
+                        "lbfgs",
+                        "sag"
+                    ]
+                },
+                {
+                    "parameterName": "multi_class",
+                    "parameterType": "list",
+                    "minValue": null,
+                    "maxValue": null,
+                    "values": [
+                        "ovr",
+                        "auto",
+                        "multinomial"
+                    ]
+                },
+                {
+                    "parameterName": "l1_ratio",
+                    "parameterType": "list",
+                    "minValue": 0.0,
+                    "maxValue": 1.0,
+                    "values": [
+                        "None"
+                    ]
+                }
+            ]
+        ]
+    ]
+}

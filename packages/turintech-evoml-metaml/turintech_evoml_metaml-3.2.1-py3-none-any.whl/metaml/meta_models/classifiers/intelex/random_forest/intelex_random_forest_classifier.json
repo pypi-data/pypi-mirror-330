@@ -1,0 +1,50 @@
+{
+    "dependencies": [
+        "scikit-learn",
+        "scikit-learn-intelex"
+    ],
+    "constraintParameters": [
+        [
+            [
+                {
+                    "parameterName": "bootstrap",
+                    "parameterType": "list",
+                    "minValue": null,
+                    "maxValue": null,
+                    "values": [
+                        "True"
+                    ]
+                },
+                {
+                    "parameterName": "max_samples",
+                    "parameterType": "list",
+                    "minValue": 0.0001,
+                    "maxValue": 0.9999,
+                    "values": [
+                        "None"
+                    ]
+                }
+            ],
+            [
+                {
+                    "parameterName": "bootstrap",
+                    "parameterType": "list",
+                    "minValue": null,
+                    "maxValue": null,
+                    "values": [
+                        "False"
+                    ]
+                },
+                {
+                    "parameterName": "max_samples",
+                    "parameterType": "list",
+                    "minValue": null,
+                    "maxValue": null,
+                    "values": [
+                        "None"
+                    ]
+                }
+            ]
+        ]
+    ]
+}

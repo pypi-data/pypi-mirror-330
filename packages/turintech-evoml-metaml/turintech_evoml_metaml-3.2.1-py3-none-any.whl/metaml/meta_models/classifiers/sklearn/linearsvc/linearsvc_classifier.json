@@ -1,0 +1,69 @@
+{
+    "dependencies": [
+        "scikit-learn"
+    ],
+    "constraintParameters": [
+        [
+            [
+                {
+                    "parameterName": "dual",
+                    "parameterType": "list",
+                    "minValue": null,
+                    "maxValue": null,
+                    "values": [
+                        "True"
+                    ]
+                },
+                {
+                    "parameterName": "penalty",
+                    "parameterType": "list",
+                    "minValue": null,
+                    "maxValue": null,
+                    "values": [
+                        "l2"
+                    ]
+                },
+                {
+                    "parameterName": "loss",
+                    "parameterType": "list",
+                    "minValue": null,
+                    "maxValue": null,
+                    "values": [
+                        "squared_hinge",
+                        "hinge"
+                    ]
+                }
+            ],
+            [
+                {
+                    "parameterName": "dual",
+                    "parameterType": "list",
+                    "minValue": null,
+                    "maxValue": null,
+                    "values": [
+                        "False"
+                    ]
+                },
+                {
+                    "parameterName": "penalty",
+                    "parameterType": "list",
+                    "minValue": null,
+                    "maxValue": null,
+                    "values": [
+                        "l1",
+                        "l2"
+                    ]
+                },
+                {
+                    "parameterName": "loss",
+                    "parameterType": "list",
+                    "minValue": null,
+                    "maxValue": null,
+                    "values": [
+                        "squared_hinge"
+                    ]
+                }
+            ]
+        ]
+    ]
+}

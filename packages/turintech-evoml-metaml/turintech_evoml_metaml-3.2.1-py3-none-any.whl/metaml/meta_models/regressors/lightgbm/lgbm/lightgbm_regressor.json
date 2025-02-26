@@ -1,0 +1,64 @@
+{
+    "dependencies": [
+        "lightgbm"
+    ],
+    "constraintParameters": [
+        [
+            [
+                {
+                    "parameterName": "boosting_type",
+                    "parameterType": "list",
+                    "minValue": null,
+                    "maxValue": null,
+                    "values": [
+                        "rf"
+                    ]
+                },
+                {
+                    "parameterName": "subsample_freq",
+                    "parameterType": "int",
+                    "minValue": 1,
+                    "maxValue": 10,
+                    "values": []
+                }
+            ],
+            [
+                {
+                    "parameterName": "boosting_type",
+                    "parameterType": "list",
+                    "minValue": null,
+                    "maxValue": null,
+                    "values": [
+                        "goss"
+                    ]
+                },
+                {
+                    "parameterName": "subsample_freq",
+                    "parameterType": "int",
+                    "minValue": -1,
+                    "maxValue": 0,
+                    "values": []
+                }
+            ],
+            [
+                {
+                    "parameterName": "boosting_type",
+                    "parameterType": "list",
+                    "minValue": null,
+                    "maxValue": null,
+                    "values": [
+                        "gbdt",
+                        "dart"
+                    ]
+                },
+                {
+                    "parameterName": "subsample_freq",
+                    "parameterType": "int",
+                    "minValue": -1,
+                    "maxValue": 10,
+                    "values": []
+                }
+            ]
+        ]
+    ]
+}

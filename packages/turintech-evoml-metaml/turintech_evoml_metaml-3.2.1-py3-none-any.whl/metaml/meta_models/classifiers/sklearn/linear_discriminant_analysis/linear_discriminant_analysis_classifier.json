@@ -1,0 +1,50 @@
+{
+    "dependencies": [
+        "scikit-learn"
+    ],
+    "constraintParameters": [
+        [
+            [
+                {
+                    "parameterName": "solver",
+                    "parameterType": "list",
+                    "minValue": null,
+                    "maxValue": null,
+                    "values": [
+                        "svd"
+                    ]
+                },
+                {
+                    "parameterName": "shrinkage",
+                    "parameterType": "list",
+                    "minValue": null,
+                    "maxValue": null,
+                    "values": [
+                        "None"
+                    ]
+                }
+            ],
+            [
+                {
+                    "parameterName": "solver",
+                    "parameterType": "list",
+                    "minValue": null,
+                    "maxValue": null,
+                    "values": [
+                        "lsqr",
+                        "eigen"
+                    ]
+                },
+                {
+                    "parameterName": "shrinkage",
+                    "parameterType": "list",
+                    "minValue": 0.0,
+                    "maxValue": 1.0,
+                    "values": [
+                        "None"
+                    ]
+                }
+            ]
+        ]
+    ]
+}

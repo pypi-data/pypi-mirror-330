@@ -1,0 +1,159 @@
+import numpy as np
+import pandas as pd
+import logging
+from abc import abstractmethod
+from functools import reduce
+from typing import List, Union
+from sklearn.model_selection import cross_val_predict, RandomizedSearchCV
+from sklearn.base import clone
+
+
+from metaml.factory import factory
+from metaml.meta_models.regressors.meta_regressor import MetaRegressor
+from metaml.meta_models.names import RegressorName
+from metaml._util.typing import strict
+from .utils import StackingOptions
+from .parameters import StackingParams
+
+
+logger = logging.getLogger("metaml")
+
+
+# Default options
+stacking_options = StackingOptions()
+default_stacking_regressors = [
+    factory.get_model(RegressorName.decision_tree_regressor),
+    factory.get_model(RegressorName.linear_regressor),
+]
+default_stacking_meta_regressor = factory.get_model(RegressorName.elastic_net_regressor)
+
+
+class LibStackingRegressor(MetaRegressor):
+    """
+    This is a base Stacking Regressor Model class that provides
+    an interface to stacking methods
+    """
+
+    params: StackingParams
+    regressors: strict(list, MetaRegressor)
+    model: Union[RandomizedSearchCV, MetaRegressor]
+
+    def __init__(self) -> None:
+        """
+        Constructor for Base Stacking Regression Model
+        """
+
+        self.regressors = clone(self.params.regressors)
+        self.model = clone(self.params.meta_regressor)
+
+        # Selected base models - may be updated in fit if subclass reduces the
+        # space of base models
+        self.selected_base_models: List[int] = list(range(len(self.regressors)))
+
+    @abstractmethod
+    def _stack_fit_transform(self, X: pd.DataFrame, X_base: pd.DataFrame, y: pd.Series) -> pd.DataFrame:
+        """Creates a new set of features for use when fitting the metaregressor.
+        These new features are generated from the original features X and the
+        predictions of the base models using cross-validation, i.e., X_base =
+        [cross_val_predict(model, X, y) for model in base_models].
+        Various feature selection techniques and transformations are used to
+        perform this task. The procedure varies for each subclass and is
+        determined by the implementation of this method.
+
+        Args:
+            X: features of the original training dataset.
+            X_base: dataset of predictions of base models. It is created using
+            cross-validation on X.
+            y: target vector relative to X.
+
+        Returns:
+            pd.DataFrame: dataset created from X and X_base.
+
+        """
+        ...
+
+    def _fit(self, X: pd.DataFrame, y: pd.Series):
+        """Responsible for fitting the stacking model, including both the base
+        regressors and the metaregressor.
+
+        Args:
+            X: training dataset.
+            y: target vector relative to X.
+
+        Returns:
+            Fitted estimator.
+        """
+        # Clone base models and meta regressors
+        self.regressors = clone(self.regressors)
+        self.model = clone(self.model)
+
+        # Get predictions from base estimators
+        cv_pred_ls = [cross_val_predict(model, X, y, cv=stacking_options.cv_) for model in self.regressors]
+        X_base = reduce(
+            lambda x, y: pd.concat([pd.DataFrame(x), pd.DataFrame(y)], axis=1),
+            cv_pred_ls,
+            pd.DataFrame(),
+        )
+        X_base.columns = list(range(len(self.regressors)))
+        X_base.index = X.index
+
+        # Fit base estimators
+        for model in self.regressors:
+            model.fit(X, y)
+
+        X_stack = self._stack_fit_transform(X, X_base, y)
+
+        # Fit metaregressor on X_stack
+        X_stack.columns = X_stack.columns.astype(str)
+        self.model.fit(X_stack, y)
+
+    @abstractmethod
+    def _stack_transform(self, X: pd.DataFrame) -> pd.DataFrame:
+        """Creates the stacked dataframe that will be used for predict and score
+        methods of metaregressors.
+
+        Args:
+            X: input data.
+
+        Returns:
+            pd.DataFrame: dataset created from X and predictions of base models
+             on X.
+
+        """
+        ...
+
+    def _get_base_predictions(self, X: pd.DataFrame) -> pd.DataFrame:
+        """Creates a dataframe with the predictions of the selected (possible
+        all) base models.
+
+        Args:
+            X: input data.
+
+        Returns:
+            pd.DataFrame: a dataframe where each column contains the
+            predictions of one of the selected base models.
+
+        """
+        df = pd.DataFrame()
+        for i in self.selected_base_models:
+            model = self.regressors[i]
+            pred = model.predict(X)
+            df[i] = pred
+        df.index = X.index
+        return df
+
+    def _predict(self, X: pd.DataFrame) -> np.array:
+        """Responsible for producing predictions on X.
+
+        Args:
+            X: input data.
+
+        Returns:
+            np.ndarray: predicted target values for X.
+        """
+        if not self.fitted_:
+            raise ValueError("Stacking model has not been fitted.")
+
+        df_stack = self._stack_transform(X)
+        df_stack.columns = df_stack.columns.astype(str)
+        return self.model.predict(df_stack)

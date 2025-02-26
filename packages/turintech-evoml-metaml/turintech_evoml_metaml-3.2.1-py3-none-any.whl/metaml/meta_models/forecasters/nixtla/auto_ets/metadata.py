@@ -1,0 +1,23 @@
+from metaml.meta_models.metadata import MetaData, Supports, ModelTag, ModelTypeEnum
+from metaml.meta_models.names import ForecasterName
+
+
+metadata = MetaData(
+    model_name=ForecasterName.nixtla_auto_ets_forecaster,
+    model_type={ModelTypeEnum.statistical},
+    tags={ModelTag.ts, ModelTag.forecaster},
+    description="The Auto ETS forecaster is an automated version of the ETS model, known for its ability to handle different types of time series data. Auto ETS works by conducting a search over possible model parameters to select the best fit that minimizes the AIC, BIC, or other user-defined criteria. It then uses the best parameters to generate forecasts. Auto ETS has the ability to incorporate seasonal patterns, trend, and other components into its model, making it a versatile tool for time series forecasting.",
+    advantages=[
+        "Automated model selection: Auto ETS automatically finds the best ETS model parameters, reducing the need for manual tuning.",
+        "Versatility: Auto ETS is capable of modeling a wide range of time series data with different characteristics.",
+        "Incorporation of seasonal patterns: The model can handle seasonality in the time series data.",
+        "Interpretability: ETS models, including Auto ETS, are generally more interpretable than some complex machine learning models.",
+    ],
+    disadvantages=[
+        "Computational intensity: The process of finding the best model parameters can be computationally intensive, especially for large datasets.",
+        "Dependence on historical data: Like other time series forecasting models, Auto ETS's performance heavily depends on the quality of the historical data used for training.",
+    ],
+    prime=[],
+    display_name="Auto ETS Forecaster",
+    supports=Supports(probabilities=False, feature_importances=False),
+)

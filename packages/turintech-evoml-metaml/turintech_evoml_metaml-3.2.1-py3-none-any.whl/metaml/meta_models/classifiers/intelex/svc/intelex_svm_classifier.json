@@ -1,0 +1,51 @@
+{
+    "dependencies": [
+        "scikit-learn",
+        "scikit-learn-intelex"
+    ],
+    "constraintParameters": [
+        [
+            [
+                {
+                    "parameterName": "decision_function_shape",
+                    "parameterType": "list",
+                    "minValue": null,
+                    "maxValue": null,
+                    "values": [
+                        "ovo"
+                    ]
+                },
+                {
+                    "parameterName": "break_ties",
+                    "parameterType": "list",
+                    "minValue": null,
+                    "maxValue": null,
+                    "values": [
+                        "False"
+                    ]
+                }
+            ],
+            [
+                {
+                    "parameterName": "decision_function_shape",
+                    "parameterType": "list",
+                    "minValue": null,
+                    "maxValue": null,
+                    "values": [
+                        "ovr"
+                    ]
+                },
+                {
+                    "parameterName": "break_ties",
+                    "parameterType": "list",
+                    "minValue": null,
+                    "maxValue": null,
+                    "values": [
+                        "True",
+                        "False"
+                    ]
+                }
+            ]
+        ]
+    ]
+}
