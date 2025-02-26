@@ -1,0 +1,17 @@
+MANIFEST.in
+readme.md
+setup.py
+version.txt
+delta_lens/__init__.py
+delta_lens/cli.py
+delta_lens/config.py
+delta_lens/config_schema.json
+delta_lens/csvExport.py
+delta_lens/deltaLens.py
+delta_lens/sqliteExport.py
+delta_lens.egg-info/PKG-INFO
+delta_lens.egg-info/SOURCES.txt
+delta_lens.egg-info/dependency_links.txt
+delta_lens.egg-info/entry_points.txt
+delta_lens.egg-info/requires.txt
+delta_lens.egg-info/top_level.txt
