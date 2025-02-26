@@ -1,0 +1,3 @@
+[console_scripts]
+abvd_download = abvd.download:main
+abvd_xml = abvd.download_fast:main
