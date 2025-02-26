@@ -1,0 +1,83 @@
+# Requirements only for development (upload library to Nexus, testing, code style, ...)
+#   python_version: 3.8
+# ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+# --------------------------------------------------------------------------------------------------------------------
+# --- Utilities
+# --------------------------------------------------------------------------------------------------------------------
+
+# Command line utility to show dependency tree of packages
+pipdeptree==2.9.4
+
+# --------------------------------------------------------------------------------------------------------------------
+# --- Code Style Tools:
+# --------------------------------------------------------------------------------------------------------------------
+
+# Tool for catch errors and ensure that the code is idiomatic Python (ie PEP8)
+flake8==7.1.1
+
+# Google tool for finding bugs and style problems in Python source code.
+# also suggests avoiding some tricky-but-useful features
+pylint==3.2.7
+
+# Mypy has a powerful type system with features such as type inference,
+# gradual typing, generics and union types.
+mypy==1.11.2
+pandas-stubs>=1.0.0,<3.0.0
+
+pydantic>=1.0.0,<2.0.0
+
+# Black applyies automatic formatting to the codebase
+black==24.8.0
+
+# --------------------------------------------------------------------------------------------------------------------
+# --- Testing:
+# --------------------------------------------------------------------------------------------------------------------
+
+# Framework to write small tests, yet scales to support complex functional testing for applications and libraries.
+pytest==7.4.1
+
+# Pytest plugin for measuring coverage.
+pytest-cov==5.0.0
+
+# Pytest plugin for paralell execution
+pytest-xdist==3.6.1
+
+# Pytest pluging in order to split test execution
+pytest-split==0.8.2
+
+# Mocking module for pytest
+pytest-mock==3.14.0
+
+# Benchmarking for pytest
+pytest-benchmark==4.0.0
+
+# Faker is a Python package that generates fake data for you.
+Faker>=6.5.0
+
+# Libraries lazily imported at runtime of fit_transform
+optuna>=3.1.0,<3.7.0
+sklearn-contrib-lightning>=0.6.2,<1.0.0
+
+# --------------------------------------------------------------------------------------------------------------------
+# --- Documentation:
+# --------------------------------------------------------------------------------------------------------------------
+
+#Generate the documentation for the project from code comments.
+sphinx==8.0.2
+
+# --------------------------------------------------------------------------------------------------------------------
+# Uploading PyPI Package to Nexus
+# --------------------------------------------------------------------------------------------------------------------
+
+# Client tool to upload them to a hosted repository on the repository manager
+twine==5.1.1
+
+# --------------------------------------------------------------------------------------------------------------------
+# Management of commit hooks.
+# --------------------------------------------------------------------------------------------------------------------
+
+# A framework for managing and maintaining multi-language pre-commit hooks.
+pre-commit==3.5.0
+
+evoml-api-models>=3.1.0,<4.0.0
