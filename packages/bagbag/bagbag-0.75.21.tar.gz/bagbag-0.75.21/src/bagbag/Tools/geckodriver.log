@@ -1,0 +1,339 @@
+1660045301842	geckodriver	INFO	Listening on 127.0.0.1:53342
+1660045302339	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "--remote-debugging-port" "53343" "--remote-allow-hosts" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/ms/xp1k9yc12nn__dpmmdwhsv7c0000gn/T/rust_mozprofile1xra32"
+2022-08-09 15:41:42.752 plugin-container[25135:10478781] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-08-09 15:41:42.752 plugin-container[25135:10478781] nil host used in call to allowsAnyHTTPSCertificateForHost:
+1660045302762	Marionette	INFO	Marionette enabled
+2022-08-09 15:41:42.778 plugin-container[25135:10478781] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-08-09 15:41:42.778 plugin-container[25135:10478781] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2022-08-09 15:41:42.778 plugin-container[25135:10478786] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-08-09 15:41:42.778 plugin-container[25135:10478786] nil host used in call to allowsAnyHTTPSCertificateForHost:
+1660045302788	Marionette	INFO	Listening on port 53356
+WebDriver BiDi listening on ws://localhost:53343
+Read port: 53356
+1660045302953	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/ms/xp1k9yc12nn__dpmmdwhsv7c0000gn/T/rust_mozprofile1xra32/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:53343/devtools/browser/36fe9708-498e-4ed7-9580-bb0bbc25ac78
+UNSUPPORTED (log once): POSSIBLE ISSUE: unit 1 GLD_TEXTURE_INDEX_2D is unloadable and bound to sampler type (Float) - using zero texture because texture unloadable
+1660045305801	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'uninitialized'.
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1660045600617	geckodriver	INFO	Listening on 127.0.0.1:53542
+1660045600622	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "--remote-debugging-port" "53543" "--remote-allow-hosts" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/ms/xp1k9yc12nn__dpmmdwhsv7c0000gn/T/rust_mozprofileaLpGmH"
+2022-08-09 15:46:40.854 plugin-container[26918:10485833] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-08-09 15:46:40.854 plugin-container[26918:10485833] nil host used in call to allowsAnyHTTPSCertificateForHost:
+1660045600856	Marionette	INFO	Marionette enabled
+2022-08-09 15:46:40.856 plugin-container[26918:10485833] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-08-09 15:46:40.856 plugin-container[26918:10485833] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2022-08-09 15:46:40.856 plugin-container[26918:10485854] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-08-09 15:46:40.856 plugin-container[26918:10485854] nil host used in call to allowsAnyHTTPSCertificateForHost:
+1660045600876	Marionette	INFO	Listening on port 53546
+WebDriver BiDi listening on ws://localhost:53543
+Read port: 53546
+1660045600980	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/ms/xp1k9yc12nn__dpmmdwhsv7c0000gn/T/rust_mozprofileaLpGmH/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:53543/devtools/browser/5721bd3a-0c9a-47c9-ae7d-9cdd639fa726
+UNSUPPORTED (log once): POSSIBLE ISSUE: unit 1 GLD_TEXTURE_INDEX_2D is unloadable and bound to sampler type (Float) - using zero texture because texture unloadable
+1660045605275	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'uninitialized'.
+Exiting due to channel error.
+Exiting due to channel error.
+1660045711127	geckodriver	INFO	Listening on 127.0.0.1:53658
+1660045711131	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "--remote-debugging-port" "53659" "--remote-allow-hosts" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/ms/xp1k9yc12nn__dpmmdwhsv7c0000gn/T/rust_mozprofile7zTGLs"
+2022-08-09 15:48:31.391 plugin-container[27594:10488853] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-08-09 15:48:31.391 plugin-container[27594:10488853] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2022-08-09 15:48:31.393 plugin-container[27594:10488853] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-08-09 15:48:31.393 plugin-container[27594:10488853] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2022-08-09 15:48:31.393 plugin-container[27594:10488861] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-08-09 15:48:31.393 plugin-container[27594:10488861] nil host used in call to allowsAnyHTTPSCertificateForHost:
+1660045711394	Marionette	INFO	Marionette enabled
+1660045711413	Marionette	INFO	Listening on port 53663
+WebDriver BiDi listening on ws://localhost:53659
+Read port: 53663
+1660045711572	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/ms/xp1k9yc12nn__dpmmdwhsv7c0000gn/T/rust_mozprofile7zTGLs/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:53659/devtools/browser/a3d6b3cc-1495-42f2-8267-da51fbd2b842
+UNSUPPORTED (log once): POSSIBLE ISSUE: unit 1 GLD_TEXTURE_INDEX_2D is unloadable and bound to sampler type (Float) - using zero texture because texture unloadable
+1660045715731	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'uninitialized'.
+1660045722726	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'uninitialized'.
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1660046698584	geckodriver	INFO	Listening on 127.0.0.1:54054
+1660046698588	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "--remote-debugging-port" "54055" "--remote-allow-hosts" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/ms/xp1k9yc12nn__dpmmdwhsv7c0000gn/T/rust_mozprofileL8GdU9"
+2022-08-09 16:04:58.886 plugin-container[33300:10511639] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-08-09 16:04:58.886 plugin-container[33300:10511639] nil host used in call to allowsAnyHTTPSCertificateForHost:
+1660046698888	Marionette	INFO	Marionette enabled
+1660046698909	Marionette	INFO	Listening on port 54058
+2022-08-09 16:04:58.910 plugin-container[33300:10511639] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-08-09 16:04:58.910 plugin-container[33300:10511639] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2022-08-09 16:04:58.911 plugin-container[33300:10511672] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-08-09 16:04:58.911 plugin-container[33300:10511672] nil host used in call to allowsAnyHTTPSCertificateForHost:
+WebDriver BiDi listening on ws://localhost:54055
+Read port: 54058
+1660046699067	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/ms/xp1k9yc12nn__dpmmdwhsv7c0000gn/T/rust_mozprofileL8GdU9/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:54055/devtools/browser/5552cedb-e551-404b-9e13-f77a1fd53baf
+UNSUPPORTED (log once): POSSIBLE ISSUE: unit 1 GLD_TEXTURE_INDEX_2D is unloadable and bound to sampler type (Float) - using zero texture because texture unloadable
+1660046723969	Marionette	INFO	Stopped listening on port 54058
+1660046764616	geckodriver	INFO	Listening on 127.0.0.1:54122
+1660046764622	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "--remote-debugging-port" "54123" "--remote-allow-hosts" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/ms/xp1k9yc12nn__dpmmdwhsv7c0000gn/T/rust_mozprofileFqJ47u"
+2022-08-09 16:06:04.855 plugin-container[33760:10513775] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-08-09 16:06:04.855 plugin-container[33760:10513775] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2022-08-09 16:06:04.857 plugin-container[33760:10513775] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-08-09 16:06:04.857 plugin-container[33760:10513775] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2022-08-09 16:06:04.857 plugin-container[33760:10513781] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-08-09 16:06:04.857 plugin-container[33760:10513781] nil host used in call to allowsAnyHTTPSCertificateForHost:
+1660046764860	Marionette	INFO	Marionette enabled
+1660046764881	Marionette	INFO	Listening on port 54126
+WebDriver BiDi listening on ws://localhost:54123
+Read port: 54126
+1660046764985	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/ms/xp1k9yc12nn__dpmmdwhsv7c0000gn/T/rust_mozprofileFqJ47u/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:54123/devtools/browser/131bc302-7147-4f53-83a2-d3326ef4e66a
+UNSUPPORTED (log once): POSSIBLE ISSUE: unit 1 GLD_TEXTURE_INDEX_2D is unloadable and bound to sampler type (Float) - using zero texture because texture unloadable
+1660046768573	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'uninitialized'.
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1660046775535	geckodriver	INFO	Listening on 127.0.0.1:54169
+1660046775539	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "--remote-debugging-port" "54170" "--remote-allow-hosts" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/ms/xp1k9yc12nn__dpmmdwhsv7c0000gn/T/rust_mozprofileq3MkQk"
+2022-08-09 16:06:15.803 plugin-container[33841:10514360] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-08-09 16:06:15.803 plugin-container[33841:10514360] nil host used in call to allowsAnyHTTPSCertificateForHost:
+1660046775805	Marionette	INFO	Marionette enabled
+2022-08-09 16:06:15.822 plugin-container[33841:10514360] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-08-09 16:06:15.822 plugin-container[33841:10514360] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2022-08-09 16:06:15.822 plugin-container[33841:10514384] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-08-09 16:06:15.822 plugin-container[33841:10514384] nil host used in call to allowsAnyHTTPSCertificateForHost:
+1660046775824	Marionette	INFO	Listening on port 54173
+WebDriver BiDi listening on ws://localhost:54170
+Read port: 54173
+1660046775983	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/ms/xp1k9yc12nn__dpmmdwhsv7c0000gn/T/rust_mozprofileq3MkQk/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:54170/devtools/browser/884248ab-7da5-433a-9abe-72220d91b0b4
+UNSUPPORTED (log once): POSSIBLE ISSUE: unit 1 GLD_TEXTURE_INDEX_2D is unloadable and bound to sampler type (Float) - using zero texture because texture unloadable
+1660046779619	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'uninitialized'.
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.google.com"
+1660046799543	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1660046955638	geckodriver	INFO	Listening on 127.0.0.1:54348
+1660046955643	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "--remote-debugging-port" "54349" "--remote-allow-hosts" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/ms/xp1k9yc12nn__dpmmdwhsv7c0000gn/T/rust_mozprofileLIutuP"
+2022-08-09 16:09:15.835 plugin-container[35000:10519895] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-08-09 16:09:15.835 plugin-container[35000:10519895] nil host used in call to allowsAnyHTTPSCertificateForHost:
+1660046955837	Marionette	INFO	Marionette enabled
+2022-08-09 16:09:15.859 plugin-container[35000:10519895] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-08-09 16:09:15.859 plugin-container[35000:10519895] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2022-08-09 16:09:15.859 plugin-container[35000:10519924] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-08-09 16:09:15.859 plugin-container[35000:10519924] nil host used in call to allowsAnyHTTPSCertificateForHost:
+1660046955860	Marionette	INFO	Listening on port 54352
+WebDriver BiDi listening on ws://localhost:54349
+Read port: 54352
+1660046956050	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/ms/xp1k9yc12nn__dpmmdwhsv7c0000gn/T/rust_mozprofileLIutuP/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:54349/devtools/browser/a440e5b6-85f1-4127-a394-9cae2dca3278
+UNSUPPORTED (log once): POSSIBLE ISSUE: unit 1 GLD_TEXTURE_INDEX_2D is unloadable and bound to sampler type (Float) - using zero texture because texture unloadable
+Exiting due to channel error.
+Exiting due to channel error.
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+Exiting due to channel error.
+1660047893702	geckodriver	INFO	Listening on 127.0.0.1:54801
+1660047893707	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "--remote-debugging-port" "54802" "--remote-allow-hosts" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/ms/xp1k9yc12nn__dpmmdwhsv7c0000gn/T/rust_mozprofilelXAkai"
+1660047893900	Marionette	INFO	Marionette enabled
+2022-08-09 16:24:53.904 plugin-container[40576:10542735] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-08-09 16:24:53.904 plugin-container[40576:10542735] nil host used in call to allowsAnyHTTPSCertificateForHost:
+1660047893926	Marionette	INFO	Listening on port 54807
+2022-08-09 16:24:53.926 plugin-container[40576:10542735] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-08-09 16:24:53.926 plugin-container[40576:10542735] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2022-08-09 16:24:53.927 plugin-container[40576:10542737] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-08-09 16:24:53.927 plugin-container[40576:10542737] nil host used in call to allowsAnyHTTPSCertificateForHost:
+WebDriver BiDi listening on ws://localhost:54802
+Read port: 54807
+1660047894113	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/ms/xp1k9yc12nn__dpmmdwhsv7c0000gn/T/rust_mozprofilelXAkai/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:54802/devtools/browser/934a9c88-51d6-4a35-b818-749b7eb05573
+UNSUPPORTED (log once): POSSIBLE ISSUE: unit 1 GLD_TEXTURE_INDEX_2D is unloadable and bound to sampler type (Float) - using zero texture because texture unloadable
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://www.google.ae"
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1660047924128	geckodriver	INFO	Listening on 127.0.0.1:54870
+1660047924132	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "--remote-debugging-port" "54871" "--remote-allow-hosts" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/ms/xp1k9yc12nn__dpmmdwhsv7c0000gn/T/rust_mozprofilewYlpAR"
+1660047924367	Marionette	INFO	Marionette enabled
+2022-08-09 16:25:24.368 plugin-container[40764:10543937] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-08-09 16:25:24.368 plugin-container[40764:10543937] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2022-08-09 16:25:24.386 plugin-container[40764:10543937] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-08-09 16:25:24.386 plugin-container[40764:10543937] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2022-08-09 16:25:24.386 plugin-container[40764:10543935] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-08-09 16:25:24.386 plugin-container[40764:10543935] nil host used in call to allowsAnyHTTPSCertificateForHost:
+1660047924389	Marionette	INFO	Listening on port 54876
+WebDriver BiDi listening on ws://localhost:54871
+Read port: 54876
+1660047924490	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/ms/xp1k9yc12nn__dpmmdwhsv7c0000gn/T/rust_mozprofilewYlpAR/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:54871/devtools/browser/9528fdb1-2157-47b2-832f-621987c96fc9
+UNSUPPORTED (log once): POSSIBLE ISSUE: unit 1 GLD_TEXTURE_INDEX_2D is unloadable and bound to sampler type (Float) - using zero texture because texture unloadable
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1660048781703	geckodriver	INFO	Listening on 127.0.0.1:55309
+1660048781708	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "--remote-debugging-port" "55310" "--remote-allow-hosts" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/ms/xp1k9yc12nn__dpmmdwhsv7c0000gn/T/rust_mozprofilePs2zwF"
+1660048781977	Marionette	INFO	Marionette enabled
+2022-08-09 16:39:41.979 plugin-container[45716:10564334] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-08-09 16:39:41.979 plugin-container[45716:10564334] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2022-08-09 16:39:41.998 plugin-container[45716:10564334] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-08-09 16:39:41.998 plugin-container[45716:10564334] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2022-08-09 16:39:41.998 plugin-container[45716:10564359] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-08-09 16:39:41.998 plugin-container[45716:10564359] nil host used in call to allowsAnyHTTPSCertificateForHost:
+1660048781999	Marionette	INFO	Listening on port 55315
+WebDriver BiDi listening on ws://localhost:55310
+Read port: 55315
+1660048782147	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/ms/xp1k9yc12nn__dpmmdwhsv7c0000gn/T/rust_mozprofilePs2zwF/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:55310/devtools/browser/b71527bb-83e0-4cba-9b83-052c1a6ffda3
+UNSUPPORTED (log once): POSSIBLE ISSUE: unit 1 GLD_TEXTURE_INDEX_2D is unloadable and bound to sampler type (Float) - using zero texture because texture unloadable
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1660048893288	geckodriver	INFO	Listening on 127.0.0.1:55408
+1660048893293	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "--remote-debugging-port" "55409" "--remote-allow-hosts" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/ms/xp1k9yc12nn__dpmmdwhsv7c0000gn/T/rust_mozprofile5itJo8"
+1660048893530	Marionette	INFO	Marionette enabled
+2022-08-09 16:41:33.537 plugin-container[46385:10567455] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-08-09 16:41:33.538 plugin-container[46385:10567455] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2022-08-09 16:41:33.539 plugin-container[46385:10567455] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-08-09 16:41:33.539 plugin-container[46385:10567455] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2022-08-09 16:41:33.539 plugin-container[46385:10567453] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-08-09 16:41:33.539 plugin-container[46385:10567453] nil host used in call to allowsAnyHTTPSCertificateForHost:
+1660048893550	Marionette	INFO	Listening on port 55415
+WebDriver BiDi listening on ws://localhost:55409
+Read port: 55415
+1660048893657	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/ms/xp1k9yc12nn__dpmmdwhsv7c0000gn/T/rust_mozprofile5itJo8/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:55409/devtools/browser/0c6d03e6-278c-4160-a3eb-d9a41fb33634
+UNSUPPORTED (log once): POSSIBLE ISSUE: unit 1 GLD_TEXTURE_INDEX_2D is unloadable and bound to sampler type (Float) - using zero texture because texture unloadable
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1660048951918	geckodriver	INFO	Listening on 127.0.0.1:55487
+1660048951922	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "--remote-debugging-port" "55488" "--remote-allow-hosts" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/ms/xp1k9yc12nn__dpmmdwhsv7c0000gn/T/rust_mozprofileM53pep"
+1660048952168	Marionette	INFO	Marionette enabled
+2022-08-09 16:42:32.169 plugin-container[46722:10569004] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-08-09 16:42:32.169 plugin-container[46722:10569004] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2022-08-09 16:42:32.171 plugin-container[46722:10569004] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-08-09 16:42:32.171 plugin-container[46722:10569004] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2022-08-09 16:42:32.171 plugin-container[46722:10569029] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-08-09 16:42:32.171 plugin-container[46722:10569029] nil host used in call to allowsAnyHTTPSCertificateForHost:
+1660048952188	Marionette	INFO	Listening on port 55493
+WebDriver BiDi listening on ws://localhost:55488
+Read port: 55493
+1660048952293	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/ms/xp1k9yc12nn__dpmmdwhsv7c0000gn/T/rust_mozprofileM53pep/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:55488/devtools/browser/5669548c-bf4a-43a5-9aac-56638a264da3
+UNSUPPORTED (log once): POSSIBLE ISSUE: unit 1 GLD_TEXTURE_INDEX_2D is unloadable and bound to sampler type (Float) - using zero texture because texture unloadable
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+1660048979315	geckodriver	INFO	Listening on 127.0.0.1:55549
+1660048979319	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "--remote-debugging-port" "55550" "--remote-allow-hosts" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/ms/xp1k9yc12nn__dpmmdwhsv7c0000gn/T/rust_mozprofileKKCNp2"
+1660048979583	Marionette	INFO	Marionette enabled
+1660048979602	Marionette	INFO	Listening on port 55556
+WebDriver BiDi listening on ws://localhost:55550
+2022-08-09 16:42:59.608 plugin-container[46899:10570006] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-08-09 16:42:59.608 plugin-container[46899:10570006] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2022-08-09 16:42:59.610 plugin-container[46899:10570006] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-08-09 16:42:59.610 plugin-container[46899:10570006] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2022-08-09 16:42:59.610 plugin-container[46899:10570004] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-08-09 16:42:59.610 plugin-container[46899:10570004] nil host used in call to allowsAnyHTTPSCertificateForHost:
+Read port: 55556
+1660048979757	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/ms/xp1k9yc12nn__dpmmdwhsv7c0000gn/T/rust_mozprofileKKCNp2/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:55550/devtools/browser/ee5b041a-e44c-4c62-bc06-979d406ee22c
+UNSUPPORTED (log once): POSSIBLE ISSUE: unit 1 GLD_TEXTURE_INDEX_2D is unloadable and bound to sampler type (Float) - using zero texture because texture unloadable
+Exiting due to channel error.
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+Exiting due to channel error.
+Exiting due to channel error.
+1660049064414	geckodriver	INFO	Listening on 127.0.0.1:55648
+1660049064418	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "--remote-debugging-port" "55649" "--remote-allow-hosts" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/ms/xp1k9yc12nn__dpmmdwhsv7c0000gn/T/rust_mozprofilel3l3c5"
+1660049064639	Marionette	INFO	Marionette enabled
+2022-08-09 16:44:24.639 plugin-container[47433:10572420] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-08-09 16:44:24.640 plugin-container[47433:10572420] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2022-08-09 16:44:24.641 plugin-container[47433:10572420] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-08-09 16:44:24.641 plugin-container[47433:10572420] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2022-08-09 16:44:24.642 plugin-container[47433:10572418] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-08-09 16:44:24.642 plugin-container[47433:10572418] nil host used in call to allowsAnyHTTPSCertificateForHost:
+1660049064657	Marionette	INFO	Listening on port 55654
+WebDriver BiDi listening on ws://localhost:55649
+Read port: 55654
+1660049064759	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/ms/xp1k9yc12nn__dpmmdwhsv7c0000gn/T/rust_mozprofilel3l3c5/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:55649/devtools/browser/247e3f09-f934-4e39-9c26-289273945e2b
+UNSUPPORTED (log once): POSSIBLE ISSUE: unit 1 GLD_TEXTURE_INDEX_2D is unloadable and bound to sampler type (Float) - using zero texture because texture unloadable
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://find-and-update.company-information.service.gov.uk"
+JavaScript error: https://d3w3bjnu1qmgrz.cloudfront.net/javascripts/vendor/require.js, line 166: Error: Script error for: //d3w3bjnu1qmgrz.cloudfront.net/javascripts/app/search.js
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://d3w3bjnu1qmgrz.cloudfront.net/javascripts/vendor/require.js, line 166: Error: Script error for: //d3w3bjnu1qmgrz.cloudfront.net/javascripts/app/feedback.js
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript warning: https://d3w3bjnu1qmgrz.cloudfront.net/javascripts/app/search.js, line 14: unreachable code after return statement
+JavaScript warning: https://d3w3bjnu1qmgrz.cloudfront.net/javascripts/app/search.js, line 14: unreachable code after return statement
+1660049104272	Marionette	INFO	Stopped listening on port 55654
+1660049107322	geckodriver	INFO	Listening on 127.0.0.1:55716
+1660049107327	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "--remote-debugging-port" "55717" "--remote-allow-hosts" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/ms/xp1k9yc12nn__dpmmdwhsv7c0000gn/T/rust_mozprofileuCppbA"
+2022-08-09 16:45:07.591 plugin-container[47764:10574209] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-08-09 16:45:07.591 plugin-container[47764:10574209] nil host used in call to allowsAnyHTTPSCertificateForHost:
+1660049107592	Marionette	INFO	Marionette enabled
+2022-08-09 16:45:07.608 plugin-container[47764:10574209] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-08-09 16:45:07.608 plugin-container[47764:10574209] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2022-08-09 16:45:07.608 plugin-container[47764:10574211] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-08-09 16:45:07.608 plugin-container[47764:10574211] nil host used in call to allowsAnyHTTPSCertificateForHost:
+1660049107613	Marionette	INFO	Listening on port 55722
+WebDriver BiDi listening on ws://localhost:55717
+Read port: 55722
+1660049107771	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/ms/xp1k9yc12nn__dpmmdwhsv7c0000gn/T/rust_mozprofileuCppbA/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:55717/devtools/browser/1561e322-5142-455b-a854-67c469290c91
+UNSUPPORTED (log once): POSSIBLE ISSUE: unit 1 GLD_TEXTURE_INDEX_2D is unloadable and bound to sampler type (Float) - using zero texture because texture unloadable
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://find-and-update.company-information.service.gov.uk"
+JavaScript error: https://d3w3bjnu1qmgrz.cloudfront.net/javascripts/vendor/require.js, line 166: Error: Script error for: //d3w3bjnu1qmgrz.cloudfront.net/javascripts/app/search.js
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://d3w3bjnu1qmgrz.cloudfront.net/javascripts/vendor/require.js, line 166: Error: Script error for: //d3w3bjnu1qmgrz.cloudfront.net/javascripts/app/feedback.js
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript warning: https://d3w3bjnu1qmgrz.cloudfront.net/javascripts/app/search.js, line 14: unreachable code after return statement
+JavaScript warning: https://d3w3bjnu1qmgrz.cloudfront.net/javascripts/app/search.js, line 14: unreachable code after return statement
+JavaScript warning: https://d3w3bjnu1qmgrz.cloudfront.net/javascripts/app/search.js, line 14: unreachable code after return statement
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://find-and-update.company-information.service.gov.uk"
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+1660049210981	geckodriver	INFO	Listening on 127.0.0.1:55840
+1660049210986	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "--remote-debugging-port" "55841" "--remote-allow-hosts" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/ms/xp1k9yc12nn__dpmmdwhsv7c0000gn/T/rust_mozprofile3wRhV2"
+1660049211326	Marionette	INFO	Marionette enabled
+2022-08-09 16:46:51.343 plugin-container[48404:10577237] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-08-09 16:46:51.344 plugin-container[48404:10577237] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2022-08-09 16:46:51.351 plugin-container[48404:10577237] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-08-09 16:46:51.351 plugin-container[48404:10577237] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2022-08-09 16:46:51.351 plugin-container[48404:10577263] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2022-08-09 16:46:51.351 plugin-container[48404:10577263] nil host used in call to allowsAnyHTTPSCertificateForHost:
+1660049211457	Marionette	INFO	Listening on port 55846
+WebDriver BiDi listening on ws://localhost:55841
+Read port: 55846
+1660049211565	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /var/folders/ms/xp1k9yc12nn__dpmmdwhsv7c0000gn/T/rust_mozprofile3wRhV2/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:55841/devtools/browser/bc440135-0681-4a95-bf2a-c3aa22d7c583
+UNSUPPORTED (log once): POSSIBLE ISSUE: unit 1 GLD_TEXTURE_INDEX_2D is unloadable and bound to sampler type (Float) - using zero texture because texture unloadable
+console.warn: LoginRecipes: "getRecipes: falling back to a synchronous message for:" "https://find-and-update.company-information.service.gov.uk"
+JavaScript error: https://d3w3bjnu1qmgrz.cloudfront.net/javascripts/vendor/require.js, line 166: Error: Script error for: //d3w3bjnu1qmgrz.cloudfront.net/javascripts/app/feedback.js
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript error: https://d3w3bjnu1qmgrz.cloudfront.net/javascripts/vendor/require.js, line 166: Error: Script error for: //d3w3bjnu1qmgrz.cloudfront.net/javascripts/app/search.js
+http://requirejs.org/docs/errors.html#scripterror
+JavaScript warning: https://d3w3bjnu1qmgrz.cloudfront.net/javascripts/app/search.js, line 14: unreachable code after return statement
+JavaScript warning: https://d3w3bjnu1qmgrz.cloudfront.net/javascripts/app/search.js, line 14: unreachable code after return statement
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
