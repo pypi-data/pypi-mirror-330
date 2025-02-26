@@ -1,0 +1,66 @@
+Metadata-Version: 2.3
+Name: tay
+Version: 0.1.0
+Summary: Python library that provides interface for table formats such as csv, xlsx 
+License: MIT
+Keywords: tay,csv,xlsx
+Author: Gregory Bakhtin
+Author-email: greasha46@gmail.com
+Requires-Python: >=3.8
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Programming Language :: Python :: 3.7
+Requires-Dist: openpyxl (==3.1.5)
+Project-URL: Homepage, https://github.com/kra53n/tay
+Project-URL: Repository, https://github.com/kra53n/tay
+Description-Content-Type: text/markdown
+
+# tay
+
+Python library that provides interface for table formats such as csv, xlsx.
+
+
+## Quick Start
+
+```sh
+pip install tay
+```
+
+```python
+from dataclasses import dataclass
+
+import tay
+
+
+@dataclass
+class Entity:
+    id: int
+    name: str
+
+
+entity = Entity(0, 'sword')
+with tay.CSV('entities.csv', 'w') as sheet:
+    sheet.write_header(Entity)
+    sheet.write_record(entity)
+```
+
+```python
+import tay
+
+with tay.CSV('entities.csv', 'r') as sheet:
+    records = sheet.read(Entity)
+```
+
+## Interfaces
+
+Interface name | File type
+--- | ---
+`CSV` | `.csv`
+`Excel` | `.xlsx`
+
