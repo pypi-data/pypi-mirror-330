@@ -1,0 +1,43 @@
+Metadata-Version: 2.2
+Name: turintech-evoml-utils
+Version: 2.0.1
+Summary: Evoml Utils is a package that contains utility functions for the EvoML project.
+Home-page: https://turintech.ai
+Author: Turing Intelligence Technology
+Author-email: contact@turintech.ai
+License: TURING INTELLIGENCE TECHNOLOGY LIMITED END-USER LICENCE
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Python: >=3.9, <4
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy<3.0.0,>1.21.0
+Requires-Dist: pandas<2.0,>=1.3.1
+Requires-Dist: scikit-learn<2.0.0,>=1.5.0
+Requires-Dist: scipy>=1.7.3
+Requires-Dist: phonenumbers>=8.12.28
+Requires-Dist: email_validator>=1.1.3
+Requires-Dist: pyap>=0.3.1
+Requires-Dist: python-stdnum>=1.16
+Requires-Dist: turintech-evoml-api-models<4.0.0,>=3.1.0
+Requires-Dist: Faker>=6.5.0
+Requires-Dist: pycountry>=18.5.26
+Requires-Dist: pydantic<2.0.0,>=1.7.3
+Requires-Dist: sktime<=0.32.0,>0.30.0
+Requires-Dist: turintech-evoml-metaml<4.0.0,>=3.2.1
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: license
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# EvoML Utils
+
+Evoml Utils is a package that contains utility functions for the EvoML project.
