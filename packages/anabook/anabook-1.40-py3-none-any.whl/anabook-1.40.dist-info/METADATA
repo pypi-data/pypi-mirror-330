@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: anabook
+Version: 1.40
+Summary: This library facilitates exploratory data analysis (EDA), streamlining access to key functions for univariate and bivariate analysis of continuous and categorical variables.
+Home-page: https://github.com/FreddyAlvarado/anabook
+Author: Freddy Alvarado
+Author-email: freddy.alvarado.b1@gmail.com
+License: MIT
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+ANABook is a library designed to optimize and simplify access to the most commonly used functions in the exploratory data analysis (EDA) stage, covering both univariate and bivariate analysis for continuous and categorical variables. Its purpose is to streamline the process of exploring and understanding data.
