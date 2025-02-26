@@ -1,0 +1,65 @@
+Metadata-Version: 2.2
+Name: proxyseller
+Version: 1.1.1
+Summary: Unofficial python library for working with proxy-seller.com
+Home-page: https://github.com/makarworld/proxyseller.git
+Download-URL: https://github.com/makarworld/proxyseller/archive/refs/tags/v1.1.1.zip
+Author: abuztrade
+Author-email: abuztrade.work@gmail.com
+License: MIT License
+Classifier: Development Status :: 4 - Beta
+Classifier: Topic :: Communications :: Email
+Classifier: Operating System :: OS Independent
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Customer Service
+Classifier: Intended Audience :: Financial and Insurance Industry
+Requires-Python: >=3.10.0
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: requests
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: download-url
+Dynamic: home-page
+Dynamic: license
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+[![PyPI version](https://badge.fury.io/py/proxyseller.svg)](https://badge.fury.io/py/proxyseller)
+[![image](https://img.shields.io/pypi/pyversions/proxyseller.svg)](https://pypi.org/project/proxyseller/)
+[![Github last commit date](https://img.shields.io/github/last-commit/makarworld/proxyseller.svg?label=Updated&logo=github&cacheSeconds=600)](https://github.com/makarworld/proxyseller/commits)
+# proxyseller - Unofficial python library for working with proxy-seller.com
+
+PyPi: https://pypi.org/project/proxyseller/
+
+Site: https://proxy-seller.com/
+
+Docs: https://docs.proxy-seller.com/
+
+> pip install proxyseller
+
+Example:
+```python
+from proxyseller import ProxySeller
+# async version
+# from proxyseller._async import ProxySeller
+# from proxyseller import AsyncProxySeller
+
+
+
+api_key = "YOUR_API_KEY"
+proxyseller = ProxySeller(api_key)
+
+print(proxyseller.balance())
+```
+
+
+
+
+# Main part of code was sourced from https://bitbucket.org/abuztrade/user-api-python/src/master/
