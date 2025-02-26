@@ -1,0 +1,32 @@
+Metadata-Version: 2.2
+Name: DocuGoggles
+Version: 0.2.0
+Summary: A tool for scanning and analyzing files in directories
+Home-page: https://github.com/Duquesne-Spring-2025-COSC-481/Naif-ALqurashi
+Author: Naif ALqurashi
+Author-email: Naif.cen@gmail.com
+License: MIT
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: python-magic>=0.4.27
+Requires-Dist: click>=8.0.0
+Requires-Dist: pathlib>=1.0.1
+Requires-Dist: tqdm>=4.65.0
+Requires-Dist: pytesseract>=0.3.10
+Requires-Dist: Pillow>=9.0.0
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+DocuGoggles - A File Search and Analysis Tool
