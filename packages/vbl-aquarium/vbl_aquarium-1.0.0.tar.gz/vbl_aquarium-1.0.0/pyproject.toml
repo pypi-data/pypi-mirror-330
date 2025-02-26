@@ -1,0 +1,72 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "vbl-aquarium"
+dynamic = ["version"]
+description = 'Collection of Pydantic models describing data objects passed between Virtual Brain Lab projects.'
+readme = "README.md"
+requires-python = ">=3.8"
+license = "MIT"
+keywords = ['pydantic', "virtualbrainlab", "neuroscience"]
+authors = [
+    { name = "Daniel Birman", email = "dbirman@uw.edu" },
+    { name = "Kenneth Yang", email = "kjy5@uw.edu" },
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python :: Implementation :: PyPy",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Science/Research",
+]
+dependencies = [
+    "pydantic==2.10.6"
+]
+
+[project.urls]
+Documentation = "https://github.com/VirtualBrainLab/vbl-aquarium/blob/main/README.md"
+Issues = "https://github.com/VirtualBrainLab/vbl-aquarium/issues"
+Source = "https://github.com/VirtualBrainLab/vbl-aquarium"
+
+[tool.hatch.version]
+path = "src/vbl_aquarium/__about__.py"
+
+[tool.hatch.build.targets.sdist]
+exclude = ["/models", "/.github", "/.idea"]
+
+[tool.hatch.envs.default]
+python = "3.13"
+dependencies = [
+    "basedpyright==1.27.1"
+]
+
+[tool.hatch.envs.default.scripts]
+check = "basedpyright"
+check-watched = "basedpyright --watch"
+
+[tool.hatch.envs.docs]
+python = "3.13"
+skip-install = true
+dependencies = [
+    "mkdocs-material==9.6.5",
+    "mkdocstrings-python==1.16.1",
+    "mkdocs-gen-files==0.5.0",
+    "mkdocs-literate-nav==0.6.1",
+    "mkdocs-section-index==0.3.9"
+]
+[tool.hatch.envs.docs.scripts]
+serve = "mkdocs serve"
+build = "mkdocs build"
+
+[tool.basedpyright]
+include = ["src/vbl_aquarium"]
+strict = ["src/vbl_aquarium"]
