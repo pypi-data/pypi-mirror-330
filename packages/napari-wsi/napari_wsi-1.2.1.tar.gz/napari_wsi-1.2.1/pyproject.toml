@@ -1,0 +1,121 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "napari-wsi"
+version = "1.2.1"
+description = "A plugin to read whole-slide images within napari."
+readme = "README.md"
+requires-python = ">=3.11"
+license = "Apache-2.0"
+license-files = [
+    "LICENSE",
+]
+authors = [
+    { name = "Philipp Plewa", email = "philipp.plewa@astrazeneca.com" },
+]
+maintainers = [
+    { name = "Philipp Plewa", email = "philipp.plewa@astrazeneca.com" },
+    { name = "Robert Schweizer", email = "robert.schweizer@astrazeneca.com" },
+]
+classifiers = [
+    "Framework :: napari",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering :: Image Processing",
+]
+dependencies = [
+    "dask>=2025.1",
+    "magicgui>=0.10",
+    "numpy>=1.26",
+    "pillow>=11.1",
+    "typing-extensions>=4.6.1",
+    "universal-pathlib>=0.2",
+    "zarr>=3.0",
+]
+
+[project.optional-dependencies]
+openslide = [
+    "openslide-python>=1.4",
+]
+rasterio = [
+    "rasterio>=1.4",
+]
+wsidicom = [
+    "colorspacious>=1.1.2",
+    "pandas>=2.0",
+    "shapely>=2.0",
+    "wsidicom>=0.22",
+]
+all = [
+    "napari-wsi[openslide,rasterio,wsidicom]"
+]
+
+[dependency-groups]
+dev = [
+    "invoke>=2.2.0",
+    "mypy>=1.14",
+    "napari[optional]>=0.5.6",
+    "openslide-bin>=4.0",
+    "pandas-stubs>=2.2",
+    "pyqt5>=5.15",
+    "pytest>=8.3",
+    "pytest-cov>=6.0",
+    "pytest-qt>=4.4",
+    "ruff>=0.9",
+    "scikit-image>=0.25",
+    "types-shapely>=2.0.0",
+]
+
+[project.urls]
+Repository = "https://github.com/AstraZeneca/napari-wsi"
+
+[project.entry-points."napari.manifest"]
+napari-wsi = "napari_wsi:napari.yaml"
+
+[tool.mypy]
+check_untyped_defs = true
+warn_unused_ignores = true
+
+[[tool.mypy.overrides]]
+ignore_missing_imports = true
+module = [
+    "colorspacious.*",
+    "napari.*",
+    "rasterio.*",
+    "wsidicom.*",
+]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 88
+
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = [
+    "ANN003", # Missing type annotation for `**kwargs`
+    "B028", # No explicit `stacklevel` keyword argument found
+    "COM812", # May cause conflicts when used with the formatter
+    "D100", # Missing docstring in public module
+    "D101", # Missing docstring in public class
+    "D102", # Missing docstring in public method
+    "D103", # Missing docstring in public function
+    "D104", # Missing docstring in public package
+    "D105", # Missing docstring in magic method
+    "D107", # Missing docstring in `__init__`
+    "D203", # D203 and D211 are incompatible
+    "D213", # D213 and D212 are incompatible
+    "EM101", # Exception must not use a string literal
+    "EM102", # Exception must not use an f-string literal
+    "FBT001", # Boolean-typed positional argument in function definition
+    "S101", # Use of `assert`
+    "TID252", # Prefer absolute imports over relative imports from parent modules
+    "TRY003", # Avoid specifying long messages outside the exception class
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/test_*.py" = [
+    "PLR2004", # Magic value used in comparison
+    "SLF001", # Private member accessed
+]

@@ -1,0 +1,70 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+env:
+  UV_VERSION: '0.5.26'
+
+jobs:
+  check:
+    name: Check
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      # Note: We need to manually install uv because this action is not whitelisted.
+      # - name: Install uv
+      #   uses: astral-sh/setup-uv@v5
+      #   with:
+      #     version: ${{ env.UV_VERSION }}
+      #     enable-cache: true
+      #     cache-dependency-glob: 'uv.lock'
+      - name: Install uv
+        run: pipx install uv==$UV_VERSION
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version-file: '.python-version'
+
+      - name: Install dependencies
+        run: uv sync --all-extras --dev
+
+      - name: Run checks
+        run: uv run invoke check
+
+  test:
+    needs: [check]
+    name: Test py${{ matrix.python-version }}
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.11', '3.12']
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        run: pipx install uv==$UV_VERSION
+
+      - name: Set up python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install qtbase5-dev xvfb
+          uv sync --all-extras --dev
+
+      - name: Run tests
+        run: xvfb-run uv run invoke test
