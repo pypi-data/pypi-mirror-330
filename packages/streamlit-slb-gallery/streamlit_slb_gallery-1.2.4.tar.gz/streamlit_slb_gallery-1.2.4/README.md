@@ -1,0 +1,68 @@
+# streamlit_slb_gallery
+
+Streamlit component that allows user display images and video gallery
+
+## Installation instructions
+
+```sh
+pip install streamlit_slb_gallery
+```
+
+## Release Notes
+
+1.0.10
+
+- Fix the gallery pagination. load details only for selected events per page
+
+  1.1.0
+
+- stable version and able to customize the height
+
+  1.1.1
+
+- fix date format for alert time to yyyy-MM-dd HH:mm:ss
+
+  1.1.2
+
+- fix date format for alert time to yyyy-MM-dd HH:mm:ss on missing seconds
+
+  1.1.3
+
+- fix date format for alert time to yyyy-MM-dd HH:mm:ss on missing seconds
+
+  1.1.4
+
+- Fix pagination issue
+
+  1.1.5
+
+- Fix time display and conversion
+
+  1.1.6
+
+- Update violation type display
+
+  1.1.7
+
+- Show event with no image available
+
+  1.1.8
+
+- sort the gallery by latest start time
+
+  1.2.0
+
+- Add support to filter by Camera ID
+
+  1.2.2
+
+- Fix bug for date filter
+
+  1.2.3
+
+- Fix the sort for the gallery
+
+  1.2.4
+
+- Fix the gallery sorting
+- Use CogniteSdk instead of direct query from API
