@@ -1,0 +1,7 @@
+matplotlib
+astropy
+scipy
+seaborn
+numpy<2.0.0,>=1.26.4
+pandas
+FuzzyTM>=0.4.0
