@@ -1,0 +1,2 @@
+class UYEIAConfigError(Exception):
+    pass
