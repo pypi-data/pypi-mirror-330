@@ -1,0 +1,15 @@
+[project]
+name = "windmill-endpoint"
+version = "1.0.0.23.dev13"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "bce-internal-sdk>=1.0.0.11",
+    "bce-python-sdk==0.8.87",
+    "lmdeployv1>=0.0.9.1",
+    "multidict==6.0.4",
+    "pillow>=10.4.0",
+    "tritonclient>=2.41.1",
+    "tritonv2>=1.2.8; sys_platform != 'darwin'",
+]
