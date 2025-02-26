@@ -1,0 +1,14 @@
+include LICENSE
+include README.md
+recursive-include src/fac_format *.py
+
+global-exclude .DS_Store
+global-exclude *.pyc
+global-exclude __pycache__
+global-exclude *.so
+global-exclude .env
+global-exclude .cache
+global-exclude .replit
+global-exclude .pythonlibs
+global-exclude .upm
+global-exclude .config
