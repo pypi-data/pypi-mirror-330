@@ -1,0 +1,47 @@
+[tool.poetry]
+name = "pykebab"
+version = "0.10.2"
+description = ""
+authors = ["Yangming Huang <leonmax@gmail.com>"]
+packages = [{ include = "kebab" }]
+
+[tool.poetry.dependencies]
+python = "^3.8.1"
+deprecation = "^2.1.0"
+pydantic = "^2.0.3"
+configparser = "^6.0.0"
+setuptools = ">=68,<71"
+pyyaml = "^6.0.1"
+# cli
+click = { version = "^8.1.5", optional = true }
+# aws
+boto3 = { version = "^1.37.0", optional = true }
+# k8s
+kubernetes = { version = "^27.2.0", optional = true }
+
+[tool.poetry.extras]
+cli = ["click"]
+k8s = ["kubernetes"]
+aws = ["boto3"]
+
+[tool.poetry.group.dev.dependencies]
+pytest = "*"
+pytest-cov = "*"
+pytest-black = "*"
+mock = "*"
+black = "*"
+flake8 = "*"
+flake8-black = "*"
+
+[tool.poetry.scripts]
+kebab = 'kebab.cli:run'
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -q"
+testpaths = ["tests"]
+filterwarnings = ["ignore::DeprecationWarning"]
+
+[build-system]
+requires = ["poetry-core>=1.6.1"]
+build-backend = "poetry.core.masonry.api"
