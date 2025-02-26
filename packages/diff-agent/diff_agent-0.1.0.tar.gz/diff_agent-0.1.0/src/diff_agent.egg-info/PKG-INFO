@@ -1,0 +1,71 @@
+Metadata-Version: 2.2
+Name: diff_agent
+Version: 0.1.0
+Summary: A tool for automatically committing and summarizing git changes
+Home-page: https://github.com/yourusername/diff_agent
+Author: Your Name
+Author-email: your.email@example.com
+License: MIT
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: litellm>=0.1.0
+Requires-Dist: weave>=0.1.0
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# DiffAgent
+
+A tool for automatically committing and summarizing git changes.
+
+## Installation
+
+Install via pip:
+```
+pip install diff_agent
+```
+
+## Usage
+
+```python
+from diff_agent import DiffAgent
+
+# Initialize the DiffAgent with desired model and prompt
+agent = DiffAgent(
+    model="ollama/llama3.1",  # Default model
+    prompt="Summarize the code changes clearly and concisely",
+    strong_model="openai/gpt-4o-mini",  # Strong model for larger diffs
+    strong_model_threshold=10,  # Threshold to switch to strong model
+    max_diff_len=5000,  # Max chars to send to the model
+    log_file="whatIdid.txt"  # Optional log file to track changes
+)
+
+# Run the process and get the summary of changes
+change_summary = agent.run()
+
+# Print the result
+print(change_summary)
+```
+
+## Features
+
+- Automatically switch to a branch for commits and back to your original branch
+- Summarize code changes using LLMs
+- Ignore specified files from Git tracking
+- Log changes to a human-readable file
+- Switch to a more powerful model for complex changes
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
