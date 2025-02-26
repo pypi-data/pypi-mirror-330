@@ -1,0 +1,53 @@
+[project]
+name = "deep_dummy_maths"
+version = "0.1.0"
+description = "A dummy library for mathematical functions created by Deependu Jha."
+authors = [{ name = "deependujha", email = "deependujha21@gmail.com" }]
+license = { text = "MIT" }
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "maturin>=1.8.2",
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python"
+]
+
+[build-system]
+requires = ["maturin>=1.0,<2.0"]
+build-backend = "maturin"
+
+[tool.maturin]
+module-name = "deep_dummy_maths._core"
+python-packages = ["deep_dummy_maths"]
+python-source = "src"
+
+# taken from lightning-ai/litdata (Apache License)
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = [
+    "tests",
+]
+norecursedirs = [
+    ".git",
+    ".github",
+    ".venv",
+    "dist",
+    "target",
+]
+addopts = [
+    "--strict-markers",
+    "--doctest-modules",
+    "--color=yes",
+    "--disable-pytest-warnings",
+    "--ignore=legacy/checkpoints",
+]
+markers = [
+    "cloud: Run the cloud tests for example",
+]
+filterwarnings = [
+    "error::FutureWarning",
+]
+xfail_strict = true
+junit_duration_report = "call"
