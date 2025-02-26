@@ -1,0 +1,9 @@
+Metadata-Version: 2.1
+Name: turintech-ioc
+Version: 1.1.1
+Summary: Inversion of control implementation. Based on the work of https://github.com/kodemore/kink
+License: MIT
+Requires-Python: <4,>=3.9
+License-File: LICENSE
+Requires-Dist: typing-extensions (<5.0.0,>=4.5.0)
+
