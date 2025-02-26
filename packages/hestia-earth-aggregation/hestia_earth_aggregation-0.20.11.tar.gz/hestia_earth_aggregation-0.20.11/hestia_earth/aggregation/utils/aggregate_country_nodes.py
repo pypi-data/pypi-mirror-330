@@ -1,0 +1,500 @@
+import os
+from functools import reduce
+from typing import TypedDict, Optional, Dict, List, Union, Tuple, Set
+from hestia_earth.schema import TermTermType, CycleJSONLD, SiteJSONLD, TermJSONLD
+from hestia_earth.utils.model import find_primary_product
+from hestia_earth.utils.tools import list_sum, non_empty_list, flatten, is_number, is_boolean
+from hestia_earth.utils.blank_node import ArrayTreatment, get_node_value
+
+from hestia_earth.aggregation.log import logger, log_memory_usage
+from . import (
+    CYCLE_AGGREGATION_KEYS, SITE_AGGREGATION_KEYS,
+    pick, weighted_average, _min, _max, _sd, sum_data, format_aggregated_list
+)
+from .completeness import (
+    combine_completeness_count, sum_completeness_count, is_complete, blank_node_completeness_key
+)
+from .group import GROUP_BY_EXTRA_VALUES
+from .blank_node import map_blank_node, default_missing_value, filter_blank_nodes, filter_aggregate
+from .queries import download_nodes, download_site
+from .cycle import is_organic, is_irrigated, aggregate_with_matrix
+from .site import create_site, format_site_results
+from .practice import filter_practices
+from .management import filter_management
+from .emission import get_method_tier
+
+_BATCH_SIZE = int(os.getenv('AGGREGATION_CYCLES_BATCH_SIZE', '1000'))
+
+
+def _map_values(values: list, key: str = 'value'): return flatten(non_empty_list([v.get(key) for v in values]))
+
+
+class BlankNodeFormatted(TypedDict, total=False):
+    term: dict
+    value: Optional[List[Union[str, int, float, bool]]]
+    economicValueShare: Optional[List[Union[int, float]]]
+    min: Optional[List[Union[int, float]]]
+    max: Optional[List[Union[int, float]]]
+    observations: Optional[int]
+    complete: Optional[bool]
+    completeness_key: Optional[str]
+    start_date: Optional[str]
+    end_date: str
+
+
+_FILTER_BLANK_NODES = {
+    'measurements': filter_blank_nodes,
+    # filtering by date is done over start-20 to end years
+    'management': lambda blank_nodes, start_year, end_year: filter_blank_nodes(
+        filter_management(blank_nodes, start_year, end_year)
+    ),
+    'practices': lambda blank_nodes, start_year, end_year: filter_blank_nodes(
+        filter_practices(blank_nodes),
+        start_year,
+        end_year
+    ),
+    'emissions': lambda blank_nodes, *args: list(filter(filter_aggregate, blank_nodes))
+}
+
+
+def _filter_blank_nodes(node: dict, list_key: str, start_year: int, end_year: int):
+    blank_nodes = node.get(list_key, [])
+    blank_nodes = _FILTER_BLANK_NODES.get(list_key, lambda values, *args: values)(blank_nodes, start_year, end_year)
+    # make sure we skip any blank node marked as `deleted`
+    return [n for n in blank_nodes if not n.get('deleted') and 'value' in n]
+
+
+# --- Cycle
+
+
+class CycleFormatted(TypedDict, total=False):
+    cycle_ids: List[str]
+    site_ids: List[str]
+    source_ids: List[str]
+    completeness: Dict[str, int]
+    product: TermJSONLD
+    functionalUnit: str
+    organic: bool
+    irrigated: bool
+    numberOfCycles: int
+    inputs: Dict[str, BlankNodeFormatted]
+    products: Dict[str, BlankNodeFormatted]
+    practices: Dict[str, BlankNodeFormatted]
+    emissions: Dict[str, BlankNodeFormatted]
+
+
+def _cycle_product_value(cycle: dict, primary_product: dict):
+    return list_sum(flatten([
+        # account for every product with the same `@id`
+        p.get('value', []) for p in cycle.get('products', [])
+        if p.get('term', {}).get('@id') == primary_product.get('term', {}).get('@id')
+    ]), 0)
+
+
+def _blank_node_evs(blank_nodes: List[BlankNodeFormatted]) -> Union[None, int, float]:
+    values = _map_values(blank_nodes, 'economicValueShare')
+    return None if not values else list_sum(values)
+
+
+def _group_cycle_blank_node(cycle: dict, product: dict, product_value: float):
+    def grouper(group: dict, blank_node: dict) -> Dict[str, BlankNodeFormatted]:
+        """
+        Group a single blank node, using the term `@id` and optionally some other keys.
+        This will group with any other existing blank node in the same group, and keep only one value.
+        """
+        term = blank_node.get('term', {})
+        term_id = term.get('@id')
+        keys = [term_id]
+        keys = list(map(str, non_empty_list(keys)))
+        group_key = '-'.join(keys)
+
+        complete = is_complete(cycle, product, blank_node)
+        # only primary product can be incomplete, otherwise skip the blank node
+        if complete is False and not blank_node.get('primary'):
+            return group
+
+        blank_node_data: BlankNodeFormatted = map_blank_node(
+            blank_node | {
+                'complete': complete,
+                'completeness_key': blank_node_completeness_key(blank_node, product)
+            }
+        )
+        normalize_value = product.get('term', {}).get('termType') != TermTermType.CROP.value
+        value = blank_node_data['value']
+        blank_node_data['value'] = (
+            value / (product_value if product_value else 1)
+        ) if normalize_value and is_number(value) else value
+
+        # if there is an existing blank node in the same group, combine to get a single value
+        existing_data: BlankNodeFormatted = group.get(group_key)
+
+        blank_nodes = non_empty_list([existing_data, blank_node_data])
+        values = _map_values(blank_nodes)
+        value = get_node_value({'value': values}, array_treatment=ArrayTreatment.SUM)
+        data = (existing_data or {}) | blank_node_data | {
+            'value': non_empty_list([value]),
+            'economicValueShare': non_empty_list([_blank_node_evs(blank_nodes)]),
+            'min': non_empty_list([_min(_map_values(blank_nodes, 'min'), min_observations=1)]),
+            'max': non_empty_list([_min(_map_values(blank_nodes, 'max'), min_observations=1)]),
+            # needed for background emissions
+            'inputs': _map_values(blank_nodes, 'inputs'),
+            'methodTier': get_method_tier(blank_nodes),
+            'observations': 0 if value is None else 1
+        }
+        group[group_key] = data
+        return group
+    return grouper
+
+
+def _group_cycle_blank_nodes(
+    cycle: dict,
+    product: dict,
+    product_value: float,
+    start_year: int = None,
+    end_year: int = None
+):
+    def grouper(group: dict, list_key: str) -> Dict[str, Dict[str, BlankNodeFormatted]]:
+        blank_nodes = _filter_blank_nodes(cycle, list_key, start_year, end_year)
+        group[list_key] = reduce(_group_cycle_blank_node(cycle, product, product_value), blank_nodes, {})
+        return group
+    return grouper
+
+
+def _should_include_cycle(cycle: dict):
+    should_include = all([
+        # skip any cycle that does not represent a commercial practice
+        cycle.get('commercialPracticeTreatment', True)
+    ])
+    if not should_include:
+        logger.debug('Cycle %s skipped because commercialPracticeTreatment=true.', cycle.get('@id'))
+    return should_include
+
+
+def _format_cycle(
+    cycle: CycleJSONLD,
+    start_year: int = None,
+    end_year: int = None
+) -> Tuple[List[CycleFormatted], Set[str]]:
+    """
+    Format Cycles to be used in grouping.
+    Returns the list of formatted Cycles, and the list of Site ids to be downloaded.
+    Note: if a Site does not have an `@id`, it means it's nested within the Cycle.
+    """
+    product = find_primary_product(cycle) or {}
+    product_value = _cycle_product_value(cycle, product)
+    data: CycleFormatted = (
+        pick(cycle, ['functionalUnit']) | {
+            'cycle_ids': [cycle.get('@id')],
+            'site_ids': [cycle.get('site', {}).get('@id')],
+            'source_ids': [cycle.get('defaultSource', {}).get('@id')],
+            'completeness': combine_completeness_count([cycle.get('completeness')]),
+            'product': product.get('term'),
+            'organic': is_organic(cycle),
+            'irrigated': is_irrigated(cycle),
+            'numberOfCycles': cycle.get('numberOfCycles') or 1
+        } |
+        reduce(
+            _group_cycle_blank_nodes(cycle, product, product_value, start_year, end_year),
+            CYCLE_AGGREGATION_KEYS,
+            {}
+        )
+    ) if _should_include_cycle(cycle) else None
+    if data and product_value:
+        logger.debug(
+            'id=%s, yield=%s, organic=%s, irrigated=%s',
+            cycle.get('@id'),
+            product_value,
+            data['organic'],
+            data['irrigated']
+        )
+    return data
+
+
+def _combine_cycle_blank_node(cycles: List[CycleFormatted], list_key: str, completeness: Dict[str, int]):
+    def grouper(group: dict, group_key: str):
+        values: List[BlankNodeFormatted] = non_empty_list([cycle.get(list_key, {}).get(group_key) for cycle in cycles])
+        value = _map_values(values)
+        term = values[0].get('term')
+        completeness_key = values[0].get('completeness_key')
+        completeness_count = completeness.get(completeness_key) or 0
+        default_value = default_missing_value(term)
+        missing_values = ([default_value] * (completeness_count - len(value)))
+        data: BlankNodeFormatted = {
+            **values[0],
+            'value': value + missing_values,
+            'economicValueShare': _map_values(values, 'economicValueShare'),
+            'min': _map_values(values, 'min'),
+            'max': _map_values(values, 'max'),
+            'observations': len(value + missing_values),
+            'inputs': list({v.get('@id'): v for v in _map_values(values, 'inputs')}.values()),
+            'methodTier': get_method_tier(values)
+        }
+        group[group_key] = data
+        return group
+    return grouper
+
+
+def _combine_cycle_blank_nodes(cycles: List[CycleFormatted], completeness: Dict[str, int]):
+    def combine(group: dict, list_key: str):
+        # get all possible keys first, then group each key values into a single blank node
+        keys = set(flatten([list(cycle.get(list_key, {}).keys()) for cycle in cycles]))
+        group[list_key] = reduce(_combine_cycle_blank_node(cycles, list_key, completeness), keys, {})
+        return group
+    return combine
+
+
+def _combine_formatted_cycles(cycles: List[CycleFormatted]) -> CycleFormatted:
+    completeness = sum_completeness_count([v['completeness'] for v in cycles])
+    data: CycleFormatted = pick(cycles[0], ['product', 'functionalUnit', 'organic', 'irrigated']) | {
+        'cycle_ids': flatten([v['cycle_ids'] for v in cycles]),
+        'site_ids': flatten([v['site_ids'] for v in cycles]),
+        'source_ids': flatten([v['source_ids'] for v in cycles]),
+        'completeness': completeness,
+        'numberOfCycles': sum_data(cycles, 'numberOfCycles')
+    } | reduce(_combine_cycle_blank_nodes(cycles, completeness), CYCLE_AGGREGATION_KEYS, {})
+    return data
+
+
+# --- Site
+
+
+class SiteFormatted(TypedDict, total=False):
+    site_ids: List[str]
+    source_ids: List[str]
+    numberOfSites: int
+    measurements: Dict[str, BlankNodeFormatted]
+    management: Dict[str, BlankNodeFormatted]
+
+
+def _group_site_blank_node(list_key: str):
+    def grouper(group: dict, blank_node: dict) -> Dict[str, BlankNodeFormatted]:
+        """
+        Group a single blank node, using the term `@id` and optionally some other keys.
+        This will group with any other existing blank node in the same group, and keep only one value.
+        """
+        term = blank_node.get('term', {})
+        term_id = term.get('@id')
+        keys = [term_id] + GROUP_BY_EXTRA_VALUES.get(list_key, lambda *args: [])(blank_node)
+        keys = list(map(str, non_empty_list(keys)))
+        group_key = '-'.join(keys)
+
+        blank_node_data: BlankNodeFormatted = map_blank_node(blank_node)
+
+        # if there is an existing blank node in the same group, combine to get a single value
+        existing_data: BlankNodeFormatted = group.get(group_key)
+
+        blank_nodes = non_empty_list([existing_data, blank_node_data])
+        values = _map_values(blank_nodes)
+        value = any(values) if all(map(is_boolean, values)) else get_node_value({'value': values})
+        data = (existing_data or {}) | blank_node_data | {
+            'value': non_empty_list([value]),
+            'min': non_empty_list([_min(_map_values(blank_nodes, 'min'), min_observations=1)]),
+            'max': non_empty_list([_min(_map_values(blank_nodes, 'max'), min_observations=1)]),
+        }
+        group[group_key] = data
+        return group
+    return grouper
+
+
+def _group_site_blank_nodes(site: SiteJSONLD, start_year: int = None, end_year: int = None):
+    def grouper(group: dict, list_key: str) -> Dict[str, BlankNodeFormatted]:
+        blank_nodes = _filter_blank_nodes(site, list_key, start_year, end_year)
+        group[list_key] = reduce(_group_site_blank_node(list_key), blank_nodes, {})
+        return group
+    return grouper
+
+
+def _format_site(site: SiteJSONLD, start_year: int = None, end_year: int = None) -> SiteFormatted:
+    data: SiteFormatted = pick(site, ['country', 'siteType']) | {
+        'site_ids': [site.get('@id')],
+        'source_ids': [site.get('defaultSource', {}).get('@id')],
+        'numberOfSites': site.get('numberOfSites') or 1
+    } | reduce(
+        _group_site_blank_nodes(site, start_year, end_year),
+        SITE_AGGREGATION_KEYS,
+        {}
+    )
+    return data
+
+
+def _combine_site_blank_node(sites: List[SiteFormatted], list_key: str):
+    def grouper(group: dict, group_key: str):
+        values: List[BlankNodeFormatted] = non_empty_list([site.get(list_key, {}).get(group_key) for site in sites])
+        value = _map_values(values)
+        data: BlankNodeFormatted = {
+            **values[0],
+            'value': value,
+            'min': _map_values(values, 'min'),
+            'max': _map_values(values, 'max'),
+            'observations': len(value),
+        }
+        group[group_key] = data
+        return group
+    return grouper
+
+
+def _combine_site_blank_nodes(sites: List[SiteFormatted]):
+    def combine(group: dict, list_key: str):
+        # get all possible keys first, then group each key values into a single blank node
+        keys = set(flatten([list(site.get(list_key, {}).keys()) for site in sites]))
+        group[list_key] = reduce(_combine_site_blank_node(sites, list_key), keys, {})
+        return group
+    return combine
+
+
+def _combine_formatted_sites(sites: List[SiteFormatted]) -> SiteFormatted:
+    data: SiteFormatted = pick(sites[0], ['country', 'siteType']) | {
+        'site_ids': flatten([v['site_ids'] for v in sites]),
+        'source_ids': flatten([v['source_ids'] for v in sites]),
+        'numberOfSites': sum_data(sites, 'numberOfSites')
+    } | reduce(_combine_site_blank_nodes(sites), SITE_AGGREGATION_KEYS, {})
+    return data
+
+
+# --- Aggregate
+
+
+def _aggregate_blank_node(blank_node: BlankNodeFormatted):
+    value = weighted_average([(v, 1) for v in blank_node.get('value', [])])
+    economicValueShare = weighted_average([(v, 1) for v in blank_node.get('economicValueShare') or []])
+
+    return pick(blank_node | {
+        'value': value,
+        'economicValueShare': economicValueShare,
+        'min': _min(blank_node.get('min', [])),
+        'max': _max(blank_node.get('max', [])),
+        'sd': _sd(blank_node.get('value', []))
+    }, [
+        'term',
+        'observations', 'inputs', 'methodTier', 'depthUpper', 'depthLower', 'startDate', 'endDate',
+        'value', 'economicValueShare', 'min', 'max', 'sd', 'primary'
+    ])
+
+
+def _aggregate_formatted(data: Union[CycleFormatted, SiteFormatted], aggregated_keys: List[str]):
+    return reduce(
+        lambda group, key: group | {key: list(map(_aggregate_blank_node, data.get(key, {}).values()))},
+        aggregated_keys,
+        {}
+    )
+
+
+def _group_cycles(cycles: list) -> dict[str, list]:
+    """
+    Group cycles by organic/irrigated.
+    """
+    def group_by(data: dict, cycle: dict):
+        group_key = '-'.join([str(cycle.get('organic', False)), str(cycle.get('irrigated', False))])
+        data[group_key] = data.get(group_key, []) + [cycle]
+        return data
+    return reduce(group_by, cycles, {})
+
+
+def _combine_cycles_batch(cycles: list, product: dict, start_year: int, end_year: int) -> Dict[str, CycleFormatted]:
+    cycles = download_nodes(cycles)
+    if not cycles:
+        logger.warning('No cycles found, stopping aggregations.')
+        return {}
+
+    cycles = non_empty_list([_format_cycle(cycle, start_year, end_year) for cycle in cycles])
+
+    include_matrix = aggregate_with_matrix(product)
+    cycles = _group_cycles(cycles) if include_matrix else {'all': cycles}
+    cycles = {
+        key: _combine_formatted_cycles(value) for key, value in cycles.items()
+    }
+
+    # current product might not be any primary product in cycles
+    if len(cycles.keys()) == 0:
+        logger.debug('No cycles to run aggregation.')
+        return {}
+
+    return cycles
+
+
+def _combine_sites_batch(
+    site_ids: List[str],
+    start_year: int,
+    end_year: int
+) -> Dict[str, SiteFormatted]:
+    # the same site can be used multiple times
+    sites_by_id = {
+        site_id: _format_site(download_site({'@type': 'Site', '@id': site_id}), start_year, end_year)
+        for site_id in set(site_ids)
+    }
+    return _combine_formatted_sites([sites_by_id[site_id] for site_id in site_ids])
+
+
+def _aggregate_sites(site_ids: List[str], start_year: int, end_year: int) -> SiteJSONLD:
+    batches = range(0, len(site_ids), _BATCH_SIZE)
+
+    all_sites = []
+
+    for batch_index in batches:
+        logger.info(f"Processing sites in batch {int(batch_index / _BATCH_SIZE) + 1} of {len(batches)}...")
+        log_memory_usage()
+        batched_site_ids = site_ids[batch_index:batch_index + _BATCH_SIZE]
+        site = _combine_sites_batch(batched_site_ids, start_year, end_year)
+        all_sites.append(site)
+
+    logger.info('Finished processing batch, combining all sites...')
+    log_memory_usage()
+
+    site = _combine_formatted_sites(all_sites)
+    site = (
+        create_site(pick(site, ['country', 'siteType'])) |
+        format_site_results(_aggregate_formatted(site, SITE_AGGREGATION_KEYS)) | {
+            'aggregatedSites': format_aggregated_list('Site', site['site_ids']),
+            'aggregatedSources': format_aggregated_list('Source', site['source_ids']),
+            'numberOfSites': site.get('numberOfSites')
+        }
+    )
+    return site
+
+
+def aggregate_cycles(cycles: list, product: dict, start_year: int, end_year: int):
+    batches = range(0, len(cycles), _BATCH_SIZE)
+
+    all_cycles: Dict[str, List[CycleFormatted]] = {}
+
+    # step 1: combine and aggregate all cycles by group
+    for batch_index in batches:
+        logger.info(f"Processing cycles in batch {int(batch_index / _BATCH_SIZE) + 1} of {len(batches)}...")
+        log_memory_usage()
+        batched_cycles = cycles[batch_index:batch_index + _BATCH_SIZE]
+        batch_cycles = _combine_cycles_batch(batched_cycles, product, start_year, end_year)
+        for key, value in batch_cycles.items():
+            all_cycles[key] = all_cycles.get(key, []) + [value]
+
+    logger.info('Finished processing batch, combining all cycles...')
+    log_memory_usage()
+    cycles = [
+        _combine_formatted_cycles(cycles=values)
+        for values in all_cycles.values()
+    ]
+
+    # step 2: combine and aggregate all sites by group
+    logger.info('Finished combining cycles, processing sites...')
+    log_memory_usage()
+    sites = [
+        _aggregate_sites(value.get('site_ids', []), start_year, end_year)
+        for value in cycles
+    ]
+
+    logger.info('Finished aggregating sites, aggregating cycles...')
+    log_memory_usage()
+    cycles: List[CycleFormatted] = [
+        cycle | {'site': sites[index]} | _aggregate_formatted(cycle, CYCLE_AGGREGATION_KEYS)
+        for index, cycle in enumerate(cycles)
+    ]
+    cycles = [
+        # map fields for `format_term_results`
+        cycle | {
+            'node-ids': cycle['cycle_ids'],
+            'source-ids': cycle['source_ids'],
+            'completeness-count': cycle['completeness']
+        }
+        for cycle in cycles
+    ]
+    log_memory_usage()
+    return cycles
