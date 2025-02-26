@@ -1,0 +1,71 @@
+Metadata-Version: 2.2
+Name: blueflow
+Version: 4.857.1
+Summary: 📜 workflow management on aws batch and more.
+Home-page: https://github.com/kamangir/notebooks-and-scripts
+Author: Arash Abadpour (Kamangir)
+Author-email: arash@kamangir.net
+License: Public Domain
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Unix Shell
+Classifier: License :: Public Domain
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: blueness
+Requires-Dist: abcli
+Requires-Dist: beautifulsoup4
+Requires-Dist: blue_objects
+Requires-Dist: boto3
+Requires-Dist: geojson
+Requires-Dist: geopandas
+Requires-Dist: ipdb
+Requires-Dist: matplotlib
+Requires-Dist: networkx
+Requires-Dist: opencv-python
+Requires-Dist: pydot
+Requires-Dist: pylint
+Requires-Dist: pymysql
+Requires-Dist: pytest
+Requires-Dist: python-dotenv[cli]
+Requires-Dist: pyyaml
+Requires-Dist: requests
+Requires-Dist: tqdm
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license
+Dynamic: requires-dist
+Dynamic: summary
+
+# 📜 blueflow
+
+📜 `blueflow` for workflow management on [aws batch](https://aws.amazon.com/batch/) and more.
+
+```bash
+pip install blueflow
+```
+
+|   |   |   |   |   |
+| --- | --- | --- | --- | --- |
+| 📜 | [`a-bc-d`](https://raw.githubusercontent.com/kamangir/notebooks-and-scripts/main/patterns/a-bc-d.dot) | [`hourglass`](https://raw.githubusercontent.com/kamangir/notebooks-and-scripts/main/patterns/hourglass.dot) | [`map-reduce`](https://raw.githubusercontent.com/kamangir/notebooks-and-scripts/main/patterns/map-reduce.dot) | [`map-reduce-large`](https://raw.githubusercontent.com/kamangir/notebooks-and-scripts/main/patterns/map-reduce-large.dot) |
+| [aws_batch](https://raw.githubusercontent.com/kamangir/notebooks-and-scripts/main/runners/aws_batch.py) | [![image](https://kamangir-public.s3.ca-central-1.amazonaws.com/aws_batch-a-bc-d/workflow.gif?raw=true&random=mbb7he4dnxupqpa9)](https://kamangir-public.s3.ca-central-1.amazonaws.com/aws_batch-a-bc-d/workflow.gif?raw=true&random=mbb7he4dnxupqpa9) [🔗](https://kamangir-public.s3.ca-central-1.amazonaws.com/aws_batch-a-bc-d/workflow.gif?raw=true&random=mbb7he4dnxupqpa9) | [![image](https://kamangir-public.s3.ca-central-1.amazonaws.com/aws_batch-hourglass/workflow.gif?raw=true&random=8ictytqwfxk8cvap)](https://kamangir-public.s3.ca-central-1.amazonaws.com/aws_batch-hourglass/workflow.gif?raw=true&random=8ictytqwfxk8cvap) [🔗](https://kamangir-public.s3.ca-central-1.amazonaws.com/aws_batch-hourglass/workflow.gif?raw=true&random=8ictytqwfxk8cvap) | [![image](https://kamangir-public.s3.ca-central-1.amazonaws.com/aws_batch-map-reduce/workflow.gif?raw=true&random=qtelmug8kltg3pg3)](https://kamangir-public.s3.ca-central-1.amazonaws.com/aws_batch-map-reduce/workflow.gif?raw=true&random=qtelmug8kltg3pg3) [🔗](https://kamangir-public.s3.ca-central-1.amazonaws.com/aws_batch-map-reduce/workflow.gif?raw=true&random=qtelmug8kltg3pg3) | [![image](https://kamangir-public.s3.ca-central-1.amazonaws.com/aws_batch-map-reduce-large/workflow.gif?raw=true&random=821q32plcrimf458)](https://kamangir-public.s3.ca-central-1.amazonaws.com/aws_batch-map-reduce-large/workflow.gif?raw=true&random=821q32plcrimf458) [🔗](https://kamangir-public.s3.ca-central-1.amazonaws.com/aws_batch-map-reduce-large/workflow.gif?raw=true&random=821q32plcrimf458) |
+| [generic](https://raw.githubusercontent.com/kamangir/notebooks-and-scripts/main/runners/generic.py) | [![image](https://kamangir-public.s3.ca-central-1.amazonaws.com/generic-a-bc-d/workflow.gif?raw=true&random=xaur309dbdqzp5pt)](https://kamangir-public.s3.ca-central-1.amazonaws.com/generic-a-bc-d/workflow.gif?raw=true&random=xaur309dbdqzp5pt) [🔗](https://kamangir-public.s3.ca-central-1.amazonaws.com/generic-a-bc-d/workflow.gif?raw=true&random=xaur309dbdqzp5pt) | [![image](https://kamangir-public.s3.ca-central-1.amazonaws.com/generic-hourglass/workflow.gif?raw=true&random=qjcrs9aaj186u8u3)](https://kamangir-public.s3.ca-central-1.amazonaws.com/generic-hourglass/workflow.gif?raw=true&random=qjcrs9aaj186u8u3) [🔗](https://kamangir-public.s3.ca-central-1.amazonaws.com/generic-hourglass/workflow.gif?raw=true&random=qjcrs9aaj186u8u3) | [![image](https://kamangir-public.s3.ca-central-1.amazonaws.com/generic-map-reduce/workflow.gif?raw=true&random=vc4yshol8vntmygg)](https://kamangir-public.s3.ca-central-1.amazonaws.com/generic-map-reduce/workflow.gif?raw=true&random=vc4yshol8vntmygg) [🔗](https://kamangir-public.s3.ca-central-1.amazonaws.com/generic-map-reduce/workflow.gif?raw=true&random=vc4yshol8vntmygg) | [![image](https://kamangir-public.s3.ca-central-1.amazonaws.com/generic-map-reduce-large/workflow.gif?raw=true&random=2iijhlniig21rzj8)](https://kamangir-public.s3.ca-central-1.amazonaws.com/generic-map-reduce-large/workflow.gif?raw=true&random=2iijhlniig21rzj8) [🔗](https://kamangir-public.s3.ca-central-1.amazonaws.com/generic-map-reduce-large/workflow.gif?raw=true&random=2iijhlniig21rzj8) |
+| [local](https://raw.githubusercontent.com/kamangir/notebooks-and-scripts/main/runners/local.py) | [![image](https://kamangir-public.s3.ca-central-1.amazonaws.com/local-a-bc-d/workflow.gif?raw=true&random=lwtt4mbachmlwq1p)](https://kamangir-public.s3.ca-central-1.amazonaws.com/local-a-bc-d/workflow.gif?raw=true&random=lwtt4mbachmlwq1p) [🔗](https://kamangir-public.s3.ca-central-1.amazonaws.com/local-a-bc-d/workflow.gif?raw=true&random=lwtt4mbachmlwq1p) | [![image](https://kamangir-public.s3.ca-central-1.amazonaws.com/local-hourglass/workflow.gif?raw=true&random=ecnqeweyonfg6zei)](https://kamangir-public.s3.ca-central-1.amazonaws.com/local-hourglass/workflow.gif?raw=true&random=ecnqeweyonfg6zei) [🔗](https://kamangir-public.s3.ca-central-1.amazonaws.com/local-hourglass/workflow.gif?raw=true&random=ecnqeweyonfg6zei) | [![image](https://kamangir-public.s3.ca-central-1.amazonaws.com/local-map-reduce/workflow.gif?raw=true&random=4l0xkub13vnt40cb)](https://kamangir-public.s3.ca-central-1.amazonaws.com/local-map-reduce/workflow.gif?raw=true&random=4l0xkub13vnt40cb) [🔗](https://kamangir-public.s3.ca-central-1.amazonaws.com/local-map-reduce/workflow.gif?raw=true&random=4l0xkub13vnt40cb) | [![image](https://kamangir-public.s3.ca-central-1.amazonaws.com/local-map-reduce-large/workflow.gif?raw=true&random=cik9jn5chb3wgcwv)](https://kamangir-public.s3.ca-central-1.amazonaws.com/local-map-reduce-large/workflow.gif?raw=true&random=cik9jn5chb3wgcwv) [🔗](https://kamangir-public.s3.ca-central-1.amazonaws.com/local-map-reduce-large/workflow.gif?raw=true&random=cik9jn5chb3wgcwv) |
+
+💡 example use: [literature review using OpenAI API](https://github.com/kamangir/openai-commands/tree/main/openai_commands/literature_review).
+
+
+---
+
+
+[![pylint](https://github.com/kamangir/notebooks-and-scripts/actions/workflows/pylint.yml/badge.svg)](https://github.com/kamangir/notebooks-and-scripts/actions/workflows/pylint.yml) [![pytest](https://github.com/kamangir/notebooks-and-scripts/actions/workflows/pytest.yml/badge.svg)](https://github.com/kamangir/notebooks-and-scripts/actions/workflows/pytest.yml) [![bashtest](https://github.com/kamangir/notebooks-and-scripts/actions/workflows/bashtest.yml/badge.svg)](https://github.com/kamangir/notebooks-and-scripts/actions/workflows/bashtest.yml) [![PyPI version](https://img.shields.io/pypi/v/blueflow.svg)](https://pypi.org/project/blueflow/) [![PyPI - Downloads](https://img.shields.io/pypi/dd/blueflow)](https://pypistats.org/packages/blueflow)
+
+built by 🌀 [`blue_options-4.227.1`](https://github.com/kamangir/awesome-bash-cli), based on 📜 [`blueflow-4.857.1`](https://github.com/kamangir/notebooks-and-scripts).
+
+---
+
+used to be [`notebooks-and-scripts`](https://pypi.org/project/notebooks-and-scripts/).
