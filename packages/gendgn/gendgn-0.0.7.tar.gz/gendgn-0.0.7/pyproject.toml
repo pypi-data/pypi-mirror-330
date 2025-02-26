@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gendgn"
+version = "0.0.7"
+authors = [
+  { name="Kian Wee CHEN", email="chenkianwee@gmail.com" },
+]
+description = 'Python-based command line tool for generative design using IFC file format'
+readme = "README.md"
+requires-python = '>=3.10,<3.13'
+classifiers = ["License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+               "Programming Language :: Python :: 3.10",
+               "Operating System :: OS Independent"]
+dependencies = ['ifc2osmod==0.0.6',
+                'jsonschema==4.23.0',
+                'pymoo==0.6.1.3']
+[project.optional-dependencies]
+viewer3d = ['ifc2osmod[viewer3d]==0.0.6']
+
+[project.urls]
+"Homepage" = "https://github.com/chenkianwee/gendgn"
+"Bug Tracker" = "https://github.com/chenkianwee/gendgn/issues"
+
+[project.scripts]
+batch_eval = "gendgn.batch_eval:main"
+exe_wwr_constr = "gendgn.exe_wwr_constr:main"
+pmtrz_wwr_constr = "gendgn.pmtrz_wwr_constr:main"
+sample_variants = "gendgn.sample_variants:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
