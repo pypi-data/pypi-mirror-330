@@ -1,0 +1,12 @@
+presidio-analyzer==2.2.32
+openpyxl==3.1.5
+pydantic==2.10.3
+numpy==2.0.2
+unstructured[docx,pptx]
+unstructured[pdf]
+python-stdnum==1.20
+pytesseract==0.3.13
+PyPDF2==3.0.1
+xmltodict==0.14.2
+scikit-image==0.25.1
+deskew==1.5.1
