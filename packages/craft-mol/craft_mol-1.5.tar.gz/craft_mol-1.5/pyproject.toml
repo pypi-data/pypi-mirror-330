@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "craft-mol"
+version = "1.5"
+description = "CRAFT: Consistent Representational Fusion of Three Molecular Modalities."
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: Apache Software License",
+]
+dependencies = [
+    "torch==2.5.1",
+    "torch-scatter==2.1.2",
+    "torch-geometric==2.6.1",
+    "selfies==2.2.0",
+    "ruamel.yaml==0.16.6",
+    "tqdm==4.67.1",
+    "toolz==1.0.0",
+]
+
+[tool.setuptools.packages.find]
+exclude = ["assets*", "benchmark*", "docs", "dist*","craft_mol/data","craft_mol/pre_train","*.ipynb","*.log","craft_mol/config/*.json"] 
+
+
+[tool.wheel]
+exclude = ["assets*", "benchmark*", "docs", "dist*","craft_mol/data","craft_mol/pre_train","*.ipynb","*.log","craft_mol/config/*.json"]

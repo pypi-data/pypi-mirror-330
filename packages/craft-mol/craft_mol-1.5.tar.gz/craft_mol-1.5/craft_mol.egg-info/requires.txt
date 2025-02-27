@@ -1,0 +1,7 @@
+torch==2.5.1
+torch-scatter==2.1.2
+torch-geometric==2.6.1
+selfies==2.2.0
+ruamel.yaml==0.16.6
+tqdm==4.67.1
+toolz==1.0.0
