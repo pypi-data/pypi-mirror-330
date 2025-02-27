@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["django_polls_gs377209", "django_polls_gs377209.migrations"]
+
+[project]
+name = "django_polls_gs377209"
+version = "0.0.3"
+dependencies = [
+    "django>=5.1",
+]
+description = "A Django app to conduct web-based polls."
+readme = "README.rst"
+requires-python = ">= 3.10"
+authors = [
+    {name = "Gerrod Schirtzinger", email = "gerrod.l.schirtzinger@gmail.com"},
+]
+classifiers = [
+    "Environment :: Web Environment",
+    "Framework :: Django",
+    "Framework :: Django :: 5.1",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: BSD License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Internet :: WWW/HTTP",
+    "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
+]
+
+[project.urls]
+Homepage = "https://github.com/gs377209/django-polls"
+Issues = "https://github.com/gs377209/django-polls/issues"

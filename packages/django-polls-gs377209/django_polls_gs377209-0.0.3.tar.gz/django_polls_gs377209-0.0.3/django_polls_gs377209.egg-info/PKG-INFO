@@ -1,0 +1,55 @@
+Metadata-Version: 2.2
+Name: django_polls_gs377209
+Version: 0.0.3
+Summary: A Django app to conduct web-based polls.
+Author-email: Gerrod Schirtzinger <gerrod.l.schirtzinger@gmail.com>
+Project-URL: Homepage, https://github.com/gs377209/django-polls
+Project-URL: Issues, https://github.com/gs377209/django-polls/issues
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: Framework :: Django :: 5.1
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Topic :: Internet :: WWW/HTTP
+Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic Content
+Requires-Python: >=3.10
+Description-Content-Type: text/x-rst
+License-File: LICENSE
+Requires-Dist: django>=5.1
+
+=======================
+django_polls_gs377209
+=======================
+
+django_polls_gs377209 is a Django app to conduct web-based polls. For each
+question, visitors can choose between a fixed number of answers.
+
+Detailed documentation is in the "docs" directory.
+
+Quick start
+-----------
+
+1. Add "polls" to your INSTALLED_APPS setting like this::
+
+    INSTALLED_APPS = [
+        ...,
+        "django_polls_gs377209",
+    ]
+
+2. Include the polls URLconf in your project urls.py like this::
+
+    path("polls/", include("django_polls_gs377209.urls")),
+
+3. Run ``python manage.py migrate`` to create the models.
+
+4. Start the development server and visit the admin to create a poll.
+
+5. Visit the ``/polls/`` URL to participate in the poll.
