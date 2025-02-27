@@ -1,0 +1,12 @@
+requests
+numpy
+ortools
+beautifulsoup4
+jsp-vis
+
+[dev]
+pip-tools
+pytest
+pytest-cov
+tox
+twine
