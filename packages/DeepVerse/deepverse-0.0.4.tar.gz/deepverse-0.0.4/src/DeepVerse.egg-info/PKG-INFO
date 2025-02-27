@@ -1,0 +1,26 @@
+Metadata-Version: 2.2
+Name: DeepVerse
+Version: 0.0.4
+Summary: DeepVerse 6G
+Home-page: https://deepverse6g.net/
+Author: Umut Demirhan, Abdelrahman Taha, Shuaifeng Jiang, Ahmed Alkhateeb
+Keywords: mmWave,MIMO,digital twin,wireless,python,Beta
+Classifier: Development Status :: 3 - Alpha
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Dist: numpy
+Requires-Dist: scipy
+Requires-Dist: tqdm
+Requires-Dist: matplotlib
+Requires-Dist: pyyaml
+Requires-Dist: natsort
+Requires-Dist: pandas
+Dynamic: author
+Dynamic: classifier
+Dynamic: description
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: requires-dist
+Dynamic: summary
+
+DeepVerse 6G dataset generator library
