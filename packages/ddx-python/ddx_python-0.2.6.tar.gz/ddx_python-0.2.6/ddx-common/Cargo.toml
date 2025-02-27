@@ -1,0 +1,184 @@
+[package]
+name = "ddx-common"
+version = "0.8.0"
+edition = "2021"
+
+[features]
+default = ["database", "arbitrary", "sgx"]                           # Requires the std by default
+alpha1 = []
+no_rate_limit = []
+self_ra = []
+python = ["pyo3", "ethabi/serde", "rust_decimal/maths", "pythonize"]
+test_harness = ["test_account"]
+test_account = []
+arbitrary = ["quickcheck"]
+database = ["postgres-types", "bytes"]
+index_fund = []
+fixed_expiry_future = ["pyo3?/chrono"]
+multi_strategies = []
+console = ["console-subscriber"]
+# warp related code to build HTTP server
+api = ["warp"]
+# SGX related modules
+sgx = ["sgx_types", "sgx_urts"]
+
+[dependencies]
+ddx-common-macros = { path = "./macros" }
+# Types, encoding and serialization
+serde-big-array = "0.3.2"
+ethereum-types = { version = "0.14.1", default-features = false, features = [
+    "serialize",
+] }
+ethabi = { version = "18.0.0", default-features = false }
+hash-db = { version = "0.15.2", default-features = false }
+plain_hasher = { version = "0.2.3", default-features = false }
+rlp = { version = "0.5.1", default-features = false }
+# Using the no_std mode of serde which should also work in the enclave without a custom port
+serde = { version = "1.0", features = ["derive", "rc"] }
+serde_json = { version = "1.0" }
+serde_repr = { version = "0.1", default-features = false }
+serde_cbor = { version = "0.11.2" }
+rustc-hex = { version = "2.1.0", default-features = false }
+rust_decimal = { version = "1.34", features = ["serde"] }
+postgres-types = { version = "0.2", features = [
+    "derive",
+    "with-serde_json-1",
+], optional = true }
+triehash = { version = "0.8", default-features = false }
+downcast-rs = "1.2.1"
+
+# Exception management
+anyhow = { version = "1", default-features = false }
+thiserror = { version = "1" }
+
+# Logging
+tracing = { version = "0.1", features = [
+    "attributes",
+], default-features = false }
+tracing-futures = "0.2.5"
+tracing-subscriber = { version = "0.3", features = [
+    "env-filter",
+    "json",
+    "time",
+    "registry",
+] }
+console-subscriber = { version = "0.2.0", optional = true }
+time = "0.3.17"
+# Utils
+arrayvec = { version = "0.7", default-features = false }
+sparse-merkle-tree = { git = "https://github.com/jjyr/sparse-merkle-tree.git", rev = "b7932906aa2da6059c8ed19c93821fa78d271f73", default-features = false }
+lazy_static = { version = "1.4.0", default-features = false, features = [
+    "spin_no_std",
+] }
+bytes = { version = "1.0", default-features = false, optional = true }
+bitvec = { version = "0.20.4", default-features = false, features = ["alloc"] }
+cfg-if = "1.0.0"
+derive_builder = "0.20.0"
+heapless = { version = "0.8.0", features = ["serde"] }
+clap = "4.5.4"
+libsecp256k1 = { version = "0.7.1", default-features = false }
+# Versions of digest and typenum must be aligned with libsecp256k1
+digest = { version = "0.9", default-features = false }
+typenum = "1.13.0"
+tiny-keccak = { version = "1.4" }
+
+# Development and testing
+quickcheck = { version = "1.0.3", optional = true }
+
+# Specs related
+chrono = { version = "0.4", features = ["serde"] }
+gjson = { version = "0.8" }
+nom = "7.1"
+dyn-fmt = { version = "0.3", default-features = false }
+regex = { version = "1.3.1" }
+
+# Sync
+arc-swap = "1.2.0"
+
+# Python types (should be in the python feature)
+pyo3 = { version = "0.20.3", optional = true, features = [
+    "multiple-pymethods",
+] }
+pythonize = { version = "0.20.0", optional = true }
+
+[dev-dependencies]
+ddx-common = { path = ".", features = ["test_harness"] }
+rand = "0.8.5"
+tracing-subscriber = { version = "0.3", features = [
+    "env-filter",
+    "json",
+    "time",
+    "registry",
+] }
+time = "0.3.35"
+
+[target.'cfg(all(not(target_vendor = "teaclave"), not(target_family = "wasm")))'.dependencies]
+anyhow = { version = "1" }
+async-trait = "0.1"
+base64 = "0.22.1"
+base64-url = "3.0.0"
+reqwest = { version = "0.11", features = ["json"] }
+sha2 = "0.10.8"
+# JWT
+jsonwebtoken = { git = "https://github.com/yangfh2004/jsonwebtoken.git" }
+jsonwebkey = { version = "0.3", features = ["pkcs-convert"] }
+tokio = { package = "tokio", version = "1", default-features = false, features = [
+    "fs",
+    "io-util",
+    "macros",
+    "rt",
+    "rt-multi-thread",
+    "sync",
+    "time",
+    "process",
+    "tracing",
+] }
+tokio-postgres = { version = "0.7", features = [
+    "with-serde_json-1",
+    "with-chrono-0_4",
+    "array-impls",
+] }
+postgres = { version = "0.19", features = [
+    "with-serde_json-1",
+    "with-chrono-0_4",
+] }
+# Cryptography
+aes-gcm = { version = "0.10.3", default-features = false, features = [
+    "alloc",
+    "aes",
+] }
+# Web backend
+warp = { version = "0.3.5", optional = true }
+deadpool-postgres = "0.10"
+x509-certificate = "0.23"
+backoff = { version = "0.4.0" }
+ethabi = { version = "18.0.0", default-features = false, features = ["std"] }
+serde_cbor = "0.11.2"
+log = { version = "0.4.11", default-features = false, features = ["std"] }
+# Wasm types (should be in the wasm feature)
+wasm-bindgen = { version = "0.2" }
+rust_decimal = { version = "1.34", features = ["serde", "db-postgres"] }
+# SGX
+sgx_types = { git = "https://gitlab.com/dexlabs/incubator-teaclave-sgx-sdk", branch = "update-v2.0.0-sgx-emm", optional = true }
+sgx_urts = { git = "https://gitlab.com/dexlabs/incubator-teaclave-sgx-sdk", branch = "update-v2.0.0-sgx-emm", optional = true }
+libsecp256k1 = { version = "0.7.1", default-features = false, features = [
+    "hmac",
+] }
+
+[target.'cfg(target_vendor = "teaclave")'.dependencies]
+anyhow = { version = "1" }
+log = { version = "0.4.11", default-features = false, features = ["std"] }
+ethabi = { version = "18.0.0", default-features = false, features = ["std"] }
+# SGX
+sgx_crypto = { git = "https://gitlab.com/dexlabs/incubator-teaclave-sgx-sdk", branch = "update-v2.0.0-sgx-emm" }
+
+[target.'cfg(target_family = "wasm")'.dependencies]
+wasm-bindgen = { version = "0.2" }
+libsecp256k1 = { version = "0.7.1", default-features = false, features = [
+    "hmac",
+] }
+# Cryptography
+aes-gcm = { version = "0.10.3", default-features = false, features = [
+    "alloc",
+    "aes",
+] }

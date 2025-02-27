@@ -1,0 +1,6 @@
+[workspace]
+members = ["ddx-common", "ddx-python"]
+
+exclude = ["third-party"]
+
+resolver = "2"

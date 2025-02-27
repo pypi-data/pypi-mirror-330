@@ -1,0 +1,21 @@
+[package]
+name = "ddx-python"
+# NOTE: The maturin build script replaces this by the SEMVER env variable.
+version = "0.2.6"
+edition = "2021"
+
+[lib]
+name = "ddx_python"
+crate-type = ["cdylib"]
+
+[features]
+default = ["fixed_expiry_future", "index_fund"]
+index_fund = ["ddx-common/index_fund"]
+fixed_expiry_future = ["ddx-common/fixed_expiry_future"]
+
+[dependencies]
+ddx-common = { path = "../ddx-common", default-features = false, features = [
+    "python",
+    "database",
+] }
+pyo3 = { version = "0.20.3", features = ["extension-module"] }
