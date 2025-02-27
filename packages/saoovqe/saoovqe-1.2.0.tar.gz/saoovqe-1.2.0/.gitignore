@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+.idea/
+example/sandbox*.py
+*.out
+*.bin
+*.dat
+.*_cache
+timer.dat
+psi4-rhf.out
+*.clean
+docs/build/
+output_Psi4.txt
+dist/
+example/out.txt

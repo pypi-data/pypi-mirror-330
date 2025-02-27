@@ -1,0 +1,38 @@
+&GATEWAY
+  coord=formaldimine_90_120.xyz
+  basis=sto-3g
+  group=Nosym
+  NOMOVE
+
+&SEWARD
+
+&SCF
+
+&RASSCF
+  SPIN = 1
+  LEVShft = 0
+  NACTel = 4
+  INACtive = 6
+  RAS2 = 3
+  CIROot = 2 2 1
+  ITERations = 500, 200
+  THRS = 1e-07, .35e-02, 1.9e-03
+  EXPERT
+
+&ALASKA
+  ROOT = 1
+  PNEW
+  SHOW
+  VERBose
+
+&ALASKA
+  ROOT = 2
+  PNEW
+  SHOW
+  VERBose
+
+&ALASKA
+  NAC = 1 2
+  SHOW
+  VERBose
+

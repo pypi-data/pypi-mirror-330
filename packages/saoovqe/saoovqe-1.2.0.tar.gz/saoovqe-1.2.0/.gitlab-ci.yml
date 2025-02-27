@@ -1,0 +1,23 @@
+default:
+  image: continuumio/anaconda3
+
+stages:
+  - test
+
+before_script:
+  - conda env create -f environment.yml
+  - conda info --envs
+  - conda init bash
+  - source ~/.bashrc
+  - conda activate saoovqe-env
+  - pip install .
+
+vqe_optimization_validation_tests:
+  only:
+    - main
+  stage: test
+  script:
+    - conda init bash
+    - source ~/.bashrc
+    - conda activate saoovqe-env
+    - pytest tests/

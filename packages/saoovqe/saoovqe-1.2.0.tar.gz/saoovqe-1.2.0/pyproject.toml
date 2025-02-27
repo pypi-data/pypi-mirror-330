@@ -1,0 +1,41 @@
+[build-system]
+requires = ["hatchling", "hatch-requirements-txt"]
+build-backend = "hatchling.build"
+
+[project]
+name = "saoovqe"
+version = "1.2.0"
+authors = [
+    { name = "Martin Beseda", email = "martinbeseda@seznam.cz" },
+    { name = "Silvie Illésová", email = "silvie.illesova@seznam.cz" },
+    { name = "Saad Yalouz", email = "yalouzsaad@gmail.com" },
+    { name = "Bruno Senjean", email = "bsenjean@gmail.com" }
+]
+description = "SA-OO-VQE method implemented via Qiskit library"
+readme = "README.md"
+requires-python = ">=3.12"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "Operating System :: POSIX :: Linux",
+]
+license = { file = "LICENSE.md" }
+
+[tool.hatch.metadata.hooks.requirements_txt]
+files = ["requirements.txt"]
+
+[project.urls]
+"Homepage" = "https://gitlab.com/MartinBeseda/sa-oo-vqe-qiskit.git"
+"Documentation" = "https://sa-oo-vqe-qiskit.readthedocs.io/en/latest/"
+
+[tool.tox]
+legacy_tox_ini = """
+    [tox]
+    min_version = 4.0
+    env_list =
+        py312
+
+    [testenv]
+    deps = pytest
+    commands = pytest tests
+"""

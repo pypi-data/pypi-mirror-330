@@ -1,0 +1,50 @@
+cff-version: "1.2.0"
+authors:
+- family-names: Beseda
+  given-names: Martin
+  orcid: "https://orcid.org/0000-0001-5792-2872"
+- family-names: Illésová
+  given-names: Silvie
+  orcid: "https://orcid.org/0009-0002-5231-3714"
+- family-names: Yalouz
+  given-names: Saad
+  orcid: "https://orcid.org/0000-0002-8818-3379"
+- family-names: Senjean
+  given-names: Bruno
+  orcid: "https://orcid.org/0000-0003-1706-015X"
+contact:
+- family-names: Beseda
+  given-names: Martin
+  orcid: "https://orcid.org/0000-0001-5792-2872"
+doi: 10.5281/zenodo.13840953
+message: If you use this software, please cite our article in the
+  Journal of Open Source Software.
+preferred-citation:
+  authors:
+  - family-names: Beseda
+    given-names: Martin
+    orcid: "https://orcid.org/0000-0001-5792-2872"
+  - family-names: Illésová
+    given-names: Silvie
+    orcid: "https://orcid.org/0009-0002-5231-3714"
+  - family-names: Yalouz
+    given-names: Saad
+    orcid: "https://orcid.org/0000-0002-8818-3379"
+  - family-names: Senjean
+    given-names: Bruno
+    orcid: "https://orcid.org/0000-0003-1706-015X"
+  date-published: 2024-09-26
+  doi: 10.21105/joss.06036
+  issn: 2475-9066
+  issue: 101
+  journal: Journal of Open Source Software
+  publisher:
+    name: Open Journals
+  start: 6036
+  title: "State-Averaged Orbital-Optimized VQE: A quantum algorithm for
+    the democratic description of ground and excited electronic states"
+  type: article
+  url: "https://joss.theoj.org/papers/10.21105/joss.06036"
+  volume: 9
+title: "State-Averaged Orbital-Optimized VQE: A quantum algorithm for
+  the democratic description of ground and excited electronic states"
