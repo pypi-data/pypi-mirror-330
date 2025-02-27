@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: quick-ssh
+Version: 0.0.2
+Summary: Quick SSH connection manager
+Home-page: https://github.com/shivambhilarkar
+Author: Shivam Bhilarkar
+Author-email: shivambhilarkar@gmail.com
+License: MIT
+Keywords: quick-ssh,ssh,ssh-manager
+License-File: LICENSE.txt
+Requires-Dist: prompt-toolkit==3.0.50
+Requires-Dist: requests==2.32.3
