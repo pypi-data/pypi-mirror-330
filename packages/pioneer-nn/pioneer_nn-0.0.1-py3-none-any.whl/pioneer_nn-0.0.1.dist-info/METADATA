@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: pioneer-nn
+Version: 0.0.1
+Summary: An in silico framework to simulate AI-experiment cycles for iterative improvement of genomic deep learning models.
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Topic :: Scientific/Engineering :: Bio-Informatics
+Requires-Python: >=3.6, <4
+License-File: LICENSE
+Provides-Extra: dev
+Requires-Dist: black ; extra == 'dev'
+Requires-Dist: flake8 ; extra == 'dev'
+
