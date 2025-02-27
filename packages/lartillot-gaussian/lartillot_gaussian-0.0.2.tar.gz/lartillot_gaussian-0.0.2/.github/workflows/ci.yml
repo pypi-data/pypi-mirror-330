@@ -1,0 +1,37 @@
+name: Python Package Workflow
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4.2.2
+        with:
+          fetch-depth: 0
+          ref: main       # Replace with your branch
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.8'
+          cache: 'pip' # Enable caching for pip dependencies
+
+
+      - run: python -m pip install -e .[dev]
+      - run: pytest tests/
+
+      - run: |
+          cp README.md docs/
+          jupyter-book build docs/
+
+      # Push the book's HTML to github-pages
+      - name: GitHub Pages action
+        uses: peaceiris/actions-gh-pages@v3.9.3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs/_build/html

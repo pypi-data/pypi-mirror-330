@@ -1,0 +1,7 @@
+numpy
+scipy
+
+[dev]
+pytest>=6.0
+matplotlib
+jupyter-book

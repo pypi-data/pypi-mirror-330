@@ -1,0 +1,112 @@
+[build-system]
+requires = [
+    "setuptools>=64",
+    "setuptools-scm>=8.0",
+    "wheel"
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lartillot_gaussian"
+dynamic = ["version"] # scm versioning (using tags)
+requires-python = ">=3.8"
+description = "A simple multi-dimensional Gaussian model from Lartillot et al '06, useful for testing Bayesian applications."
+readme = "README.md"
+authors = [
+    { name = "avi.vajpeyi@gmail.com", email = "avi.vajpeyi@gmail.com" },
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3.8",
+]
+dependencies = [
+    "numpy",
+    "scipy",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=6.0",
+    "matplotlib",
+    "jupyter-book",
+]
+
+[tool.setuptools_scm]
+version_file = "src/lartillot_gaussian/_version.py"
+
+[tool.semantic_release]
+version_variable = "src/lartillot_gaussian/_version.py:__version__"
+version_source = "commit"
+commit_version_number = true
+commit_subject = "chore(release): {version}"
+commit_message = "chore(release): {version}"
+tag_format = "v{version}"
+no_local_version = true
+
+
+[tool.semantic_release.changelog]
+changelog_file = "CHANGELOG.rst"
+
+[project.urls]  # Optional
+"Homepage" = "https://avivajpeyi.github.io/lartillot_gaussian/"
+"Bug Reports" = "https://avivajpeyi.com/pywavelet/lartillot_gaussian/issues"
+"Source" = "https://github.com/avivajpeyi/lartillot_gaussian/"
+
+
+
+[tool.black]
+line-length = 79
+exclude = '''
+/(
+    \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+)/
+'''
+
+[tool.isort]
+profile = "black"
+line_length = 79
+
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.coverage.run]
+branch = true
+source = ["lartillot_gaussian"]
+
+[tool.coverage.paths]
+source = [
+    "src/lartillot_gaussian",
+    "**/site-packages/lartillot_gaussian"
+]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "if self.debug",
+    "raise AssertionError",
+    "raise NotImplentedError",
+    "if 0:",
+    "if __name__ == .__main__.:"
+]
+
+ignore_errors = true
+
+
+
+[[tool.mypy.overrides]]
+module = "matplotlib.*,scipy.*,numba.*,bilby.*"
+ignore_missing_imports = true

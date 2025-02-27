@@ -1,0 +1,17 @@
+.gitignore
+CHANGELOG.rst
+README.md
+pyproject.toml
+.github/workflows/ci.yml
+.github/workflows/pypi.yml
+docs/_config.yml
+docs/_toc.yml
+src/lartillot_gaussian/__init__.py
+src/lartillot_gaussian/_version.py
+src/lartillot_gaussian/model.py
+src/lartillot_gaussian.egg-info/PKG-INFO
+src/lartillot_gaussian.egg-info/SOURCES.txt
+src/lartillot_gaussian.egg-info/dependency_links.txt
+src/lartillot_gaussian.egg-info/requires.txt
+src/lartillot_gaussian.egg-info/top_level.txt
+tests/test_model.py
