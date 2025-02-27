@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Blend</title>
+<link rel=stylesheet href=default.css>
+<script type=text/javascript async
+src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js>
+</script>
+</head>
+<body>
+
+<pre><code>
+b = bottom
+t = top
+</code></pre>
+
+<h2>Normal Group</h2>
+
+<pre><code>
+def normal(b,t):
+	return t
+</code></pre>
+
+<p>\(\text{normal}(b,t) = t\)</p>
+
+<h2>Darken Group</h2>
+
+<pre><code>
+def darken(b,t):
+	return np.minimum(b,t)
+</code></pre>
+
+<p>\(\text{darken}(b,t) = \min(b,t)\)</p>
+
+<pre><code>
+def multiply(b,t):
+	return b*t
+</code></pre>
+
+<p>\(\text{multiply}(b,t) = bt\)</p>
+
+<pre><code>
+def color_burn(b,t):
+	invalid = np.geterr()['invalid']
+	np.seterr(invalid='ignore')
+	r = np.where(
+		b == 1,1,np.where(
+		t == 0,0,1-np.minimum((1-b)/t,1)))
+	np.seterr(invalid=invalid)
+	return r
+</code></pre>
+
+<p>\(\text{color_burn}(b,t) = \begin{cases}
+1&\text{if }b = 1\\
+0&\text{elif }t = 0\\
+1-\min((1-b)/t,1)&\text{else}
+\end{cases}\)</p>
+
+<pre><code>
+def linear_burn(b,t):
+	return np.maximum(b+t-1,0)
+</code></pre>
+
+<p>\(\text{linear_burn}(b,t) = \text{max}(b+t-1,0)\)</p>
+
+<pre><code>
+def darker_color(b,t):
+	bY = rgb_to_gray(b).atleast_3d()
+	tY = rgb_to_gray(t).atleast_3d()
+	return np.where(bY < tY,b,t)
+</code></pre>
+
+<p>\(\text{darker_color}(b,t) = \begin{cases}
+b&\text{if }b_Y \lt t_Y\\
+t&\text{else}
+\end{cases}\)</p>
+
+<h2>Lighten Group</h2>
+
+<pre><code>
+def lighten(b,t):
+	return np.maximum(b,t)
+</code></pre>
+
+<p>\(\text{lighten}(b,t) = \text{max}(b,t)\)</p>
+
+<pre><code>
+def screen(b,t):
+	return b+t-b*t
+</code></pre>
+
+<p>\(\begin{align}
+\text{screen}(b,t) &= 1-(1-b)(1-t)\\
+									 &= b+t-bt
+\end{align}\)</p>
+
+<pre><code>
+def color_dodge(b,t):
+	invalid = np.geterr()['invalid']
+	np.seterr(invalid='ignore')
+	r = np.where(
+		b == 0,0,np.where(
+		t == 1,1,1-np.minimum(b/(1-t),1)))
+	np.seterr(invalid=invalid)
+	return r
+</code></pre>
+
+<p>\(\text{color_dodge}(b,t) = \begin{cases}
+0&\text{if }b = 0\\
+1&\text{elif }t = 1\\
+\min(b/(1-t),1)&\text{else}
+\end{cases}\)</p>
+
+<pre><code>
+def linear_dodge(b,t):
+	return np.minimum(b+t,1)
+</code></pre>
+
+<p>\(\text{linear_dodge}(b,t) = \text{min}(b+t,1)\)</p>
+
+<pre><code>
+def lighter_color(b,t):
+	bY = rgb_to_gray(b).atleast_3d()
+	tY = rgb_to_gray(t).atleast_3d()
+	return np.where(bY < tY,t,b)
+</code></pre>
+
+<p>\(\text{lighter_color}(b,t) = \begin{cases}
+t&\text{if }b_Y \lt t_Y\\
+b&\text{else}
+\end{cases}\)</p>
+
+<h2>Contrast Group</h2>
+
+<pre><code>
+def overlay(b,t):
+	return hard_light(t,b)
+</code></pre>
+
+<p>\(\text{overlay}(b,t) = \text{hard_light}(b,t)\)</p>
+
+<pre><code>
+def soft_light(b,t):
+	return np.where(t <= 0.5,
+		2*b*t+(1-2*t)*b**2,
+		2*b*(1-t)+(2*t-1)*b**0.5)
+</code></pre>
+
+<p>\(\text{soft_light}(b,t) = \begin{cases}
+2bt+(1-2t)b^2&\text{if }t \le 0.5\\
+2b(1-t)+(2t-1)b^{0.5}&\text{else}
+\end{cases}\)</p>
+
+<pre><code>
+def hard_light(b,t):
+	return np.where(t <= 0.5,
+		multiply(b,2*t),
+		screen(b,2*t-1))
+</code></pre>
+
+<p>\(\text{hard_light}(b,t) = \begin{cases}
+\text{multiply}(b,2t)&\text{if }t \le 0.5\\
+\text{screen}(b,2t-1)&\text{else}
+\end{cases}\)</p>
+
+<pre><code>
+def vivid_light(b,t):
+	return np.where(t <= 0.5,
+		color_burn(b,2*t),
+		color_dodge(b,2*t-1))
+</code></pre>
+
+<p>\(\text{vivid_light}(b,t) = \begin{cases}
+\text{color_burn}(b,2t)&\text{if }t \le 0.5\\
+\text{color_dodge}(b,2t-1)&\text{else}
+\end{cases}\)</p>
+
+<pre><code>
+def linear_light(b,t):
+	return np.where(t <= 0.5,
+		linear_burn(b,2*t),
+		linear_dodge(b,2*t-1))
+</code></pre>
+
+<p>\(\text{linear_light}(b,t) = \begin{cases}
+\text{linear_burn}(b,2t)&\text{if }t \le 0.5\\
+\text{linear_dodge}(b,2t-1)&\text{else}
+\end{cases}\)</p>
+
+<pre><code>
+def pin_light(b,t):
+	return np.where(t <= 0.5,
+		darken(b,2*t),
+		lighten(b,2*t-1))
+</code></pre>
+
+<p>\(\text{pin_light}(b,t) = \begin{cases}
+\text{darken}(b,2t)&\text{if }t \le 0.5\\
+\text{lighten}(b,2t-1)&\text{else}
+\end{cases}\)</p>
+
+<pre><code>
+def hard_mix(b,t):
+	return np.floor(b+t)
+</code></pre>
+
+<p>\(\text{hard_mix}(b,t) = \lfloor b+t \rfloor\)</p>
+
+<h2>Inversion Group</h2>
+
+<pre><code>
+
+<pre><code>
+def difference(b,t):
+	return np.maximum(b-t,t-b)
+</code></pre>
+
+<p>\(\text{difference}(b,t) = \max(b-t,t-b)\)</p>
+
+<p>\(\text{exclusion}(b,t) = b+t-2bt\)</p>
+
+<h2>Cancellation Group</h2>
+
+<pre><code>
+def subtract(b,t):
+	return np.maximum(b-t,0)
+</code></pre>
+
+<p>\(\text{subtract}(b,t) = \text{max}(b-t,0)\)</p>
+
+<pre><code>
+
+</code></pre>
+
+<p>\(\text{divide}(b,t) = \begin{cases}
+0&\text{if }b = 0\\
+1&\text{elif }b \ge t\\
+b/t&\text{else}
+\end{cases}\)</p>
+
+<h2>Component Group</h2>
+
+<pre><code>
+def hue(b,t):
+	tH = get_hsl_h(t)
+	return set_hsl_h(b,tH)
+</code></pre>
+
+<pre><code>
+def saturation(b,t):
+	tS = get_hsl_s(t)
+	return set_hsl_s(b,tS)
+</code></pre>
+
+<pre><code>
+def color(b,t):
+	bL = get_hsl_l(b)
+	return set_hsl_l(t,bL)
+</code></pre>
+
+<pre><code>
+def luminosity(b,t):
+	return color(t,b)
+</code></pre>
+
+</body>
+</html>

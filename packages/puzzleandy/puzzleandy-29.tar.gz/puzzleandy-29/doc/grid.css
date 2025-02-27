@@ -1,0 +1,15 @@
+#grid
+{
+	display: grid;
+	grid-template-columns: repeat(3,1fr);
+}
+#grid>div
+{
+	align-self: flex-end;
+	padding: 10px;
+	text-align: center;
+}
+#grid img
+{
+	width: 100%;
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>RGB to HSL/HSV</title>
+<link rel=stylesheet href=default.css>
+<script type=text/javascript async
+src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js>
+</script>
+</head>
+<body>
+
+<h2>RGB to HSL/HSV</h2>
+<p>\(\begin{align}
+&M = \max(R,G,B)\\
+&m = \min(R,G,B)\\
+&V = M\\
+&C = M-m\\
+&L = 0.5(M+m)\\
+&H' = \begin{cases}
+0&\text{if }C = 0\\
+\dfrac{G-B}{C}{\bmod}6&\text{if }V = R\\
+\dfrac{B-R}{C}+2&\text{else if }V = G\\
+\dfrac{R-G}{C}+4&\text{else}
+\end{cases}\\
+&H = 60H' \\
+&S = \begin{cases}
+0&\text{if }V = 0\\
+\dfrac{C}{V}&\text{else}
+\end{cases}
+\end{align}\)</p>
+
+</body>
+</html>

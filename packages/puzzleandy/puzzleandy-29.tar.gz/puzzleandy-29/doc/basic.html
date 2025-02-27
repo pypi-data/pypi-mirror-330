@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Basic</title>
+<link rel=stylesheet href=default.css>
+<script type=text/javascript async
+src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js>
+</script>
+</head>
+<body>
+
+<p>All images are gray, RGB, or RGBA.<br>
+Each component is in \([0,1]\).<br>
+In a uint array, each element is in \([0,255].\)<br>
+In a float array, each element is in \([0,1].\)</p>
+
+<p><code>solid_color(w,h,c)</code><br>
+\(w\) and \(h\) are non-negative integers.<br>
+\(c\) is a color.<br>
+Solid color.</p>
+
+<p><code>flip_hor(x)</code><br>
+\(x\) is an image.<br>
+Flip horizontally.</p>
+
+<p><code>flip_vert(x)</code><br>
+\(x\) is an image.<br>
+Flip vertically.</p>
+
+<p><code>to_float(x)</code><br>
+\(x\) is a uint array.<br>
+\(x/255\) cast to float.</p>
+
+<p><code>to_uint(x)</code><br>
+\(x\) is a float array.<br>
+\(255x\) cast to uint.</p>
+
+<p><code>comps(x)</code><br>
+\(x\) is an image.<br>
+Number of components.<br>
+1 = gray, 3 = RGB, 4 = RGBA.</p>
+
+<p><code>to_bgr(x)</code><br>
+\(x\) is an image.<br>
+Gray, RGB, or RGBA, to BGR.</p>
+
+<p><code>read(path)</code><br>
+path is a string.<br>
+Read image.</p>
+
+<p><code>write(x,path)</code><br>
+\(x\) is an image.<br>
+path is a string.<br>
+Write image.</p>
+
+<p><code>show(x)</code><br>
+\(x\) is an image.<br>
+Show image.</p>
+
+</body>
+</html>

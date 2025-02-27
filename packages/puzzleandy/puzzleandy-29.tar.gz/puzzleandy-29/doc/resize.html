@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Resize</title>
+<link rel=stylesheet href=default.css>
+<script type=text/javascript async
+src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js>
+</script>
+</head>
+<body>
+
+<p><code>resize(I,w,h)</code><br>
+<code>resize_to(I1,I2)</code><br></p>
+
+<p>\(\text{resize}(w_{\text{in}},h_{\text{in}},w_{\text{out}},h_{\text{out}}) = w_{\text{out}},h_{\text{out}}\)</p>
+
+<p style="margin-top:3em"><code>resize_max(I,w,h)</code><br>
+
+<p>\(\begin{align}
+&w_f = \min\left(\dfrac{w_\text{max}}{w_\text{in}},1\right)\\
+&h_f = \min\left(\dfrac{h_\text{max}}{h_\text{in}},1\right)\\
+&f = \min(w_f,h_f)\\
+&\text{resize_max}(w_{\text{in}},h_{\text{in}},w_{\text{max}},h_{\text{max}}) = \text{resize_factor}(w_{\text{in}},h_{\text{in}},f)
+\end{align}\)</p>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sigmoid</title>
+<link rel=stylesheet href=default.css>
+<script type=text/javascript async
+src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js>
+</script>
+</head>
+<body>
+
+<h2>Sigmoid</h2>
+
+<p>\(\text{sig}(x,k) = \dfrac{x-xk}{k-|x|2k+1}\)</p>
+<p><a href=https://www.desmos.com/calculator/9tu5xutg2d>Desmos</a></p>
+
+<h2>Sigmoidal Contrast</h2>
+
+<p>\(\begin{align}
+&k = \text{remap}(c,-1,1,1,-1)\\
+&\text{sig_contrast}(x,c) = \dfrac{\text{sig}(2x-1,k)+1}{2}
+\end{align}\)</p>
+<p><a href=https://www.desmos.com/calculator/ijw53ujkbb>Desmos</a></p>
+
+</body>
+</html>
