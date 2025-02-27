@@ -1,0 +1,17 @@
+LICENSE
+MANIFEST.in
+README.md
+VERSION
+pyproject.toml
+requirements.txt
+rara_meta_extractor/config.py
+rara_meta_extractor/llama_api_wrapper.py
+rara_meta_extractor/llama_meta_extractor.py
+rara_meta_extractor/schema_generator.py
+rara_meta_extractor/utils.py
+rara_meta_extractor.egg-info/PKG-INFO
+rara_meta_extractor.egg-info/SOURCES.txt
+rara_meta_extractor.egg-info/dependency_links.txt
+rara_meta_extractor.egg-info/requires.txt
+rara_meta_extractor.egg-info/top_level.txt
+tests/test_meta_extractor.py
