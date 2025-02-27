@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: zeent-api-client
+Version: 0.0.1
+Summary: A reusable API client using httpx
+Home-page: https://github.com/zeent/zeent-api-client
+Author: Joan Camps Morey
+Author-email: joan.camps@zeent.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
