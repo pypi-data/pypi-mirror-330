@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: ASRepCatcher
+Version: 0.7.0
+Summary: Make everyone in your VLAN ASREProastable
+Home-page: https://github.com/Yaxxine7/ASRepCatcher
+Author: Yassine OUKESSOU
+Author-email: yassine.oukess@gmail.com
+License: GPLv3
+Requires-Python: >=3.7
+License-File: LICENSE
+Requires-Dist: scapy
+Requires-Dist: asn1
+Requires-Dist: termcolor
+Requires-Dist: netifaces
+
