@@ -1,0 +1,4 @@
+[console_scripts]
+_tractorun_bootstrap = tractorun.cli.tractorun_bootstrap:main
+tractorun = tractorun.cli.tractorun_runner:main
+yt_stderr_reader = tractorun.cli.yt_stderr_reader:main

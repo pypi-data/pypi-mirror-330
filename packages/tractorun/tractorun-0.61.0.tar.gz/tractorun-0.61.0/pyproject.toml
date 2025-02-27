@@ -1,0 +1,103 @@
+[project]
+name = "tractorun"
+description = "Run distributed training in TractoAI"
+authors = [{name = "TractoAI team"}]
+requires-python = ">=3.10"
+dynamic = ["version", "dependencies", "optional-dependencies"]
+readme = {file = "README.md", content-type = "text/markdown"}
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["*", "tractorun.*"]
+exclude = ["__pycache__", "*.pyc", ".mypy_cache", "tractorun.tests", "examples", ".github", "README.md"]
+
+[tool.setuptools.dynamic]
+version = {attr = "tractorun.__version__"}
+dependencies = {file = ["requirements.txt"]}
+optional-dependencies.torch = { file = ["requirements_torch.txt"] }
+optional-dependencies.jax = { file = ["requirements_jax.txt"] }
+optional-dependencies.tests = { file = ["requirements_tests.txt"] }
+optional-dependencies.dev = { file = ["requirements_dev.txt"] }
+optional-dependencies.examples = { file = ["requirements_examples.txt"] }
+optional-dependencies.tensorproxy = { file = ["requirements_tensorproxy.txt"] }
+optional-dependencies.all = { file = ["requirements_torch.txt", "requirements_jax.txt", "requirements_tests.txt", "requirements_dev.txt", "requirements_examples.txt"] }
+
+[tool.setuptools.package-data]
+"tractorun" = ["py.typed"]
+
+[project.scripts]
+tractorun = "tractorun.cli.tractorun_runner:main"
+_tractorun_bootstrap = "tractorun.cli.tractorun_bootstrap:main"
+yt_stderr_reader = "tractorun.cli.yt_stderr_reader:main"
+
+[tool.black]
+line-length = 120
+extend-exclude = '''
+(^|/)examples/adoptation/
+'''
+
+[tool.isort]
+line_length = 120
+multi_line_output = 3
+force_grid_wrap = 2
+lines_after_imports = 2
+include_trailing_comma = true
+force_sort_within_sections = true
+sections = [
+  "FUTURE",
+  "STDLIB",
+  "THIRDPARTY",
+  "FIRSTPARTY",
+  "LOCALFOLDER"
+]
+skip = ["examples/adoptation", "build/lib/examples/adoptation"]
+
+[tool.mypy]
+disallow_untyped_defs = true
+check_untyped_defs = true
+exclude = "(^|/)examples/adoptation/"
+
+[[tool.mypy.overrides]]
+module = "yt.*"
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = "testcontainers_yt_local.*"
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = "yt_yson_bindings.*"
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = "orbax.*"
+ignore_missing_imports = true
+
+
+[[tool.mypy.overrides]]
+module = "ytpath.*"
+ignore_missing_imports = true
+
+[tool.bumpversion]
+current_version = "0.61.0"
+commit = true
+commit_args = "--no-verify"
+tag = true
+tag_name = "{new_version}"
+message = "New version: {new_version} [changelog-ignore]"
+allow_dirty = true
+
+[[tool.bumpversion.files]]
+filename = "tractorun/__init__.py"
+
+[[tool.bumpversion.files]]
+filename = "CHANGELOG.md"
+search = "Unreleased"
+
+[[tool.bumpversion.files]]
+filename = "CHANGELOG.md"
+search = "{current_version}...HEAD"
+replace = "{current_version}...{new_version}"
+
+[tool.ruff]
+exclude = ["examples/adoptation"]
