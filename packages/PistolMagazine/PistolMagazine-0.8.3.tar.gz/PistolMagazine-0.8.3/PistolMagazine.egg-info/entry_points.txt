@@ -1,0 +1,2 @@
+[console_scripts]
+pistol-gen = pistol_magazine.cli:generate_template
