@@ -1,0 +1,13 @@
+lazy
+odfpy
+importlib-metadata
+pypng
+PyQRCode
+setuptools
+z3c.rml
+zope.interface
+
+[test]
+coverage
+unoconv
+zope.testrunner
