@@ -1,0 +1,17 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+settings.ini
+setup.py
+fasttransform/__init__.py
+fasttransform/_modidx.py
+fasttransform/cast.py
+fasttransform/transform.py
+fasttransform.egg-info/PKG-INFO
+fasttransform.egg-info/SOURCES.txt
+fasttransform.egg-info/dependency_links.txt
+fasttransform.egg-info/entry_points.txt
+fasttransform.egg-info/not-zip-safe
+fasttransform.egg-info/requires.txt
+fasttransform.egg-info/top_level.txt
