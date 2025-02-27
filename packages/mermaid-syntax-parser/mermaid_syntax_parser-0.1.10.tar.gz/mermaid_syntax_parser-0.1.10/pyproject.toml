@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "mermaid-syntax-parser"
+version = "0.1.10"
+description = ""
+authors = ["Roy M Mezan <88roy88@gmail.com>"]
+packages = [
+    { include = "mermaid_parser", from = "src" },
+]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pythonmonkey = "^1.1.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.4"
+
+[tool.pytest]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_functions = ["test_*"]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
