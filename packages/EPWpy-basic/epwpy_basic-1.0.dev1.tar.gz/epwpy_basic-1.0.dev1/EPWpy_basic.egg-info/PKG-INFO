@@ -1,0 +1,23 @@
+Metadata-Version: 2.2
+Name: EPWpy-basic
+Version: 1.0.dev1
+Summary: A Python wrapper for EPW
+Home-page: https://epwpy.org
+Author: Sabyasachi Tiwari
+Author-email: sabyasachi.tiwari@austin.utexas.edu
+License: BSD
+Requires-Dist: wheel
+Requires-Dist: alive-progress
+Provides-Extra: materials-project
+Requires-Dist: mp-api; extra == "materials-project"
+Provides-Extra: visualization
+Requires-Dist: mayavi; extra == "visualization"
+Provides-Extra: automatic-pseudo
+Requires-Dist: requests; extra == "automatic-pseudo"
+Dynamic: author
+Dynamic: author-email
+Dynamic: home-page
+Dynamic: license
+Dynamic: provides-extra
+Dynamic: requires-dist
+Dynamic: summary

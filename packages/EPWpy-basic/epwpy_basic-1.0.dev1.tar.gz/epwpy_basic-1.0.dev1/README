@@ -1,0 +1,59 @@
+                                                                                          
+                                       -*#*-                             ...............- 
+                          .+*=      .+%*-=%%:      .=#*-               -===============-:.
+                        :*%=*%%-    *%*   #%*    :+%+-%%+             .:.  -=.   :==-.    
+                        -%S  -%%*: :#%.   -%%-. -##:  #%*                  -=.   :==-     
+                ..      .%S:   +%%%%*.     :*%%%#=    %%=                  -=.   :==-     
+              :=#%%*-   .#S-     ..                  .%%=     :*#*:        -=.   :==-     
+             -%S:.=#%%*==%#                           *%%=::=##-+%%.  .   .=-.   :==-  .= 
+             :%%-   .-+++:                             -+##*=.  =%S   :-::==:    .==-  --.
+              *%#                                               #%+    -=--:.     .----:. 
+              :%%-                                             -%S.                       
+       .-=*####SS%#########:  -###########*+:     +#######=   =%SS####+::.                
+     =+#**%SSSSSSSSSSSSSSSS=  =SSSSSSSSSSSSSSS=   #SSSSSSS*.  +SSSSSSSS%%%%-              
+     *%%    =SSS..     .SSS=     SSS=.   .:+SSS+   -SSS:. .-::.  .SSS+.  #%*              
+      #%#.  =SSS.  *S#  *S%:     SSS=       %SS%.  .SSS=  #SSS%. :SSS:  =%#.              
+       *%%: =SSS#*#SSS-          SSS=     .+SSS+.   %SS*.=SSSSS+ +SS%.:+%+                
+        +%%:=SSSSSSSSS-          SSSSSSSSSSSSS=.    +SSS:SSS%SSS:%SS*-#%=                 
+     ....#S==SSS:..SSS:  =+-     SSS%######+=.      -SSS%SS%.#SS%SSS==%%=.                
+ .:+##%%#*- =SSS.   ::. :SSS.    SSS=.               SSSSSS:..SSSSSS: :*%%%*=-            
+ #%+.     -+#SSS*+++++++*SSS: .=+SSS#++++:           %SSSS+.  =SSSS%.    :-+#%%+          
+ #%*     .SSSSSSSSSSSSSSSSSS: *SSSSSSSSSSS.          +SSS%.    %SSS*.      . .%%=         
+ =%S       :::::::::::::::::.  .:::::::::.            :::.      :::.     =+=-.#%+         
+ -%S:                                                                    =+===#S:         
+ ==*------------------------------=========+++++++++++++++++++++++========++-+##          
+ =+++++++++++*******++++++++++++++++========------------------==========+++++++-          
+                                                                                                       
+ EPWpy v1.0 is an open-source software package that serves as a wrapper for the EPW code, 
+ enabling ab initio calculations of electron-phonon interactions based on Density-Functional 
+ Perturbation Theory (DFPT) and Maximally Localized Wannier Functions (MLWFs).
+ EPWpy is released under the permissive three-clause BSD license and is copyrighted to 
+ the EPWpy Collaboration, 2024. The EPWpy Collaboration team includes Dr. Sabyasachi Tiwari (University of Texas at Austin), 
+ Prof. Samuel Poncé (Université Catholique de Louvain), Prof. Roxana Margine (State University of New York at Binghamton), 
+ Prof. Emmanouil Kioupakis (University of Michigan), and Prof. Feliciano Giustino (University of Texas at Austin).
+ For calculations performed using EPWpy please cite: 
+      H. Lee, S. Ponc\'e, K. Bushick, S. Hajinazar, J. Lafuente-Bartolome, J. Leveillee, 
+      C. Lian, J.-M. Lihm, F. Macheda, H. Mori, H. Paudyal, W. H. Sio, S. Tiwari, M. Zacharias, 
+      X. Zhang, N. Bonini, E. Kioupakis, E. R. Margine, and F. Giustino, 
+      npj Comput.  Mater. 9, 156 (2023).
+    
+ The software tree of EPWpy v1.0 is composed of
+ ./EPWpy -> The main EPWpy package which contains the EPWpy class
+ ./EPWpy/<folders> -> Various subclasses and packages
+ ./test-suite -> test for EPWpy (automatic download of QE in buid directory)
+ ./notebooks_basic -> Basic Jupyter notebooks depicting usage of EPWpy 
+ ./examples -> examples for using EPWpy on a terminal
+ Installation
+ ------------
+ To compile the code you need to issue python setup.py install
+ -------------------------------
+ Installation with Quantum ESPRESSO
+ ------------
+ To compile the code with QE+EPW you need to issue python setup.py install --withQE True --configs "<QE configuration>" --cores <number of cores to compile>
+ ------------------------------
+ EPW has a dedicated website that you can access at https://epwpy-code.org
+ Detailed documentation and tutorials can be found here: https://docs.epwpy-code.org
+ If you have any questions, please use the forum at https://forum.epw-code.org
+ The EPWpy Collaboration, Sep 2024
+ 
+ 
