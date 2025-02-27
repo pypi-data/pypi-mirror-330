@@ -1,0 +1,35 @@
+[build-system]
+requires      = ["setuptools>=61.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "osm-map-merger"
+version = "1.0.0"
+description = "Tool for handling (negative) IDs and merging different OSM maps (e.g. Lanelet2 maps). Very helpful if you have modeled several maps separately and now want to merge them into a single map."
+readme = "README.md"
+authors = [{name = "Institute of Automotive Engineering, Technical University of Darmstadt", email = "sekretariat@fzd.tu-darmstadt.de"}]
+maintainers = [{name = "Institute of Automotive Engineering, Technical University of Darmstadt", email = "sekretariat@fzd.tu-darmstadt.de"}]
+license = { file = "LICENSE" }
+keywords = ["automated driving", "BSSD", "Lanelet2", "OSM"]
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+]
+dependencies = [
+    "osmium>=3.2.0",
+    "lxml",
+    "beautifulsoup4",
+    "click"
+]
+requires-python = ">=3.8"
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[project.urls]
+BSSD-Homepage = "https://gitlab.com/tuda-fzd/scenery-representations-and-maps/behavior-semantic-scenery-description"
+Repository = "https://gitlab.com/tuda-fzd/scenery-representations-and-maps/osm-map-merger"
+
+[project.scripts]
+osm-map-merger = "osm_map_merger.__main__:cmd"

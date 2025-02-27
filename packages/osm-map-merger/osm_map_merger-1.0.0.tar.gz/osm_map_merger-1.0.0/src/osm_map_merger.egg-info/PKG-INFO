@@ -1,0 +1,81 @@
+Metadata-Version: 2.1
+Name: osm-map-merger
+Version: 1.0.0
+Summary: Tool for handling (negative) IDs and merging different OSM maps (e.g. Lanelet2 maps). Very helpful if you have modeled several maps separately and now want to merge them into a single map.
+Author-email: "Institute of Automotive Engineering, Technical University of Darmstadt" <sekretariat@fzd.tu-darmstadt.de>
+Maintainer-email: "Institute of Automotive Engineering, Technical University of Darmstadt" <sekretariat@fzd.tu-darmstadt.de>
+License: Copyright 2024 Institute of Automotive Engineering (FZD), Technical University of Darmstadt
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+        
+Project-URL: BSSD-Homepage, https://gitlab.com/tuda-fzd/scenery-representations-and-maps/behavior-semantic-scenery-description
+Project-URL: Repository, https://gitlab.com/tuda-fzd/scenery-representations-and-maps/osm-map-merger
+Keywords: automated driving,BSSD,Lanelet2,OSM
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: osmium>=3.2.0
+Requires-Dist: lxml
+Requires-Dist: beautifulsoup4
+Requires-Dist: click
+Provides-Extra: dev
+Requires-Dist: pytest; extra == "dev"
+
+# OSM Map Merger
+
+> **IMPORTANT NOTE** This repository is part of the _Behavior-Semantic Scenery Description (BSSD)_ framework. Check out our BSSD documentation and overview repository in your git of choice:
+[![GitLab](https://img.shields.io/badge/GitLab-330F63?style=flat&logo=gitlab&logoColor=white)](https://gitlab.com/tuda-fzd/scenery-representations-and-maps/behavior-semantic-scenery-description)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white)](https://github.com/TUDa-FZD/Behavior-Semantic-Scenery-Description)
+
+This tool can be used to handle one or more maps in OSM-format such as [Lanelet2 maps](https://github.com/fzi-forschungszentrum-informatik/Lanelet2) including the BSSD extension.
+
+**Features:**
+- Assign positive IDs to all elements and add a "version" attribute if missing. This is necessary after modification or creation of OSM-maps (e.g. with [JOSM](https://josm.openstreetmap.de/)) without synchronizing with the OSM database.
+- Remap single negative IDs without changing the positive IDs.
+- Merge multiple OSM input files into a single OSM output file. This works also for a mixture of positive and negative IDs.
+- Elements with "action"="delete" will be ignored.
+
+Use the ```--help``` command for more information about the [usage](#usage).
+
+## Requirements
++ Python 3.8 or higher
++ osmium >=3.2.0
++ lxml,
++ beautifulsoup4,
++ click
+
+## Installation
+### Using pip
+```bash
+pip install osm-map-merger
+```
+This will install the latest version of the OSM Map Merger available in [PyPI](https://pypi.org/project/osm-map-merger/) to your environment.
+
+### Manual Installation
+
+Clone the source code to a directory of your choice (```path/to/osm-map-merger-src/```).
+
+If you are using virtual environments, make sure to activate the correct environment to install the library into e.g:
+
+```bash
+source /<path-to-my-project>/.venv/bin/activate
+```
+
+Install the library:
+```bash
+pip install -e path/to/osm-map-merger-src/
+```
+
+## Usage
+To see a list of available commands use:  
+
+```bash
+osm-map-merger --help
+```
