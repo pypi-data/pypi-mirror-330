@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: contrasto-trustable
+Version: 0.1.0
+Summary: Scalable oversight & prompt injection of LLM Agentic applications
+Author-Email: Carlos Vecina <carlosvecinatebar@gmail.com>, Ana Belen Barbero Castejon <anabarberocastejon@gmail.com>
+License: MIT
+Project-URL: repository, https://www.github.com/ContrastoAI/contrasto-trustable
+Requires-Python: <4.0,>=3.9
+Requires-Dist: aiohttp>=3.11.13
+Requires-Dist: pydantic>=2
+Requires-Dist: requests>=2.32.3
+Description-Content-Type: text/markdown
+
+# contrasto_trustable
+Scalable oversight &amp; prompt injection of LLM Agentic applications

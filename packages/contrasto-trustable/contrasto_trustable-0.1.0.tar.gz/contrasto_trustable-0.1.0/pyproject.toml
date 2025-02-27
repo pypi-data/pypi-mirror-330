@@ -1,0 +1,47 @@
+[project]
+name = "contrasto-trustable"
+version = "0.1.0"
+description = "Scalable oversight & prompt injection of LLM Agentic applications"
+readme = "README.md"
+requires-python = "<4.0,>=3.9"
+authors = [
+    { name = "Carlos Vecina", email = "carlosvecinatebar@gmail.com" },
+    { name = "Ana Belen Barbero Castejon", email = "anabarberocastejon@gmail.com" },
+]
+dependencies = [
+    "aiohttp>=3.11.13",
+    "pydantic>=2",
+    "requests>=2.32.3",
+]
+
+[project.license]
+text = "MIT"
+
+[project.urls]
+repository = "https://www.github.com/ContrastoAI/contrasto-trustable"
+
+[build-system]
+requires = [
+    "pdm-backend",
+]
+build-backend = "pdm.backend"
+
+[dependency-groups]
+lint = [
+    "ruff<1.0.0,>=0.5.0",
+]
+typecheck = [
+    "mypy>=1.10",
+]
+codespell = [
+    "codespell<3.0.0,>=2.2.0",
+]
+test = [
+    "pytest>=8.3.4",
+]
+nb = [
+    "ipykernel>=6.29.5",
+    "python-dotenv>=1.0.1",
+]
+
+[tool]
