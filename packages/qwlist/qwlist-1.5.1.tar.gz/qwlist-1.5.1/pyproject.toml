@@ -1,0 +1,22 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "qwlist"
+version = "1.5.1"
+authors = [
+  { name="Witold Frącek" },
+]
+description = "A small package introducing a new way to use higher order functions with lists"
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/WitoldFracek/qlist"
+"Docs" = "https://witoldfracek.github.io/qlist/"
