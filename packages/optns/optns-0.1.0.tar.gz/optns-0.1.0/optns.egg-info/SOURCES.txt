@@ -1,0 +1,12 @@
+README.rst
+pyproject.toml
+optns/profilelike.py
+optns/sampler.py
+optns.egg-info/PKG-INFO
+optns.egg-info/SOURCES.txt
+optns.egg-info/dependency_links.txt
+optns.egg-info/requires.txt
+optns.egg-info/top_level.txt
+tests/test_profilelike.py
+tests/testgauss.py
+tests/testskpoisson.py
