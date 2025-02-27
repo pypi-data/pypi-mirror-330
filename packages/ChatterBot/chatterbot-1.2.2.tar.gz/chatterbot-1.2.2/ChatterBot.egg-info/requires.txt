@@ -1,0 +1,17 @@
+mathparse<0.2,>=0.1
+python-dateutil<2.10,>=2.9
+sqlalchemy<2.1,>=2.0
+spacy<3.9,>=3.8
+tqdm
+
+[dev]
+pint>=0.8.1
+pymongo<4.12,>=4.11
+pyyaml<7.0,>=6.0
+chatterbot-corpus>=1.2.2
+
+[test]
+flake8
+coverage
+nose
+sphinx<8.2,>=5.3
