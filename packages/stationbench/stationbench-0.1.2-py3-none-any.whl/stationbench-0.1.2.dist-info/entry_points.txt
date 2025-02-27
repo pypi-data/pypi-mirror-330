@@ -1,0 +1,4 @@
+[console_scripts]
+stationbench-calculate=stationbench.cli:calculate_metrics
+stationbench-compare=stationbench.cli:compare_forecasts
+
