@@ -1,0 +1,20 @@
+Metadata-Version: 2.4
+Name: semaphoreui-client
+Version: 0.1.0
+Summary: An api client for interacting with Semaphore UI
+Project-URL: Documentation, https://github.com/Paul Hummer/semaphoreui-client#readme
+Project-URL: Issues, https://github.com/Paul Hummer/semaphoreui-client/issues
+Project-URL: Source, https://github.com/Paul Hummer/semaphoreui-client
+Author-email: Paul Hummer <paul@eventuallyanyway.com>
+License-Expression: MIT
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Requires-Python: >=3.9
+Requires-Dist: dataclasses-json>=0.6.7
+Requires-Dist: requests>=2.32.3
