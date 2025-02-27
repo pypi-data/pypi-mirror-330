@@ -1,0 +1,11 @@
+
+[dev]
+pre-commit
+ruff
+
+[test]
+pytest
+seleniumbase
+pytest-xprocess
+Pillow
+pixelmatch
