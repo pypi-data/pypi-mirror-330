@@ -1,0 +1,5 @@
+cli
+    glob = $(void)
+    v = $(void)
+glob = $(cli glob)
+verbose = $(cli v)
