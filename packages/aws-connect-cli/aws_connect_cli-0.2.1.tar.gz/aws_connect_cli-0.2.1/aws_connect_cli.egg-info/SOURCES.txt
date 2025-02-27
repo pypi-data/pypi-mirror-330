@@ -1,0 +1,15 @@
+README.md
+pyproject.toml
+aws_connect_cli/__init__.py
+aws_connect_cli/main.py
+aws_connect_cli.egg-info/PKG-INFO
+aws_connect_cli.egg-info/SOURCES.txt
+aws_connect_cli.egg-info/dependency_links.txt
+aws_connect_cli.egg-info/entry_points.txt
+aws_connect_cli.egg-info/requires.txt
+aws_connect_cli.egg-info/top_level.txt
+aws_connect_cli/services/__init__.py
+aws_connect_cli/services/billing.py
+aws_connect_cli/services/ec2.py
+aws_connect_cli/services/login.py
+aws_connect_cli/services/s3.py
