@@ -1,0 +1,53 @@
+Metadata-Version: 2.2
+Name: nettracer3d
+Version: 0.5.5
+Summary: Scripts for intializing and analyzing networks from segmentations of three dimensional images.
+Author-email: Liam McLaughlin <mclaughlinliam99@gmail.com>
+Project-URL: User_Tutorial, https://www.youtube.com/watch?v=cRatn5VTWDY
+Project-URL: Reference_Citation_For_Use, https://doi.org/10.1101/2024.07.29.605633
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: Other/Proprietary License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy==1.26.4
+Requires-Dist: scipy==1.14.1
+Requires-Dist: scikit-image==0.25.0
+Requires-Dist: Pillow==11.1.0
+Requires-Dist: matplotlib==3.9.2
+Requires-Dist: networkx==3.2.1
+Requires-Dist: opencv-python-headless==4.10.0.84
+Requires-Dist: openpyxl==3.1.2
+Requires-Dist: pandas==2.2.0
+Requires-Dist: napari==0.5.5
+Requires-Dist: python-louvain==0.16
+Requires-Dist: tifffile==2023.7.18
+Requires-Dist: qtrangeslider==0.1.5
+Requires-Dist: PyQt6==6.8.0
+Requires-Dist: scikit-learn==1.6.1
+Requires-Dist: nibabel==5.2.0
+Provides-Extra: cuda11
+Requires-Dist: cupy-cuda11x; extra == "cuda11"
+Provides-Extra: cuda12
+Requires-Dist: cupy-cuda12x; extra == "cuda12"
+Provides-Extra: cupy
+Requires-Dist: cupy; extra == "cupy"
+
+NetTracer3D is a python package developed for both 2D and 3D analysis of microscopic images in the .tif file format. It supports generation of 3D networks showing the relationships between objects (or nodes) in three dimensional space, either based on their own proximity or connectivity via connecting objects such as nerves or blood vessels. In addition to these functionalities are several advanced 3D data processing algorithms, such as labeling of branched structures or abstraction of branched structures into networks. Note that nettracer3d uses segmented data, which can be segmented from other softwares such as ImageJ and imported into NetTracer3D, although it does offer its own segmentation via intensity and volumetric thresholding, or random forest machine learning segmentation. NetTracer3D currently has a fully functional GUI. To use the GUI, after installing the nettracer3d package via pip, enter the command 'nettracer3d' in your command prompt:
+
+
+This gui is built from the PyQt6 package and therefore may not function on dockers or virtual envs that are unable to support PyQt6 displays. More advanced documentation is coming down the line, but for now please see: https://www.youtube.com/watch?v=cRatn5VTWDY
+for a video tutorial on using the GUI.
+
+NetTracer3D is free to use/fork for academic/nonprofit use so long as citation is provided, and is available for commercial use at a fee (see license file for information).
+
+NetTracer3D was developed by Liam McLaughlin while working under Dr. Sanjay Jain at Washington University School of Medicine.
+
+-- Version 0.5.5 updates --
+
+1. When the highlight overlay is being used in big overlays (and therefore defaulting to the mini overlay), updated system to just make one 2d overlay that regenerates on slice movement. Decided this was better than having it sit in a bigger 3d array when said array wasn't being used for anything and had to be rebuilt on slice movement or 3d operations anyway.
+
+2. For the random forrest segmenter, added the option to segment by 2D slice instead of 3D. In short, the 3D version was very greedy with its RAM usage and essentially computes a set of feature maps for the target array that are equivalent dims. By default it makes 7 of these, so a 1 GB array is going to demand 7GB of RAM to store its feature maps. The 2D slice version segments by 2D slice instead, meaning it stores only feature maps for slices with actual slices on them for training the model, and then for predicting voxel foreground/background, it computes the feature maps for the current slice (admittedly in the threadpool so this is amplified by core amount in the CPU but generally speaking this will save a lot of RAM). The reason I made this segmenter is to give NetTracer3D all the bells and whistles to let a user do everything in one program, but admittedly there are more efficient ML segmenters out there, such as through FIJI's big data viewer which is a lot better at handling big arrays in memory. I considered a way to compute 3D feature maps one at a time, save them in chunks to hard mem, and then open them while doing the chunked total segmentation but frankly this would likely be too slow to want to use so I will just suggest using 2D slice segmenter if RAM runs low.
+
+I do not anticipate any major updates for this project for the foreseeable future beyond bug fixes. 
