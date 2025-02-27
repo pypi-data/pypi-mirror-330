@@ -1,0 +1,71 @@
+{
+  "jupyter.lab.shortcuts": [
+    {
+      "command": "kishu:init",
+      "keys": ["Accel K", "Accel I"],
+      "selector": "body"
+    },
+    {
+      "command": "kishu:commit",
+      "keys": ["Accel K", "Accel C"],
+      "selector": "body"
+    },
+    {
+      "command": "kishu:checkout",
+      "keys": ["Accel K", "Accel V"],
+      "selector": "body"
+    },
+    {
+      "command": "kishu:undo",
+      "keys": ["Accel K", "Accel Z"],
+      "selector": "body"
+    }
+  ],
+  "title": "Kishu",
+  "description": "Kishu JupyterLab Extension (jupyterlab_kishu) settings.",
+  "type": "object",
+  "properties": {
+    "kishu_dir": {
+      "type": "string",
+      "title": "Kishu directory",
+      "description": "Path to Kishu directory storing all notebook commits.",
+      "default": "~/.kishu/"
+    }
+  },
+  "jupyter.lab.menus": {
+    "main": [
+      {
+        "id": "kishu-menu",
+        "label": "Kishu",
+        "rank": 80,
+        "items": [
+          {
+            "type": "command",
+            "command": "kishu:init",
+            "args": {"label": "short"},
+            "rank": 1
+          },
+          {
+            "type": "command",
+            "command": "kishu:commit",
+            "args": {"label": "short"},
+            "rank": 2
+          },
+          {
+            "type": "command",
+            "command": "kishu:checkout",
+            "args": {"label": "short"},
+            "rank": 3
+          },
+          {
+            "type": "command",
+            "command": "kishu:undo",
+            "args": {"label": "short"},
+            "rank": 4
+          }
+        ]
+      }
+    ]
+  },
+  "additionalProperties": false
+}
