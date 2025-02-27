@@ -1,0 +1,15 @@
+.env.sample
+LICENSE
+MANIFEST.in
+README.md
+requirements.txt
+setup.py
+src/namegiver/__init__.py
+src/namegiver/namegiver.py
+src/namegiver.egg-info/PKG-INFO
+src/namegiver.egg-info/SOURCES.txt
+src/namegiver.egg-info/dependency_links.txt
+src/namegiver.egg-info/entry_points.txt
+src/namegiver.egg-info/requires.txt
+src/namegiver.egg-info/top_level.txt
+tests/test_namegiver.py
