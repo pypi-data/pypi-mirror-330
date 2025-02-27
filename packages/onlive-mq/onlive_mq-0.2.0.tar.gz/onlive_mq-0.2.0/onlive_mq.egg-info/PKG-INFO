@@ -1,0 +1,15 @@
+Metadata-Version: 2.2
+Name: onlive_mq
+Version: 0.2.0
+Summary: Message Service for Onlive
+Author: Alejandro Vargas
+Author-email: alejandro.alfonso@onlive.site
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+License-File: LICENSE
+Requires-Dist: aio-pika>=6.8.0
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: requires-dist
+Dynamic: summary
