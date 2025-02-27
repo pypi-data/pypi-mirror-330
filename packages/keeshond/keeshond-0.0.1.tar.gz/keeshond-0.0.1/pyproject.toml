@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "keeshond"
+version = "0.0.1"
+description = ""
+authors = ["Mel <melchior.im.dreital@model-enact-analyze-manage.de>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.12,<3.14"
+#pytest = "^8.3.4"
+pyyaml = "^6.0.2"
+toga-core = "^0.4.8"
+toga-android = "^0.4.8"
+python-for-android = "^2024.1.21"
+bcrypt = "^4.2.1"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest-mock = { version = "^3.14.0", python = ">=3.8" }
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
