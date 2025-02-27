@@ -1,0 +1,12 @@
+# Include core files
+include LICENSE
+include README.md
+include setup.py
+include requirements.txt
+include snowflow/data/*
+
+# Exclude folders not needed in PyPi package
+prune pipes
+prune snowflake
+prune admin
+exclude bobsled/SVAM_Internal_Bobsled.code-workspace
