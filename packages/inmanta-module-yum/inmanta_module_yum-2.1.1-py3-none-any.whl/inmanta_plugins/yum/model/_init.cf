@@ -1,0 +1,151 @@
+"""
+    Copyright 2024 Inmanta
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+    Contact: code@inmanta.com
+"""
+import fs
+import mitogen
+
+entity Repository:
+    """
+        A yum repository.
+
+        Constraint: The attributes baseurl, mirrorlist and metalink cannot be null at the same time.
+    """
+    string name
+    bool gpgcheck=false
+    bool enabled=true
+    string? baseurl=null
+    string? mirrorlist=null
+    string? metalink=null
+    string gpgkey=""
+    number metadata_expire=7200
+    bool skip_if_unavailable=false
+
+    bool purged = false
+end
+
+Repository.via [0:1] -- mitogen::Context
+"""
+Mitogen context dedicated to this resource.  If not specified, defaults
+to the one of the host.
+"""
+
+std::Host.repos [0:] -- Repository.host [1]
+"""
+Relation toward the repositories of the host
+"""
+
+implementation validateInput for Repository:
+   std::assert(
+       expression=self.baseurl != null or self.mirrorlist != null or self.metalink != null,
+       message="baseurl, mirrorlist and metalink cannot be null at the same time.",
+   )
+end
+
+implementation redhatRepo for Repository:
+    fs::File(
+        mode=644,
+        owner="root",
+        group="root",
+        path="/etc/yum.repos.d/{{ name }}.repo",
+        content=std::template("yum/repo.tmpl"),
+        host=self.host,
+        via=self.via is defined ? self.via: null,
+        provides=self.provides,
+        purged=self.purged,
+    )
+end
+
+implement Repository using validateInput
+implement Repository using redhatRepo
+
+entity AbstractPackage:
+   """
+        Abstract class to avoid duplications between
+        package and packages
+   """ 
+end
+
+AbstractPackage.via [0:1] -- mitogen::Context
+"""
+Mitogen context dedicated to this resource.  If not specified, defaults
+to the one of the host.
+"""
+
+AbstractPackage.host [1] -- std::Host
+"""
+Relation to the host on which the package should be deployed.
+"""
+
+implementation wire_dependencies for AbstractPackage:
+    for repo in self.host.repos:
+        if self.purged and repo.purged:
+            self.provides += repo
+        else:
+            self.requires += repo
+        end
+    end
+end
+
+implement AbstractPackage using wire_dependencies
+
+entity Package extends AbstractPackage, std::PurgeableResource:
+    """
+        A software package installed on a managed device.
+
+        :attr name: The name of the package to manage
+    """
+    string name
+    bool send_event=true
+end
+
+index Package(host, name)
+implement Package using parents
+
+
+entity Packages extends AbstractPackage:
+    """ Define the state for multiple packages at once
+
+        :param name: A list of package names
+        :param purged: The purged status of all the packages
+    """
+    string[] name
+    bool purged=false
+end
+
+implement Packages using pkgs
+
+implementation pkgs for Packages:
+    for pkg in name:
+        Package(host=self.host, via=self.via is defined ? self.via: null, name=pkg, requires=self.requires, provides=self.provides, purged=self.purged)
+    end
+end
+
+entity PackagesBatch extends AbstractPackage, std::PurgeableResource:
+    """
+        Multiple package that will be installed at the same time
+
+        :attr name: A friendly name to give to the resource
+        :attr packages: The list of packages to install
+        :param purged: The purged status of all the packages
+    """
+    string name
+    string[] packages
+    bool purged=false
+    bool send_event=true
+end
+
+implement PackagesBatch using parents
