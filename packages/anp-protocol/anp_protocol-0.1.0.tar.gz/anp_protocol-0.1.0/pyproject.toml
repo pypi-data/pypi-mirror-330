@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "anp-protocol"
+version = "0.1.0"
+description = "Agent Network Protocol implementation for agent communication and interoperability"
+authors = ["changshan <chgaowei@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "anp_protocol"}]
+repository = "https://github.com/agent-network-protocol/AgentConnect"
+homepage = "https://agent-network-protocol.com/"
+documentation = "https://github.com/agent-network-protocol/AgentNetworkProtocol"
+
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[tool.poetry.dependencies]
+python = ">=3.8"
+agent-connect = "^0.3.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[virtualenvs]
+in-project = true
