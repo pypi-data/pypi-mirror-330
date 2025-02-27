@@ -1,0 +1,121 @@
+import os
+from unittest.mock import patch
+
+import pytest
+
+from git_llm_commit import EnvironmentError, get_api_key, main
+
+
+def test_get_api_key_success():
+    test_key = "test-api-key"
+    with patch.dict(os.environ, {"OPENAI_API_KEY": test_key}):
+        assert get_api_key() == test_key
+
+
+def test_get_api_key_missing():
+    with patch.dict(os.environ, {}, clear=True):
+        with pytest.raises(EnvironmentError) as exc_info:
+            get_api_key()
+        assert str(exc_info.value) == (
+            "Neither OPENROUTER_API_KEY nor OPENAI_API_KEY environment variable is set."
+        )
+
+
+def test_get_api_key_openrouter_success():
+    test_key = "test-openrouter-key"
+    with patch.dict(os.environ, {"OPENROUTER_API_KEY": test_key}):
+        assert get_api_key() == test_key
+
+
+def test_get_api_key_both_keys():
+    test_openrouter_key = "test-openrouter-key"
+    test_openai_key = "test-openai-key"
+    with patch.dict(
+        os.environ,
+        {"OPENROUTER_API_KEY": test_openrouter_key, "OPENAI_API_KEY": test_openai_key},
+    ):
+        assert get_api_key() == test_openrouter_key
+
+
+def test_get_api_key_neither_key():
+    with patch.dict(os.environ, {}, clear=True):
+        with pytest.raises(EnvironmentError) as exc_info:
+            get_api_key()
+        assert str(exc_info.value) == (
+            "Neither OPENROUTER_API_KEY nor OPENAI_API_KEY environment variable is set."
+        )
+
+
+def test_main_environment_error():
+    with (
+        patch("git_llm_commit.load_dotenv"),
+        patch("git_llm_commit.get_api_key", side_effect=EnvironmentError("Test error")),
+        patch("sys.argv", ["git-llm-commit"]),
+    ):
+        with pytest.raises(SystemExit) as exc_info:
+            main([])
+        assert exc_info.value.code == 1
+
+
+def test_main_unexpected_error():
+    test_key = "test-api-key"
+    with (
+        patch.dict(os.environ, {"OPENAI_API_KEY": test_key}),
+        patch("git_llm_commit.load_dotenv"),
+        patch("git_llm_commit.llm_commit", side_effect=RuntimeError("Test error")),
+    ):
+        with pytest.raises(SystemExit) as exc_info:
+            main([])
+        assert exc_info.value.code == 1
+
+
+def test_main_success():
+    test_key = "test-api-key"
+    with (
+        patch.dict(os.environ, {"OPENAI_API_KEY": test_key}),
+        patch("git_llm_commit.llm_commit") as mock_llm_commit,
+        patch("git_llm_commit.load_dotenv"),
+    ):
+        main([])
+        mock_llm_commit.assert_called_once_with(api_key=test_key, dynamic_length=False)
+
+
+def test_main_missing_key():
+    with patch.dict(os.environ, {}, clear=True), patch("git_llm_commit.load_dotenv"):
+        with pytest.raises(SystemExit) as exc_info:
+            main([])
+        assert exc_info.value.code == 1
+
+
+def test_main_with_dynamic_flag():
+    test_key = "test-api-key"
+    with (
+        patch.dict(os.environ, {"OPENAI_API_KEY": test_key}),
+        patch("git_llm_commit.llm_commit") as mock_llm_commit,
+        patch("git_llm_commit.load_dotenv"),
+    ):
+        main(["--dynamic"])
+        mock_llm_commit.assert_called_once_with(api_key=test_key, dynamic_length=True)
+
+
+def test_main_with_short_dynamic_flag():
+    test_key = "test-api-key"
+    with (
+        patch.dict(os.environ, {"OPENAI_API_KEY": test_key}),
+        patch("git_llm_commit.llm_commit") as mock_llm_commit,
+        patch("git_llm_commit.load_dotenv"),
+    ):
+        main(["-d"])
+        mock_llm_commit.assert_called_once_with(api_key=test_key, dynamic_length=True)
+
+
+def test_main_without_dynamic_flag():
+    test_key = "test-api-key"
+    with (
+        patch.dict(os.environ, {"OPENAI_API_KEY": test_key}),
+        patch("git_llm_commit.llm_commit") as mock_llm_commit,
+        patch("git_llm_commit.load_dotenv"),
+        patch("sys.argv", ["git-llm-commit"]),
+    ):
+        main([])
+        mock_llm_commit.assert_called_once_with(api_key=test_key, dynamic_length=False)

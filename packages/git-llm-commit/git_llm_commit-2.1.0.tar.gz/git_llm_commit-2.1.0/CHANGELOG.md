@@ -1,0 +1,58 @@
+# Changelog
+
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## v2.1.0 (2025-02-26)
+
+### Feat
+
+- add argv support to main function for enhanced testing
+- enhance git-llm-commit with dynamic commit message option
+
+### Fix
+
+- improve main function argument parsing
+
+## v2.0.0 (2025-02-06)
+
+### Refactor
+
+- streamline scripts and improve code formatting
+
+## v1.2.1 (2025-02-05)
+
+### Fix
+
+- add version diagnostics to release script
+
+## v1.2.0 (2025-02-05)
+
+### Feat
+
+- **release-script**: enhance version bump handling in release process
+- add LLM_COMMIT_TEMPERATURE env var to control model creativity
+
+### Fix
+
+- push changelog updates in release script
+- handle existing tags gracefully in release script
+- improve version extraction in release script
+
+## v1.1.0 (2025-02-05)
+
+### Feat
+
+- integrate Commitizen for version management and changelog generation
+
+### Refactor
+
+- **build**: switch build system from setuptools to hatch
+
+## 1.0.2 - (2025-02-05)
+
+### Added
+
+- Initial version with changelog

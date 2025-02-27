@@ -1,0 +1,55 @@
+[project]
+name = "git-llm-commit"
+dynamic = ["version"]
+description = "Generate Conventional Commit messages from your staged changes using an LLM"
+readme = "README.md"
+authors = [
+    { name = "Bryan Lackey", email = "lackeyjb1@users.noreply.github.com" },
+]
+requires-python = ">=3.12"
+dependencies = ["openai>=1.61.0", "python-dotenv>=1.0.1"]
+
+[project.scripts]
+git-llm-commit = "git_llm_commit:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.version]
+path = "src/git_llm_commit/__init__.py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/git_llm_commit"]
+
+[dependency-groups]
+dev = [
+    "commitizen>=4.1.1",
+    "genbadge[coverage]>=1.1.1",
+    "pytest>=8.3.4",
+    "pytest-cov>=5.0.0",
+    "ruff>=0.9.4",
+]
+
+[tool.ruff]
+line-length = 88
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = [
+    # pycodestyle
+    "E",
+    # Pyflakes
+    "F",
+    # pyupgrade
+    "UP",
+    # flake8-bugbear
+    "B",
+    # flake8-simplify
+    "SIM",
+    # isort
+    "I",
+]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
