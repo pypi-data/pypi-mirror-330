@@ -1,0 +1,2 @@
+[console_scripts]
+github-repo-delete = github_repo_bulk_deleter:cli_main
