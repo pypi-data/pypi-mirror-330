@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: wish-models
+Version: 0.0.0
+Summary: Models used in wish-sh and RapidPen
+Requires-Python: >=3.13
+Requires-Dist: pydantic>=2.10.6
+Description-Content-Type: text/markdown
+
+# wish-models
+
+A package for creating and managing models in the Wish.
