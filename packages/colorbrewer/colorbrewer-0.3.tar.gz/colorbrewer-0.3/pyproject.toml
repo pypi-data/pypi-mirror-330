@@ -1,0 +1,38 @@
+[build-system]
+build-backend = "setuptools.build_meta"
+requires = ["setuptools", "setuptools-scm"]
+
+[project]
+authors = [{name = "Michael Hoffman", email = "michael.hoffman@utoronto.ca"}]
+classifiers = [
+  "Natural Language :: English",
+  "Development Status :: 5 - Production/Stable",
+  "Intended Audience :: Science/Research",
+  "Topic :: Scientific/Engineering",
+  "Operating System :: Unix",
+  "Programming Language :: Python :: 3",
+]
+
+description = "An easy way to get access to ColorBrewer schemes from within a Python program"
+dynamic = ["version"]
+name = "colorbrewer"
+readme = "README.md"
+requires-python = ">=3.9"
+
+[project.license]
+text = "Apache-2.0"
+
+[project.urls]
+"Bug Tracker" = "https://github.com/hoffmangroup/colorbrewer/issues"
+"Download" = "https://pypi.python.org/pypi/colorbrewer"
+"Homepage" = "https://github.com/hoffmangroup/colorbrewer"
+
+[tool.setuptools]
+# Override setuptools autodiscovery algorithm
+packages = ["colorbrewer"]
+
+# Enable version inference from scm
+[tool.setuptools_scm]
+
+[tool.mypy]
+ignore_missing_imports = true

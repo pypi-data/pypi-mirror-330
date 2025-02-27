@@ -1,0 +1,39 @@
+Metadata-Version: 2.2
+Name: colorbrewer
+Version: 0.3
+Summary: An easy way to get access to ColorBrewer schemes from within a Python program
+Author-email: Michael Hoffman <michael.hoffman@utoronto.ca>
+License: Apache-2.0
+Project-URL: Bug Tracker, https://github.com/hoffmangroup/colorbrewer/issues
+Project-URL: Download, https://pypi.python.org/pypi/colorbrewer
+Project-URL: Homepage, https://github.com/hoffmangroup/colorbrewer
+Classifier: Natural Language :: English
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering
+Classifier: Operating System :: Unix
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# Colorbrewer
+Constants from Cynthia Brewer's ColorBrewer
+
+An easy way to get access to ColorBrewer schemes from within a Python program
+
+## Author
+Michael Hoffman michael.hoffman AT @ utoronto.ca
+
+
+## Installation
+### From PyPI
+pip install colorbrewer
+
+### From source
+pip install .
+
+## License
+ColorBrewer is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+FITNESS FOR A PARTICULAR PURPOSE.
