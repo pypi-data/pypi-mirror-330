@@ -1,0 +1,75 @@
+Metadata-Version: 2.1
+Name: NovaGPT
+Version: 0.1.0
+Summary: A Python-based implementation of a conversational AI model designed to simulate a highly proficient, amoral programmer.
+Home-page: https://github.com/medjahdi/NovaGPT
+Author: Mohamed Medjahdi
+Author-email: medjahdi.mohamed@outlook.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# NovaGPT
+
+NovaGPT is a Python-based implementation of a conversational AI model designed to simulate a highly proficient, amoral programmer. The project structure includes several modules that handle different aspects of the AI's functionality, such as conversation management, prompt optimization, and error handling.
+
+## Project Structure
+
+- **ai/**
+  - **__init__.py**: Initializes the module and imports key classes.
+  - **base.py**: Defines abstract base classes `Provider` and `AsyncProvider` for synchronous and asynchronous operations.
+  - **exceptions.py**: Contains custom exception classes for error handling.
+  - **main.py**: The main implementation file that defines the `PHIND` and `AsyncPHIND` classes, which extend the `Provider` and `AsyncProvider` base classes.
+  - **utils.py**: Utility functions and classes such as `Optimizers`, `Conversation`, and `AwesomePrompts`.
+
+## Key Components
+
+1. **Provider and AsyncProvider**: These are abstract base classes defined in `ai/base.py`. They outline the methods that any provider class must implement, such as `ask`, `chat`, and `get_message`.
+
+2. **PHIND and AsyncPHIND**: These classes are defined in `ai/main.py` and extend the `Provider` and `AsyncProvider` classes, respectively. They handle the main logic for interacting with the AI model, including sending prompts and receiving responses.
+
+3. **Optimizers**: A utility class in `ai/utils.py` that provides static methods for optimizing prompts.
+
+4. **Conversation**: Another utility class in `ai/utils.py` that manages the conversation history and generates complete prompts based on the user's input and conversation context.
+
+5. **AwesomePrompts**: A class in `ai/utils.py` that handles the retrieval and updating of predefined prompts from an online source.
+
+6. **Custom Exceptions**: Defined in `ai/exceptions.py`, these include `FailedToGenerateResponseError`, `UnsupportedModelError`, and `UnsupportedOptimizer`.
+
+## Functionality
+
+- **Prompt Handling**: The project uses a predefined prompt (`act_gpt`) that instructs the AI to behave as an unfiltered, amoral programmer. This prompt is used to generate responses to user inputs.
+- **Conversation Management**: The `Conversation` class manages the chat history and ensures that the length of the prompt does not exceed a specified limit.
+- **Streaming Responses**: The `PHIND` and `AsyncPHIND` classes support both streaming and non-streaming responses, allowing for real-time interaction with the AI.
+- **Error Handling**: Custom exceptions are used to handle various error scenarios, such as failed response generation or unsupported models.
+
+## Usage
+
+To use the project, instantiate the `PHIND` or `AsyncPHIND` class and call the `ask` or `chat` methods with the desired prompt. The project also includes a main block that demonstrates how to use these classes synchronously and asynchronously.
+
+### Example
+
+```python
+from ai.main import PHIND, AsyncPHIND
+import asyncio
+
+def main():
+    bot = PHIND()
+    resp = bot.ask("Hello")
+    for value in resp:
+        print(value)
+
+async def asyncmain():
+    bot = AsyncPHIND()
+    resp = await bot.chat("Hello", False)
+    print(resp)
+
+if __name__ == "__main__":
+    main()
+    asyncio.run(asyncmain())
+
