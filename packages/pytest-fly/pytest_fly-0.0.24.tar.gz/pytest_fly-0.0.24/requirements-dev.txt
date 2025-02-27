@@ -1,0 +1,29 @@
+appdirs
+msqlite
+ismain
+numpy
+watchdog
+PySide6
+pref
+attrs
+typeguard
+balsa
+psutil
+py-cpuinfo
+humanize
+tobool
+# linters
+black
+flake8
+mypy
+# testing
+pytest
+pytest-qt
+pytest-pycharm
+pytest-cov
+pytest-xdist
+flask
+requests
+# distribution
+flit
+hatch
