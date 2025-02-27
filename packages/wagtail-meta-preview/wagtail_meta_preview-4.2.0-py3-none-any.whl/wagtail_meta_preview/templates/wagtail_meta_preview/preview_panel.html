@@ -1,0 +1,37 @@
+<script>
+    {% if is_twitter %}
+        window.twitter_title_fields = "{{ title_fallback_fields }}";
+        window.twitter_description_fields = "{{ description_fallback_fields }}";
+        window.twitter_image_fields = "{{ image_fallback_fields }}";
+    {% elif is_facebook %}
+        window.facebook_title_fields = "{{ title_fallback_fields }}";
+        window.facebook_description_fields = "{{ description_fallback_fields }}";
+        window.facebook_image_fields = "{{ image_fallback_fields }}";
+    {% else %}
+        window.google_title_fields = "{{ title_fallback_fields }}";
+        window.google_description_fields = "{{ description_fallback_fields }}";
+    {% endif %}
+
+    window.wmp_base_home_url = "{% url 'wagtailadmin_home' %}";
+</script>
+
+<div class="meta-preview{% if is_single %} meta-preview--single{% endif %}">
+    {% if not is_single %}
+    <fieldset>
+        <ul class="fields">
+            {% for child in self.children %}
+                <li>
+                    {% include "wagtailadmin/shared/field.html"  with field=child.bound_field %}
+                </li>
+            {% endfor %}
+        </ul>
+    </fieldset>
+    {% endif %}
+    {% if is_twitter %}
+        {% include "wagtail_meta_preview/_twitter.html" %}
+    {% elif is_facebook %}
+        {% include "wagtail_meta_preview/_facebook.html" %}
+    {% else %}
+        {% include "wagtail_meta_preview/_google.html" %}
+    {% endif %}
+</div>
