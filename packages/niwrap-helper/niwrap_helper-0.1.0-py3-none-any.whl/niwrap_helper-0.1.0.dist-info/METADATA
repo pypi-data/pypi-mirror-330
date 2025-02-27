@@ -1,0 +1,28 @@
+Metadata-Version: 2.4
+Name: niwrap-helper
+Version: 0.1.0
+Summary: Utility functions for working with NiWrap
+Project-URL: Repository, https://github.com/kaitj/niwrap-helper
+Author-email: Jason Kai <21226986+kaitj@users.noreply.github.com>
+License-Expression: MIT
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Scientific/Engineering
+Requires-Python: >=3.10
+Requires-Dist: bids2table>=0.1.0
+Requires-Dist: niwrap>=0.3.5
+Requires-Dist: pyyaml>=6.0.2
+Requires-Dist: styxdocker>=0.3.0
+Requires-Dist: styxsingularity>=0.3.0
+Description-Content-Type: text/markdown
+
+# NiWrap Helper
+
+Package of utility functions to help make working with NiWrap easier (namely for use
+with scripts).
