@@ -1,0 +1,17 @@
+[project]
+name = "retrotool"
+version = "0.1.1"
+description = "Address Conversion Tool for the Super Famicom"
+readme = "README.md"
+authors = [{name = "Daniel Burgess", email = "daniel@herotechsys.com"}]
+license = {file = "LICENSE"}
+dependencies = ["chardet>=5.2.0"]  # If your package needs other libraries
+requires-python = ">=3.8"
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+
+[project.urls]
+"Homepage" = "https://github.com/danielburgess/SFCRetroTools"
