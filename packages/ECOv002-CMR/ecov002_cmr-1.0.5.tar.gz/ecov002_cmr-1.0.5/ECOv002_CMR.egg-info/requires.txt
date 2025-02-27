@@ -1,0 +1,11 @@
+colored-logging
+ECOv002-granules
+numpy
+pandas
+rasters>=1.3.6
+requests
+sentinel-tiles
+
+[dev]
+pytest>=6.0
+pytest-cov
