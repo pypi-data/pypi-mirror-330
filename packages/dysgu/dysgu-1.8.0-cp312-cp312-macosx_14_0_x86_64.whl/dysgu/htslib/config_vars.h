@@ -1,0 +1,5 @@
+#define HTS_CC "gcc"
+#define HTS_CPPFLAGS "-mmacosx-version-min=14.0 -I/opt/homebrew/include "
+#define HTS_CFLAGS "-Wall  -mmacosx-version-min=14.0 -fvisibility=hidden"
+#define HTS_LDFLAGS "-mmacosx-version-min=14.0 -L/opt/homebrew/lib -fvisibility=hidden "
+#define HTS_LIBS "-ldeflate -llzma -lbz2 -lz   -lcurl "
