@@ -1,0 +1,12 @@
+Metadata-Version: 2.2
+Name: introtopython-okechio-finance-tools
+Version: 0.2.0
+Summary: A collection of tools for financial analysis
+Author: Okechi Osuagwu
+License: MIT
+Requires-Dist: numpy
+Requires-Dist: pandas
+Dynamic: author
+Dynamic: license
+Dynamic: requires-dist
+Dynamic: summary
