@@ -1,0 +1,33 @@
+# Python-related files
+*__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+.env
+venv/*
+ENV/
+dist/
+build/
+*.egg-info/
+.eggs/
+*.egg
+*.pytest_cache/
+
+core/tests/output
+core/tests/assets
+
+# Virtual environment
+.venv/
+.vscode/
+
+*.DS_Store
+
+storage/*
+logs/*
+samples/*
+aggregated_code.txt
+
+offload/*
+test.pdf
