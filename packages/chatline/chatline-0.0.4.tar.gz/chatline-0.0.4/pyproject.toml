@@ -1,0 +1,33 @@
+[tool.poetry]
+name = "chatline"
+version = "0.0.4"
+authors = ["Alex Basile <basileaw@gmail.com>"]
+description = "A pretty command line interface for LLM chat."
+readme = "README.md"
+license = "MIT"
+
+[[tool.poetry.packages]]
+include = "chatline"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.dependencies]
+python = ">=3.12,<4.0"
+boto3 = "*"
+httpx = "*"
+rich = "*"
+prompt-toolkit = "*"
+
+[tool.poetry.group.dev.dependencies]
+fastapi = "*"
+uvicorn = "*"
+poethepoet = "*"
+
+[tool.poe.tasks]
+embedded-client = "python example/client.py"
+embedded-client-log = "python example/client.py --enable-logging --log-file logs/chatline_debug.log"
+serve = "python example/server.py"
+remote-client = "python example/client.py -e http://127.0.0.1:8000/chat"
+remote-client-log = "python example/client.py -e http://127.0.0.1:8000/chat --enable-logging --log-file logs/chatline_debug.log"
