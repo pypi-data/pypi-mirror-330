@@ -1,0 +1,9 @@
+Metadata-Version: 2.2
+Name: nemoai_package
+Version: 0.1.1
+Requires-Dist: fastapi
+Requires-Dist: uvicorn
+Requires-Dist: sphinx
+Requires-Dist: twine
+Requires-Dist: setuptools
+Dynamic: requires-dist

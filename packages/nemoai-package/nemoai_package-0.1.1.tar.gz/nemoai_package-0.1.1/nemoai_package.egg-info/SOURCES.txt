@@ -1,0 +1,12 @@
+README.md
+pyproject.toml
+setup.py
+nemoai/__init__.py
+nemoai/sample/__init__.py
+nemoai/sample/math.py
+nemoai_package.egg-info/PKG-INFO
+nemoai_package.egg-info/SOURCES.txt
+nemoai_package.egg-info/dependency_links.txt
+nemoai_package.egg-info/requires.txt
+nemoai_package.egg-info/top_level.txt
+tests/__init__.py
