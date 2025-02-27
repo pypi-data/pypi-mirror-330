@@ -1,0 +1,68 @@
+Metadata-Version: 2.2
+Name: atai-image-tool
+Version: 0.0.1
+Summary: Extract text from images using OCR and save to JSON or print to console
+Home-page: https://github.com/AtomGradient/atai-image-tool
+Author: AtomGradient
+Author-email: AtomGradient <alex@atomgradient.com>
+License: MIT
+Project-URL: Homepage, https://github.com/AtomGradient/atai-image-tool
+Project-URL: Bug Tracker, https://github.com/AtomGradient/atai-image-tool/issues
+Keywords: ocr,image,text,extraction,ai
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: easyocr
+Dynamic: author
+Dynamic: home-page
+Dynamic: requires-python
+
+# ATAI Image Tool
+
+A command line tool to extract text from images using OCR and either save the results as JSON or print to console.
+
+## Installation
+
+```bash
+pip install atai-image-tool
+```
+
+## Usage
+
+```bash
+# Basic usage with output to JSON file
+atai-image-tool input.jpg output.json
+
+# Print OCR results to console (no output file)
+atai-image-tool input.jpg
+
+# Specify languages (default is English)
+atai-image-tool input.jpg output.json --languages en zh
+
+# Show help
+atai-image-tool --help
+```
+
+## Python API
+
+You can also use ATAI Image Tool as a Python library:
+
+```python
+from atai_image_tool import extract_image_content, save_as_json
+
+# Extract text from an image
+text = extract_image_content("input.jpg")
+
+# Print the text
+print(text)
+
+# Or save the text as JSON
+save_as_json(text, "output.json")
+```
+
+## License
+
+MIT
