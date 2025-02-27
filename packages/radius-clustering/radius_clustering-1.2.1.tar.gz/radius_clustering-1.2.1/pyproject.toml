@@ -1,0 +1,155 @@
+[build-system]
+requires = ["numpy>=2.0","cython >=3.0","setuptools >= 61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "radius-clustering"
+dynamic = ["version"]
+description = "A Clustering under radius constraints algorithm using minimum dominating sets"
+readme = "README.md"
+authors = [
+    {name = "Quentin Haenn"},
+    {name = "Lias Laboratory"}
+]
+
+dependencies = [
+    "matplotlib>=3.6.2",
+    "numpy>=1.23",
+    "scikit-learn>=1.2.2",
+    "scipy>=1.12.0",
+]
+
+requires-python = ">=3.9"
+license = {file = "LICENSE"}
+classifiers=[
+  "Intended Audience :: Science/Research",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: C",
+  "Programming Language :: C++",
+  "Programming Language :: Python",
+  "Topic :: Software Development",
+  "Topic :: Scientific/Engineering",
+  "Operating System :: Microsoft :: Windows",
+  "Operating System :: POSIX",
+  "Operating System :: Unix",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: Implementation :: CPython",
+]
+keywords = ["Unsupervised learning","clustering", "minimum dominating sets","clustering under radius constraint"]
+
+[project.urls]
+source = "https://github.com/lias-laboratory/radius_clustering"
+tracker = "https://github.com/lias-laboratory/radius_clustering/issues"
+documentation = "https://lias-laboratory.github.io/radius_clustering/"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.3.3",
+    "pandas",
+    "cython>=3.0",
+    "setuptools>= 61.0",
+    "black>=24.3.0",
+    "ruff>=0.4.8",
+    "sphinx>=8.1.3",
+    "sphinx_gallery>=0.18.0",
+    "sphinx-copybutton>=0.5.2",
+    "pydata-sphinx-theme>=0.15.3",
+    "sphinxcontrib-email>=0.3.6",
+    "sphinx-remove-toctrees>=1.0.0",
+    "sphinx-prompt>=1.9.0",
+    "sphinx_design>=0.6.1",
+    "sphinxcontrib.sass >= 0.3.4",
+]
+
+doc = [
+    "sphinx>=8.1.3",
+    "sphinx_gallery>=0.18.0",
+    "sphinx-copybutton>=0.5.2",
+    "pydata-sphinx-theme>=0.15.3",
+    "sphinxcontrib-email>=0.3.6",
+    "sphinx-remove-toctrees>=1.0.0",
+    "sphinx-prompt>=1.9.0",
+    "sphinx_design>=0.6.1",
+    "sphinxcontrib.sass >= 0.3.4",
+]
+
+[tool.setuptools]
+packages.find = {where = ["src"], include = ["radius_clustering", "radius_clustering.*"]}
+dynamic.version = {attr = "radius_clustering.__version__"}
+
+[tool.pytest.ini_options]
+pythonpath = "src"
+testpaths = ["tests"]
+addopts = [
+    "--import-mode=importlib",
+]
+
+[tool.ruff]
+# Exclude a variety of commonly ignored directories.
+exclude = [
+    ".git",
+    ".git-rewrite",
+    ".pytest_cache",
+    ".ruff_cache",
+    ".venv",
+    ".vscode",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "site-packages",
+    "venv",
+    "**.egg-info",
+    "tests",
+    "examples",
+]
+
+# Same as Black.
+line-length = 88
+indent-width = 4
+
+[tool.ruff.lint]
+# Enable Pyflakes (`F`) and a subset of the pycodestyle (`E`)  codes by default.
+# Unlike Flake8, Ruff doesn't enable pycodestyle warnings (`W`) or
+# McCabe complexity (`C901`) by default.
+select = ["E", "F"]
+ignore = []
+
+# Allow fix for all enabled rules (when `--fix`) is provided.
+fixable = ["ALL"]
+unfixable = []
+
+# Allow unused variables when underscore-prefixed.
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+[tool.ruff.format]
+# Like Black, use double quotes for strings.
+quote-style = "double"
+
+# Like Black, indent with spaces, rather than tabs.
+indent-style = "space"
+
+# Like Black, respect magic trailing commas.
+skip-magic-trailing-comma = false
+
+# Like Black, automatically detect the appropriate line ending.
+line-ending = "auto"
+
+# Enable auto-formatting of code examples in docstrings.
+docstring-code-format = true
+
+# Set the line length limit used when formatting code snippets in
+# docstrings.
+docstring-code-line-length = "dynamic"
+
+
+[tool.cibuildwheel]
+# Skip building for PyPy, python 3.6/7/8 and 13t, and 32-bit platforms.
+skip = ["pp*", "cp36-*", "cp37-*", "cp38-*", "*-win32", "*linux_i686", "*musllinux*"]
