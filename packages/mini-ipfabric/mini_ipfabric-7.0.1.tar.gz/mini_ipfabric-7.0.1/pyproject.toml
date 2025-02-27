@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "mini-ipfabric"
+version = "v7.0.1"
+description = "Mini Python package for interacting with IP Fabric using requests."
+authors = [
+    "Solution Architecture <solution.architecture@ipfabric.io>"
+]
+license = "MIT"
+readme = "README.md"
+homepage = "https://gitlab.com/ip-fabric/integrations/mini-ipfabric"
+repository = "https://gitlab.com/ip-fabric/integrations/mini-ipfabric"
+keywords = ["ipfabric", "ip-fabric", "community-fabric"]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+requests = ">=2.31.0,<=2.33.0"
+importlib_resources = {version = "^5.0", python = "<3.9"}
+importlib-metadata = {version = "0.12", python = "<3.8"}
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
