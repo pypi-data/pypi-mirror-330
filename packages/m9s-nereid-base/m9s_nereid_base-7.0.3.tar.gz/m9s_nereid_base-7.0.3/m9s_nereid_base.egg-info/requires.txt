@@ -1,0 +1,9 @@
+m9s-nereid<7.1,>=7.0
+m9s-trytond<7.1,>=7.0
+trytond_company<7.1,>=7.0
+
+[test]
+pillow
+proteus<7.1,>=7.0
+pycountry
+python-magic

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!-- This file is part of Tryton.  The COPYRIGHT file at the top level of
+this repository contains the full copyright notices and license terms. -->
+<form>
+    <label name="party"/>
+    <field name="party"/>
+    <label name="name"/>
+    <field name="name"/>
+    <label name="company"/>
+    <field name="company"/>
+    <label name="email"/>
+    <field name="email"/>
+    <label name="password"/>
+    <field name="password" widget="char"/>
+    <label name="timezone" />
+    <field name="timezone" />
+    <label name="email_verified"/>
+    <field name="email_verified"/>
+    <label name="active"/>
+    <field name="active"/>
+    <!-- Provide an empty notebook for extension by other modules -->
+    <notebook colspan="4">
+    </notebook>
+</form>

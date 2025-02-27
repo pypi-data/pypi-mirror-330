@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!-- The COPYRIGHT file at the top level of this repository contains the full
+copyright notices and license terms. -->
+<tryton>
+    <data grouped="1">
+        <record model="ir.message" id="msg_user_email_unique">
+            <field name="text">Email must be unique in a company.</field>
+        </record>
+        <record model="ir.message" id="invalid_name">
+            <field name="text">Folder name not allowed:
+The folder name must not contain '.' or begin or end with '/'</field>
+        </record>
+        <record model="ir.message" id="invalid_file_name">
+            <field name="text">File name not allowed:
+The file name must not contain '..' or '/'</field>
+        </record>
+        <record model="ir.message" id="missing_extension">
+            <field name="text">File extension is missing from file name and it is required to guess file type.</field>
+        </record>
+        <record model="ir.message" id="remove">
+            <field name="text">Remove</field>
+        </record>
+        <record model="ir.message" id="set">
+            <field name="text">Set</field>
+        </record>
+        <record model="ir.message" id="msg_invalid_phone_number">
+            <field name="text">The phone number "%(phone)s" is not valid.</field>
+        </record>
+        <record model="ir.message" id="msg_invalid_convert_format">
+            <field name="text">The conversion to "%(convert_format)s" is not supported.
+Save the file without conversion?</field>
+        </record>
+    </data>
+</tryton>

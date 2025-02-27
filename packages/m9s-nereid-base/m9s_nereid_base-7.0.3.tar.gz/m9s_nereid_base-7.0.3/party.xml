@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<!-- The COPYRIGHT file at the top level of this repository contains the full
+copyright notices and license terms. -->
+<tryton>
+    <data>
+        <record model="ir.ui.view" id="bsure_party_view_form">
+            <field name="model">party.party</field>
+            <field name="inherit" ref="party.party_view_form"/>
+            <field name="name">party_form</field>
+        </record>
+
+        <record model="ir.ui.view" id="contact_mechanism_view_tree">
+            <field name="model">party.contact_mechanism</field>
+            <field name="inherit" ref="party.contact_mechanism_view_tree"/>
+            <field name="name">contact_mechanism_tree</field>
+        </record>
+        <record model="ir.ui.view" id="contact_mechanism_view_form">
+            <field name="model">party.contact_mechanism</field>
+            <field name="inherit" ref="party.contact_mechanism_view_form"/>
+            <field name="name">contact_mechanism_form</field>
+        </record>
+        <record model="ir.ui.view" id="contact_mechanism_view_tree_sequence">
+            <field name="model">party.contact_mechanism</field>
+            <field name="inherit" ref="party.contact_mechanism_view_tree_sequence"/>
+            <field name="name">contact_mechanism_tree_sequence</field>
+        </record>
+
+        <record model="ir.ui.view" id="nereid_user_form2">
+            <field name="model">nereid.user</field>
+            <field name="type">form</field>
+            <field name="priority" eval="20"/>
+            <field name="name">nereid_user_form2</field>
+        </record>
+
+        <record id="nereid_user_tree" model="ir.ui.view">
+            <field name="model">nereid.user</field>
+            <field name="type">tree</field>
+            <field name="name">nereid_user_tree</field>
+        </record>
+
+        <record model="ir.action.act_window" id="action_nereid_user_view">
+            <field name="name">Web User</field>
+            <field name="res_model">nereid.user</field>
+        </record>
+        <record model="ir.action.act_window.view" id="act_nereid_user_view1">
+            <field name="sequence" eval="10" />
+            <field name="view" ref="nereid_user_tree" />
+            <field name="act_window" ref="action_nereid_user_view" />
+        </record>
+        <record model="ir.action.act_window.view" id="act_nereid_user_view2">
+            <field name="sequence" eval="20" />
+            <field name="view" ref="nereid_user_form2" />
+            <field name="act_window" ref="action_nereid_user_view" />
+        </record>
+
+        <menuitem
+            parent="menu_nereid"
+            name="Users"
+            sequence="10"
+            id="menu_nereid_user"
+            icon="tryton-party"/>
+
+        <menuitem name="Web Users" sequence="20"
+            id="menu_nereid_user1"
+            action="action_nereid_user_view"
+            parent="menu_nereid_user"/>
+
+        <!-- Global rules -->
+        <record model="ir.rule.group" id="rule_group_nereid_user_companies">
+            <field name="name">User in companies</field>
+            <field name="model" search="[('model', '=', 'nereid.user')]"/>
+            <field name="global_p" eval="True"/>
+        </record>
+        <record model="ir.rule" id="rule_nereid_user_companies">
+            <field name="domain"
+                eval="[('company', 'in', Eval('companies', []))]"
+                pyson="1"/>
+            <field name="rule_group" ref="rule_group_nereid_user_companies"/>
+        </record>
+    </data>
+</tryton>
