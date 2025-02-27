@@ -1,0 +1,4 @@
+include README.md
+include PredDNAContam/scripts/config.txt
+recursive-include PredDNAContam/scripts *
+recursive-include PredDNAContam/model *
