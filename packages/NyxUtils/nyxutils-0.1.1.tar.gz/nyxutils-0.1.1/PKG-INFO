@@ -1,0 +1,10 @@
+Metadata-Version: 2.2
+Name: NyxUtils
+Version: 0.1.1
+Author: AlitaZzz
+Requires-Python: >=3.6
+Requires-Dist: aiosqlite
+Requires-Dist: requests
+Dynamic: author
+Dynamic: requires-dist
+Dynamic: requires-python
