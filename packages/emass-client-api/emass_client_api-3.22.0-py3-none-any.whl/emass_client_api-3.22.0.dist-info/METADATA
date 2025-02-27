@@ -1,0 +1,26 @@
+Metadata-Version: 2.2
+Name: emass_client_api
+Version: 3.22.0
+Summary: Enterprise Mission Assurance Support Service (eMASS)
+Home-page: https://github.com/mitre/emass_client
+Author: NISP eMASS Support
+Author-email: disa.global.servicedesk.mbx.ma-ticket-request@mail.mil
+License: Apache 2.0
+Keywords: OpenAPI,OpenAPI-Generator,Enterprise Mission Assurance Support Service (eMASS)
+Description-Content-Type: text/markdown
+Requires-Dist: urllib3<3.0.0,>=1.25.3
+Requires-Dist: python-dateutil>=2.8.2
+Requires-Dist: pydantic>=2
+Requires-Dist: typing-extensions>=4.7.1
+Dynamic: author
+Dynamic: author-email
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: license
+Dynamic: requires-dist
+Dynamic: summary
+
+    The eMASS Representational State Transfer (REST) Application Programming Interface (API) enables users to perform assessments and complete actions associated with system records.  The eMASS API provides an interface for application to communicate eMASS Services. For information on how to register and use the eMASS API reference the [eMASS API Getting Started](eMASSGettingStarted.md).  Additional information about eMASS can be obtain by contacting the National Industrial Security Program (NISP). Points of Contact are: 
+    
