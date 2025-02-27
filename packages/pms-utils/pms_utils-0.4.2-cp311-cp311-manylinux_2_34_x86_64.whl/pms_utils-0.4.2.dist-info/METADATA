@@ -1,0 +1,6 @@
+Metadata-Version: 2.1
+Name: pms-utils
+Version: 0.4.2
+Requires-Python: >=3.8
+Requires-Dist: typing-extensions; python_version < "3.11"
+
