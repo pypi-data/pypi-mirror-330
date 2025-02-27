@@ -1,0 +1,32 @@
+Metadata-Version: 2.1
+Name: qytoolspkg
+Version: 0.0.2
+Summary: qytoolspkg is a package for data processing and data analysis.
+Home-page: https://github.com/lookingout96/qytoolspkg
+Author: lookingout
+Author-email: lookingout96@163.com
+License: MIT
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8.19
+Description-Content-Type: text/markdown
+Requires-Dist: pandas (>=2.0.0)
+Requires-Dist: numpy (>=1.23.0)
+Requires-Dist: pymysql (>=1.4.6)
+Requires-Dist: jieba (>=0.42.1)
+Requires-Dist: altair (>=5.4.1)
+Requires-Dist: xpinyin
+
+本文主要分析银行在信息安全领域的专利摘要数据来衡量其技术储备情况。管理层关注度指标则主要基于上市公司年报中的管理层分析与讨论章节。考虑到银行业后量子密码迁移是一项复杂的跨学科任务，需要密码学、信息安全等多个领域的知识和技术储备，简单的词频统计有以下的缺点：一方面是难以理解词语的上下文语意，例如"密码"一词可能指加密算法，也可能是指访问凭据；另一方面，由于银行业后量子密码迁移本身是一个较为狭窄、且十分深度的领域，如果仅统计窄领域的关键词，容易得到大多数银行在该领域毫无准备的结论，但实际上银行对于信息系统、信息安全等领域的技术储备能够有效地迁移到该领域。但同时，简单词频统计无法反映词语的重要性，例如"系统"、"信息"等词汇在文本中可能频繁出现，容易导致这些词汇占主要权重，真正具有意义的低频专业词汇被忽略。因此，针对上述问题，本文提出"领域权重法"进行文本分析。对于每个关键词$i$，我们将其权重定义为${\widetilde{w}}_{i}$：
+
+$${\widetilde{w}}_{i} = \sum_{k = 1}^{N}{w_{k}B(i;k)} + \sum_{k = 1}^{N}{\sum_{l = 1,l \neq k}^{N}{w_{k,l}B(i;k,l)}} + \cdots + w_{k,l,m,\ldots,n}B(i;k,l,m,\ldots,n)$$
+
+式中N是总的学科领域(D)数量，下标$k,l,m,\ldots,n$均表示领域，$B(i;\  \bullet \ )$是01函数：
+
+$$B(i;\ k,l,\ldots,n) = \left\{ \begin{array}{r}
+1\ if\ i \in D_{k} \cap D_{l} \cap \cdots \cap D_{n} \\
+0\ \ \ \ \ \ \ \ \ \ otherwise\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 
+\end{array} \right.\ $$
+
+后量子密码领域作为银行业后量子密码迁移所需要最核心部分应当单独设定较高权重，同时其所需的知识、技术、人员储备情况大致可视为4个领域的交集，故本文领域设定如下：1：密码学；2：信息安全；3：银行信息系统；4：量子信息；5：后量子密码。本文设定第1级领域的权重$\frac{w_{k} = w_{k}^{'}}{s_{k}}$，这里$s_{k}$是领域$D_{k}$选取的关键词总数，考虑该5个领域在后量子密码迁移进程中起到的作用，在咨询专家建议下，本文设定后量子迁移指标中$\overrightarrow{w^{'}} = \left\lbrack w_{1}^{'},w_{2}^{'},w_{3}^{'},w_{4}^{'},w_{5}^{'} \right\rbrack = \lbrack 0.5,0.4,0.5,0.2,1\rbrack$。并设定领域交集的权重$w_{\mathcal{D}} = \sum_{k}^{\mathcal{D}}w_{k}$，这里$\mathcal{D}$是领域的集合。信息安全大类指标中，权重：$\overrightarrow{w^{'}} = \lbrack 0.5,1,0.5,0,0\rbrack$。
