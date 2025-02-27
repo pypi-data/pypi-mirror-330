@@ -1,0 +1,42 @@
+hacker news re bruno.
+https://news.ycombinator.com/item?id=39653718
+    ===============================
+    ===============================
+    ===============================
+    ===============================
+    ===============================
+    ===============================
+    What I want, is an API explorer for CLI. A tool that takes an OpenAPI Spec
+    and then converts it into a set of examples and REST endpoint calls I can
+    just fire off or mess with. Kinda like how Swagger does for their web-based
+    docs, but for CLI, and bonus points if you can generate some examples.
+
+    I feel like this should be possible with today's tech, but am coming up dry
+    finding anything while searching.
+ 
+
+Complaints about Bruno
+from 
+https://www.reddit.com/r/programming/comments/1h2wcei/bruno_opensource_and_gitfriendly_api_client/
+
+    Last time I looked, Bruno lacked some critical features:
+    Shared workspace among team mates.
+    Collections.
+    Workflows (perform API calls in sequence).
+    Ability to generate random data.
+    Ability to consume streams of data.
+    Ability to interact with non-REST and non-HTTP endpoints (websockets, gRPC, tRPC, GraphQL).
+
+
+Kudos to Bruno
+from
+https://www.reddit.com/r/macapps/comments/1f9h35e/bruno_http_client_app_for_devs_mostly/
+
+    pre/post scripts with variable/env reading/writing
+    simple notation that can be pushed to git along the rest of the code
+    no f* cloud!
+    fast and beautiful
+    app + CLI + vscode extension
+    absolutely ZERO bloat.
+
+
