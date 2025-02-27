@@ -1,0 +1,25 @@
+Metadata-Version: 2.2
+Name: lineup-lang
+Version: 0.1.6
+Summary: Pseudo language interpreter for Python
+Home-page: https://github.com/alex-bouget/Lineup
+Author: alex-bouget
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Topic :: Software Development :: Interpreters
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: regex
+Dynamic: author
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-dist
+Dynamic: summary
+
+# LineUp
+Python abstract language interpreter
