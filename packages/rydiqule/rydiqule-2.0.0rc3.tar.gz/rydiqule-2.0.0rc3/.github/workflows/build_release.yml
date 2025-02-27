@@ -1,0 +1,204 @@
+name: Build and Release
+
+on:
+  push:
+    tags:
+      - 'v[0-9]+.[0-9]+.[0-9]+*'
+
+env:
+  PACKAGE_NAME: rydiqule
+  ANACONDA_USER: rydiqule
+
+  # Configuration for a package with no extensions and the same dependencies on all
+  # platforms and Python versions. For this configuration you should comment out all but
+  # the first entry in the job matrix of the build job since multiple platforms are not
+  # needed.
+  # Assumes the package is pure (ie does not have compiled extensions)
+  NOARCH: true
+  python_version: '3.10'
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    if: github.repository_owner == 'QTC-UMD'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.python_version }}
+
+      - name: Install Build Tools
+        run: |
+          python -m pip install --upgrade pip setuptools wheel build
+
+      - name: Build Source Distribution
+        run: |
+          python -m build -s .
+      
+      - name: Build Wheel Distribution
+        run: |
+          python -m build -w .
+
+      - name: Upload Artifact (pip)
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: ./dist
+          if-no-files-found: error
+
+      - name: Set Variables for Conda Build
+        shell: bash
+        run: |
+          if [ $NOARCH == true ]; then
+              CONDA_BUILD_ARGS="--noarch"
+          else
+              CONDA_BUILD_ARGS=""
+          fi
+          echo "CONDA_BUILD_ARGS=$CONDA_BUILD_ARGS" >> $GITHUB_ENV
+
+      - name: Install Miniconda
+        uses: conda-incubator/setup-miniconda@v3
+        with:
+          auto-update-conda: true
+          python-version: ${{ env.python_version }}
+          miniconda-version: "latest"
+
+      - name: Conda package (Unix)
+        shell: bash -l {0}
+        run: |
+          conda install -c labscript-suite setuptools-conda "conda-build<25"
+          setuptools-conda build $CONDA_BUILD_ARGS .
+
+      - name: Upload Artifact (conda)
+        uses: actions/upload-artifact@v4
+        with:
+          name: conda_packages
+          path: ./conda_packages
+          if-no-files-found: error
+
+  github-release:
+    name: Github Release
+    runs-on: ubuntu-latest
+    if: github.repository_owner == 'QTC-UMD'
+    needs: [build]
+    permissions:
+      packages: read
+      contents: write
+    steps:
+      - name: Download Artifact (pip)
+        uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: ./dist
+
+      - name: Download Artifact (conda)
+        uses: actions/download-artifact@v4
+        with:
+          name: conda_packages
+          path: ./conda_packages
+
+      - name: Get Version Number
+        run: |
+          VERSION="${GITHUB_REF/refs\/tags\/v/}"
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+
+      - name: Create Github Release and Upload Release Asset
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.event.ref }}
+          name: ${{ env.PACKAGE_NAME }} ${{ env.VERSION }}
+          draft: true
+          prerelease: ${{ contains(github.event.ref, 'rc') }}
+          files: ./dist/${{ env.PACKAGE_NAME }}-${{ env.VERSION }}.tar.gz
+          generate_release_notes: true
+
+  test-pypi-release:
+    name: TestPyPI Release
+    runs-on: ubuntu-latest
+    if: github.repository_owner == 'QTC-UMD'
+    needs: [build, conda-release]
+    environment:
+      name: testpypi
+      url: https://test.pypi.org/p/${{ env.PACKAGE_NAME }}
+    permissions:
+      id-token: write
+    steps:
+      - name: Download Artifact (pip)
+        uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: ./dist
+
+      - name: Publish on TestPyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          repository-url: https://test.pypi.org/legacy/
+
+  pypi-release:
+    name: PyPI Release
+    runs-on: ubuntu-latest
+    if: github.repository_owner == 'QTC-UMD'
+    needs: [build, test-pypi-release, conda-release]
+    environment:
+      name: pypi
+      url: https://pypi.org/p/${{ env.PACKAGE_NAME }}
+    permissions:
+      id-token: write
+    steps:
+      - name: Download Artifact (pip)
+        uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: ./dist
+
+      - name: Publish on PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1
+
+  conda-release:
+    name: Conda Release
+    runs-on: ubuntu-latest
+    if: github.repository_owner == 'QTC-UMD'
+    needs: [build]
+    steps:
+      - name: Download Artifact (conda)
+        uses: actions/download-artifact@v4
+        with:
+          name: conda_packages
+          path: ./conda_packages
+
+      - name: Install Miniconda
+        uses: conda-incubator/setup-miniconda@v3
+        with:
+          auto-update-conda: true
+          python-version: ${{ env.python_version }}
+          miniconda-version: "latest"
+
+      - name: Install Anaconda cloud client
+        shell: bash -l {0}
+        run: conda install anaconda-client
+
+      - name: Publish to Test Anaconda channel
+        shell: bash -l {0}
+        if: contains(github.event.ref, 'rc')
+        run: |
+          anaconda \
+            --token ${{ secrets.ANACONDA_API_TOKEN }} \
+            upload \
+            --user $ANACONDA_USER \
+            --label test \
+            conda_packages/*/*
+
+      - name: Publish to Anaconda channel
+        shell: bash -l {0}
+        if: contains(github.event.ref, 'rc') != true
+        run: |
+          anaconda \
+            --token ${{ secrets.ANACONDA_API_TOKEN }} \
+            upload \
+            --user $ANACONDA_USER \
+            conda_packages/*/*
+        
