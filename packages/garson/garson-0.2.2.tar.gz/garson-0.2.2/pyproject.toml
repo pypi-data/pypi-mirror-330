@@ -1,0 +1,38 @@
+[project]
+name = "garson"
+dynamic = ["version"]
+authors = [
+  { name="Dima Burmistrov", email="pyctrl.dev@gmail.com" },
+]
+description = "The library that serves"
+readme = "README.rst"
+license = {file = "LICENSE"}
+
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: Unix",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+keywords = ["garson", "service"]
+
+[project.urls]
+homepage = "https://github.com/pyctrl/garson"
+# source = "https://github.com/pyctrl/garson"
+# documentation = ...
+issues = "https://github.com/pyctrl/garson/issues"
+
+
+[project.optional-dependencies]
+rc-daemon = ["python-daemon<4.0.0"]
+svc-bjoern = ["bjoern<4.0.0"]
+all = ["garson[rc-daemon, svc-bjoern]"]
+
+
+[build-system]
+requires = ["setuptools>=61.2", "setuptools-scm", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools_scm]
