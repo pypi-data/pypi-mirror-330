@@ -1,0 +1,72 @@
+Metadata-Version: 2.2
+Name: isacalc
+Version: 1.3.3
+Summary: Standard International Atmosphere Calculator
+Home-page: https://github.com/LukeDeWaal/ISA_Calculator
+Download-URL: https://github.com/LukeDeWaal/ISA_Calculator/archive/v1.3.3.tar.gz
+Author: Luke de Waal
+Author-email: lr.de.waal.01@gmail.com
+License: GNU GPLv3
+Keywords: ISA,Aerospace,Aeronautical,Atmosphere
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: tabulate
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: download-url
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: license
+Dynamic: requires-dist
+Dynamic: summary
+
+# ISACALC : A Basic ISA Calculator for Python projects
+
+  - Accurate Atmospheric Model up to 110km
+  - Accurate Calculations for Temperature, Pressure and Density
+  - Option for user-defined atmospheric conditions:
+    - Change the temperature gradients
+    - Change the base pressure or density
+    - Change physical constants such as gravity or universal gas constant for air
+    - Make your custom atmosphere and save it to a JSON file to be loaded
+  - Tabulate your data to save future computation time
+    - Start, Stop and Step in meters
+    - Save tabulated data in .csv or .xlsx files
+  
+With this module, it is possible to calculate, using the 1976 standard atmosphere model, the Temperature,
+Density and Pressure at any point in the atmosphere from 0 up to 110,000 \[m].
+
+This package is useful for Aerospace and Aeronautical Engineers who wish to run simulations using atmospheric data.
+
+To install this package, simply `pip install isacalc`
+
+And thats it! An simple example script:
+
+    
+```python
+import isacalc as isa
+    
+# Default atmosphere
+atmosphere = isa.Atmosphere()
+
+print(atmosphere)
+
+h = 50000.0
+
+# Calculate a single time 
+T, P, d, a, mu = atmosphere.calculate(h)
+
+# Generate a table
+table = atmosphere.tabulate(0, 25000, 100)
+```
