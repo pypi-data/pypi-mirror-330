@@ -1,0 +1,12 @@
+Metadata-Version: 2.2
+Name: mlpype-spark
+Version: 0.6.5
+Summary: Spark extension for MLpype
+Author: Jeroen van den Hoven
+License: MIT
+Requires-Python: >=3.9
+Requires-Dist: mlpype-base==0.6.5
+Requires-Dist: pyspark>=3.4.0
+Provides-Extra: strict
+Requires-Dist: mlpype-base==0.6.5; extra == "strict"
+Requires-Dist: pyspark==3.4.0; extra == "strict"
