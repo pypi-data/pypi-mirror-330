@@ -1,0 +1,7 @@
+Metadata-Version: 2.2
+Name: inmanta-module-yum
+Version: 2.1.1
+License: Apache 2.0
+Requires-Dist: inmanta-module-std
+Requires-Dist: inmanta-module-fs
+Requires-Dist: inmanta-module-mitogen

@@ -1,0 +1,5 @@
+include inmanta_plugins/yum/setup.cfg
+include inmanta_plugins/yum/py.typed
+recursive-include inmanta_plugins/yum/model *.cf
+graft inmanta_plugins/yum/files
+graft inmanta_plugins/yum/templates
