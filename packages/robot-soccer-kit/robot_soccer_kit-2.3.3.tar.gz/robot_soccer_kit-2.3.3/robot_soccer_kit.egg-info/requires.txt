@@ -1,0 +1,15 @@
+numpy<2
+pyyaml
+pyzmq
+
+[gc]
+flask
+flask-cors
+pyserial
+waitress
+
+[gc:platform_system == "Linux"]
+opencv-contrib-python
+
+[gc:platform_system == "Windows"]
+opencv-contrib-python<4.7
