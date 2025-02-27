@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: akatool
+Version: 0.0.5
+Summary: read descript thag writed by korean what write in github.
+Home-page: https://github.com/FarAway6834/akatool
+Author: du7ec
+Author-email: dutec6834@gmail.com
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Programming Language :: Python :: 3.14
+Requires-Python: >=3.6
+License-File: LICENSE
+Requires-Dist: edprompt
+Requires-Dist: lbdc
+Requires-Dist: sympy
+Requires-Dist: ipitin
