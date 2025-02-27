@@ -1,0 +1,11 @@
+Metadata-Version: 2.4
+Name: mm-std
+Version: 0.3.3
+Requires-Python: >=3.12
+Requires-Dist: cryptography~=44.0.1
+Requires-Dist: httpx[http2,socks]~=0.28.1
+Requires-Dist: pydantic~=2.10.6
+Requires-Dist: pydash~=8.0.5
+Requires-Dist: python-dotenv~=1.0.1
+Requires-Dist: pyyaml~=6.0.2
+Requires-Dist: rich~=13.9.4
