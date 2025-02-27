@@ -1,0 +1,11 @@
+requests
+aiohttp
+loguru
+tqdm
+
+[server]
+pandas
+flask
+loguru
+flask_socketio
+flask_sqlalchemy
