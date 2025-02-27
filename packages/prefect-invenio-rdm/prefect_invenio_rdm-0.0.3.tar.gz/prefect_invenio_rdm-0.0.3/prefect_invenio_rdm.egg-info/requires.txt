@@ -1,0 +1,10 @@
+prefect>=3.0.0
+
+[dev]
+coverage
+pytest-asyncio
+pytest>=8.3
+pytest-env
+pytest-xdist
+pytest-mock
+respx

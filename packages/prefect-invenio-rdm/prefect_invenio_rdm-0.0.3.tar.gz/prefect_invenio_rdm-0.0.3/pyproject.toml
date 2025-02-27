@@ -1,0 +1,58 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "prefect-invenio-rdm"
+version = "0.0.3"
+description = "Prefect integrations interacting with an InvenioRDM instance."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+keywords = ["prefect", "invenio", "invenio-rdm"]
+authors = [
+    {name = "Joel Goncalves", email = "goncalves.joel95@gmail.com"},
+    {name = "ARISA LAB, LLC", email = "admin@ARISALab.org"},
+]
+classifiers = [
+  "Natural Language :: English",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Software Development :: Libraries",
+]
+dependencies = ["prefect>=3.0.0"]
+
+[project.optional-dependencies]
+dev = [
+  "coverage",
+  "pytest-asyncio",
+  "pytest >= 8.3",
+  "pytest-env",
+  "pytest-xdist",
+  "pytest-mock",
+  "respx",
+]
+
+[project.urls]
+Homepage = "https://github.com/ARISA-Lab-LLC/prefect-invenio-rdm"
+
+[project.entry-points."prefect.collections"]
+prefect_invenio_rdm = "prefect_invenio_rdm"
+
+[tool.coverage.run]
+omit = ["tests/*", "prefect_invenio_rdm/_version.py"]
+
+[tool.coverage.report]
+fail_under = 80
+show_missing = true
+
+[tool.pytest.ini_options]
+asyncio_default_fixture_loop_scope = "session"
+asyncio_mode = "auto"
+addopts = "-vv -rA -p no:warnings"
+env = ["PREFECT_TEST_MODE=1"]
