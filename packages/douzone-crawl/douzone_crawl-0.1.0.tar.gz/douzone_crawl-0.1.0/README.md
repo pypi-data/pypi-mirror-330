@@ -1,0 +1,84 @@
+# Douzone-crawl
+
+![GitHub](https://img.shields.io/badge/license-MIT-blue)
+![Python](https://img.shields.io/badge/python-3.6+-blue.svg)
+![Selenium](https://img.shields.io/badge/selenium-4.0+-green.svg)
+
+🔍 빠르고 쉬운 웹 크롤링을 위한 파이썬 라이브러리입니다. Google 검색 결과와 웹 페이지 콘텐츠를 손쉽게 추출하세요.
+
+## 주요 기능
+
+- Google 검색 결과 수집
+- 검색 결과 페이지 내용 추출
+- 검색 결과의 제목, URL, 날짜, 설명 정보 제공
+- 결과 파일 저장 기능
+
+## 설치 방법
+
+```bash
+pip install Douzone-crawl
+```
+
+## 사용 방법
+
+### 기본 검색
+
+```python
+from Douzone_crawl import search
+
+# 검색 수행 (기본 최대 결과 수: 5)
+results = search("더존비즈온", max_results=3)
+
+# 결과 출력
+for title, link, date, description in results:
+    print(f"제목: {title}")
+    print(f"링크: {link}")
+    print(f"날짜: {date}")
+    print(f"설명: {description}")
+    print("-" * 50)
+```
+
+### 웹 페이지 내용 추출
+
+```python
+from Douzone_crawl import get_content
+
+# 특정 URL에서 콘텐츠 추출
+content = get_content("https://example.com")
+print(content)
+```
+
+### 검색 및 내용 추출 결합
+
+```python
+from Douzone_crawl import search_and_extract
+
+# 검색 결과와 페이지 내용을 함께 추출
+report = search_and_extract(
+    "더존비즈온", 
+    max_results=3,
+    save_to_file="results.txt"  # 선택적 파일 저장
+)
+
+# 생성된 보고서 출력
+print(report)
+```
+
+## 요구사항
+
+- Python 3.6+
+- Selenium
+- Chrome WebDriver
+- python-dotenv
+
+## 라이선스
+
+이 프로젝트는 MIT 라이선스를 따릅니다. 자세한 내용은 [LICENSE](LICENSE) 파일을 참조하세요.
+
+## 기여하기
+
+버그 신고나 기능 제안은 이슈 트래커를 이용해 주세요. 풀 리퀘스트도 환영합니다!
+
+---
+
+⭐ 이 프로젝트가 유용하다면 GitHub 저장소에 별표를 눌러주세요!
