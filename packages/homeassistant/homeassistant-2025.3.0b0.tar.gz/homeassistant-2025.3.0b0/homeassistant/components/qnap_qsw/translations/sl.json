@@ -1,0 +1,33 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Naprava je \u017ee konfigurirana",
+            "invalid_id": "Naprava je vrnila neveljaven edinstven ID"
+        },
+        "error": {
+            "cannot_connect": "Povezava ni uspela",
+            "invalid_auth": "Neveljavna avtentikacija"
+        },
+        "step": {
+            "discovered_connection": {
+                "data": {
+                    "password": "Geslo"
+                }
+            },
+            "user": {
+                "data": {
+                    "password": "Geslo",
+                    "url": "URL",
+                    "username": "Uporabni\u0161ko ime"
+                }
+            }
+        }
+    },
+    "entity": {
+        "sensor": {
+            "uptime": {
+                "name": "\u010cas delovanja"
+            }
+        }
+    }
+}

@@ -1,0 +1,32 @@
+{
+    "config": {
+        "error": {
+            "webhook_exception": "Home Assistant URL is not available, go to Settings > System > Network > Home Assistant URL and correct the URLs, see {more_info}"
+        },
+        "step": {
+            "privacy": {
+                "description": "Privacy mode is enabled on Reolink device {host}. By pressing SUBMIT, the privacy mode will be disabled to retrieve the necessary information from the Reolink device. You can abort the setup by pressing X and repeat the setup at a time in which privacy mode can be disabled. After this configuration, you are free to enable the privacy mode again using the privacy mode switch entity. During normal startup the privacy mode will not be disabled. Note however that all entities will be marked unavailable as long as the privacy mode is active.",
+                "title": "Permission to disable Reolink privacy mode"
+            }
+        }
+    },
+    "entity": {
+        "select": {
+            "day_night_mode": {
+                "state": {
+                    "color": "Colour"
+                }
+            }
+        },
+        "switch": {
+            "privacy_mode": {
+                "name": "Privacy mode"
+            }
+        }
+    },
+    "issues": {
+        "ssl": {
+            "title": "Reolink incompatible with global SSL certificate"
+        }
+    }
+}

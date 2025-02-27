@@ -1,0 +1,22 @@
+{
+    "services": {
+        "start_conversation": {
+            "description": "",
+            "fields": {
+                "extra_system_prompt": {
+                    "description": "",
+                    "name": ""
+                },
+                "start_media_id": {
+                    "description": "",
+                    "name": ""
+                },
+                "start_message": {
+                    "description": "",
+                    "name": ""
+                }
+            },
+            "name": ""
+        }
+    }
+}

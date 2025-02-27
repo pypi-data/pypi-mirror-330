@@ -1,0 +1,216 @@
+{
+    "entity": {
+        "binary_sensor": {
+            "overloaded": {
+                "name": ""
+            }
+        },
+        "button": {
+            "charging_contacts_reset": {
+                "name": "Reset charging contacts consumable"
+            },
+            "filter_reset": {
+                "name": "Reset filter consumable"
+            },
+            "main_brush_reset": {
+                "name": "Reset main brush consumable"
+            },
+            "pair": {
+                "name": "Pair new device"
+            },
+            "sensor_reset": {
+                "name": "Reset sensor consumable"
+            },
+            "side_brush_reset": {
+                "name": "Reset side brush consumable"
+            },
+            "unpair": {
+                "name": "Unpair device"
+            }
+        },
+        "number": {
+            "clean_count": {
+                "name": "Clean count"
+            },
+            "power_protection_threshold": {
+                "name": ""
+            }
+        },
+        "sensor": {
+            "charging_contacts_remaining": {
+                "name": "Charging contacts remaining"
+            },
+            "charging_contacts_used": {
+                "name": "Charging contacts used"
+            },
+            "clean_area": {
+                "name": "Cleaning area"
+            },
+            "clean_progress": {
+                "name": "Cleaning progress"
+            },
+            "clean_time": {
+                "name": "Cleaning time"
+            },
+            "current_consumption": {
+                "name": "Current consumption"
+            },
+            "filter_remaining": {
+                "name": "Filter remaining"
+            },
+            "filter_used": {
+                "name": "Filter used"
+            },
+            "last_clean_area": {
+                "name": "Last cleaned area"
+            },
+            "last_clean_time": {
+                "name": "Last cleaned time"
+            },
+            "last_clean_timestamp": {
+                "name": "Last clean start"
+            },
+            "main_brush_remaining": {
+                "name": "Main brush remaining"
+            },
+            "main_brush_used": {
+                "name": "Main brush used"
+            },
+            "sensor_remaining": {
+                "name": "Sensor remaining"
+            },
+            "sensor_used": {
+                "name": "Sensor used"
+            },
+            "side_brush_remaining": {
+                "name": "Side brush remaining"
+            },
+            "side_brush_used": {
+                "name": "Side brush used"
+            },
+            "total_clean_area": {
+                "name": "Total cleaning area"
+            },
+            "total_clean_count": {
+                "name": "Total cleaning count"
+            },
+            "total_clean_time": {
+                "name": "Total cleaning time"
+            },
+            "vacuum_error": {
+                "name": "Error",
+                "state": {
+                    "batterylow": "Low on battery",
+                    "dustbinremoved": "",
+                    "lidarblocked": "",
+                    "mainbrushstuck": "",
+                    "ok": "",
+                    "sidebrushstuck": "",
+                    "trapped": "",
+                    "trappedcliff": "",
+                    "unabletofinddock": "",
+                    "unabletomove": "",
+                    "unknowninternal": "",
+                    "wheelblocked": ""
+                }
+            }
+        },
+        "switch": {
+            "carpet_boost": {
+                "name": ""
+            },
+            "led": {
+                "name": "LED"
+            }
+        },
+        "vacuum": {
+            "vacuum": {
+                "state_attributes": {
+                    "fan_speed": {
+                        "state": {
+                            "max": "Max",
+                            "quiet": "Quiet",
+                            "standard": "Standard",
+                            "turbo": "Turbo",
+                            "ultra": "Ultra"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "exceptions": {
+        "invalid_alarm_duration": {
+            "message": "Invalid duration {duration} available: 1-{duration_max}s"
+        }
+    },
+    "services": {
+        "random_effect": {
+            "fields": {
+                "backgrounds": {
+                    "name": "Backgrounds"
+                },
+                "brightness": {
+                    "description": "Initial brightness.",
+                    "name": "Brightness"
+                },
+                "brightness_range": {
+                    "description": "Range of brightness.",
+                    "name": "Brightness range"
+                },
+                "duration": {
+                    "description": "Duration.",
+                    "name": "Duration"
+                },
+                "fadeoff": {
+                    "description": "Fade off.",
+                    "name": "Fade off"
+                },
+                "hue_range": {
+                    "description": "Range of hue.",
+                    "name": "Hue range"
+                },
+                "init_states": {
+                    "description": "Initial HSV sequence.",
+                    "name": "Initial states"
+                },
+                "random_seed": {
+                    "description": "Random seed.",
+                    "name": "Random seed"
+                },
+                "saturation_range": {
+                    "description": "Range of saturation.",
+                    "name": "Saturation range"
+                },
+                "segments": {
+                    "description": "List of segments (0 for all).",
+                    "name": "Segments"
+                },
+                "transition": {
+                    "name": "Transition"
+                },
+                "transition_range": {
+                    "description": "Range of transition.",
+                    "name": "Transition range"
+                }
+            },
+            "name": "Random effect"
+        },
+        "sequence_effect": {
+            "description": "Sets a sequence effect.",
+            "fields": {
+                "brightness": {
+                    "description": "Initial brightness.",
+                    "name": "Brightness"
+                },
+                "direction": {
+                    "description": "Direction.",
+                    "name": "Direction"
+                },
+                "duration": {
+                    "description": "Duration."
+                }
+            }
+        }
+    }
+}

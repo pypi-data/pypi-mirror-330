@@ -1,0 +1,12 @@
+{
+    "config": {
+        "step": {
+            "confirm": {
+                "description": "\u017delite nastaviti {name}?"
+            },
+            "user": {
+                "description": "Izberite napravo, ki jo \u017eelite nastaviti"
+            }
+        }
+    }
+}

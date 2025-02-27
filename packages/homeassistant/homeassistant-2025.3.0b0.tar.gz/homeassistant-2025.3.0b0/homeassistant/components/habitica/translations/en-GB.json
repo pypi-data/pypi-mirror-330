@@ -1,0 +1,129 @@
+{
+    "common": {
+        "alias_description": "A task alias can be used instead of the name or task ID. Only dashes, underscores, and alphanumeric characters are supported. The task alias must be unique among all your tasks.",
+        "alias_name": "Task alias",
+        "config_entry_description": "Select the Habitica account to update a task.",
+        "developer_options_description": "Additional features available in developer mode.",
+        "developer_options_name": "Advanced settings",
+        "notes_description": "The new notes for the Habitica task.",
+        "notes_name": "Update notes",
+        "remove_tag_description": "Remove tags from the Habitica task.",
+        "remove_tag_name": "Remove tags",
+        "rename_description": "The new title for the Habitica task.",
+        "rename_name": "Rename",
+        "tag_description": "Add tags to the Habitica task. If a tag does not already exist, a new one will be created.",
+        "tag_name": "Add tags",
+        "tag_options_description": "Add or remove tags from a task.",
+        "tag_options_name": "Tags",
+        "task_description": "The name (or task ID) of the task you want to update."
+    },
+    "config": {
+        "step": {
+            "reauth_confirm": {
+                "description": "![Habiticans]({habiticans}) It seems your API token for **{name}** has been reset. To re-authorise the integration, you can either log in with your username or email, and password, or directly provide your new API token.",
+                "sections": {
+                    "reauth_api_key": {
+                        "name": "Re-authorise via API Token"
+                    },
+                    "reauth_login": {
+                        "description": "Enter your login details below to re-authorise the Home Assistant integration with Habitica",
+                        "name": "Re-authorise via login"
+                    }
+                },
+                "title": "Re-authorise {name} with Habitica"
+            }
+        }
+    },
+    "entity": {
+        "sensor": {
+            "display_name": {
+                "state_attributes": {
+                    "blurb": {
+                        "name": "About"
+                    },
+                    "joined": {
+                        "name": "Joined"
+                    },
+                    "last_login": {
+                        "name": "Last login"
+                    },
+                    "total_logins": {
+                        "name": "Total logins"
+                    }
+                }
+            }
+        }
+    },
+    "exceptions": {
+        "frequency_not_monthly": {
+            "message": "Unable to update task, monthly repeat settings apply only to monthly recurring dailies."
+        },
+        "frequency_not_weekly": {
+            "message": "Unable to update task, weekly repeat settings apply only to weekly recurring dailies."
+        }
+    },
+    "services": {
+        "api_call": {
+            "description": "Calls Habitica API.",
+            "fields": {
+                "args": {
+                    "description": "Any additional JSON or URL parameter arguments. See apidoc mentioned for path. Example uses same API endpoint.",
+                    "name": "Args"
+                },
+                "name": {
+                    "description": "Habitica's username to call for."
+                },
+                "path": {
+                    "description": "Items from API URL in form of an array with method attached at the end. Consult https://habitica.com/apidoc/. Example uses https://habitica.com/apidoc/#api-Task-CreateUserTasks."
+                }
+            },
+            "name": "API name"
+        },
+        "update_reward": {
+            "description": "Updates a specific reward for the selected Habitica character",
+            "fields": {
+                "alias": {
+                    "description": "A task alias can be used instead of the name or task ID. Only dashes, underscores, and alphanumeric characters are supported. The task alias must be unique among all your tasks.",
+                    "name": "Task alias"
+                },
+                "config_entry": {
+                    "description": "Select the Habitica account to update a reward."
+                },
+                "cost": {
+                    "description": "Update the cost of a reward.",
+                    "name": "Cost"
+                },
+                "notes": {
+                    "description": "The new notes for the Habitica task.",
+                    "name": "Update notes"
+                },
+                "remove_tag": {
+                    "description": "Remove tags from the Habitica task.",
+                    "name": "Remove tags"
+                },
+                "rename": {
+                    "description": "The new title for the Habitica task.",
+                    "name": "Rename"
+                },
+                "tag": {
+                    "description": "Add tags to the Habitica task. If a tag does not already exist, a new one will be created.",
+                    "name": "Add tags"
+                },
+                "task": {
+                    "description": "The name (or task ID) of the task you want to update."
+                }
+            },
+            "name": "Update a reward",
+            "sections": {
+                "developer_options": {
+                    "description": "Additional features available in developer mode.",
+                    "name": "Advanced settings"
+                },
+                "tag_options": {
+                    "description": "Add or remove tags from a task.",
+                    "name": "Tags"
+                }
+            }
+        }
+    }
+}

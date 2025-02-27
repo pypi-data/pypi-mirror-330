@@ -1,0 +1,17 @@
+{
+    "entity": {
+        "sensor": {
+            "expires": {
+                "name": "Subscription expiration date"
+            },
+            "subscription": {
+                "name": "Subscription",
+                "state": {
+                    "free": "Free",
+                    "premium": "Premium",
+                    "trial": "Trial"
+                }
+            }
+        }
+    }
+}

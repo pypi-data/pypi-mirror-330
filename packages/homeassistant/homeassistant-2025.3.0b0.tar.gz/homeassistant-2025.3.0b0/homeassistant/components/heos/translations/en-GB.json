@@ -1,0 +1,64 @@
+{
+    "config": {
+        "step": {
+            "confirm_discovery": {
+                "description": "Do you want to add your HEOS devices to Home Assistant?",
+                "title": "Discovered HEOS System"
+            }
+        }
+    },
+    "exceptions": {
+        "entity_not_grouped": {
+            "message": "Entity {entity_id} is not joined to a group"
+        },
+        "not_heos_media_player": {
+            "message": ""
+        },
+        "sign_in_auth_error": {
+            "message": "Failed to sign in: Invalid username and/or password"
+        },
+        "sign_in_error": {
+            "message": "Unable to sign in: {error}"
+        },
+        "sign_out_error": {
+            "message": "Unable to sign out: {error}"
+        },
+        "unable_to_connect": {
+            "message": "Unable to connect to {host}"
+        },
+        "unable_to_get_players": {
+            "message": "Unexpected error retrieving players"
+        }
+    },
+    "services": {
+        "group_volume_down": {
+            "description": "Turns down the group volume.",
+            "name": "Turn down group volume"
+        },
+        "group_volume_set": {
+            "description": "Sets the group's volume while preserving member volume ratios.",
+            "fields": {
+                "volume_level": {
+                    "description": "The volume. 0 is inaudible, 1 is the maximum volume.",
+                    "name": "Level"
+                }
+            },
+            "name": "Set group volume"
+        },
+        "group_volume_up": {
+            "description": "Turns up the group volume.",
+            "name": "Turn up group volume"
+        },
+        "sign_in": {
+            "fields": {
+                "username": {
+                    "description": "The username or email of the HEOS account."
+                }
+            },
+            "name": "Sign in"
+        },
+        "sign_out": {
+            "name": "Sign out"
+        }
+    }
+}

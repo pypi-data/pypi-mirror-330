@@ -1,0 +1,41 @@
+{
+    "config": {
+        "step": {
+            "2fa": {
+                "data_description": {
+                    "2fa": "Account verification code via the method selected in your Ring account settings."
+                }
+            },
+            "reauth_confirm": {
+                "data_description": {
+                    "password": "Your Ring account password."
+                }
+            },
+            "reconfigure": {
+                "data_description": {
+                    "password": "Your Ring account password."
+                }
+            },
+            "user": {
+                "data_description": {
+                    "password": "Your Ring account password.",
+                    "username": "Your Ring account username."
+                }
+            }
+        }
+    },
+    "exceptions": {
+        "api_authentication": {
+            "message": "Authentication error communicating with Ring API"
+        },
+        "api_error": {
+            "message": "Error communicating with Ring API"
+        },
+        "api_timeout": {
+            "message": "Timeout communicating with Ring API"
+        },
+        "sdp_m_line_index_required": {
+            "message": "Error negotiating stream for {device}"
+        }
+    }
+}

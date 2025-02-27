@@ -1,0 +1,20 @@
+{
+    "config": {
+        "abort": {
+            "no_devices_found": "V omre\u017eju ni bilo najdenih naprav"
+        },
+        "step": {
+            "bluetooth_confirm": {
+                "description": "\u017delite nastaviti {name}?"
+            },
+            "user": {
+                "description": "Izberite napravo, ki jo \u017eelite nastaviti"
+            }
+        }
+    },
+    "device_automation": {
+        "trigger_subtype": {
+            "locked": "Zaklenjeno"
+        }
+    }
+}
