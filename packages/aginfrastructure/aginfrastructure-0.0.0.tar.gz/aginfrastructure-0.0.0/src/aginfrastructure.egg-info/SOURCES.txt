@@ -1,0 +1,14 @@
+LICENSE
+LICENSE-AGiXT
+README.md
+pyproject.toml
+src/aginfrastructure.egg-info/PKG-INFO
+src/aginfrastructure.egg-info/SOURCES.txt
+src/aginfrastructure.egg-info/dependency_links.txt
+src/aginfrastructure.egg-info/entry_points.txt
+src/aginfrastructure.egg-info/requires.txt
+src/aginfrastructure.egg-info/top_level.txt
+src/sample/__init__.py
+src/sample/package_data.dat
+src/sample/simple.py
+tests/test_simple.py
