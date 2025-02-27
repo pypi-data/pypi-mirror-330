@@ -1,0 +1,178 @@
+Metadata-Version: 2.3
+Name: wind_power_timeseries
+Version: 0.2.0
+Summary: Package for downloading timeseries data and convert to generated power
+License: MIT
+Author: Harald G Svendsen
+Author-email: harald.svendsen@sintef.no
+Requires-Python: >=3.10
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python
+Requires-Dist: cdsapi (>=0.7.5,<0.8.0)
+Requires-Dist: metocean-api (>=1.1.10)
+Requires-Dist: numpy (>=2.2.3)
+Requires-Dist: pandas (>=2.2.3)
+Requires-Dist: scipy (>=1.15.2)
+Description-Content-Type: text/markdown
+
+![pipeline](https://gitlab.sintef.no/harald.svendsen/timeseries/badges/main/pipeline.svg)
+![coverage](https://gitlab.sintef.no/harald.svendsen/timeseries/badges/main/coverage.svg)
+
+# Timeseries Methods for Wind Power
+
+
+This is a Python package to download timeseries data from the NORA3 reanalysis, and to convert to power time series for wind farms.
+
+
+## Quick-start
+- Installl as a Python package in your preferred way, for example using `poetry`
+- Copy and adjust the example code below.
+
+
+## Example
+```python
+import pandas as pd
+import pathlib
+import timeseries_methods as tm
+
+# Specify windfarms
+windfarms = pd.DataFrame([
+    {"id":"windfarm_1", "lat":55, "lon": 9, "orientation":None, "shape":None, "turbine_height": 150},
+    {"id":"windfarm_2", "lat":60, "lon": 7, "orientation":None, "shape":None, "turbine_height": 150},
+]).set_index("id")
+
+# Download wind speed data from NORA3 and save to CSV file in specified folder
+time_start = "2022-05-01"
+time_end = "2022-05-05"
+data_path = pathlib.Path("downloaded_nora3").mkdir(parents=True,exist_ok=True)
+
+# Download from server and save to files
+wind_data = tm.download.retrieve_nora3(
+    windfarms,time_start,time_end,use_cache=True,data_path=data_path)
+
+# Specify function for wind speed to wind power conversion, using a pre-defined function:
+my_power_function = tm.compute.func_ninja_compute_power
+my_args = {"turbine_power_curve": tm.compute.get_power_curve(name="VestasV80")}
+
+# Compute wind farm power from wind speed data
+windpower = tm.compute.compute_power(windfarms,wind_data,
+        power_function=my_power_function,power_function_args=my_args)
+
+# Save to file
+windpower.to_csv("windpower.csv")
+```
+
+This creates a windpower dataframe
+```
+                     windfarm_1  windfarm_2
+time
+2022-05-01 00:00:00    0.053922    0.105866
+2022-05-01 01:00:00    0.065940    0.037178
+2022-05-01 02:00:00    0.107095    0.009000
+2022-05-01 03:00:00    0.056030    0.006256
+2022-05-01 04:00:00    0.041206    0.003573
+...
+```
+
+## Model description
+
+The package consists of two modules
+- download.py - for downloading timeseries
+- compute.py - for processing timeseries and computing generated power
+
+The main inputs are the specifications of 
+- wind farms
+- Wind power functions
+
+### Wind data
+The package relies on the metocean_api Python package for retrieving data from the Reanalysis servers (NORA3 or ERA5)
+
+Data retrieval is time-consuming and downloaded NETCDF files are automatically saved in a local cache that may be re-used.
+
+Downloaded data is also saved in CSV files for easy access later on.
+
+Regarding wind direction:
+- wind direction angle is defined as the direction the wind is blowing *from*. 0 degrees for wind from north, 90 degrees for wind from east
+- u,v wind components: u-component is wind blowing towards the east, v-component is wind blowing towards the north
+- Example: (u,v) = (1,1) corresponds to direction towards north-east, ie from south-west, direction = 255 (=45+180) degrees.
+
+### Wind farms
+Wind farms are specified with the following information
+- id (name)
+- latitude
+- longitude
+- turbine height
+- orientation
+- shape (aspect ratio)
+
+### Wind power function
+Generated wind power is computed via `compute_power`:
+```python
+windpower = tm.compute.compute_power(windfarms, wind_data, power_function,power_function_args)
+```
+This takes as arguments
+- wind farms specified in a pandas dataframe
+- wind data:  Reanalysis wind data from NORA3
+- a power function (reference)
+- extra power function arguments specified as a dictionary.
+
+The wind power function is what converts wind data to generated power. It acts on the wind data and is a function of
+- wind speed at hub height
+- wind direction at hub height
+- wind farm orientation
+- wind farm shape
+- possibly additional arguments supplied via the power_function_args dictionary
+
+
+There are three main alternatives for specifying the power function:
+
+**ALTERNATIVE 1: From power curve.**
+The package includes some pre-defined wind turbine power curves, that can be used to define a power function. In this case, the power function is only a function of the wind speed (at hub height).
+
+```python
+pc_V80 = tm.compute.get_power_curve(name="VestasV80")
+my_power_function = tm.compute.func_power_curve(pc_V80)
+```
+
+
+**ALTERNATIVE 2: Pre-defined function.**
+The package also includes som pre-defined power functions. Shown below is a function that reproduces the method used by Renewables.ninja, which is based on gauss-filtering a single turbine curve with a wake loss factor included.
+```python
+power_function = tm.compute.func_ninja_compute_power
+power_function_args = {
+    "turbine_power_curve": tm.compute.get_power_curve(name="VestasV80"),
+    "sigma": 2*1.17, 
+    "wakeloss", 0.71,
+    }
+```
+
+**ALTERNATIVE 3: Explicitly define function.**
+Another alternative is to define the power conversion function explictily, for example like this:
+```python
+def power_function(
+        windspeed_at_hub,
+        winddirection_at_hub,
+        windfarm_orientation,
+        windfarm_shape,
+        **kwargs):
+    windpower =  ...
+    return windpower
+power_function_args = dict()
+```
+
+### References
+
+Science
+- H Hersbach et al., "The ERA5 global Reanalysis", https://doi.org/10.1002/qj.3803
+- H Haakenstad et al., "NORA3: A Nonhydrostatic High-Resolution Hindcast of the North Sea, the Norwegian Sea, and the Barents Sea", 
+https://doi.org/10.1175/JAMC-D-21-0029.1
+- IM Solbrekke, A Sorteberg, H Haakenstad, "The 3 km Norwegian reanalysis (NORA3) – a validation of offshore wind resources in the North Sea and the Norwegian Sea", https://doi.org/10.5194/wes-6-1501-2021
+- I Stafell, S Pfenninger, "Using bias-corrected reanalysis to simulate current and future wind power output", https://doi.org/10.1016/j.energy.2016.08.068, https://www.renewables.ninja/documentation/science
+
+Data and APIs
+- metocean-api documentation: https://metocean-api.readthedocs.io/en/latest/index.html
+- ECMWF Reanalysis v5 ERA5, https://www.ecmwf.int/en/forecasts/dataset/ecmwf-reanalysis-v5
+- WindPRO NORA3 page, https://help.emd.dk/mediawiki/index.php/NORA3 
+- WindPRO ERA5 page, https://help.emd.dk/mediawiki/index.php/ERA5_Gaussian_Grid
+
+
