@@ -1,0 +1,24 @@
+Metadata-Version: 2.1
+Name: causalchamber
+Version: 0.1.3
+Summary: Access the datasets and models from the causal chambers.
+Author-email: "Juan L. Gamella" <juangamella@gmail.com>
+Project-URL: Homepage, https://causalchamber.ai
+Project-URL: Repository, https://github.com/juangamella/causal-chamber-package
+Project-URL: Issues, https://github.com/juangamella/causal-chamber-package/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+Requires-Dist: numpy >=1.18.0
+Requires-Dist: pandas >=1.2.1
+Requires-Dist: requests >=2.23.0
+Requires-Dist: pyyaml >=5.3.1
+Requires-Dist: Pillow
+Requires-Dist: tqdm
+Provides-Extra: torch
+Requires-Dist: torch ; extra == 'torch'
+Requires-Dist: torchvision ; extra == 'torch'
+
