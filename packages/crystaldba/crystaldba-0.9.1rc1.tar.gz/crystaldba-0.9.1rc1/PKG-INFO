@@ -1,0 +1,81 @@
+Metadata-Version: 2.3
+Name: crystaldba
+Version: 0.9.1rc1
+Summary: Crystal DBA Agent CLI with Tui Chat integration
+License: Apache-2.0
+Author: Crystal DBA Developers
+Author-email: support@crystaldba.ai
+Requires-Python: >=3.10,<4.0.0
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Dist: attrs (>=24.3.0)
+Requires-Dist: email-validator (>=2.2.0)
+Requires-Dist: http-message-signatures (>=0.5.0)
+Requires-Dist: litellm (>=1.37.19)
+Requires-Dist: pexpect (>=4.9.0,<5.0.0)
+Requires-Dist: prompt-toolkit (>=3.0.48)
+Requires-Dist: psycopg2-binary (>=2.9.10)
+Requires-Dist: pydantic (>=2.10.6)
+Requires-Dist: pyperclip (>=1.8.2)
+Requires-Dist: python-dotenv (>=1.0.1)
+Requires-Dist: pyyaml (>=6.0.2)
+Requires-Dist: requests-http-signature (>=0.7.1)
+Requires-Dist: rich (>=13.9.4)
+Requires-Dist: sqlalchemy (>=2.0.36)
+Requires-Dist: sseclient (>=0.0.27)
+Requires-Dist: textual[syntax] (>=2.1.0)
+Project-URL: Documentation, https://www.crystaldba.ai/docs
+Project-URL: Homepage, https://www.crystaldba.ai
+Project-URL: Repository, https://github.com/crystaldba/crystaldba
+Description-Content-Type: text/markdown
+
+# Crystal DBA Agent Command Line Interface
+
+
+[Crystal DBA](https://www.crystaldba.ai) is an AI teammate for PostgreSQL database administration.
+For more information, see the [documentation](https://www.crystaldba.ai/docs).
+
+Installation:
+
+```
+pipx install crystaldba
+```
+
+See the [website installation instructions](https://www.crystaldba.ai/docs/installation) for further details.
+
+Usage:
+
+```
+usage: crystaldba [-h HOSTNAME] [-p PORT] [-U USERNAME] [-d DBNAME] [-v] [--help] [DBNAME | URI]
+
+Crystal DBA is an AI-powered postgreSQL expert.
+
+Examples:
+  crystaldba dbname
+  crystaldba postgres://<username>:<password>@<host>:<port>/<dbname>
+  crystaldba -d dbname -u dbuser
+
+Connection options:
+  DBNAME | URI          database name or URI to connect to
+  -h HOSTNAME, --host HOSTNAME
+                        database server host or socket directory (default: "localhost")
+  -p PORT, --port PORT  database server port (default: "5432")
+  -U USERNAME, -u USERNAME, --username USERNAME
+                        database user name (default: "postgres")
+  -d DBNAME, --dbname DBNAME
+                        database name (default: "postgres")
+
+Other options:
+  -v, --verbose         increase verbosity level (-v: INFO, -vv: DEBUG)
+  --help                show this help message and exit
+
+Contact us:
+  Email support@crystaldba.ai if you have questions.
+```
+
+
+
