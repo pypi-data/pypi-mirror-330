@@ -1,0 +1,16 @@
+numpy>=1.14
+scipy
+mplhep
+
+[dev]
+pre-commit
+
+[docs]
+sphinx>=7.0
+myst_parser>=0.13
+sphinx_copybutton
+sphinx_autodoc_typehints
+furo>=2023.08.17
+
+[test]
+pytest
