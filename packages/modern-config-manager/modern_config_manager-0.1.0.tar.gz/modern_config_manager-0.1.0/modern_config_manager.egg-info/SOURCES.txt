@@ -1,0 +1,15 @@
+LICENSE
+README.md
+setup.py
+config_manager/__init__.py
+config_manager/base.py
+config_manager/composite.py
+config_manager/parser.py
+config_manager/registry.py
+modern_config_manager.egg-info/PKG-INFO
+modern_config_manager.egg-info/SOURCES.txt
+modern_config_manager.egg-info/dependency_links.txt
+modern_config_manager.egg-info/requires.txt
+modern_config_manager.egg-info/top_level.txt
+tests/test_config_manager.py
+tests/test_parser.py
