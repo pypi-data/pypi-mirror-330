@@ -1,0 +1,44 @@
+Metadata-Version: 2.2
+Name: airavata-jupyter-magic
+Version: 0.1.0
+Summary: Jupyter magics for running notebook cells on remote HPC resources. Powered by Apache Airavata.
+Author-email: Yasith Jayawardana <yasith@gatech.edu>, Dimuthu Wannipurage <dimuthuw@gatech.edu>, Lahiru Jayathilake <ljayathilake3@gatech.edu>
+License: Apache-2.0
+Project-URL: Homepage, https://github.com/apache/airavata
+Project-URL: Repository, https://github.com/apache/airavata
+Description-Content-Type: text/markdown
+Requires-Dist: requests
+Requires-Dist: PyJWT
+Requires-Dist: ipython
+Provides-Extra: dev
+Requires-Dist: black; extra == "dev"
+Requires-Dist: flake8; extra == "dev"
+
+# airavata-jupyter-magic
+
+https://pypi.org/project/airavata-jupyter-magic
+
+A Python package that extends Jupyter Notebook with
+custom annotations (i.e., magics) to execute notebook
+cells on remote HPC resources seamlessly.
+Powered by Apache Airavata.
+
+### Installing
+
+```shell
+python -m pip install airavata-jupyter-magic
+```
+
+### Importing
+
+```python
+import airavata_magics
+```
+
+### Contributing
+
+```shell
+python -m pip install setuptools wheel twine
+python -m build.
+python -m twine upload dist/*
+```
