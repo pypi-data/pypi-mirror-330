@@ -1,0 +1,82 @@
+Metadata-Version: 2.2
+Name: MagmaPEC
+Version: 1.0.0
+Summary: MagmaPandas based PEC correction tool for olivine-hosted melt inclusions.
+Author: Thomas van Gerve
+License: MIT License
+        
+        Copyright (c) 2024 Thomas van Gerve
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE.
+        
+Project-URL: Homepage, https://github.com/TDGerve/MagmaPEC
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/x-rst
+License-File: LICENSE
+Requires-Dist: pandas
+Requires-Dist: numpy
+Requires-Dist: scipy
+Requires-Dist: alive_progress
+Requires-Dist: matplotlib-label-lines
+Requires-Dist: matplotlib
+Requires-Dist: elementMass>=1.1.0
+Requires-Dist: magmapandas>=2.1.1
+Requires-Dist: ipython
+Requires-Dist: scikit-learn
+Requires-Dist: statsmodels
+
+========
+MagmaPEC
+========
+MagmaPEC is a flexible model for correcting olivine-hosted melt inclusions for the effects of post-entrapment crystallisation (PEC) or melting.
+
+Documentation
+-------------
+Code documentation is currently being worked on at `magmapec.readthedocs.io <https://magmapec.readthedocs.io>`_
+
+
+How to cite MagmaPandas
+------------------------------
+If have used MagmaPandas in your research, please reference  `this paper <placeholder>`_ . To ensure reproducibility, please also mention the release version of MagmaPEC and reference the specific models you used (see `documentation <https://magmapandas.readthedocs.io/en/latest/code_documentation.html#references>`_).
+
+
+Installation
+------------
+MagmaPEC can be installed with pip by running:
+
+.. code-block:: bash
+
+    pip install magmapec
+
+in a terminal.
+If you want to install from a specific git branch or release, use:
+
+.. code-block:: bash
+
+    pip install git+https://github.com/TDGerve/MagmaPEC.git@tag
+
+where *tag* should be repleaced by the release tag or branch name (e.g. *v1.0.0* or *development*)
+
+
+
+
+
