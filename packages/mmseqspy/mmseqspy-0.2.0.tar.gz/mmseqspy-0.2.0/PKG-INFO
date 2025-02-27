@@ -1,0 +1,31 @@
+Metadata-Version: 2.2
+Name: mmseqspy
+Version: 0.2.0
+Summary: Python utilities for protein sequence clustering and dataset splitting with MMseqs2
+Home-page: https://github.com/michaelscutari/mmseqspy
+Author: Michael Scutari
+Author-email: michael.scutari@duke.edu
+Keywords: bioinformatics,protein,sequence,clustering,mmseqs2
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering :: Bio-Informatics
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.6
+Requires-Dist: pandas
+Requires-Dist: numpy
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+
+    mmseqspy provides utilities for clustering protein sequences and creating train-test splits
+    that respect sequence similarity. It requires MMseqs2 to be installed and in your PATH.
+    Features include sequence clustering, cluster-aware train/test splits, k-fold cross-validation,
+    and constrained dataset splitting.
+    
