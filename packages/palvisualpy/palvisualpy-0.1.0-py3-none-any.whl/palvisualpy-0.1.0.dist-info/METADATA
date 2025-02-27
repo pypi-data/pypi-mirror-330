@@ -1,0 +1,10 @@
+Metadata-Version: 2.4
+Name: palvisualpy
+Version: 0.1.0
+Summary: A visual for py lib
+Author-email: Tiny Twist <tiny.mahua@gmail.com>
+Maintainer-email: Tiny Twist <tiny.mahua@gmail.com>
+Requires-Python: >= 3.6
+License-File: LICENSE.txt
+Requires-Dist: rich == 13.3.5
+Requires-Dist: flatdict == 4.0.1
