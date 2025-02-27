@@ -1,0 +1,16 @@
+LICENSE.txt
+MANIFEST.in
+README.md
+VERSION.txt
+requirements.txt
+setup.py
+src/OpenFOAMPost.egg-info/PKG-INFO
+src/OpenFOAMPost.egg-info/SOURCES.txt
+src/OpenFOAMPost.egg-info/dependency_links.txt
+src/OpenFOAMPost.egg-info/entry_points.txt
+src/OpenFOAMPost.egg-info/requires.txt
+src/OpenFOAMPost.egg-info/top_level.txt
+src/ofpost/__init__.py
+src/ofpost/__main__.py
+src/ofpost/lib.py
+src/ofpost/options.py
