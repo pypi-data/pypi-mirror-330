@@ -1,0 +1,35 @@
+[build-system]
+requires = ["maturin>=1.7,<2.0"]
+build-backend = "maturin"
+
+[project]
+name = "xim_reader_rs"
+version = "0.0.2"
+authors = [{name="purepani", email="purepani@pm.me"}]
+description = "Parse the XIM image format from Varian"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICEN[CS]E"]
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Rust",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python :: Implementation :: PyPy",
+]
+dependencies = [
+    "numpy>=1.20.3, <2.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/purepani/xim_reader"
+
+[dependency-groups]
+dev = [
+    "matplotlib>=3.10.0",
+    "maturin-import-hook>=0.2.0",
+    "pdoc>=15.0.1",
+    "pylinac>=3.23.2",
+]
+
+[tool.maturin]
+features = ["pyo3/extension-module"]
