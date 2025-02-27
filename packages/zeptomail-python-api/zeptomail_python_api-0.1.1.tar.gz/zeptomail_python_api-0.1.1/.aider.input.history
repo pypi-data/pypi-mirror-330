@@ -1,0 +1,385 @@
+
+# 2025-02-26 19:38:00.594189
++/add *
+
+# 2025-02-26 19:38:21.743296
++let's prepare this repository ready to publish to pypi, using uv package manager 
+
+# 2025-02-26 19:39:59.434487
++y
+
+# 2025-02-26 19:40:20.509627
++D
+
+# 2025-02-26 19:40:25.449235
++y
+
+# 2025-02-26 19:40:25.451768
++/run uv pip install hatch
+
+# 2025-02-26 19:40:25.451825
++/run uv pip install hatch
+
+# 2025-02-26 19:40:27.422337
++/run hatch build
+
+# 2025-02-26 19:40:27.422454
++/run hatch build
+
+# 2025-02-26 19:40:33.039757
++y
+
+# 2025-02-26 19:40:36.830887
++S
+
+# 2025-02-26 20:31:00.627445
++/add tests/ zeptomail/
+
+# 2025-02-26 20:31:19.331179
++let's implement tests for these lines:   def add_attachment_from_file_cache(self, file_cache_key: str, name: Optional[str] = None) -> Dict:
++        """
++        Add an attachment using a file cache key.
++
++        Args:
++            file_cache_key: File cache key from ZeptoMail
++            name: Optional name for the file
++
++        Returns:
++            Attachment dictionary
++        """
++        attachment = {"file_cache_key": file_cache_key}
++        if name:
++            attachment["name"] = name
++        return attachment
++
++    def add_attachment_from_content(self, content: str, mime_type: str, name: str) -> Dict:
++        """
++        Add an attachment using base64 encoded content.
++
++        Args:
++            content: Base64 encoded content
++            mime_type: MIME type of the content
++            name: Name for the file
++
++        Returns:
++            Attachment dictionary
++        """
++        return {
++            "content": content,
++            "mime_type": mime_type,
++            "name": name
++        }
++
++    def add_inline_image(self, cid: str, content: Optional[str] = None,
++                         mime_type: Optional[str] = None,
++                         file_cache_key: Optional[str] = None) -> Dict:
++        """
++        Add an inline image to the email.
++
++        Args:
++            cid: Content ID to reference in HTML
++            content: Base64 encoded content
++            mime_type: MIME type of the content
++            file_cache_key: File cache key from ZeptoMail
++
++        Returns:
++            Inline image dictionary
++        """
++        inline_image = {"cid": cid}
++
++        if content and mime_type:
++            inline_image["content"] = content
++            inline_image["mime_type"] = mime_type
++
++        if file_cache_key:
++            inline_image["file_cache_key"] = file_cache_key
++
++        return inline_image
++
+
+# 2025-02-26 20:31:40.853047
++D
+
+# 2025-02-26 20:33:06.967546
++let's update tests so it convers the batch     def send_batch_email(self,
++                         from_address: str,
++                         from_name: Optional[str] = None,
++                         to: List[Dict] = None,
++                         cc: List[Dict] = None,
++                         bcc: List[Dict] = None,
++                         subject: str = "",
++                         html_body: Optional[str] = None,
++                         text_body: Optional[str] = None,
++                         attachments: List[Dict] = None,
++                         inline_images: List[Dict] = None,
++                         track_clicks: bool = True,
++                         track_opens: bool = True,
++                         client_reference: Optional[str] = None,
++                         mime_headers: Optional[Dict] = None,
++                         merge_info: Optional[Dict] = None) -> Dict:
++        """
++        Send a batch email using the ZeptoMail API.
++
++        Args:
++            from_address: Sender's email address
++            from_name: Sender's name
++            to: List of recipient dictionaries with optional merge_info
++            cc: List of cc recipient dictionaries
++            bcc: List of bcc recipient dictionaries
++            subject: Email subject
++            html_body: HTML content of the email
++            text_body: Plain text content of the email
++            attachments: List of attachment dictionaries
++            inline_images: List of inline image dictionaries
++            track_clicks: Whether to track clicks
++            track_opens: Whether to track opens
++            client_reference: Client reference identifier
++            mime_headers: Additional MIME headers
++            merge_info: Global merge info for recipients without specific merge info
++
++        Returns:
++            API response as a dictionary
++        """
++        url = f"{self.base_url}/email/batch"
++
++        payload = {
++            "from": self._build_email_address(from_address, from_name),
++            "subject": subject
++        }
++
++        # Add recipients
++        if to:
++            payload["to"] = to
++
++        if cc:
++            payload["cc"] = cc
++
++        if bcc:
++            payload["bcc"] = bcc
++
++        # Add content
++        if html_body:
++            payload["htmlbody"] = html_body
++
++        if text_body:
++            payload["textbody"] = text_body
++
++        # Add tracking options
++        payload["track_clicks"] = track_clicks
++        payload["track_opens"] = track_opens
++
++        # Add optional parameters
++        if client_reference:
++            payload["client_reference"] = client_reference
++
++        if mime_headers:
++            payload["mime_headers"] = mime_headers
++
++        if attachments:
++            payload["attachments"] = attachments
++
++        if inline_images:
++            payload["inline_images"] = inline_images
++
++        if merge_info:
++            payload["merge_info"] = merge_info
++
++        response = requests.post(url, headers=self.headers, data=json.dumps(payload))
++        return response.json()
++
++    # Helper methods for common operations
+
+# 2025-02-26 20:34:13.084763
++
++        if cc:
++            payload["cc"] = cc
++
++        if bcc:
++            payload["bcc"] = bcc
++
++        if reply_to:
++            payload["reply_to"] = reply_to
++
++        # Add content
++        if html_body:
++            payload["htmlbody"] = html_body
++
++        if text_body:
++            payload["textbody"] = text_body
++
++        # Add tracking options
++        payload["track_clicks"] = track_clicks
++        payload["track_opens"] = track_opens
++
++        # Add optional parameters
++        if client_reference:
++            payload["client_reference"] = client_reference
++
++        if mime_headers:
++            payload["mime_headers"] = mime_headers
++
++        if attachments:
++            payload["attachments"] = attachments
++
++        if inline_images:
++            payload["inline_images"] = inline_images
++ cover these lines in send_email
+
+# 2025-02-26 20:35:20.472188
++   if cc:
++            payload["cc"] = cc
++
++        if bcc:
++            payload["bcc"] = bcc
++
++        AND----- 
++        if mime_headers:
++            payload["mime_headers"] = mime_headers
++
++        if attachments:
++            payload["attachments"] = attachments
++
++        if inline_images:
++            payload["inline_images"] = inline_images
++
++        if merge_info: lines are not covered in `send_batch_email`
+
+# 2025-02-26 20:36:15.913138
++/clear
+
+# 2025-02-26 20:36:42.398138
++lets verify, if these responses are properly processed by the client! Success response parameters
++Parameter	Data Type 	Description
++Data	JSON array 	It consists of code, additional_info and message parameters
++code	String	The code corresponding to a success response
++additional_info	JSON array	Provides additional information about the action performed in the request
++message	String	The action taken for this request
++message	String	The status of the request made
++request_id	String	A unique id which is generated for every request
++object	Email	It signifies that the response is for email API
++Failure response parameters
++Parameter	Data Type 	Description
++error	JSON object 	It consists of code, details, message and request_id parameters
++code	String	The code corresponding to the status of the request made
++details	JSON array	Consists of code, message and target parameters
++code	String	Code of the error found
++message	String	Reason for the error
++target	String	The field that caused the error
++message	String	The status of the request made
++request_id 	String	Unique id generated for every request
++
+
+# 2025-02-26 20:37:14.074181
++D
+
+# 2025-02-26 20:45:25.558041
++/clear
+
+# 2025-02-26 20:45:44.483178
++Error Code	Sub Code	Reason	Solution
++TM_3201	GE_102	Mandatory Field "subject" was set as Empty Value.	Set the Mandatory Fields as proper values instead of setting Empty in the API.
++Mandatory Field "from" is missing.	Add the mandatory "from" field.
++No recipient field found.	Add either "to", "cc" or "bcc" fields.
++Mandatory field "Mail Template Key" is missing.	Add the mandatory "Mail Template Key" field.
++TM_3301	SM_101	Invalid JSON.	
++Kindly check your API syntax.
++
++SM_120	Invalid Mimetype found	Kindly check if the attachment added and the Mimetype specified match.
++TM_3501	UE_106	Invalid File Cache Key. 	
++Obtain proper File Cache Key from the respective Mail Agent in your File Cache tab. 
++
++MTR_101	Invalid Template Key. 	
++Obtain proper Template Key from the respective Mail Agent.
++
++LE_101	Credits expired.	Purchase new credits from the ZeptoMail Subscription page.
++TM_3601	SERR_156	Email sending IP is not in the allowed IPs list.	You need to add the relevant IP to the allowed IPs list from the settings. Learn more
++SM_133	Trial mail sending limit exceeded.	Get your account reviewed to start sending emails again.
++SMI_115	Per day limit exhausted, try after some time.	Wait till the next day to send your emails.
++AE_101	Account blocked	Contact ZeptoMail support 
++TM_4001	SM_111	Sender address domain is not verified in your Mail Agent.	Use the sender address domain that is verified in your Mail Agent.
++SM_113	Mandatory Field "from" has Invalid Value.	
++Set the Mandatory Fields as proper values in the API.
++
++Note: target_value in the error response shows the field where an invalid email address is set.​
++Same error response if an Invalid Values is set in any of these fields: cc, bcc, mime-type in attachments, reply_to, File Cache Key. 
++
++Mandatory Field "to" has Invalid Value.
++Mandatory Field "bounce_address" is missing or has Invalid Value.
++SM_128	Your ZeptoMail account is yet to be reviewed and approved by us.	Get your account reviewed and then send your emails using API.
++SERR_157	Sendmail token is invalid. 	Obtain proper Sendmail token from the configuration settings within your Mail Agent.
++TM_5001	LE_102	Credit exhausted.	Purchase new credits from the ZeptoMail Subscription page.
++TM_8001	SM_127	Total number of attachments exceeding the limit.	Allowed total number of attachments < = 60.
++Fields exceeding limits.	
++Total number of addresses exceeding the limit. The allowed number of unique values is 500 for each of these fields :
++
++i) reply_to 
++
++ii) to 
++
++iii) cc 
++
++iv) bcc 
++
++SM_129	Character limit exceeded for the name field for any of these parameters - from, to, reply_to, cc, bcc.	Allowed character limit < = 250.
++Subject field exceeding the character count limit.	Allowed subject line character count < = 500.
++Attachment size exceeding the limit.​	Allowed attachment size < = 15 MB.​​
++Exceeding the character limit in attachment filename.​	Allowed Attachment FileName Characters Length <=150.​​ let's incorporate these error codes into the API (provide possible solution in response)
+
+# 2025-02-26 20:46:37.280326
++y
+
+# 2025-02-26 20:46:44.808978
++n
+
+# 2025-02-26 20:47:12.888027
++/clear
+
+# 2025-02-26 20:47:19.437779
++                    detail_messages.append(f"{target}: {detail_msg}")
++                elif detail_msg:
++                    detail_messages.append(detail_msg)
++            
++            if detail_messages: these lines are not covered in zeptomailerror
+
+# 2025-02-26 20:47:38.174216
++D
+
+# 2025-02-26 20:47:55.333555
++/clear
+
+# 2025-02-26 20:47:59.453903
++let's cover these lines!          # If the sub-code solution is a string, return it directly
++                if isinstance(sub_code_solution, str):
++                    return sub_code_solution
++                
++                # If it's a dict, try to find a more specific solution based on details
++                elif isinstance(sub_code_solution, dict) and details:
++                    for detail in details:
++                        target = detail.get("target", "")
++                        if target in sub_code_solution:
++                            return sub_code_solution[target]
++                    
++                    # If no specific target match, return the first solution
++                    return next(iter(sub_code_solution.values()), None)
++        
+
+# 2025-02-26 20:54:17.605311
++/drop
+
+# 2025-02-26 20:54:24.462643
++/map-refresh
+
+# 2025-02-26 20:54:27.906298
++/add zeptomail/
+
+# 2025-02-26 20:54:31.351721
++/add README.md
+
+# 2025-02-26 20:54:38.331087
++update readme, add shields and add emojis!
+
+# 2025-02-26 21:06:52.845067
++add disclaimer that this is not an official SDK, Namilink Kft is not affiliated of Zeptomail. Also bump version to be able to republish
+
+# 2025-02-26 21:08:10.026318
++Also please add, that only Email sending API, Batch email sending API is implemented, Templates API, TEamplates management API is not implemented in this library but i welcome contribs
