@@ -1,0 +1,4 @@
+[console_scripts]
+exostriker = exostriker.gui:main
+exostriker-desktop-create = exostriker.desktop_entry:create
+exostriker-desktop-remove = exostriker.desktop_entry:remove
