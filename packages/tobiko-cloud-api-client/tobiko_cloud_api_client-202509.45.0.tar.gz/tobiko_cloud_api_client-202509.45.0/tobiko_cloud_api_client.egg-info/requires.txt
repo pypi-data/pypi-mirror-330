@@ -1,0 +1,8 @@
+Authlib
+httpx
+pydantic>=2.0.0
+rich[jupyter]
+ruamel.yaml
+tenacity
+tobiko-cloud-helpers==202509.45.0
+typing_extensions
