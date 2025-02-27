@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pytoolsx"  # Your package name (should be unique on PyPI)
+version = "0.1.0" # Update this for new releases
+description = "A simple Python tools library"  # Short description
+readme = "README.md"
+authors = [{name = "Your Name", email = "your@email.com"}]
+license = {file = "LICENSE"}
+dependencies = [
+    "requests",  # Example dependency, add more if needed
+]
+requires-python = ">=3.7"
+
+[project.urls]
+Homepage = "https://github.com/yourusername/pytoolsx"
+Documentation = "https://yourwebsite.com/docs"
