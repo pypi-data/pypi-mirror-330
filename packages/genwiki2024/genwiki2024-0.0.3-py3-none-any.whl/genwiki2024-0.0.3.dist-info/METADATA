@@ -1,0 +1,58 @@
+Metadata-Version: 2.4
+Name: genwiki2024
+Version: 0.0.3
+Summary: nicesprinkler
+Project-URL: Home, https://github.com/WolfgangFahl/genwiki2024
+Project-URL: Documentation, https://wiki.bitplan.com/index.php/genwiki2024
+Project-URL: Source, https://github.com/WolfgangFahl/genwiki2024
+Author-email: Wolfgang Fahl <wf@bitplan.com>
+Maintainer-email: Wolfgang Fahl <wf@bitplan.com>
+License-Expression: Apache-2.0
+License-File: LICENSE
+Keywords: genealogy,mediawiki,nicegui,semantic
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Web Environment
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Education
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.9
+Requires-Dist: djvulibre-python>=0.9.1
+Requires-Dist: geocoder>=1.38.1
+Requires-Dist: geopy>=2.3.0
+Requires-Dist: mwparserfromhell>=0.6.6
+Requires-Dist: ngwidgets>=0.19.1
+Requires-Dist: nicegui>=2.1.0
+Requires-Dist: numpy>=2.2.3
+Requires-Dist: py-3rdparty-mediawiki>=0.13.5
+Requires-Dist: py-ez-wikidata>=0.2.3
+Requires-Dist: pyarrow>=17.0.0
+Requires-Dist: pycairo>=1.27.0
+Requires-Dist: pylodstorage>=0.12.4
+Requires-Dist: requests>=2.31.0
+Requires-Dist: tqdm>=4.66.5
+Requires-Dist: wdgrid>=0.1.2
+Provides-Extra: test
+Requires-Dist: green; extra == 'test'
+Description-Content-Type: text/markdown
+
+# genwiki2024
+Semantification of Genealogy
+
+[![pypi](https://img.shields.io/pypi/pyversions/genwiki2024)](https://pypi.org/project/genwiki2024/)
+[![Github Actions Build](https://github.com/WolfgangFahl/genwiki2024/actions/workflows/build.yml/badge.svg)](https://github.com/WolfgangFahl/genwiki2024/actions/workflows/build.yml)
+[![PyPI Status](https://img.shields.io/pypi/v/genwiki2024.svg)](https://pypi.python.org/pypi/genwiki2024/)
+[![GitHub issues](https://img.shields.io/github/issues/WolfgangFahl/genwiki2024.svg)](https://github.com/WolfgangFahl/genwiki2024/issues)
+[![GitHub closed issues](https://img.shields.io/github/issues-closed/WolfgangFahl/genwiki2024.svg)](https://github.com/WolfgangFahl/genwiki2024/issues/?q=is%3Aissue+is%3Aclosed)
+[![API Docs](https://img.shields.io/badge/API-Documentation-blue)](https://WolfgangFahl.github.io/genwiki2024/)
+[![License](https://img.shields.io/github/license/WolfgangFahl/genwiki2024.svg)](https://www.apache.org/licenses/LICENSE-2.0)
+
+## Demo/Simulation
+[Demo](http://genwiki2024.bitplan.com/)

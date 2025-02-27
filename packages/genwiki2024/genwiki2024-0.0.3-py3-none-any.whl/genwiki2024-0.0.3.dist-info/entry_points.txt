@@ -1,0 +1,3 @@
+[console_scripts]
+djvuconv = genwiki.djvu_cmd:main
+genwiki = genwiki.genwiki_cmd:main
