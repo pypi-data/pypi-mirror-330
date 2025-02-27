@@ -1,0 +1,19 @@
+Metadata-Version: 2.4
+Name: open_learning_ai_tutor
+Version: 0.0.0
+Summary: AI powered tutor
+Author-email: MIT Open Learning Engineering <odl-devops@mit.edu>
+License-File: LICENSE
+Requires-Dist: e2b-code-interpreter
+Requires-Dist: langchain
+Requires-Dist: langchain-anthropic
+Requires-Dist: langchain-chroma
+Requires-Dist: langchain-community
+Requires-Dist: langchain-core
+Requires-Dist: langchain-experimental
+Requires-Dist: langchain-openai
+Requires-Dist: langchain-together
+Requires-Dist: langgraph
+Requires-Dist: openai
+Requires-Dist: pygithub
+Requires-Dist: tiktoken
