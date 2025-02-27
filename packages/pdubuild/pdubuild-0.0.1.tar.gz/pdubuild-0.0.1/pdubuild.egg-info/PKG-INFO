@@ -1,0 +1,34 @@
+Metadata-Version: 2.1
+Name: pdubuild
+Version: 0.0.1
+Summary: Generate SMS-SUBMIT PDUs for sending text messages
+Home-page: https://github.com/pscl4rke/pdubuild
+Author: P. S. Clarke
+Author-email: pdubuild@pscl4rke.net
+License: cf:licence
+Project-URL: Source Code, https://github.com/pscl4rke/pdubuild
+Project-URL: Issues, https://github.com/pscl4rke/pdubuild/issues
+Project-URL: Licence, https://github.com/pscl4rke/pdubuild/blob/master/LICENCE.txt
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Provides-Extra: testing
+License-File: LICENCE.txt
+
+
+**WARNING:**
+This library has been written to create `SMS-SUBMIT` PDUs
+for one specific piece of telecoms hardware.
+It may work for your equipment.
+It may not.
+
+Licence
+-------
+
+This software is licensed under the terms of the BSD licence.
+
