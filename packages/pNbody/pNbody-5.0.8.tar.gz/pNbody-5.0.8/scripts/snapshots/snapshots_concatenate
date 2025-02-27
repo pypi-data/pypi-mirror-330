@@ -1,0 +1,64 @@
+#!/usr/bin/env python3
+
+from pNbody import Nbody
+import argparse
+import os
+import glob
+
+####################################################################
+# option parser
+####################################################################
+
+description="""Loop over a set of snapshot and concatenate all of them in the same file.
+"""
+
+epilog     ="""
+Examples:
+--------
+snapshots_contatenate snapshots/* -o outputfile.hdf5
+
+"""
+
+
+parser = argparse.ArgumentParser(description=description,epilog=epilog,formatter_class=argparse.RawDescriptionHelpFormatter)
+
+parser.add_argument(action="store", 
+                    dest="files", 
+                    metavar='FILE', 
+                    type=str,
+                    default=None,
+                    nargs='*',
+                    help='a list of snapshots')       
+
+parser.add_argument('-o','--outputfile',
+                    type=str,
+                    default=None,
+                    help='output file') 
+
+
+
+####################################################################
+# main
+####################################################################
+
+opt = parser.parse_args()
+
+for i,snapshot in enumerate(opt.files):
+  
+  print("adding %s"%snapshot)
+  
+  if i==0:
+    nb = Nbody(snapshot)
+  else:
+    nb.append(Nbody(snapshot),do_init_num=True,do_not_change_num=True)
+
+
+# save the file   
+if opt.outputfile is not None:
+  print("writing %s ..."%opt.outputfile)
+  nb.write(opt.outputfile)
+
+
+    
+    
+  
