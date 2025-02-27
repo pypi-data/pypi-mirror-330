@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "temporal_disaggregation"
+version = "0.1.0"
+description = "Library for time series temporal disaggregation"
+authors = [{ name = "Jaime Vera-Jaramillo", email = "jaimevera1107@gmail.com" }]
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "numpy",
+    "pandas",
+    "scipy",
+    "matplotlib",
+    "scikit-learn"
+]
+
+[tool.setuptools]
+packages = ["temporal_disaggregation"]
