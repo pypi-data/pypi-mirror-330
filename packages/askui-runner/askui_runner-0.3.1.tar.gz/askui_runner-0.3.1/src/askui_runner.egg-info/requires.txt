@@ -1,0 +1,9 @@
+pydantic>=2.10.4
+jinja2>=3.1.4
+requests>=2.32.3
+tenacity>=9.0.0
+requests-toolbelt>=1.0.0
+pyyaml>=6.0.2
+typer[all]>=0.15.1
+kubernetes>=28.0.0
+pydantic-settings>=2.7.0

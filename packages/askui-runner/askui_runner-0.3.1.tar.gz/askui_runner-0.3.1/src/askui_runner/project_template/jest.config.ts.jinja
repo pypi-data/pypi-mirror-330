@@ -1,0 +1,22 @@
+import type { Config } from "@jest/types";
+
+const config: Config.InitialOptions = {
+  preset: "ts-jest",
+  testEnvironment: '@askui/jest-allure-circus',
+  testEnvironmentOptions: {
+    resultsDir: "{{ results.dir }}"
+  },
+  setupFilesAfterEnv: ["./helper/jest.setup.ts"],
+  sandboxInjectedGlobals: ["Math"],
+  testMatch: [ "**/{{ workflows.dir }}/**/*.[jt]s?(x)" ],
+  testPathIgnorePatterns: [
+    "/node_modules/",
+    "/helper/",
+    "jest.config.ts",
+  ],
+  moduleNameMapper: {
+    "^@/(.*)$": "<rootDir>/$1",
+  },
+};
+
+export default config;
