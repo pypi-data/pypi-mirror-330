@@ -1,0 +1,3 @@
+[console_scripts]
+sokoweb-down = sokoweb.sokoweb.cli:down
+sokoweb-up = sokoweb.sokoweb.cli:up
