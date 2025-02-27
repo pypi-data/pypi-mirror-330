@@ -1,0 +1,72 @@
+Metadata-Version: 2.4
+Name: b3Dv
+Version: 2025.2.26.1
+Summary: A package to easily plot functions over 3D surfaces.
+Project-URL: Homepage, https://github.com/ariva00/b3Dv
+Project-URL: Repository, https://github.com/ariva00/b3Dv.git
+Project-URL: Issues, https://github.com/ariva00/b3Dv/issues
+Author: Alessandro Riva
+License: MIT License
+        
+        Copyright (c) 2024 Alessandro Riva
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE.
+License-File: LICENSE.txt
+Keywords: 3D,blender,functions,meshes,plotting,point clouds,surfaces,visualization
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Python: >=3.10
+Requires-Dist: bpy
+Requires-Dist: numpy
+Requires-Dist: open3d
+Provides-Extra: docs
+Requires-Dist: sphinx; extra == 'docs'
+Description-Content-Type: text/markdown
+
+# b3Dv
+
+This package is meant to easily plot functions over 3D surfaces and point clouds.
+It is built on top of the [Blender Python API](https://docs.blender.org/api/current/index.html).
+
+## Installation
+
+The project is still in early alpha develpment and is not yet available on PyPI.
+It is however available on the test PyPI repository.
+To install it, run the following command:
+
+```bash
+python3 -m pip install --index-url https://test.pypi.org/simple/ --no-deps b3Dv
+```
+
+The installation of dependencies might be necessary.
+The following command will install the necessary dependencies:
+
+```bash
+python3 -m pip install numpy open3d bpy
+```
+
+## Usage
+
+main.py is a simple example of how to use the package.
+More documentation is coming soon.

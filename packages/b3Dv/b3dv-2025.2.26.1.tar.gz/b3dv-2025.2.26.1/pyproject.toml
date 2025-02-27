@@ -1,0 +1,50 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "b3Dv"
+version = "2025.2.26.1"
+requires-python = ">= 3.10"
+dependencies = [
+    "bpy",
+    "numpy",
+    "open3d"
+]
+description = "A package to easily plot functions over 3D surfaces."
+authors = [
+    {name = "Alessandro Riva"},
+]
+readme = "README.md"
+license = {file = "LICENSE.txt"}
+keywords = ["3D", "plotting", "visualization", "point clouds", "meshes", "surfaces", "functions", "blender"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+]
+
+[project.optional-dependencies]
+docs = [
+    "sphinx"
+]
+
+[project.urls]
+Homepage = "https://github.com/ariva00/b3Dv"
+Repository = "https://github.com/ariva00/b3Dv.git"
+Issues = "https://github.com/ariva00/b3Dv/issues"
+
+[tool.hatch.build.targets.sdist]
+include =[
+    "README.md",
+    "LICENSE.txt",
+    "src/*",
+]
+exclude = [
+  ".git/",
+  "env/",
+]
