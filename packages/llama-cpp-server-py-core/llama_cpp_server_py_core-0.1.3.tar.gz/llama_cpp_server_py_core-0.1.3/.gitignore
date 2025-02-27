@@ -1,0 +1,12 @@
+# python generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# venv
+.venv
+llama_cpp_server_py_core/convert_hf_to_gguf.py
+llama_cpp_server_py_core/lib

@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: llama-cpp-server-py-core
+Version: 0.1.3
+Summary: Add your description here
+Author-Email: Fangyin Cheng <staneyffer@gmail.com>
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+
+# llama-cpp-server-py-core
+
+Describe your project here.
+
+
+## Some tools
+
+### Convert huggingface model to gguf model
+
+```bash
+rye run hf2gguf /opt/models/llm/qwen/Qwen2.5-Coder-14B-Instruct --outfile /opt/models/llm/qwen/Qwen2.5-Coder-14B-Instruct-f16.gguf
+```
+
+### Quantize gguf model
+
+```bash
+rye run quantize /opt/models/llm/qwen/Qwen2.5-Coder-14B-Instruct-f16.gguf /opt/models/llm/qwen/Qwen2.5-Coder-14B-Instruct-Q4_k_m.gguf Q4_k_m
+```
