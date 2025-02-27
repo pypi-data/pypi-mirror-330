@@ -1,0 +1,41 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "esycord"
+version = "1.6.1"
+
+dependencies = ["discord", "aiohttp>=3.9.5","pynacl>=1.5.0", "colorama","requests"]
+requires-python = ">=3.9"
+
+authors =[
+    { name = "Aayush Srivastava", discord = "aayush.2410"}
+    ]
+
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+
+  "Intended Audience :: Developers",
+  "Topic :: Software Development :: Build Tools",
+
+  "License :: OSI Approved :: MIT License",
+
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+]
+
+description = "The most beginner friendly discord package"
+readme ="README.rst"
+
+keywords = ["discord", "beginner discord", "easycord", "discord simple", 'esycord', 'Discord bot maker',"ezycord"]
+
+license = "MIT"
+
+[project.urls]
+Repository = "https://github.com/Aayush-Srivastava2410/esycord"
+Issues = "https://github.com/Aayush-Srivastava2410/esycord/issues"
+Documentation = "https://github.com/Aayush-Srivastava2410/esycord/wiki"
+Discord = "https://discord.com/users/795873954668871731"
