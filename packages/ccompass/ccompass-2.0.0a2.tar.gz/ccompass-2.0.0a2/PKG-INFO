@@ -1,0 +1,189 @@
+Metadata-Version: 2.2
+Name: ccompass
+Version: 2.0.0a2
+Summary: C-COMPASS (Cellular COMPartmentclASSifier) is an advanced open-source software tool designed for the quantitative analysis of fractionated proteomics samples.
+Author-email: Daniel Haas <daniel.haas@helmholtz-munich.de>
+License: BSD 3-Clause License
+        
+        Copyright (c) 2024, Daniel T. Haas, Helmholtz Diabetes Center, Helmholtz Munich
+        
+        Redistribution and use in source and binary forms, with or without
+        modification, are permitted provided that the following conditions are met:
+        
+        1. Redistributions of source code must retain the above copyright notice, this
+           list of conditions and the following disclaimer.
+        
+        2. Redistributions in binary form must reproduce the above copyright notice,
+           this list of conditions and the following disclaimer in the documentation
+           and/or other materials provided with the distribution.
+        
+        3. Neither the name of Helmholtz Diabetes Center, Helmholtz Munich nor the
+           names of its contributors, including Dr. Natalie Krahmer, may be used to
+           endorse or promote products derived from this software without specific
+           prior written permission.
+        
+        THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+        AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+        IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+        DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+        FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+        DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+        SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+        CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+        OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+        OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+        
+Project-URL: homepage, https://github.com/ICB-DCM/C-COMPASS
+Project-URL: documentation, https://c-compass.readthedocs.io/en/latest/
+Project-URL: issue-tracker, https://github.com/ICB-DCM/C-COMPASS/issues
+Keywords: proteomics,machine learning,bioinformatics,mass spectrometry,fractionation
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Programming Language :: Python
+Classifier: Topic :: Scientific/Engineering :: Bio-Informatics
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: FreeSimpleGUI
+Requires-Dist: keras
+Requires-Dist: keras-tuner
+Requires-Dist: matplotlib
+Requires-Dist: numpy
+Requires-Dist: openpyxl
+Requires-Dist: pandas
+Requires-Dist: pydantic
+Requires-Dist: pyyaml
+Requires-Dist: rich
+Requires-Dist: tensorflow
+Requires-Dist: scikit-learn
+Requires-Dist: scipy
+Requires-Dist: seaborn
+Requires-Dist: xlsxwriter
+Provides-Extra: dev
+Requires-Dist: pre-commit>=3; extra == "dev"
+Requires-Dist: pytest; extra == "dev"
+Requires-Dist: tox; extra == "dev"
+Provides-Extra: doc
+Requires-Dist: sphinx; extra == "doc"
+Requires-Dist: sphinx-rtd-theme; extra == "doc"
+Provides-Extra: test
+Requires-Dist: pytest; extra == "test"
+
+# C-COMPASS
+
+[![PyPI](https://badge.fury.io/py/ccompass.svg)](https://badge.fury.io/py/ccompass)
+[![Documentation](https://readthedocs.org/projects/c-compass/badge/?version=latest)](https://c-compass.readthedocs.io)
+[![DOI](https://zenodo.org/badge/916143374.svg)](https://doi.org/10.5281/zenodo.14712134)
+
+
+**C-COMPASS** (Cellular COMPartmentclASSifier) is an open-source software tool designed to predict the spatial distribution of proteins across cellular compartments. It uses a neural network-based regression model to analyze multilocalization patterns and integrate protein abundance data while considering different biological conditions. C-COMPASS is designed to be accessible to users without extensive computational expertise, featuring an intuitive graphical user interface.
+
+The data analyzed by C-COMPASS typically derives from proteomics fractionation samples that result in compartment-specific protein profiles. Our tool can be used to analyze datasets derived from various experimental techniques.
+
+![C-COMPASS Overview](doc/gfx/ccompass_gui_sample_data_screenshot.png)
+
+## Key Features
+
+- **Protein Localization Prediction**: Use a neural network to predict the spatial distribution of proteins within cellular compartments.
+- **Dynamic Compartment Composition Analysis**: Model changes in compartment composition based on protein abundance data under various conditions.
+- **Comparison of Biological Conditions**: Compare different biological conditions to identify and quantify relocalization of proteins and re-organization of cellular compartments.
+- **Multi-Omics Support**: Combine your proteomics experiment with different omics measurements such as lipidomics to bring your project to the spacial multi-omics level.
+- **User-Friendly Interface**: No coding skills required; the tool features a simple GUI for conducting analysis.
+
+## Documentation
+
+Further documentation is available at https://c-compass.readthedocs.io/en/latest/.
+
+## Installation
+
+### Single-file executables
+
+Single-file executables that don't require a Python installation are available
+on the [release page](https://github.com/ICB-DCM/C-COMPASS/releases)
+for Linux, Windows, and macOS.
+Download the appropriate file for your operating system and run it.
+
+On Windows, make sure to install the Microsoft C and C++ (MSVC) runtime
+libraries before ([further information](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist?view=msvc-170),
+[direct download](https://aka.ms/vs/17/release/vc_redist.x64.exe)).
+
+Unreleased versions can be downloaded from
+[![Build and Package](https://github.com/ICB-DCM/C-COMPASS/actions/workflows/bundle.yml/badge.svg?branch=main)](https://github.com/ICB-DCM/C-COMPASS/actions/workflows/bundle.yml).
+(Click on the latest run, then choose the version for your operating system
+from the "Artifacts" section. Requires a GitHub account.)
+
+### Via pip
+
+```bash
+# install
+pip install --pre ccompass
+
+# launch the GUI
+ccompass
+# or alternatively: `python -m ccompass`
+```
+
+Note that C-COMPASS currently requires Python>=3.10, and due to its
+`tensorflow` dependency Python<=3.12.
+
+On Ubuntu linux, installing the `python3-tk` package is required:
+
+```bash
+sudo apt-get install python3-tk
+```
+
+### Troubleshooting
+
+If you encounter any issues during installation, please refer to the
+[troubleshooting guide](https://c-compass.readthedocs.io/en/latest/troubleshooting.html).
+
+## Usage
+
+See also https://c-compass.readthedocs.io/en/latest/usage.html.
+
+* The GUI will guide you through the process of loading and analyzing your
+  proteomics dataset, including fractionation samples and Total Proteome
+  samples.
+* Follow the on-screen instructions to perform the analysis and configure
+  settings only if required
+* Standard parameters should fit for the majority of experiments.
+  You don't need to change the default settings.
+
+
+## Contributing
+
+Contributions to C-COMPASS are welcome!
+
+For further information, please refer to
+[https://c-compass.readthedocs.io/en/latest/contributing.html](https://c-compass.readthedocs.io/en/latest/contributing.html).
+
+## License
+
+C-COMPASS is licensed under the BSD 3-Clause License.
+
+## Citation
+
+If you use C-COMPASS in your research, please cite the following publication:
+
+```bibtex
+@Article{HaasTra2024,
+  author           = {Haas, Daniel Thomas and Trautmann, Eva-Maria and Mao, Xia and Gerl, Mathias J. and Klose, Christian and Cheng, Xiping and Hasenauer, Jan and Krahmer, Natalie},
+  journal          = {bioRxiv},
+  title            = {{C-COMPASS}: a neural network tool for multi-omic classification of cell compartments},
+  year             = {2024},
+  doi              = {10.1101/2024.08.05.606647},
+  elocation-id     = {2024.08.05.606647},
+  eprint           = {https://www.biorxiv.org/content/early/2024/08/08/2024.08.05.606647.full.pdf},
+  publisher        = {Cold Spring Harbor Laboratory},
+  url              = {https://www.biorxiv.org/content/early/2024/08/08/2024.08.05.606647},
+}
+```
+
+## Contact
+
+For any questions, contact `daniel.haas@helmholtz-munich.de` or post an
+issue at https://github.com/ICB-DCM/C-COMPASS/issues/.
