@@ -1,0 +1,16 @@
+CONTRIBUTING.md
+LICENSE
+MANIFEST.in
+README.md
+requirements.txt
+setup.py
+examples/simple_usage.py
+pylib_explorer/__init__.py
+pylib_explorer/cli.py
+pylib_explorer/core.py
+pylib_explorer/utils.py
+pylib_explorer/llm/__init__.py
+pylib_explorer/llm/claude_client.py
+pylib_explorer/llm/openai_client.py
+tests/__init__.py
+tests/test_core.py
