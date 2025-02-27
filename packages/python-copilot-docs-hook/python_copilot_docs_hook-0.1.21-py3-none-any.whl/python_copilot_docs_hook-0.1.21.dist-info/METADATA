@@ -1,0 +1,5 @@
+Metadata-Version: 2.2
+Name: python_copilot_docs_hook
+Version: 0.1.21
+Requires-Dist: openai>=1.0.0
+Dynamic: requires-dist
