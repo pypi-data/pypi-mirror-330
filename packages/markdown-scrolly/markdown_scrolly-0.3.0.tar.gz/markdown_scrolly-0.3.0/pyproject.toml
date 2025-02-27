@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=61.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "markdown-scrolly"
+version = "0.3.0"
+description = "MD renderer for control aestetics using CSS and to include simple scroll animations."
+authors = [
+    {name = "Willy Pregliasco", email = "willy.pregliasco@gmail.com"},
+]
+license = {file = "LICENSE"}
+readme = "README.md"
+requires-python = ">=3.9,<4.0"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "markdown",
+    "html-packager (>=0.1.6,<0.2.0)",
+]
+
+[project.urls]
+"Gitlab Page" = "https://gitlab.com/wpregliasco/markdown-scrolly"
+"Bug Tracker" = "https://gitlab.com/wpregliasco/markdown-scrolly/-/issues"
+
+[tool.setuptools.packages.find]
+include = ["scrolly*"]
+
+[tool.setuptools.package-data]
+"scrolly" = ["resources/*"]
+
+[project.scripts]
+scrolly = "markdown_scrolly.cli:main"
