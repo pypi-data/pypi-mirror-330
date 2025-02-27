@@ -1,0 +1,8 @@
+
+[tests]
+mypy==1.11.0
+ruff
+pytest-cov
+pytest-timeout
+pytest-asyncio
+uvloop
