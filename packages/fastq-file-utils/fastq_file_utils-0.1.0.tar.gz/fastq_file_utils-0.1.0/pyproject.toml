@@ -1,0 +1,55 @@
+[project]
+name = "fastq_file_utils"
+version = "0.1.0"
+description = "A collection of Python scripts for working with FASTQ files."
+readme = "README.rst"
+authors = [
+    { name = "Jaideep Sundaram", email = "jai.python3@gmail.com" }
+]
+maintainers = [
+  {name = "Jaideep Sundaram", email = "jai.python3@gmail.com"}
+]
+requires-python = ">=3.10"
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Natural Language :: English",
+    "Programming Language :: Python :: 3.10",
+]
+license = {text = "Not open source"}
+keywords = ["fastq_file_utils"]
+dependencies = [
+    "Click>=7.0",
+    "PyYAML",
+    "Rich",
+    "singleton-decorator"
+]
+
+[project.optional-dependencies]
+dev = [
+    "coverage",  # testing
+    "mypy",  # linting
+    "pytest",  # testing
+    "ruff"  # linting
+]
+
+[project.urls]
+Homepage = "https://github.com/jai-python3/fastq-file-utils"
+
+[project.scripts]
+validate-fastq-file = "fastq_file_utils.validate_fastq_file:main"
+analyze-fastq-file = "fastq_file_utils.analyze_fastq_file:main"
+
+[tool.setuptools]
+zip-safe = false
+include-package-data = true
+
+[tool.setuptools.packages.find]
+include = ["fastq_file_utils", "fastq_file_utils.*"]
+
+[tool.setuptools.package-data]
+fastq_file_utils = ["conf/config.yaml"]
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"

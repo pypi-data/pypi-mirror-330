@@ -1,0 +1,10 @@
+Click>=7.0
+PyYAML
+Rich
+singleton-decorator
+
+[dev]
+coverage
+mypy
+pytest
+ruff

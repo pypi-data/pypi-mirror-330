@@ -1,0 +1,3 @@
+[console_scripts]
+analyze-fastq-file = fastq_file_utils.analyze_fastq_file:main
+validate-fastq-file = fastq_file_utils.validate_fastq_file:main
