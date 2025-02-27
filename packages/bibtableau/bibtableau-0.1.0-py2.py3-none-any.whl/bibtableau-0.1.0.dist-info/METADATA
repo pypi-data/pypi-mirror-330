@@ -1,0 +1,66 @@
+Metadata-Version: 2.1
+Name: bibtableau
+Version: 0.1.0
+Summary: Librairie simpliste de manipulation de tableaux a des fins d'enseignement de l'algorithmique
+Author: Guy
+Author-email: guywiz@gmail.com
+Requires-Python: <=3.11
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Description-Content-Type: text/markdown
+
+# Librairie `bibTableau`
+
+Cette librairie est destinée aux étudiants des UEs d'initiation à l'algorithmique de l'université de Bordeaux. Sa publication sur `pypi` vise à faciliter l'installation de la librairie par les étudiants en séance de travux pratiques.
+
+## Une librairie minimaliste
+
+La librairie a un objectif pédagogique précis:
+
+- Faire en sorte que les étuiants manipule des tableaux comme si ceux-ci était typés et nécessitait la déclaration de leur taille.
+
+La librarie ne contient que trois fonctions:
+
+- La fonction `creerTableau` crée un tableau de taille `nombreElements`
+  - utilisation: `creerTableau(10)` ou `creerTableau(10,-1)`
+
+```
+def creerTableau(nombreElements,valeurInitiale=None ):
+    return [valeurInitiale]*nombreElements
+```
+
+- La fonction `creerTableaualeatoire` crée un tableau de `nombreElements` éléments tirés aléatoirement dans l'intervalle `[borneInf, borneSup]`
+  - utilisation: `creerTableauAleatoire(10)` ou `creerTableauAleatoire(10,-50,-10)`
+
+```
+def creerTableauAleatoire(nombreElements,borneInf=-50, borneSup=50): 
+    t = creerTableau(nombreElements)
+    for i in range (nombreElements):
+        t[i] = random.randint(borneInf,borneSup)
+    return t
+```
+
+- La fonction `creerTableauMonotone` crée un tableau de `nombreElements` éléments tirés aléatoirement dans l'intervalle `[borneInf, borneSup]`
+  - si `variation` est positif (resp. négatif), le tableau est croissant (resp. décroissant)
+  - utilisation: `creerTableauMonotone(10)` ou `creerTableauMonotone(10,-1)`
+
+```
+def creerTableauMonotone(nombreElements, variation = 1,borneInf=-1000, borneSup=1000):
+     t = creerTableauAleatoire(nombreElements,borneInf,borneSup)
+     var = variation < 0
+     return sorted(t,reverse = var)
+```
+
+        
+    
+
+
