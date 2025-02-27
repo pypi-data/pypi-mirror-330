@@ -1,0 +1,72 @@
+Changelog
+=========
+
+6.0 (2024-02-26)
+----------------
+
+- Add support for letters that are not part of the latin-1 character set.
+  (`#17 <https://github.com/zopefoundation/AuthEncoding/issues/17>`_)
+
+- Add preliminary support for Python 3.14.
+
+- Add support for Python 3.12 and 3.13.
+
+- Drop support for Python 3.7 and 3.8.
+
+
+5.0 (2023-01-12)
+----------------
+
+- Fix schema sorting bug.
+
+- Drop support for Python 2.7, 3.5, 3.6.
+
+- Add support for Python 3.10 and 3.11.
+
+
+4.3 (2021-06-29)
+----------------
+
+- Replace hand-rolled salt creation with ``os.urandom``
+  (`#8 <https://github.com/zopefoundation/AuthEncoding/issues/8>`_).
+
+
+4.2.1 (2021-04-08)
+------------------
+
+- Test on GHA.
+
+- Skip some tests for broken crypt implementations.
+
+
+4.2 (2020-09-30)
+----------------
+
+- Add support for Python 3.8 and 3.9.
+
+
+4.1 (2018-10-30)
+----------------
+
+- Add support for Python 3.6, 3.7 and PyPy3.
+
+- Drop support for Python 2.6, 3.3 and 3.4.
+
+- Add ``BCRYPTHashingScheme``, optionally available if package is
+  installed with the `bcrypt` extra.
+
+- Accept bytes as input to ``AuthEncoding.is_encrypted``.
+
+
+4.0.0 (2015-09-30)
+------------------
+
+- Supporting Python 3.3 up to 3.5 and PyPy2.
+
+- Added ``SHA256DigestScheme``.
+
+
+3.0.0 (2015-09-28)
+------------------
+
+- Extracted from ``AccessControl 3.0.11``
