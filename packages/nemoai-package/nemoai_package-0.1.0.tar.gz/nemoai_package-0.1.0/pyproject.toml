@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "nemoai-package"
+version = "0.1.0"
+description = ""
+authors = ["김일태 <multicg@naver.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+sphinx = "^8.2.1"
+fastapi = "^0.115.8"
+uvicorn = "^0.34.0"
+twine = "^6.1.0"
+setuptools = "^75.8.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
