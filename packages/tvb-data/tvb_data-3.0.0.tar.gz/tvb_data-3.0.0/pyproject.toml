@@ -1,0 +1,121 @@
+# -*- coding: utf-8 -*-
+#
+#
+# TheVirtualBrain-Framework Package. This package holds all Data Management, and
+# Web-UI helpful to run brain-simulations. To use it, you also need do download
+# TheVirtualBrain-Scientific Package (for simulators). See content of the
+# documentation-folder for more details. See also http://www.thevirtualbrain.org
+#
+# (c) 2012-2017, Baycrest Centre for Geriatric Care ("Baycrest") and others
+#
+# This program is free software: you can redistribute it and/or modify it under the
+# terms of the GNU General Public License as published by the Free Software Foundation,
+# either version 3 of the License, or (at your option) any later version.
+# This program is distributed in the hope that it will be useful, but WITHOUT ANY
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+# PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+# You should have received a copy of the GNU General Public License along with this
+# program.  If not, see <http://www.gnu.org/licenses/>.
+#
+#
+#   CITATION:
+# When using The Virtual Brain for scientific publications, please cite it as follows:
+#
+#   Paula Sanz Leon, Stuart A. Knock, M. Marmaduke Woodman, Lia Domide,
+#   Jochen Mersmann, Anthony R. McIntosh, Viktor Jirsa (2013)
+#       The Virtual Brain: a simulator of primate brain network dynamics.
+#   Frontiers in Neuroinformatics (7:10. doi: 10.3389/fninf.2013.00010)
+#
+#
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "tvb-data"
+version = "3.0.0"
+description = "A package with data for TVB"
+readme = "README.rst"
+license = { file = "LICENSE" }
+authors = [
+    { name = "TVB Team", email = "tvb.admin@thevirtualbrain.org" }
+]
+
+requires-python = ">=3.8"
+
+keywords = [
+    "tvb",
+    "brain",
+    "simulator",
+    "neuroscience",
+    "human",
+    "animal",
+    "neuronal",
+    "dynamics",
+    "models",
+    "delay",
+    "data"
+]
+
+[project.urls]
+Homepage = "http://www.thevirtualbrain.org"
+Download = "https://gitlab.ebrains.eu/ri/tech-hub/apps/tvb/tvb-data"
+
+[tool.hatch.build.targets.wheel]
+packages = ["tvb_data", "tvb_data.*"]
+
+[tool.hatch.build]
+include = [
+  "LICENSE",
+
+  "tvb_data/__init__.py",
+
+  "tvb_data/brco/tvb-brco.xml",
+
+  "tvb_data/connectivity/connectivity_66.zip",
+  "tvb_data/connectivity/connectivity_68.zip",
+  "tvb_data/connectivity/connectivity_76.zip",
+  "tvb_data/connectivity/connectivity_96.zip",
+  "tvb_data/connectivity/connectivity_192.zip",
+  "tvb_data/connectivity/paupau.zip",
+  "tvb_data/connectivity/__init__.py",
+
+  "tvb_data/dti_pipeline_toronto/output_ConnectionDistanceMatrix.csv",
+  "tvb_data/dti_pipeline_toronto/output_ConnectionCapacityMatrix.csv",
+
+  "tvb_data/gifti/__init__.py",
+  "tvb_data/gifti/sample.cortex.gii",
+
+  "tvb_data/projectionMatrix/projection_eeg_62_surface_16k.mat",
+  "tvb_data/projectionMatrix/projection_eeg_65_surface_16k.npy",
+  "tvb_data/projectionMatrix/projection_meg_276_surface_16k.npy",
+  "tvb_data/projectionMatrix/__init__.py",
+
+  "tvb_data/regionMapping/__init__.py",
+  "tvb_data/regionMapping/regionMapping_16k_76.txt",
+  "tvb_data/regionMapping/regionMapping_16k_192.txt",
+
+  "tvb_data/sensors/eeg_unitvector_62.txt.bz2",
+  "tvb_data/sensors/eeg_brainstorm_65.txt",
+  "tvb_data/sensors/meg_151.txt.bz2",
+  "tvb_data/sensors/meg_brainstorm_276.txt",
+  "tvb_data/sensors/seeg_39.txt.bz2",
+  "tvb_data/sensors/seeg_588.txt",
+  "tvb_data/sensors/__init__.py",
+
+  "tvb_data/surfaceData/__init__.py",
+  "tvb_data/surfaceData/cortex_16384.zip",
+  "tvb_data/surfaceData/outer_skin_4096.zip",
+  "tvb_data/surfaceData/inner_skull_4096.zip",
+  "tvb_data/surfaceData/outer_skull_4096.zip",
+  "tvb_data/surfaceData/scalp_1082.zip",
+  "tvb_data/surfaceData/face_8614.zip",
+
+  "tvb_data/local_connectivity/__init__.py",
+  "tvb_data/local_connectivity/local_connectivity_16384.mat",
+
+  "tvb_data/obj/__init__.py",
+  "tvb_data/obj/face_surface.obj",
+  "tvb_data/obj/eeg_cap.obj"
+]
