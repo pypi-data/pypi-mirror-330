@@ -1,0 +1,2 @@
+[console_scripts]
+git-import-contributions = git_import_contributions.cli:main
