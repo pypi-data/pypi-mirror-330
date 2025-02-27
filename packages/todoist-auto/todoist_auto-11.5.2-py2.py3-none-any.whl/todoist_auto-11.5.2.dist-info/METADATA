@@ -1,0 +1,14 @@
+Metadata-Version: 2.4
+Name: todoist_auto
+Version: 11.5.2
+Summary: Automate Todoist
+Author-email: Mahdi Mir <imahdimir@gmail.com>
+Requires-Dist: google-auth==2.38.0
+Requires-Dist: gspread==6.1.4
+Requires-Dist: mtok==5.0.0
+Requires-Dist: pandas==2.2.3
+Requires-Dist: requests==2.32.3
+Requires-Dist: todoist-api==2.0.2
+Description-Content-Type: text/markdown
+
+Automation
