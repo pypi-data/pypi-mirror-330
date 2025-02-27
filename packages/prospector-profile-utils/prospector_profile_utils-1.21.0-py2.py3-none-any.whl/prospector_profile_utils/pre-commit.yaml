@@ -1,0 +1,14 @@
+inherits:
+  - utils:autofix
+
+dodgy:
+  run: false
+
+pycodestyle:
+  run: false
+
+pyflakes:
+  run: false
+
+pyroma:
+  run: false
