@@ -1,0 +1,19 @@
+Metadata-Version: 2.2
+Name: python-dom
+Version: 0.2.5
+Summary: A Python package for creating and manipulating reusable HTML components
+Author-email: Xpo Development <dev@xpo.dev>
+Project-URL: Homepage, https://github.com/xpodev/pydom
+Project-URL: Issues, https://github.com/xpodev/pydom/issues
+Classifier: Development Status :: 7 - Inactive
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: cssutils==2.9.0
+Requires-Dist: typing-extensions
+
+# PyDOM
+
+This package is deprecated. Please use [pydom](https://pypi.org/project/pydom/) instead.
