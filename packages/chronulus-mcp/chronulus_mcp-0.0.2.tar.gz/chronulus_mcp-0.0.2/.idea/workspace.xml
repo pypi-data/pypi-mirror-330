@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="59cd3027-5e44-4321-b1d1-b40f4360b929" name="Changes" comment="Added react assets to pyproject.toml">
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+    </option>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="2t6gHTgFJ7Ni0FxcUcDoCQlsDZQ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.git.unshallow": "true",
+    "Shell Script.get-index-url.sh.executor": "Run",
+    "git-widget-placeholder": "feat/add-chronulus-agents",
+    "last_opened_file_path": "/Users/theoldfather/Projects/chronulus/chronulus-mcp",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyIntegratedToolsModulesConfigurable",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/chronulus_mcp" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src/chronulus_mcp/assets/react" />
+      <recent name="$PROJECT_DIR$/src/chronulus_mcp/assets" />
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="get-index-url.sh" type="ShConfigurationType" temporary="true">
+      <option name="SCRIPT_TEXT" value="" />
+      <option name="INDEPENDENT_SCRIPT_PATH" value="true" />
+      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/get-index-url.sh" />
+      <option name="SCRIPT_OPTIONS" value="" />
+      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
+      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="INDEPENDENT_INTERPRETER_PATH" value="true" />
+      <option name="INTERPRETER_PATH" value="/bin/zsh" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="EXECUTE_IN_TERMINAL" value="true" />
+      <option name="EXECUTE_SCRIPT_FILE" value="true" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Shell Script.get-index-url.sh" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-76f8388c3a79-JavaScript-PY-243.24978.54" />
+        <option value="bundled-python-sdk-91e3b7efe1d4-466328ff949b-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-243.24978.54" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="59cd3027-5e44-4321-b1d1-b40f4360b929" name="Changes" comment="" />
+      <created>1739677041201</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1739677041201</updated>
+      <workItem from="1739677064109" duration="571000" />
+      <workItem from="1739677856943" duration="113000" />
+      <workItem from="1739678004910" duration="1173000" />
+      <workItem from="1739712085524" duration="27000" />
+      <workItem from="1739712186925" duration="60000" />
+      <workItem from="1739712279556" duration="679000" />
+      <workItem from="1739712962736" duration="2178000" />
+      <workItem from="1739715656760" duration="13871000" />
+      <workItem from="1739737807143" duration="74821000" />
+      <workItem from="1740069866907" duration="7350000" />
+      <workItem from="1740083238979" duration="27889000" />
+      <workItem from="1740409190468" duration="903000" />
+      <workItem from="1740412658560" duration="17725000" />
+      <workItem from="1740585725166" duration="12925000" />
+    </task>
+    <task id="LOCAL-00001" summary="Adding chronulus agent tools">
+      <option name="closed" value="true" />
+      <created>1739718833055</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1739718833055</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Added nf agent">
+      <option name="closed" value="true" />
+      <created>1739749070567</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1739749070567</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Agent working">
+      <option name="closed" value="true" />
+      <created>1739900707687</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1739900707687</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Added rescaling function">
+      <option name="closed" value="true" />
+      <created>1740004852141</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1740004852141</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Added server and cli descriptions">
+      <option name="closed" value="true" />
+      <created>1740314700631</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1740314700632</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Implemented rescaling using new RescaledForecast">
+      <option name="closed" value="true" />
+      <created>1740314735336</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1740314735336</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Added requests docutils and pandas to requirements">
+      <option name="closed" value="true" />
+      <created>1740314799446</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1740314799446</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Added scorecard.jsx template as a resource">
+      <option name="closed" value="true" />
+      <created>1740418806326</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1740418806326</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Deleted example weather server">
+      <option name="closed" value="true" />
+      <created>1740418822077</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1740418822077</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Created separate server.py enterpoint">
+      <option name="closed" value="true" />
+      <created>1740418840867</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1740418840867</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Updated requirements to use the latest mcp release 1.3.0">
+      <option name="closed" value="true" />
+      <created>1740419759660</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1740419759660</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Added reusable estimator and updated to latest public version of chronulus">
+      <option name="closed" value="true" />
+      <created>1740585926865</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1740585926865</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Updated pyproject">
+      <option name="closed" value="true" />
+      <created>1740585953712</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1740585953712</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Added readme">
+      <option name="closed" value="true" />
+      <created>1740586217002</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1740586217002</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Added uv.lock">
+      <option name="closed" value="true" />
+      <created>1740586834907</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1740586834907</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Added MIT license">
+      <option name="closed" value="true" />
+      <created>1740587329913</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1740587329913</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Added dockerfile and tested in claude">
+      <option name="closed" value="true" />
+      <created>1740594654214</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1740594654214</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Updated readme with install instructions">
+      <option name="closed" value="true" />
+      <created>1740598349420</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1740598349420</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Update typography on readme">
+      <option name="closed" value="true" />
+      <created>1740598550188</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1740598550188</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Added react assets to pyproject.toml">
+      <option name="closed" value="true" />
+      <created>1740599002951</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1740599002951</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Adding chronulus agent tools" />
+    <MESSAGE value="Added nf agent" />
+    <MESSAGE value="Agent working" />
+    <MESSAGE value="Added rescaling function" />
+    <MESSAGE value="Added server and cli descriptions" />
+    <MESSAGE value="Implemented rescaling using new RescaledForecast" />
+    <MESSAGE value="Added requests docutils and pandas to requirements" />
+    <MESSAGE value="Added scorecard.jsx template as a resource" />
+    <MESSAGE value="Deleted example weather server" />
+    <MESSAGE value="Created separate server.py enterpoint" />
+    <MESSAGE value="Updated requirements to use the latest mcp release 1.3.0" />
+    <MESSAGE value="Added reusable estimator and updated to latest public version of chronulus" />
+    <MESSAGE value="Updated pyproject" />
+    <MESSAGE value="Added readme" />
+    <MESSAGE value="Added uv.lock" />
+    <MESSAGE value="Added MIT license" />
+    <MESSAGE value="Added dockerfile and tested in claude" />
+    <MESSAGE value="Updated readme with install instructions" />
+    <MESSAGE value="Update typography on readme" />
+    <MESSAGE value="Added react assets to pyproject.toml" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added react assets to pyproject.toml" />
+  </component>
+</project>

@@ -1,0 +1,47 @@
+{
+  "properties": {
+    "product_category": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "description": "Category and type of product",
+      "title": "Product Category"
+    },
+    "market_position": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "description": "Price point and market positioning",
+      "title": "Market Position"
+    },
+    "sales_channels": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "description": "Distribution channels and retail presence",
+      "title": "Sales Channels"
+    }
+  },
+  "required": [
+    "product_category",
+    "market_position",
+    "sales_channels"
+  ],
+  "title": "InputItem",
+  "type": "object"
+}

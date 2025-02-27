@@ -1,0 +1,59 @@
+choronulus-agents server provides access to the Chronulus AI platform of forecasting and prediction agents.
+
+- Sessions capture an overall use case that is described by a situation and task.
+- Agents created for a given session and are reusable across multiple different forecasting inputs.
+
+For example, in a retail forecasting workflow, 
+    - The situation might include information about the business, location, demographics of customers, and motivation for forecasting
+    - The task would include specifics about what to forecast like the demand, share of foot traffic, probability of the item going out of stock, etc.
+    - The agent could be used for multiple different types of items with a single data model.  For example a data model with brand and price feature could
+    be used to predict over multiple items with their own values for brand and price.
+
+
+```bash 
+aws sso login --profile CentralArtifacts
+```
+
+```bash
+bash get-index-url.sh
+```
+
+
+
+```bash
+npx dotenv npx @modelcontextprotocol/inspector \
+  uv run \
+  --with-requirements /Users/theoldfather/Projects/chronulus/chronulus-mcp/requirements.txt  \
+  --prerelease=allow \
+  mcp run /Users/theoldfather/Projects/chronulus/chronulus-mcp/src/chronulus_mcp
+  
+```
+
+
+## Claude Desktop Config
+`~/Library/Application Support/Claude/claude_desktop_config.json`
+
+```json 
+{
+  "mcpServers": {
+    "chronulus-agents": {
+      "command": "/Users/theoldfather/.local/bin/uv",
+      "args": [
+        "run",
+        "--prerelease=allow",
+        "--env-file",
+        "/Users/theoldfather/Projects/chronulus/chronulus-mcp/.env",  
+        "--with-requirements",
+        "/Users/theoldfather/Projects/chronulus/chronulus-mcp/requirements.txt",
+        "mcp",
+        "run",
+        "/Users/theoldfather/Projects/chronulus/chronulus-mcp/src/server.py"
+      ],
+      "env": {
+        "CHRONULUS_API_KEY": "a6dfdcce-6116-4039-a3fc-00e79f650efa",
+        "API_URI": "https://core-dev.api.chronulus.com/v1",
+        "UV_EXTRA_INDEX_URL": "https://aws:eyJ2ZXIiOjEsImlzdSI6MTc0MDUyNzg4OSwiZW5jIjoiQTEyOEdDTSIsInRhZyI6InJTaEtSNElnS18xQ2IwRWZfNXdxWWciLCJleHAiOjE3NDA1NzEwODksImFsZyI6IkExMjhHQ01LVyIsIml2IjoiclAyaVllVjQ0cE5EUWVidiJ9.TC2pn5LtBkWW-eBcBdNtkw.DbXr3P17m9iXthLI.aRjBPs2AYpc9W5Iar51HQrWaSXPuUrAZ2T_F9LcKWSVDMSO68yj4HmXhGFcVk4FyiFsVxJoXDLCQtsrmY6zV1ffGHJK8Ipuc9ES26gx_Epv8CIe83_DE_4Pf81i-wL8vXE3vnxJ1TmmmbNQSycTyajgrFWUmMSe2zxXU9Q9n5nDdSJImWAMsXJ9eTnJvx4sXwzzs0y3P0Fnd4ytQQcjTSa2XjoJUwrcmCh48Va7rZbDfBsaVeDp2jAnzv4W5WxS8RXhPRj5uua4o5WfZsSEsGAhQLefcQCNdFtJ-uGKX83_zd7MMjTdUOeIkdpPkkz5FdM2HyPeQCiTUsOATWzpdBZJSTniIx25o3cKGdRghYRw1rQ7Ym9EZBBEVjUhG4HYoUAaG73oqBsKUzEpXxxviwxKkSauKnCosjo6aj73iUFtepB5FS8kuxGbW5prL6JMSy8EcCjs1_3B5I5LrhL3WAILidZ0kcmH8gGHiHz-xBFS5aWGMq5YSw416CeRD8GJgbjzOsBnsiX-QGfLEX3IR_Ij6Y9XprkWNb-uy4QqCJB8xYt_X2ufnLoNup3MS9IWL_ctm1skCbBbzZdQRok1LRrAt1jxlDpsTFgAAVRUJSfz3JtVKhuJolLp6sPjDmuwD5PkkYKkCtQpZimA5Llcse2nk8pZYRY-oMWl89fcRQdiTkuM3F1775s3_gJr76CZfG0jCqRnJMY4QAnxKvUVmx3Cj39-_rOnJXWz5v-rq47y3qtCDnFDK8yArHL90s6b8KEXYlK7h8N3chBKEFxbbuDo8X_gSjj30pknCytiJC-IfJsuX6eJEYEWYRGRlJbsBf7mSHcTSWy30MOeYqQLQ-dh8PC8GNLj2HGUa3bKm-4lfB4zpSSpHx8FxcNInTdundQY9hG0X3xrowDMY4hJ438fbzI7m6GJVzl4c9SMfy7iFuJKC5NJiSMshSMzS4ozWXTvGOEpuRYA0JDrDCrTpuILrHt30zxagiCp94vw_s5NA1U90aNYhcj9LhHHb0YYJDlKuLTlW7skIiTKVnBRGxGgT8m7mrgzst86mUZs0zHvTRN3hQycEXXqljWHCuF543uACbuBZpe-PoTpl-XI0Tz_tg2ti6qqZh1gj1UANDVVYslpbhajqur0b_y_iIX0noauP3nhfPeW_1cI1XPOb_LfSb0Voqugu0gyXaQoVmnhu1kFgVfGpn602Q-ANvq6UVwvhNFvhOKREFabzawQFmKqC9nADcsRLtUNqNrmnZiqM5i7ZqM-6yeozxeZ_ruJ86sDxU_SK8aqrf0eD52CiT4lZkzfkl_lsWslkKEOs9qfgW8If4Oos9h4BYNK9mRguh9I.nrQG9I7PHsD5KcD6Z7epYQ@chronulus-central-artifacts-605134426679.d.codeartifact.us-east-1.amazonaws.com/pypi/pip/simple/"}
+    }
+  }
+}
+```
