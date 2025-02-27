@@ -1,0 +1,4 @@
+[console_scripts]
+membrain = membrain_seg.segmentation.cli:cli
+patch_corrections = membrain_seg.annotations:cli
+tomo_preprocessing = membrain_seg.tomo_preprocessing:cli
