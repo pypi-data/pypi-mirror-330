@@ -1,0 +1,31 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "pytest-latin-hypercube"
+version = "0.1"
+description="""Implementation of Latin Hypercube Sampling for pytest."""
+license = "MIT"
+authors = [
+    { name = "Shuaib Ahmed", email = "shuaib2001.sa@gmail.com" },
+]
+dependencies = [
+    "numpy",
+    "pytest"
+]
+
+[project.urls]
+Documentation = "https://pytest-latin-hypercube.github.io"
+
+[project.optional-dependencies]
+doc = [
+    "sphinx",
+    "sphinxcontrib-bibtex",
+    "sphinxcontrib-proof",
+    "sphinx-autobuild",
+    "sphinx-design",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["pytest_latin_hypercube"]
