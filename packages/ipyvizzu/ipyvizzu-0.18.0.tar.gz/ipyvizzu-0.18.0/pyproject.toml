@@ -1,0 +1,486 @@
+[project]
+name = "ipyvizzu"
+dynamic = []
+description = "Build animated charts in Jupyter Notebook and similar environments with a simple Python syntax."
+authors = [
+    { name = "Vizzu Inc.", email = "hello@vizzu.io" },
+]
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "IPython",
+    "jsonschema",
+]
+classifiers = [
+    "Environment :: Console",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+]
+keywords = [
+    "python",
+    "chart",
+    "charts",
+    "dataviz",
+    "jupyter",
+    "animation",
+    "ipython",
+    "graphs",
+    "storytelling",
+    "jupyter-notebook",
+    "data-visualization",
+    "graphing",
+    "plotting",
+    "charting",
+    "vizzu",
+]
+version = "0.18.0"
+
+[project.license]
+text = "Apache-2.0"
+
+[project.optional-dependencies]
+pandas = [
+    "pandas",
+]
+pyspark = [
+    "pyspark",
+]
+numpy = [
+    "numpy",
+]
+fugue = [
+    "fugue[sql]",
+]
+
+[project.urls]
+Homepage = "https://ipyvizzu.vizzuhq.com"
+Documentation = "https://ipyvizzu.vizzuhq.com"
+Source = "https://github.com/vizzuhq/ipyvizzu"
+Tracker = "https://github.com/vizzuhq/ipyvizzu/issues"
+
+[build-system]
+requires = [
+    "pdm-backend",
+]
+build-backend = "pdm.backend"
+
+[tool.pdm.package-dir]
+ipyvizzu = "src/ipyvizzu"
+
+[tool.pdm.version]
+source = "file"
+path = "src/ipyvizzu/__version__.py"
+
+[tool.pdm.scripts]
+lock-py = "pdm lock --no-default -d"
+lock-js = "npm update"
+format-black = "black --diff --check"
+format-mdformat = "python ./tools/ci/std_check.py mdformat --wrap 80 --end-of-line keep --line-length 70 --check"
+format-prettier = "npx prettier -c"
+lint-pylint = "pylint"
+lint-eslint = "npx eslint"
+type-mypy = "mypy"
+test = "tox"
+fix-format-black = "black"
+fix-format-mdformat = "python ./tools/ci/std_check.py mdformat --wrap 80 --end-of-line keep --line-length 70"
+fix-format-prettier = "npx prettier -w"
+fix-lint-eslint = "npx eslint --fix"
+deploy = "pip install -e ."
+
+[tool.pdm.scripts.lock]
+composite = [
+    "lock-py",
+    "lock-js",
+]
+
+[tool.pdm.scripts.format]
+composite = [
+    "format-src",
+    "format-docs",
+    "format-tools",
+]
+
+[tool.pdm.scripts.format-src]
+composite = [
+    "format-src-py",
+    "format-src-js",
+]
+
+[tool.pdm.scripts.format-src-py]
+composite = [
+    "format-black src tests",
+]
+
+[tool.pdm.scripts.format-src-js]
+composite = [
+    "format-prettier src tests",
+]
+
+[tool.pdm.scripts.format-docs]
+composite = [
+    "format-docs-py",
+    "format-docs-js",
+]
+
+[tool.pdm.scripts.format-docs-py]
+composite = [
+    "format-mdformat docs README.md CONTRIBUTING.md CODE_OF_CONDUCT.md",
+]
+
+[tool.pdm.scripts.format-docs-js]
+composite = [
+    "format-prettier docs",
+]
+
+[tool.pdm.scripts.format-tools]
+composite = [
+    "format-tools-py",
+    "format-tools-js",
+]
+
+[tool.pdm.scripts.format-tools-py]
+composite = [
+    "format-black tools",
+]
+
+[tool.pdm.scripts.format-tools-js]
+composite = [
+    "format-prettier package.json tools .github",
+]
+
+[tool.pdm.scripts.lint]
+composite = [
+    "lint-src",
+    "lint-docs",
+    "lint-tools",
+]
+
+[tool.pdm.scripts.lint-src]
+composite = [
+    "lint-src-py",
+    "lint-src-js",
+]
+
+[tool.pdm.scripts.lint-src-py]
+composite = [
+    "lint-pylint src tests",
+]
+
+[tool.pdm.scripts.lint-src-js]
+composite = [
+    "lint-eslint src",
+]
+
+[tool.pdm.scripts.lint-docs]
+composite = [
+    "lint-docs-js",
+]
+
+[tool.pdm.scripts.lint-docs-js]
+composite = [
+    "lint-eslint docs",
+]
+
+[tool.pdm.scripts.lint-tools]
+composite = [
+    "lint-tools-py",
+    "lint-tools-js",
+]
+
+[tool.pdm.scripts.lint-tools-py]
+composite = [
+    "lint-pylint tools",
+]
+
+[tool.pdm.scripts.lint-tools-js]
+composite = [
+    "lint-eslint tools",
+]
+
+[tool.pdm.scripts.type]
+composite = [
+    "type-src",
+    "type-tools",
+]
+
+[tool.pdm.scripts.type-src]
+composite = [
+    "type-src-py",
+]
+
+[tool.pdm.scripts.type-src-py]
+composite = [
+    "type-mypy src tests",
+]
+
+[tool.pdm.scripts.type-tools]
+composite = [
+    "type-tools-py",
+]
+
+[tool.pdm.scripts.type-tools-py]
+composite = [
+    "type-mypy tools",
+]
+
+[tool.pdm.scripts.ci]
+composite = [
+    "ci-src",
+    "ci-docs",
+    "ci-tools",
+]
+
+[tool.pdm.scripts.ci-src]
+composite = [
+    "ci-src-py",
+    "ci-src-js",
+]
+
+[tool.pdm.scripts.ci-src-py]
+composite = [
+    "format-src-py",
+    "lint-src-py",
+    "type-src-py",
+    "test",
+]
+
+[tool.pdm.scripts.ci-src-js]
+composite = [
+    "format-src-js",
+    "lint-src-js",
+]
+
+[tool.pdm.scripts.ci-docs]
+composite = [
+    "ci-docs-py",
+    "ci-docs-js",
+]
+
+[tool.pdm.scripts.ci-docs-py]
+composite = [
+    "format-docs-py",
+]
+
+[tool.pdm.scripts.ci-docs-js]
+composite = [
+    "format-docs-js",
+    "lint-docs-js",
+]
+
+[tool.pdm.scripts.ci-tools]
+composite = [
+    "ci-tools-py",
+    "ci-tools-js",
+]
+
+[tool.pdm.scripts.ci-tools-py]
+composite = [
+    "format-tools-py",
+    "lint-tools-py",
+    "type-tools-py",
+]
+
+[tool.pdm.scripts.ci-tools-js]
+composite = [
+    "format-tools-js ",
+    "lint-tools-js",
+]
+
+[tool.pdm.scripts.fix]
+composite = [
+    "fix-format",
+    "fix-lint",
+]
+
+[tool.pdm.scripts.fix-format]
+composite = [
+    "fix-format-src",
+    "fix-format-docs",
+    "fix-format-tools",
+]
+
+[tool.pdm.scripts.fix-format-src]
+composite = [
+    "fix-format-src-py",
+    "fix-format-src-js",
+]
+
+[tool.pdm.scripts.fix-format-src-py]
+composite = [
+    "fix-format-black src tests",
+]
+
+[tool.pdm.scripts.fix-format-src-js]
+composite = [
+    "fix-format-prettier src tests",
+]
+
+[tool.pdm.scripts.fix-format-docs]
+composite = [
+    "fix-format-docs-py",
+    "fix-format-docs-js",
+]
+
+[tool.pdm.scripts.fix-format-docs-py]
+composite = [
+    "fix-format-mdformat docs README.md CONTRIBUTING.md CODE_OF_CONDUCT.md",
+]
+
+[tool.pdm.scripts.fix-format-docs-js]
+composite = [
+    "fix-format-prettier docs",
+]
+
+[tool.pdm.scripts.fix-format-tools]
+composite = [
+    "fix-format-tools-py",
+    "fix-format-tools-js",
+]
+
+[tool.pdm.scripts.fix-format-tools-py]
+composite = [
+    "fix-format-black tools",
+]
+
+[tool.pdm.scripts.fix-format-tools-js]
+composite = [
+    "fix-format-prettier package.json tools .github",
+]
+
+[tool.pdm.scripts.fix-lint]
+composite = [
+    "fix-lint-src",
+    "fix-lint-docs",
+    "fix-lint-tools",
+]
+
+[tool.pdm.scripts.fix-lint-src]
+composite = [
+    "fix-lint-src-js",
+]
+
+[tool.pdm.scripts.fix-lint-src-js]
+composite = [
+    "fix-lint-eslint src",
+]
+
+[tool.pdm.scripts.fix-lint-docs]
+composite = [
+    "fix-lint-docs-js",
+]
+
+[tool.pdm.scripts.fix-lint-docs-js]
+composite = [
+    "fix-lint-eslint docs",
+]
+
+[tool.pdm.scripts.fix-lint-tools]
+composite = [
+    "fix-lint-tools-js",
+]
+
+[tool.pdm.scripts.fix-lint-tools-js]
+composite = [
+    "fix-lint-eslint tools",
+]
+
+[tool.pdm.scripts.build-docs]
+composite = [
+    "python tools/docs/placeholder.py",
+    "mkdocs build -f ./tools/docs/mkdocs.yml",
+]
+
+[tool.pdm.scripts.deploy-docs]
+composite = [
+    "python tools/docs/placeholder.py",
+    "python ./tools/docs/deploy.py",
+]
+
+[tool.pdm.scripts.build]
+composite = [
+    "python ./tools/ci/version.py False",
+    "pdm build",
+    "twine check dist/*.tar.gz dist/*.whl",
+]
+
+[tool.pdm.scripts.release]
+composite = [
+    "build",
+    "python ./tools/ci/version.py True",
+]
+
+[tool.pdm.dev-dependencies]
+packagetool = [
+    "twine ; python_version >= '3.13'",
+]
+packagedeps = [
+    "IPython ; python_version >= '3.13'",
+    "jsonschema ; python_version >= '3.13'",
+    "pandas ; python_version >= '3.13'",
+    "pandas-stubs ; python_version >= '3.13'",
+    "pyspark ; python_version >= '3.13'",
+    "numpy ; python_version >= '3.13'",
+    "fugue[sql] ; python_version >= '3.13'",
+]
+codequality = [
+    "pre-commit ; python_version >= '3.13'",
+    "black ; python_version >= '3.13'",
+    "pylint ; python_version >= '3.13'",
+    "mypy ; python_version >= '3.13'",
+    "tox ; python_version >= '3.13'",
+]
+env = [
+    "notebook ; python_version >= '3.13'",
+]
+docs = [
+    "setuptools ; python_version >= '3.13'",
+    "mdformat ; python_version >= '3.13'",
+    "mdformat-beautysh ; python_version >= '3.13'",
+    "mdformat-black ; python_version >= '3.13'",
+    "mdformat-configurable-black ; python_version >= '3.13'",
+    "mdformat-config ; python_version >= '3.13'",
+    "mdformat-web ; python_version >= '3.13'",
+    "mdformat-gfm ; python_version >= '3.13'",
+    "mdformat-tables ; python_version >= '3.13'",
+    "mdformat-footnote ; python_version >= '3.13'",
+    "mdformat-frontmatter ; python_version >= '3.13'",
+    "mdformat-mkdocs ; python_version >= '3.13'",
+    "markdown ; python_version >= '3.13'",
+    "linkify-it-py ; python_version >= '3.13'",
+    "types-Markdown ; python_version >= '3.13'",
+    "pyyaml ; python_version >= '3.13'",
+    "types-pyyaml ; python_version >= '3.13'",
+    "requests ; python_version >= '3.13'",
+    "types-requests ; python_version >= '3.13'",
+    "mkdocs ; python_version >= '3.13'",
+    "mkdocs-material ; python_version >= '3.13'",
+    "mkdocs-section-index ; python_version >= '3.13'",
+    "mkdocs-literate-nav ; python_version >= '3.13'",
+    "mkdocs-autorefs ; python_version >= '3.13'",
+    "mkdocstrings[python] ; python_version >= '3.13'",
+    "mkdocs-gen-files ; python_version >= '3.13'",
+    "mkdocs-coverage ; python_version >= '3.13'",
+    "mkdocs-placeholder-plugin ; python_version >= '3.13'",
+    "mkdocs-include-markdown-plugin ; python_version >= '3.13'",
+    "mkdocs-exclude ; python_version >= '3.13'",
+    "mike ; python_version >= '3.13'",
+]
+
+[tool.tox]
+legacy_tox_ini = "[tox]\nenvlist =\n    py{39,310,311,312,313}\n    coverage\n\n[testenv]\nsetenv =\n    COVERAGE_FILE = .coverage/env/.coverage.{envname}\ndeps =\n    coverage[toml]\n\ncommands =\n    python -m coverage run --branch --source ipyvizzu -m unittest discover tests\n    python -m coverage report -m\n    python -c \"import os; pyenv='{envname}'; os.rename('.coverage/env/.coverage.' + pyenv, '.coverage/env/.coverage.3.' + pyenv[3:])\"\n\n[testenv:py{39,310,311,312,313}]\npackage = editable\ndeps =\n    {[testenv]deps}\n    openpyxl\n    packaging\nextras =\n    pandas\n    pyspark\n    numpy\n    fugue\n\n[testenv:coverage]\nskip_install = True\ncommands =\n    python -m coverage combine --keep --data-file .coverage/.coverage .coverage/env/\n    python -m coverage html --data-file .coverage/.coverage -d .coverage/html\n    python -m coverage report --data-file .coverage/.coverage -m --fail-under=100\n"
+
+[tool.pylint.messages-control]
+disable = [
+    "fixme",
+]
+good-names = [
+    "i",
+    "df",
+]
+
+[tool.coverage.paths]
+source = [
+    "src/",
+    ".tox/py*/lib/python*/site-packages/",
+]
