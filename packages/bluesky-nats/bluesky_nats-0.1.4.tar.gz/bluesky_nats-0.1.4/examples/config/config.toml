@@ -1,0 +1,18 @@
+servers = [
+  "nats://localhost:4222",
+]
+pedantic = false
+verbose = false
+allow_reconnect = true
+connect_timeout = 2
+reconnect_time_wait = 2
+max_reconnect_attempts = 60
+ping_interval = 120
+max_outstanding_pings = 2
+dont_randomize = false
+flusher_queue_size = 1_024
+no_echo = false
+tls_handshake_first = false
+drain_timeout = 30
+inbox_prefix = "_INBOX"
+pending_size = 2_097_152

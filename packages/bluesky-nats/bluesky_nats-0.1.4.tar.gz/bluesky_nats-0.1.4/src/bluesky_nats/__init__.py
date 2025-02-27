@@ -1,0 +1,1 @@
+"""bluesky-nats module."""
