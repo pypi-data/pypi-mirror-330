@@ -1,0 +1,131 @@
+Metadata-Version: 2.4
+Name: chronulus-mcp
+Version: 0.0.2
+Summary: An MCP Server for Chronulus AI Forecasting and Prediction Agents
+Author-email: Chronulus AI <jeremy@chronulus.com>
+License-File: LICENSE
+Keywords: agents,forecasting,llm,mcp,prediction,timeseries
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Python: >=3.10
+Requires-Dist: chronulus-core>=0.0.15
+Requires-Dist: chronulus>=0.0.10
+Requires-Dist: mcp[cli]>=1.3.0
+Requires-Dist: pandas
+Requires-Dist: requests
+Description-Content-Type: text/markdown
+
+<div align="center">
+<img width="150px" src="https://www.chronulus.com/brand-assets/chronulus-logo-blue-on-alpha-square.png" alt="Chronulus AI">
+    <h1 align="center">MCP Server for Chronulus</h1>
+    <h3 align="center">Chat with Chronulus AI Forecasting & Prediction Agents in Claude</h3>
+</div>
+
+
+
+
+### Quickstart: Claude for Desktop
+
+#### Install 
+
+Claude for Desktop is currently available on macOS and Windows.
+
+Install Claude for Desktop [here](https://claude.ai/download)
+
+#### Configuration
+
+Follow the general instructions [here](https://modelcontextprotocol.io/quickstart/user) to configure the Claude desktop client.
+
+You can find your Claude config at one of the following locations:
+
+- macOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
+- Windows: `%APPDATA%\Claude\claude_desktop_config.json`
+
+Then choose one of the following methods that best suits your needs and add it to your `claude_desktop_config.json`
+
+<details>
+<summary>Using pip</summary>
+
+(Option 1) Install release from PyPI
+```bash 
+pip install chronulus-mcp
+```
+
+
+(Option 2) Install from Github
+```bash 
+git clone https://github.com/ChronulusAI/chronulus-mcp.git
+cd chronulus-mcp
+pip install .
+```
+
+
+
+```json 
+{
+  "mcpServers": {
+    "chronulus-agents": {
+      "command": "python",
+      "args": ["-m", "chronulus_mcp"],
+      "env": {
+        "CHRONULUS_API_KEY": "<YOUR_CHRONULUS_API_KEY>"
+      }
+    }
+  }
+}
+```
+</details>
+
+
+<details>
+<summary>Using docker</summary>
+
+Here we will build a docker image called 'chronulus-mcp' that we can reuse in our Claude config.
+
+```bash 
+git clone https://github.com/ChronulusAI/chronulus-mcp.git
+cd chronulus-mcp
+ docker build . -t 'chronulus-mcp'
+```
+
+In your Claude config, be sure that the final argument matches the name you give to the docker image in the build command.
+
+```json 
+{
+  "mcpServers": {
+    "chronulus-agents": {
+      "command": "docker",
+      "args": ["run", "-i", "--rm", "-e", "CHRONULUS_API_KEY", "chronulus-mcp"],
+      "env": {
+        "CHRONULUS_API_KEY": "<YOUR_CHRONULUS_API_KEY>"
+      }
+    }
+  }
+}
+```
+
+</details>
+
+<details>
+<summary>Using uv</summary>
+
+`uv` will pull the latest version of `chronulus-mcp` from the PyPI registry, install it, and then run it.
+
+```json 
+{
+  "mcpServers": {
+    "chronulus-agents": {
+      "command": "uv",
+      "args": ["run", "--with", "chronulus-mcp", "chronulus_mcp"],
+      "env": {
+        "CHRONULUS_API_KEY": "<YOUR_CHRONULUS_API_KEY>"
+      }
+    }
+  }
+}
+```
+
+</details>
