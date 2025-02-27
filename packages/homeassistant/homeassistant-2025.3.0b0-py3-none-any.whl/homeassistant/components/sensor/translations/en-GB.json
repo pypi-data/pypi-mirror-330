@@ -1,0 +1,25 @@
+{
+    "device_automation": {
+        "condition_type": {
+            "is_energy_distance": "Current {entity_name} energy per distance",
+            "is_ph": "Current {entity_name} pH level",
+            "is_wind_direction": "Current {entity_name} wind direction"
+        },
+        "trigger_type": {
+            "energy_distance": "{entity_name} energy per distance changes",
+            "ph": "{entity_name} pH level changes",
+            "wind_direction": "{entity_name} wind direction changes"
+        }
+    },
+    "entity_component": {
+        "energy_distance": {
+            "name": "Energy per distance"
+        },
+        "ph": {
+            "name": "pH"
+        },
+        "wind_direction": {
+            "name": "Wind direction"
+        }
+    }
+}

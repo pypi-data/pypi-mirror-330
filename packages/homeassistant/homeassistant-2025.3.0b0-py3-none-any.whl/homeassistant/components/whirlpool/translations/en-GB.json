@@ -1,0 +1,31 @@
+{
+    "common": {
+        "account_locked_error": ""
+    },
+    "config": {
+        "error": {
+            "account_locked": ""
+        }
+    },
+    "entity": {
+        "sensor": {
+            "end_time": {
+                "name": "End time"
+            },
+            "whirlpool_machine": {
+                "name": "State",
+                "state": {
+                    "system_initialize": "System Initialise"
+                }
+            },
+            "whirlpool_tank": {
+                "name": "Washing powder level"
+            }
+        }
+    },
+    "exceptions": {
+        "account_locked": {
+            "message": ""
+        }
+    }
+}

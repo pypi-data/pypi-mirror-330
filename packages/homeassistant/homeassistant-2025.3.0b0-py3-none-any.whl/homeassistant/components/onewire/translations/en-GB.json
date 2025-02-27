@@ -1,0 +1,27 @@
+{
+    "config": {
+        "step": {
+            "discovery_confirm": {
+                "description": ""
+            }
+        }
+    },
+    "entity": {
+        "sensor": {
+            "latest_voltage_id": {
+                "name": ""
+            },
+            "voltage_id": {
+                "name": ""
+            }
+        },
+        "switch": {
+            "pio": {
+                "name": "Programmed input-output"
+            },
+            "pio_id": {
+                "name": "Programmed input-output {id}"
+            }
+        }
+    }
+}

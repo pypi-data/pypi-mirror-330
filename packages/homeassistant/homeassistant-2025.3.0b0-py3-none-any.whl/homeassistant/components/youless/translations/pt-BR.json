@@ -1,0 +1,28 @@
+{
+    "config": {
+        "error": {
+            "cannot_connect": "Falha ao conectar"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "host": "Host",
+                    "name": "Nome"
+                }
+            }
+        }
+    },
+    "entity": {
+        "sensor": {
+            "active_tariff": {
+                "name": "Tarifa"
+            },
+            "average_peak": {
+                "name": "Pico m\u00e9dio"
+            },
+            "month_peak": {
+                "name": "M\u00eas de pico"
+            }
+        }
+    }
+}

@@ -1,0 +1,59 @@
+{
+    "config": {
+        "abort": {
+            "reauth_enable_api_successful": "Enabling API was successful"
+        },
+        "error": {
+            "authorization_failed": "Failed to authorise, make sure to press the button of the device within 30 seconds"
+        },
+        "step": {
+            "authorize": {
+                "description": "Press the button on the HomeWizard Energy device, then select the button below.",
+                "title": "Authorise"
+            },
+            "reauth_confirm_update_token": {
+                "description": "Press the button on the HomeWizard Energy device, then select the button below.",
+                "title": "Re-authenticate"
+            },
+            "reauth_enable_api": {
+                "description": "The local API is disabled. Go to the HomeWizard Energy app and enable the API in the device settings."
+            }
+        }
+    },
+    "entity": {
+        "sensor": {
+            "cycles": {
+                "name": "Battery cycles"
+            },
+            "state_of_charge_pct": {
+                "name": "State of charge"
+            },
+            "uptime": {
+                "name": ""
+            },
+            "wifi_rssi": {
+                "name": "Wi-Fi RSSI"
+            }
+        }
+    },
+    "issues": {
+        "migrate_to_v2_api": {
+            "fix_flow": {
+                "error": {
+                    "authorization_failed": "Failed to authorise, make sure to press the button of the device within 30 seconds"
+                },
+                "step": {
+                    "authorize": {
+                        "description": "Press the button on the HomeWizard Energy device, then select the button below.",
+                        "title": "Authorise"
+                    },
+                    "confirm": {
+                        "description": "Your {title} now supports a more secure and feature-rich communication method. To take advantage of this, you need to reconfigure the integration.\n\nSelect **Submit** to start the reconfiguration.",
+                        "title": "Update authentication method"
+                    }
+                }
+            },
+            "title": "Update authentication method"
+        }
+    }
+}

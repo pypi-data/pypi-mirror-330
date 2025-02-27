@@ -1,0 +1,78 @@
+{
+    "entity": {
+        "binary_sensor": {
+            "one_time_charge": {
+                "name": "One-time charge"
+            }
+        },
+        "fan": {
+            "ventilation": {
+                "state_attributes": {
+                    "preset_mode": {
+                        "state": {
+                            "standard": "Minimal"
+                        }
+                    }
+                }
+            }
+        },
+        "sensor": {
+            "buffer_bottom_temperature": {
+                "name": "Buffer bottom temperature"
+            },
+            "buffer_mid_bottom_temperature": {
+                "name": "Buffer mid bottom temperature"
+            },
+            "buffer_mid_top_temperature": {
+                "name": "Buffer mid top temperature"
+            },
+            "buffer_middle_temperature": {
+                "name": "Buffer middle temperature"
+            },
+            "fuel_need": {
+                "name": "Fuel need"
+            },
+            "heating_rod_hours": {
+                "name": ""
+            },
+            "heating_rod_starts": {
+                "name": ""
+            },
+            "spf_dhw": {
+                "name": "Seasonal performance factor \u2014 domestic hot water"
+            },
+            "spf_heating": {
+                "name": "Seasonal performance factor \u2014 heating"
+            },
+            "spf_total": {
+                "name": "Seasonal performance factor"
+            },
+            "supply_pressure": {
+                "name": "Supply pressure"
+            }
+        }
+    },
+    "exceptions": {
+        "program_not_activated": {
+            "message": "Unable to activate ViCare programme {program}"
+        },
+        "program_not_deactivated": {
+            "message": "Unable to deactivate ViCare programme {program}"
+        },
+        "program_unknown": {
+            "message": "Cannot translate preset {preset} into a valid ViCare programme"
+        }
+    },
+    "services": {
+        "set_vicare_mode": {
+            "description": "Set a ViCare mode.",
+            "fields": {
+                "vicare_mode": {
+                    "description": "ViCare mode.",
+                    "name": "ViCare mode"
+                }
+            },
+            "name": "Set ViCare mode"
+        }
+    }
+}

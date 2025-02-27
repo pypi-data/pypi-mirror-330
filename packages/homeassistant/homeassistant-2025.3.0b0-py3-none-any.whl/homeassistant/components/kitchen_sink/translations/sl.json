@@ -1,0 +1,22 @@
+{
+    "config_subentries": {
+        "entity": {
+            "step": {
+                "add_sensor": {
+                    "data": {
+                        "name": "Naziv",
+                        "state": "Za\u010detno stanje"
+                    },
+                    "description": "Konfiguriraj nov senzor"
+                },
+                "reconfigure_sensor": {
+                    "data": {
+                        "name": "Za\u010detno stanje",
+                        "state": "Za\u010detno stanje"
+                    },
+                    "description": "Ponovno konfiguriraj nov senzor"
+                }
+            }
+        }
+    }
+}

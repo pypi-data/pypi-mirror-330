@@ -1,0 +1,8 @@
+{
+    "issues": {
+        "automatic_backup_agents_unavailable": {
+            "description": "The backup location `{agent_id}` is unavailable but is still configured for automatic backups.\n\nPlease visit the [automatic backup configuration page]({backup_settings}) to review and update your backup locations. Backups will not be uploaded to selected locations that are unavailable.",
+            "title": "The backup location {agent_id} is unavailable"
+        }
+    }
+}

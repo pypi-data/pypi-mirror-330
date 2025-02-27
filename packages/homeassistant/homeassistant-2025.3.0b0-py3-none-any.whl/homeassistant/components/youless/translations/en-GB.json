@@ -1,0 +1,65 @@
+{
+    "device": {
+        "delivery": {
+            "name": ""
+        },
+        "extra": {
+            "name": ""
+        },
+        "gas": {
+            "name": ""
+        },
+        "power": {
+            "name": ""
+        },
+        "water": {
+            "name": ""
+        }
+    },
+    "entity": {
+        "sensor": {
+            "active_current_phase_a": {
+                "name": ""
+            },
+            "active_power_phase_w": {
+                "name": ""
+            },
+            "active_power_w": {
+                "name": ""
+            },
+            "active_s0_w": {
+                "name": ""
+            },
+            "active_tariff": {
+                "name": ""
+            },
+            "active_voltage_phase_v": {
+                "name": ""
+            },
+            "average_peak": {
+                "name": ""
+            },
+            "month_peak": {
+                "name": ""
+            },
+            "total_energy_export_tariff_kwh": {
+                "name": ""
+            },
+            "total_energy_import_kwh": {
+                "name": ""
+            },
+            "total_energy_import_tariff_kwh": {
+                "name": ""
+            },
+            "total_gas_m3": {
+                "name": ""
+            },
+            "total_s0_kwh": {
+                "name": ""
+            },
+            "total_water": {
+                "name": ""
+            }
+        }
+    }
+}

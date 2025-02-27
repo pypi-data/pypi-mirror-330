@@ -1,0 +1,32 @@
+{
+    "config": {
+        "flow_title": "",
+        "step": {
+            "detect": {
+                "data": {
+                    "device": ""
+                },
+                "data_description": {
+                    "device": ""
+                },
+                "description": ""
+            },
+            "manual": {
+                "data": {
+                    "device": ""
+                },
+                "data_description": {
+                    "device": ""
+                },
+                "description": ""
+            }
+        }
+    },
+    "selector": {
+        "devices": {
+            "options": {
+                "manual": ""
+            }
+        }
+    }
+}

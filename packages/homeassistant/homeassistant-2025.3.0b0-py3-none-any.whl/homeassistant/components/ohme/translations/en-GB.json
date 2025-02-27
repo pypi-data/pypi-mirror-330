@@ -1,0 +1,37 @@
+{
+    "entity": {
+        "number": {
+            "preconditioning_duration": {
+                "name": "Preconditioning duration"
+            },
+            "target_percentage": {
+                "name": "Target percentage"
+            }
+        },
+        "select": {
+            "charge_mode": {
+                "name": "Charge mode",
+                "state": {
+                    "max_charge": "Max charge",
+                    "paused": "Paused",
+                    "smart_charge": "Smart charge"
+                }
+            }
+        },
+        "sensor": {
+            "slot_list": {
+                "name": "Charge slots"
+            },
+            "status": {
+                "state": {
+                    "finished": ""
+                }
+            }
+        },
+        "time": {
+            "target_time": {
+                "name": "Target time"
+            }
+        }
+    }
+}

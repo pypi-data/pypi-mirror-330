@@ -1,0 +1,45 @@
+{
+    "config": {
+        "error": {
+            "empty_listening_mode_list": "Listening mode list cannot be empty"
+        },
+        "step": {
+            "configure_receiver": {
+                "data": {
+                    "listening_modes": "Listening modes"
+                },
+                "data_description": {
+                    "listening_modes": "List of listening modes supported by the receiver."
+                }
+            }
+        }
+    },
+    "exceptions": {
+        "invalid_sound_mode": {
+            "message": "Cannot select sound mode \"{invalid_sound_mode}\" for entity: {entity_id}."
+        }
+    },
+    "options": {
+        "error": {
+            "empty_listening_mode_list": "Listening mode list cannot be empty"
+        },
+        "step": {
+            "init": {
+                "data": {
+                    "listening_modes": "Listening modes"
+                },
+                "data_description": {
+                    "listening_modes": "List of listening modes supported by the receiver."
+                }
+            },
+            "names": {
+                "sections": {
+                    "listening_modes": {
+                        "description": "Mappings of receiver's listening modes to their names.",
+                        "name": "Listening mode names"
+                    }
+                }
+            }
+        }
+    }
+}
