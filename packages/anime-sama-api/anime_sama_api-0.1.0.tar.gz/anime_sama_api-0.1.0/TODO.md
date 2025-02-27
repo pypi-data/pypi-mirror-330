@@ -1,0 +1,23 @@
+- [X] Search
+- [X] Download
+- [X] Play
+- [X] Name Episode
+- [X] All language
+- [X] Order Episode
+- [X] Separate backend
+- [X] Fallback on other players
+- [X] Retry players
+- [X] Config
+- [X] Tests
+- [?] Make a package
+- [ ] Implement all NotImplemented
+- [ ] Nix?
+- [ ] Auto-download at start-up & queue download
+- [ ] Menu
+- [ ] Planning
+- [ ] Ani-skip
+- [ ] Resume play (history)
+- [ ] MAL sync
+- [ ] Play from download
+- [ ] Discord presence
+- [ ] Smart load distribution between players
