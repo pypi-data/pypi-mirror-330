@@ -1,0 +1,100 @@
+[project]
+name = "noaa-ghcn"
+version = "0.2.0"
+description = "A package to retrieve data from the NOAA Global Historical Climatology Network Daily (GHCN-D) dataset on AWS S3."
+authors = [{name = "Colin Hill", email = "colinalastairhill@gmail.com"}]
+readme = "README.md"
+license = {file = "LICENSE.md"}
+requires-python = ">=3.10"
+classifiers = [
+	"Development Status :: 5 - Production/Stable",
+	"License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+	"Programming Language :: Python :: 3.10",
+	"Programming Language :: Python :: 3.11",
+	"Programming Language :: Python :: 3.12",
+	"Programming Language :: Python :: 3.13",
+]
+dependencies = [
+	"pandas",
+	"geopandas",
+	"pyarrow",
+	"shapely",
+	"tqdm",
+	"boto3>=1.36.24,<2",
+]
+
+[tool.pixi.project]
+platforms = ["win-64", "linux-64", "osx-arm64", "osx-64"]
+channels = [
+	"conda-forge",
+	"https://prefix.dev/pixi-build-backends",
+	"https://prefix.dev/conda-forge",
+]
+preview = ["pixi-build"]
+
+[tool.pixi.pypi-dependencies]
+noaa_ghcn = { path = ".", editable = true }
+
+[tool.pixi.dependencies]
+python = ">=3.10,<3.14"
+pandas = "*"
+geopandas = "*"
+pyarrow = "*"
+shapely = "*"
+tqdm = "*"
+boto3 = ">=1.36.24,<2"
+ipykernel = ">=6.29.5,<7"
+
+[tool.pixi.feature.dev.dependencies]
+pytest = "*"
+pytest-cov = "*"
+pre-commit = "*"
+ruff = "*"
+
+[tool.pixi.environments]
+default = { features = [], solve-group = "default" }
+dev = { features = ["dev"], solve-group = "default" }
+
+[tool.pixi.tasks]
+lint = { cmd = "pixi run -e dev ruff check --fix noaa_ghcn/", description = "Lint the code" }
+format = { cmd = "pixi run -e dev ruff format noaa_ghcn/", description = "Format the code" }
+test = { cmd = "pixi run -e dev pytest noaa_ghcn/", description = "Run tests" }
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+ignore = ["D1", "D2", "D4", "TID"]
+
+[tool.ruff.format]
+indent-style = "tab"
+docstring-code-format = true
+docstring-code-line-length = 120
+
+[tool.pytest.ini_options]
+addopts = "--doctest-modules --cov=noaa-ghcn --cov-branch --cov-report term-missing  -vv --color=yes"
+
+[build-system]
+build-backend = "hatchling.build"
+requires = ["hatchling"]
+
+[tool.hatch.build.targets.sdist]
+include = ["noaa_ghcn"]
+exclude = [
+  "/.github",
+  "/docs",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["noaa_ghcn"]
+
+[tool.hatch.version]
+path = "pyproject.toml"
+
+[tool.pixi.package.build]
+backend = { name = "pixi-build-python", version = "0.1.*" }
+
+[tool.pixi.package.host-dependencies]
+hatchling = "*"
