@@ -1,0 +1,20 @@
+[project]
+name = "li_queens"
+version = "0.1.0"
+description = "Solve a LinkedIn Queens puzzle in an image."
+readme = "README.md"
+authors = [
+    { name = "Rodrigo Girão Serrão", email = "5621605+rodrigogiraoserrao@users.noreply.github.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "click>=8.1.8",
+    "pillow>=11.1.0",
+]
+
+[project.scripts]
+queens = "li_queens:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
