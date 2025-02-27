@@ -1,0 +1,8 @@
+selenium>=4.9.1
+selenium-wire>=5.0.0
+requests>=2.31.0
+SpeechRecognition
+pyaudio
+pydub==0.25.1
+blinker==1.7.0
+setuptools
