@@ -1,0 +1,86 @@
+[build-system]
+requires = ["setuptools >=61.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pointtorch"
+version = "0.2.0"
+authors = [
+    {name = "Josafat-Mattias Burmeister", email = "burmeister@uni-potsdam.de"},
+]
+maintainers = [
+    {name = "Josafat-Mattias Burmeister", email = "burmeister@uni-potsdam.de"},
+]
+description = "A Python Package for Deep Learning on 3D Point Clouds Using PyTorch."
+readme = "README.md"
+license = { file = "LICENSE" }
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+keywords = ["point cloud", "deep learning", "pytorch"]
+requires-python = ">=3.9"
+dependencies = [
+    "h5py>=3.5.0, <4.0.0",
+    "laspy>=2.0.0, <3.0.0",
+    "laszip>=0.2.0, <3.0.0",
+    "lazrs>=0.5.0, <1.0.0",
+    "numpy>=1.21.0, <3.0.0",
+    "pandas>=2.0.0, <3.0.0",
+    "pyproj>=3.4.0, <4.0.0",
+    "scikit-learn>=1.2.0, <2.0.0",
+    "tables>=3.8.0, <4.0.0",
+    "tqdm>=4.60.0, <5.0.0",
+]
+[project.optional-dependencies]
+dev = [
+    "black",
+    "hypothesis",
+    "mypy",
+    "pandas-stubs",
+    "pre-commit",
+    "pylint",
+    "pytest",
+    "pytest-cov",
+    "pytest-httpserver",
+    "types-tqdm",
+]
+docs = [
+    "sphinx",
+    "sphinx-copybutton",
+    "sphinx-design",
+    "sphinx-docsearch",
+    "sphinxawesome-theme",
+    "sphinx-sitemap",
+    "sphinxcontrib-jsmath",
+    "sphinxcontrib-katex",
+    "sphinxcontrib-napoleon",
+    "sphinx_mdinclude",
+]
+
+[project.urls]
+Homepage = "https://github.com/ai4trees/pointtorch"
+Documentation = "https://ai4trees.github.io/pointtorch/"
+Repository = "https://github.com/ai4trees/pointtorch.git"
+Issues = "https://github.com/ai4trees/pointtorch/issues"
+Changelog = "https://ai4trees.github.io/pointtorch/changelog"
+
+[tool.semantic_release]
+version_toml = [
+    "pyproject.toml:project.version"
+]
+branch = "main"
+changelog_file = "CHANGELOG.md"
+build_command = "python -m build"
+
+[tool.setuptools.package-data]
+pointtorch = ["*.typed"]
