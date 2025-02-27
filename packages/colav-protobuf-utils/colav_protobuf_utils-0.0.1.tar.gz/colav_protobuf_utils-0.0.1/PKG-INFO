@@ -1,0 +1,52 @@
+Metadata-Version: 2.4
+Name: colav-protobuf-utils
+Version: 0.0.1
+Summary: A pkg specifically providing COLAV Protobuf utils
+Project-URL: Documentation, https://github.com/Ryan/colav-protobuf-utils#readme
+Project-URL: Issues, https://github.com/Ryan/colav-protobuf-utils/issues
+Project-URL: Source, https://github.com/Ryan/colav-protobuf-utils
+Author-email: Ryan <r.mckee@qub.ac.uk>
+License-Expression: MIT
+License-File: LICENSE.txt
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Requires-Python: >=3.8
+Requires-Dist: colav-protobuf==0.0.9
+Requires-Dist: hatch
+Requires-Dist: numpy
+Requires-Dist: shapely
+Description-Content-Type: text/markdown
+
+# colav_protobuf_utils
+
+[![PyPI - Version](https://img.shields.io/pypi/v/colav-protobuf-utils.svg)](https://pypi.org/project/colav-protobuf-utils)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/colav-protobuf-utils.svg)](https://pypi.org/project/colav-protobuf-utils)
+
+This package simplifies the generation of COLAV Protobuf messages as defined in [colav-protobuf](https://pypi.org/project/colav-protobuf/), allowing you to work with structured data without needing in-depth knowledge of Protobuf. Simply provide the required data to the relevant functions, and they will return the corresponding Protobuf messages. Additionally, the package includes built-in serialization and deserialization functionality for seamless data handling.
+
+-----
+
+## Table of Contents
+
+- [Installation](#installation)
+- [License](#license)
+
+## Installation
+
+```console
+pip install colav-protobuf-utils
+```
+
+## Usage
+How to use... TODO
+
+## License
+
+`colav-protobuf-utils` is distributed under the terms of the [MIT](https://spdx.org/licenses/MIT.html) license.
