@@ -1,0 +1,41 @@
+name: "CodeChecker"
+
+on:
+  push:
+    branches: main
+  pull_request:
+    branches: main
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/jannik2099/pms-utils-gentoo-ci:latest
+      volumes:
+        # https://github.com/actions/runner/issues/716
+        - /home/runner/work/_actions/whisperity/codechecker-analysis-action/:/home/runner/work/_actions/whisperity/codechecker-analysis-action/
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Prepare CodeChecker
+        run: |
+          git config --global --add safe.directory .
+          # CodeChecker calls pip install directly
+          rm -f /usr/lib/python*/EXTERNALLY-MANAGED
+          # CodeChecker seems to hardcode PATH
+          ln -s $(command -v clang-tidy) /usr/bin/clang-tidy
+
+      - name: Configure
+        run: |
+          meson setup build
+
+      - uses: whisperity/codechecker-analysis-action@v1
+        id: codechecker
+        with:
+          logfile: build/compile_commands.json
+          llvm-version: ignore
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: "CodeChecker Bug Reports"
+          path: ${{ steps.codechecker.outputs.result-html-dir }}

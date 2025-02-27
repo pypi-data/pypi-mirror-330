@@ -1,0 +1,20 @@
+option(
+    'bindings',
+    type: 'array',
+    choices: ['python'],
+)
+option(
+    'test',
+    type: 'boolean',
+    value: false,
+)
+option(
+    'docs',
+    type: 'boolean',
+    value: false,
+)
+option(
+    'only-wheels',
+    type: 'boolean',
+    value: false,
+)

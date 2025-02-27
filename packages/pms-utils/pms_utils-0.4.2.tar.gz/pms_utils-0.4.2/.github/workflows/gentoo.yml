@@ -1,0 +1,109 @@
+# GitHub actions workflow.
+# https://docs.github.com/en/actions/learn-github-actions/workflow-syntax-for-github-actions
+
+name: Gentoo
+
+on:
+  push:
+    branches: main
+  pull_request:
+    branches: main
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        cc: [gcc, clang]
+        sanitizer: [none, address, undefined]
+        type: [debugoptimized, release]
+        exclude:
+          # https://gcc.gnu.org/bugzilla/show_bug.cgi?id=71962
+          - cc: gcc
+            sanitizer: undefined
+      fail-fast: false
+    runs-on: ubuntu-latest
+    container: ghcr.io/jannik2099/pms-utils-gentoo-ci:latest
+    env:
+      SANITIZER: ${{ matrix.sanitizer }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up ebuild repo
+        run: |
+          mkdir /etc/portage/repos.conf
+          cp .github/gentoo.conf /etc/portage/repos.conf
+          cp .github/localrepo.conf /etc/portage/repos.conf
+          pushd /etc/portage
+
+          mkdir -p package.accept_keywords
+          echo "dev-libs/pms-utils **" > package.accept_keywords/pms-utils
+
+          mkdir -p package.env
+          mkdir -p env
+
+          echo "dev-libs/pms-utils myenv" > package.env/pms-utils
+          TEMP=\"${{ github.repositoryUrl }}\"
+          TEMP="$(echo ${TEMP} | sed 's/git/https/')"
+          echo EGIT_OVERRIDE_REPO_JANNIK2099_PMS_UTILS=\"${TEMP}\" >> env/myenv
+          echo EGIT_OVERRIDE_COMMIT_JANNIK2099_PMS_UTILS=\"${{ github.ref }}\" >> env/myenv
+
+          case "${{ matrix.cc }}" in
+            gcc)
+              echo CC=gcc >> env/myenv
+              echo CXX=g++ >> env/myenv
+              ;;
+            clang)
+              echo CC=clang >> env/myenv
+              echo CXX=clang++ >> env/myenv
+              echo LDFLAGS=\"-fuse-ld=lld\" >> env/myenv
+              args+="-Db_lto_mode=thin -Db_lundef=false "
+              ;;
+          esac
+          case "${{ matrix.type }}" in
+            *debug*)
+                args+="-Dcpp_debugstl=true "
+                ;;
+            *)
+                ;;
+          esac
+
+          echo FEATURES='"${FEATURES} test"' >> env/myenv
+          echo PYTHON_TARGETS='"${PYTHON_TARGETS} pypy3"' >> env/myenv
+          echo "MYMESONARGS=\"-Dbuildtype=${{ matrix.type }} -Dwerror=true -Db_lto=true -Db_sanitize=${SANITIZER} ${args}\"" >> env/myenv
+          popd
+
+          cp -r .github/localrepo /var/db/repos/localrepo
+          cd /var/db/repos/localrepo/dev-libs/pms-utils
+          pkgdev manifest -f
+
+      - name: Install package dependencies
+        run: |
+          emerge --autounmask --autounmask-write --autounmask-continue -q -j8 -o dev-libs/pms-utils
+
+      - name: Configure
+        run: |
+          cd /var/db/repos/localrepo/dev-libs/pms-utils
+          ebuild pms-utils-9999.ebuild configure
+
+      - name: Compile
+        run: |
+          cd /var/db/repos/localrepo/dev-libs/pms-utils
+          ebuild pms-utils-9999.ebuild compile
+
+      - name: Test
+        run: |
+          if [[ "${{ matrix.sanitizer }}" == "address" ]]; then
+            export FEATURES="${FEATURES} -sandbox -usersandbox"
+          fi
+          cd /var/db/repos/localrepo/dev-libs/pms-utils
+          ebuild pms-utils-9999.ebuild test
+
+      - name: Install
+        run: |
+          cd /var/db/repos/localrepo/dev-libs/pms-utils
+          ebuild pms-utils-9999.ebuild install
+
+      - name: Merge
+        run: |
+          cd /var/db/repos/localrepo/dev-libs/pms-utils
+          ebuild pms-utils-9999.ebuild merge
