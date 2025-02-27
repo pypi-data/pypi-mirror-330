@@ -1,0 +1,6 @@
+singer-python==5.13.0
+requests==2.32.3
+
+[dev]
+pylint
+ipdb
