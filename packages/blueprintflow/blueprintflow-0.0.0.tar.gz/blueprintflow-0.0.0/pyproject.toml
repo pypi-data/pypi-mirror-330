@@ -1,0 +1,76 @@
+[build-system]
+requires = ["setuptools>=43.0.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+dynamic = ["readme"]
+name = "blueprintflow"
+version = "0.0.0"
+license = { file = "LICENSE" }
+description = "Simplify code generation via abstractions and structured retrieval"
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Software Development :: Code Generators",
+    "Development Status :: 1 - Planning",
+]
+authors = [{ name = "oceord" }]
+requires-python = ">=3.12"
+dependencies = []
+
+[project.urls]
+Repository = "https://github.com/oceord/blueprintflow"
+
+[tool.setuptools.dynamic]
+readme = { file = ["README.md"], content-type = "text/markdown" }
+
+[tool.mypy]
+implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_return_any = true
+warn_unreachable = true
+allow_redefinition = true
+local_partial_types = true
+strict_equality = true
+install_types = true
+
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = [
+    # Allow public structures without docstrings
+    "D100", # undocumented-public-module
+    "D101", # undocumented-public-class
+    "D102", # undocumented-public-method
+    "D103", # undocumented-public-function
+    "D104", # undocumented-public-package
+    "D105", # undocumented-magic-method
+    "D106", # undocumented-public-nested-class
+    "D107", # undocumented-public-init
+    # Ignore rules fixed by the formatter
+    "COM812", # missing-trailing-comma
+]
+
+[tool.ruff.lint.extend-per-file-ignores]
+"*.ipynb" = [
+    # Allow public structures without docstrings
+    "D100", # undocumented-public-module
+    "D101", # undocumented-public-class
+    "D102", # undocumented-public-method
+    "D103", # undocumented-public-function
+    "D104", # undocumented-public-package
+    "D105", # undocumented-magic-method
+    "D106", # undocumented-public-nested-class
+    "D107", # undocumented-public-init
+]
+
+[tool.ruff.lint.flake8-annotations]
+allow-star-arg-any = true
+ignore-fully-untyped = true
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"

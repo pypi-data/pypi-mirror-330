@@ -1,0 +1,98 @@
+Metadata-Version: 2.2
+Name: blueprintflow
+Version: 0.0.0
+Summary: Simplify code generation via abstractions and structured retrieval
+Author: oceord
+License: MIT License
+        
+        Copyright (c) 2025 oceord
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE.
+        
+Project-URL: Repository, https://github.com/oceord/blueprintflow
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Topic :: Software Development :: Code Generators
+Classifier: Development Status :: 1 - Planning
+Requires-Python: >=3.12
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# BlueprintFlow
+
+BlueprintFlow aims to simplify code generation through abstractions and structured data retrieval, allowing developers to create high-quality, modularized code with reduced overhead and adherence to established standards.
+
+## Overview
+
+### Goals
+
+- **Systematic Approach**: ensure structured and consistent code generation.
+- **Architecture Replication**: replicate existing architectural structures.
+- **Reduced Overhead**: minimize the initial development.
+- **Modularity**: facilitate the creation of reusable, independent components.
+
+### Generative AI
+
+- **Code Generation**: automate the production of efficient, modular code.
+- **Abstraction Generation**: create high-level, reusable code structures using AI.
+
+### User Interaction
+
+- **Q&A**: provide question and answer mechanisms to support development needs.
+- **Chat**: allow user to communicate with AI through a chat interface.
+- **Configuration**: allow tool customization for tailored usage.
+- **Software Library**: provide reusable components and modules.
+- **Validation Checks**: ensure the code generated meets quality standards.
+
+### Content Validation
+
+- **Code Failure by Default**: fail code generated without human validation.
+- **Function Calling**: allow custom validations through function calling.
+- **Traceability**: track content generation up to its origins.
+- **Watermarks**: embed identifiers for metadata purposes.
+
+### Information Retrieval
+
+- **RAG**: use Retrieval-Augmented Generation.
+- **GraphRAG**: use graph-based approaches for structured data access.
+- **Contextual Retrieval**: enhance efficiency by considering retrieval context.
+- **Query Expansion Retrieval**: refine search queries for more relevant results.
+
+### Storage
+
+- **VectorStore**: store abstractions and high-quality code along with their vectors.
+- **GraphDB**: store guidelines and rules in graph structures.
+
+### Tech Stack
+
+- Python
+- [LiteLLM](https://github.com/BerriAI/litellm)
+- [Pydantic](https://github.com/pydantic/pydantic)
+- [Chroma](https://github.com/chroma-core/chroma)
+- [Kùzu](https://github.com/kuzudb/kuzu)
+
+### Philosophy
+
+- **Offline-First**: prioritize software that works seamlessly without internet connection.
+- **Local Privacy**: store all data locally.
+- **Open-Source**: promote transparency, collaboration, and community-driven development.
