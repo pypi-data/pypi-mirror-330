@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:import namespace= "opendrive_17_object.xsd" schemaLocation="opendrive_17_object.xsd"/>
+	<xs:import namespace="opendrive_17_railroad.xsd" schemaLocation="opendrive_17_railroad.xsd"/>
+	<xs:import namespace="opendrive_17_junction.xsd" schemaLocation="opendrive_17_junction.xsd"/>
+	<xs:import namespace="opendrive_17_signal.xsd" schemaLocation="opendrive_17_signal.xsd"/>
+	<xs:import namespace="opendrive_17_road.xsd" schemaLocation="opendrive_17_road.xsd"/>
+	<xs:import namespace="opendrive_17_lane.xsd" schemaLocation="opendrive_17_lane.xsd"/>
+</xs:schema>
