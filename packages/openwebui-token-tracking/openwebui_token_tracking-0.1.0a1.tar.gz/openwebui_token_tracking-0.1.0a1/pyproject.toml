@@ -1,0 +1,45 @@
+[project]
+name = "openwebui-token-tracking"
+version = "0.1.0-alpha1"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Simon Stone", email = "simon.stone@dartmouth.edu" }
+]
+requires-python = ">=3.11"
+dependencies = [
+    "alembic>=1.14.0",
+    "click>=8.1.8",
+    "google-generativeai>=0.7.2",
+    "open-webui",
+    "pydantic>=2.9.2",
+    "pytest>=8.3.4",
+    "python-dotenv>=1.0.1",
+    "sqlalchemy>=2.0.32",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/openwebui_token_tracking"]
+
+[dependency-groups]
+docs = [
+    "myst-parser>=4.0.1",
+    "sphinx>=8.1.3",
+    "sphinx-autodoc-typehints>=3.0.1",
+    "sphinx-rtd-theme>=3.0.2",
+]
+
+[tool.hatch.build]
+include = [
+    "src/openwebui_token_tracking/**/*.py",
+    "src/openwebui_token_tracking/migrations/alembic/*",
+    "src/openwebui_token_tracking/migrations/alembic/versions/*",
+    "src/openwebui_token_tracking/resources/*"
+]
+
+[project.scripts]
+owui-token-tracking = "openwebui_token_tracking.cli.main:cli"
