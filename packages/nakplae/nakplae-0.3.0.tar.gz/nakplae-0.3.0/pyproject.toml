@@ -1,0 +1,73 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nakplae"
+version = "0.3.0"
+description = "Video transcription and translation tool using Whisper and Gemini"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [
+    {name = "Eli Mydlarz", email = "eli@mydlarz.com"}
+]
+keywords = ["whisper", "transcription", "translation", "subtitles", "srt", "gemini", "video"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: End Users/Desktop",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Multimedia :: Video",
+    "Topic :: Text Processing :: Linguistic",
+]
+dependencies = [
+    "openai-whisper>=20230918",
+    "google-generativeai>=0.3.0",
+    "tqdm>=4.65.0",
+]
+
+[project.optional-dependencies]
+gpu = [
+    "torch>=2.0.0",
+]
+dev = [
+    "pytest>=7.0.0",
+    "black>=23.0.0",
+    "ruff>=0.0.240",
+    "mypy>=1.0.0",
+    "build",
+    "twine",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/elimydlarz/nakplae"
+"Bug Tracker" = "https://github.com/elimydlarz/nakplae/issues"
+"Documentation" = "https://github.com/elimydlarz/nakplae#readme"
+"Source Code" = "https://github.com/elimydlarz/nakplae"
+
+[project.scripts]
+nakplae = "nakplae.__main__:main"
+
+[tool.setuptools]
+packages = ["nakplae"]
+
+[tool.black]
+line-length = 88
+target-version = ["py310"]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 88
+select = ["E", "F", "B", "I"]
+
+[tool.mypy]
+python_version = "3.10"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true

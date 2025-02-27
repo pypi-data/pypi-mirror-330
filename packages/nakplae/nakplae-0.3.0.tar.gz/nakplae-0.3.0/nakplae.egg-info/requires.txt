@@ -1,0 +1,14 @@
+openai-whisper>=20230918
+google-generativeai>=0.3.0
+tqdm>=4.65.0
+
+[dev]
+pytest>=7.0.0
+black>=23.0.0
+ruff>=0.0.240
+mypy>=1.0.0
+build
+twine
+
+[gpu]
+torch>=2.0.0
