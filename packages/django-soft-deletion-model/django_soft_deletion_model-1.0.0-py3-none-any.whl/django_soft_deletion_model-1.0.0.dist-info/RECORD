@@ -1,0 +1,14 @@
+soft_deletion/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+soft_deletion/models/__init__.py,sha256=CJMkIJQjx_JD_oNRjQt9wKfEPbbViCEfwsS53QCQobI,169
+soft_deletion/models/base.py,sha256=QzrlISJUtGJfT-Xb3QYYqZuEukF_5mMMTeIC1q1z4W8,918
+soft_deletion/models/deletion.py,sha256=6TvaCik0m83GSH069cw0vnZZWhcmwyTmAVixmhzUgn8,3874
+soft_deletion/models/query.py,sha256=9VKCbNEzCuKHcu46mS6bOBhhdtFofM2uqacTeEA5yp8,1766
+soft_deletion/models/signals.py,sha256=_4On7Cm9PfJZTRQCLZExLXdGO7PaiAZz1zcdX2KFlHo,147
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/test_settings.py,sha256=Y80O79fnea90-HdR--Jz5au6V1X8fWp0z9HG2JSSIUo,394
+tests/test_soft_delete.py,sha256=O8bR145umJVBvMDcQ34haH-z7jkqclG3QEc21oFBgJc,6867
+django_soft_deletion_model-1.0.0.dist-info/LICENSE,sha256=6bmsLwhsw4jnmLDxwZG5IHwxrwW-Ta95TQPbvd5yF4A,1067
+django_soft_deletion_model-1.0.0.dist-info/METADATA,sha256=J4P9x28Q2VXL6hoihM7958YWiJxmu86D6PiyRlQtquA,3319
+django_soft_deletion_model-1.0.0.dist-info/WHEEL,sha256=nn6H5-ilmfVryoAQl3ZQ2l8SH5imPWFpm1A5FgEuFV4,91
+django_soft_deletion_model-1.0.0.dist-info/top_level.txt,sha256=ONdLiaD6v967n3rAVMVQCkte-ML0pkn-GbHavI3FJD4,20
+django_soft_deletion_model-1.0.0.dist-info/RECORD,,
