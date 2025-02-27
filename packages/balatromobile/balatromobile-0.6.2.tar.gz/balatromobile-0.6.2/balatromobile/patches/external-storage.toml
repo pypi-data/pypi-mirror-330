@@ -1,0 +1,15 @@
+description = "Save game files under /sdcard/Android [Works well for Android < 13]"
+authors = ["blake502"]
+supported_platforms = ["android"]
+
+[[patch_lists]]
+  version = 0
+  # supported_game_versions = ALL
+  [[patch_lists.patch_files]]
+	target_file = "conf.lua"
+	[[patch_lists.patch_files.patches]]
+		search_string = "function love.conf(t)"
+		patch_content = """
+function love.conf(t)
+	t.externalstorage = true
+"""
