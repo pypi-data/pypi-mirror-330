@@ -1,0 +1,13 @@
+py2neo>=2021.2.3
+mal-toolbox<0.4,>=0.3
+PyYAML>=6.0.1
+
+[dev]
+pytest
+mypy
+ruff
+
+[ml]
+numpy>=1.21.4
+pettingzoo>=1.24.2
+gymnasium==1.0
