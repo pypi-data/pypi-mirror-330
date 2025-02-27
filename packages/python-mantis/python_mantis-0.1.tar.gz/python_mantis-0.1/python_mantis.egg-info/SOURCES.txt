@@ -1,0 +1,12 @@
+LICENSE
+README.rst
+pyproject.toml
+mantis/__init__.py
+mantis/__version.py
+mantis/cli.py
+mantis/client.py
+mantis/exceptions.py
+python_mantis.egg-info/PKG-INFO
+python_mantis.egg-info/SOURCES.txt
+python_mantis.egg-info/dependency_links.txt
+python_mantis.egg-info/top_level.txt
