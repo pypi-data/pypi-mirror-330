@@ -1,0 +1,46 @@
+Metadata-Version: 2.4
+Name: databridge-client
+Version: 0.2.2
+Summary: DataBridge Python Client
+Author-email: DataBridge <databridgesuperuser@gmail.com>
+Requires-Python: >=3.8
+Requires-Dist: httpx>=0.24.0
+Requires-Dist: pydantic==2.10.3
+Requires-Dist: pyjwt>=2.0.0
+Requires-Dist: requests>=2.32.3
+Description-Content-Type: text/markdown
+
+# DataBridge
+
+A Python client for DataBridge API that enables document ingestion and semantic search capabilities.
+
+## Installation
+
+```bash
+pip install databridge-client
+```
+
+```python
+from databridge import DataBridge
+
+# Initialize client
+db = DataBridge("your-api-key")
+
+# Ingest a document
+doc_id = await db.ingest_document(
+    content="Your document content",
+    metadata={"title": "Example Document"}
+)
+
+# Query documents
+results = await db.query(
+    query="Your search query",
+    filters={"title": "Example Document"}
+)
+
+# Process results
+for result in results:
+    print(f"Content: {result.content}")
+    print(f"Score: {result.score}")
+    print(f"Metadata: {result.metadata}")
+```
