@@ -1,0 +1,64 @@
+.
+├── build
+│   ├── bdist.linux-x86_64
+│   └── lib
+│       ├── config
+│       │   └── __init__.py
+│       ├── logs
+│       │   ├── __init__.py
+│       │   └── logging
+│       │       └── __init__.py
+│       └── modules
+│           ├── entities
+│           │   ├── __init__.py
+│           │   └── redis
+│           │       └── __init__.py
+│           ├── __init__.py
+│           └── utils
+│               └── __init__.py
+├── config
+│   ├── config.dev.yaml
+│   ├── __init__.py
+│   └── loader.so
+├── dist
+│   ├── tsearch-1.0.1-py3-none-any.whl
+│   └── tsearch-1.0.1.tar.gz
+├── env.json
+├── __init__.py
+├── logs
+│   ├── __init__.py
+│   ├── logging
+│   │   └── __init__.py
+│   └── log_handler.so
+├── main.py
+├── main.so
+├── modules
+│   ├── entities
+│   │   ├── __init__.py
+│   │   └── redis
+│   │       ├── __init__.py
+│   │       └── redis_utils.so
+│   ├── __init__.py
+│   └── utils
+│       ├── checker.so
+│       ├── faiss_db.so
+│       ├── helper.so
+│       ├── index_db.so
+│       ├── info_db.so
+│       └── __init__.py
+├── mysearch_acb.so
+├── mysearch.so
+├── README.md
+├── requirements.txt
+├── setup.py
+├── test.so
+├── tree.txt
+└── tsearch.egg-info
+    ├── dependency_links.txt
+    ├── __init__.py
+    ├── PKG-INFO
+    ├── requires.txt
+    ├── SOURCES.txt
+    └── top_level.txt
+
+19 directories, 42 files
