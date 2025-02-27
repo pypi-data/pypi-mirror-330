@@ -1,0 +1,72 @@
+[project]
+name = "c4m-pdk-sky130"
+dynamic = []
+description = "PDKMaster based PDK for open source GF180MCU process"
+authors = [
+    { name = "Chips4Makers contributors" },
+]
+dependencies = [
+    "PDKMaster~=0.11.5",
+    "pdkmaster-io-klayout~=0.1.6",
+    "c4m-flexcell~=0.4.5",
+    "c4m-flexio~=0.4.8",
+]
+requires-python = "~=3.8"
+readme = "README.md"
+version = "0.2.6"
+
+[project.license]
+text = "GPL-2.0-or-later OR AGPL-3.0-or-later OR CERN-OHL-S-2.0+"
+
+[build-system]
+requires = [
+    "pdm-backend",
+]
+build-backend = "pdm.backend"
+
+[tool.pdm]
+ignore_package_warnings = [
+    "*",
+]
+distribution = true
+
+[tool.pdm.build]
+includes = [
+    "c4m/",
+]
+
+[tool.pdm.version]
+source = "scm"
+
+[tool.pdm.dev-dependencies]
+dev = [
+    "-e file:///${PROJECT_ROOT}/deps/PySpice#egg=PySpice",
+    "-e file:///${PROJECT_ROOT}/deps/PDKMaster#egg=PDKMaster",
+    "-e file:///${PROJECT_ROOT}/deps/pdkmaster-io-klayout#egg=pdkmaster-io-klayout",
+    "-e file:///${PROJECT_ROOT}/deps/c4m-flexcell#egg=c4m-flexcell",
+    "-e file:///${PROJECT_ROOT}/deps/c4m-flexio#egg=c4m-flexio",
+    "doit",
+    "tomlkit",
+    "volare",
+]
+vscode = [
+    "pip",
+    "docutils",
+    "esbonio",
+]
+notebook = [
+    "jupyter",
+    "nbconvert",
+]
+fixed_deps = [
+    "klayout==0.27.13",
+]
+
+[tool.pdm.scripts]
+post_install = "doit spice_models_python"
+pre_build = "doit spice_models_python"
+cell_list = "./scripts/regen_celllist.sh"
+doit = "doit"
+clean = "doit clean open_pdk_dir signoff"
+upd = "pdm update --update-reuse-installed"
+updns = "pdm update --update-reuse-installed --no-sync"
