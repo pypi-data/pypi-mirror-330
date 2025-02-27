@@ -1,0 +1,48 @@
+{
+    "standard_link_roles": [
+        "/role/link"
+    ],
+    "standard_link_names": [
+        "labelLink",
+        "referenceLink",
+        "presentationLink",
+        "calculationLink",
+        "definitionLink",
+        "footnoteLink"
+    ],
+    "standard_resource_roles": [
+        "/role/label",
+        "/role/terseLabel",
+        "/role/verboseLabel",
+        "/role/positiveLabel",
+        "/role/positiveTerseLabel",
+        "/role/positiveVerboseLabel",
+        "/role/negativeLabel",
+        "/role/negativeTerseLabel",
+        "/role/negativeVerboseLabel",
+        "/role/zeroLabel",
+        "/role/zeroTerseLabel",
+        "/role/zeroVerboseLabel",
+        "/role/totalLabel",
+        "/role/periodStartLabel",
+        "/role/periodEndLabel",
+        "/role/documentation",
+        "/role/definitionGuidance",
+        "/role/disclosureGuidance",
+        "/role/presentationGuidance",
+        "/role/measurementGuidance",
+        "/role/commentaryGuidance",
+        "/role/exampleGuidance",
+        "/role/reference",
+        "/role/definitionRef",
+        "/role/disclosureRef",
+        "/role/mandatoryDisclosureRef",
+        "/role/recommendedDisclosureRef",
+        "/role/unspecifiedDisclosureRef",
+        "/role/presentationRef",
+        "/role/measurementRef",
+        "/role/commentaryRef",
+        "/role/exampleRef",
+        "/role/footnote"
+    ]
+}
