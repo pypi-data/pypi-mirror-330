@@ -1,0 +1,19 @@
+Metadata-Version: 2.2
+Name: Pairs_Package
+Version: 0.1.1
+Summary: Pairs Trading strategy, trades executed with Alpaca
+Author: Mihai Posea
+Author-email: pose4408@mylaurier.ca
+Classifier: Programming Language :: Python :: 3.8
+Requires-Dist: pandas
+Requires-Dist: pandas_datareader
+Requires-Dist: alpaca-trade-api
+Requires-Dist: numpy
+Requires-Dist: yfinance
+Requires-Dist: python-dotenv
+Requires-Dist: setuptools
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: requires-dist
+Dynamic: summary
