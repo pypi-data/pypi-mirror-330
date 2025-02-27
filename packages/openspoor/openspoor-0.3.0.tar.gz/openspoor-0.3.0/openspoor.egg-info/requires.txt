@@ -1,0 +1,17 @@
+importlib_metadata
+geopandas
+pyyaml
+loguru
+requests
+rtree
+pyproj
+pandas
+shapely
+folium
+
+[dev]
+pytest
+pytest-cov
+pytest-xdist
+parameterized
+nbmake
