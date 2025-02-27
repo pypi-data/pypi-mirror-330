@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: stu-dense-fog
+Version: 0.2.2
+Summary: A dense fog project for STU
+Home-page: https://github.com/yourusername/stu-dense-fog
+Author: Jack-Li
+Author-email: 477434296@qq.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+解决了远距离音频传输丢包粘包的问题
