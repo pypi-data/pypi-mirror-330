@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: flagrel-tower
+Version: 0.1.0
+Summary: 
+Author: Gary Wang
+Author-email: gary@linuxzen.com
+Requires-Python: >=3.8,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: click (>=8.1.8,<9.0.0)
+Requires-Dist: requests (>=2.32.3,<3.0.0)
+Description-Content-Type: text/markdown
+
+# Flag Release Tower
+
