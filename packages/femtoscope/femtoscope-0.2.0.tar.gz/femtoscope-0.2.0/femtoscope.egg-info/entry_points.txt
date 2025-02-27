@@ -1,0 +1,3 @@
+[console_scripts]
+generate-femtoscope-docs = femtoscope.misc.generate_documentation:main
+run-femtoscope-tests = femtoscope.tests.run_tests:main
