@@ -1,0 +1,106 @@
+[build-system]
+requires = [
+  "setuptools>=42",
+  'setuptools<72.2; implementation_name == "pypy"', # https://github.com/pypa/distutils/issues/283
+  "setuptools-scm",
+  "pybind11>2.10",
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "macromol_voxelize"
+authors = [
+  {name = "Kale Kundert", email = "kale@thekunderts.net"},
+]
+description = "Create 3D images from atomic coordinates"
+readme = 'README.md'
+dynamic = ["version"]
+requires-python = "~=3.8"
+classifiers = [
+  'Programming Language :: Python :: 3.8',
+  'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
+]
+dependencies = [
+  'numpy',
+  'polars',
+  'typing-extensions',
+]
+
+[project.optional-dependencies]
+pymol = [
+  'macromol_dataframe',
+  'matplotlib',
+  'pymixbox',
+  'pipeline_func',
+]
+test = [
+  'macromol_dataframe',
+  'parametrize_from_file',
+  'pytest',
+]
+docs = [
+  'sphinx',
+  'sphinx_rtd_theme',
+  'sphinx_math_dollar',
+  'myst_parser',
+]
+
+[project.urls]
+'Documentation' = 'https://macromol_voxelize.readthedocs.io/en/latest/'
+'Version Control' = 'https://github.com/kalekundert/macromol_voxelize'
+'Bug Tracker' = 'https://github.com/kalekundert/macromol_voxelize/issues'
+'Continuous Integration' = 'https://github.com/kalekundert/macromol_voxelize/actions'
+'Test Coverage' = 'https://coveralls.io/github/kalekundert/macromol_voxelize'
+
+[tool.setuptools]
+packages = ["macromol_voxelize"]
+package-dir = {"macromol_voxelize" = "src"}
+
+[tool.setuptools.dynamic]
+version = {attr = "macromol_voxelize.__version__"}
+
+[tool.cibuildwheel]
+test-extras = ["test"]
+test-command = "pytest {package}/tests"
+# Only run the tests if a polars wheel is available:
+test-skip = [
+  "pp*",
+  "*-win32",
+  "*-win_arm64",
+  "*-musllinux*",
+  "*-*linux_{i686,ppc64le,s390x}",
+]
+
+[tool.ruff.lint]
+select = ["F"]
+ignore = ["F405", "F403"]
+exclude = ["src/vendored/*"]
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = ["F401"]
+
+[tool.pytest.ini_options]
+addopts = "--ignore src --doctest-modules --doctest-glob='*.rst' --ignore=docs/_inv"
+doctest_optionflags = 'NORMALIZE_WHITESPACE'
+
+[tool.coverage.run]
+branch = true
+parallel = true
+source = ['macromol_voxelize']
+
+[tool.coverage.paths]
+source = [
+    'src/',
+    '/Users/runner/work/macromol_voxelize/macromol_voxelize/src',
+    'D:\a\macromol_voxelize\macromol_voxelize\src',
+]
+
+[tool.coverage.report]
+exclude_lines = [
+    "^\\s*raise AssertionError\\b",
+    "^\\s*raise NotImplementedError\\b",
+]
+
+[tool.semantic_release]
+version_variables = ['src/__init__.py:__version__']
+major_on_zero = false

@@ -1,0 +1,8 @@
+[submodule "src/vendored/Eigen"]
+	path = src/vendored/Eigen
+	url = https://gitlab.com/libeigen/eigen.git
+	shallow = true
+[submodule "src/vendored/overlap"]
+	path = src/vendored/overlap
+	url = https://github.com/severinstrobl/overlap.git
+	shallow = true
