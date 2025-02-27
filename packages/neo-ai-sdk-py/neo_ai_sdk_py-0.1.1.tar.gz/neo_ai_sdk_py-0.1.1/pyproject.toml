@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "neo-ai-sdk-py"
+version = "0.1.1"
+description = ""
+authors = ["zimo <zimo-go@163.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.12"
+langgraph = "^0.3.0"
+partialjson = "^0.1.0"
+langchain = "^0.3.19"
+langchain-community = "^0.3.18"
+langchain-openai = "^0.3.6"
+langfuse = "^2.59.3"
+jinja2 = "^3.1.5"
+dashscope = "^1.22.1"
+fastapi = "^0.115.8"
+uvicorn = "^0.34.0"
+sse-starlette = "^2.2.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
