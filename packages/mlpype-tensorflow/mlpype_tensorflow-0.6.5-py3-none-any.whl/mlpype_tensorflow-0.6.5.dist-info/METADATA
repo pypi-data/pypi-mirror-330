@@ -1,0 +1,17 @@
+Metadata-Version: 2.2
+Name: mlpype-tensorflow
+Version: 0.6.5
+Summary: Tensorflow extension for MLpype
+Author: Jeroen van den Hoven
+License: MIT
+Requires-Python: >=3.9
+Requires-Dist: mlpype-base==0.6.5
+Requires-Dist: tensorflow==2.14.1
+Requires-Dist: numpy==1.26.4
+Requires-Dist: protobuf==3.20.3
+Requires-Dist: tensorflow-macos==2.14.1; sys_platform == "darwin"
+Provides-Extra: strict
+Requires-Dist: mlpype-base==0.6.5; extra == "strict"
+Requires-Dist: tensorflow==2.14.1; extra == "strict"
+Requires-Dist: numpy==1.26.4; extra == "strict"
+Requires-Dist: protobuf==3.20.3; extra == "strict"
