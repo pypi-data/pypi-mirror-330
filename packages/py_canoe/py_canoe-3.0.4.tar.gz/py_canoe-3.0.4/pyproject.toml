@@ -1,0 +1,36 @@
+[project]
+name = "py_canoe"
+version = "3.0.4"
+description = "Python CANoe Package"
+license = { text = "LICENSE" }
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [{ name = "chaitu-ycr", email = "chaitu.ycr@gmail.com" }]
+keywords = ["Vector", "CANoe", "py_canoe"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: Microsoft :: Windows",
+    "Topic :: Software Development :: Embedded Systems"
+]
+dynamic = [ "dependencies" ]
+
+[project.urls]
+homepage = "https://github.com/chaitu-ycr/py_canoe"
+repository = "https://github.com/chaitu-ycr/py_canoe"
+documentation = "https://chaitu-ycr.github.io/py_canoe/"
+
+[tool.poetry.dependencies]
+python = ">=3.9"
+pywin32 = "*"
+
+[tool.poetry.group.dev.dependencies]
+mkdocs-material = "*"
+mkdocstrings-python = "*"
+mkdocs-include-markdown-plugin = "*"
+pytest = "*"
+pytest-html = "*"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
