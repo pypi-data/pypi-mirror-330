@@ -1,0 +1,33 @@
+$*************************HEADING************************
+$
+PROJ 'CAN' '{{ case_num }}'
+$
+$********************MODEL INPUT*************************$
+MODE STAT
+COORDINATES CARTESIAN 
+SET level=0   NAUTICAL
+$
+CGRID REGULAR 410000 4802379 0 70000 35620 698 354 CIRCLE 120 0.03 1.0 
+$
+INPGRID BOTTOM REGULAR 409888.026 4802179.317 0 702 359 100.0 100.0
+READINP BOTTOM 1 'depth_main_cantabria.dat' 1 0 FREE
+$
+{% if dir < 45 %}BOU SIDE N CON FILE 'input_spectra.bnd'
+{% elif dir < 135 %}BOU SIDE E CON FILE 'input_spectra.bnd'
+{% elif dir < 225 %}BOU SIDE S CON FILE 'input_spectra.bnd'
+{% elif dir < 315 %}BOU SIDE W CON FILE 'input_spectra.bnd'
+{% else %}BOU SIDE N CON FILE 'input_spectra.bnd'{% endif %}
+$
+FRICTION JONSWAP
+BREAKING
+$
+OFF QUAD
+$
+POINTS 'BUOYS' FILE 'buoys.loc'
+SPECOUT 'BUOYS' SPEC2D 'output.spec'
+BLOCK 'COMPGRID' NOHEAD 'output.mat' LAY 3 XP YP DEPTH HSIGN TM02 DIR PDIR TPS DSPR PTHSIGN PTRTP PTDIR PTDSPR
+$
+TEST  1,0
+COMPUTE 
+STOP
+$
