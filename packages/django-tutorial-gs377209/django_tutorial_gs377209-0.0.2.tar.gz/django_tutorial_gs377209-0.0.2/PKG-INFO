@@ -1,0 +1,28 @@
+Metadata-Version: 2.2
+Name: django-tutorial-gs377209
+Version: 0.0.2
+Summary: A Django app to conduct web-based polls.
+Author-email: Gerrod Schirtzinger <gerrod.l.schirtzinger@gmail.com>
+Project-URL: Homepage, https://github.com/gs377209/djangotutorial/
+Project-URL: Issues, https://github.com/gs377209/djangotutorial/issues
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: Framework :: Django :: 5.1
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Topic :: Internet :: WWW/HTTP
+Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic Content
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: django>=5.1
+
+# djangotutorial
