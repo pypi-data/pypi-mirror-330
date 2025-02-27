@@ -1,0 +1,15 @@
+Metadata-Version: 2.3
+Name: viu-chem
+Version: 0.1.0
+Summary: Collection of commonly used functions by VIU chemistry
+Author: Joseph Monaghan
+Author-email: Joseph_Monaghan@outlook.com
+Requires-Python: >=3.12
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Dist: imzml-writer (>=0.0.30,<0.0.31)
+Requires-Dist: pandas (>=2.2.3,<3.0.0)
+Description-Content-Type: text/markdown
+
+
