@@ -1,0 +1,7 @@
+Metadata-Version: 2.1
+Name: aidev
+Version: 0.10
+Requires-Dist: click
+Requires-Dist: gitpython
+Requires-Dist: openai
+
