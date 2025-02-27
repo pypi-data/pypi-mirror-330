@@ -1,0 +1,96 @@
+[tool.poetry]
+name = "greenbone-scap"
+version = "0.3.2"
+description = "Python library for downloading CVE and CPE from NIST NVD"
+authors = ["Greenbone <info@greenbone.net>"]
+license = "GPL-3.0-or-later"
+readme = "README.md"
+
+classifiers = [
+  # Full list: https://pypi.org/pypi?%3Aaction=list_classifiers
+  "Development Status :: 4 - Beta",
+  "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)", # pylint: disable=line-too-long
+  "Environment :: Console",
+  "Intended Audience :: Developers",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Operating System :: OS Independent",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+packages = [
+  { include = "greenbone/scap" },
+  { include = "tests", format = "sdist" },
+]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+shtab = ">=1.6.5"
+rich = ">=13.7.1"
+sqlalchemy = { extras = ["asyncio"], version = ">=2.0.28" }
+stamina = ">=23.2.0"
+psycopg = ">=3.1.13"
+pontos = ">=23.12.4"
+fastjsonschema = ">=2.21.1"
+
+[tool.poetry.group.dev.dependencies]
+autohooks-plugin-black = ">=23.10.0"
+autohooks-plugin-ruff = ">=23.10.0"
+autohooks-plugin-mypy = ">=23.10.0"
+coverage = ">=7.2.7"
+
+[tool.black]
+line-length = 80
+target-version = ["py311", "py312"]
+exclude = '''
+/(
+    \.git
+  | \.venv
+  | \.github
+  | \.vscode
+  | _build
+  | build
+  | dist
+  | docs
+)/
+'''
+
+[tool.autohooks]
+mode = "poetry"
+pre-commit = [
+  "autohooks.plugins.black",
+  "autohooks.plugins.ruff",
+  "autohooks.plugins.mypy",
+]
+
+[tool.pontos.version]
+version-module-file = "greenbone/scap/__version__.py"
+
+[tool.ruff]
+line-length = 80
+target-version = "py39"
+
+[tool.ruff.lint]
+extend-select = ["I", "PLE", "PLW"]
+
+[tool.poetry.scripts]
+greenbone-cve-download = 'greenbone.scap.cve.cli.download:main'
+greenbone-cpe-download = 'greenbone.scap.cpe.cli.download:main'
+greenbone-cpe-find = 'greenbone.scap.cpe.cli.find:main'
+greenbone-cpe-match-db-download = 'greenbone.scap.cpe_match.cli.db_download:main'
+greenbone-cpe-match-json-download = 'greenbone.scap.cpe_match.cli.json_download:main'
+greenbone-cpe-match-db-to-json = 'greenbone.scap.cpe_match.cli.db_to_json:main'
+
+[tool.mypy]
+files = "greenbone"
+ignore_missing_imports = true
+explicit_package_bases = true
+
+[tool.coverage.run]
+branch = true
+omit = ["tests/*", "*/__init__.py"]
+source = ["greenbone"]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
