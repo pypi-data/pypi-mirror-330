@@ -1,0 +1,11 @@
+pyproject.toml
+setup.py
+transcriptor/__init__.py
+transcriptor/cli.py
+transcriptor/constants.py
+whisper_transcribe_cli.egg-info/PKG-INFO
+whisper_transcribe_cli.egg-info/SOURCES.txt
+whisper_transcribe_cli.egg-info/dependency_links.txt
+whisper_transcribe_cli.egg-info/entry_points.txt
+whisper_transcribe_cli.egg-info/requires.txt
+whisper_transcribe_cli.egg-info/top_level.txt
