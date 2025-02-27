@@ -1,0 +1,39 @@
+[project]
+name = "py_uds_lib"
+version = "0.0.6"
+description = "Python package for creating UDS requests"
+license = { text = "LICENSE" }
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [{ name = "chaitu-ycr", email = "chaitu.ycr@gmail.com" }]
+keywords = ["python", "UDS", "diagnostics"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: Microsoft :: Windows",
+    "Topic :: Software Development :: Embedded Systems"
+]
+dynamic = [ "dependencies" ]
+
+[project.urls]
+homepage = "https://github.com/chaitu-ycr/py_uds_lib.git"
+repository = "https://github.com/chaitu-ycr/py_uds_lib.git"
+documentation = "https://chaitu-ycr.github.io/py_uds_lib/"
+
+[tool.poetry.dependencies]
+python = ">=3.9"
+cantools = "*"
+odxtools = "*"
+python-can = "*"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "*"
+pytest-html = "*"
+allure-pytest = "*"
+mkdocs-material = "*"
+mkdocs-include-markdown-plugin = "*"
+mkdocstrings-python = "*"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
