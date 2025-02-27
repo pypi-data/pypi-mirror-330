@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+src/better_result/__init__.py
+src/better_result/_result.py
+src/better_result/py.typed
+src/better_result.egg-info/PKG-INFO
+src/better_result.egg-info/SOURCES.txt
+src/better_result.egg-info/dependency_links.txt
+src/better_result.egg-info/requires.txt
+src/better_result.egg-info/top_level.txt
+tests/test_result.py

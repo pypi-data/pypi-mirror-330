@@ -1,0 +1,8 @@
+Metadata-Version: 2.2
+Name: better-result
+Version: 0.1.0
+Summary: A fork of the `result` library with some updates.
+Author: Rayan Sóstenes
+Requires-Python: >=3.12
+License-File: LICENSE
+Requires-Dist: typing-extensions>=4.12.2
