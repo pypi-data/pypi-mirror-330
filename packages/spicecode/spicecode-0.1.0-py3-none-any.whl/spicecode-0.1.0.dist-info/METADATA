@@ -1,0 +1,7 @@
+Metadata-Version: 2.2
+Name: spicecode
+Version: 0.1.0
+License-File: LICENSE
+Requires-Dist: typer[all]
+Requires-Dist: rich
+Dynamic: requires-dist
