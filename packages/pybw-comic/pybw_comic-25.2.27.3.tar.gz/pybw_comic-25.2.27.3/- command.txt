@@ -1,0 +1,30 @@
+
+
+PyPI程序发布教程
+
+
+## ------ 01 修改setup.py里的版本号 ------
+
+
+## ------ 02 setup.py build 包 ------
+# 先删除dist文件夹或其下的文件
+rmdir /s /q build dist pybw.egg-info
+python setup.py sdist bdist_wheel 
+
+
+## ------ 03 发布到正式的PyPI ------
+twine upload dist/* 
+
+帐号: pubowei
+密码: ******
+
+
+## ------ 04 pip 更新新版本 ------
+pip install pybw==2023.3.14.1 -i https://pypi.org/simple
+
+
+## ------ 其他 ------
+## 发布到TestPyPI
+twine upload --repository-url https://test.pypi.org/legacy/ dist/* 
+
+
