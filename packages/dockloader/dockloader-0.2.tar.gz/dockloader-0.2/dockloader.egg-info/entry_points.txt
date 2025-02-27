@@ -1,0 +1,3 @@
+[console_scripts]
+dockhub = dockloader.dockhub:main
+dockloader = dockloader.cmds:main
