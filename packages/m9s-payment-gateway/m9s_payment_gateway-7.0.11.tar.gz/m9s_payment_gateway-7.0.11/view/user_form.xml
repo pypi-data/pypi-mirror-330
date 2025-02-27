@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<!-- The COPYRIGHT file at the top level of this repository contains the full
+copyright notices and license terms. -->
+<data>
+    <xpath expr="/form/notebook/page[@id='preferences']" position="after">
+      <page string="Payment Gateways" id="payment_gateways">
+          <field name="payment_gateways"/>
+      </page>
+    </xpath>
+</data>
