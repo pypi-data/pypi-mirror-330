@@ -1,0 +1,50 @@
+Metadata-Version: 2.1
+Name: vul_py_utils
+Version: 0.0.8
+Summary: The package contains common utilities for Python projects at Vulcan Labs.
+Author: Tu Pham
+Author-email: tupham.dev@vulcanlabs.co
+Requires-Python: >=3.11,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: fastapi (>=0.105.0,<0.106.0)
+Requires-Dist: firebase-admin (>=6.3.0,<7.0.0)
+Requires-Dist: google (>=3.0.0,<4.0.0)
+Requires-Dist: numpy (>=1.26.2,<2.0.0)
+Requires-Dist: pillow (>=10.1.0,<11.0.0)
+Requires-Dist: redis (>=5.0.1,<6.0.0)
+Description-Content-Type: text/markdown
+
+vul-py is a general-purpose library of utilities and extensions to the standard library. It provides common functionality such as: redis, file I/O, image processing, and more. It is compatible with Python ^3.11.
+
+To use package, please follow this repo: [vulcanlabsvn/vul-py: vul-py ](https://github.com/vulcanlabsvn/vul-py)
+
+# Change Log
+
+### 0.0.8 - 26/02/2024
+ADD:
+* exceptions.handle_common_error
+* exceptions.map_error2exception
+* exceptions.to_common_error_response
+
+UPDATE:
+* VulcanBaseException: add gRpc field
+
+### 0.0.7 - 27/02/2024
+
+Add:
+
+* response_error and response_data
+* VulcanBaseError
+* VulcanBaseException
+
+### ~~0.0.6 - 27/02/2024 - Deprecated~~
+
+### 0.0.5 - 03/01/2024
+
+Deprecated:
+
+* Remove torch dependencies
+* Remove JsonHandlerWithGpu and host_health_check
+
