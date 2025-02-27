@@ -1,0 +1,11 @@
+Metadata-Version: 2.2
+Name: dependencias_libs
+Version: 0.4.6
+Summary: Pacote que baixa e configura o LibTorch automaticamente ao ser importado
+Author: Seu Nome
+Author-email: seu.email@exemplo.com
+Requires-Dist: requests
+Dynamic: author
+Dynamic: author-email
+Dynamic: requires-dist
+Dynamic: summary
