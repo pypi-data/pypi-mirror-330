@@ -1,0 +1,4 @@
+openai>=1.64.0
+pandas>=2.2.3
+rich>=10
+typer<1,>=0.15
