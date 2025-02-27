@@ -1,0 +1,7 @@
+[console_scripts]
+dn=dreadnode_cli.__main__:run
+dreadnode=dreadnode_cli.__main__:run
+
+[pipx.run]
+dreadnode-cli=dreadnode_cli.__main__:run
+
