@@ -1,0 +1,1 @@
+from .calculator import compound_interest, investment_return
