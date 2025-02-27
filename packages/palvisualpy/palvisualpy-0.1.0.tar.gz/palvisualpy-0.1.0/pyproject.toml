@@ -1,0 +1,22 @@
+[build-system]
+# AVOID CHANGING REQUIRES: IT WILL BE UPDATED BY PYSCAFFOLD!
+requires = ["setuptools>=46.1.0", "setuptools_scm[toml]>=5"]
+build-backend = "setuptools.build_meta"
+
+[project]
+dynamic = ["version"]
+requires-python = ">= 3.6"
+name = "palvisualpy"
+dependencies = [
+    "rich == 13.3.5",
+    "flatdict == 4.0.1"
+]
+authors = [
+    {name = "Tiny Twist", email = "tiny.mahua@gmail.com"},
+]
+maintainers = [
+  {name = "Tiny Twist", email = "tiny.mahua@gmail.com"}
+]
+description = "A visual for py lib"
+
+[project.scripts]
