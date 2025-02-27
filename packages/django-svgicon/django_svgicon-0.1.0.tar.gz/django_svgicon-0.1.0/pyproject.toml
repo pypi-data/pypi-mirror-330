@@ -1,0 +1,57 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "django-svgicon"
+dynamic = ["version"]
+description = "SVG icons for Django."
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+    {name = "MeyT"},
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Framework :: Django",
+  "Framework :: Django :: 5",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+  "Topic :: Internet :: WWW/HTTP",
+  "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
+  "Operating System :: OS Independent",
+  "Environment :: Web Environment",
+]
+dependencies = [
+  "django>=5"
+]
+
+[project.optional-dependencies]
+lxml = ["lxml"]
+
+[project.urls]
+Documentation = "https://github.com/meyt/django-svgicon"
+Source = "https://github.com/meyt/django-svgicon"
+Tracker = "https://github.com/meyt/django-svgicon/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+
+[tool.setuptools.dynamic]
+version = {attr = "svgicon.__version__"}
+
+[tool.black]
+line-length = 80
+
+[tool.isort]
+profile = "black"
+
+[tool.djlint]
+max_line_length= 80
