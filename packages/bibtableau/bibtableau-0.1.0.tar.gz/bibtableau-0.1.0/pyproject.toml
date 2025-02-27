@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "bibtableau"
+version = "0.1.0"
+description = "Librairie simpliste de manipulation de tableaux a des fins d'enseignement de l'algorithmique"
+authors = ["Guy <guywiz@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "<=3.11"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
