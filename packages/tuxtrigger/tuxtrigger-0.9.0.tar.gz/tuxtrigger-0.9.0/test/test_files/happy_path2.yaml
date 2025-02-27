@@ -1,0 +1,16 @@
+squad_config:
+  plugins: linux_log_parser
+  force_finishing_builds_on_timeout: True
+  important_metadata_keys: kernel_version,git_ref
+  data_retention: 2137
+repositories:
+- url: https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git
+  squad_group: ~non.existing
+  default_plan: default_plan
+  squad_project_prefix: testing
+  branches:
+    - name: master
+      squad_project: example_project
+      plan: stable.yaml
+      lab: https://lkft.validation.linaro.org
+      lava_test_plans_project: lkft

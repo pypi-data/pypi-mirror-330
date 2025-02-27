@@ -1,0 +1,10 @@
+repositories:
+- url: http://not_existing_path/repository.git
+  squad_group: ~non.existing
+  branches:
+    - name: not_existing_branch
+      squad_project: example_project
+      plan: stable.yaml
+    - name: also_doesn't exist
+      squad_project: example_project
+      plan: stable-next.yaml

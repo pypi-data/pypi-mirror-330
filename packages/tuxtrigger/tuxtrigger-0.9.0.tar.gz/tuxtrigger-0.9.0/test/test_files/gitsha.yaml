@@ -1,0 +1,16 @@
+https://git.kernel.org/pub/scm/linux/kernel/git/tomba/linux.git:
+  fingerprint: 8fa23329efa65477f077d99e145e4087190a55cc
+  for-laurent:
+    sha: '12345'
+    ref: refs/for-laurent
+  master: &id001
+    sha: '12345'
+    ref: refs/master/torvalds
+https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git:
+  fingerprint: eb054f9048d6a8c3de909d97cf7ae080662f591c
+  master:
+    sha: "1234567"
+    ref: refs/master/torvalds
+  v5.19:
+    sha: '12345'
+    ref: refs/v5.19

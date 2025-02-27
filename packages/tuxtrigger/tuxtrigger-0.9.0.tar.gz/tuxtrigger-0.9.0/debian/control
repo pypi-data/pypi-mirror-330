@@ -1,0 +1,31 @@
+Source: tuxtrigger
+Maintainer: Pawel Szymaszek <pawel.szymaszek@linaro.org>
+Section: python
+Priority: optional
+Build-Depends: bash-completion,
+               debhelper-compat (= 13),
+               dh-python,
+               flit,
+               git,
+               python3-all,
+               python3-pytest,
+               python3-pytest-cov,
+               python3-pytest-mock,
+               python3-requests,
+               python3-jinja2,
+               python3-pip,
+               python3-yaml,
+Standards-Version: 4.6.0.1
+Homepage: https://tuxsuite.org/
+
+Package: tuxtrigger
+Architecture: all
+Depends: python3 (>= 3.10),
+         python3-requests,
+         python3-jinja2,
+         python3-yaml,
+         ${python3:Depends},
+         ${misc:Depends}, 
+Description: TuxTrigger
+ TuxTrigger allows to automatically track a set of git repositories and branches.
+ When a change occurs, TuxTrigger will build, test and track the results using Tuxsuite and SQUAD.

@@ -1,0 +1,6 @@
+version: 1
+name: basic_test_plan
+description: basic_test_plan
+jobs:
+- tests:
+    - {device: qemu-x86_64, tests: [ltp-smoke]}

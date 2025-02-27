@@ -1,0 +1,34 @@
+strict: true
+site_name: TuxTrigger
+site_author: TuxSuite Team
+site_dir: public
+site_description: |
+  TuxTrigger, by Linaro, is a command line tool.  TuxTrigger is a part of TuxSuite, a suite of tools and
+  services to help with Linux kernel development.
+repo_url: https://gitlab.com/Linaro/TuxTrigger/
+
+theme:
+  name: 'material'
+  logo: tuxtrigger.svg
+  favicon: tuxtrigger.svg
+  font: false
+  features:
+    - content.code.copy
+    - navigation.footer
+
+markdown_extensions:
+- admonition
+- pymdownx.highlight
+- pymdownx.superfences
+- pymdownx.tabbed
+- toc:
+    permalink: true
+
+nav:
+- Getting Started: index.md
+- Installing TuxTrigger:
+  - PyPI: install-pypi.md
+  - Run uninstalled: run-uninstalled.md
+- Running:
+  - Triggering: run.md
+  - Subcommands: subcommands.md

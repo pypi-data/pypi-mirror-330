@@ -1,0 +1,14 @@
+https://git.kernel.org/pub/scm/linux/kernel/git/tomba/linux.git:
+  for-laurent:
+    ref: ''
+    sha: ''
+  master:
+    ref: refs/heads/master
+    sha: 6fae37b8a05e58b6103198e89d12dc0d6d472d92
+https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git:
+  master:
+    ref: refs/heads/master
+    sha: 072e51356cd5a4a1c12c1020bc054c99b98333df
+  v5.19:
+    ref: ''
+    sha: ''
