@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "posto-sdk"
+version = "0.1.1"
+description = "A Python SDK for scheduling and managing social media posts"
+readme = "README.md"
+authors = [
+    {name = "Posto Team", email = "support@xmachine.online"}
+]
+license = {file = "LICENSE"}
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Internet :: WWW/HTTP"
+]
+keywords = ["social media", "posting", "scheduling", "wordpress", "twitter", "instagram", "threads"]
+dependencies = [
+    "requests>=2.25.0",
+    "python-dateutil>=2.8.0",
+]
+requires-python = ">=3.7"
+
+[project.urls]
+Homepage = "https://xmachine.online"
+Documentation = "https://xmachine.online/docs"
+Repository = "https://github.com/yourusername/posto-sdk" 
