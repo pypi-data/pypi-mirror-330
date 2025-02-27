@@ -1,0 +1,2 @@
+[console_scripts]
+gecdatasets-download = gec_datasets.cli.download:cli_main
