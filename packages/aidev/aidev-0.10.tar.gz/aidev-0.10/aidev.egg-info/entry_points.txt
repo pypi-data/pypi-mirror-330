@@ -1,0 +1,3 @@
+[console_scripts]
+aidev = aidev:main
+aidev-config = aidev.config_manager:manage_config
