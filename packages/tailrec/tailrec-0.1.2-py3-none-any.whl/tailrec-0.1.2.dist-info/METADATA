@@ -1,0 +1,47 @@
+Metadata-Version: 2.3
+Name: tailrec
+Version: 0.1.2
+Summary: Execute a tail recursive function iteratively
+License: MIT
+Author: Christian Kreutz
+Author-email: christian.kreutz.dev@stud.uni-due.de
+Requires-Python: >=3.11
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Project-URL: Repository, https://github.com/chr3st5an/tailrec
+Description-Content-Type: text/markdown
+
+# tailrec
+
+Provides a decorator `tailrec` which executes a tail recursive function iteratively
+
+## Installation
+
+```bash
+pip install tailrec
+```
+
+## Usage
+
+Decorate the target function with `tailrec`. The first argument of the function is a callable object representing a recursive call. Make sure to use this callable in combination with a `return` statement.
+
+## Example
+
+```py
+from tailrec import tailrec
+
+
+@tailrec
+def factorial(f, n: int, accum: int = 1) -> int:
+    if n > 0:
+        return f(n - 1, accum * n)
+    else:
+        return accum
+
+
+print(factorial(1_100))
+```
+
