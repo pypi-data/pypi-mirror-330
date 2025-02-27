@@ -1,0 +1,8 @@
+asyncio>=3.4.3
+aioquic>=1.2.0
+
+[examples]
+argparse
+
+[test]
+pytest

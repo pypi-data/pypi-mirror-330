@@ -1,0 +1,19 @@
+{
+  "python.defaultInterpreterPath": "./venv/bin/python3",
+  "python.analysis.extraPaths": [
+    "${workspaceFolder}"
+  ],
+  "python.analysis.typeCheckingMode": "off",
+  "python.analysis.diagnosticMode": "workspace",
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "explicit",
+  },
+  "editor.formatOnSave": false,
+  "files.autoSave": "afterDelay",
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.autopep8",
+    "editor.rulers": [
+      100
+    ]
+  }
+}
