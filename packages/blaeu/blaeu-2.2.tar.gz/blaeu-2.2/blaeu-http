@@ -1,0 +1,274 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+"""Python code to start a RIPE Atlas UDM (User-Defined
+Measurement). This one is for running HTTP queries (with many
+limitations, because of RIPE Atlas rules, which are in place to
+prevent abuses. Only RIPE anchors, such as
+fr-par-as2486.anchors.atlas.ripe.net, may be targeted).
+
+You'll need an API key in ~/.atlas/auth.
+
+After launching the measurement, it downloads the results and analyzes
+them.
+
+Stéphane Bortzmeyer <stephane+frama@bortzmeyer.org>
+
+"""
+
+import json
+import time
+import os
+import sys
+import time
+import socket
+import copy
+import collections
+
+import Blaeu
+
+config = Blaeu.Config()
+# Default values
+config.method = "GET"
+config.path = "/"
+config.query = None
+config.https = False
+config.timing = False
+
+class Set():
+    def __init__(self):
+        self.failed = True
+        
+def usage(msg=None):
+    print("Usage: %s target-anchor-name ..." % sys.argv[0], file=sys.stderr)
+    config.usage(msg)
+    # (Poor) documentation for the queries in
+    # https://atlas.ripe.net/docs/apis/rest-api-reference/
+    # https://atlas.ripe.net/docs/apis/rest-api-manual/measurements/types/type_specific_attributes.html
+    # For the anchors:
+    # https://atlas.ripe.net/docs/howtos/anchors.html#ripe-atlas-anchor-services
+    print("""Also: 
+    --method=S : HTTP method to use (default is %s)
+    --path=S : Path in the URL (the anchors accept a number, which will be the size returned)
+    --query=S : Query string to use, in format key=value (ignored by the anchors, may be useful to disable a cache) 
+    --https : Uses HTTPS (default is plain HTTP)
+    --timing : Displays extra timing information
+    """ % (config.method), file=sys.stderr) # https://atlas.ripe.net/docs/howtos/anchors.html#http-s
+
+def specificParse(config, option, value):
+    result = True
+    if option == "--method":
+        if value.upper() not in ["GET", "HEAD", "POST"]:
+            usage("Unknown HTTP method")
+            return False
+        config.method = value.upper()
+    elif option == "--path":
+        config.path = value
+        if not config.path.startswith("/"):
+            config.path = "/%s" % config.path
+    elif option == "--query":
+        config.query = value
+    elif option == "--https":
+        config.https = True
+    elif option == "--timing":
+        config.timing = True
+    else:
+        result = False
+    return result
+    
+args, data = config.parse("", ["method=", "path=", "query=", "https", "timing"], specificParse,
+                    usage)
+
+targets = args
+if len(targets) == 0:
+    usage("No target found")
+    sys.exit(1)
+    
+if config.verbose and config.machine_readable:
+    usage("Specify verbose *or* machine-readable output")
+    sys.exit(1)
+if (config.display_probes or config.display_probe_asns) and config.machine_readable:
+    usage("Display probes *or* machine-readable output")
+    sys.exit(1)
+data["definitions"][0]["type"] = "http"
+del data["definitions"][0]["port"]
+del data["definitions"][0]["size"] 
+
+for target in targets:
+    data["definitions"][0]["target"] = target
+    data["definitions"][0]["method"] = config.method
+    data["definitions"][0]["path"] = config.path
+    if config.query is not None and config.query != "":
+        data["definitions"][0]["query_string"] = config.query
+    data["definitions"][0]["https"] = config.https
+    if config.timing:
+        data["definitions"][0]["extended_timing"] = True # We don't
+        # parse readtiming yet, so we don't use more_extended_timing.
+    data["definitions"][0]["description"] = ("HTTP %s to %s" % (config.method, target)) + data["definitions"][0]["description"]
+    if config.include is not None:
+        data["probes"][0]["tags"]["include"] = copy.copy(config.include)
+    else:
+        data["probes"][0]["tags"]["include"] = []
+    if config.ipv4:
+        data["probes"][0]["tags"]["include"].append("system-ipv4-works") 
+    else:
+        data["probes"][0]["tags"]["include"].append("system-ipv6-works")
+    if config.exclude is not None:
+        data["probes"][0]["tags"]["exclude"] = copy.copy(config.exclude)
+    if config.measurement_id is None:
+        if config.verbose:
+            print(data)
+        try:
+            measurement = Blaeu.Measurement(data)
+        except Blaeu.RequestSubmissionError as error:
+            print(Blaeu.format_error(error), file=sys.stderr)
+            sys.exit(1)        
+        if config.old_measurement is None:
+            config.old_measurement = measurement.id
+        if config.verbose:
+            print("Measurement #%s to %s uses %i probes" % (measurement.id, target,
+                                                        measurement.num_probes))
+        # Retrieve the results
+        rdata = measurement.results(wait=True, percentage_required=config.percentage_required)
+    else:
+        measurement = Blaeu.Measurement(data=None, id=config.measurement_id)
+        rdata = measurement.results(wait=False)
+        if config.verbose:
+            print("%i results from already-done measurement #%s" % (len(rdata), measurement.id))
+
+    if len(rdata) == 0:
+        print("Warning: zero results. Measurement not terminated? May be retry later with --measurement-ID=%s ?" % measurement.id, file=sys.stderr)
+    total_rtt = 0
+    num_rtt = 0
+    num_error = 0
+    num_wrongcode = 0
+    wrongcodes = []
+    num_timeout = 0
+    num_tests = 0
+    total_hsize = 0
+    total_bsize = 0
+    total_ttr = 0
+    total_ttc = 0
+    total_ttfb = 0
+    min_ttr = sys.float_info.max
+    min_ttc = sys.float_info.max
+    min_ttfb = sys.float_info.max
+    max_ttr = 0
+    max_ttc = 0
+    max_ttfb = 0
+    if not config.machine_readable and config.measurement_id is None:
+        print(("%s probes reported" % len(rdata)))
+    if config.display_probe_asns:
+        config.display_probes = True
+    if config.display_probes:
+        failed_probes = collections.defaultdict(Set)
+    for result in rdata: # https://atlas.ripe.net/docs/apis/result-format/ https://atlas.ripe.net/docs/apis/result-format/#version-5000
+        probe_ok = False
+        probe = result["prb_id"]
+        for test in result["result"]:
+            num_tests += 1
+            if "rt" in test:
+                total_rtt += int(test["rt"])
+                num_rtt += 1
+                total_hsize += int(test["hsize"])
+                total_bsize += int(test["bsize"]) # Note this is the
+                # size of the entire body, not just the "payload"
+                # member. So, it changes with the size of the text
+                # representation of the client's IP address.
+                if test["res"] == 200:
+                    probe_ok = True
+                else:
+                    num_wrongcode += 1
+                    wrongcodes.append(test["res"])
+                if config.timing:
+                    # TTR (Time To Resolve) is meaningless without
+                    # resolve-on-probe.
+                    if config.resolve_on_probe:
+                        total_ttr += float(test["ttr"])
+                        if test["ttr"] < min_ttr:
+                            min_ttr = test["ttr"] 
+                        if test["ttr"] > max_ttr:
+                            max_ttr = test["ttr"] 
+                    total_ttc += float(test["ttc"])
+                    if test["ttc"] < min_ttc:
+                        min_ttc = test["ttc"] 
+                    if test["ttc"] > max_ttc:
+                        max_ttc = test["ttc"] 
+                    total_ttfb += float(test["ttfb"])
+                    if test["ttfb"] < min_ttfb:
+                        min_ttfb = test["ttfb"] 
+                    if test["ttfb"] > max_ttfb:
+                        max_ttfb = test["ttfb"] 
+            elif "err" in test: 
+                num_error += 1
+            elif "x" in test: # Actually, HTTP tests never return
+                              # "x". We should parse the error message
+                              # above and spots the "timeout".
+                num_timeout += 1
+            else:
+                print(("Result has no field rt, or x or err"), file=sys.stderr)
+                sys.exit(1)
+        if not probe_ok:
+            if config.display_probes:
+                failed_probes[probe].failed = True
+            if config.display_probe_asns:
+                details = Blaeu.ProbeCache.cache_probe_id(config.cache_probes, probe) \
+                    if config.cache_probes else Blaeu.Probe(probe)
+                failed_probes[probe].asn = getattfb(details, "asn_v%i" % (4 if config.ipv4 else 6), None)
+    if not config.machine_readable:
+        print(("Test #%s done at %s" % (measurement.id, time.strftime("%Y-%m-%dT%H:%M:%SZ", measurement.time))))
+    if num_rtt == 0: 
+        if not config.machine_readable:
+            print("No successful test")
+    else:
+        if not config.machine_readable:
+            wrongstatus = ""
+            if num_wrongcode > 0:
+                wrongstatus = ", %i wrong HTTP status (%.1f %%) %s" % \
+                    (num_wrongcode, num_wrongcode*100.0/num_tests, wrongcodes)
+            print(("Tests: %i successful tests (%.1f %%), %i errors (%.1f %%)%s, %i timeouts (%.1f %%), average RTT: %i ms, average header size: %i bytes, average body size: %i bytes" % \
+                    (num_rtt, num_rtt*100.0/num_tests, 
+                    num_error, num_error*100.0/num_tests,
+                    wrongstatus,
+                    num_timeout, num_timeout*100.0/num_tests, total_rtt/num_rtt,
+                    total_hsize/num_rtt, total_bsize/num_rtt)))
+        # HTTP errors, for instance 404 by a stupid firewall in-between
+        # may seriously skew the mean sizes. Allow to exclude these
+        # errors? Display both with and without the erroneous responses?
+        # Display the median, not only the average?
+        if len(targets) > 1 and not config.machine_readable:
+            print("")    
+        if config.display_probes:
+            if config.display_probe_asns:
+                l = [[probe, failed_probes[probe].asn] for probe in failed_probes.keys()]
+            else:
+                l = failed_probes.keys()
+            all = list(l)
+            if all != []:
+                print(all)
+        if config.timing:
+            if not config.machine_readable:
+                resolve_text = ""
+                connect_text = "M"
+                if config.resolve_on_probe:
+                    resolve_text = "Mean time to resolve: %.3f ms" % (total_ttr/num_rtt)
+                    connect_text = ", m"
+                print("%s%sean time to connect: %.3f ms, mean time to first byte: %.3f ms" % \
+                      (resolve_text, connect_text, total_ttc/num_rtt, total_ttfb/num_rtt))
+                resolve_text = ""
+                connect_text = "M"
+                if config.resolve_on_probe:
+                    resolve_text = "Minimum time to resolve: %.3f ms, maximum time to resolve: %.3f ms " % \
+                        (min_ttr, max_ttr)
+                    connect_text = ", m"
+                print("%s%sinimum time to connect: %.3f ms, maximum time to connect: %.3f ms, Minimum time to first byte: %.3f ms, maximum time to first byte: %.3f ms" % \
+                      (resolve_text, connect_text, min_ttc, max_ttc, min_ttfb, max_ttfb))
+        if config.machine_readable:
+            if num_rtt != 0:
+                percent_rtt = total_rtt/num_rtt
+            else:
+                percent_rtt = 0
+            print(",".join([target, str(measurement.id), "%s/%s" % (len(rdata),measurement.num_probes), \
+                            time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()), "%i" % num_rtt, \
+                            "%.1f" % (num_rtt*100.0/num_tests), "%i" % num_error, "%.1f" % (num_error*100.0/num_tests), \
+                            "%i" % num_timeout, "%.1f" % (num_timeout*100.0/num_tests), "%i" % (percent_rtt)]))

@@ -1,0 +1,183 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+"""Python code to start a RIPE Atlas UDM (User-Defined
+Measurement). This one is to test NTP (time) servers.
+
+You'll need an API key in ~/.atlas/auth.
+
+After launching the measurement, it downloads the results and
+analyzes. By default, it displays only version, mode and stratum, but
+you can request a full display.
+
+Stéphane Bortzmeyer <stephane+frama@bortzmeyer.org>
+
+"""
+
+import json
+import time
+import os
+import string
+import sys
+import time
+import socket
+import collections
+import copy
+
+import Blaeu
+from Blaeu import Host_Type
+
+config = Blaeu.Config()
+# Default values
+config.only_stratum = False
+config.display_all = False
+
+class Set():
+    def __init__(self):
+        self.total = 0
+
+def usage(msg=None):
+    print("Usage: %s target-name-or-IP" % sys.argv[0], file=sys.stderr)
+    config.usage(msg)
+    print("""Also:
+    --only-stratum : displays only the stratum
+    --display-all : displays all the details""",
+          file=sys.stderr)
+ 
+def specificParse(config, option, value):
+    result = True
+    if option == "--only-stratum":
+        config.only_stratum = True
+    elif option == "--display-all":
+        config.display_all = True
+    else:
+        result = False
+    return result
+
+(args, data) = config.parse("", ["only-stratum", "display-all"],
+                            specificParse, usage)
+
+if config.only_stratum and config.display_all:
+    usage("--only-stratum and --display-all are not compatible")
+    sys.exit(1)
+if len(args) != 1:
+    usage("Not the good number of arguments")
+    sys.exit(1)
+target = args[0]
+
+if config.measurement_id is None:
+    data["definitions"][0]["target"] = target
+    data["definitions"][0]["type"] = "ntp"
+    data["definitions"][0]["description"] = "NTP measurement of %s" % target
+
+    target_type = Blaeu.host_type(target)
+    if target_type == Host_Type.IPv6:
+        config.ipv4 = False
+        af = 6
+        if config.include is not None:
+            data["probes"][0]["tags"]["include"] = copy.copy(config.include)
+            data["probes"][0]["tags"]["include"].append("system-ipv6-works")
+        else:
+            data["probes"][0]["tags"]["include"] = ["system-ipv6-works",]
+    elif target_type == Host_Type.IPv4:
+        config.ipv4 = True
+        af = 4
+        if config.include is not None:
+            data["probes"][0]["tags"]["include"] = copy.copy(config.include)
+            data["probes"][0]["tags"]["include"].append("system-ipv4-works")
+        else:
+            data["probes"][0]["tags"]["include"] = ["system-ipv4-works",]
+    else:
+        # Hostname
+        if config.ipv4:
+            af = 4
+        else:
+            af = 6
+    data["definitions"][0]['af'] = af
+
+    if config.verbose:
+        print(data)
+
+    try:
+        measurement = Blaeu.Measurement(data)
+    except Blaeu.RequestSubmissionError as error:
+        print(Blaeu.format_error(error), file=sys.stderr)
+        sys.exit(1)        
+    if config.verbose:
+            print("Measurement #%s to %s uses %i probes" % (measurement.id, target,
+                                                        measurement.num_probes))
+    rdata = measurement.results(wait=True, percentage_required=config.percentage_required)
+else:
+    measurement = Blaeu.Measurement(data=None, id=config.measurement_id)
+    rdata = measurement.results(wait=False)
+
+sets = collections.defaultdict(Set)
+if config.display_probe_asns:
+    config.display_probes = True
+if config.display_probes:
+    probes_sets = collections.defaultdict(Set)
+print(("%s probes reported" % len(rdata)))
+min_offset = 0
+max_offset = sys.float_info.max
+total_offset = 0
+min_rtt = 0
+max_rtt = sys.float_info.max
+total_rtt = 0
+successes = 0
+# Documentation at https://atlas.ripe.net/docs/apis/result-format/#version-5000
+for result in rdata:
+        if config.display_probes:
+            probe_id = result["prb_id"]
+        if config.display_probe_asns:
+            details = Blaeu.ProbeCache.cache_probe_id(config.cache_probes, probe_id) \
+                if config.cache_probes else Blaeu.Probe(probe_id)
+            asn = getattr(details, "asn_v%i" % (4 if config.ipv4 else 6), None)
+        if 'stratum' in result:
+            offset = 0
+            num = 0
+            for m in result['result']:
+                if 'offset' in m:
+                    successes += 1
+                    total_offset += float(m['offset'])
+                    total_rtt += float(m['rtt'])
+            if config.only_stratum:
+                value = "Stratum %s" % result['stratum']
+            elif config.display_all:
+                value = "Version %s, Mode %s, Stratum %s, Precision %s s, Root delay %s s, Root dispersion %s s" % \
+                    (result['version'], result['mode'], result['stratum'], result['precision'], \
+                     result['root-delay'], result['root-dispersion'])
+            else:
+                value = "Version %s, Mode %s, Stratum %s" % (result['version'], result['mode'], result['stratum'])
+        else:
+            if 'err' in result:
+                error = result['err']
+            elif 'alert' in result:
+                error = result['alert']
+            else:
+                error = "UNKNOWN ERROR (timeout?)"
+            value = "FAILED TO GET A RESULT: %s" % error
+        sets[value].total += 1
+        if config.display_probes:
+            if config.display_probe_asns:
+                info = [probe_id, asn]
+            else:
+                info = probe_id
+            if value in probes_sets:
+                probes_sets[value].append(info)
+            else:
+                probes_sets[value] = [info,]
+sets_data = sorted(sets, key=lambda s: sets[s].total, reverse=False)
+for myset in sets_data:
+    detail = ""
+    if config.display_probes:
+        detail = "(probes %s)" % probes_sets[myset]
+    print("[%s] : %i occurrences %s" % (myset, sets[myset].total, detail))
+
+if successes > 0:
+    means = "Mean time offset: %.6f s, mean RTT: %6f s" % \
+        (total_offset/successes, total_rtt/successes)
+else:
+    means = ""
+print("Test #%s done at %s. %s" % \
+       (measurement.id,
+        time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()), means))

@@ -1,0 +1,11 @@
+Some useful tags to use with --include and --exclude:
+
+Stability tags (documented in
+<https://labs.ripe.net/author/chris_amin/new-ripe-atlas-probe-stability-system-tags/>):
+system-ipv6-stable-1d, system-ipv6-stable-30d, system-ipv6-stable-90d (and the equivalent
+for IPv4).
+
+"nat" for probes behind a network address translator. It is an user tag so often forgotten. Better to use system tags system-ipv4-rfc1918 and system-ipv6-ula.
+
+TODO: using the list of all probes, list all the tags and see their number.
+
