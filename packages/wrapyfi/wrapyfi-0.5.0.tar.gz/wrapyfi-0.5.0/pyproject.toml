@@ -1,0 +1,110 @@
+[project]
+name = "wrapyfi"
+version = "0.5.0"
+description = "Wrapyfi is a wrapper for simplifying Middleware communication"
+readme = "README.md"
+authors = [
+    { name = "Fares Abawi", email = "f.abawi@outlook.com" },
+]
+maintainers = [
+    { name = "Fares Abawi", email = "f.abawi@outlook.com" },
+]
+requires-python = ">=3.6"
+dependencies = [
+    "pyyaml>=5.1.1",
+    "setuptools>=59.6.0",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Information Technology",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Scientific/Engineering :: Human Machine Interfaces",
+    "Topic :: System :: Distributed Computing",
+    "Operating System :: Microsoft :: Windows :: Windows 10",
+    "Operating System :: Microsoft :: Windows :: Windows 11",
+]
+
+[project.urls]
+Homepage = "https://github.com/fabawi/wrapyfi/blob/main/"
+Documentation = "https://wrapyfi.readthedocs.io/en/latest/"
+Source = "https://github.com/fabawi/wrapyfi/"
+Tracker = "https://github.com/fabawi/wrapyfi/issues"
+
+[project.optional-dependencies]
+docs = [
+    "myst_parser",
+    "sphinx",
+    "sphinx_rtd_theme",
+]
+pyzmq = [
+    "pyzmq>=19.0.0",
+]
+numpy = [
+    "numpy>=1.19.2",
+]
+websocket = [
+    "python-socketio>=5.0.4",
+    "python_socketio>=5.0.4",
+]
+zenoh = [
+    "eclipse-zenoh>=1.0.0",
+]
+mqtt = [
+    "paho-mqtt>=2.0",
+]
+headless = [
+    "wrapyfi[numpy]",
+    "wrapyfi[pyzmq]",
+    "opencv-python-headless>=4.2.0",
+]
+headless_websocket = [
+    "wrapyfi[numpy]",
+    "wrapyfi[websocket]",
+    "opencv-python-headless>=4.2.0",
+]
+headless_zenoh = [
+    "wrapyfi[numpy]",
+    "wrapyfi[zenoh]",
+    "opencv-python-headless>=4.2.0",
+]
+headless_mqtt = [
+    "wrapyfi[numpy]",
+    "wrapyfi[mqtt]",
+    "opencv-python-headless>=4.2.0",
+]
+complete = [
+    "wrapyfi[numpy]",
+    "sounddevice",
+    "soundfile",
+    "Pillow",
+    "pandas",
+    "wrapyfi[pyzmq]",
+    "wrapyfi[websocket]",
+    "wrapyfi[zenoh]",
+    "wrapyfi[mqtt]",
+    "wrapyfi[docs]",
+    "opencv-contrib-python>=4.2.0",
+]
+all = [
+    "wrapyfi[numpy]",
+    "wrapyfi[pyzmq]",
+    "opencv-contrib-python>=4.2.0",
+]
+
+[build-system]
+requires = [
+    "pdm-backend",
+]
+build-backend = "pdm.backend"
+
+[tool]
