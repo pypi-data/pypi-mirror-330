@@ -1,0 +1,8 @@
+Metadata-Version: 2.2
+Name: vaspc
+Version: 0.1.2
+Summary: A package to run multiple VASP-related Python scripts
+Author-email: Your Name <your.email@example.com>
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Requires-Dist: ase
