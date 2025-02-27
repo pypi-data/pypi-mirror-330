@@ -1,0 +1,10 @@
+
+[dev]
+pytest
+pytest-coverage
+hypothesis
+mypy
+ruff>=0.2.1
+
+[doc]
+sphinx
