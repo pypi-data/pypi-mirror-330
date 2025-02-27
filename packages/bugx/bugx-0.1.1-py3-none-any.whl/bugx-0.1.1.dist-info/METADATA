@@ -1,0 +1,13 @@
+Metadata-Version: 2.4
+Name: bugx
+Version: 0.1.1
+Summary: Bug Report extractor
+Author-email: Govardhan Ummadisetty <vardhank9@gmail.com>
+Requires-Python: >=3.12
+Requires-Dist: hatch>=1.14.0
+Requires-Dist: inquirerpy>=0.3.4
+Requires-Dist: prettytable>=3.14.0
+Requires-Dist: typer>=0.15.1
+Description-Content-Type: text/markdown
+
+#### Bugreport Extractor
