@@ -1,0 +1,2 @@
+[console_scripts]
+server = solace_ai_connector_web.backend.server:main
