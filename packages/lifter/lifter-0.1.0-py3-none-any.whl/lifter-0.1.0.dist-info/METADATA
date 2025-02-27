@@ -1,0 +1,7 @@
+Metadata-Version: 2.2
+Name: lifter
+Version: 0.1.0
+Requires-Python: >=3.11
+Requires-Dist: psycopg2-binary
+Dynamic: requires-dist
+Dynamic: requires-python
