@@ -1,0 +1,61 @@
+Metadata-Version: 2.1
+Name: pySciTools
+Version: 0.1.2
+Summary: A simple example library
+Home-page: https://github.com/PeterouZh
+Author: Peng Zhou
+Author-email: zhoupeng23@nuaa.edu.cn
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy
+Requires-Dist: matplotlib
+Requires-Dist: tyro
+Requires-Dist: easydict
+
+# pySciTools
+
+A collection of useful tools for scientific computing.
+
+## Installation
+
+You can install the library via pip:
+
+```bash
+pip install pySciTools
+```
+
+## Usage
+
+```python
+from pySciTools import func1, func2
+
+data = [1, 2, 3]
+result = func1(data)
+print(result)
+
+sum_result = func2(3, 4)
+print(sum_result)
+
+
+```
+
+# Upload to PyPI
+
+```bash
+# Install packaging tools
+pip install twine setuptools wheel
+
+# Build the package
+# Modify the version in setup.py
+rm -rf dist build *egg-info
+python setup.py sdist bdist_wheel
+
+# Upload the package
+# Set up $HOME/.pypirc and create a token
+twine upload dist/*
+
+
+```
