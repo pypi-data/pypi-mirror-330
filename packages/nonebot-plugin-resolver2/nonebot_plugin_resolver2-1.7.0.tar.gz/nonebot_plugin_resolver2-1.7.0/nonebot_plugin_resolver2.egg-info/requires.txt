@@ -1,0 +1,9 @@
+aiohttp<4.0.0,>=3.10.0
+tqdm<5.0.0,>=4.66.6
+aiofiles>=24.1.0
+yt-dlp>=2025.1.15
+nonebot2<3.0.0,>=2.4.0
+nonebot-adapter-onebot<3.0.0,>=2.4.6
+nonebot-plugin-localstore<1.0.0,>=0.7.0
+nonebot-plugin-apscheduler<1.0.0,>=0.5.0
+bilibili-api-python<17.0.0,>=16.3.0
