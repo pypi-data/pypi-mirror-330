@@ -1,0 +1,115 @@
+##############################################
+# Settings for Vivado
+##############################################
+
+# Group processes
+process_group: True
+
+# Default metrics file for this tool
+default_metrics_file: "$eda_tools_path/vivado/metrics.yml"
+
+unix:
+  # Optional constants (anchors) that can be used in the file
+  constants:
+    - &vivado_init_unix export LC_ALL=C; unset LANGUAGE; # Prevent known vivado bugs
+    - &vivado_unix vivado
+    - &vivado_opt_unix -mode tcl -notrace
+    - &source_init_script_unix -source $script_path/init_script.tcl
+    - &source_analyze_script_unix -source $script_path/analyze_script.tcl
+    - &source_synth_script_unix -source $script_path/synth_script.tcl
+    - &source_synth_freq_script_unix -source $script_path/find_fmax.tcl
+    - &source_exit_script_unix -source $script_path/exit.tcl
+    
+  # Command to check if the tool is installed
+  tool_test_command: 
+    - *vivado_unix
+    - -version
+
+  # Command for fmax synthesis
+  fmax_synthesis_command: 
+    - *vivado_init_unix
+    - *vivado_unix
+    - *vivado_opt_unix
+    - *source_init_script_unix
+    - *source_analyze_script_unix
+    - *source_synth_freq_script_unix
+    - *source_exit_script_unix
+
+  # Command for custom frequency synthesis
+  custom_freq_synthesis_command: 
+    - *vivado_init_unix
+    - *vivado_unix
+    - *vivado_opt_unix
+    - *source_init_script_unix
+    - *source_analyze_script_unix
+    - *source_synth_script_unix
+    - *source_exit_script_unix
+
+windows:
+  constants:
+    - &vivado_windows vivado.bat
+    - &vivado_opt_windows -mode tcl -notrace
+    - &source_init_script_windows -source $script_path\init_script.tcl
+    - &source_analyze_script_windows -source $script_path\analyze_script.tcl
+    - &source_synth_script_windows -source $script_path\synth_script.tcl
+    - &source_synth_freq_script_windows -source $script_path\find_fmax.tcl
+    - &source_exit_script_windows -source $script_path\exit.tcl
+
+  tool_test_command: 
+    - *vivado_windows
+    - -mode tcl -source 
+    - $eda_tools_path\_common\exit.tcl
+
+  fmax_synthesis_command:
+    - *vivado_windows
+    - *vivado_opt_windows
+    - *source_init_script_windows
+    - *source_analyze_script_windows
+    - *source_synth_freq_script_windows
+    - *source_exit_script_windows
+
+  custom_freq_synthesis_command: 
+    - *vivado_windows
+    - *vivado_opt_windows
+    - *source_init_script_windows
+    - *source_analyze_script_windows
+    - *source_synth_script_windows
+    - *source_exit_script_windows
+
+# Log formatting
+format:
+
+  # Format the whole log line
+  logs:
+    error:         ['<error>', 'ERROR:']
+    crit_warning:  ['<crit_warning>', 'CRITICAL WARNING:']
+    warning:       ['<warning>', 'WARNING:']
+    info:          ['<note>', 'INFO:']
+    trace:         ['<trace>', 'Command:']
+  
+  # Format tags (replaced by the corresponding format escape code)
+  tags:
+    bold:          ['<bold>']
+    end:           ['<end>']
+    black:         ['<black>']
+    red:           ['<red>']
+    green:         ['<green>']
+    yellow:        ['<yellow>']
+    blue:          ['<blue>']
+    magenta:       ['<magenta>']
+    cyan:          ['<cyan>']
+    grey:          ['<grey>']
+    white:         ['<lgrey>']
+    light_red:     ['<lred>']
+    light_green:   ['<lgreen>']
+    light_yellow:  ['<lyellow>']
+    light_blue:    ['<lblue>']
+    light_magenta: ['<lmagenta>']
+    light_cyan:    ['<lcyan>']
+    light_white:   ['<white>']
+  
+  # Replace sequences (regular expressions)
+  replace:
+    - "(Slack \\(VIOLATED\\))": "<red>$1<end>"
+    - "(Slack \\(MET\\))": "<green>$1<end>"
+    - "(.* completed successfully)": "<green>$1<end>"

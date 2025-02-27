@@ -1,0 +1,28 @@
+##############################################
+# Settings for OpenLane
+##############################################
+
+# Group processes
+process_group: False
+report_path: runs/odatix/reports
+
+# Default metrics file for this tool
+default_metrics_file: $eda_tools_path/openlane/metrics.yml
+
+unix:
+
+  # Command to check if the tool is installed
+  tool_test_command: 
+    - make -f $eda_tools_path/openlane/makefile.mk test_tool
+    - TOOL_INSTALL_PATH=$tool_install_path
+
+  # Command for fmax synthesis
+  fmax_synthesis_command: 
+    - make -f $eda_tools_path/openlane/makefile.mk synth_fmax
+    - EDA_TOOLS_PATH=$eda_tools_path
+    - TOOL_INSTALL_PATH=$tool_install_path
+    - WORK_DIR=$work_path
+    - REPORT_DIR=$work_path/runs/odatix/reports
+    - SCRIPT_DIR=$script_path
+    - LOG_DIR=$log_path
+    - LIB_NAME=$lib_name
