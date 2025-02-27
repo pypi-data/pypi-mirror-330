@@ -1,0 +1,127 @@
+Metadata-Version: 2.4
+Name: cross-bones
+Version: 1.0.0
+Summary: Cross-match By Offsetting Neighbouring Extracted Sources
+Project-URL: Homepage, https://github.com/flint-crew/cross-bones
+Project-URL: Bug Tracker, https://github.com/flint-crew/cross-bones/issues
+Project-URL: Discussions, https://github.com/flint-crew/cross-bones/discussions
+Project-URL: Changelog, https://github.com/flint-crew/cross-bones/releases
+Author: Tim Galvin
+License-File: LICENSE
+Classifier: Development Status :: 1 - Planning
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Topic :: Scientific/Engineering
+Classifier: Typing :: Typed
+Requires-Python: >=3.9
+Requires-Dist: astropy
+Requires-Dist: matplotlib
+Requires-Dist: numpy>=1.22.4
+Requires-Dist: pandas
+Provides-Extra: dev
+Requires-Dist: mypy; extra == 'dev'
+Requires-Dist: nox; extra == 'dev'
+Requires-Dist: pre-commit; extra == 'dev'
+Requires-Dist: pytest-cov>=3; extra == 'dev'
+Requires-Dist: pytest>=6; extra == 'dev'
+Requires-Dist: ruff; extra == 'dev'
+Provides-Extra: docs
+Requires-Dist: furo>=2023.08.17; extra == 'docs'
+Requires-Dist: myst-parser>=0.13; extra == 'docs'
+Requires-Dist: sphinx-autoapi; extra == 'docs'
+Requires-Dist: sphinx-autodoc-typehints; extra == 'docs'
+Requires-Dist: sphinx-copybutton; extra == 'docs'
+Requires-Dist: sphinx>=7.0; extra == 'docs'
+Provides-Extra: test
+Requires-Dist: pytest-cov>=3; extra == 'test'
+Requires-Dist: pytest>=6; extra == 'test'
+Description-Content-Type: text/markdown
+
+# Cross-BONES 🏴‍☠️
+
+[![Actions Status][actions-badge]][actions-link]
+[![Documentation Status][rtd-badge]][rtd-link]
+
+[![PyPI version][pypi-version]][pypi-link]
+[![PyPI platforms][pypi-platforms]][pypi-link]
+
+<!-- SPHINX-START -->
+
+<!-- prettier-ignore-start -->
+[actions-badge]:            https://github.com/flint-crew/cross-bones/workflows/CI/badge.svg
+[actions-link]:             https://github.com/flint-crew/cross-bones/actions
+[pypi-link]:                https://pypi.org/project/cross-bones/
+[pypi-platforms]:           https://img.shields.io/pypi/pyversions/cross-bones
+[pypi-version]:             https://img.shields.io/pypi/v/cross-bones
+[rtd-badge]:                https://readthedocs.org/projects/cross-bones/badge/?version=latest
+[rtd-link]:                 https://cross-bones.readthedocs.io/en/latest/?badge=latest
+
+<!-- prettier-ignore-end -->
+
+🏴‍☠️ Cross-match By Offsetting Neighbouring Extracted Sources 🏴‍☠️
+
+Attempt to align catalogues of radio sources onto a self-consistent grid. It
+implements a fairly simple iterative procedure that aims to reduce separations
+between sources in common between pairs of catalogues.
+
+## Installation
+
+All dependencies can be installed via `pip`. We strongly recommend using [uv](https://docs.astral.sh/uv/).
+
+
+### Install from GitHub (latest)
+
+```bash
+pip install git+https://github.com/flint-crew/cross-bones
+```
+
+### Install from PyPI release (stable)
+
+```bash
+pip install cross-bones
+```
+
+## Usage
+
+### Command-line
+
+```bash
+$ cross_bones -h
+# usage: cross_bones [-h] [-o OUTPUT_PREFIX] [--passes PASSES] paths [paths ...]
+
+# Looking at per-beam shifts
+
+# positional arguments:
+#   paths                 The beam wise catalogues to examine
+
+# options:
+#   -h, --help            show this help message and exit
+#   -o OUTPUT_PREFIX, --output-prefix OUTPUT_PREFIX
+#                         The prefix to base outputs onto
+#   --passes PASSES       Number of passes over the data should the iterative method attempt
+```
+
+## Contributing
+
+Contributions are welcome! Please open an issue to discuss ahead of opening a pull request.
+
+### Dev tools
+
+The dev tooling can be installed by using the `dev` option flags e.g.
+
+```bash
+git clone https://github.com/flint-crew/cross-bones.git
+cd cross-bones
+pip install -e .[dev]
+pre-commit install
+```
