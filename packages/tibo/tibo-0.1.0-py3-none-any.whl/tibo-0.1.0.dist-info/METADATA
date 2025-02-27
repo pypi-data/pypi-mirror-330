@@ -1,0 +1,33 @@
+Metadata-Version: 2.2
+Name: tibo
+Version: 0.1.0
+Summary: CLI tool for codebase indexingand natural language retrieval.
+Home-page: https://github.com/Thibault-Knobloch/codebase-intelligence
+Author: Thibault Knobloch
+Author-email: thibaultknobloch@yahoo.fr
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: POSIX
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Intended Audience :: Developers
+Requires-Python: >=3.9
+Description-Content-Type: text/plain
+Requires-Dist: click
+Requires-Dist: graphviz
+Requires-Dist: tree_sitter
+Requires-Dist: requests
+Requires-Dist: numpy
+Requires-Dist: sentence_transformers
+Requires-Dist: faiss-cpu
+Requires-Dist: python-dotenv
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+A command-line tool for indexing codebases, generating call graphs, and chunking code into a vector database. It empowers users to query their code using natural language, retrieving relevant files, functions, and code snippets with ease.
