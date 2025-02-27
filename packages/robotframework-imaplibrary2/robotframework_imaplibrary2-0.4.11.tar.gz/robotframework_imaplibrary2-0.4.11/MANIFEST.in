@@ -1,0 +1,3 @@
+include *.rst LICENSE README.md
+recursive-include doc *.html
+recursive-include src *.py
