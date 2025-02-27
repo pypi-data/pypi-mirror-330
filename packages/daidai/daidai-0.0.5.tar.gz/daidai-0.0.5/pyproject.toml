@@ -1,0 +1,125 @@
+[build-system]
+requires = ["hatchling>=1.18.0", "hatch-vcs>=0.3.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "daidai"
+dynamic = ["version"]
+description = "Modern dependency injection and asset management for MLOps workflows with intelligent caching and minimal boilerplate"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+    {name = "Antoine Jeannot", email = "antoine.jeannot1002+github@gmail.com"},
+]
+dependencies = []
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Software Development :: Libraries :: Application Frameworks",
+    "Typing :: Typed",
+    "Natural Language :: English",
+]
+keywords = [
+    "mlops",
+    "dependency-injection",
+    "caching",
+    "machine-learning",
+    "asset-management",
+    "functional-programming",
+    "resource-management"
+]
+license = {text = "MIT"}
+
+[project.urls]
+"Homepage" = "https://github.com/antoinejeannot/daidai"
+"Bug Tracker" = "https://github.com/antoinejeannot/daidai/issues"
+"Documentation" = "https://antoinejeannot.github.io/daidai/"
+"Source" = "https://github.com/antoinejeannot/daidai"
+
+
+[project.optional-dependencies]
+files = [
+    "fsspec>=2025.2.0",
+]
+memory = [
+    "pympler>=1.1",
+]
+all = ["daidai[files, memory]"]
+
+publish = [
+    "build>=1.2.2.post1",
+    "twine>=6.1.0",
+]
+dev = [
+    "pre-commit>=4.0.1",
+    "ruff==0.9.7",
+    "pytest>=8.3.4",
+    "bandit[toml]>=1.8.3",
+    "daidai[files, memory]",
+    "mkdocs-material>=9.6.5",
+]
+
+[tool.hatch.version]
+source = "vcs"
+
+[tool.hatch.build.targets.wheel]
+packages = ["daidai"]
+
+[tool.hatch.build.targets.wheel.sources]
+"daidai" = "daidai"
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "daidai",
+    "README.md",
+    "LICENSE",
+]
+
+[tool.hatch.build.force-include]
+"daidai/py.typed" = "daidai/py.typed"
+
+[tool.ruff]
+line-length = 88
+indent-width = 4
+
+[tool.ruff.lint]
+select = [
+    "E",   # pycodestyle errors
+    "F",   # pyflakes
+    "B",   # flake8-bugbear
+    "I",   # isort
+    "N",   # pep8-naming
+    "UP",  # pyupgrade
+    "RUF", # ruff-specific rules
+    "PT",  # pytest style
+    "SIM", # simplify
+    "TCH", # type-checking
+    "ARG", # unused arguments
+    "C4",  # comprehensions
+]
+
+ignore = [
+    "E501",    # Line too long (handled by formatter)
+    "B008",    # Do not perform function call in argument defaults
+    "C901",    # Too complex
+    "N999",    # Invalid module name
+]
+
+[tool.ruff.lint.isort]
+known-first-party = ["daidai"]
+
+[tool.pytest.ini_options]
+addopts = "-s -vv --durations=0"
+
+[tool.bandit]
+exclude_dirs = ["tests"]
