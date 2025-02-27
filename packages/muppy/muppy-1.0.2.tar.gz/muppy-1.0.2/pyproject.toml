@@ -1,0 +1,32 @@
+[build-system]
+requires = [ "hatchling" ]
+build-backend = "hatchling.build"
+
+[project]
+name = "muppy"
+version = "1.0.2"
+authors = [ { name = "Ellie Viesná", email="snowboard_refinery@proton.me" } ]
+description = "Markup Preprocessor for Python"
+keywords = [ "markup", "preprocessor", "xml", "tex", "c", "shell" ]
+readme = "README.md"
+license = { text = "MIT License" }
+requires-python = ">= 3.12"
+dependencies = [
+	"argparse"
+]
+classifiers = [
+	"Programming Language :: Python :: 3.12",
+	"License :: OSI Approved :: MIT License",
+	"Operating System :: OS Independent",
+	"Natural Language :: English",
+	"Development Status :: 4 - Beta",
+	"Environment :: Console"
+]
+
+[project.scripts]
+muppy = "muppy.main:main"
+
+[project.urls]
+"Repository" = "https://codeberg.org/screwery/muppy"
+"Issues" = "https://codeberg.org/screwery/muppy/issues"
+"Changelog" = "https://codeberg.org/screwery/muppy/src/branch/main/CHANGELOG.md"
