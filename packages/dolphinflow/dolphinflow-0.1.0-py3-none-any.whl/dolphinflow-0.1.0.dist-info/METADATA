@@ -1,0 +1,490 @@
+Metadata-Version: 2.2
+Name: dolphinflow
+Version: 0.1.0
+Summary: DolphinFlow optimizer for PyTorch
+Author-email: Eric Hartford <ehartford@gmail.com>
+License:                                  Apache License
+                                   Version 2.0, January 2004
+                                http://www.apache.org/licenses/
+        
+           TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
+        
+           1. Definitions.
+        
+              "License" shall mean the terms and conditions for use, reproduction,
+              and distribution as defined by Sections 1 through 9 of this document.
+        
+              "Licensor" shall mean the copyright owner or entity authorized by
+              the copyright owner that is granting the License.
+        
+              "Legal Entity" shall mean the union of the acting entity and all
+              other entities that control, are controlled by, or are under common
+              control with that entity. For the purposes of this definition,
+              "control" means (i) the power, direct or indirect, to cause the
+              direction or management of such entity, whether by contract or
+              otherwise, or (ii) ownership of fifty percent (50%) or more of the
+              outstanding shares, or (iii) beneficial ownership of such entity.
+        
+              "You" (or "Your") shall mean an individual or Legal Entity
+              exercising permissions granted by this License.
+        
+              "Source" form shall mean the preferred form for making modifications,
+              including but not limited to software source code, documentation
+              source, and configuration files.
+        
+              "Object" form shall mean any form resulting from mechanical
+              transformation or translation of a Source form, including but
+              not limited to compiled object code, generated documentation,
+              and conversions to other media types.
+        
+              "Work" shall mean the work of authorship, whether in Source or
+              Object form, made available under the License, as indicated by a
+              copyright notice that is included in or attached to the work
+              (an example is provided in the Appendix below).
+        
+              "Derivative Works" shall mean any work, whether in Source or Object
+              form, that is based on (or derived from) the Work and for which the
+              editorial revisions, annotations, elaborations, or other modifications
+              represent, as a whole, an original work of authorship. For the purposes
+              of this License, Derivative Works shall not include works that remain
+              separable from, or merely link (or bind by name) to the interfaces of,
+              the Work and Derivative Works thereof.
+        
+              "Contribution" shall mean any work of authorship, including
+              the original version of the Work and any modifications or additions
+              to that Work or Derivative Works thereof, that is intentionally
+              submitted to Licensor for inclusion in the Work by the copyright owner
+              or by an individual or Legal Entity authorized to submit on behalf of
+              the copyright owner. For the purposes of this definition, "submitted"
+              means any form of electronic, verbal, or written communication sent
+              to the Licensor or its representatives, including but not limited to
+              communication on electronic mailing lists, source code control systems,
+              and issue tracking systems that are managed by, or on behalf of, the
+              Licensor for the purpose of discussing and improving the Work, but
+              excluding communication that is conspicuously marked or otherwise
+              designated in writing by the copyright owner as "Not a Contribution."
+        
+              "Contributor" shall mean Licensor and any individual or Legal Entity
+              on behalf of whom a Contribution has been received by Licensor and
+              subsequently incorporated within the Work.
+        
+           2. Grant of Copyright License. Subject to the terms and conditions of
+              this License, each Contributor hereby grants to You a perpetual,
+              worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+              copyright license to reproduce, prepare Derivative Works of,
+              publicly display, publicly perform, sublicense, and distribute the
+              Work and such Derivative Works in Source or Object form.
+        
+           3. Grant of Patent License. Subject to the terms and conditions of
+              this License, each Contributor hereby grants to You a perpetual,
+              worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+              (except as stated in this section) patent license to make, have made,
+              use, offer to sell, sell, import, and otherwise transfer the Work,
+              where such license applies only to those patent claims licensable
+              by such Contributor that are necessarily infringed by their
+              Contribution(s) alone or by combination of their Contribution(s)
+              with the Work to which such Contribution(s) was submitted. If You
+              institute patent litigation against any entity (including a
+              cross-claim or counterclaim in a lawsuit) alleging that the Work
+              or a Contribution incorporated within the Work constitutes direct
+              or contributory patent infringement, then any patent licenses
+              granted to You under this License for that Work shall terminate
+              as of the date such litigation is filed.
+        
+           4. Redistribution. You may reproduce and distribute copies of the
+              Work or Derivative Works thereof in any medium, with or without
+              modifications, and in Source or Object form, provided that You
+              meet the following conditions:
+        
+              (a) You must give any other recipients of the Work or
+                  Derivative Works a copy of this License; and
+        
+              (b) You must cause any modified files to carry prominent notices
+                  stating that You changed the files; and
+        
+              (c) You must retain, in the Source form of any Derivative Works
+                  that You distribute, all copyright, patent, trademark, and
+                  attribution notices from the Source form of the Work,
+                  excluding those notices that do not pertain to any part of
+                  the Derivative Works; and
+        
+              (d) If the Work includes a "NOTICE" text file as part of its
+                  distribution, then any Derivative Works that You distribute must
+                  include a readable copy of the attribution notices contained
+                  within such NOTICE file, excluding those notices that do not
+                  pertain to any part of the Derivative Works, in at least one
+                  of the following places: within a NOTICE text file distributed
+                  as part of the Derivative Works; within the Source form or
+                  documentation, if provided along with the Derivative Works; or,
+                  within a display generated by the Derivative Works, if and
+                  wherever such third-party notices normally appear. The contents
+                  of the NOTICE file are for informational purposes only and
+                  do not modify the License. You may add Your own attribution
+                  notices within Derivative Works that You distribute, alongside
+                  or as an addendum to the NOTICE text from the Work, provided
+                  that such additional attribution notices cannot be construed
+                  as modifying the License.
+        
+              You may add Your own copyright statement to Your modifications and
+              may provide additional or different license terms and conditions
+              for use, reproduction, or distribution of Your modifications, or
+              for any such Derivative Works as a whole, provided Your use,
+              reproduction, and distribution of the Work otherwise complies with
+              the conditions stated in this License.
+        
+           5. Submission of Contributions. Unless You explicitly state otherwise,
+              any Contribution intentionally submitted for inclusion in the Work
+              by You to the Licensor shall be under the terms and conditions of
+              this License, without any additional terms or conditions.
+              Notwithstanding the above, nothing herein shall supersede or modify
+              the terms of any separate license agreement you may have executed
+              with Licensor regarding such Contributions.
+        
+           6. Trademarks. This License does not grant permission to use the trade
+              names, trademarks, service marks, or product names of the Licensor,
+              except as required for reasonable and customary use in describing the
+              origin of the Work and reproducing the content of the NOTICE file.
+        
+           7. Disclaimer of Warranty. Unless required by applicable law or
+              agreed to in writing, Licensor provides the Work (and each
+              Contributor provides its Contributions) on an "AS IS" BASIS,
+              WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+              implied, including, without limitation, any warranties or conditions
+              of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A
+              PARTICULAR PURPOSE. You are solely responsible for determining the
+              appropriateness of using or redistributing the Work and assume any
+              risks associated with Your exercise of permissions under this License.
+        
+           8. Limitation of Liability. In no event and under no legal theory,
+              whether in tort (including negligence), contract, or otherwise,
+              unless required by applicable law (such as deliberate and grossly
+              negligent acts) or agreed to in writing, shall any Contributor be
+              liable to You for damages, including any direct, indirect, special,
+              incidental, or consequential damages of any character arising as a
+              result of this License or out of the use or inability to use the
+              Work (including but not limited to damages for loss of goodwill,
+              work stoppage, computer failure or malfunction, or any and all
+              other commercial damages or losses), even if such Contributor
+              has been advised of the possibility of such damages.
+        
+           9. Accepting Warranty or Additional Liability. While redistributing
+              the Work or Derivative Works thereof, You may choose to offer,
+              and charge a fee for, acceptance of support, warranty, indemnity,
+              or other liability obligations and/or rights consistent with this
+              License. However, in accepting such obligations, You may act only
+              on Your own behalf and on Your sole responsibility, not on behalf
+              of any other Contributor, and only if You agree to indemnify,
+              defend, and hold each Contributor harmless for any liability
+              incurred by, or claims asserted against, such Contributor by reason
+              of your accepting any such warranty or additional liability.
+        
+           END OF TERMS AND CONDITIONS
+        
+           APPENDIX: How to apply the Apache License to your work.
+        
+              To apply the Apache License to your work, attach the following
+              boilerplate notice, with the fields enclosed by brackets "[]"
+              replaced with your own identifying information. (Don't include
+              the brackets!)  The text should be enclosed in the appropriate
+              comment syntax for the file format. We also recommend that a
+              file or class name and description of purpose be included on the
+              same "printed page" as the copyright notice for easier
+              identification within third-party archives.
+        
+           Copyright [yyyy] [name of copyright owner]
+        
+           Licensed under the Apache License, Version 2.0 (the "License");
+           you may not use this file except in compliance with the License.
+           You may obtain a copy of the License at
+        
+               http://www.apache.org/licenses/LICENSE-2.0
+        
+           Unless required by applicable law or agreed to in writing, software
+           distributed under the License is distributed on an "AS IS" BASIS,
+           WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+           See the License for the specific language governing permissions and
+           limitations under the License.
+Project-URL: Homepage, https://github.com/cognitivecomputations/dolphinflow-optimizer
+Project-URL: Bug Tracker, https://github.com/cognitivecomputations/dolphinflow-optimizer/issues
+Keywords: pytorch,optimizer,machine learning
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: torch>=1.0.0
+
+# DolphinFlow Optimizer
+
+DolphinFlow is a pragmatic, hardware agnostic, memory-efficient PyTorch optimizer that uses orthogonalization techniques to improve neural network training stability and performance, particularly for models with large, dense layers.
+
+DolphinFlow is inspired by the optimizers I've worked with, including Muon and AdamW, with a focus on fine tuning pretrained and instruct tuned large language models such as Llama, Mistral, Qwen, DeepSeek, Gemma, Phi, and others.
+
+DolphinFlow is about results.  I'm a practitioner, not a theoretician.  I build things that do things.
+
+## Overview
+
+DolphinFlow addresses several key challenges in training deep neural networks:
+
+1. **Direction vs. Magnitude:** By orthogonalizing gradient updates, DolphinFlow focuses on optimizing the *direction* of parameter updates, rather than just their magnitude. This helps prevent updates from collapsing onto a low-dimensional subspace, improving exploration of the parameter space.
+
+2. **Memory Efficiency:** DolphinFlow utilizes in-place operations extensively to minimize memory overhead during training, making it suitable for large models.
+
+3. **Training Stability:** The optimizer incorporates features like gradient clipping, optional trust region constraints, and dynamic momentum adjustment to enhance training stability.
+
+4. **Flexible Orthogonalization:** DolphinFlow offers multiple orthogonalization strategies ("block", "full", or "vector") to accommodate different parameter types and sizes.
+
+## Why Orthogonalization?
+
+Standard optimizers can lead to highly correlated weight updates, reducing the effective dimensionality of the update space. This can hinder the model's ability to explore the full parameter space and slow down or prevent convergence. Orthogonalizing gradients helps maintain the full dimensionality of the updates, leading to more efficient training. This is particularly important for overparameterized models, like large language models, where the number of parameters vastly exceeds the number of training samples.
+
+## Grokking, Overfitting, and Fine-tuning
+
+When fine-tuning large language models, it's crucial to avoid overfitting to the fine-tuning dataset, which would cause the model to lose its general knowledge gained during pretraining (catastrophic forgetting).  However, some degree of "memorization" of the fine-tuning data is often necessary to achieve optimal performance on the target task. This can sometimes lead to a phenomenon known as "grokking," where the model initially appears to overfit but then suddenly generalizes well.
+
+DolphinFlow incorporates several features to help manage this balance:
+
+-   **Orthogonalization:** Helps prevent the model from collapsing onto a low-dimensional subspace, encouraging exploration of the parameter space and potentially delaying the onset of overfitting, giving the model a longer "chance" to grok.
+-   **Low Learning Rates:**  Using a small learning rate (typically 1e-5 or lower) is essential for fine-tuning. This prevents large updates that could drastically alter the pre-trained weights.  Consider using differential learning rates for different layers.
+-   **Adaptive Learning Rates:**  The `adaptive_lr` option (Adam-like) can help adjust to the scale of different parameters, which is beneficial for fine-tuning.
+-   **Weight Decay:**  A moderate amount of weight decay (e.g., 1e-2) can help regularize the model and prevent overfitting.  Experiment with different values.
+-   **Gradient Clipping:**  Helps prevent exploding gradients, which can destabilize training and lead to overfitting.
+-   **Trust Region (Optional):**  The `trust_region` option can provide additional stability, but it's generally not necessary unless you encounter significant instability.
+
+**Monitoring for Grokking:**
+
+-   **Track both Training and Validation Loss:** Carefully monitor both the training loss and the validation loss throughout training.
+-   **Expect Initial Overfitting:** Don't be alarmed if the validation loss initially stays high while the training loss decreases. This is common in fine-tuning.
+-   **Look for a Sudden Drop in Validation Loss:**  If you observe a sudden, significant drop in validation loss after a period of apparent overfitting, this could indicate grokking.
+-   **Patience:**  Grokking can take a long time. Be prepared to train for many epochs.
+
+**If you observe consistent overfitting (validation loss increasing) without any signs of grokking, consider:**
+
+-   **Reducing the learning rate further.**
+-   **Increasing weight decay.**
+-   **Using a smaller model.**
+-   **Increasing the size of your fine-tuning dataset.**
+-   **Using data augmentation techniques.**
+-   **Early Stopping:** Use Early Stopping, but be generous.
+
+## Key Features
+
+- **Block-wise In-Place Gradient Orthonormalization:** Efficiently orthogonalizes gradients for 2D weight matrices using an in-place Newton-Schulz iteration, minimizing memory usage.
+- **Vector-wise Orthogonal Projection (for >2D tensors):** For higher-dimensional tensors (e.g., convolutional filters), removes the gradient component parallel to the weight vector, providing a partial orthogonalization effect.
+- **Adaptive Newton-Schulz Steps:** Dynamically chooses the number of NS iterations based on gradient properties.
+- **Momentum and Nesterov Momentum:** Includes standard momentum and Nesterov acceleration.
+- **Decoupled Weight Decay:** Applies weight decay separately from the gradient update.
+- **Optional Adaptive Learning Rate (Adam-like):** Optionally uses a per-parameter adaptive learning rate based on the second moment of the gradients.
+- **Optional Dynamic Momentum:** Dynamically adjusts the momentum factor based on gradient alignment.
+- **Optional Trust Region Constraint:** Limits the update magnitude relative to the parameter magnitude for enhanced stability (especially useful in reinforcement learning).
+- **Global Gradient Clipping:** Clips the global gradient norm to prevent exploding gradients.
+- **PyTorch 2.0 Ready:** Automatically uses `torch.compile` when available for additional performance.
+
+## Installation
+
+```bash
+pip install dolphinflow
+```
+
+Alternatively, copy the `dolphinflow.py` file directly into your project.
+
+## Basic Usage
+
+```python
+import torch
+from your_module import DolphinFlow  # Replace your_module with the appropriate import
+
+# Example model
+model = torch.nn.Sequential(
+    torch.nn.Linear(100, 200),
+    torch.nn.ReLU(),
+    torch.nn.Linear(200, 10)
+)
+
+# Create the optimizer with default settings
+optimizer = DolphinFlow(
+    model.parameters(),
+    lr=1e-3,
+    weight_decay=1e-2,
+    momentum=0.9,
+    nesterov=True
+)
+
+# Training loop
+for epoch in range(num_epochs):
+    for inputs, targets in dataloader:
+        optimizer.zero_grad()  # **Important: Zero gradients before each backward pass!**
+        outputs = model(inputs)
+        loss = loss_function(outputs, targets)
+        loss.backward()
+        optimizer.step()
+```
+
+## Configurations
+
+DolphinFlow provides several configuration options to adapt to different training scenarios:
+
+### Orthogonalization Modes
+
+```python
+# Default: Block-wise orthogonalization (recommended for large 2D layers)
+optimizer = DolphinFlow(model.parameters(), ortho_mode="block", block_size=128)
+
+# Full matrix orthogonalization (for smaller 2D matrices)
+optimizer = DolphinFlow(model.parameters(), ortho_mode="full")
+
+# Vector-wise orthogonalization (works for all tensor dimensions)
+optimizer = DolphinFlow(model.parameters(), ortho_mode="vector")
+```
+
+### Adaptive Learning Rate (Adam-like)
+
+```python
+# Enable Adam-like adaptive learning rates
+optimizer = DolphinFlow(
+    model.parameters(),
+    adaptive_lr=True,
+    beta2=0.99,
+    eps=1e-8
+)
+```
+
+### Dynamic Momentum
+
+```python
+# Enable dynamic momentum adjustment
+optimizer = DolphinFlow(
+    model.parameters(),
+    dynamic_momentum=True,
+    momentum_bounds=(0.7, 0.98)
+)
+```
+
+### Trust Region Constraints (for RL)
+
+```python
+# Add trust region constraint
+optimizer = DolphinFlow(
+    model.parameters(),
+    trust_region=0.1  # max ratio of update norm to param norm
+)
+```
+
+## Parameters
+
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| `params` | Iterable | | Model parameters to optimize. |
+| `lr` | float | 1e-5 | Base learning rate. |
+| `weight_decay` | float | 1e-2 | Decoupled weight decay coefficient. |
+| `momentum` | float | 0.9 | Initial momentum factor. |
+| `nesterov` | bool | True | Enable Nesterov momentum. |
+| `ortho_mode` | str | "block" | Orthogonalization mode: "block" (recommended for large 2D), "full" (for smaller 2D), or "vector" (for all dimensions). |
+| `block_size` | int | 128 | Sub-block dimension for block-wise orthogonalization. Larger values are more accurate but slower. 128-256 is often a good balance. |
+| `adaptive_lr` | bool | True | Use Adam-like adaptive learning rates (second moment scaling). |
+| `beta2` | float | 0.99 | Exponential decay rate for the second moment estimate (if adaptive_lr is True). |
+| `eps` | float | 1e-8 | Epsilon value for numerical stability (added to the denominator in adaptive LR). |
+| `dynamic_momentum` | bool | False | Enable dynamic momentum adjustment based on gradient alignment. |
+| `momentum_bounds` | Tuple[float] | (0.7, 0.98) | Minimum and maximum momentum values (if dynamic_momentum is True). |
+| `gradient_clipping` | float | 1.0 | Global gradient clipping threshold (applied before the optimizer step). |
+| `trust_region` | Optional[float] | None | Trust region constraint. Limits the update norm to this fraction of the parameter norm. Useful for reinforcement learning. Set to None (default) to disable. |
+| `ns_min_steps` | int | 1 | Minimum number of Newton-Schulz iterations. |
+| `ns_max_steps` | int | 3 | Maximum number of Newton-Schulz iterations. 3 is generally sufficient. |
+| `verbose` | bool | False | Print verbose logging information (for debugging). Logs to the standard logging module. |
+
+## When to Use DolphinFlow
+
+DolphinFlow is particularly well-suited for:
+
+1. **Large Model Training:** The memory-efficient implementation makes it suitable for training large models
+2. **Models with Matrix-Heavy Operations:** Networks with many linear layers, attention mechanisms, or other matrix operations benefit most from orthogonalization
+3. **Reinforcement Learning:** The trust region option helps stabilize policy updates
+4. **Models Prone to Instability:** The orthogonalization approach can stabilize training when other optimizers struggle
+
+## Recommendations
+
+- **2D Layers (Fully Connected):** Start with ortho_mode="block" and block_size=128. Experiment with block_size.
+- **Convolutional Layers:** Use ortho_mode="vector" or skip orthogonalization. Vector-wise projection is a reasonable compromise.
+- **1D Layers (Biases, LayerNorm Gains):** Orthogonalization is usually unnecessary. Use ortho_mode="vector" if you want the vector-wise projection applied.
+- **Adaptive LR and Dynamic Momentum:** Experiment with adaptive_lr and dynamic_momentum. They can improve convergence but might require tuning.
+- **Trust Region:** For reinforcement learning or stability-sensitive applications, try setting a trust_region value (e.g., 0.1 or 0.01).
+
+## Implementation Details
+
+DolphinFlow builds on several key techniques:
+
+### Newton-Schulz Iteration
+
+The core of DolphinFlow is a quintic polynomial Newton-Schulz iteration that approximates orthogonalization:
+
+```
+X_{k+1} = a*X_k + (b*A + c*A^2)*X_k,  where A = X_k @ X_k^T
+```
+
+With carefully tuned coefficients `a=3.4445`, `b=-4.7750`, `c=2.0315` to maximize convergence speed.
+
+### In-place Operations
+
+All operations are performed in-place wherever possible, reusing buffers and avoiding unnecessary allocations:
+
+```python
+# Example from the code
+torch.mul(A, b, out=A)   # re-use A
+torch.addcmul(A, A2, value=c, out=A)  # A = b*A + c*A2
+```
+
+### Block-wise Processing
+
+For large matrices, DolphinFlow processes blocks independently:
+
+```
+┌───────────────────┐
+│ ┌─────┐ ┌─────┐   │
+│ │     │ │     │   │
+│ │  B1 │ │  B2 │   │
+│ │     │ │     │   │
+│ └─────┘ └─────┘   │
+│ ┌─────┐ ┌─────┐   │
+│ │     │ │     │   │
+│ │  B3 │ │  B4 │   │
+│ │     │ │     │   │
+│ └─────┘ └─────┘   │
+└───────────────────┘
+```
+
+Each block is orthogonalized independently, striking a balance between orthogonality quality and computational efficiency.
+
+## Citation
+
+If you use DolphinFlow in your research, please cite:
+
+```
+@misc{dolphinflow2025,
+  author = {Eric Hartford},
+  title = {DolphinFlow: A Memory-Efficient Orthogonalizing Optimizer},
+  year = {2025},
+  publisher = {GitHub},
+  journal = {GitHub repository},
+  howpublished = {\url{https://github.com/cognitivecomputations/dolphinflow-optimizer}}
+}
+```
+
+## License
+
+MIT
+
+## Acknowledgements
+
+DolphinFlow draws inspiration from several optimizer implementations, including:
+- Muon
+- Newton-Schulz iterations for matrix orthogonalization
+- Decoupled weight decay from AdamW
+- Momentum techniques from SGD with Nesterov momentum
+- Trust region approaches from TRPO
