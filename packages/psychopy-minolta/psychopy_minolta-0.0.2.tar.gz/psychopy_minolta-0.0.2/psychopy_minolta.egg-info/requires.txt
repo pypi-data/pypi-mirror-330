@@ -1,0 +1,10 @@
+pyserial
+
+[docs]
+psychopy
+sphinx
+furo
+
+[tests]
+psychopy
+pytest
