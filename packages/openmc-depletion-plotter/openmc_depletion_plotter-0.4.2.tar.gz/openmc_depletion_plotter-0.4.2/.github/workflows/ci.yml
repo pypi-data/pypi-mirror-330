@@ -1,0 +1,49 @@
+name: CI
+
+on:
+  pull_request:
+    branches:
+      - develop
+      - main
+
+
+jobs:
+  testing:
+    runs-on: ubuntu-latest
+    container:
+      # could use last stable image
+      # image: openmc/openmc:v0.13.1
+      image: openmc/openmc:develop
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: install package
+        run: |
+          pip install .
+          python -c "import openmc_depletion_plotter"
+
+      - name: run tests
+        run: |
+          pip install .[tests]
+          pytest tests -v
+
+      - name: run examples
+        run: |
+
+          python examples/activity_atoms_vs_time/simulate_silver_depletion.py
+          python examples/activity_atoms_vs_time/plot_activity_vs_time.py
+          python examples/activity_atoms_vs_time/plot_atoms_vs_time.py
+
+          python examples/isotope_charts/plot_isotope_charts.py
+          python examples/isotope_charts/plot_multiple_isotope_charts.py
+
+          # skipped these intensive examples
+          # simulate_fission_actiation.py
+          # plot_isotope_charts_fusion_irradiation.py
+          # plot_isotope_charts_fisson_irradiation.py
+
+          python examples/pulse_schedule/plot_pulse_schedule.py
+
+          # simulation requires more nuclear data that available on the CI
+          # python examples/decay_heat_vs_time/decay_heat_vs_time.py
