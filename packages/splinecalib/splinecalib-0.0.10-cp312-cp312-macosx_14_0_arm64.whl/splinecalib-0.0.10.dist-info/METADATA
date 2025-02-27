@@ -1,0 +1,35 @@
+Metadata-Version: 2.2
+Name: splinecalib
+Version: 0.0.10
+Summary: SplineCalib is a Python package for calibrating ML models using smoothing splines.  See documentation at: https://splinecalib.readthedocs.io/
+Home-page: https://github.com/numeristical/splinecalib
+Author: Brian Lucena
+Author-email: brianlucena@gmail.com
+License: MIT
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Requires-Python: >=3.5
+License-File: LICENSE
+Requires-Dist: numpy>=1.16
+Requires-Dist: scipy>=1.3
+Requires-Dist: pandas>=0.23
+Requires-Dist: matplotlib>=2.0.0
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: home-page
+Dynamic: license
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# splinecalib
+Location for the splinecalib package
