@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+	<h3>Sample Form</h3>
+    <hr>
+    <p>
+        Sample form where forms.bundle.js is being added via an HTML <code>&lt;script&gt;</code> tag.
+        Then, the object variable, <code>fv</code>, is being exported and used within another <code>&lt;script&gt;</code> tag.
+    </p>
+    <div id="formDiv">
+        <form id="sampleForm" action="{% url 'sample-form' %}" method="post" novalidate>
+            {% csrf_token %}
+            {% if form.non_field_errors %}
+                {% for error in form.non_field_errors %}
+                {{ error }}
+                {% endfor %}
+            {% endif %}
+
+            {% for field in form %}
+                <div class="form-group mb-3">
+                    <label class="form-label" for="{{ field.name }}">{{ field.label }}</label>
+                    {{ field }}
+                    {% if field.errors %}
+                        {{ field.errors }}
+                    {% endif %}
+                </div>
+            {% endfor %}
+
+            <button class="btn btn-primary btn-lg" type="submit">Submit</button>
+        </form>
+    </div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'dist/forms.bundle.js' %}"></script>
+<script>
+    // fv is exported from forms.bundle.js
+    window.addEventListener("load", () => {
+        let ignoredClasses = []; // add more classes that represent forms you want this script to ignore.
+        let ignoreValidation = []; // add any form classes that you want to ignore validation
+        let validateOnlyOnSubmit = []; // for hitting all forms make index 0 either __all__, all, * or leave blank for false or use false
+        let forms = document.getElementsByTagName("form");
+        // if (form || userForm) {
+        if (forms.length > 0) {
+            // calling specific functions on all forms
+            fv._InitializeForms(forms, ignoredClasses, ignoreValidation, validateOnlyOnSubmit);
+        }
+    });
+</script>
+{% endblock %}
