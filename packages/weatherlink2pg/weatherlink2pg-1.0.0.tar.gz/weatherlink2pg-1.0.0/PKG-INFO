@@ -1,0 +1,72 @@
+Metadata-Version: 2.3
+Name: weatherlink2pg
+Version: 1.0.0
+Summary: Simple python app to store weatherlink data into PostgreSQL through API
+License: AGPL-3.0-or-later
+Keywords: WeatherLink
+Author: Johan Rocheteau
+Author-email: johan.rocheteau@hotmail.fr
+Maintainer: Johan Rocheteau
+Maintainer-email: johan.rocheteau@hotmail.fr
+Requires-Python: >=3.9,<4.0
+Classifier: Development Status :: 1 - Planning
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: GNU Affero General Public License v3
+Classifier: License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)
+Classifier: Natural Language :: French
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Classifier: Topic :: Documentation
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: System :: Installation/Setup
+Classifier: Topic :: System :: Software Distribution
+Requires-Dist: click (>=8.1.7,<9.0.0)
+Requires-Dist: pandas (>=2.2.2,<3.0.0)
+Requires-Dist: psycopg2-binary (>=2.9.3)
+Requires-Dist: python-dotenv (>=1.0.1,<2.0.0)
+Requires-Dist: requests (>=2.31.0,<3.0.0)
+Requires-Dist: sqlalchemy (>=2.0.29,<3.0.0)
+Requires-Dist: tqdm (>=4.66.2,<5.0.0)
+Project-URL: Homepage, https://github.com/lpoaura/weatherlink2pg/
+Description-Content-Type: text/markdown
+
+# Weatherlink2pg
+
+A very simple app to download weatherlink data into a postgresql database through API.
+
+Application developed voluntarily by Johan ROCHETEAU (
+@JohanRocheteau) to archive data from weatherlink weather stations installed on nature reserves managed by LPO AuRA.
+
+## usage
+
+## Installation
+
+```sh
+pip install weatherlink2pg
+```
+
+## Usage
+
+See help
+
+```sh
+weatherlink2pg --help
+```
+
+## Team
+
+Project developped by [LPO Auvergne-Rhône-Alpes](https//auvergne-rhone-alpes.lpo.fr/)
+
+**Contributors are**:
+
+* Johan ROCHETEAU (@JohanRocheteau) : Development
+* Frédéric CLOITRE (@lpofredc) : Development - Project coordination
+
