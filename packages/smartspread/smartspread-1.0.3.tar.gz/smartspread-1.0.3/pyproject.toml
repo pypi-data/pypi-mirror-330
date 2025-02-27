@@ -1,0 +1,35 @@
+[build-system]
+requires = [
+    "setuptools>=61.0",
+    "wheel"
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "smartspread"
+version = "1.0.3"
+readme = "README.md"
+description = "A Python library that extends gspread for enhanced spreadsheet manipulation."
+authors = [
+    { name = "Arved Klöhn", email = "arved.kloehn@gmail.com" }
+]
+license = { text = "MIT" }  # Add license information
+keywords = ["google-sheets", "gspread", "pandas", "spreadsheet", "automation"]
+
+requires-python = ">=3.7"
+dependencies = [
+    "gspread>=5.0.0",
+    "pandas>=1.3.0",
+    "cacherator>=0.1.0",
+    "logorator>=0.1.0"
+]
+
+[project.urls]
+"Homepage" = "https://github.com/Redundando/smart_spread"
+"Repository" = "https://github.com/Redundando/smart_spread"
+"Issues" = "https://github.com/Redundando/smart_spread/issues"  # Add an Issues URL
+"Documentation" = "https://github.com/Redundando/smart_spread#readme"  # Add a documentation link
+
+[tool.setuptools]
+packages = ["smart_spread"]
+
