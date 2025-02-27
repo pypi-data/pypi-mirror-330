@@ -1,0 +1,3 @@
+[console_scripts]
+fairchem = fairchem.core._cli:main
+fairchemv2 = fairchem.core._cli_hydra:main
