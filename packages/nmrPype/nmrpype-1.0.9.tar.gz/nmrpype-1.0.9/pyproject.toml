@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nmrPype"
+version = "1.0.9"
+dependencies = [
+    "numpy",
+    "scipy",
+    "matplotlib"
+]
+requires-python = ">=3.10"
+authors = [
+    { name = "Micah Smith", email = "mykahsmith21@gmail.com" },
+    { name = "Frank Delaglio", email = "frank.delaglio@nist.gov"}
+]
+maintainers = [
+  {name = "Micah Smith", email = "mykahsmith21@gmail.com"}
+]
+description = "Python implementation of Nuclear Magnetic Resonance (NMR) signal analysis program \"nmrPipe\""
+readme = "README.md"
+license = { file = "LICENSE" }
+keywords = ["nmr", "decomposition"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "License :: OSI Approved :: BSD License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.12"
+]
+
+[project.urls]
+Homepage = "https://github.com/PhiMykah/nmrPype"
+Documentation = "https://phimykah.github.io/nmrpype/"
+Repository = "https://github.com/PhiMykah/nmrPype.git"
+Issues = "https://github.com/PhiMykah/nmrPype/issues"
+
+[project.scripts]
+    nmrPype = "nmrPype.pype:main"
+
+[tool.setuptools]
+packages = ["nmrPype"]
