@@ -1,0 +1,18 @@
+Metadata-Version: 2.4
+Name: graphfusionai
+Version: 0.1.0
+Summary: A Python framework for building multi-agent systems with Knowledge Graph integration
+License-File: LICENSE
+Requires-Python: >=3.11
+Requires-Dist: flask-login>=0.6.3
+Requires-Dist: flask-wtf>=1.2.2
+Requires-Dist: hatchling>=1.27.0
+Requires-Dist: networkx>=3.4.2
+Requires-Dist: numpy>=2.2.3
+Requires-Dist: oauthlib>=3.2.2
+Requires-Dist: openai>=1.64.0
+Requires-Dist: pydantic>=2.10.6
+Requires-Dist: rich>=13.9.4
+Requires-Dist: scikit-learn>=1.6.1
+Requires-Dist: spacy>=3.8.4
+Requires-Dist: transformers>=4.49.0
