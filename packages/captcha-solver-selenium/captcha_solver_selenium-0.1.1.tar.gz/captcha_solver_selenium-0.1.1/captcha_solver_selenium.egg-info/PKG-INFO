@@ -1,0 +1,23 @@
+Metadata-Version: 2.2
+Name: captcha_solver_selenium
+Version: 0.1.1
+Summary: A package for solving Google reCAPTCHA using Selenium and Speech Recognition
+Author: DENO
+Author-email: your.email@example.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Requires-Dist: selenium
+Requires-Dist: selenium-wire
+Requires-Dist: requests
+Requires-Dist: speechrecognition
+Requires-Dist: pyaudio
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description-content-type
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
