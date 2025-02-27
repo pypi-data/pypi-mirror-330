@@ -1,0 +1,42 @@
+/****** Forms ******/
+input, select {
+  font-size: 18px!important;
+}
+
+.errorlist li, .error-msg {
+    color: red;
+}
+
+.error {
+  color: red;
+  font-style: italic;
+}
+
+.error-input {
+  background: #edbabf;
+  border-color: #dc3545;
+}
+
+.error-msg {
+  color: #dc3545;
+  margin-bottom: 0;
+}
+
+.success {
+  color: blue;
+}
+
+.readonly {
+  background-color: #e9ecef;
+  opacity: 1;
+  cursor: not-allowed;
+}
+
+.required-field {
+    font-weight: 800;
+}
+
+.required-field::after {
+  content: " *";
+  color: red;
+}
