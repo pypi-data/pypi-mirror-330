@@ -1,0 +1,2 @@
+[console_scripts]
+cellarr_build = cellarr.slurm.build_cellarr_steps:main
