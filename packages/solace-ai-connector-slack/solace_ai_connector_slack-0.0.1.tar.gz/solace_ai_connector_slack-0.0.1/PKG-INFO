@@ -1,0 +1,32 @@
+Metadata-Version: 2.4
+Name: solace-ai-connector-slack
+Version: 0.0.1
+Summary: Slack plugin for the Solace AI Connector - this provides an input and output component to talk to Slack
+Project-URL: homepage, https://github.com/SolaceLabs/solace-ai-connector-slack
+Project-URL: repository, https://github.com/SolaceLabs/solace-ai-connector-slack
+Project-URL: documentation, https://github.com/SolaceLabs/solace-ai-connector-slack/blob/main/docs/index.md
+Author-email: Edward Funnekotter <edward.funnekotter@solace.com>, Greg Meldrum <greg.meldrum@solace.com>, Cyrus Mobini <cyrus.mobini@solace.com>
+License-File: LICENSE
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Python: >=3.11
+Requires-Dist: prettytable>=3.10.0
+Requires-Dist: pyyaml>=6.0.1
+Requires-Dist: slack-bolt>=1.18.1
+Requires-Dist: solace-ai-connector>=1.0.0
+Description-Content-Type: text/markdown
+
+# Solace AI Connector Slack
+
+Plugin for the solace-ai-connector to communicate with slack
+
+[![PyPI - Version](https://img.shields.io/pypi/v/solace-ai-connector-slack.svg)](https://pypi.org/project/solace-ai-connector-slack)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/solace-ai-connector-slack.svg)](https://pypi.org/project/solace-ai-connector-slack)
+
+## Prerequisites
+
+- Python 3.11 and above
+- Required Python dependencies
