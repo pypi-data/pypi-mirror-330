@@ -1,0 +1,2 @@
+[console_scripts]
+astrolab = astrolab.cli.main:cli
