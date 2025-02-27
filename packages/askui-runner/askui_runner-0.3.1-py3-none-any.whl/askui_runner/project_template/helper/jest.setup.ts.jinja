@@ -1,0 +1,52 @@
+import { UiControlClient } from 'askui';
+import { AskUIAllureStepReporter } from '@askui/askui-reporters';
+import {Blob} from 'node:buffer';
+import data from '@/data.json';
+
+let aui: UiControlClient;
+
+jest.setTimeout(60 * 1000 * 60);
+
+const UPLOAD_API_MAX_PAYLOAD_SIZE_IN_MB = 5 * 1024   
+
+function getByteSizeInMB(str: string): number {
+    const blob = new Blob([str]);
+    return blob.size / (1024 * 1024);
+}
+
+function isVideoTooLargeForUploadApi(video: string): boolean {
+   return getByteSizeInMB(video) >= UPLOAD_API_MAX_PAYLOAD_SIZE_IN_MB
+}
+
+beforeAll(async () => {
+  aui = await UiControlClient.build({
+    uiControllerUrl: "http://{{ controller.host }}:{{ controller.port }}",
+    inferenceServerUrl: "{{ inference_api_url }}",
+    credentials: {
+      workspaceId: "{{ credentials.workspace_id }}",
+      token: "{{ credentials.access_token }}",
+    },
+    reporter: new AskUIAllureStepReporter({
+      withScreenshots: 'always',
+    }),
+  });
+  await aui.connect();
+});
+
+beforeEach(async () => {
+  await aui.startVideoRecording();
+});
+
+afterEach(async () => {
+  await aui.stopVideoRecording();
+  const video = await aui.readVideoRecording();
+  if (!isVideoTooLargeForUploadApi(video)) {
+    AskUIAllureStepReporter.attachVideo(video);
+  }
+});
+
+afterAll(async () => {
+  aui.disconnect();
+});
+
+export { aui, data };
