@@ -1,0 +1,14 @@
+Metadata-Version: 2.2
+Name: mlpype-lightgbm
+Version: 0.6.5
+Summary: LightGBM extension for MLpype
+Author: Jeroen van den Hoven
+License: MIT
+Requires-Python: >=3.9
+Requires-Dist: mlpype-base==0.6.5
+Requires-Dist: mlpype-sklearn==0.6.5
+Requires-Dist: lightgbm>=4.3.0
+Provides-Extra: strict
+Requires-Dist: mlpype-base==0.6.5; extra == "strict"
+Requires-Dist: mlpype-sklearn==0.6.5; extra == "strict"
+Requires-Dist: lightgbm==4.3.0; extra == "strict"
