@@ -1,0 +1,23 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "igfash"
+version = "0.1.0"
+authors = [
+  { name="Francis Tong", email="author@example.com" },
+]
+description = "Instytut GeoFizyki Anthropogenic Seismic Hazard"
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+license = "GPL-3.0-or-later"
+license-files = []
+
+[project.urls]
+Homepage = "https://github.com/francistong/igfash"
+Issues = "https://github.com/francistong/igfash/issues"
