@@ -1,0 +1,32 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "shiny_tail"
+version = "0.1.0"
+authors = [
+  { name = "Daniel Boadzie", email = "boadziedaniel43@gmail.com" },
+]
+description = "A package to use Tailwind CSS in Shiny for Python"
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "shiny>=0.5.0",
+    "htmltools>=0.4.0",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/yourusername/shinytail"
+"Bug Tracker" = "https://github.com/yourusername/shinytail/issues"
+
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/shiny_tail"]
+
+
