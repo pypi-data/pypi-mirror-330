@@ -1,0 +1,27 @@
+inherits:
+  - utils:autofix
+
+pylint:
+  disable:
+    - import-error # Unable to import
+
+mypy:
+  disable:
+    - unused-ignore # Unused "type: ignore" comment.
+    - misc # Untyped decorator makes function "{}" untyped
+    - no-untyped-def # Function is missing a type annotation for one or more arguments
+    - abstract # Cannot instantiate abstract class "{}" with abstract attributes "{}".
+    - index # Value of type "{}" is not indexable.
+    - import-untyped # Library stubs not installed for "{}".
+
+dodgy:
+  run: false
+
+pycodestyle:
+  run: false
+
+pyflakes:
+  run: false
+
+pyroma:
+  run: false
