@@ -1,0 +1,44 @@
+Metadata-Version: 2.2
+Name: rigol_dg1022
+Version: 0.0.9
+Summary: A Python driver for the Rigol DG1022 arbitrary signal generator
+Author-email: Daniel Köpping <daniel.koepping@de.abb.com>
+License: MIT
+Project-URL: Homepage, https://github.com/dkoep/rigol-dg1022-driver
+Project-URL: Repository, https://github.com/dkoep/rigol-dg1022-driver
+Project-URL: Issues, https://github.com/dkoep/rigol-dg1022-driver/issues
+Keywords: Rigol DG1022,Python driver,Ethernet,USB,Signal generator,Industrial automation
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pyvisa
+Requires-Dist: pyusb
+
+# Rigol DG1022 Python Driver
+
+This package provides a Python driver for controlling the Rigol DG1022 arbitrary waveform generator via USB or Ethernet.
+
+## Usage
+
+```python
+from rigol_dg1022 import RigolDG1022
+
+# Connect to the device
+dg = RigolDG1022()
+
+# Set a sine wave on Channel 1
+dg.apply_waveform(channel=1, waveform="SIN", frequency=1000, amplitude=1, offset=0)
+
+# Turn on the output for Channel 1
+dg.set_output(channel=1, state=True)
+
+# Get the current frequency of Channel 1
+freq = dg.get_frequency(channel=1)
+print(f"Current frequency: {freq} Hz")
+
+# Turn off the output
+dg.set_output(channel=1, state=False)
+```
+

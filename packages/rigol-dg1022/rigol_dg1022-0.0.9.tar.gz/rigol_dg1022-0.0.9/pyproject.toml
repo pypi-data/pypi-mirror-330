@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rigol_dg1022"
+version = "0.0.9"
+description = "A Python driver for the Rigol DG1022 arbitrary signal generator"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [
+    { name = "Daniel Köpping", email = "daniel.koepping@de.abb.com" }
+]
+dependencies = [
+    "pyvisa",
+    "pyusb"
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent"
+]
+keywords = ["Rigol DG1022", "Python driver", "Ethernet", "USB", "Signal generator", "Industrial automation"]
+
+[project.urls]
+Homepage = "https://github.com/dkoep/rigol-dg1022-driver"
+Repository = "https://github.com/dkoep/rigol-dg1022-driver"
+Issues = "https://github.com/dkoep/rigol-dg1022-driver/issues"
+
+
+[tool.setuptools]
+packages = ["rigol_dg1022"]
