@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "vul_py_utils"
+version = "0.0.8"
+description = "The package contains common utilities for Python projects at Vulcan Labs."
+authors = ["Tu Pham <tupham.dev@vulcanlabs.co>"]
+readme = ["README.md", "CHANGELOG.md"]
+packages = [{include = "vul_py_utils"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+firebase-admin = "^6.3.0"
+pillow = "^10.1.0"
+numpy = "^1.26.2"
+google = "^3.0.0"
+redis = "^5.0.1"
+fastapi = "^0.105.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
