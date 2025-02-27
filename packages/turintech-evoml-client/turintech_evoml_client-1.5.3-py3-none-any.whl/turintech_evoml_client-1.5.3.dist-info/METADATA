@@ -1,0 +1,104 @@
+Metadata-Version: 2.2
+Name: turintech-evoml-client
+Version: 1.5.3
+Summary: Python client library for core functionality of evoml
+Home-page: https://turintech.ai
+Author: Turing Intelligence Technology
+Author-email: contact@turintech.ai
+License: TURING INTELLIGENCE TECHNOLOGY LIMITED END-USER LICENCE
+Keywords: evoml-client
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+License-File: AUTHORS.md
+Requires-Dist: pandas>=1.4.2
+Requires-Dist: numpy>=1.21.5
+Requires-Dist: requests>=2.27.0
+Requires-Dist: tqdm>=4.62.3
+Requires-Dist: joblib>=1.1.0
+Requires-Dist: pydantic<2.0.0,>=1.9.1
+Requires-Dist: pydantic[dotenv]
+Requires-Dist: scikit-learn>=1.1.2
+Requires-Dist: pyarrow>=8.0.0
+Requires-Dist: turintech-pagination==1.2.1
+Requires-Dist: turintech-rest-clients==1.2.1
+Requires-Dist: turintech-data-types==1.2.1
+Requires-Dist: turintech-evoml-rocket-client==1.2.0
+Provides-Extra: full
+Requires-Dist: turintech-evoml-python-dependencies[external_runtime]==2.4.6; extra == "full"
+Requires-Dist: numpy<1.25.0; extra == "full"
+Requires-Dist: pydantic[dotenv]<2.0.0; extra == "full"
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: license
+Dynamic: provides-extra
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# turintech-evoml-client
+
+Python client library to support script and notebook interactions with the platform
+
+
+## Installation
+There are two options to install the client library:
+
+### Default installation
+
+Installs basic requirements and versions of libraries like pandas, numpy.
+
+```shell
+pip install turintech_evoml_client
+```
+
+### Full installation
+ 
+If you want to be able to generate models locally make sure you use the `full` extra when installing evoml_client.
+
+```shell
+pip install turintech_evoml_client[full]
+```
+Note that if you are using zsh, you might need to use one the following command instead:
+
+```shell
+pip install turintech_evoml_client\[full\]
+pip install "turintech_evoml_client[full]"
+noglob pip install turintech_evoml_client[full]
+```
+
+
+## Description
+
+Currently supports the following concepts and actions:
+
+### Datasets:
+* Creation - EvoML client supports: Pandas DataFrames, numpy arrays and csv files. With 
+Additional support to come.
+* Uploading - Send the locally defined Dataset to the platform in preparation for future
+trials.
+* Statistical analysis - Using the Analyser class retrieve statistical info on the uploaded
+dataset.
+
+### Trials:
+* Configuration - Multiple levels of abstraction provided by the TrialConfig class to allow
+specification of as much or as little technical details as desired.
+* Uploading - Send the locally defined trial to the platform to await execution.
+* Execution - Trigger the optimization of the given trial.
+* Result retrieval - Get either all models or the best model for a trial.
+* local execution - Once retrieved and built, models can be run locally against new data.
+
+### AutoML:
+* Given a Pandas Dataframe, Numpy array or EvoML dataset and a target column
+returns the best model trained to predict the given target column.
+
+You can find further information and examples in our documentation page: https://docs.evoml.ai/evoml-client/introduction
+
