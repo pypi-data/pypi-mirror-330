@@ -1,0 +1,13 @@
+mlpype-base==0.6.5
+tensorflow==2.14.1
+numpy==1.26.4
+protobuf==3.20.3
+
+[:sys_platform == "darwin"]
+tensorflow-macos==2.14.1
+
+[strict]
+mlpype-base==0.6.5
+tensorflow==2.14.1
+numpy==1.26.4
+protobuf==3.20.3
