@@ -1,0 +1,9 @@
+
+[all]
+garson[rc-daemon,svc-bjoern]
+
+[rc-daemon]
+python-daemon<4.0.0
+
+[svc-bjoern]
+bjoern<4.0.0
