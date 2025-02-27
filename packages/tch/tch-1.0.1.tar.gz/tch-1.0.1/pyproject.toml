@@ -1,0 +1,73 @@
+[project]
+name = "tch"
+version = "1.0.1"
+description = "Quick terminal file creation tool"
+readme = "README.md"
+authors = [
+    { name = "wyattferguson", email = "wyattf@gmail.com" }
+]
+requires-python = ">=3.12"
+license = {text = "MIT License"}
+keywords = ["cli", "files", "command-line", "touch", "python"]
+dependencies = [
+    "click>=8.1.8",
+]
+
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python",
+    "Topic :: Utilities",
+    "License :: OSI Approved :: MIT License"
+]
+
+[project.urls]
+homepage = "https://github.com/wyattferguson/tch"
+repository = "https://github.com/wyattferguson/tch.git"
+documentation = "https://github.com/wyattferguson/tch"
+issues = "https://github.com/wyattferguson/tch/issues"
+
+[project.scripts]
+tch = "tch.tch:cli"
+
+[tool.hatch.build.targets.wheel]
+packages = ["tch"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "mypy>=1.15.0",
+    "pytest>=8.3.4",
+    "ruff>=0.9.7",
+    "taskipy>=1.14.1",
+]
+
+[tool.taskipy.tasks]
+format = "ruff format ./tch/"
+lint = "ruff check --fix ./tch/ && mypy ./tch/"
+typecheck = "mypy ./tch/"
+tests = "pytest --verbose --color=yes tests"
+build = "uv build"
+run = "uv run ./tch/tch.py"
+
+[tool.ruff]
+line-length = 100
+indent-width = 4
+format.indent-style = "space"
+target-version = "py312"
+unfixable = ["F401"] # Disable fix for unused imports
+src = ["tch", "tests"]
+
+[tool.mypy]
+packages = [ "tch" ]
+python_version = "3.12"
+disable_error_code = 'import-untyped'
+implicit_reexport = false
+show_error_codes = true
+strict = true
