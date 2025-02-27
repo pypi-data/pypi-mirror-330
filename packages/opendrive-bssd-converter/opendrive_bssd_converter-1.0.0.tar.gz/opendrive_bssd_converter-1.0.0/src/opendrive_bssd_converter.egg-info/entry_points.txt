@@ -1,0 +1,2 @@
+[console_scripts]
+opendrive-bssd-converter = integrate_BSSD_into_OpenDRIVE.__main__:main
