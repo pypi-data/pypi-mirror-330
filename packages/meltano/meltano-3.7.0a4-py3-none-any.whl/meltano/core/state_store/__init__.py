@@ -1,0 +1,162 @@
+"""State backends."""
+
+from __future__ import annotations
+
+import enum
+import platform
+import sys
+import typing as t
+from urllib.parse import urlparse
+
+from structlog.stdlib import get_logger
+
+from meltano.core.behavior.addon import MeltanoAddon
+from meltano.core.db import project_engine
+from meltano.core.state_store.base import MeltanoState, StateStoreManager
+from meltano.core.state_store.db import DBStateStoreManager
+
+if sys.version_info < (3, 11):
+    from backports.strenum import StrEnum
+else:
+    from enum import StrEnum
+
+if t.TYPE_CHECKING:
+    from collections.abc import Mapping
+
+    from sqlalchemy.orm import Session
+
+    from meltano.core.project_settings_service import ProjectSettingsService
+
+if sys.version_info >= (3, 12):
+    from importlib.metadata import EntryPoints, entry_points
+else:
+    from importlib_metadata import EntryPoints, entry_points
+
+__all__ = [
+    "BuiltinStateBackendEnum",
+    "DBStateStoreManager",
+    "MeltanoState",
+    "StateBackend",
+    "StateStoreManager",
+    "state_store_manager_from_project_settings",
+]
+
+logger = get_logger(__name__)
+
+
+class BuiltinStateBackendEnum(StrEnum):
+    """State backend."""
+
+    SYSTEMDB = "systemdb"
+
+
+class StateBackend:
+    """State backend."""
+
+    addon: MeltanoAddon[type[StateStoreManager]] = MeltanoAddon(
+        "meltano.state_backends",
+    )
+
+    def __init__(self, scheme: str) -> None:
+        """Create a new StateBackend.
+
+        Args:
+            scheme: The scheme of the StateBackend.
+        """
+        self.scheme = scheme
+
+    @classmethod
+    def backends(cls) -> list[str]:
+        """List available state backends.
+
+        Returns:
+            List of available state backends.
+        """
+        return [
+            *(x.value for x in BuiltinStateBackendEnum),
+            *(ep.name for ep in cls.addon.installed),
+        ]
+
+    @property
+    def _builtin_managers(
+        self,
+    ) -> Mapping[str, type[StateStoreManager]]:
+        """Get mapping of StateBackend to associated StateStoreManager.
+
+        Returns:
+            Mapping of StateBackend to associated StateStoreManager.
+        """
+        return {
+            BuiltinStateBackendEnum.SYSTEMDB: DBStateStoreManager,
+        }
+
+    @property
+    def manager(
+        self,
+    ) -> type[StateStoreManager]:
+        """Get the StateStoreManager associated with this StateBackend.
+
+        Returns:
+            The StateStoreManager associated with this StateBackend.
+
+        Raises:
+            ValueError: If no state backend is found for the scheme.
+        """
+        try:
+            return self._builtin_managers[self.scheme]
+        except KeyError:
+            logger.info(
+                "No builtin state backend found for scheme '%s'",
+                self.scheme,
+            )
+
+        try:
+            return self.addon.get(self.scheme)
+        except KeyError:
+            logger.info(
+                "No state backend plugin found for scheme '%s'",
+                self.scheme,
+            )
+
+        # TODO: This should be a Meltano exception
+        msg = f"No state backend found for scheme '{self.scheme}'"
+        raise ValueError(msg)
+
+
+def state_store_manager_from_project_settings(
+    settings_service: ProjectSettingsService,
+    session: Session | None = None,
+) -> StateStoreManager:
+    """Return a StateStoreManager based on the project's settings.
+
+    Args:
+        settings_service: the settings service to use
+        session: the session to use if using default systemdb state backend
+
+    Returns:
+        The relevant StateStoreManager instance.
+    """
+    state_backend_uri: str = settings_service.get("state_backend.uri")
+    if state_backend_uri == BuiltinStateBackendEnum.SYSTEMDB:
+        return DBStateStoreManager(
+            session=session or project_engine(settings_service.project)[1](),
+        )
+
+    parsed = urlparse(state_backend_uri)
+    scheme = parsed.scheme
+    # Get backend-specific settings
+    # AND top-level state_backend settings
+    setting_defs = filter(
+        lambda setting_def: setting_def.name.startswith(
+            f"state_backend.{'gcs' if scheme == 'gs' else scheme}",
+        )
+        or (
+            setting_def.name.startswith("state_backend")
+            and len(setting_def.name.split(".")) == 2
+        ),
+        settings_service.setting_definitions,
+    )
+    settings = (setting_def.name for setting_def in setting_defs)
+    backend = StateBackend(scheme).manager
+    kwargs = {name.split(".")[-1]: settings_service.get(name) for name in settings}
+    return backend(**kwargs)
