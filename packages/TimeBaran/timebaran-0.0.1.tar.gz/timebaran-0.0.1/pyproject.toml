@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "TimeBaran"
+version = "0.0.1"
+description = "A Python library for managing time and displaying Persian (Jalali) calendar events and daily supplications."
+authors = [
+    {name = "Ali Ayati Qaffari", email = "ayatiali910@gmail.com"}
+]
+readme = "README.md"
+license = {file = "LICENSE"}
+
+requires-python = ">=3.7"
+
+dependencies = [ 
+    "lxml",
+    'pytz',
+    'jdatetime',
+    'requests',
+    'beautifulsoup4',
+    'tzlocal',
+    'regex'
+]
+
+
+[project.urls]
+"Profile" = "https://github.com/MrAAQPy"
+"github" = "https://github.com/MrAAQPy/TimeBaran"
+"issue" = "https://github.com/MrAAQPy/TimeBaran/issues"
+"bale" = "https://ble.ir/aaq1386"
+
+[tool.setuptools.packages.find]
+where = ["src"]
