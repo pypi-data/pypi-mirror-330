@@ -1,0 +1,70 @@
+[tool.poetry]
+name = "robbie"
+version = "0.1.42"
+description = "Run experiments in the Robbie Cloud"
+authors = ["Positron Networks <support@robbie.run>"]
+homepage = "https://robbie.run"
+documentation = "https://github.com/Positron-Networks/robbie-examples"
+license = "Apache License 2.0"
+readme = "README.md"
+packages = [
+    { include = "cli", from = "app" },
+    { include = "common", from = "app" },
+    { include = "positron_job_runner", from = "app" },
+    { include = "remote_function", from = "app" },
+    { include = "robbie", from = "app" },
+]
+include = ["app/common/build_env"]
+
+[tool.poetry.scripts]
+robbie = "cli.cli:app"
+positron-job-runner = "positron_job_runner.cli:app"
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.13"
+requests = ">=2.28,<2.32"
+urllib3 = ">=1.26,<2.0"
+python-socketio = ">=5.0.0,<6.0.0"
+colorama = ">=0.4.0,<1.0.0"
+configparser = ">=5.0.0,<7.0.0"
+argparse = ">=1.4.0"
+aiohttp = ">=3.7.4.post0"
+typer = ">=0.12.3"
+pyyaml = ">=6.0.1"
+pydantic = ">=2.8.0"
+pydantic_core = ">=2.20.0"
+s3transfer = ">=0.10.0"
+boto3 = ">=1.34.0"
+cloudpickle = ">=3.0.0"
+python-dotenv = ">=1.0.1"
+rich = ">=13.8.1"
+pyfiglet = ">=1.0.2"
+prompt_toolkit = ">=3.0.47"
+pydantic_yaml = ">=1.3.0"
+nest_asyncio = ">=1.6.0"
+ipywidgets = ">=8"
+pipreqs = {version = ">=0.5.0", python = ">=3.9,<3.13" }
+tqdm = ">=4.66.5"
+dill = ">=0.3.4"
+stdlib_list = ">=0.11.0"
+matplotlib = ">=3.9.2"
+sentry-sdk = ">=2.17.0"
+jupyter-ui-poll = ">=1.0.0"
+pipdeptree = ">=2.24.0"
+psutil = ">=6.1.1"
+awscli = ">=1.37.16"
+GitPython = ">=3.1.44"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.4"
+torch = "^2.5.1"
+tox = "^4.23.2"
+tox-gh-actions = "^3.2.0"
+mypy = "^1.13.0"
+
+[tool.pytest.ini_options]
+testpaths = ["app"]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
