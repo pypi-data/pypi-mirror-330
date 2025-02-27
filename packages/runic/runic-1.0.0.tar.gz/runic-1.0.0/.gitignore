@@ -1,0 +1,39 @@
+# Byte-compiled / temporary files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.swp
+
+# Virtual environment
+venv/
+.env
+.envrc
+
+# Build artifacts
+dist/
+build/
+*.egg-info/
+.pypirc
+
+# Logs & debugging files
+logs/
+*.log
+*.out
+*.err
+
+# Editor & OS-specific files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Coverage & testing files
+.coverage
+htmlcov/
+.cache/
+.mypy_cache/
+pytest_cache/
+
+# Runic files to help with development of Runic; how meta! 🤯
+.runic/
