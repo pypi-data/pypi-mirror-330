@@ -1,0 +1,53 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "mkdocs-docuq"
+version = "0.1.1"
+description = "DocuQ plugin for MkDocs - DocuQ is an AI-powered documentation search and interaction tool"
+authors = [
+    { name = "Evgenii Konev at SmartAndPoint", email = "ekonev@smartandpoint.com" },
+]
+license = { file = "LICENSE" }
+readme = "README.md"
+requires-python = ">=3.8"
+keywords = ["mkdocs", "documentation", "ai", "search", "plugin"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Documentation",
+    "Topic :: Software Development :: Documentation",
+]
+dependencies = ["Markdown>=3.7", "beautifulsoup4>=4.13.3", "mkdocs>=1.6.1"]
+
+[project.urls]
+Homepage = "https://github.com/SmartAndPoint/mkdocs-docuq"
+Documentation = "https://github.com/SmartAndPoint/mkdocs-docuq#readme"
+Repository = "https://github.com/SmartAndPoint/mkdocs-docuq.git"
+Issues = "https://github.com/SmartAndPoint/mkdocs-docuq/issues"
+
+[project.entry-points."mkdocs.plugins"]
+docuq = "docuq:DocuQPlugin"
+
+[project.optional-dependencies]
+dev = ["types-Markdown", "types-beautifulsoup4"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["docuq"]
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+check_untyped_defs = true
+
+[tool.ruff]
+select = ["E", "F", "I"]
+line-length = 100
