@@ -1,0 +1,11 @@
+prefix=/tmp/tmpoq0k286g/wheel/platlib
+exec_prefix=${prefix}
+includedir=/tmp/tmpoq0k286g/wheel/platlib/include
+libdir=/tmp/tmpoq0k286g/wheel/platlib/lib
+
+Name: Yaml-cpp
+Description: A YAML parser and emitter for C++
+Version: 0.8.0
+Requires:
+Libs: -L${libdir} -lyaml-cpp
+Cflags: -I${includedir}
