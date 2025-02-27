@@ -1,0 +1,12 @@
+pandas<3,>=2
+tqdm
+more_itertools
+ConfigSpace>=1.0
+
+[dev]
+ruff
+mypy
+pre-commit
+
+[notebook]
+ipykernel
