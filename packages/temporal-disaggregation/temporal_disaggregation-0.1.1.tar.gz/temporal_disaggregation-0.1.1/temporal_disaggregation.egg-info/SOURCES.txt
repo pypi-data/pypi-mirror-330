@@ -1,0 +1,16 @@
+README.md
+pyproject.toml
+setup.py
+temporal_disaggregation/__init__.py
+temporal_disaggregation/aggregation.py
+temporal_disaggregation/disaggregation.py
+temporal_disaggregation/processor.py
+temporal_disaggregation/utils.py
+temporal_disaggregation.egg-info/PKG-INFO
+temporal_disaggregation.egg-info/SOURCES.txt
+temporal_disaggregation.egg-info/dependency_links.txt
+temporal_disaggregation.egg-info/requires.txt
+temporal_disaggregation.egg-info/top_level.txt
+tests/test_aggregation.py
+tests/test_disaggregation.py
+tests/test_processor.py
