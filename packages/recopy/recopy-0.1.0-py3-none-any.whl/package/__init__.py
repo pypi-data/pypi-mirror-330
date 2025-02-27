@@ -1,0 +1,1 @@
+from .pyrecommend import print_hi  # 导入主要功能 
