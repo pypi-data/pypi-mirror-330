@@ -1,0 +1,22 @@
+Metadata-Version: 2.4
+Name: roverlib
+Version: 0.3.5
+Summary: ASE roverlib
+Project-URL: Repository, https://github.com/vu-ase/roverlib-python
+Project-URL: Issues, https://github.com/vu-ase/roverlib-python/issues
+Author-email: NielsD1 <n.j.dijkstra@student.vu.nl>, maxgallup <m.gallup@student.vu.nl>
+License-File: LICENSE
+Requires-Python: >=3.10
+Requires-Dist: betterproto
+Requires-Dist: loguru
+Requires-Dist: pyzmq
+Description-Content-Type: text/markdown
+
+<h1 align="center"><code>roverlib-python</code> library</h1>
+<div align="center">
+  
+  <a href="https://ase.vu.nl/docs/category/roverlib-python">Documentation</a>
+  <br />
+</div>
+<br/>
+
