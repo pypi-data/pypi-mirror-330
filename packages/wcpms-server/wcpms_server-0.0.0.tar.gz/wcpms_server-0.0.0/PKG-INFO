@@ -1,0 +1,19 @@
+Metadata-Version: 2.2
+Name: wcpms_server
+Version: 0.0.0
+Summary: A lightweight web service for calculating phenological metrics based on Phenolopy library and EO Data from the Brazil Data Cube (BDC)
+Author-email: Brazil Data Cube Team <bdc.team@inpe.br>
+Classifier: Development Status :: 1 - Planning
+Classifier: Environment :: Web Environment
+Classifier: Intended Audience :: Education
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Scientific/Engineering :: GIS
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.8
