@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!-- The COPYRIGHT file at the top level of this repository contains the full
+copyright notices and license terms. -->
+<form>
+    <label name="folder"/>
+    <field name="folder"/>
+    <label name="sequence"/>
+    <field name="sequence"/>
+    <separator string="Preview" colspan="4" id="sepr_preview"/>
+    <label name="file_binary"/>
+    <field name="file_binary" widget="image" colspan="2" width="640" height="520"/>
+    <newline/>
+    <label name="convert_format"/>
+    <field name="convert_format"/>
+    <newline/>
+    <label name="name"/>
+    <field name="name"/>
+    <label name="mimetype"/>
+    <field name="mimetype"/>
+</form>
