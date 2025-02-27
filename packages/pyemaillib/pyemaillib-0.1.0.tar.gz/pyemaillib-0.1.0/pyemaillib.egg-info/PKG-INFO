@@ -1,0 +1,6 @@
+Metadata-Version: 2.2
+Name: pyemaillib
+Version: 0.1.0
+Summary: A simple email sending library with Jinja2 templates
+Author-email: Peniel Ben <penivera655@gmail.com>
+Requires-Dist: jinja2

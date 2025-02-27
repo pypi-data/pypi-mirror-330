@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pyemaillib"
+version = "0.1.0"
+authors = [
+    { name="Peniel Ben", email="penivera655@gmail.com" }
+]
+description = "A simple email sending library with Jinja2 templates"
+dependencies = [
+    "jinja2"
+]
