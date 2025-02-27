@@ -1,0 +1,33 @@
+[build-system]
+requires      = ["setuptools>=61.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sip-parser"
+version = "0.1.0"
+description = "Scenario Instance Parser"
+readme = "README.md"
+authors = [{ name = "Leon Starr", email = "leon_starr@modelint.com" }]
+license = { file = "LICENSE" }
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+]
+keywords = ["scenario population", "initial instances", "parser", "executable uml", "class model", "mbse",
+"xuml", "xtuml", "platform independent", "sysml", "leon starr", "blueprint", "model integration", "shlaer-mellor"]
+dependencies = [
+    'Arpeggio<3.0.0',
+    'tomli; python_version < "3.13"']
+requires-python = ">=3.11"
+
+[project.optional-dependencies]
+build = ["build", "twine"]
+dev = ["bump2version", "pytest"]
+
+[project.scripts]
+sip = "sip_parser.__main__:main"
+
+[project.urls]
+repository    = "https://github.com/modelint/sip-parser"
+documentation = "https://github.com/modelint/sip-parser/wiki"

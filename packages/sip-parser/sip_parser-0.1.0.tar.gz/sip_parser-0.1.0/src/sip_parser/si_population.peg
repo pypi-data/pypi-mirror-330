@@ -1,0 +1,37 @@
+// Instance population
+
+si_population = EOL* scenario (class_def instance_block)+ EOF
+
+// Scenario name
+scenario = scenario_name block_end
+scenario_name = 'scenario : ' icaps_name EOL
+
+// Class def
+class_def = class_name class_attrs block_end
+class_name = icaps_name EOL
+class_attrs = col_name (' | ' col_name)* EOL
+col_name = rnum_list / icaps_name
+rnum_list = rnum (', ' rnum)*
+
+// Instance block
+instance_block = row+ block_end
+row = (word SP+)? '{ ' val (SP+ val)* ' }' EOL // TODO: add *
+val = at_val / brace_val
+at_val = '@' word
+brace_val = '[' ival ']'
+ival = r'[^\t\n\r\f\v\[\]]+'
+//val = r'[^,\s\\]][^,\t\n\r\f\v]*' // TODO: try escaping braces
+block_end = "--" EOL*
+
+// Words and delimiters
+delim = r'[ _]' // Delimiter used inside of names
+word = iword / lword
+icaps_name = iword (delim word)*  // A name using initial caps only
+iword = r'[A-Z][A-Za-z0-9]*' // Initial cap word (used in Class and Subsystem names)
+lword = r'[a-z][a-z]*' // Lower case only word (used in relationship phrase)
+rnum = r'O?R[1-9][0-9]*' // Relationship number
+
+// Whitespace and comments
+EOL = SP* COMMENT? '\n' // end of line: Comments, blank lines, whitespace we can omit from the parser result
+COMMENT = '//' r'.*' // Comment slashes don't work if included in the regular expression for some reason
+SP = " "
