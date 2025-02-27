@@ -1,0 +1,46 @@
+[build-system]
+requires = ["hatchling",
+"hatch-vcs"]
+build-backend = "hatchling.build"
+
+[project]
+name = "khoca"
+dynamic = ["version"]
+description = "Khoca as pip installable package"
+readme = "README.md"
+license = "GPL-2.0-or-later"
+authors = [
+    { name = "Sebastian Oehms", email = "seb.oehms@gmail.com" },
+]
+keywords = [
+    "Khovanov",
+    "Knot",
+    "homology",
+    "theory",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: GNU General Public License v2 or later (GPLv2+)",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: C++",
+    "Programming Language :: Cython",
+    "Programming Language :: Python",
+    "Topic :: Scientific/Engineering :: Mathematics",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/soehms/khoca/"
+
+[tool.hatch.version]
+source = "vcs"
+
+#[tool.hatch.build.hooks.vcs]
+#version-file = "khoca/_version.py"
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "/khoca",
+]
+
