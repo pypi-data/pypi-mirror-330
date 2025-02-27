@@ -1,0 +1,5 @@
+websockets==13.1
+asyncio
+pyaudio
+cryptography<45.0.0,>=44.0.0
+numpy

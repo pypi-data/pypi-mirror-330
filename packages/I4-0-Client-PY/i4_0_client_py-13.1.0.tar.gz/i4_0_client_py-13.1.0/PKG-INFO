@@ -1,0 +1,26 @@
+Metadata-Version: 2.2
+Name: I4_0-Client-PY
+Version: 13.1.0
+Summary: Client Python bindings for I4.0.
+Home-page: https://github.com/TAO71-AI/I4.0
+Author: TAO71-AI
+License: TAO71 I4.0 License (v1)
+Project-URL: Source, https://github.com/TAO71-AI/I4.0/tree/development/LibI4/ClientPythonPackage
+Project-URL: License, https://github.com/TAO71-AI/I4.0/blob/main/LICENSE.md
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: Other/Proprietary License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Requires-Dist: websockets==13.1
+Requires-Dist: asyncio
+Requires-Dist: pyaudio
+Requires-Dist: cryptography<45.0.0,>=44.0.0
+Requires-Dist: numpy
+Dynamic: author
+Dynamic: classifier
+Dynamic: home-page
+Dynamic: license
+Dynamic: project-url
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
