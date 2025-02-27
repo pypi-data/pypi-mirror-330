@@ -1,0 +1,56 @@
+Metadata-Version: 2.4
+Name: kirin-toolchain
+Version: 0.13.1
+Summary: The Kirin Toolchain for building compilers and interpreters.
+Author-email: Roger-luo <rluo@quera.com>
+License-File: LICENSE
+Requires-Python: >=3.10
+Requires-Dist: beartype>=0.17.2
+Requires-Dist: rich>=13.7.1
+Requires-Dist: typing-extensions>=4.11.0
+Description-Content-Type: text/markdown
+
+# KIRIN
+
+[![CI](https://github.com/QuEraComputing/kirin/actions/workflows/ci.yml/badge.svg)](https://github.com/QuEraComputing/kirin/actions/workflows/ci.yml)
+[![codecov](https://codecov.io/gh/QuEraComputing/kirin/graph/badge.svg?token=lkUZ9DTqy4)](https://codecov.io/gh/QuEraComputing/kirin)
+[![Supported Python versions](https://img.shields.io/pypi/pyversions/kirin-toolchain.svg?color=%2334D058)](https://pypi.org/project/fastapi)
+
+*K*ernel *I*ntermediate *R*epresentation *IN*frastructure
+
+> [!IMPORTANT]
+>
+> This project is in the early stage of development. API and features are subject to change.
+> If you are concerned about the stability of the APIs, consider pin the version of Kirin in your project.
+
+## Installation
+
+### Install via `uv` (Recommended)
+
+```py
+uv add kirin-toolchain
+```
+
+### Install via pip
+
+```bash
+pip install kirin-toolchain
+```
+
+## Documentation
+
+The documentation is available at [https://queracomputing.github.io/kirin/latest/](https://queracomputing.github.io/kirin/latest/). We are at early stage of completing the documentation with more details and examples, comments and contributions are extremely welcome!
+
+## Project using Kirin
+
+### Quantum Computing
+
+We are actively using Kirin in QuEra Computing, here are some open-source eDSLs for quantum computing that we have developed using Kirin:
+
+- [bloqade.qasm2](https://github.com/QuEraComputing/bloqade/tree/main/src/bloqade/qasm2) This is an eDSL for quantum computing that we uses Kirin to define an eDSL for the Quantum Assembly Language (QASM) 2.0. It demonstrates how to create multiple dialects, run custom analysis and rewrites, and generate code from the dialects (back to QASM 2.0 in this case).
+- [bloqade.stim](https://github.com/QuEraComputing/bloqade/tree/main/src/bloqade/stim) This is an eDSL for quantum computing that we uses Kirin to define an eDSL for the [STIM](https://github.com/quantumlib/Stim/) language. It demonstrates how to create multiple dialects, run custom analysis and rewrites, and generate code from the dialects (back to Stim in this case).
+- [bloqade.qBraid](https://github.com/QuEraComputing/bloqade/blob/main/src/bloqade/qbraid/lowering.py) this example demonstrates how to lower from an existing representation into Kirin IR by using the visitor pattern.
+
+## License
+
+Apache License 2.0 with LLVM Exceptions
