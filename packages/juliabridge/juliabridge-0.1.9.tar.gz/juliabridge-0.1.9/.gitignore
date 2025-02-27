@@ -1,0 +1,10 @@
+# Python-generated files
+__pycache__
+dist
+.temp
+
+# Virtual environments
+.venv
+
+# Test-generated files
+tests/julia_venv_test
