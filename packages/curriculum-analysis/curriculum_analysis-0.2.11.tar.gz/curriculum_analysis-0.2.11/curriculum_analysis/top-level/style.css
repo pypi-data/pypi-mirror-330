@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');
+
+body {
+    margin: 0;
+    font-family: "Poppins", Arial, Helvetica, sans-serif;
+    max-width: 900px;
+    margin-inline: auto;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem 2rem;
+    background-color: #2E6F6C;
+    color: white;
+}
+header * {
+    line-height: 1em;
+    margin: 0;
+}
+header div {
+    display: flex;
+    align-items: flex-end;
+    gap: 1rem;
+}
+header a {
+    color: inherit;
+}
+header p {
+    flex-grow: 1;
+}
+
+article {
+    background: #eee;
+    padding: 1rem 2rem;
+    margin-bottom: 1rem;
+    border-radius: 3px;
+}
+table {
+    width: 100%;
+}
+.pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.pill, .keyword, .location {
+    font-weight: 200;
+    padding: 0.1em 0.25em;
+    border-radius: 1em;
+}
+.count {
+    background-color: hsla(0, 0%, 0%, 0.6);
+    display: inline-grid;
+    place-items: center;
+    padding-inline: 0.25rem;
+    margin-left: 0.25rem;
+    width: 1em;
+    color: white;
+    aspect-ratio: 1;
+    border-radius: 2rem;
+}
+.keyword {
+    background-color: hsl(200, 50%, 70%);
+}
+.location {
+    background-color: hsl(250, 50%, 70%);
+}
+
+#itemName {
+    font-size: 1.4em;
+}
+#target {
+    border-collapse: collapse;
+}
+#target td, #target th {
+    border: 1px solid #c3c3c3;
+    padding: 0.25em 2rem;
+}
+#target tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+#target tr:hover {
+    background-color: #ddd;
+}
+#target th {
+  text-align: left;
+  background-color: #2E6F6C;
+  color: white;
+}
+#title_header {
+    width: 100%;
+}
+
+#target tr:not(.found) {
+    color: grey;
+}
