@@ -1,0 +1,147 @@
+Metadata-Version: 2.2
+Name: gperiod
+Version: 0.0.4
+Summary: General datetime period library
+Author-email: Dima Burmistrov <pyctrl.dev@gmail.com>
+License: Copyright (c) 2023-2025 Dmitry Burmistrov
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE.
+        
+        Except as contained in this notice, the name(s) of the above copyright holders
+        shall not be used in advertising or otherwise to promote the sale, use or other
+        dealings in this Software without prior written authorization.
+        
+Project-URL: homepage, https://github.com/pyctrl/gperiod
+Project-URL: issues, https://github.com/pyctrl/gperiod/issues
+Keywords: period,periods,time interval,datetime,duration
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/x-rst
+License-File: LICENSE
+
+GPeriod
+#######
+
+|
+
+    *"Simplified time period manipulations"*
+
+|
+
+**Installation**
+
+::
+
+    pip install gperiod
+
+
+Presenting ``gperiod``
+**********************
+
+Introduction
+============
+
+Functional API
+
+``Period`` class
+
+``PeriodProto`` protocol
+
+factories (Period/Tuple/...)
+
+
+Quickstart
+==========
+
+Prepare playground
+------------------
+
+::
+
+    pip install ipython
+
+    ipython -i -c 'from gperiod.g import *; from datetime import *'
+
+
+
+Versioning
+**********
+
+`SemVer <http://semver.org/>`__ used for versioning.
+For available versions see the repository
+`tags <https://github.com/pyctrl/gperiod/tags>`__
+and `releases <https://github.com/pyctrl/gperiod/releases>`__.
+
+
+Authors
+*******
+
+-  **Dima Burmistrov** - *Initial work* -
+   `pyctrl <https://github.com/pyctrl>`__
+
+
+License
+*******
+
+This project is licensed under the X11 License (extended MIT) - see the
+`LICENSE <https://github.com/pyctrl/gperiod/blob/main/LICENSE>`__ file for details
+
+
+
+
+
+
+
+Additional APIs
+===============
+
+
+Representations
+---------------
+
+::
+
+    x
+
+
+* ``str`` and ``repr`` output differs
+
+
+
+Pickling, dumping and loading
+-----------------------------
+
+Pickling
+""""""""
+
+x
+
+
+Dumping
+"""""""
+
+x
+
+
+Loading
+"""""""
+
+x

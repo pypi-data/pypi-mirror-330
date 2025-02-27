@@ -1,0 +1,16 @@
+.gitignore
+.gitlab-ci.yml
+LICENSE
+README.rst
+pyproject.toml
+tox.ini
+.github/workflows/publish-to-pypi.yml
+.github/workflows/tests.yaml
+gperiod/__init__.py
+gperiod/f.py
+gperiod/g.py
+gperiod.egg-info/PKG-INFO
+gperiod.egg-info/SOURCES.txt
+gperiod.egg-info/dependency_links.txt
+gperiod.egg-info/top_level.txt
+tests/test_g.py
