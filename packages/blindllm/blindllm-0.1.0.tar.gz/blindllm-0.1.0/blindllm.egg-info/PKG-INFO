@@ -1,0 +1,154 @@
+Metadata-Version: 2.2
+Name: blindllm
+Version: 0.1.0
+Summary: A library for making anonymized calls to LLM APIs
+Home-page: https://github.com/EthanPasquier/BlindLLM
+Author: BlindLLM Team
+Author-email: contact@blindllm.com
+Keywords: llm,ai,anonymization,privacy,openai,mistral,claude
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: openai>=1.0.0
+Requires-Dist: anthropic>=0.18.0
+Requires-Dist: mistralai
+Requires-Dist: text_anonymizer
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# BlindLLM
+
+BlindLLM is a Python library that provides a secure way to interact with LLM APIs by automatically anonymizing sensitive information in prompts and de-anonymizing the responses. It supports multiple LLM services including OpenAI, Mistral, and Claude.
+
+## Features
+
+- Automatic anonymization of sensitive data (names, emails, organizations, phone numbers, etc.)
+- Support for multiple LLM services:
+  - OpenAI (GPT-4o, GPT-4, GPT-3.5-turbo)
+  - Mistral AI
+  - Anthropic's Claude
+- Simple, unified interface for all supported services
+- Automatic de-anonymization of responses
+
+## Installation
+
+```bash
+pip install .
+```
+
+## Requirements
+
+- Python 3.8 or higher
+- API keys for the services you plan to use
+- text_anonymizer library
+
+## Quick Start
+
+```python
+from blindllm import BlindLLM
+
+# Initialize with your chosen service
+llm = BlindLLM(
+    service="openai",  # or "mistral" or "claude"
+    model="gpt-4",    # model name for the chosen service
+    api_key="your-api-key"
+)
+
+# Make a call - get all information including anonymized data
+prompt = "John Smith from Acme Corp (email: john.smith@acme.com) asked about the project status."
+result = llm.call(prompt)
+
+# Access all available information
+print(result['anonymized_prompt'])   # The anonymized version of your prompt
+print(result['anonymized_response']) # The raw response from the LLM
+print(result['response'])           # The final de-anonymized response
+print(result['anonymization_map'])  # The mapping of tokens to original values
+```
+
+## Supported Services and Models
+
+### OpenAI
+- gpt-4o
+- gpt-4
+- gpt-3.5-turbo
+- And other available OpenAI chat models
+
+### Mistral
+- mistral-large-latest
+- mistral-medium-latest
+- mistral-small-latest
+- mistral-tiny-latest
+
+### Claude
+- claude-3-5-sonnet-20241022
+- claude-3-opus-20240229
+- claude-3-sonnet-20240229
+- claude-3-haiku-20240307
+- And other available Claude models
+
+## How It Works
+
+1. **Anonymization**: When you make a call, BlindLLM uses the `text_anonymizer` library to anonymize sensitive information in your prompt by replacing it with tokens (e.g., [ENTITY_PERSON_1], [ENTITY_EMAIL_1], [ENTITY_ORG_1]).
+
+2. **API Call**: The anonymized prompt is sent to the chosen LLM service.
+
+3. **De-anonymization**: The response from the LLM is automatically de-anonymized by replacing the tokens with the original sensitive information.
+
+## Example
+
+```python
+from blindllm import BlindLLM
+
+llm = BlindLLM(
+    service="openai",
+    model="gpt-4",
+    api_key="your-openai-api-key"
+)
+
+# Example of what happens behind the scenes:
+
+# 1. Your prompt:
+prompt = "John Smith from Acme Corp (email: john.smith@acme.com) asked about the project status."
+
+# 2. Anonymized before sending to API:
+# result['anonymized_prompt'] will be something like:
+# "[ENTITY_PERSON_1] from [ENTITY_ORG_1] (email: [ENTITY_EMAIL_1]) asked about the project status."
+
+# 3. Raw LLM response with anonymized tokens:
+# result['anonymized_response'] contains the direct response from the LLM
+
+# 4. Final de-anonymized response:
+# result['response'] contains the response with original names restored
+
+# 5. Mapping information:
+# result['anonymization_map'] contains:
+# {
+#   "[ENTITY_PERSON_1]": "John Smith",
+#   "[ENTITY_ORG_1]": "Acme Corp",
+#   "[ENTITY_EMAIL_1]": "john.smith@acme.com"
+# }
+```
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
