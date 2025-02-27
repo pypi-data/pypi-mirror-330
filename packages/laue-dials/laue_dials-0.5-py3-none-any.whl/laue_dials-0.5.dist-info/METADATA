@@ -1,0 +1,123 @@
+Metadata-Version: 2.2
+Name: laue_dials
+Version: 0.5
+Summary: A package for analyzing Laue x-ray crystallography data using the DIALS framework.
+Home-page: https://github.com/rs-station/laue_dials
+Author: Rick A. Hewitt
+Author-email: rahewitt@g.harvard.edu
+License: MIT
+Platform: Mac
+Platform: Linux
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python
+Requires-Python: >=3.8
+Description-Content-Type: text/x-rst; charset=UTF-8
+License-File: LICENSE.txt
+Requires-Dist: importlib-metadata
+Requires-Dist: reciprocalspaceship
+Requires-Dist: tqdm
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: argparse
+Requires-Dist: gemmi
+Requires-Dist: matplotlib
+Requires-Dist: scipy
+Requires-Dist: jupyter
+Provides-Extra: docs
+Requires-Dist: sphinx; extra == "docs"
+Requires-Dist: myst_parser; extra == "docs"
+Requires-Dist: sphinxcontrib_autoprogram; extra == "docs"
+Requires-Dist: sphinx_rtd_theme; extra == "docs"
+Requires-Dist: nbsphinx; extra == "docs"
+Requires-Dist: sphinx-design; extra == "docs"
+Requires-Dist: autodocsumm; extra == "docs"
+Requires-Dist: pandoc; extra == "docs"
+Provides-Extra: testing
+Requires-Dist: setuptools>=61; extra == "testing"
+Requires-Dist: pytest; extra == "testing"
+Requires-Dist: pytest-cov; extra == "testing"
+
+.. image:: https://github.com/rs-station/laue-dials/actions/workflows/build.yml/badge.svg
+   :alt: Build Status
+   :target: https://github.com/rs-station/laue-dials/actions/workflows/build.yml
+
+.. image:: https://github.com/rs-station/laue-dials/actions/workflows/build_docs.yml/badge.svg
+   :alt: Documentation Status
+   :target: https://rs-station.github.io/laue-dials/
+
+.. image:: https://img.shields.io/pypi/v/laue-dials?color=blue
+   :alt: PyPI Release
+   :target: https://pypi.org/project/laue-dials/
+
+.. image:: https://codecov.io/gh/rs-station/laue-dials/branch/main/graph/badge.svg
+   :alt: Code Coverage
+   :target: https://codecov.io/gh/rs-station/laue-dials
+
+.. image:: https://img.shields.io/badge/License-MIT-yellow.svg
+   :alt: MIT License
+   :target: https://github.com/rs-station/laue-dials/blob/main/LICENSE.txt
+
+==========
+laue-dials
+==========
+
+Data analysis package for Laue crystallography.
+
+``laue-dials`` is an extension to the `DIALS`_ code for analyzing polychromatic crystallographic data.
+Building off the ``DIALS`` framework, and including modern tools like ``numpy``, ``scipy``, and
+``reciprocalspaceship``, this package allows for analysis of X-ray crystallographic data using
+wide-bandwidth light sources. This package is intended to be used in conjunction with `DIALS`_,
+`careless`_, and `Phenix`_ in order to generate molecular models from raw data. For documentation, see
+https://rs-station.github.io/laue-dials/index.html.
+
+============
+Installation
+============
+
+To install ``laue-dials``, the DIALS code must first be installed using
+
+.. code:: python
+
+   conda install -c conda-forge dials
+
+Then, using the same python environment, run the following to install ``laue-dials`` from ``pip``:
+
+.. code:: python
+
+   pip install laue-dials
+
+or alternatively, install the development version of ``laue-dials`` from GitHub:
+
+.. code:: python
+
+   pip install git+https://github.com/rs-station/laue-dials.git
+
+``laue-dials`` consists of several command-line scripts for the processing of Laue diffraction data, which are
+
+.. code:: python
+
+   laue.find_spots
+   laue.index
+   laue.sequence_to_stills
+   laue.optimize_indexing
+   laue.refine
+   laue.predict
+   laue.integrate
+   laue.plot_wavelengths
+   laue.compute_rmsds
+
+Note that you need to import the image data using ``dials.import``. For information on how to use this command, visit https://dials.github.io/documentation/programs/dials_import.html. An example of how to analyze a full dataset lives at https://github.com/rs-station/laue-dials/blob/main/examples/pipeline.sh.
+
+If any issues occur either with installation or use of the software, please file an issue at `issue tracker`_. Any and all questions, concerns, or feature requests are welcome.
+
+============
+Publications
+============
+
+`Laue-DIALS: Open-source software for polychromatic x-ray diffraction data <https://doi.org/10.1063/4.0000265>`_. **Hewitt, Rick A.** and Kevin M. Dalton, Derek Mendez, Harrison K. Wang, Margaret A. Klureza, Dennis E. Brookner, Jack B. Greisman, David McDonagh, Vukica Šrajer, Nicholas K. Sauter, Aaron S. Brewster, Doeke R. Hekstra. *Structural Dynamics, 2024*
+
+.. _careless: https://github.com/rs-station/careless
+.. _DIALS: https://dials.github.io/index.html
+.. _issue tracker: https://github.com/rs-station/laue-dials/issues
+.. _Phenix: http://www.phenix-online.org
+.. _reciprocalspaceship: https://github.com/rs-station/reciprocalspaceship
