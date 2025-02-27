@@ -1,0 +1,2 @@
+[console_scripts]
+pds-ingress-client = pds.ingress.client.pds_ingress_client:main
