@@ -1,0 +1,91 @@
+[project]
+name = "unitelabs-cdk"
+version = "0.2.11"
+description = "A framework to develop UniteLabs connectors based on the SiLA 2 standard specification."
+license = "MIT"
+authors = [
+    {name = "UniteLabs", email = "developers+cdk@unitelabs.io"},
+]
+readme = "README.md"
+keywords = ["UniteLabs", "SiLA 2", "laboratory", "automation", "connectivity"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Healthcare Industry",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries",
+]
+requires-python=">=3.9,<4.0"
+dependencies = [
+    "click",
+    "deprecated",
+    "pydantic_settings",
+    "python-dotenv",
+    "pyyaml",
+    "unitelabs-sila >= 0.1.8",
+]
+
+[project.urls]
+homepage = "https://unitelabs.io"
+repository = "https://gitlab.com/unitelabs/cdk/python-cdk"
+documentation = "https://docs.unitelabs.io/connector-development/overview"
+"Bug Tracker" = "https://gitlab.com/unitelabs/cdk/python-cdk/-/issues"
+
+[project.scripts]
+certificate = 'unitelabs.cdk.cli:certificate'
+connector = 'unitelabs.cdk.cli:connector'
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-asyncio",
+    "pytest-cov",
+    "ruff",
+]
+docs = [
+    "unitelabs-jsondocs",
+]
+
+[tool.ruff]
+src = ["src", "tests"]
+line-length = 120
+target-version = "py39"
+
+[tool.ruff.format]
+docstring-code-format = true
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["test"]
+asyncio_mode = "auto"
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "@typing.overload",
+]
+
+[tool.poetry]
+packages = [{include = "unitelabs", from = "src"}]
+
+[[tool.poetry.source]]
+name = "unitelabs"
+url = "https://gitlab.com/api/v4/groups/1009252/-/packages/pypi/simple"
+priority = "supplemental"
+
+[tool.poetry.dependencies]
+unitelabs-bus = {source = "unitelabs"}
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
