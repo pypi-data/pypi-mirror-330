@@ -1,0 +1,16 @@
+LICENSE
+README.md
+pyhelper.c
+pyhelper.h
+pyproject.toml
+pyuci.c
+pyuci.h
+ucimodule.c
+euci/__init__.py
+euci/boolean.py
+pyuci.egg-info/PKG-INFO
+pyuci.egg-info/SOURCES.txt
+pyuci.egg-info/dependency_links.txt
+pyuci.egg-info/top_level.txt
+tests/test_euci.py
+tests/test_uci.py

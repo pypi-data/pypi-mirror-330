@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pyuci"
+dynamic = []
+description = "Python UCI bindings"
+readme = "README.md"
+license = {file = "LICENSE"}
+version = "0.10.3"
+requires-python = ">=3.7"
+authors = [
+    { name = "CZ.NIC z.s.p.o", email = "karel.koci@nic.cz" },
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+]
+
+[project.urls]
+Homepage = "https://gitlab.nic.cz/turris/pyuci"
+
+[tool.setuptools]
+packages = ["euci"]
+
+[[tool.setuptools.ext-modules]]
+name = "uci"
+sources = ["ucimodule.c", "pyuci.c", "pyhelper.c"]
+language = "c"
+libraries = ["uci"]
+
+# Uncomment to enable coverage measurement
+#extra-compile-args = ["-fprofile-arcs", "-ftest-coverage"]
+#extra-link-args = ["-fprofile-arcs"]
