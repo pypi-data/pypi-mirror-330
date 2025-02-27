@@ -1,0 +1,45 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "mkdocs-ubleiden-theme"
+version = "1.2.0"
+authors = [
+  { name="Ben Companjen", email="ben@companjen.name" },
+]
+description = "UBL theme for MkDocs, extending Material for MkDocs"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Operating System :: OS Independent",
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "Topic :: Documentation",
+  "Topic :: Software Development :: Documentation",
+]
+keywords = ["mkdocs", "theme"]
+license = "GPL-3.0"
+license-files = ["LICEN[CS]E*"]
+
+dependencies = [
+  "mkdocs-material>=8.5.11",
+]
+
+[project.entry-points."mkdocs.themes"]
+ubleiden = "ubleiden_theme"
+
+[project.urls]
+Homepage = "https://github.com/LeidenUniversityLibrary/mkdocs-ubleiden-theme"
+Issues = "https://github.com/LeidenUniversityLibrary/mkdocs-ubleiden-theme/issues"
+
+[tool.hatch.build.targets.sdist]
+include = [
+  "ubleiden_theme/",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = [
+  "ubleiden_theme",
+]

@@ -1,0 +1,17 @@
+extends: material
+
+palette:
+  scheme: leidenuniv
+  primary: white
+
+features:
+  - navigation.instant
+  - navigation.tabs
+  - navigation.sections
+  - navigation.tracking
+
+font:
+  text: Open Sans
+  code: Inconsolata
+
+logo: assets/images/favicon.png
