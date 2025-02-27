@@ -1,0 +1,44 @@
+[build-system]
+requires = [
+    "setuptools>=74.1.1",
+    "wheel>=0.44.0",
+    "setuptools-scm>=8.1.0"  # Add setuptools-scm for versioning
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "maoto-agent"
+description = "Maoto Agent"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {file = "LICENSE"}
+keywords = ["Maoto", "Agent"]
+authors = [
+    {name = "Maoto"}
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent"
+]
+dependencies = [
+    "gql>=3.4.0",
+    "websockets>=10.4",
+    "setuptools>=74.1.1",
+    "psutil>=6.0.0",
+    "python-dateutil>=2.9.0",
+]
+
+dynamic = ["version"]
+
+[tool.setuptools_scm]
+local_scheme = "no-local-version"
+version_scheme = "post-release"
+
+[project.urls]
+Home = "https://maoto.world"
+
+[project.scripts]
+maoto-agent = "maoto_agent.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["./src"]
