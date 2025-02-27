@@ -1,0 +1,6 @@
+[console_scripts]
+decompose=cvanmf.denovo:cli_decompose
+rank_select=cvanmf.denovo:cli_rank_selection
+reapply=cvanmf.reapply:cli
+regu_select=cvanmf.denovo:cli_regu_selection
+
