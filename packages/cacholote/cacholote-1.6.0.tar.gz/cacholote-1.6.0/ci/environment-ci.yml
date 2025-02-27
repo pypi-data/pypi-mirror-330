@@ -1,0 +1,36 @@
+# environment-ci.yml: Additional dependencies to install in the CI environment.
+channels:
+- conda-forge
+- nodefaults
+dependencies:
+- make
+- mypy
+- myst-parser
+- pip
+- pre-commit
+- pydata-sphinx-theme
+- pytest
+- pytest-cov
+- sphinx
+- sphinx-autoapi
+# DO NOT EDIT ABOVE THIS LINE, ADD DEPENDENCIES BELOW
+- aiohttp
+- cfgrib
+- dask
+- moto
+- netCDF4
+- postgresql
+- psycopg
+- psycopg2
+- pytest-httpserver
+- pytest-postgresql!=6.1.0
+- python-magic
+- requests
+- s3fs
+- sqlalchemy[mypy]
+- types-requests
+- xarray>=2022.6.0
+- zarr<3.0.0
+- pip:
+  - pytest-structlog
+  - types-sqlalchemy-utils

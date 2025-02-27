@@ -1,0 +1,89 @@
+[build-system]
+build-backend = "setuptools.build_meta"
+requires = ["setuptools>=64", "setuptools_scm>=8"]
+
+[project]
+classifiers = [
+  "Development Status :: 2 - Pre-Alpha",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: Apache Software License",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Scientific/Engineering"
+]
+dependencies = [
+  "alembic",
+  "fsspec",
+  "pydantic",
+  "pydantic-settings",
+  "sqlalchemy>=2.0.9",
+  "sqlalchemy_utils",
+  "structlog"
+]
+description = "Efficiently cache calls to functions"
+dynamic = ["version"]
+license = {file = "LICENSE"}
+name = "cacholote"
+readme = "README.md"
+
+[tool.coverage.run]
+branch = true
+
+[tool.mypy]
+plugins = [
+  "sqlalchemy.ext.mypy.plugin"
+]
+strict = true
+
+[[tool.mypy.overrides]]
+ignore_missing_imports = true
+module = [
+  "botocore.*",
+  "cfgrib.*",
+  "fsspec.*",
+  "moto.*"
+]
+
+[tool.ruff]
+# Same as Black.
+indent-width = 4
+line-length = 88
+
+[tool.ruff.lint]
+ignore = [
+  # pydocstyle: Missing Docstrings
+  "D1"
+]
+select = [
+  # pyflakes
+  "F",
+  # pycodestyle
+  "E",
+  "W",
+  # isort
+  "I",
+  # pydocstyle
+  "D"
+]
+
+[tool.ruff.lint.pycodestyle]
+max-line-length = 110
+
+[tool.ruff.lint.pydocstyle]
+convention = "numpy"
+
+[tool.setuptools]
+packages = ["cacholote"]
+
+[tool.setuptools_scm]
+fallback_version = "999"
+write_to = "cacholote/version.py"
+write_to_template = '''
+# Do not change! Do not track in version control!
+__version__ = "{version}"
+'''
