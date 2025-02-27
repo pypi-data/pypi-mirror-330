@@ -1,0 +1,2092 @@
+[
+    {
+        "inputs": [],
+        "name": "AlreadyInitialized",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "DelegationFailed",
+        "type": "error"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "capacity",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint256",
+                "name": "amount",
+                "type": "uint256"
+            }
+        ],
+        "name": "DepositCapacityExceeded",
+        "type": "error"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "amount",
+                "type": "uint256"
+            }
+        ],
+        "name": "DepositInsufficient",
+        "type": "error"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "ActionIndex",
+                "name": "idx",
+                "type": "uint256"
+            },
+            {
+                "internalType": "address",
+                "name": "account",
+                "type": "address"
+            }
+        ],
+        "name": "ExcludedAccount",
+        "type": "error"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "ActionIndex",
+                "name": "idx",
+                "type": "uint256"
+            },
+            {
+                "internalType": "address",
+                "name": "account",
+                "type": "address"
+            },
+            {
+                "internalType": "bytes32",
+                "name": "subaccount",
+                "type": "bytes32"
+            },
+            {
+                "internalType": "address",
+                "name": "token",
+                "type": "address"
+            },
+            {
+                "internalType": "uint256",
+                "name": "amount",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint128",
+                "name": "fee",
+                "type": "uint128"
+            }
+        ],
+        "name": "FeeNotCoveredByBalance",
+        "type": "error"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "ActionIndex",
+                "name": "idx",
+                "type": "uint256"
+            },
+            {
+                "internalType": "address",
+                "name": "account",
+                "type": "address"
+            },
+            {
+                "internalType": "bytes32",
+                "name": "subaccount",
+                "type": "bytes32"
+            },
+            {
+                "internalType": "address",
+                "name": "token",
+                "type": "address"
+            },
+            {
+                "internalType": "uint256",
+                "name": "amount",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint256",
+                "name": "balance",
+                "type": "uint256"
+            }
+        ],
+        "name": "InsufficientBalance",
+        "type": "error"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "ActionIndex",
+                "name": "idx",
+                "type": "uint256"
+            },
+            {
+                "internalType": "enum ActionType",
+                "name": "actionType",
+                "type": "uint8"
+            }
+        ],
+        "name": "InvalidAction",
+        "type": "error"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "token",
+                "type": "address"
+            }
+        ],
+        "name": "InvalidDepositToken",
+        "type": "error"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "ActionIndex",
+                "name": "idx",
+                "type": "uint256"
+            },
+            {
+                "internalType": "enum EngineType",
+                "name": "engineType",
+                "type": "uint8"
+            }
+        ],
+        "name": "InvalidEngineType",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "InvalidInitialization",
+        "type": "error"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "ActionIndex",
+                "name": "idx",
+                "type": "uint256"
+            },
+            {
+                "internalType": "address",
+                "name": "account",
+                "type": "address"
+            },
+            {
+                "internalType": "bytes32",
+                "name": "subaccount",
+                "type": "bytes32"
+            }
+        ],
+        "name": "InvalidLiquidator",
+        "type": "error"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "ActionIndex",
+                "name": "idx",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint64",
+                "name": "nonce",
+                "type": "uint64"
+            }
+        ],
+        "name": "InvalidNonce",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "InvalidRegistryRecord",
+        "type": "error"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "ActionIndex",
+                "name": "idx",
+                "type": "uint256"
+            },
+            {
+                "internalType": "address",
+                "name": "signer",
+                "type": "address"
+            }
+        ],
+        "name": "InvalidSigner",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "NewOwnerIsZeroAddress",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "NoHandoverRequest",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "NotInitializing",
+        "type": "error"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "sender",
+                "type": "address"
+            }
+        ],
+        "name": "NotSequencer",
+        "type": "error"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "sequencer",
+                "type": "address"
+            }
+        ],
+        "name": "SequencerPaused",
+        "type": "error"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "account",
+                "type": "address"
+            }
+        ],
+        "name": "SignerDepositUnauthorized",
+        "type": "error"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "ActionIndex",
+                "name": "idx",
+                "type": "uint256"
+            },
+            {
+                "internalType": "address",
+                "name": "sender",
+                "type": "address"
+            },
+            {
+                "internalType": "bytes32",
+                "name": "subaccount",
+                "type": "bytes32"
+            }
+        ],
+        "name": "SignerNotFound",
+        "type": "error"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "ActionIndex",
+                "name": "idx",
+                "type": "uint256"
+            },
+            {
+                "internalType": "address",
+                "name": "sender",
+                "type": "address"
+            },
+            {
+                "internalType": "bytes32",
+                "name": "subaccount",
+                "type": "bytes32"
+            }
+        ],
+        "name": "SubaccountNotFound",
+        "type": "error"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "token",
+                "type": "address"
+            }
+        ],
+        "name": "TokenDepositPaused",
+        "type": "error"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "ActionIndex",
+                "name": "idx",
+                "type": "uint256"
+            },
+            {
+                "internalType": "address",
+                "name": "token",
+                "type": "address"
+            }
+        ],
+        "name": "TokenWithdrawPaused",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "Unauthorized",
+        "type": "error"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "account",
+                "type": "address"
+            }
+        ],
+        "name": "UnauthorizedAccount",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "UnauthorizedCallContext",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "UpgradeFailed",
+        "type": "error"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "ActionIndex",
+                "name": "idx",
+                "type": "uint256"
+            },
+            {
+                "internalType": "address",
+                "name": "account",
+                "type": "address"
+            },
+            {
+                "internalType": "bytes32",
+                "name": "subaccount",
+                "type": "bytes32"
+            },
+            {
+                "internalType": "address",
+                "name": "token",
+                "type": "address"
+            },
+            {
+                "internalType": "uint256",
+                "name": "amount",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint256",
+                "name": "fee",
+                "type": "uint256"
+            }
+        ],
+        "name": "WithdrawFound",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "WithdrawNotFound",
+        "type": "error"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint64",
+                "name": "validAfterTimestamp",
+                "type": "uint64"
+            },
+            {
+                "internalType": "address",
+                "name": "token",
+                "type": "address"
+            },
+            {
+                "internalType": "uint256",
+                "name": "amount",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint256",
+                "name": "fee",
+                "type": "uint256"
+            }
+        ],
+        "name": "WithdrawNotReady",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "ZeroAmount",
+        "type": "error"
+    },
+    {
+        "inputs": [],
+        "name": "ZeroLength",
+        "type": "error"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": true,
+                "internalType": "address",
+                "name": "account",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "bytes32",
+                "name": "referralCode",
+                "type": "bytes32"
+            }
+        ],
+        "name": "AccountReferred",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": true,
+                "internalType": "address",
+                "name": "sender",
+                "type": "address"
+            },
+            {
+                "indexed": true,
+                "internalType": "bytes32",
+                "name": "subaccount",
+                "type": "bytes32"
+            },
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "token",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "amount",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "balance",
+                "type": "uint256"
+            }
+        ],
+        "name": "Deposit",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": true,
+                "internalType": "address",
+                "name": "account",
+                "type": "address"
+            },
+            {
+                "indexed": true,
+                "internalType": "bytes32",
+                "name": "subaccount",
+                "type": "bytes32"
+            },
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "token",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "feeAmount",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "balance",
+                "type": "uint256"
+            }
+        ],
+        "name": "FeeAccrued",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": true,
+                "internalType": "address",
+                "name": "account",
+                "type": "address"
+            },
+            {
+                "indexed": true,
+                "internalType": "bytes32",
+                "name": "subaccount",
+                "type": "bytes32"
+            }
+        ],
+        "name": "FeeCollectorUpdated",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": true,
+                "internalType": "address",
+                "name": "account",
+                "type": "address"
+            },
+            {
+                "indexed": true,
+                "internalType": "bytes32",
+                "name": "subaccount",
+                "type": "bytes32"
+            },
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "token",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "amount",
+                "type": "uint256"
+            }
+        ],
+        "name": "FeesClaimed",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "uint64",
+                "name": "version",
+                "type": "uint64"
+            }
+        ],
+        "name": "Initialized",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": true,
+                "internalType": "address",
+                "name": "account",
+                "type": "address"
+            },
+            {
+                "indexed": true,
+                "internalType": "bytes32",
+                "name": "subaccount",
+                "type": "bytes32"
+            }
+        ],
+        "name": "LiquidatorUpdated",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": true,
+                "internalType": "address",
+                "name": "pendingOwner",
+                "type": "address"
+            }
+        ],
+        "name": "OwnershipHandoverCanceled",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": true,
+                "internalType": "address",
+                "name": "pendingOwner",
+                "type": "address"
+            }
+        ],
+        "name": "OwnershipHandoverRequested",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": true,
+                "internalType": "address",
+                "name": "oldOwner",
+                "type": "address"
+            },
+            {
+                "indexed": true,
+                "internalType": "address",
+                "name": "newOwner",
+                "type": "address"
+            }
+        ],
+        "name": "OwnershipTransferred",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": true,
+                "internalType": "bytes32",
+                "name": "name",
+                "type": "bytes32"
+            },
+            {
+                "indexed": true,
+                "internalType": "address",
+                "name": "record",
+                "type": "address"
+            }
+        ],
+        "name": "RegistryRecordUpdated",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": true,
+                "internalType": "address",
+                "name": "sequencer",
+                "type": "address"
+            }
+        ],
+        "name": "SequencerAdded",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": true,
+                "internalType": "address",
+                "name": "sequencer",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "bool",
+                "name": "paused",
+                "type": "bool"
+            }
+        ],
+        "name": "SequencerPausedUpdated",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": true,
+                "internalType": "address",
+                "name": "sequencer",
+                "type": "address"
+            }
+        ],
+        "name": "SequencerRemoved",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": true,
+                "internalType": "address",
+                "name": "sender",
+                "type": "address"
+            },
+            {
+                "indexed": true,
+                "internalType": "bytes32",
+                "name": "subaccount",
+                "type": "bytes32"
+            },
+            {
+                "indexed": true,
+                "internalType": "address",
+                "name": "signer",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint64",
+                "name": "linkedTimestamp",
+                "type": "uint64"
+            }
+        ],
+        "name": "SignerLinked",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": true,
+                "internalType": "address",
+                "name": "sender",
+                "type": "address"
+            },
+            {
+                "indexed": true,
+                "internalType": "bytes32",
+                "name": "subaccount",
+                "type": "bytes32"
+            },
+            {
+                "indexed": true,
+                "internalType": "address",
+                "name": "signer",
+                "type": "address"
+            }
+        ],
+        "name": "SignerRevoked",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": true,
+                "internalType": "bytes32",
+                "name": "tokenName",
+                "type": "bytes32"
+            },
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "tokenAddress",
+                "type": "address"
+            }
+        ],
+        "name": "TokenAdded",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": true,
+                "internalType": "bytes32",
+                "name": "tokenName",
+                "type": "bytes32"
+            },
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "tokenAddress",
+                "type": "address"
+            }
+        ],
+        "name": "TokenPromoted",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": true,
+                "internalType": "bytes32",
+                "name": "tokenName",
+                "type": "bytes32"
+            },
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "tokenAddress",
+                "type": "address"
+            }
+        ],
+        "name": "TokenRemoved",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": true,
+                "internalType": "bytes32",
+                "name": "tokenName",
+                "type": "bytes32"
+            },
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "tokenAddress",
+                "type": "address"
+            }
+        ],
+        "name": "TokenUpdated",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": true,
+                "internalType": "address",
+                "name": "implementation",
+                "type": "address"
+            }
+        ],
+        "name": "Upgraded",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": true,
+                "internalType": "address",
+                "name": "account",
+                "type": "address"
+            },
+            {
+                "indexed": true,
+                "internalType": "bytes32",
+                "name": "subaccount",
+                "type": "bytes32"
+            },
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "token",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "amount",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint128",
+                "name": "fee",
+                "type": "uint128"
+            }
+        ],
+        "name": "WithdrawFinalized",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": true,
+                "internalType": "address",
+                "name": "account",
+                "type": "address"
+            },
+            {
+                "indexed": true,
+                "internalType": "bytes32",
+                "name": "subaccount",
+                "type": "bytes32"
+            },
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "token",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "amount",
+                "type": "uint256"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint128",
+                "name": "fee",
+                "type": "uint128"
+            }
+        ],
+        "name": "WithdrawInitiated",
+        "type": "event"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "uint64",
+                "name": "period",
+                "type": "uint64"
+            }
+        ],
+        "name": "WithdrawLockoutUpdated",
+        "type": "event"
+    },
+    {
+        "inputs": [],
+        "name": "INITIATE_WITHDRAW_ABI_PARAM",
+        "outputs": [
+            {
+                "internalType": "bytes",
+                "name": "",
+                "type": "bytes"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "LINK_SIGNER_ABI_PARAM",
+        "outputs": [
+            {
+                "internalType": "bytes",
+                "name": "",
+                "type": "bytes"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "LIQUIDATE_ORDER_ABI_PARAM",
+        "outputs": [
+            {
+                "internalType": "bytes",
+                "name": "",
+                "type": "bytes"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "TRADE_ORDER_ABI_PARAM",
+        "outputs": [
+            {
+                "internalType": "bytes",
+                "name": "",
+                "type": "bytes"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "UPDATE_FUNDING_ABI_PARAM",
+        "outputs": [
+            {
+                "internalType": "bytes",
+                "name": "",
+                "type": "bytes"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "sequencer",
+                "type": "address"
+            }
+        ],
+        "name": "addSequencer",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "bytes32",
+                "name": "tokenName",
+                "type": "bytes32"
+            },
+            {
+                "internalType": "address",
+                "name": "tokenAddress",
+                "type": "address"
+            }
+        ],
+        "name": "addToken",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "cancelOwnershipHandover",
+        "outputs": [],
+        "stateMutability": "payable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "feeToken",
+                "type": "address"
+            },
+            {
+                "internalType": "uint256",
+                "name": "amount",
+                "type": "uint256"
+            }
+        ],
+        "name": "claimFees",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "pendingOwner",
+                "type": "address"
+            }
+        ],
+        "name": "completeOwnershipHandover",
+        "outputs": [],
+        "stateMutability": "payable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "bytes32",
+                "name": "subaccount",
+                "type": "bytes32"
+            },
+            {
+                "internalType": "address",
+                "name": "depositToken",
+                "type": "address"
+            },
+            {
+                "internalType": "uint256",
+                "name": "amount",
+                "type": "uint256"
+            },
+            {
+                "internalType": "bytes32",
+                "name": "referralCode",
+                "type": "bytes32"
+            }
+        ],
+        "name": "deposit",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "eip712Domain",
+        "outputs": [
+            {
+                "internalType": "bytes1",
+                "name": "fields",
+                "type": "bytes1"
+            },
+            {
+                "internalType": "string",
+                "name": "name",
+                "type": "string"
+            },
+            {
+                "internalType": "string",
+                "name": "version",
+                "type": "string"
+            },
+            {
+                "internalType": "uint256",
+                "name": "chainId",
+                "type": "uint256"
+            },
+            {
+                "internalType": "address",
+                "name": "verifyingContract",
+                "type": "address"
+            },
+            {
+                "internalType": "bytes32",
+                "name": "salt",
+                "type": "bytes32"
+            },
+            {
+                "internalType": "uint256[]",
+                "name": "extensions",
+                "type": "uint256[]"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "account",
+                "type": "address"
+            },
+            {
+                "internalType": "bytes32",
+                "name": "subaccount",
+                "type": "bytes32"
+            }
+        ],
+        "name": "finalizeWithdraw",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "account",
+                "type": "address"
+            },
+            {
+                "internalType": "bytes32",
+                "name": "subaccount",
+                "type": "bytes32"
+            },
+            {
+                "internalType": "address",
+                "name": "token",
+                "type": "address"
+            }
+        ],
+        "name": "getAccountBalance",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "token",
+                "type": "address"
+            }
+        ],
+        "name": "getAccountGlobalTotalBalance",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "getAccountGlobalUsdToken",
+        "outputs": [
+            {
+                "internalType": "address",
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "account",
+                "type": "address"
+            }
+        ],
+        "name": "getExchangeSequencer",
+        "outputs": [
+            {
+                "internalType": "bool",
+                "name": "isApproved",
+                "type": "bool"
+            },
+            {
+                "internalType": "bool",
+                "name": "isPaused",
+                "type": "bool"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "getExchangeTokens",
+        "outputs": [
+            {
+                "internalType": "bytes32[]",
+                "name": "",
+                "type": "bytes32[]"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "getExchangeWithdrawLockout",
+        "outputs": [
+            {
+                "internalType": "uint64",
+                "name": "",
+                "type": "uint64"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "getFeeCollector",
+        "outputs": [
+            {
+                "internalType": "address",
+                "name": "feeCollectorAccount",
+                "type": "address"
+            },
+            {
+                "internalType": "bytes32",
+                "name": "feeCollectorSubaccount",
+                "type": "bytes32"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "linkedSigner",
+                "type": "address"
+            }
+        ],
+        "name": "getLinkedSignerAccount",
+        "outputs": [
+            {
+                "internalType": "address",
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "getLiquidator",
+        "outputs": [
+            {
+                "internalType": "address",
+                "name": "liquidatorAccount",
+                "type": "address"
+            },
+            {
+                "internalType": "bytes32",
+                "name": "liquidatorSubaccount",
+                "type": "bytes32"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "sender",
+                "type": "address"
+            },
+            {
+                "internalType": "bytes32",
+                "name": "subaccount",
+                "type": "bytes32"
+            },
+            {
+                "internalType": "uint32",
+                "name": "productId",
+                "type": "uint32"
+            }
+        ],
+        "name": "getPerpPosition",
+        "outputs": [
+            {
+                "components": [
+                    {
+                        "internalType": "int128",
+                        "name": "size",
+                        "type": "int128"
+                    },
+                    {
+                        "internalType": "uint128",
+                        "name": "entryPrice",
+                        "type": "uint128"
+                    },
+                    {
+                        "internalType": "int128",
+                        "name": "lastFundingUsd",
+                        "type": "int128"
+                    }
+                ],
+                "internalType": "struct PerpPosition.Data",
+                "name": "",
+                "type": "tuple"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint32",
+                "name": "productId",
+                "type": "uint32"
+            }
+        ],
+        "name": "getPerpProduct",
+        "outputs": [
+            {
+                "components": [
+                    {
+                        "internalType": "uint32",
+                        "name": "id",
+                        "type": "uint32"
+                    },
+                    {
+                        "internalType": "enum ProductStatus",
+                        "name": "status",
+                        "type": "uint8"
+                    },
+                    {
+                        "internalType": "bytes32",
+                        "name": "baseTokenName",
+                        "type": "bytes32"
+                    },
+                    {
+                        "internalType": "bytes32",
+                        "name": "quoteTokenName",
+                        "type": "bytes32"
+                    },
+                    {
+                        "internalType": "uint128",
+                        "name": "makerFee",
+                        "type": "uint128"
+                    },
+                    {
+                        "internalType": "uint128",
+                        "name": "takerFee",
+                        "type": "uint128"
+                    },
+                    {
+                        "internalType": "uint128",
+                        "name": "liquidationMakerFee",
+                        "type": "uint128"
+                    },
+                    {
+                        "internalType": "uint128",
+                        "name": "liquidationTakerFee",
+                        "type": "uint128"
+                    },
+                    {
+                        "internalType": "uint128",
+                        "name": "tickSize",
+                        "type": "uint128"
+                    },
+                    {
+                        "internalType": "uint128",
+                        "name": "maxQuantity",
+                        "type": "uint128"
+                    },
+                    {
+                        "internalType": "uint128",
+                        "name": "lotSize",
+                        "type": "uint128"
+                    },
+                    {
+                        "internalType": "uint128",
+                        "name": "openInterest",
+                        "type": "uint128"
+                    },
+                    {
+                        "internalType": "int128",
+                        "name": "cumulativeFundingUsd",
+                        "type": "int128"
+                    },
+                    {
+                        "internalType": "uint16",
+                        "name": "maxLeverage",
+                        "type": "uint16"
+                    },
+                    {
+                        "internalType": "uint128",
+                        "name": "maxOpenInterest",
+                        "type": "uint128"
+                    }
+                ],
+                "internalType": "struct PerpProduct.Info",
+                "name": "",
+                "type": "tuple"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "bytes32",
+                "name": "tokenName",
+                "type": "bytes32"
+            }
+        ],
+        "name": "getToken",
+        "outputs": [
+            {
+                "components": [
+                    {
+                        "internalType": "address",
+                        "name": "tokenAddress",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "depositCapacity",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "minDeposit",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint128",
+                        "name": "withdrawFee",
+                        "type": "uint128"
+                    },
+                    {
+                        "internalType": "uint128",
+                        "name": "depositFee",
+                        "type": "uint128"
+                    },
+                    {
+                        "internalType": "bool",
+                        "name": "depositEnabled",
+                        "type": "bool"
+                    },
+                    {
+                        "internalType": "bool",
+                        "name": "withdrawEnabled",
+                        "type": "bool"
+                    },
+                    {
+                        "internalType": "bool",
+                        "name": "removeProtected",
+                        "type": "bool"
+                    }
+                ],
+                "internalType": "struct Token.Data",
+                "name": "",
+                "type": "tuple"
+            }
+        ],
+        "stateMutability": "pure",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "account",
+                "type": "address"
+            },
+            {
+                "internalType": "bytes32",
+                "name": "subaccount",
+                "type": "bytes32"
+            }
+        ],
+        "name": "getWithdraw",
+        "outputs": [
+            {
+                "components": [
+                    {
+                        "internalType": "address",
+                        "name": "token",
+                        "type": "address"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "amount",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint128",
+                        "name": "fee",
+                        "type": "uint128"
+                    },
+                    {
+                        "internalType": "uint64",
+                        "name": "initiatedAt",
+                        "type": "uint64"
+                    }
+                ],
+                "internalType": "struct Withdraw.Data",
+                "name": "",
+                "type": "tuple"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "initialize",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "owner",
+        "outputs": [
+            {
+                "internalType": "address",
+                "name": "result",
+                "type": "address"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "pendingOwner",
+                "type": "address"
+            }
+        ],
+        "name": "ownershipHandoverExpiresAt",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "result",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "bytes[]",
+                "name": "actions",
+                "type": "bytes[]"
+            }
+        ],
+        "name": "processActions",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "bytes32",
+                "name": "tokenName",
+                "type": "bytes32"
+            },
+            {
+                "internalType": "address",
+                "name": "tokenAddress",
+                "type": "address"
+            }
+        ],
+        "name": "promoteToken",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "proxiableUUID",
+        "outputs": [
+            {
+                "internalType": "bytes32",
+                "name": "",
+                "type": "bytes32"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "components": [
+                    {
+                        "internalType": "enum ProductStatus",
+                        "name": "status",
+                        "type": "uint8"
+                    },
+                    {
+                        "internalType": "bytes32",
+                        "name": "baseTokenName",
+                        "type": "bytes32"
+                    },
+                    {
+                        "internalType": "bytes32",
+                        "name": "quoteTokenName",
+                        "type": "bytes32"
+                    },
+                    {
+                        "internalType": "uint128",
+                        "name": "makerFee",
+                        "type": "uint128"
+                    },
+                    {
+                        "internalType": "uint128",
+                        "name": "takerFee",
+                        "type": "uint128"
+                    },
+                    {
+                        "internalType": "uint128",
+                        "name": "liquidationMakerFee",
+                        "type": "uint128"
+                    },
+                    {
+                        "internalType": "uint128",
+                        "name": "liquidationTakerFee",
+                        "type": "uint128"
+                    },
+                    {
+                        "internalType": "uint128",
+                        "name": "tickSize",
+                        "type": "uint128"
+                    },
+                    {
+                        "internalType": "uint128",
+                        "name": "maxQuantity",
+                        "type": "uint128"
+                    },
+                    {
+                        "internalType": "uint128",
+                        "name": "lotSize",
+                        "type": "uint128"
+                    },
+                    {
+                        "internalType": "uint16",
+                        "name": "maxLeverage",
+                        "type": "uint16"
+                    },
+                    {
+                        "internalType": "uint128",
+                        "name": "maxOpenInterest",
+                        "type": "uint128"
+                    }
+                ],
+                "internalType": "struct IPerpEngine.RegisterPerpProductParams",
+                "name": "params",
+                "type": "tuple"
+            }
+        ],
+        "name": "registerPerpProduct",
+        "outputs": [
+            {
+                "internalType": "uint32",
+                "name": "",
+                "type": "uint32"
+            }
+        ],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "sequencer",
+                "type": "address"
+            }
+        ],
+        "name": "removeSequencer",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "bytes32",
+                "name": "tokenName",
+                "type": "bytes32"
+            }
+        ],
+        "name": "removeToken",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "renounceOwnership",
+        "outputs": [],
+        "stateMutability": "payable",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "requestOwnershipHandover",
+        "outputs": [],
+        "stateMutability": "payable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "newOwner",
+                "type": "address"
+            }
+        ],
+        "name": "transferOwnership",
+        "outputs": [],
+        "stateMutability": "payable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "account",
+                "type": "address"
+            },
+            {
+                "internalType": "bytes32",
+                "name": "subaccount",
+                "type": "bytes32"
+            }
+        ],
+        "name": "updateFeeCollector",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "account",
+                "type": "address"
+            },
+            {
+                "internalType": "bytes32",
+                "name": "subaccount",
+                "type": "bytes32"
+            }
+        ],
+        "name": "updateLiquidator",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint32",
+                "name": "productId",
+                "type": "uint32"
+            },
+            {
+                "internalType": "uint128",
+                "name": "makerFee",
+                "type": "uint128"
+            },
+            {
+                "internalType": "uint128",
+                "name": "takerFee",
+                "type": "uint128"
+            },
+            {
+                "internalType": "uint128",
+                "name": "liquidationMakerFee",
+                "type": "uint128"
+            },
+            {
+                "internalType": "uint128",
+                "name": "liquidationTakerFee",
+                "type": "uint128"
+            }
+        ],
+        "name": "updatePerpProductFees",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint32",
+                "name": "productId",
+                "type": "uint32"
+            },
+            {
+                "internalType": "uint16",
+                "name": "maxLeverage",
+                "type": "uint16"
+            }
+        ],
+        "name": "updatePerpProductMaxLeverage",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint32",
+                "name": "productId",
+                "type": "uint32"
+            },
+            {
+                "internalType": "uint128",
+                "name": "maxOpenInterest",
+                "type": "uint128"
+            }
+        ],
+        "name": "updatePerpProductMaxOpenInterest",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint32",
+                "name": "productId",
+                "type": "uint32"
+            },
+            {
+                "internalType": "uint128",
+                "name": "tickSize",
+                "type": "uint128"
+            },
+            {
+                "internalType": "uint128",
+                "name": "maxQuantity",
+                "type": "uint128"
+            },
+            {
+                "internalType": "uint128",
+                "name": "lotSize",
+                "type": "uint128"
+            }
+        ],
+        "name": "updatePerpProductSizes",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint32",
+                "name": "productId",
+                "type": "uint32"
+            },
+            {
+                "internalType": "enum ProductStatus",
+                "name": "status",
+                "type": "uint8"
+            }
+        ],
+        "name": "updatePerpProductStatus",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "bytes32",
+                "name": "name",
+                "type": "bytes32"
+            },
+            {
+                "internalType": "address",
+                "name": "record",
+                "type": "address"
+            }
+        ],
+        "name": "updateRegistryRecord",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "sequencer",
+                "type": "address"
+            },
+            {
+                "internalType": "bool",
+                "name": "paused",
+                "type": "bool"
+            }
+        ],
+        "name": "updateSequencerPaused",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "components": [
+                    {
+                        "internalType": "bytes32",
+                        "name": "tokenName",
+                        "type": "bytes32"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "depositCapacity",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "minDeposit",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint128",
+                        "name": "depositFee",
+                        "type": "uint128"
+                    },
+                    {
+                        "internalType": "uint128",
+                        "name": "withdrawFee",
+                        "type": "uint128"
+                    },
+                    {
+                        "internalType": "bool",
+                        "name": "depositEnabled",
+                        "type": "bool"
+                    },
+                    {
+                        "internalType": "bool",
+                        "name": "withdrawEnabled",
+                        "type": "bool"
+                    }
+                ],
+                "internalType": "struct IExchangeConfig.UpdateTokenParams",
+                "name": "params",
+                "type": "tuple"
+            }
+        ],
+        "name": "updateToken",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint64",
+                "name": "period",
+                "type": "uint64"
+            }
+        ],
+        "name": "updateWithdrawLockout",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "newImplementation",
+                "type": "address"
+            },
+            {
+                "internalType": "bytes",
+                "name": "data",
+                "type": "bytes"
+            }
+        ],
+        "name": "upgradeToAndCall",
+        "outputs": [],
+        "stateMutability": "payable",
+        "type": "function"
+    }
+]
