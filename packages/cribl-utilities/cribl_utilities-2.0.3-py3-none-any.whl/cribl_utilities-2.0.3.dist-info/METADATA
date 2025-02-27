@@ -1,0 +1,27 @@
+Metadata-Version: 2.3
+Name: cribl-utilities
+Version: 2.0.3
+Summary: A CLI tool to interact with Cribl
+Author: CINQ ICT
+Author-email: info@cinqict.nl
+Requires-Python: >=3.13,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.13
+Requires-Dist: PyYAML (>=6.0.2,<7.0.0)
+Requires-Dist: pydantic (>=2.10.6,<3.0.0)
+Requires-Dist: requests (>=2.32.3,<3.0.0)
+Requires-Dist: tomli (>=2.2.1,<3.0.0)
+Requires-Dist: typer (>=0.15.1,<0.16.0)
+Requires-Dist: yamllint (>=1.35.1,<2.0.0)
+Description-Content-Type: text/markdown
+
+# Using cribl-utilities CLI
+## Install instructions
+- `brew install pipx`
+- `pipx install cribl-utilities`
+- `cribl-utilities --help`
+
+## Notes on usage
+- Before running the CLI make sure that your variables file with the Cribl credentials are included in the same folder that you are running the CLI in. 
+  - Use an existing variables file and use it running `source [FILE]`. To view an example or a variables file type cribl-utilities example-env
+  - To create a new variables file use cribl-utilities setup. Use it running `source variables`
