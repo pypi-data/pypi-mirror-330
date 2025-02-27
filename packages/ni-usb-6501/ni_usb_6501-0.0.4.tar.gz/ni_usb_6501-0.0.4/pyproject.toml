@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ni_usb_6501"
+version = "0.0.4"
+description = "A Python driver for the NI USB 6501 I/O Module"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [
+    { name = "Daniel Köpping", email = "daniel.koepping@de.abb.com" }
+]
+dependencies = [
+    "pyusb"
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent"
+]
+keywords = ["NI USB 6501", "National Instruments", "Python driver", "USB", "I/O Module", "Industrial automation"]
+
+[project.urls]
+Homepage = "https://github.com/dkoep/ni-usb-6501-driver"
+Repository = "https://github.com/dkoep/ni-usb-6501-driver"
+Issues = "https://github.com/dkoep/ni-usb-6501-driver/issues"
+
+[tool.setuptools]
+packages = ["ni_usb_6501"]
