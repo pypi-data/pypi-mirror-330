@@ -1,0 +1,27 @@
+examples/comparison.jpg,sha256=0YjKGAuZ8919YwTm2JQESdS9hjJc-P1Rmn7gkYkgvKo,322076
+examples/examples.py,sha256=tZYQeauTGy-mOvLOaxup1AULn7d9H2AxT-U5DnqUsU4,2928
+examples/data/Adobe Scan 23 Jan 2024.pdf,sha256=j3Cb92QxChaXBv2s54qFayveSfup5FGkPqzwq4pltoI,24326032
+examples/data/G38J5.jpg,sha256=jxqe_2mO5NS_9xE7HGX7RYBpWuDEgUMn8M-9yiA5Fig,361412
+examples/output/comparison.jpg,sha256=0YjKGAuZ8919YwTm2JQESdS9hjJc-P1Rmn7gkYkgvKo,322076
+examples/output/page_0.jpg,sha256=8lzyDDoI2MU14DW1GDKVTbapvqENXVvsjUs3HPQS0yU,979882
+examples/output/page_1.jpg,sha256=NPxekSKQB4CJ58Ynn6a5yUwfDs6aqN_sTJrHS1vQSgE,938981
+examples/output/pages_0_1.pdf,sha256=eWNSG3b5P8USensKx86NtrTIdd2-bQZRxugPCAX936M,844412
+examples/output/pdf_comparison_0.jpg,sha256=h891Aff2KpNWeVUZdcoo4AWc6pfaMjjR-BsVMoicCSM,889467
+examples/output/pdf_comparison_1.jpg,sha256=vTqib_5R4z0xOXjMDYcX1IQzGJjniWMWjIo-Jv-pwUc,835632
+examples/output/straightened.jpg,sha256=MemfVhPBcVhMqfnxTOZbQzkBTgqt_33Jyqbsog1sM5Y,156653
+examples/output/straightened.pdf,sha256=3ZpSMmxb8ZZk6_dn_zZ8ZvZGFKWxxs6QYkwV8JNe_aM,14136386
+py_reform/__init__.py,sha256=suIRRZr8N4BlIqyxAwZDC4novPQl8kPDsXLMLj1mQv8,192
+py_reform/core.py,sha256=tcSZh5ZPu1oAcTUpZ5DJqXYCdy0i0dU7l0TJ0xEqSZc,3340
+py_reform/models/__init__.py,sha256=7WWnTvnp9NUkp468sxSovsJ8WjBw8TlOA4vhqlR7UtA,1132
+py_reform/models/base.py,sha256=4ExZObHe7VNDgczoXsvWUwFXbnd8f2cqDkjyb2NjTBI,496
+py_reform/models/uvdoc_model.py,sha256=b82ip0FjSLJsLTMHeL4NR3PeJIwpJ3vvZ56dPk7TdhM,17786
+py_reform/models/weights/best_model.pkl,sha256=fpCGG4pRbrS8UfhL2InLdydXQ9LR08qAkZUeyfK32iM,32158393
+py_reform/utils/__init__.py,sha256=S9n9_0z-Bz20xYTSCMW3VpAaq8CM995TCYBLPMdEW8U,181
+py_reform/utils/comparison.py,sha256=bO-xu2HgYmzsm9ljWsV4b_oBPhzAla2-12mOqXYCsvc,3949
+py_reform/utils/pdf.py,sha256=VtrX6Hptp7Fsyul888HwSf_pLUMMItsTuZ1FLNQPRIM,5195
+tests/test_basic.py,sha256=pV9TY4cl5HauPASR1gRyN644XulkDTysdWe_c6wmdeA,1552
+py_reform-0.1.0.dist-info/LICENSE,sha256=wrXfmcpVuS2MEr5nj2VKBk414otnVTGyGP2Te5oWWKg,1070
+py_reform-0.1.0.dist-info/METADATA,sha256=Yw9IORb5skY3e-41wOSfuMEiN3ZBDUdd-JUgiG2KPyg,3873
+py_reform-0.1.0.dist-info/WHEEL,sha256=jB7zZ3N9hIM9adW7qlTAyycLYW9npaWKLRzaoVcLKcM,91
+py_reform-0.1.0.dist-info/top_level.txt,sha256=HpLACs0hx_V3tZfS458UMBkZXBU-YODMggjmRRsJuK0,25
+py_reform-0.1.0.dist-info/RECORD,,
