@@ -1,0 +1,76 @@
+Metadata-Version: 2.4
+Name: yooink
+Version: 0.1.9
+Summary: A package for accessing OOI data via the m2m protocol
+Project-URL: Repository, https://github.com/Waveform-Analytics/yooink
+Project-URL: Documentation, https://waveform-analytics.github.io/yooink/
+Project-URL: Issues, https://github.com/Waveform-Analytics/yooink/issues
+Author-email: Michelle Weirathmueller <michelle@waveformanalytics.com>
+License: MIT License
+        
+        Copyright (c) 2024 Waveform Analytics
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE.
+License-File: LICENSE
+Keywords: OOI,ocean observatory data
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.9
+Requires-Dist: beautifulsoup4>=4.13.3
+Requires-Dist: h5netcdf>=1.5.0
+Requires-Dist: h5py>=3.13.0
+Requires-Dist: ipykernel>=6.29.5
+Requires-Dist: jupyterlab>=4.3.5
+Requires-Dist: munch>=4.0.0
+Requires-Dist: numpy>=2.0.2
+Requires-Dist: pandas>=2.2.3
+Requires-Dist: pyarrow>=19.0.1
+Requires-Dist: python-dateutil>=2.9.0.post0
+Requires-Dist: pytz>=2025.1
+Requires-Dist: pyyaml>=6.0.2
+Requires-Dist: requests>=2.32.3
+Requires-Dist: tomlkit>=0.13.2
+Requires-Dist: tqdm>=4.67.1
+Requires-Dist: xarray>=2024.7.0
+Description-Content-Type: text/markdown
+
+![Yooink text logo](https://raw.githubusercontent.com/Waveform-Analytics/yooink/main/assets/final-text-sm.png)
+
+# yooink
+
+A Python package to access Ocean Observatories Initiative (OOI) data via 
+the m2m (machine to machine) interface. This project has been built with 
+the help of various tutorials and examples provided by the OOI, most 
+notably [the python section of their repository](https://github.com/oceanobservatories/ooi-data-explorations/tree/master/python/ooi_data_explorations),
+which was written mostly (or entirely) by [Chris Wingard](https://github.com/cwingard) at OOI.
+
+## Quick Setup
+
+You can install this package from [PyPI](https://pypi.org/project/yooink/) using:
+
+```bash
+pip install yooink
+```
+
+## Usage
+
+For more information about how to install and use yooink, check out the 
+[yooink documentation site](https://waveform-analytics.github.io/yooink/).
+

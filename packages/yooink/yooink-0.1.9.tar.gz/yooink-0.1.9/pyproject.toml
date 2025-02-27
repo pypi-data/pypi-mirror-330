@@ -1,0 +1,46 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "yooink"
+version = "0.1.9"
+authors = [
+  { name="Michelle Weirathmueller", email="michelle@waveformanalytics.com" },
+]
+description = "A package for accessing OOI data via the m2m protocol"
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+license = {file = "LICENSE"}
+keywords = ["OOI", "ocean observatory data"]
+dependencies = [
+    "beautifulsoup4>=4.13.3",
+    "h5netcdf>=1.5.0",
+    "h5py>=3.13.0",
+    "ipykernel>=6.29.5",
+    "jupyterlab>=4.3.5",
+    "munch>=4.0.0",
+    "numpy>=2.0.2",
+    "pandas>=2.2.3",
+    "pyarrow>=19.0.1",
+    "python-dateutil>=2.9.0.post0",
+    "pytz>=2025.1",
+    "pyyaml>=6.0.2",
+    "requests>=2.32.3",
+    "tomlkit>=0.13.2",
+    "tqdm>=4.67.1",
+    "xarray>=2024.7.0",
+]
+
+
+[project.urls]
+Repository = "https://github.com/Waveform-Analytics/yooink"
+Documentation = "https://waveform-analytics.github.io/yooink/"
+Issues = "https://github.com/Waveform-Analytics/yooink/issues"
+
+
