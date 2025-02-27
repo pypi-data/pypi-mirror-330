@@ -1,0 +1,2 @@
+[console_scripts]
+aws = aws_connect_cli.main:app
