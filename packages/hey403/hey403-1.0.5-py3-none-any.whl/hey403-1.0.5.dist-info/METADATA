@@ -1,0 +1,143 @@
+Metadata-Version: 2.2
+Name: hey403
+Version: 1.0.5
+Summary: DNS accessibility testing tool for identifying 403 errors and network restrictions
+Author-email: Diramid <diramidteam@gmail.com>
+License: MIT License
+        
+        Copyright (c) 2025 Diramid
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE.
+        
+Project-URL: Homepage, https://github.com/Diramid/hey-403-cli
+Project-URL: Documentation, https://github.com/Diramid/hey-403-cli/blob/main/README.md
+Project-URL: Issues, https://github.com/Diramid/hey-403-cli/issues
+Keywords: dns,cli,security,403,http-testing,network-troubleshooting
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: System Administrators
+Classifier: Topic :: Internet :: Name Service (DNS)
+Classifier: Topic :: Security
+Classifier: Topic :: Utilities
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: dnspython>=2.7.0
+Requires-Dist: requests>=2.32.3
+Requires-Dist: rich>=13.9.4
+
+<h1 align="center">
+  🌐 Hey 403 - CLI Edition
+  <br>
+  <sub>⚡ DNS Accessibility Testing Tool ⚡</sub>
+</h1>
+
+<div align="center">
+
+[![Stars](https://img.shields.io/github/stars/Diramid/hey-403-cli?logo=starship&color=gold)](https://github.com/Diramid/hey403/stargazers)
+[![Forks](https://img.shields.io/github/forks/Diramid/hey-403-cli?logo=git&color=9cf)](https://github.com/Diramid/hey403/forks)
+[![Issues](https://img.shields.io/github/issues/Diramid/hey-403-cli?logo=openbugbounty&color=red)](https://github.com/Diramid/hey403/issues)
+[![License](https://img.shields.io/github/license/Diramid/hey-403-cli?logo=open-source-initiative&color=green)](https://github.com/Diramid/hey403/blob/main/LICENSE)
+
+</div>
+
+## 📖 Table of Contents
+- [✨ Features](#-features)
+- [🚀 Quick Start](#-quick-start)
+- [🔧 Usage Examples](#-usage-examples)
+- [🤝 Contributing](#-contributing)
+- [⚖️ License](#️-license)
+
+## 🌟 About Hey 403
+**Hey 403 - CLI Edition** is a powerful command-line utility designed to diagnose domain accessibility issues across multiple DNS providers. This tool helps developers, network administrators, and security professionals quickly identify:
+
+- Geo-restrictions and censorship blocks 🚫
+- DNS resolution inconsistencies 🌍
+- Server response variations 🔄
+- Potential connectivity issues 🔍
+
+### Key Capabilities
+- Test domain accessibility through **15+ global DNS servers**
+- Detect **403 Forbidden** and other HTTP errors
+- Compare DNS resolution times ⏱️
+- Identify regional blocking patterns 🗺️
+- Generate machine-readable reports 📊
+
+### Why Use Hey 403?
+- 🚦 **Instant Diagnostics**: Verify domain accessibility in seconds
+- 🌐 **Global Perspective**: Test against worldwide DNS providers
+- 🔧 **Troubleshooting Made Easy**: Pinpoint DNS-related issues quickly
+- 📈 **Performance Metrics**: Measure response times across providers
+
+## ✨ Features
+| **Feature**         | **Description**                          |
+|----------------------|------------------------------------------|
+| 🚪 CLI First        | Terminal-native interface                |
+| 🌍 15+ Built-in DNS | Preconfigured DNS servers                |
+| ⚡ Parallel Testing  | Concurrent DNS checks                    |
+| 🎨 Colorful Output  | Rich text formatting                     |
+
+## 🚀 Quick Start
+```bash
+# Install the package
+pip install hey403
+
+# Run the main command
+hey403 --help
+```
+
+## 🔧 Usage Examples
+```bash
+# Test a single domain
+hey403 example.com
+
+# Set best dns for current domain
+hey403 example.com --set
+
+```
+## 🤝 Contributing
+1. Fork the repository
+2. Set up the development environment:
+   ```bash
+   git clone https://github.com/Diramid/hey-403-cli.git
+   cd hey-403-cli
+   pip install -e .[dev]
+   ```
+3. Run tests:
+   ```bash
+   pytest tests/ -v
+   ```
+4. Commit and push your changes:
+   ```bash
+   git checkout -b feature/amazing-feature
+   git commit -m 'Add amazing feature'
+   git push origin feature/amazing-feature
+   ```
+5. Open a Pull Request
+
+## ⚖️ License
+Distributed under MIT License. See [LICENSE](https://github.com/Diramid/hey403/blob/main/LICENSE) for details.
+
+---
+
+> **Note** 📢  
+> Always use this tool responsibly and in compliance with local laws and regulations.  
+> Unauthorized access to computer systems is strictly prohibited.
