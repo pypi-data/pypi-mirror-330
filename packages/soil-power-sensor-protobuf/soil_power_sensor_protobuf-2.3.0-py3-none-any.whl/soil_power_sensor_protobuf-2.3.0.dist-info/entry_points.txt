@@ -1,0 +1,5 @@
+[console_scripts]
+ents = soil_power_sensor_protobuf.cli:entry
+
+[gui_scripts]
+gui = soil_power_sensor_protobuf.config.user_config:main
