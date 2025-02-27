@@ -1,0 +1,19 @@
+Metadata-Version: 2.4
+Name: dotbeat
+Version: 1.0.1
+Summary: A library for Swatch Internet Time
+Project-URL: Homepage, https://github.com/theoddcell/dotbeat
+Project-URL: Repository, https://github.com/theoddcell/dotbeat
+Author-email: TheOddCell <me@oddcell.ca>
+License: Unlicence
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+
+# dotbeat
+Swatch internet time is cool.
+
+## What is a .beat?
+One .beat is 1/1000th of a day. It could reasonably be called millidays.
+
+A time formatted in @xxx means number of .beats since midnight in Switzerland.
+Some implimentations of .beats use the format @xxx.xx to make .beats more precise.
