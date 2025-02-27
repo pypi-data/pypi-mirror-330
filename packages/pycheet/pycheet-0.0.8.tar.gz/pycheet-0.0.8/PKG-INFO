@@ -1,0 +1,15 @@
+Metadata-Version: 2.4
+Name: pycheet
+Version: 0.0.8
+Summary: A small python cheet package
+Project-URL: Homepage, https://github.com/webro-13/pycheet
+Project-URL: Issues, https://github.com/webro-13/pycheet/issues
+Author-email: Rocco S <botmech@outlook.com>
+License-Expression: MIT
+License-File: LICENSE
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+
+this library is a python "cheet" library. it currently is still under development.(I recomend installing "libhelp" to find out the syntax/code.)
