@@ -1,0 +1,15 @@
+{
+  "jupyter.lab.shortcuts": [],
+  "title": "@e2xgrader/cells",
+  "description": "@e2xgrader/cells settings.",
+  "type": "object",
+  "properties": {
+    "edit_mode": {
+      "title": "Edit Mode",
+      "description": "If the edit cell button is displayed",
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "additionalProperties": false
+}
