@@ -1,0 +1,30 @@
+[tool.poetry]
+name = "kattis-cli"
+version = "1.0.4"
+authors = ["Ram Basnet <rbasnet@coloradomesa.edu>"]
+description = "A command-line tool for Kattis"
+readme = "README.md"
+repository = "https://github.com/rambasnet/kattis-cli"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/rambasnet/kattis-cli"
+"Bug Tracker" = "https://github.com/rambasnet/kattis-cli/issues"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+requests = "^2.31.0"
+click = "^8.1.7"
+beautifulsoup4 = "^4.12.2"
+pyyaml = "^6.0.1"
+rich = "^13.6.0"
+tomlkit = "^0.12.2"
+lxml = "^4.9.3"
+
+[tool.poetry.scripts]
+kattis = 'kattis_cli.main:main'
+
