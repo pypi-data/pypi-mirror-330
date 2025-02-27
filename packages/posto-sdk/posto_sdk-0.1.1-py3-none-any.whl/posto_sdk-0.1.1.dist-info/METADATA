@@ -1,0 +1,213 @@
+Metadata-Version: 2.2
+Name: posto-sdk
+Version: 0.1.1
+Summary: A Python SDK for scheduling and managing social media posts
+Author-email: Posto Team <support@xmachine.online>
+License: MIT License
+        
+        Copyright (c) 2024 Posto SDK Contributors
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE. 
+Project-URL: Homepage, https://xmachine.online
+Project-URL: Documentation, https://xmachine.online/docs
+Project-URL: Repository, https://github.com/yourusername/posto-sdk
+Keywords: social media,posting,scheduling,wordpress,twitter,instagram,threads
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Internet :: WWW/HTTP
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: requests>=2.25.0
+Requires-Dist: python-dateutil>=2.8.0
+
+# Posto SDK
+
+A powerful Python SDK for scheduling and managing social media posts across multiple platforms.
+
+## Installation
+
+```bash
+pip install posto-sdk
+```
+
+## Quick Start
+
+```python
+from posto_sdk import PostoSDK
+
+# Initialize with credentials
+sdk = PostoSDK.from_credentials('your_username', 'your_password')
+
+# Or initialize with an existing token
+sdk = PostoSDK.from_token('your_auth_token')
+
+# Schedule a simple text post
+result = sdk.post(
+    message="Hello World!",
+    channels=[1, 2]  # Channel IDs for your social media accounts
+)
+
+# Schedule a post with media
+result = sdk.post(
+    message="Check out this image!",
+    channels=[1, 2],
+    media="path/to/image.jpg"  # Can be local path or URL
+)
+
+# Schedule a post for later
+from datetime import datetime, timedelta
+future_time = datetime.now() + timedelta(hours=2)
+
+result = sdk.post(
+    message="Scheduled post!",
+    channels=[1, 2],
+    when=future_time
+)
+```
+
+## Core Features
+
+- **Multi-Platform Support**: Post to multiple social media platforms simultaneously
+- **Media Handling**: Support for images, videos, and multiple media files
+- **Flexible Scheduling**: Post immediately or schedule for later
+- **Channel Management**: Easy access to available social media channels
+- **Error Handling**: Comprehensive error reporting and validation
+
+## API Reference
+
+### Initialization
+
+```python
+# With credentials
+sdk = PostoSDK.from_credentials(
+    username="your_username",
+    password="your_password",
+    base_url="https://xmachine.online",  # Optional
+    debug=False  # Optional
+)
+
+# With token
+sdk = PostoSDK.from_token(
+    token="your_auth_token",
+    base_url="https://xmachine.online",  # Optional
+    debug=False  # Optional
+)
+```
+
+### Core Methods
+
+#### Post Content
+```python
+result = sdk.post(
+    message="Your post content",
+    channels=["1", "2"],  # Channel IDs as string or list
+    media="path/to/media.jpg",  # Optional: path or URL to media
+    when=datetime.now()  # Optional: scheduling time
+)
+```
+
+#### Channel Management
+```python
+# Get all available channels
+channels = sdk.get_available_channels()
+
+# Get channels by type
+facebook_channels = sdk.get_channels_by_type("facebook")
+
+# Find specific channels
+channels = sdk.find_channel("my channel name")
+
+# Get active channels
+active = sdk.get_active_channels()
+
+# Refresh channels list
+sdk.refresh_channels()
+```
+
+### Response Types
+
+#### PostResult
+The `post()` method returns a `PostResult` object with:
+- `success`: Boolean indicating success
+- `schedule_group_id`: ID for the scheduled post group
+- `error_message`: Error details if failed
+- `media_ids`: List of uploaded media IDs
+
+### Error Handling
+
+The SDK provides specific exceptions for different error cases:
+- `PostoError`: Base exception
+- `MediaUploadError`: Media upload failures
+- `ChannelError`: Channel-related issues
+- `PostingError`: Post creation failures
+
+```python
+try:
+    result = sdk.post(message="Test post", channels=[1])
+except MediaUploadError as e:
+    print(f"Media upload failed: {e}")
+except ChannelError as e:
+    print(f"Channel error: {e}")
+except PostingError as e:
+    print(f"Posting failed: {e}")
+```
+
+## Supported Media Types
+
+### Images
+- JPEG/JPG
+- PNG
+- GIF
+- WebP
+- TIFF
+- BMP
+
+### Videos
+- MP4
+- MPEG
+- QuickTime
+- AVI
+- WMV
+- WebM
+- 3GPP
+
+## Best Practices
+
+1. **Error Handling**: Always wrap API calls in try-except blocks
+2. **Channel Validation**: Verify channel IDs before posting
+3. **Media Optimization**: Ensure media files meet platform requirements
+4. **Rate Limiting**: Consider implementing delays between multiple posts
+5. **Token Management**: Store authentication tokens securely
+
+## Support
+
+For support, please contact: support@xmachine.online
+
+## License
+
+MIT License - See LICENSE file for details 
