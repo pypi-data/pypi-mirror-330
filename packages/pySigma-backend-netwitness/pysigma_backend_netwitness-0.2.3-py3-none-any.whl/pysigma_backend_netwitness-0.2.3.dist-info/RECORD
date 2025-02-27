@@ -1,0 +1,12 @@
+sigma/backends/netwitness/__init__.py,sha256=1IcTkC6FLi9iU6QYAhFjqg-q0dja7pwU1711Oz6VGFQ,307
+sigma/backends/netwitness/netwitness.py,sha256=mqNqxRSrkEIMJ-UHPgQYzeP8ijbasnAo1z8L0wwLL2g,22807
+sigma/backends/netwitness/transformations.py,sha256=qrzg-MWsjWOIB6r4z4RxIUbsCsVX1Dr7MUkH0rwV5lg,2204
+sigma/backends/netwitness/types.py,sha256=zPMPnaFzrIXl6NQZn3DWzDn7lWLGFUpSUY6nzi1KR0c,380
+sigma/pipelines/netwitness/__init__.py,sha256=gXSDTnPNJT-6U99ODn3Ckf6CRSaQF0RCZ6olxWdX9DM,180
+sigma/pipelines/netwitness/netwitness.py,sha256=uiDMDE0d61btRBsAD3cj9zGUBh-wcn7tUcrJF5aR10A,6108
+sigma/pipelines/netwitness/schemas.py,sha256=W-GSaWb2H7m_KyDzzSnZAzopUwWVHrKyXEQY08xkkNE,245
+sigma/pipelines/netwitness/windows.py,sha256=iseMMTOCzN9u613CE-1Afxg55D4xSru39yRTuZVmGEQ,2537
+pysigma_backend_netwitness-0.2.3.dist-info/LICENSE,sha256=gUzxp-edxqPto9GX-n3tNsO3M5F-1doejME16yTzrAk,26525
+pysigma_backend_netwitness-0.2.3.dist-info/METADATA,sha256=VZgsGRSunhCnNSEmD2caYlSu2ttqb7HnvDqiUiyJAtI,3485
+pysigma_backend_netwitness-0.2.3.dist-info/WHEEL,sha256=XbeZDeTWKc1w7CSIyre5aMDU_-PohRwTQceYnisIYYY,88
+pysigma_backend_netwitness-0.2.3.dist-info/RECORD,,
