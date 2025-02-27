@@ -1,0 +1,25 @@
+Metadata-Version: 2.2
+Name: nomad_camels_driver_agilent_34970
+Version: 0.1.1
+Summary: Driver for communicating with a Voltcraft PPS power supply.
+Author-email: FAIRmat - HU Berlin <nomad-camels@fau.de>
+Project-URL: GitHub Page, https://github.com/FAU-LAP/NOMAD-CAMELS
+Project-URL: Documentation, https://fau-lap.github.io/NOMAD-CAMELS/doc/instruments/instruments.html
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: GNU Lesser General Public License v2 (LGPLv2)
+Requires-Python: >=3.9.6
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+Requires-Dist: pyvisa
+Requires-Dist: pyvisa-py
+
+# NOMAD-CAMELS Driver for Voltcraft PPS
+
+Driver for communicating with a Agilent 34970 series switch matrix written for the measurement software [NOMAD-CAMELS](https://fau-lap.github.io/NOMAD-CAMELS/).
+
+## Features
+(De-)Activate (i.e. electrically open/close) connections of the switch matrix modules. Read the integrated DMM. Configure the DMM reading, most integrated. If your use case is not integrated yet, contact us at [nomad-camels@fau.de](mailto:nomad-camels@fau.de).
+
+## Documentation
+
+For more information and documentation visit [this page](https://fau-lap.github.io/NOMAD-CAMELS/doc/instruments/instruments.html).
