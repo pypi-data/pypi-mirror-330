@@ -1,0 +1,22 @@
+Metadata-Version: 2.2
+Name: ml_ops_mironov
+Version: 0.1.0
+Summary: ML OPS
+Home-page: https://gitlab.v-efimov.tech/mlops_spring_2025/mlops_project_mironov.nedab#
+Author: Mironov Ilya
+Author-email: ilyamironov2102@gail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Requires-Dist: numpy
+Requires-Dist: pandas
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
