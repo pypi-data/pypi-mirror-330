@@ -1,0 +1,18 @@
+Metadata-Version: 2.2
+Name: mlpype-base
+Version: 0.6.5
+Summary: Base package for standardised machine learning
+Author: Jeroen van den Hoven
+License: MIT
+Requires-Python: >=3.9
+Requires-Dist: docstring_parser>=0.14.1
+Requires-Dist: pydantic>=1.10.7
+Requires-Dist: joblib>=1.1.1
+Requires-Dist: PyYAML==6.0.1
+Requires-Dist: jinja2==3.1.5
+Provides-Extra: strict
+Requires-Dist: docstring_parser==0.14.1; extra == "strict"
+Requires-Dist: pydantic==1.10.7; extra == "strict"
+Requires-Dist: joblib==1.1.1; extra == "strict"
+Requires-Dist: PyYAML==6.0.1; extra == "strict"
+Requires-Dist: jinja2==3.1.5; extra == "strict"
