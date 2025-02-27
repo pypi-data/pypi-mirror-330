@@ -1,0 +1,36 @@
+import os
+import json
+from typing import List, Optional
+
+def load_txt(file_path: str, to_list: Optional[bool] = False) -> List[str] | str:
+    """ Loads text from a given file_path.
+    
+    Parameters
+    -----------
+    file_path: str
+        Path to file containing the text.
+    to_list: Optional[bool]
+        If enabled, each row is treated as a list element
+        and a list of strings is returned.
+        
+    Returns
+    -----------
+    out: List[str] | str
+        
+    """
+    with open(file_path, "r") as f:
+        out = f.read().strip()
+        if to_list:
+            out = [
+                row.strip() 
+                for row in out.split("\n") 
+                if row.strip()
+            ]
+    return out
+
+def load_json(file_path: str) -> list | dict:
+    """ Loads a JSON file.
+    """
+    with open(file_path, "r") as f:
+        data = json.load(f)
+    return data
