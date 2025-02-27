@@ -1,0 +1,20 @@
+Metadata-Version: 2.2
+Name: MedLytics
+Version: 0.1.0
+Summary: A text analysis package for medical text analytics using NLP libraries.
+Author: Abdullah Al Fahad
+Author-email: alfahadarc@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Requires-Python: >=3.6
+License-File: LICENSE
+Requires-Dist: spacy
+Requires-Dist: nltk
+Requires-Dist: textstat
+Requires-Dist: textblob
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
