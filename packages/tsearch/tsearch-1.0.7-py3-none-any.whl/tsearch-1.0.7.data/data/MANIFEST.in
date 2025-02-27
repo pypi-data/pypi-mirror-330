@@ -1,0 +1,4 @@
+include README.md requirements.txt env.json
+recursive-include config *.so *.yaml *.json *.md
+recursive-include logs *.so
+recursive-include modules *.so
