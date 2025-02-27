@@ -1,0 +1,10 @@
+exclude src/masai/Tools/calendar.py
+exclude src/masai/Tools/email.py
+exclude src/masai/Tools/vision.py
+exclude src/masai/Tools/math.py
+exclude src/masai/Tools/search.py
+exclude src/masai/Tools/baseTools.py
+exclude src/masai/Tools/InputOutputTools.py
+exclude src/masai/Tools/ragTools.py
+exclude src/masai/Tools/utilities/platformData_utils
+exclude src/masai/Tools/Vectorstore/
