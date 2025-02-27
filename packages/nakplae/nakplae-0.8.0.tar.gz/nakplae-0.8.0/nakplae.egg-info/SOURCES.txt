@@ -1,0 +1,15 @@
+LICENSE
+README.md
+pyproject.toml
+nakplae/__init__.py
+nakplae/__main__.py
+nakplae/transcribe.py
+nakplae/translate.py
+nakplae.egg-info/PKG-INFO
+nakplae.egg-info/SOURCES.txt
+nakplae.egg-info/dependency_links.txt
+nakplae.egg-info/entry_points.txt
+nakplae.egg-info/requires.txt
+nakplae.egg-info/top_level.txt
+tests/test_transcribe.py
+tests/test_translate.py
