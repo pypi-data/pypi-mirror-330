@@ -1,0 +1,86 @@
+name: CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.11", "3.12", "3.13"]
+
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ matrix.python-version }}
+        
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install types-PyYAML
+        pip install .[test,docs]
+        pip install pytest pytest-cov flake8 mypy
+        
+    - name: Lint with flake8
+      run: |
+        # stop the build if there are Python syntax errors or undefined names
+        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+        # exit-zero treats all errors as warnings
+        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+        
+    - name: Type checking with mypy
+      run: |
+        mypy --ignore-missing-imports aria/
+        
+    - name: Run tests with pytest
+      id: coverage
+      run: |
+        pytest tests/ --cov=aria --cov-report=xml --cov-report=term
+        
+    - name: Upload coverage report
+      uses: actions/upload-artifact@v4
+      with:
+        name: coverage-report-python-${{ matrix.python-version }}
+        path: coverage.xml
+        
+  docs:
+    runs-on: ubuntu-latest
+    # Only run on main branch push, not on PRs
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: test  # Only build and deploy docs if tests pass
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.x'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install mkdocs mkdocs-material mkdocs-minify-plugin mkdocs-exclude
+
+    - name: Build documentation
+      run: |
+        mkdocs build
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v4
+      with:
+        # This requires setting up a deploy key with write access
+        # See docs/GITHUB_PAGES_SETUP.md for instructions
+        deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+        publish_dir: ./site  # The folder the action should deploy
+        force_orphan: true   # Use a single-commit history for the gh-pages branch
+        full_commit_message: 'docs: update documentation site'
