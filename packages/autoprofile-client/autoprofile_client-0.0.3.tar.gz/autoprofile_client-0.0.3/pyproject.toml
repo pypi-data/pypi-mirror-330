@@ -1,0 +1,15 @@
+[project]
+name = "autoprofile_client"
+version = "0.0.3"
+authors = [
+  { name="Yi Kuo", email="kuokuoyiyi@gmail.com" },
+]
+description = "Client package for autoprofiling"
+readme = "README.md"
+requires-python = ">=3.5"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+license = { file = "LICENSE" }
+
