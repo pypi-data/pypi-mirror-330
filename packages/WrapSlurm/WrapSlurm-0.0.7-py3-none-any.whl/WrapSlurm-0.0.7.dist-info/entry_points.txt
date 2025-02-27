@@ -1,0 +1,5 @@
+[console_scripts]
+wi = wrapslurm.node_info:main
+wl = wrapslurm.track_job:main
+wq = wrapslurm.queue_info:main
+wr = wrapslurm.job_runner:main
