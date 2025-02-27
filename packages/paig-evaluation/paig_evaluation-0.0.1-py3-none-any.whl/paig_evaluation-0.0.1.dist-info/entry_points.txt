@@ -1,0 +1,3 @@
+[console_scripts]
+paig-evaluation = paig_evaluation.__main__:main
+paig_evaluation = paig_evaluation.__main__:main
