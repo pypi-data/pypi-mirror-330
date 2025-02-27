@@ -1,0 +1,23 @@
+[project]
+name = "kule-ko"
+version = "1.2.2"
+description = "A very, very, small package to color the terminal"
+authors = [
+    {name = "kulupu ko",email = "the.blob.system@gmail.com"}
+]
+license = "MIT"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+]
+
+[project.urls]
+Repository = "https://github.com/kulupu-ko/kule-ko.git"
+
+[tool.poetry]
+packages = [{include = "kule_ko", from = "src"}]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
