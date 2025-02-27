@@ -1,0 +1,31 @@
+Metadata-Version: 2.2
+Name: hyyap
+Version: 0.0.1
+Summary: hyyap
+Author: huang yi yi
+Author-email: 363766687@qq.com
+Requires-Python: >=3.6
+License-File: LICENSE.txt
+Requires-Dist: tqdm
+Requires-Dist: rich
+Requires-Dist: requests
+Requires-Dist: py7zr
+Requires-Dist: pipreqs
+Requires-Dist: python-pptx
+Requires-Dist: openpyxl
+Requires-Dist: python-docx
+Requires-Dist: beautifulsoup4
+Requires-Dist: pillow
+Requires-Dist: pynvml
+Requires-Dist: wmi
+Requires-Dist: pywin32
+Requires-Dist: psutil
+Dynamic: author
+Dynamic: author-email
+Dynamic: description
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# hyypy
+***This is a third-party module that can convert py to exe.***
