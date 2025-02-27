@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+src/model3d/__init__.py
+src/model3d.egg-info/PKG-INFO
+src/model3d.egg-info/SOURCES.txt
+src/model3d.egg-info/dependency_links.txt
+src/model3d.egg-info/requires.txt
+src/model3d.egg-info/top_level.txt
+src/model3d/geometry/__init__.py
+src/model3d/geometry/mesh.py
+src/model3d/geometry/plane.py
+src/model3d/geometry/vector3d.py

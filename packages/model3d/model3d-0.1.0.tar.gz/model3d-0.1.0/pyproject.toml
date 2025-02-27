@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "model3d"
+version = "0.1.0"
+authors = [
+    {name = "Nicolo Bencini", email = "nicbencini@gmail.com"},
+]
+description = "A 3D geometry library that provides a vector3d class for performing 3D vector operations using NumPy."
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    # More classifiers can be found at
+]
+dependencies = ["numpy"]
+
+[project.urls]
+Homepage = "https://github.com/nicbencini/model3d"
+Issues = "https://github.com/nicbencini/model3d/issues"
