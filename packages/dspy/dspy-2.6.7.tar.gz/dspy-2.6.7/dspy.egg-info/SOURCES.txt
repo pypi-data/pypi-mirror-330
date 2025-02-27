@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+dspy/__init__.py
+dspy/__metadata__.py
+dspy.egg-info/PKG-INFO
+dspy.egg-info/SOURCES.txt
+dspy.egg-info/dependency_links.txt
+dspy.egg-info/requires.txt
+dspy.egg-info/top_level.txt
+dspy/primitives/runner.js
