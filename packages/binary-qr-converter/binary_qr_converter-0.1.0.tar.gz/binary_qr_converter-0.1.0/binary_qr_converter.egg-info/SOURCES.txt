@@ -1,0 +1,14 @@
+MANIFEST.in
+README.md
+requirements.txt
+setup.py
+binary_qr_converter/__init__.py
+binary_qr_converter/binary_qr.py
+binary_qr_converter/converter.py
+binary_qr_converter/example.py
+binary_qr_converter.egg-info/PKG-INFO
+binary_qr_converter.egg-info/SOURCES.txt
+binary_qr_converter.egg-info/dependency_links.txt
+binary_qr_converter.egg-info/entry_points.txt
+binary_qr_converter.egg-info/requires.txt
+binary_qr_converter.egg-info/top_level.txt
