@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mmm-fair"
+version = "0.4.0"
+description = "A multi-objective multi-fairness boosting classifier"
+readme = "README.md"
+authors = [
+  { name = "Arjun Roy", email = "arjunroyihrpa@gmail.com" }
+]
+license = { file = "LICENSE" }
+keywords = ["fairness", "boosting", "classification", "machine-learning"]
+requires-python = ">=3.11"
+
+
+dependencies = [
+  "numpy>=1.26.4",
+  "six>=1.16.0",
+  "pymoo>=0.6.1.3",
+  "scikit-learn>=1.5.2",
+  "ucimlrepo",
+  "pandas>=2.2.3",
+  "fairbench",
+  "skl2onnx",
+  "tqdm",
+  "plotly",
+  "onnxruntime"
+]
+
+
+[project.urls]
+Homepage= "https://github.com/arjunroyihrpa/MMM_fair"
+"Bug Tracker" = "https://github.com/arjunroyihrpa/MMM_fair/issues"
