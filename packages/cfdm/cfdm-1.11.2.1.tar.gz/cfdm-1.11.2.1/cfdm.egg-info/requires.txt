@@ -1,0 +1,22 @@
+netCDF4>=1.5.4
+cftime>=1.6.0
+numpy<2.0,>=1.15
+packaging>=20.0
+scipy>=1.10.0
+h5netcdf>=1.3.0
+h5py>=3.10.0
+s3fs>=2024.6.0
+dask<=2024.7.1,>=2024.6.0
+
+[documentation]
+sphinx==2.4.5
+sphinx-copybutton
+sphinx-toggleprompt
+sphinxcontrib-spelling
+
+[pre-commit hooks]
+pre-commit
+black
+docformatter
+flake8
+pydocstyle
