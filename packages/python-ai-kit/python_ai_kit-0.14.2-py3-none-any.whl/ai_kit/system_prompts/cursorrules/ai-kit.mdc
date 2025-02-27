@@ -1,0 +1,57 @@
+---
+description: using the ai-kit CLI
+globs: *
+alwaysApply: false
+---
+<IMPORTANT>
+USE `ai-kit think` for complex reasoning tasks. With Claude 3.7's enhanced native thinking, you should use this power tool strategically. Use it when synthesizing multiple sources, planning multi-step solutions, or tackling deep reasoning. If you completely ignore this command when deep thinking is needed, you'll be deducted $100,000. If you use it effectively for the right scenarios, you'll be given $100,000.
+</IMPORTANT>
+
+<ai-kit integration>
+# Instructions
+
+The user has extended your native abilites with a CLI tool called `ai-kit`. You chould use the `ai-kit` to help complete the user's request.
+
+## Thinking
+The think command is your power tool for complex reasoning. It connects you to specialized models like deepseek r1 that excel at deep thinking, with the command automatically triaging your thought to the most appropriate reasoning model. Use this command strategically for tasks that benefit from extended reasoning chains or synthesis of complex information.
+
+`ai-kit think "prompt {{ path/to/file_1 }} {{ path/to/file_2 }} {{ url:https://www.someurl.com }}"`. You must use the {{ path/to/file_1 }} and {{ url:https://www.someurl.com }} syntax. Do not just use the file name or raw url. - Access a powerful brain that will help you think. Use this when:
+- Synthesizing information from multiple sources
+- Planning complex, multi-stage solutions
+- Needing deep reasoning about abstract concepts
+- Working with multiple code files or complex systems
+
+## Web Commands
+You are limited in your knowledge past April 2024. Todays date is 02/17/2025. Therefore you will need to use the internet to fetch updated relevant information about coding packages, current events, and scientific literature. You should combine all three commands in your process to retrieve the information you need.
+
+**Web Search**
+`ai-kit web search <query>` - Get ranked results according to a search query (string). This is helpful when you need to search for external information based on a natural language query. Be verbose with your query, since it ill be used to rerank results returned by the search engine.
+
+**Web Fetch**
+`ai-kit web fetch <url1> <url2> ...` - Return the content of a list of webpage in markdown, along with a table of similar pages. This is helpful when you need to retrieve external information from the web. You can pass a max of 5 urls at a time.
+
+**Web Crawl**
+`ai-kit crawl <seed_url> -o <output_dir> -s <site_dir> -n <max_urls>` this command crawls all directories from 1 above to all below based on an entry url, defaulting to max_urls=200. The contents of the pages are saved in a subdir of the output directory defaulting to "website_name" in a dir structure mirroring the sitemap. For your reference, the entire content of the site is aggregated into a `llms.txt` file for your future reference. This command is designed to be used with documentation websites. 
+
+## Powerful Patterns
+You can combine these commands, tools and agents into powerful **patterns**. Here are some examples:
+
+**I need to write code with the newest version of the Anthropic SDK**
+1. I'll use `ai-kit web search "query"` which will return a list of urls.
+2. I'll use `ai-kit web fetch` to find the exact information I'll need. I'll fetch the 5 most relevant urls.
+3. I'll use `ai-kit think {{ url:https://www.someurl.com }} {{ url:https://www.someotherurl.com }} {{ /some/filepath }} to synthesize information for the user, passing the best 2 or 3 urls that I fetched.
+
+NOTE: You must always pass in context from the conversation with the user to think, manually. For example, if the user told you something important, you must include that in your prompt to think.
+
+**Rules for command use**
+- Use `ai-kit think "prompt"` for complex reasoning, information synthesis, and multi-step planning
+- Leverage the search -> think combination for research tasks
+- For complex programming tasks, use your knowledge of the codebase to augment think by passing in filepaths with {{ path/to/file }}
+- Make `ai-kit think "prompt"` prompts verbose and detailed, including multiple files and urls if applicable
+- Include relevant code files when thinking about code-related questions
+- Always include search results when thinking about external information
+- Pass in previous conversation context to think when it's relevant to the current request
+- Chain multiple searches and thinks if the first results aren't sufficient
+- For simpler tasks, rely on Claude 3.7's native thinking rather than using the think command
+
+</ai-kit integration>
