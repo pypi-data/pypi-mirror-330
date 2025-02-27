@@ -1,0 +1,83 @@
+Metadata-Version: 2.2
+Name: rabino
+Version: 2.0.1
+Summary: rubino Library Bot
+Home-page: https://github.com/vs-mamad/rabino/
+Author: mamadcoder
+Author-email: x.coder.2721@gmail.com
+License: MIT
+Keywords: rubika,bot,rubino,robot,library,rubikalib,rubikalib.ml,rubikalib.ir,rabino,Rabino,libraryrobiran,Rubika,Python,rubiran,pyrubi,telebot
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Description-Content-Type: text/markdown
+Requires-Dist: aiohttp
+Requires-Dist: aiofiles
+Requires-Dist: asyncio
+Requires-Dist: tqdm
+Requires-Dist: pathlib
+Requires-Dist: rubiran
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: license
+Dynamic: requires-dist
+Dynamic: summary
+
+
+
+
+### How to import the rubino library
+
+``` bash
+from rabino import rubino
+```
+
+## An example:
+```python
+from rabino import rubino
+import asyncio
+async def main():
+    async with rubino("auth") as bot:
+        
+        data = await bot.search_username("@super_god1")
+        print(data)
+asyncio.run(main())
+```
+
+
+### How to install the library
+
+``` bash
+pip install rabino==2.0.1 aiofiles aiohttp asyncio tqdm pathlib
+```
+
+### My ID in Telegram
+
+``` bash
+https://t.me/RMSource
+```
+## And My ID Channel in Telegram
+
+``` bash
+https://t.me/RMSource
+```
+### My site
+<a href="https://anime.api-vison.workers.dev" style="text-decoration : none;">سایت ما</a>
