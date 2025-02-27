@@ -1,0 +1,12 @@
+mlpype-base==0.6.5
+numpy>=1.26.4
+scikit-learn>=1.2.2
+pandas>=1.5.3
+dill>=0.3.8
+
+[strict]
+mlpype-base==0.6.5
+numpy==1.26.4
+scikit-learn==1.2.2
+pandas==1.5.3
+dill==0.3.8
