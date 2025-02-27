@@ -1,0 +1,3 @@
+[console_scripts]
+odatix = odatix.odatix_main:main
+odatix-explorer = odatix.odatix_explorer:main
