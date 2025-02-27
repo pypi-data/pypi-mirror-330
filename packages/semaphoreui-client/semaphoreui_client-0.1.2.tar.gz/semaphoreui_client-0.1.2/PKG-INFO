@@ -1,0 +1,46 @@
+Metadata-Version: 2.4
+Name: semaphoreui-client
+Version: 0.1.2
+Summary: An api client for interacting with Semaphore UI
+Project-URL: Documentation, https://github.com/rockstar/semaphoreui-client#readme
+Project-URL: Issues, https://github.com/rockstar/semaphoreui-client/issues
+Project-URL: Source, https://github.com/rockstar/semaphoreui-client
+Author-email: Paul Hummer <paul@eventuallyanyway.com>
+License-Expression: MIT
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Requires-Python: >=3.9
+Requires-Dist: dataclasses-json>=0.6.7
+Requires-Dist: requests>=2.32.3
+Description-Content-Type: text/markdown
+
+A python client for SemaphoreUI
+==
+
+This library provides an api client for the SemaphoreUI api. Its purpose is to provide an ergonomic and python interface, both in api and behavior.
+
+To install,
+
+```shell
+$ pip install semaphoreui-client
+```
+
+To use,
+
+```python
+from semaphoreui_client import Client
+
+client = Client("https://path.to/your/semaphore")
+client.login("username", "myPassW0rd")
+
+for project in client.projects():
+    print(project.name)
+```
+
+This library is being used in production environments, but is still early in its development. As such, caution should be exercised when using this library--its api is still heavily in flux.
