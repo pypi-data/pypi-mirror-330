@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: ipitin
+Version: 0.0.3
+Summary: Import Pandas Import Tensorflow Import Numpy
+Home-page: https://github.com/FarAway6834/ipitin
+Author: du7ec
+Author-email: du7ec6834@gmail.com
+Keywords: import pandas,import fensorflow,import numpy,Import Pandas Import Tenserflow Import Numpy,ipitin,FarAway6834
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Python: >=3.8
+License-File: LICENSE
+Requires-Dist: pandas
+Requires-Dist: tensorflow
+Requires-Dist: numpy
