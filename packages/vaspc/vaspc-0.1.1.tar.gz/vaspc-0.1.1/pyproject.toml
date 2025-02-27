@@ -1,0 +1,20 @@
+[project]
+name = "vaspc"  # 你的包名，确保它和你的文件夹一致
+version = "0.1.1"
+description = "A package to run multiple VASP-related Python scripts"
+authors = [{ name = "Your Name", email = "your.email@example.com" }]
+readme = "README.md"
+requires-python = ">=3.6"
+dependencies = [
+    "ase"
+]
+
+[tool.setuptools.packages.find]
+include = ["vaspc*"]
+
+[tool.setuptools.package-data]
+vaspc = ["POTCAR/**"]
+
+
+[project.scripts]
+vaspc = "vaspc.main:main"  # 这里应该指向 `main.py` 的 `main()` 函数
