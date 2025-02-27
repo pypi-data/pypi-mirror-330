@@ -1,0 +1,38 @@
+[project]
+name = "prettymol"
+version = "0.3.1"
+description = "make molecules. pretty"
+readme = "README.md"
+requires-python = "==3.11.*"
+dependencies = [
+    "biotite>=1.1",
+    "bpy",
+    "molecularnodes>=4.2.12",
+    "click",
+    "pillow",
+]
+packages = [{ include = "prettymol", from = "src" }]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/zachcp/prettymol"
+Issues = "https://github.com/zachcp/prettymol/issues"
+
+
+[project.scripts]
+prettymol = "prettymol.cli:cli"
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build]
+exclude = ["/docs", "/docs/*"]
