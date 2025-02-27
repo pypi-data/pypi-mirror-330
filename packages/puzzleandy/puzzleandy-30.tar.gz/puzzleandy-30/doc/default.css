@@ -1,0 +1,23 @@
+body
+{
+	background-color: rgb(15,15,15);
+	color: rgb(238,238,238);
+	font-size: 16pt;
+}
+h2,h3
+{
+	font-weight: normal;
+}
+a
+{
+	text-decoration: none;
+	color: rgb(160,208,240);
+}
+a:hover
+{
+	color: rgb(240,240,240);
+}
+pre:has(code)
+{
+	margin-top: -1em;
+}

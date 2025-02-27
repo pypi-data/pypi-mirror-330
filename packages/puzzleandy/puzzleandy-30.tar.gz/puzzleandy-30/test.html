@@ -1,0 +1,14 @@
+<html>
+  <body>
+    <script src="https://scrtwpns.com/mixbox.js"></script>
+    <script>
+      var rgb1 = "rgb(247, 0, 4)";  // blue
+      var rgb2 = "rgb(3, 26, 246)"; // yellow
+      var t = 0.5;                   // mixing ratio
+
+      var mixed = mixbox.lerp(rgb1, rgb2, t);
+
+      document.body.style.background = mixed;
+    </script>
+  </body>
+</html>

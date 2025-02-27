@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>1994</title>
+<link rel=stylesheet href=default.css>
+<script type=text/javascript async
+src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js>
+</script>
+</head>
+<body>
+
+<h2>1994</h2>
+<p>\(\begin{align}
+&C_1 = \text{hypot}(a_1,b_1)\\
+&C_2 = \text{hypot}(a_2,b_2)\\
+\\
+&\Delta a = a_1-a_2\\
+&\Delta b = b_1-b_2\\
+&\Delta C = C_1-C_2\\
+&K_1 = \begin{cases}
+0.048&\text{textiles}\\
+0.045&\text{graphic arts}
+\end{cases}\\
+&K_2 = \begin{cases}
+0.014&\text{textiles}\\
+0.015&\text{graphic arts}
+\end{cases}\\
+\\
+&\Delta L = L_1-L_2\\
+&\Delta H = \sqrt{\max\left(\Delta a^2+\Delta b^2-\Delta C^2,0\right)}\\
+&K_L = \begin{cases}
+2&\text{textiles}\\
+1&\text{default}
+\end{cases}\\
+&K_C = 1\\
+&K_H = 1\\
+&S_L = 1\\
+&S_C = 1+K_1C_1\\
+&S_H = 1+K_2C_1\\
+\\
+&\Delta E = \sqrt{
+\left(\dfrac{\Delta L}{K_LS_L}\right)^2+
+\left(\dfrac{\Delta C}{K_CS_C}\right)^2+
+\left(\dfrac{\Delta H}{K_HS_H}\right)^2}
+\end{align}\)</p>
+
+</body>
+</html>

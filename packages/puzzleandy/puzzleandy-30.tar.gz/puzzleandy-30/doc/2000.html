@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>2000</title>
+<link rel=stylesheet href=default.css>
+<script type=text/javascript async
+src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js>
+</script>
+</head>
+<body>
+
+<h2>2000</h2>
+<p>\(\begin{align}
+&C_1 = \text{hypot}(a_1,b_1)\\
+&C_2 = \text{hypot}(a_2,b_2)\\
+\\
+&\bar{C} = 0.5(C_1+C_2)\\
+&G = 0.5\left(1-\sqrt{\dfrac{\bar{C}^7}{\bar{C}^7+25^7}}\right)\\
+\\
+&a_1' = a_1(1+G)\\
+&a_2' = a_2(1+G)\\
+\\
+&h_1' = \begin{cases}
+0&\text{if }b_1 = 0\text{ and }a_1' = 0\\
+\text{arctan2}(b_1,a_1') \bmod 360&\text{else}
+\end{cases}\\
+&h_2' = \begin{cases}
+0&\text{if }b_2 = 0\text{ and }a_2' = 0\\
+\text{arctan2}(b_2,a_2') \bmod 360&\text{else}
+\end{cases}\\
+\\
+&C_1' = \text{hypot}(a_1',b_1)\\
+&C_2' = \text{hypot}(a_2',b_2)\\
+\\
+&\bar{C}' = 0.5\left(C_1'+C_2'\right)\\
+&\bar{H}' = \begin{cases}
+h_1'+h_2'&\text{if }C_1'C_2' = 0\\
+0.5(h_1'+h_2')&\text{if }|h_2'-h_1'| \le 180\\
+0.5(h_1'+h_2'+360)&\text{if }|h_2'-h_1'| \gt 180\text{ and }h_1'+h_2' \lt 360\\
+0.5(h_1'+h_2'-360)&\text{if }|h_2'-h_1'| \gt 180\text{ and }h_1'+h_2' \ge 360
+\end{cases}\\
+\\
+&\Delta h' = \begin{cases}
+0&\text{if }C_1'C_2' = 0\\
+h_2'-h_1'&\text{if }|h_2'-h_1'| \le 180\\
+h_2'-h_1'+360&\text{if }|h_2'-h_1'| \lt -180\\
+h_2'-h_2'-360&\text{if }|h_2'-h_1'| \gt 180
+\end{cases}\\
+&\bar{L}' = 0.5(L_1+L_2)\\
+&T = 1-0.17\cos\left(\bar{H}'-30\right)+0.24\cos\left(2\bar{H}'\right)+0.32\cos\left(3\bar{H}'+6\right)-0.20\cos\left(4\bar{H}'-63\right)\\
+&R_C = 2\sqrt{\dfrac{\bar{C}'^7}{\bar{C}'^7+25^7}}\\
+&\Delta\theta = 30\exp\left(-\left(\dfrac{\bar{H}'-275}{25}\right)^2\right)\\
+\\
+&\Delta L' = L_2-L_1\\
+&\Delta C' = C_2-C_1\\
+&\Delta H' = 2\sqrt{C_1'C_2'}\sin(0.5\Delta h')\\
+&K_L = \begin{cases}
+2&\text{textiles}\\
+1&\text{default}
+\end{cases}\\
+&K_C = 1\\
+&K_H = 1\\
+&S_L = 1+\dfrac{0.015\left(\bar{L}'-50\right)^2}{\sqrt{20+\left(\bar{L}'-50\right)^2}}\\
+&S_C = 1+0.045\bar{C}'\\
+&S_H = 1+0.015\bar{C}'T\\
+&R_T = -R_C\sin(2\Delta\theta)\\
+\\
+&\Delta E = \sqrt{
+\left(\dfrac{\Delta L'}{K_LS_L}\right)^2+
+\left(\dfrac{\Delta C'}{K_CS_C}\right)^2+
+\left(\dfrac{\Delta H'}{K_HS_H}\right)^2+
+R_T\left(\dfrac{\Delta C'}{K_CS_C}\right)
+\left(\dfrac{\Delta H'}{K_HS_H}\right)}
+\end{align}\)</p>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Compand</title>
+<link rel=stylesheet href=default.css>
+<script type=text/javascript async
+src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js>
+</script>
+</head>
+<body>
+
+<h2>sRGB Companding</h2>
+<p>\(\text{compand}(x) = \begin{cases}
+12.92x&\text{if }x \le 0.0031308\\
+1.055x^{1/2.4}-0.055&\text{else}
+\end{cases}\)</p>
+
+<h2>Inverse sRGB Companding</h2>
+<p>\(\text{inv_compand}(x) = \begin{cases}
+\dfrac{x}{12.92}&\text{if }x \le 0.04045\\
+\left(\dfrac{x+0.055}{1.055}\right)^{2.4}&\text{else}
+\end{cases}\)</p>
+
+</body>
+</html>

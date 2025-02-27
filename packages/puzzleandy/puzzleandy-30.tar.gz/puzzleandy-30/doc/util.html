@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Utilities</title>
+<link rel=stylesheet href=default.css>
+<script type=text/javascript async
+src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js>
+</script>
+</head>
+<body>
+
+<h2>Point-Angle Form</h2>
+<p>\(\text{pt_angle}(x,p_x,p_y,\theta) = (x-p_x)\tan\theta+p_y\)</p>
+<p><a href=https://www.desmos.com/calculator/vnzabciw4c>Desmos</a></p>
+
+<h2>Clamp</h2>
+<p>\(\begin{align}
+&\text{clamp}(x,m,M) = \min(\max(x,m),M)\\
+&\text{clamp}(x) = \text{clamp}(x,0,1)
+\end{align}\)</p>
+<p><a href=https://www.desmos.com/calculator/0cvhquska5>Desmos</a></p>
+
+<h2>Remap</h2>
+<p>\(\text{remap}(x,m_1,M_1,m_2,M_2) = \text{lerp}(\text{unlerp}(x,m_1,M_1),m_2,M_2)\)</p>
+<p><a href=https://www.desmos.com/calculator/qh3mlofdye>Desmos</a></p>
+
+</body>
+</html>

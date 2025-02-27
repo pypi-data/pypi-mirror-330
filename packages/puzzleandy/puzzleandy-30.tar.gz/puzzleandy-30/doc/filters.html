@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Filters</title>
+<link rel=stylesheet href=default.css>
+<script type=text/javascript async
+src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js>
+</script>
+</head>
+<body>
+
+<h2>Brightness</h2>
+<p>\(\text{bright}(x,b) = \text{clamp}(x+b,0,1)\)</p>
+<p><a href=https://www.desmos.com/calculator/qs3x6pyykq>Desmos</a></p>
+
+<h2>Contrast</h2>
+<p>\(\begin{align}
+&\theta = \text{remap}(c,-1,1,0,0.5\pi)\\
+&\text{contrast}(x,c) = \text{clamp}(\text{pt_angle}(x,0.5,0.5,t))
+\end{align}\)</p>
+<p><a href=https://www.desmos.com/calculator/yzcfmzr8me>Desmos</a></p>
+
+<h2>Gamma</h2>
+<p>\(\text{gamma}(x,g) = x^g\)</p>
+<p><a href=https://www.desmos.com/calculator/90zo8luutx>Desmos</a></p>
+
+</body>
+</html>
