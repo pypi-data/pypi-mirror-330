@@ -1,0 +1,12 @@
+Metadata-Version: 2.2
+Name: ND-Scaffold
+Version: 0.1.1
+License-File: LICENSE
+Requires-Dist: click
+Requires-Dist: flask
+Requires-Dist: flask-restx
+Requires-Dist: sqlalchemy
+Requires-Dist: psycopg2-binary
+Requires-Dist: marshmallow
+Requires-Dist: alembic
+Dynamic: requires-dist
