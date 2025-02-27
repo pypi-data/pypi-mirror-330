@@ -1,0 +1,30 @@
+Metadata-Version: 2.4
+Name: tls_regressor
+Version: 0.1.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Rust
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Dist: numpy>=1.20.0
+Summary: Fast Total Least Squares regression using Rust backend
+Author-email: connect0459 <connect0459@gmail.com>
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown; charset=UTF-8; variant=GFM
+Project-URL: Homepage, https://github.com/connect0459/tls_regressor
+Project-URL: Bug Tracker, https://github.com/connect0459/tls_regressor/issues
+
+# tls_regressor
+
+高速なTotal Least Squares (TLS)回帰実装
+
+## 概要
+
+`tls_regressor`はPythonでRustを利用した高速なTotal Least Squares (直交回帰)の実装を提供します。通常の最小二乗法(OLS)がy方向の誤差のみを最小化するのに対し、TLSは両方の変数の誤差を考慮します。
+
+## インストール
+
+```bash
+pip install tls_regressor
+```
+
