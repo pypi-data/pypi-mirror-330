@@ -1,0 +1,17 @@
+LICENSE
+README.md
+setup.py
+django_soft_deletion_model.egg-info/PKG-INFO
+django_soft_deletion_model.egg-info/SOURCES.txt
+django_soft_deletion_model.egg-info/dependency_links.txt
+django_soft_deletion_model.egg-info/requires.txt
+django_soft_deletion_model.egg-info/top_level.txt
+soft_deletion/__init__.py
+soft_deletion/models/__init__.py
+soft_deletion/models/base.py
+soft_deletion/models/deletion.py
+soft_deletion/models/query.py
+soft_deletion/models/signals.py
+tests/__init__.py
+tests/test_settings.py
+tests/test_soft_delete.py
