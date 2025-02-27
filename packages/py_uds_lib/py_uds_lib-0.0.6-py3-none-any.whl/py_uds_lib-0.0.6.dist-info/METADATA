@@ -1,0 +1,27 @@
+Metadata-Version: 2.3
+Name: py_uds_lib
+Version: 0.0.6
+Summary: Python package for creating UDS requests
+License: LICENSE
+Keywords: python,UDS,diagnostics
+Author: chaitu-ycr
+Author-email: chaitu.ycr@gmail.com
+Requires-Python: >=3.9
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Topic :: Software Development :: Embedded Systems
+Requires-Dist: cantools
+Requires-Dist: odxtools
+Requires-Dist: python-can
+Project-URL: Documentation, https://chaitu-ycr.github.io/py_uds_lib/
+Project-URL: Homepage, https://github.com/chaitu-ycr/py_uds_lib.git
+Project-URL: Repository, https://github.com/chaitu-ycr/py_uds_lib.git
+Description-Content-Type: text/markdown
+
+# py_uds_lib
+
+Python package for creating UDS requests
+
+**NOTE: this package not yet ready to use. implementation in progress.
+
