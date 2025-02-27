@@ -1,0 +1,109 @@
+Metadata-Version: 2.2
+Name: cli_gist
+Version: 0.1.1
+Summary: Command line to upload and update your gist files.
+Author: Fred C. (W6BSD)
+License: BSD 3-Clause License
+        
+        Copyright (c) 2023, Fred Cirera
+        
+        Redistribution and use in source and binary forms, with or without
+        modification, are permitted provided that the following conditions are met:
+        
+        1. Redistributions of source code must retain the above copyright notice, this
+           list of conditions and the following disclaimer.
+        
+        2. Redistributions in binary form must reproduce the above copyright notice,
+           this list of conditions and the following disclaimer in the documentation
+           and/or other materials provided with the distribution.
+        
+        3. Neither the name of the copyright holder nor the names of its
+           contributors may be used to endorse or promote products derived from
+           this software without specific prior written permission.
+        
+        THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+        AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+        IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+        DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+        FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+        DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+        SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+        CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+        OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+        OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+        
+Project-URL: Documentation, https://github.com/0x9900/gist/
+Project-URL: Source, https://github.com/0x9900/gist
+Project-URL: Tracker, https://github.com/0x9900/gist/issues
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Environment :: Console
+Classifier: Operating System :: Unix
+Classifier: Operating System :: POSIX
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Provides-Extra: dev
+Requires-Dist: flake8; extra == "dev"
+Requires-Dist: isort; extra == "dev"
+Requires-Dist: mypy; extra == "dev"
+Requires-Dist: pre-commit; extra == "dev"
+Requires-Dist: pylint; extra == "dev"
+
+# GIST
+
+Command line program to upload or change/update github gists.  In order to work
+this program needs an authorization token.
+
+Go to https://github.com/settings/tokens to create a token.  The token can then
+be stored into the file `~/.local/gist_token`.
+
+## Example
+
+**Upload a python program with his readme file:**
+```
+% gist new -f gist.py README.md -d "Upload or update github gists."
+Gist ID: c7dfade18834d095a2b2168d35234ae0
+Gist URL: https://gist.github.com/0x9900/c7dfade18834d095a2b2168d35234ae0
+```
+
+**Update the README file from and existing gist:**
+```
+% gist update -f README.md --gist-id c7dfade18834d095a2b2168d35234ae0
+Gist ID: c7dfade18834d095a2b2168d35234ae0
+Gist URL: https://gist.github.com/0x9900/c7dfade18834d095a2b2168d35234ae0
+```
+
+**Help:**
+```
+usage: gist.py [-h] {new,update,list} ...
+gist.py: error: the following arguments are required: {new,update,list}
+```
+
+```
+% gist new --help
+usage: gist new [-h] [-f FILE [FILE ...]] [-d DESCRIPTION] [-p]
+
+options:
+  -h, --help            show this help message and exit
+  -f FILE [FILE ...], --file FILE [FILE ...]
+  -d DESCRIPTION, --description DESCRIPTION
+  -p, --public
+
+```
+
+```
+% gist update --help
+usage: gist update [-h] -i GIST_ID [-f FILE]
+
+options:
+  -h, --help            show this help message and exit
+  -i GIST_ID, --gist-id GIST_ID
+  -f FILE, --file FILE
+```
