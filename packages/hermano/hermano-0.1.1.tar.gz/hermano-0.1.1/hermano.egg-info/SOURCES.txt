@@ -1,0 +1,12 @@
+README.md
+setup.py
+hermano/__init__.py
+hermano/cli.py
+hermano.egg-info/PKG-INFO
+hermano.egg-info/SOURCES.txt
+hermano.egg-info/dependency_links.txt
+hermano.egg-info/entry_points.txt
+hermano.egg-info/requires.txt
+hermano.egg-info/top_level.txt
+hermano/commands/__init__.py
+hermano/commands/epub_commands.py
