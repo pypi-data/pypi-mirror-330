@@ -1,0 +1,38 @@
+# 示例使用 hatchling 作为构建后端（推荐新手）
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+# 包名必须唯一！替换 YOUR_USERNAME 为你的 PyPI 用户名
+name = "pvga"
+version = "0.0.1"
+authors = [
+  { name = "Zhi Song", email = "zhisong3-c@my.cityu.edu.hk" },
+]
+description = "PVGA is a powerful virus-focused assembler that does both assembly and polishing."
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+license = "MIT"
+license-files = ["LICENSE*"]
+
+dependencies = [
+    "requests>=2.25.1",
+    "torch",
+    "Bio>=1.7.1",
+    "biopython>=1.83",
+    "consensus>=1.0.5",
+    "networkx>=3.1",
+    "numpy>=1.26.4",
+    "pysam>=0.22.0",
+    "pandas>=1.5.2",
+    
+]
+
+[project.urls]
+Homepage = "https://github.com/SoSongzhi/PVGA"
