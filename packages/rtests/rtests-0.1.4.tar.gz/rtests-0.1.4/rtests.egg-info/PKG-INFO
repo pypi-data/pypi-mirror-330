@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: rtests
+Version: 0.1.4
+Home-page: https://blindforreview.com
+Author: BlindForReview.com
+Author-email: mail@blindforreview.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: rpy2>=3.5.14
+
+# rtests
+
+TODO.
