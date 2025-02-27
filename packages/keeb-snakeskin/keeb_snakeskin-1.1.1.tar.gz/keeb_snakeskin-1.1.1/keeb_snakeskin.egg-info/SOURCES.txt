@@ -1,0 +1,16 @@
+LICENSE
+README.md
+pyproject.toml
+keeb_snakeskin.egg-info/PKG-INFO
+keeb_snakeskin.egg-info/SOURCES.txt
+keeb_snakeskin.egg-info/dependency_links.txt
+keeb_snakeskin.egg-info/entry_points.txt
+keeb_snakeskin.egg-info/requires.txt
+keeb_snakeskin.egg-info/top_level.txt
+src/__init__.py
+src/default_params.py
+src/generate_pcb_case.py
+src/import_svg.py
+src/snakeskin.py
+src/tenting_stand.py
+src/tolerance_tests.py
