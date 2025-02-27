@@ -1,0 +1,27 @@
+Metadata-Version: 2.2
+Name: twohorse-package
+Version: 0.1.0
+Summary: My short description for my project.
+Home-page: https://github.com/Two-Horse/twohorse_package
+Author: two_horse
+Author-email: two_horse@163.com
+License: MIT
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Requires-Python: >=3.8.0
+Description-Content-Type: text/markdown
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license
+Dynamic: requires-python
+Dynamic: summary
+
+My short description for my project.
