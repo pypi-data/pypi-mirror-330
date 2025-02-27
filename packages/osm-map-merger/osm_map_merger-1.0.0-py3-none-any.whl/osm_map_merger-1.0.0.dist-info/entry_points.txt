@@ -1,0 +1,2 @@
+[console_scripts]
+osm-map-merger = osm_map_merger.__main__:cmd
