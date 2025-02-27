@@ -1,0 +1,35 @@
+Metadata-Version: 2.2
+Name: digitalkin_proto
+Version: 0.0.1
+Summary: Python Generated gRPC client and server interfaces from Digitalkin's service apis
+Author-email: "DigitalKin.ai" <contact@digitalkin.ai>
+Project-URL: Homepage, https://github.com/DigitalKin-ai/service-apis-py
+Project-URL: Bug Tracker, https://github.com/DigitalKin-ai/service-apis-py/issues
+Project-URL: Documentation, https://github.com/DigitalKin-ai/service-apis-py/blob/main/README.md
+Keywords: digitalkin,kin,agent,gprc,sdk
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: License :: Other/Proprietary License
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: protobuf>=5.29.3
+Requires-Dist: protovalidate>=0.7.0
+Requires-Dist: grpcio>=1.59.0
+Provides-Extra: dev
+Requires-Dist: pytest>=7.4.0; extra == "dev"
+Requires-Dist: ruff>=0.1.5; extra == "dev"
+Requires-Dist: mypy>=1.7.0; extra == "dev"
+Requires-Dist: pre-commit>=3.5.0; extra == "dev"
+Requires-Dist: bump2version>=1.0.1; extra == "dev"
+Requires-Dist: types-protobuf>=4.24.0.4; extra == "dev"
+Requires-Dist: build>=1.0.3; extra == "dev"
+Requires-Dist: twine>=4.0.2; extra == "dev"
