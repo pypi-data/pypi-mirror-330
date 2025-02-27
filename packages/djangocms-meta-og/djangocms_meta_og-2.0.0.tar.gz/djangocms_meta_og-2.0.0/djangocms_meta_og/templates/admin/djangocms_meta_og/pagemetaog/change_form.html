@@ -1,0 +1,61 @@
+{% extends "admin/change_form.html" %}
+{% load i18n static %}
+
+{% block extrahead %}
+    {{ block.super }}
+    <script src="{% url 'jsi18n_djangocms_meta_og' %}"></script>
+{% endblock %}
+
+{% block object-tools %}
+    <div class="meta-og-admin-info">
+        <ul class="messages">
+            {% if not perms.django_meta_og.add_property %}
+                <li class="info">{% translate "Notice. You do not have permission to create new Meta Propery." %}</li>
+            {% endif %}
+            {% if not perms.django_meta_og.add_content %}
+                <li class="info">{% translate "Notice. You do not have permission to create new Meta Content." %}</li>
+            {% endif %}
+            {% if not perms.django_meta_og.add_property or not perms.django_meta_og.add_content %}
+                <li class="info">{% translate "You can only insert an existing value from the list below." %}</li>
+            {% endif %}
+        </ul>
+    </div>
+    {{ block.super }}
+{% endblock %}
+
+{% block content %}
+    {{ block.super }}
+    <div class="meta-og-admin-help">
+        <h4>{% translate "Overview of existing values" %}</h4>
+        <p class="help">{% translate "Clicking on the value will insert it into the META field." %}</p>
+        <div class="meta-og-help">
+            <div class="group">
+                <h5>{% translate "Property List" %}</h5>
+                <p class="help">{% translate "List of existing properties." %}</p>
+                <ul class="meta-og-property">
+                    {% for item in meta_og_property %}
+                        <li>{{ item }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="group">
+                <h5>{% translate "Content List" %}</h5>
+                <p class="help">{% translate "List of existing values." %}</p>
+                <ul class="meta-og-content">
+                    {% for item in meta_og_content %}
+                        <li>{{ item }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="group">
+                <h5>{% translate "Dynamic content" %}</h5>
+                <p class="help">{% translate "The key in the list will be replaced with the value described in the label." %}</p>
+                <ul class="meta-og-dynamic-content">
+                    {% for key, item in PAGE_META_OG_DYNAMIC_CONTENT.items %}
+                        <li><code><strong>{{ key }}</strong></code> <span>{{ item.1 }}</span></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,4 @@
+graft djangocms_meta_og
+include pyproject.toml
+global-exclude __pycache__/*
+global-exclude screenshots/*

@@ -1,0 +1,85 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-12-22 16:48+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Zdeněk Böhm <zdenek.bohm@nic.cz>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+msgid "A Meta without a page will be used for the entire site."
+msgstr "Meta bez stránky bude použito pro celý website."
+
+msgid "Clicking on the value will insert it into the META field."
+msgstr "Kliknutím na hodnotu se tato vloží do pole META."
+
+msgid "Content List"
+msgstr "Seznam obsahů"
+
+msgid "Dynamic content"
+msgstr "Dynamický obsah"
+
+msgid "Entire website"
+msgstr "Celý website"
+
+msgid "Invalid content"
+msgstr "Neplatný obsah"
+
+msgid "Invalid line"
+msgstr "Neplatný řádek"
+
+msgid "Invalid property"
+msgstr "Neplatná vlastnost"
+
+msgid "List of existing properties."
+msgstr "Seznam existujících vlastností."
+
+msgid "List of existing values."
+msgstr "Seznam existujících hodnot."
+
+msgid "Notice. You do not have permission to create new Meta Content."
+msgstr "Upozornění. Nemáte oprávnění vytvořit nový Meta Obsah."
+
+msgid "Notice. You do not have permission to create new Meta Propery."
+msgstr "Upozornění. Nemáte oprávnění vytvořit novou Meta Vlastnost."
+
+msgid "Overview of existing values"
+msgstr "Přehled existujících hodnot"
+
+msgid "Page"
+msgstr "Stránka"
+
+msgid "Page meta OG for entire site with this language already exists."
+msgstr "Meta OG s touto jazykovou verzí pro celý website již existuje."
+
+msgid "Property List"
+msgstr "Seznam vlastností"
+
+msgid ""
+"The key in the list will be replaced with the value described in the label."
+msgstr "Klíč v seznamu bude nahrazen hodnotou popsanou v názvu."
+
+msgid "Unknown prefix"
+msgstr "Neznámý prefix"
+
+msgid "You can only insert an existing value from the list below."
+msgstr "Můžete pouze vložit již existující hodnotu se seznamu níže."
+
+msgid "You do not have permission to create meta content"
+msgstr "Nemáte oprávnění vytvořit meta obsah"
+
+msgid "You do not have permission to create meta name"
+msgstr "Nemáte oprávnění vytvořit meta název"
+
+msgid "at line"
+msgstr "na řádce"

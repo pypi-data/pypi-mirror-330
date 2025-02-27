@@ -1,0 +1,14 @@
+.meta-og-help {
+    display: flex;
+    gap: 2em;
+    justify-content: space-between;
+}
+
+.meta-og-help .group ul {
+    height: 24em;
+    overflow: auto;
+}
+
+.meta-og-admin-info ul.messages li.info {
+    color: #eb9800;
+}
