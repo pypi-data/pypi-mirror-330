@@ -1,0 +1,24 @@
+Metadata-Version: 2.2
+Name: rbutils
+Version: 2.2.1
+Summary: python 常用的工具
+Home-page: https://github.com/Adenialzz/SongUtils
+Author: robin
+Author-email: robin.seu@foxmail.com
+License: MIT Licence
+Keywords: pip
+Platform: any
+Requires-Dist: matplotlib
+Requires-Dist: numpy
+Requires-Dist: sympy
+Dynamic: author
+Dynamic: author-email
+Dynamic: description
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: license
+Dynamic: platform
+Dynamic: requires-dist
+Dynamic: summary
+
+Junjie's private utils.
