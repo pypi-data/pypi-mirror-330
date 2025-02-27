@@ -1,0 +1,24 @@
+numpy<2.1,>=1.21
+scipy>=1.2.1
+matplotlib>=3.3.1
+formlayout==1.2.0
+PyQt6
+jupyter
+jupyter-client
+ipykernel
+qtconsole
+pathos>=0.2.5
+celerite>=0.3.1
+batman-package>=2.4.8
+ttvfast>=0.3.0
+wotan>=1.7
+openai
+desktop_file
+astropy
+Pillow
+ninja
+meson
+colorama
+
+[:sys_platform == "win32"]
+pywin32
