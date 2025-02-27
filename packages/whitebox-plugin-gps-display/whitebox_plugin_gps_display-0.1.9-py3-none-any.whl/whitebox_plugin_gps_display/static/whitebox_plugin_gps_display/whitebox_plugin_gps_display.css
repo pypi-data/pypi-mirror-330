@@ -1,0 +1,14 @@
+/* Normal template view */
+#whitebox-plugin-gps-display > #map {
+    height: 400px;
+}
+
+/* Embedded template view */
+#map.embedded {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    height: 100vh;
+    width: 100vw;
+}
