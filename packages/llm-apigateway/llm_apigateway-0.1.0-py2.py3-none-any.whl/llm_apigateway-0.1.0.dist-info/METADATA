@@ -1,0 +1,35 @@
+Metadata-Version: 2.2
+Name: llm-apigateway
+Version: 0.1.0
+Summary: Debug your AI programs with ease through a web-based interface. Modify inputs and outputs, and leverage the power of custom Python filters.
+Home-page: https://github.com/jiangmuran/llm-apigateway
+Author: Andy Jiang
+Author-email: jiangmuran1224@gmail.com
+License: MIT
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Requires-Python: >=3.6.0
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: argparse
+Requires-Dist: flask
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+
+This project is still developing.
+Plsase go to the <a href="./README_CN.md">Chinese README</a> file
+
+请前往<a href="./README_CN.md">中文Readme</a>查看项目信息
