@@ -1,0 +1,12 @@
+[console_scripts]
+beautify_json = ykutil.executable:do_beautify_json
+bulk_rename = ykutil.executable:do_bulk_rename
+colorcode_ds = ykutil.executable:do_colorcode_dataset
+count_token_sequence = ykutil.executable:do_count_token_sequence
+describe_dataset = ykutil.executable:do_describe_dataset
+llm_process_file = ykutil.llm_api:do_process_file
+llm_process_folder = ykutil.llm_api:do_process_folder
+merge_sql_database_folder = ykutil.executable:do_merge_database_folder
+merge_sql_databases = ykutil.executable:do_merge_databases
+tokenize = ykutil.executable:do_tokenize
+untokenize = ykutil.executable:do_untokenize
