@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pyeqx-opentelemetry"
+version = "0.1.1"
+description = "OpenTelemetry instrumentation for PyEQX"
+authors = [{ name = "Gunn Bhatrakarn" }]
+dependencies = [
+  "opentelemetry-api>=1.29.0",
+  "opentelemetry-exporter-otlp>=1.30.0",
+  "opentelemetry-exporter-prometheus>=0.50b0",
+  "opentelemetry-sdk>=1.29.0",
+]
+requires-python = ">=3.11"
+readme = "README.md"
+classifiers = ["Programming Language :: Python :: 3"]
+
+[project.optional-dependencies]
+dev = [
+    "black",
+    "ruff",
+    "build",
+    "twine",
+    "python-dotenv",
+    "pytest",
+    "pytest-cov",
+    "pytest-mock",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+packages = ["pyeqx", "pyeqx.opentelemetry"]
+
