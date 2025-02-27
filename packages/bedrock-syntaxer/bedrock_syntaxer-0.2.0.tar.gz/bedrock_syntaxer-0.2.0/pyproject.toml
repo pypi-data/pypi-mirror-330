@@ -1,0 +1,17 @@
+[project]
+name = "bedrock-syntaxer"
+version = "0.2.0"
+description = "A utility to force AWS Bedrock to apply the given syntax to its response."
+authors = [{ name = "Tim Furlong", email = "furlong.tim@gmail.com" }]
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = ["boto3"]
+repository = "https://github.com/timfurlong/bedrock-syntaxer"
+homepage = "https://github.com/timfurlong/bedrock-syntaxer"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.4"
