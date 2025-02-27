@@ -1,0 +1,100 @@
+Metadata-Version: 2.2
+Name: pyoidn
+Version: 2.3.0
+Summary: Intel Open Image Denoise(OIDN) python binding.
+Home-page: https://github.com/Hyiker/pyoidn
+Author: Carbene Hu
+Author-email: hyikerhu0212@gmail.com
+Platform: Linux
+Platform: Windows
+Platform: macOS
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering :: Image Processing
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Topic :: Multimedia :: Graphics
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: C++
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Environment :: GPU
+Classifier: Natural Language :: English
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy
+Requires-Dist: cffi>=1.0.0
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: platform
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# Intel Open Image Denoise python binding
+
+Unofficial Intel [OIDN](https://www.openimagedenoise.org/) python binding. I pick some of my mostly used functionalities of OIDN, feature request with issues/PRs are welcomed.
+
+Current implementation only supports numpy as input/output buffer. PyTorch version will be developed soon.
+
+## Install and Usage
+
+Install pyoidn with:
+
+```bash
+pip install pyoidn
+```
+
+A simple for ray traced image denoising:
+
+```python
+def load_image(path: str) -> np.ndarray:
+    return np.array(Image.open(path), dtype=np.float32) / 255.0
+
+color = load_image(color_path)
+normal = load_image(normal_path)
+albedo = load_image(albedo_path)
+result = np.zeros_like(color, dtype=np.float32)
+
+device = pyoidn.Device()
+device.commit()
+
+filter = pyoidn.Filter(device, "RT")
+filter.set_image(pyoidn.OIDN_IMAGE_COLOR, color, pyoidn.OIDN_FORMAT_FLOAT3)
+filter.set_image(pyoidn.OIDN_IMAGE_NORMAL, normal, pyoidn.OIDN_FORMAT_FLOAT3)
+filter.set_image(pyoidn.OIDN_IMAGE_ALBEDO, albedo, pyoidn.OIDN_FORMAT_FLOAT3)
+filter.set_image(pyoidn.OIDN_IMAGE_OUTPUT, result, pyoidn.OIDN_FORMAT_FLOAT3)
+
+filter.commit()
+filter.execute()
+
+result = np.array(np.clip(result * 255, 0, 255), dtype=np.uint8)
+Image.fromarray(result).save(output_path)
+
+filter.release()
+
+device.release()
+```
+
+Async version example can be found in `tests/test.py`
+
+Please use `device.get_error` for error check.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+This project includes:
+- [Intel Open Image Denoise](https://github.com/RenderKit/oidn) - Licensed under Apache License 2.0
