@@ -1,0 +1,10 @@
+README.rst
+pyproject.toml
+scrapy_deltafetch/__init__.py
+scrapy_deltafetch/middleware.py
+scrapy_deltafetch.egg-info/PKG-INFO
+scrapy_deltafetch.egg-info/SOURCES.txt
+scrapy_deltafetch.egg-info/dependency_links.txt
+scrapy_deltafetch.egg-info/requires.txt
+scrapy_deltafetch.egg-info/top_level.txt
+tests/test_deltafetch.py
