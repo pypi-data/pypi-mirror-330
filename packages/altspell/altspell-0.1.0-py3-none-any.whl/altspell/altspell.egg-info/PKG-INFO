@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: altspell
+Version: 0.0.1
+Summary: A flask web API for converting traditional English spelling to alternative spellings
+Author-email: Nicholas Johnson <njohnson@posteo.net>
+Classifier: Private :: Do Not Upload
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python
+Classifier: License-Expression :: GPL-3.0-or-later
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: flask
+Provides-Extra: test
+Requires-Dist: pytest; extra == "test"
