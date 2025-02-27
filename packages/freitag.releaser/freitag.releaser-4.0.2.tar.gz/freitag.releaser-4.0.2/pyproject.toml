@@ -1,0 +1,107 @@
+[build-system]
+requires = ["setuptools >= 61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "freitag.releaser"
+version = "4.0.2"
+authors = [{ name = "Gil Forcada Codinachs", email = "gil.gnome@gmail.com" }]
+requires-python = ">=3.11"
+description = "Release facilities to ease the management of buildout based projects."
+keywords = ["releasing", "packaging", "pypi"]
+readme = "README.md"
+license = { file = "LICENSE" }
+classifiers = [
+  'Development Status :: 5 - Production/Stable',
+  'Intended Audience :: Developers',
+  'License :: OSI Approved :: GNU General Public License (GPL)',
+  'Programming Language :: Python',
+  'Programming Language :: Python :: 3',
+  'Programming Language :: Python :: 3 :: Only',
+  'Programming Language :: Python :: 3.11',
+  'Programming Language :: Python :: 3.12',
+  'Programming Language :: Python :: 3.13',
+  'Programming Language :: Python :: Implementation :: CPython',
+  'Topic :: Software Development :: Libraries :: Python Modules',
+]
+dependencies = [
+  "gitpython",
+  "gocept.zestreleaser.customupload",
+  "paramiko",
+  "plone.releaser",
+  "scp",
+  "setuptools",
+  "zest.releaser[recommended]",
+]
+
+[project.urls]
+Homepage = "https://github.com/derFreitag/freitag.releaser/"
+Repository = "https://github.com/derFreitag/freitag.releaser/"
+Issues = "https://github.com/derFreitag/freitag.releaser/issues"
+Changelog = "https://github.com/derFreitag/freitag.releaser/blob/main/CHANGES.md"
+
+[project.optional-dependencies]
+test = ["testfixtures"]
+
+[project.scripts]
+freitag_manage = "freitag.releaser.manage:manage"
+
+[project.entry-points."zest.releaser.prereleaser.before"]
+i18n = "freitag.releaser.prerelease:check_translations"
+
+[tool.towncrier]
+directory = "news/"
+filename = "CHANGES.md"
+start_string = "<!-- towncrier release notes start -->\n"
+title_format = "## {version} ({project_date})"
+template = "news/.changelog_template.jinja"
+underlines = ["", "", ""]
+
+[[tool.towncrier.type]]
+directory = "breaking"
+name = "Breaking changes"
+showcontent = true
+
+[[tool.towncrier.type]]
+directory = "feature"
+name = "New features"
+showcontent = true
+
+[[tool.towncrier.type]]
+directory = "bugfix"
+name = "Bug fixes"
+showcontent = true
+
+[[tool.towncrier.type]]
+directory = "internal"
+name = "Internal"
+showcontent = true
+
+[[tool.towncrier.type]]
+directory = "documentation"
+name = "Documentation"
+showcontent = true
+
+[[tool.towncrier.type]]
+directory = "tests"
+name = "Tests"
+showcontent = true
+
+[tool.isort]
+profile = "plone"
+
+[tool.black]
+skip-string-normalization = true
+fast = true
+
+[tool.check-manifest]
+ignore = [
+    ".editorconfig",
+    ".meta.toml",
+    ".pre-commit-config.yaml",
+    "tox.ini",
+    ".flake8",
+    "mx.ini",
+
+]
+

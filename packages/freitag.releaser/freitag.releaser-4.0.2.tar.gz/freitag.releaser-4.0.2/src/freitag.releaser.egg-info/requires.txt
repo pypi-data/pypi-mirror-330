@@ -1,0 +1,10 @@
+gitpython
+gocept.zestreleaser.customupload
+paramiko
+plone.releaser
+scp
+setuptools
+zest.releaser[recommended]
+
+[test]
+testfixtures

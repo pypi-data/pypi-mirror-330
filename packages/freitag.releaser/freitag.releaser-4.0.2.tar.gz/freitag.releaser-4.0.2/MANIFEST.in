@@ -1,0 +1,6 @@
+global-exclude *pyc
+include *.md
+graft src
+include pyproject.toml
+recursive-exclude news *
+exclude news *.yml __pycache__
