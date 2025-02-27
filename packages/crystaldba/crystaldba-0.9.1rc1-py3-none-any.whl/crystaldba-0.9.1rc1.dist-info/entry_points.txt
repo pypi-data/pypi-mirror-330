@@ -1,0 +1,3 @@
+[console_scripts]
+crystaldba=tui.__main__:cli
+
