@@ -1,0 +1,271 @@
+# Yet-Another CRC Calculator (yacrc)
+
+`yacrc` is a Python package that provides comprehensive support for CRC (*Cyclic Redundancy Check*) calculations. It offers flexible and optimized algorithms for CRC calculation on various data types. Additionally, the package includes a catalog of predefined CRC models covering standard and widely used configurations.
+
+## Features
+
+- **Flexible Input Types**: Supports `bytes`, `bytearray`, `List[int]`, and binary `str` inputs. The default data width is `8 bits`, but it can be configured to any positive number.
+- **CRC Model Catalog**: Includes a catalog of more than 100 predefined CRC models based on Greg Cook's *"Catalogue of Parametrised CRC Algorithms"* [[2]](#references).
+- **Customizable Parameters**: Allows customization of CRC model parameters (e.g., CRC width, polynomial, initial value, input and output reflection, final XOR operation, etc.).
+- **Optimized Calculation**: Offers both bit-by-bit and table-driven CRC calculation for speed and flexibility. The table-driven approach can be enabled when the data width is `16 bits` or less.
+- **Polynomial Division**: Provides a method to calculate CRC directly by mathematical definition, i.e., via a polynomial division in CRC arithmetic with detailed log of performed calculation steps.
+
+## Quick Start
+
+This section provides a brief guide to quickly get started with the `yacrc` package.
+
+Install the `yacrc` package via `pip` as follows:
+
+```bash
+pip install yacrc
+```
+
+Import the package, find the appropriate CRC model in the catalog, and calculate the CRC value for a buffer:
+
+```python-repl
+>>> from yacrc import CRC16
+>>> crc = CRC16.MODBUS.crc(b'123456789')
+>>> hex(crc)
+'0x4b37'
+```
+
+## Getting Started
+
+This section provides detailed instructions on how to create and use CRC calculation objects with the `yacrc` package. You can either use predefined models from the catalog or customize your own CRC parameters. Follow the steps below to get started with CRC calculations.
+
+### Creation of CRC calculation objects
+
+To perform CRC calculations, you need to create CRC calculation objects. These objects can be created either by using predefined models from the catalog or by directly instantiating the `CRC` class. The constructor takes the following input arguments:
+
+- `width (int)` - CRC width (number of bits).
+- `poly (int)` - CRC poly, i.e., polynomial without implied leading bit `'1'`.
+- `init (int)` - CRC shift register initial value. Defaults to `0`.
+- `refin (bool)` - Input data reflection. Defaults to `False`.
+- `refout (bool)` - Output data reflection. Defaults to `False`.
+- `xorout (int)` - Operand for the final XOR operation. Defaults to `0`.
+- `check (int | None)` - CRC value for `b'123456789'`. Defaults to `None`.
+- `residue (int | None)` - Residue value. Defaults to `None`.
+- `name (str)` - CRC model name. Defaults to `''`.
+- `alias (str)` - CRC model alias(es). Defaults to `''`.
+- `data (int)` - Data width (number of bits). Defaults to `8`.
+- `reverse (bool)` - CRC is appended in reverse order. Defaults to `False`.
+- `optimized (bool | None)` - Optimized CRC calculations. Defaults to `None`.
+
+The only mandatory parameters are the `width` and `poly`. Refer to [[1]](#references) for more information on how different parameters influence CRC calculation. The built-in catalog classes (`CRC3`, `CRC4`, ..., `CRC82`) contain more than 100 predefined CRC models [[2]](#references).
+
+CRC calculation objects can also be created by overriding parameters of any CRC model from the built-in catalog:
+
+```python-repl
+>>> from yacrc import CRC16
+>>> obj = CRC16.MODBUS(xorout=0xFFFF)
+CRC-16/USB has the same set of parameters
+>>> obj is CRC16.MODBUS
+False
+>>> obj is CRC16.USB
+False
+>>> obj == CRC16.USB
+True
+>>> obj
+CRC-16/MODBUS*
+```
+
+It is possible to override any parameter except the CRC width. If the `name` is not specified, it is formed by adding a trailing `'*'` to the existing CRC model name. When the new set of parameters matches an existing CRC model in the catalog, the appropriate message will be displayed.
+
+### Check and residue parameters
+
+The `check` parameter is defined as a CRC value for the test message `b'123456789'`. The `residue` parameter is defined as the CRC value before the final XOR, calculated over a buffer with its CRC appended at the end.
+
+When the `check` and `residue` parameters are provided as inputs to the `CRC` constructor, their values are compared against the expected values. The `check` parameter should not be specified for data widths other than `8 bits`.
+
+```python-repl
+>>> from yacrc import CRC16
+>>> obj = CRC16.MODBUS
+>>> obj.crc(b'123456789') == obj.check
+True
+>>> appended = obj.append([1])
+>>> residue = obj.crc(appended) ^ obj.xorout
+>>> residue == obj.residue
+True
+```
+
+Note that the `crc()` method returns a CRC value after the final XOR operation. To undo the final XOR, the CRC value should be XORed once more with the `xorout` parameter.
+
+### Unoptimized and optimized CRC calculation
+
+The CRC calculation algorithm can be optimized for calculation speed by precomputing a table of CRC values for each possible data value in an input buffer. For a data width of `data` bits, the CRC lookup table will contain `2**data` elements. Due to the memory requirements, the table-based optimization is limited to data widths of `16 bits` or less. The `table()` and `table_2d()` methods provide access to the CRC lookup table.
+
+```python-repl
+>>> from yacrc import CRC4
+>>> obj = CRC4.G_704(data=8)
+>>> print(obj.table_2d(cols=16))
+0x0, 0x7, 0xE, 0x9, 0x5, 0x2, 0xB, 0xC, 0xA, 0xD, 0x4, 0x3, 0xF, 0x8, 0x1, 0x6,
+0xD, 0xA, 0x3, 0x4, 0x8, 0xF, 0x6, 0x1, 0x7, 0x0, 0x9, 0xE, 0x2, 0x5, 0xC, 0xB,
+0x3, 0x4, 0xD, 0xA, 0x6, 0x1, 0x8, 0xF, 0x9, 0xE, 0x7, 0x0, 0xC, 0xB, 0x2, 0x5,
+0xE, 0x9, 0x0, 0x7, 0xB, 0xC, 0x5, 0x2, 0x4, 0x3, 0xA, 0xD, 0x1, 0x6, 0xF, 0x8,
+0x6, 0x1, 0x8, 0xF, 0x3, 0x4, 0xD, 0xA, 0xC, 0xB, 0x2, 0x5, 0x9, 0xE, 0x7, 0x0,
+0xB, 0xC, 0x5, 0x2, 0xE, 0x9, 0x0, 0x7, 0x1, 0x6, 0xF, 0x8, 0x4, 0x3, 0xA, 0xD,
+0x5, 0x2, 0xB, 0xC, 0x0, 0x7, 0xE, 0x9, 0xF, 0x8, 0x1, 0x6, 0xA, 0xD, 0x4, 0x3,
+0x8, 0xF, 0x6, 0x1, 0xD, 0xA, 0x3, 0x4, 0x2, 0x5, 0xC, 0xB, 0x7, 0x0, 0x9, 0xE,
+0xC, 0xB, 0x2, 0x5, 0x9, 0xE, 0x7, 0x0, 0x6, 0x1, 0x8, 0xF, 0x3, 0x4, 0xD, 0xA,
+0x1, 0x6, 0xF, 0x8, 0x4, 0x3, 0xA, 0xD, 0xB, 0xC, 0x5, 0x2, 0xE, 0x9, 0x0, 0x7,
+0xF, 0x8, 0x1, 0x6, 0xA, 0xD, 0x4, 0x3, 0x5, 0x2, 0xB, 0xC, 0x0, 0x7, 0xE, 0x9,
+0x2, 0x5, 0xC, 0xB, 0x7, 0x0, 0x9, 0xE, 0x8, 0xF, 0x6, 0x1, 0xD, 0xA, 0x3, 0x4,
+0xA, 0xD, 0x4, 0x3, 0xF, 0x8, 0x1, 0x6, 0x0, 0x7, 0xE, 0x9, 0x5, 0x2, 0xB, 0xC,
+0x7, 0x0, 0x9, 0xE, 0x2, 0x5, 0xC, 0xB, 0xD, 0xA, 0x3, 0x4, 0x8, 0xF, 0x6, 0x1,
+0x9, 0xE, 0x7, 0x0, 0xC, 0xB, 0x2, 0x5, 0x3, 0x4, 0xD, 0xA, 0x6, 0x1, 0x8, 0xF,
+0x4, 0x3, 0xA, 0xD, 0x1, 0x6, 0xF, 0x8, 0xE, 0x9, 0x0, 0x7, 0xB, 0xC, 0x5, 0x2
+```
+
+When the `optimize` parameter is not specified, CRC calculation optimization is enabled by default for data widths of `8 bits` or less. Additionally, the `optimization()` method lets users to enable or disable CRC calculation optimization.
+
+```python-repl
+>>> from yacrc import CRC16
+>>> obj = CRC16.MODBUS
+>>> obj_e = obj.optimization(True)
+>>> obj_e is obj
+True
+>>> obj_e.crc(b'1')
+38014
+>>> obj_d = obj.optimization(False)
+>>> obj_d is obj
+True
+>>> obj_d.crc(b'1')
+38014
+>>> obj_x = obj(optimized=False)
+>>> obj_x is obj
+False
+>>> obj_x.crc(b'1')
+38014
+```
+
+Depending on the CRC width, data width, and buffer size, the optimized CRC calculation algorithms are 3-5x faster than unoptimized algorithms.
+
+```python-repl
+>>> import timeit
+>>> main = "obj.crc(buffer)"
+>>> setup = """
+... from yacrc import CRC16
+... buffer = list(range({}))
+... obj = CRC16.MODBUS.optimization({})
+... """
+>>> timeit.timeit(main, setup.format(100, True), number=100000)
+1.7694603000127245
+>>> timeit.timeit(main, setup.format(100, False), number=100000)
+6.940266099991277
+```
+
+### Polynomial division in CRC arithmetic
+
+The `crc_steps()` method calculates a CRC value directly by mathematical definition, i.e., via a polynomial division in CRC arithmetic. In addition to the calculated CRC value, it also outputs a detailed log of the performed calculation steps, which can be used to visualize the CRC calculation process. It should be noted that this calculation method is 40-50x slower than the unoptimized algorithm.
+
+```python-repl
+>>> from yacrc import CRC4
+>>> obj = CRC4.G_704
+>>> crc, steps = obj.crc_steps(b'0')
+>>> hex(crc)
+'0xe'
+>>> print(steps)
+======================
+MODEL: CRC-4/G-704
+======================
+MESSAGE   00110000
+----------------------
+REFIN     00001100
+AUGMENT   000011000000
+POLY          10011...
+              -----...
+              0101100.
+POLY           10011..
+               -----..
+               00101..
+POLY             10011
+                 -----
+                 00111
+                  ----
+REFOUT            1110
+----------------------
+CRC = 0xE
+======================
+```
+
+### Different data types and data widths
+
+The package supports `bytes`, `bytearray`, `List[int]`, and binary `str` inputs. This flexibility allows users to calculate CRC values for data in various formats. The following code shows how to calculate a CRC value for the `{0x31, 0x32}` sequence of bytes in different representations.
+
+```python-repl
+>>> from yacrc import CRC16
+>>> obj = CRC16.MODBUS
+>>> crc_1 = obj.crc(b'12')
+>>> crc_2 = obj.crc(bytearray(b'12'))
+>>> crc_3 = obj.crc([0x31, 0x32])
+>>> crc_4 = obj.crc('0011000100110010')
+>>> crc_1 == crc_2 == crc_3 == crc_4
+True
+>>> hex(crc_1)
+'0xf595'
+```
+
+The `data` parameter defines how many lower bits are relevant in each element of an integer buffer (`bytes`, `bytearray`, or `List[int]`). For binary string (`str`) buffers, their length must be a multiple of `data`. The data width will be `8 bits` in most practical cases, which is the default setting.
+
+```python-repl
+>>> from yacrc import CRC16
+>>> obj = CRC16.MODBUS(data=4)
+>>> obj.crc([1, 2]) == obj.crc('00010010')
+True
+>>> obj.crc([0, 1, 0, 2]) == obj.crc('0000000100000010')
+True
+>>> obj.crc([0, 1, 0, 2]) == obj.crc([1, 2])
+False
+```
+
+### Buffer with its CRC appended at the end
+
+The `append()` method calculates a CRC value over a given buffer and appends it to its end. The CRC value is appended (i) in big-endian when no input data reflection is used (`refin == False`), or (ii) in little-endian when input data reflection is used (`refin == True`). The `separate()` method extracts the original message and its CRC from the appended buffer, and the `verify()` method validates the given buffer by calculating its residue.
+
+```python-repl
+>>> from yacrc import CRC16
+>>> buffer = b'123456789'
+>>> obj = CRC16.MODBUS
+>>> crc = obj.crc(buffer)
+>>> appended = obj.append(buffer)
+>>> appended
+b'1234567897K'
+>>> obj.separate(appended) == (buffer, crc)
+True
+>>> obj.verify(appended)
+True
+```
+
+Some CRC calculation implementations do not take into account the `refin` parameter when appending the CRC value to the buffer. A common example is when the CRC value is appended in *big-endian* format for CRC models with `refin == True`. The `reverse` parameter allows reversing the append order:
+
+```python-repl
+>>> from yacrc import CRC16
+>>> buffer = b'123456789'
+>>> obj = CRC16.MODBUS
+>>> obj.crc(buffer).to_bytes(2, 'big')
+b'K7'
+>>> obj.append(buffer)
+b'1234567897K'
+>>> rev = CRC16.MODBUS(reverse=True)
+>>> rev.crc(buffer).to_bytes(2, 'big')
+b'K7'
+>>> rev.append(buffer)
+b'123456789K7'
+```
+
+## Changelog
+
+All notable changes to the project will be documented in this section.
+
+#### [0.0.1] - 2025-02-26
+- Initial release
+
+## <a name="references"></a>References
+
+[1] Ross Williams, ["A Painless Guide to CRC Error Detection Algorithms,"](http://www.ross.net/crc/download/crc_v3.txt) accessed January 18, 2025.
+
+[2] Greg Cook, ["Catalogue of Parametrised CRC Algorithms,"](https://reveng.sourceforge.io/crc-catalogue/) accessed January 18, 2025.
+
+## License
+
+This project is licensed under the MIT License.

@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "yacrc"
+version = "0.0.1"
+authors = [
+    { name="Marko Gulin", email="marko@gulin.fr" },
+]
+description = "Yet-Another CRC Calculator"
+readme = "README.md"
+requires-python = ">=3.7"
+license = { file="LICENSE" }
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent"
+]
+keywords = ["CRC", "checksum", "error detection"]
+
+[tool.setuptools.packages.find]
+exclude = ["tests", "tests/**"]
+
+[project.urls]
+Homepage = "https://github.com/marko-gulin/yacrc"
+Issues = "https://github.com/marko-gulin/yacrc"
