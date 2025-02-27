@@ -1,0 +1,23 @@
+[build-system]
+requires = ["flit_core>=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "django-meili"
+authors = [{ name = "Ian Kollipara", email = "ian.kollipara@cune.edu" }]
+dynamic = ["version", "description"]
+readme = "README.md"
+requires-python = ">=3.11"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = ["django", "meilisearch"]
+
+[project.optional-dependencies]
+djp = ["djp"]
+
+[project.urls]
+"Homepage" = "https://github.com/ikollipara/django-meili"
+"Bug Tracker" = "https://github.com/ikollipara/django-meili/issues"

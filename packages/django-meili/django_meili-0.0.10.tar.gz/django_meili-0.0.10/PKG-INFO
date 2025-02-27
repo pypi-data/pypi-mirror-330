@@ -1,0 +1,157 @@
+Metadata-Version: 2.4
+Name: django-meili
+Version: 0.0.10
+Summary: Custom Django integration for MeiliSearch.
+Author-email: Ian Kollipara <ian.kollipara@cune.edu>
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+License-File: LICENSE
+Requires-Dist: django
+Requires-Dist: meilisearch
+Requires-Dist: djp ; extra == "djp"
+Project-URL: Bug Tracker, https://github.com/ikollipara/django-meili/issues
+Project-URL: Homepage, https://github.com/ikollipara/django-meili
+Provides-Extra: djp
+
+# Django-Meili
+
+![](./docs/Meilisearch_-_Django.jpg)
+
+A package to integrate Meilisearch with Django in a seamless way. This pacakge is tested on Meilisearch `v1.7` - `v1.11`.
+
+## Install
+```
+pip install django_meili
+```
+
+## Usage
+### Settings
+Update your `settings.py` file to include the following:
+```python
+INSTALLED_APPS = [
+    # ...,  <--- Any 3rd Party code
+    "django_meili",
+    # ...,  <--- All your modules
+]
+
+# ....
+
+MEILISEARCH = {}
+```
+
+You must define the `django_meili` application before any of your code that
+uses the application.
+
+### (NEW) Using [`djp`](https://djp.readthedocs.io/en/latest/index.html)
+If you are using DJP as your django plugin manager, then you can simply install the application
+as normal. If you define your own custom settings, it will take priority over the current settings.
+
+### Example in Models
+Update a model to include the following:
+```python
+from django_meili.models import IndexMixin
+from django.db import models
+
+class Post(IndexMixin, models.Model):
+    """Model definition for Post."""
+
+    title = models.CharField(max_length=255)
+    body = models.TextField()
+
+    class Meta:
+        """Meta definition for Post."""
+
+        verbose_name = "Post"
+        verbose_name_plural = "Posts"
+
+    class MeiliMeta:
+        filterable_fields = ("title",)
+        searchable_fields = ("id", "title", "body")
+        displayed_fields = ("id", "title", "body")
+
+    def __str__(self):
+        return self.title
+```
+
+### Searching
+Now you can search from meilisearch using `Model.meilisearch`:
+```python
+Post.meilisearch.search("Hello World") # => <Queryset for Post>
+```
+
+## API
+### `MEILISEARCH` in `settings.py`
+These are the settings available to the package. The values
+show are the defaults.
+```python
+MEILISEARCH = {
+    'HTTPS': False, # Whether HTTPS is enabled for the meilisearch server
+    'HOST': 'localhost', # The host for the meilisearch server
+    'MASTER_KEY': None, # The master key for meilisearch. See https://www.meilisearch.com/docs/learn/security/basic_security for more detail
+    'PORT': 7700, # The port for the meilisearch server
+    'TIMEOUT': None, # The timeout to wait for when using sync meilisearch server
+    'CLIENT_AGENTS': None, # The client agents for the meilisearch server
+    'DEBUG': DEBUG, # Whether to throw exceptions on failed creation of documents
+    'SYNC': False, # Whether to execute operations to meilisearch in a synchronous manner (waiting for each rather than letting the task queue operate)
+    'OFFLINE': False, # Whether to make any http requests for the application.
+    'DEFAULT_BATCH_SIZE': 1000, # For syncindex the default batch size for import queryset
+}
+```
+
+### `django_meili.models.IndexMixin`
+
+The `IndexMixin` is how an index is defined on a model.
+To configure the `IndexMixin` define a class on the model called `MeiliMeta`.
+The `IndexMixin` defines two new properties on the model:
+1. `meilisearch` - The queryset used to search.
+2. `_meilisearch` - the `MeiliMeta` values available on the model.
+
+In addition, the `IndexMixin` defines three methods:
+1. `meili_filter()` - Should this row be synced in meilisearch
+2. `meili_serialize()` - How the model is serialized into a dictionary
+3. `meili_geo()` - What does the `_geo` column look like (optional)
+
+#### `MeiliMeta`
+The listed values here are default values. The displayed, searchable, filterable, and sortable should all be iterables containing field names, see the example above.
+
+```python
+class MeiliMeta:
+    displayed_fields = None # the fields displayed when querying meilisearch
+    searchable_fields = None # the searchable fields when querying meilisearch
+    filterable_fields = None # the fields available to filter by using meilisearch
+    sortable_fields = None # the fields that can be sorted by using meilisearch
+    supports_geo = False # Does the model support geolocation
+    index_name = "<model.__name__>" # the name of the meilisearch index
+    primary_key = "pk" # the primary key field for the index
+```
+
+### `django_meili.querysets.IndexQuerySet`
+The queryset defines the searchable operations on the index.
+It attempts to mimic the django queryset API, but differs in 2 notable ways:
+1. To do geo-filtering, you pass a positional argument
+2. Not all queryset operations are implemented.
+
+### Commands
+
+#### `python manage.py syncindex`
+
+Sync the given index with the current database state. This will always be done synchronously.
+
+#### `python manage.py clearindex`
+
+Clearn the given index. This will always be done synchronously.
+
+## Development
+
+1. clone the repo
+2. ./bin/setup.sh
+3. ./bin/test.sh
+4. Develop
+
+## Contact
+If there are any issues, please feel free to make an issue.
+If you have suggested improvements, please make an issue where we can discuss.
+
