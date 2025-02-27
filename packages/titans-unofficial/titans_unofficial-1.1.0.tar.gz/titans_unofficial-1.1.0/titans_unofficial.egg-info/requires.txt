@@ -1,0 +1,13 @@
+torch
+
+[dev]
+pytest>=7.4.0
+pytest-asyncio>=0.23.0
+black>=22.0.0
+isort>=5.10.0
+flake8>=4.0.0
+
+[examples]
+numpy
+transformers
+einops
