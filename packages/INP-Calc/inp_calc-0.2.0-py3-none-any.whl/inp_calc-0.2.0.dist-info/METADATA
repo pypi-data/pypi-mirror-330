@@ -1,0 +1,37 @@
+Metadata-Version: 2.2
+Name: INP_Calc
+Version: 0.2.0
+Summary: Functions for converting frozen fraction (FF) to concentration, volume, and surface area.
+Author: Max Fobian Skov
+Author-email: max.fobian@gmail.com
+License: MIT
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+Requires-Dist: numpy>=1.21.0
+Requires-Dist: pandas>=1.3.0
+Requires-Dist: scipy>=1.7.0
+Dynamic: author
+Dynamic: author-email
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: license
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# INP_Calc
+
+INP_Calc is a Python module that provides functions for converting freezing fraction (FF) to concentration, volume, and surface area.
+
+## Functions
+
+- `FF_to_conc(ff, volume, concentration)`: Convert freezing fraction to concentration.
+- `FF_to_volume(ff, diameter, volume, concentration)`: Convert freezing fraction to volume.
+- `FF_to_surface(ff, diameter, volume, concentration)`: Convert freezing fraction to surface area.
+
+## Installation
+
+You can install the package using pip:
+
+```bash
+pip install INP_Calc
