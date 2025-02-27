@@ -1,0 +1,16 @@
+[project]
+name = "aiml_api"
+version = "0.1.1"
+description = "AI/ML API library for a simple and seamless connection to AI/ML services."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "openai>=1.55.1",
+    "pydantic-settings>=2.7.1",
+]
+
+[dependency-groups]
+dev = [
+    "build>=1.2.2.post1",
+    "twine>=6.1.0",
+]
