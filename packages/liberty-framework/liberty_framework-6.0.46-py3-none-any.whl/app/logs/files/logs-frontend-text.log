@@ -1,0 +1,824 @@
+[2025-02-02T11:16:17.662397+00:00] [info] QueryDAO.themes - Framework: Load Themes
+Method: GET, URL: http://localhost:8000/api/fmw/themes?pool=default&q={"THM_NAME":{"=":"liberty"}}
+Category: http, Feature: database-api, IsException: True
+
+[2025-02-02T11:16:17.663243+00:00] [info] QueryDAO.modules - Framework: Load Modules
+Method: GET, URL: http://localhost:8000/api/fmw/modules
+Category: http, Feature: database-api, IsException: True
+
+[2025-02-02T11:16:18.431034+00:00] [info] QueryDAO.applications - Framework: Load Applications
+Method: GET, URL: http://localhost:8000/api/fmw/applications
+Category: http, Feature: database-api, IsException: True
+
+[2025-02-02T11:16:18.431677+00:00] [info] loginUtils.getApplications - Login: Failed to fetch applications
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-02T11:16:18.447637+00:00] [info] QueryDAO.applications - Framework: Load Applications
+Method: GET, URL: http://localhost:8000/api/fmw/applications
+Category: http, Feature: database-api, IsException: True
+
+[2025-02-02T11:16:18.448273+00:00] [info] loginUtils.getApplications - Login: Failed to fetch applications
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-02T20:44:08.313052+00:00] [info] QueryDAO.token - User Login: Check User and Password
+Method: POST, URL: http://localhost:8000/api/auth/token?pool=libnsx1&mode=session&type=database
+Category: http, Feature: database-api, IsException: True
+
+[2025-02-02T20:44:08.319907+00:00] [info] QueryDAO.login - User Login: Get User Properties
+Method: GET, URL: http://localhost:8000/api/auth/user?user=admin&pool=libnsx1&mode=session
+Category: http, Feature: database-api, IsException: True
+
+[2025-02-02T23:09:03.704709+00:00] [info] QueryDAO.themes - Framework: Load Themes
+Method: GET, URL: http://localhost:8000/api/fmw/themes?pool=default&q={"THM_NAME":{"=":"liberty"}}
+Category: http, Feature: database-api, IsException: True
+
+[2025-02-02T23:50:32.161738+00:00] [info] QueryDAO.themes - Framework: Load Themes
+Method: GET, URL: http://localhost:8000/api/fmw/themes?pool=default&q={"THM_NAME":{"=":"liberty"}}
+Category: http, Feature: database-api, IsException: True
+
+[2025-02-03T09:58:50.403914+00:00] [info] QueryDAO.applications - Framework: Load Applications
+Method: GET, URL: http://localhost:8000/api/fmw/applications
+Category: http, Feature: database-api, IsException: False
+
+[2025-02-03T09:59:06.487201+00:00] [info] QueryDAO.encrypt - Tools: Encrypt Password
+Method: POST, URL: http://localhost:8000/api/fmw/encrypt
+Category: http, Feature: database-api, IsException: False
+
+[2025-02-03T09:59:06.607619+00:00] [info] QueryDAO.token - User Login: Check User and Password
+Method: POST, URL: http://localhost:8000/api/auth/token?pool=default&mode=session&type=database
+Category: http, Feature: database-api, IsException: False
+
+[2025-02-03T09:59:06.626369+00:00] [info] QueryDAO.login - User Login: Get User Properties
+Method: GET, URL: http://localhost:8000/api/auth/user?user=admin&pool=default&mode=session
+Category: http, Feature: database-api, IsException: False
+
+[2025-02-03T09:59:06.699970+00:00] [info] QueryDAO.get - Database: Fetch Data
+Method: GET, URL: http://localhost:8000/api/db/query?source=framework&type=table&pool=default&mode=session&query=7&q={"USR_ID":{"=":"admin"}}&language=en
+Category: http, Feature: database-api, IsException: False
+
+[2025-02-03T09:59:06.702203+00:00] [info] QueryDAO.get - Database: Fetch Data
+Method: GET, URL: http://localhost:8000/api/db/query?source=framework&type=table&pool=default&mode=session&query=28&q={"DSH_ID":{"=":"1"}}
+Category: http, Feature: database-api, IsException: False
+
+[2025-02-03T09:59:06.734141+00:00] [info] QueryDAO.get - Database: Fetch Data
+Method: GET, URL: http://localhost:8000/api/db/query?source=framework&type=table&pool=default&mode=session&query=29&q={"DSH_ID":{"=":"1"}}
+Category: http, Feature: database-api, IsException: False
+
+[2025-02-03T09:59:10.243385+00:00] [info] QueryDAO.get - Database: Fetch Data
+Method: GET, URL: http://localhost:8000/api/db/query?source=framework&type=table&pool=default&mode=session&query=8&q={"TBL_ID":{"=":"36"}}
+Category: http, Feature: database-api, IsException: False
+
+[2025-02-03T09:59:10.297054+00:00] [info] QueryDAO.get - Database: Fetch Data
+Method: GET, URL: http://localhost:8000/api/db/query?source=framework&type=table&pool=default&mode=session&query=18&q={"TBL_ID":{"=":"36"}}&language=en
+Category: http, Feature: database-api, IsException: False
+
+[2025-02-03T09:59:10.344634+00:00] [info] QueryDAO.get - Database: Fetch Data
+Method: GET, URL: http://localhost:8000/api/db/query?source=query&type=table&pool=default&mode=session&query=64&language=en&offset=0&limit=5000
+Category: http, Feature: database-api, IsException: False
+
+[2025-02-03T09:59:11.311454+00:00] [info] QueryDAO.get - Database: Fetch Data
+Method: GET, URL: http://localhost:8000/api/db/query?source=framework&type=table&pool=default&mode=session&query=11&q={"FRM_ID":{"=":"35"}}
+Category: http, Feature: database-api, IsException: False
+
+[2025-02-03T09:59:11.359365+00:00] [info] QueryDAO.get - Database: Fetch Data
+Method: GET, URL: http://localhost:8000/api/db/query?source=framework&type=table&pool=default&mode=session&query=11&q={"FRM_ID":{"=":"35"}}
+Category: http, Feature: database-api, IsException: False
+
+[2025-02-03T09:59:11.371200+00:00] [info] QueryDAO.get - Database: Fetch Data
+Method: GET, URL: http://localhost:8000/api/db/query?source=query&type=table&pool=default&mode=session&query=64&q={"MODULE_ID":{"=":"debug"}}&language=en
+Category: http, Feature: database-api, IsException: False
+
+[2025-02-03T09:59:11.432686+00:00] [info] QueryDAO.get - Database: Fetch Data
+Method: GET, URL: http://localhost:8000/api/db/query?source=query&type=table&pool=default&mode=session&query=64&q={"MODULE_ID":{"=":"debug"}}&language=en
+Category: http, Feature: database-api, IsException: False
+
+[2025-02-03T09:59:11.453611+00:00] [info] QueryDAO.get - Database: Fetch Data
+Method: GET, URL: http://localhost:8000/api/db/query?source=framework&type=table&pool=default&mode=session&query=12&q={"LNG_ID":{"=":"en"},"FRM_ID":{"=":"35"}}&language=en
+Category: http, Feature: database-api, IsException: False
+
+[2025-02-03T09:59:11.455908+00:00] [info] FormsDialog.reserveRecord - Socket: Reserve Record
+Method: None, URL: None
+Category: debug, Feature: console, IsException: False
+
+[2025-02-03T09:59:11.516225+00:00] [info] QueryDAO.get - Database: Fetch Data
+Method: GET, URL: http://localhost:8000/api/db/query?source=framework&type=table&pool=default&mode=session&query=21&q={"LNG_ID":{"=":"en"},"FRM_ID":{"=":"35"}}&language=en
+Category: http, Feature: database-api, IsException: False
+
+[2025-02-03T09:59:11.526130+00:00] [info] QueryDAO.get - Database: Fetch Data
+Method: GET, URL: http://localhost:8000/api/db/query?source=framework&type=table&pool=default&mode=session&query=12&q={"LNG_ID":{"=":"en"},"FRM_ID":{"=":"35"}}&language=en
+Category: http, Feature: database-api, IsException: False
+
+[2025-02-03T09:59:11.528803+00:00] [info] FormsDialog.reserveRecord - Socket: Reserve Record
+Method: None, URL: None
+Category: debug, Feature: console, IsException: False
+
+[2025-02-03T09:59:11.572869+00:00] [info] QueryDAO.get - Database: Fetch Data
+Method: GET, URL: http://localhost:8000/api/db/query?source=framework&type=table&pool=default&mode=session&query=21&q={"LNG_ID":{"=":"en"},"FRM_ID":{"=":"35"}}&language=en
+Category: http, Feature: database-api, IsException: False
+
+[2025-02-03T09:59:13.567887+00:00] [info] QueryDAO.put - Database: Update Data
+Method: PUT, URL: http://localhost:8000/api/db/query?source=query&type=table&pool=default&mode=session&query=64
+Category: http, Feature: database-api, IsException: False
+
+[2025-02-03T09:59:13.631565+00:00] [info] QueryDAO.get - Database: Fetch Data
+Method: GET, URL: http://localhost:8000/api/db/query?source=framework&type=table&pool=default&mode=session&query=32&q={"EVT_ID":{"=":"1"},"EVT_CPT_ID":{"=":"35"},"EVT_COMPONENT":{"=":"FormsDialog"}}&language=en
+Category: http, Feature: database-api, IsException: False
+
+[2025-02-03T09:59:13.958309+00:00] [info] FormsDialog.releaseRecord - Socket: Release Record
+Method: None, URL: None
+Category: debug, Feature: console, IsException: False
+
+[2025-02-03T09:59:14.006913+00:00] [info] QueryDAO.get - Database: Fetch Data
+Method: GET, URL: http://localhost:8000/api/db/query?source=framework&type=table&pool=default&mode=session&query=8&q={"TBL_ID":{"=":"36"}}
+Category: http, Feature: database-api, IsException: False
+
+[2025-02-03T09:59:14.058910+00:00] [info] QueryDAO.get - Database: Fetch Data
+Method: GET, URL: http://localhost:8000/api/db/query?source=framework&type=table&pool=default&mode=session&query=18&q={"TBL_ID":{"=":"36"}}&language=en
+Category: http, Feature: database-api, IsException: False
+
+[2025-02-03T09:59:14.109481+00:00] [info] QueryDAO.get - Database: Fetch Data
+Method: GET, URL: http://localhost:8000/api/db/query?source=query&type=table&pool=default&mode=session&query=64&language=en&offset=0&limit=5000
+Category: http, Feature: database-api, IsException: False
+
+[2025-02-03T16:02:08.970022+00:00] [info] openai.sendPrompt - AI: Error fetching from OpenAI
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-04T15:29:52.140213+00:00] [info] openai.sendPrompt - AI: Error fetching from OpenAI
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-04T15:30:37.273770+00:00] [info] openai.sendPrompt - AI: Error fetching from OpenAI
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-04T15:31:39.376937+00:00] [info] openai.sendPrompt - AI: Error fetching from OpenAI
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-04T15:32:11.491967+00:00] [info] openai.sendPrompt - AI: Error fetching from OpenAI
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-04T15:34:16.772435+00:00] [info] openai.sendPrompt - AI: Error fetching from OpenAI
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-04T15:35:05.979914+00:00] [info] openai.sendPrompt - AI: Error fetching from OpenAI
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-04T15:36:57.230661+00:00] [info] openai.sendPrompt - AI: Error fetching from OpenAI
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-04T15:41:10.689200+00:00] [info] openai.sendPrompt - AI: Error fetching from OpenAI
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-04T15:43:49.936304+00:00] [info] openai.sendPrompt - AI: Error fetching from OpenAI
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-04T15:47:53.492447+00:00] [info] openai.sendPrompt - AI: Error fetching from OpenAI
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-04T15:47:53.494777+00:00] [info] lyChat.handleSendMessage - handleSendMessage: Failed to send message to AI
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-04T15:50:11.859381+00:00] [info] openai.sendPrompt - AI: Error fetching from OpenAI
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-04T16:49:44.991989+00:00] [info] lyChat.handleSendMessage - handleSendMessage: Failed to send message to AI
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-04T17:13:10.059925+00:00] [info] AI.sendPrompt - AI: Error fetching response
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-04T17:29:11.801907+00:00] [info] AI.sendPrompt - AI: Error fetching response
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-05T13:56:31.997433+00:00] [info] QueryDAO.login - User Login: Get User Properties
+Method: GET, URL: http://localhost:5173/api/auth/user?user=admin&pool=default&mode=session
+Category: http, Feature: database-api, IsException: True
+
+[2025-02-05T15:40:56.628207+00:00] [info] QueryDAO.token - User Login: Check User and Password
+Method: POST, URL: http://localhost:5173/api/auth/token?pool=libnjde&mode=session&type=database
+Category: http, Feature: database-api, IsException: True
+
+[2025-02-05T15:40:56.642339+00:00] [info] QueryDAO.login - User Login: Get User Properties
+Method: GET, URL: http://localhost:5173/api/auth/user?user=admin&pool=libnjde&mode=session
+Category: http, Feature: database-api, IsException: True
+
+[2025-02-05T18:01:52.811388+00:00] [info] QueryDAO.token - User Login: Check User and Password
+Method: POST, URL: http://localhost:5173/api/auth/token?pool=libnsx1&mode=session&type=database
+Category: http, Feature: database-api, IsException: True
+
+[2025-02-05T18:01:52.825057+00:00] [info] QueryDAO.login - User Login: Get User Properties
+Method: GET, URL: http://localhost:5173/api/auth/user?user=admin&pool=libnsx1&mode=session
+Category: http, Feature: database-api, IsException: True
+
+[2025-02-05T21:20:23.407405+00:00] [info] QueryDAO.token - User Login: Check User and Password
+Method: POST, URL: http://localhost:5173/api/auth/token?pool=libnsx1&mode=session&type=database
+Category: http, Feature: database-api, IsException: True
+
+[2025-02-05T21:20:23.417596+00:00] [info] QueryDAO.login - User Login: Get User Properties
+Method: GET, URL: http://localhost:5173/api/auth/user?user=admin&pool=libnsx1&mode=session
+Category: http, Feature: database-api, IsException: True
+
+[2025-02-10T16:38:01.212013+00:00] [info] QueryDAO.login - User Login: Get User Properties
+Method: GET, URL: http://localhost:8000/api/auth/user?user=admin&pool=libnsx1&mode=session
+Category: http, Feature: database-api, IsException: True
+
+[2025-02-10T16:39:53.815739+00:00] [info] QueryDAO.login - User Login: Get User Properties
+Method: GET, URL: http://localhost:5173/api/auth/user?user=admin&pool=libnsx1&mode=session
+Category: http, Feature: database-api, IsException: True
+
+[2025-02-10T16:40:18.938457+00:00] [info] QueryDAO.login - User Login: Get User Properties
+Method: GET, URL: http://localhost:5173/api/auth/user?user=admin&pool=libnsx1&mode=session
+Category: http, Feature: database-api, IsException: True
+
+[2025-02-10T16:42:54.617513+00:00] [info] QueryDAO.login - User Login: Get User Properties
+Method: GET, URL: http://localhost:5173/api/auth/user?user=admin&pool=libnsx1&mode=session
+Category: http, Feature: database-api, IsException: True
+
+[2025-02-13T11:53:00.889699+00:00] [info] QueryDAO.login - User Login: Get User Properties
+Method: GET, URL: http://localhost:8000/api/auth/user?user=admin&pool=default&mode=session
+Category: http, Feature: database-api, IsException: True
+
+[2025-02-13T11:54:41.431117+00:00] [info] QueryDAO.login - User Login: Get User Properties
+Method: GET, URL: http://localhost:8000/api/auth/user?user=admin&pool=default&mode=session
+Category: http, Feature: database-api, IsException: True
+
+[2025-02-13T11:55:00.692177+00:00] [info] QueryDAO.login - User Login: Get User Properties
+Method: GET, URL: http://localhost:8000/api/auth/user?user=admin&pool=default&mode=session
+Category: http, Feature: database-api, IsException: True
+
+[2025-02-13T11:55:42.886723+00:00] [info] QueryDAO.login - User Login: Get User Properties
+Method: GET, URL: http://localhost:8000/api/auth/user?user=admin&pool=default&mode=session
+Category: http, Feature: database-api, IsException: True
+
+[2025-02-13T11:56:55.231220+00:00] [info] QueryDAO.login - User Login: Get User Properties
+Method: GET, URL: http://localhost:8000/api/auth/user?user=admin&pool=default&mode=session
+Category: http, Feature: database-api, IsException: True
+
+[2025-02-17T20:54:58.472581+00:00] [info] AppsLogin.initialize - Login: Failed to fetch applications
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-17T20:54:58.478685+00:00] [info] AppsLogin.initialize - Login: Failed to fetch applications
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-17T20:54:58.480576+00:00] [info] AppsLogin.initialize - Login: Failed to fetch applications
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-17T20:55:01.750399+00:00] [info] AppsLogin.initialize - Login: Failed to fetch applications
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-17T20:55:01.754789+00:00] [info] AppsLogin.initialize - Login: Failed to fetch applications
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-17T20:55:01.758652+00:00] [info] AppsLogin.initialize - Login: Failed to fetch applications
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-17T20:56:08.800738+00:00] [info] AppsLogin.initialize - Login: Failed to fetch applications
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-17T20:56:08.804083+00:00] [info] AppsLogin.initialize - Login: Failed to fetch applications
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-17T20:56:08.810599+00:00] [info] AppsLogin.initialize - Login: Failed to fetch applications
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-17T20:57:03.629151+00:00] [info] AppsLogin.initialize - Login: Failed to fetch applications
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-17T20:57:03.631539+00:00] [info] AppsLogin.initialize - Login: Failed to fetch applications
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-17T20:57:03.636917+00:00] [info] AppsLogin.initialize - Login: Failed to fetch applications
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-17T20:57:36.283869+00:00] [info] AppsLogin.initialize - Login: Failed to fetch applications
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-17T20:57:36.288474+00:00] [info] AppsLogin.initialize - Login: Failed to fetch applications
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-17T20:57:36.290326+00:00] [info] AppsLogin.initialize - Login: Failed to fetch applications
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-17T20:57:39.289714+00:00] [info] AppsLogin.initialize - Login: Failed to fetch applications
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-17T20:57:39.295612+00:00] [info] AppsLogin.initialize - Login: Failed to fetch applications
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-17T20:57:39.298124+00:00] [info] AppsLogin.initialize - Login: Failed to fetch applications
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-17T20:58:05.547652+00:00] [info] AppsLogin.handleSubmit - Login: Validate and connect application
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-17T21:27:53.763594+00:00] [info] AppsLogin.handleSubmit - Login: Validate and connect application
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-17T21:29:25.620149+00:00] [info] AppsLogin.handleSubmit - Login: Validate and connect application
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-18T08:36:51.131922+00:00] [info] AppsLogin.handleSubmit - Login: Validate and connect application
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-18T08:50:17.490046+00:00] [info] QueryDAO.login - User Login: Get User Properties
+Method: GET, URL: http://localhost:5173/api/auth/user?user=admin&pool=default&mode=session
+Category: http, Feature: database-api, IsException: True
+
+[2025-02-18T08:50:46.858886+00:00] [info] QueryDAO.login - User Login: Get User Properties
+Method: GET, URL: http://localhost:5173/api/auth/user?user=admin&pool=default&mode=session
+Category: http, Feature: database-api, IsException: True
+
+[2025-02-18T09:20:18.197859+00:00] [info] AppsLogin.handleSubmit - Login: Validate and connect application
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-18T09:39:47.993101+00:00] [info] AppsLogin.handleSubmit - Login: Validate and connect application
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-18T09:39:53.694012+00:00] [info] AppsLogin.handleSubmit - Login: Validate and connect application
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-18T09:39:56.426967+00:00] [info] AppsLogin.handleSubmit - Login: Validate and connect application
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-18T09:40:15.230007+00:00] [info] AppsLogin.handleSubmit - Login: Validate and connect application
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-18T09:40:37.797926+00:00] [info] AppsLogin.handleSubmit - Login: Validate and connect application
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-18T09:40:38.567684+00:00] [info] AppsLogin.handleSubmit - Login: Validate and connect application
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-18T09:40:50.639456+00:00] [info] AppsLogin.handleSubmit - Login: Validate and connect application
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-18T11:28:07.444581+00:00] [info] DynamicMenus.getMenus - Menus: Error fetching menus
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-18T11:28:07.447532+00:00] [info] DynamicMenus.getMenus - Menus: Error fetching menus
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-18T11:28:07.477208+00:00] [info] QueryDAO.get - Database: Fetch Data
+Method: GET, URL: http://localhost:5173/api/db/query?source=framework&type=table&pool=default&mode=session&query=28&q={"DSH_ID":{"=":"-1"}}
+Category: http, Feature: database-api, IsException: True
+
+[2025-02-18T11:28:07.482890+00:00] [info] QueryDAO.get - Database: Fetch Data
+Method: GET, URL: http://localhost:5173/api/db/query?source=framework&type=table&pool=default&mode=session&query=28&q={"DSH_ID":{"=":"-1"}}
+Category: http, Feature: database-api, IsException: True
+
+[2025-02-18T11:28:07.490245+00:00] [info] QueryDAO.get - Database: Fetch Data
+Method: GET, URL: http://localhost:5173/api/db/query?source=framework&type=table&pool=default&mode=session&query=29&q={"DSH_ID":{"=":"-1"}}
+Category: http, Feature: database-api, IsException: True
+
+[2025-02-18T11:28:07.491882+00:00] [info] FormsDashboard.fetchDashboardData - Dashboard: Failed to fetch dashboard data
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-18T11:28:07.495586+00:00] [info] QueryDAO.get - Database: Fetch Data
+Method: GET, URL: http://localhost:5173/api/db/query?source=framework&type=table&pool=default&mode=session&query=29&q={"DSH_ID":{"=":"-1"}}
+Category: http, Feature: database-api, IsException: True
+
+[2025-02-18T11:28:07.496332+00:00] [info] FormsDashboard.fetchDashboardData - Dashboard: Failed to fetch dashboard data
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-18T11:28:21.105068+00:00] [info] DynamicMenus.getMenus - Menus: Error fetching menus
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-18T11:28:21.106804+00:00] [info] DynamicMenus.getMenus - Menus: Error fetching menus
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-18T11:28:21.119773+00:00] [info] DynamicMenus.getMenus - Menus: Error fetching menus
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-18T11:28:21.160111+00:00] [info] QueryDAO.get - Database: Fetch Data
+Method: GET, URL: http://localhost:5173/api/db/query?source=framework&type=table&pool=default&mode=session&query=28&q={"DSH_ID":{"=":"-1"}}
+Category: http, Feature: database-api, IsException: True
+
+[2025-02-18T11:28:21.163272+00:00] [info] QueryDAO.get - Database: Fetch Data
+Method: GET, URL: http://localhost:5173/api/db/query?source=framework&type=table&pool=default&mode=session&query=28&q={"DSH_ID":{"=":"-1"}}
+Category: http, Feature: database-api, IsException: True
+
+[2025-02-18T11:28:21.167588+00:00] [info] QueryDAO.get - Database: Fetch Data
+Method: GET, URL: http://localhost:5173/api/db/query?source=framework&type=table&pool=default&mode=session&query=29&q={"DSH_ID":{"=":"-1"}}
+Category: http, Feature: database-api, IsException: True
+
+[2025-02-18T11:28:21.169134+00:00] [info] FormsDashboard.fetchDashboardData - Dashboard: Failed to fetch dashboard data
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-18T11:28:21.172221+00:00] [info] QueryDAO.get - Database: Fetch Data
+Method: GET, URL: http://localhost:5173/api/db/query?source=framework&type=table&pool=default&mode=session&query=29&q={"DSH_ID":{"=":"-1"}}
+Category: http, Feature: database-api, IsException: True
+
+[2025-02-18T11:28:21.173431+00:00] [info] FormsDashboard.fetchDashboardData - Dashboard: Failed to fetch dashboard data
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-18T11:31:20.955066+00:00] [info] DynamicMenus.getMenus - Menus: Error fetching menus
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-18T11:31:20.958582+00:00] [info] DynamicMenus.getMenus - Menus: Error fetching menus
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-18T11:31:20.973911+00:00] [info] DynamicMenus.getMenus - Menus: Error fetching menus
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-18T11:31:21.022471+00:00] [info] QueryDAO.get - Database: Fetch Data
+Method: GET, URL: http://localhost:5173/api/db/query?source=framework&type=table&pool=default&mode=session&query=28&q={"DSH_ID":{"=":"-1"}}
+Category: http, Feature: database-api, IsException: True
+
+[2025-02-18T11:31:21.025185+00:00] [info] QueryDAO.get - Database: Fetch Data
+Method: GET, URL: http://localhost:5173/api/db/query?source=framework&type=table&pool=default&mode=session&query=28&q={"DSH_ID":{"=":"-1"}}
+Category: http, Feature: database-api, IsException: True
+
+[2025-02-18T11:31:21.031072+00:00] [info] QueryDAO.get - Database: Fetch Data
+Method: GET, URL: http://localhost:5173/api/db/query?source=framework&type=table&pool=default&mode=session&query=29&q={"DSH_ID":{"=":"-1"}}
+Category: http, Feature: database-api, IsException: True
+
+[2025-02-18T11:31:21.033031+00:00] [info] FormsDashboard.fetchDashboardData - Dashboard: Failed to fetch dashboard data
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-18T11:31:21.037162+00:00] [info] QueryDAO.get - Database: Fetch Data
+Method: GET, URL: http://localhost:5173/api/db/query?source=framework&type=table&pool=default&mode=session&query=29&q={"DSH_ID":{"=":"-1"}}
+Category: http, Feature: database-api, IsException: True
+
+[2025-02-18T11:31:21.039407+00:00] [info] FormsDashboard.fetchDashboardData - Dashboard: Failed to fetch dashboard data
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-18T11:31:42.248494+00:00] [info] DynamicMenus.getMenus - Menus: Error fetching menus
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-18T11:31:42.251473+00:00] [info] DynamicMenus.getMenus - Menus: Error fetching menus
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-18T11:31:42.269686+00:00] [info] DynamicMenus.getMenus - Menus: Error fetching menus
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-18T11:31:42.305161+00:00] [info] QueryDAO.get - Database: Fetch Data
+Method: GET, URL: http://localhost:5173/api/db/query?source=framework&type=table&pool=default&mode=session&query=28&q={"DSH_ID":{"=":"-1"}}
+Category: http, Feature: database-api, IsException: True
+
+[2025-02-18T11:31:42.307928+00:00] [info] QueryDAO.get - Database: Fetch Data
+Method: GET, URL: http://localhost:5173/api/db/query?source=framework&type=table&pool=default&mode=session&query=28&q={"DSH_ID":{"=":"-1"}}
+Category: http, Feature: database-api, IsException: True
+
+[2025-02-18T11:31:42.315174+00:00] [info] QueryDAO.get - Database: Fetch Data
+Method: GET, URL: http://localhost:5173/api/db/query?source=framework&type=table&pool=default&mode=session&query=29&q={"DSH_ID":{"=":"-1"}}
+Category: http, Feature: database-api, IsException: True
+
+[2025-02-18T11:31:42.318095+00:00] [info] FormsDashboard.fetchDashboardData - Dashboard: Failed to fetch dashboard data
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-18T11:31:42.321807+00:00] [info] QueryDAO.get - Database: Fetch Data
+Method: GET, URL: http://localhost:5173/api/db/query?source=framework&type=table&pool=default&mode=session&query=29&q={"DSH_ID":{"=":"-1"}}
+Category: http, Feature: database-api, IsException: True
+
+[2025-02-18T11:31:42.323174+00:00] [info] FormsDashboard.fetchDashboardData - Dashboard: Failed to fetch dashboard data
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-18T11:32:55.168537+00:00] [info] DynamicMenus.getMenus - Menus: Error fetching menus
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-18T11:32:55.169931+00:00] [info] DynamicMenus.getMenus - Menus: Error fetching menus
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-18T11:32:55.187446+00:00] [info] DynamicMenus.getMenus - Menus: Error fetching menus
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-18T11:34:40.177596+00:00] [info] DynamicMenus.getMenus - Menus: Error fetching menus
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-18T11:34:40.180283+00:00] [info] DynamicMenus.getMenus - Menus: Error fetching menus
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-18T11:34:40.182121+00:00] [info] DynamicMenus.getMenus - Menus: Error fetching menus
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-18T11:34:42.415649+00:00] [info] DynamicMenus.getMenus - Menus: Error fetching menus
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-18T11:34:42.417031+00:00] [info] DynamicMenus.getMenus - Menus: Error fetching menus
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-18T11:34:42.431398+00:00] [info] DynamicMenus.getMenus - Menus: Error fetching menus
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-18T11:35:53.458668+00:00] [info] DynamicMenus.getMenus - Menus: Error fetching menus
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-18T11:35:53.461768+00:00] [info] DynamicMenus.getMenus - Menus: Error fetching menus
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-18T11:35:53.467209+00:00] [info] DynamicMenus.getMenus - Menus: Error fetching menus
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-18T11:35:55.092672+00:00] [info] DynamicMenus.getMenus - Menus: Error fetching menus
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-18T11:35:55.094080+00:00] [info] DynamicMenus.getMenus - Menus: Error fetching menus
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-18T11:35:55.110704+00:00] [info] DynamicMenus.getMenus - Menus: Error fetching menus
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-18T11:36:40.695940+00:00] [info] DynamicMenus.getMenus - Menus: Error fetching menus
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-18T11:36:40.697909+00:00] [info] DynamicMenus.getMenus - Menus: Error fetching menus
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-18T11:36:40.719141+00:00] [info] DynamicMenus.getMenus - Menus: Error fetching menus
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-18T12:26:17.501157+00:00] [info] QueryDAO.get - Database: Fetch Data
+Method: GET, URL: http://localhost:5173/api/db/query?source=framework&type=table&pool=default&mode=session&query=7&q={"USR_ID":{"=":""}}&language=en
+Category: http, Feature: database-api, IsException: True
+
+[2025-02-18T12:26:17.504923+00:00] [info] DynamicMenus.getMenus - Menus: Error fetching menus
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-18T12:26:17.538976+00:00] [info] QueryDAO.get - Database: Fetch Data
+Method: GET, URL: http://localhost:5173/api/db/query?source=framework&type=table&pool=default&mode=session&query=7&q={"USR_ID":{"=":""}}&language=en
+Category: http, Feature: database-api, IsException: True
+
+[2025-02-18T12:26:17.539649+00:00] [info] DynamicMenus.getMenus - Menus: Error fetching menus
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-18T12:26:29.161153+00:00] [info] QueryDAO.get - Database: Fetch Data
+Method: GET, URL: http://localhost:5173/api/db/query?source=framework&type=table&pool=default&mode=session&query=7&q={"USR_ID":{"=":""}}&language=en
+Category: http, Feature: database-api, IsException: True
+
+[2025-02-18T12:26:29.163411+00:00] [info] DynamicMenus.getMenus - Menus: Error fetching menus
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-18T12:26:29.165401+00:00] [info] QueryDAO.get - Database: Fetch Data
+Method: GET, URL: http://localhost:5173/api/db/query?source=framework&type=table&pool=default&mode=session&query=7&q={"USR_ID":{"=":""}}&language=en
+Category: http, Feature: database-api, IsException: True
+
+[2025-02-18T12:26:29.167417+00:00] [info] DynamicMenus.getMenus - Menus: Error fetching menus
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-18T12:26:45.446053+00:00] [info] QueryDAO.get - Database: Fetch Data
+Method: GET, URL: http://localhost:5173/api/db/query?source=framework&type=table&pool=default&mode=session&query=7&q={"USR_ID":{"=":""}}&language=en
+Category: http, Feature: database-api, IsException: True
+
+[2025-02-18T12:26:45.447761+00:00] [info] DynamicMenus.getMenus - Menus: Error fetching menus
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-18T12:26:45.449224+00:00] [info] QueryDAO.get - Database: Fetch Data
+Method: GET, URL: http://localhost:5173/api/db/query?source=framework&type=table&pool=default&mode=session&query=7&q={"USR_ID":{"=":""}}&language=en
+Category: http, Feature: database-api, IsException: True
+
+[2025-02-18T12:26:45.450902+00:00] [info] DynamicMenus.getMenus - Menus: Error fetching menus
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-18T12:26:58.749524+00:00] [info] QueryDAO.get - Database: Fetch Data
+Method: GET, URL: http://localhost:5173/api/db/query?source=framework&type=table&pool=default&mode=session&query=7&q={"USR_ID":{"=":""}}&language=en
+Category: http, Feature: database-api, IsException: True
+
+[2025-02-18T12:26:58.750774+00:00] [info] DynamicMenus.getMenus - Menus: Error fetching menus
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-18T12:26:58.751591+00:00] [info] QueryDAO.get - Database: Fetch Data
+Method: GET, URL: http://localhost:5173/api/db/query?source=framework&type=table&pool=default&mode=session&query=7&q={"USR_ID":{"=":""}}&language=en
+Category: http, Feature: database-api, IsException: True
+
+[2025-02-18T12:26:58.752004+00:00] [info] DynamicMenus.getMenus - Menus: Error fetching menus
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-18T15:49:43.024218+00:00] [info] QueryDAO.get - Database: Fetch Data
+Method: GET, URL: http://localhost:5173/api/db/query?source=query&type=table&pool=default&mode=framework&query=10&language=en
+Category: http, Feature: database-api, IsException: True
+
+[2025-02-20T09:13:20.634228+00:00] [info] QueryDAO.themes - Framework: Load Themes
+Method: GET, URL: http://localhost:5173/api/fmw/themes?pool=default&q={"THM_NAME":{"=":"liberty"}}
+Category: http, Feature: database-api, IsException: True
+
+[2025-02-20T09:13:20.702231+00:00] [info] QueryDAO.modules - Framework: Load Modules
+Method: GET, URL: http://localhost:5173/api/fmw/modules
+Category: http, Feature: database-api, IsException: True
+
+[2025-02-20T09:13:20.706164+00:00] [info] QueryDAO.themes - Framework: Load Themes
+Method: GET, URL: http://localhost:5173/api/fmw/themes?pool=default&q={"THM_NAME":{"=":"liberty"}}
+Category: http, Feature: database-api, IsException: True
+
+[2025-02-20T09:13:20.732747+00:00] [info] QueryDAO.applications - Framework: Load Applications
+Method: GET, URL: http://localhost:5173/api/fmw/applications
+Category: http, Feature: database-api, IsException: True
+
+[2025-02-20T09:13:20.735799+00:00] [info] loginUtils.getApplications - Login: Failed to fetch applications
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-20T09:13:20.738052+00:00] [info] QueryDAO.modules - Framework: Load Modules
+Method: GET, URL: http://localhost:5173/api/fmw/modules
+Category: http, Feature: database-api, IsException: True
+
+[2025-02-20T09:13:20.740934+00:00] [info] QueryDAO.applications - Framework: Load Applications
+Method: GET, URL: http://localhost:5173/api/fmw/applications
+Category: http, Feature: database-api, IsException: True
+
+[2025-02-20T09:13:20.742297+00:00] [info] loginUtils.getApplications - Login: Failed to fetch applications
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-20T09:13:30.840563+00:00] [info] QueryDAO.themes - Framework: Load Themes
+Method: GET, URL: http://localhost:5173/api/fmw/themes?pool=default&q={"THM_NAME":{"=":"liberty"}}
+Category: http, Feature: database-api, IsException: True
+
+[2025-02-20T09:13:30.844224+00:00] [info] QueryDAO.modules - Framework: Load Modules
+Method: GET, URL: http://localhost:5173/api/fmw/modules
+Category: http, Feature: database-api, IsException: True
+
+[2025-02-20T09:13:30.848139+00:00] [info] QueryDAO.themes - Framework: Load Themes
+Method: GET, URL: http://localhost:5173/api/fmw/themes?pool=default&q={"THM_NAME":{"=":"liberty"}}
+Category: http, Feature: database-api, IsException: True
+
+[2025-02-20T09:13:30.852600+00:00] [info] QueryDAO.modules - Framework: Load Modules
+Method: GET, URL: http://localhost:5173/api/fmw/modules
+Category: http, Feature: database-api, IsException: True
+
+[2025-02-20T09:13:31.144029+00:00] [info] QueryDAO.applications - Framework: Load Applications
+Method: GET, URL: http://localhost:5173/api/fmw/applications
+Category: http, Feature: database-api, IsException: True
+
+[2025-02-20T09:13:31.145813+00:00] [info] loginUtils.getApplications - Login: Failed to fetch applications
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-20T09:13:31.149219+00:00] [info] QueryDAO.applications - Framework: Load Applications
+Method: GET, URL: http://localhost:5173/api/fmw/applications
+Category: http, Feature: database-api, IsException: True
+
+[2025-02-20T09:13:31.150759+00:00] [info] loginUtils.getApplications - Login: Failed to fetch applications
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-20T09:14:03.986127+00:00] [info] QueryDAO.themes - Framework: Load Themes
+Method: GET, URL: http://localhost:5173/api/fmw/themes?pool=default&q={"THM_NAME":{"=":"liberty"}}
+Category: http, Feature: database-api, IsException: True
+
+[2025-02-20T09:14:04.002142+00:00] [info] QueryDAO.modules - Framework: Load Modules
+Method: GET, URL: http://localhost:5173/api/fmw/modules
+Category: http, Feature: database-api, IsException: True
+
+[2025-02-20T09:14:04.003574+00:00] [info] QueryDAO.themes - Framework: Load Themes
+Method: GET, URL: http://localhost:5173/api/fmw/themes?pool=default&q={"THM_NAME":{"=":"liberty"}}
+Category: http, Feature: database-api, IsException: True
+
+[2025-02-20T09:14:04.005992+00:00] [info] QueryDAO.modules - Framework: Load Modules
+Method: GET, URL: http://localhost:5173/api/fmw/modules
+Category: http, Feature: database-api, IsException: True
+
+[2025-02-20T09:14:04.137380+00:00] [info] QueryDAO.applications - Framework: Load Applications
+Method: GET, URL: http://localhost:5173/api/fmw/applications
+Category: http, Feature: database-api, IsException: True
+
+[2025-02-20T09:14:04.139094+00:00] [info] loginUtils.getApplications - Login: Failed to fetch applications
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-20T09:14:04.152038+00:00] [info] QueryDAO.applications - Framework: Load Applications
+Method: GET, URL: http://localhost:5173/api/fmw/applications
+Category: http, Feature: database-api, IsException: True
+
+[2025-02-20T09:14:04.168950+00:00] [info] loginUtils.getApplications - Login: Failed to fetch applications
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-20T09:15:08.063483+00:00] [info] QueryDAO.themes - Framework: Load Themes
+Method: GET, URL: http://localhost:5173/api/fmw/themes?pool=default&q={"THM_NAME":{"=":"liberty"}}
+Category: http, Feature: database-api, IsException: True
+
+[2025-02-20T09:15:08.072462+00:00] [info] QueryDAO.modules - Framework: Load Modules
+Method: GET, URL: http://localhost:5173/api/fmw/modules
+Category: http, Feature: database-api, IsException: True
+
+[2025-02-20T09:15:08.160705+00:00] [info] QueryDAO.modules - Framework: Load Modules
+Method: GET, URL: http://localhost:5173/api/fmw/modules
+Category: http, Feature: database-api, IsException: True
+
+[2025-02-20T09:15:08.161360+00:00] [info] QueryDAO.themes - Framework: Load Themes
+Method: GET, URL: http://localhost:5173/api/fmw/themes?pool=default&q={"THM_NAME":{"=":"liberty"}}
+Category: http, Feature: database-api, IsException: True
+
+[2025-02-20T09:15:08.298074+00:00] [info] QueryDAO.applications - Framework: Load Applications
+Method: GET, URL: http://localhost:5173/api/fmw/applications
+Category: http, Feature: database-api, IsException: True
+
+[2025-02-20T09:15:08.299597+00:00] [info] loginUtils.getApplications - Login: Failed to fetch applications
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-20T09:15:08.302464+00:00] [info] QueryDAO.applications - Framework: Load Applications
+Method: GET, URL: http://localhost:5173/api/fmw/applications
+Category: http, Feature: database-api, IsException: True
+
+[2025-02-20T09:15:08.303872+00:00] [info] loginUtils.getApplications - Login: Failed to fetch applications
+Method: None, URL: None
+Category: debug, Feature: console, IsException: True
+
+[2025-02-20T09:20:53.819597+00:00] [info] QueryDAO.login - User Login: Get User Properties
+Method: GET, URL: http://localhost:5173/api/auth/user?user=admin&pool=libnsx1&mode=session
+Category: http, Feature: database-api, IsException: True
+
+[2025-02-26T15:16:17.684769+00:00] [info] APIDAO.post - REST: Failed POST API call
+Method: POST, URL: http://localhost:5173/api/rest?pool=default&mode=session&api=1
+Category: http, Feature: rest-api, IsException: True
+
+[2025-02-26T16:00:40.041233+00:00] [info] APIDAO.post - REST: Failed POST API call
+Method: POST, URL: http://localhost:5173/api/rest?pool=default&mode=session&api=1
+Category: http, Feature: rest-api, IsException: True
+
+[2025-02-26T16:27:09.583000+00:00] [info] APIDAO.post - REST: Failed POST API call
+Method: POST, URL: http://localhost:5173/api/rest?pool=default&mode=session&api=1
+Category: http, Feature: rest-api, IsException: True
+
