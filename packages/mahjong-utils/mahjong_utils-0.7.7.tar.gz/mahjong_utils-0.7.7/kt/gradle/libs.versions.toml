@@ -1,0 +1,32 @@
+[versions]
+kotlin = "2.0.20"
+kotlinx-coroutines = "1.8.1"
+kotlinx-serialization = "1.7.0-RC"
+kotlinx-kover = "0.8.0"
+jetbrains-dokka = "1.9.20"
+ktor = "2.3.11"
+buildlogic = "0.0.1"
+
+[libraries]
+kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "kotlinx-coroutines" }
+kotlinx-serialization-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-core", version.ref = "kotlinx-serialization" }
+kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinx-serialization" }
+kotlin-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
+
+ktor-server-core = { group = "io.ktor", name = "ktor-server-core-jvm" }
+ktor-server-netty = { group = "io.ktor", name = "ktor-server-netty-jvm" }
+
+qos-logback-classic = { group = "ch.qos.logback", name = "logback-classic", version = "1.4.11" }
+
+[plugins]
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+kotlinx-kover = { id = "org.jetbrains.kotlinx.kover", version.ref = "kotlinx-kover" }
+devPetsuka-npmPublish = { id = "dev.petuska.npm.publish", version = "3.4.3" }
+jetbrains-dokka = { id = "org.jetbrains.dokka", version.ref = "jetbrains-dokka" }
+ktor = { id = "io.ktor.plugin", version.ref = "ktor" }
+
+buildlogic-kmplib = { id = "mahjongutils.buildlogic.kmplib", version.ref = "buildlogic" }
+buildlogic-kmpexe = { id = "mahjongutils.buildlogic.kmpexe", version.ref = "buildlogic" }
+buildlogic-mavenpublish = { id = "mahjongutils.buildlogic.mavenpublish", version.ref = "buildlogic" }
