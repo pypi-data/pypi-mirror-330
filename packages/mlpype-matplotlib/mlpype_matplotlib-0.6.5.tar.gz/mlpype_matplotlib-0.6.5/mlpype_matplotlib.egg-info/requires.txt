@@ -1,0 +1,12 @@
+mlpype-base==0.6.5
+matplotlib>=3.7.5
+numpy>=1.26.4
+pandas>=1.5.3
+shap>=0.46.0
+
+[strict]
+mlpype-base==0.6.5
+matplotlib==3.7.5
+numpy==1.26.4
+pandas==1.5.3
+shap==0.46.0
