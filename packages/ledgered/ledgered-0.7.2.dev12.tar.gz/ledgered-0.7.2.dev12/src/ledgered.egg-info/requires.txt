@@ -1,0 +1,7 @@
+toml
+pyelftools
+pygithub
+
+[dev]
+pytest
+pytest-cov
