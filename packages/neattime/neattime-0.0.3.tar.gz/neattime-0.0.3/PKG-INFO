@@ -1,0 +1,52 @@
+Metadata-Version: 2.4
+Name: neattime
+Version: 0.0.3
+Summary: A single function to get a nice date-time format
+Project-URL: Homepage, https://github.com/cgeils25/neattime
+Project-URL: Issues, https://github.com/cgeils25/neattime/issues
+Author-email: Christian Geils <christiangeils@outlook.com>
+Maintainer-email: Christian Geils <christiangeils@outlook.com>
+License-Expression: MIT
+License-File: LICENSE
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+
+# neattime
+
+This package includes a simple function to create my preferred date-time format for log files.
+
+The date and time are given in the format yyyy-MM-dd_HH-mm-ss_SSSS
+
+Example:
+
+```python
+from neattime import neattime
+
+print(neattime())
+```
+
+output:
+
+```bash
+'2025-02-26_08-34-13_636609'
+```
+
+How I would actually use it:
+
+```python
+from neattime import neattime
+
+filepath = f'save_directory/log_{neattime()}'
+
+# some code that saves my logfile
+
+print(f"File saved to {filepath}")
+```
+
+output:
+
+```bash
+File saved to save_directory/log_2025-02-26_08-34-13_636609
+```

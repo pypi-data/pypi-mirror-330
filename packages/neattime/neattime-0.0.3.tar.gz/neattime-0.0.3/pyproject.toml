@@ -1,0 +1,26 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "neattime"
+version = "0.0.3"
+authors = [
+  { name="Christian Geils", email="christiangeils@outlook.com" },
+]
+maintainers = [
+  { name="Christian Geils", email="christiangeils@outlook.com" },
+]
+description = "A single function to get a nice date-time format"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+license = "MIT"
+license-files = ["LICENSE"]
+
+[project.urls]
+Homepage = "https://github.com/cgeils25/neattime"
+Issues = "https://github.com/cgeils25/neattime/issues"
