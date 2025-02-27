@@ -1,0 +1,56 @@
+site_name: PYDAQ
+site_description: Data Acquisition and Experimental Analysis with Python
+site_author: Samir Angelo Milani Martins
+site_url: https://www.pydaq.org
+
+repo_name: samirmartins/pydaq
+repo_url: https://github.com/samirmartins/pydaq
+
+copyright: Copyright &copy; 2025 - Samir Martins
+
+nav:
+  - Home: index.md
+  - Data Acquisition:
+      - NIDAQ: get_data_nidaq.md
+      - Arduino: get_data_arduino.md
+  - Sending Data:
+      - NIDAQ: send_data_nidaq.md
+      - Arduino: send_data_arduino.md
+  - Step Response:
+      - NIDAQ: step_response_nidaq.md
+      - Arduino: step_response_arduino.md
+  - Get Model:
+      - NIDAQ: get_model_nidaq.md
+      - Arduino: get_model_arduino.md
+  - Jupyter Notebooks: jupyter_notebooks.md
+
+theme:
+  favicon: img/favicon.ico
+  name: material
+  logo: img/logo.png
+  features:
+    - content.code.copy
+  language: en
+  palette:
+    - scheme: default
+      primary: white
+      accent: brown
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: black
+      accent: brown
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+plugins:
+  - search
+  - meta-descriptions:
+      export_csv: false
+      quiet: false
+      enable_checks: false
+      min_length: 50
+      max_length: 160
+      trim: false
