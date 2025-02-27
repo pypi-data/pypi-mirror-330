@@ -1,0 +1,41 @@
+Metadata-Version: 2.2
+Name: tomato-jumo
+Version: 1.0.0
+Summary: This package is a part of tomato. It has been made for the automation of Jumo Quantrol devices.
+Author-email: Peter Kraus <peter.kraus@ceramics.tu-berlin.de>
+Project-URL: Repository, https://github.com/dgbowl/tomato-jumo
+Project-URL: Issues, https://github.com/dgbowl/tomato-jumo/issues
+Classifier: Development Status :: 3 - Alpha
+Classifier: License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: minimalmodbus>=2.1.1
+Requires-Dist: tomato>=2.0
+Provides-Extra: testing
+Requires-Dist: pytest; extra == "testing"
+
+# tomato-jumo
+`tomato` driver for Jumo Quantrol heater controllers.
+
+This driver is based on the [`minimalmodbus`](https://github.com/pyhys/minimalmodbus) library. This driver is developed by the [ConCat lab at TU Berlin](https://tu.berlin/en/concat).
+
+## Supported functions
+
+### Capabilities
+- `constant_temperature` which sets the setpoint to the required value,
+- `temperature_ramp` for a gradual heating / cooling followed by a hold
+
+### Attributes
+- `setpoint` which is the current temperature setpoint, `pint.Quantity(float, "degC")`
+- `ramp_rate` which is the temperature ramp rate, `pint.Quantity(float, "K/min")`
+- `ramp_target` which is the target of the temperature ramp, `pint.Quantity(float, "degC")`
+
+## Contributors
+
+- Peter Kraus
