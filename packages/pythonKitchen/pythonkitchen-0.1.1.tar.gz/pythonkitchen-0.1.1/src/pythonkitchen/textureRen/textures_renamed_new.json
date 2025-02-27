@@ -1,0 +1,544 @@
+{
+    "hdri": {
+        "hdriSkies_beach_partlyCloudy_morning1_16k_sRGBlinear_v01.hdr": {
+            "source": "src03",
+            "scene": "sce03",
+            "clouds": "cl02",
+            "hour": "hr01",
+            "color": "col02",
+            "resol": "16k",
+            "variant": "v01",
+            "old_file_name": "559_hdri_skies_com.hdr"
+        },
+        "cgChoco_aboveClouds_lightClouds_bright1_8k_sRGBlinear_v01.exr": {
+            "source": "src01",
+            "scene": "sce01",
+            "clouds": "cl05",
+            "hour": "hr05",
+            "color": "col02",
+            "resol": "8k",
+            "variant": "v01",
+            "old_file_name": "Above_Cloud_HDRI_by_CgChoco_Light_Clouds_bright.exr"
+        },
+        "cgChoco_aboveClouds_lightClouds_medium1_8k_sRGBlinear_v01.exr": {
+            "source": "src01",
+            "scene": "sce01",
+            "clouds": "cl05",
+            "hour": "hr07",
+            "color": "col02",
+            "resol": "8k",
+            "variant": "v01",
+            "old_file_name": "Above_Cloud_HDRI_by_CgChoco_Light_Clouds_medium.exr"
+        },
+        "cgChoco_aboveClouds_lightClouds_dark1_8k_sRGBlinear_v01.exr": {
+            "source": "src01",
+            "scene": "sce01",
+            "clouds": "cl05",
+            "hour": "hr06",
+            "color": "col02",
+            "resol": "8k",
+            "variant": "v01",
+            "old_file_name": "Above_Cloud_HDRI_by_CgChoco_Light_Clouds_Neutral_dark.exr"
+        },
+        "cgChoco_aboveClouds_lightClouds_noon1_8k_sRGBlinear_v01.exr": {
+            "source": "src01",
+            "scene": "sce01",
+            "clouds": "cl05",
+            "hour": "hr08",
+            "color": "col02",
+            "resol": "8k",
+            "variant": "v01",
+            "old_file_name": "Above_Cloud_HDRI_by_CgChoco_Light_Clouds_Noon.exr"
+        },
+        "cgChoco_aboveClouds_lightClouds_night1_8k_sRGBlinear_v01.exr": {
+            "source": "src01",
+            "scene": "sce01",
+            "clouds": "cl05",
+            "hour": "hr04",
+            "color": "col02",
+            "resol": "8k",
+            "variant": "v01",
+            "old_file_name": "Above_Cloud_HDRI_by_CgChoco_Light_Clouds_sunrise_dark.exr"
+        },
+        "cgChoco_aboveClouds_lightClouds_blueHour1_8k_sRGBlinear_v01.exr": {
+            "source": "src01",
+            "scene": "sce01",
+            "clouds": "cl05",
+            "hour": "hr12",
+            "color": "col02",
+            "resol": "8k",
+            "variant": "v01",
+            "old_file_name": "Above_Cloud_HDRI_by_CgChoco_Light_Clouds_sunrise_low.exr"
+        },
+        "cgChoco_aboveClouds_lightClouds_sunrise1_8k_RAW_v01.exr": {
+            "source": "src01",
+            "scene": "sce01",
+            "clouds": "cl05",
+            "hour": "hr10",
+            "color": "col03",
+            "resol": "8k",
+            "variant": "v01",
+            "old_file_name": "Above_Cloud_HDRI_by_CgChoco_Light_clouds_Sunrise_raw.exr"
+        },
+        "cgChoco_aboveClouds_lightClouds_sunrise1_8k_sRGBlinear_v01.exr": {
+            "source": "src01",
+            "scene": "sce01",
+            "clouds": "cl05",
+            "hour": "hr10",
+            "color": "col02",
+            "resol": "8k",
+            "variant": "v01",
+            "old_file_name": "Above_Cloud_HDRI_by_CgChoco_Light_clouds_Sunrise.exr"
+        },
+        "cgChoco_aboveClouds_lightClouds_sunset1_8k_sRGBlinear_v01.exr": {
+            "source": "src01",
+            "scene": "sce01",
+            "clouds": "cl05",
+            "hour": "hr09",
+            "color": "col02",
+            "resol": "8k",
+            "variant": "v01",
+            "old_file_name": "Above_Cloud_HDRI_by_CgChoco_Light_Clouds_Sunset.exr"
+        },
+        "cgChoco_aboveClouds_lightClouds_sunset1_8k_sRGBlinear_v02.exr": {
+            "source": "src01",
+            "scene": "sce01",
+            "clouds": "cl05",
+            "hour": "hr09",
+            "color": "col02",
+            "resol": "8k",
+            "variant": "v02",
+            "old_file_name": "Above_Cloud_HDRI_by_CgChoco_Light_Clouds_Sunset2.exr"
+        },
+        "cgChoco_aboveClouds_lightClouds_sunset1_8k_sRGBlinear_v03.exr": {
+            "source": "src01",
+            "scene": "sce01",
+            "clouds": "cl05",
+            "hour": "hr09",
+            "color": "col02",
+            "resol": "8k",
+            "variant": "v03",
+            "old_file_name": "Above_Cloud_HDRI_by_CgChoco_Light_clouds_sunset3.exr"
+        },
+        "cgChoco_aboveClouds_denseClouds_bright1_8k_sRGBlinear_v01.exr": {
+            "source": "src01",
+            "scene": "sce01",
+            "clouds": "cl03",
+            "hour": "hr05",
+            "color": "col02",
+            "resol": "8k",
+            "variant": "v01",
+            "old_file_name": "Above_Cloud_HDRI_dense_by_CgChoco_Dense_Cloud_HDRI_bright.exr"
+        },
+        "cgChoco_aboveClouds_denseClouds_light1_8k_sRGBlinear_v01.exr": {
+            "source": "src01",
+            "scene": "sce01",
+            "clouds": "cl03",
+            "hour": "hr11",
+            "color": "col02",
+            "resol": "8k",
+            "variant": "v01",
+            "old_file_name": "Above_Cloud_HDRI_dense_by_CgChoco_Dense_Cloud_HDRI_light_cloud.exr"
+        },
+        "cgChoco_aboveClouds_denseClouds_medium1_8k_sRGBlinear_v01.exr": {
+            "source": "src01",
+            "scene": "sce01",
+            "clouds": "cl03",
+            "hour": "hr07",
+            "color": "col02",
+            "resol": "8k",
+            "variant": "v01",
+            "old_file_name": "Above_Cloud_HDRI_dense_by_CgChoco_Dense_Cloud_HDRI_medium_cloud.exr"
+        },
+        "cgChoco_aboveClouds_denseClouds_medium1_8k_sRGBlinear_v02.exr": {
+            "source": "src01",
+            "scene": "sce01",
+            "clouds": "cl03",
+            "hour": "hr07",
+            "color": "col02",
+            "resol": "8k",
+            "variant": "v02",
+            "old_file_name": "Above_Cloud_HDRI_dense_by_CgChoco_Dense_Cloud_HDRI_medium_cloud2.exr"
+        },
+        "cgChoco_aboveClouds_denseClouds_dark1_8k_sRGBlinear_v01.exr": {
+            "source": "src01",
+            "scene": "sce01",
+            "clouds": "cl03",
+            "hour": "hr06",
+            "color": "col02",
+            "resol": "8k",
+            "variant": "v01",
+            "old_file_name": "Above_Cloud_HDRI_dense_by_CgChoco_Dense_Cloud_HDRI_neutral_dark.exr"
+        },
+        "cgChoco_aboveClouds_opensky_light1_8k_sRGBlinear_v01.exr": {
+            "source": "src01",
+            "scene": "sce01",
+            "clouds": "cl04",
+            "hour": "hr11",
+            "color": "col02",
+            "resol": "8k",
+            "variant": "v01",
+            "old_file_name": "Above_Cloud_HDRI_dense_by_CgChoco_Dense_Cloud_HDRI_no_cloud.exr"
+        },
+        "cgChoco_aboveClouds_denseClouds_noon1_8k_sRGBlinear_v01.exr": {
+            "source": "src01",
+            "scene": "sce01",
+            "clouds": "cl03",
+            "hour": "hr08",
+            "color": "col02",
+            "resol": "8k",
+            "variant": "v01",
+            "old_file_name": "Above_Cloud_HDRI_dense_by_CgChoco_Dense_Cloud_HDRI_Noon.exr"
+        },
+        "cgChoco_aboveClouds_denseClouds_sunrise1_8k_sRGBlinear_v01.exr": {
+            "source": "src01",
+            "scene": "sce01",
+            "clouds": "cl03",
+            "hour": "hr10",
+            "color": "col02",
+            "resol": "8k",
+            "variant": "v01",
+            "old_file_name": "Above_Cloud_HDRI_dense_by_CgChoco_Dense_Cloud_HDRI_Sunrise.exr"
+        },
+        "cgChoco_aboveClouds_denseClouds_sunset1_8k_sRGBlinear_v01.exr": {
+            "source": "src01",
+            "scene": "sce01",
+            "clouds": "cl03",
+            "hour": "hr09",
+            "color": "col02",
+            "resol": "8k",
+            "variant": "v01",
+            "old_file_name": "Above_Cloud_HDRI_dense_by_CgChoco_Dense_Cloud_HDRI_Sunset.exr"
+        },
+        "cgChoco_aboveClouds_denseClouds_sunset1_8k_sRGBlinear_v02.exr": {
+            "source": "src01",
+            "scene": "sce01",
+            "clouds": "cl03",
+            "hour": "hr09",
+            "color": "col02",
+            "resol": "8k",
+            "variant": "v02",
+            "old_file_name": "Above_Cloud_HDRI_dense_by_CgChoco_Dense_Cloud_HDRI_Sunset2.exr"
+        },
+        "hdriHaven_dappled_opensky_afternoon1_6k_sRGBlinear_v01.exr": {
+            "source": "src02",
+            "scene": "sce04",
+            "clouds": "cl04",
+            "hour": "hr02",
+            "color": "col02",
+            "resol": "6k",
+            "variant": "v01",
+            "old_file_name": "Bench_And_Sidewalk.exr"
+        },
+        "cgAxis_overWater_lightClouds_evening1_10k_sRGBlinear_v01.hdr": {
+            "source": "src04",
+            "scene": "sce06",
+            "clouds": "cl05",
+            "hour": "hr03",
+            "color": "col02",
+            "resol": "10k",
+            "variant": "v01",
+            "old_file_name": "cgaxis_hdri_skies_01_53.hdr"
+        },
+        "cgAxis_mountains_lightClouds_afternoon1_10k_sRGBlinear_v01.hdr": {
+            "source": "src04",
+            "scene": "sce07",
+            "clouds": "cl05",
+            "hour": "hr02",
+            "color": "col02",
+            "resol": "10k",
+            "variant": "v01",
+            "old_file_name": "cgaxis_hdri_skies_01_69.hdr"
+        },
+        "hdriHaven_dappled_denseClouds_medium1_6k_sRGBlinear_v01.exr": {
+            "source": "src02",
+            "scene": "sce04",
+            "clouds": "cl03",
+            "hour": "hr07",
+            "color": "col02",
+            "resol": "6k",
+            "variant": "v01",
+            "old_file_name": "CloudyClearing.exr"
+        },
+        "hdriHaven_inShadow_opensky_afternoon1_6k_sRGBlinear_v01.exr": {
+            "source": "src02",
+            "scene": "sce05",
+            "clouds": "cl04",
+            "hour": "hr02",
+            "color": "col02",
+            "resol": "6k",
+            "variant": "v01",
+            "old_file_name": "Creekside.exr"
+        },
+        "hdriHaven_forest_opensky_afternoon1_6k_sRGBlinear_v02.exr": {
+            "source": "src02",
+            "scene": "sce02",
+            "clouds": "cl04",
+            "hour": "hr02",
+            "color": "col02",
+            "resol": "6k",
+            "variant": "v02",
+            "old_file_name": "Creekside2.exr"
+        },
+        "hdriHaven_mountains_opensky_afternoon1_4k_sRGBlinear_v01.exr": {
+            "source": "src02",
+            "scene": "sce07",
+            "clouds": "cl04",
+            "hour": "hr02",
+            "color": "col02",
+            "resol": "4k",
+            "variant": "v01",
+            "old_file_name": "drakensberg_solitary_mountain_4k.exr"
+        },
+        "hdriHaven_medow_opensky_afternoon1_4k_sRGBlinear_v01.exr": {
+            "source": "src02",
+            "scene": "sce08",
+            "clouds": "cl04",
+            "hour": "hr02",
+            "color": "col02",
+            "resol": "4k",
+            "variant": "v01",
+            "old_file_name": "dreifaltigkeitsberg_4k.exr"
+        },
+        "hdriHaven_forest_opensky_afternoon1_6k_sRGBlinear_v01.exr": {
+            "source": "src02",
+            "scene": "sce02",
+            "clouds": "cl04",
+            "hour": "hr02",
+            "color": "col02",
+            "resol": "6k",
+            "variant": "v01",
+            "old_file_name": "EmptyCampsite.exr"
+        },
+        "hdriHaven_inShadow_opensky_morning1_6k_sRGBlinear_v01.exr": {
+            "source": "src02",
+            "scene": "sce05",
+            "clouds": "cl04",
+            "hour": "hr01",
+            "color": "col02",
+            "resol": "6k",
+            "variant": "v01",
+            "old_file_name": "FishingSpot.exr"
+        },
+        "hdriHaven_forest_opensky_noon1_8k_sRGBlinear_v01.exr": {
+            "source": "src02",
+            "scene": "sce02",
+            "clouds": "cl04",
+            "hour": "hr08",
+            "color": "col02",
+            "resol": "8k",
+            "variant": "v01",
+            "old_file_name": "forest_slope_8k.exr"
+        },
+        "hdriHaven_inShadow_opensky_evening1_6k_sRGBlinear_v01.exr": {
+            "source": "src02",
+            "scene": "sce05",
+            "clouds": "cl04",
+            "hour": "hr03",
+            "color": "col02",
+            "resol": "6k",
+            "variant": "v01",
+            "old_file_name": "ForestStairs.exr"
+        },
+        "hdriHaven_mountains_lightClouds_noon1_6k_sRGBlinear_v01.exr": {
+            "source": "src02",
+            "scene": "sce07",
+            "clouds": "cl05",
+            "hour": "hr08",
+            "color": "col02",
+            "resol": "6k",
+            "variant": "v01",
+            "old_file_name": "fouriesburg_mountain_midday_4k.exr"
+        },
+        "hdriHaven_forest_opensky_light1_6k_sRGBlinear_v01.exr": {
+            "source": "src02",
+            "scene": "sce02",
+            "clouds": "cl04",
+            "hour": "hr11",
+            "color": "col02",
+            "resol": "6k",
+            "variant": "v01",
+            "old_file_name": "LushGreen.exr"
+        },
+        "hdriHaven_mountains_lightClouds_afternoon1_4k_sRGBlinear_v01.hdr": {
+            "source": "src02",
+            "scene": "sce07",
+            "clouds": "cl05",
+            "hour": "hr02",
+            "color": "col02",
+            "resol": "4k",
+            "variant": "v01",
+            "old_file_name": "hegyes_panorama.hdr"
+        },
+        "hdriHaven_aboveClouds_cloudy_sunset1_8k_sRGBlinear_v01.exr": {
+            "source": "src02",
+            "scene": "sce01",
+            "clouds": "cl01",
+            "hour": "hr09",
+            "color": "col02",
+            "resol": "8k",
+            "variant": "v01",
+            "old_file_name": "industrial_sunset_puresky_8k.exr"
+        },
+        "hdriHaven_openField_partlyCloudy_light1_8k_sRGBlinear_v01.exr": {
+            "source": "src02",
+            "scene": "sce14",
+            "clouds": "cl02",
+            "hour": "hr11",
+            "color": "col02",
+            "resol": "8k",
+            "variant": "v01",
+            "old_file_name": "kloofendal_48d_partly_cloudy_8k.exr"
+        },
+        "hdriHaven_overcast_denseClouds_dark1_6k_sRGBlinear_v01.exr": {
+            "source": "src02",
+            "scene": "sce15",
+            "clouds": "cl03",
+            "hour": "hr06",
+            "color": "col02",
+            "resol": "6k",
+            "variant": "v01",
+            "old_file_name": "LakePath.exr"
+        },
+        "hdriHaven_lakeSide_opensky_sunset1_6k_sRGBlinear_v01.exr": {
+            "source": "src02",
+            "scene": "sce10",
+            "clouds": "cl04",
+            "hour": "hr09",
+            "color": "col02",
+            "resol": "6k",
+            "variant": "v01",
+            "old_file_name": "LakesideSunset.exr"
+        },
+        "hdriHaven_indoorHall_indoor_light1_4k_sRGBlinear_v01.exr": {
+            "source": "src02",
+            "scene": "sce11",
+            "clouds": "cl06",
+            "hour": "hr11",
+            "color": "col02",
+            "resol": "4k",
+            "variant": "v01",
+            "old_file_name": "marry_hall_4k.exr"
+        },
+        "suhail_indoorRoom_indoor_light1_6k_sRGBlinear_v01.exr": {
+            "source": "src05",
+            "scene": "sce12",
+            "clouds": "cl06",
+            "hour": "hr11",
+            "color": "col02",
+            "resol": "6k",
+            "variant": "v01",
+            "old_file_name": "MyRoom.exr"
+        },
+        "hdriHaven_forest_opensky_light1_6k_sRGBlinear_v02.exr": {
+            "source": "src02",
+            "scene": "sce02",
+            "clouds": "cl04",
+            "hour": "hr11",
+            "color": "col02",
+            "resol": "6k",
+            "variant": "v02",
+            "old_file_name": "OldGate.exr"
+        },
+        "hdriHaven_sunny_lightClouds_bright1_4k_sRGBlinear_v01.exr": {
+            "source": "src02",
+            "scene": "sce13",
+            "clouds": "cl05",
+            "hour": "hr05",
+            "color": "col02",
+            "resol": "4k",
+            "variant": "v01",
+            "old_file_name": "outdoor_workshop_4k.exr"
+        },
+        "hdriHaven_sunny_lightClouds_afternoon1_4k_sRGBlinear_v01.exr": {
+            "source": "src02",
+            "scene": "sce13",
+            "clouds": "cl05",
+            "hour": "hr02",
+            "color": "col02",
+            "resol": "4k",
+            "variant": "v01",
+            "old_file_name": "quarry_03_4k.exr"
+        },
+        "hdriHaven_sunny_opensky_morning1_4k_sRGBlinear_v01.exr": {
+            "source": "src02",
+            "scene": "sce13",
+            "clouds": "cl04",
+            "hour": "hr01",
+            "color": "col02",
+            "resol": "4k",
+            "variant": "v01",
+            "old_file_name": "simons_town_rocks_4k.exr"
+        },
+        "hdriHaven_sunny_opensky_bright1_4k_sRGBlinear_v01.exr": {
+            "source": "src02",
+            "scene": "sce13",
+            "clouds": "cl04",
+            "hour": "hr05",
+            "color": "col02",
+            "resol": "4k",
+            "variant": "v01",
+            "old_file_name": "spiaggia_di_mondello_4k.exr"
+        },
+        "hdriHaven_openField_opensky_sunrise1_4k_sRGBlinear_v01.exr": {
+            "source": "src02",
+            "scene": "sce14",
+            "clouds": "cl04",
+            "hour": "hr10",
+            "color": "col02",
+            "resol": "4k",
+            "variant": "v01",
+            "old_file_name": "spruit_sunrise_4k.exr"
+        },
+        "hdriHaven_inShadow_opensky_light1_6k_sRGBlinear_v01.exr": {
+            "source": "src02",
+            "scene": "sce05",
+            "clouds": "cl04",
+            "hour": "hr11",
+            "color": "col02",
+            "resol": "6k",
+            "variant": "v01",
+            "old_file_name": "SunnyClearing.exr"
+        },
+        "hdriHaven_forest_cloudy_dark1_6k_sRGBlinear_v01.exr": {
+            "source": "src02",
+            "scene": "sce02",
+            "clouds": "cl01",
+            "hour": "hr06",
+            "color": "col02",
+            "resol": "6k",
+            "variant": "v01",
+            "old_file_name": "WatersEdge.exr"
+        },
+        "hdriHaven_mudRoad_cloudy_dark1_4k_sRGBlinear_v01.exr": {
+            "source": "hdriHaven",
+            "scene": "mudRoad",
+            "clouds": "cloudy",
+            "hour": "dark",
+            "color": "sRGBlinear",
+            "resol": "4k",
+            "variant": "v01",
+            "old_file_name": "mud_road_puresky_4k.exr"
+        },
+        "hdriHaven_sunflowers_partlyCloudy_bright1_4k_sRGBlinear_v01.exr": {
+            "source": "hdriHaven",
+            "scene": "sunflowers",
+            "clouds": "partlyCloudy",
+            "hour": "bright",
+            "color": "sRGBlinear",
+            "resol": "4k",
+            "variant": "v01",
+            "old_file_name": "sunflowers_puresky_4k.exr"
+        },
+        "hdriHaven_treesHade_opensky_bright1_4k_sRGBlinear_v01.exr": {
+            "source": "hdriHaven",
+            "scene": "treesHade",
+            "clouds": "opensky",
+            "hour": "bright",
+            "color": "sRGBlinear",
+            "resol": "4k",
+            "variant": "v01",
+            "old_file_name": "tief_etz_4k.exr"
+        }
+    }
+}
