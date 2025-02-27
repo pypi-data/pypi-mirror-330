@@ -1,0 +1,5 @@
+wagtail>=5.2
+
+[testing]
+black
+coverage
