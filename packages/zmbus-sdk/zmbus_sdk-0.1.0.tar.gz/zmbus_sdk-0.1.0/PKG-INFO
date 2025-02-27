@@ -1,0 +1,73 @@
+Metadata-Version: 2.1
+Name: zmbus-sdk
+Version: 0.1.0
+Summary: SDK for interacting with Zima Sabus systems
+Home-page: https://github.com/yourusername/zmbus-sdk
+License: MIT
+Keywords: zima,sabus,sdk
+Author: Shikoli
+Author-email: shikoli@turnkeyafrica.com
+Requires-Python: >=3.8,<4.0
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Dist: exrex
+Requires-Dist: pydantic (==2.*)
+Requires-Dist: requests
+Project-URL: Repository, https://github.com/yourusername/zmbus-sdk
+Description-Content-Type: text/markdown
+
+# zmbus-sdk
+
+A Python SDK for interacting with Zima Sabus systems.
+
+## Installation
+
+```bash
+pip install zmbus-sdk
+```
+
+## Usage
+
+```python
+from zimasabus_sdk import zmsystem
+
+# Initialize the client
+client = zmsystem.ZMSystem(
+    api_key="your_api_key",
+    base_url="https://api.example.com"
+)
+
+# Use the client to interact with the API
+response = client.some_method()
+```
+
+## Features
+
+- Feature 1
+- Feature 2
+- Feature 3
+
+## Development
+
+This project uses Poetry for dependency management.
+
+```bash
+# Install dependencies
+poetry install
+
+# Run tests
+poetry run pytest
+```
+
+## License
+
+MIT
+
