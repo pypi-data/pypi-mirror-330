@@ -1,0 +1,64 @@
+setup.py
+mydb/__init__.py
+mydb/main.py
+mydb/mysearch.py
+mydb/mysearch_acb.py
+mydb/test.py
+mydb/test_import.py
+mydb copy/__init__.py
+mydb copy/main.py
+mydb copy/mysearch.py
+mydb copy/mysearch_acb.py
+mydb copy/test.py
+mydb copy/test_import.py
+mydb_converted/README.md
+mydb_converted/__init__.py
+mydb_converted/env.json
+mydb_converted/main.so
+mydb_converted/mysearch.so
+mydb_converted/mysearch_acb.so
+mydb_converted/requirements.txt
+mydb_converted/test.so
+mydb_converted/test_import.so
+mydb_converted/__pycache__/__init__.cpython-38.pyc
+mydb_converted/__pycache__/mysearch.cpython-38.pyc
+mydb_converted/__pycache__/search.cpython-38.pyc
+mydb_converted/config/__init__.py
+mydb_converted/config/config.dev.yaml
+mydb_converted/config/loader.so
+mydb_converted/config/__pycache__/__init__.cpython-38.pyc
+mydb_converted/config/__pycache__/loader.cpython-38.pyc
+mydb_converted/config/__pycache__/loader.cpython-39.pyc
+mydb_converted/logs/__init__.py
+mydb_converted/logs/log_handler.so
+mydb_converted/logs/__pycache__/__init__.cpython-38.pyc
+mydb_converted/logs/__pycache__/log_handler.cpython-38.pyc
+mydb_converted/logs/__pycache__/log_handler.cpython-39.pyc
+mydb_converted/logs/logging/MySearch.log
+mydb_converted/logs/logging/__init__.py
+mydb_converted/modules/__init__.py
+mydb_converted/modules/__pycache__/__init__.cpython-38.pyc
+mydb_converted/modules/entities/__init__.py
+mydb_converted/modules/entities/redis/__init__.py
+mydb_converted/modules/entities/redis/redis_utils.so
+mydb_converted/modules/entities/redis/__pycache__/redis_utils.cpython-38.pyc
+mydb_converted/modules/utils/__init__.py
+mydb_converted/modules/utils/checker.so
+mydb_converted/modules/utils/faiss_db.so
+mydb_converted/modules/utils/helper.so
+mydb_converted/modules/utils/index_db.so
+mydb_converted/modules/utils/info_db.so
+mydb_converted/modules/utils/__pycache__/__init__.cpython-38.pyc
+mydb_converted/modules/utils/__pycache__/backup_file.cpython-38.pyc
+mydb_converted/modules/utils/__pycache__/checker.cpython-38.pyc
+mydb_converted/modules/utils/__pycache__/convert_camera_info.cpython-38.pyc
+mydb_converted/modules/utils/__pycache__/faiss_db.cpython-38.pyc
+mydb_converted/modules/utils/__pycache__/fps_control.cpython-38.pyc
+mydb_converted/modules/utils/__pycache__/helper.cpython-38.pyc
+mydb_converted/modules/utils/__pycache__/index_db.cpython-38.pyc
+mydb_converted/modules/utils/__pycache__/info_db.cpython-38.pyc
+tsearch.egg-info/PKG-INFO
+tsearch.egg-info/SOURCES.txt
+tsearch.egg-info/dependency_links.txt
+tsearch.egg-info/requires.txt
+tsearch.egg-info/top_level.txt
