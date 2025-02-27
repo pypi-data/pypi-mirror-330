@@ -1,0 +1,50 @@
+[project]
+name = "c4m-flexio"
+dynamic = []
+description = "PDKMaster based scalable IO library"
+authors = [
+    { name = "Chips4Makers contributors" },
+]
+dependencies = [
+    "PDKMaster~=0.11.5",
+    "c4m-flexcell~=0.4.5",
+]
+requires-python = "~=3.8"
+readme = "README.md"
+version = "0.4.8"
+
+[project.license]
+text = "GPL-2.0-or-later OR AGPL-3.0-or-later OR CERN-OHL-S-2.0+"
+
+[build-system]
+requires = [
+    "pdm-backend",
+]
+build-backend = "pdm.backend"
+
+[tool.pdm]
+ignore_package_warnings = [
+    "*",
+]
+distribution = true
+
+[tool.pdm.build]
+includes = [
+    "c4m/",
+]
+
+[tool.pdm.version]
+source = "scm"
+
+[tool.pdm.dev-dependencies]
+dev = []
+vscode = [
+    "pip",
+    "docutils",
+    "esbonio",
+]
+
+[tool.pdm.scripts]
+doit = "doit"
+upd = "pdm update --update-reuse-installed"
+updns = "pdm update --update-reuse --no-sync"
