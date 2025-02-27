@@ -1,0 +1,52 @@
+Metadata-Version: 2.2
+Name: sentinel_tiles
+Version: 1.0.2
+Summary: generates raster geometries for the Sentinel version of 100km Military Grid Reference System (MGRS) tiles
+Author-email: "Gregory H. Halverson" <gregory.h.halverson@jpl.nasa.gov>
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: rasters>=1.3.0
+Requires-Dist: geopandas
+Requires-Dist: mgrs
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: shapely
+Requires-Dist: affine
+Requires-Dist: python-dateutil
+Requires-Dist: sentinelsat
+Provides-Extra: dev
+Requires-Dist: pytest>=6.0; extra == "dev"
+Requires-Dist: pytest-cov; extra == "dev"
+
+# `sentinel-tiles` Python Package
+
+![CI](https://github.com/JPL-Evapotranspiration-Algorithms/sentinel_tiles/actions/workflows/ci.yml/badge.svg)
+
+The `sentinel-tiles` Python package generates raster geometries for the Sentinel version of 100km Military Grid Reference System (MGRS) tiles.
+
+The Julia equivalent of this package is [SentinelTiles.jl](https://github.com/STARS-Data-Fusion/SentinelTiles.jl).
+
+[Gregory H. Halverson](https://github.com/gregory-halverson-jpl) (they/them)<br>
+[gregory.h.halverson@jpl.nasa.gov](mailto:gregory.h.halverson@jpl.nasa.gov)<br>
+NASA Jet Propulsion Laboratory 329G
+
+![MGRS grid](MGRS_GZD.png)
+
+## Installation
+
+This package is available on PyPi as a [pip package](https://pypi.org/project/sentinel-tiles/) called `sentinel-tiles` with a dash.
+
+```bash
+pip install sentinel-tiles
+```
+
+## Usage
+
+Import this package as `sentinel_tiles` with an under-score.
+
+```python
+import sentinel_tiles
+```
