@@ -1,0 +1,12 @@
+README.md
+setup.py
+github_repo_bulk_delete.egg-info/PKG-INFO
+github_repo_bulk_delete.egg-info/SOURCES.txt
+github_repo_bulk_delete.egg-info/dependency_links.txt
+github_repo_bulk_delete.egg-info/entry_points.txt
+github_repo_bulk_delete.egg-info/requires.txt
+github_repo_bulk_delete.egg-info/top_level.txt
+github_repo_bulk_deleter/__init__.py
+github_repo_bulk_deleter/cli.py
+github_repo_bulk_deleter/core.py
+tests/test_core.py
