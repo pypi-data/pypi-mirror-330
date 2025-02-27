@@ -1,0 +1,14 @@
+format: jb-book
+root: napari_sediment
+parts:
+  - caption: Getting started
+    chapters:
+    - file: Installation
+  - caption: Tutorials
+    chapters:
+    - file: Load_preprocess
+    - file: Dimensionality_reduction
+    - file: Spectral_indices
+  - caption: Detailed explanations
+    chapters:
+    - file: Details_sediment
