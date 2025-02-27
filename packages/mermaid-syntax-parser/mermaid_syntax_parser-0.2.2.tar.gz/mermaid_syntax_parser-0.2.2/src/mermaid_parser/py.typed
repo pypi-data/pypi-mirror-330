@@ -1,0 +1,9 @@
+touch mermaid_parser/py.typed
+
+# If using setuptools, add the following to your setup.py or setup.cfg:
+# In setup.py:
+package_data={"mermaid_parser": ["py.typed"]},
+
+# Or in setup.cfg:
+# [options.package_data]
+# mermaid_parser = py.typed
