@@ -1,0 +1,38 @@
+name: Deploy incognito docs web page
+on:
+  push:
+    branches:
+      - main
+permissions:
+  contents: write
+    
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4 
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install python deps 
+        run: |
+          python -m pip install mkdocs mkdocstrings-python
+
+      - name: Build doc
+        run: |
+          python -m  mkdocs build -f ./docs/mkdocs.yml -d www
+
+      - name: Check files 
+        run: |
+          ls docs/www
+
+      - name: Deploy page
+        uses: JamesIves/github-pages-deploy-action@v4 
+        with:
+          folder: docs/www
+          token: ${{ secrets.GITHUB_TOKEN }} 
