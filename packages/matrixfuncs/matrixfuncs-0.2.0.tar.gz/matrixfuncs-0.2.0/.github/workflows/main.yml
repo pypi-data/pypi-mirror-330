@@ -1,0 +1,98 @@
+name: CI
+
+# Controls when the workflow will run
+on:
+  push:
+    tags: [ "v*" ]
+    #branches: [ "main" ]
+  #pull_request:
+  #  branches: [ "main" ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  test-matrix:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        # python-version: [ '3.10', '3.11', '3.12', '3.13', '3.14-dev' ]
+        python-version: [ '3.10', '3.11', '3.12', '3.13' ]
+    name: Test on ${{ matrix.python-version }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: 'pip'
+          cache-dependency-path: 'pyproject.toml'
+      - name: Test python package
+        run: |
+          pip install --upgrade tox pytest
+          TESTVERSION=${{ matrix.python-version }}
+          TESTVERSION=$(python -c "s='$TESTVERSION'; print('py3'+s[2:].split('-')[0])")
+          tox -e $TESTVERSION
+
+  # act --pull=false -P ubuntu-latest=catthehacker/ubuntu:act-latest --job="build"
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+          cache: 'pip'
+          cache-dependency-path: 'pyproject.toml'
+      
+      - name: Build python package
+        run: |
+          pip install --upgrade build
+          python -m build
+          PKGVERSION=$(python -c "$(grep version\ =\  matrixfuncs/_version.py); print(version)")
+          echo "PKGVERSION=v$PKGVERSION" >> $GITHUB_ENV
+      - name: "Report built version"
+        run: echo "Built version ${{ env.PKGVERSION }}"
+      - name: Upload package
+        uses: actions/upload-artifact@v4
+        with:
+          name: python-package
+          path: dist/*
+
+  build-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compile Typst
+        uses: typst-community/setup-typst@v4
+      - run: |
+          cd typst
+          typst compile --root .. matrix-functions-docu.typ
+          cd
+      - name: Upload documentation
+        uses: actions/upload-artifact@v4
+        with:
+          name: python-package-documentation
+          path: typst/matrix-functions-docu.pdf
+
+  release:
+    runs-on: ubuntu-latest
+    if: github.triggering_actor == 'nextdorf'
+    permissions:
+      contents: write
+    needs: [build, build-docs]
+    steps:
+      - name: Download
+        uses: actions/download-artifact@v4
+        with:
+          path: out
+          merge-multiple: true
+      - name: Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: out/*
+          draft: false
+          prerelease: false

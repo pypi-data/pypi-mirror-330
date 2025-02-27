@@ -1,0 +1,45 @@
+[build-system]
+requires = [
+  "setuptools>=42",
+  "setuptools-scm>=2.0.0"
+  ]
+build-backend = "setuptools.build_meta"
+
+
+[tool.setuptools]
+packages = ["matrixfuncs"]
+
+[project]
+name = "matrixfuncs"
+dynamic = ["version"]
+description = "A package for computing matrix functions using eigenvalue decomposition."
+readme = "README.md"
+requires-python = ">=3.10"
+keywords = ["matrix", "linear algebra", "eigenvalues", "numerical methods"]
+license = {text = "LGPL-3.0-only"}
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)",
+  "Intended Audience :: Science/Research",
+  "Programming Language :: Python :: 3",
+  "Topic :: Scientific/Engineering :: Mathematics",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+  ]
+dependencies = [
+  "numpy",
+  "scipy",
+  "numdifftools"
+  ]
+
+
+[project.urls]
+"Github" = "https://github.com/nextdorf/matrix-functions"
+
+[tool.setuptools.dynamic]
+version = {attr = "matrixfuncs._version.version"}
+
+[tool.setuptools_scm]
+write_to = "matrixfuncs/_version.py"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
