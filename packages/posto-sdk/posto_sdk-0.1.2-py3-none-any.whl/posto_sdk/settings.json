@@ -1,0 +1,1383 @@
+{
+    "tumblr": {
+      "name": "Tumblr",
+      "settings": {},
+      "default_values": {
+        "send_tags": {
+          "setting_name": "tumblr_send_tags",
+          "default": false
+        },
+        "post_title": {
+          "setting_name": "tumblr_post_title",
+          "default": "{post_title}"
+        },
+        "post_content": {
+          "setting_name": "tumblr_post_content",
+          "default": "{post_content}"
+        },
+        "attach_link": {
+          "setting_name": "tumblr_attach_link",
+          "default": true
+        },
+        "upload_media": {
+          "setting_name": "tumblr_upload_media",
+          "default": false
+        },
+        "media_type_to_upload": {
+          "setting_name": "tumblr_media_type_to_upload",
+          "default": "featured_image"
+        }
+      },
+      "custom_post_data": {},
+      "posting_data": {},
+      "enums": {
+        "media_types": [
+          "featured_image",
+          "all_images",
+          "video",
+          "gallery"
+        ]
+      },
+      "capabilities": {
+        "supports_media": false,
+        "supports_scheduling": true
+      },
+      "setting_types": {
+        "media_type_to_upload": "enum",
+        "attach_link": "boolean",
+        "upload_media": "boolean",
+        "send_tags": "boolean",
+        "post_content": "string",
+        "post_title": "string"
+      },
+      "setting_descriptions": {
+        "media_type_to_upload": "Type of media to upload (featured image, all images, video)",
+        "attach_link": "Whether to attach the original post link",
+        "upload_media": "Whether to upload media with the post",
+        "send_tags": "",
+        "post_content": "Content template for the post. Supports variables like {post_title}, {post_content}",
+        "post_title": "Title template for the post. Supports variables like {post_title}"
+      },
+      "setting_dependencies": {}
+    },
+    "reddit": {
+      "name": "Reddit",
+      "settings": {},
+      "default_values": {
+        "post_title": {
+          "setting_name": "reddit_post_title",
+          "default": "{post_title}"
+        },
+        "cut_post_title": {
+          "setting_name": "reddit_cut_post_title",
+          "default": true
+        },
+        "post_content": {
+          "setting_name": "reddit_post_content",
+          "default": "{post_title}"
+        },
+        "share_to_first_comment": {
+          "setting_name": "reddit_share_to_first_comment",
+          "default": true
+        },
+        "first_comment_text": {
+          "setting_name": "reddit_first_comment_text",
+          "default": ""
+        },
+        "attach_link": {
+          "setting_name": "reddit_attach_link",
+          "default": true
+        },
+        "upload_media": {
+          "setting_name": "reddit_upload_media",
+          "default": false
+        },
+        "media_type_to_upload": {
+          "setting_name": "reddit_media_type_to_upload",
+          "default": "featured_image"
+        }
+      },
+      "custom_post_data": {},
+      "posting_data": {},
+      "enums": {
+        "media_types": [
+          "featured_image",
+          "all_images",
+          "video",
+          "gallery"
+        ]
+      },
+      "capabilities": {
+        "supports_media": false,
+        "supports_scheduling": true
+      },
+      "setting_types": {
+        "cut_post_title": "string",
+        "attach_link": "boolean",
+        "media_type_to_upload": "enum",
+        "upload_media": "boolean",
+        "first_comment_text": "string",
+        "share_to_first_comment": "boolean",
+        "post_content": "string",
+        "post_title": "string"
+      },
+      "setting_descriptions": {
+        "cut_post_title": "",
+        "attach_link": "Whether to attach the original post link",
+        "media_type_to_upload": "Type of media to upload (featured image, all images, video)",
+        "upload_media": "Whether to upload media with the post",
+        "first_comment_text": "Text template for first comment",
+        "share_to_first_comment": "Whether to share additional content in first comment",
+        "post_content": "Content template for the post. Supports variables like {post_title}, {post_content}",
+        "post_title": "Title template for the post. Supports variables like {post_title}"
+      },
+      "setting_dependencies": {
+        "first_comment_text": {
+          "depends_on": "share_to_first_comment",
+          "condition": "value == True"
+        }
+      }
+    },
+    "odnoklassniki": {
+      "name": "Odnoklassniki",
+      "settings": {},
+      "default_values": {},
+      "custom_post_data": {},
+      "posting_data": {},
+      "enums": {},
+      "capabilities": {
+        "supports_media": false,
+        "supports_scheduling": true
+      },
+      "setting_types": {},
+      "setting_descriptions": {},
+      "setting_dependencies": {}
+    },
+    "facebook": {
+      "name": "Facebook",
+      "settings": {},
+      "default_values": {},
+      "custom_post_data": {},
+      "posting_data": {},
+      "enums": {
+        "supported_media_types": [
+          "image",
+          "video",
+          "gallery"
+        ]
+      },
+      "capabilities": {
+        "supports_media": true,
+        "supported_media_types": [
+          "image",
+          "video",
+          "gallery"
+        ],
+        "max_media_items": 10,
+        "supports_scheduling": true,
+        "supports_privacy_levels": true
+      },
+      "setting_types": {},
+      "setting_descriptions": {},
+      "setting_dependencies": {}
+    },
+    "blogger": {
+      "name": "Blogger",
+      "settings": {},
+      "default_values": {
+        "post_title": {
+          "setting_name": "blogger_post_title",
+          "default": "{post_title}"
+        },
+        "post_content": {
+          "setting_name": "blogger_post_content",
+          "default": "<img src='{post_featured_image_url}'>\\n\\n{post_content} \\n\\n<a href='{post_url}'>{post_url}</a>"
+        },
+        "post_status": {
+          "setting_name": "blogger_post_status",
+          "default": "draft"
+        },
+        "send_categories": {
+          "setting_name": "blogger_send_categories",
+          "default": false
+        },
+        "send_tags": {
+          "setting_name": "blogger_send_tags",
+          "default": false
+        },
+        "send_pages_as_page": {
+          "setting_name": "blogger_send_pages_as_page",
+          "default": true
+        }
+      },
+      "custom_post_data": {
+        "is_draft": {
+          "setting_name": "blogger_post_status",
+          "default": "draft"
+        },
+        "kind": {
+          "setting_name": "blogger_send_pages_as_page",
+          "default": true
+        }
+      },
+      "posting_data": {},
+      "enums": {},
+      "capabilities": {
+        "supports_media": false,
+        "supports_scheduling": true
+      },
+      "setting_types": {
+        "kind": "string",
+        "post_status": "string",
+        "send_pages_as_page": "string",
+        "send_tags": "boolean",
+        "post_content": "string",
+        "send_categories": "boolean",
+        "is_draft": "string",
+        "post_title": "string"
+      },
+      "setting_descriptions": {
+        "kind": "",
+        "post_status": "",
+        "send_pages_as_page": "",
+        "send_tags": "",
+        "post_content": "Content template for the post. Supports variables like {post_title}, {post_content}",
+        "send_categories": "",
+        "is_draft": "",
+        "post_title": "Title template for the post. Supports variables like {post_title}"
+      },
+      "setting_dependencies": {}
+    },
+    "mastodon": {
+      "name": "Mastodon",
+      "settings": {},
+      "default_values": {
+        "post_content": {
+          "setting_name": "mastodon_post_content",
+          "default": "{post_title}"
+        },
+        "attach_link": {
+          "setting_name": "mastodon_attach_link",
+          "default": true
+        },
+        "upload_media": {
+          "setting_name": "mastodon_upload_media",
+          "default": false
+        },
+        "media_type_to_upload": {
+          "setting_name": "mastodon_media_type_to_upload",
+          "default": "featured_image"
+        }
+      },
+      "custom_post_data": {
+        "upload_media_type": {
+          "setting_name": "mastodon_media_type_to_upload",
+          "default": "featured_image"
+        }
+      },
+      "posting_data": {},
+      "enums": {
+        "media_types": [
+          "featured_image",
+          "all_images",
+          "video",
+          "gallery"
+        ]
+      },
+      "capabilities": {
+        "supports_media": false,
+        "supports_scheduling": true
+      },
+      "setting_types": {
+        "media_type_to_upload": "enum",
+        "upload_media": "boolean",
+        "upload_media_type": "string",
+        "post_content": "string",
+        "attach_link": "boolean"
+      },
+      "setting_descriptions": {
+        "media_type_to_upload": "Type of media to upload (featured image, all images, video)",
+        "upload_media": "Whether to upload media with the post",
+        "upload_media_type": "",
+        "post_content": "Content template for the post. Supports variables like {post_title}, {post_content}",
+        "attach_link": "Whether to attach the original post link"
+      },
+      "setting_dependencies": {}
+    },
+    "medium": {
+      "name": "Medium",
+      "settings": {},
+      "default_values": {
+        "post_title": {
+          "setting_name": "medium_post_title",
+          "default": "{post_title}"
+        },
+        "post_content": {
+          "setting_name": "medium_post_content",
+          "default": "<img src=\\\"{post_featured_image_url}\\\">\\n\\n{post_content}\\n\\n<a href=\\\"{post_url}\\\">{post_url}</a>"
+        },
+        "send_tags": {
+          "setting_name": "medium_send_tags",
+          "default": false
+        }
+      },
+      "custom_post_data": {},
+      "posting_data": {},
+      "enums": {},
+      "capabilities": {
+        "supports_media": false,
+        "supports_scheduling": true
+      },
+      "setting_types": {
+        "send_tags": "boolean",
+        "post_content": "string",
+        "post_title": "string"
+      },
+      "setting_descriptions": {
+        "send_tags": "",
+        "post_content": "Content template for the post. Supports variables like {post_title}, {post_content}",
+        "post_title": "Title template for the post. Supports variables like {post_title}"
+      },
+      "setting_dependencies": {}
+    },
+    "wordpress": {
+      "name": "WordPress",
+      "settings": {},
+      "default_values": {
+        "post_title": {
+          "setting_name": "wordpress_post_title",
+          "default": "{post_title}"
+        },
+        "post_excerpt": {
+          "setting_name": "wordpress_post_excerpt",
+          "default": "{post_excerpt}"
+        },
+        "post_content": {
+          "setting_name": "wordpress_post_content",
+          "default": "{post_content}"
+        },
+        "upload_media": {
+          "setting_name": "wordpress_upload_media",
+          "default": false
+        },
+        "media_type_to_upload": {
+          "setting_name": "wordpress_media_type_to_upload",
+          "default": "featured_image"
+        },
+        "post_status": {
+          "setting_name": "wordpress_post_status",
+          "default": "publish"
+        },
+        "preserve_post_type": {
+          "setting_name": "wordpress_preserve_post_type",
+          "default": true
+        },
+        "send_categories": {
+          "setting_name": "wordpress_send_categories",
+          "default": true
+        },
+        "send_tags": {
+          "setting_name": "wordpress_send_tags",
+          "default": true
+        }
+      },
+      "custom_post_data": {},
+      "posting_data": {},
+      "enums": {
+        "media_types": [
+          "featured_image",
+          "all_images",
+          "video",
+          "gallery"
+        ]
+      },
+      "capabilities": {
+        "supports_media": false,
+        "supports_scheduling": true
+      },
+      "setting_types": {
+        "post_status": "string",
+        "media_type_to_upload": "enum",
+        "post_excerpt": "string",
+        "upload_media": "boolean",
+        "send_categories": "boolean",
+        "send_tags": "boolean",
+        "post_content": "string",
+        "preserve_post_type": "boolean",
+        "post_title": "string"
+      },
+      "setting_descriptions": {
+        "post_status": "",
+        "media_type_to_upload": "Type of media to upload (featured image, all images, video)",
+        "post_excerpt": "",
+        "upload_media": "Whether to upload media with the post",
+        "send_categories": "",
+        "send_tags": "",
+        "post_content": "Content template for the post. Supports variables like {post_title}, {post_content}",
+        "preserve_post_type": "",
+        "post_title": "Title template for the post. Supports variables like {post_title}"
+      },
+      "setting_dependencies": {}
+    },
+    "googlebusinessprofile": {
+      "name": "GoogleBusinessProfile",
+      "settings": {},
+      "default_values": {},
+      "custom_post_data": {},
+      "posting_data": {},
+      "enums": {},
+      "capabilities": {
+        "supports_media": false,
+        "supports_scheduling": true
+      },
+      "setting_types": {},
+      "setting_descriptions": {},
+      "setting_dependencies": {}
+    },
+    "tiktok": {
+      "name": "Tiktok",
+      "settings": {},
+      "default_values": {
+        "post_content": {
+          "setting_name": "tiktok_post_content",
+          "default": "{post_title}"
+        },
+        "privacy_level": {
+          "setting_name": "tiktok_privacy_level",
+          "default": "PUBLIC_TO_EVERYONE"
+        },
+        "disable_duet": {
+          "setting_name": "tiktok_disable_duet",
+          "default": false
+        },
+        "disable_comment": {
+          "setting_name": "tiktok_disable_comment",
+          "default": false
+        },
+        "disable_stitch": {
+          "setting_name": "tiktok_disable_stitch",
+          "default": false
+        },
+        "auto_add_music_to_photo": {
+          "setting_name": "tiktok_auto_add_music_to_photo",
+          "default": true
+        }
+      },
+      "custom_post_data": {
+        "upload_media_type": {
+          "setting_name": "tiktok_privacy_level",
+          "default": "PUBLIC_TO_EVERYONE"
+        }
+      },
+      "posting_data": {},
+      "enums": {
+        "privacy_level": [
+          "PUBLIC_TO_EVERYONE",
+          "MUTUAL_FOLLOW_FRIENDS",
+          "FOLLOWER_OF_CREATOR",
+          "SELF_ONLY"
+        ],
+        "supported_media_types": [
+          "video",
+          "image"
+        ]
+      },
+      "capabilities": {
+        "supports_media": true,
+        "required_media": true,
+        "supported_media_types": [
+          "video",
+          "image"
+        ],
+        "max_video_length": 600,
+        "supports_scheduling": true,
+        "supports_music": true,
+        "supports_privacy_levels": true
+      },
+      "setting_types": {
+        "disable_duet": "boolean",
+        "privacy_level": "enum",
+        "disable_stitch": "boolean",
+        "auto_add_music_to_photo": "boolean",
+        "disable_comment": "boolean",
+        "post_content": "string",
+        "upload_media_type": "string"
+      },
+      "setting_descriptions": {
+        "disable_duet": "Prevent users from creating duets with this post",
+        "privacy_level": "Who can see this post",
+        "disable_stitch": "Prevent users from creating stitches with this post",
+        "auto_add_music_to_photo": "Automatically add music to photo posts",
+        "disable_comment": "Prevent users from commenting on this post",
+        "post_content": "Content template for the post. Supports variables like {post_title}, {post_content}",
+        "upload_media_type": ""
+      },
+      "setting_dependencies": {}
+    },
+    "webhook": {
+      "name": "Webhook",
+      "settings": {},
+      "default_values": {},
+      "custom_post_data": {},
+      "posting_data": {},
+      "enums": {},
+      "capabilities": {
+        "supports_media": false,
+        "supports_scheduling": true
+      },
+      "setting_types": {},
+      "setting_descriptions": {},
+      "setting_dependencies": {}
+    },
+    "discord": {
+      "name": "Discord",
+      "settings": {},
+      "default_values": {
+        "post_content": {
+          "setting_name": "discord_post_content",
+          "default": "{post_title}"
+        },
+        "cut_post_text": {
+          "setting_name": "discord_cut_post_text",
+          "default": true
+        },
+        "upload_media": {
+          "setting_name": "discord_upload_media",
+          "default": false
+        },
+        "media_type_to_upload": {
+          "setting_name": "discord_media_type_to_upload",
+          "default": "featured_image"
+        }
+      },
+      "custom_post_data": {},
+      "posting_data": {},
+      "enums": {
+        "media_types": [
+          "featured_image",
+          "all_images",
+          "video",
+          "gallery"
+        ]
+      },
+      "capabilities": {
+        "supports_media": false,
+        "supports_scheduling": true
+      },
+      "setting_types": {
+        "cut_post_text": "boolean",
+        "post_content": "string",
+        "media_type_to_upload": "enum",
+        "upload_media": "boolean"
+      },
+      "setting_descriptions": {
+        "cut_post_text": "Whether to cut post text to platform limits",
+        "post_content": "Content template for the post. Supports variables like {post_title}, {post_content}",
+        "media_type_to_upload": "Type of media to upload (featured image, all images, video)",
+        "upload_media": "Whether to upload media with the post"
+      },
+      "setting_dependencies": {}
+    },
+    "linkedin": {
+      "name": "Linkedin",
+      "settings": {},
+      "default_values": {
+        "post_content": {
+          "setting_name": "linkedin_post_content",
+          "default": "{post_title}"
+        },
+        "cut_post_text": {
+          "setting_name": "linkedin_cut_post_text",
+          "default": true
+        },
+        "attach_link": {
+          "setting_name": "linkedin_attach_link",
+          "default": true
+        },
+        "upload_media": {
+          "setting_name": "linkedin_upload_media",
+          "default": false
+        },
+        "media_type_to_upload": {
+          "setting_name": "linkedin_media_type_to_upload",
+          "default": "featured_image"
+        }
+      },
+      "custom_post_data": {
+        "upload_media_type": {
+          "setting_name": "linkedin_media_type_to_upload",
+          "default": "featured_image"
+        }
+      },
+      "posting_data": {},
+      "enums": {
+        "supported_media_types": [
+          "image",
+          "video",
+          "article"
+        ]
+      },
+      "capabilities": {
+        "supports_media": true,
+        "supported_media_types": [
+          "image",
+          "video",
+          "article"
+        ],
+        "max_text_length": 3000,
+        "supports_scheduling": true
+      },
+      "setting_types": {
+        "media_type_to_upload": "enum",
+        "upload_media": "boolean",
+        "upload_media_type": "string",
+        "cut_post_text": "boolean",
+        "post_content": "string",
+        "attach_link": "boolean"
+      },
+      "setting_descriptions": {
+        "media_type_to_upload": "Type of media to upload (featured image, all images, video)",
+        "upload_media": "Whether to upload media with the post",
+        "upload_media_type": "",
+        "cut_post_text": "Whether to cut post text to platform limits",
+        "post_content": "Content template for the post. Supports variables like {post_title}, {post_content}",
+        "attach_link": "Whether to attach the original post link"
+      },
+      "setting_dependencies": {}
+    },
+    "pinterest": {
+      "name": "Pinterest",
+      "settings": {},
+      "default_values": {
+        "post_title": {
+          "setting_name": "pinterest_post_title",
+          "default": "{post_title}"
+        },
+        "post_content": {
+          "setting_name": "pinterest_post_content",
+          "default": "{post_content limit=\"497\"}"
+        },
+        "max_images_count": {
+          "setting_name": "pinterest_max_images_count",
+          "default": 1
+        },
+        "alt_text": {
+          "setting_name": "pinterest_alt_text",
+          "default": ""
+        },
+        "attach_link": {
+          "setting_name": "pinterest_attach_link",
+          "default": true
+        }
+      },
+      "custom_post_data": {},
+      "posting_data": {},
+      "enums": {},
+      "capabilities": {
+        "supports_media": false,
+        "supports_scheduling": true
+      },
+      "setting_types": {
+        "attach_link": "boolean",
+        "post_title": "string",
+        "post_content": "string",
+        "max_images_count": "integer",
+        "alt_text": "string"
+      },
+      "setting_descriptions": {
+        "attach_link": "Whether to attach the original post link",
+        "post_title": "Title template for the post. Supports variables like {post_title}",
+        "post_content": "Content template for the post. Supports variables like {post_title}, {post_content}",
+        "max_images_count": "",
+        "alt_text": ""
+      },
+      "setting_dependencies": {}
+    },
+    "vk": {
+      "name": "Vk",
+      "settings": {},
+      "default_values": {
+        "post_content": {
+          "setting_name": "vk_post_content",
+          "default": "{post_title}"
+        },
+        "attach_link": {
+          "setting_name": "vk_attach_link",
+          "default": true
+        },
+        "upload_media": {
+          "setting_name": "vk_upload_media",
+          "default": false
+        },
+        "media_type_to_upload": {
+          "setting_name": "vk_media_type_to_upload",
+          "default": "featured_image"
+        }
+      },
+      "custom_post_data": {
+        "upload_media_type": {
+          "setting_name": "vk_media_type_to_upload",
+          "default": "featured_image"
+        }
+      },
+      "posting_data": {},
+      "enums": {
+        "media_types": [
+          "featured_image",
+          "all_images",
+          "video",
+          "gallery"
+        ]
+      },
+      "capabilities": {
+        "supports_media": false,
+        "supports_scheduling": true
+      },
+      "setting_types": {
+        "media_type_to_upload": "enum",
+        "upload_media": "boolean",
+        "upload_media_type": "string",
+        "post_content": "string",
+        "attach_link": "boolean"
+      },
+      "setting_descriptions": {
+        "media_type_to_upload": "Type of media to upload (featured image, all images, video)",
+        "upload_media": "Whether to upload media with the post",
+        "upload_media_type": "",
+        "post_content": "Content template for the post. Supports variables like {post_title}, {post_content}",
+        "attach_link": "Whether to attach the original post link"
+      },
+      "setting_dependencies": {}
+    },
+    "instagram": {
+      "name": "Instagram",
+      "settings": {},
+      "default_values": {
+        "story_customization_title_font_family": {
+          "setting_name": "instagram_story_customization_title_font_family",
+          "default": ""
+        },
+        "story_customization_link_font_family": {
+          "setting_name": "instagram_story_customization_link_font_family",
+          "default": ""
+        },
+        "story_customization_hashtag_font_family": {
+          "setting_name": "instagram_story_customization_hashtag_font_family",
+          "default": ""
+        },
+        "post_text": {
+          "setting_name": "instagram_post_text",
+          "default": "{post_title}"
+        },
+        "cut_post_text": {
+          "setting_name": "instagram_cut_post_text",
+          "default": true
+        },
+        "media_type_to_upload": {
+          "setting_name": "instagram_media_type_to_upload",
+          "default": "featured_image"
+        },
+        "pin_the_post": {
+          "setting_name": "instagram_pin_the_post",
+          "default": false
+        },
+        "share_to_first_comment": {
+          "setting_name": "instagram_share_to_first_comment",
+          "default": false
+        },
+        "first_comment_text": {
+          "setting_name": "instagram_first_comment_text",
+          "default": ""
+        },
+        "story_text": {
+          "setting_name": "instagram_story_text",
+          "default": "{post_title}"
+        },
+        "story_send_link": {
+          "setting_name": "instagram_story_send_link",
+          "default": false
+        },
+        "story_customization_bg_color": {
+          "setting_name": "instagram_story_customization_bg_color",
+          "default": "636e72"
+        },
+        "story_customization_title_bg_color": {
+          "setting_name": "instagram_story_customization_title_bg_color",
+          "default": 0
+        },
+        "story_customization_title_bg_opacity": {
+          "setting_name": "instagram_story_customization_title_bg_opacity",
+          "default": 30
+        },
+        "story_customization_title_color": {
+          "setting_name": "instagram_story_customization_title_color",
+          "default": "FFFFFF"
+        },
+        "story_customization_title_top_offset": {
+          "setting_name": "instagram_story_customization_title_top_offset",
+          "default": 125
+        },
+        "story_customization_title_left_offset": {
+          "setting_name": "instagram_story_customization_title_left_offset",
+          "default": 30
+        },
+        "story_customization_title_width": {
+          "setting_name": "instagram_story_customization_title_width",
+          "default": 660
+        },
+        "story_customization_title_font_size": {
+          "setting_name": "instagram_story_customization_title_font_size",
+          "default": 30
+        },
+        "story_customization_is_rtl": {
+          "setting_name": "instagram_story_customization_is_rtl",
+          "default": false
+        },
+        "story_customization_link_bg_color": {
+          "setting_name": "instagram_story_customization_link_bg_color",
+          "default": 0
+        },
+        "story_customization_link_bg_opacity": {
+          "setting_name": "instagram_story_customization_link_bg_opacity",
+          "default": 100
+        },
+        "story_customization_link_color": {
+          "setting_name": "instagram_story_customization_link_color",
+          "default": "3468CF"
+        },
+        "story_customization_link_top_offset": {
+          "setting_name": "instagram_story_customization_link_top_offset",
+          "default": 1000
+        },
+        "story_customization_link_left_offset": {
+          "setting_name": "instagram_story_customization_link_left_offset",
+          "default": 30
+        },
+        "story_customization_link_width": {
+          "setting_name": "instagram_story_customization_link_width",
+          "default": 660
+        },
+        "story_customization_link_font_size": {
+          "setting_name": "instagram_story_customization_link_font_size",
+          "default": 30
+        },
+        "story_customization_add_hashtag": {
+          "setting_name": "instagram_story_customization_add_hashtag",
+          "default": false
+        },
+        "story_customization_hashtag_text": {
+          "setting_name": "instagram_story_customization_hashtag_text",
+          "default": ""
+        },
+        "story_customization_hashtag_bg_color": {
+          "setting_name": "instagram_story_customization_hashtag_bg_color",
+          "default": 0
+        },
+        "story_customization_hashtag_bg_opacity": {
+          "setting_name": "instagram_story_customization_hashtag_bg_opacity",
+          "default": 100
+        },
+        "story_customization_hashtag_color": {
+          "setting_name": "instagram_story_customization_hashtag_color",
+          "default": "3468CF"
+        },
+        "story_customization_hashtag_top_offset": {
+          "setting_name": "instagram_story_customization_hashtag_top_offset",
+          "default": 700
+        },
+        "story_customization_hashtag_left_offset": {
+          "setting_name": "instagram_story_customization_hashtag_left_offset",
+          "default": 30
+        },
+        "story_customization_hashtag_width": {
+          "setting_name": "instagram_story_customization_hashtag_width",
+          "default": 660
+        },
+        "story_customization_hashtag_font_size": {
+          "setting_name": "instagram_story_customization_hashtag_font_size",
+          "default": 30
+        }
+      },
+      "custom_post_data": {},
+      "posting_data": {},
+      "enums": {
+        "supported_media_types": [
+          "image",
+          "video",
+          "gallery",
+          "story"
+        ]
+      },
+      "capabilities": {
+        "supports_media": true,
+        "required_media": true,
+        "supported_media_types": [
+          "image",
+          "video",
+          "gallery"
+        ],
+        "max_media_items": 10,
+        "supports_scheduling": true,
+        "supports_stories": true,
+        "supports_first_comment": true
+      },
+      "setting_types": {
+        "story_customization_hashtag_bg_opacity": "string",
+        "story_customization_title_bg_color": "string",
+        "story_customization_hashtag_text": "string",
+        "story_customization_link_width": "string",
+        "story_customization_hashtag_bg_color": "string",
+        "story_customization_hashtag_top_offset": "string",
+        "story_customization_title_top_offset": "string",
+        "story_customization_add_hashtag": "boolean",
+        "story_customization_title_color": "color",
+        "story_text": "string",
+        "story_customization_hashtag_font_size": "string",
+        "story_customization_title_font_size": "string",
+        "story_customization_is_rtl": "boolean",
+        "pin_the_post": "boolean",
+        "story_customization_link_font_size": "string",
+        "story_send_link": "boolean",
+        "media_type_to_upload": "enum",
+        "story_customization_hashtag_left_offset": "string",
+        "story_customization_link_top_offset": "string",
+        "story_customization_title_font_family": "string",
+        "first_comment_text": "string",
+        "story_customization_title_width": "string",
+        "story_customization_link_bg_color": "string",
+        "story_customization_title_bg_opacity": "string",
+        "cut_post_text": "boolean",
+        "post_text": "string",
+        "story_customization_link_font_family": "string",
+        "story_customization_link_bg_opacity": "string",
+        "story_customization_bg_color": "color",
+        "story_customization_hashtag_width": "string",
+        "story_customization_hashtag_color": "color",
+        "share_to_first_comment": "boolean",
+        "story_customization_link_color": "color",
+        "story_customization_title_left_offset": "string",
+        "story_customization_hashtag_font_family": "string",
+        "story_customization_link_left_offset": "string"
+      },
+      "setting_descriptions": {
+        "story_customization_hashtag_bg_opacity": "",
+        "story_customization_title_bg_color": "",
+        "story_customization_hashtag_text": "",
+        "story_customization_link_width": "",
+        "story_customization_hashtag_bg_color": "",
+        "story_customization_hashtag_top_offset": "",
+        "story_customization_title_top_offset": "",
+        "story_customization_add_hashtag": "",
+        "story_customization_title_color": "",
+        "story_text": "",
+        "story_customization_hashtag_font_size": "",
+        "story_customization_title_font_size": "",
+        "story_customization_is_rtl": "",
+        "pin_the_post": "",
+        "story_customization_link_font_size": "",
+        "story_send_link": "",
+        "media_type_to_upload": "Type of media to upload (featured image, all images, video)",
+        "story_customization_hashtag_left_offset": "",
+        "story_customization_link_top_offset": "",
+        "story_customization_title_font_family": "",
+        "first_comment_text": "Text template for first comment",
+        "story_customization_title_width": "",
+        "story_customization_link_bg_color": "",
+        "story_customization_title_bg_opacity": "",
+        "cut_post_text": "Whether to cut post text to platform limits",
+        "post_text": "",
+        "story_customization_link_font_family": "",
+        "story_customization_link_bg_opacity": "",
+        "story_customization_bg_color": "",
+        "story_customization_hashtag_width": "",
+        "story_customization_hashtag_color": "",
+        "share_to_first_comment": "Whether to share additional content in first comment",
+        "story_customization_link_color": "",
+        "story_customization_title_left_offset": "",
+        "story_customization_hashtag_font_family": "",
+        "story_customization_link_left_offset": ""
+      },
+      "setting_dependencies": {
+        "first_comment_text": {
+          "depends_on": "share_to_first_comment",
+          "condition": "value == True"
+        }
+      }
+    },
+    "plurk": {
+      "name": "Plurk",
+      "settings": {},
+      "default_values": {
+        "post_content": {
+          "setting_name": "plurk_post_content",
+          "default": "{post_title}\\n{post_featured_image_url}\\n{post_content limit=\\\"200\\\"}"
+        },
+        "cut_post_content": {
+          "setting_name": "plurk_cut_post_content",
+          "default": true
+        },
+        "qualifier": {
+          "setting_name": "plurk_qualifier",
+          "default": ":"
+        }
+      },
+      "custom_post_data": {},
+      "posting_data": {},
+      "enums": {},
+      "capabilities": {
+        "supports_media": false,
+        "supports_scheduling": true
+      },
+      "setting_types": {
+        "qualifier": "string",
+        "post_content": "string",
+        "cut_post_content": "string"
+      },
+      "setting_descriptions": {
+        "qualifier": "",
+        "post_content": "Content template for the post. Supports variables like {post_title}, {post_content}",
+        "cut_post_content": ""
+      },
+      "setting_dependencies": {}
+    },
+    "xing": {
+      "name": "Xing",
+      "settings": {},
+      "default_values": {
+        "post_content": {
+          "setting_name": "xing_post_content",
+          "default": "{post_title}"
+        },
+        "attach_link": {
+          "setting_name": "xing_attach_link",
+          "default": true
+        },
+        "upload_media": {
+          "setting_name": "xing_upload_media",
+          "default": false
+        },
+        "media_type_to_upload": {
+          "setting_name": "xing_media_type_to_upload",
+          "default": "featured_image"
+        },
+        "post_visibility": {
+          "setting_name": "xing_post_visibility",
+          "default": "public"
+        }
+      },
+      "custom_post_data": {
+        "visibility": {
+          "setting_name": "xing_post_visibility",
+          "default": "public"
+        },
+        "upload_media_type": {
+          "setting_name": "xing_media_type_to_upload",
+          "default": "featured_image"
+        }
+      },
+      "posting_data": {},
+      "enums": {
+        "media_types": [
+          "featured_image",
+          "all_images",
+          "video",
+          "gallery"
+        ]
+      },
+      "capabilities": {
+        "supports_media": false,
+        "supports_scheduling": true
+      },
+      "setting_types": {
+        "media_type_to_upload": "enum",
+        "attach_link": "boolean",
+        "upload_media": "boolean",
+        "upload_media_type": "string",
+        "post_content": "string",
+        "post_visibility": "string",
+        "visibility": "string"
+      },
+      "setting_descriptions": {
+        "media_type_to_upload": "Type of media to upload (featured image, all images, video)",
+        "attach_link": "Whether to attach the original post link",
+        "upload_media": "Whether to upload media with the post",
+        "upload_media_type": "",
+        "post_content": "Content template for the post. Supports variables like {post_title}, {post_content}",
+        "post_visibility": "",
+        "visibility": ""
+      },
+      "setting_dependencies": {}
+    },
+    "threads": {
+      "name": "Threads",
+      "settings": {},
+      "default_values": {
+        "post_content": {
+          "setting_name": "threads_post_content",
+          "default": "{post_title}"
+        },
+        "cut_post_text": {
+          "setting_name": "threads_cut_post_text",
+          "default": true
+        },
+        "attach_link": {
+          "setting_name": "threads_attach_link",
+          "default": true
+        },
+        "upload_media": {
+          "setting_name": "threads_upload_media",
+          "default": false
+        },
+        "media_type_to_upload": {
+          "setting_name": "threads_media_type_to_upload",
+          "default": "featured_image"
+        }
+      },
+      "custom_post_data": {
+        "upload_media_type": {
+          "setting_name": "threads_media_type_to_upload",
+          "default": "featured_image"
+        }
+      },
+      "posting_data": {},
+      "enums": {
+        "media_types": [
+          "featured_image",
+          "all_images",
+          "video",
+          "gallery"
+        ]
+      },
+      "capabilities": {
+        "supports_media": false,
+        "supports_scheduling": true
+      },
+      "setting_types": {
+        "media_type_to_upload": "enum",
+        "upload_media": "boolean",
+        "upload_media_type": "string",
+        "cut_post_text": "boolean",
+        "post_content": "string",
+        "attach_link": "boolean"
+      },
+      "setting_descriptions": {
+        "media_type_to_upload": "Type of media to upload (featured image, all images, video)",
+        "upload_media": "Whether to upload media with the post",
+        "upload_media_type": "",
+        "cut_post_text": "Whether to cut post text to platform limits",
+        "post_content": "Content template for the post. Supports variables like {post_title}, {post_content}",
+        "attach_link": "Whether to attach the original post link"
+      },
+      "setting_dependencies": {}
+    },
+    "twitter": {
+      "name": "Twitter",
+      "settings": {},
+      "default_values": {
+        "cut_post_text": {
+          "setting_name": "twitter_cut_post_text",
+          "default": true
+        },
+        "post_content": {
+          "setting_name": "twitter_post_content",
+          "default": "{post_title}"
+        },
+        "share_to_first_comment": {
+          "setting_name": "twitter_share_to_first_comment",
+          "default": false
+        },
+        "first_comment_text": {
+          "setting_name": "twitter_first_comment_text",
+          "default": ""
+        },
+        "attach_link": {
+          "setting_name": "twitter_attach_link",
+          "default": true
+        },
+        "upload_media": {
+          "setting_name": "twitter_upload_media",
+          "default": false
+        },
+        "media_type_to_upload": {
+          "setting_name": "twitter_media_type_to_upload",
+          "default": "featured_image"
+        }
+      },
+      "custom_post_data": {
+        "upload_media_type": {
+          "setting_name": "twitter_media_type_to_upload",
+          "default": "featured_image"
+        },
+        "first_comment": {
+          "setting_name": "twitter_first_comment_text",
+          "default": ""
+        }
+      },
+      "posting_data": {},
+      "enums": {
+        "supported_media_types": [
+          "image",
+          "video",
+          "gif"
+        ]
+      },
+      "capabilities": {
+        "max_text_length": 280,
+        "supports_media": true,
+        "max_media_items": 4,
+        "supported_media_types": [
+          "image",
+          "video",
+          "gif"
+        ],
+        "supports_scheduling": true,
+        "supports_first_comment": true
+      },
+      "setting_types": {
+        "media_type_to_upload": "enum",
+        "upload_media": "boolean",
+        "first_comment": "string",
+        "first_comment_text": "string",
+        "share_to_first_comment": "boolean",
+        "upload_media_type": "string",
+        "cut_post_text": "boolean",
+        "post_content": "string",
+        "attach_link": "boolean"
+      },
+      "setting_descriptions": {
+        "media_type_to_upload": "Type of media to upload (featured image, all images, video)",
+        "upload_media": "Whether to upload media with the post",
+        "first_comment": "",
+        "first_comment_text": "Text template for first comment",
+        "share_to_first_comment": "Whether to share additional content in first comment",
+        "upload_media_type": "",
+        "cut_post_text": "Whether to cut post text to platform limits",
+        "post_content": "Content template for the post. Supports variables like {post_title}, {post_content}",
+        "attach_link": "Whether to attach the original post link"
+      },
+      "setting_dependencies": {
+        "first_comment_text": {
+          "depends_on": "share_to_first_comment",
+          "condition": "value == True"
+        }
+      }
+    },
+    "telegram": {
+      "name": "Telegram",
+      "settings": {},
+      "default_values": {
+        "post_content": {
+          "setting_name": "telegram_post_content",
+          "default": "{post_title}"
+        },
+        "cut_post_content": {
+          "setting_name": "telegram_cut_post_content",
+          "default": true
+        },
+        "silent_notifications": {
+          "setting_name": "telegram_silent_notifications",
+          "default": false
+        },
+        "add_read_more_button": {
+          "setting_name": "telegram_add_read_more_button",
+          "default": false
+        },
+        "read_more_button_text": {
+          "setting_name": "telegram_read_more_button_text",
+          "default": ""
+        },
+        "upload_media": {
+          "setting_name": "telegram_upload_media",
+          "default": false
+        },
+        "media_type_to_upload": {
+          "setting_name": "telegram_media_type_to_upload",
+          "default": "featured_image"
+        }
+      },
+      "custom_post_data": {},
+      "posting_data": {},
+      "enums": {
+        "media_types": [
+          "featured_image",
+          "all_images",
+          "video",
+          "gallery"
+        ]
+      },
+      "capabilities": {
+        "supports_media": false,
+        "supports_scheduling": true
+      },
+      "setting_types": {
+        "cut_post_content": "string",
+        "media_type_to_upload": "enum",
+        "add_read_more_button": "boolean",
+        "read_more_button_text": "string",
+        "upload_media": "boolean",
+        "post_content": "string",
+        "silent_notifications": "boolean"
+      },
+      "setting_descriptions": {
+        "cut_post_content": "",
+        "media_type_to_upload": "Type of media to upload (featured image, all images, video)",
+        "add_read_more_button": "",
+        "read_more_button_text": "",
+        "upload_media": "Whether to upload media with the post",
+        "post_content": "Content template for the post. Supports variables like {post_title}, {post_content}",
+        "silent_notifications": ""
+      },
+      "setting_dependencies": {}
+    },
+    "youtube": {
+      "name": "Youtube",
+      "settings": {},
+      "default_values": {
+        "post_content": {
+          "setting_name": "youtube_post_content",
+          "default": "{post_title}"
+        },
+        "upload_media": {
+          "setting_name": "youtube_upload_media",
+          "default": false
+        },
+        "media_type_to_upload": {
+          "setting_name": "youtube_media_type_to_upload",
+          "default": "featured_image"
+        }
+      },
+      "custom_post_data": {
+        "upload_media_type": {
+          "setting_name": "youtube_media_type_to_upload",
+          "default": "featured_image"
+        }
+      },
+      "posting_data": {},
+      "enums": {
+        "supported_media_types": [
+          "video"
+        ]
+      },
+      "capabilities": {
+        "supports_media": true,
+        "required_media": true,
+        "supported_media_types": [
+          "video"
+        ],
+        "supports_scheduling": true
+      },
+      "setting_types": {
+        "post_content": "string",
+        "media_type_to_upload": "enum",
+        "upload_media": "boolean",
+        "upload_media_type": "string"
+      },
+      "setting_descriptions": {
+        "post_content": "Content template for the post. Supports variables like {post_title}, {post_content}",
+        "media_type_to_upload": "Type of media to upload (featured image, all images, video)",
+        "upload_media": "Whether to upload media with the post",
+        "upload_media_type": ""
+      },
+      "setting_dependencies": {}
+    }
+  }
