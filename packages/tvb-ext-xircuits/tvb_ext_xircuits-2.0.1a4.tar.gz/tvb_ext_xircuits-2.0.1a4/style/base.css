@@ -1,0 +1,89 @@
+/*-----------------------------------------------------------------------------
+| Copyright (c) XpressAI GK and Jupyter Development Team.
+| Distributed under the terms of the Modified BSD License.
+|----------------------------------------------------------------------------*/
+
+.jp-DebuggerWidget {
+  color: var(--jp-ui-font-color1);
+  background: var(--jp-layout-color1);
+  font-size: 14px;
+  align-items: center;
+  justify-content: left;
+  text-align: left;
+  overflow-y: auto;
+}
+
+.jp-debugger-toolbar-panel {
+  flex: 0 0 auto;
+}
+
+input[type=number] {
+  line-height: 35px;
+}
+
+input[type=number]::-webkit-inner-spin-button {
+  width: 35px;
+  height: 35px;
+}
+
+/* Remove outer resizing of run dialog */
+.jp-Dialog-content {
+  resize: none !important;
+}
+
+/* Fix arrow position of HTMLSelect tag on run dialog */
+.jp-Dialog-content .f1ozlkqi {
+  position: relative;
+}
+
+/* Loading Indicator */
+.loading-indicator {
+  z-index: 10;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.loading-gif-wrapper {
+  width: 100px;
+  height: 100px;
+  background-image: url(../style/icons/xpress-loading-2.gif);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.loading-text {
+  margin-top: 20px;
+  text-align: center;
+  color: #000;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.alignToggle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.alignToggle span {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+
+.collapsible .header {
+    background-color: rgb(200, 200, 200);
+    padding: 6px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid rgb(220, 220, 220);
+}
