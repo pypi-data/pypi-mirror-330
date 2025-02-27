@@ -1,0 +1,20 @@
+Metadata-Version: 2.3
+Name: scrapscii
+Version: 0.0.3
+Summary: Scrape ASCII art from various sources.
+Author: apehex
+Author-email: apehex@protonmail.com
+Requires-Python: >=3.10,<3.13
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: art (>=6.0)
+Requires-Dist: pyarrow (>=16.0)
+Requires-Dist: scrapy (>=2.0)
+Description-Content-Type: text/markdown
+
+# scrapscii
+
+Scrape ASCII art from various sources.
+
