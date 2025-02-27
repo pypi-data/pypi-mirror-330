@@ -1,0 +1,44 @@
+Metadata-Version: 2.2
+Name: xtrapnet
+Version: 0.1.0
+Summary: A robust package for extrapolation control in neural networks
+Home-page: https://github.com/YourUser/xtrapnet
+Author: cykurd
+Author-email: cykurd@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Requires-Dist: torch>=2.0.0
+Requires-Dist: numpy
+Requires-Dist: scipy
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# XtrapNet
+
+XtrapNet is a robust package for extrapolation control in neural networks. It provides advanced uncertainty quantification, ensemble methods, and fallback mechanisms to improve predictions in out-of-distribution regions.
+
+## Installation
+pip install xtrapnet
+
+## Usage
+from xtrapnet import XtrapNet, XtrapTrainer, XtrapController
+
+net = XtrapNet(input_dim=2)
+trainer = XtrapTrainer(net, num_epochs=100)
+trainer.train(labels, features)
+xtrap_ctrl = XtrapController(trained_model=net, train_features=features, train_labels=labels, mode='clip')
+
+predictions = xtrap_ctrl.predict([[0.5, 0.5]])
+print(predictions)
+License
+MIT License 
