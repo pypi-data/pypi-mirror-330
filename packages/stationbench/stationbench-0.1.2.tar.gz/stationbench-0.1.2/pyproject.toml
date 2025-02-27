@@ -1,0 +1,44 @@
+[tool.poetry]
+name = "stationbench"
+version = "0.1.2"
+description = "A Python package for benchmarking weather forecasts against weather station data"
+authors = ["Jua.ai <support@jua.ai>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "stationbench"}]
+
+[tool.poetry.dependencies]
+python = ">=3.11,<3.13"
+xarray = "^2024.1.1"
+pandas = "^2.2.0"
+dask = {extras = ["distributed"], version = "^2024.1.1"}
+plotly = "^5.18.0"
+zarr = "^2.16.1"
+gcsfs = "^2024.2.0"
+scipy = "^1.12.0"
+nbformat = "^5.10.4"
+kaleido = "0.2.1"
+wandb = "^0.19.7"
+
+[tool.poetry.group.dev.dependencies]
+ruff = "0.4.2"
+pytest = "^8.0.0"
+pytest-cov = "^4.1.0"
+poetry-exec-plugin = "^0.3.6"
+ipykernel = "^6.29.5"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+
+[tool.poetry-exec-plugin.commands]
+format = "ruff format . && ruff check . --fix"
+test = "pytest"
+
+[tool.poetry.scripts]
+stationbench-calculate = "stationbench.cli:calculate_metrics"
+stationbench-compare = "stationbench.cli:compare_forecasts"
