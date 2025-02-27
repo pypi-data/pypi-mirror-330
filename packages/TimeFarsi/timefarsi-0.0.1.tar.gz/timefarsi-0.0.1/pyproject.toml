@@ -1,0 +1,17 @@
+[project]
+name = "TimeFarsi"
+version = "0.0.1"
+authors = [
+  { name="Mohammad Parsa Mortazavi", email="mohammadparsa9053@gmail.com"},
+]
+description = "The Time..."
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "License :: OSI Approved :: MIT License",
+]
+
+[project.urls]
+Homepage = "https://pypi.org/project/timefarsi"

@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+src/TimeFarsi.egg-info/PKG-INFO
+src/TimeFarsi.egg-info/SOURCES.txt
+src/TimeFarsi.egg-info/dependency_links.txt
+src/TimeFarsi.egg-info/top_level.txt
+src/timefarsi/__init__.py
+src/timefarsi/events/__init__.py
+src/timefarsi/events/events.py
+src/timefarsi/times/__init__.py
+src/timefarsi/times/times.py
