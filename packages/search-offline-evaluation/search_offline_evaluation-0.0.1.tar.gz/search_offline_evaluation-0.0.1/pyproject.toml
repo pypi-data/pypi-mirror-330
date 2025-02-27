@@ -1,0 +1,35 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "search_offline_evaluation"
+version = "0.0.1"
+description = "Search Extrinsic and Intrinsic Evaluation powered by LLMs"
+authors = [
+  { name = "Search" },
+]
+
+readme = "README.md"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    
+]
+requires-python = "~=3.10"
+
+[project.scripts]
+search-offline-evaluation = "search_offline_evaluation.cli.main:main"
+
+[tool.black]
+line-length = 99
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.git
+  | \.venv
+)/
+'''
+
+[tool.ruff.lint.isort]
+known_first_party = ["search_offline_evaluation"]
+force_sort_within_sections = true
