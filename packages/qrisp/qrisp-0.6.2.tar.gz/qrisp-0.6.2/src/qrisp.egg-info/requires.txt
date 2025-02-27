@@ -1,0 +1,17 @@
+qiskit>=0.44.0
+matplotlib>=3.5.1
+scipy>=1.10.0
+numba
+networkx
+tdqm
+dill
+flask
+waitress
+pyyaml
+requests
+psutil
+jax==0.4.28
+jaxlib==0.4.28
+
+[iqm]
+qiskit-iqm
