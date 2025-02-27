@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=45", "wheel", "setuptools_scm>=6.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kickpython"
+description = "Python wrapper for Kick.com API"
+authors = [
+    {name = "berkay.digital", email = "contact@berkay.digital"}
+]
+requires-python = ">=3.6"
+readme = "README.md"
+license = {text = "MIT"}
+dynamic = ["version"]
+
+[project.urls]
+Homepage = "https://github.com/berkay-digital/kickpython"
+Documentation = "https://github.com/berkay-digital/kickpython/tree/main/docs"
+Repository = "https://github.com/berkay-digital/kickpython.git"
+Issues = "https://github.com/berkay-digital/kickpython/issues"
+
+[tool.black]
+line-length = 88
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | \.db
+  | _build
+  | buck-out
+  | build
+  | dist
+)/
+'''
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
