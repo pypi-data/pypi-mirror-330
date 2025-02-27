@@ -1,0 +1,7 @@
+include README.md
+include LICENSE
+include djangosetupheist/assets/.envtemp
+include djangosetupheist/assets/app_urls.py
+include djangosetupheist/assets/appsConfig.py
+include djangosetupheist/assets/settings.py
+include djangosetupheist/assets/urls.py
