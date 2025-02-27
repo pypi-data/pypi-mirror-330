@@ -1,0 +1,4 @@
+[console_scripts]
+probs=deepdog.cli.probs:wrapped_main
+subset_sim_probs=deepdog.cli.subset_sim_probs:wrapped_main
+
