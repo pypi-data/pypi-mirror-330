@@ -1,0 +1,377 @@
+Metadata-Version: 2.2
+Name: bdrc-util
+Version: 1.0.12
+Summary: BDRC Utilities
+Author-email: jimk <jimk@bdrc.io>
+License: MIT License
+        
+        Copyright (c) [2020-2024] [Buddhist Digital Resource Center, Inc.]
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE.
+Project-URL: Homepage, https://github.com/buda-base/archive-ops/tree/master/bdrc-util
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Intended Audience :: System Administrators
+Classifier: Development Status :: 5 - Production/Stable
+Requires-Python: >=3.9
+Description-Content-Type: text/x-rst
+License-File: LICENSE
+Requires-Dist: bdrc-db-lib>=1.0.22
+Requires-Dist: pandas
+Requires-Dist: boto3
+Requires-Dist: requests
+Requires-Dist: cachetools
+Requires-Dist: s3pathlib
+Requires-Dist: bdrc-bag
+
+-  `BDRC-UTIL <#bdrc-util>`__
+
+   -  `Overview <#overview>`__
+   -  `Development <#development>`__
+
+      -  `Deployment <#deployment>`__
+
+   -  `Installation <#installation>`__
+
+      -  `Debian requirements <#debian-requirements>`__
+      -  `MacOS requirements <#macos-requirements>`__
+
+   -  `Contents <#contents>`__
+
+      -  `Publicly available scripts <#publicly-available-scripts>`__
+      -  `locators <#locators>`__
+      -  `migrate works <#migrate-works>`__
+      -  `log_dip <#log_dip>`__
+
+   -  `User Guides <#user-guides>`__
+
+      -  `log_dip <#log_dip-1>`__
+
+         -  `Synopsis <#synopsis>`__
+         -  `Argument structure <#argument-structure>`__
+         -  `Argument hints <#argument-hints>`__
+
+   -  `Deep Archive and Inversion <#deep-archive-and-inversion>`__
+
+      -  `Inversion <#inversion>`__
+      -  `Sync and Deep Archive <#sync-and-deep-archive>`__
+
+-  `API <#api>`__
+-  `TODO: Document API <#todo-document-api>`__
+-  `bdrc-util Changelog <#bdrc-util-changelog>`__
+
+
+
+BDRC-UTIL
+=========
+
+Overview
+--------
+
+BDRC UTIL is a python package containing modules for use by the Buddhist
+Digital Resource Center. It is offered to the public under the `MIT
+License <https://mit-license.org>`__. This document describes its
+contents and features.
+
+At this time, the source repository is not publicly available.
+
+
+Development
+-----------
+
+archive-ops uses python packages from ``archive-ops/venv``
+
+.. Attention:: You must run the ``openpecha-266-fix-install.sh`` script
+   before installing the requirements.
+
+.. code:: shell
+
+   # be in project main dir
+   python -m venv venv
+   source venv/bin/activate
+   openpecha-266-fix-install.sh
+   pip install -r requirements.txt
+
+
+Deployment
+~~~~~~~~~~
+
+.. code:: shell
+
+   # be in project main dir
+   python -m setup bdist_wheel
+   # test
+   twine upload --verbose  -r testpypi dist/bdrc_util-x.MM.mm-py3-none-any.whl
+   # prod   
+   twine upload --verbose  dist/bdrc_util-x.MM.mm-py3-none-any.whl   
+
+Installation
+------------
+
+`pyPI.org bdrc-util <https://pypi.org/project/bdrc-util/>`__
+
+Debian requirements
+~~~~~~~~~~~~~~~~~~~
+
+You need this (and its dependencies) for the pip component mysqlclient
+to install: ``sudo apt install default-libmysqlclient-dev``
+
+
+
+MacOS requirements
+~~~~~~~~~~~~~~~~~~
+
+You need this (and its dependencies) for the pip component mysqlclient
+to install: ``brew install mysql``
+
+Contents
+--------
+
+Publicly available scripts
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+As defined in setup.py
+
+locators
+~~~~~~~~
+
+Maps a work and a destination parent to a specific directory using
+various BDRC mapping schemes
+
+migrate works
+~~~~~~~~~~~~~
+
+Scripts to migrate and log works into BDRC’s 2021 Archival strategy
+
+log_dip
+~~~~~~~
+
+Log creation and distribution of Distribution Information Packages
+(DIPs). DIP is an OAIS term to describe a unit of publication.
+
+User Guides
+-----------
+
+.. _log_dip-1:
+
+``log_dip``
+~~~~~~~~~~~
+
+The command ``log_dip`` is intended for use by BDRC staff to instrument
+their publication activities. ``log_dip`` takes arguments from the shell
+and transfers them into a database table.
+
+Synopsis
+^^^^^^^^
+
+::
+
+   log_dip --help
+   usage: log_dip | -d DBAppSection:DbAppFile log_dip [OPTIONS] [dip_source_path] [dip_dest_path]
+
+   Logs a number of different publication strategies
+
+   positional arguments:
+     source_path           Source path (optional) - string
+     dest_path             Destination path (optional) - string
+
+   options:
+     -h, --help            show this help message and exit
+     -d DRSDBCONFIG, --drsDbConfig DRSDBCONFIG
+                           specify section:configFileName
+     -l {info,warning,error,debug,critical}, --log-level {info,warning,error,debug,critical}
+                           choice values are from python logging module
+     -a ACTIVITY_TYPE, --activity_type ACTIVITY_TYPE
+                           Activity type
+     -w WORK_NAME, --work_name WORK_NAME
+                           work being distributed
+     -i DIP_ID, --dip_id DIP_ID
+                           ID to update
+     -r ACTIVITY_RETURN_CODE, --activity_return_code ACTIVITY_RETURN_CODE
+                           Integer result of operation.
+     -b BEGIN_TIME, --begin_time BEGIN_TIME
+                           time of beginning - ')yyyy-mm-dd hh:mm:ss bash format date +'%Y-%m-%d
+                           %R:%S'
+     -e END_TIME, --end_time END_TIME
+                           time of end.Default is invocation time. yyyy-mm-dd hh:mm:ss bash format
+                           date + '%Y-%m-%d %R:%S'
+     -c COMMENT, --comment COMMENT
+                           Any text up to 4GB in length
+     -s DIP_SOURCE_PATH, --dip_source_path DIP_SOURCE_PATH
+                           Source path (optional) - string
+     -t DIP_DEST_PATH, --dip_dest_path DIP_DEST_PATH
+                           Destination path (optional) - string
+     -L, --resolve-sym-links
+                           True to resolve file paths, false to accept input as is
+     -n INVENTORY, --inventory INVENTORY
+                           path to inventory (only used for ARCHIVE)
+
+Argument structure
+^^^^^^^^^^^^^^^^^^
+
+log_dip creates a database record that captures the beginning or end of
+a DIP event.
+
+All its operations return an opaque identifier which can reference the
+record. In bash, this would be invoked as
+
+You reference the record later by one of two methods:
+
+-  passing in the id from the initial (or subsequent calls):
+
+.. code:: shell
+
+   dip_id=$(dip_log --drsDbConfig sec:some.config --begin_time "2021-05-11 01:23:45" --activity_type DRS --work_name W12345)
+
+   dip_log -d sec:some.config --activity_return_code 42 --end_time "2021-05-11 12:34:56" --dip_id $dip_id
+
+-  using the work Id, Activity type and begin time:
+
+.. code:: shell
+
+   dip_log -d sec:some.config -b "2021-05-11 01:23:45" -a DRS -w W12345
+
+   dip_log -d sec:some.config -b "2021-05-11 01:23:45" -a DRS -w W12345 -r 42 -e "2021-05-11 12:34:56"
+
+Both of the above examples perform the same function:
+
+1. log the start of a DRS job for work W12345 at “2021-05-11 01:23:45”
+2. log the end_time of the job at “2021-05-11 12:34:56” , with a return
+   code of 42
+
+Argument hints
+^^^^^^^^^^^^^^
+
+-  to give an end time, you must give all the job id information, either
+   in the id, or with the (work_name, begin_time, activity_id) tuple
+-  You can add as much information as you want in one call. If you’ve
+   captured the begin time, you can create a call which logs them all at
+   the same time (this is not the best practice, because it eliminates
+   the system’s ability to check for in-progress jobs). This is
+   perfectly legal:
+
+.. code:: shell
+
+   dip_log -d sec:some.config -b "2021-05-11 01:23:45" -a DRS -w W12345  -r 42 -e "2021-05-11 12:34:56 -c "Hi Mom, Im re-writing history"
+
+-  Begin and end dates are fussy: in shell, the format for generating
+   the date dip_log requires is: ``date +%Y-%m-%d %R:%S`` (for Mac with
+   GNU core, GNU Linuxes)
+
+-  you can update some DIP log properties:
+
+   -  comments
+   -  end time
+   -  operation return code
+
+-  Obviously, since these are the tuple which identifies the
+   transaction, you cannot modify:
+
+   -  work name
+   -  begin time
+   -  activity type
+   -  dip_external_id (this is a read only argument supplied by the
+      caller of ``log_dip``)
+
+In this example, the comments field is updated.
+
+.. code:: shell
+
+   dip_log_id=$( dip_log -d sec:some.config -b "2021-05-11 01:23:45" -a DRS -w W12345  -r 42 -e "2021-05-11 12:34:56 -c "Experienced some discomfort")
+   dip_log -d sec:some.config -i $dip_log_id  -c "But it passed.")
+
+-  
+-  Any property not given in the command line is preserved. (The example
+   above preserves the begin and end times of the DIP transaction.)
+
+-  the comment field is a free-form text field of up to 4GB in length.
+   You can store XML or JSON data in it for later use. (such as any
+   error messages or summary information about the process or the
+   objects being processed). **Update**: the ``deep-archive`` utility
+   reads the comment field for coded data.
+
+Deep Archive and Inversion
+--------------------------
+
+Inversion
+~~~~~~~~~
+
+In version 1.0.2 of ``bdrc-util`` the ``deep-archive`` utility was
+created, to send to Glacier Deep Archive **separate** image groups. This
+allowed large works to be sent as separate smaller segments. (It also
+allowed other material that was not categorized by image group to be
+sent to Glacier.) The process packages all the media types (``sources``,
+``archive``, ``images``) for an image group into one bagged zip file.
+
+Sync and Deep Archive
+~~~~~~~~~~~~~~~~~~~~~
+
+`archive-ops-1087 - sync by image
+group <https://github.com/buda-base/archive-ops/issues/1087>`__
+specifies enhancements to the ``sync`` process to sync fragments of
+image groups. `README.md <../README.md>`__ documents these requirements
+and provides examples.
+
+API
+===
+
+A simple API, inspired by ``openpecha.buda.api`` is provided as a
+central library for commonly used utilities, including Legacy Hack Image
+Group Translation
+
+TODO: Document API
+==================
+
+To use in your code, ``pip install bdrc-util>=0.9.44``
+
+bdrc-util Changelog
+===================
+
+======= ================================================================================================================= =========================================================
+version commit                                                                                                            Comments
+======= ================================================================================================================= =========================================================
+1.0.12  `65ed144  <https://github.com/buda-base/bdrc-util/commit/65ed144a5d8765bd31d7d40879973653e04b6c7a>`__             Support docker
+1.0.11  `3b9ba53  <https://github.com/buda-base/bdrc-util/commit/3b9ba5300790dc40ae913ecdb819829f456e221f>`__             SqlAlchemy 1.4 support for airflow
+1.0.10  `7ff6a79  <https://github.com/buda-base/archive-ops/commit/7ff6a79e9d0e6a329b0ee403424f52f5c02696f7>`__           Fix default bucket name
+1.0.9   `d0d73f51 <https://github.com/buda-base/archive-ops/commit/d0d73f512a3cc9d0bddc752964c535a26ea013df>`__           Fix ``do_archive_incremental`` parameter mismatch
+1.0.5   `df8de377 <https://github.com/buda-base/archive-ops/commit/df8de377239049839fa8de54dda5cd5d0a0bfe77>`__                                                                                                            Release fixes
+1.0.5   (many)                                                                                                            Integration fixes
+1.0.4   (many)                                                                                                            Support volume-manifest-builder by image group
+1.0.3   `1dfef221 <https://github.com/buda-base/archive-ops/commit/1dfef221a6e71901b530d3e16e74ad6cdeb10f93>`__           Silence deep archive empty file error
+1.0.2   (many)                                                                                                            Invert works for deep archive
+1.0.1   `ccd9865 <https://github.com/buda-base/archive-ops/pull/1068/commits/ccd9865df60877b5bbaf8e442db627af8a5fa652>`__ ``dip_log`` passes db config to ORM
+0.9.48  `9573f3c <https://github.com/buda-base/archive-ops/commit/9573f3c7874af0e3e35b88143248898516a7a463>`__            optional symlink resolution
+0.9.47  `192c43f4 <https://github.com/buda-base/archive-ops/commit/b7dd40c9a928007bfda076ec4ff5a6e48cde0c99>`__           Add s3pathlib to install requirements
+0.9.46  `e14b3a6 <https://github.com/buda-base/archive-ops/commit/e14b3a64c5a2618e261aba074403057f18479f51>`__            decomission web in favor of api
+0.9.45  `89724ee <https://github.com/buda-base/archive-ops/commit/89724eec20b1861f1611fadbe1d46a9c7df14025>`__            Raise pageSize for Get volumes
+0.9.44  `TBD <https://github.com/buda-base/archive-ops/commit/013242a8a05c47173d94156f13d881364eea06ce>`__                Move Resolvers to api
+0.9.43  `013242a <https://github.com/buda-base/archive-ops/commit/013242a8a05c47173d94156f13d881364eea06ce>`__            cacheing to reduce load on server
+0.9.42  `146bc43a <https://github.com/buda-base/archive-ops/commit/146bc43ac4b1e6938398b44c1fcb682cdfe1aba1>`__           support buda-dld
+0.9.41  `0d01394 <https://github.com/buda-base/archive-ops/commit/0d0139448d80b2900f2212b99c40c973ef060532>`__            print, dont return from ``disk_ig_from_buda``
+0.9.40                                                                                                                    Rename get_image_groups
+0.9.39                                                                                                                    Added measure archive fixity
+\                                                                                                                         Shorten log file name
+0.9.38                                                                                                                    Added RST documentation to setup.
+\                                                                                                                         Added minimum requirement for bdrc-db-lib
+0.9.34                                                                                                                    Use external address for resolver
+0.9.32  be754999                                                                                                          Create entry points for image group renaming
+0.9.31  192eea17                                                                                                          (not released) single entry point for image group renames
+0.9.30  83c5062a                                                                                                          Add Work calculation size to script
+======= ================================================================================================================= =========================================================
