@@ -1,0 +1,5 @@
+[console_scripts]
+nfl-player-info = espn.bin:get_player_metadata
+nfl-player-stats = espn.bin:get_nfl_players_historical_stats
+nfl-team-season-stats = espn.bin:get_team_season_stats
+sports-api-urls = espn.bin:get_all_sports_apis
