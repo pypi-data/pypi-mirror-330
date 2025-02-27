@@ -1,0 +1,34 @@
+[build-system]
+requires      = ["setuptools>=61.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lanelet2-bssd-converter"
+version = "1.0.0"
+description = "Tool for the automated generation of the BSSD extension based on Lanelet2 maps"
+readme = "README.md"
+authors = [{name = "Institute of Automotive Engineering, Technical University of Darmstadt", email = "sekretariat@fzd.tu-darmstadt.de"}]
+maintainers = [{name = "Institute of Automotive Engineering, Technical University of Darmstadt", email = "sekretariat@fzd.tu-darmstadt.de"}]
+license = { file = "LICENSE" }
+keywords = ["automated driving", "BSSD", "Lanelet2", "OSM"]
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+]
+dependencies = [
+    "numpy>=1.22.3",
+    "osmium>=3.2.0",
+    "bssd-core>=0.1.0",
+]
+requires-python = ">=3.8"
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[project.urls]
+BSSD-Homepage = "https://gitlab.com/tuda-fzd/scenery-representations-and-maps/behavior-semantic-scenery-description"
+Repository = "https://gitlab.com/tuda-fzd/scenery-representations-and-maps/lanelet2-bssd-converter"
+
+[project.scripts]
+lanelet2-bssd-converter = "BSSD_derivation_for_Lanelet2.__main__:main"
