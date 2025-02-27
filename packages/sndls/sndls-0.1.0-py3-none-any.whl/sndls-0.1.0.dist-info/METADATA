@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: sndls
+Version: 0.1.0
+Summary: An audio-friendly ls, with a little something extra
+Keywords: audio,dataset,dsp
+Author-email: Esteban Gómez <esteban.gomezmellado@aalto.fi>
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+Requires-Dist: numpy>=2.0.2
+Requires-Dist: polars>=1.23.0
+Requires-Dist: soundfile>=0.13.1
+Requires-Dist: tqdm>=4.67.1
+Requires-Dist: ruff>=0.9.7 ; extra == "lint"
+Project-URL: Bug Tracker, https://github.com/eagomez2/lsa/issues
+Project-URL: Changelog, https://github.com/eagomez2/lsa/releases
+Project-URL: Documentation, https://eagomez2.github.io/lsa/
+Project-URL: Home, https://github.com/eagomez2/lsa
+Project-URL: Repository, https://github.com/eagomez2/lsa
+Provides-Extra: lint
+
+# `sndls`: An audio-friendly `ls`, with a little something extra
