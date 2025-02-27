@@ -1,0 +1,21 @@
+{
+    "configurations": [
+    
+      {
+        "type": "debugpy",
+        "request": "launch",
+        "name": "Launch Program",
+        "program": "${workspaceFolder}/${input:programPath}",
+        "env": {
+          "PYTHONPATH": "${workspaceFolder}/src"
+        }
+      }
+    ],
+    "inputs": [
+      {
+        "type": "promptString",
+        "id": "programPath",
+        "description": "Path to the Python file you want to debug"
+      }
+    ]
+  }
