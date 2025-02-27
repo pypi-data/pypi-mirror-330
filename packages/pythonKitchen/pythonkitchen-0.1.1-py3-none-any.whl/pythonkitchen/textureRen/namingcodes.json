@@ -1,0 +1,62 @@
+{
+  "source":{
+    "src01": "cgChoco",
+    "src02": "hdriHaven",
+    "src03": "hdriSkies",
+    "src04": "cgAxis",
+    "src05": "suhail"
+  },
+  "scene":{
+    "sce01":"aboveClouds",
+    "sce02":"forest",
+    "sce03":"beach",
+    "sce04":"dappled",
+    "sce05":"inShadow",
+    "sce06":"overWater",
+    "sce07":"mountains",
+    "sce08":"medow",
+    "sce09":"studio",
+    "sce10":"lakeSide",
+    "sce11":"indoorHall",
+    "sce12":"indoorRoom",
+    "sce13":"sunny",
+    "sce14":"openField",
+    "sce15":"overcast",
+    "sce16":"sunflowers",
+    "sce17":"mudRoad",
+    "sce18":"treesHade"
+  },
+  "clouds":{
+    "cl01":"cloudy",
+    "cl02":"partlyCloudy",
+    "cl03":"denseClouds",
+    "cl04":"opensky",
+    "cl05":"lightClouds",
+    "cl06":"indoor"
+  },
+  "hour":{
+    "hr01":"morning",
+    "hr02":"afternoon",
+    "hr03":"evening",
+    "hr04":"night",
+    "hr05":"bright",
+    "hr06":"dark",
+    "hr07":"medium",
+    "hr08":"noon",
+    "hr09":"sunset",
+    "hr10":"sunrise",
+    "hr11":"light",
+    "hr12":"blueHour"
+  },
+  "color":{
+    "col01":"ACEScg",
+    "col02":"sRGBlinear",
+    "col03":"RAW"
+  },
+  "variant":{
+    "v01":"v01",
+    "v02":"v02",
+    "v03":"v03"
+  }
+}
+
