@@ -1,0 +1,5 @@
+[console_scripts]
+ansible-local = ansible_tools.cli.ansible_local:main
+ansible-mkpasswd = ansible_tools.cli.ansible_mkpasswd:main
+ansible-vault-helper = ansible_tools.cli.ansible_vault_helper:main
+vaultify = ansible_tools.cli.vaultify:main
