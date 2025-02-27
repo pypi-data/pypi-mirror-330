@@ -1,0 +1,41 @@
+[project]
+name = "wind_power_timeseries"
+version = "0.2.0"
+authors = [{name="Harald G Svendsen", email="harald.svendsen@sintef.no"}]
+description = "Package for downloading timeseries data and convert to generated power"
+license = "MIT"
+readme = "README.md"
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python"
+]
+requires_python = ">=3.10"
+dependencies = [
+    "numpy >=2.2.3",
+    "pandas >=2.2.3",
+    "metocean-api >=1.1.10",
+    "scipy >=1.15.2",
+    "cdsapi (>=0.7.5,<0.8.0)",
+]
+
+[tool.poetry.dependencies]
+python = ">=3.10"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.4"
+pre-commit = "^4.1.0"
+black = "^25.1.0"
+isort = "^6.0.0"
+coverage = "^7.6.12"
+
+
+[tool.poetry.group.analyse.dependencies]
+ipykernel = "^6.29.5"
+matplotlib = "^3.10.0"
+
+[tool.isort]
+profile = "black"
+
+[tool.black]
+line-length = 119
+
