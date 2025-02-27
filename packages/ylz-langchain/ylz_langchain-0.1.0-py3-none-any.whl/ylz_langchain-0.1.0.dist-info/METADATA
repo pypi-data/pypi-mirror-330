@@ -1,0 +1,130 @@
+Metadata-Version: 2.1
+Name: ylz-langchain
+Version: 0.1.0
+Summary: 
+Author: Your Name
+Author-email: you@example.com
+Requires-Python: >=3.12,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Dist: aiosqlite (>=0.20.0,<0.21.0)
+Requires-Dist: akshare (>=1.15.22,<2.0.0)
+Requires-Dist: annotated-types (>=0.7.0,<0.8.0)
+Requires-Dist: apscheduler (>=3.10.4,<4.0.0)
+Requires-Dist: argparse (>=1.4.0,<2.0.0)
+Requires-Dist: bilibili-api-python (>=17.1.1,<18.0.0)
+Requires-Dist: cryptography (>=44.0.0,<45.0.0)
+Requires-Dist: dashscope (>=1.20.4,<2.0.0)
+Requires-Dist: distro (>=1.9.0,<2.0.0)
+Requires-Dist: docx2txt (>=0.8,<0.9)
+Requires-Dist: duckduckgo-search (>=6.2.1,<7.0.0)
+Requires-Dist: elastic-transport (>=8.15.0,<9.0.0)
+Requires-Dist: elasticsearch-dsl (>=8.15.2,<9.0.0)
+Requires-Dist: faiss-cpu (>=1.10.0,<2.0.0)
+Requires-Dist: fastapi (>=0.111.1,<0.112.0)
+Requires-Dist: fastapi-cdn-host (>=0.8.2,<0.9.0)
+Requires-Dist: google-search-results (>=2.4.2,<3.0.0)
+Requires-Dist: gradio-client (>=1.1.1,<2.0.0)
+Requires-Dist: gradio-tools (>=0.0.9,<0.0.10)
+Requires-Dist: grandalf (>=0.8,<0.9)
+Requires-Dist: h11 (>=0.14.0,<0.15.0)
+Requires-Dist: ipfs-toolkit (>=0.5.24,<0.6.0)
+Requires-Dist: jieba (>=0.42.1,<0.43.0)
+Requires-Dist: jionlp (>=1.5.15,<2.0.0)
+Requires-Dist: langchain (>=0.3.0,<0.4.0)
+Requires-Dist: langchain-community
+Requires-Dist: langchain-elasticsearch
+Requires-Dist: langchain-experimental
+Requires-Dist: langchain-ollama
+Requires-Dist: langchain-openai
+Requires-Dist: langchain-together
+Requires-Dist: langgraph (>=0.2.28,<0.3.0)
+Requires-Dist: langgraph-checkpoint (==1.0.9)
+Requires-Dist: langgraph-cli (>=0.1.52,<0.2.0)
+Requires-Dist: langserve
+Requires-Dist: markdownify (>=0.13.1,<0.14.0)
+Requires-Dist: matplotlib (>=3.9.0,<4.0.0)
+Requires-Dist: mpmath (>=1.3.0,<2.0.0)
+Requires-Dist: neo4j (>=5.23.1,<6.0.0)
+Requires-Dist: numpy (<2)
+Requires-Dist: opentelemetry-sdk (>=1.27.0,<2.0.0)
+Requires-Dist: pdfminer (>=20191125,<20191126)
+Requires-Dist: pdfplumber (>=0.11.2,<0.12.0)
+Requires-Dist: pillow-heif (>=0.18.0,<0.19.0)
+Requires-Dist: playwright (>=1.45.1,<2.0.0)
+Requires-Dist: pydantic-core (>=2.20.1,<3.0.0)
+Requires-Dist: python-docx (>=1.1.2,<2.0.0)
+Requires-Dist: python-dotenv (>=1.0.1,<2.0.0)
+Requires-Dist: python-pptx (>=0.6.23,<0.7.0)
+Requires-Dist: pyyaml (>=6.0.1,<7.0.0)
+Requires-Dist: qianfan (>=0.4.2,<0.5.0)
+Requires-Dist: requests (>=2.32.3,<3.0.0)
+Requires-Dist: rich (>=13.8.1,<14.0.0)
+Requires-Dist: scikit-learn (>=1.6.1,<2.0.0)
+Requires-Dist: serpapi (>=0.1.5,<0.2.0)
+Requires-Dist: sqlite4 (>=0.1.1,<0.2.0)
+Requires-Dist: sse-starlette (>=2.1.2,<3.0.0)
+Requires-Dist: tabulate (>=0.9.0,<0.10.0)
+Requires-Dist: torch (==2.2.1)
+Requires-Dist: trustcall (>=0.0.22,<0.0.23)
+Requires-Dist: typing-extensions (>=4.12.2,<5.0.0)
+Requires-Dist: websockets (==11.0)
+Requires-Dist: wolframalpha (>=5.1.3,<6.0.0)
+Description-Content-Type: text/markdown
+
+`python3 main.py` 
+
+```
+usage: examples:
+        # 初始化配置信息 
+        ylz_langchain reset 
+
+        # 启动大语言模型对话
+        ylz_langchain start --mode chat
+        
+        # 测试neo4j
+        ylz_langchain neo4j start
+       [-h] --mode {llm,chat,prompt,loader,runnable,tools,rag,outputParser,graph,agent,info} [--llm_key LLM_KEY] [--embedding_key EMBEDDING_KEY]
+       [--llm_model LLM_MODEL] [--embedding_model EMBEDDING_MODEL] [--message MESSAGE] [--user_id USER_ID] [--conversation_id CONVERSATION_ID] [--url URL]
+       [--depth DEPTH] [--rag_indexname RAG_INDEXNAME] [--chat_dbname CHAT_DBNAME] [--query_dbname QUERY_DBNAME] [--docx DOCX] [--pptx PPTX] [--pdf PDF]
+       [--glob GLOB] [--websearch {tavily,duckduckgo,serpapi}] [--size SIZE] [--graph {stand,life,engineer,db,selfrag,test,stock}] [--fake_size FAKE_SIZE]
+       [--batch BATCH]
+
+options:
+  -h, --help            show this help message and exit
+  --mode {llm,chat,prompt,loader,runnable,tools,rag,outputParser,graph,agent,info}
+                        测试内容
+  --llm_key LLM_KEY     语言模型标识，例如：LLM.DEEPSEEK
+  --embedding_key EMBEDDING_KEY
+                        嵌入模型标识，例如：EMBEDDING.TOGETHER
+  --llm_model LLM_MODEL
+                        语言模型model
+  --embedding_model EMBEDDING_MODEL
+                        嵌入模型model
+  --message MESSAGE     input message
+  --user_id USER_ID     user_id,example: alice
+  --conversation_id CONVERSATION_ID
+                        conversation_id,example: 123
+  --url URL             仅rag,loader使用,下载的URL地址
+  --depth DEPTH         仅rag使用,下载的深度，默认为1
+  --rag_indexname RAG_INDEXNAME
+                        保存的向量索引表,格式为<es|faiss|chroma>:<indexname>
+  --chat_dbname CHAT_DBNAME
+                        保存的对话数据库
+  --query_dbname QUERY_DBNAME
+                        测试查询的数据库，默认Chinook.db
+  --docx DOCX           docx文档文件名
+  --pptx PPTX           pptx文档文件名
+  --pdf PDF             pdf文档文件名
+  --glob GLOB           当前目录下的glob匹配的文件
+  --websearch {tavily,duckduckgo,serpapi}
+                        websearch的工具
+  --size SIZE           文档分隔的size
+  --graph {stand,life,engineer,db,selfrag,test,stock}
+                        内置graph的类型
+  --fake_size FAKE_SIZE
+                        使用fake embeding的size，当fake_size>0是使用fake embeding，并且维度为fake_size
+  --batch BATCH         使用生成embeding时的以batch为度量显示进度，默认分隔为10批
+
+  ```
