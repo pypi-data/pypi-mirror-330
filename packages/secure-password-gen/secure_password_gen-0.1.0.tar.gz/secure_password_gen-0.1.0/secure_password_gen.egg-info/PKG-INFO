@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: secure-password-gen
+Version: 0.1.0
+Summary: A simple Python package to generate strong passwords.
+Home-page: https://github.com/NIL327/password_generator
+Author: NIL MAKVANA
+Author-email: neel327.rejoice@gmail.com
+License: MIT
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# Password Generator
+
+A simple Python package to generate strong and unique passwords.
+
+## Installation
+
+```sh
+pip install password-generator
+
+
