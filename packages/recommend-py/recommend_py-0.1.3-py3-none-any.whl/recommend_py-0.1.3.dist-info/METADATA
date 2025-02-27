@@ -1,0 +1,52 @@
+Metadata-Version: 2.1
+Name: recommend-py
+Version: 0.1.3
+Summary: A library to do recommendations based on matrix
+Home-page: https://github.com/blacker-sd/pyrecommendation
+Author: Ziqian Wang
+Author-email: 1793982387@qq.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Classifier: Development Status :: 3 - Alpha
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: scikit-learn
+
+# Recopy
+
+## Description
+this is a library to do recommendations based on matrix
+
+## Functions
+- Function 1: is_utility(df) input the matrix and return if it is a utility matrix
+- Function 2: to_utility(df, id_col_num) input the matrix and the column number of the id and return the utility matrix
+- Function 3: utility_normalize(df) input the utility matrix and return the normalized utility matrix
+- Function 4: utility_standardize(df) input the utility matrix and return the standardized utility matrix
+- Function 5: similarity_calculation(df, mean_same_item) input the utility matrix and the minimum number of same items and return the similarity matrix
+- Function 6: recommend_calculation(df, top_n, mean_score) input the utility matrix, the number of top items to recommend and the minimum score a similar user must give for an item to be recommended and return the recommendation matrix
+
+## Installation
+To install this project, clone the repository and install the required packages:
+```
+pip install pandas
+pip install numpy
+pip install scikit-learn
+```
+
+## Usage
+To use this project, import the library and call the functions:
+```
+import recopy
+
+recopy.is_utility(df)
+recopy.to_utility(df, id_col_num)
+recopy.utility_normalize(df)
+recopy.utility_standardize(df)
+recopy.similarity_calculation(df, mean_same_item)
+recopy.recommend_calculation(df, top_n, mean_score)
+```
+
