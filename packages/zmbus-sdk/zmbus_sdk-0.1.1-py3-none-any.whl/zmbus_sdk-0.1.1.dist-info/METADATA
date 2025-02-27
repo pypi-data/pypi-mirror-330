@@ -1,0 +1,122 @@
+Metadata-Version: 2.1
+Name: zmbus-sdk
+Version: 0.1.1
+Summary: SDK for interacting with Zimasa medical systems
+Home-page: https://github.com/shikoli-makatiani/zimabus-sdk
+License: MIT
+Keywords: zimasa,zmbus,sdk
+Author: Shikoli
+Author-email: shikoli@turnkeyafrica.com
+Requires-Python: >=3.8,<4.0
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Dist: exrex
+Requires-Dist: pydantic (==2.*)
+Requires-Dist: requests
+Project-URL: Repository, https://github.com/shikoli-makatiani/zimabus-sdk
+Description-Content-Type: text/markdown
+
+# zmbus-sdk
+
+A Python SDK for interacting with Zimasa medical systems. This library simplifies integration with Zimasa's healthcare APIs, allowing developers to easily access and manage medical data, patient records, and healthcare services.
+
+## Installation
+
+You can install the package directly from PyPI:
+
+```bash
+pip install zmbus-sdk
+```
+
+For development installation:
+
+```bash
+# Clone the repository
+git clone https://github.com/shikoli-makatiani/zimabus-sdk.git
+cd zimabus-sdk
+
+# Install with Poetry
+poetry install
+```
+
+## Quick Start
+
+```python
+from zimasabus_sdk import zmsystem
+
+# Initialize the client with your credentials
+client = zmsystem.ZMSystem(
+    api_key="your_api_key",
+    base_url="https://api.zimasa.com/v1"
+)
+
+# Example: Get patient information
+patient = client.get_patient(patient_id="12345")
+print(f"Patient Name: {patient.full_name}")
+
+# Example: Submit medical records
+response = client.submit_medical_record(
+    patient_id="12345",
+    record_data={
+        "diagnosis": "Hypertension",
+        "treatment": "Prescribed medication",
+        "notes": "Follow-up in 2 weeks"
+    }
+)
+```
+
+## Features
+
+- **Secure Authentication**: Easy API authentication with your Zimasa credentials
+- **Patient Management**: Create, retrieve, update, and manage patient records
+- **Medical Data**: Access and submit medical records, test results, and diagnoses
+- **Appointment Scheduling**: Manage healthcare appointments and schedules
+- **Data Validation**: Built-in validation for all API requests using Pydantic
+- **Error Handling**: Comprehensive error handling with detailed error messages
+
+## Documentation
+
+For detailed documentation and API reference, visit our [documentation site](https://github.com/shikoli-makatiani/zimabus-sdk/docs).
+
+## Development
+
+This project uses Poetry for dependency management.
+
+```bash
+# Install dependencies
+poetry install
+
+# Run tests
+poetry run pytest
+
+# Format code
+poetry run black zimasabus_sdk
+poetry run isort zimasabus_sdk
+```
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Support
+
+For support, please contact [shikoli@turnkeyafrica.com](mailto:shikoli@turnkeyafrica.com) or open an issue on GitHub.
+
