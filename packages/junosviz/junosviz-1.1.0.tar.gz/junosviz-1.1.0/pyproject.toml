@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "junosviz"
+version = "1.1.0"
+description = "A Python package for BGP monitoring,state analysis and prediction."
+authors = [
+    {name = "Menuka Wijayarathne", email = "menu.sri13@gmail.com"}
+]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.12"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "aiohttp",
+    "httpx",
+    "nornir",
+    "ncclient",
+    "pysnmp",
+    "pandas",
+    "matplotlib",
+    "scikit-learn",
+    "tensorflow",
+    "influxdb-client",
+    "flask",
+]
+[project.urls]
+Homepage = "https://github.com/Menuka-Wijayarathne/junosviz"
+Documentation = "https://github.com/Menuka-Wijayarathne/junosviz/wiki"
+Release = "https://github.com/Menuka-Wijayarathne/junosviz/releases/tag/v1.1.0"
