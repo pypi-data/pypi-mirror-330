@@ -1,0 +1,4 @@
+recursive-include botasaurus_driver/core *
+recursive-include botasaurus_driver/cdp *
+global-exclude */__pycache__/*
+global-exclude *.pyc
