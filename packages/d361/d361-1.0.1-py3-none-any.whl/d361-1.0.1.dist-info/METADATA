@@ -1,0 +1,90 @@
+Metadata-Version: 2.4
+Name: d361
+Version: 1.0.1
+Project-URL: Documentation, https://github.com/twardoch/d361#readme
+Project-URL: Issues, https://github.com/twardoch/d361/issues
+Project-URL: Source, https://github.com/twardoch/d361
+Author-email: Adam Twardoch <adam+github@twardoch.com>
+License-Expression: MIT
+License-File: LICENSE
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Requires-Python: >=3.10
+Requires-Dist: aiofiles
+Requires-Dist: aiohttp
+Requires-Dist: beautifulsoup4
+Requires-Dist: fire
+Requires-Dist: html2text>=2024.2.26
+Requires-Dist: loguru
+Requires-Dist: lxml>=5.3.1
+Requires-Dist: markdownify
+Requires-Dist: playwright
+Requires-Dist: pydantic
+Provides-Extra: all
+Provides-Extra: dev
+Requires-Dist: mypy>=1.0.0; extra == 'dev'
+Requires-Dist: pre-commit>=3.6.0; extra == 'dev'
+Requires-Dist: pyupgrade>=3.19.0; extra == 'dev'
+Requires-Dist: ruff>=0.1.0; extra == 'dev'
+Provides-Extra: test
+Requires-Dist: pytest-cov>=4.0.0; extra == 'test'
+Requires-Dist: pytest>=7.0.0; extra == 'test'
+Description-Content-Type: text/markdown
+
+# 
+
+
+
+## Features
+
+- Modern Python packaging with PEP 621 compliance
+- Type hints and runtime type checking
+- Comprehensive test suite and documentation
+- CI/CD ready configuration
+
+## Installation
+
+```bash
+pip install d361
+```
+
+## Usage
+
+```python
+import d361
+```
+
+## Development
+
+This project uses [Hatch](https://hatch.pypa.io/) for development workflow management.
+
+### Setup Development Environment
+
+```bash
+# Install hatch if you haven't already
+pip install hatch
+
+# Create and activate development environment
+hatch shell
+
+# Run tests
+hatch run test
+
+# Run tests with coverage
+hatch run test-cov
+
+# Run linting
+hatch run lint
+
+# Format code
+hatch run format
+```
+
+## License
+
+MIT License 
