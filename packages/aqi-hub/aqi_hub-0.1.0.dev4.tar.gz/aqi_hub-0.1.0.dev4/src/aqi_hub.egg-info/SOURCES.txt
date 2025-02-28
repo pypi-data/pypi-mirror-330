@@ -1,0 +1,15 @@
+.gitignore
+.python-version
+LICENSE
+README.md
+pyproject.toml
+uv.lock
+.github/workflows/release.yml
+docs/HJ_633--2012_环境空气质量指数 （AQI） 技术规定 （试行）.pdf
+src/aqi_hub/aqi.py
+src/aqi_hub.egg-info/PKG-INFO
+src/aqi_hub.egg-info/SOURCES.txt
+src/aqi_hub.egg-info/dependency_links.txt
+src/aqi_hub.egg-info/top_level.txt
+tests/__init__.py
+tests/test_aqi.py
