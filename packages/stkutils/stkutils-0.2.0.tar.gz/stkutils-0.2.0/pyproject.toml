@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "stkutils"
+version = "0.2.0"
+description = "Utils for compile/decompile X-Ray game engine files"
+authors = [
+    { name = "Mikhail Belov(mishka251)", email = "mishkabelka251@gmail.com" },
+    { name = "bardak" },
+]
+readme = "README.md"
+
+classifiers = [
+  # How mature is this project? Common values are
+  #   3 - Alpha
+  #   4 - Beta
+  #   5 - Production/Stable
+  "Development Status :: 4 - Beta",
+
+  # Specify the Python versions you support here.
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+]
+
+dependencies = [
+    "perl_binary_packing==0.4.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/mishka251/perl_binary_packing"
+
+[tool.setuptools.packages.find]
+include = [
+    "stkutils",
+]
