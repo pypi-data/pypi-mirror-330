@@ -1,0 +1,51 @@
+[build-system]
+build-backend = "setuptools.build_meta"
+requires = [
+  "setuptools>=61.0",
+  "setuptools_scm>=8",
+  "wheel",
+]
+
+[project]
+name = "monarchtominttoreport"
+description = "Convert a Monarch CSV transaction export file to legacy Mint format, suitable for MintToReport"
+readme = "README.md"
+license = {file = "LICENSE"}
+maintainers = [
+    {name = "Micah Wengren", email = "micah.wengren@gmail.com"},
+]
+requires-python = ">=3.8"
+classifiers = [
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+]
+dynamic = [
+  "dependencies",
+  "version",
+]
+[project.urls]
+documentation = "https://github.com/mwengren/monarchtominttoreport"
+homepage = "https://github.com/mwengren/monarchtominttoreport"
+repository = "https://github.com/mwengren/monarchtominttoreport"
+
+[project.scripts]
+monarchtominttoreport = "monarchtominttoreport.convert:main"
+
+[tool.setuptools]
+packages = ["monarchtominttoreport"]
+include-package-data = true
+
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}
+version = {attr = "monarchtominttoreport.__version__"}
+
+[tool.setuptools_scm]
+version_file = "monarchtominttoreport/_version.py"
+
+[tool.check-manifest]
+ignore = [  
+    ]

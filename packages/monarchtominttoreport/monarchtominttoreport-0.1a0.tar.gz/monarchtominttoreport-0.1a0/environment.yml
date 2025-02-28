@@ -1,0 +1,5 @@
+name: monarchtominttoreport 
+channels:
+  - conda-forge
+dependencies:
+        - polars

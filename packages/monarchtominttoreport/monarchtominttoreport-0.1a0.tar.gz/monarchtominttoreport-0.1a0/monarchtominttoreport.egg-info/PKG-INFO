@@ -1,0 +1,40 @@
+Metadata-Version: 2.2
+Name: monarchtominttoreport
+Version: 0.1a0
+Summary: Convert a Monarch CSV transaction export file to legacy Mint format, suitable for MintToReport
+Maintainer-email: Micah Wengren <micah.wengren@gmail.com>
+License: Copyright 2025 Micah Wengren
+        
+        Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+        
+        1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+        
+        2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+        
+        3. Neither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+        
+        THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS “AS IS” AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+Project-URL: documentation, https://github.com/mwengren/monarchtominttoreport
+Project-URL: homepage, https://github.com/mwengren/monarchtominttoreport
+Project-URL: repository, https://github.com/mwengren/monarchtominttoreport
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: polars
+
+## MonarchToMintToReport
+
+Convert a Monarch CSV transaction export file to the CSV format used by the former Mint app, suitable for use in MintToReport, or other Mint CSV file-compatible software.
+
+This utility is not connected in any way to the authors of MintToReport and is provided solely as a free service to users of Monarch that might need to convert their exported transaction files to Mint format.  The name does not represent an endoresement of MintToReport.
+
+### Example Usage
+```
+monarchtominttoreport --input transactions_monarch.csv --output transactions_mint.csv
+```
