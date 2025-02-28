@@ -1,0 +1,85 @@
+# Resource Reporter
+
+A Python library for monitoring and reporting resource usage in containerized applications, with support for asynchronous event reporting and command listening.
+
+## Features
+
+- Regular resource usage reporting (CPU, memory, network, GPU)
+- Asynchronous event reporting
+- Command listening via Google PubSub for remote control of containers
+- Support for graceful shutdown and restart
+
+## Installation
+
+### Basic Installation
+
+```bash
+pip install resource-reporter
+```
+
+### With GPU Support
+```bash
+pip install resource-reporter[gpu]
+```
+
+### Quick Start
+```Python
+from resource_reporter import ResourceReporter
+
+# Initialize the reporter
+reporter = ResourceReporter(
+    metrics_endpoint_url="http://monitoring-service/api/metrics",
+    events_endpoint_url="http://monitoring-service/api/events",
+    interval=30,
+    consumer_id="consumer-1",
+    group_consumer="production"
+)
+
+# Start reporting
+reporter.start()
+
+# Report an event
+reporter.async_report_event({
+    "status": 200,
+    "error_code": 0,
+    "error_message": "",
+    "result": {"processed": True},
+    "stats_data": {"duration_ms": 120},
+    "task_id": "task-123"
+})
+
+# Update job stats
+reporter.update_job_stats({
+    "processed": 1000,
+    "errors": 5
+})
+
+# Stop the reporter when done
+reporter.stop()
+```
+### Documentation
+## Environment Variables
+
+The Resource Reporter library uses several environment variables for configuration. While most parameters can be passed directly to the constructor, environment variables provide a convenient way to configure the reporter, especially in containerized environments.
+
+### Required Environment Variables
+
+None of the environment variables are strictly required, as all configuration can be passed directly to the constructor. However, the following are commonly used:
+
+### Optional Environment Variables
+
+| Variable | Description | Default |
+|----------|-------------|---------|
+| `GROUP_CONSUMER` | Group identifier for the consumer | `"default"` |
+| `API_KEY` | API key for authentication with metrics and events endpoints | None |
+| `GOOGLE_APPLICATION_CREDENTIALS` | Path to Google Cloud credentials JSON file | None |
+
+### Google Cloud Authentication
+
+For PubSub command listening functionality, the reporter requires Google Cloud authentication. There are several ways to provide this:
+
+1. **Service Account JSON** (recommended for non-GCP environments):
+   ```bash
+   export GOOGLE_APPLICATION_CREDENTIALS=/path/to/service-account-key.json
+License
+MIT
