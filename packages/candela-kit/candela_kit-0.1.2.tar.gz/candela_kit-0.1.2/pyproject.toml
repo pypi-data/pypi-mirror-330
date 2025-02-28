@@ -1,0 +1,45 @@
+[tool.poetry]
+name = "candela-kit"
+version = "0.1.2"
+description = "Client library for Candela"
+authors = ["Candela Team <engineering@finbourne.com>"]
+readme = "README.md"
+packages = [
+    { include = "candela_kit", from = "src" },
+]
+
+[tool.poetry.dependencies]
+python = "^3.10"  # Adjust minimum Python version as needed
+lumipy = "^1.0.254"
+lusid-sdk = "^2.1.423"
+pydantic = "^2.9.2"
+pyfiglet = "^1.0.2"
+pyyaml = "^6.0.2"
+graphviz = "^0.20.3"
+tabulate = "^0.9.0"
+cryptography = ">=42.0.5,<42.1.0"
+boto3 = "^1.35.35"
+pandas = "^2.2.3"
+aiofiles = "^24.1.0"
+black = "^25.1.0"
+pygments = "^2.19.1"
+
+[tool.poetry.group.dev.dependencies]
+coverage = "^7.6.12"
+radon = "^6.0.1"
+ruff = "^0.9.8"
+pytest = "^8.3.4"
+mypy = "^1.15.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.coverage.run]
+source = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+
+[tool.poetry.scripts]
+candela-kit = "candela_kit.cli.app:cli"
