@@ -1,0 +1,31 @@
+Metadata-Version: 2.2
+Name: django-ahin
+Version: 2.1.0
+Summary: A tool to quickly generate Django projects with apps, templates, static files, models, and forms.
+Home-page: https://github.com/AHINDEV/django-ahin
+Author: Ahindev .B
+Author-email: ahindev27@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Requires-Dist: colorama>=0.4.4
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# Django-Ahin
+
+A tool to quickly generate Django projects with apps, including templates, static files, models, and forms.
+
+## Installation
+
+```bash
+pip install django-ahin
