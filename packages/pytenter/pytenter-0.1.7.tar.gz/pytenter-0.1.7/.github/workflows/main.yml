@@ -1,0 +1,56 @@
+name: Publish to PyPI and Create GitHub Release
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'  # Trigger on version tags like v1.0.0
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install setuptools wheel twine
+
+      - name: Build package
+        run: |
+          python setup.py sdist bdist_wheel
+
+      - name: Upload package to PyPI
+        env:
+          TWINE_USERNAME: __token__
+          TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
+        run: |
+          twine upload --repository pypi dist/*  # Push to PyPI using API token
+
+      - name: Install GitHub CLI
+        run: |
+          sudo apt update
+          sudo apt install gh -y
+
+      - name: Generate Changelog
+        run: |
+          VERSION=$(git describe --tags)
+          echo "VERSION=$VERSION" >> $GITHUB_ENV  # Set the VERSION as an environment variable
+          # Generate changelog using git log, you can adjust the format
+          changelog=$(git log $VERSION..HEAD --oneline --no-merges)
+          echo "CHANGELOG=$changelog" >> $GITHUB_ENV  # Set the changelog as an environment variable
+
+      - name: Create GitHub Release
+        run: |
+          VERSION=$(git describe --tags)
+          CHANGELOG=${{ env.CHANGELOG }}
+          gh release create $VERSION dist/* --title "$VERSION" --notes "What's Changed:\n$CHANGELOG\nFull Changelog: $VERSION...HEAD"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # GitHub auto-generated token
