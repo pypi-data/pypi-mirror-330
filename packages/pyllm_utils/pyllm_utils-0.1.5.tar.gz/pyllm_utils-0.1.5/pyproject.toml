@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "pyllm_utils"
+version = "0.1.5"
+description = ""
+authors = ["shokitano0521 <s.kitano.h050521@gmail.com>"]
+readme = "README.md"
+packages = [{include = "pyllm_utils"}]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+openai = "^1.58.1"
+tiktoken = "^0.8.0"
+pillow = "^11.0.0"
+google-generativeai = "^0.8.3"
+anthropic = "^0.42.0"
+numpy = "^2.2.1"
+voyageai = { version = "^0.3.2", python = "<3.13" }
+llama-cpp-python = "^0.3.5"
+pyvirtualdisplay = "^3.0"
+mss = "^10.0.0"
+pyautogui = "^0.9.54"
+ipython = "^8.31.0"
+pymilvus = "^2.5.1"
+clickhouse-driver = "^0.2.9"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
