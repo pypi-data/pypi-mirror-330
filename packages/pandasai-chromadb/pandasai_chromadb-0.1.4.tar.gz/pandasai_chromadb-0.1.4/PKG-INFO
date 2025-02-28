@@ -1,0 +1,38 @@
+Metadata-Version: 2.3
+Name: pandasai-chromadb
+Version: 0.1.4
+Summary: ChromaDB integration for PandaAI
+License: Proprietary
+Author: Gabriele Venturi
+Requires-Python: >=3.9,<3.12
+Classifier: License :: Other/Proprietary License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: chromadb (>=0.4.22,<0.5.0)
+Requires-Dist: numpy (==1.23.2)
+Requires-Dist: onnxruntime (>=1.14.1,<1.20)
+Requires-Dist: pandasai (>=3.0.0b4)
+Requires-Dist: pydantic (>=2.0.0,<3.0.0)
+Project-URL: Documentation, https://docs.getpanda.ai/
+Project-URL: Repository, https://github.com/sinaptik-ai/pandas-ai
+Description-Content-Type: text/markdown
+
+# ChromaDB Extension for PandaAI
+
+This extension integrates ChromaDB with PandaAI, providing vector storage capabilities for enhanced data analysis and machine learning tasks.
+
+## Installation
+
+You can install this extension using poetry:
+
+```bash
+poetry add pandasai-chromadb
+```
+
+## License
+
+This package is licensed under the Sinaptik GmbH Enterprise License.  
+For commercial use, please contact [pm@sinaptik.ai](mailto:pm@sinaptik.ai).
+
