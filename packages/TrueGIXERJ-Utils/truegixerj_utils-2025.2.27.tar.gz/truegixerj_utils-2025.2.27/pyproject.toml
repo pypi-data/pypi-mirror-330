@@ -1,0 +1,19 @@
+[build-system]
+requires = ['hatchling']
+build-backend = 'hatchling.build'
+
+[project]
+name = 'TrueGIXERJ_Utils'
+version = '2025.02.27'
+authors = [
+    { name='TrueGIXERJ' },
+]
+description = 'a collection of small python utilities to use across various projects.'
+readme = 'README.md'
+requires-python = ">=3.12"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: Microsoft :: Windows",
+]
+license = 'GPL-3.0-only'
+license-files = ["LICEN[CS]E*"]
