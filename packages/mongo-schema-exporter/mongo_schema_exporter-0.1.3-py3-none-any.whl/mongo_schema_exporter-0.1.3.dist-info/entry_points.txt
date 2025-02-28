@@ -1,0 +1,2 @@
+[console_scripts]
+mongo_schema_exporter = mongo_schema_exporter.cli:main
