@@ -1,0 +1,3 @@
+[console_scripts]
+certificate_cli=certificate_cli.main:start_cli
+
