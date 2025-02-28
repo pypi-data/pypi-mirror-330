@@ -1,0 +1,2 @@
+[console_scripts]
+s3docker = s3docker.cli:cli
