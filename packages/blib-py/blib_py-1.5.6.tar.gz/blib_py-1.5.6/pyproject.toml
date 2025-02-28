@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+
+[project]
+name = "blib-py"
+dynamic = ["version", "dependencies"]
+authors = [
+    {name = "Boonleng Cheong", email = "boonleng@ou.edu"},
+]
+description = "Boonleng's Python Library"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {file = "LICENSE"}
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+[project.urls]
+Repository = "https://github.com/boonleng/blib-py"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"blib.data" = ["*.ttf"]
+
+[tool.setuptools.dynamic]
+version = {attr = "blib.__version__"}
+dependencies = {file = "requirements.txt"}
