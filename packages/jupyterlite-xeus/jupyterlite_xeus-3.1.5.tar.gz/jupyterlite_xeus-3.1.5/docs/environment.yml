@@ -1,0 +1,17 @@
+name: xeus-python-kernel-docs
+channels:
+  - https://repo.mamba.pm/emscripten-forge
+  - conda-forge
+dependencies:
+  - xeus-python
+  - xeus-lua
+  - xeus-javascript
+  - xeus-nelson
+  - xeus-r
+  - numpy
+  - matplotlib
+  - pillow
+  - ipywidgets>=8.1.3
+  - ipyleaflet
+  - pip:
+    - ipycanvas
