@@ -1,0 +1,24 @@
+{
+    "app_data": {
+        "name": "My PWA",
+        "version": 1.0,
+        "description": "A Progressive Web App"
+    },
+    "features": {
+        "offline_mode": true,
+        "push_notifications": true,
+        "background_sync": false
+    },
+    "user_preferences": {
+        "theme": [
+            "light",
+            "dark",
+            "system"
+        ],
+        "languages": [
+            "en",
+            "es",
+            "fr"
+        ]
+    }
+}

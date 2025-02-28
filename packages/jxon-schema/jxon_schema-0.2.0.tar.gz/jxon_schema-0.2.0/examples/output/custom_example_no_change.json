@@ -1,0 +1,32 @@
+{
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "product": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {},
+            "description": "Product information",
+            "current_value": {
+                "name": "Smart Watch",
+                "price": 199.99,
+                "in_stock": true,
+                "colors": [
+                    "Black",
+                    "Silver",
+                    "Gold"
+                ]
+            }
+        },
+        "categories": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        }
+    },
+    "required": [
+        "product",
+        "categories"
+    ]
+}

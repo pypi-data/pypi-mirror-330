@@ -1,0 +1,78 @@
+{
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "tags": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "add": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "remove": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "replace": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "add",
+                "remove",
+                "replace"
+            ],
+            "current_value": [],
+            "description": ""
+        },
+        "languages": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "add": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "remove": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "replace": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "add",
+                "remove",
+                "replace"
+            ],
+            "current_value": [],
+            "description": ""
+        },
+        "language_preference": {
+            "type": "string",
+            "current_value": "",
+            "description": ""
+        }
+    },
+    "required": [
+        "tags",
+        "languages",
+        "language_preference"
+    ]
+}

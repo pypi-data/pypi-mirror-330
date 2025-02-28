@@ -1,0 +1,57 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "jxon-schema"
+version = "0.2.0"
+description = "JSON with change tracking - A library for converting between JSON and schemas with change tracking"
+readme = "README.md"
+authors = [
+    {name = "Kenta Aratani", email = "kenta.a.desu@gmail.com"}
+]
+license = {text = "MIT"}
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Utilities",
+]
+keywords = ["json", "schema", "openai", "structured-data"]
+requires-python = ">=3.8"
+dependencies = [
+    "openai>=1.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "black>=23.0.0",
+    "mypy>=1.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/CoinEZ-JPN/lib_jxon"
+Documentation = "https://github.com/CoinEZ-JPN/lib_jxon#readme"
+"Bug Tracker" = "https://github.com/CoinEZ-JPN/lib_jxon/issues"
+Source = "https://github.com/CoinEZ-JPN/lib_jxon"
+
+[tool.setuptools]
+packages = ["jxon"]
+exclude-package-data = {"tests" = ["*"]}
+
+[tool.pytest]
+testpaths = ["tests"]
+
+[tool.black]
+line-length = 88
+target-version = ["py311"]

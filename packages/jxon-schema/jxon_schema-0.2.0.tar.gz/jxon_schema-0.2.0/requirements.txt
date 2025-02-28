@@ -1,0 +1,12 @@
+# Core dependencies
+openai>=1.10.0,<2.0.0
+
+# For development
+pytest>=7.0.0
+black>=23.0.0
+mypy>=1.0.0
+twine>=4.0.0
+build>=0.10.0
+
+# For compatibility testing
+tox>=4.0.0

@@ -1,0 +1,88 @@
+{
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "user_information": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "language_preference": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "add": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "remove": {
+                            "type": "array",
+                            "items": {}
+                        }
+                    },
+                    "required": [
+                        "add",
+                        "remove"
+                    ],
+                    "description": "Languages the user wants in app",
+                    "current_value": []
+                },
+                "authentication": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "use_oauth2": {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "properties": {
+                                "replace": {
+                                    "type": "boolean"
+                                }
+                            },
+                            "required": [
+                                "replace"
+                            ],
+                            "description": "Whether OAuth2 is used for authentication",
+                            "current_value": false
+                        }
+                    },
+                    "required": [
+                        "use_oauth2"
+                    ]
+                }
+            },
+            "required": [
+                "language_preference",
+                "authentication"
+            ]
+        },
+        "pwa_purpose": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "app_name": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "replace": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "replace"
+                    ],
+                    "description": "Name of the app",
+                    "current_value": ""
+                }
+            },
+            "required": [
+                "app_name"
+            ]
+        }
+    },
+    "required": [
+        "user_information",
+        "pwa_purpose"
+    ]
+}

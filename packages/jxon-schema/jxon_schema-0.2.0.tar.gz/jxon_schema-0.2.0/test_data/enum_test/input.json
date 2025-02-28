@@ -1,0 +1,13 @@
+{
+    "status": [
+        "pending",
+        "approved",
+        "rejected"
+    ],
+    "priority": [
+        "low",
+        "medium",
+        "high",
+        "critical"
+    ]
+}

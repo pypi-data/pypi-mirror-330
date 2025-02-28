@@ -1,0 +1,63 @@
+{
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "username": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "replace": {
+                    "type": "string",
+                    "description": "Value to replace username with"
+                }
+            },
+            "required": [
+                "replace"
+            ],
+            "description": "username",
+            "current_value": "johndoe"
+        },
+        "email": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "replace": {
+                    "type": "string",
+                    "description": "Value to replace email with"
+                }
+            },
+            "required": [
+                "replace"
+            ],
+            "description": "email",
+            "current_value": "john@example.com"
+        },
+        "preferences": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "replace": {
+                    "type": "object",
+                    "description": "Value to replace with"
+                }
+            },
+            "description": "User preferences",
+            "current_value": {
+                "theme": "dark",
+                "notifications": true,
+                "languages": [
+                    "English",
+                    "Spanish"
+                ]
+            },
+            "required": [
+                "replace"
+            ]
+        }
+    },
+    "required": [
+        "username",
+        "email",
+        "preferences"
+    ]
+}

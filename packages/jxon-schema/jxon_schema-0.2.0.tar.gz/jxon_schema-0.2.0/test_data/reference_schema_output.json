@@ -1,0 +1,475 @@
+{
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "user_information": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "language_preference": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "current_value": [],
+                    "properties": {
+                        "add": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "description": "Items to add"
+                        },
+                        "remove": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "description": "Items to remove"
+                        }
+                    },
+                    "required": [
+                        "add",
+                        "remove"
+                    ]
+                },
+                "authentication": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "use_oauth2": {
+                            "type": "boolean"
+                        },
+                        "oauth_provider": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "required": [
+                        "use_oauth2",
+                        "oauth_provider"
+                    ]
+                }
+            },
+            "required": [
+                "language_preference",
+                "authentication"
+            ]
+        },
+        "pwa_purpose": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "app_name": {
+                    "type": "string"
+                },
+                "short_description": {
+                    "type": "string"
+                },
+                "target_audience": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "current_value": [],
+                    "properties": {
+                        "add": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "description": "Items to add"
+                        },
+                        "remove": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "description": "Items to remove"
+                        }
+                    },
+                    "required": [
+                        "add",
+                        "remove"
+                    ]
+                },
+                "expected_outcome": {
+                    "type": "string"
+                },
+                "app_category": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "current_value": [],
+                    "properties": {
+                        "add": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "description": "Items to add"
+                        },
+                        "remove": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "description": "Items to remove"
+                        }
+                    },
+                    "required": [
+                        "add",
+                        "remove"
+                    ]
+                }
+            },
+            "required": [
+                "app_name",
+                "short_description",
+                "target_audience",
+                "expected_outcome",
+                "app_category"
+            ]
+        },
+        "functional_requirements": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "features": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "current_value": [],
+                    "properties": {
+                        "add": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "description": "Items to add"
+                        },
+                        "remove": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "description": "Items to remove"
+                        }
+                    },
+                    "required": [
+                        "add",
+                        "remove"
+                    ]
+                },
+                "user_interactions": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "current_value": [],
+                    "properties": {
+                        "add": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "description": "Items to add"
+                        },
+                        "remove": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "description": "Items to remove"
+                        }
+                    },
+                    "required": [
+                        "add",
+                        "remove"
+                    ]
+                }
+            },
+            "required": [
+                "features",
+                "user_interactions"
+            ]
+        },
+        "design_preferences": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "theme": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "current_value": [],
+                    "properties": {
+                        "add": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "description": "Items to add"
+                        },
+                        "remove": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "description": "Items to remove"
+                        }
+                    },
+                    "required": [
+                        "add",
+                        "remove"
+                    ]
+                },
+                "primary_color": {
+                    "type": "string"
+                },
+                "secondary_color": {
+                    "type": "string"
+                },
+                "layout": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "current_value": [],
+                    "properties": {
+                        "add": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "description": "Items to add"
+                        },
+                        "remove": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "description": "Items to remove"
+                        }
+                    },
+                    "required": [
+                        "add",
+                        "remove"
+                    ]
+                },
+                "navigation_style": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "current_value": [],
+                    "properties": {
+                        "add": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "description": "Items to add"
+                        },
+                        "remove": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "description": "Items to remove"
+                        }
+                    },
+                    "required": [
+                        "add",
+                        "remove"
+                    ]
+                },
+                "branding": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "brand_name": {
+                            "type": "string"
+                        },
+                        "tagline": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "brand_name",
+                        "tagline"
+                    ]
+                },
+                "typography": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "current_value": [],
+                    "properties": {
+                        "add": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "description": "Items to add"
+                        },
+                        "remove": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "description": "Items to remove"
+                        }
+                    },
+                    "required": [
+                        "add",
+                        "remove"
+                    ]
+                },
+                "logo": {
+                    "type": "string"
+                },
+                "splash_screen": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "theme",
+                "primary_color",
+                "secondary_color",
+                "layout",
+                "navigation_style",
+                "branding",
+                "typography",
+                "logo",
+                "splash_screen"
+            ]
+        },
+        "content_management": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "type": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "current_value": [],
+                    "properties": {
+                        "add": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "description": "Items to add"
+                        },
+                        "remove": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "description": "Items to remove"
+                        }
+                    },
+                    "required": [
+                        "add",
+                        "remove"
+                    ]
+                },
+                "content_source": {
+                    "type": "string"
+                },
+                "update_frequency": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "current_value": [],
+                    "properties": {
+                        "add": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "description": "Items to add"
+                        },
+                        "remove": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            },
+                            "description": "Items to remove"
+                        }
+                    },
+                    "required": [
+                        "add",
+                        "remove"
+                    ]
+                }
+            },
+            "required": [
+                "type",
+                "content_source",
+                "update_frequency"
+            ]
+        },
+        "integration_requirements": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "third_party_apis": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "add": {
+                            "type": "array",
+                            "description": "Items to add to Field",
+                            "items": {
+                                "type": "object"
+                            }
+                        },
+                        "remove": {
+                            "type": "array",
+                            "description": "Items to remove from Field",
+                            "items": {
+                                "type": "object"
+                            }
+                        },
+                        "other": {
+                            "type": "string",
+                            "description": "Other changes to Field not covered by add/remove"
+                        }
+                    },
+                    "required": [
+                        "add",
+                        "remove",
+                        "other"
+                    ],
+                    "current_value": [
+                        {
+                            "api_name": "Placeholder API",
+                            "purpose": "Placeholder Purpose"
+                        }
+                    ],
+                    "type_direct": "array"
+                }
+            },
+            "required": [
+                "third_party_apis"
+            ]
+        },
+        "offline_capabilities": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "offline_support": {
+                    "type": "boolean"
+                },
+                "service_worker": {
+                    "type": "boolean"
+                },
+                "cache_storage": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "offline_support",
+                "service_worker",
+                "cache_storage"
+            ]
+        }
+    },
+    "required": [
+        "user_information",
+        "pwa_purpose",
+        "functional_requirements",
+        "design_preferences",
+        "content_management",
+        "integration_requirements",
+        "offline_capabilities"
+    ]
+}

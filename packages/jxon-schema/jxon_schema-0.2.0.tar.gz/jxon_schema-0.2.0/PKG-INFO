@@ -1,0 +1,341 @@
+Metadata-Version: 2.2
+Name: jxon-schema
+Version: 0.2.0
+Summary: JSON with change tracking - A library for converting between JSON and schemas with change tracking
+Home-page: https://github.com/CoinEZ-JPN/lib_jxon
+Author: Kenta Aratani
+Author-email: Kenta Aratani <kenta.a.desu@gmail.com>
+License: MIT
+Project-URL: Homepage, https://github.com/CoinEZ-JPN/lib_jxon
+Project-URL: Documentation, https://github.com/CoinEZ-JPN/lib_jxon#readme
+Project-URL: Bug Tracker, https://github.com/CoinEZ-JPN/lib_jxon/issues
+Project-URL: Source, https://github.com/CoinEZ-JPN/lib_jxon
+Keywords: json,schema,openai,structured-data
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Utilities
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: openai>=1.0.0
+Provides-Extra: dev
+Requires-Dist: pytest>=7.0.0; extra == "dev"
+Requires-Dist: black>=23.0.0; extra == "dev"
+Requires-Dist: mypy>=1.0.0; extra == "dev"
+Dynamic: author
+Dynamic: home-page
+Dynamic: requires-python
+
+# JXON Library
+
+A Python library for converting between JSON and JSON Schema, specifically designed for applications that need to provide frontend editing capabilities for JSON configuration files.
+
+## Features
+
+- Convert JSON to JSON Schema dynamically based on the actual data structure
+- Support for primitive types (string, number, boolean) without nesting fields
+- Handle arrays properly with add/remove/replace operations
+- Support for objects with nested properties
+- Convert schemas back to JSON for frontend use
+- Preserve clean input files when converting back and forth
+
+## Getting Started
+
+### Installation
+
+```bash
+pip install jxon
+```
+
+### Basic Usage
+
+```python
+from jxon import convert_to_schema, schema_to_json
+
+# Sample JSON object
+json_data = {
+    "name": "My Application",
+    "version": "1.0.0",
+    "settings": {
+        "theme": "dark",
+        "notifications": True
+    },
+    "tags": ["web", "desktop", "mobile"]
+}
+
+# Convert to schema
+schema = convert_to_schema(json_data)
+
+# Convert schema back to JSON
+output_json = schema_to_json(schema)
+```
+
+## Schema Conversion Rules
+
+The library follows these rules when converting JSON to schema:
+
+1. **Primitive types** (string, number, boolean) are represented as primitive types with appropriate type properties
+2. **Arrays** are converted to objects with `add`, `remove`, and `replace` properties
+3. **Objects** are represented as type `object` with sub-properties and types matching the input JSON
+4. By default, each field will have:
+   - Required entries in parent objects (always a list of all properties)
+   - Empty descriptions for all fields
+   - Appropriate default current values
+
+## Schema Default Values
+
+When generating schemas, the library sets the following default values:
+
+- **String fields:**
+  - `current_value`: `""` (empty string)
+  - `description`: `""` (empty string)
+
+- **Boolean fields:**
+  - `current_value`: `false`  
+  - `description`: `""` (empty string)
+
+- **Integer fields:**
+  - `current_value`: `0`
+  - `description`: `""` (empty string)
+
+- **Number fields:**
+  - `current_value`: `0.0`
+  - `description`: `""` (empty string)
+
+- **Array fields:**
+  - Converted to objects with add/remove/replace properties (all array types)
+  - `current_value`: `[]` (empty array)
+  - `description`: `""` (empty string)
+
+- **Object fields:**
+  - Include a `required` array with all property names
+  - No `description` at the root level
+
+## Additional Options
+
+When converting JSON to schema, you can customize the behavior with these options:
+
+```python
+schema = convert_to_schema(
+    json_data,
+    include_description=True,  # Include description fields
+    include_current_value=True,  # Include current_value fields
+    add_required=True,  # Add required properties
+    add_change_fields=True,  # Add add/remove/replace fields
+    wrap_primitives=False  # When true, wrap primitive types in objects
+)
+```
+
+## Examples
+
+### Simple Field Conversion
+
+```json
+// Input JSON
+{
+  "name": "John",
+  "age": 30
+}
+
+// Output Schema
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "",
+      "current_value": ""
+    },
+    "age": {
+      "type": "integer",
+      "description": "",
+      "current_value": 0
+    }
+  },
+  "required": ["name", "age"],
+  "description": ""
+}
+```
+
+### Array Field Conversion
+
+```json
+// Input JSON
+{
+  "tags": ["web", "app", "mobile"]
+}
+
+// Output Schema
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "tags": {
+      "type": "object",
+      "properties": {
+        "add": {
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "remove": {
+          "type": "array",
+          "items": {"type": "string"}
+        },
+        "replace": {
+          "type": "string",
+          "enum": ["web", "app", "mobile"]
+        }
+      },
+      "required": ["add", "remove", "replace"],
+      "description": ""
+    }
+  },
+  "required": ["tags"],
+  "description": ""
+}
+```
+
+## Testing Compatibility
+
+To test compatibility with multiple Python versions, you can use the included tox configuration:
+
+```bash
+# Install tox
+pip install tox
+
+# Run tests on all supported Python versions
+tox
+
+# Run tests on a specific Python version
+tox -e py311
+```
+
+The compatibility tests verify that JXON works correctly across Python 3.8 to 3.13, checking for version-specific features and ensuring consistent behavior.
+
+## Python Version Compatibility
+
+JXON is tested and supported on the following Python versions:
+
+| Python Version | Status |
+|----------------|--------|
+| 3.8            | ✅ Supported |
+| 3.9            | ✅ Supported |
+| 3.10           | ✅ Supported |
+| 3.11           | ✅ Supported (Development Version) |
+| 3.12           | ✅ Supported |
+| 3.13           | ✅ Supported |
+
+### Version-specific considerations
+
+- Python 3.8-3.9: Base functionality works with standard type annotations.
+- Python 3.10+: Supports newer Union type syntax (e.g., `str | int` instead of `Union[str, int]`).
+- Python 3.11+: Takes advantage of improved error messages and performance optimizations.
+
+## OpenAI Structured Outputs Integration
+
+JXON can be used to generate JSON schemas for OpenAI's structured outputs feature, which allows you to constrain the model's output to a specific format defined by a JSON schema.
+
+### Using JXON with OpenAI Structured Outputs
+
+To use JXON with OpenAI's structured outputs:
+
+1. Generate a schema from your JSON data using `convert_to_schema`
+2. Clean the schema for OpenAI compatibility (removing JXON-specific fields)
+3. Use the schema with OpenAI's API
+
+```python
+from jxon import convert_to_schema
+from openai import OpenAI
+import json
+
+# Sample JSON data
+task_json = {
+    "title": "Implement feature X",
+    "description": "Implement the new feature X for the application",
+    "due_date": "2023-12-31",
+    "priority": "high",
+    "tags": ["feature", "development", "important"],
+    "assignee": {
+        "name": "Jane Smith",
+        "email": "jane.smith@example.com"
+    },
+    "status": "in progress"
+}
+
+# Generate schema
+schema = convert_to_schema(task_json)
+
+# Clean schema for OpenAI (remove JXON-specific fields)
+def clean_schema_for_openai(schema_obj):
+    if isinstance(schema_obj, dict):
+        # Remove JXON-specific fields
+        schema_obj.pop('current_value', None)
+        schema_obj.pop('description', None)
+        
+        # Ensure required fields exist in properties
+        if 'properties' in schema_obj and 'required' in schema_obj:
+            for field in list(schema_obj['required']):
+                if field not in schema_obj['properties']:
+                    schema_obj['properties'][field] = {"type": "string"}
+        
+        # Process nested objects
+        for key, value in list(schema_obj.items()):
+            if isinstance(value, (dict, list)):
+                clean_schema_for_openai(value)
+    elif isinstance(schema_obj, list):
+        for item in schema_obj:
+            if isinstance(item, (dict, list)):
+                clean_schema_for_openai(item)
+    
+    return schema_obj
+
+# Clean the schema
+cleaned_schema = clean_schema_for_openai(schema)
+
+# Call OpenAI API with the schema
+client = OpenAI(api_key="your-api-key")
+response = client.chat.completions.create(
+    model="gpt-4o-2024-08-06",
+    messages=[
+        {"role": "system", "content": "You are a helpful assistant that outputs structured JSON data."},
+        {"role": "user", "content": "Create a task for implementing a new feature in a mobile app."}
+    ],
+    response_format={
+        "type": "json_schema",
+        "json_schema": {
+            "name": "structured_response",
+            "schema": cleaned_schema,
+            "strict": True
+        }
+    }
+)
+```
+
+### OpenAI Structured Outputs Limitations
+
+When using JXON with OpenAI's structured outputs, be aware of these limitations:
+
+1. **Nesting depth and size**: OpenAI schemas may have up to 100 object properties total, with up to 5 levels of nesting.
+2. **Required fields**: All properties must be listed in the `required` array, and all required fields must exist in the `properties` object.
+3. **Schema validation**: OpenAI performs strict validation against the provided schema.
+
+For more information, refer to the [official OpenAI documentation on structured outputs](https://platform.openai.com/docs/guides/structured-outputs?lang=python&format=without-parse&example=structured-data).
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.

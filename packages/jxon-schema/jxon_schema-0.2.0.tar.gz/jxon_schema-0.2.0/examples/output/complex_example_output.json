@@ -1,0 +1,73 @@
+{
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "user_information": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "replace": {
+                    "type": "object",
+                    "description": "Value to replace user_information with"
+                }
+            },
+            "required": [
+                "replace"
+            ],
+            "description": "user_information",
+            "current_value": {
+                "personal": {
+                    "name": "Jane Smith",
+                    "email": "jane@example.com",
+                    "age": 32
+                },
+                "address": {
+                    "street": "123 Main St",
+                    "city": "Anytown",
+                    "country": "USA",
+                    "postal_code": "12345"
+                }
+            }
+        },
+        "app_settings": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "replace": {
+                    "type": "object",
+                    "description": "Value to replace app_settings with"
+                }
+            },
+            "required": [
+                "replace"
+            ],
+            "description": "app_settings",
+            "current_value": {
+                "language_preference": {
+                    "description": "Languages the user wants in app",
+                    "current_value": [
+                        "English"
+                    ]
+                },
+                "authentication": {
+                    "use_oauth2": {
+                        "description": "Whether OAuth2 is used for authentication",
+                        "current_value": false
+                    },
+                    "oauth_providers": [
+                        "Google",
+                        "GitHub"
+                    ]
+                },
+                "ui_theme": {
+                    "description": "UI theme preference",
+                    "current_value": "light"
+                }
+            }
+        }
+    },
+    "required": [
+        "user_information",
+        "app_settings"
+    ]
+}

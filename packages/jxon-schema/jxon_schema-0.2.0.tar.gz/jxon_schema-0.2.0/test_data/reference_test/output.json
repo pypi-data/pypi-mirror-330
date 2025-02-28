@@ -1,0 +1,568 @@
+{
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "user_information": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "language_preference": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "add": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "remove": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "replace": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "required": [
+                        "add",
+                        "remove",
+                        "replace"
+                    ],
+                    "current_value": [],
+                    "description": ""
+                },
+                "authentication": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "use_oauth2": {
+                            "type": "boolean",
+                            "current_value": false,
+                            "description": ""
+                        },
+                        "oauth_provider": {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "properties": {
+                                "add": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                },
+                                "remove": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                },
+                                "replace": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "required": [
+                                "add",
+                                "remove",
+                                "replace"
+                            ],
+                            "current_value": [],
+                            "description": ""
+                        }
+                    },
+                    "required": [
+                        "use_oauth2",
+                        "oauth_provider"
+                    ]
+                }
+            },
+            "required": [
+                "language_preference",
+                "authentication"
+            ]
+        },
+        "pwa_purpose": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "app_name": {
+                    "type": "string",
+                    "current_value": "",
+                    "description": ""
+                },
+                "short_description": {
+                    "type": "string",
+                    "current_value": "",
+                    "description": ""
+                },
+                "target_audience": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "add": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "remove": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "replace": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "required": [
+                        "add",
+                        "remove",
+                        "replace"
+                    ],
+                    "current_value": [],
+                    "description": ""
+                },
+                "expected_outcome": {
+                    "type": "string",
+                    "current_value": "",
+                    "description": ""
+                },
+                "app_category": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "add": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "remove": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "replace": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "required": [
+                        "add",
+                        "remove",
+                        "replace"
+                    ],
+                    "current_value": [],
+                    "description": ""
+                }
+            },
+            "required": [
+                "app_name",
+                "short_description",
+                "target_audience",
+                "expected_outcome",
+                "app_category"
+            ]
+        },
+        "functional_requirements": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "features": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "add": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "remove": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "replace": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "required": [
+                        "add",
+                        "remove",
+                        "replace"
+                    ],
+                    "current_value": [],
+                    "description": ""
+                },
+                "user_interactions": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "add": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "remove": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "replace": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "required": [
+                        "add",
+                        "remove",
+                        "replace"
+                    ],
+                    "current_value": [],
+                    "description": ""
+                }
+            },
+            "required": [
+                "features",
+                "user_interactions"
+            ]
+        },
+        "design_preferences": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "theme": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "add": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "remove": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "replace": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "required": [
+                        "add",
+                        "remove",
+                        "replace"
+                    ],
+                    "current_value": [],
+                    "description": ""
+                },
+                "primary_color": {
+                    "type": "string",
+                    "current_value": "",
+                    "description": ""
+                },
+                "secondary_color": {
+                    "type": "string",
+                    "current_value": "",
+                    "description": ""
+                },
+                "layout": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "add": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "remove": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "replace": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "required": [
+                        "add",
+                        "remove",
+                        "replace"
+                    ],
+                    "current_value": [],
+                    "description": ""
+                },
+                "navigation_style": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "add": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "remove": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "replace": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "required": [
+                        "add",
+                        "remove",
+                        "replace"
+                    ],
+                    "current_value": [],
+                    "description": ""
+                },
+                "branding": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "brand_name": {
+                            "type": "string",
+                            "current_value": "",
+                            "description": ""
+                        },
+                        "tagline": {
+                            "type": "string",
+                            "current_value": "",
+                            "description": ""
+                        }
+                    },
+                    "required": [
+                        "brand_name",
+                        "tagline"
+                    ]
+                },
+                "typography": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "add": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "remove": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "replace": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "required": [
+                        "add",
+                        "remove",
+                        "replace"
+                    ],
+                    "current_value": [],
+                    "description": ""
+                },
+                "logo": {
+                    "type": "string",
+                    "current_value": "",
+                    "description": ""
+                },
+                "splash_screen": {
+                    "type": "string",
+                    "current_value": "",
+                    "description": ""
+                }
+            },
+            "required": [
+                "theme",
+                "primary_color",
+                "secondary_color",
+                "layout",
+                "navigation_style",
+                "branding",
+                "typography",
+                "logo",
+                "splash_screen"
+            ]
+        },
+        "content_management": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "type": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "add": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "remove": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "replace": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "required": [
+                        "add",
+                        "remove",
+                        "replace"
+                    ],
+                    "current_value": [],
+                    "description": ""
+                },
+                "content_source": {
+                    "type": "string",
+                    "current_value": "",
+                    "description": ""
+                },
+                "update_frequency": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "add": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "remove": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "replace": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "required": [
+                        "add",
+                        "remove",
+                        "replace"
+                    ],
+                    "current_value": [],
+                    "description": ""
+                }
+            },
+            "required": [
+                "type",
+                "content_source",
+                "update_frequency"
+            ]
+        },
+        "integration_requirements": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "third_party_apis": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "current_value": "",
+                        "description": ""
+                    },
+                    "current_value": [],
+                    "description": ""
+                }
+            },
+            "required": [
+                "third_party_apis"
+            ]
+        },
+        "offline_capabilities": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "offline_support": {
+                    "type": "boolean",
+                    "current_value": false,
+                    "description": ""
+                },
+                "service_worker": {
+                    "type": "boolean",
+                    "current_value": false,
+                    "description": ""
+                },
+                "cache_storage": {
+                    "type": "boolean",
+                    "current_value": false,
+                    "description": ""
+                }
+            },
+            "required": [
+                "offline_support",
+                "service_worker",
+                "cache_storage"
+            ]
+        }
+    },
+    "required": [
+        "user_information",
+        "pwa_purpose",
+        "functional_requirements",
+        "design_preferences",
+        "content_management",
+        "integration_requirements",
+        "offline_capabilities"
+    ]
+}

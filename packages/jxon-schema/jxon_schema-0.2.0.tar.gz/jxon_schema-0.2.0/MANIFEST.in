@@ -1,0 +1,16 @@
+include README.md
+include LICENSE
+include requirements.txt
+include pyproject.toml
+
+# Include example files
+recursive-include examples *.py
+recursive-include examples/output *.json
+
+# Include test data but exclude test cache files
+recursive-include test_data *.json
+recursive-include tests *.py
+global-exclude __pycache__
+global-exclude *.py[cod]
+global-exclude *.so
+global-exclude .DS_Store

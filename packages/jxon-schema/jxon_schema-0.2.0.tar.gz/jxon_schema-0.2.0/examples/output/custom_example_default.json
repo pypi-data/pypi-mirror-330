@@ -1,0 +1,69 @@
+{
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "product": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "replace": {
+                    "type": "object",
+                    "description": "Value to replace with"
+                }
+            },
+            "description": "Product information",
+            "current_value": {
+                "name": "Smart Watch",
+                "price": 199.99,
+                "in_stock": true,
+                "colors": [
+                    "Black",
+                    "Silver",
+                    "Gold"
+                ]
+            },
+            "required": [
+                "replace"
+            ]
+        },
+        "categories": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "add": {
+                    "type": "array",
+                    "description": "Items to add to categories",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "remove": {
+                    "type": "array",
+                    "description": "Items to remove from categories",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "other": {
+                    "type": "string",
+                    "description": "Other changes to categories not covered by add/remove"
+                }
+            },
+            "required": [
+                "add",
+                "remove",
+                "other"
+            ],
+            "description": "categories",
+            "current_value": [
+                "Electronics",
+                "Wearables",
+                "Fitness"
+            ]
+        }
+    },
+    "required": [
+        "product",
+        "categories"
+    ]
+}

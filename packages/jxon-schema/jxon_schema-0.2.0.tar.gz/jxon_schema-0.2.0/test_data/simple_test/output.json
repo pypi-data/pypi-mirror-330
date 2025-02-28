@@ -1,0 +1,26 @@
+{
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "name": {
+            "type": "string",
+            "current_value": "",
+            "description": ""
+        },
+        "version": {
+            "type": "string",
+            "current_value": "",
+            "description": ""
+        },
+        "description": {
+            "type": "string",
+            "current_value": "",
+            "description": ""
+        }
+    },
+    "required": [
+        "name",
+        "version",
+        "description"
+    ]
+}

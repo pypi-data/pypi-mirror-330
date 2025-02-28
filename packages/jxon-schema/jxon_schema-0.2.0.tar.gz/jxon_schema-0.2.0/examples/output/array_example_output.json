@@ -1,0 +1,108 @@
+{
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "todo_list": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "add": {
+                    "type": "array",
+                    "description": "Items to add",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "remove": {
+                    "type": "array",
+                    "description": "Items to remove",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "other": {
+                    "type": "string",
+                    "description": "Other changes not covered by add/remove"
+                }
+            },
+            "description": "User's todo list",
+            "current_value": [
+                "Buy groceries",
+                "Call mom",
+                "Finish report"
+            ],
+            "required": [
+                "add",
+                "remove",
+                "other"
+            ]
+        },
+        "tags": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "add": {
+                    "type": "array",
+                    "description": "Items to add to tags",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "remove": {
+                    "type": "array",
+                    "description": "Items to remove from tags",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "other": {
+                    "type": "string",
+                    "description": "Other changes to tags not covered by add/remove"
+                }
+            },
+            "required": [
+                "add",
+                "remove",
+                "other"
+            ],
+            "description": "tags",
+            "current_value": [
+                "work",
+                "personal",
+                "urgent"
+            ]
+        },
+        "completed_tasks": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "add": {
+                    "type": "array",
+                    "description": "Items to add to completed_tasks",
+                    "items": {}
+                },
+                "remove": {
+                    "type": "array",
+                    "description": "Items to remove from completed_tasks",
+                    "items": {}
+                },
+                "other": {
+                    "type": "string",
+                    "description": "Other changes to completed_tasks not covered by add/remove"
+                }
+            },
+            "required": [
+                "add",
+                "remove",
+                "other"
+            ],
+            "description": "completed_tasks",
+            "current_value": []
+        }
+    },
+    "required": [
+        "todo_list",
+        "tags",
+        "completed_tasks"
+    ]
+}

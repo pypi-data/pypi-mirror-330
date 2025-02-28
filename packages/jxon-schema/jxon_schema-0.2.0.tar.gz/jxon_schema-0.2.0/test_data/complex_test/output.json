@@ -1,0 +1,135 @@
+{
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "app_data": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "current_value": "",
+                    "description": ""
+                },
+                "version": {
+                    "type": "number",
+                    "current_value": 0.0,
+                    "description": ""
+                },
+                "description": {
+                    "type": "string",
+                    "current_value": "",
+                    "description": ""
+                }
+            },
+            "required": [
+                "name",
+                "version",
+                "description"
+            ]
+        },
+        "features": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "offline_mode": {
+                    "type": "boolean",
+                    "current_value": false,
+                    "description": ""
+                },
+                "push_notifications": {
+                    "type": "boolean",
+                    "current_value": false,
+                    "description": ""
+                },
+                "background_sync": {
+                    "type": "boolean",
+                    "current_value": false,
+                    "description": ""
+                }
+            },
+            "required": [
+                "offline_mode",
+                "push_notifications",
+                "background_sync"
+            ]
+        },
+        "user_preferences": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "theme": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "add": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "remove": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "replace": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "required": [
+                        "add",
+                        "remove",
+                        "replace"
+                    ],
+                    "current_value": [],
+                    "description": ""
+                },
+                "languages": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "add": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "remove": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "replace": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "required": [
+                        "add",
+                        "remove",
+                        "replace"
+                    ],
+                    "current_value": [],
+                    "description": ""
+                }
+            },
+            "required": [
+                "theme",
+                "languages"
+            ]
+        }
+    },
+    "required": [
+        "app_data",
+        "features",
+        "user_preferences"
+    ]
+}

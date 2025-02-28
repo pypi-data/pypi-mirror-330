@@ -1,0 +1,921 @@
+{
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "user_information": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "language_preference": {
+                    "type": "object",
+                    "description": "Languages the user wants in app",
+                    "current_value": [],
+                    "additionalProperties": false,
+                    "properties": {
+                        "add": {
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "English",
+                                    "Japanese"
+                                ]
+                            },
+                            "description": "Languages to add"
+                        },
+                        "remove": {
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "English",
+                                    "Japanese"
+                                ]
+                            },
+                            "description": "Languages to remove"
+                        },
+                        "other": {
+                            "type": "string",
+                            "description": "I want to add a language that's not listed above."
+                        }
+                    },
+                    "required": [
+                        "add",
+                        "remove",
+                        "other"
+                    ]
+                },
+                "authentication": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "use_oauth2": {
+                            "type": "object",
+                            "description": "Whether OAuth2 is used for authentication",
+                            "current_value": false,
+                            "additionalProperties": false,
+                            "properties": {
+                                "replace": {
+                                    "type": "boolean",
+                                    "description": "Set if OAuth2 should be used for authentication."
+                                }
+                            },
+                            "required": [
+                                "replace"
+                            ]
+                        },
+                        "oauth_provider": {
+                            "type": "object",
+                            "description": "OAuth2 provider details",
+                            "additionalProperties": false,
+                            "current_value": [],
+                            "properties": {
+                                "add": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string",
+                                        "enum": [
+                                            "Google",
+                                            "Facebook",
+                                            "Twitter",
+                                            "GitHub",
+                                            "Apple",
+                                            "Microsoft"
+                                        ]
+                                    },
+                                    "description": "OAuth providers to add"
+                                },
+                                "remove": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string",
+                                        "enum": [
+                                            "Google",
+                                            "Facebook",
+                                            "Twitter",
+                                            "GitHub",
+                                            "Apple",
+                                            "Microsoft"
+                                        ]
+                                    },
+                                    "description": "OAuth providers to remove"
+                                },
+                                "other": {
+                                    "type": "string",
+                                    "description": "I want to add an OAuth provider not listed above."
+                                }
+                            },
+                            "required": [
+                                "add",
+                                "remove",
+                                "other"
+                            ]
+                        }
+                    },
+                    "required": [
+                        "use_oauth2",
+                        "oauth_provider"
+                    ]
+                }
+            },
+            "required": [
+                "language_preference",
+                "authentication"
+            ]
+        },
+        "pwa_purpose": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "app_name": {
+                    "type": "object",
+                    "description": "Name of the app",
+                    "additionalProperties": false,
+                    "current_value": "",
+                    "properties": {
+                        "replace": {
+                            "type": "string",
+                            "description": "App name to replace"
+                        }
+                    },
+                    "required": [
+                        "replace"
+                    ]
+                },
+                "short_description": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "current_value": "",
+                    "description": "Brief description of the app",
+                    "properties": {
+                        "add": {
+                            "type": "string",
+                            "description": "Description to add"
+                        },
+                        "replace": {
+                            "type": "string",
+                            "description": "Description to replace"
+                        }
+                    },
+                    "required": [
+                        "add",
+                        "replace"
+                    ]
+                },
+                "target_audience": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "current_value": [],
+                    "description": "Intended users of the app",
+                    "properties": {
+                        "add": {
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "Male",
+                                    "Female",
+                                    "Kids",
+                                    "Teens",
+                                    "Adults",
+                                    "Business",
+                                    "Education",
+                                    "Seniors",
+                                    "Parents",
+                                    "Professionals",
+                                    "Gamers",
+                                    "Entrepreneurs"
+                                ]
+                            },
+                            "description": "Target audiences to add"
+                        },
+                        "remove": {
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "Male",
+                                    "Female",
+                                    "Kids",
+                                    "Teens",
+                                    "Adults",
+                                    "Business",
+                                    "Education",
+                                    "Seniors",
+                                    "Parents",
+                                    "Professionals",
+                                    "Gamers",
+                                    "Entrepreneurs"
+                                ]
+                            },
+                            "description": "Target audiences to remove"
+                        },
+                        "other": {
+                            "type": "string",
+                            "description": "I want to specify a target audience not listed above."
+                        }
+                    },
+                    "required": [
+                        "add",
+                        "remove",
+                        "other"
+                    ]
+                },
+                "expected_outcome": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "current_value": "",
+                    "description": "The expected outcome from using the app",
+                    "properties": {
+                        "add": {
+                            "type": "string",
+                            "description": "Outcomes to add"
+                        },
+                        "replace": {
+                            "type": "string",
+                            "description": "Outcomes to replace"
+                        }
+                    },
+                    "required": [
+                        "add",
+                        "replace"
+                    ]
+                },
+                "app_category": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "current_value": [],
+                    "description": "The category of the app",
+                    "properties": {
+                        "add": {
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "Utility",
+                                    "Lifestyle",
+                                    "Games",
+                                    "Business",
+                                    "Health",
+                                    "Finance",
+                                    "Education",
+                                    "Social Media",
+                                    "E-commerce",
+                                    "News",
+                                    "Music",
+                                    "Productivity",
+                                    "Travel",
+                                    "Food & Drink",
+                                    "Weather",
+                                    "Sports"
+                                ]
+                            },
+                            "description": "App categories to add"
+                        },
+                        "remove": {
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "Utility",
+                                    "Lifestyle",
+                                    "Games",
+                                    "Business",
+                                    "Health",
+                                    "Finance",
+                                    "Education",
+                                    "Social Media",
+                                    "E-commerce",
+                                    "News",
+                                    "Music",
+                                    "Productivity",
+                                    "Travel",
+                                    "Food & Drink",
+                                    "Weather",
+                                    "Sports"
+                                ]
+                            },
+                            "description": "App categories to remove"
+                        },
+                        "other": {
+                            "type": "string",
+                            "description": "I want to specify a custom app category."
+                        }
+                    },
+                    "required": [
+                        "add",
+                        "remove",
+                        "other"
+                    ]
+                }
+            },
+            "required": [
+                "app_name",
+                "short_description",
+                "target_audience",
+                "expected_outcome",
+                "app_category"
+            ]
+        },
+        "functional_requirements": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "features": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "current_value": [],
+                    "description": "List of functional features for the app",
+                    "properties": {
+                        "feature_name": {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "current_value": [],
+                            "description": "The name of the feature",
+                            "properties": {
+                                "add": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string",
+                                        "enum": [
+                                            "User authentication",
+                                            "Push notifications",
+                                            "Data storage",
+                                            "In-app messaging",
+                                            "File upload",
+                                            "Camera access",
+                                            "Geolocation",
+                                            "Background sync",
+                                            "Service worker",
+                                            "Offline support",
+                                            "Analytics",
+                                            "Voice input",
+                                            "In-app purchases"
+                                        ]
+                                    },
+                                    "description": "Features to add"
+                                },
+                                "remove": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string",
+                                        "enum": [
+                                            "User authentication",
+                                            "Push notifications",
+                                            "Data storage",
+                                            "In-app messaging",
+                                            "File upload",
+                                            "Camera access",
+                                            "Geolocation",
+                                            "Background sync",
+                                            "Service worker",
+                                            "Offline support",
+                                            "Analytics",
+                                            "Voice input",
+                                            "In-app purchases"
+                                        ]
+                                    },
+                                    "description": "Features to remove"
+                                },
+                                "other": {
+                                    "type": "string",
+                                    "description": "I want to specify a custom feature."
+                                }
+                            },
+                            "required": [
+                                "add",
+                                "remove",
+                                "other"
+                            ]
+                        }
+                    },
+                    "required": [
+                        "feature_name"
+                    ]
+                },
+                "user_interactions": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "description": "List of user interactions with the app",
+                    "properties": {
+                        "interaction_name": {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "current_value": [],
+                            "description": "The name of the user interaction",
+                            "properties": {
+                                "add": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string",
+                                        "enum": [
+                                            "form submission",
+                                            "button click",
+                                            "swipe",
+                                            "drag and drop"
+                                        ]
+                                    },
+                                    "description": "Interactions to add"
+                                },
+                                "remove": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string",
+                                        "enum": [
+                                            "form submission",
+                                            "button click",
+                                            "swipe",
+                                            "drag and drop"
+                                        ]
+                                    },
+                                    "description": "Interactions to remove"
+                                },
+                                "other": {
+                                    "type": "string",
+                                    "description": "I want to specify a custom user interaction."
+                                }
+                            },
+                            "required": [
+                                "add",
+                                "remove",
+                                "other"
+                            ]
+                        }
+                    },
+                    "required": [
+                        "interaction_name"
+                    ]
+                }
+            },
+            "required": [
+                "features",
+                "user_interactions"
+            ]
+        },
+        "design_preferences": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "theme": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "description": "Color scheme for the app",
+                    "properties": {
+                        "color_scheme": {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "current_value": "",
+                            "description": "Select a color scheme",
+                            "properties": {
+                                "replace": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string",
+                                        "enum": [
+                                            "Light",
+                                            "Dark",
+                                            "Auto",
+                                            "Custom"
+                                        ]
+                                    },
+                                    "description": "Color schemes to replace"
+                                }
+                            },
+                            "required": [
+                                "replace"
+                            ]
+                        },
+                        "primary_color": {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "current_value": "",
+                            "description": "Primary color of the app",
+                            "properties": {
+                                "replace": {
+                                    "type": "string",
+                                    "description": "Primary color to replace"
+                                }
+                            },
+                            "required": [
+                                "replace"
+                            ]
+                        },
+                        "secondary_color": {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "current_value": "",
+                            "description": "Secondary color of the app",
+                            "properties": {
+                                "replace": {
+                                    "type": "string",
+                                    "description": "Secondary color to replace"
+                                }
+                            },
+                            "required": [
+                                "replace"
+                            ]
+                        }
+                    },
+                    "required": [
+                        "color_scheme",
+                        "primary_color",
+                        "secondary_color"
+                    ]
+                },
+                "layout": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "current_value": [],
+                    "description": "Layout style of the app",
+                    "properties": {
+                        "add": {
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "Single Column",
+                                    "Multi Column",
+                                    "Grid",
+                                    "Tabbed",
+                                    "Split View",
+                                    "Full-Screen",
+                                    "Modal View"
+                                ]
+                            },
+                            "description": "Layout styles to add"
+                        },
+                        "remove": {
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "Single Column",
+                                    "Multi Column",
+                                    "Grid",
+                                    "Tabbed",
+                                    "Split View",
+                                    "Full-Screen",
+                                    "Modal View"
+                                ]
+                            },
+                            "description": "Layout styles to remove"
+                        },
+                        "other": {
+                            "type": "string",
+                            "description": "I want to specify a custom layout style."
+                        }
+                    },
+                    "required": [
+                        "add",
+                        "remove",
+                        "other"
+                    ]
+                },
+                "navigation_style": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "current_value": [],
+                    "description": "Style of the app's navigation",
+                    "properties": {
+                        "replace": {
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "Side Navigation",
+                                    "Top Navigation",
+                                    "Bottom Navigation",
+                                    "Drawer",
+                                    "Floating Action Button"
+                                ]
+                            },
+                            "description": "Navigation styles to replace"
+                        },
+                        "other": {
+                            "type": "string",
+                            "description": "I want to specify a custom navigation style."
+                        }
+                    },
+                    "required": [
+                        "replace",
+                        "other"
+                    ]
+                },
+                "branding": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "tagline": {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "current_value": "",
+                            "description": "Tagline for the app",
+                            "properties": {
+                                "replace": {
+                                    "type": "string",
+                                    "description": "Tagline to replace"
+                                }
+                            },
+                            "required": [
+                                "replace"
+                            ]
+                        }
+                    },
+                    "required": [
+                        "tagline"
+                    ]
+                },
+                "typography": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "current_value": "",
+                    "description": "Typography settings for the app",
+                    "properties": {
+                        "font_family": {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "current_value": "",
+                            "description": "Font family for the app",
+                            "properties": {
+                                "replace": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string",
+                                        "enum": [
+                                            "Sans-serif",
+                                            "Serif",
+                                            "Monospace",
+                                            "Custom"
+                                        ]
+                                    },
+                                    "description": "Font families to replace"
+                                }
+                            },
+                            "required": [
+                                "replace"
+                            ]
+                        }
+                    },
+                    "required": [
+                        "font_family"
+                    ]
+                },
+                "splash_screen": {
+                    "type": "string",
+                    "description": "Description of the splash screen design"
+                },
+                "other": {
+                    "type": "string",
+                    "description": "I want to specify additional design preferences that are not covered above."
+                }
+            },
+            "required": [
+                "theme",
+                "layout",
+                "navigation_style",
+                "branding",
+                "typography",
+                "splash_screen",
+                "other"
+            ]
+        },
+        "content_management": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "type": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "current_value": [],
+                    "description": "Type of content management system",
+                    "properties": {
+                        "add": {
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "CMS",
+                                    "Custom Backend",
+                                    "Static Files"
+                                ]
+                            },
+                            "description": "Content management systems to add"
+                        },
+                        "remove": {
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "CMS",
+                                    "Custom Backend",
+                                    "Static Files"
+                                ]
+                            },
+                            "description": "Content management systems to remove"
+                        },
+                        "other": {
+                            "type": "string",
+                            "description": "I want to specify a custom content management type."
+                        }
+                    },
+                    "required": [
+                        "add",
+                        "remove",
+                        "other"
+                    ]
+                },
+                "content_source": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "current_value": "",
+                    "description": "Source of the content",
+                    "properties": {
+                        "add": {
+                            "type": "string",
+                            "description": "Content sources to add"
+                        },
+                        "remove": {
+                            "type": "string",
+                            "description": "Content sources to remove"
+                        }
+                    },
+                    "required": [
+                        "add",
+                        "remove"
+                    ]
+                },
+                "update_frequency": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "current_value": "",
+                    "description": "How often content is updated",
+                    "properties": {
+                        "replace": {
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "Hourly",
+                                    "Daily",
+                                    "Weekly",
+                                    "Monthly"
+                                ]
+                            },
+                            "description": "Update frequencies to replace"
+                        },
+                        "other": {
+                            "type": "string",
+                            "description": "I want to specify a custom update frequency."
+                        }
+                    },
+                    "required": [
+                        "replace",
+                        "other"
+                    ]
+                }
+            },
+            "required": [
+                "type",
+                "content_source",
+                "update_frequency"
+            ]
+        },
+        "integration_requirements": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "third_party_apis": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "current_value": [],
+                    "description": "List of third-party APIs the app needs to integrate with",
+                    "properties": {
+                        "api_name": {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "current_value": "",
+                            "description": "Name of the third-party API",
+                            "properties": {
+                                "add": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "description": "APIs to add"
+                                },
+                                "remove": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "description": "APIs to remove"
+                                }
+                            },
+                            "required": [
+                                "add",
+                                "remove"
+                            ]
+                        },
+                        "purpose": {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "current_value": "",
+                            "description": "Purpose of the API integration",
+                            "properties": {
+                                "add": {
+                                    "type": "string",
+                                    "description": "Purpose details to add"
+                                },
+                                "remove": {
+                                    "type": "string",
+                                    "description": "Purpose details to remove"
+                                }
+                            },
+                            "required": [
+                                "add",
+                                "remove"
+                            ]
+                        }
+                    },
+                    "required": [
+                        "api_name",
+                        "purpose"
+                    ]
+                },
+                "other": {
+                    "type": "string",
+                    "description": "I want to specify additional integration requirements."
+                }
+            },
+            "required": [
+                "third_party_apis",
+                "other"
+            ]
+        },
+        "offline_capabilities": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "offline_support": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "current_value": false,
+                    "description": "Whether the app supports offline usage",
+                    "properties": {
+                        "replace": {
+                            "type": "boolean",
+                            "description": "Offline support status to replace"
+                        }
+                    },
+                    "required": [
+                        "replace"
+                    ]
+                },
+                "service_worker": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "current_value": true,
+                    "description": "Whether the app uses a service worker",
+                    "properties": {
+                        "replace": {
+                            "type": "boolean",
+                            "description": "Service worker status to replace"
+                        }
+                    },
+                    "required": [
+                        "replace"
+                    ]
+                },
+                "cache_storage": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "current_value": false,
+                    "description": "Whether the app uses cache storage",
+                    "properties": {
+                        "replace": {
+                            "type": "boolean",
+                            "description": "Cache storage status to replace"
+                        }
+                    },
+                    "required": [
+                        "replace"
+                    ]
+                }
+            },
+            "required": [
+                "offline_support",
+                "service_worker",
+                "cache_storage"
+            ]
+        }
+    },
+    "required": [
+        "user_information",
+        "pwa_purpose",
+        "design_preferences",
+        "functional_requirements",
+        "content_management",
+        "integration_requirements",
+        "offline_capabilities"
+    ]
+}
