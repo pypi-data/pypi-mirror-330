@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk_datalayer_jupyter_kernels=self.webpackChunk_datalayer_jupyter_kernels||[]).push([[205],{205:(e,r,a)=>{a.r(r),a.d(r,{default:()=>t});const t={id:"@datalayer/jupyter-kernels:placeholder",description:"Jupyter Kernels Placeholder.",autoStart:!0,requires:[],activate:e=>{}}}}]);
