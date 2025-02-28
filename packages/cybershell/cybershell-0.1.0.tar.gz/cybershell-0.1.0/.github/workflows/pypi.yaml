@@ -1,0 +1,45 @@
+name: Build and Release
+
+on:
+  push:
+    branches:
+    - main
+
+jobs:
+  build:
+    if: startsWith(github.event.head_commit.message, 'pub')
+    runs-on: ubuntu-latest
+    steps:
+    # Check out the repository with full history for version detection
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    # Set up uv
+    - name: Install uv
+      uses: astral-sh/setup-uv@v5
+
+    # Set up Python using uv
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version-file: ".python-version"
+
+    # Install project dependencies
+    - name: Install the project
+      run: uv sync --all-extras --dev
+
+    # Bump the version using bump-my-version tool
+    - name: Bump Version
+      run: ./.venv/bin/bump-my-version bump minor --allow-dirty
+
+    # Build the distribution using uv
+    - name: Build package
+      run: uv build
+
+    # Publish to PyPI using uv
+    - name: Publish package to PyPI
+      env:
+        PYPI_TOKEN: ${{ secrets.PYPI_TOKEN }}
+      run: uv publish --username __token__ --password $PYPI_TOKEN
