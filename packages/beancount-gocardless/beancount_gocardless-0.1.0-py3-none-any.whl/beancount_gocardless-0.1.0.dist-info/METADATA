@@ -1,0 +1,18 @@
+Metadata-Version: 2.3
+Name: beancount-gocardless
+Version: 0.1.0
+Summary: 
+License: MIT
+Requires-Python: >=3.12
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Dist: beancount
+Requires-Dist: beangulp
+Requires-Dist: pyyaml
+Requires-Dist: requests
+Requires-Dist: requests-cache
+Description-Content-Type: text/markdown
+
+
