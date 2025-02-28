@@ -1,0 +1,33 @@
+codecov:
+  require_ci_to_pass: true
+
+coverage:
+  status:
+    project:
+      default:
+        target: 80
+    patch:
+      default:
+        target: 80
+
+parsers:
+  gcov:
+    branch_detection:
+      conditional: yes
+      loop: yes
+      method: no
+      macro: no
+
+comment:
+  layout: "reach,diff,flags,files,footer"
+  behavior: default
+  require_changes: false
+
+ignore:
+  - "**/tests"
+  - "**/Catch2"
+  - "**/eigen"
+  - "**/nanoflann"
+
+fixes:
+  - "py4dgeo/::"
