@@ -1,0 +1,751 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>ms3 - Parsing MuseScore 3 and 4 &#8212; ms3 1.2.4.post0.dev2+gf30d960 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+<link href="_static/styles/bootstrap.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=796348d33e8b1d947c94" rel="stylesheet">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="_static/thebelab.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94">
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/thebelab-helper.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'index';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Installing ms3" href="install.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="docsearch:language" content="en">
+  </head>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  
+  <input type="checkbox" class="sidebar-toggle" name="__primary" id="__primary">
+  <label class="overlay overlay-primary" for="__primary"></label>
+
+  
+  <input type="checkbox" class="sidebar-toggle" name="__secondary" id="__secondary">
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+      
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+    </div>
+  </div>
+
+  
+  <nav class="bd-header navbar navbar-expand-lg bd-navbar" id="navbar-main"><div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+      <span class="fa-solid fa-bars"></span>
+  </label>
+  <div id="navbar-start">
+    
+    
+  
+
+
+<a class="navbar-brand logo" href="#">
+
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+    <p class="title logo__title">ms3 1.2.4.post0.dev2+gf30d960 documentation</p>
+  
+</a>
+    
+  </div>
+
+  
+  <div class="col-lg-9 navbar-header-items">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="install.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="quick.html">
+                        Quick Reference
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="manual/index.html">
+                        Manual
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="reference.html">
+                        Developers' Reference
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="contributing.html">
+                        Contributions & Help
+                      </a>
+                    </li>
+                
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="license.html">
+                        License
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="authors.html">
+                        Authors
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="changelog.html">
+                        Changelog
+                      </a>
+                    </li>
+                
+                </div>
+            </div>
+            
+    </ul>
+</nav>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+        <div class="navbar-end-item navbar-persistent--container">
+          
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+        </div>
+      
+      
+      <div class="navbar-end-item">
+        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+</button>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+
+
+  
+  
+    <div class="navbar-persistent--mobile">
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+    </div>
+  
+
+  
+  <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+  </label>
+  
+
+</div>
+  </nav>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="install.html">
+                        Installation
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="quick.html">
+                        Quick Reference
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="manual/index.html">
+                        Manual
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="reference.html">
+                        Developers' Reference
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="contributing.html">
+                        Contributions & Help
+                      </a>
+                    </li>
+                
+            <div class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    More
+                </button>
+                <div class="dropdown-menu">
+                    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="license.html">
+                        License
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="authors.html">
+                        Authors
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="changelog.html">
+                        Changelog
+                      </a>
+                    </li>
+                
+                </div>
+            </div>
+            
+    </ul>
+</nav>
+      </div>
+      
+      </div>
+    
+
+    
+    
+    <div class="sidebar-header-items__end">
+      
+      <div class="navbar-end-item">
+        <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+</button>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+      </ul>
+      </div>
+      
+    </div>
+    
+  </div>
+
+  
+  <div class="sidebar-start-items sidebar-primary__section">
+    <div class="sidebar-start-items__item">
+<h3><a href="#">Table of Contents</a></h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quick.html">Quick Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manual/index.html">Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reference.html">Developers' Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributions &amp; Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="authors.html">Authors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+</ul>
+
+    </div>
+    <div class="sidebar-start-items__item">
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="install.html"
+                          title="next chapter">Installing ms3</a></p>
+  </div>
+    </div>
+    <div class="sidebar-start-items__item">
+<div class="tocsection sourcelink">
+    <a href="_sources/index.rst.txt">
+        <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+</div>
+
+    </div>
+    <div class="sidebar-start-items__item">
+<div id="searchbox"></div>
+    </div>
+  </div>
+  
+
+  
+  <div class="sidebar-end-items sidebar-primary__section">
+    <div class="sidebar-end-items__item">
+    </div>
+  </div>
+
+  
+  <div id="rtd-footer-container"></div>
+
+      </div>
+      <main id="main-content" class="bd-main">
+        
+        
+        <div class="bd-content">
+          <div class="bd-article-container">
+            
+            <div class="bd-header-article">
+                
+            </div>
+            
+            
+            <article class="bd-article" role="main">
+              
+  <p><img alt="GitHub" src="https://img.shields.io/github/license/johentsch/ms3?color=%230000ff" /> <img alt="PyPI" src="https://img.shields.io/pypi/v/ms3?color=%2300" /> <img alt="GitHub Release Date" src="https://img.shields.io/github/release-date/johentsch/ms3" />  <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/johentsch/ms3" /></p>
+<section id="ms3-parsing-musescore-3-and-4">
+<h1>ms3 - Parsing MuseScore 3 and 4<a class="headerlink" href="#ms3-parsing-musescore-3-and-4" title="Permalink to this heading">#</a></h1>
+<p>Welcome to <strong>ms3</strong>, a Python library for parsing <a class="reference external" href="https://musescore.org/en/download">MuseScore</a> files.</p>
+<section id="statement-of-need">
+<h2>Statement of need<a class="headerlink" href="#statement-of-need" title="Permalink to this heading">#</a></h2>
+<p>Here comes a list of functionalities to help you decide if this library could be useful for you.</p>
+<p><code class="docutils literal notranslate"><span class="pre">ms3</span></code></p>
+<ul class="simple">
+<li><p>parses MuseScore 3 and 4 files, i.e.</p>
+<ul>
+<li><p>uncompressed <code class="docutils literal notranslate"><span class="pre">*.mscx</span></code> files,</p></li>
+<li><p>compressed <code class="docutils literal notranslate"><span class="pre">*.mscz</span></code> files,</p></li>
+</ul>
+</li>
+<li><p>extracts and processes the information contained in one or many scores in the form of
+<a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/dsintro.html#dataframe">DataFrames</a>:</p>
+<ul>
+<li><p><strong>notes</strong> (start, duration, pitch etc.) and/or rests,</p></li>
+<li><p><strong>measures</strong> (time signature, lengths, repeat structure etc.)</p></li>
+<li><p><strong>labels</strong>, such as</p>
+<ul>
+<li><p>guitar/Jazz chord labels</p></li>
+<li><p>arbitrary annotation labels</p></li>
+<li><p><strong>expanded</strong> harmony labels following the <a class="reference external" href="https://github.com/DCMLab/standards">DCML annotation standard</a></p></li>
+<li><p><strong>cadences</strong> (part of the same annotation syntax)</p></li>
+<li><p><strong>form_labels</strong> (annotation standard currently in press)</p></li>
+</ul>
+</li>
+<li><p><strong>chords</strong>, that is, onset positions that have musical markup attached, e.g. dynamics, lyrics, slurs, 8va signs…</p></li>
+<li><p><strong>metadata</strong> from the respective fields, but also score statistics, such as length, number of notes, etc.</p></li>
+</ul>
+</li>
+<li><p>stores the extracted information in a uniform and interoperable tabular format (<code class="docutils literal notranslate"><span class="pre">*.tsv</span></code>)</p></li>
+<li><p>writes information from tabular <code class="docutils literal notranslate"><span class="pre">*.tsv</span></code> files into MuseScore files, especially</p>
+<ul>
+<li><p>chord and annotation labels</p></li>
+<li><p>metadata</p></li>
+<li><p>header information (title, subtitle, etc.)</p></li>
+<li><p>note coloring</p></li>
+</ul>
+</li>
+<li><p>uses a locally installed or standalone MuseScore executable for</p>
+<ul>
+<li><p>batch-converting files to any output format supported by MuseScore (mscz, mscx, mp3, midi, pdf etc.)</p></li>
+<li><p>on-the-fly converting any file that MuseScore can read (including MuseScore 2, cap, capx, midi, and musicxml) to parse it</p></li>
+</ul>
+</li>
+<li><p>offers its functionality via the convenient <code class="docutils literal notranslate"><span class="pre">ms3</span></code> commandline interface.</p></li>
+</ul>
+<p>View the <a class="reference external" href="https://johentsch.github.io/ms3/">full documentation here</a>.</p>
+<p>For a demo video (using an old, pre-1.0.0 version) on YouTube, <a class="reference external" href="https://youtu.be/UBY3wuIS4wc">click here</a></p>
+</section>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this heading">#</a></h2>
+<p>ms3 requires Python &gt;= 3.10 (type <code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">--version</span></code> to check). Once you have switched to a virtual environment
+that has Python 3.10 installed you can pip-install the library via one of the two commands:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">ms3</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">ms3</span>
+</pre></div>
+</div>
+<p>If successful, the installation will make the <code class="docutils literal notranslate"><span class="pre">ms3</span></code> commands available in your PATH (try by typing <code class="docutils literal notranslate"><span class="pre">ms3</span></code>).</p>
+</section>
+<section id="quick-demo">
+<h2>Quick demo<a class="headerlink" href="#quick-demo" title="Permalink to this heading">#</a></h2>
+<section id="parsing-a-single-score">
+<h3>Parsing a single score<a class="headerlink" href="#parsing-a-single-score" title="Permalink to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ms3</span>
+<span class="n">score</span> <span class="o">=</span> <span class="n">ms3</span><span class="o">.</span><span class="n">Score</span><span class="p">(</span><span class="s1">&#39;musescore_file.mscz&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="parsing-a-corpus">
+<h3>Parsing a corpus<a class="headerlink" href="#parsing-a-corpus" title="Permalink to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ms3</span>
+<span class="n">corpus</span> <span class="o">=</span> <span class="n">ms3</span><span class="o">.</span><span class="n">Corpus</span><span class="p">(</span><span class="s1">&#39;score_directory&#39;</span><span class="p">)</span>
+<span class="n">corpus</span><span class="o">.</span><span class="n">parse</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="parsing-several-corpora">
+<h3>Parsing several corpora<a class="headerlink" href="#parsing-several-corpora" title="Permalink to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ms3</span>
+<span class="n">corpora</span> <span class="o">=</span> <span class="n">ms3</span><span class="o">.</span><span class="n">Parse</span><span class="p">(</span><span class="s1">&#39;my_research_corpora&#39;</span><span class="p">)</span>
+<span class="n">corpora</span><span class="o">.</span><span class="n">parse</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="acknowledgements">
+<h2>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Permalink to this heading">#</a></h2>
+<p>Development of this software tool was supported by the Swiss National Science Foundation within the project “Distant
+Listening – The Development of Harmony over Three Centuries (1700–2000)” (Grant no. 182811). This project is being
+conducted at the Latour Chair in Digital and Cognitive Musicology, generously funded by Mr. Claude Latour.</p>
+<p>The Python package has been set up using <a class="reference external" href="https://pyscaffold.org/">PyScaffold</a> 3.2.3.</p>
+</section>
+<section id="table-of-contents">
+<h2>Table of Contents<a class="headerlink" href="#table-of-contents" title="Permalink to this heading">#</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="install.html#unix-based-systems">Unix-based systems</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="quick.html">Quick Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="quick.html#to-run-this-notebook">To run this notebook</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quick.html#setup">Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quick.html#parsing-multiple-scores-at-once">Parsing multiple scores at once</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="manual/index.html">Manual</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="manual/index.html#good-to-know">Good to know</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual/index.html#facets">Facets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual/index.html#parsing">Parsing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual/index.html#extracting-score-information">Extracting score information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manual/index.html#column-names">Column Names</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="reference.html">Developers' Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="reference.html#module-ms3.parse">The Parse class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference.html#module-ms3.corpus">The Corpus class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference.html#module-ms3.piece">The Piece class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference.html#module-ms3.view">The View class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference.html#the-score-class">The Score class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference.html#module-ms3.annotations">The Annotations class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference.html#module-ms3.bs4_parser">The BeautifulSoup parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference.html#module-ms3.expand_dcml">The expand_dcml module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference.html#module-ms3.utils">Utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference.html#module-ms3.transformations">Transformations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference.html#the-commandline-interface">The commandline interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference.html#unittests">Unittests</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributions &amp; Help</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#issue-reports">Issue Reports</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#documentation-improvements">Documentation Improvements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#code-contributions">Code Contributions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#maintainer-tasks">Maintainer tasks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="authors.html">Authors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-1-2-4">Version 1.2.4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-1-2-3">Version 1.2.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-1-2-2">Version 1.2.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-1-2-1">Version 1.2.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-1-2-0">Version 1.2.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-1-1-2">Version 1.1.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-1-1-1">Version 1.1.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-1-1-0">Version 1.1.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-1-0-4">Version 1.0.4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-1-0-3">Version 1.0.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-1-0-2">Version 1.0.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-1-0-1">Version 1.0.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-1-0-0">Version 1.0.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-5-3">Version 0.5.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-5-2">Version 0.5.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-5-1">Version 0.5.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-5-0">Version 0.5.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-4-10">Version 0.4.10</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-4-9">Version 0.4.9</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-4-8">Version 0.4.8</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-4-7">Version 0.4.7</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-4-6">Version 0.4.6</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-4-5">Version 0.4.5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-4-3">Version 0.4.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-4-2">Version 0.4.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-4-1">Version 0.4.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-4-0">Version 0.4.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-3-0">Version 0.3.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-2-0">Version 0.2.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-1-3">Version 0.1.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#version-0-1-0">Version 0.1.0</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="indices-and-tables">
+<h2>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</section>
+</section>
+
+
+            </article>
+            
+            
+            
+            <footer class="bd-footer-article">
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+  <a class='right-next' id="next-link" href="install.html" title="next page">
+  <div class="prev-next-info">
+      <p class="prev-next-subtitle">next</p>
+      <p class="prev-next-title">Installing ms3</p>
+  </div>
+  <i class="fa-solid fa-angle-right"></i>
+  </a>
+</div>
+            </footer>
+            
+          </div>
+          
+          
+          
+            <div class="bd-sidebar-secondary bd-toc">
+              
+<div class="toc-item">
+  
+<div class="tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+</div>
+<nav id="bd-toc-nav" class="page-toc">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#statement-of-need">
+   Statement of need
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#installation">
+   Installation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#quick-demo">
+   Quick demo
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#parsing-a-single-score">
+     Parsing a single score
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#parsing-a-corpus">
+     Parsing a corpus
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#parsing-several-corpora">
+     Parsing several corpora
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#acknowledgements">
+   Acknowledgements
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#table-of-contents">
+   Table of Contents
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#indices-and-tables">
+   Indices and tables
+  </a>
+ </li>
+</ul>
+
+</nav>
+</div>
+
+<div class="toc-item">
+  
+<div id="searchbox"></div>
+</div>
+
+<div class="toc-item">
+  
+</div>
+
+<div class="toc-item">
+  
+<div class="tocsection sourcelink">
+    <a href="_sources/index.rst.txt">
+        <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+</div>
+
+</div>
+
+            </div>
+          
+          
+        </div>
+        <footer class="bd-footer-content">
+          <div class="bd-footer-content__inner">
+            
+          </div>
+        </footer>
+        
+      </main>
+    </div>
+  </div>
+
+  
+    
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=796348d33e8b1d947c94"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=796348d33e8b1d947c94"></script>
+
+  <footer class="bd-footer"><div class="bd-footer__inner container">
+  
+  <div class="footer-item">
+    
+<p class="copyright">
+
+    &copy; Copyright 2020, johentsch.<br>
+
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    <p class="theme-version">
+    Built with the
+    <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">
+        PyData Sphinx Theme
+    </a>
+    0.12.0.
+</p>
+  </div>
+  
+  <div class="footer-item">
+    
+<p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0.<br>
+</p>
+
+  </div>
+  
+</div>
+  </footer>
+  </body>
+</html>
