@@ -1,0 +1,73 @@
+[tool.poetry]
+name = "qi-compute-api-client"
+version = "0.48.0"
+description = "An API client for the Compute Job Manager of Quantum Inspire."
+license = "Apache-2.0"
+authors = ["Quantum Inspire <support@quantum-inspire.eu>"]
+readme = "README.md"
+repository = "https://github.com/QuTech-Delft/compute-api-client"
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "License :: OSI Approved :: Apache Software License"
+]
+packages = [
+    { include = "compute_api_client" },
+    { include = "qi2_shared" },
+]
+exclude = ["compute_api_client/test", "tests"]
+
+[tool.poetry.dependencies]
+# Should not exceed package python version, so be conservative
+aiohttp = "^3.10.5"
+pydantic = "^2.10.4"
+python = "^3.9"
+python-dateutil = "^2.8.2"
+urllib3 = "^2.0.0"
+requests = "^2.31.0"
+typing-extensions = "^4.12.2"
+
+[tool.poetry.group.dev.dependencies]
+pytest = {extras = ["toml"], version = "^8.3.4"}
+coverage = {extras = ["toml"], version = "^7.6.10"}
+pytest-cov = "^6.0.0"
+mypy = "^1.14"
+docformatter = "1.7.5"
+pytest-mock = "^3.14.0"
+black = "^25.0.0"
+pytest-asyncio = "^0.25.2"
+ruff = "^0.9.3"
+deptry = "^0.23.0"
+types-requests = "^2.32.0"
+responses = "^0.25.6"
+refurb = { version = "^2.0.0",  python = "^3.10" }
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+addopts = "-v --cov --cov-report term-missing:skip-covered --cov-report xml --junitxml=report.xml"
+asyncio_mode = "auto"
+testpaths = "tests/*"
+
+[tool.coverage.run]
+branch = true
+source = [ "qi2_shared",]
+omit = [ "compute_api_client/*" ]
+
+[tool.mypy]
+exclude = [ "compute_api_client/*" ]
+
+[tool.deptry]
+exclude = [ "compute_api_client/*", "tests/*", ".venv/*"]
+
+[tool.deptry.per_rule_ignores]
+DEP002 = ["aiohttp", "python-dateutil", "urllib3"]
+
+[tool.ruff]
+exclude = [ "compute_api_client/*" ]
