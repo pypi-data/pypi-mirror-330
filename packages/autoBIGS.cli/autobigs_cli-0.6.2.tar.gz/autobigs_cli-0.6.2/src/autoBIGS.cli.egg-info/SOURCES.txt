@@ -1,0 +1,14 @@
+LICENSE
+README.md
+pyproject.toml
+src/autoBIGS.cli.egg-info/PKG-INFO
+src/autoBIGS.cli.egg-info/SOURCES.txt
+src/autoBIGS.cli.egg-info/dependency_links.txt
+src/autoBIGS.cli.egg-info/entry_points.txt
+src/autoBIGS.cli.egg-info/requires.txt
+src/autoBIGS.cli.egg-info/top_level.txt
+src/autobigs/cli/__init__.py
+src/autobigs/cli/info.py
+src/autobigs/cli/meta.py
+src/autobigs/cli/program.py
+src/autobigs/cli/st.py
