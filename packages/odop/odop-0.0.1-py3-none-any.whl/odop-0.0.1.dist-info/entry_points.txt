@@ -1,0 +1,2 @@
+[console_scripts]
+odop = odop.cli.__main__:odop_cli
