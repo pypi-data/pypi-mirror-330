@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: cuopt_lp
+Version: 25.2.0
+Summary: cuOpt - GPU Combinatorial Optimization
+Author: NVIDIA Corporation
+License: MIT
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Python: >=3.10
+Requires-Dist: numpy<3.0a0,>=1.23.5
+Requires-Dist: pytest-cov; extra == "test"
+Requires-Dist: pytest<8; extra == "test"
+Provides-Extra: test
+Description-Content-Type: text/markdown
+
+cuOpt-LP - mps parser and data model
