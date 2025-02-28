@@ -1,0 +1,38 @@
+{
+    "Name": "REQUIRED. Name of the dataset",
+    "BIDSVersion": "REQUIRED. The version of the BIDS standard that was used.",
+    "HEDVersion": "RECOMMENDED. If HED tags are used: The version of the HED schema used to validate HED tags for study. May include a single schema or a base schema and one or more library schema.",
+    "DatasetType": "RECOMMENDED.  The interpretation of the dataset. For backwards compatibility, the default value is 'raw'. Must be one of: 'raw', 'derivative'.",
+    "License": "RECOMMENDED. The license for the dataset. The use of license name abbreviations is RECOMMENDED for specifying a license (see Licenses). The corresponding full license text MAY be specified in an additional LICENSE file.",
+    "Authors": [
+        "RECOMMENDED. List of individuals who contributed to the dataset.",
+        "At least two names are recommended for BIDS compliance."
+    ],
+    "Acknowledgements": "OPTIONAL. Text acknowledging contributions of individuals or institutions beyond those listed in Authors or Funding.",
+    "HowToAcknowledge": "OPTIONAL. Text containing instructions on how researchers using this dataset should acknowledge the original authors. This field can also be used to define a publication that should be cited in publications that use the dataset.",
+    "Funding": [
+        "OPTIONAL. List of sources of funding (grant numbers)."
+    ],
+    "EthicsApprovals": [
+        "OPTIONAL. List of ethics committee approvals of the research protocols and/or protocol identifiers."
+    ],
+    "ReferencesAndLinks": [
+        "OPTIONAL. List of references to publications that contain information on the dataset. A reference may be textual or a URI."
+    ],
+    "DatasetDOI": "OPTIONAL. The Digital Object Identifier of the dataset (not the corresponding paper). DOIs SHOULD be expressed as a valid URI; bare DOIs such as 10.0.2.3/dfjj.10 are DEPRECATED.",
+    "SourceDatasets": [
+        {
+            "URL": "https://example.com/dataset",
+            "DOI": "RECOMMENDED",
+            "Version": "RECOMMENDED"
+        }
+    ],
+    "GeneratedBy": [
+        {
+            "Name": "psychopy-bids",
+            "Version": "PLACEHOLDER_VERSION",
+            "Description": "A PsychoPy plugin for working with the Brain Imaging Data Structure (BIDS).",
+            "CodeURL": "https://gitlab.com/psygraz/psychopy-bids"
+        }
+    ]
+}

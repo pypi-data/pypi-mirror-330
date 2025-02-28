@@ -1,0 +1,36 @@
+# .gitignore
+
+# Python-specific ignores
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pyz
+*.pyw
+dist/
+build/
+*.egg-info/
+venv/
+*.venv/
+env/
+*.env/
+.coverage
+coverage.xml
+htmlcov/
+
+# IDE-specific ignores
+.vscode/
+.idea/
+*.pycharm/
+
+# Miscellaneous ignores
+.DS_Store
+.cache/
+.mypy_cache/
+.pytest_cache/
+
+# Ignore files created by pytest
+tests/tested_code_blocks.md
+example_dataset/
+tests/bids_validator/data
+tests/bids_validator/bids

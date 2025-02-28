@@ -1,0 +1,55 @@
+site_name: psychopy-bids Documentation
+site_dir: public
+docs_dir: docs/.
+
+theme:
+  name: material
+  palette:
+    primary: light-green
+  extra_css:
+      - 'files/'
+  features:
+    - content.code.copy
+    - navigation.sections
+  icon:
+    repo: fontawesome/brands/gitlab
+
+nav:
+  - Home: index.md
+  - Installation: installation.md
+  - Tutorials:
+      - PsychoPy Builder: builder.md
+      - PsychoPy Coder: coder.md
+  - Code Reference:
+      - bids:
+          - BIDSHandler: bidshandler.md
+          - BIDSTaskEvent: bidstaskevent.md
+          - BIDSBehEvent: bidsbehevent.md
+          - BIDSError: bidserror.md
+      - Builder:
+          - BidsExportRoutine: bidsexportroutine.md
+          - BidsEventComponent: bidseventcomponent.md
+
+plugins:
+  - search
+  - mkdocs-jupyter
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            docstring_style: numpy
+
+markdown_extensions:
+  - footnotes
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - toc:
+      permalink: true
+
+repo_url: https://gitlab.com/psygraz/psychopy-bids/
+repo_name: psychopy-bids

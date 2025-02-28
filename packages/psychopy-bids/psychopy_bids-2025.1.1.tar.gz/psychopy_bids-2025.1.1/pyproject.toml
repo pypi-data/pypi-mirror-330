@@ -1,0 +1,90 @@
+[build-system]
+requires = ["setuptools>=61.0.0", "wheel", "setuptools_scm"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools_scm]
+version_scheme = "release-branch-semver"
+local_scheme = "no-local-version"
+
+[project]
+name = "psychopy-bids"
+dynamic = ["version"]
+description = "A PsychoPy plugin for using the Brain Imaging Data Structure (BIDS) to organize and describe data."
+readme = { file = "README.md", content-type = "text/markdown" }
+requires-python = ">=3.8"
+license = { text = "GNU General Public License v3 (GPLv3)" }
+keywords = ["psychopy", "bids", "psychology", "data organization"]
+authors = [
+    { name = "Christoph Anzengruber", email = "christoph.anzengruber@uni-graz.at" },
+    { name = "Florian Schöngaßner", email = "florian.schoengassner@uni-graz.at" }
+]
+classifiers = [
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: Implementation :: CPython"
+]
+dependencies = [
+    "requests >=2.31.0",
+    "numpy >=1.21.0",
+    "pandas >=1.4.3",
+    "hedtools >=0.5.0",
+    "packaging >= 20.0"
+]
+
+[project.urls]
+homepage = "https://psygraz.gitlab.io/psychopy-bids"
+project = "https://pypi.org/project/psychopy-bids"
+changelog = "https://gitlab.com/psygraz/psychopy-bids/-/blob/master/CHANGELOG.md"
+documentation = "https://psychopy-bids.readthedocs.io/en/stable"
+repository = "https://gitlab.com/psygraz/psychopy-bids"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["psychopy_bids*"]
+
+[tool.setuptools.package-data]
+"*" = ["*.png", "*.json", "*"]
+
+[project.entry-points."psychopy.experiment.components"]
+BidsEventComponent = "psychopy_bids.bids_event:BidsEventComponent"
+
+# Backward compatibility
+BidsBehEventComponent = "psychopy_bids.deprecated.bids_beh:BidsBehEventComponent"
+BidsTaskEventComponent = "psychopy_bids.deprecated.bids_task:BidsTaskEventComponent"
+
+[project.entry-points."psychopy.experiment.routines"]
+BidsExportRoutine = "psychopy_bids.bids_settings:BidsExportRoutine"
+
+[project.optional-dependencies]
+docs = [
+    "mkdocs",
+    "mkdocs-material",
+    "mkdocstrings",
+    "mkdocstrings-python",
+    "mkdocs-jupyter",
+    "mkdocs-roamlinks-plugin",
+    "seedir",
+    "pytkdocs[numpy-style]"
+]
+dev = [
+    "autopep8",
+    "black",
+    "isort",
+    "bandit",
+    "codespell",
+    "flake8",
+    "pylint",
+    "pytest-cov",
+    "pytest",
+    "psychopy"
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.isort]
+profile = "black"

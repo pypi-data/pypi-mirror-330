@@ -1,0 +1,213 @@
+workflow:
+  rules:
+    # Skip if the commit message matches "Add changelog for version ..."
+    - if: '$CI_COMMIT_MESSAGE =~ /^Add changelog for version .*/'
+      when: never
+    # Allow pipeline to run for version tags
+    - if: $CI_COMMIT_TAG =~ /^v\d{4}\.\d+\.\d+$/
+      when: always
+    # Allow pipeline to run for merge request events
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+      when: always
+    # Allow pipeline to run for branch "main"
+    - if: '$CI_COMMIT_BRANCH == "main"'
+      when: always
+    # Default behavior: Block everything else
+    - when: never
+
+stages:
+  - Static Analysis
+  - Test
+  - Deploy
+
+default:
+  image: python:3.10-slim
+  tags:
+    - self-hosted
+  cache:
+    paths:
+      - .cache/pip/
+
+# Static Analysis jobs
+autopep8:
+  stage: Static Analysis
+  script:
+    - pip install autopep8
+    - autopep8 --diff --recursive --max-line-length 99 psychopy_bids/
+  rules:
+    - changes:
+        - psychopy_bids/**/*
+        - .gitlab-ci.yml
+
+black:
+  stage: Static Analysis
+  script:
+    - pip install black
+    - black --check psychopy_bids/
+  rules:
+    - changes:
+        - psychopy_bids/**/*
+        - .gitlab-ci.yml
+
+isort:
+  stage: Static Analysis
+  script:
+    - pip install isort
+    - isort --check-only psychopy_bids/
+  rules:
+    - changes:
+        - psychopy_bids/**/*
+        - .gitlab-ci.yml
+
+bandit:
+  stage: Static Analysis
+  script:
+    - pip install bandit
+    - bandit -r psychopy_bids/
+  rules:
+    - changes:
+        - psychopy_bids/**/*
+        - .gitlab-ci.yml
+
+codespell:
+  stage: Static Analysis
+  script:
+    - pip install codespell
+    - codespell --ignore-words-list="assertIn" psychopy_bids/
+  rules:
+    - changes:
+        - psychopy_bids/**/*
+        - .gitlab-ci.yml
+
+flake8:
+  stage: Static Analysis
+  script:
+    - pip install flake8
+    - flake8 --ignore=E501,W503,F841 psychopy_bids/
+  rules:
+    - changes:
+        - psychopy_bids/**/*
+        - .gitlab-ci.yml
+
+pylint:
+  stage: Static Analysis
+  script:
+    - pip install pylint numpy pandas requests hedtools
+    - pip install psychopy --no-deps
+    - pip install psychopy-bids --no-deps
+    - pylint --method-naming-style=camelCase -d C0123,C0301,C0301,C0302,R0902,R0912,R0913,R0914,R0915,R0917,R1702,W0511 psychopy_bids/bids/*.py
+    - pylint -d C0103,C0301,R0912,R0913,R0914,R0915,R0917,W0212,W0511,W0612 psychopy_bids/bids_event/*.py
+    - pylint -d C0103,C0301,R0913,R0915,R0917,W0511 psychopy_bids/bids_settings/*.py
+  rules:
+    - changes:
+        - psychopy_bids/**/*
+        - .gitlab-ci.yml
+
+# Test Job
+pytest:
+  stage: Test
+  image: wieluk/bids_ci_cd_ubuntu22:v1.4
+  parallel:
+    matrix:
+      - PYTHON_VERSION: "3.8"
+      - PYTHON_VERSION: "3.9"
+      - PYTHON_VERSION: "3.10"
+  script:
+    - source /home/gitlab-runner/psychopy_${PYTHON_VERSION}/bin/activate
+    - pip install -U psychopy .
+    - pip show psychopy 
+    - pip show psychopy-bids
+    - pytest --cov=psychopy_bids -v --disable-warnings
+  artifacts:
+    paths:
+      - tests/tested_code_blocks.md  
+    expire_in: 7 days
+  rules:
+    - changes:
+        - psychopy_bids/**/*
+        - test/**/*
+        - .gitlab-ci.yml
+        - README.md
+        - docs/**/*
+
+bids_validator:
+  stage: Test
+  image: wieluk/bids_ci_cd_ubuntu22:v1.4
+  needs:
+   - pytest
+  before_script:
+    - source /home/gitlab-runner/psychopy_3.10/bin/activate
+    - pip install -U psychopy .
+    - pip show psychopy
+    - pip show psychopy-bids
+    - cd /home/gitlab-runner/bids-validator
+    - git pull origin main
+    - chmod +x /home/gitlab-runner/bids-validator/local-run
+    - cd -
+  script:
+    - |
+        for i in {1..10}; do
+          xvfb-run -s "-screen 0 1024x768x24" python tests/bids_validator/experiment_lastrun.py
+          sleep 1
+        done
+    - python -c "import seedir as sd; sd.seedir('tests/bids_validator/bids', printout=True)"
+    - /home/gitlab-runner/bids-validator/local-run tests/bids_validator/bids
+  rules:
+    - changes:
+        - psychopy_bids/**/*
+        - test/**/*
+        - .gitlab-ci.yml
+
+# Prepare release notes
+prepare_release:
+  stage: Deploy
+  image: alpine:latest
+  script:
+    - apk add curl jq
+    - 'curl -H "PRIVATE-TOKEN: $CI_API_TOKEN" "$CI_API_V4_URL/projects/$CI_PROJECT_ID/repository/changelog?version=$CI_COMMIT_TAG" | jq -r .notes > release_notes.md'
+    - 'curl -H "PRIVATE-TOKEN: $CI_API_TOKEN" -X POST "$CI_API_V4_URL/projects/$CI_PROJECT_ID/repository/changelog?version=$CI_COMMIT_TAG"'
+  artifacts:
+    paths:
+      - release_notes.md
+    expire_in: 7 days
+  only:
+    refs:
+      - tags
+    variables:
+      - $CI_COMMIT_TAG =~ /^v\d{4}\.\d+\.\d+$/
+      - $CI_COMMIT_REF_NAME == "main"
+
+# Create GitLab release
+release_gitlab:
+  stage: Deploy
+  image: registry.gitlab.com/gitlab-org/release-cli:latest            
+  needs:
+    - prepare_release
+  script:
+    - echo "Running release job"
+  release:                              
+    tag_name: '$CI_COMMIT_TAG'
+    description: release_notes.md
+  only:
+    refs:
+      - tags
+    variables:
+      - $CI_COMMIT_TAG =~ /^v\d{4}\.\d+\.\d+$/
+      - $CI_COMMIT_REF_NAME == "main"
+
+# Release Job for PyPI
+release_pypi:
+  stage: Deploy
+  before_script:
+    - apt-get update && apt-get install -y git
+  script:
+    - pip install --upgrade build twine
+    - rm -rf dist/
+    - python -m build
+    - python -m twine upload --repository pypi dist/* -u __token__ -p $PYPI_TOKEN --non-interactive
+  only:
+    refs:
+      - tags
+    variables:
+      - $CI_COMMIT_TAG =~ /^v\d{4}\.\d+\.\d+$/
+      - $CI_COMMIT_REF_NAME == "main"
