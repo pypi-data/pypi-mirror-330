@@ -1,0 +1,3 @@
+[console_scripts]
+swecc-email-sender = swecc_email_sender.cli:main
+swecc-email-sender-setup = scripts.setup_env:setup_environment

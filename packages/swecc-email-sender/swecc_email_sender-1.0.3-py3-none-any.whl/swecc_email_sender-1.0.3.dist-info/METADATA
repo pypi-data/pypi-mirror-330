@@ -1,0 +1,198 @@
+Metadata-Version: 2.4
+Name: swecc-email-sender
+Version: 1.0.3
+Summary: A production-ready email automation library using SendGrid
+Project-URL: Homepage, https://github.com/swecc-uw/swecc-email-sender
+Project-URL: Documentation, https://github.com/swecc-uw-uw/swecc-email-sender#readme
+Project-URL: Repository, https://github.com/swecc-uw-uw/swecc-email-sender.git
+Project-URL: Bug Tracker, https://github.com/swecc-uw/swecc-email-sender/issues
+Author-email: SWECC <info@swecc.org>
+License-Expression: MIT
+License-File: LICENSE
+Keywords: automation,email,markdown,sendgrid
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Communications :: Email
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.8
+Requires-Dist: markdown>=3.3.0
+Provides-Extra: dev
+Requires-Dist: beautifulsoup4>=4.9.0; extra == 'dev'
+Requires-Dist: black>=22.0.0; extra == 'dev'
+Requires-Dist: flake8>=5.0.0; extra == 'dev'
+Requires-Dist: isort>=5.0.0; extra == 'dev'
+Requires-Dist: mypy>=1.0.0; extra == 'dev'
+Requires-Dist: pre-commit>=3.5.0; extra == 'dev'
+Requires-Dist: pytest-cov>=4.0.0; extra == 'dev'
+Requires-Dist: pytest>=7.0.0; extra == 'dev'
+Requires-Dist: ruff>=0.2.0; extra == 'dev'
+Description-Content-Type: text/markdown
+
+# SWECC Email Sender
+
+An email automation library using SendGrid API. Supports both single and batch email sending with Markdown formatting and template substitution.
+
+## Features
+
+- Single and batch email sending
+- Markdown to HTML conversion with styling
+- Template substitution support
+- CSV and JSON data source support
+- Preview and validation modes
+
+## Installation
+
+```bash
+pip install swecc-email-sender
+```
+
+## Quick Start
+
+### Single Email
+
+```python
+from swecc_email_sender import EmailSender
+
+sender = EmailSender()  # uses SENDGRID_API_KEY environment variable
+success = sender.send_email(
+    to_email="recipient@example.com",
+    subject="Hello!",
+    content="This is a test email",
+    from_email="sender@example.com"
+)
+```
+
+### Markdown Email
+
+```python
+success = sender.send_email(
+    to_email="recipient@example.com",
+    subject="Hello!",
+    content="# Hello World\n\nThis is a **markdown** email",
+    from_email="sender@example.com",
+    is_markdown=True
+)
+```
+
+### Template Email
+
+```python
+template = """
+Hello {name}!
+
+Your order #{order_id} has been shipped to:
+{address}
+
+Thank you for your business!
+"""
+
+success = sender.send_email(
+    to_email="customer@example.com",
+    subject="Order #{order_id} Shipped",
+    content=template,
+    from_email="shop@example.com",
+    template_data={
+        "name": "John Doe",
+        "order_id": "12345",
+        "address": "123 Main St, City, Country"
+    }
+)
+```
+
+## Command Line Interface
+
+The package includes a command-line interface for easy use:
+
+```bash
+# Single email
+swecc-email-sender --from sender@example.com --to recipient@example.com --subject "Hello" --content "Test email"
+
+# Markdown email
+swecc-email-sender --from sender@example.com --to recipient@example.com --subject "Hello" --content "# Hello" --markdown
+
+# Template with CSV data
+swecc-email-sender --from sender@example.com --src recipients.csv --subject "Hello {name}" --template email.md
+
+# Preview first email
+swecc-email-sender --from sender@example.com --src data.json --subject "Hello" --template email.md --preview
+
+# Validate templates
+swecc-email-sender --from sender@example.com --src data.json --subject "Hello {name}" --template email.md --validate
+```
+
+### Data File Formats
+
+#### CSV Example (recipients.csv)
+```csv
+to_email,name,order_id,address
+customer1@example.com,John Doe,12345,123 Main St
+customer2@example.com,Jane Smith,12346,456 Oak Ave
+```
+
+#### JSON Example (data.json)
+```json
+[
+  {
+    "to_email": "customer1@example.com",
+    "name": "John Doe",
+    "order_id": "12345",
+    "address": "123 Main St"
+  },
+  {
+    "to_email": "customer2@example.com",
+    "name": "Jane Smith",
+    "order_id": "12346",
+    "address": "456 Oak Ave"
+  }
+]
+```
+
+## Development
+
+### Setup
+
+1. Clone the repository:
+```bash
+git clone https://github.com/swecc/swecc-email-sender.git
+cd swecc-email-sender
+```
+
+2. Create a virtual environment and install dependencies:
+```bash
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+pip install -e ".[dev]"
+```
+
+### Running Tests
+
+```bash
+pytest
+```
+
+### Code Style
+
+The project uses:
+- Black for code formatting
+- isort for import sorting
+- mypy for type checking
+- flake8 for linting
+
+To run all checks:
+
+```bash
+ruff --fix
+isort .
+mypy swecc_email_sender
+flake8 swecc_email_sender
+```
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
