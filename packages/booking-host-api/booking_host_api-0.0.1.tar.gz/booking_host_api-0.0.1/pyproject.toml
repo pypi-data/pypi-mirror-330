@@ -1,0 +1,23 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "booking-host-api"
+version = "0.0.1"
+dependencies = [
+    "selenium>=4.28.1",
+    "requests>=2.32.3",
+]
+requires-python = ">=3.12.5"
+authors = [
+  { name="kaxcheg", email="kaxcheg@gmail.com" },
+]
+description = "Simple native Booking.com API wrapper"
+readme = "README.md"
+license = { file = "LICENSE" }
+keywords = ['booking', 'API']
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
