@@ -1,0 +1,43 @@
+name: Prost CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+          python-version: ['3.8', '3.9', '3.10', '3.11', '3.12']
+
+    steps:
+    - uses: actions/checkout@main
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@main
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Install pip
+      run: |
+        python -m ensurepip --upgrade
+        python -m pip install --upgrade pip setuptools wheel
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y libcurl4-openssl-dev
+        python -m pip install --upgrade pip
+        pip install -e .[dev] pytest-xdist
+    - name: Run unit tests in parallel
+      id: parallel_tests
+      continue-on-error: true
+      run: |
+        pytest -n auto --capture=no -W ignore::DeprecationWarning || echo "pytest_failed=true" >> $GITHUB_ENV
+
+    - name: Rerun failed tests in serial (if any)
+      if: env.pytest_failed == 'true'
+      run: |
+        pytest --last-failed --maxfail=3 -n 1 --capture=no -W ignore::DeprecationWarning
