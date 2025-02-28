@@ -1,0 +1,46 @@
+Metadata-Version: 2.4
+Name: cisco-pyaci
+Version: 1.1.2
+Summary: Python Bindings for Cisco ACI REST API
+Project-URL: Homepage, https://github.com/datacenter/pyaci
+Project-URL: Issues, https://github.com/datacenter/pyaci/issues
+Author-email: Praveen Kumar <praveek6@cisco.com>, Camillo Rossi <camrossi@cisco.com>
+License-File: LICENSE
+License-File: NOTICE
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.8
+Requires-Dist: cryptography
+Requires-Dist: flask<=3.0.3
+Requires-Dist: lxml
+Requires-Dist: paramiko
+Requires-Dist: parse
+Requires-Dist: pyopenssl
+Requires-Dist: pyyaml
+Requires-Dist: requests
+Requires-Dist: scp
+Requires-Dist: six
+Requires-Dist: websocket-client
+Requires-Dist: xmltodict
+Description-Content-Type: text/x-rst
+
+PyACI: Python Bindings for Cisco ACI REST API
+=============================================
+.. image:: https://codecov.io/gh/datacenter/pyaci/branch/master/graph/badge.svg
+   :alt: codecov status
+   :target: https://codecov.io/gh/datacenter/pyaci
+
+.. image:: https://readthedocs.org/projects/pyaci/badge/?version=latest&style=plastic
+   :alt: Doc Status
+   :target: http://pyaci.readthedocs.io/en/latest/
+
+Documentation
+-------------
+
+Documentation is available at http://pyaci.readthedocs.io/en/latest/
+
+Examples
+--------
+
+Jupyter Notebook based examples can be found in `examples <examples>`_ directory.

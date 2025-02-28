@@ -1,0 +1,20 @@
+# Documentation
+docs/_build
+
+# Tests.
+tests/.coverage
+tests/cover
+.coverage
+.pytest_cache
+cover
+
+# Distribution
+*.egg-info/
+build
+dist
+
+# Miscelleneous
+*.pyc
+.pyenv-version
+examples/.ipynb_checkpoints/
+*~
