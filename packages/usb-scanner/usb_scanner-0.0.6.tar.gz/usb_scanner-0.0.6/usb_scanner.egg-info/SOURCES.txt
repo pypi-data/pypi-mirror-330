@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+usb_scanner/__init__.py
+usb_scanner/exceptions.py
+usb_scanner/mapping.py
+usb_scanner/usb_devices.py
+usb_scanner.egg-info/PKG-INFO
+usb_scanner.egg-info/SOURCES.txt
+usb_scanner.egg-info/dependency_links.txt
+usb_scanner.egg-info/top_level.txt
