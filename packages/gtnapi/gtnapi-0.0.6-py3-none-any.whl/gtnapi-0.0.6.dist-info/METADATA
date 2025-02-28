@@ -1,0 +1,149 @@
+Metadata-Version: 2.2
+Name: gtnapi
+Version: 0.0.6
+Summary: Python Software Developement Kit for GTN Fintech API
+Author-email: Uditha Nagahawatta <n.uditha@gtngroup.com>
+Maintainer-email: Fintech API Team <fintechapi-dev@gtngroup.com>
+License: MIT License
+        
+        Copyright (c) 2025 GTN Group
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE.
+        
+Project-URL: Homepage, https://github.com/gtn/python-sdk.git
+Project-URL: Download, https://github.com/gtn/python-sdk.git/releases
+Project-URL: Documentation, https://github.com/gtn/python-sdk.git/README.md
+Project-URL: Source, https://github.com/gtn/python-sdk.git
+Keywords: GTN API
+Classifier: Development Status :: 4 - Beta
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Internet
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Intended Audience :: Developers
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: requests
+Requires-Dist: cryptography
+Requires-Dist: PyJWT
+Requires-Dist: websocket-client
+Provides-Extra: test
+Requires-Dist: pytest; extra == "test"
+Requires-Dist: websockets; extra == "test"
+Provides-Extra: optional
+Requires-Dist: python-socks; extra == "optional"
+Requires-Dist: wsaccel; extra == "optional"
+Provides-Extra: docs
+Requires-Dist: Sphinx>=6.0; extra == "docs"
+Requires-Dist: sphinx_rtd_theme>=1.1.0; extra == "docs"
+Requires-Dist: myst-parser>=2.0.0; extra == "docs"
+
+## Python SDK for GTN API
+<img src="https://img.shields.io/badge/Python-3.10 -- 3.12-green"/>
+
+This is a lightweight SDK which wraps the REST APIs of the GTN API set as documented in the [API Portal](https://developer.globaltradingnetwork.com/rest-api-reference)
+
+### installing packages
+The GTN SDK is available on PYPI. Install with pip:<br>
+```bash
+    pip install gtnapi
+```
+
+### API Authentication
+The GTN API uses the notion of Institutions, which represent customers that build their platform upon the GTN API. 
+The end-users of the institution, are referred to as customers. 
+An institution is able to manage their customers directly and is also able to initiate actions on the user's behalf.
+
+As describe in the [API Portal](https://developer.globaltradingnetwork.com/rest-api-reference) you are required to authenticate
+first to the Institution and then as a customer. And resulting keys expire in a certain period, which require
+renewing using authentication APIs. However when using the SDK, key renewing is not required since it is 
+handled by the SDK in background.
+
+The <code>api_url</code> is the API hub where customers are connected to access the GTN API. This URL can change depending on 
+customer's registered country.
+
+#### Initiating API connection
+For a connection to be establish, it is required to have following information
+  * API URL, provided by GTN. Can vary depending on the environment (Sandbox, UAT, Production)
+  * App Key, provided by GTN
+  * App Secret, provided by GTN
+  * Institution Code, provided by GTN
+  * Customer Number of the customer initiating the connection
+  * Private Key of the institution, provided by GTN
+
+```python
+    import gtnapi
+
+    api_data = {
+        "api_url": "https://api-mena-uat.globaltradingnetwork.com",
+        "app_key": "my-app-key",
+        "app_secret": "my-app-secret",
+        "institution": "MY-INST-CODE",
+        "customer_number": "12345678",
+        "private_key": "RTRGDBCNKVGJTURI49857YURIEOLFMKJTU5I4O847YRHFJDKDKVFLKTUEJFHRU"
+    }
+
+    status = gtnapi.init(**api_data)
+```
+
+authentication **status** is in the format
+```json
+    {
+        "http_code": 200, 
+        "status": "AUTH_SUCCESS"
+    }
+```
+Once the _**gtnapi.init()**_ is success (i.e. <code>http_code == 200</code>), it is possible to access any REST endpoint (authorised to the customer) by using the SDK
+
+### Getting customer details
+```python
+    http_status, details = gtnapi.Requests.get('/trade/bo/v1.2.1/customer/account', customerNumber="12345678")
+    print(http_status, json.dumps(details, indent=4))
+```
+### Getting market data
+```python
+    search_params = {
+        "source-id": 'DFM',
+        "keys": "DFM~EMAAR"
+    }
+    http_status, details = gtnapi.Requests.get('/market-data/realtime/keys/data', **search_params)
+    print(http_status, json.dumps(details, indent=4))
+``````
+### Initiate the market data websocket connection
+Can initiate the WS session by passing call-back method references 
+```python
+    gtnapi.Streaming.MarketData.connect(on_open, on_message, on_error, on_close)
+```
+### close the websocket connection
+can close the WS session by calling
+```python
+    gtnapi.Streaming.MarketData.disconnect()
+```
+### terminate the session
+The while GT API session will be terminated by calling the following
+```python
+    gtnapi.stop()
+```
