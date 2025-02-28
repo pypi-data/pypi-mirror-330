@@ -1,0 +1,29 @@
+Metadata-Version: 2.3
+Name: pandasai-ibm
+Version: 0.1.5
+Summary: IBM integration for PandaAI
+License: MIT
+Author: Gabriele Venturi
+Requires-Python: >=3.10,<3.12
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: ibm-watsonx-ai (>=1.1.0,<2.0.0)
+Requires-Dist: pandasai (>=3.0.0b4)
+Project-URL: Documentation, https://docs.getpanda.ai/
+Project-URL: Repository, https://github.com/sinaptik-ai/pandas-ai
+Description-Content-Type: text/markdown
+
+# IBM WatsonX Extension for PandaAI
+
+This extension integrates IBM WatsonX with PandaAI, providing IBM WatsonX LLMs support.
+
+## Installation
+
+You can install this extension using poetry:
+
+```bash
+poetry add pandasai-ibm
+```
+
