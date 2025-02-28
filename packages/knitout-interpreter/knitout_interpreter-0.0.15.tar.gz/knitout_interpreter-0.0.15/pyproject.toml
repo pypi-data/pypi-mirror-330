@@ -1,0 +1,62 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "knitout-interpreter"
+dynamic = ["version"]
+description = 'Support for interpreting knitout files used for controlling automatic V-Bed Knitting machines.'
+homepage = "https://github.com/mhofmann-Khoury/knitout_interpreter"
+repository = "https://github.com/mhofmann-Khoury/knitout_interpreter"
+readme = "README.md"
+requires-python = ">=3.11"
+keywords = ["knit", "machine knit", "textile", "Northeastern", "ACT Lab", "fabrication"]
+authors = [
+  { name = "Megan Hofmann", email = "m.hofmann@northeastern.edu" },
+]
+classifiers = [
+  "Development Status :: 2 - Pre-Alpha",
+  "Natural Language :: English",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: Implementation :: PyPy",
+  "Topic :: Scientific/Engineering",
+]
+dependencies = [
+  "parglare~=0.16.1",
+  "knit-graphs~=0.0.6",
+  "virtual-knitting-machine~=0.0.13",
+  "nodejs-bin",
+  "importlib-resources",
+]
+
+
+[project.urls]
+Documentation = "https://github.com/mhofmann-Khoury/knitout_interpreter#readme"
+Issues = "https://github.com/mhofmann-Khoury/knitout_interpreter/issues"
+Source = "https://github.com/mhofmann-Khoury/knitout_interpreter"
+
+[tool.hatch.version]
+path = "src/knitout_interpreter/__about__.py"
+
+[tool.hatch.build.targets.sdist]
+include = [
+  "knitout_interpeter/*.py",
+  "knitout_interpreter/knitout_language/*.pg",
+  "knitout_interpreter/knitout_compilers/*.html",
+  "knitout_interpreter/knitout_compilers/*.js"
+]
+exclude = [
+  "/tests",
+  "requirements.txt",
+  ".gitignore",
+]
+
+[tool.hatch.envs.types]
+extra-dependencies = [
+  "mypy>=1.0.0",
+]
+[tool.hatch.envs.types.scripts]
+check = "mypy --install-types --non-interactive {args:src/knitout_interpreter tests}"
+
