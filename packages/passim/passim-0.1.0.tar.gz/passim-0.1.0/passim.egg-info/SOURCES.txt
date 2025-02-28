@@ -1,0 +1,12 @@
+README.md
+pyproject.toml
+setup.py
+passim/__init__.py
+passim/core.py
+passim/utils.py
+passim.egg-info/PKG-INFO
+passim.egg-info/SOURCES.txt
+passim.egg-info/dependency_links.txt
+passim.egg-info/requires.txt
+passim.egg-info/top_level.txt
+tests/test_core.py

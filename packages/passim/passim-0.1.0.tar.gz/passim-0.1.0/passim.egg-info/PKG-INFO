@@ -1,0 +1,134 @@
+Metadata-Version: 2.2
+Name: passim
+Version: 0.1.0
+Summary: A lightweight, secure Python library for checking password similarity
+Home-page: https://github.com/nasredeenabdulhaleem/passim
+Author: Abdulhaleem Nasredeen
+Author-email: Abdulhaleem Nasredeen <nabdulhaleem09@gmail.com>
+License: MIT
+Project-URL: Homepage, https://github.com/nasredeenabdulhaleem/passim
+Project-URL: Bug Tracker, https://github.com/nasredeenabdulhaleem/passim/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Requires-Dist: bcrypt>=4.2.1
+Dynamic: author
+Dynamic: home-page
+Dynamic: requires-python
+
+# Passim (Python)
+
+**Passim** is a lightweight, secure Python library for checking password similarity during password changes or resets. It ensures users don't reuse passwords that are too similar to their previous ones, enhancing security in authentication systems. This version (v1) uses an n-gram-based approach, with a future v2 planned to leverage homomorphic encryption for improved security.
+
+## Features
+
+- Secure password hashing with bcrypt.
+- Similarity checking using n-gram sketches.
+- Configurable parameters (n-gram size, similarity threshold, etc.).
+
+## Installation
+
+Install via PyPI:
+
+```bash
+pip install passim
+```
+
+Or install from source:
+
+```bash
+git clone https://github.com/nasredeenabdulhaleem/passim.git
+cd passim
+pip install .
+```
+
+### Requirements:
+
+- Python 3.6+
+- bcrypt (automatically installed)
+
+## Usage
+
+```python
+from passim import Passim
+
+# Initialize Passim with default settings
+p = Passim()
+
+# Store an initial password
+password = "Password123"
+hash_, sketch = p.store_password(password)
+print(f"Stored hash: {hash_[:10]}...")
+print(f"Stored sketch: {sketch}")
+
+# Check a similar password
+new_password = "Password124"
+is_similar = p.check_similarity(sketch, new_password)
+print(f"'{new_password}' is{' ' if is_similar else ' not '}too similar")
+
+# Attempt to change password
+success, (new_hash, new_sketch) = p.change_password(hash_, sketch, "TotallyNew")
+print(f"Password change: {'Accepted' if success else 'Rejected'}")
+```
+
+## API Documentation
+
+### Configuration
+
+Passim supports customization via constructor parameters:
+
+- **n_gram_size** (int, default: 3): Size of n-grams for similarity checking.
+- **similarity_threshold** (float, 0-1, default: 0.5): Proportion of matching n-grams that flags a password as "too similar."
+- **num_ngrams_to_store** (int, default: 5): Maximum n-grams stored in the sketch.
+
+Example:
+
+```python
+p = Passim(n_gram_size=4, similarity_threshold=0.7, num_ngrams_to_store=3)
+```
+
+### Methods
+
+#### store_password
+
+Stores a password by generating a bcrypt hash and similarity sketch.
+
+- **Input**: password (str)
+- **Output**: Tuple (hash: bytes, sketch: Set[str])
+
+#### check_similarity
+
+Checks if a new password is too similar to an old one.
+
+- **Input**: old_sketch (Set[str]), new_password (str)
+- **Output**: bool (True if too similar)
+
+#### change_password
+
+Attempts to change a password, rejecting it if too similar.
+
+- **Input**: old_hash (bytes), old_sketch (Set[str]), new_password (str)
+- **Output**: Tuple (success: bool, (new_hash: bytes, new_sketch: Set[str]) or (None, None))
+
+## Security Notes
+
+- **Password Hashing**: Uses bcrypt with a unique salt for each password.
+- **Similarity Sketch**: Stores hashed n-grams, not plaintext. However, this method may leak structural info (e.g., common trigrams). A future v2 will use homomorphic encryption to eliminate this risk.
+- **Storage**: Store hash and sketch securely (e.g., in a database with access controls).
+
+## Roadmap
+
+- v2: Replace n-gram sketches with homomorphic encryption.
+- Add more similarity metrics (e.g., edit distance).
+- Expand test coverage.
+
+## Contributing
+
+Open issues or submit pull requests at:
+github.com/nasredeenabdulhaleem/passim
+
+## License
+
+MIT License © 2025 Abdulhaleem Nasredeen
