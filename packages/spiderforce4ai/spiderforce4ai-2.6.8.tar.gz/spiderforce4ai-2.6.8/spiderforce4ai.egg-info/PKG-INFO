@@ -1,0 +1,789 @@
+Metadata-Version: 2.1
+Name: spiderforce4ai
+Version: 2.6.8
+Summary: Python wrapper for SpiderForce4AI HTML-to-Markdown conversion service with LLM post-processing
+Home-page: https://petertam.pro
+Author: Piotr Tamulewicz
+Author-email: Piotr Tamulewicz <pt@petertam.pro>
+Project-URL: Homepage, https://petertam.pro
+Project-URL: Documentation, https://petertam.pro/docs/spiderforce4ai
+Project-URL: Repository, https://github.com/yourusername/spiderforce4ai
+Project-URL: Bug Tracker, https://github.com/yourusername/spiderforce4ai/issues
+Keywords: web-scraping,markdown,html-to-markdown,llm,ai,content-extraction,async,parallel-processing
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic Content
+Classifier: Topic :: Text Processing :: Markup :: Markdown
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+Requires-Dist: aiohttp>=3.8.0
+Requires-Dist: asyncio>=3.4.3
+Requires-Dist: rich>=10.0.0
+Requires-Dist: aiofiles>=0.8.0
+Requires-Dist: httpx>=0.24.0
+Requires-Dist: litellm>=1.26.0
+Requires-Dist: pydantic>=2.6.0
+Requires-Dist: requests>=2.31.0
+Requires-Dist: aiofiles>=23.2.1
+Requires-Dist: et-xmlfile>=1.1.0
+Requires-Dist: multidict>=6.0.4
+Requires-Dist: openai>=1.12.0
+Requires-Dist: pandas>=2.2.0
+Requires-Dist: numpy>=1.26.0
+Requires-Dist: yarl>=1.9.4
+Requires-Dist: typing_extensions>=4.9.0
+Provides-Extra: dev
+Requires-Dist: pytest>=7.4.0; extra == "dev"
+Requires-Dist: pytest-asyncio>=0.21.1; extra == "dev"
+Requires-Dist: pytest-cov>=4.1.0; extra == "dev"
+Requires-Dist: black>=23.7.0; extra == "dev"
+Requires-Dist: isort>=5.12.0; extra == "dev"
+Requires-Dist: mypy>=1.4.1; extra == "dev"
+Requires-Dist: ruff>=0.1.8; extra == "dev"
+Requires-Dist: pre-commit>=3.5.0; extra == "dev"
+Provides-Extra: test
+Requires-Dist: pytest>=7.4.0; extra == "test"
+Requires-Dist: pytest-asyncio>=0.21.1; extra == "test"
+Requires-Dist: pytest-cov>=4.1.0; extra == "test"
+Requires-Dist: pytest-mock>=3.12.0; extra == "test"
+Requires-Dist: coverage>=7.4.0; extra == "test"
+Provides-Extra: docs
+Requires-Dist: sphinx>=7.1.0; extra == "docs"
+Requires-Dist: sphinx-rtd-theme>=1.3.0; extra == "docs"
+Requires-Dist: myst-parser>=2.0.0; extra == "docs"
+
+# SpiderForce4AI Python Wrapper
+
+A comprehensive Python package for web content crawling, HTML-to-Markdown conversion, and AI-powered post-processing with real-time webhook notifications. Built for seamless integration with the SpiderForce4AI service.
+
+## Prerequisites
+
+**Important:** To use this wrapper, you must have the SpiderForce4AI service running. For full installation and deployment instructions, visit:
+[https://github.com/petertamai/SpiderForce4AI](https://github.com/petertamai/SpiderForce4AI)
+
+## Features
+
+- HTML to Markdown conversion
+- Advanced content extraction with custom selectors
+- Parallel and async crawling support
+- Sitemap processing
+- Automatic retry mechanism
+- Real-time webhook notifications for each processed URL
+- AI-powered post-extraction processing
+- Post-extraction webhook integration
+- Detailed progress tracking
+- Customizable reporting
+
+## Installation
+
+```bash
+pip install spiderforce4ai
+```
+
+## Quick Start with Webhooks
+
+```python
+from spiderforce4ai import SpiderForce4AI, CrawlConfig
+from pathlib import Path
+
+# Initialize crawler with your SpiderForce4AI service URL (required)
+spider = SpiderForce4AI("http://localhost:3004")
+
+# Configure crawling options with webhook support
+config = CrawlConfig(
+    target_selector="article",  # Optional: target element to extract
+    remove_selectors=[".ads", ".navigation"],  # Optional: elements to remove
+    max_concurrent_requests=5,  # Optional: default is 1
+    save_reports=True,  # Optional: default is False
+    
+    # Webhook configuration for real-time notifications
+    webhook_url="https://webhook.site/your-unique-webhook-id",  # Required for webhooks
+    webhook_headers={  # Optional custom headers
+        "Authorization": "Bearer your-token",
+        "Content-Type": "application/json"
+    }
+)
+
+# Crawl a sitemap with webhook notifications
+results = spider.crawl_sitemap_server_parallel("https://petertam.pro/sitemap.xml", config)
+```
+
+## Core Components
+
+### Configuration Options
+
+The `CrawlConfig` class accepts the following parameters:
+
+#### Mandatory Parameters for Webhook Integration
+- `webhook_url`: (str) Webhook endpoint URL (required only if you want webhook notifications)
+
+#### Optional Parameters
+
+**Content Selection:**
+- `target_selector`: (str) CSS selector for the main content to extract
+- `remove_selectors`: (List[str]) List of CSS selectors to remove from content
+- `remove_selectors_regex`: (List[str]) List of regex patterns for element removal
+
+**Processing:**
+- `max_concurrent_requests`: (int) Number of parallel requests (default: 1)
+- `request_delay`: (float) Delay between requests in seconds (default: 0.5)
+- `timeout`: (int) Request timeout in seconds (default: 30)
+
+**Output:**
+- `output_dir`: (Path) Directory to save output files (default: "spiderforce_reports")
+- `save_reports`: (bool) Whether to save crawl reports (default: False)
+- `report_file`: (Path) Custom report file location (generated if None)
+- `combine_to_one_markdown`: (str) 'full' or 'metadata_headers' (perfect for SEO) to combine content
+- `combined_markdown_file`: (Path) Custom combined file location (generated if None)
+
+**Webhook:**
+- `webhook_url`: (str) Webhook endpoint URL
+- `webhook_timeout`: (int) Webhook timeout in seconds (default: 10)
+- `webhook_headers`: (Dict[str, str]) Custom webhook headers
+- `webhook_payload_template`: (str) Custom webhook payload template
+
+**Post-Extraction Processing:**
+- `post_extraction_agent`: (Dict) Configuration for LLM post-processing
+- `post_extraction_agent_save_to_file`: (str) Path to save extraction results
+- `post_agent_transformer_function`: (Callable) Custom transformer function for webhook payloads
+
+## When Are Webhooks Triggered?
+
+SpiderForce4AI provides webhook notifications at multiple points in the crawling process:
+
+1. **URL Processing Completion**: Triggered after each URL is processed (whether successful or failed)
+2. **Post-Extraction Completion**: Triggered after LLM post-processing of each URL (if configured)
+3. **Custom Transformation**: You can implement your own webhook logic in the transformer function
+
+The webhook payload contains detailed information about the processed URL, including:
+- The URL that was processed
+- Processing status (success/failed)
+- Extracted markdown content (for successful requests)
+- Error details (for failed requests)
+- Timestamp of processing
+- Post-extraction results (if LLM processing is enabled)
+
+## Complete Webhook Integration Examples
+
+### Basic Webhook Integration
+
+This example sends a webhook notification after each URL is processed:
+
+```python
+from spiderforce4ai import SpiderForce4AI, CrawlConfig
+from pathlib import Path
+
+# Initialize crawler
+spider = SpiderForce4AI("http://localhost:3004")
+
+# Configure with basic webhook support
+config = CrawlConfig(
+    # Content selection
+    target_selector="article",
+    remove_selectors=[".ads", ".navigation"],
+    
+    # Processing
+    max_concurrent_requests=5,
+    request_delay=0.5,
+    
+    # Output
+    output_dir=Path("content_output"),
+    save_reports=True,
+    
+    # Webhook configuration
+    webhook_url="https://webhook.site/your-unique-id",
+    webhook_headers={
+        "Authorization": "Bearer your-token",
+        "Content-Type": "application/json"
+    }
+)
+
+# Crawl URLs with webhook notifications
+urls = ["https://petertam.pro/about", "https://petertam.pro/contact"]
+results = spider.crawl_urls_server_parallel(urls, config)
+```
+
+### Custom Webhook Payload Template
+
+You can customize the webhook payload format:
+
+```python
+from spiderforce4ai import SpiderForce4AI, CrawlConfig
+
+# Initialize crawler
+spider = SpiderForce4AI("http://localhost:3004")
+
+# Configure with custom webhook payload
+config = CrawlConfig(
+    target_selector="article",
+    max_concurrent_requests=3,
+    
+    # Webhook with custom payload template
+    webhook_url="https://webhook.site/your-unique-id",
+    webhook_payload_template='''{
+        "page": {
+            "url": "{url}",
+            "status": "{status}",
+            "processed_at": "{timestamp}"
+        },
+        "content": {
+            "markdown": "{markdown}",
+            "error": "{error}"
+        },
+        "metadata": {
+            "service": "SpiderForce4AI",
+            "version": "2.6.7",
+            "client_id": "your-client-id"
+        }
+    }'''
+)
+
+# Crawl with custom webhook payload
+results = spider.crawl_url("https://petertam.pro", config)
+```
+
+### Advanced: Post-Extraction Webhooks
+
+This example demonstrates how to use webhooks with the AI post-processing feature:
+
+```python
+from spiderforce4ai import SpiderForce4AI, CrawlConfig
+import requests
+from pathlib import Path
+
+# Define extraction template structure
+extraction_template = """
+{
+    "Title": "Extract the main title of the content",
+    "MetaDescription": "Extract a search-friendly meta description (under 160 characters)",
+    "KeyPoints": ["Extract 3-5 key points from the content"],
+    "Categories": ["Extract relevant categories for this content"],
+    "ReadingTimeMinutes": "Estimate reading time in minutes"
+}
+"""
+
+# Define a custom webhook function
+def post_extraction_webhook(extraction_result):
+    """Send extraction results to a webhook and return transformed data."""
+    # Add custom fields or transform the data as needed
+    payload = {
+        "url": extraction_result.get("url", ""),
+        "title": extraction_result.get("Title", ""),
+        "description": extraction_result.get("MetaDescription", ""),
+        "key_points": extraction_result.get("KeyPoints", []),
+        "categories": extraction_result.get("Categories", []),
+        "reading_time": extraction_result.get("ReadingTimeMinutes", ""),
+        "processed_at": extraction_result.get("timestamp", "")
+    }
+    
+    # Send to webhook (example using a different webhook than the main one)
+    try:
+        response = requests.post(
+            "https://webhook.site/your-extraction-webhook-id",
+            json=payload,
+            headers={
+                "Authorization": "Bearer extraction-token",
+                "Content-Type": "application/json"
+            },
+            timeout=10
+        )
+        print(f"Extraction webhook sent: Status {response.status_code}")
+    except Exception as e:
+        print(f"Extraction webhook error: {str(e)}")
+    
+    # Return the transformed data (will be stored in result.extraction_result)
+    return payload
+
+# Initialize crawler
+spider = SpiderForce4AI("http://localhost:3004")
+
+# Configure with post-extraction and webhooks
+config = CrawlConfig(
+    # Basic crawling settings
+    target_selector="article",
+    remove_selectors=[".ads", ".navigation", ".comments"],
+    max_concurrent_requests=5,
+    
+    # Regular webhook for crawl results
+    webhook_url="https://webhook.site/your-crawl-webhook-id",
+    webhook_headers={
+        "Authorization": "Bearer crawl-token",
+        "Content-Type": "application/json"
+    },
+    
+    # Post-extraction LLM processing
+    post_extraction_agent={
+        "model": "gpt-4-turbo",  # Or another compatible model
+        "api_key": "your-api-key-here",
+        "max_tokens": 1000,
+        "temperature": 0.3,
+        "response_format": "json_object",  # Request JSON response format
+        "messages": [
+            {
+                "role": "system",
+                "content": f"Extract the following information from the content. Return ONLY valid JSON, no explanations:\n\n{extraction_template}"
+            },
+            {
+                "role": "user",
+                "content": "{here_markdown_content}"  # Will be replaced with actual content
+            }
+        ]
+    },
+    # Save combined extraction results
+    post_extraction_agent_save_to_file="extraction_results.json",
+    # Custom function to transform and send extraction webhook
+    post_agent_transformer_function=post_extraction_webhook
+)
+
+# Crawl a sitemap with both regular and post-extraction webhooks
+results = spider.crawl_sitemap_server_parallel("https://petertam.pro/sitemap.xml", config)
+```
+
+### Real-World Example: SEO Analyzer with Webhooks
+
+This complete example crawls a site and uses Mistral AI to extract SEO-focused data, sending custom webhooks at each step:
+
+```python
+from spiderforce4ai import SpiderForce4AI, CrawlConfig
+from pathlib import Path
+import requests
+
+# Define your extraction template
+extraction_template = """
+{
+    "Title": "Extract the main title of the content (ideally under 60 characters for SEO)",
+    "MetaDescription": "Extract the meta description of the content (ideally under 160 characters for SEO)",
+    "CanonicalUrl": "Extract the canonical URL of the content",
+    "Headings": {
+        "H1": "Extract the main H1 heading",
+        "H2": ["Extract all H2 headings (for better content structure)"],
+        "H3": ["Extract all H3 headings (for better content structure)"]
+    },
+    "KeyPoints": [
+        "Point 1 (focus on primary keywords)",
+        "Point 2 (focus on secondary keywords)",
+        "Point 3 (focus on user intent)"
+    ],
+    "CallToAction": "Extract current call to actions (e.g., Sign up now for exclusive offers!)"
+}
+"""
+
+# Define custom transformer function
+def post_webhook(post_extraction_agent_response):
+    """Transform and send extracted SEO-focused data to webhook."""
+    payload = {
+        "url": post_extraction_agent_response.get("url", ""),
+        "Title": post_extraction_agent_response.get("Title", ""),
+        "MetaDescription": post_extraction_agent_response.get("MetaDescription", ""),
+        "CanonicalUrl": post_extraction_agent_response.get("CanonicalUrl", ""),
+        "Headings": post_extraction_agent_response.get("Headings", {}),
+        "KeyPoints": post_extraction_agent_response.get("KeyPoints", []),
+        "CallToAction": post_extraction_agent_response.get("CallToAction", "")
+    }
+    
+    # Send webhook with custom headers
+    try:
+        response = requests.post(
+            "https://webhook.site/your-extraction-webhook-id",
+            json=payload,
+            headers={
+                "Authorization": "Bearer token",
+                "X-Custom-Header": "value",
+                "Content-Type": "application/json"
+            },
+            timeout=10
+        )
+        
+        # Log the response for debugging
+        if response.status_code == 200:
+            print(f"✅ Webhook sent successfully for {payload['url']}")
+        else:
+            print(f"❌ Failed to send webhook. Status code: {response.status_code}")
+    except Exception as e:
+        print(f"❌ Webhook error: {str(e)}")
+    
+    return payload  # Return transformed data
+
+# Initialize crawler
+spider = SpiderForce4AI("http://localhost:3004")
+
+# Configure post-extraction agent
+post_extraction_agent = {
+    "model": "mistral/mistral-large-latest",  # Or any model compatible with litellm
+    "messages": [
+        {
+            "role": "system",
+            "content": f"Based on the provided markdown content, extract the following information. Return ONLY valid JSON, no comments or explanations:\n\n{extraction_template}"
+        },
+        {
+            "role": "user",
+            "content": "{here_markdown_content}"  # Placeholder for markdown content
+        }
+    ],
+    "api_key": "your-mistral-api-key",  # Replace with your actual API key
+    "max_tokens": 8000,
+    "response_format": "json_object"  # Request JSON format from the API
+}
+
+# Create crawl configuration
+config = CrawlConfig(
+    # Basic crawl settings
+    save_reports=True,
+    max_concurrent_requests=5,
+    remove_selectors=[
+        ".header-bottom",
+        "#mainmenu", 
+        ".headerfix", 
+        ".header",
+        ".menu-item", 
+        ".wpcf7",
+        ".followus-section"
+    ],
+    output_dir=Path("reports"),
+    
+    # Crawl results webhook
+    webhook_url="https://webhook.site/your-crawl-webhook-id",
+    webhook_headers={
+        "Authorization": "Bearer crawl-token",
+        "Content-Type": "application/json"
+    },
+    
+    # Add post-extraction configuration
+    post_extraction_agent=post_extraction_agent,
+    post_extraction_agent_save_to_file="combined_extraction.json",
+    post_agent_transformer_function=post_webhook
+)
+
+# Run the crawler with parallel processing
+results = spider.crawl_sitemap_parallel(
+    "https://petertam.pro/sitemap.xml",
+    config
+)
+
+# Print summary
+successful = len([r for r in results if r.status == "success"])
+extracted = len([r for r in results if hasattr(r, 'extraction_result') and r.extraction_result])
+print(f"\n📊 Crawling complete:")
+print(f"  - {len(results)} URLs processed")
+print(f"  - {successful} successfully crawled")
+print(f"  - {extracted} with AI extraction")
+print(f"  - Reports saved to: {config.report_file}")
+print(f"  - Extraction data saved to: {config.post_extraction_agent_save_to_file}")
+```
+
+## AI-Powered Post-Processing with Webhook Integration
+
+The package includes a powerful AI post-processing system through the `PostExtractionAgent` class with integrated webhook capabilities.
+
+### Post-Extraction Configuration
+
+```python
+from spiderforce4ai import SpiderForce4AI, CrawlConfig, PostExtractionConfig, PostExtractionAgent
+import requests
+
+# Define a custom webhook transformer
+def transform_and_notify(result):
+    """Process extraction results and send to external system."""
+    # Send to external system
+    requests.post(
+        "https://your-api.com/analyze",
+        json=result,
+        headers={"Authorization": "Bearer token"}
+    )
+    return result  # Return data for storage
+
+# Configure post-extraction processing with webhooks
+config = CrawlConfig(
+    # Basic crawl settings
+    target_selector="article",
+    max_concurrent_requests=5,
+    
+    # Standard crawl webhook
+    webhook_url="https://webhook.site/your-crawl-webhook-id",
+    
+    # Post-extraction LLM configuration
+    post_extraction_agent={
+        "model": "gpt-4-turbo",
+        "api_key": "your-api-key-here",
+        "max_tokens": 1000,
+        "temperature": 0.7,
+        "base_url": "https://api.openai.com/v1",
+        "messages": [
+            {
+                "role": "system",
+                "content": "Extract key information from the following content."
+            },
+            {
+                "role": "user",
+                "content": "Please analyze the following content:\n\n{here_markdown_content}"
+            }
+        ]
+    },
+    # Save extraction results to file
+    post_extraction_agent_save_to_file="extraction_results.json",
+    # Custom webhook transformer
+    post_agent_transformer_function=transform_and_notify
+)
+
+# Crawl with post-processing and webhooks
+results = spider.crawl_urls_server_parallel(["https://petertam.pro"], config)
+```
+
+## Crawling Methods
+
+All methods support webhook integration automatically when configured:
+
+#### 1. Single URL Processing
+
+```python
+# Synchronous with webhook
+result = spider.crawl_url("https://petertam.pro", config)
+
+# Asynchronous with webhook
+async def crawl():
+    result = await spider.crawl_url_async("https://petertam.pro", config)
+```
+
+#### 2. Multiple URLs
+
+```python
+urls = ["https://petertam.pro/about", "https://petertam.pro/contact"]
+
+# Server-side parallel with webhooks (recommended)
+results = spider.crawl_urls_server_parallel(urls, config)
+
+# Client-side parallel with webhooks
+results = spider.crawl_urls_parallel(urls, config)
+
+# Asynchronous with webhooks
+async def crawl():
+    results = await spider.crawl_urls_async(urls, config)
+```
+
+#### 3. Sitemap Processing
+
+```python
+# Server-side parallel with webhooks (recommended)
+results = spider.crawl_sitemap_server_parallel("https://petertam.pro/sitemap.xml", config)
+
+# Client-side parallel with webhooks
+results = spider.crawl_sitemap_parallel("https://petertam.pro/sitemap.xml", config)
+
+# Asynchronous with webhooks
+async def crawl():
+    results = await spider.crawl_sitemap_async("https://petertam.pro/sitemap.xml", config)
+```
+
+## Webhook Payload Structure
+
+The default webhook payload includes:
+
+```json
+{
+  "url": "https://petertam.pro/about",
+  "status": "success",
+  "markdown": "# About\n\nThis is the about page content...",
+  "error": null,
+  "timestamp": "2025-02-27T12:30:45.123456",
+  "config": {
+    "target_selector": "article",
+    "remove_selectors": [".ads", ".navigation"]
+  },
+  "extraction_result": {
+    "Title": "About Peter Tam",
+    "MetaDescription": "Professional developer with expertise in AI and web technologies",
+    "KeyPoints": ["Over 10 years experience", "Specializes in AI integration", "Full-stack development"]
+  }
+}
+```
+
+For failed requests:
+
+```json
+{
+  "url": "https://petertam.pro/missing-page",
+  "status": "failed",
+  "markdown": null,
+  "error": "HTTP 404: Not Found",
+  "timestamp": "2025-02-27T12:31:23.456789",
+  "config": {
+    "target_selector": "article",
+    "remove_selectors": [".ads", ".navigation"]
+  },
+  "extraction_result": null
+}
+```
+
+## Custom Webhook Transformation
+
+You can transform webhook data with a custom function:
+
+```python
+def transform_webhook_data(result):
+    """Custom transformer for webhook data."""
+    # Extract only needed fields
+    transformed = {
+        "url": result.get("url"),
+        "title": result.get("Title"),
+        "description": result.get("MetaDescription"),
+        "processed_at": result.get("timestamp")
+    }
+    
+    # Add custom calculations
+    if "raw_content" in result:
+        transformed["word_count"] = len(result["raw_content"].split())
+        transformed["reading_time_min"] = max(1, transformed["word_count"] // 200)
+    
+    # Send to external systems if needed
+    requests.post("https://your-analytics-api.com/log", json=transformed)
+    
+    return transformed  # This will be stored in result.extraction_result
+```
+
+## Smart Retry Mechanism
+
+The package provides a sophisticated retry system with webhook notifications:
+
+```python
+# Retry behavior with webhook notifications
+config = CrawlConfig(
+    max_concurrent_requests=5,
+    request_delay=1.0,
+    webhook_url="https://webhook.site/your-webhook-id",
+    # Webhook will be called for both initial attempts and retries
+)
+results = spider.crawl_urls_async(urls, config)
+```
+
+## Report Generation
+
+The package can generate detailed reports of crawling operations:
+
+```python
+config = CrawlConfig(
+    save_reports=True,
+    report_file=Path("custom_report.json"),
+    output_dir=Path("content"),
+    webhook_url="https://webhook.site/your-webhook-id"
+)
+```
+
+## Combined Content Output
+
+You can combine multiple pages into a single Markdown file:
+
+```python
+config = CrawlConfig(
+    combine_to_one_markdown="full",
+    combined_markdown_file=Path("all_pages.md"),
+    webhook_url="https://webhook.site/your-webhook-id"
+)
+```
+
+## Progress Tracking
+
+The package provides rich progress tracking with detailed statistics:
+
+```
+Fetching sitemap from https://petertam.pro/sitemap.xml...
+Found 23 URLs in sitemap
+[━━━━━━━━━━━━━━━━━━━━━━━━━━━━] 100% • 23/23 URLs
+
+Retrying failed URLs: 3 (13.0% failed)
+[━━━━━━━━━━━━━━━━━━━━━━━━━━━━] 100% • 3/3 retries
+
+Starting post-extraction processing...
+[⠋] Post-extraction processing... • 0/20 0% • 00:00:00
+
+Crawling Summary:
+Total URLs processed: 23
+Initial failures: 3 (13.0%)
+Final results:
+  ✓ Successful: 22
+  ✗ Failed: 1
+Retry success rate: 2/3 (66.7%)
+```
+
+## Advanced Error Handling with Webhooks
+
+```python
+import logging
+from datetime import datetime
+
+# Setup logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    filename='spider_log.txt'
+)
+
+# Define error handling webhook function
+def error_handler(extraction_result):
+    """Handle errors and send notifications."""
+    url = extraction_result.get('url', 'unknown')
+    
+    # Check for errors
+    if 'error' in extraction_result and extraction_result['error']:
+        # Log the error
+        logging.error(f"Error processing {url}: {extraction_result['error']}")
+        
+        # Send error notification webhook
+        try:
+            requests.post(
+                "https://webhook.site/your-error-webhook-id",
+                json={
+                    "url": url,
+                    "error": extraction_result['error'],
+                    "timestamp": datetime.now().isoformat(),
+                    "severity": "high" if "404" in extraction_result['error'] else "medium"
+                },
+                headers={"X-Error-Alert": "true"}
+            )
+        except Exception as e:
+            logging.error(f"Failed to send error webhook: {e}")
+    
+    # Always return the original result to ensure data is preserved
+    return extraction_result
+
+# Add to config
+config = CrawlConfig(
+    # Regular webhook for all crawl results
+    webhook_url="https://webhook.site/your-regular-webhook-id",
+    
+    # Error handling webhook through the transformer function
+    post_agent_transformer_function=error_handler
+)
+```
+
+## Requirements
+
+- Python 3.11+
+- Running SpiderForce4AI service
+- Internet connection
+
+## Dependencies
+
+- aiohttp
+- asyncio
+- rich
+- aiofiles
+- httpx
+- litellm
+- pydantic
+- requests
+- pandas
+- numpy
+- openai
+
+## License
+
+MIT License
+
+## Credits
+
+Created by [Piotr Tamulewicz](https://petertam.pro)
