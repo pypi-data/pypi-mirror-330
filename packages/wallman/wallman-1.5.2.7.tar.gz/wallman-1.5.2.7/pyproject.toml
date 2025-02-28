@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wallman"
+version = "1.5.2.7"
+authors = [
+    {name = "Emma Nora Theuer", email = "wallman@entheuer.de"},
+]
+description = "A simple program to set dynamic wallpapers on standalone X11 Windows Managers and Wayland compositors"
+readme = "README.md"
+requires-python = ">=3.11"
+keywords = ["Desktop", "Wallpapers"]
+license = {text = "MIT"}
+classifiers = [
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: POSIX :: GNU Hurd",
+    "Operating System :: POSIX :: BSD",
+]
+dependencies = [
+    "APScheduler",
+    "pillow",
+    "pystray",
+    'importlib-metadata; python_version<"3.10"',
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["wallman*"]
+exclude = ["icons*", "packaging*", "DefaultFallbackWallpaper.jpg"]
+
+[project.urls]
+Homepage = "https://git.entheuer.de/emma/Wallman"
+Issues = "https://git.entheuer.de/emma/Wallman/issues"
+
+[project.scripts]
+wallman = "wallman.main:main"

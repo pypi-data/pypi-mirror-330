@@ -1,0 +1,5 @@
+include sample_config.toml
+include packaging/wallman.desktop
+include DefaultFallbackWallpaper.jpg
+recursive-include icons *
+exclude README.org

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=wallman
+Comment=run wallman
+Exec=wallman
+Icon=/etc/wallman/icons/WallmanLogo.jpg
+Terminal=false
+Type=Application
+Categories=Utility;
