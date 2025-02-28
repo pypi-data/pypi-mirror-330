@@ -1,0 +1,54 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "reasonercli"
+version = "0.8.0"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.8"
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+]
+dependencies = [
+    "aiofiles>=24.1.0",
+    "httpimport>=1.4.0",
+    "httpx>=0.24.1",
+    "starlette>=0.29.0",
+    "typer[all]",
+]
+
+[project.scripts]
+reasonercli = "reasoner.cli:app"
+
+[tool.hatch.build]
+include = [
+    "src/*"
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/reasoner"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "src/*",
+]
+
+[tool.uv.workspace]
+members = ["reasoner-cli"]
+
+[tool.pytest.ini_options]
+testpaths = [
+    "tests/unit",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3.4",
+    "pytest-asyncio>=0.24.0",
+    "pytest-mock>=3.14.0",
+    "pytest-xdist>=3.6.1",
+]
