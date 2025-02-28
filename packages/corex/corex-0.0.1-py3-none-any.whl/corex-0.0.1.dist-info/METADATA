@@ -1,0 +1,44 @@
+Metadata-Version: 2.4
+Name: corex
+Version: 0.0.1
+Summary: An application building platform on top of Flask and HTMLX.
+Project-URL: Documentation, https://github.com/Yasas Senarath/corex#readme
+Project-URL: Issues, https://github.com/Yasas Senarath/corex/issues
+Project-URL: Source, https://github.com/Yasas Senarath/corex
+Author-email: Yasas Senarath <12231659+ysenarath@users.noreply.github.com>
+License-Expression: MIT
+License-File: LICENSE.txt
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+
+# corex
+
+[![PyPI - Version](https://img.shields.io/pypi/v/corex.svg)](https://pypi.org/project/corex)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/corex.svg)](https://pypi.org/project/corex)
+
+---
+
+## Table of Contents
+
+- [Installation](#installation)
+- [License](#license)
+
+## Installation
+
+```console
+pip install corex
+```
+
+## License
+
+`corex` is distributed under the terms of the
+[MIT](https://spdx.org/licenses/MIT.html) license.
