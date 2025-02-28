@@ -1,0 +1,27 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+requirements.txt
+setup.py
+examples/examples.py
+examples/data/Adobe Scan 23 Jan 2024.pdf
+examples/data/G38J5.jpg
+examples/data/sideways.jpg
+py_reform/__init__.py
+py_reform/core.py
+py_reform.egg-info/PKG-INFO
+py_reform.egg-info/SOURCES.txt
+py_reform.egg-info/dependency_links.txt
+py_reform.egg-info/requires.txt
+py_reform.egg-info/top_level.txt
+py_reform/models/__init__.py
+py_reform/models/base.py
+py_reform/models/deskew_model.py
+py_reform/models/uvdoc_model.py
+py_reform/models/weights/best_model.pkl
+py_reform/utils/__init__.py
+py_reform/utils/comparison.py
+py_reform/utils/image.py
+py_reform/utils/pdf.py
+tests/test_basic.py
