@@ -1,0 +1,25 @@
+[build-system]
+requires = [
+    "setuptools>=61.0",
+    "wheel"
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "AIUT_RoboticsToolbox"
+version = "0.0.0.4"
+authors = [
+  { name="Maziar Palhang", email="palhang@iut.ac.ir" },
+]
+description = "A simple Robotics package"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "License :: OSI Approved :: MIT License",
+]
+
+[project.urls]
+Homepage = "https://github.com/pypa/AIUT_RoboticsToolbox"
+Issues = "https://github.com/pypa/AIUT_RoboticsToolbox/issues"
