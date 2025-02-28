@@ -1,0 +1,11 @@
+README.md
+setup.py
+LemX.egg-info/PKG-INFO
+LemX.egg-info/SOURCES.txt
+LemX.egg-info/dependency_links.txt
+LemX.egg-info/requires.txt
+LemX.egg-info/top_level.txt
+lemx/__init__.py
+lemx/dictionary.csv
+lemx/lemmatizer.py
+tests/test_lemmatizer.py
