@@ -1,0 +1,16 @@
+README.md
+setup.py
+keepthink/__init__.py
+keepthink/chat.py
+keepthink/cli.py
+keepthink.egg-info/PKG-INFO
+keepthink.egg-info/SOURCES.txt
+keepthink.egg-info/dependency_links.txt
+keepthink.egg-info/entry_points.txt
+keepthink.egg-info/requires.txt
+keepthink.egg-info/top_level.txt
+keepthink/prompts/__init__.py
+keepthink/prompts/think_prompt
+keepthink/web/__init__.py
+keepthink/web/app.py
+keepthink/web/templates/__init__.py
