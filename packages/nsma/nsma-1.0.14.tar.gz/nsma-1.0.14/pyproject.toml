@@ -1,0 +1,43 @@
+[project]
+name = "nsma"
+version = "1.0.14"
+description = "NSMA: A Memetic Procedure for Global Multi-Objective Optimization."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "Apache License 2.0" }
+authors = [
+  { name="Mansueto Pierluigi", email="pierluigimansueto@gmail.com" },
+]
+keywords = [
+  "Multi-objective optimization",
+  "Memetic algorithm",
+  "NSGA-II",
+  "Descent method",
+  "Pareto front approximation"
+]
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "License :: OSI Approved :: Apache Software License",
+  "Operating System :: Microsoft :: Windows",
+  "Operating System :: MacOS",
+  "Operating System :: POSIX :: Linux",
+  "Programming Language :: Python :: 3.10",
+  "Topic :: Scientific/Engineering :: Mathematics"
+]
+dependencies = [
+  "progressbar2>=4.2.0",
+  "gurobipy>=9.5.2",
+  "matplotlib>=3.5.3; platform_system == 'Windows'",
+  "matplotlib>=3.6.1; platform_system == 'Darwin'",
+  "matplotlib>=3.5.2; platform_system == 'Linux'",
+  "numpy>=1.22.3",
+  "scipy>=1.7.3",
+  "tensorflow>=2.9.1; platform_system == 'Windows'",
+  "tensorflow>=2.10.0; platform_system == 'Darwin'",
+  "tensorflow>=2.8.2; platform_system == 'Linux'",
+  "pyqt5>=5.15.7; platform_system == 'Darwin'"
+]
+
+[project.urls]
+"Homepage" = "https://github.com/pierlumanzu/nsma"
+"Tracker" = "https://github.com/pierlumanzu/nsma/issues"
