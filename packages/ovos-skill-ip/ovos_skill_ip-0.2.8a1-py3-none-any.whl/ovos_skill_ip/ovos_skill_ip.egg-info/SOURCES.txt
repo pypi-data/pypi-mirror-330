@@ -1,0 +1,150 @@
+LICENSE
+MANIFEST.in
+README.md
+__init__.py
+requirements.txt
+setup.py
+version.py
+locale/ca-es/IP.voc
+locale/ca-es/digits.voc
+locale/ca-es/dot.dialog
+locale/ca-es/ethernet.connection.dialog
+locale/ca-es/last digits device.dialog
+locale/ca-es/last digits.dialog
+locale/ca-es/last.voc
+locale/ca-es/my address is.dialog
+locale/ca-es/my address on X is Y.dialog
+locale/ca-es/no network connection.dialog
+locale/ca-es/query.voc
+locale/ca-es/skill.json
+locale/ca-es/what.ssid.intent
+locale/cs-cz/IP.voc
+locale/cs-cz/digits.voc
+locale/cs-cz/dot.dialog
+locale/cs-cz/ethernet.connection.dialog
+locale/cs-cz/last digits device.dialog
+locale/cs-cz/last digits.dialog
+locale/cs-cz/last.voc
+locale/cs-cz/my address is.dialog
+locale/cs-cz/my address on X is Y.dialog
+locale/cs-cz/no network connection.dialog
+locale/cs-cz/query.voc
+locale/cs-cz/what.ssid.intent
+locale/da-dk/IP.voc
+locale/da-dk/digits.voc
+locale/da-dk/dot.dialog
+locale/da-dk/ethernet.connection.dialog
+locale/da-dk/last digits device.dialog
+locale/da-dk/last digits.dialog
+locale/da-dk/last.voc
+locale/da-dk/my address is.dialog
+locale/da-dk/my address on X is Y.dialog
+locale/da-dk/no network connection.dialog
+locale/da-dk/query.voc
+locale/da-dk/skill.json
+locale/da-dk/what.ssid.intent
+locale/de-de/IP.voc
+locale/de-de/digits.voc
+locale/de-de/dot.dialog
+locale/de-de/ethernet.connection.dialog
+locale/de-de/last digits device.dialog
+locale/de-de/last digits.dialog
+locale/de-de/last.voc
+locale/de-de/my address is.dialog
+locale/de-de/my address on X is Y.dialog
+locale/de-de/no network connection.dialog
+locale/de-de/query.voc
+locale/de-de/skill.json
+locale/de-de/what.ssid.intent
+locale/en-us/IP.voc
+locale/en-us/digits.voc
+locale/en-us/dot.dialog
+locale/en-us/ethernet.connection.dialog
+locale/en-us/last digits device.dialog
+locale/en-us/last digits.dialog
+locale/en-us/last.voc
+locale/en-us/my address is.dialog
+locale/en-us/my address on X is Y.dialog
+locale/en-us/no network connection.dialog
+locale/en-us/query.voc
+locale/en-us/skill.json
+locale/en-us/what.ssid.intent
+locale/es-es/IP.voc
+locale/es-es/dot.dialog
+locale/es-es/my address is.dialog
+locale/es-es/my address on X is Y.dialog
+locale/es-es/no network connection.dialog
+locale/es-es/query.voc
+locale/eu-eu/IP.voc
+locale/eu-eu/digits.voc
+locale/eu-eu/dot.dialog
+locale/eu-eu/ethernet.connection.dialog
+locale/eu-eu/last digits device.dialog
+locale/eu-eu/last digits.dialog
+locale/eu-eu/last.voc
+locale/eu-eu/my address is.dialog
+locale/eu-eu/my address on X is Y.dialog
+locale/eu-eu/no network connection.dialog
+locale/eu-eu/query.voc
+locale/eu-eu/what.ssid.intent
+locale/gl-es/IP.voc
+locale/gl-es/digits.voc
+locale/gl-es/dot.dialog
+locale/gl-es/ethernet.connection.dialog
+locale/gl-es/last digits device.dialog
+locale/gl-es/last digits.dialog
+locale/gl-es/last.voc
+locale/gl-es/my address is.dialog
+locale/gl-es/my address on X is Y.dialog
+locale/gl-es/no network connection.dialog
+locale/gl-es/query.voc
+locale/gl-es/what.ssid.intent
+locale/it-it/IP.voc
+locale/it-it/dot.dialog
+locale/it-it/my address is.dialog
+locale/it-it/my address on X is Y.dialog
+locale/it-it/no network connection.dialog
+locale/it-it/query.voc
+locale/pl-pl/IP.voc
+locale/pl-pl/digits.voc
+locale/pl-pl/dot.dialog
+locale/pl-pl/ethernet.connection.dialog
+locale/pl-pl/last digits device.dialog
+locale/pl-pl/last digits.dialog
+locale/pl-pl/last.voc
+locale/pl-pl/my address is.dialog
+locale/pl-pl/my address on X is Y.dialog
+locale/pl-pl/no network connection.dialog
+locale/pl-pl/query.voc
+locale/pl-pl/what.ssid.intent
+locale/pt-br/IP.voc
+locale/pt-br/digits.voc
+locale/pt-br/dot.dialog
+locale/pt-br/ethernet.connection.dialog
+locale/pt-br/last digits device.dialog
+locale/pt-br/last digits.dialog
+locale/pt-br/last.voc
+locale/pt-br/my address is.dialog
+locale/pt-br/my address on X is Y.dialog
+locale/pt-br/no network connection.dialog
+locale/pt-br/query.voc
+locale/pt-br/what.ssid.intent
+locale/pt-pt/IP.voc
+locale/pt-pt/digits.voc
+locale/pt-pt/last.voc
+locale/pt-pt/query.voc
+locale/pt-pt/what.ssid.intent
+locale/sv-se/IP.voc
+locale/sv-se/dot.dialog
+locale/sv-se/my address is.dialog
+locale/sv-se/my address on X is Y.dialog
+locale/sv-se/no network connection.dialog
+locale/sv-se/query.voc
+ovos_skill_ip.egg-info/PKG-INFO
+ovos_skill_ip.egg-info/SOURCES.txt
+ovos_skill_ip.egg-info/dependency_links.txt
+ovos_skill_ip.egg-info/entry_points.txt
+ovos_skill_ip.egg-info/requires.txt
+ovos_skill_ip.egg-info/top_level.txt
+test/test_plugin.py
+test/test_skill_loading.py
