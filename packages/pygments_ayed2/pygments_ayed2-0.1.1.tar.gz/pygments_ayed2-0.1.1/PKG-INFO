@@ -1,0 +1,29 @@
+Metadata-Version: 2.1
+Name: pygments_ayed2
+Version: 0.1.1
+Summary: Pygments support for AyED2 Language
+License: MIT
+Author: Javier Mansilla
+Author-email: javimansilla@gmail.com
+Requires-Python: >=3.8,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: pygments (>=2.18.0,<3.0.0)
+Description-Content-Type: text/markdown
+
+# pygments_ayed2
+Pygments Lexer for AyED2 language
+
+After installing this package, pygments package will apply syntax highlighting to .ayed2 files
+
+![](https://github.com/jmansilla/pygments_ayed2/blob/main/img/Example.png?raw=true)
+
+# install
+
+pip install pygments-ayed2
+
