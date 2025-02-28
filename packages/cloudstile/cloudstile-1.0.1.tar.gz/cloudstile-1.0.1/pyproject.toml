@@ -1,0 +1,39 @@
+[tool.poetry]
+name = "cloudstile"
+version = "1.0.1"
+description = "Unofficial Cloudflare Turnstile library for Python with async and sync support."
+authors = ["NotAussie <notaussie@duck.com>"]
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/notaussie/cloudstile"
+keywords = ["cloudflare", "turnstile", "captcha"]
+classifiers = [
+    "Framework :: Pydantic",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Security",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Operating System :: OS Independent"
+]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+httpx = "0.28.1"
+typing-extensions = "4.12.2"
+
+[tool.poetry.group.dev.dependencies]
+pytest-asyncio = "^0.25.3"
+pytest = "^8.3.4"
+
+[tool.poetry.group.tests.dependencies]
+pytest-asyncio = "^0.25.3"
+pytest-cov = "^6.0.0"
+pytest = "^8.3.4"
+
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
