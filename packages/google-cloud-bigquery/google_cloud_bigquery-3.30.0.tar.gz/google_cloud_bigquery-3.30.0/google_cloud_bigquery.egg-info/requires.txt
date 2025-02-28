@@ -1,0 +1,56 @@
+google-api-core[grpc]<3.0.0dev,>=2.11.1
+google-auth<3.0.0dev,>=2.14.1
+google-cloud-core<3.0.0dev,>=2.4.1
+google-resumable-media<3.0dev,>=2.0.0
+packaging>=20.0.0
+python-dateutil<3.0dev,>=2.7.3
+requests<3.0.0dev,>=2.21.0
+
+[all]
+google-cloud-bigquery[bigquery_v2,bqstorage,geopandas,ipython,ipywidgets,opentelemetry,pandas,tqdm]
+
+[bigquery_v2]
+proto-plus<2.0.0dev,>=1.22.3
+protobuf!=4.21.0,!=4.21.1,!=4.21.2,!=4.21.3,!=4.21.4,!=4.21.5,<6.0.0dev,>=3.20.2
+
+[bqstorage]
+google-cloud-bigquery-storage<3.0.0dev,>=2.6.0
+grpcio<2.0dev,>=1.47.0
+pyarrow>=3.0.0
+
+[bqstorage:python_version >= "3.11"]
+grpcio<2.0dev,>=1.49.1
+
+[geopandas]
+geopandas<2.0dev,>=0.9.0
+Shapely<3.0.0dev,>=1.8.4
+
+[ipython]
+bigquery-magics>=0.1.0
+
+[ipywidgets]
+ipywidgets>=7.7.0
+ipykernel>=6.0.0
+
+[opentelemetry]
+opentelemetry-api>=1.1.0
+opentelemetry-sdk>=1.1.0
+opentelemetry-instrumentation>=0.20b0
+
+[pandas]
+pandas>=1.1.0
+grpcio<2.0dev,>=1.47.0
+pyarrow>=3.0.0
+db-dtypes<2.0.0dev,>=0.3.0
+
+[pandas:python_version < "3.8"]
+importlib_metadata>=1.0.0
+
+[pandas:python_version >= "3.11"]
+grpcio<2.0dev,>=1.49.1
+
+[pandas:python_version >= "3.8"]
+pandas-gbq>=0.26.1
+
+[tqdm]
+tqdm<5.0.0dev,>=4.7.4
