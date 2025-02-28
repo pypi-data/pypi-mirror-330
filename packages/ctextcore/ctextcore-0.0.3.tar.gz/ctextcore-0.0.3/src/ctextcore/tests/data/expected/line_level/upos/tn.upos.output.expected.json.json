@@ -1,0 +1,594 @@
+[
+  {
+    "doc": {
+      "p": [
+        {
+          "lid": "NONE",
+          "tokenised": true,
+          "sent": {
+            "tokens": [
+              {
+                "start_char": 0,
+                "end_char": 2,
+                "upos": "NOUN",
+                "id": 1,
+                "text": "RE"
+              },
+              {
+                "start_char": 3,
+                "end_char": 7,
+                "upos": "NOUN",
+                "id": 2,
+                "text": "RATA"
+              },
+              {
+                "start_char": 8,
+                "end_char": 10,
+                "upos": "NOUN",
+                "id": 3,
+                "text": "GO"
+              },
+              {
+                "start_char": 11,
+                "end_char": 13,
+                "upos": "NOUN",
+                "id": 4,
+                "text": "GO"
+              },
+              {
+                "start_char": 14,
+                "end_char": 19,
+                "upos": "NOUN",
+                "id": 5,
+                "text": "THUSA"
+              }
+            ]
+          }
+        },
+        {
+          "lid": "NONE",
+          "tokenised": true,
+          "sent": {
+            "tokens": [
+              {
+                "start_char": 0,
+                "end_char": 7,
+                "upos": "NOUN",
+                "id": 1,
+                "text": "Dipotso"
+              },
+              {
+                "start_char": 8,
+                "end_char": 10,
+                "upos": "PART",
+                "id": 2,
+                "text": "le"
+              },
+              {
+                "start_char": 11,
+                "end_char": 19,
+                "upos": "NOUN",
+                "id": 3,
+                "text": "Dikarabo"
+              }
+            ]
+          }
+        },
+        {
+          "lid": "NONE",
+          "tokenised": true,
+          "sent": {
+            "tokens": [
+              {
+                "start_char": 0,
+                "end_char": 3,
+                "upos": "NOUN",
+                "id": 1,
+                "text": "GEP"
+              },
+              {
+                "start_char": 4,
+                "end_char": 6,
+                "upos": "PART",
+                "id": 2,
+                "text": "ke"
+              },
+              {
+                "start_char": 7,
+                "end_char": 11,
+                "upos": "PART",
+                "id": 3,
+                "text": "mang"
+              },
+              {
+                "start_char": 11,
+                "end_char": 12,
+                "upos": "PUNCT",
+                "id": 4,
+                "text": "?"
+              }
+            ]
+          }
+        },
+        {
+          "lid": "NONE",
+          "tokenised": true,
+          "sent": {
+            "tokens": [
+              {
+                "start_char": 0,
+                "end_char": 7,
+                "upos": "NOUN",
+                "id": 1,
+                "text": "Gauteng"
+              },
+              {
+                "start_char": 8,
+                "end_char": 18,
+                "upos": "NOUN",
+                "id": 2,
+                "text": "Enterprise"
+              },
+              {
+                "start_char": 19,
+                "end_char": 28,
+                "upos": "NOUN",
+                "id": 3,
+                "text": "Propeller"
+              },
+              {
+                "start_char": 29,
+                "end_char": 30,
+                "upos": "PUNCT",
+                "id": 4,
+                "text": "("
+              },
+              {
+                "start_char": 30,
+                "end_char": 33,
+                "upos": "NOUN",
+                "id": 5,
+                "text": "GEP"
+              },
+              {
+                "start_char": 33,
+                "end_char": 34,
+                "upos": "PUNCT",
+                "id": 6,
+                "text": ")"
+              },
+              {
+                "start_char": 35,
+                "end_char": 37,
+                "upos": "PART",
+                "id": 7,
+                "text": "ke"
+              },
+              {
+                "start_char": 38,
+                "end_char": 44,
+                "upos": "NOUN",
+                "id": 8,
+                "text": "setheo"
+              },
+              {
+                "start_char": 45,
+                "end_char": 47,
+                "upos": "PRON",
+                "id": 9,
+                "text": "se"
+              },
+              {
+                "start_char": 48,
+                "end_char": 50,
+                "upos": "PRON",
+                "id": 10,
+                "text": "se"
+              },
+              {
+                "start_char": 51,
+                "end_char": 62,
+                "upos": "VERB",
+                "id": 11,
+                "text": "tlhomilweng"
+              },
+              {
+                "start_char": 63,
+                "end_char": 65,
+                "upos": "PART",
+                "id": 12,
+                "text": "ke"
+              },
+              {
+                "start_char": 66,
+                "end_char": 70,
+                "upos": "NOUN",
+                "id": 13,
+                "text": "Puso"
+              },
+              {
+                "start_char": 71,
+                "end_char": 73,
+                "upos": "PART",
+                "id": 14,
+                "text": "ya"
+              },
+              {
+                "start_char": 74,
+                "end_char": 83,
+                "upos": "NOUN",
+                "id": 15,
+                "text": "Porofense"
+              },
+              {
+                "start_char": 84,
+                "end_char": 86,
+                "upos": "PART",
+                "id": 16,
+                "text": "ya"
+              },
+              {
+                "start_char": 87,
+                "end_char": 94,
+                "upos": "NOUN",
+                "id": 17,
+                "text": "Gauteng"
+              },
+              {
+                "start_char": 94,
+                "end_char": 95,
+                "upos": "PUNCT",
+                "id": 18,
+                "text": ","
+              },
+              {
+                "start_char": 96,
+                "end_char": 98,
+                "upos": "PRON",
+                "id": 19,
+                "text": "mo"
+              },
+              {
+                "start_char": 99,
+                "end_char": 111,
+                "upos": "VERB",
+                "id": 20,
+                "text": "tlhokomelong"
+              },
+              {
+                "start_char": 112,
+                "end_char": 114,
+                "upos": "PART",
+                "id": 21,
+                "text": "ya"
+              },
+              {
+                "start_char": 115,
+                "end_char": 122,
+                "upos": "NOUN",
+                "id": 22,
+                "text": "Lefapha"
+              },
+              {
+                "start_char": 123,
+                "end_char": 125,
+                "upos": "PART",
+                "id": 23,
+                "text": "la"
+              },
+              {
+                "start_char": 126,
+                "end_char": 136,
+                "upos": "NOUN",
+                "id": 24,
+                "text": "Tlhabololo"
+              },
+              {
+                "start_char": 137,
+                "end_char": 139,
+                "upos": "PART",
+                "id": 25,
+                "text": "le"
+              },
+              {
+                "start_char": 140,
+                "end_char": 149,
+                "upos": "NOUN",
+                "id": 26,
+                "text": "Tsweletso"
+              },
+              {
+                "start_char": 150,
+                "end_char": 152,
+                "upos": "PART",
+                "id": 27,
+                "text": "ya"
+              },
+              {
+                "start_char": 153,
+                "end_char": 160,
+                "upos": "NOUN",
+                "id": 28,
+                "text": "Ikonomi"
+              },
+              {
+                "start_char": 160,
+                "end_char": 161,
+                "upos": "PUNCT",
+                "id": 29,
+                "text": ","
+              },
+              {
+                "start_char": 162,
+                "end_char": 164,
+                "upos": "PRON",
+                "id": 30,
+                "text": "se"
+              },
+              {
+                "start_char": 165,
+                "end_char": 167,
+                "upos": "VERB",
+                "id": 31,
+                "text": "na"
+              },
+              {
+                "start_char": 168,
+                "end_char": 170,
+                "upos": "PART",
+                "id": 32,
+                "text": "le"
+              },
+              {
+                "start_char": 171,
+                "end_char": 178,
+                "upos": "NOUN",
+                "id": 33,
+                "text": "taolelo"
+              },
+              {
+                "start_char": 179,
+                "end_char": 180,
+                "upos": "PRON",
+                "id": 34,
+                "text": "e"
+              },
+              {
+                "start_char": 181,
+                "end_char": 182,
+                "upos": "PRON",
+                "id": 35,
+                "text": "e"
+              },
+              {
+                "start_char": 183,
+                "end_char": 195,
+                "upos": "VERB",
+                "id": 36,
+                "text": "kgethegileng"
+              },
+              {
+                "start_char": 196,
+                "end_char": 198,
+                "upos": "PART",
+                "id": 37,
+                "text": "ya"
+              },
+              {
+                "start_char": 199,
+                "end_char": 201,
+                "upos": "PRON",
+                "id": 38,
+                "text": "go"
+              },
+              {
+                "start_char": 202,
+                "end_char": 209,
+                "upos": "VERB",
+                "id": 39,
+                "text": "tlamela"
+              },
+              {
+                "start_char": 210,
+                "end_char": 216,
+                "upos": "NOUN",
+                "id": 40,
+                "text": "diSMME"
+              },
+              {
+                "start_char": 217,
+                "end_char": 219,
+                "upos": "PART",
+                "id": 41,
+                "text": "ka"
+              },
+              {
+                "start_char": 220,
+                "end_char": 229,
+                "upos": "NOUN",
+                "id": 42,
+                "text": "tshegetso"
+              },
+              {
+                "start_char": 230,
+                "end_char": 232,
+                "upos": "PRON",
+                "id": 43,
+                "text": "mo"
+              },
+              {
+                "start_char": 233,
+                "end_char": 244,
+                "upos": "NOUN",
+                "id": 44,
+                "text": "Porofenseng"
+              },
+              {
+                "start_char": 245,
+                "end_char": 247,
+                "upos": "PART",
+                "id": 45,
+                "text": "ya"
+              },
+              {
+                "start_char": 248,
+                "end_char": 255,
+                "upos": "NOUN",
+                "id": 46,
+                "text": "Gauteng"
+              },
+              {
+                "start_char": 256,
+                "end_char": 258,
+                "upos": "PART",
+                "id": 47,
+                "text": "ka"
+              },
+              {
+                "start_char": 259,
+                "end_char": 266,
+                "upos": "NOUN",
+                "id": 48,
+                "text": "dithuso"
+              },
+              {
+                "start_char": 267,
+                "end_char": 270,
+                "upos": "PART",
+                "id": 49,
+                "text": "tsa"
+              },
+              {
+                "start_char": 271,
+                "end_char": 278,
+                "upos": "NOUN",
+                "id": 50,
+                "text": "matlole"
+              },
+              {
+                "start_char": 279,
+                "end_char": 281,
+                "upos": "PART",
+                "id": 51,
+                "text": "le"
+              },
+              {
+                "start_char": 282,
+                "end_char": 284,
+                "upos": "PART",
+                "id": 52,
+                "text": "ka"
+              },
+              {
+                "start_char": 285,
+                "end_char": 292,
+                "upos": "NOUN",
+                "id": 53,
+                "text": "dithuso"
+              },
+              {
+                "start_char": 293,
+                "end_char": 296,
+                "upos": "PART",
+                "id": 54,
+                "text": "tsa"
+              },
+              {
+                "start_char": 297,
+                "end_char": 303,
+                "upos": "NOUN",
+                "id": 55,
+                "text": "mofuta"
+              },
+              {
+                "start_char": 304,
+                "end_char": 305,
+                "upos": "PRON",
+                "id": 56,
+                "text": "o"
+              },
+              {
+                "start_char": 306,
+                "end_char": 312,
+                "upos": "ADJ",
+                "id": 57,
+                "text": "mongwe"
+              },
+              {
+                "start_char": 313,
+                "end_char": 317,
+                "upos": "CCONJ",
+                "id": 58,
+                "text": "fela"
+              },
+              {
+                "start_char": 317,
+                "end_char": 318,
+                "upos": "PUNCT",
+                "id": 59,
+                "text": "."
+              }
+            ]
+          }
+        },
+        {
+          "lid": "NONE",
+          "tokenised": true,
+          "sent": {
+            "tokens": [
+              {
+                "start_char": 0,
+                "end_char": 3,
+                "upos": "NOUN",
+                "id": 1,
+                "text": "GEP"
+              },
+              {
+                "start_char": 4,
+                "end_char": 5,
+                "upos": "PRON",
+                "id": 2,
+                "text": "e"
+              },
+              {
+                "start_char": 6,
+                "end_char": 16,
+                "upos": "VERB",
+                "id": 3,
+                "text": "tlhometswe"
+              },
+              {
+                "start_char": 17,
+                "end_char": 19,
+                "upos": "PRON",
+                "id": 4,
+                "text": "go"
+              },
+              {
+                "start_char": 20,
+                "end_char": 24,
+                "upos": "VERB",
+                "id": 5,
+                "text": "dira"
+              },
+              {
+                "start_char": 25,
+                "end_char": 28,
+                "upos": "PART",
+                "id": 6,
+                "text": "eng"
+              },
+              {
+                "start_char": 28,
+                "end_char": 29,
+                "upos": "PUNCT",
+                "id": 7,
+                "text": "?"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+]

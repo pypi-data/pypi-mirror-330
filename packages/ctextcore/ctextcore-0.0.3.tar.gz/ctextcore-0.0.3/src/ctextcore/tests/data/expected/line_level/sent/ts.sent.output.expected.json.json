@@ -1,0 +1,462 @@
+[
+  {
+    "doc": {
+      "p": [
+        {
+          "lid": "NONE",
+          "tokenised": false,
+          "sent": {
+            "tokens": [
+              {
+                "start_char": 0,
+                "end_char": 2,
+                "id": 1,
+                "text": "HA"
+              },
+              {
+                "start_char": 3,
+                "end_char": 5,
+                "id": 2,
+                "text": "KU"
+              },
+              {
+                "start_char": 6,
+                "end_char": 15,
+                "id": 3,
+                "text": "KORHOKELA"
+              }
+            ]
+          }
+        },
+        {
+          "lid": "NONE",
+          "tokenised": false,
+          "sent": {
+            "tokens": [
+              {
+                "start_char": 0,
+                "end_char": 9,
+                "id": 1,
+                "text": "Swivutiso"
+              },
+              {
+                "start_char": 10,
+                "end_char": 12,
+                "id": 2,
+                "text": "na"
+              },
+              {
+                "start_char": 13,
+                "end_char": 23,
+                "id": 3,
+                "text": "Tinhlamulo"
+              }
+            ]
+          }
+        },
+        {
+          "lid": "NONE",
+          "tokenised": false,
+          "sent": {
+            "tokens": [
+              {
+                "start_char": 0,
+                "end_char": 4,
+                "id": 1,
+                "text": "Xana"
+              },
+              {
+                "start_char": 5,
+                "end_char": 6,
+                "id": 2,
+                "text": "i"
+              },
+              {
+                "start_char": 7,
+                "end_char": 11,
+                "id": 3,
+                "text": "yini"
+              },
+              {
+                "start_char": 12,
+                "end_char": 16,
+                "id": 4,
+                "text": "GEP?"
+              }
+            ]
+          }
+        },
+        {
+          "lid": "NONE",
+          "tokenised": false,
+          "sent": {
+            "tokens": [
+              {
+                "start_char": 0,
+                "end_char": 10,
+                "id": 1,
+                "text": "Xindzuluti"
+              },
+              {
+                "start_char": 11,
+                "end_char": 13,
+                "id": 2,
+                "text": "xa"
+              },
+              {
+                "start_char": 14,
+                "end_char": 22,
+                "id": 3,
+                "text": "Mabindzu"
+              },
+              {
+                "start_char": 23,
+                "end_char": 25,
+                "id": 4,
+                "text": "ya"
+              },
+              {
+                "start_char": 26,
+                "end_char": 33,
+                "id": 5,
+                "text": "Gauteng"
+              },
+              {
+                "start_char": 34,
+                "end_char": 35,
+                "id": 6,
+                "text": "-"
+              },
+              {
+                "start_char": 26,
+                "end_char": 33,
+                "id": 7,
+                "text": "Gauteng"
+              },
+              {
+                "start_char": 44,
+                "end_char": 54,
+                "id": 8,
+                "text": "Enterprise"
+              },
+              {
+                "start_char": 55,
+                "end_char": 64,
+                "id": 9,
+                "text": "Propeller"
+              },
+              {
+                "start_char": 65,
+                "end_char": 70,
+                "id": 10,
+                "text": "(GEP)"
+              },
+              {
+                "start_char": 1,
+                "end_char": 2,
+                "id": 11,
+                "text": "i"
+              },
+              {
+                "start_char": 73,
+                "end_char": 80,
+                "id": 12,
+                "text": "xiyenge"
+              },
+              {
+                "start_char": 81,
+                "end_char": 85,
+                "id": 13,
+                "text": "lexi"
+              },
+              {
+                "start_char": 86,
+                "end_char": 99,
+                "id": 14,
+                "text": "tumbuluxiweke"
+              },
+              {
+                "start_char": 100,
+                "end_char": 102,
+                "id": 15,
+                "text": "hi"
+              },
+              {
+                "start_char": 103,
+                "end_char": 108,
+                "id": 16,
+                "text": "Mfumo"
+              },
+              {
+                "start_char": 109,
+                "end_char": 111,
+                "id": 17,
+                "text": "wa"
+              },
+              {
+                "start_char": 112,
+                "end_char": 125,
+                "id": 18,
+                "text": "Xifundzankulu"
+              },
+              {
+                "start_char": 11,
+                "end_char": 13,
+                "id": 19,
+                "text": "xa"
+              },
+              {
+                "start_char": 129,
+                "end_char": 137,
+                "id": 20,
+                "text": "Gauteng,"
+              },
+              {
+                "start_char": 100,
+                "end_char": 102,
+                "id": 21,
+                "text": "hi"
+              },
+              {
+                "start_char": 121,
+                "end_char": 123,
+                "id": 22,
+                "text": "ku"
+              },
+              {
+                "start_char": 144,
+                "end_char": 150,
+                "id": 23,
+                "text": "landza"
+              },
+              {
+                "start_char": 151,
+                "end_char": 160,
+                "id": 24,
+                "text": "swipimelo"
+              },
+              {
+                "start_char": 161,
+                "end_char": 164,
+                "id": 25,
+                "text": "swa"
+              },
+              {
+                "start_char": 165,
+                "end_char": 173,
+                "id": 26,
+                "text": "Ndzawulo"
+              },
+              {
+                "start_char": 23,
+                "end_char": 25,
+                "id": 27,
+                "text": "ya"
+              },
+              {
+                "start_char": 177,
+                "end_char": 187,
+                "id": 28,
+                "text": "Nhluvukiso"
+              },
+              {
+                "start_char": 109,
+                "end_char": 111,
+                "id": 29,
+                "text": "wa"
+              },
+              {
+                "start_char": 191,
+                "end_char": 200,
+                "id": 30,
+                "text": "Ikhonomi,"
+              },
+              {
+                "start_char": 100,
+                "end_char": 102,
+                "id": 31,
+                "text": "hi"
+              },
+              {
+                "start_char": 204,
+                "end_char": 211,
+                "id": 32,
+                "text": "xirhumo"
+              },
+              {
+                "start_char": 212,
+                "end_char": 214,
+                "id": 33,
+                "text": "xo"
+              },
+              {
+                "start_char": 215,
+                "end_char": 220,
+                "id": 34,
+                "text": "nyika"
+              },
+              {
+                "start_char": 221,
+                "end_char": 230,
+                "id": 35,
+                "text": "nseketelo"
+              },
+              {
+                "start_char": 231,
+                "end_char": 233,
+                "id": 36,
+                "text": "na"
+              },
+              {
+                "start_char": 234,
+                "end_char": 242,
+                "id": 37,
+                "text": "nhluvuko"
+              },
+              {
+                "start_char": 243,
+                "end_char": 246,
+                "id": 38,
+                "text": "eka"
+              },
+              {
+                "start_char": 247,
+                "end_char": 253,
+                "id": 39,
+                "text": "tiSMME"
+              },
+              {
+                "start_char": 243,
+                "end_char": 246,
+                "id": 40,
+                "text": "eka"
+              },
+              {
+                "start_char": 112,
+                "end_char": 125,
+                "id": 41,
+                "text": "Xifundzankulu"
+              },
+              {
+                "start_char": 11,
+                "end_char": 13,
+                "id": 42,
+                "text": "xa"
+              },
+              {
+                "start_char": 26,
+                "end_char": 33,
+                "id": 43,
+                "text": "Gauteng"
+              },
+              {
+                "start_char": 100,
+                "end_char": 102,
+                "id": 44,
+                "text": "hi"
+              },
+              {
+                "start_char": 121,
+                "end_char": 123,
+                "id": 45,
+                "text": "ku"
+              },
+              {
+                "start_char": 289,
+                "end_char": 296,
+                "id": 46,
+                "text": "tirhisa"
+              },
+              {
+                "start_char": 297,
+                "end_char": 303,
+                "id": 47,
+                "text": "timali"
+              },
+              {
+                "start_char": 231,
+                "end_char": 233,
+                "id": 48,
+                "text": "na"
+              },
+              {
+                "start_char": 307,
+                "end_char": 312,
+                "id": 49,
+                "text": "leswi"
+              },
+              {
+                "start_char": 313,
+                "end_char": 316,
+                "id": 50,
+                "text": "nga"
+              },
+              {
+                "start_char": 317,
+                "end_char": 321,
+                "id": 51,
+                "text": "riki"
+              },
+              {
+                "start_char": 322,
+                "end_char": 327,
+                "id": 52,
+                "text": "mali."
+              }
+            ]
+          }
+        },
+        {
+          "lid": "NONE",
+          "tokenised": false,
+          "sent": {
+            "tokens": [
+              {
+                "start_char": 0,
+                "end_char": 4,
+                "id": 1,
+                "text": "Xana"
+              },
+              {
+                "start_char": 5,
+                "end_char": 16,
+                "id": 2,
+                "text": "hikokwalaho"
+              },
+              {
+                "start_char": 17,
+                "end_char": 19,
+                "id": 3,
+                "text": "ka"
+              },
+              {
+                "start_char": 20,
+                "end_char": 24,
+                "id": 4,
+                "text": "yini"
+              },
+              {
+                "start_char": 25,
+                "end_char": 27,
+                "id": 5,
+                "text": "ku"
+              },
+              {
+                "start_char": 28,
+                "end_char": 41,
+                "id": 6,
+                "text": "tumbuluxiwile"
+              },
+              {
+                "start_char": 42,
+                "end_char": 46,
+                "id": 7,
+                "text": "GEP?"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+]
