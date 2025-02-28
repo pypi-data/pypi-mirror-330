@@ -1,0 +1,2 @@
+[console_scripts]
+tell-joke = predictable_jokes.jokes:tell_joke

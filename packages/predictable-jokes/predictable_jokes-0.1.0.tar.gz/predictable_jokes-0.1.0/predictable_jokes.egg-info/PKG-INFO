@@ -1,0 +1,25 @@
+Metadata-Version: 2.2
+Name: predictable_jokes
+Version: 0.1.0
+Summary: A Python package for AI, ML, data, and tech jokes.
+Home-page: https://github.com/ewimpey/predictable_jokes
+Author: Evan Wimpey
+Author-email: evan@predictablejokes.com
+License: MIT
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license
+Dynamic: requires-python
+Dynamic: summary
+
+# Predictable Jokes
+
+Coding is soooo boring. Here are some jokes to lighten the mood. 
