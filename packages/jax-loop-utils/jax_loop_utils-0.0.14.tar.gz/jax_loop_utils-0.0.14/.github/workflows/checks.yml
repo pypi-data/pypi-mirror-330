@@ -1,0 +1,75 @@
+---
+name: checks
+on: # yamllint disable-line rule:truthy
+  pull_request:
+  push:
+    branches:
+      - master
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+jobs:
+  unit-tests:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v3
+        with:
+          enable-cache: true
+      - name: pytest
+        run: |
+          uv sync
+          uv run -- pytest --capture=no --verbose --cov --cov-report=xml \
+             --ignore=src/jax_loop_utils/metric_writers/tf/ \
+             --ignore=src/jax_loop_utils/metric_writers/torch/ \
+             --ignore=src/jax_loop_utils/metric_writers/mlflow/ \
+             --ignore=src/jax_loop_utils/metric_writers/_audio_video/ \
+             src/jax_loop_utils/
+      - name: pytest tensorflow
+        run: |
+          uv sync --extra tensorflow
+          uv run -- pytest --capture=no --verbose --cov --cov-report=xml --cov-append \
+            src/jax_loop_utils/metric_writers/tf
+      - name: pytest torch
+        run: |
+          uv sync --group dev-torch --extra torch --extra audio-video
+          uv run -- pytest --capture=no --verbose --cov --cov-report=xml --cov-append \
+            src/jax_loop_utils/metric_writers/torch
+      - name: pytest mlflow
+        run: |
+          uv sync --extra mlflow --extra audio-video
+          uv run -- pytest --capture=no --verbose --cov --cov-report=xml --cov-append \
+            src/jax_loop_utils/metric_writers/mlflow
+      - name: pytest audio-video
+        run: |
+          uv sync --extra audio-video
+          uv run -- pytest --capture=no --verbose --cov --cov-report=xml --cov-append \
+            src/jax_loop_utils/metric_writers/_audio_video
+      - name: Upload coverage reports to Codecov
+        if: always()
+        uses: codecov/codecov-action@v5
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+
+  format:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v3
+        with:
+          enable-cache: true
+      - name: ruff format
+        run: uv run -- ruff format --check
+      - name: ruff check
+        run: uv run -- ruff check
+
+  pyright:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v3
+        with:
+          enable-cache: true
+      - name: uv sync
+        run: uv sync --all-extras
+      - name: pyright
+        run: uv run -- pyright

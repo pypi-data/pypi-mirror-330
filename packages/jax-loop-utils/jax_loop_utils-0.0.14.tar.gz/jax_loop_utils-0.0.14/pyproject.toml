@@ -1,0 +1,105 @@
+[project]
+name = "jax_loop_utils"
+version = "0.0.14"
+description = "Libraries for ML training loops in JAX."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "Apache 2.0" }
+authors = [{ name = "Gary Miguel", email = "garymm@garymm.org" }]
+dependencies = ["absl-py", "etils[epath,epy]", "jax>=0.4.36", "numpy", "wrapt"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+keywords = ["JAX", "machine learning"]
+
+[project.urls]
+Homepage = "http://github.com/garymm/jax_loop_utils"
+
+[project.optional-dependencies]
+mlflow = ["mlflow-skinny>=2.0", "Pillow"]
+# for synopsis.ipynb
+synopsis = ["chex", "flax", "ipykernel", "matplotlib"]
+tensorflow = ["tensorflow>=2.12"]
+torch = ["torch>=2.0"]
+audio-video = ["av>=14.0"]
+
+[dependency-groups]
+dev = [
+    "chex>=0.1.87",
+    "pyright==1.1.391",
+    "pytest>=8.3.4",
+    "pytest-cov>=6.0.0",
+    "ruff>=0.9.1",
+]
+# Development dependencies for --extra torch
+dev-torch = ["tensorflow>=2.12"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build]
+exclude = ["*_test.py"]
+
+[tool.uv]
+
+# restrict to platforms we care about so that version resolution is faster and more likely to succeed
+# (e.g. don't fail if a package isn't built for windows)
+environments = [
+    "sys_platform == 'darwin' and platform_machine == 'arm64'",
+    "sys_platform == 'linux' and platform_machine == 'aarch64'",
+    "sys_platform == 'linux' and platform_machine == 'x86_64'",
+]
+
+[tool.pytest.ini_options]
+filterwarnings = [
+    # Please only ignore warnings that come from a transitive dependency that we
+    # can't easily avoid.
+    # See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#controlling-warnings
+    # action:message:category:module:line
+    "error",
+    "ignore:.*:SyntaxWarning:moviepy",
+]
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = [
+    "A",   # flake8-builtins
+    "B",   # flake8-bugbear
+    "E",   # pycodestyle
+    "F",   # Pyflakes
+    "I",   # isort
+    "PT",  # flake8-pytest-style
+    "SIM", # flake8-simplify
+    "UP",  # pyupgrade
+]
+ignore = [
+    "A003",   # builtin-attribute-shadowing
+    "SIM108", # Use the ternary operator
+    "UP007",  # Allow Optional[type] instead of X | Y
+    "PT",     # TODO: Remove
+    "A005",   # builtin-module-shadowing
+]
+
+[tool.pyright]
+typeCheckingMode = "standard"
+include = [
+    # TODO: Fix issues in adopted code and enable for all sources
+    "src/jax_loop_utils/metric_writers/",
+]
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[tool.uv.sources]
+# we only need torch for the tensorboard writer
+torch = { index = "pytorch-cpu" }
