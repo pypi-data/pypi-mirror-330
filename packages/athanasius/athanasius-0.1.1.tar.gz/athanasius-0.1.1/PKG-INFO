@@ -1,0 +1,16 @@
+Metadata-Version: 2.2
+Name: athanasius
+Version: 0.1.1
+Summary: python CLI to archiving files
+Home-page: https://github.com/lim-james/athanasius
+Author: James
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+License-File: LICENSE
+Dynamic: author
+Dynamic: classifier
+Dynamic: home-page
+Dynamic: requires-python
+Dynamic: summary
