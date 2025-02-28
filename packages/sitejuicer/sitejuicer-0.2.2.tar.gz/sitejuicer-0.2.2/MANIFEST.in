@@ -1,0 +1,18 @@
+include LICENSE
+include README.md
+include CHANGELOG.md
+include CONTRIBUTING.md
+include pyproject.toml
+include mypy.ini
+include pytest.ini
+include .flake8
+include .isort.cfg
+
+recursive-include docs *
+recursive-include examples *
+recursive-include tests *
+
+recursive-exclude * __pycache__
+recursive-exclude * *.py[cod]
+recursive-exclude * *.so
+recursive-exclude * .DS_Store 

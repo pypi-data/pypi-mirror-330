@@ -1,0 +1,14 @@
+requests>=2.25.0
+rich>=12.0.0
+commonmark>=0.9.1
+typer>=0.7.0
+
+[dev]
+pytest>=7.0.0
+black>=22.0.0
+isort>=5.0.0
+mypy>=0.9.0
+flake8>=5.0.0
+
+[ui]
+textual>=0.11.0
