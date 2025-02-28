@@ -1,0 +1,16 @@
+Metadata-Version: 2.2
+Name: pyrfuniverse-test
+Version: 0.30.3
+Summary: RFUniverse test scripts
+Home-page: https://github.com/robotflow-initiative/pyrfuniverse
+Author: RobotFlow AI Team
+Author-email: robotflow@163.com
+Requires-Python: >=3.10
+License-File: LICENSE
+Requires-Dist: pyrfuniverse==0.30.3
+Dynamic: author
+Dynamic: author-email
+Dynamic: home-page
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
