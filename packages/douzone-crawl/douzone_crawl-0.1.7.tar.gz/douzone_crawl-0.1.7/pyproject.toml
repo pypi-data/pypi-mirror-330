@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "douzone_crawl"
+version = "0.1.7"  # 새 버전 번호
+description = "효율적인 웹 크롤링 및 검색 결과 처리를 위한 라이브러리"
+readme = "README.md"
+authors = [{ name = "choheejin", email = "hjcho1027@douzone.com" }]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "selenium>=4.0.0",
+    "python-dotenv>=0.19.0",
+]
+requires-python = ">=3.7"
