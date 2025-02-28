@@ -1,0 +1,42 @@
+Metadata-Version: 2.2
+Name: geodev-mapping
+Version: 0.0.2
+Summary: Python Boilerplate contains all the boilerplate you need to create a Python package.
+Author-email: Farai Marumbwa <maxmarumbwa@gmail.com>
+License: MIT License
+Project-URL: Homepage, https://github.com/maxmarumbwa/geodev-mapping
+Keywords: geodev-mapping
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy
+Provides-Extra: all
+Requires-Dist: geodev-mapping[extra]; extra == "all"
+Provides-Extra: extra
+Requires-Dist: pandas; extra == "extra"
+
+# geodev-mapping
+
+
+[![image](https://img.shields.io/pypi/v/geodev-mapping.svg)](https://pypi.python.org/pypi/geodev-mapping)
+[![image](https://img.shields.io/conda/vn/conda-forge/geodev-mapping.svg)](https://anaconda.org/conda-forge/geodev-mapping)
+
+
+**Python Boilerplate contains all the boilerplate you need to create a Python package.**
+
+
+-   Free software: MIT License
+-   Documentation: https://maxmarumbwa.github.io/geodev-mapping
+
+
+## Features
+
+-   TODO
