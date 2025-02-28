@@ -1,0 +1,36 @@
+when:
+  - branch: [main]
+    event: [pull_request, push]
+
+matrix:
+  extras: ["--all-extras", ""]
+
+steps:
+  build:
+    image: ghcr.io/astral-sh/uv:python3.11-alpine
+    commands:
+      - uv sync ${extras}
+  test_format:
+    image: ghcr.io/astral-sh/uv:python3.11-alpine
+    commands:
+      - uv run ruff format --check .
+      - uv run ruff check .
+    when:
+      - matrix: { extras: "--all-extras" }
+  test_pytest:
+    image: ghcr.io/astral-sh/uv:python3.11-alpine
+    commands:
+      - uv run pytest
+  test_typing:
+    image: ghcr.io/astral-sh/uv:python3.11-alpine
+    commands:
+      - apk add libstdc++ libgcc
+      - uv run pyright roboherd
+    when:
+      - matrix: { extras: "--all-extras" }
+  build_docs:
+    image: ghcr.io/astral-sh/uv:python3.11-alpine
+    commands:
+      - uv run mkdocs build
+    when:
+      - matrix: { extras: "--all-extras" }
