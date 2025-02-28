@@ -1,0 +1,8 @@
+
+[fluent]
+fluent-logger
+msgpack
+python-fluent-log-formatter
+
+[sentry]
+sentry-sdk
