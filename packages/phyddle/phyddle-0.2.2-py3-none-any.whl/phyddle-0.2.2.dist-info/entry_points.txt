@@ -1,0 +1,2 @@
+[console_scripts]
+phyddle = phyddle.command_line:run
