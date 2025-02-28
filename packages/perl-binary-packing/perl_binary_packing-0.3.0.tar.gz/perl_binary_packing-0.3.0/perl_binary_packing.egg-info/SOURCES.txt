@@ -1,0 +1,15 @@
+LICENSE
+README.md
+pyproject.toml
+perl_binary_packing/__init__.py
+perl_binary_packing/factory.py
+perl_binary_packing/formats.py
+perl_binary_packing.egg-info/PKG-INFO
+perl_binary_packing.egg-info/SOURCES.txt
+perl_binary_packing.egg-info/dependency_links.txt
+perl_binary_packing.egg-info/top_level.txt
+perl_binary_packing/tests/__init__.py
+perl_binary_packing/tests/base.py
+perl_binary_packing/tests/test_binary.py
+perl_binary_packing/tests/test_final.py
+perl_binary_packing/tests/test_strings.py

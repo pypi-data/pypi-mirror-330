@@ -1,0 +1,22 @@
+Metadata-Version: 2.2
+Name: perl_binary_packing
+Version: 0.3.0
+Summary: Binary pack/unpack with perl-style format
+Author-email: "Mikhail Belov(mishka251)" <mishkabelka251@gmail.com>
+Project-URL: Homepage, https://github.com/mishka251/perl_binary_packing
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# Perl Binary Packing
+
+Project for using perl-style format for bynary data. Simplify rewriting old perl code to python.
+
+Проект для использования в Python форматов бинарных данных как в perl. Облечает переписывание старого кода с perl на python.
+
+Используемые форматы: 
+
+https://perldoc.perl.org/functions/pack
