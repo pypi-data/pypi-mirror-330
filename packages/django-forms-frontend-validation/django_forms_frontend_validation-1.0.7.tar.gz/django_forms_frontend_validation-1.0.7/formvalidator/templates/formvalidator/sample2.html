@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_head %}
+    <script src="https://assets.tucsonaz.gov/share/web/js/forms.bundle.js" crossorigin="anonymous"></script>
+{% endblock %}
+
+{% block content %}
+	<h3>Sample Form 2</h3>
+    <hr>
+    <p>This form only validates when the submit button is clicked.</p>
+    <div id="formDiv">
+        <form id="sampleForm" class="sample-form2" action="{% url 'sample-form2' %}" method="post" novalidate>
+            {% csrf_token %}
+            {% if form.non_field_errors %}
+                {% for error in form.non_field_errors %}
+                {{ error }}
+                {% endfor %}
+            {% endif %}
+
+            {% for field in form %}
+                <div class="form-group mb-3">
+                    <label class="form-label" for="{{ field.name }}">{{ field.label }}</label>
+                    {{ field }}
+                    {% if field.errors %}
+                        {{ field.errors }}
+                    {% endif %}
+                </div>
+            {% endfor %}
+
+            <button class="btn btn-primary btn-lg" type="submit">Submit</button>
+        </form>
+    </div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    // fv (formsvalidator) is exported from forms.bundle.js
+    window.addEventListener("load", () => {
+        let ignoredClasses = {{ form_validator.ignored_classes|safe }}; // add more classes that represent forms you want this script to ignore.
+        let ignoreValidation = {{ form_validator.ignore_validation|safe }}; // add any form classes that you want to ignore validation
+        let validateOnlyOnSubmit = {{ form_validator.validate_only_on_submit|safe }}; // for hitting all forms make index 0 either __all__, all, * or leave blank for false or use false
+        let forms = document.getElementsByTagName("form");
+        // if (form || userForm) {
+        if (forms.length > 0) {
+            // calling specific functions on all forms
+            fv._InitializeForms(forms, ignoredClasses, ignoreValidation, validateOnlyOnSubmit);
+        }
+    });
+</script>
+{% endblock %}
