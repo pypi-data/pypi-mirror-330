@@ -1,0 +1,41 @@
+Metadata-Version: 2.3
+Name: blprint
+Version: 0.1.6
+Summary: A simple scaffolding cli
+Author: Mateus Gurgel
+Author-email: mateusgurgel15@gmail.com
+Requires-Python: >=3.10,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Dist: jinja2 (>=3.1.5,<4.0.0)
+Requires-Dist: typer (>=0.15.1,<0.16.0)
+Description-Content-Type: text/markdown
+
+# Blueprint
+
+A maneira mais simples e poderosa de gerar código boilerplate universal.
+
+## Installation
+
+Instale via pip:
+
+```bash
+pip install blprint
+```
+
+## Setup
+
+1. Crie uma pasta chamada `blueprints` na raiz do seu projeto.
+2. Dentro dela, crie uma subpasta nomeada conforme o que você está desenvolvendo.
+3. Adicione um template Jinja2 nessa subpasta com o código boilerplate desejado.
+
+## Usage
+
+Gere seu blueprint executando:
+
+```bash
+blueprint create <blueprint_name> <destination>
+```
