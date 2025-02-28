@@ -1,0 +1,4 @@
+[console_scripts]
+fleetspeak_client = grr_response_client.distro_entry:FleetspeakClientWrapper
+grr_fleetspeak_client = grr_response_client.distro_entry:FleetspeakClient
+

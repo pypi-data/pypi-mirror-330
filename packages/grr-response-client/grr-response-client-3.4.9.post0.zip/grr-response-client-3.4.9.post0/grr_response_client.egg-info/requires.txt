@@ -1,0 +1,10 @@
+absl-py==1.4.0
+grr-response-core==3.4.9post0
+pytsk3==20230125
+libfsntfs-python==20230606
+fleetspeak-client-bin==0.1.13
+xattr==0.9.7
+
+[:sys_platform=="win32"]
+WMI==1.5.1
+pywin32==303
