@@ -1,0 +1,26 @@
+[project]
+name = "llmrepo_danleeaj"
+version = "0.0.1"
+authors = [
+  { name="An Jie Lee", email="anjie.wav@gmail.com" },
+]
+description = "A command-line tool designed to help users easily convert a directory into an LLM-friendly format directly to your clipboard."
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+license = { file = "LICENSE" }
+dependencies=[
+    'pyperclip==1.9.0',
+    'pathspec==0.12.1',
+    'typer==0.15.2'
+]
+
+[project.scripts]
+llmrepo = "greetings.cli:app"
+
+[project.urls]
+Homepage = "https://github.com/danleeaj/llmrepo"
+Issues = "https://github.com/danleeaj/llmrepo/issues"
