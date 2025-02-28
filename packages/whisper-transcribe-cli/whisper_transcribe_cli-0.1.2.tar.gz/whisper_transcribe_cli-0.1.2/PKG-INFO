@@ -1,0 +1,22 @@
+Metadata-Version: 2.2
+Name: whisper-transcribe-cli
+Version: 0.1.2
+Summary: A command-line tool to transcribe video and audio files using OpenAI's Whisper model.
+Author-email: Siddhesh Desai <siddheshdesai777@gmail.com>
+License: MIT
+Project-URL: Repository, https://github.com/siddhesh-desai/whisper-transcribe-cli
+Keywords: whisper,transcribe,cli,command-line,audio,video,speechtotext
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Multimedia :: Sound/Audio :: Speech
+Requires-Python: >=3.8
+Requires-Dist: typer[all]
+Requires-Dist: watchdog
+Requires-Dist: openai-whisper
