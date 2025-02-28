@@ -1,0 +1,15 @@
+requests>=2.25.0
+beautifulsoup4>=4.9.3
+colorama>=0.4.4
+pygments>=2.7.3
+rich>=10.0.0
+tqdm>=4.56.0
+click>=8.0.0
+
+[dev]
+pytest>=6.2.2
+black>=21.5b2
+isort>=5.8.0
+flake8>=3.9.1
+mypy>=0.812
+pytest-cov>=2.12.0
