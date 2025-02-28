@@ -1,0 +1,11 @@
+[project]
+name = "embedding-suite"
+version = "0.1.7"
+description = "A simple, unified interface for generating embeddings from various providers."
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "python-dotenv>=1.0.1",
+    "requests>=2.32.3",
+]
