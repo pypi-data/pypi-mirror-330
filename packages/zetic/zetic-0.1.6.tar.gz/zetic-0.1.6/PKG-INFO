@@ -1,0 +1,51 @@
+Metadata-Version: 2.3
+Name: zetic
+Version: 0.1.6
+Summary: Zetic AI CLI tool for model management and deployment.
+License: Apache-2.0
+Keywords: ai,model,ondevice,coreml,qnn
+Author: Zetic AI
+Author-email: support@zetic.ai
+Maintainer: Zetic AI
+Maintainer-email: supportn@zetic.ai
+Requires-Python: >=3.9
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Dist: click (>=8.1.8,<9.0.0)
+Requires-Dist: requests (>=2.32.3,<3.0.0)
+Requires-Dist: termcolor (>=2.5.0,<3.0.0)
+Project-URL: Documentation, https://docs.zetic.ai
+Project-URL: Homepage, https://zetic.ai
+Description-Content-Type: text/markdown
+
+# Zetic CLI
+
+On-device model converter service.
+
+## Guide
+
+### 1. Auth
+
+```bash
+# login with zetic
+zetic auth login
+
+# If you have no brwoser
+zetic auth login --no-browser
+```
+
+
+### 2. Upload model
+
+```bash
+
+# login with zetic
+
+zetic gen path/to/model --input path/to/input.npy --input path/to/input2.py --project project/path
+```
+
