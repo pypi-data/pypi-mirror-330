@@ -1,0 +1,12 @@
+__pycache__
+.mypy_cache
+.pytest_cache
+.ruff_cache
+.idea
+dist
+docs/build
+persistent
+.venv
+sleamdge.egg-info
+build
+.python-version
