@@ -1,0 +1,8 @@
+Metadata-Version: 2.1
+Name: hf3fs_py_usrbio
+Version: 1.2.9
+Summary: Python binding for hf3fs client library
+Requires-Python: >=3.6
+License-File: LICENSE
+Provides-Extra: test
+Requires-Dist: pytest>=6.0; extra == "test"
