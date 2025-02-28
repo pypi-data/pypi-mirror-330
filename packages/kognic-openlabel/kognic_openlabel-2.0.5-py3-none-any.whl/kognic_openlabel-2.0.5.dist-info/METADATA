@@ -1,0 +1,90 @@
+Metadata-Version: 2.2
+Name: kognic-openlabel
+Version: 2.0.5
+Summary: Kognic OpenLABEL Datamodel
+Author-email: Kognic <new-annotation@kognic.com>
+License: MIT
+Project-URL: homepage, https://github.com/annotell/kognic-openlabel-python
+Keywords: Kognic,OpenLABEL
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Requires-Dist: pydantic<3,>2
+
+# Kognic OpenLABEL
+
+## Installation
+Install the Kognic OpenLABEL package from pip with
+
+    pip install kognic-openlabel
+
+## Serialization and deserialization
+
+Since all models inherit from `pydantic`'s `BaseModel`, serialization and deserialization from dicts or json strings are relatively straight forward. 
+
+```py
+data = {
+    "openlabel": {
+        "metadata": {
+            "schema_version": "1.0.0"
+        }
+    }
+}
+
+import kognic.openlabel.models as OLM
+
+# Deserialize dict
+openlabel_annotation = OLM.OpenLabelAnnotation.model_validate(data)
+
+# Serialize to json
+json_data = openlabel_annotation.model_dump_json(exclude_none=True)
+
+# Deserialize json
+openlabel_annotation = OLM.OpenLabelAnnotation.model_validate_json(json_data)
+
+# Serialize to dict
+dict_data = openlabel_annotation.model_dump(exclude_none=True)
+```
+    
+## Further reading
+https://www.asam.net/project-detail/asam-openlabel-v100/
+
+# Changelog
+
+## [2.0.3] - 2024-07-26
+- Fix so that `model_dump` works correctly with ontologies
+
+## [2.0.2] - 2024-07-26
+...
+
+## [2.0.1] - 2023-11-07
+- Use `model_rebuild` instead of deprecated `update_forward_refs`
+
+## [2.0.0] - 2023-11-06
+- Bump pydantic to >2
+
+## [1.0.1] - 2023-07-05
+- Pin pydantic version to <2
+
+## [1.0.0] - 2022-10-18
+- Annotell becomes Kognic
+
+## [0.1.4] - 2022-01-24
+- Improved serializability for enum classes
+
+## [0.1.3] - 2022-01-04
+- Fixed issues with version 0.1.2
+
+## [0.1.2] - 2021-12-29
+- Updated several fields with multiple types to fix issues with serialization and deserialization.
+For example, the coordinates on `Poly2d` objects were previously always parsed to strings.
+  This update means that an attempt to parse them to floats is made. If this fails the they will be parsed to strings. 
+
+## [0.1.1] - 2021-11-24
+- Updated stream properties model generation to be nicer to work with
+
+## [0.1.0] - 2021-11-18
+- Updated json schema and model to be true to the 1.0.0 release of openlabel. Previously it was based on the release-candidate
