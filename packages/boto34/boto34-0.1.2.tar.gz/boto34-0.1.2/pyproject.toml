@@ -1,0 +1,215 @@
+[project]
+name = "boto34"
+version = "0.1.2"
+description = "Type annotated AWS SDK for boto3, aiobotocore, and aioboto3."
+readme = "README.md"
+authors = [{ name = "Vlad Emelianov", email = "vlad.emelianov.nz@gmail.com" }]
+requires-python = ">=3.8"
+keywords = [
+    "boto3",
+    "aiobotocore",
+    "aioboto3",
+    "type-annotations",
+    "pyright",
+    "mypy",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Typing :: Typed",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+dependencies = ["typing-extensions"]
+
+[project.optional-dependencies]
+boto3 = ["boto3", "types-boto3-lite", "types-boto3-full"]
+aioboto3 = ["aioboto3", "types-aioboto3-lite", "types-aiobotocore-full"]
+aiobotocore = [
+    "aiobotocore",
+    "types-aiobotocore-lite",
+    "types-aiobotocore-full",
+]
+
+[dependency-groups]
+dev = [
+    "boto3",
+    "pyright",
+    "mypy",
+    "pytest",
+    "pytest-asyncio",
+    "types-boto3-lite",
+    "types-boto3-full",
+    "types-aiobotocore-lite",
+    "types-aioboto3-lite",
+    "types-aiobotocore-full",
+    "aiobotocore",
+    "aioboto3",
+    "moto[server,s3]",
+]
+
+
+[project.urls]
+Homepage = "https://github.com/youtype/boto34"
+Documentation = "https://youtype.github.io/boto34/"
+Repository = "https://github.com/youtype/boto34"
+Changelog = "https://github.com/youtype/boto34/releases"
+Issues = "https://github.com/youtype/boto34/issues"
+
+[tool.uv]
+default-groups = ["dev"]
+package = true
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.pyright]
+include = ["src"]
+exclude = ["tests"]
+ignore = [
+    ".venv",
+    "**/__pycache__",
+    "**/build",
+    "typestubs",
+    "examples",
+    "integration",
+    "**/test_*.py",
+]
+typeCheckingMode = "strict"
+reportMissingImports = "error"
+reportMissingTypeStubs = "error"
+reportMissingTypeArgument = "error"
+reportIncompatibleMethodOverride = "error"
+reportIncompatibleVariableOverride = "error"
+reportUnknownParameterType = "error"
+pythonVersion = "3.8"
+
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_ignores = false
+disallow_untyped_defs = true
+ignore_missing_imports = true
+ignore_errors = false
+
+
+[tool.ruff]
+exclude = [
+    ".eggs",
+    ".git",
+    ".git-rewrite",
+    ".mypy_cache",
+    ".pytest_cache",
+    ".ruff_cache",
+    ".venv",
+    ".vscode",
+    "build",
+    "dist",
+]
+
+line-length = 100
+indent-width = 4
+target-version = "py38"
+
+[tool.ruff.lint]
+preview = true
+select = ["ALL"]
+ignore = [
+    "ARG002",  # unused-argument
+    "COM812",  # missing-trailing-comma
+    "D107",    # undocumented-public-init
+    "D200",    # fits-on-one-line
+    "D203",    # one-blank-line-before-class
+    "D212",    # multi-line-summary-first-line
+    "D406",    # new-line-after-section-name
+    "D407",    # dashed-underline-after-section
+    "D413",    # blank-line-after-last-section
+    "D417",    # undocumented-param
+    "DOC",     # pydoclint
+    "EM",      # flake8-errmsg
+    "ERA001",  # commented-out-code
+    "FIX001",  # line-contains-fixme
+    "G004",    # logging-f-string
+    "INP001",  # implicit-namespace-package
+    "ISC001",  # implicit-str-concat
+    "PERF203", # try-except-in-loop
+    "PLR0904", # too-many-public-methods
+    "PLR0913", # too-many-arguments
+    "PLR6301", # no-self-use
+    "S404",    # suspicious-subprocess-import
+    "S603",    # subprocess-without-shell-equals-true
+    "TD",      # flake8-todos
+    "TRY003",  # raise-vanilla-args
+    "PLR0911", # too-many-return-statements
+    "D",       # flake8-docstrings
+    "TC",      # flake8-type-checking
+    "FBT",     # flake8-boolean-trap
+    "E501",    # line-too-long
+]
+fixable = ["ALL"]
+unfixable = ["B"]
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+exclude = ["*.pyi", "examples/*", "integration/*"]
+
+
+[tool.ruff.lint.per-file-ignores]
+"test_*.py" = [
+    "D",       # missing-docstring
+    "S101",    # use-of-assert
+    "N803",    # argument-name-does-not-match
+    "PLR2004", # constant-comparison
+    "CPY001",  # missing-copyright
+    "SLF001",  # private-member-access
+    "S106",    # hardcoded-credentials
+]
+"conftest.py" = [
+    "D",       # missing-docstring
+    "S101",    # use-of-assert
+    "N803",    # argument-name-does-not-match
+    "PLR2004", # constant-comparison
+    "CPY001",  # missing-copyright
+    "SLF001",  # private-member-access
+]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "lf"
+docstring-code-format = false
+docstring-code-line-length = "dynamic"
+
+[tool.ruff.lint.flake8-copyright]
+# author = "Vlad Emelianov"
+min-file-size = 200
+notice-rgx = "(?i)Copyright \\d{4}"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+norecursedirs = [
+    "build",
+    "dist",
+    ".eggs",
+    ".git",
+    ".venv",
+    "src",
+    ".ruff_cache",
+    ".pytest_cache",
+    ".mypy_cache",
+]
+asyncio_default_fixture_loop_scope = "function"
+filterwarnings = ["ignore::DeprecationWarning:botocore"]
