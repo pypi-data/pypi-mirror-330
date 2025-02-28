@@ -1,0 +1,76 @@
+[project]
+name = "laplaciannb"
+version = "0.6.0"
+description = "**LaplacianNB** is a Python module developed at **Novartis AG** for Naive Bayes classifier for laplacian modified models based on scikit-learn Naive Bayes implementation."
+authors = [
+    { name = "Bartosz Baranowski", email = "bartosz.baranowski@novartis.com" },
+]
+dependencies = [
+    "rdkit>=2024.3.5",
+    "scikit-learn>=1.5.2",
+    "pandas>=2.2.3",
+    "scipy>=1.6.0",
+]
+requires-python = ">=3.9"
+readme = "README.md"
+
+[project.license]
+text = "BSD 3"
+
+[build-system]
+requires = [
+    "pdm-backend",
+]
+build-backend = "pdm.backend"
+
+[dependency-groups]
+test = [
+    "ruff>=0.7.2",
+    "pytest>=8.3.3",
+    "pre-commit>=4.0.1",
+]
+
+[tool.ruff]
+line-length = 119
+
+[tool.ruff.lint]
+ignore = [
+    "C901",
+    "E501",
+    "E741",
+    "F402",
+    "F823",
+]
+select = [
+    "C",
+    "E",
+    "F",
+    "I",
+    "W",
+]
+exclude = [
+    "*.ipynb",
+]
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = [
+    "E402",
+    "F401",
+    "F403",
+    "F811",
+]
+
+[tool.ruff.lint.isort]
+lines-after-imports = 2
+
+[tool.ruff.format]
+quote-style = "double"
+exclude = [
+    "*.ipynb",
+]
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
+
+[tool.pdm]
+distribution = true
