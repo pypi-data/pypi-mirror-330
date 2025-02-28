@@ -1,0 +1,41 @@
+# Ignore all .log files
+*.log
+
+src/astro_prost/_version.py
+
+obsolete/
+sfddata-master/
+
+_readthedocs/
+_build/
+.doctrees/
+
+# Ignore all directories named "temp"
+temp/
+
+# Ignore a specific file
+secrets.json
+
+# Ignore all files with the .tmp extension in the root directory
+*.tmp
+
+# Ignore all files in a directory, but not the directory itself
+temp/*
+
+# Exception: do not ignore a specific file
+!important.log
+
+# Python cache files
+__pycache__/
+*.py[cod]
+
+# Egg info and other build artifacts
+*.egg-info/
+
+# Jupyter notebook checkpoints
+.ipynb_checkpoints/
+docs/notebooks/.ipynb_checkpoints/
+
+# Doctree files
+*.doctree
+.DS_Store
