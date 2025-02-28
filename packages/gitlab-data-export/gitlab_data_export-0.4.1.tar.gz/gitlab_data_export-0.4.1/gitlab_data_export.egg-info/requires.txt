@@ -1,0 +1,11 @@
+google-cloud-bigquery<3.20.0,>=3.0.0
+python-gitlab<4,>=3.0.0
+
+[dev]
+autopep8
+build
+coverage
+google-auth-stubs
+mypy
+python-dotenv
+twine
