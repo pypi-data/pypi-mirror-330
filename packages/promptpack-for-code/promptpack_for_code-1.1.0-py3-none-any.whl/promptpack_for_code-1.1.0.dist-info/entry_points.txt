@@ -1,0 +1,4 @@
+[console_scripts]
+packcode = promptpack_for_code.__main__:main
+ppc = promptpack_for_code.__main__:main
+promptpack-for-code = promptpack_for_code.__main__:main
