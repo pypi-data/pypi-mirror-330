@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ssvlogger"
+version = "1.6.0"
+description = "A simple python package to parse SSV node logs and make them legible"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { file="LICENSE" } # Assuming the license is in a file named LICENSE
+authors = [
+    { name = "JKinc"},
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+]
+keywords = ["SSV", "logging"]
+
+dependencies = [
+  'colorama >= 0.4.6'
+]
+
+[project.urls]
+Homepage = "https://github.com/JKincorperated/ssvlogger"
+Issues = "https://github.com/JKincorperated/ssvlogger/issues"
+
+[project.scripts]
+ssvlogger = "ssvlogger.logger:main"
