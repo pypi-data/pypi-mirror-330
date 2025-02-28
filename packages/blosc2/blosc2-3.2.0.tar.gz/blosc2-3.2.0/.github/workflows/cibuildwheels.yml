@@ -1,0 +1,141 @@
+name: Python wheels
+on:
+  # Trigger the workflow on push or pull request,
+  # but only for the main branch
+  push:
+    tags:
+      - '*'
+  pull_request:
+    branches:
+      - main
+
+env:
+  CIBW_BUILD_VERBOSITY: 1
+  # Skip testing on aarch64 for now, as it is emulated on GitHub Actions and takes too long
+  # Now that github provides native arm64 runners, we can enable tests again
+  # CIBW_TEST_SKIP: "*linux*aarch64*"
+
+jobs:
+
+  build_wheels:
+    name: Build wheels on ${{ matrix.os }} for ${{ matrix.arch }} - ${{ matrix.p_ver }}
+    runs-on: ${{ matrix.os }}
+    permissions:
+      contents: write
+    env:
+      CIBW_BUILD: ${{ matrix.cibw_build }}
+      CIBW_ARCHS_LINUX: ${{ matrix.arch }}
+      CIBW_ARCHS_MACOS: "x86_64 arm64"
+    strategy:
+      matrix:
+        os: [ubuntu-latest, ubuntu-24.04-arm, windows-latest, macos-latest]
+        arch: [x86_64, aarch64]
+        # aarch64 is emulated, and it is giving issues with cibuildwheel
+        # Just build for x86_64 for now (Mac arm64 is already covered by cibuildwheel)
+        # arch: [x86_64]
+        cibw_build: ["cp3{11,12,13}-*"]
+        p_ver: ["3.11-3.13"]
+        exclude:
+          - os: windows-latest
+            arch: aarch64
+          # cibuild is already in charge to build aarch64 (see CIBW_ARCHS_MACOS)
+          - os: macos-latest
+            arch: aarch64
+          # Mutually exclude aarch64 and x86_64 for ubuntu-24.04-arm and ubuntu-latest
+          - os: ubuntu-24.04-arm
+            arch: x86_64
+          - os: ubuntu-latest
+            arch: aarch64
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          # Use the most recent released python
+          python-version: '3.x'
+
+      # For some reason, this is still needed, even when using new arm64 runners
+      - name: Set up QEMU
+        if: ${{ matrix.arch == 'aarch64' }}
+        uses: docker/setup-qemu-action@v3
+
+      - name: Install Ninja
+        id: ninja
+        uses: turtlesec-no/get-ninja@main
+
+      - name: Install MSVC amd64
+        uses: ilammy/msvc-dev-cmd@v1
+        with:
+          arch: amd64
+
+      - name: Build wheels
+        uses: pypa/cibuildwheel@v2.22
+
+      - name: Upload wheels
+        uses: actions/upload-artifact@v4
+        with:
+          name: wheels-${{ matrix.os }}-${{ matrix.arch }}-${{ matrix.p_ver }}
+          path: ./wheelhouse/*.whl
+
+  build_sdist:
+    name: Build sdist
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.12]
+        os: [ubuntu-latest]
+        arch: [auto]
+        exclude:
+          - os: [ubuntu-latest]
+            # We don't support 32-bit platforms in python-blosc2
+            arch: x86
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        name: Setup Python ${{ matrix.python-version }}
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Build sdist
+        run: pipx run build --sdist --outdir ./wheelhouse
+
+      - name: Upload sdist package
+        uses: actions/upload-artifact@v4
+        with:
+          name: wheels-source
+          path: wheelhouse/*.tar.gz
+
+      - name: Build building extension from sdist package
+        run: |
+          cd ./wheelhouse
+          tar -xzf blosc2-*.tar.gz
+          cd ./blosc2-*/
+          pip install pip --upgrade
+          pip install --break-system-packages -e .[test]
+
+      - name: Test sdist package with pytest
+        run: |
+          cd ./wheelhouse/blosc2-*/
+          pytest
+
+  upload_pypi:
+    needs: [ build_wheels, build_sdist ]  # last but not least
+    runs-on: ubuntu-latest
+    # Only upload wheels when tagging (typically a release)
+    if: startsWith(github.event.ref, 'refs/tags')
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: wheels-*
+          path: ./wheelhouse
+          merge-multiple: true  # Merge all the wheels artifacts into one directory
+
+      - uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          user: __token__
+          password: ${{ secrets.blosc_pypi_secret }}
