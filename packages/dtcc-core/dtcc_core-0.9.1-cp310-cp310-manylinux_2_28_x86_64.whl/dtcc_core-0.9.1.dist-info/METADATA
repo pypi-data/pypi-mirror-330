@@ -1,0 +1,71 @@
+Metadata-Version: 2.1
+Name: dtcc-core
+Version: 0.9.1
+Summary: DTCC Core
+Author-Email: Anders Logg <logg@chalmers.se>, Vasilis Naserentin <vasilis.naserentin@chalmers.se>, =?utf-8?q?Dag_W=C3=A4stberg?= <dwastberg@gmail.com>, George Spaias <gspaiasa@ece.auth.gr>, Jens Olsson <jens.olsson@chalmersindustriteknik.se>
+Classifier: Intended Audience :: Science/Research
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: C++
+Classifier: License :: OSI Approved :: MIT License
+Requires-Python: >=3.10
+Requires-Dist: Fiona<2.0.0,>=1.8.0
+Requires-Dist: affine
+Requires-Dist: geopandas<1.0.0,>=0.14.0
+Requires-Dist: laspy[lazrs]<3.0.0,>=2.3.0
+Requires-Dist: meshio<6.0.0,>=5.0.0
+Requires-Dist: numpy<3.0.0,>=1.20.0
+Requires-Dist: pillow<12.0.0,>=9.0.0
+Requires-Dist: protobuf<6.0.0,>=5.0.0
+Requires-Dist: psutil
+Requires-Dist: pyassimp
+Requires-Dist: pybind11
+Requires-Dist: pygltflib
+Requires-Dist: pypoints2grid>=0.1.9
+Requires-Dist: pyproj<4.0.0,>=3.1.0
+Requires-Dist: rasterio<2.0.0,>=1.2.0
+Requires-Dist: rasterstats<1.0.0,>=0.19.0
+Requires-Dist: scipy<2.0.0,>=1.13.0
+Requires-Dist: shapely<3.0.0,>=2.0.0
+Requires-Dist: tqdm>=4.66.1
+Requires-Dist: pytest; extra == "test"
+Provides-Extra: test
+Description-Content-Type: text/markdown
+
+# DTCC Core
+
+DTCC Core provides the core functionality for DTCC Platform, including data
+modeling, data wrangling, data generation, and data input/output.
+
+This project is part of the
+[Digital Twin Platform (DTCC Platform)](https://github.com/dtcc-platform/)
+developed at the
+[Digital Twin Cities Centre](https://dtcc.chalmers.se/)
+supported by Sweden’s Innovation Agency Vinnova under Grant No. 2019-421 00041.
+
+## Documentation
+
+This project is documented as part of the
+[DTCC Platform Documentation](https://platform.dtcc.chalmers.se/).
+
+## Authors (in order of appearance)
+
+* [Anders Logg](http://anders.logg.org)
+* [Vasilis Naserentin](https://www.chalmers.se/en/Staff/Pages/vasnas.aspx)
+* [Dag Wästerberg](https://chalmersindustriteknik.se/sv/medarbetare/dag-wastberg/)
+* [Orfeas Eleutheriou](http://orfeasel.com/)
+* [Anton Olsson](mailto:anton.j.olsson@bredband.net)
+* [Anton Annlöv](mailto:annlova@student.chalmers.se)
+* [George Spaias](mailto:gspaiasa@ece.auth.gr)
+
+## License
+
+This project is licensed under the
+[MIT license](https://opensource.org/licenses/MIT).
+
+Copyrights are held by the individual authors as listed at the top of
+each source file.
+
+## Community guidelines
+
+Comments, contributions, and questions are welcome. Please engage with
+us through Issues, Pull Requests, and Discussions on our GitHub page.
