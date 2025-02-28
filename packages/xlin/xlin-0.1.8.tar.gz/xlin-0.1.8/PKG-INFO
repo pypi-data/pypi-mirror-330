@@ -1,0 +1,31 @@
+Metadata-Version: 2.1
+Name: xlin
+Version: 0.1.8
+Summary: toolbox for LinXueyuan
+License: MIT
+Author: XiChen
+Author-email: 23211526+LinXueyuanStdio@users.noreply.github.com
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: loguru
+Requires-Dist: pandas
+Requires-Dist: pyexcel
+Requires-Dist: pyexcel-xls
+Requires-Dist: pyexcel-xlsx
+Requires-Dist: xlsxwriter
+Description-Content-Type: text/markdown
+
+# xlin
+个人 python 工具代码
+
