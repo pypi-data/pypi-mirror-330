@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: fuson-strategy-client
+Version: 0.1.1
+Summary: A Python library to access strategies' results API
+Author: Andrew Yu Yang
+Author-email: yang_yu2023@163.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+
+# MyDataLib
+
+A Python library to access MyData API.
+
+## Installation
+
+Install the library using pip:
+
+```bash
+pip install fuson_strategy_client
