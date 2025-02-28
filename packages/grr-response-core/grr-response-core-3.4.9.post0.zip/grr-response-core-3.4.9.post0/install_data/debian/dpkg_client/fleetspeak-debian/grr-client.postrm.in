@@ -1,0 +1,10 @@
+#!/bin/bash
+#
+# Deb post-removal script for a Fleetspeak-enabled GRR client.
+#
+# Restarts the Fleetspeak process after GRR's Fleetspeak config has been
+# removed.
+
+set -e
+
+#DEBHELPER#
