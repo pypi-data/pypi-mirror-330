@@ -1,0 +1,22 @@
+Metadata-Version: 2.2
+Name: OpenDHW
+Version: 0.2.5
+Summary: Tool for generating domestic hot water profiles
+Home-page: https://github.com/RWTH-EBC/OpenDHW
+Author: RWTH Aachen University, E.ON Energy Research Center, Institute of Energy Efficient Buildings and Indoor Climate
+Author-email: ebc-tools@eonerc.rwth-aachen.de
+License: MIT
+License-File: LICENSE
+Requires-Dist: scipy
+Requires-Dist: pathlib
+Requires-Dist: pandas
+Requires-Dist: numpy
+Requires-Dist: matplotlib
+Requires-Dist: seaborn
+Requires-Dist: holidays
+Dynamic: author
+Dynamic: author-email
+Dynamic: home-page
+Dynamic: license
+Dynamic: requires-dist
+Dynamic: summary
