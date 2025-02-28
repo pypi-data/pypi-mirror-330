@@ -1,0 +1,5 @@
+[console_scripts]
+micro-sip-nextcloud-bridge-server = micro_sip_nextcloud_bridge.__main__:main
+
+[gui_scripts]
+
