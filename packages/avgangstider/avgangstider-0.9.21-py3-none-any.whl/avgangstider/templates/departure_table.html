@@ -1,0 +1,18 @@
+<table>
+  <tr>
+    <th>Linje</th>
+    <th>Destinasjon</th>
+    <th>Avgang</th>
+  </tr>
+  {% for departure in departures %}
+    <tr>
+      <td class="linenumbercol">
+        <div class="lineNumberBox"
+             style="background-color: #{{ departure.bg_color }};
+                    color: #{{ departure.fg_color }}">{{ departure.line_name }}</div>
+      </td>
+      <td>{{ departure.destination }}</td>
+      <td class="departurecol">{{ departure.departure_string }}</td>
+    </tr>
+  {% endfor %}
+</table>

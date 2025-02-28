@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Invalid data</title>
+  </head>
+  <body>
+    <h1>No stop_id provided</h1>
+
+    <p>
+      See
+      <a href="https://avgangstider.readthedocs.io/">online documentation</a>
+      for details.
+    </p>
+    As a minimum, you need to provide a stop_id. You can find your stop_id in
+    two ways:
+    <ol>
+      <li>
+        Browse the interactive map at
+        <a href="https://entur.no/kart">entur.no</a>. Click the station you are
+        interested in, and then click "Se alle avganger" in the window that pops
+        up. The stop_id will now be part of your URL: Look for something like
+        NSR:StopPlace:59651.
+      </li>
+      <li>
+        Search the
+        <a href="https://stoppested.entur.org">National Stop Register</a>.
+      </li>
+    </ol>
+
+    <h2>Examples</h2>
+    <ul>
+      <li>
+        <a href="/?stop_id=NSR:StopPlace:58366&max_rows=10">Jernbanetorget</a>
+        (NSR:StopPlace:58366)
+      </li>
+      <li>
+        <a
+          href="/?stop_id=NSR:StopPlace:58366&max_rows=10&line_id=RUT:Line:19&line_id=RUT:Line:37&line_id=RUT:Line:3"
+        >
+          Jernbanetorget noen linjer</a
+        >
+        (NSR:StopPlace:58366)
+      </li>
+      <li>
+        <a href="/?stop_id=NSR:StopPlace:59872">Oslo S</a>
+        (NSR:StopPlace:59872)
+      </li>
+      <li>
+        <a href="/?stop_id=NSR:StopPlace:59838">Torget i Bergen</a>
+        (NSR:StopPlace:59838)
+      </li>
+      <li>
+        <a href="/?stop_id=NSR:StopPlace:41613">Prinsens gate (Trondheim)</a>
+        (NSR:StopPlace:41613)
+      </li>
+      <li>
+        <a
+          href="/?stop_id=NSR:StopPlace:5968&max_rows=5&platform=NSR:Quay:10949"
+        >
+          Next 5 departures from Godlia T, only in direction towards city
+          center</a
+        >
+        (NSR:StopPlace:5968)
+      </li>
+    </ul>
+  </body>
+</html>
