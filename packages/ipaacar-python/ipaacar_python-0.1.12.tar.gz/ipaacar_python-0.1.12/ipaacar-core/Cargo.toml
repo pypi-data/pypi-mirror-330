@@ -1,0 +1,40 @@
+[package]
+name = "ipaacar-core"
+version = "0.1.5"
+edition = "2021"
+authors = ["David Schwab <david-schwab@uni-bielefeld.de>"]
+readme = "README.md"
+
+[lib]
+name = "ipaacar_core"
+path = "src/lib.rs"
+
+
+
+[dependencies]
+poster = "0.3.1"
+tokio = { version = "1.40.0", features = ["net", "rt", "time"] }
+futures = "0.3.31"
+anyhow = "1.0.89"
+bytes = "1.7.2"
+async-trait = "0.1.83"
+tokio-util = { version = "0.7.12", features = ["compat"] }
+thiserror = "1.0.64"
+uuid = { version = "1.10.0", features = ["v4", "fast-rng", "macro-diagnostics", "serde"] }
+log = "0.4.22"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+rmp-serde = "1.3"
+
+[dev-dependencies]
+env_logger = "0.11.5"
+tokio = { version = "1.40.0", features = ["test-util", "macros"]}
+
+[features]
+tokio-testing = ["tokio/test-util", "tokio/macros"]
+
+[[example]]
+name = "bad_ping"
+required-features = ["tokio-testing"]
+
+

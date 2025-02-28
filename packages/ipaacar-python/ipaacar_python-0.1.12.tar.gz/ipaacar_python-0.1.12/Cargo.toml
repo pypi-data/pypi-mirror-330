@@ -1,0 +1,3 @@
+[workspace]
+members = ["ipaacar-core", "ipaacar-python"]
+resolver = "2"
