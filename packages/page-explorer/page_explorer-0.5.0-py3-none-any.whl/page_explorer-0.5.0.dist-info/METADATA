@@ -1,0 +1,33 @@
+Metadata-Version: 2.2
+Name: page-explorer
+Version: 0.5.0
+Summary: A tool that enables page interactions via instructions.
+Home-page: https://github.com/MozillaSecurity/page-explorer
+Author: Tyson Smith
+Author-email: twsmith@mozilla.com
+Maintainer: Mozilla Fuzzing Team
+Maintainer-email: fuzzing@mozilla.com
+License: MPL 2.0
+Keywords: automation testing
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Mozilla Public License 2.0 (MPL 2.0)
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Software Development :: Testing
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE.md
+Requires-Dist: selenium
+Provides-Extra: dev
+Requires-Dist: pre-commit; extra == "dev"
+Requires-Dist: tox; extra == "dev"
+
+Page Explorer
+=============
+[![Task Status](https://community-tc.services.mozilla.com/api/github/v1/repository/MozillaSecurity/page-explorer/main/badge.svg)](https://community-tc.services.mozilla.com/api/github/v1/repository/MozillaSecurity/page-explorer/main/latest)
+[![codecov](https://codecov.io/gh/MozillaSecurity/page-explorer/branch/main/graph/badge.svg)](https://codecov.io/gh/MozillaSecurity/page-explorer)
+[![Matrix](https://img.shields.io/badge/chat-%23fuzzing-green?logo=matrix)](https://matrix.to/#/#fuzzing:mozilla.org)
+[![PyPI](https://img.shields.io/pypi/v/page-explorer)](https://pypi.org/project/page-explorer)
+
+Page Explorer facilitates content interactions via instructions.
+
+See [Site-Scout](/MozillaSecurity/site-scout) to see it in action.
