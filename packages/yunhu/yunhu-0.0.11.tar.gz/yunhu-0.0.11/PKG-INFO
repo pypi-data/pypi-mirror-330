@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: yunhu
+Version: 0.0.11
+Summary: 云湖官方Python SDK
+Author: yunhu
+Author-email: yunhu <1114110051@qq.com>
+Project-URL: Homepage, https://github.com/yhchat/bot-python-sdk
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+
+# 云湖官方Python SDK
+## 使用
+```
+pip install yunhu
+```
+
+## 官方文档
+[https://www.yhchat.com/document/1-3](https://www.yhchat.com/document/1-3)
