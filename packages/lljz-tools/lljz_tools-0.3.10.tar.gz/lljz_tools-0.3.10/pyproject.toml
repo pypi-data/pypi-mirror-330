@@ -1,0 +1,34 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "lljz_tools"
+version = "0.3.10"
+authors = [
+    { name = "liulangjuanzhou", email = "liulangjuanzhou@gmail.com" },
+]
+description = "常用工具方法的封装"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    'requests>=2.32.3',
+    'openpyxl>=3.1.5',
+    'better-exceptions>=0.3.3',
+    'python-dateutil>=2.9.0.post0',
+    'colorlog>=6.9.0',
+    'concurrent-log-handler>=0.9.23',
+    'jinja2>=3.1.5',
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["lljz_tools"]
+
+[tool.hatch.build]
+include = [
+    "lljz_tools/**/*",
+]
+
+[[tool.uv.index]]
+url = "https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple"
+default = true
