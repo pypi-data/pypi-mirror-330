@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: cvcuda-cu11
+Version: 0.14.0b0
+Summary: CUDA-accelerated Computer Vision algorithms
+Home-page: https://github.com/CVCUDA/CV-CUDA
+Author: NVIDIA Corporation
+Author-email: support@nvidia.com
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: GPU :: NVIDIA CUDA
+Classifier: Environment :: GPU :: NVIDIA CUDA :: 11
+Classifier: Operating System :: POSIX :: Linux
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Requires-Python: >=3.8, <3.14
+Requires-Dist: numpy >=1.23.5
+
