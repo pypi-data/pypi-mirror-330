@@ -1,0 +1,35 @@
+Metadata-Version: 2.4
+Name: running-stats
+Version: 0.1.3
+Summary: Library for computing linear statistics.
+Project-URL: Homepage, https://github.com/kod-kristoff/running-stats-py
+Project-URL: Repository, https://github.com/kod-kristoff/running-stats-py
+Project-URL: Bug Tracker, https://github.com/kod-kristoff/running-stats-py/issues
+Author-email: Kristoffer Andersson <kod.kristoff@gmail.com>
+License: MIT
+License-File: LICENSE
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: POSIX
+Classifier: Operating System :: Unix
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Topic :: Utilities
+Requires-Python: >=3.9
+Requires-Dist: attrs>=25.1.0
+Description-Content-Type: text/markdown
+
+# running-stats
+
+[![Build & Publish](https://github.com/kod-kristoff/running-stats-py/workflows/Build%20&%20Publish/badge.svg?branch=master)](https://github.com/kod-kristoff/running-stats-py/actions)
+[![codecov](https://codecov.io/gh/kod-kristoff/running-stats-py/g/branch/master/graph/badge.svg)](https://codecov.io/gh/kod-kristoff/running-stats-py)
+[![Maintainability](https://api.codeclimate.com/v1/badges/07f28a8ed2f04bc62429/maintainability)](https://codeclimate.com/github/kod-kristoff/running-stats-py/maintainability)
+
+Inspired by [John D. Cook's blog](https://www.johndcook.com/blog/skewness_kurtosis/)
+## usage
+
