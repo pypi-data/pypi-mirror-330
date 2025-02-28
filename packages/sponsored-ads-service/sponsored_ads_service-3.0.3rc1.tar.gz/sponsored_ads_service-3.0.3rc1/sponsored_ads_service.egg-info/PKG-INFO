@@ -1,0 +1,103 @@
+Metadata-Version: 2.2
+Name: sponsored-ads-service
+Version: 3.0.3rc1
+Summary: S4F service responsible for sponsored ads
+Home-page: https://github.com/TAKEALOT/sponsored-ads-service
+Author: DSCBE
+Author-email: en-dsc-be@takealot.com
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Natural Language :: English
+Classifier: Intended Audience :: Developers
+Description-Content-Type: text/markdown
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: summary
+
+# Sponsored Ads Service
+
+[![python](https://img.shields.io/badge/python-3.12-informational)](https://docs.python.org/3.12/)
+[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
+[![black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![pytest](https://img.shields.io/badge/pytest-enabled-brightgreen)](https://docs.pytest.org/en/latest/)
+[![sentry](https://img.shields.io/badge/sentry-enabled-blueviolet)](https://sentry-gcp.takealot.com/takealot/ads-service/)
+[![sonarqube](https://img.shields.io/badge/sonarqube-enabled-informational)](https://sonarqube.stagealot.com/dashboard?id=sponsored-ads-service)
+[![docs](https://img.shields.io/badge/docs-mkdocs-informational)](https://www.mkdocs.org/)
+
+## Getting Started
+
+Getting started with developing on sponsored-ads-service
+
+### Viewing Documentation
+
+To view the full documentation of the project, make sure you pull the repo and run the following:
+
+```bash
+pip install -e .[docs]
+mkdocs serve
+```
+
+> **Note:** If you get errors when starting mkdocs, ensure that you have the client installed:
+> ```bash
+> pip install -e ./client
+> ```
+
+The docs will be hosted locally on port 8000 (http://localhost:8000/)
+
+### Project Setup
+
+These steps will go through how to set up your developer environment
+
+#### Setup your virtual environment
+
+You will have 2 choices here depending on whether you use `virtualenv` or `pyenv-virtualenv`
+
+1. Using `virtualenv`:
+    ```bash
+    virtualenv -p python3 venv
+    source venv/bin/activate
+    ```
+
+2. Using `pyenv-virtualenv`:
+    ```bash
+    pyenv virtualenv 3.12 sponsored-ads-service
+    echo "sponsored-ads-service" >| .python-version
+    ```
+
+#### Install dependencies
+
+Install the service and developer dependencies, as well as, configure pre-commit
+
+```bash
+pip install -e .
+pip install -e .[dev]
+pre-commit install
+```
+
+> **Note:** If you are using zsh you may need to either:
+>   1. Add unsetopt nomatch to your `~/.zshrc`
+>   2. Use `pip install -e .\[dev\]` instead
+
+> **Note:** If you want to run the pre-commits without committing to a branch:
+> ```bash
+> pre-commit run
+> ```
+
+#### Build Client Locally
+
+```bash
+pip install -e ./client
+```
+
+### Kubernetes Quickstart (Local)
+
+Starting up a developer patched sponsored-ads-service in your local environment.
+
+> **Note:** Before you begin, you must have completed the steps from the [Project Setup](#project-setup) section.
+
+```bash
+helm install -n sponsored-ads-service --set dev.patch=true,dev.hostPath=$PWD charts/sponsored-ads-service
+```

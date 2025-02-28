@@ -1,0 +1,3 @@
+[console_scripts]
+sponsored_ads_cli = sponsored_ads_service.cli:cli
+sponsored_ads_service = sponsored_ads_service.service:serve

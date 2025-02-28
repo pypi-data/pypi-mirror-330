@@ -1,0 +1,124 @@
+[tool.ruff]
+line-length = 99
+target-version = "py312"
+include = ["pyproject.toml", "sponsored_ads_service/**/*.py", "client/**/*.py", "tests/**/*.py"]
+exclude = ["client/sponsored_ads_client/protobuf/*", "sponsored_ads_service/protobuf/*"]
+
+[tool.ruff.lint]
+# Use extend-select to maintain selection of default rules
+extend-select = [
+    "W",   # pycodestyle warnings
+    "I",   # isort
+    "UP",  # pyupgrade
+    "A",   # flake8-builtins (don't use the same variable name as a builtin, eg: `filter`)
+    "C4",  # flake8-comprehensions
+    "B",   # flake8-bugbear
+    "INP", # check for __init__.py files
+    "T20", # check for print statements
+    "PYI", # flake8-pyi (type annotation rules, not a type checker)
+    "N",   # enforce pep8 naming convention
+    "S",   # flake8-bandit (security checks)
+    "C90", # mccabe complexity check
+    "PT",  # pytest-style
+    "RET", # flake8-return
+    "TCH", # flake8-type-checking
+    "PTH", # flake8-pathlib (we prefer pathlib over os)
+    "ERA", # flake8-eradicate (we have git, don't commit commented out code)
+    "RUF", # ruff-specific rules
+    "E",   # pycodestyle
+    "F",   # Pyflakes
+    "B",   # flake8-bugbear
+    "SIM", # flake8-simplify
+    "G",   # flake8-logging-format
+]
+ignore = [
+    "S311",   # Allow 'random' module, we don't need crypto level randomness to pick an endpoint.
+    "S324",   # Allow use of insecure hash functions in `hashlib`: `md5`
+    "B904",   # Within an `except` clause, raise exceptions with `raise ... from err` or `raise ... from None` to distinguish them from errors in exception handling
+    "SIM105", # Don't discourage except X: pass
+    "SIM117", # Use a single `with` statement with multiple contexts instead of nested `with` statements
+    "UP040",  # Mypy does not yet support PEP 695 type aliases
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = [
+    "S", # disable security checks for unit tests
+    "PT004", # don't care about functions returning nothing
+]
+"client/tests/*" = [
+    "S", # disable security checks for unit tests in client/tests/*
+]
+"setup.py" = [
+    "PTH", # allow the use of os.path for `setup.py`
+]
+
+
+[tool.mypy]
+python_version = "3.12"
+ignore_errors = false
+show_column_numbers = true
+ignore_missing_imports = true
+disallow_untyped_calls = true
+disallow_untyped_defs = true
+no_implicit_optional = true
+warn_no_return = true
+files = ["sponsored_ads_service", "client"]
+
+[[tool.mypy.overrides]]
+module = [
+    "tests.*",
+    "setup",
+    "client.tests.*",
+    "sponsored_ads_service.protobuf.*",
+    "client.sponsored_ads_client.protobuf.*",
+]
+ignore_errors = true
+
+[tool.pytest.ini_options]
+filterwarnings = [
+    "ignore:.*importing the ABCs from 'collections'.*:DeprecationWarning",
+    "ignore:.*GenericFunction 'array_agg'.*:",
+    "ignore:.*the imp module is deprecated in favour of importlib",
+    "ignore:.*Call to deprecated create function .*Descriptor().*:DeprecationWarning"
+]
+markers = [
+    "configuration",
+    "controllers",
+    "factories",
+    "integrations",
+    "link_data",
+    "models",
+    "service",
+    "utils",
+    "validators",
+]
+
+[tool.coverage.run]
+branch = true
+source = ["sponsored_ads_service", "client"]
+omit = [
+    "venv/*",
+    "tests/*",
+    "setup.py",
+    "client/setup.py",
+    "client/sponsored_ads_client/protobuf/*",
+    "sponsored_ads_service/protobuf/*",
+    "sponsored_ads_service/cli.py", # This is for dev purposes only
+]
+
+[tool.coverage.report]
+fail_under = 100
+skip_empty = true
+show_missing = true
+exclude_lines = [
+    "logger",
+    # See https://github.com/nedbat/coveragepy/issues/970
+    "pragma: no cover",
+    "@overload",
+    # Protocols are structural types (no logic)
+    "(Protocol)",
+    # These blocks are not run at runtime (only for typing)
+    "if TYPE_CHECKING:",
+    # for match statements
+    "case _:\\n\\s*assert_never(.*)"
+]
