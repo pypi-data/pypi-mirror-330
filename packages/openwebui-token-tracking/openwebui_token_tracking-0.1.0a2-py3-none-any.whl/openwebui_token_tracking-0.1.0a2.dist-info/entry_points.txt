@@ -1,0 +1,2 @@
+[console_scripts]
+owui-token-tracking = openwebui_token_tracking.cli.main:cli
