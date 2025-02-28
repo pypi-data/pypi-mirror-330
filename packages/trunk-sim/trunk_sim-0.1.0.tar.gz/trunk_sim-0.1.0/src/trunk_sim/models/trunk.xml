@@ -1,0 +1,152 @@
+
+    <mujoco model="trunk">
+        <compiler angle="radian"/>
+        <extension>
+            <plugin plugin="mujoco.elasticity.cable">
+            <instance name="compositeactuated">
+                <config key="twist" value="1e8"/>
+                <config key="bend" value="1e8"/>
+                <config key="vmax" value="0"/>
+            </instance>
+            </plugin>
+        </extension>
+
+        <asset>
+            <texture type="skybox" builtin="gradient" rgb1=".6 .8 1" rgb2=".6 .8 1" width="1" height="1"/>
+        </asset>
+
+        <worldbody>
+            <light pos="0 -1 -1" dir="0 -1 -1" diffuse="1 1 1"/>
+            <body name="actuatedB_first" pos="0 0 0.7" quat="0 -0.707107 0 0.707107">
+                <geom name="actuatedG0" size="0.005 0.005" pos="0.005 0 0" quat="0.707107 0 -0.707107 0" type="capsule" rgba="0.8 0.2 0.1 1"/>
+                      <site name="cable_0_y_front" pos="0 0.005 0"/> 
+                    <site name="cable_0_y_back" pos="0 -0.005 0"/>
+                    <site name="cable_0_z_front" pos="0 0 0.005"/> 
+                    <site name="cable_0_z_back" pos="0 0 -0.005"/>
+        <body name="link_1" pos="0.1 0 0">
+            <joint name="joint_1" pos="0 0 0" type="ball" group="3" actuatorfrclimited="false" armature="0.01" damping="0.25"/>
+            <geom name="geom_1" size="0.05 0.05" density="0.1" pos="0.05 0 0" quat="0.707107 0 -0.707107 0" type="capsule" rgba="0 0 0 1"/>
+            <site name="site_1_y_front" pos="0 0.05 0"/> 
+            <site name="site_1_y_back" pos="0 -0.05 0"/>
+            <site name="site_1_z_front" pos="0 0 0.05"/> 
+            <site name="site_1_z_back" pos="0 0 -0.05"/>
+            
+        <body name="link_2" pos="0.1 0 0">
+            <joint name="joint_2" pos="0 0 0" type="ball" group="3" actuatorfrclimited="false" armature="0.01" damping="0.25"/>
+            <geom name="geom_2" size="0.05 0.05" density="0.1" pos="0.05 0 0" quat="0.707107 0 -0.707107 0" type="capsule" rgba="0 0 0 1"/>
+            <site name="site_2_y_front" pos="0 0.05 0"/> 
+            <site name="site_2_y_back" pos="0 -0.05 0"/>
+            <site name="site_2_z_front" pos="0 0 0.05"/> 
+            <site name="site_2_z_back" pos="0 0 -0.05"/>
+            
+        <body name="link_3" pos="0.1 0 0">
+            <joint name="joint_3" pos="0 0 0" type="ball" group="3" actuatorfrclimited="false" armature="0.01" damping="0.25"/>
+            <geom name="geom_3" size="0.05 0.05" density="0.1" pos="0.05 0 0" quat="0.707107 0 -0.707107 0" type="capsule" rgba="0 0 0 1"/>
+            <site name="site_3_y_front" pos="0 0.05 0"/> 
+            <site name="site_3_y_back" pos="0 -0.05 0"/>
+            <site name="site_3_z_front" pos="0 0 0.05"/> 
+            <site name="site_3_z_back" pos="0 0 -0.05"/>
+            
+        <body name="link_4" pos="0.1 0 0">
+            <joint name="joint_4" pos="0 0 0" type="ball" group="3" actuatorfrclimited="false" armature="0.01" damping="0.25"/>
+            <geom name="geom_4" size="0.05 0.05" density="0.1" pos="0.05 0 0" quat="0.707107 0 -0.707107 0" type="capsule" rgba="0 0 0 1"/>
+            <site name="site_4_y_front" pos="0 0.05 0"/> 
+            <site name="site_4_y_back" pos="0 -0.05 0"/>
+            <site name="site_4_z_front" pos="0 0 0.05"/> 
+            <site name="site_4_z_back" pos="0 0 -0.05"/>
+            
+        <body name="link_5" pos="0.1 0 0">
+            <joint name="joint_5" pos="0 0 0" type="ball" group="3" actuatorfrclimited="false" armature="0.01" damping="0.25"/>
+            <geom name="geom_5" size="0.05 0.05" density="0.1" pos="0.05 0 0" quat="0.707107 0 -0.707107 0" type="capsule" rgba="0 0 0 1"/>
+            <site name="site_5_y_front" pos="0 0.05 0"/> 
+            <site name="site_5_y_back" pos="0 -0.05 0"/>
+            <site name="site_5_z_front" pos="0 0 0.05"/> 
+            <site name="site_5_z_back" pos="0 0 -0.05"/>
+            
+        <body name="link_6" pos="0.1 0 0">
+            <joint name="joint_6" pos="0 0 0" type="ball" group="3" actuatorfrclimited="false" armature="0.01" damping="0.25"/>
+            <geom name="geom_6" size="0.05 0.05" density="0.1" pos="0.05 0 0" quat="0.707107 0 -0.707107 0" type="capsule" rgba="0 0 0 1"/>
+            <site name="site_6_y_front" pos="0 0.05 0"/> 
+            <site name="site_6_y_back" pos="0 -0.05 0"/>
+            <site name="site_6_z_front" pos="0 0 0.05"/> 
+            <site name="site_6_z_back" pos="0 0 -0.05"/>
+            
+        <body name="link_7" pos="0.1 0 0">
+            <joint name="joint_7" pos="0 0 0" type="ball" group="3" actuatorfrclimited="false" armature="0.01" damping="0.25"/>
+            <geom name="geom_7" size="0.05 0.05" density="0.1" pos="0.05 0 0" quat="0.707107 0 -0.707107 0" type="capsule" rgba="0 0 0 1"/>
+            <site name="site_7_y_front" pos="0 0.05 0"/> 
+            <site name="site_7_y_back" pos="0 -0.05 0"/>
+            <site name="site_7_z_front" pos="0 0 0.05"/> 
+            <site name="site_7_z_back" pos="0 0 -0.05"/>
+            
+        <body name="link_8" pos="0.1 0 0">
+            <joint name="joint_8" pos="0 0 0" type="ball" group="3" actuatorfrclimited="false" armature="0.01" damping="0.25"/>
+            <geom name="geom_8" size="0.05 0.05" density="0.1" pos="0.05 0 0" quat="0.707107 0 -0.707107 0" type="capsule" rgba="0 0 0 1"/>
+            <site name="site_8_y_front" pos="0 0.05 0"/> 
+            <site name="site_8_y_back" pos="0 -0.05 0"/>
+            <site name="site_8_z_front" pos="0 0 0.05"/> 
+            <site name="site_8_z_back" pos="0 0 -0.05"/>
+            
+        <body name="link_9" pos="0.1 0 0">
+            <joint name="joint_9" pos="0 0 0" type="ball" group="3" actuatorfrclimited="false" armature="0.01" damping="0.25"/>
+            <geom name="geom_9" size="0.05 0.05" density="0.1" pos="0.05 0 0" quat="0.707107 0 -0.707107 0" type="capsule" rgba="0 0 0 1"/>
+            <site name="site_9_y_front" pos="0 0.05 0"/> 
+            <site name="site_9_y_back" pos="0 -0.05 0"/>
+            <site name="site_9_z_front" pos="0 0 0.05"/> 
+            <site name="site_9_z_back" pos="0 0 -0.05"/>
+            
+        <body name="link_10" pos="0.1 0 0">
+            <joint name="joint_10" pos="0 0 0" type="ball" group="3" actuatorfrclimited="false" armature="0.01" damping="0.25"/>
+            <geom name="geom_10" size="0.05 0.05" density="0.1" pos="0.05 0 0" quat="0.707107 0 -0.707107 0" type="capsule" rgba="0 0 0 1"/>
+            <site name="site_10_y_front" pos="0 0.05 0"/> 
+            <site name="site_10_y_back" pos="0 -0.05 0"/>
+            <site name="site_10_z_front" pos="0 0 0.05"/> 
+            <site name="site_10_z_back" pos="0 0 -0.05"/>
+            
+        </body>
+    
+        </body>
+    
+        </body>
+    
+        </body>
+    
+        </body>
+    
+        </body>
+    
+        </body>
+    
+        </body>
+    
+        </body>
+    
+        </body>
+    
+            </body>
+        </worldbody>
+
+        
+        <tendon>
+            <spatial name="tendon_y_front" stiffness="0.0" damping="0.0" width="0.002">
+    <site site="cable_0_y_front"/>
+                <site site="site_1_y_front"/>
+    <site site="site_2_y_front"/>
+    <site site="site_3_y_front"/>
+    <site site="site_4_y_front"/>
+    <site site="site_5_y_front"/>
+    <site site="site_6_y_front"/>
+    <site site="site_7_y_front"/>
+    <site site="site_8_y_front"/>
+    <site site="site_9_y_front"/>
+    <site site="site_10_y_front"/>
+            </spatial>
+        </tendon>
+    
+
+        <actuator>
+            <muscle tendon="tendon_y_front"/> 
+        </actuator>
+
+    </mujoco>
+    
