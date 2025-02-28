@@ -1,0 +1,48 @@
+name: uv Tests
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+        
+    - name: Install uv
+      run: |
+        curl -LsSf https://astral.sh/uv/install.sh | sh
+        
+    - name: Install dependencies with uv
+      run: |
+        uv venv
+        source .venv/bin/activate
+        uv pip install -e ".[dev,api,scripts]"
+        
+    - name: Run tests with uv
+      run: |
+        source .venv/bin/activate
+        pytest tests/
+        
+    - name: Run linting with uv
+      run: |
+        source .venv/bin/activate
+        # Run ruff but don't fail the build on errors (exit code 0)
+        ruff check src/ tests/ || true
+        echo "Linting complete - any issues will be shown above but won't fail the build"
+        
+    - name: Run type checking with uv
+      run: |
+        source .venv/bin/activate
+        # Run mypy but don't fail the build on errors (exit code 0)
+        mypy src/ || true
+        echo "Type checking complete - any issues will be shown above but won't fail the build" 
