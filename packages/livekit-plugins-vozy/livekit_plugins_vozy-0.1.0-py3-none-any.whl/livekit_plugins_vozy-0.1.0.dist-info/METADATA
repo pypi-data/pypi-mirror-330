@@ -1,0 +1,14 @@
+Metadata-Version: 2.2
+Name: livekit-plugins-vozy
+Version: 0.1.0
+Summary: LiveKit plugin for Vozy TTS integration
+Author: Your Name
+Author-email: your.email@example.com
+Requires-Python: >=3.7
+Requires-Dist: aiohttp>=3.8.0
+Requires-Dist: livekit>=0.1.0
+Dynamic: author
+Dynamic: author-email
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
