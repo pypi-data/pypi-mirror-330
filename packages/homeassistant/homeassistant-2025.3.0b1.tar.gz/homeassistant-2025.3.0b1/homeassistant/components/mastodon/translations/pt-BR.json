@@ -1,0 +1,38 @@
+{
+    "config": {
+        "step": {
+            "user": {
+                "data": {
+                    "base_url": "URL"
+                }
+            }
+        }
+    },
+    "exceptions": {
+        "integration_not_found": {
+            "message": "Integra\u00e7\u00e3o \" {target} \" n\u00e3o encontrada no registro."
+        },
+        "not_loaded": {
+            "message": "{target} n\u00e3o est\u00e1 carregado."
+        },
+        "not_whitelisted_directory": {
+            "message": "{media} n\u00e3o \u00e9 um diret\u00f3rio da lista de permiss\u00f5es."
+        },
+        "unable_to_send_message": {
+            "message": "N\u00e3o foi poss\u00edvel enviar mensagem."
+        },
+        "unable_to_upload_image": {
+            "message": "N\u00e3o foi poss\u00edvel carregar a imagem {media_path}."
+        }
+    },
+    "services": {
+        "post": {
+            "fields": {
+                "media_description": {
+                    "description": "Se uma imagem ou v\u00eddeo for anexado, adicionaremos uma descri\u00e7\u00e3o para esta m\u00eddia para pessoas com defici\u00eancia visual.",
+                    "name": "Descri\u00e7\u00e3o da m\u00eddia"
+                }
+            }
+        }
+    }
+}

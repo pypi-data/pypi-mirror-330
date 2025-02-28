@@ -1,0 +1,15 @@
+{
+    "config": {
+        "step": {
+            "network": {
+                "data": {
+                    "tls": "Use TLS (secure connection)"
+                },
+                "title": "TCP/IP configuration"
+            },
+            "usbselect": {
+                "title": "USB configuration"
+            }
+        }
+    }
+}

@@ -1,0 +1,19 @@
+{
+    "entity": {
+        "binary_sensor": {
+            "automatic_blind_spot_camera": {
+                "name": ""
+            }
+        },
+        "device_tracker": {
+            "origin": {
+                "name": ""
+            }
+        },
+        "switch": {
+            "charge_state_charging_state": {
+                "name": "Charge"
+            }
+        }
+    }
+}

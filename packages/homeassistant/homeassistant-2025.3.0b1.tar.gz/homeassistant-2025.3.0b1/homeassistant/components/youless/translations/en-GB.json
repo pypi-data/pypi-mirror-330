@@ -1,0 +1,39 @@
+{
+    "entity": {
+        "sensor": {
+            "active_s0_w": {
+                "name": ""
+            },
+            "active_tariff": {
+                "name": ""
+            },
+            "active_voltage_phase_v": {
+                "name": ""
+            },
+            "average_peak": {
+                "name": ""
+            },
+            "month_peak": {
+                "name": ""
+            },
+            "total_energy_export_tariff_kwh": {
+                "name": ""
+            },
+            "total_energy_import_kwh": {
+                "name": ""
+            },
+            "total_energy_import_tariff_kwh": {
+                "name": ""
+            },
+            "total_gas_m3": {
+                "name": ""
+            },
+            "total_s0_kwh": {
+                "name": ""
+            },
+            "total_water": {
+                "name": ""
+            }
+        }
+    }
+}

@@ -1,0 +1,23 @@
+{
+    "entity": {
+        "sensor": {
+            "status": {
+                "state": {
+                    "idle": "Nedejaven",
+                    "locked": "Zaklenjeno"
+                }
+            }
+        },
+        "vacuum": {
+            "roborock": {
+                "state_attributes": {
+                    "fan_speed": {
+                        "state": {
+                            "auto": "Samodejno"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

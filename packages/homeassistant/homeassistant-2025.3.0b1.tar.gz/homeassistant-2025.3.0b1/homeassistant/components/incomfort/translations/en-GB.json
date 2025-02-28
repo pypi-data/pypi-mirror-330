@@ -1,0 +1,37 @@
+{
+    "config": {
+        "step": {
+            "dhcp_auth": {
+                "data_description": {
+                    "password": "",
+                    "username": ""
+                },
+                "description": "",
+                "title": ""
+            },
+            "dhcp_confirm": {
+                "description": "",
+                "title": ""
+            },
+            "reauth_confirm": {
+                "data_description": {
+                    "password": ""
+                },
+                "description": ""
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "legacy_setpoint_status": ""
+                },
+                "data_description": {
+                    "legacy_setpoint_status": ""
+                },
+                "title": ""
+            }
+        }
+    }
+}

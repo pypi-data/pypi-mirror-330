@@ -1,0 +1,46 @@
+{
+    "entity": {
+        "binary_sensor": {
+            "water_heater_operation_mode": {
+                "name": "Power"
+            }
+        },
+        "select": {
+            "operation_mode": {
+                "state": {
+                    "power_on": "Power on"
+                }
+            },
+            "operation_mode_for_location": {
+                "state": {
+                    "power_on": "Power on"
+                }
+            }
+        },
+        "sensor": {
+            "cycle_count": {
+                "name": "Cycles"
+            },
+            "cycle_count_for_location": {
+                "name": "{location} cycles"
+            },
+            "room_air_current_temperature": {
+                "name": "Indoor temperature"
+            },
+            "room_in_water_current_temperature": {
+                "name": "Inlet temperature"
+            },
+            "room_out_water_current_temperature": {
+                "name": "Outlet temperature"
+            }
+        },
+        "switch": {
+            "display_light": {
+                "name": "Lighting"
+            },
+            "express_fridge": {
+                "name": "Express cool"
+            }
+        }
+    }
+}

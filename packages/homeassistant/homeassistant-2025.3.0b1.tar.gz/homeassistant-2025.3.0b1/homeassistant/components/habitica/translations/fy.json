@@ -1,0 +1,19 @@
+{
+    "entity": {
+        "sensor": {
+            "display_name": {
+                "state_attributes": {
+                    "blurb": {
+                        "name": "Oer"
+                    },
+                    "last_login": {
+                        "name": "L\u00east ynlogd"
+                    },
+                    "total_logins": {
+                        "name": "Totaal oantal logins"
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,165 @@
+{
+    "entity": {
+        "sensor": {
+            "dishwasher_job_state": {
+                "state": {
+                    "air_wash": "\u00d5hupesu"
+                }
+            },
+            "dryer_job_state": {
+                "state": {
+                    "ai_drying": "AI kuivatamine",
+                    "continuous_dehumidifying": "Pidev niiskuse eemaldamine",
+                    "dehumidifying": "Niiskuse eemaldamine",
+                    "delay_wash": "Pesemise viivitus",
+                    "freeze_protection": "K\u00fclmumiskaitse",
+                    "internal_care": "Sisemine hooldus",
+                    "none": "Puudub",
+                    "refreshing": "V\u00e4rskendamine",
+                    "sanitizing": "Desinfitseerimine",
+                    "thawing_frozen_inside": "Seest k\u00fclmutatud sulatamine",
+                    "weight_sensing": "Kaalu tuvastamine"
+                }
+            },
+            "dryer_machine_state": {
+                "state": {
+                    "pause": "Peatatud"
+                }
+            },
+            "media_input_source": {
+                "state": {
+                    "digitaltv": "Digi-TV",
+                    "fm": "FM",
+                    "hdmi": "HDMI",
+                    "hdmi1": "HDMI 1",
+                    "hdmi2": "HDMI 2",
+                    "hdmi3": "HDMI 3",
+                    "hdmi4": "HDMI 4",
+                    "hdmi5": "HDMI 5",
+                    "hdmi6": "HDMI 6",
+                    "melon": "Melon",
+                    "network": "V\u00f5rk",
+                    "optical": "Optiline",
+                    "phono": "Fono",
+                    "usb": "USB",
+                    "wifi": "Wi-Fi",
+                    "youtube": "YouTube"
+                }
+            },
+            "media_playback_shuffle": {
+                "name": "Meedi juhusesitus"
+            },
+            "media_playback_status": {
+                "name": "Meedia taasesituse olek"
+            },
+            "odor_sensor": {
+                "name": "L\u00f5hnaandur"
+            },
+            "oven_mode": {
+                "name": "Ahju re\u017eiim",
+                "state": {
+                    "bake": "K\u00fcpsetamine",
+                    "bottom_heat": "Alumine kuumus",
+                    "broil": "Praadimine",
+                    "convection_bake": "P\u00f6\u00f6rd\u00f5huga k\u00fcpsetamine",
+                    "convection_broil": "P\u00f6\u00f6rd\u00f5huga praadimine",
+                    "convection_roast": "P\u00f6\u00f6rd\u00f5huga r\u00f6stimine",
+                    "conventional": "Tavap\u00e4rane",
+                    "defrosting": "Sulatamine",
+                    "dehydrate": "Kuivatamine",
+                    "descale": "Katlakivi eemaldamine",
+                    "grill": "Grill",
+                    "heating": "Kuumutamine",
+                    "microwave": "Mikrolaine",
+                    "microwave_plus_convection": "Mikrolaine pluss konvektsioon"
+                }
+            },
+            "oven_setpoint": {
+                "name": "Seadepunkt"
+            },
+            "power_energy": {
+                "name": "V\u00f5imsusenergia"
+            },
+            "power_source": {
+                "name": "Toiteallikas"
+            },
+            "refrigeration_setpoint": {
+                "name": "Seadepunkt"
+            },
+            "robot_cleaner_cleaning_mode": {
+                "name": "Puhastusre\u017eiim",
+                "state": {
+                    "stop": "Peata"
+                }
+            },
+            "robot_cleaner_movement": {
+                "name": "Liikumine"
+            },
+            "robot_cleaner_turbo_mode": {
+                "name": "Turbore\u017eiim",
+                "state": {
+                    "extra_silence": "\u00dclivaikne",
+                    "off": "V\u00e4ljas",
+                    "on": "Sees",
+                    "silence": "Vaikne"
+                }
+            },
+            "smoke_detector": {
+                "name": "Suitsuandur"
+            },
+            "thermostat_cooling_setpoint": {
+                "name": "Jahutuse seadepunkt"
+            },
+            "thermostat_fan_mode": {
+                "name": "Ventilaatori re\u017eiim"
+            },
+            "thermostat_heating_setpoint": {
+                "name": "K\u00fctte seadepunkt"
+            },
+            "thermostat_mode": {
+                "name": "Re\u017eiim"
+            },
+            "thermostat_operating_state": {
+                "name": "T\u00f6\u00f6seisund"
+            },
+            "thermostat_setpoint": {
+                "name": "Seadepunkt"
+            },
+            "tv_channel": {
+                "name": "Telekanal"
+            },
+            "tv_channel_name": {
+                "name": "Telekanali nimi"
+            },
+            "uv_index": {
+                "name": "UV-indeks"
+            },
+            "washer_job_state": {
+                "state": {
+                    "ai_rinse": "AI loputus",
+                    "ai_spin": "AI tsentrifuug",
+                    "ai_wash": "AI pesu",
+                    "air_wash": "\u00d5hupesu",
+                    "delay_wash": "Pesemise viivitus",
+                    "freeze_protection": "K\u00fclmumiskaitse",
+                    "none": "Puudub",
+                    "weight_sensing": "Kaalu tuvastamine"
+                }
+            },
+            "washer_machine_state": {
+                "state": {
+                    "pause": "Peatatud"
+                }
+            },
+            "washer_mode": {
+                "name": "Pesumasina re\u017eiim"
+            },
+            "x_coordinate": {
+                "name": "X koordinaat"
+            },
+            "y_coordinate": {
+                "name": "Y koordinaat"
+            }
+        }
+    }
+}

@@ -1,0 +1,16 @@
+{
+    "entity": {
+        "sensor": {
+            "charge_current_limit_source": {
+                "state": {
+                    "local_scheduled_charging": "Scheduled charging"
+                }
+            }
+        },
+        "switch": {
+            "charge": {
+                "name": "Charge"
+            }
+        }
+    }
+}

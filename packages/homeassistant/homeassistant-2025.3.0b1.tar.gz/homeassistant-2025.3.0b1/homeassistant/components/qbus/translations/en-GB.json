@@ -1,0 +1,19 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "",
+            "discovery_in_progress": "",
+            "not_supported": ""
+        },
+        "error": {
+            "no_controller": ""
+        },
+        "flow_title": "",
+        "step": {
+            "discovery_confirm": {
+                "description": "",
+                "title": ""
+            }
+        }
+    }
+}

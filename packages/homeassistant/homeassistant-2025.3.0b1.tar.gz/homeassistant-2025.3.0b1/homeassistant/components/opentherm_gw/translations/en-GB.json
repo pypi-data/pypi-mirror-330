@@ -1,0 +1,9 @@
+{
+    "entity": {
+        "binary_sensor": {
+            "override_program_change_prio": {
+                "name": "Programmed change has priority over override"
+            }
+        }
+    }
+}

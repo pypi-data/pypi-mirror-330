@@ -1,0 +1,177 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Account is already configured",
+            "authorize_url_timeout": "Timeout generating authorise URL.",
+            "reauth_account_mismatch": "",
+            "reauth_location_mismatch": ""
+        },
+        "error": {
+            "already_configured": "Account is already configured"
+        },
+        "step": {
+            "reauth_confirm": {
+                "description": ""
+            }
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "acceleration": {
+                "name": ""
+            },
+            "filter_status": {
+                "name": ""
+            },
+            "valve": {
+                "name": ""
+            }
+        },
+        "sensor": {
+            "air_conditioner_mode": {
+                "name": ""
+            },
+            "alarm": {
+                "state": {
+                    "both": "",
+                    "siren": "",
+                    "strobe": ""
+                }
+            },
+            "dishwasher_job_state": {
+                "state": {
+                    "air_wash": "",
+                    "cooling": "",
+                    "drying": "",
+                    "finish": "",
+                    "pre_drain": "",
+                    "pre_wash": "",
+                    "rinse": "",
+                    "spin": "",
+                    "wash": "",
+                    "wrinkle_prevent": ""
+                }
+            },
+            "dishwasher_machine_state": {
+                "state": {
+                    "run": "",
+                    "stop": ""
+                }
+            },
+            "dryer_job_state": {
+                "state": {
+                    "ai_drying": "",
+                    "continuous_dehumidifying": "",
+                    "cooling": "",
+                    "dehumidifying": "",
+                    "delay_wash": "",
+                    "drying": "",
+                    "freeze_protection": "Freeze protection",
+                    "internal_care": "Internal care",
+                    "refreshing": "",
+                    "sanitizing": "Sanitising",
+                    "thawing_frozen_inside": "",
+                    "wrinkle_prevent": ""
+                }
+            },
+            "dryer_machine_state": {
+                "state": {
+                    "run": "",
+                    "stop": ""
+                }
+            },
+            "media_input_source": {
+                "state": {
+                    "am": "",
+                    "analog1": "Analogue 1",
+                    "analog2": "Analogue 2",
+                    "analog3": "Analogue 3",
+                    "aux": "",
+                    "bluetooth": "",
+                    "cd": "",
+                    "coaxial": "",
+                    "digital": "",
+                    "digitaltv": "",
+                    "fm": "",
+                    "hdmi": "",
+                    "hdmi1": "",
+                    "hdmi2": "",
+                    "hdmi5": "",
+                    "hdmi6": "",
+                    "melon": "",
+                    "network": "",
+                    "optical": "",
+                    "phono": "",
+                    "usb": "",
+                    "wifi": "",
+                    "youtube": ""
+                }
+            },
+            "oven_mode": {
+                "state": {
+                    "bake": "",
+                    "bottom_heat": "",
+                    "broil": "Grill",
+                    "convection_bake": "Convection bake",
+                    "convection_broil": "Convection grill",
+                    "convection_roast": "",
+                    "conventional": "",
+                    "defrosting": "",
+                    "dehydrate": "",
+                    "descale": "",
+                    "grill": "",
+                    "heating": "",
+                    "microwave": "",
+                    "microwave_plus_convection": "",
+                    "microwave_plus_grill": "",
+                    "microwave_plus_hot_blast": "",
+                    "microwave_plus_hot_blast_2": "",
+                    "others": "",
+                    "proof": "",
+                    "rinse": "",
+                    "slim_middle": ""
+                }
+            },
+            "robot_cleaner_cleaning_mode": {
+                "state": {
+                    "auto": "",
+                    "manual": "",
+                    "map": "",
+                    "part": "",
+                    "repeat": "",
+                    "stop": "Stop"
+                }
+            },
+            "robot_cleaner_movement": {
+                "state": {
+                    "point": "",
+                    "reserve": ""
+                }
+            },
+            "robot_cleaner_turbo_mode": {
+                "state": {
+                    "extra_silence": "",
+                    "silence": ""
+                }
+            },
+            "washer_job_state": {
+                "state": {
+                    "ai_rinse": "",
+                    "ai_spin": "",
+                    "ai_wash": "",
+                    "air_wash": "",
+                    "cooling": "",
+                    "delay_wash": "",
+                    "drying": "",
+                    "finish": ""
+                }
+            },
+            "washer_machine_state": {
+                "state": {
+                    "run": "",
+                    "stop": ""
+                }
+            }
+        }
+    }
+}
