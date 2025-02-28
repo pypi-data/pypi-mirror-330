@@ -1,0 +1,2 @@
+[console_scripts]
+importlinter = ilint.__main__:main
