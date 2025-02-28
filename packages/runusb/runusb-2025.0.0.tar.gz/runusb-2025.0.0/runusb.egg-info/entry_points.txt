@@ -1,0 +1,2 @@
+[console_scripts]
+runusb = runusb.__main__:main

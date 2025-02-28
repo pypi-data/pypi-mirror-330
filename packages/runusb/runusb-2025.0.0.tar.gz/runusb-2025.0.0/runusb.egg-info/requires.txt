@@ -1,0 +1,5 @@
+logger-extras==0.4.2
+rpi.GPIO==0.7.1
+
+[mqtt]
+logger-extras[mqtt]==0.4.2
