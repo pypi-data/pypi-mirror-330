@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+NevesDB.egg-info/PKG-INFO
+NevesDB.egg-info/SOURCES.txt
+NevesDB.egg-info/dependency_links.txt
+NevesDB.egg-info/requires.txt
+NevesDB.egg-info/top_level.txt
+nevesdb/__init__.py
+nevesdb/model.py
+nevesdb/nevesdb.py
+tests/test.py
