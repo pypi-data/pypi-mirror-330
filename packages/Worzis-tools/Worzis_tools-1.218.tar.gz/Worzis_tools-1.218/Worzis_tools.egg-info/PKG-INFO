@@ -1,0 +1,8 @@
+Metadata-Version: 2.1
+Name: Worzis_tools
+Version: 1.218
+Author-email: dag201011@gmail.com
+Requires-Dist: colorama
+Requires-Dist: pytz
+Requires-Dist: python-dotenv
+Requires-Dist: python-telegram-bot==13.7
