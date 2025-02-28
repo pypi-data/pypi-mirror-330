@@ -1,0 +1,39 @@
+[project]
+name = "machwave"
+version = "0.1.0"
+description = "Rocket simulator"
+readme = "README.md"
+authors = [
+    { name = "Felipe Bogaerts de Mattos", email = "me@felipebm.com" }
+]
+license = { file = "license.txt" }
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: Unix",
+    "Operating System :: MacOS :: MacOS X",
+    "Operating System :: Microsoft :: Windows",
+]
+keywords = ["python", "rocket", "srm", "engine", "propulsion"]
+requires-python = ">=3.9,<=3.14"
+dependencies = [
+    "numpy",
+    "pandas",
+    "fluids",
+    "matplotlib",
+    "plotly",
+    "scipy",
+]
+
+[project.optional-dependencies]
+dev = [
+    "ruff",
+    "pyright",
+    "pytest",
+]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[project.urls]
+Homepage = "https://github.com/felipebogaertsm/rocket-solver"
