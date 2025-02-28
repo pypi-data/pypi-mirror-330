@@ -1,0 +1,166 @@
+[build-system]
+requires = ["setuptools>=65.0.0", "wheel>=0.40.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "spiderforce4ai"
+version = "2.6.9"
+description = "Python wrapper for SpiderForce4AI HTML-to-Markdown conversion service with LLM post-processing"
+readme = "README.md"
+authors = [
+    { name = "Piotr Tamulewicz", email = "pt@petertam.pro" }
+]
+license = { file = "LICENSE" }
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
+    "Topic :: Text Processing :: Markup :: Markdown",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+keywords = [
+    "web-scraping",
+    "markdown",
+    "html-to-markdown",
+    "llm",
+    "ai",
+    "content-extraction",
+    "async",
+    "parallel-processing"
+]
+requires-python = ">=3.11"
+dependencies = [
+    "aiohttp>=3.8.0",
+    "asyncio>=3.4.3",
+    "rich>=10.0.0",
+    "aiofiles>=0.8.0",
+    "httpx>=0.24.0",
+    "litellm>=1.26.0",
+    "pydantic>=2.6.0",
+    "requests>=2.31.0",
+    "aiofiles>=23.2.1",
+    "et-xmlfile>=1.1.0",
+    "multidict>=6.0.4",
+    "openai>=1.12.0",
+    "pandas>=2.2.0",
+    "numpy>=1.26.0",
+    "yarl>=1.9.4",
+    "typing_extensions>=4.9.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "pytest-asyncio>=0.21.1",
+    "pytest-cov>=4.1.0",
+    "black>=23.7.0",
+    "isort>=5.12.0",
+    "mypy>=1.4.1",
+    "ruff>=0.1.8",
+    "pre-commit>=3.5.0",
+]
+
+test = [
+    "pytest>=7.4.0",
+    "pytest-asyncio>=0.21.1",
+    "pytest-cov>=4.1.0",
+    "pytest-mock>=3.12.0",
+    "coverage>=7.4.0",
+]
+
+docs = [
+    "sphinx>=7.1.0",
+    "sphinx-rtd-theme>=1.3.0",
+    "myst-parser>=2.0.0",
+]
+
+[project.urls]
+Homepage = "https://petertam.pro"
+Documentation = "https://petertam.pro/docs/spiderforce4ai"
+Repository = "https://github.com/yourusername/spiderforce4ai"
+"Bug Tracker" = "https://github.com/yourusername/spiderforce4ai/issues"
+
+[project.scripts]
+spiderforce4ai = "spiderforce4ai.cli:main"
+
+[tool.setuptools]
+packages = ["spiderforce4ai"]
+
+[tool.setuptools.package-data]
+spiderforce4ai = ["py.typed"]
+
+[tool.black]
+line-length = 100
+target-version = ["py311"]
+include = '\.pyi?$'
+
+[tool.isort]
+profile = "black"
+line_length = 100
+multi_line_output = 3
+include_trailing_comma = true
+force_grid_wrap = 0
+use_parentheses = true
+ensure_newline_before_comments = true
+
+[tool.mypy]
+python_version = "3.11"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+disallow_untyped_decorators = true
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_no_return = true
+warn_unreachable = true
+show_error_codes = true
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = "-ra -q --cov=spiderforce4ai --cov-report=term-missing"
+testpaths = ["tests"]
+asyncio_mode = "auto"
+
+[tool.coverage.run]
+source = ["spiderforce4ai"]
+branch = true
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "if self.debug:",
+    "raise NotImplementedError",
+    "if __name__ == .__main__.:",
+    "pass",
+    "raise ImportError",
+]
+ignore_errors = true
+omit = [
+    "tests/*",
+    "setup.py",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+select = [
+    "E",    # pycodestyle errors
+    "W",    # pycodestyle warnings
+    "F",    # pyflakes
+    "I",    # isort
+    "C",    # flake8-comprehensions
+    "B",    # flake8-bugbear
+]
+ignore = [
+    "E501",  # line too long
+]
+[tool.ruff.per-file-ignores]
+"__init__.py" = ["F401"]
