@@ -1,0 +1,18 @@
+[project]
+name = "fasthtml-admin"
+version = "0.1.1"
+description = "Providing helper user management and authentication functions for FastHTML"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "bcrypt>=4.2.1",
+    "python-fasthtml>=0.12.1",
+]
+
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project.urls]
+Homepage = "https://github.com/AndreasThinks/fasthtml-admin"
