@@ -1,0 +1,18 @@
+# pyproject.toml
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "JW96"
+version = "0.1.0"
+description = "A Python library for solving the Traveling Salesperson Problem using various algorithms."
+authors = [
+    {name = "Justin", email = "justin.williams1@students.cau.edu"}
+]
+dependencies = [
+    "numpy"
+]
+
+[tool.setuptools]
+packages = ["tsp_solver_jtw", "tsp_solver_jtw.algorithms"]
