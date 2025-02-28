@@ -1,0 +1,69 @@
+[build-system]
+requires = ["setuptools>=61.0", "setuptools_scm>=6.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "d361_offline"
+version = "0.1.0"
+description = "A tool for generating offline documentation from Document360 sites"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+authors = [
+    {name = "Adam Twardoch", email = "adam@twardoch.com"},
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Documentation",
+    "Topic :: Internet :: WWW/HTTP",
+    "Topic :: Utilities",
+]
+dependencies = [
+    "loguru",
+    "fire",
+    "pydantic",
+    "playwright",
+    "beautifulsoup4",
+    "aiohttp",
+    "aiofiles",
+    "markdownify",
+    "lxml",  # for XML parsing in BeautifulSoup
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "ruff",
+    "pytest-asyncio",
+    "pytest-mock",
+]
+
+[project.scripts]
+d361-offline = "d361_offline:main"
+
+[tool.setuptools]
+packages = ["d361_offline"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 88
+select = ["E", "F", "B", "I", "W", "C90", "N", "UP", "ANN"]
+ignore = ["ANN101", "ANN102", "E203"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "auto"
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+testpaths = ["tests"]
+python_files = "test_*.py"
+python_functions = "test_*"
+asyncio_mode = "auto" 
