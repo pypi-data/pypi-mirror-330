@@ -1,0 +1,31 @@
+Metadata-Version: 2.1
+Name: foxpuppet
+Version: 1.0.6
+Summary: 
+License: Mozilla Public License 2.0 (MPL 2.0)
+Author: Benjamin Forehand Jr
+Author-email: bforehand@mozilla.com
+Requires-Python: >=3.12,<4.0
+Classifier: License :: Other/Proprietary License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Dist: selenium (>=4.29.0,<5.0.0)
+Description-Content-Type: text/markdown
+
+# FoxPuppet
+
+FoxPuppet is a library for automating user interactions in [Firefox](https://www.mozilla.org/en-US/firefox/products/) using [Selenium](http://seleniumhq.org/).
+
+## Getting Started
+
+The following has been confirmed to work on linux based systems.
+
+1. Clone repository
+2. Install poetry: `make install_poetry`
+3. Run the tests: `make test`
+
+## Contributing Guidelines
+
+Please see our [Contributing Guidelines](CONTRIBUTING.md)
+
