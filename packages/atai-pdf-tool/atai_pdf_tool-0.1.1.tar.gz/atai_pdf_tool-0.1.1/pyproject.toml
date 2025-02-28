@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "atai-pdf-tool"
+version = "0.1.1"
+description = "A tool for parsing and extracting text from PDF files with OCR capabilities"
+readme = "README.md"
+authors = [
+    {name = "AtomGradient", email = "alex@atomgradient.com"}
+]
+license = {text = "MIT"}
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+keywords = ["pdf", "ocr", "text-extraction", "document-processing"]
+requires-python = ">=3.7"
+dependencies = [
+    "PyPDF2",
+    "PyMuPDF",
+    "easyocr",
+    "tqdm"
+]
+
+[project.urls]
+"Homepage" = "https://github.com/AtomGradient/atai-pdf-tool"
+"Bug Tracker" = "https://github.com/AtomGradient/atai-pdf-tool/issues"
+
+[project.scripts]
+atai-pdf-tool = "atai_pdf_tool.cli:main"
