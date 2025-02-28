@@ -1,0 +1,79 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sitejuicer"
+dynamic = ["version"]
+description = "Convert URLs to markdown using Jina Reader"
+readme = "README.md"
+authors = [
+    {name = "Jake Rains", email = "your-email@example.com"}
+]
+requires-python = ">=3.7"
+license = {text = "MIT"}
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Operating System :: OS Independent",
+    "Topic :: Internet :: WWW/HTTP",
+    "Topic :: Text Processing :: Markup :: Markdown",
+    "Topic :: Utilities",
+]
+keywords = ["web scraping", "markdown", "url", "jina", "reader", "sitejuicer"]
+dependencies = [
+    "requests>=2.25.0",
+    "rich>=12.0.0",
+    "commonmark>=0.9.1",
+    "typer>=0.7.0",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/jakerains/sitejuicer"
+"Bug Tracker" = "https://github.com/jakerains/sitejuicer/issues"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "black>=22.0.0",
+    "isort>=5.0.0",
+    "mypy>=0.9.0",
+    "flake8>=5.0.0",
+]
+ui = ["textual>=0.11.0"]
+
+[project.scripts]
+sitejuicer = "sitejuicer.cli:main"
+
+[tool.setuptools.dynamic]
+version = {attr = "sitejuicer.__version__"}
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["sitejuicer*"]
+
+[tool.setuptools.package-data]
+sitejuicer = ["py.typed"]
+
+[tool.black]
+line-length = 88
+target-version = ["py37", "py38", "py39", "py310", "py311"]
+include = '\.pyi?$'
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+
+[tool.mypy]
+python_version = "3.7"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true 
