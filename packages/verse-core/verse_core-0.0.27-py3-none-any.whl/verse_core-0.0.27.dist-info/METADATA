@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: verse-core
+Version: 0.0.27
+Summary: Verse Core
+Home-page: https://github.com/rapidverse/verse
+License: MIT
+Keywords: verse,core
+Author: Verse
+Author-email: admin@rapidverse.com
+Requires-Python: >=3.9
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Provides-Extra: hosted
+Requires-Dist: PyYAML
+Requires-Dist: docstring_parser
+Requires-Dist: httpx ; extra == "hosted"
+Requires-Dist: pydantic
+Project-URL: Documentation, https://github.com/rapidverse/verse
+Project-URL: Repository, https://github.com/rapidverse/verse
+Description-Content-Type: text/markdown
+
+
