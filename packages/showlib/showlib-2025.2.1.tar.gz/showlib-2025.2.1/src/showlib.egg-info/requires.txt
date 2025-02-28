@@ -1,0 +1,10 @@
+numpy
+netcdf4
+xarray
+skretrieval
+
+[plotting]
+matplotlib
+
+[test]
+pytest
