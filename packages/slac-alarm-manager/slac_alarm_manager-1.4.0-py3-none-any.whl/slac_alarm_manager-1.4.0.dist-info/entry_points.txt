@@ -1,0 +1,5 @@
+[console_scripts]
+slam = slam_launcher.main:main
+
+[pydm.data_plugin]
+pydm_alarm_plugin = pydm_alarm_plugin.alarm_plugin:AlarmPlugin
