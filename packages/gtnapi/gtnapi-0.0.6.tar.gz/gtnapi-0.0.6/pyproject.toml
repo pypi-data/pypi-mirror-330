@@ -1,0 +1,56 @@
+[build-system]
+requires = ["setuptools >= 61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gtnapi"
+version = "0.0.6"
+description = "Python Software Developement Kit for GTN Fintech API"
+dependencies = [
+    "requests",
+    "cryptography",
+    "PyJWT",
+    "websocket-client"
+]
+requires-python = ">=3.10"
+authors = [
+    { name = "Uditha Nagahawatta", email = "n.uditha@gtngroup.com" },
+]
+maintainers = [
+    { name = "Fintech API Team", email = "fintechapi-dev@gtngroup.com" },
+]
+readme = "README.md"
+license = { file = "LICENSE" }
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Operating System :: OS Independent",
+    "Topic :: Internet",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Intended Audience :: Developers",
+]
+keywords = ["GTN API"]
+
+[project.urls]
+Homepage = "https://github.com/gtn/python-sdk.git"
+Download = "https://github.com/gtn/python-sdk.git/releases"
+Documentation = "https://github.com/gtn/python-sdk.git/README.md"
+Source = "https://github.com/gtn/python-sdk.git"
+
+[project.optional-dependencies]
+test = ["pytest", "websockets"]
+optional = ["python-socks", "wsaccel"]
+docs = [
+    "Sphinx >= 6.0",
+    "sphinx_rtd_theme >= 1.1.0",
+    "myst-parser >= 2.0.0"
+]
+
+[project.entry-points.console_scripts]
+wsdump = "websocket._wsdump:main"
