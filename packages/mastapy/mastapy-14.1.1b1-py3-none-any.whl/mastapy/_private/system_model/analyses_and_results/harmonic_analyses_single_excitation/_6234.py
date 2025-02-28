@@ -1,0 +1,221 @@
+"""ShaftToMountableComponentConnectionHarmonicAnalysisOfSingleExcitation"""
+
+from __future__ import annotations
+
+from typing import TYPE_CHECKING, ClassVar
+
+from mastapy._private._internal import constructor, utility
+from mastapy._private._internal.cast_exception import CastException
+from mastapy._private._internal.dataclasses import extended_dataclass
+from mastapy._private._internal.python_net import (
+    python_net_import,
+    pythonnet_property_get,
+)
+from mastapy._private.system_model.analyses_and_results.harmonic_analyses_single_excitation import (
+    _6136,
+)
+
+_SHAFT_TO_MOUNTABLE_COMPONENT_CONNECTION_HARMONIC_ANALYSIS_OF_SINGLE_EXCITATION = (
+    python_net_import(
+        "SMT.MastaAPI.SystemModel.AnalysesAndResults.HarmonicAnalysesSingleExcitation",
+        "ShaftToMountableComponentConnectionHarmonicAnalysisOfSingleExcitation",
+    )
+)
+
+if TYPE_CHECKING:
+    from typing import Any, Type, TypeVar
+
+    from mastapy._private.system_model.analyses_and_results import _2721, _2723, _2725
+    from mastapy._private.system_model.analyses_and_results.analysis_cases import (
+        _7697,
+        _7700,
+    )
+    from mastapy._private.system_model.analyses_and_results.harmonic_analyses_single_excitation import (
+        _6157,
+        _6168,
+        _6177,
+        _6220,
+    )
+    from mastapy._private.system_model.connections_and_sockets import _2358
+
+    Self = TypeVar(
+        "Self",
+        bound="ShaftToMountableComponentConnectionHarmonicAnalysisOfSingleExcitation",
+    )
+    CastSelf = TypeVar(
+        "CastSelf",
+        bound="ShaftToMountableComponentConnectionHarmonicAnalysisOfSingleExcitation._Cast_ShaftToMountableComponentConnectionHarmonicAnalysisOfSingleExcitation",
+    )
+
+
+__docformat__ = "restructuredtext en"
+__all__ = ("ShaftToMountableComponentConnectionHarmonicAnalysisOfSingleExcitation",)
+
+
+@extended_dataclass(frozen=True, slots=True, weakref_slot=True)
+class _Cast_ShaftToMountableComponentConnectionHarmonicAnalysisOfSingleExcitation:
+    """Special nested class for casting ShaftToMountableComponentConnectionHarmonicAnalysisOfSingleExcitation to subclasses."""
+
+    __parent__: "ShaftToMountableComponentConnectionHarmonicAnalysisOfSingleExcitation"
+
+    @property
+    def abstract_shaft_to_mountable_component_connection_harmonic_analysis_of_single_excitation(
+        self: "CastSelf",
+    ) -> "_6136.AbstractShaftToMountableComponentConnectionHarmonicAnalysisOfSingleExcitation":
+        return self.__parent__._cast(
+            _6136.AbstractShaftToMountableComponentConnectionHarmonicAnalysisOfSingleExcitation
+        )
+
+    @property
+    def connection_harmonic_analysis_of_single_excitation(
+        self: "CastSelf",
+    ) -> "_6168.ConnectionHarmonicAnalysisOfSingleExcitation":
+        from mastapy._private.system_model.analyses_and_results.harmonic_analyses_single_excitation import (
+            _6168,
+        )
+
+        return self.__parent__._cast(_6168.ConnectionHarmonicAnalysisOfSingleExcitation)
+
+    @property
+    def connection_static_load_analysis_case(
+        self: "CastSelf",
+    ) -> "_7700.ConnectionStaticLoadAnalysisCase":
+        from mastapy._private.system_model.analyses_and_results.analysis_cases import (
+            _7700,
+        )
+
+        return self.__parent__._cast(_7700.ConnectionStaticLoadAnalysisCase)
+
+    @property
+    def connection_analysis_case(self: "CastSelf") -> "_7697.ConnectionAnalysisCase":
+        from mastapy._private.system_model.analyses_and_results.analysis_cases import (
+            _7697,
+        )
+
+        return self.__parent__._cast(_7697.ConnectionAnalysisCase)
+
+    @property
+    def connection_analysis(self: "CastSelf") -> "_2721.ConnectionAnalysis":
+        from mastapy._private.system_model.analyses_and_results import _2721
+
+        return self.__parent__._cast(_2721.ConnectionAnalysis)
+
+    @property
+    def design_entity_single_context_analysis(
+        self: "CastSelf",
+    ) -> "_2725.DesignEntitySingleContextAnalysis":
+        from mastapy._private.system_model.analyses_and_results import _2725
+
+        return self.__parent__._cast(_2725.DesignEntitySingleContextAnalysis)
+
+    @property
+    def design_entity_analysis(self: "CastSelf") -> "_2723.DesignEntityAnalysis":
+        from mastapy._private.system_model.analyses_and_results import _2723
+
+        return self.__parent__._cast(_2723.DesignEntityAnalysis)
+
+    @property
+    def coaxial_connection_harmonic_analysis_of_single_excitation(
+        self: "CastSelf",
+    ) -> "_6157.CoaxialConnectionHarmonicAnalysisOfSingleExcitation":
+        from mastapy._private.system_model.analyses_and_results.harmonic_analyses_single_excitation import (
+            _6157,
+        )
+
+        return self.__parent__._cast(
+            _6157.CoaxialConnectionHarmonicAnalysisOfSingleExcitation
+        )
+
+    @property
+    def cycloidal_disc_central_bearing_connection_harmonic_analysis_of_single_excitation(
+        self: "CastSelf",
+    ) -> (
+        "_6177.CycloidalDiscCentralBearingConnectionHarmonicAnalysisOfSingleExcitation"
+    ):
+        from mastapy._private.system_model.analyses_and_results.harmonic_analyses_single_excitation import (
+            _6177,
+        )
+
+        return self.__parent__._cast(
+            _6177.CycloidalDiscCentralBearingConnectionHarmonicAnalysisOfSingleExcitation
+        )
+
+    @property
+    def planetary_connection_harmonic_analysis_of_single_excitation(
+        self: "CastSelf",
+    ) -> "_6220.PlanetaryConnectionHarmonicAnalysisOfSingleExcitation":
+        from mastapy._private.system_model.analyses_and_results.harmonic_analyses_single_excitation import (
+            _6220,
+        )
+
+        return self.__parent__._cast(
+            _6220.PlanetaryConnectionHarmonicAnalysisOfSingleExcitation
+        )
+
+    @property
+    def shaft_to_mountable_component_connection_harmonic_analysis_of_single_excitation(
+        self: "CastSelf",
+    ) -> "ShaftToMountableComponentConnectionHarmonicAnalysisOfSingleExcitation":
+        return self.__parent__
+
+    def __getattr__(self: "CastSelf", name: str) -> "Any":
+        try:
+            return self.__getattribute__(name)
+        except AttributeError:
+            class_name = utility.camel(name)
+            raise CastException(
+                f'Detected an invalid cast. Cannot cast to type "{class_name}"'
+            ) from None
+
+
+@extended_dataclass(frozen=True, slots=True, weakref_slot=True, eq=False)
+class ShaftToMountableComponentConnectionHarmonicAnalysisOfSingleExcitation(
+    _6136.AbstractShaftToMountableComponentConnectionHarmonicAnalysisOfSingleExcitation
+):
+    """ShaftToMountableComponentConnectionHarmonicAnalysisOfSingleExcitation
+
+    This is a mastapy class.
+    """
+
+    TYPE: ClassVar["Type"] = (
+        _SHAFT_TO_MOUNTABLE_COMPONENT_CONNECTION_HARMONIC_ANALYSIS_OF_SINGLE_EXCITATION
+    )
+
+    wrapped: "Any"
+
+    def __post_init__(self: "Self") -> None:
+        """Override of the post initialisation magic method."""
+        if not hasattr(self.wrapped, "reference_count"):
+            self.wrapped.reference_count = 0
+
+        self.wrapped.reference_count += 1
+
+    @property
+    def connection_design(self: "Self") -> "_2358.ShaftToMountableComponentConnection":
+        """mastapy.system_model.connections_and_sockets.ShaftToMountableComponentConnection
+
+        Note:
+            This property is readonly.
+        """
+        temp = pythonnet_property_get(self.wrapped, "ConnectionDesign")
+
+        if temp is None:
+            return None
+
+        type_ = temp.GetType()
+        return constructor.new(type_.Namespace, type_.Name)(temp)
+
+    @property
+    def cast_to(
+        self: "Self",
+    ) -> "_Cast_ShaftToMountableComponentConnectionHarmonicAnalysisOfSingleExcitation":
+        """Cast to another type.
+
+        Returns:
+            _Cast_ShaftToMountableComponentConnectionHarmonicAnalysisOfSingleExcitation
+        """
+        return (
+            _Cast_ShaftToMountableComponentConnectionHarmonicAnalysisOfSingleExcitation(
+                self
+            )
+        )
