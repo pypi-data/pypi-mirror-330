@@ -1,0 +1,19 @@
+Metadata-Version: 2.4
+Name: blendpy
+Version: 25.2.0
+Summary: Blendpy: Blendpy uses atomistic simulations with ASE calculators to compute alloy properties like enthalpy of mixing. It supports binary and multicomponent systems, including alloys and pseudoalloys.
+Project-URL: Homepage, https://github.com/leseixas/blendpy
+Author-email: Leandro Seixas <leandro.fisica@gmail.com>
+License-File: LICENSE.txt
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Scientific/Engineering :: Chemistry
+Classifier: Topic :: Scientific/Engineering :: Physics
+Requires-Python: >=3.9
+Requires-Dist: ase
+Requires-Dist: numpy
+Requires-Dist: pandas
+Description-Content-Type: text/markdown
+
+# blendpy
+Blendpy uses ab initio simulations with ASE calculators to compute alloy properties like enthalpy of mixing. It supports binary and ternary systems, including full and suballoys for compounds.
