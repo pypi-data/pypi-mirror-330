@@ -1,0 +1,14 @@
+LICENSE
+README.md
+setup.py
+mombai/__init__.py
+mombai.egg-info/PKG-INFO
+mombai.egg-info/SOURCES.txt
+mombai.egg-info/dependency_links.txt
+mombai.egg-info/requires.txt
+mombai.egg-info/top_level.txt
+mombai/activations/__init__.py
+mombai/activations/splines.py
+mombai/layers/__init__.py
+mombai/layers/kan.py
+mombai/layers/multi_activation.py
