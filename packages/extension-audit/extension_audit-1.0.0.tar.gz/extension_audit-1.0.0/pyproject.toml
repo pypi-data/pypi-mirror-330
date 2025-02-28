@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "extension_audit"
+version = "1.0.0"
+description = "A tool to audit browser extensions using mitmproxy"
+readme = "README.md"
+authors = [
+    { name = "Alex Ciechonski", email = "alex.ciechonski.22@ucl.ac.uk" }
+]
+license = { text = "MIT" }
+keywords = ["browser", "security", "mitmproxy", "streamlit", "audit"]
+requires-python = ">=3.12"
+
+dependencies = [
+    "mitmproxy",
+    "streamlit",
+    "pandas"
+]
+
+[project.urls]
+Homepage = "https://github.com/alexciechonski/LLM-Extensions-Security"
+Repository = "https://github.com/alexciechonski/LLM-Extensions-Security"
+Issues = "https://github.com/alexciechonski/LLM-Extensions-Security/issues"
+
+[project.scripts]
+extension_audit = "extension_audit.main:main"
