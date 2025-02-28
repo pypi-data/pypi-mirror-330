@@ -1,0 +1,16 @@
+{
+    "local_models": [
+        {
+            "name": "Phi-3-mini-4k-instruct-q4",
+            "description": "Phi-3-mini-4k-instruct-q4.gguf is a model trained by Phi-3. It is a small model that is easy to use.",
+            "context_window": 4096,
+            "max_output_tokens": 256,
+            "training_data": "2023年10月まで",
+            "Vision": false,
+            "Audio": false,
+            "Video": false,
+            "Code": false,
+            "path": "/workspaces/LLMUtils/local_models/Phi-3-mini-4k-instruct-q4.gguf"
+        }
+    ]
+}
