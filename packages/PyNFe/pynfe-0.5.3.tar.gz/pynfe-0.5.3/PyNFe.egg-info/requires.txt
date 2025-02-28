@@ -1,0 +1,11 @@
+pyopenssl>=23.0.0
+requests
+lxml
+signxml
+
+[impressao]
+brazilfiscalreport[damdfe]
+
+[nfse]
+suds-jurko
+pyxb==1.2.4
