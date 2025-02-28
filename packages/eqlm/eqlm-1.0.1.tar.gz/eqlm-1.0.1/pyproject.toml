@@ -1,0 +1,43 @@
+[project]
+name = "eqlm"
+description = "Simple CLI tool to spatially equalize image luminance"
+keywords = ["image processing", "image manipulation", "brightness", "saturation", "lightness", "luminance"]
+requires-python = ">=3.12"
+readme = "README.md"
+license = {text = "AGPL-3.0"}
+maintainers = [
+  {name = "curegit", email = "contact@curegit.jp"}
+]
+classifiers = [
+  "Programming Language :: Python :: 3 :: Only",
+  "Topic :: Multimedia :: Graphics",
+  "Topic :: Scientific/Engineering :: Image Processing",
+  "License :: OSI Approved :: GNU Affero General Public License v3",
+  "Typing :: Typed",
+]
+dynamic = ["version"]
+dependencies = [
+  "numpy >= 1.26.0",
+  "opencv-python >= 4.9.0",
+  "pillow >= 9.3.0",
+]
+
+[project.optional-dependencies]
+dev = ["pip", "setuptools", "build", "twine", "black", "mypy", "coverage"]
+
+[project.scripts]
+eqlm = "eqlm.cli:main"
+
+[project.urls]
+homepage = "https://github.com/curegit/eqlm"
+repository = "https://github.com/curegit/eqlm.git"
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["eqlm"]
+
+[tool.setuptools.dynamic]
+version = {attr = "eqlm.__version__"}
