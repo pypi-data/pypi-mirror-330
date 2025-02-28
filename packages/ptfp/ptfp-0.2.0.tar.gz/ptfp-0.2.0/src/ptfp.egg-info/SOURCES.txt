@@ -1,0 +1,40 @@
+.dictionary.txt
+.gitignore
+.gitlab-ci.yml
+.pre-commit-config.yaml
+LICENSE.md
+README.md
+pyproject.toml
+setup.cfg
+docs/mkdocs.yml
+docs/requirements.txt
+docs/docs/index.md
+docs/docs/API/bilby_pipe_interface.md
+docs/docs/API/configuration.md
+docs/docs/API/index.md
+docs/docs/API/patches.md
+docs/docs/API/spectrograms.md
+docs/docs/API/time_domain_plots.md
+docs/docs/API/time_frequency_tracks.md
+docs/docs/API/waveform_generators.md
+docs/docs/API/waveforms.md
+docs/docs/Plotting Tools for PE Examples/0_bilby_building_blocks.ipynb
+docs/docs/Plotting Tools for PE Examples/1_spectrograms.ipynb
+docs/docs/Plotting Tools for PE Examples/2_timeseries.ipynb
+docs/docs/Plotting Tools for PE Examples/index.md
+src/ptfp/__init__.py
+src/ptfp/_version.py
+src/ptfp/bilby_pipe_interface.py
+src/ptfp/configuration.py
+src/ptfp/frequency_domain_plots.py
+src/ptfp/patches.py
+src/ptfp/spectrograms.py
+src/ptfp/time_domain_plots.py
+src/ptfp/time_frequency_tracks.py
+src/ptfp/waveform_generators.py
+src/ptfp/waveforms.py
+src/ptfp.egg-info/PKG-INFO
+src/ptfp.egg-info/SOURCES.txt
+src/ptfp.egg-info/dependency_links.txt
+src/ptfp.egg-info/requires.txt
+src/ptfp.egg-info/top_level.txt

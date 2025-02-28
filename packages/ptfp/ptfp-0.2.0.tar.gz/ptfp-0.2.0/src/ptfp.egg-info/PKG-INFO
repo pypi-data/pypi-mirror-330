@@ -1,0 +1,23 @@
+Metadata-Version: 2.2
+Name: ptfp
+Version: 0.2.0
+Summary: Random tools to assist in making pretty plots for PE, especially with bilby.
+Author-email: Rhiannon Udall <rhiannon.udall@ligo.org>
+Project-URL: Homepage, https://github.com/Rhiannon-Udall/RhiannonsUtils
+Project-URL: Bug Tracker, https://github.com/Rhiannon-Udall/RhiannonsUtils/-/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE.md
+Requires-Dist: bilby[gw]
+Requires-Dist: bilby_pipe
+Requires-Dist: pycbc
+
+# Overview
+
+A set of plotting tools which assist in making high quality plots for gravitational wave data, especially as it applies to parameter estimation. These are mostly building on bilby, though some only interact directly with gwpy. 
+
+This code aims to atomize functions to the greatest degree possible, so that individual components may be interchanged as easily as possible. Furthermore, it will aim to support independent choices of various matplotlib settings, so that users can decide this for itself, though very high level functions may set defaults. 
+

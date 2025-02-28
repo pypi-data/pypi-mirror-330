@@ -1,0 +1,53 @@
+include:
+  - project: computing/gitlab-ci-templates
+    file:
+      - python.yml
+
+stages:
+  - initial
+  - test
+  - docs
+  - deploy
+
+precommit:
+  stage: initial
+  extends:
+    - .python:base
+  script:
+    - pip install pre-commit
+    - pre-commit run --all-files --verbose --show-diff-on-failure
+
+# unit-test:
+#   stage: test
+#   extends:
+#     - .python:pytest
+#   script:
+#     - pip install .
+#     - pytest --cov gwtc_pipeline --cov-report xml
+
+docs:
+  image: python:3.11-bookworm
+  stage: docs
+  extends:
+    - .python:base
+  script:
+    - pip install .
+    - cd docs/
+    - python -m pip install -r requirements.txt
+    - mkdocs build
+  artifacts:
+    paths:
+      - docs/site/
+
+pages:
+  stage: deploy
+  script:
+    - mkdir public/
+    - mv docs/site/* public/
+  artifacts:
+    paths:
+      - public
+    expire_in: 30 days
+  # only:
+  #   - documentation
+

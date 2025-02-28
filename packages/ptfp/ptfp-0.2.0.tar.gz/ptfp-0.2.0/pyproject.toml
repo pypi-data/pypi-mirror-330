@@ -1,0 +1,37 @@
+[build-system]
+requires = [
+    "setuptools>=42",
+    "setuptools_scm[toml]>=3.4.3",
+    "wheel",
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ptfp"
+authors = [
+  { name="Rhiannon Udall", email="rhiannon.udall@ligo.org" },
+]
+description = "Random tools to assist in making pretty plots for PE, especially with bilby."
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+  "bilby[gw]",
+  "bilby_pipe",
+  "pycbc"
+]
+dynamic = ["version"]
+
+[tool.setuptools.dynamic]
+version = {attr = "ptfp._version.__version__"}
+
+[tool.setuptools_scm]
+write_to = "src/ptfp/_version.py"
+
+[project.urls]
+"Homepage" = "https://github.com/Rhiannon-Udall/RhiannonsUtils"
+"Bug Tracker" = "https://github.com/Rhiannon-Udall/RhiannonsUtils/-/issues"
