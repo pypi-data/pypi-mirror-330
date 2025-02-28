@@ -1,0 +1,35 @@
+[build-system]
+
+requires = ["setuptools", "setuptools_scm", "build"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools_scm]
+write_to = "src/mcmax/_version.py"
+
+[project]
+dynamic = ["version"]
+name = "tangods-mcmax"
+dependencies = [
+  "pytango>=9.5",
+  "paho-mqtt>=2.0",
+]
+authors = [
+  {name = "Antonio Bartalesi", email = "antonio.bartalesi@gmail.com"},
+  {name = "Laura Torres Garcia", email = "lautg88@gmail.com"},
+]
+description = "A tango device server to control the microcontrollers in the project MC-MAX"
+readme = "README.md"
+classifiers = [
+"License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest",
+]
+
+[project.urls]
+repository = "https://gitlab.com/ABartalesi/mc-max-tango-device-server"
+
+[project.scripts]
+McMaxTangoDs = "mcmax:main"

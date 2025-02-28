@@ -1,0 +1,28 @@
+Metadata-Version: 2.2
+Name: tangods-mcmax
+Version: 1.0.4
+Summary: A tango device server to control the microcontrollers in the project MC-MAX
+Author-email: Antonio Bartalesi <antonio.bartalesi@gmail.com>, Laura Torres Garcia <lautg88@gmail.com>
+Project-URL: repository, https://gitlab.com/ABartalesi/mc-max-tango-device-server
+Classifier: License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pytango>=9.5
+Requires-Dist: paho-mqtt>=2.0
+Provides-Extra: test
+Requires-Dist: pytest; extra == "test"
+
+# Tango Device Server for the MC-MAX project
+
+This tango device server connects to an mqtt broker using the paho-mqtt library
+and upon success reads the esp-32 self description topic, and starts a tango
+device with dynamic attributes and commands.
+
+## Properties
+
+Name | Description
+---- | ----
+`broker` | A string, URI of the mqtt broker
+`username` | The username for the mqtt broker connection
+`password` | The password for the mqtt broker connection
+`mqtt_name` | The name of the microcontroller in the mqtt topic tree. Usually it's the hostname of the microcontroller (without domain).

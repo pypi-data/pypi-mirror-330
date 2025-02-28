@@ -1,0 +1,105 @@
+stages:
+  - pre-commit
+  - build
+  - test
+  - publish
+
+image: python:3.11-bookworm
+
+before_script:
+  - apt update
+  - pip install --upgrade pip --root-user-action=ignore
+
+check:
+  stage: pre-commit
+  script:
+    - pip install pre-commit --root-user-action=ignore
+    - pre-commit run --all
+
+build-pip:
+  stage: build
+  needs:
+    - check
+  script:
+    - apt install -y cppzmq-dev libboost-dev libboost-python-dev libtango-dev libomniorb4-dev
+    - pip install build wheel setuptools_scm --root-user-action=ignore
+    - python -m build
+  artifacts:
+    paths:
+      - dist/
+
+build-conda:
+  stage: build
+  image: continuumio/miniconda3
+  dependencies:
+    - build-pip
+  needs:
+    - check
+    - build-pip
+  script:
+    - conda config --set anaconda_upload no
+    - conda install -c conda-forge conda-build grayskull --quiet --yes
+    - mkdir grayskull
+    - grayskull pypi dist/*.tar.gz -o grayskull
+    - conda build . -c conda-forge --output-folder conda-build --quiet
+  artifacts:
+    paths:
+      - conda-build/
+      - grayskull/
+
+test-pip:
+  stage: test
+  dependencies:
+    - build-pip
+  needs:
+    - build-pip
+  script:
+    - ls dist/ | grep \.whl | xargs -I% echo "dist/%" | xargs pip install --root-user-action=ignore
+    - pip install --root-user-action=ignore pytest
+    - pytest
+  artifacts:
+    paths:
+      - dist/
+
+test-conda:
+  stage: test
+  image: continuumio/miniconda3
+  dependencies:
+    - build-conda
+  needs:
+    - build-conda
+  script:
+    - conda install tangods-mcmax -c ./conda-build -c conda-forge --quiet --yes
+    - conda install pytest --quiet --yes
+    - pytest
+  artifacts:
+    paths:
+      - conda-build/
+      - grayskull
+
+publish-pip:
+  stage: publish
+  only:
+    - tags
+    - main
+  dependencies:
+    - test-pip
+  needs:
+    - test-pip
+  script:
+    - pip install twine
+    - twine upload dist/* -u __token__ -p $PYPI_API_TOKEN
+
+publish-conda:
+  stage: publish
+  only:
+    - tags
+    - main
+  dependencies:
+    - test-conda
+  needs:
+    - test-conda
+  script:
+    - ls -Alh conda-build
+    - ls -Alh grayskull
+    - cat grayskull/*/meta.yaml
