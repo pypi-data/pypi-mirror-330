@@ -1,0 +1,14 @@
+kafka-python
+pydm
+PyQt5
+qtpy
+
+[dev]
+pytest
+pytest-qt
+pytest-cov
+pre-commit
+
+[docs]
+mkdocs
+mkdocs-material
