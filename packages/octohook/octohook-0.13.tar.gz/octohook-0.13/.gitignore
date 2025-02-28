@@ -1,0 +1,12 @@
+.idea/
+venv/
+
+*.pyc
+
+# Distribution
+dist/
+build/
+*.egg-info/
+
+.qodo
+.DS_Store
