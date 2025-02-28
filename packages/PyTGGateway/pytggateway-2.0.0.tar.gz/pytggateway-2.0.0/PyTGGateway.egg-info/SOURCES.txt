@@ -1,0 +1,14 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+PyTGGateway.egg-info/PKG-INFO
+PyTGGateway.egg-info/SOURCES.txt
+PyTGGateway.egg-info/dependency_links.txt
+PyTGGateway.egg-info/requires.txt
+PyTGGateway.egg-info/top_level.txt
+TGGateway/__init__.py
+TGGateway/_api.py
+TGGateway/_api_async.py
+TGGateway/exceptions.py
+TGGateway/types.py
