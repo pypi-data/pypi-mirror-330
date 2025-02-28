@@ -1,0 +1,76 @@
+[tool.poetry]
+name = "djangofobi-email-router"
+version = "1.2.1"
+description = "A django-fobi handler plugin to send the content of a form to different e-mails addresses, depending on a value of a form field."
+authors = ["KAPT dev team <dev@kapt.mobi>"]
+license = "GPL-3.0-or-later"
+repository = "https://gitlab.com/kapt/open-source/djangofobi-email-router"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">3.9"
+Django = ">=1.11"
+django-fobi = ">=0.17.0"
+
+[tool.poetry.group.dev.dependencies]
+gitchangelog = "^3.0.4"
+ruff = "^0.3.4"
+isort = "^6.0.0"
+django-upgrade = "^1.23.1"
+pre-commit = "~4.1.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0", "setuptools"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+target-version = "py312"
+line-length = 88 # Même que Black par défaut
+exclude = [
+    ".eggs",
+    ".git",
+    ".hg",
+    ".mypy_cache",
+    ".tox",
+    ".venv",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "migrations",
+]
+
+[tool.ruff.lint]
+select = [
+    "E",   # pycodestyle errors
+    "W",   # pycodestyle warnings
+    "F",   # pyflakes
+    "B",   # flake8-bugbear
+    "C4",  # flake8-comprehensions
+    "UP",  # pyupgrade
+    "DJ",  # django
+]
+ignore = ["E501", "E203"]
+
+[tool.ruff.lint.per-file-ignores]
+"src/website/settings/dev.py" = ["F405"]
+"src/website/settings/base.py" = ["F405"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
+
+[tool.isort]
+profile = "black"
+known_local_folder = ["src"]
+sections="FUTURE,STDLIB,DJANGO,THIRDPARTY,LOCALFOLDER,FIRSTPARTY"
+import_heading_stdlib = "Standard Library"
+import_heading_firstparty= "Project"
+import_heading_thirdparty= "Third party"
+import_heading_localfolder= "Local application / specific library imports"
+known_django= "django"
+import_heading_django= "Django"
+
