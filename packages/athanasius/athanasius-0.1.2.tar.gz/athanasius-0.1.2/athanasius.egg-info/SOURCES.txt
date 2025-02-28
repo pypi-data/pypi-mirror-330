@@ -1,0 +1,17 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+athanasius/__init__.py
+athanasius/archiver.py
+athanasius/cli.py
+athanasius/extractor.py
+athanasius/utils.py
+athanasius.egg-info/PKG-INFO
+athanasius.egg-info/SOURCES.txt
+athanasius.egg-info/dependency_links.txt
+athanasius.egg-info/entry_points.txt
+athanasius.egg-info/top_level.txt
+tests/test_archiver.py
+tests/test_cli.py
+tests/test_extractor.py
