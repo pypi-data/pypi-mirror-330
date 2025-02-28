@@ -1,0 +1,779 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="65535d0c-1174-492e-92f9-7af88874f288" name="Default Changelist" comment="also displays AIC during fit">
+      <change beforePath="$PROJECT_DIR$/src/quantumcatch/simulation.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/quantumcatch/simulation.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Jupyter Notebook" />
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FlaskConsoleOptions" custom-start-script="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))">
+    <envs>
+      <env key="FLASK_APP" value="app" />
+    </envs>
+    <option name="myCustomStartScript" value="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))" />
+    <option name="myEnvs">
+      <map>
+        <entry key="FLASK_APP" value="app" />
+      </map>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="PREVIEW_PUSH_PROTECTED_ONLY" value="true" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="MERGE" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;MarkusSifft&quot;
+  }
+}</component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/MarkusSifft/QuantumPolyspectra.git&quot;,
+    &quot;accountId&quot;: &quot;8281a268-afbd-4fb2-afcb-e35a5b3103a9&quot;
+  }
+}</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Examples/Coversion of CSV to h5.ipynb" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Examples/Simulating a Measurement.ipynb" root0="FORCE_HIGHLIGHTING" root1="SKIP_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/setup.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/sphinx/code.rst" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/sphinx/conf.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/sphinx/index.rst" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="JupyterTrust" id="6f50ab79-cbdf-4496-bc1b-8a173c1a4d5b">
+    <option name="files">
+      <option value="Examples/Analysis of Telegraph Noise.ipynb" />
+      <option value="Examples/Calculating Polyspectra from Measurement.ipynb" />
+      <option value="Examples/Calculating Spectra Directly from Stochastic Master Equation.ipynb" />
+      <option value="Examples/Calculating Spectra from Simulation.ipynb" />
+      <option value="Examples/Coversion of CSV to h5.ipynb" />
+      <option value="Examples/Simulating a Measurement.ipynb" />
+    </option>
+  </component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="tfp18ct2" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="1r4VCPkn12z3G9YylrSxMbolCz6" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="false" id="Update" />
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/markus/Documents/Uni/Doktorarbeit/Python Packages/QuantumPolyspectra-Project/Examples&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="ReaderModeSettings">
+    <option name="enabled" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Examples" />
+      <recent name="$PROJECT_DIR$/Examples/example_data" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Examples/plots" />
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/Examples" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python docs.sphinx task in QuantumPolyspectra">
+    <configuration name="QuantumPolyspectra Package" type="PythonConfigurationType" factoryName="Python">
+      <module name="QuantumPolyspectra" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Examples" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="false" />
+      <option name="ADD_SOURCE_ROOTS" value="false" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Examples/Coversion of CSV to h5.ipynb" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <module name="QuantumPolyspectra" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="sphinx task in QuantumPolyspectra" type="docs" factoryName="Sphinx task" temporary="true">
+      <module name="QuantumPolyspectra" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/.." />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="docutils_input_file" value="$PROJECT_DIR$/sphinx" />
+      <option name="docutils_output_file" value="$PROJECT_DIR$/docs" />
+      <option name="docutils_params" value="" />
+      <option name="docutils_task" value="html" />
+      <option name="docutils_open_in_browser" value="false" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.QuantumPolyspectra Package" />
+      <item itemvalue="Python docs.sphinx task in QuantumPolyspectra" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python docs.sphinx task in QuantumPolyspectra" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="RustProjectSettings">
+    <option name="toolchainHomeDirectory" value="$USER_HOME$/.cargo/bin" />
+    <option name="version" value="2" />
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-PY-242.23339.19" />
+        <option value="bundled-python-sdk-0029f7779945-399fe30bd8c1-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-242.23339.19" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="project-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="65535d0c-1174-492e-92f9-7af88874f288" name="Default Changelist" comment="" />
+      <created>1618235220056</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1618235220056</updated>
+      <workItem from="1618235229681" duration="8099000" />
+      <workItem from="1618316824422" duration="503000" />
+      <workItem from="1618317344646" duration="2568000" />
+      <workItem from="1618319934171" duration="40743000" />
+      <workItem from="1618835003600" duration="30000" />
+      <workItem from="1619012085217" duration="767000" />
+      <workItem from="1619012931509" duration="1053000" />
+      <workItem from="1619339510517" duration="1621000" />
+      <workItem from="1619445538606" duration="10217000" />
+      <workItem from="1620136784049" duration="190000" />
+      <workItem from="1621004191530" duration="6081000" />
+      <workItem from="1621506845824" duration="5335000" />
+      <workItem from="1621517752578" duration="1332000" />
+      <workItem from="1621939218955" duration="13675000" />
+      <workItem from="1622106313486" duration="11669000" />
+      <workItem from="1622123284729" duration="317000" />
+      <workItem from="1622129315298" duration="187000" />
+      <workItem from="1622189606076" duration="11110000" />
+      <workItem from="1622657007242" duration="19000" />
+      <workItem from="1622803736544" duration="9000" />
+      <workItem from="1622818938997" duration="307000" />
+      <workItem from="1623056874089" duration="178000" />
+      <workItem from="1623062544572" duration="4181000" />
+      <workItem from="1624268541333" duration="18739000" />
+      <workItem from="1624454054775" duration="43098000" />
+      <workItem from="1625558626194" duration="7813000" />
+      <workItem from="1626250612264" duration="282000" />
+      <workItem from="1626451301075" duration="1289000" />
+      <workItem from="1626523525400" duration="205000" />
+      <workItem from="1626680784604" duration="35000" />
+      <workItem from="1626771301117" duration="43000" />
+      <workItem from="1628351280634" duration="51000" />
+      <workItem from="1628351343209" duration="81000" />
+      <workItem from="1628351551042" duration="8000" />
+      <workItem from="1630068855625" duration="6836000" />
+      <workItem from="1632744122675" duration="923000" />
+      <workItem from="1633086212159" duration="4014000" />
+      <workItem from="1634046197893" duration="530000" />
+      <workItem from="1634194152750" duration="49000" />
+      <workItem from="1634894252733" duration="1479000" />
+      <workItem from="1635337275277" duration="602000" />
+      <workItem from="1636287845900" duration="150000" />
+      <workItem from="1636548810413" duration="3347000" />
+      <workItem from="1636803768539" duration="210000" />
+      <workItem from="1636968399211" duration="4762000" />
+      <workItem from="1637048539689" duration="1157000" />
+      <workItem from="1637051101360" duration="774000" />
+      <workItem from="1637664810140" duration="2004000" />
+      <workItem from="1637748192450" duration="1444000" />
+      <workItem from="1637752535971" duration="4885000" />
+      <workItem from="1641133957928" duration="1000000" />
+      <workItem from="1641375102239" duration="141000" />
+      <workItem from="1641375343367" duration="1202000" />
+      <workItem from="1642238306718" duration="37000" />
+      <workItem from="1642416275821" duration="86000" />
+      <workItem from="1642592115490" duration="1531000" />
+      <workItem from="1643884075842" duration="292000" />
+      <workItem from="1643884499861" duration="21517000" />
+      <workItem from="1644825053768" duration="6821000" />
+      <workItem from="1646736785144" duration="1086000" />
+      <workItem from="1646993474303" duration="4901000" />
+      <workItem from="1648732238356" duration="4229000" />
+      <workItem from="1649503519275" duration="851000" />
+      <workItem from="1649938490055" duration="31000" />
+      <workItem from="1649938563089" duration="1001000" />
+      <workItem from="1649940169335" duration="1285000" />
+      <workItem from="1650883315170" duration="2299000" />
+      <workItem from="1651741969168" duration="8038000" />
+      <workItem from="1653043983623" duration="5341000" />
+      <workItem from="1653052611948" duration="3652000" />
+      <workItem from="1653062141535" duration="29000" />
+      <workItem from="1653062392269" duration="875000" />
+      <workItem from="1653133880664" duration="2665000" />
+      <workItem from="1653136629835" duration="4207000" />
+      <workItem from="1654070344731" duration="2586000" />
+      <workItem from="1663070321383" duration="12780000" />
+      <workItem from="1663235133363" duration="19816000" />
+      <workItem from="1663686169028" duration="70000" />
+      <workItem from="1663687599929" duration="60441000" />
+      <workItem from="1664887724703" duration="19572000" />
+      <workItem from="1665047268383" duration="2601000" />
+      <workItem from="1666000824168" duration="680000" />
+      <workItem from="1666007760376" duration="3331000" />
+      <workItem from="1667813472438" duration="10178000" />
+      <workItem from="1668508452537" duration="1606000" />
+      <workItem from="1670237446906" duration="1308000" />
+      <workItem from="1670589994735" duration="1729000" />
+      <workItem from="1670852583089" duration="348000" />
+      <workItem from="1674215723584" duration="249000" />
+      <workItem from="1677249839772" duration="291000" />
+      <workItem from="1678104552179" duration="528000" />
+      <workItem from="1680258063879" duration="160000" />
+      <workItem from="1681374914090" duration="1944000" />
+      <workItem from="1681983240369" duration="7536000" />
+      <workItem from="1681998534662" duration="552000" />
+      <workItem from="1681999289499" duration="292000" />
+      <workItem from="1682082096502" duration="1184000" />
+      <workItem from="1682322247786" duration="609000" />
+      <workItem from="1684849028960" duration="1896000" />
+      <workItem from="1685004511976" duration="5661000" />
+      <workItem from="1685094020152" duration="2423000" />
+      <workItem from="1685444861690" duration="174000" />
+      <workItem from="1685445471192" duration="14000" />
+      <workItem from="1686138482081" duration="4724000" />
+      <workItem from="1686304490032" duration="200000" />
+      <workItem from="1686733674858" duration="2077000" />
+      <workItem from="1686739257876" duration="3108000" />
+      <workItem from="1686742410563" duration="17742000" />
+      <workItem from="1687442460845" duration="4741000" />
+      <workItem from="1687511097866" duration="6279000" />
+      <workItem from="1688981411838" duration="5502000" />
+      <workItem from="1689250295135" duration="783000" />
+      <workItem from="1689256017258" duration="9472000" />
+      <workItem from="1689671088003" duration="27340000" />
+      <workItem from="1690982566789" duration="53000" />
+      <workItem from="1690984717515" duration="196000" />
+      <workItem from="1691055975550" duration="62000" />
+      <workItem from="1691140266782" duration="4565000" />
+      <workItem from="1693838523305" duration="3645000" />
+      <workItem from="1693908457570" duration="756000" />
+      <workItem from="1693911575430" duration="3844000" />
+      <workItem from="1693919288478" duration="5094000" />
+      <workItem from="1693993701895" duration="810000" />
+      <workItem from="1693994580022" duration="4598000" />
+      <workItem from="1694004188050" duration="7700000" />
+      <workItem from="1694163505895" duration="14998000" />
+      <workItem from="1694437808296" duration="302000" />
+      <workItem from="1694439187232" duration="3375000" />
+      <workItem from="1694518817091" duration="2333000" />
+      <workItem from="1694771334477" duration="607000" />
+      <workItem from="1694779170879" duration="11354000" />
+      <workItem from="1695028636959" duration="8509000" />
+      <workItem from="1697641089270" duration="594000" />
+      <workItem from="1701338778218" duration="711000" />
+      <workItem from="1702547673657" duration="6707000" />
+      <workItem from="1706714674126" duration="21407000" />
+      <workItem from="1706882873119" duration="3931000" />
+      <workItem from="1711450399942" duration="2202000" />
+      <workItem from="1714486459177" duration="170000" />
+      <workItem from="1715073732334" duration="4889000" />
+      <workItem from="1715680585138" duration="248000" />
+      <workItem from="1716986473521" duration="371000" />
+      <workItem from="1722865893519" duration="246000" />
+      <workItem from="1722950758448" duration="131000" />
+      <workItem from="1723470321678" duration="120000" />
+      <workItem from="1723557132886" duration="62000" />
+      <workItem from="1726477595582" duration="88000" />
+      <workItem from="1727694071486" duration="3110000" />
+      <workItem from="1732186191096" duration="1862000" />
+      <workItem from="1736432418270" duration="1165000" />
+      <workItem from="1740651585854" duration="1809000" />
+    </task>
+    <task id="LOCAL-00373" summary="First order can now also be fitted">
+      <created>1689680636041</created>
+      <option name="number" value="00373" />
+      <option name="presentableId" value="LOCAL-00373" />
+      <option name="project" value="LOCAL" />
+      <updated>1689680636041</updated>
+    </task>
+    <task id="LOCAL-00374" summary="First order can now also be fitted">
+      <created>1689680690828</created>
+      <option name="number" value="00374" />
+      <option name="presentableId" value="LOCAL-00374" />
+      <option name="project" value="LOCAL" />
+      <updated>1689680690828</updated>
+    </task>
+    <task id="LOCAL-00375" summary="First order can now also be fitted">
+      <created>1689680762686</created>
+      <option name="number" value="00375" />
+      <option name="presentableId" value="LOCAL-00375" />
+      <option name="project" value="LOCAL" />
+      <updated>1689680762686</updated>
+    </task>
+    <task id="LOCAL-00376" summary="First order can now also be fitted">
+      <created>1689680920857</created>
+      <option name="number" value="00376" />
+      <option name="presentableId" value="LOCAL-00376" />
+      <option name="project" value="LOCAL" />
+      <updated>1689680920857</updated>
+    </task>
+    <task id="LOCAL-00377" summary="First order can now also be fitted">
+      <created>1689681125223</created>
+      <option name="number" value="00377" />
+      <option name="presentableId" value="LOCAL-00377" />
+      <option name="project" value="LOCAL" />
+      <updated>1689681125223</updated>
+    </task>
+    <task id="LOCAL-00378" summary="First order can now also be fitted">
+      <created>1689681296732</created>
+      <option name="number" value="00378" />
+      <option name="presentableId" value="LOCAL-00378" />
+      <option name="project" value="LOCAL" />
+      <updated>1689681296732</updated>
+    </task>
+    <task id="LOCAL-00379" summary="First order can now also be fitted">
+      <created>1689681702596</created>
+      <option name="number" value="00379" />
+      <option name="presentableId" value="LOCAL-00379" />
+      <option name="project" value="LOCAL" />
+      <updated>1689681702596</updated>
+    </task>
+    <task id="LOCAL-00380" summary="First order can now also be fitted">
+      <created>1689681865812</created>
+      <option name="number" value="00380" />
+      <option name="presentableId" value="LOCAL-00380" />
+      <option name="project" value="LOCAL" />
+      <updated>1689681865812</updated>
+    </task>
+    <task id="LOCAL-00381" summary="First order can now also be fitted">
+      <created>1689681897382</created>
+      <option name="number" value="00381" />
+      <option name="presentableId" value="LOCAL-00381" />
+      <option name="project" value="LOCAL" />
+      <updated>1689681897382</updated>
+    </task>
+    <task id="LOCAL-00382" summary="First order can now also be fitted">
+      <created>1689682101352</created>
+      <option name="number" value="00382" />
+      <option name="presentableId" value="LOCAL-00382" />
+      <option name="project" value="LOCAL" />
+      <updated>1689682101352</updated>
+    </task>
+    <task id="LOCAL-00383" summary="First order can now also be fitted">
+      <created>1689682179015</created>
+      <option name="number" value="00383" />
+      <option name="presentableId" value="LOCAL-00383" />
+      <option name="project" value="LOCAL" />
+      <updated>1689682179015</updated>
+    </task>
+    <task id="LOCAL-00384" summary="First order can now also be fitted">
+      <created>1689682874906</created>
+      <option name="number" value="00384" />
+      <option name="presentableId" value="LOCAL-00384" />
+      <option name="project" value="LOCAL" />
+      <updated>1689682874906</updated>
+    </task>
+    <task id="LOCAL-00385" summary="Cut through S3 and S4 is plotted">
+      <created>1689757021902</created>
+      <option name="number" value="00385" />
+      <option name="presentableId" value="LOCAL-00385" />
+      <option name="project" value="LOCAL" />
+      <updated>1689757021902</updated>
+    </task>
+    <task id="LOCAL-00386" summary="Cut through S3 and S4 is plotted">
+      <created>1689757097174</created>
+      <option name="number" value="00386" />
+      <option name="presentableId" value="LOCAL-00386" />
+      <option name="project" value="LOCAL" />
+      <updated>1689757097174</updated>
+    </task>
+    <task id="LOCAL-00387" summary="Cut through S3 and S4 is plotted">
+      <created>1689757620729</created>
+      <option name="number" value="00387" />
+      <option name="presentableId" value="LOCAL-00387" />
+      <option name="project" value="LOCAL" />
+      <updated>1689757620729</updated>
+    </task>
+    <task id="LOCAL-00388" summary="Cut through S3 and S4 is plotted">
+      <created>1689758418301</created>
+      <option name="number" value="00388" />
+      <option name="presentableId" value="LOCAL-00388" />
+      <option name="project" value="LOCAL" />
+      <updated>1689758418301</updated>
+    </task>
+    <task id="LOCAL-00389" summary="Cut through S3 and S4 is plotted">
+      <created>1689758569503</created>
+      <option name="number" value="00389" />
+      <option name="presentableId" value="LOCAL-00389" />
+      <option name="project" value="LOCAL" />
+      <updated>1689758569503</updated>
+    </task>
+    <task id="LOCAL-00390" summary="Cut through S3 and S4 is plotted">
+      <created>1689759531381</created>
+      <option name="number" value="00390" />
+      <option name="presentableId" value="LOCAL-00390" />
+      <option name="project" value="LOCAL" />
+      <updated>1689759531381</updated>
+    </task>
+    <task id="LOCAL-00391" summary="Cut through S3 and S4 is plotted">
+      <created>1689765800639</created>
+      <option name="number" value="00391" />
+      <option name="presentableId" value="LOCAL-00391" />
+      <option name="project" value="LOCAL" />
+      <updated>1689765800640</updated>
+    </task>
+    <task id="LOCAL-00392" summary="1. Order can now also be saved">
+      <created>1689768091432</created>
+      <option name="number" value="00392" />
+      <option name="presentableId" value="LOCAL-00392" />
+      <option name="project" value="LOCAL" />
+      <updated>1689768091433</updated>
+    </task>
+    <task id="LOCAL-00393" summary="1. Order can now also be saved">
+      <created>1689768677552</created>
+      <option name="number" value="00393" />
+      <option name="presentableId" value="LOCAL-00393" />
+      <option name="project" value="LOCAL" />
+      <updated>1689768677552</updated>
+    </task>
+    <task id="LOCAL-00394" summary="arcsinh calculation overwrittes data no more">
+      <created>1689770582405</created>
+      <option name="number" value="00394" />
+      <option name="presentableId" value="LOCAL-00394" />
+      <option name="project" value="LOCAL" />
+      <updated>1689770582405</updated>
+    </task>
+    <task id="LOCAL-00395" summary="arcsinh calculation overwrittes data no more">
+      <created>1689770763666</created>
+      <option name="number" value="00395" />
+      <option name="presentableId" value="LOCAL-00395" />
+      <option name="project" value="LOCAL" />
+      <updated>1689770763666</updated>
+    </task>
+    <task id="LOCAL-00396" summary="arcsinh calculation overwrittes data no more">
+      <created>1689771140043</created>
+      <option name="number" value="00396" />
+      <option name="presentableId" value="LOCAL-00396" />
+      <option name="project" value="LOCAL" />
+      <updated>1689771140043</updated>
+    </task>
+    <task id="LOCAL-00397" summary="scipy can be used as alternativ fitting lib">
+      <created>1689837711448</created>
+      <option name="number" value="00397" />
+      <option name="presentableId" value="LOCAL-00397" />
+      <option name="project" value="LOCAL" />
+      <updated>1689837711448</updated>
+    </task>
+    <task id="LOCAL-00398" summary="scipy can be used as alternativ fitting lib">
+      <created>1689838127978</created>
+      <option name="number" value="00398" />
+      <option name="presentableId" value="LOCAL-00398" />
+      <option name="project" value="LOCAL" />
+      <updated>1689838127978</updated>
+    </task>
+    <task id="LOCAL-00399" summary="scipy can be used as alternativ fitting lib">
+      <created>1689838254258</created>
+      <option name="number" value="00399" />
+      <option name="presentableId" value="LOCAL-00399" />
+      <option name="project" value="LOCAL" />
+      <updated>1689838254259</updated>
+    </task>
+    <task id="LOCAL-00400" summary="scipy can be used as alternativ fitting lib">
+      <created>1689838374994</created>
+      <option name="number" value="00400" />
+      <option name="presentableId" value="LOCAL-00400" />
+      <option name="project" value="LOCAL" />
+      <updated>1689838374994</updated>
+    </task>
+    <task id="LOCAL-00401" summary="scipy can be used as alternativ fitting lib">
+      <created>1689839192461</created>
+      <option name="number" value="00401" />
+      <option name="presentableId" value="LOCAL-00401" />
+      <option name="project" value="LOCAL" />
+      <updated>1689839192461</updated>
+    </task>
+    <task id="LOCAL-00402" summary="scipy can be used as alternativ fitting lib">
+      <created>1689841015277</created>
+      <option name="number" value="00402" />
+      <option name="presentableId" value="LOCAL-00402" />
+      <option name="project" value="LOCAL" />
+      <updated>1689841015277</updated>
+    </task>
+    <task id="LOCAL-00403" summary="scipy can be used as alternativ fitting lib">
+      <created>1689841168936</created>
+      <option name="number" value="00403" />
+      <option name="presentableId" value="LOCAL-00403" />
+      <option name="project" value="LOCAL" />
+      <updated>1689841168936</updated>
+    </task>
+    <task id="LOCAL-00404" summary="scipy can be used as alternativ fitting lib">
+      <created>1689841348933</created>
+      <option name="number" value="00404" />
+      <option name="presentableId" value="LOCAL-00404" />
+      <option name="project" value="LOCAL" />
+      <updated>1689841348933</updated>
+    </task>
+    <task id="LOCAL-00405" summary="scipy can be used as alternativ fitting lib">
+      <created>1689841753245</created>
+      <option name="number" value="00405" />
+      <option name="presentableId" value="LOCAL-00405" />
+      <option name="project" value="LOCAL" />
+      <updated>1689841753245</updated>
+    </task>
+    <task id="LOCAL-00406" summary="scipy can be used as alternativ fitting lib">
+      <created>1689841908769</created>
+      <option name="number" value="00406" />
+      <option name="presentableId" value="LOCAL-00406" />
+      <option name="project" value="LOCAL" />
+      <updated>1689841908769</updated>
+    </task>
+    <task id="LOCAL-00407" summary="scipy can be used as alternativ fitting lib">
+      <created>1689842050834</created>
+      <option name="number" value="00407" />
+      <option name="presentableId" value="LOCAL-00407" />
+      <option name="project" value="LOCAL" />
+      <updated>1689842050834</updated>
+    </task>
+    <task id="LOCAL-00408" summary="scipy can be used as alternativ fitting lib">
+      <created>1689842164635</created>
+      <option name="number" value="00408" />
+      <option name="presentableId" value="LOCAL-00408" />
+      <option name="project" value="LOCAL" />
+      <updated>1689842164635</updated>
+    </task>
+    <task id="LOCAL-00409" summary="scipy can be used as alternativ fitting lib">
+      <created>1689842751815</created>
+      <option name="number" value="00409" />
+      <option name="presentableId" value="LOCAL-00409" />
+      <option name="project" value="LOCAL" />
+      <updated>1689842751815</updated>
+    </task>
+    <task id="LOCAL-00410" summary="scipy can be used as alternativ fitting lib">
+      <created>1689843078249</created>
+      <option name="number" value="00410" />
+      <option name="presentableId" value="LOCAL-00410" />
+      <option name="project" value="LOCAL" />
+      <updated>1689843078249</updated>
+    </task>
+    <task id="LOCAL-00411" summary="scipy can be used as alternativ fitting lib">
+      <created>1689843126641</created>
+      <option name="number" value="00411" />
+      <option name="presentableId" value="LOCAL-00411" />
+      <option name="project" value="LOCAL" />
+      <updated>1689843126641</updated>
+    </task>
+    <task id="LOCAL-00412" summary="scipy can be used as alternativ fitting lib">
+      <created>1689843262703</created>
+      <option name="number" value="00412" />
+      <option name="presentableId" value="LOCAL-00412" />
+      <option name="project" value="LOCAL" />
+      <updated>1689843262703</updated>
+    </task>
+    <task id="LOCAL-00413" summary="scipy can be used as alternativ fitting lib">
+      <created>1689843567405</created>
+      <option name="number" value="00413" />
+      <option name="presentableId" value="LOCAL-00413" />
+      <option name="project" value="LOCAL" />
+      <updated>1689843567405</updated>
+    </task>
+    <task id="LOCAL-00414" summary="scipy can be used as alternativ fitting lib">
+      <created>1689843737996</created>
+      <option name="number" value="00414" />
+      <option name="presentableId" value="LOCAL-00414" />
+      <option name="project" value="LOCAL" />
+      <updated>1689843737996</updated>
+    </task>
+    <task id="LOCAL-00415" summary="scipy can be used as alternativ fitting lib">
+      <created>1689843789570</created>
+      <option name="number" value="00415" />
+      <option name="presentableId" value="LOCAL-00415" />
+      <option name="project" value="LOCAL" />
+      <updated>1689843789570</updated>
+    </task>
+    <task id="LOCAL-00416" summary="scipy can be used as alternativ fitting lib">
+      <created>1689843856008</created>
+      <option name="number" value="00416" />
+      <option name="presentableId" value="LOCAL-00416" />
+      <option name="project" value="LOCAL" />
+      <updated>1689843856008</updated>
+    </task>
+    <task id="LOCAL-00417" summary="scipy can be used as alternativ fitting lib">
+      <created>1689843920262</created>
+      <option name="number" value="00417" />
+      <option name="presentableId" value="LOCAL-00417" />
+      <option name="project" value="LOCAL" />
+      <updated>1689843920262</updated>
+    </task>
+    <task id="LOCAL-00418" summary="scipy can be used as alternativ fitting lib">
+      <created>1689844272138</created>
+      <option name="number" value="00418" />
+      <option name="presentableId" value="LOCAL-00418" />
+      <option name="project" value="LOCAL" />
+      <updated>1689844272138</updated>
+    </task>
+    <task id="LOCAL-00419" summary="scipy can be used as alternativ fitting lib">
+      <created>1689844877839</created>
+      <option name="number" value="00419" />
+      <option name="presentableId" value="LOCAL-00419" />
+      <option name="project" value="LOCAL" />
+      <updated>1689844877839</updated>
+    </task>
+    <task id="LOCAL-00420" summary="scipy can be used as alternativ fitting lib">
+      <created>1689852533499</created>
+      <option name="number" value="00420" />
+      <option name="presentableId" value="LOCAL-00420" />
+      <option name="project" value="LOCAL" />
+      <updated>1689852533499</updated>
+    </task>
+    <task id="LOCAL-00421" summary="scipy can be used as alternativ fitting lib">
+      <created>1689857900125</created>
+      <option name="number" value="00421" />
+      <option name="presentableId" value="LOCAL-00421" />
+      <option name="project" value="LOCAL" />
+      <updated>1689857900125</updated>
+    </task>
+    <option name="localTasksCounter" value="550" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="removed separate second_matrix_step njit and gpu methode" />
+    <MESSAGE value="bug in save_fit" />
+    <MESSAGE value="GPU can now be enabled during fit" />
+    <MESSAGE value="rho_steady now self.rho_steady on GPU" />
+    <MESSAGE value="update cachesize disabled" />
+    <MESSAGE value="improved plot" />
+    <MESSAGE value="bug with correction_only=True" />
+    <MESSAGE value="Multiple orders can be given as input to calculate_spectrum" />
+    <MESSAGE value="Spectra can now be plotted with plot() from signalsnap" />
+    <MESSAGE value="began refactoring to QuantumCatch" />
+    <MESSAGE value="Added Working Example" />
+    <MESSAGE value="Restructuring of the project and added sphinx documentation:&#10;Modules are moved to src/quantumcatch&#10;+ minor improvements in the doc strings" />
+    <MESSAGE value="Updated readme with a lof of details&#10;+ Fitting Routine is now adapted to MarkovAnalyzer&#10;+ Updated two examples and removed the numeric_spec example" />
+    <MESSAGE value="Updated readme with a lof of details" />
+    <MESSAGE value="Marked old Example as not working" />
+    <MESSAGE value="improved the example" />
+    <MESSAGE value="added" />
+    <MESSAGE value="Old Example removed" />
+    <MESSAGE value="typo" />
+    <MESSAGE value="Added example" />
+    <MESSAGE value="Version Update" />
+    <MESSAGE value="Set qubit to be maximally version 4.7.5" />
+    <MESSAGE value="sqrt(dt) for wiener process normalization" />
+    <MESSAGE value="updated scipy dependencies" />
+    <MESSAGE value="also displays AIC during fit" />
+    <option name="LAST_COMMIT_MESSAGE" value="also displays AIC during fit" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/QuantumPolyspectra$sphinx_task_in_QuantumPolyspectra.coverage" NAME="sphinx task in QuantumPolyspectra Coverage Results" MODIFIED="1653056029336" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/.." />
+    <SUITE FILE_PATH="coverage/QuantumPolyspectra_Project$sphinx_task_in_QuantumPolyspectra.coverage" NAME="sphinx task in QuantumPolyspectra Coverage Results" MODIFIED="1706885070346" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/.." />
+  </component>
+</project>
