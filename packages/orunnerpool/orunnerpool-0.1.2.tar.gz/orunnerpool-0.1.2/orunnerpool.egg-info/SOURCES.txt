@@ -1,0 +1,17 @@
+LICENSE
+MANIFEST.in
+README.md
+config.ini.example
+pyproject.toml
+setup.py
+orunnerpool/__init__.py
+orunnerpool/__main__.py
+orunnerpool/cli.py
+orunnerpool/setup.py
+orunnerpool/worker.py
+orunnerpool.egg-info/PKG-INFO
+orunnerpool.egg-info/SOURCES.txt
+orunnerpool.egg-info/dependency_links.txt
+orunnerpool.egg-info/entry_points.txt
+orunnerpool.egg-info/requires.txt
+orunnerpool.egg-info/top_level.txt
