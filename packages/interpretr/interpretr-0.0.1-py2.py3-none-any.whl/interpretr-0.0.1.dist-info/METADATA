@@ -1,0 +1,23 @@
+Metadata-Version: 2.4
+Name: interpretr
+Version: 0.0.1
+Summary: A better code interpreter for Large Language Models
+Author-email: Ryan Young <dev@ryayoung.com>
+License-Expression: MIT
+License-File: LICENSE
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Software Development :: Libraries
+Requires-Dist: black
+Requires-Dist: pandas
+Requires-Dist: polars
+Description-Content-Type: text/markdown
+
+# Code Interpreter
+
+A better code interpreter for Large Language Models.
+
+interpretr is not yet ready for public release.
