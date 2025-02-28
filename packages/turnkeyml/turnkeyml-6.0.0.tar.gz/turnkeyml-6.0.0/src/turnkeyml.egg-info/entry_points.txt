@@ -1,0 +1,5 @@
+[console_scripts]
+lemonade = lemonade:lemonadecli
+lemonade-install = lemonade_install:installcli
+turnkey = turnkeyml:turnkeycli
+turnkey-llm = lemonade:lemonadecli
