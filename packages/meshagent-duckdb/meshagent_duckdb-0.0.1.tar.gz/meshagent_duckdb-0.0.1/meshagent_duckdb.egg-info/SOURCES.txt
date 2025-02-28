@@ -1,0 +1,14 @@
+MANIFEST.in
+README.md
+pyproject.toml
+setup.py
+version.py
+meshagent/duckdb/agents/__init__.py
+meshagent/duckdb/agents/indexer.py
+meshagent/duckdb/tools/__init__.py
+meshagent/duckdb/tools/tables.py
+meshagent_duckdb.egg-info/PKG-INFO
+meshagent_duckdb.egg-info/SOURCES.txt
+meshagent_duckdb.egg-info/dependency_links.txt
+meshagent_duckdb.egg-info/requires.txt
+meshagent_duckdb.egg-info/top_level.txt
