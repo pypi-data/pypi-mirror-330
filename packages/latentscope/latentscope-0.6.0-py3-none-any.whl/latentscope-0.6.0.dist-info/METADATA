@@ -1,0 +1,424 @@
+Metadata-Version: 2.1
+Name: latentscope
+Version: 0.6.0
+Summary: Quickly embed, project, cluster and explore a dataset.
+Home-page: https://github.com/enjalot/latent-scope
+License: UNKNOWN
+Project-URL: Source, https://github.com/enjalot/latent-scope
+Project-URL: Tracker, https://github.com/enjalot/latent-scope/issues
+Platform: UNKNOWN
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy (~=1.26.4)
+Requires-Dist: accelerate (~=0.31.0)
+Requires-Dist: aiohttp (~=3.9.1)
+Requires-Dist: aiolimiter (~=1.1.0)
+Requires-Dist: aiosignal (~=1.3.1)
+Requires-Dist: annotated-types (~=0.6.0)
+Requires-Dist: anyio (~=4.2.0)
+Requires-Dist: appnope (~=0.1.3)
+Requires-Dist: argon2-cffi (~=23.1.0)
+Requires-Dist: argon2-cffi-bindings (~=21.2.0)
+Requires-Dist: arrow (~=1.3.0)
+Requires-Dist: asttokens (~=2.4.1)
+Requires-Dist: async-lru (~=2.0.4)
+Requires-Dist: attrs (~=23.2.0)
+Requires-Dist: Babel (~=2.14.0)
+Requires-Dist: backoff (~=2.2.1)
+Requires-Dist: beautifulsoup4 (~=4.12.3)
+Requires-Dist: bleach (~=6.1.0)
+Requires-Dist: blinker (~=1.7.0)
+Requires-Dist: certifi (~=2023.11.17)
+Requires-Dist: cffi (~=1.16.0)
+Requires-Dist: charset-normalizer (~=3.3.2)
+Requires-Dist: click (~=8.1.7)
+Requires-Dist: cohere (~=4.44)
+Requires-Dist: comm (~=0.2.1)
+Requires-Dist: contourpy
+Requires-Dist: cycler (~=0.12.1)
+Requires-Dist: Cython (~=0.29.37)
+Requires-Dist: datamapplot (~=0.3.0)
+Requires-Dist: debugpy (~=1.8.0)
+Requires-Dist: decorator (~=5.1.1)
+Requires-Dist: defusedxml (~=0.7.1)
+Requires-Dist: distro (~=1.9.0)
+Requires-Dist: einops (~=0.7.0)
+Requires-Dist: executing (~=2.0.1)
+Requires-Dist: fastavro (~=1.9.3)
+Requires-Dist: fastjsonschema (~=2.19.1)
+Requires-Dist: filelock (~=3.13.1)
+Requires-Dist: Flask (~=3.0.0)
+Requires-Dist: Flask-Cors (~=4.0.0)
+Requires-Dist: fonttools (~=4.47.2)
+Requires-Dist: fqdn (~=1.5.1)
+Requires-Dist: frozenlist (~=1.4.1)
+Requires-Dist: fsspec (~=2023.10.0)
+Requires-Dist: h11 (~=0.14.0)
+Requires-Dist: h5py
+Requires-Dist: hdbscan
+Requires-Dist: httpcore (~=1.0.2)
+Requires-Dist: httpx (~=0.25.2)
+Requires-Dist: huggingface-hub (~=0.24.5)
+Requires-Dist: idna (~=3.6)
+Requires-Dist: importlib-metadata (~=6.11.0)
+Requires-Dist: ipykernel (~=6.29.0)
+Requires-Dist: ipython (~=8.18.0)
+Requires-Dist: ipywidgets (~=8.1.1)
+Requires-Dist: isoduration (~=20.11.0)
+Requires-Dist: itsdangerous (~=2.1.2)
+Requires-Dist: jedi (~=0.19.1)
+Requires-Dist: Jinja2 (~=3.1.3)
+Requires-Dist: joblib (~=1.3.2)
+Requires-Dist: json5 (~=0.9.14)
+Requires-Dist: jsonpointer (~=2.4)
+Requires-Dist: jsonschema (~=4.21.1)
+Requires-Dist: jsonschema-specifications (~=2023.12.1)
+Requires-Dist: jupyter (~=1.0.0)
+Requires-Dist: jupyter-console (~=6.6.3)
+Requires-Dist: jupyter-events (~=0.9.0)
+Requires-Dist: jupyter-lsp (~=2.2.2)
+Requires-Dist: jupyter-client (~=8.6.0)
+Requires-Dist: jupyter-core (~=5.7.1)
+Requires-Dist: jupyter-server (~=2.12.5)
+Requires-Dist: jupyter-server-terminals (~=0.5.2)
+Requires-Dist: jupyterlab (~=4.0.12)
+Requires-Dist: jupyterlab-widgets (~=3.0.9)
+Requires-Dist: jupyterlab-pygments (~=0.3.0)
+Requires-Dist: jupyterlab-server (~=2.25.2)
+Requires-Dist: kiwisolver (~=1.4.5)
+Requires-Dist: latentsae (~=0.1.3)
+Requires-Dist: llvmlite (~=0.42.0)
+Requires-Dist: MarkupSafe (~=2.1.3)
+Requires-Dist: matplotlib
+Requires-Dist: matplotlib-inline
+Requires-Dist: mistralai (~=0.0.11)
+Requires-Dist: mistune (~=3.0.2)
+Requires-Dist: mpmath (~=1.3.0)
+Requires-Dist: multidict (~=6.0.4)
+Requires-Dist: nbclient (~=0.9.0)
+Requires-Dist: nbconvert (~=7.14.2)
+Requires-Dist: nbformat (~=5.9.2)
+Requires-Dist: nest-asyncio (~=1.5.9)
+Requires-Dist: networkx (~=3.2.1)
+Requires-Dist: nltk (~=3.8.1)
+Requires-Dist: notebook (~=7.0.7)
+Requires-Dist: notebook-shim (~=0.2.3)
+Requires-Dist: numba (~=0.59.0)
+Requires-Dist: openai (~=1.12.0)
+Requires-Dist: opt-einsum
+Requires-Dist: orjson (~=3.9.12)
+Requires-Dist: outlines (~=0.1.0)
+Requires-Dist: overrides (~=7.7.0)
+Requires-Dist: packaging (~=23.2)
+Requires-Dist: pandas
+Requires-Dist: pandocfilters (~=1.5.1)
+Requires-Dist: parso (~=0.8.3)
+Requires-Dist: pexpect (~=4.9.0)
+Requires-Dist: pillow (~=10.2.0)
+Requires-Dist: platformdirs (~=4.1.0)
+Requires-Dist: prometheus-client (~=0.19.0)
+Requires-Dist: prompt-toolkit (~=3.0.43)
+Requires-Dist: psutil (~=5.9.7)
+Requires-Dist: ptyprocess (~=0.7.0)
+Requires-Dist: pure-eval (~=0.2.2)
+Requires-Dist: pyarrow (~=17.0.0)
+Requires-Dist: pycparser (~=2.21)
+Requires-Dist: pydantic (~=2.5.3)
+Requires-Dist: pydantic-core (~=2.14.6)
+Requires-Dist: Pygments (~=2.17.2)
+Requires-Dist: pynndescent (~=0.5.11)
+Requires-Dist: pyparsing (~=3.1.1)
+Requires-Dist: python-dateutil (~=2.8.2)
+Requires-Dist: python-dotenv (~=1.0.0)
+Requires-Dist: python-json-logger (~=2.0.7)
+Requires-Dist: pytz (~=2023.3.post1)
+Requires-Dist: PyYAML (~=6.0.1)
+Requires-Dist: pyzmq (~=25.1.2)
+Requires-Dist: qtconsole (~=5.5.1)
+Requires-Dist: QtPy (~=2.4.1)
+Requires-Dist: referencing (~=0.33.0)
+Requires-Dist: regex (~=2023.12.25)
+Requires-Dist: requests (~=2.32.0)
+Requires-Dist: rfc3339-validator (~=0.1.4)
+Requires-Dist: rfc3986-validator (~=0.1.1)
+Requires-Dist: rpds-py (~=0.17.1)
+Requires-Dist: safetensors (~=0.4.1)
+Requires-Dist: scikit-learn (~=1.3.2)
+Requires-Dist: scipy (~=1.11.4)
+Requires-Dist: Send2Trash (~=1.8.2)
+Requires-Dist: sentence-transformers (~=3.2.0)
+Requires-Dist: six (~=1.16.0)
+Requires-Dist: sniffio (~=1.3.0)
+Requires-Dist: soupsieve (~=2.5)
+Requires-Dist: sseclient-py (~=1.8.0)
+Requires-Dist: stack-data (~=0.6.3)
+Requires-Dist: sympy (~=1.12)
+Requires-Dist: tabulate (~=0.9.0)
+Requires-Dist: tenacity (~=8.2.3)
+Requires-Dist: terminado (~=0.18.0)
+Requires-Dist: threadpoolctl (~=3.2.0)
+Requires-Dist: tiktoken (~=0.7.0)
+Requires-Dist: tinycss2 (~=1.2.1)
+Requires-Dist: together (~=0.2.10)
+Requires-Dist: tokenizers (~=0.20.0)
+Requires-Dist: torch (~=2.3.0)
+Requires-Dist: tornado (~=6.4)
+Requires-Dist: tqdm (~=4.66.1)
+Requires-Dist: traitlets (~=5.14.1)
+Requires-Dist: transformers (~=4.46.3)
+Requires-Dist: typer (~=0.9.0)
+Requires-Dist: types-python-dateutil (~=2.8.19.20240106)
+Requires-Dist: typing-extensions (~=4.9.0)
+Requires-Dist: tzdata (~=2023.4)
+Requires-Dist: umap-learn (~=0.5.5)
+Requires-Dist: uri-template (~=1.3.0)
+Requires-Dist: urllib3 (~=2.1.0)
+Requires-Dist: voyageai (~=0.2.3)
+Requires-Dist: wcwidth (~=0.2.13)
+Requires-Dist: webcolors (~=1.13)
+Requires-Dist: webencodings (~=0.5.1)
+Requires-Dist: websocket-client (~=1.7.0)
+Requires-Dist: Werkzeug (~=3.0.1)
+Requires-Dist: widgetsnbextension (~=4.0.9)
+Requires-Dist: yarl (~=1.9.4)
+Requires-Dist: zipp (~=3.17.0)
+Requires-Dist: lancedb (~=0.19.0)
+
+# Latent Scope
+
+[![](https://dcbadge.vercel.app/api/server/x7NvpnM4pY?style=flat)](https://discord.gg/x7NvpnM4pY)
+[![PyPI version](https://img.shields.io/pypi/v/latentscope.svg)](https://pypi.org/project/latentscope/)
+
+Quickly embed, project, cluster and explore a dataset with open models locally or via API. This project is a new kind of workflow + tool for visualizing and exploring datasets through the lens of latent spaces.
+
+[Docs](https://enjalot.github.io/latent-scope/) · [Demos](https://latent.estate)
+
+| [![](https://storage.googleapis.com/fun-data/latent-scope/demos/enjalot/ls-fineweb-edu-100k/scopes-001.png)](http://latent.estate/scope/enjalot/ls-fineweb-edu-100k/scopes-001) | [![](https://storage.googleapis.com/fun-data/latent-scope/demos/enjalot/ls-dadabase/scopes-001.png)](https://latent.estate/scope/enjalot/ls-dadabase/scopes-001) | [![](https://storage.googleapis.com/fun-data/latent-scope/demos/enjalot/ls-common-corpus-100k/scopes-001.png)](https://latent.estate/scope/enjalot/ls-common-corpus-100k/scopes-001) | [![](https://storage.googleapis.com/fun-data/latent-scope/demos/enjalot/ls-dataisplural/scopes-001.png)](https://latent.estate/scope/enjalot/ls-dataisplural/scopes-001) |
+| :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+|                                                [Fineweb EDU](http://latent.estate/scope/enjalot/ls-fineweb-edu-100k/scopes-001)                                                 |                                             [Dad Jokes](https://latent.estate/scope/enjalot/ls-dadabase/scopes-001)                                              |                                                [Common Corpus](https://latent.estate/scope/enjalot/ls-common-corpus-100k/scopes-001)                                                 |                                             [Data is Plural](https://latent.estate/scope/enjalot/ls-dataisplural/scopes-001)                                             |
+
+Latent Scope encodes a process that is increasingly common in AI and data science workflows: Embed unstructured data into high-dimensional vectors, reduce the dimensionality of those vectors, cluster the resulting points, label the clusters with an LLM and then explore the annotated data.
+
+<img src="https://github.com/enjalot/latent-scope/blob/main/documentation/process-crop.png?raw=true"  alt="Setup your scope">
+
+In addition to making this process easier by providing a web interface for each step, Latent Scope provides an intuitive way to explore the resulting annotated data via an interactive visualization tightly coupled with the input data.
+
+<img src="https://github.com/enjalot/latent-scope/blob/main/documentation/explore.png?raw=true" alt="Explore and your data">
+
+## Getting started
+
+Follow the documentation guides to get started:
+
+1. [Install and Configure](https://enjalot.github.io/latent-scope/install-and-config)
+2. [Your First Scope](https://enjalot.github.io/latent-scope/your-first-scope)
+3. [Explore and Curate](https://enjalot.github.io/latent-scope/explore-and-curate)
+4. [Exporting Data](https://enjalot.github.io/latent-scope/exporting-data)
+
+## Example Analysis
+
+What can you do with Latent Scope? The following examples demonstrate the kinds of perspective and insights you can gain from your unstructured text data.
+
+- Explore free-responses from surveys in this [datavis survey analysis](https://enjalot.github.io/latent-scope/datavis-survey)
+- Cluster thousands of [GitHub issues and PRs](https://enjalot.github.io/latent-scope/plot-issues)
+- Explore 50,000 [US Federal laws](https://enjalot.github.io/latent-scope/us-federal-laws) spanning two hundred years.
+
+### Quick Start
+
+Latent Scope works on Mac, Linux and Windows. Python 3.12 is the recommended python version.
+
+To get started, install the [latent-scope python module](https://pypi.org/project/latentscope/) and run the server via the Command Line:
+
+```bash
+python -m venv venv
+source venv/bin/activate
+pip install latentscope
+ls-init ~/latent-scope-data --openai_key=XXX --mistral_key=YYY # optional api keys to enable API models
+ls-serve
+```
+
+Then open your browser to http://localhost:5001 and start processing your first dataset!
+
+See the [Your First Scope](https://enjalot.github.io/latent-scope/your-first-scope) guide for a detailed walk-through of the process.
+
+### Python interface
+
+You can also ingest data from a Pandas dataframe using the Python interface:
+
+```python
+import latentscope as ls
+df = pd.read_parquet("...")
+ls.init("~/latent-scope-data") # you can also pass in openai_key="XXX", mistral_key="XXX" etc.)
+ls.ingest("dadabase", df, text_column="joke")
+ls.serve()
+```
+
+See these notebooks for detailed examples of using the Python interface to prepare and load data.
+
+- [dvs-survey](notebooks/dvs-survey.ipynb) - A small test dataset of 700 rows to quickly illustrate the process. This notebook shows how you can do every step of the process with the Python interface.
+- [dadabase](notebooks/dadabase.ipynb) - A more interesting (and funny) dataset of 50k rows. This notebook shows how you can preprocess a dataset, ingest it into latentscope and then use the web interface to complete the process.
+- [dolly15k](notebooks/dolly15k.ipynb) - Grab data from HuggingFace datasets and ingest into the process.
+- [emotion](notebooks/emotion.ipynb) - 400k rows of emotional tweets.
+
+### Command line quick start
+
+When latent-scope is installed, it creates a suite of command line scripts that can be used to setup the scopes for exploring in the web application. The output of each step in the process is flat files stored in the data directory specified at init. These files are in standard formats that were designed to be ported into other pipelines or interfaces.
+
+```bash
+# like above, we make sure to install latent-scope
+python -m venv venv
+source venv/bin/activate
+pip install latent-scope
+
+# prepare some data
+wget "https://storage.googleapis.com/fun-data/latent-scope/examples/dvs-survey/datavis-misunderstood.csv" > ~/Downloads/datavis-misunderstood.csv
+
+ls-init "~/latent-scope-data"
+# ls-ingest dataset_id csv_path
+ls-ingest-csv "datavis-misunderstood" "~/Downloads/datavis-misunderstood.csv"
+# get a list of model ids available (lists both embedding and chat models available)
+ls-list-models
+# ls-embed dataset_id text_column model_id prefix
+ls-embed datavis-misunderstood "answer" transformers-intfloat___e5-small-v2 ""
+# ls-umap dataset_id embedding_id n_neighbors min_dist
+ls-umap datavis-misunderstood embedding-001 25 .1
+# ls-cluster dataset_id umap_id samples min_samples
+ls-cluster datavis-misunderstood umap-001 5 5
+# ls-label dataset_id text_column cluster_id model_id context
+ls-label datavis-misunderstood "answer" cluster-001 transformers-HuggingFaceH4___zephyr-7b-beta ""
+# ls-scope  dataset_id embedding_id umap_id cluster_id cluster_labels_id label description
+ls-scope datavis-misunderstood cluster-001-labels-001 "E5 demo" "E5 embeddings summarized by Zephyr 7B"
+# start the server to explore your scope
+ls-serve
+```
+
+### Repository overview
+
+This repository is currently meant to run locally, with a React frontend that communicates with a python server backend. We support several popular open source embedding models that can run locally as well as proprietary API embedding services. Adding new models and services should be quick and easy.
+
+To learn more about contributing and the project roadmap see [CONTRIBUTION.md](CONTRIBUTION.md), for technical details see [DEVELOPMENT.md](DEVELOPMENT.md).
+
+### Design principles
+
+This tool is meant to be a part of a larger process. Something that hopefully helps you see things in your data that you wouldn't otherwise have. That means it needs to be easy to get data in, and easily get useful data out.
+
+1. Flat files
+
+- All of the data that drives the app is stored in flat files. This is so that both final and intermediate outputs can easily be exported for other uses. It also makes it easy to see the status of any part of the process.
+
+2. Remember everything
+
+- This tool is intended to aid in research, the purpose is experimentation and exploration. I developed it because far too often I try a lot of things and then I forget what parameters lead me down a promising path in the first place. All choices you make in the process are recorded in metadata files along with the output of the process.
+
+3. It's all about the indices
+
+- We consider an input dataset the source of truth, a list of rows that can be indexed into. So all downstream operations, whether its embeddings, pointing to nearest neighbors or assigning data points to clusters, all use indices into the input dataset.
+
+## Command Line Scripts: Detailed description
+
+If you want to use the CLI instead of the web UI you can use the following scripts.
+
+The scripts should be run in order once you have an `input.csv` file in your folder. Alternatively the Setup page in the web UI will run these scripts via API calls to the server for you.  
+These scripts expect at the least a `LATENT_SCOPE_DATA` environment variable with a path to where you want to store your data. If you run `ls-serve` it will set the variable and put it in a `.env` file. You can add API keys to the .env file to enable usage of the various API services, see [.env.example](.env.example) for the structure.
+
+### 0. ingest
+
+This script turns the `input.csv` into `input.parquet` and sets up the directories and `meta.json` which run the app.
+
+```bash
+# ls-ingest <dataset_name>
+ls-ingest database-curated
+```
+
+### 1. embed
+
+Take the text from the input and embed it. Default is to use `BAAI/bge-small-en-v1.5` locally via HuggingFace transformers. API services are supported as well, see [latentscope/models/embedding_models.json](latentscope/models/embedding_models.json) for model ids.
+
+```bash
+# you can get a list of models available with:
+ls-list-models
+# ls-embed <dataset_name> <text_column> <model_id>
+ls-embed dadabase joke transformers-intfloat___e5-small-v2
+```
+
+### 2. umap
+
+Map the embeddings from high-dimensional space to 2D with UMAP. Will generate a thumbnail of the scatterplot.
+
+```bash
+# ls-umap <dataset_name> <embedding_id> <neighbors> <min_dist>
+ls-umap dadabase embedding-001 50 0.1
+```
+
+### 3. cluster
+
+Cluster the UMAP points using HDBSCAN. This will label each point with a cluster label
+
+```bash
+# ls-cluster <dataset_name> <umap_id> <samples> <min-samples>
+ls-cluster dadabase umap-001 5 3
+```
+
+### 4. label
+
+We support auto-labeling clusters by summarizing them with an LLM. Supported models and APIs are listed in [latentscope/models/chat_models.json](latentscope/models/chat_models.json).
+You can pass context that will be injected into the system prompt for your dataset.
+
+```bash
+# ls-label <dataset_id> <cluster_id> <chat_model_id> <context>
+ls-label dadabase "joke" cluster-001 openai-gpt-3.5-turbo ""
+```
+
+### 5. scope
+
+The scope command ties together each step of the process to create an explorable configuration. You can have several scopes to view different choices, for example using different embeddings or even different parameters for UMAP and clustering. Switching between scopes in the UI is instant.
+
+```bash
+# ls-scope  <dataset_id> <embedding_id> <umap_id> <cluster_id> <cluster_labels_id> <label> <description>
+ls-scope datavis-misunderstood cluster-001-labels-001 "E5 demo" "E5 embeddings summarized by GPT3.5-Turbo"
+```
+
+### 6. serve
+
+To start the web UI we run a small server. This also enables nearest neighbor similarity search and interactively querying subsets of the input data while exploring the scopes.
+
+```bash
+ls-serve ~/latent-scope-data
+```
+
+## Dataset directory structure
+
+Each dataset will have its own directory in data/ created when you ingest your CSV. All subsequent steps of setting up a dataset write their data and metadata to this directory.
+There are no databases in this tool, just flat files that are easy to copy and edit.
+
+<pre>
+├── data/
+|   ├── dataset1/
+|   |   ├── input.parquet                           # from ingest.py, the dataset
+|   |   ├── meta.json                               # from ingest.py, metadata for dataset, #rows, columns, text_column
+|   |   ├── embeddings/
+|   |   |   ├── embedding-001.h5                    # from embed.py, embedding vectors
+|   |   |   ├── embedding-001.json                  # from embed.py, parameters used to embed
+|   |   |   ├── embedding-002...                   
+|   |   ├── umaps/
+|   |   |   ├── umap-001.parquet                    # from umap.py, x,y coordinates
+|   |   |   ├── umap-001.json                       # from umap.py, params used
+|   |   |   ├── umap-001.png                        # from umap.py, thumbnail of plot
+|   |   |   ├── umap-002....                        
+|   |   ├── clusters/
+|   |   |   ├── clusters-001.parquet                # from cluster.py, cluster indices
+|   |   |   ├── clusters-001-labels-default.parquet # from cluster.py, default labels
+|   |   |   ├── clusters-001-labels-001.parquet     # from label_clusters.py, LLM generated labels
+|   |   |   ├── clusters-001.json                   # from cluster.py, params used
+|   |   |   ├── clusters-001.png                    # from cluster.py, thumbnail of plot
+|   |   |   ├── clusters-002...                     
+|   |   ├── scopes/
+|   |   |   ├── scopes-001.json                     # from scope.py, combination of embed, umap, clusters and label choice
+|   |   |   ├── scopes-...                      
+|   |   ├── tags/
+|   |   |   ├── ❤️.indices                           # tagged by UI, powered by tags.py
+|   |   |   ├── ...                                 # can have arbitrary named tags
+|   |   ├── jobs/
+|   |   |   ├──  8980️-12345...json                  # created when job is run via web UI
+</pre>
+
+
