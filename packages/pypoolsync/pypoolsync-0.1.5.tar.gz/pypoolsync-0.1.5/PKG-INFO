@@ -1,0 +1,23 @@
+Metadata-Version: 2.3
+Name: pypoolsync
+Version: 0.1.5
+Summary: Python package for interacting with Poolsync devices
+License: MIT
+Keywords: Poolsync,Chlorsync,SWG,python
+Author: John Gemkow
+Requires-Python: >=3.9,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Project-URL: Homepage, https://github.com/jgemkow/pypoolsync
+Project-URL: Repository, https://github.com/jgemkow/pypoolsync
+Description-Content-Type: text/markdown
+
+# pypoolsync
+
+Python package for interacting with Poolsync devices
+
