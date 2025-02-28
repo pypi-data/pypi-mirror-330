@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools", "wheel", "scapy"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "TecHackPortScanner"
+description = "A simple package for scanning ports on a network."
+readme = "README.md"
+requires-python = ">= 3.9"
+license.file = "LICENSE"
+authors = [
+  { name = "Lucas Hix", email = "admin@peng1104.net" },
+]
+classifiers = [
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent"
+]
+urls.changelog = "https://github.com/Peng1104/PortScanner/releases/latest"
+urls.issues = "https://github.com/Peng1104/PortScanner/issues"
+urls.source = "https://github.com/Peng1104/PortScanner"
+version = "1.0.2"
+dependencies = [
+  "scapy",
+]
