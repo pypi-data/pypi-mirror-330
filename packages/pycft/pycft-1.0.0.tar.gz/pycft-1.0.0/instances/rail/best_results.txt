@@ -1,0 +1,12 @@
+Results obtained with a single run of the 3phase 
+Date: 2024/03/26
+CPU:  13th Gen Intel(R) Core(TM) i7-13700H (Thinkpad P16v)
+
+Instance   Solution  N.Iters  Time(s)
+rail2536        701       73    53.55
+rail2586        953       65    18.16
+rail4284       1072       56    39.95
+rail4872       1541      174    52.77
+rail507         175       28     2.21
+rail516         182       11     0.94
+rail582         211        8     0.65
