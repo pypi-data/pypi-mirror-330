@@ -1,0 +1,71 @@
+Metadata-Version: 2.2
+Name: pyd2d
+Version: 0.1.2
+Summary: A Python wrapper for the Windows Direct2D and DirectWrite APIs
+License: The MIT License (MIT)
+        
+        Copyright (c) 2025 Merlin Zimmerman
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE.
+Project-URL: Homepage, https://github.com/merlinz01/pyd2d
+Project-URL: Repository, https://github.com/merlinz01/pyd2d
+Project-URL: Issues, https://github.com/merlinz01/pyd2d/issues
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+
+# pyD2D - A Python wrapper for the Windows Direct2D API
+
+pyD2D is a Python wrapper for the Windows Direct2D and DirectWrite APIs.
+
+Not all of the Direct2D and DirectWrite APIs are wrapped, but the most commonly used ones are.
+If you need a specific API that is not wrapped, feel free to open an issue or submit a pull request.
+
+## Installation
+
+```bash
+pip install pyd2d
+```
+
+## Usage
+
+```python
+import pyd2d
+
+# Initialize COM
+pyd2d.InitializeCOM()
+
+# Create a Direct2D factory
+factory = pyd2d.GetD2DFactory()
+
+# Create a render target
+render_target = factory.CreateHwndRenderTarget(
+    my_hwnd, width=800, height=600,
+)
+
+# Draw a rectangle
+render_target.BeginDraw()
+render_target.Clear(1.0, 1.0, 1.0, 1.0)
+render_target.FillRectangle(100, 100, 200, 200, render_target.CreateSolidColorBrush(0.0, 0.0, 0.0, 1.0))
+render_target.EndDraw()
+```
+
+## License
+
+pyD2D is licensed under the MIT License.
