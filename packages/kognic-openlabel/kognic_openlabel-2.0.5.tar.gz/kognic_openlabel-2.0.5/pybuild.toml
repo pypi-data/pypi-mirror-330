@@ -1,0 +1,5 @@
+# pybuild config for this repo
+[pybuild]
+min-version="1.33.0"
+artifact-repo-push = "https://us-east4-python.pkg.dev/annotell-com/python-default-us"
+artifact-repo-pull = "https://us-east4-python.pkg.dev/annotell-com/python-vproxy-us/simple"
