@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: odoo-addons-sygel-technology-sy-project
+Version: 15.0.20250227.1
+Summary: Meta package for sygel-technology-sy-project Odoo addons
+Classifier: Programming Language :: Python
+Classifier: Framework :: Odoo
+Classifier: Framework :: Odoo :: 15.0
+Requires-Dist: odoo-addon-duplicate-project-task-timesheet<15.1dev,>=15.0dev
+Requires-Dist: odoo-addon-modify-followers-task<15.1dev,>=15.0dev
+Requires-Dist: odoo-addon-project-subtask-default-display-project<15.1dev,>=15.0dev
+Requires-Dist: odoo-addon-project-task-block-reason<15.1dev,>=15.0dev
+Requires-Dist: odoo-addon-project-task-description-template-section<15.1dev,>=15.0dev
+Requires-Dist: odoo-addon-project-task-show-project-manager<15.1dev,>=15.0dev
+Requires-Dist: odoo-addon-task-requirements-mgmt<15.1dev,>=15.0dev
+
+UNKNOWN
