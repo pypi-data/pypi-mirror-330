@@ -1,0 +1,24 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+[project]
+name = "sparv-sbx-sbx2hf"
+version = "0.1.1"
+description = "A Sparv plugin for uploading export files to HuggingFace"
+readme = "README.md"
+requires-python = ">=3.11"
+license.text = "The GNU General Public License v3.0"
+ authors = [
+     { name = "Felix Morger", email = "felix.morger@gu.se" }
+ ]
+dependencies = [
+    "sparv-pipeline~=5.2",
+    "sbx2hf~=0.1.1"
+]
+entry-points."sparv.plugin" = { sbx_sbx2hf = "sbx_sbx2hf" }
+
+[tool.hatch]
+build.include = ["/sbx_sbx2hf"]
+
+[tool.hatch.envs.default]
+python="3.11"

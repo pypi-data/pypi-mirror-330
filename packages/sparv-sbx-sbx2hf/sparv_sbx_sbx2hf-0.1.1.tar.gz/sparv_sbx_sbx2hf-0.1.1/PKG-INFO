@@ -1,0 +1,10 @@
+Metadata-Version: 2.4
+Name: sparv-sbx-sbx2hf
+Version: 0.1.1
+Summary: A Sparv plugin for uploading export files to HuggingFace
+Author-email: Felix Morger <felix.morger@gu.se>
+License: The GNU General Public License v3.0
+License-File: LICENSE
+Requires-Python: >=3.11
+Requires-Dist: sbx2hf~=0.1.1
+Requires-Dist: sparv-pipeline~=5.2
