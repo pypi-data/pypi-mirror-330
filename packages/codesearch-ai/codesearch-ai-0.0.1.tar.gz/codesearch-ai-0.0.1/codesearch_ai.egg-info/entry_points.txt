@@ -1,0 +1,4 @@
+[console_scripts]
+codesearch-ai = codesearch_ai.main:main
+dir-assistant = codesearch_ai.main:main
+
