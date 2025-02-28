@@ -1,0 +1,102 @@
+Metadata-Version: 2.3
+Name: kithara
+Version: 0.0.9
+Summary: LLM post-training library
+Author: Kithara Authors
+Requires-Python: >= 3.11
+Description-Content-Type: text/markdown
+Requires-Dist: flax>=0.7.0
+Requires-Dist: datasets
+Requires-Dist: huggingface-hub
+Requires-Dist: keras>=3.8.0
+Requires-Dist: transformers>=4.45.1
+Requires-Dist: keras-hub>=0.18.1
+Requires-Dist: google-api-python-client
+Requires-Dist: google-auth-httplib2
+Requires-Dist: google-auth-oauthlib
+Requires-Dist: ray[default]==2.40.0
+Requires-Dist: jax[cpu]
+Requires-Dist: peft
+Requires-Dist: hf_transfer
+Requires-Dist: tabulate
+Requires-Dist: cryptography
+Requires-Dist: aqtp
+Requires-Dist: grain-nightly
+Requires-Dist: orbax-checkpoint>=0.10.3
+Requires-Dist: google-cloud-logging
+Requires-Dist: tensorboardx
+Requires-Dist: ml-collections
+Requires-Dist: tensorflow_datasets
+Requires-Dist: sentencepiece
+Requires-Dist: tiktoken
+Requires-Dist: cloud-accelerator-diagnostics
+Requires-Dist: cloud-tpu-diagnostics
+Requires-Dist: ml-goodput-measurement
+Requires-Dist: google-cloud-monitoring
+Requires-Dist: jax[cpu] ; extra == "cpu"
+Requires-Dist: torch==2.4.0 ; extra == "cpu"
+Requires-Dist: twine ; extra == "dev"
+Requires-Dist: flit ; extra == "dev"
+Requires-Dist: sphinx==8.2.0 ; extra == "dev"
+Requires-Dist: sphinx-autobuild ; extra == "dev"
+Requires-Dist: sphinxawesome-theme>=5.3.2 ; extra == "dev"
+Requires-Dist: sphinx_design ; extra == "dev"
+Requires-Dist: jax[cuda] ; extra == "gpu"
+Requires-Dist: torch==2.4.0 ; extra == "gpu"
+Requires-Dist: jax[tpu] ; extra == "tpu"
+Requires-Dist: torch==2.4.0+cpu ; extra == "tpu"
+Project-URL: Documentation, https://kithara.readthedocs.io/en/latest/index.html
+Project-URL: Homepage, https://github.com/wenxindongwork/keras-tuner-alpha
+Project-URL: Repository, https://github.com/wenxindongwork/keras-tuner-alpha
+Provides-Extra: cpu
+Provides-Extra: dev
+Provides-Extra: gpu
+Provides-Extra: tpu
+
+# Kithara - Easy Finetuning on TPUs
+
+[![PyPI](https://img.shields.io/pypi/v/kithara)](https://pypi.org/project/kithara/)
+[![GitHub pull request](https://img.shields.io/badge/PRs-welcome-blue)](https://github.com/wenxindongwork/keras-tuner-alpha/pulls)
+[![GitHub last commit](https://img.shields.io/github/last-commit/wenxindongwork/keras-tuner-alpha)](https://github.com/wenxindongwork/keras-tuner-alpha/commits/main)
+[![Documentation](https://img.shields.io/badge/docs-latest-brightgreen)](https://kithara.readthedocs.io/en/latest/)
+
+<div align="center">
+
+<a href="https://kithara.readthedocs.io/en/latest"><picture>
+<source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/wenxindongwork/keras-tuner-alpha/documentation-v2/docs/images/kithara_logo_with_green_bg.png">
+<source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/wenxindongwork/keras-tuner-alpha/documentation-v2/docs/images/kithara_logo_with_green_bg.png">
+<img alt="kithara logo" src="https://raw.githubusercontent.com/wenxindongwork/keras-tuner-alpha/documentation-v2/docs/images/kithara_logo_with_green_bg.png" height="150" style="max-width: 100%;">
+</picture></a>
+
+</div>
+
+## 👋 Overview
+
+Kithara is a lightweight library offering building blocks and recipes for tuning popular open source LLMs including Gemma2 and Llama3 on Google TPUs. 
+
+It provides:
+
+- **Frictionless scaling**: Distributed training abstractions intentionally built with simplicity in mind.
+- **Multihost training support**: Integration with Ray, GCE and GKE.
+- **Async, distributed checkpointing**: Multi-host & Multi-device checkpointing via Orbax.
+- **Distributed, streamed dataloading**: Per-process, streamed data loading via Ray.data.
+- **GPU/TPU fungibility**: Same code works for both GPU and TPU out of the box. 
+- **Native integration with HuggingFace**: Tune and save models in HuggingFace format.
+
+**New to TPUs?**
+
+Using TPUs provides significant advantages in terms of performance, cost-effectiveness, and scalability, enabling faster training times and the ability to work with larger models and datasets. Check out our onboarding guide to [getting TPUs](https://kithara.readthedocs.io/en/latest/getting_tpus.html).
+
+## 🔗 **Key links and resources**
+|                                   |                                                                                                                             |
+| --------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| 📚 **Documentation**              | [Read Our Docs](https://kithara.readthedocs.io/en/latest/)                                                                  |
+| 💾 **Installation**               | [Quick Pip Install](https://kithara.readthedocs.io/en/latest/installation.html) |
+| ✏️ **Get Started**               | [Intro to Kithara](https://kithara.readthedocs.io/en/latest/quickstart.html) |
+| 🌟 **Supported Models**           | [List of Models](https://kithara.readthedocs.io/en/latest/models.html)                           |
+| 🌐 **Supported Datasets**       | [List of Data Formats](https://kithara.readthedocs.io/en/latest/datasets.html)                       |
+| 🌵 **SFT + LoRA Example**       | [SFT + LoRA Example](https://kithara.readthedocs.io/en/latest/datasets.html)                       |
+| 🌵 **Continued Pretraining Example**       | [Continued Pretraining Example](https://kithara.readthedocs.io/en/latest/datasets.html)                       |
+| ⌛️ **Performance Optimizations** | [Our Memory and Throughput Optimizations](https://kithara.readthedocs.io/en/latest/optimizations.html)  |
+| 📈 **Scaling up**                 | [Guide for Tuning Large Models](https://kithara.readthedocs.io/en/latest/scaling_with_ray.html)   |
+
