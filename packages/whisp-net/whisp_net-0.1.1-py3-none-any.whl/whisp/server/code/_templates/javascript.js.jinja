@@ -1,0 +1,22 @@
+/* Auto-generated file. Do not edit manually. */
+
+{% for enum in enums %}
+export const {{ enum.name }} = Object.freeze({
+    {% for value in enum.values %}
+    {{ value }}: "{{ value }}"{% if not loop.last %},{% endif %}
+    {% endfor %}
+});
+{% endfor %}
+
+{% for msg in document.types %}
+export class {{ msg.name }} {
+    constructor(data = {}) {
+        {% for field in msg.fields %}
+        this.{{ field.name }} = data.{{ field.name }} !== undefined ? data.{{ field.name }} : {% if field.default_value is not none %}{{ field.default_value | tojson_safe }}{% else %}null{% endif %};
+        {% endfor %}
+    }
+    {% for field in msg.static_fields %}
+    static {{ field.name }} = {% if field.default_value is not none %}{{ field.default_value | tojson_safe }}{% else %}null{% endif %};
+    {% endfor %}
+}
+{% endfor %}

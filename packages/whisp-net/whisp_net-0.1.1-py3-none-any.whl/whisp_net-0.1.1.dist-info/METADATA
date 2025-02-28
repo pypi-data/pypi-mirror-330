@@ -1,0 +1,24 @@
+Metadata-Version: 2.1
+Name: whisp-net
+Version: 0.1.1
+Summary: Simple websocket based ipc protocol.
+Home-page: https://github.com/cansik/whisp
+Author: Florian Bruggisser
+Author-email: github@broox.ch
+License: MIT License
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: python-socketio[client]~=5.12.1
+Provides-Extra: all
+Requires-Dist: flask~=3.0.3; extra == "all"
+Requires-Dist: flask-cors~=5.0.0; extra == "all"
+Requires-Dist: Flask-SocketIO~=5.4.1; extra == "all"
+Requires-Dist: eventlet~=0.39.0; extra == "all"
+Provides-Extra: server
+Requires-Dist: flask~=3.0.3; extra == "server"
+Requires-Dist: flask-cors~=5.0.0; extra == "server"
+Requires-Dist: Flask-SocketIO~=5.4.1; extra == "server"
+Requires-Dist: eventlet~=0.39.0; extra == "server"
+
+# whisp
+Simple websocket based ipc protocol.

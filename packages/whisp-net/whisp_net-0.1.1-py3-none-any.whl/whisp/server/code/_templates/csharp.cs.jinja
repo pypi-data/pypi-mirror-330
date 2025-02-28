@@ -1,0 +1,38 @@
+/* Auto-generated file. Do not edit manually. */
+
+using System;
+using System.Collections.Generic;
+using System.Text.Json.Serialization;
+
+namespace Whisp.Messages
+{
+    {% for enum in enums %}
+    public enum {{ enum.name }}
+    {
+        {% for value in enum.values %}
+        {{ value }}{% if not loop.last %},{% endif %}
+
+        {% endfor %}
+    }
+    {% endfor %}
+
+    {% for msg in document.types %}
+    /// <summary>
+    /// {{ msg.description.default_value }}
+    /// </summary>
+    [Serializable]
+    [WhispMessage(eventName: "{{ msg.event.default_value }}", description: "{{ msg.description.default_value }}")]
+    public class {{ msg.name }} : WhispMessage
+    {
+        {% for field in msg.static_fields %}
+        public static const {{ field.type | csharp_type }} {{ field.name | upper }} = {% if field.default_value is not none %}{{ field.default_value | to_csharp_value }}{% else %}default{% endif %};
+        {% endfor %}
+        {% for field in msg.fields %}
+        [JsonPropertyName("{{ field.name }}")] public {{ field.type | csharp_type }} {{ field.name | csharp_property }} { get; set; } = {% if field.default_value is not none %}{{ field.default_value | to_csharp_value }}{% else %}default{% endif %};
+        {% endfor %}
+    }
+    {% if not loop.last %}
+
+    {% endif %}
+    {% endfor %}
+}

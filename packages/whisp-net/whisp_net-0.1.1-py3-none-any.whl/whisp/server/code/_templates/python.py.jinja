@@ -1,0 +1,25 @@
+# Auto-generated file. Do not edit manually.
+
+from dataclasses import dataclass, field
+from typing import Optional, List
+from enum import Enum
+from whisp.messages.WhispMessage import whisp_message, WhispMessage
+
+{% for enum in enums %}
+class {{ enum.name }}(Enum):
+    {% for value in enum.values %}{{ value }} = {{ loop.index0 }}
+    {% endfor %}
+{% endfor %}
+{% for message in messages %}
+@whisp_message(event="{{ message.event }}", description="{{ message.description }}")
+@dataclass(slots=True)
+class {{ message.name }}(WhispMessage):
+    {%- if message.fields %}
+    {%- for field in message.fields %}
+    {{ field.name }}: {{ field.type }}{% if field.default %} = {{ field.default | to_python_value }}{% endif %}
+    {%- endfor %}
+    {%- else %}
+    pass
+    {%- endif %}
+
+{% endfor %}
