@@ -1,0 +1,20 @@
+Metadata-Version: 2.4
+Name: numworks-jpeg-viewer
+Version: 0.0.3
+Summary: A python jpeg viewer made to run on a Numworks
+Project-URL: Homepage, https://github.com/Coldr0n/numworks-jpeg-viewer
+Project-URL: Issues, https://github.com/Coldr0n/numworks-jpeg-viewer/issues
+Project-URL: Numworks-download, https://my.numworks.com/python/martin-garel-528/jpeg_viewer
+Author-email: Martin Garel <martin.garel.528@gmail.com>
+License-Expression: MIT
+License-File: LICENSE
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.8
+Requires-Dist: kandinsky
+Requires-Dist: pillow
+Description-Content-Type: text/markdown
+
+# Numworks jpeg viewer
+
+See https://github.com/Coldr0n/numworks-jpeg-viewer to have more info on this project and how to use the package.
