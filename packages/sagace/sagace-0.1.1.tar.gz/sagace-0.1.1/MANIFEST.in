@@ -1,0 +1,15 @@
+include README.md
+include LICENSE
+include setup.py
+include requirements.txt
+include pyproject.toml
+include setup.cfg
+recursive-include sagace *.py
+recursive-include sagace/auth *.py
+recursive-include sagace/core *.py
+recursive-include sagace/exceptions *.py
+recursive-include sagace/samples *.py
+recursive-include tests *.py
+recursive-include docs *
+prune docs/_build
+
