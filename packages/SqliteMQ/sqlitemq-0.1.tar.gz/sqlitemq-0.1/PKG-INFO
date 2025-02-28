@@ -1,0 +1,38 @@
+Metadata-Version: 2.2
+Name: SqliteMQ
+Version: 0.1
+Summary: SqliteMQ is a simple Sqlite MQ server:Queue
+Author-email: NelsonLongXiang <1169207670@qq.com>
+Project-URL: Homepage, https://github.com/NelsonLongxiang/SqliteMQ
+Project-URL: Issues, https://github.com/NelsonLongxiang/SqliteMQ/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+SqliteMQ is a simple Sqlite3 MQ queue server
+
+## Installation
+
+```bash
+pip install -i https://pypi.org/simple SqliteMQ
+```
+
+```commandline
+pip install --upgrade -i https://pypi.org/simple SqliteMQ
+```
+
+## Usage
+
+#### 请参考test目录下test.py文件
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
+
+### 作者联系方式
+
+1. 作者邮箱：`1169207670@qq.com`
+2. Wechat: `1169207670`
