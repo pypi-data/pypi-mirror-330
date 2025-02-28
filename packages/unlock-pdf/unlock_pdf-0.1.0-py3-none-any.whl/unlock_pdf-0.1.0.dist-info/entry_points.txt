@@ -1,0 +1,2 @@
+[console_scripts]
+unlock_pdf = unlock_pdf_cli_app.main:main
