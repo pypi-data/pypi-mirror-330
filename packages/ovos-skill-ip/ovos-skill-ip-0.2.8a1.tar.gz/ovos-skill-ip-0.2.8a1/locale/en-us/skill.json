@@ -1,0 +1,20 @@
+{
+  "skill_id": "skill-ovos-ip.openvoiceos",
+  "source": "https://github.com/OpenVoiceOS/skill-ovos-ip",
+  "name": "Device IP Address",
+  "description": "Network connection information",
+  "examples": [
+    "What's your network address?",
+    "What's your IP address?",
+    "Tell me your IP address",
+    "Tell me your network address",
+    "What network are you connected to?"
+  ],
+  "tags": [
+    "IP-address",
+    "IPaddress",
+    "network-address",
+    "network",
+    "system"
+  ]
+}
