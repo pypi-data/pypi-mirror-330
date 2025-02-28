@@ -1,0 +1,11 @@
+exclude ./biz-affordabox-rss-parser-python/.env
+exclude ./biz-affordabox-rss-parser-pythondocker-compose.yaml
+exclude ./biz-affordabox-rss-parser-pythonDockerfile
+exclude ./biz-affordabox-rss-parser-pythonpackage
+exclude ./biz-affordabox-rss-parser-pythonpackage/*
+exclude ./biz-affordabox-rss-parser-pythonlambda_function.py
+exclude ./biz-affordabox-rss-parser-pythonrequirements.txt
+exclude ./biz-affordabox-rss-parser-pythonserver.py
+exclude ./biz-affordabox-rss-parser-pythontest.py
+exclude ./biz-affordabox-rss-parser-pythonvenv
+exclude ./biz-affordabox-rss-parser-pythonvenv/*
