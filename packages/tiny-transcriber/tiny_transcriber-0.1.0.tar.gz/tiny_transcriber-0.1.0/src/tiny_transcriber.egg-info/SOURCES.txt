@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/tiny-transcriber/__init__.py
+src/tiny-transcriber/transcriber.py
+src/tiny_transcriber.egg-info/PKG-INFO
+src/tiny_transcriber.egg-info/SOURCES.txt
+src/tiny_transcriber.egg-info/dependency_links.txt
+src/tiny_transcriber.egg-info/requires.txt
+src/tiny_transcriber.egg-info/top_level.txt
+tests/test_transcriber.py
