@@ -1,0 +1,11 @@
+prefix=/Users/runner/work/cft/cft/_skbuild/macosx-11.0-arm64-3.13/cmake-install
+exec_prefix=/Users/runner/work/cft/cft/_skbuild/macosx-11.0-arm64-3.13/cmake-install
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: fmt
+Description: A modern formatting library
+Version: 11.1.4
+Libs: -L${libdir} -lfmt
+Cflags: -I${includedir}
+
