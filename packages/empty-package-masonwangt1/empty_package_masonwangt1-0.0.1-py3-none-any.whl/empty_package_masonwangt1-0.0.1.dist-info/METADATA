@@ -1,0 +1,16 @@
+Metadata-Version: 2.4
+Name: empty_package_masonwangt1
+Version: 0.0.1
+Summary: A minimal empty package for testing
+Author-email: Your Name <wangchengchao115@gmail.com>
+License-Expression: MIT
+License-File: LICENSE
+Keywords: empty,pypi,test
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+
+# Empty Package
+This is a minimal empty package for testing PyPI upload.
