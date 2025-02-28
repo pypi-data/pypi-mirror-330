@@ -1,0 +1,144 @@
+Metadata-Version: 2.2
+Name: aws_abort
+Version: 0.0.1
+Summary: A lightweight Python package for handling HTTP error status codes by raising a custom exception with detailed, human-friendly messages.
+Home-page: https://bitbucket.org/joetilsed/abort/src
+Author: Joe Tilsed
+Author-email: Joe@Tilsed.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: summary
+
+# AWS Abort
+A lightweight Python package for handling HTTP error status codes by raising a custom exception with detailed, human-friendly messages.
+
+
+## Overview
+The `abort` package simplifies error handling in web applications or any Python project that interacts with HTTP APIs. Instead of manually checking status codes and constructing error messages, `abort` provides a clean interface to raise an `AbortException` with a pre-defined message for common HTTP error status codes. The package also leverages Pythonâ€™s built-in logging module to help you track and debug issues based on error severity.
+
+
+## Features
+- **Custom Exception**: The `AbortException` class encapsulates an HTTP status code and a descriptive error message.
+- **Pre-defined Error Messages**: Built-in messages for common HTTP status codes (400, 401, 403, 404, 405, 409, 415, 424, 429, 500) help clarify what went wrong.
+- **Over-right Default Error Messages**: If you are not a fan of the built-in messages, you can change them with ease!
+- **Integrated Logging**: Automatically logs error details at appropriate logging levels (debug, warning, critical) to facilitate troubleshooting.
+
+
+## Installation
+You can install the package using pip:
+
+```bash
+pip install aws-abort
+```
+
+## Usage
+Import the `abort` function from the package and call it with an HTTP status code and an optional message. This will log the error and raise an `AbortException` with a combined error message.
+
+### Example
+
+```python
+from abort import abort
+
+# Trigger an HTTP 400 Bad Request error
+abort(400, "The submitted data is missing required fields.")
+```
+
+When this code runs, it logs the error at the debug level and raises an `AbortException` with a message like:
+
+```
+"Bad request, check your code is right, required fields entered? The submitted data is missing required fields."
+```
+
+
+## API Reference
+### `AbortException`
+A custom exception for HTTP error status codes.
+
+**Attributes:**
+
+- `status_code` (int): The HTTP status code.
+- `message` (str): A detailed error message combining a base message with additional context.
+
+**Example:**
+
+```python
+from abort import AbortException, abort
+
+try:
+    abort(404, "Lost!")
+except AbortException as e:
+    print(e.status_code)  # 404
+    print(e.message)      # "Not found, we searched, and we searched, but nothing was there... Sorry. Lost!"
+```
+
+
+### `abort(status_code, message="")`
+
+Handles HTTP error status codes by logging the error and raising an `AbortException`.
+
+**Parameters:**
+
+- `status_code` (int): The HTTP status code.
+- `message` (str, optional): Additional context to append to the base error message.
+
+**Raises:**
+
+- `AbortException`: Raised with a detailed message based on the status code.
+
+
+### Update Built-In Messages
+You may not want the default built-in messages, which is fine! You can set them to anything you like!
+
+**Example**
+
+```python
+from abort import AbortException, abort
+
+# Set a different 405 base message
+AbortException.base_405 = "Whatcha doing?!"
+
+try:
+    abort(405, "This is a GET request!")
+except AbortException as e:
+    print(e.status_code)  # 405
+    print(e.message)      # "Whatcha doing?! This is a GET request!"
+```
+
+
+## Logging Configuration
+The package uses Python's `logging` module under the logger name `abort`. You can configure logging in your application to capture these messages:
+
+```python
+import logging
+
+logging.basicConfig(level=logging.DEBUG)
+```
+
+
+## License
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+
+
+## Contributing
+Contributions, issues, and feature requests are welcome!
+
+
+## Contact
+For further inquiries or feedback, feel free to reach out via my [website](https://JoeTilsed.com).
+
+---
+
+With `abort`, handling HTTP errors becomes more structured and maintainable. Enjoy seamless error management in your Python projects!
+
+<br>
+
+###### # That's all folks...
