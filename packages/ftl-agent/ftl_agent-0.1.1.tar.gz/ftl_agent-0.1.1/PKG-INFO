@@ -1,0 +1,8 @@
+Metadata-Version: 2.2
+Name: ftl-agent
+Version: 0.1.1
+License-File: LICENSE
+Requires-Dist: smolagents[litellm]==1.9.2
+Requires-Dist: faster_than_light
+Requires-Dist: gradio
+Requires-Dist: black
