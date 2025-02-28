@@ -1,0 +1,18 @@
+from cryptography.fernet import Fernet
+from loguru import logger
+from pk_encryptor.utils.key_generator import generate_key
+
+
+def decrypt_private_key(encrypted_private_key, password):
+    key = generate_key(password)
+    fernet = Fernet(key)
+    decrypted_private_key = fernet.decrypt(encrypted_private_key)
+    return decrypted_private_key.decode()
+
+
+def read_cex_data(cex_data, password):
+    try:
+        return Fernet(generate_key(password)).decrypt(cex_data).decode('utf-8').split(',')
+    except Exception as e:
+        logger.warning("Can't read encrypted CEX data, trying to read unencrypted")
+        return cex_data
