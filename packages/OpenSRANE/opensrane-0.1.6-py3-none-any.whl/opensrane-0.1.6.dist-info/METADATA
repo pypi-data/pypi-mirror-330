@@ -1,0 +1,41 @@
+Metadata-Version: 2.2
+Name: OpenSRANE
+Version: 0.1.6
+Summary: Open System for Risk Assessment of Natech Events
+Home-page: https://github.com/OpenSRANE/OpenSRANE
+Author: Bijan Sayyafzadeh
+Author-email: <OpenSRANE@Gmail.com>
+Keywords: python,NaTech,Modeling,Risk
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Operating System :: Microsoft :: Windows
+Description-Content-Type: text/markdown
+Requires-Dist: numpy
+Requires-Dist: plotly
+Requires-Dist: scipy
+Requires-Dist: kaleido
+Requires-Dist: tqdm
+Requires-Dist: pandas
+Requires-Dist: ipywidgets
+Requires-Dist: nbformat
+Requires-Dist: ipykernel
+Requires-Dist: matplotlib
+Requires-Dist: requests
+Requires-Dist: anywidget
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: requires-dist
+Dynamic: summary
+
+## OpenSRANE
+
+### Open System for Risk Assessment of Natech Events
+
+Documentation: https://github.com/OpenSRANE/OpenSRANE_Documentation
+
+
