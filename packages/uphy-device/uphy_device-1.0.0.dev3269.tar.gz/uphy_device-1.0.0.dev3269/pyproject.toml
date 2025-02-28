@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools", "wheel", "Cython"]
+
+[project]
+name="uphy-device"
+version="1.0.0.dev3269"
+authors = [
+    {name="RT-Labs", email="support@rt-labs.com"}
+]
+requires-python = ">= 3.10"
+
+license = {file = "LICENSE.txt"}
+readme = "README.md"
+
+dependencies = [
+    "yarl>=1.15.2",
+    "typer>=0.12.5",
+    "rich>=13.9.2",
+    "dearpygui>=2.0.0",
+    "uphy-upgen>=1.0.0",
+    "yarl>=1.12.1",
+    "pyserial>=3.5",
+    "psutil>=6.1.0",
+    "uphy",
+]
+
+[project.urls]
+RT-Labs = "https://rt-labs.com"
+U-Phy = "https://rt-labs.com/u-phy"
+Documentation  = "https://docs.rt-labs.com/u-phy"
+
+[project.scripts]
+uphy-device = "uphy.device.__main__:app"
+
+
+[tool.uv]
+dev-dependencies = [
+    "ruff>=0.6.8",
+]
+
+[tool.uv.sources]
+uphy = { workspace = true }
+
+[project.entry-points.'uphy.cli']
+device = 'uphy.device.__main__:app'
