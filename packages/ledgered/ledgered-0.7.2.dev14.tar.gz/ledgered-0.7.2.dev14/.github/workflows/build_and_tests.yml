@@ -1,0 +1,153 @@
+name: Build, test and deploy Ledgered
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - '*'
+    branches:
+      - master
+      - develop
+  pull_request:
+    branches:
+      - master
+      - develop
+    paths:
+      - 'src/**'
+      - 'tests/**'
+      - .github/workflows/build_and_tests.yml
+
+jobs:
+
+  build_install_test:
+    name: Build, install and test the Ledgered Python package
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python_version: ['3.9', '3.10', '3.11', '3.12', '3.13']
+    steps:
+    - name: Clone
+      uses: actions/checkout@v4
+
+    - name: Setup Python version
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ matrix.python_version }}
+
+    - name: Build & install
+      run: |
+        pip install -U pip
+        pip install -U .[dev]
+
+    - name: Run tests and generate coverage
+      run: pytest -v --tb=short tests/ --cov ledgered --cov-report xml
+
+    - name: Run unit tests and generate coverage
+      run: pytest -v --tb=short tests/unit --cov ledgered --cov-report xml
+
+    - name: Run functional tests and generate coverage
+      run: pytest -v --tb=short tests/functional --cov ledgered --cov-report xml --cov-append --token "${{ secrets.GITHUB_TOKEN }}"
+
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v4
+      with:
+        name: codecov-ledgered
+        token: ${{ secrets.CODECOV_TOKEN }}
+
+
+  package_and_deploy:
+    name: Build and deploy Ledgered Python package
+    runs-on: public-ledgerhq-shared-small
+    needs: [build_install_test]
+    permissions:
+      id-token: write
+      attestations: write
+    steps:
+
+    - name: Clone
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Build Ledgered Python package
+      run: |
+        # Needed to workaround this bug https://github.com/pypa/setuptools/issues/4759
+        # To be removed when it's fixed
+        pip install -U packaging
+        pip install --upgrade pip build twine
+        python -m build
+        pip install .
+        python -m twine check dist/*
+        echo "TAG_VERSION=$(python -c 'from ledgered import __version__; print(__version__)')" >> "$GITHUB_ENV"
+
+    - name: Display current status
+      run: |
+        echo "Current status is:"
+        if [[ ${{ github.ref }} == "refs/tags/"* ]];
+        then
+            echo "- Triggered from tag, package will be a release";
+        else
+            echo "- Not triggered from tag, package will be a pre-release";
+        fi
+        echo "- Tag version: ${{ env.TAG_VERSION }}"
+
+    - name: Check version against CHANGELOG
+      if: startsWith(github.ref, 'refs/tags/')
+      run: |
+        CHANGELOG_VERSION=$(grep -Po '(?<=## \[)(\d+\.)+[^\]]' CHANGELOG.md | head -n 1)
+        if [ "${{ env.TAG_VERSION }}" == "${CHANGELOG_VERSION}" ]; \
+        then \
+            exit 0; \
+        else \
+            echo "Tag '${{ env.TAG_VERSION }}' and CHANGELOG '${CHANGELOG_VERSION}' versions mismatch!"; \
+            exit 1; \
+        fi
+
+    - name: Publish Python package on pypi.org
+      if: success() && github.event_name == 'push'
+      run: python -m twine upload dist/*
+      env:
+        TWINE_USERNAME: __token__
+        TWINE_PASSWORD: ${{ secrets.PYPI_PUBLIC_API_TOKEN  }}
+        TWINE_NON_INTERACTIVE: 1
+
+    - name: Login to Ledger Artifactory
+      if: success() && github.event_name == 'push'
+      timeout-minutes: 10
+      id: jfrog-login
+      uses: LedgerHQ/actions-security/actions/jfrog-login@actions/jfrog-login-1
+
+    - name: Publish Python package on Ledger Artifactory
+      if: success() && github.event_name == 'push'
+      run: python -m twine upload dist/*
+      env:
+        TWINE_REPOSITORY_URL: https://jfrog.ledgerlabs.net/artifactory/api/pypi/embedded-apps-pypi-prod-green
+        TWINE_USERNAME: ${{ steps.jfrog-login.outputs.oidc-user }}
+        TWINE_PASSWORD: ${{ steps.jfrog-login.outputs.oidc-token }}
+        TWINE_NON_INTERACTIVE: 1
+
+    - name: Generate library build attestations
+      if: success() && github.event_name == 'push'
+      timeout-minutes: 10
+      uses: LedgerHQ/actions-security/actions/attest@actions/attest-1
+      with:
+        subject-path: dist/*
+
+    - name: Sign library artifacts
+      if: success() && github.event_name == 'push'
+      timeout-minutes: 10
+      uses: LedgerHQ/actions-security/actions/sign-blob@actions/sign-blob-1
+      with:
+        path: dist
+
+    - name: Publish a release on the repo
+      if: success() && github.event_name == 'push' && startsWith(github.ref, 'refs/tags/')
+      uses: "marvinpinto/action-automatic-releases@latest"
+      with:
+        automatic_release_tag: "v${{ env.TAG_VERSION }}"
+        repo_token: "${{ secrets.GITHUB_TOKEN }}"
+        prerelease: false
+        files: |
+          LICENSE
+          dist/
