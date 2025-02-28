@@ -1,0 +1,263 @@
+CHANGES
+=======
+
+3.3.3
+-----
+
+* ci: update to upload artifact v4
+* ci: build x86\_64 wheels
+* fix(CompressoArray): z-index when np.integer input
+
+3.3.2
+-----
+
+* ci: update build
+* fix(CrackleArray): handle z-index more gracefully when a scalar
+* fix: warning about language level
+
+3.3.1
+-----
+
+* ci: rebuild for numpy 2.0
+
+3.3.0
+-----
+
+* ci: bump cibuildwheel to 2.16.5
+* feat: add \_\_contains\_\_ to CompressoArray
+
+3.2.2
+-----
+
+* build: rmeove cpp file from version control
+* build: switch to dynamically compiling pyx
+* build: add pyproject.toml
+* fix: add binding for top level functions
+* build: update build for py312
+
+3.2.1
+-----
+
+* chore: remove versioning property
+* build: set version
+* chore: update supported python versions
+* build: update build system for py311
+
+3.2.0
+-----
+
+* fix: small edits to docstrings + update build
+* feat: add gzip loading/saving
+
+3.1.0
+-----
+
+* docs: fix comment
+* feat: add save, load, raw\_labels to cython wrapper
+* feat(cli): -i/--info flag prints header info from file
+* build: skip musllinux (no numpy binaries, slow compilation)
+
+3.0.0
+-----
+
+* build: update build process
+* docs: accidently deleted 'z'
+* docs: fix outdated format description
+* build: ensure windows builds in release mode
+* fix: make CompressoArray take more natural slices
+* feat: random z access (#8)
+* fix(cli): filenotfounderror
+
+2.3.2
+-----
+
+* chore: update MANIFEST.in
+* test: protect against rle zero overflow
+* fix: logic error in RLE window encoder
+* fix: calculation for valid stream used bits instead of bytes
+* refactor: use templates to shorten the logic for decompress
+* chore: tighten up whitespace
+
+2.3.1
+-----
+
+* chore: exclude test data files from sdist
+
+2.3.0
+-----
+
+* docs: fix whitespace
+* perf(remap): substantially faster
+* docs: show how to use remap and valid
+* docs: add docstring to remap
+* feat(remap): adds remap without compression
+* refactor: use cython type notation
+
+2.2.0
+-----
+
+* feat: if RLE encode error, automatically recompress as 8,8,1
+
+2.1.0
+-----
+
+* fix: throw error if unable to RLE encode windows
+* fix: catch cpp exceptions in Python
+* feat(cli): adds steps and six flags
+
+2.0.0
+-----
+
+* chore: update changelog
+* docs: note that this implementation is format version 0
+* docs: note that a second stage compressor is needed
+* docs: make CLI example clearer
+* chore: update changelog
+* fix: really add CLI
+* feat: add compresso cli
+* chore: delete obsolete dockerfile
+* chore: update dockerfile with oldest-supported-numpy
+* chore: rename connectomics.cpso.lzma to connectomics.npy.cpso.lzma
+* chore: add sample data to repo
+* chore: compresso.hxx to compresso.hpp and add MANIFEST.in
+* docs: note that any possible input is possible in header
+* docs: name author of modifications
+* chore: skip pypy builds
+* docs: describe the stream format better
+* chore: add github builds
+* fix(encode\_boundaries): ensure 1 is correct type
+* chore: update all runtime\_errors to start with "compresso"
+* fix: ensure that zero locations can never segfault
+* feat: allow nonstandard step sizes
+* fix: incorrect casting of pointers
+* chore(setup.cfg): replace deprecated hyphens
+* docs: describe support for 6 connected
+* feat: support for both 4 and 6 connectivity (4 is default)
+* feat: add connectivity to header
+* refactor(cc3d): change name of main fn to connected\_components
+* perf(decompress): improve decode\_boundary performance
+* docs: change wording slightly
+* docs: description of the algorithm
+* fix: uint8 windows
+* docs: discuss implementation changes
+* docs: save edits needed to experiment with 6-way ccl
+* docs: update readme
+* fix: use new interface to cc3d
+* fix(cc3d): add back in optimizations
+* chore: update year
+* chore: update license for cc3d.hpp to LGPLv3
+* docs: compresson performance in docs
+* fix: add figure back in to docs
+* docs: describe modifications to the protocol
+* fix: support window8 in cpp
+* test: add tests for steps
+* fix: start to support uint32 windows
+* test: check black arrays
+* test: ensure compresso.labels matches actual unique labels
+* chore: update appveyor
+* fix: magic should be cpso not cpso\0
+* test: make sure maximum values are handled
+* feat: add more tests
+* fix: handle zero length arrays
+* fix(cc3d): can't use optimizations with start\_label
+* docs: add comments
+* feat: add python methods for inspecting the raw stream
+* perf: vectorize decoding of ccids
+* chore: whitespace
+* fix: prevent amplification of start label
+* fix(cc3d): start label was not assigned correctly
+* fix: better error messages for decoding locations
+* fix: incorrect nx and ny
+* fix: add check for zero step size
+* fix: more rounding errors for nx,ny,nz
+* fix: bug in boundary decoding
+* fix: bug with rounding nblocks up
+* fix: memory leak
+* fix: ensure labels handles 0 properly
+* fix(labels): use new decoding protocol for locations
+* fix: able to encode last 6 units for indeterminate locations
+* docs: fix error in docstring
+* feat: add functions for reading labels and dtypes from compressed stream
+* docs: add a header
+* fix: lots of cleanup
+* fix(cc3d): start\_label required some finessing
+* fix: make sure output pointer is mapped to right data type
+* fix: cc3d needs to offset start label as well in relabel
+* fix: bug in rle compression
+* fix: skipping first values for uniform arrays
+* fix(cc3d): need to have a new offset label for each z level
+* perf: specialization for uint16\_t window renumber
+* wip: trying to figure out decoding error
+* fix: compiles!
+* fix: forgot to decode RLE
+* feat: add decompression
+* feat: support uint16 for 4x4x1
+* refactor: cc3d switched to use black as on
+* perf: maybe faster unique
+* fix: some cleanup
+* refactor: move stream writing into a function
+* fix: some encoding errors
+* feat: read header function
+* fix: bounds check was in the wrong direction
+* wip: overhauling the code
+* fix: wrong order of arguments
+* fix: try to match the 2d slice processing of original connected components
+* fix: memory errors
+* wip: attempting to fix ordering
+* test: add order test
+* fix: unsigned long -> uint64\_t
+* chore: no support for 32-bit windows
+* chore: update build system
+* docs: place note on unofficialness in a more attractive location
+* docs: remove inapplicable section on running experiments
+* docs: add example, badge, and update requirements
+* chore: a few changes for the 1.0 release
+
+1.0.0
+-----
+
+* docs: update docstring for compress/decompress + reference
+* test: add size restriction
+* test: add reconstitution test
+* chore: add Dockerfile for manylinux distribution
+* Revert "perf: ~1/3 faster connected components algorithm"
+* refactor: remove redundant array inititalizations
+* perf: ~1/3 faster connected components algorithm
+* fix: used the right implementation of compresso (from experiments)
+* chore: update gitignore
+* refactor: setup such that it is packageable
+* Fixed installation instructions
+* Updated requirements.txt to work with conda
+* README: fixed formatting
+* Removed wrong instructions
+* README: added datasets
+* Updated README
+* Removed old compression location
+* requirements.txt: moved to conda environment
+* experiments: updated all files to work with new framework
+* .gitignore: ignore temp cython files
+* .gitignore: ignore the results folder
+* compression: removed failed methods
+* compression: removed old files
+* README: fixed formatting
+* README: updated instructions
+* \_LEGACY: removed old outdated experiments
+* Mention paper explicitly
+* Minimize
+* Update results
+* Update name
+* Add link to paper
+* Update name
+* Update name
+* Add plotting script
+* Fix failure when using lowercase names
+* Add missing no-compression class
+* Sanity assertion runs only once
+* Added experiment runner. Fixed a bug. Updated README
+* Set to root path
+* Update to latest banner
+* Add logo
+* Update references visually
+* Update figure composition to save space
+* Bockwurst encoding and experiments
+* Initial commit
