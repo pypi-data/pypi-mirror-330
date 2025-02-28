@@ -1,0 +1,28 @@
+[root]
+depends_on = ["api", "//module5"]
+layer = "mid"
+
+[[modules]]
+path = "*"
+depends_on = []
+layer = "hightest"
+
+[[modules]]
+path = "api"
+depends_on = ["**"]
+layer = "mid"
+
+[[modules]]
+path = "submodule1"
+depends_on = []
+layer = "mid"
+
+[[modules]]
+path = "submodule2"
+depends_on = []
+layer = "mid"
+
+[[modules]]
+path = "submodule3"
+depends_on = []
+layer = "mid"
