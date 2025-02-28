@@ -1,0 +1,5 @@
+[console_scripts]
+mitoanalyzer = mitosisanalyzer.analysis:main
+
+[gui_scripts]
+mitoanalyzer = mitosisanalyzer.analysis:main
