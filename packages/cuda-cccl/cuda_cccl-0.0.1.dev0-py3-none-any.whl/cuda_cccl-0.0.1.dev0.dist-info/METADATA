@@ -1,0 +1,24 @@
+Metadata-Version: 2.2
+Name: cuda-cccl
+Version: 0.0.1.dev0
+Summary: cuda-cccl: (experimental) CUDA C++ Core Compute Libraries
+Author: NVIDIA Corporation
+Project-URL: homepage, https://nvidia.github.io/cccl/
+Project-URL: documentation, https://nvidia.github.io/cccl/
+Project-URL: repository, https://github.com/NVIDIA/cccl/tree/main/python
+Project-URL: issues, https://github.com/NVIDIA/cccl/issues
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: Natural Language :: English
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Topic :: Education
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Environment :: GPU :: NVIDIA CUDA
+Classifier: License :: OSI Approved :: Apache Software License
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
