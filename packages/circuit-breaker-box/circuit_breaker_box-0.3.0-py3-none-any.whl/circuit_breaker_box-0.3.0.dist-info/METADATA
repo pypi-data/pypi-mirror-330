@@ -1,0 +1,48 @@
+Metadata-Version: 2.4
+Name: circuit-breaker-box
+Version: 0.3.0
+Summary: Implementations of the Circuit Breaker
+Project-URL: Repository, https://github.com/community-of-python/circuit-breaker-box
+Project-URL: Issues, https://github.com/community-of-python/circuit-breaker-box/issues
+Project-URL: Changelogs, https://github.com/community-of-python/circuit-breaker-box/releases
+Author: community-of-python
+Keywords: python
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Typing :: Typed
+Requires-Python: <4,>=3.10
+Requires-Dist: cachetools
+Requires-Dist: httpx
+Requires-Dist: tenacity
+Provides-Extra: redis
+Requires-Dist: redis; extra == 'redis'
+Description-Content-Type: text/markdown
+
+# Python Circuit Breaker Box
+
+A Python implementation of the Circuit Breaker pattern.
+
+## Features
+
+- 🚀 Implementations:
+  - **Redis-based**
+  - **In-memory**
+- [![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=FFD43B)](https://python.org) 3.10-3.13 support.
+- ⚡ Asynchronous API
+- 🔧 Configurable parameters
+- 🔄 Retries by [tenacity](https://tenacity.readthedocs.io/en/latest/)
+- 🛠️ FastAPI integration through custom exceptions
+
+## Installation
+```bash
+pip install circuit-breaker-box
+```
+
+## Usage
+See -> [Examples](examples/)
+
+## Development
+### Commands
+Use -> [Justfile](Justfile)

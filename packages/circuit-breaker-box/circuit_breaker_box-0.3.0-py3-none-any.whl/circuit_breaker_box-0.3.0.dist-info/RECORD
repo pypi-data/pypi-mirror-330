@@ -1,0 +1,11 @@
+circuit_breaker_box/__init__.py,sha256=Y-JtwU6aXH0xi-FCc33mhNncb0N936rtecneAGwV-jQ,611
+circuit_breaker_box/circuit_breaker_base.py,sha256=m9EB4zrfP8xdVVdczTu-51_ezFYSLbwkTb-y1Xn-7_8,481
+circuit_breaker_box/circuit_breaker_in_memory.py,sha256=YvILh6z70oAd1Y3vYDWRKtcsHTspgrEYsUq9x0sL3Eg,1728
+circuit_breaker_box/circuit_breaker_redis.py,sha256=OAJeGu9AE0Gad8k34eBSVCRUW-CGbl7ezeYrC047AV0,2344
+circuit_breaker_box/common_types.py,sha256=HVflr2DroO8PiLGN-Z9XBFcadmMFIkJ13yE-x12wSTA,1073
+circuit_breaker_box/errors.py,sha256=S-UcikW9SWMHswCyuEd2uZ_zVeKa0U1-k-Lbn7GfkeY,221
+circuit_breaker_box/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+circuit_breaker_box/retryer.py,sha256=Xxxkf03olHknc7QnUjamDlZQjKho7oJfo13J3OmrI_s,1904
+circuit_breaker_box-0.3.0.dist-info/METADATA,sha256=ywR4xDqCHOJQ1iTEAyF2D5i8dix52NGtFvfuL2o38tQ,1500
+circuit_breaker_box-0.3.0.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+circuit_breaker_box-0.3.0.dist-info/RECORD,,
