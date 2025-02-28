@@ -1,0 +1,144 @@
+{
+  "checkout_url": [
+    "https://VeePeeN.net/buy"
+  ],
+  "contact_url": [
+    "https://veepeen.net/docs/contact"
+  ],
+  "official_url": [
+    "https://VeePeeN.net",
+    "https://VeePeeN.xyz",
+    "https://VeePeeN.org"
+  ],
+  "version": {
+    "current": "25.02.08",
+    "min": "25.01.03"
+  },
+  "prices": {
+    "usePurchaseInAPP": true,
+    "zh_CN": [
+      {
+        "tab": "套餐",
+        "item": [
+          {
+            "name": "30天 | 100GB | 免费试用",
+            "data1": "新用户试用",
+            "data2": "30 天 | 100 GB",
+            "price": "0 RMB",
+            "payPrice": 0,
+            "id": 0
+          },
+          {
+            "name": "六个月 | 1200GB | 57RMB",
+            "data1": "1200 GB",
+            "data2": "六个月后过期 | 平均 9 块每月",
+            "price": "60 RMB",
+            "payPrice": 60,
+            "id": 96
+          },
+          {
+            "name": "三个月 | 600GB | 32RMB",
+            "data1": "600 GB",
+            "data2": "三个月后过期 | 平均 10 块每月",
+            "price": "30 RMB",
+            "payPrice": 30,
+            "id": 54
+          },
+          {
+            "name": "一个月 | 200GB | 12RMB",
+            "data1": "200 GB",
+            "data2": "一个月后过期 | 平均 12 块每月",
+            "price": "12 RMB",
+            "payPrice": 12,
+            "id": 20
+          }
+        ]
+      },
+      {
+        "tab": "流量包",
+        "item": [
+          {
+            "name": "永不过期 | 1000GB | 60RMB",
+            "data1": "0.06/GB",
+            "data2": "永不过期 1000GB",
+            "price": "60 RMB",
+            "payPrice": 60,
+            "id": 100
+          },
+          {
+            "name": "永不过期 | 100GB | 9RMB",
+            "data1": "0.09/GB",
+            "data2": "永不过期 100GB",
+            "price": "9 RMB",
+            "payPrice": 9,
+            "id": 16
+          }
+        ]
+      },
+      {
+        "tab": "定制",
+        "item": [
+          {
+            "name": "直播运营",
+            "data1": "直播运营",
+            "data2": "稳定赚大钱",
+            "price": "联系客服",
+            "id": 1
+          },
+          {
+            "name": "游戏专用",
+            "data1": "游戏专用",
+            "data2": "内部专线",
+            "price": "联系客服",
+            "id": 1
+          },
+          {
+            "name": "回国线路",
+            "data1": "回国线路",
+            "data2": "智能分流",
+            "price": "联系客服",
+            "id": 1
+          },
+          {
+            "name": "网络组网",
+            "data1": "网络组网",
+            "data2": "工程师在线支持",
+            "price": "联系客服",
+            "id": 1
+          }
+        ]
+      }
+    ],
+    "en_US": [
+      {
+        "tab": "Plan",
+        "item": [
+          {
+            "name": "6 Months - 1200GB - 16.99 USD",
+            "data1": "1200 GB",
+            "data2": "Expires in 6 months - $2.88/month",
+            "price": "16.99 USD",
+            "payPrice": 60,
+            "id": 96
+          },
+          {
+            "name": "3 Months - 600GB - 9.99 USD",
+            "data1": "600 GB",
+            "data2": "Expires in 3 months - $3.33/month",
+            "price": "9.99 USD",
+            "payPrice": 30,
+            "id": 54
+          },
+          {
+            "name": "1 Months - 200GB - 3.99 USD",
+            "data1": "200 GB",
+            "data2": "Expires in 3 months - $3.99/month",
+            "price": "3.99 USD",
+            "payPrice": 12,
+            "id": 20
+          }
+        ]
+      }
+    ]
+  }
+}
