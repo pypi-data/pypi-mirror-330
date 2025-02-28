@@ -1,0 +1,9 @@
+Metadata-Version: 2.2
+Name: foundry_db
+Version: 0.1.5
+Requires-Dist: psycopg2-binary~=2.9.1
+Requires-Dist: pandas>=1.5.0
+Requires-Dist: numpy>=1.21.0
+Requires-Dist: tqdm~=4.67.1
+Requires-Dist: kedro~=0.19.9
+Dynamic: requires-dist
