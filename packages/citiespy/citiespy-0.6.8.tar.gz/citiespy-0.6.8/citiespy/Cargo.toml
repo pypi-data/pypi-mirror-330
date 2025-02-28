@@ -1,0 +1,15 @@
+[package]
+name = "citiespy"
+version = "0.6.8"
+edition = "2021"
+license = "Unlicense"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+name = "citiespy"
+crate-type = ["cdylib"]
+
+[dependencies]
+pyo3 = {version = "0.23.4", features = ["extension-module", "abi3-py39"]}
+cities-json = { path = "../" }
