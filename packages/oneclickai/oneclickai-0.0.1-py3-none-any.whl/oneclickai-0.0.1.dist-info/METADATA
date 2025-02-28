@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: oneclickai
+Version: 0.0.1
+Summary: OneclickAI package for learnig AI with python
+Home-page: https://oneclickai.co.kr
+Author: Seung Oh
+Author-email: osy044@naver.com
+Keywords: oneclick,clickai,learning ai,ai model,ai,ai package,oneclickai,oneclickai package
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Requires-Python: >=3.9
+License-File: LICENSE
+Requires-Dist: tensorflow==2.11
+Requires-Dist: ultralytics==8.3.28
+Requires-Dist: opencv-python==4.10.0.84
+
