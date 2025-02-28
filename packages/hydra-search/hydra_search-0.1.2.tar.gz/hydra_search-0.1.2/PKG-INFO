@@ -1,0 +1,44 @@
+Metadata-Version: 2.2
+Name: hydra-search
+Version: 0.1.2
+Summary: An advanced pathfinding algorithm inspired by the Hydra mechanism.
+Home-page: https://github.com/abhshkpandey/hydra-search
+Author: Abhishek Pandey
+Author-email: abhshkpandey01@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy
+Requires-Dist: torch
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# Hydra Search
+
+Hydra Search is an advanced pathfinding algorithm inspired by the Hydra mechanism.
+
+## Installation
+
+```sh
+pip install hydra-search
+```
+
+## Usage
+
+```python
+from hydra_search import HydraSearch
+
+hsa = HydraSearch(search_space_size=100, num_searchers=10, parallel_mode='cpu')
+best_section = hsa.run(iterations=10)
+print("Best Section:", best_section)
+```
