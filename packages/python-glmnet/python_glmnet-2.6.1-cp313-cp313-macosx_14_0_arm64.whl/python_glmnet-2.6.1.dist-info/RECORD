@@ -1,0 +1,14 @@
+python_glmnet-2.6.1.dist-info/RECORD,,
+python_glmnet-2.6.1.dist-info/WHEEL,sha256=Z6suL4LoFGKsAj0u-1H2KPWIAj9PBf-rOSI4euKUzl8,93
+python_glmnet-2.6.1.dist-info/METADATA,sha256=W5jahRo7rcDodiBKFOJtEt6dIEDhU05zU1kpdrporcI,4443
+glmnet/_glmnet.cpython-313-darwin.so,sha256=2IMbBA-ryXgmnXgXNFT_nupiajzEwbcP1eCVQFDNREI,342896
+glmnet/util.py,sha256=Lou17h9K_EdtRMOxzNlUowN1X2-LNBmPdphP4d2uPq8,7082
+glmnet/logistic.py,sha256=jH41x4YllCF9RY9UyUfKHqVY64gDSNbt6NcZoFFytjk,23544
+glmnet/linear.py,sha256=iLp8nTt_7dWjovRSnpbZN7OCJZmQjyX38_OUxqBRa1o,17261
+glmnet/__init__.py,sha256=brUZqZ-FsWCXmawhh_ckeudik8fOhyZJvSLB7l_vL7c,186
+glmnet/doc.py,sha256=pcGuWqNOrmgz0DNbdahBnpg6Zir-70UVZfhIXaK7TPI,11502
+glmnet/errors.py,sha256=y3bJjZMc6fz4xjqzNdnEFAKHTBH_6APQFB6M063LFsA,2262
+glmnet/scorer.py,sha256=swJ52Wtvx2B3IKVdrq7eZMWWZNn7had3W9F2-fl72EA,12320
+glmnet/.dylibs/libgfortran.5.dylib,sha256=AuoElNfihGrcaDuxu4oAiPu3xkl-WZgQzTy20e0KuuE,1947952
+glmnet/.dylibs/libquadmath.0.dylib,sha256=fA82fKe1kXlj-mZHw8rJOt3P9xMliiCzuE4sT6VZYOQ,362752
+glmnet/.dylibs/libgcc_s.1.1.dylib,sha256=RxJkDgvi1fA9oJFcHrLZBntuXjm7j6_fPnlulfrAjHY,220512
