@@ -1,0 +1,15 @@
+MANIFEST.in
+VERSION
+setup.py
+canonical.ext.http.egg-info/PKG-INFO
+canonical.ext.http.egg-info/SOURCES.txt
+canonical.ext.http.egg-info/dependency_links.txt
+canonical.ext.http.egg-info/requires.txt
+canonical.ext.http.egg-info/top_level.txt
+canonical/ext/http/__init__.py
+canonical/ext/http/_asyncclient.py
+canonical/ext/http/_asyncclientparams.py
+canonical/ext/http/_asyncrequestparams.py
+canonical/ext/http/_bearertokenauth.py
+canonical/ext/http/_response.py
+canonical/ext/http/package.json
