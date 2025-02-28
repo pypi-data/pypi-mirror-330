@@ -1,0 +1,6 @@
+mlpype-base==0.6.6
+pyspark>=3.4.0
+
+[strict]
+mlpype-base==0.6.6
+pyspark==3.4.0
