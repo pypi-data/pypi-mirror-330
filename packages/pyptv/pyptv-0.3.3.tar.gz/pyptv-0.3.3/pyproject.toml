@@ -1,0 +1,52 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pyptv"
+version = "0.3.3"
+description = "Python GUI for the OpenPTV library `liboptv`"
+authors = [
+    { name = "Alex Liberzon", email = "alex.liberzon@gmail.com" }
+]
+readme = "README.md"
+requires-python = ">=3.8"
+keywords = ["pyptv"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent"
+]
+dependencies = [
+    "chaco",
+    "enable",
+    "optv",
+    "PySide6",
+    "scikit-image",
+    "Pygments",
+    "six",
+    "imagecodecs",
+    "flowtracks",
+    "pandas",
+    "tables",
+    "pyparsing",
+    "tqdm",
+    "matplotlib",
+    "scipy"
+]
+
+[project.urls]
+"Homepage" = "https://github.com/alexlib/pyptv"
+
+[project.scripts]
+pyptv = "pyptv.pyptv_gui:main"
+
+[tool.black]
+line-length = 88
+target-version = ['py37']
+include = '\.pyi?$'
+extend-exclude = '''
+# A regex preceded with ^/ will apply only to files and directories
+# in the root of the project.
+^/foo.py  # exclude a file named foo.py in the root of the project (in addition to the defaults)
+'''
