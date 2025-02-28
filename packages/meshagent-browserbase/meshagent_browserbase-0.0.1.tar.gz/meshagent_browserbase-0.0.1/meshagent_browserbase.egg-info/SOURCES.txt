@@ -1,0 +1,12 @@
+MANIFEST.in
+README.md
+pyproject.toml
+setup.py
+version.py
+meshagent/browserbase/agents/__init__.py
+meshagent/browserbase/agents/browserbase.py
+meshagent_browserbase.egg-info/PKG-INFO
+meshagent_browserbase.egg-info/SOURCES.txt
+meshagent_browserbase.egg-info/dependency_links.txt
+meshagent_browserbase.egg-info/requires.txt
+meshagent_browserbase.egg-info/top_level.txt
