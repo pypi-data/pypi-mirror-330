@@ -1,0 +1,32 @@
+Metadata-Version: 2.3
+Name: pandasai-langchain
+Version: 0.1.5
+Summary: Langchain integration for PandaAI
+License: MIT
+Author: Gabriele Venturi
+Requires-Python: >=3.8.1,<3.12
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: langchain (>=0.1.0,<0.2.0)
+Requires-Dist: langchain-community (>=0.0.38,<0.0.39)
+Requires-Dist: langchain-openai (>=0.1.0,<0.2.0)
+Requires-Dist: pandasai (>=3.0.0b4)
+Project-URL: Documentation, https://docs.getpanda.ai/
+Project-URL: Repository, https://github.com/sinaptik-ai/pandas-ai
+Description-Content-Type: text/markdown
+
+# LangChain LLMs Extension for PandaAI
+
+This extension integrates LangChain LLMs with PandaAI, providing LangChain LLMs support.
+
+## Installation
+
+You can install this extension using poetry:
+
+```bash
+poetry add pandasai-langchain
+```
+
