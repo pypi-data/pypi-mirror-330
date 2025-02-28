@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: tinyrange
+Version: 0.1.1
+Summary: TinyRange: Next-generation Virtualization for Cyber and beyond
+License: Apache-2.0
+Author: Joshua Scarsbrook
+Author-email: jscarsbrook@gmail.com
+Requires-Python: >=3.10,<4.0
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: tinyrange-sys (==0.2.7.post0)
+Description-Content-Type: text/markdown
+
+# TinyRange Python Bindings
