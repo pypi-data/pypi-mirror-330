@@ -1,0 +1,16 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+akin/__init__.py
+akin/_data_structures.py
+akin/lsh.py
+akin/minhash.py
+akin.egg-info/PKG-INFO
+akin.egg-info/SOURCES.txt
+akin.egg-info/dependency_links.txt
+akin.egg-info/requires.txt
+akin.egg-info/top_level.txt
+tests/test_data_structures.py
+tests/test_lsh.py
+tests/test_minhash.py
