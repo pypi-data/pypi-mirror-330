@@ -1,0 +1,12 @@
+---
+- hosts: web_servers
+  become: true
+  gather_facts: true
+  tasks:
+    - include_role:
+        name: "{{ item }}"
+      loop:
+        - apt
+        - php
+        - composer
+        - fail2ban
