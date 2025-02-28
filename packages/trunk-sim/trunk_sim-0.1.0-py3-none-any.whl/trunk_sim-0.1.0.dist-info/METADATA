@@ -1,0 +1,48 @@
+Metadata-Version: 2.4
+Name: trunk-sim
+Version: 0.1.0
+Summary: ASL Trunk simulator
+License-File: LICENSE
+Keywords: robotics,simulator,trunk
+Requires-Python: >=3.12
+Requires-Dist: matplotlib>=3.10.0
+Requires-Dist: mediapy>=1.2.2
+Requires-Dist: mujoco>=3.2.7
+Requires-Dist: numpy>=2.2.3
+Requires-Dist: pandas>=2.2.3
+Requires-Dist: torch>=2.6.0
+Requires-Dist: tqdm>=4.67.1
+Description-Content-Type: text/markdown
+
+# trunk-sim
+
+The ASL Trunk simulator is a tool designed to simulate the dynamics of a trunk system. It provides functionalities to generate, manipulate, and visualize trunk models, as well as to run simulations and analyze the results based on a user-defined control policy.
+
+## Features
+
+- Generate trunk models with different properties
+- Add and manipulate simulation data
+- Create PyTorch datasets for machine learning
+- Visualize and evaluate policies in simulation
+
+## Usage
+
+### Generating Data
+
+To generate simulation data, run:
+
+```bash
+uv run scripts/generate_data.py --render_video
+```
+
+### Running Tests
+
+Run tests with:
+
+```bash
+pytest
+```
+
+## Acknowledgements
+
+This project is developed and maintained by the ASL team at Stanford University.
