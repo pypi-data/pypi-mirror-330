@@ -1,0 +1,16 @@
+LICENSE
+MANIFEST.in
+README.md
+requirements.txt
+setup.py
+libs/stringvector.cc
+libs/texterrors_align.cc
+tests/test_functions.py
+texterrors/__init__.py
+texterrors/texterrors.py
+texterrors.egg-info/PKG-INFO
+texterrors.egg-info/SOURCES.txt
+texterrors.egg-info/dependency_links.txt
+texterrors.egg-info/entry_points.txt
+texterrors.egg-info/requires.txt
+texterrors.egg-info/top_level.txt
