@@ -1,0 +1,7 @@
+Metadata-Version: 2.1
+Name: Weather-API-MASI
+Version: 0.2
+Requires-Dist: requests>=2.31.0
+Requires-Dist: selenium>=4.28.1
+Requires-Dist: geopy>=2.4.1
+
