@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: ovos-skill-cmd
+Version: 0.2.10a2
+Summary: CmdSkill
+Home-page: https://github.com/OpenVoiceOS/ovos-skill-cmd
+Author: forslund
+Author-email: 
+License: Apache2.0
+Keywords: ovos skill plugin
+License-File: LICENSE.txt
+Requires-Dist: ovos-workshop<4.0.0,>=0.0.15
+
