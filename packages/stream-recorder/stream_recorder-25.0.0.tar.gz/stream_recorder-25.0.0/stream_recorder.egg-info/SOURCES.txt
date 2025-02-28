@@ -1,0 +1,15 @@
+pyproject.toml
+readme.md
+stream_recorder/__main__.py
+stream_recorder.egg-info/PKG-INFO
+stream_recorder.egg-info/SOURCES.txt
+stream_recorder.egg-info/dependency_links.txt
+stream_recorder.egg-info/requires.txt
+stream_recorder.egg-info/top_level.txt
+stream_recorder/checker/channels.py
+stream_recorder/checker/etc.py
+stream_recorder/checker/main.py
+stream_recorder/checker/timeout.py
+stream_recorder/core/common.py
+stream_recorder/core/config.py
+stream_recorder/recorder/recorder.py
