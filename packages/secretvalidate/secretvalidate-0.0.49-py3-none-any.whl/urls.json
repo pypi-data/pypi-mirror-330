@@ -1,0 +1,15 @@
+{
+    "discord_bot_token":"https://discord.com/api/v10/users/@me",
+    "github_personal_access_token":"https://api.github.com/user",
+    "hf_user_access_token": "https://huggingface.co/api/whoami-v2",
+    "launchdarkly_access_token": "https://app.launchdarkly.com/api/v2/caller-identity",
+    "microsoft_azure_entra_id_token": "https://login.microsoftonline.com/common/.well-known/openid-configuration",
+    "new_relic_license_key": ["https://log-api.newrelic.com/log/v1", "https://log-api.eu.newrelic.com/log/v1"],
+    "npm_access_token": "https://registry.npmjs.org/-/npm/v1/user",
+    "openai_api_key":"https://api.openai.com/v1/organizations",
+    "pagerduty_api_key": "https://api.pagerduty.com/users",
+    "sentry_auth_token": "https://sentry.io/api/0/",
+    "slack_api_token":"https://slack.com/api/auth.test?pretty=1",
+    "snykkey": "https://snyk.io/api/v1/user",
+    "sonarcloud_token": "https://sonarcloud.io/api/users/current"
+}
