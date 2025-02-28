@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lead_md"
+version = "1.1.1"
+description = "Renders markdown to the terminal using producesyntaxed"
+readme = "README.md"
+authors = [{ name = "Pittab", email = "Pittab.0001@gmail.com" }]
+license = { file = "LICENCE" }
+dependencies = [
+    "producesyntaxed",
+]
