@@ -1,0 +1,2 @@
+[console_scripts]
+promptgraph = promptgraphtools.__main__:main
