@@ -1,0 +1,18 @@
+[project]
+name = "rds-utils"
+version = "0.1.0"
+description = "A simple utility library providing helper functions for RDS"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "boto3>=1.36.12",
+]
+
+[project.urls]
+Homepage = "https://github.com/soapergem/rds-utils"
+Repository = "https://github.com/soapergem/rds-utils"
+Issues = "https://github.com/soapergem/rds-utils/issues"
+
+[tool.uv]
+# publish-url = "https://gemovationlabs-602436928406.d.codeartifact.us-east-1.amazonaws.com/pypi/artifacts/"
+publish-url = "https://upload.pypi.org/legacy/"
