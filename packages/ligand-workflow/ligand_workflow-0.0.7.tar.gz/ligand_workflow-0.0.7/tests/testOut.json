@@ -1,0 +1,646 @@
+[
+    {
+        "pdb_file": "6GZR.1-10_09.pdb",
+        "contacts": [
+            {
+                "model1": "6GZR.1-10_09",
+                "atom1": 785,
+                "coord1": [
+                    19.78,
+                    2.151,
+                    6.446
+                ],
+                "model2": "6GZR.1-10_09",
+                "atom2": 1551,
+                "coord2": [
+                    18.238,
+                    1.404,
+                    4.299
+                ],
+                "calculated_distance": 2.747,
+                "original_distance": 2.747
+            },
+            {
+                "model1": "6GZR.1-10_09",
+                "atom1": 787,
+                "coord1": [
+                    20.643,
+                    0.423,
+                    5.186
+                ],
+                "model2": "6GZR.1-10_09",
+                "atom2": 1551,
+                "coord2": [
+                    18.238,
+                    1.404,
+                    4.299
+                ],
+                "calculated_distance": 2.745,
+                "original_distance": 2.745
+            },
+            {
+                "model1": "6GZR.1-10_09",
+                "atom1": 1271,
+                "coord1": [
+                    17.308,
+                    3.818,
+                    5.241
+                ],
+                "model2": "6GZR.1-10_09",
+                "atom2": 1551,
+                "coord2": [
+                    18.238,
+                    1.404,
+                    4.299
+                ],
+                "calculated_distance": 2.753,
+                "original_distance": 2.753
+            }
+        ]
+    },
+    {
+        "pdb_file": "6GZR.1-10_08.pdb",
+        "contacts": [
+            {
+                "model1": "6GZR.1-10_08",
+                "atom1": 785,
+                "coord1": [
+                    19.623,
+                    2.207,
+                    6.621
+                ],
+                "model2": "6GZR.1-10_08",
+                "atom2": 1551,
+                "coord2": [
+                    18.226,
+                    1.409,
+                    4.269
+                ],
+                "calculated_distance": 2.85,
+                "original_distance": 2.85
+            },
+            {
+                "model1": "6GZR.1-10_08",
+                "atom1": 787,
+                "coord1": [
+                    20.393,
+                    0.322,
+                    5.542
+                ],
+                "model2": "6GZR.1-10_08",
+                "atom2": 1551,
+                "coord2": [
+                    18.226,
+                    1.409,
+                    4.269
+                ],
+                "calculated_distance": 2.738,
+                "original_distance": 2.738
+            },
+            {
+                "model1": "6GZR.1-10_08",
+                "atom1": 1271,
+                "coord1": [
+                    17.257,
+                    3.798,
+                    5.272
+                ],
+                "model2": "6GZR.1-10_08",
+                "atom2": 1551,
+                "coord2": [
+                    18.226,
+                    1.409,
+                    4.269
+                ],
+                "calculated_distance": 2.766,
+                "original_distance": 2.766
+            }
+        ]
+    },
+    {
+        "pdb_file": "6GZR.1-10_06.pdb",
+        "contacts": [
+            {
+                "model1": "6GZR.1-10_06",
+                "atom1": 785,
+                "coord1": [
+                    19.699,
+                    2.367,
+                    6.505
+                ],
+                "model2": "6GZR.1-10_06",
+                "atom2": 1551,
+                "coord2": [
+                    18.242,
+                    1.4,
+                    4.278
+                ],
+                "calculated_distance": 2.832,
+                "original_distance": 2.832
+            },
+            {
+                "model1": "6GZR.1-10_06",
+                "atom1": 787,
+                "coord1": [
+                    20.55,
+                    0.508,
+                    5.441
+                ],
+                "model2": "6GZR.1-10_06",
+                "atom2": 1551,
+                "coord2": [
+                    18.242,
+                    1.4,
+                    4.278
+                ],
+                "calculated_distance": 2.734,
+                "original_distance": 2.734
+            },
+            {
+                "model1": "6GZR.1-10_06",
+                "atom1": 1271,
+                "coord1": [
+                    17.209,
+                    3.789,
+                    5.214
+                ],
+                "model2": "6GZR.1-10_06",
+                "atom2": 1551,
+                "coord2": [
+                    18.242,
+                    1.4,
+                    4.278
+                ],
+                "calculated_distance": 2.766,
+                "original_distance": 2.766
+            }
+        ]
+    },
+    {
+        "pdb_file": "6GZR.1-10_07.pdb",
+        "contacts": [
+            {
+                "model1": "6GZR.1-10_07",
+                "atom1": 785,
+                "coord1": [
+                    19.669,
+                    2.312,
+                    6.541
+                ],
+                "model2": "6GZR.1-10_07",
+                "atom2": 1551,
+                "coord2": [
+                    18.197,
+                    1.425,
+                    4.315
+                ],
+                "calculated_distance": 2.812,
+                "original_distance": 2.812
+            },
+            {
+                "model1": "6GZR.1-10_07",
+                "atom1": 787,
+                "coord1": [
+                    20.506,
+                    0.47,
+                    5.438
+                ],
+                "model2": "6GZR.1-10_07",
+                "atom2": 1551,
+                "coord2": [
+                    18.197,
+                    1.425,
+                    4.315
+                ],
+                "calculated_distance": 2.739,
+                "original_distance": 2.739
+            },
+            {
+                "model1": "6GZR.1-10_07",
+                "atom1": 1271,
+                "coord1": [
+                    17.21,
+                    3.816,
+                    5.245
+                ],
+                "model2": "6GZR.1-10_07",
+                "atom2": 1551,
+                "coord2": [
+                    18.197,
+                    1.425,
+                    4.315
+                ],
+                "calculated_distance": 2.749,
+                "original_distance": 2.749
+            }
+        ]
+    },
+    {
+        "pdb_file": "6GZR.1-10_05.pdb",
+        "contacts": [
+            {
+                "model1": "6GZR.1-10_05",
+                "atom1": 785,
+                "coord1": [
+                    19.652,
+                    2.168,
+                    6.638
+                ],
+                "model2": "6GZR.1-10_05",
+                "atom2": 1551,
+                "coord2": [
+                    18.24,
+                    1.402,
+                    4.274
+                ],
+                "calculated_distance": 2.858,
+                "original_distance": 2.858
+            },
+            {
+                "model1": "6GZR.1-10_05",
+                "atom1": 787,
+                "coord1": [
+                    20.345,
+                    0.24,
+                    5.582
+                ],
+                "model2": "6GZR.1-10_05",
+                "atom2": 1551,
+                "coord2": [
+                    18.24,
+                    1.402,
+                    4.274
+                ],
+                "calculated_distance": 2.737,
+                "original_distance": 2.737
+            },
+            {
+                "model1": "6GZR.1-10_05",
+                "atom1": 1271,
+                "coord1": [
+                    17.279,
+                    3.779,
+                    5.331
+                ],
+                "model2": "6GZR.1-10_05",
+                "atom2": 1551,
+                "coord2": [
+                    18.24,
+                    1.402,
+                    4.274
+                ],
+                "calculated_distance": 2.773,
+                "original_distance": 2.773
+            }
+        ]
+    },
+    {
+        "pdb_file": "6GZR.1-10_10.pdb",
+        "contacts": [
+            {
+                "model1": "6GZR.1-10_10",
+                "atom1": 785,
+                "coord1": [
+                    19.8,
+                    2.14,
+                    6.556
+                ],
+                "model2": "6GZR.1-10_10",
+                "atom2": 1551,
+                "coord2": [
+                    18.256,
+                    1.39,
+                    4.414
+                ],
+                "calculated_distance": 2.745,
+                "original_distance": 2.745
+            },
+            {
+                "model1": "6GZR.1-10_10",
+                "atom1": 787,
+                "coord1": [
+                    20.636,
+                    0.381,
+                    5.324
+                ],
+                "model2": "6GZR.1-10_10",
+                "atom2": 1551,
+                "coord2": [
+                    18.256,
+                    1.39,
+                    4.414
+                ],
+                "calculated_distance": 2.741,
+                "original_distance": 2.741
+            },
+            {
+                "model1": "6GZR.1-10_10",
+                "atom1": 1271,
+                "coord1": [
+                    17.293,
+                    3.812,
+                    5.263
+                ],
+                "model2": "6GZR.1-10_10",
+                "atom2": 1551,
+                "coord2": [
+                    18.256,
+                    1.39,
+                    4.414
+                ],
+                "calculated_distance": 2.741,
+                "original_distance": 2.741
+            }
+        ]
+    },
+    {
+        "pdb_file": "6GZR.1-10_04.pdb",
+        "contacts": [
+            {
+                "model1": "6GZR.1-10_04",
+                "atom1": 785,
+                "coord1": [
+                    19.419,
+                    1.955,
+                    6.677
+                ],
+                "model2": "6GZR.1-10_04",
+                "atom2": 1551,
+                "coord2": [
+                    18.306,
+                    1.363,
+                    4.203
+                ],
+                "calculated_distance": 2.777,
+                "original_distance": 2.777
+            },
+            {
+                "model1": "6GZR.1-10_04",
+                "atom1": 787,
+                "coord1": [
+                    20.15,
+                    0.0,
+                    5.697
+                ],
+                "model2": "6GZR.1-10_04",
+                "atom2": 1551,
+                "coord2": [
+                    18.306,
+                    1.363,
+                    4.203
+                ],
+                "calculated_distance": 2.737,
+                "original_distance": 2.737
+            },
+            {
+                "model1": "6GZR.1-10_04",
+                "atom1": 819,
+                "coord1": [
+                    20.352,
+                    4.026,
+                    3.986
+                ],
+                "model2": "6GZR.1-10_04",
+                "atom2": 1551,
+                "coord2": [
+                    18.306,
+                    1.363,
+                    4.203
+                ],
+                "calculated_distance": 3.365,
+                "original_distance": 3.365
+            },
+            {
+                "model1": "6GZR.1-10_04",
+                "atom1": 1267,
+                "coord1": [
+                    15.284,
+                    1.982,
+                    0.053
+                ],
+                "model2": "6GZR.1-10_04",
+                "atom2": 1547,
+                "coord2": [
+                    16.972,
+                    1.247,
+                    2.242
+                ],
+                "calculated_distance": 2.86,
+                "original_distance": 2.86
+            },
+            {
+                "model1": "6GZR.1-10_04",
+                "atom1": 1271,
+                "coord1": [
+                    17.375,
+                    3.804,
+                    5.056
+                ],
+                "model2": "6GZR.1-10_04",
+                "atom2": 1551,
+                "coord2": [
+                    18.306,
+                    1.363,
+                    4.203
+                ],
+                "calculated_distance": 2.748,
+                "original_distance": 2.748
+            },
+            {
+                "model1": "6GZR.1-10_04",
+                "atom1": 1272,
+                "coord1": [
+                    16.3,
+                    4.416,
+                    3.124
+                ],
+                "model2": "6GZR.1-10_04",
+                "atom2": 1547,
+                "coord2": [
+                    16.972,
+                    1.247,
+                    2.242
+                ],
+                "calculated_distance": 3.357,
+                "original_distance": 3.357
+            }
+        ]
+    },
+    {
+        "pdb_file": "6GZR.1-10_01.pdb",
+        "contacts": [
+            {
+                "model1": "6GZR.1-10_01",
+                "atom1": 785,
+                "coord1": [
+                    19.657,
+                    2.163,
+                    6.643
+                ],
+                "model2": "6GZR.1-10_01",
+                "atom2": 1551,
+                "coord2": [
+                    18.245,
+                    1.398,
+                    4.276
+                ],
+                "calculated_distance": 2.86,
+                "original_distance": 2.86
+            },
+            {
+                "model1": "6GZR.1-10_01",
+                "atom1": 787,
+                "coord1": [
+                    20.345,
+                    0.23,
+                    5.593
+                ],
+                "model2": "6GZR.1-10_01",
+                "atom2": 1551,
+                "coord2": [
+                    18.245,
+                    1.398,
+                    4.276
+                ],
+                "calculated_distance": 2.74,
+                "original_distance": 2.74
+            },
+            {
+                "model1": "6GZR.1-10_01",
+                "atom1": 1271,
+                "coord1": [
+                    17.282,
+                    3.774,
+                    5.335
+                ],
+                "model2": "6GZR.1-10_01",
+                "atom2": 1551,
+                "coord2": [
+                    18.245,
+                    1.398,
+                    4.276
+                ],
+                "calculated_distance": 2.774,
+                "original_distance": 2.774
+            }
+        ]
+    },
+    {
+        "pdb_file": "6GZR.1-10_03.pdb",
+        "contacts": [
+            {
+                "model1": "6GZR.1-10_03",
+                "atom1": 785,
+                "coord1": [
+                    19.728,
+                    2.261,
+                    6.537
+                ],
+                "model2": "6GZR.1-10_03",
+                "atom2": 1551,
+                "coord2": [
+                    18.203,
+                    1.422,
+                    4.317
+                ],
+                "calculated_distance": 2.821,
+                "original_distance": 2.821
+            },
+            {
+                "model1": "6GZR.1-10_03",
+                "atom1": 787,
+                "coord1": [
+                    20.551,
+                    0.462,
+                    5.356
+                ],
+                "model2": "6GZR.1-10_03",
+                "atom2": 1551,
+                "coord2": [
+                    18.203,
+                    1.422,
+                    4.317
+                ],
+                "calculated_distance": 2.741,
+                "original_distance": 2.741
+            },
+            {
+                "model1": "6GZR.1-10_03",
+                "atom1": 1271,
+                "coord1": [
+                    17.279,
+                    3.823,
+                    5.309
+                ],
+                "model2": "6GZR.1-10_03",
+                "atom2": 1551,
+                "coord2": [
+                    18.203,
+                    1.422,
+                    4.317
+                ],
+                "calculated_distance": 2.757,
+                "original_distance": 2.757
+            }
+        ]
+    },
+    {
+        "pdb_file": "6GZR.1-10_02.pdb",
+        "contacts": [
+            {
+                "model1": "6GZR.1-10_02",
+                "atom1": 785,
+                "coord1": [
+                    19.498,
+                    2.088,
+                    6.758
+                ],
+                "model2": "6GZR.1-10_02",
+                "atom2": 1551,
+                "coord2": [
+                    18.244,
+                    1.399,
+                    4.253
+                ],
+                "calculated_distance": 2.885,
+                "original_distance": 2.885
+            },
+            {
+                "model1": "6GZR.1-10_02",
+                "atom1": 787,
+                "coord1": [
+                    20.138,
+                    0.116,
+                    5.754
+                ],
+                "model2": "6GZR.1-10_02",
+                "atom2": 1551,
+                "coord2": [
+                    18.244,
+                    1.399,
+                    4.253
+                ],
+                "calculated_distance": 2.736,
+                "original_distance": 2.736
+            },
+            {
+                "model1": "6GZR.1-10_02",
+                "atom1": 1271,
+                "coord1": [
+                    17.275,
+                    3.772,
+                    5.324
+                ],
+                "model2": "6GZR.1-10_02",
+                "atom2": 1551,
+                "coord2": [
+                    18.244,
+                    1.399,
+                    4.253
+                ],
+                "calculated_distance": 2.778,
+                "original_distance": 2.778
+            }
+        ]
+    }
+]
