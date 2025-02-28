@@ -1,0 +1,92 @@
+Metadata-Version: 2.2
+Name: django-munigeo
+Version: 0.3.12
+Summary: A Django app for processing municipality-related geospatial data.
+Home-page: https://github.com/City-of-Helsinki/django-munigeo
+Author: City of Helsinki
+Author-email: dev@hel.fi
+License: BSD License
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.2
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Topic :: Internet :: WWW/HTTP
+Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic Content
+Classifier: Topic :: Scientific/Engineering :: GIS
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: Django
+Requires-Dist: requests
+Requires-Dist: requests_cache
+Requires-Dist: django_mptt
+Requires-Dist: django-parler>=2
+Requires-Dist: django-parler-rest
+Requires-Dist: six
+Requires-Dist: pyyaml
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license
+Dynamic: requires-dist
+Dynamic: summary
+
+[![codecov](https://codecov.io/gh/City-of-Helsinki/django-munigeo/branch/main/graph/badge.svg)](https://codecov.io/gh/City-of-Helsinki/django-munigeo)
+
+munigeo
+=======
+
+`munigeo` is a reusable Django application for storing and accessing
+municipality-related geospatial data. It can manage following categories of
+data:
+* Municipalities as containers of everything below
+* Administrative divisions (with parent-child relationships and links to Municipalities)
+* Streets and address locations on those Streets
+* Buildings with 2D-geometries and addresses
+* PoIs (Points of Interest) with location and type
+
+If you are using Django Rest Framework (DRF), munigeo also provides you with serializers
+for including these in your API.
+
+For actually getting the data into your database application, munigeo provides importer
+framework. Currently we only have actual importers for City of Helsinki, but
+other are welcome.
+
+## Usage
+Install this to your project with `pip install django-munigeo`,
+add `munigeo` to your `INSTALLED_APPS` setting.
+
+### Helsinki example
+Before you can get Helsinki, you will need the data for Finland first:
+```
+python manage.py geo_import finland --municipalities
+```
+then
+```
+python manage.py geo_import helsinki --divisions
+```
+
+## Code format
+
+This project uses [Ruff](https://docs.astral.sh/ruff/) for code formatting and quality checking.
+
+Basic `ruff` commands:
+
+* lint: `ruff check`
+* apply safe lint fixes: `ruff check --fix`
+* check formatting: `ruff format --check`
+* format: `ruff format`
+
+[`pre-commit`](https://pre-commit.com/) can be used to install and
+run all the formatting tools as git hooks automatically before a
+commit.
