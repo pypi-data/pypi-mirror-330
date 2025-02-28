@@ -1,0 +1,24 @@
+# Temporary files
+*~
+*.sw[op]
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Setuptools distribution folder.
+/build/
+/dist/
+
+# Python egg metadata, regenerated from source files by setuptools.
+*.egg-info
+/.eggs
+
+# Testing output
+/.cache
+/.coverage
+.pytest_cache
+
+# Sonarqube
+/.scannerwork
