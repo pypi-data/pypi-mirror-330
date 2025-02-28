@@ -1,0 +1,14 @@
+exclude .gitignore
+exclude testSpark.ipynb
+
+# Include all Python files and the README
+include *.py
+include readme.md
+include *.md
+include *.txt
+include *.json
+
+# Include other necessary files and directories
+recursive-include sparkLib *
+recursive-include sparkLib *.pyc
+recursive-include sparkLib *.json
