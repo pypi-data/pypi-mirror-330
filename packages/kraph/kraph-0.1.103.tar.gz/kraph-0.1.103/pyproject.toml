@@ -1,0 +1,35 @@
+[tool.poetry]
+name = "kraph"
+version = "0.1.103"
+description = ""
+authors = ["jhnnsrs <jhnnsrs@gmail.com>"]
+packages = [{ include = "kraph" }]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+rath = ">=1.0.0"
+
+[tool.poetry.group.dev.dependencies]
+autoflake = "^1.7.7"
+pytest = "^7.2.0"
+pytest-qt = "^4.2.0"
+pytest-asyncio = "^0.20.2"
+websockets = "^10.4"
+black = "^22.10.0"
+pytest-cov = "^4.0.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+qt_api = "pyqt5"
+markers = [
+    "integration: marks tests that require a running server",
+    "qt: marks tests that require a running qt application",
+    "define: marks tests that concern to definining a funcionality",
+    "shrink: marks tests that concern to serializing inputs to requests to an actor",
+    "expand: marks tests that concern to serializing outputs from answers of an actor",
+    "actor: marks tests that concern actors",
+]
+
