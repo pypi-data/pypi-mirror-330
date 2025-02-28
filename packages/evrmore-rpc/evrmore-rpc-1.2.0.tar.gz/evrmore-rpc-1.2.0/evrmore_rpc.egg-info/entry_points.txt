@@ -1,0 +1,4 @@
+[console_scripts]
+evrmore-interactive = evrmore_rpc.interactive:main
+evrmore-rpc = evrmore_rpc.cli:main
+
