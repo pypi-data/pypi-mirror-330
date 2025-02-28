@@ -1,0 +1,22 @@
+Metadata-Version: 2.4
+Name: gd_icon_composite
+Version: 0.0.14
+Summary: A package to easily generate images of geometry dash icons using pillow
+Project-URL: Homepage, https://github.com/Luar77/gdIconComposite
+Project-URL: Bug Tracker, https://github.com/Luar77/gdIconComposite/issues
+Author-email: Luar77 <luar77.commissions@gmail.com>
+License-File: LICENSE
+Keywords: dash,gd,geometry,geometry dash,gmd,icon
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.9
+Requires-Dist: numpy~=1.23.5
+Requires-Dist: pillow>=9
+Description-Content-Type: text/markdown
+
+# GD Icon Composite
+
+Used to generate a full image out of the sprites that make up the icons in Geometry Dash.
+
+Requires Pillow (version 9, haven't tested with others)

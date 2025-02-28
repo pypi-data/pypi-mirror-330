@@ -1,0 +1,30 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "gd_icon_composite"
+version = "0.0.14"
+authors = [
+  { name="Luar77", email="luar77.commissions@gmail.com" },
+]
+description = "A package to easily generate images of geometry dash icons using pillow"
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+keywords = [
+    "geometry", "dash", "geometry dash", "icon", "gd", "gmd"
+]
+dependencies = [
+    "numpy~=1.23.5",
+    "pillow>=9"
+]
+
+[project.urls]
+"Homepage" = "https://github.com/Luar77/gdIconComposite"
+"Bug Tracker" = "https://github.com/Luar77/gdIconComposite/issues"
+
