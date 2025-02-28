@@ -1,0 +1,14 @@
+simple-build-system>=1.6.0
+
+[all]
+numpy
+ncrystal[all]>=4.1.2
+matplotlib
+scipy
+pandas
+PySimpleGUI-4-foss
+
+[recommended]
+numpy
+ncrystal>=4.1.2
+matplotlib
