@@ -1,0 +1,1918 @@
+
+# 2025-02-26 19:38:00.594189
++/add *
+
+# 2025-02-26 19:38:21.743296
++let's prepare this repository ready to publish to pypi, using uv package manager 
+
+# 2025-02-26 19:39:59.434487
++y
+
+# 2025-02-26 19:40:20.509627
++D
+
+# 2025-02-26 19:40:25.449235
++y
+
+# 2025-02-26 19:40:25.451768
++/run uv pip install hatch
+
+# 2025-02-26 19:40:25.451825
++/run uv pip install hatch
+
+# 2025-02-26 19:40:27.422337
++/run hatch build
+
+# 2025-02-26 19:40:27.422454
++/run hatch build
+
+# 2025-02-26 19:40:33.039757
++y
+
+# 2025-02-26 19:40:36.830887
++S
+
+# 2025-02-26 20:31:00.627445
++/add tests/ zeptomail/
+
+# 2025-02-26 20:31:19.331179
++let's implement tests for these lines:   def add_attachment_from_file_cache(self, file_cache_key: str, name: Optional[str] = None) -> Dict:
++        """
++        Add an attachment using a file cache key.
++
++        Args:
++            file_cache_key: File cache key from ZeptoMail
++            name: Optional name for the file
++
++        Returns:
++            Attachment dictionary
++        """
++        attachment = {"file_cache_key": file_cache_key}
++        if name:
++            attachment["name"] = name
++        return attachment
++
++    def add_attachment_from_content(self, content: str, mime_type: str, name: str) -> Dict:
++        """
++        Add an attachment using base64 encoded content.
++
++        Args:
++            content: Base64 encoded content
++            mime_type: MIME type of the content
++            name: Name for the file
++
++        Returns:
++            Attachment dictionary
++        """
++        return {
++            "content": content,
++            "mime_type": mime_type,
++            "name": name
++        }
++
++    def add_inline_image(self, cid: str, content: Optional[str] = None,
++                         mime_type: Optional[str] = None,
++                         file_cache_key: Optional[str] = None) -> Dict:
++        """
++        Add an inline image to the email.
++
++        Args:
++            cid: Content ID to reference in HTML
++            content: Base64 encoded content
++            mime_type: MIME type of the content
++            file_cache_key: File cache key from ZeptoMail
++
++        Returns:
++            Inline image dictionary
++        """
++        inline_image = {"cid": cid}
++
++        if content and mime_type:
++            inline_image["content"] = content
++            inline_image["mime_type"] = mime_type
++
++        if file_cache_key:
++            inline_image["file_cache_key"] = file_cache_key
++
++        return inline_image
++
+
+# 2025-02-26 20:31:40.853047
++D
+
+# 2025-02-26 20:33:06.967546
++let's update tests so it convers the batch     def send_batch_email(self,
++                         from_address: str,
++                         from_name: Optional[str] = None,
++                         to: List[Dict] = None,
++                         cc: List[Dict] = None,
++                         bcc: List[Dict] = None,
++                         subject: str = "",
++                         html_body: Optional[str] = None,
++                         text_body: Optional[str] = None,
++                         attachments: List[Dict] = None,
++                         inline_images: List[Dict] = None,
++                         track_clicks: bool = True,
++                         track_opens: bool = True,
++                         client_reference: Optional[str] = None,
++                         mime_headers: Optional[Dict] = None,
++                         merge_info: Optional[Dict] = None) -> Dict:
++        """
++        Send a batch email using the ZeptoMail API.
++
++        Args:
++            from_address: Sender's email address
++            from_name: Sender's name
++            to: List of recipient dictionaries with optional merge_info
++            cc: List of cc recipient dictionaries
++            bcc: List of bcc recipient dictionaries
++            subject: Email subject
++            html_body: HTML content of the email
++            text_body: Plain text content of the email
++            attachments: List of attachment dictionaries
++            inline_images: List of inline image dictionaries
++            track_clicks: Whether to track clicks
++            track_opens: Whether to track opens
++            client_reference: Client reference identifier
++            mime_headers: Additional MIME headers
++            merge_info: Global merge info for recipients without specific merge info
++
++        Returns:
++            API response as a dictionary
++        """
++        url = f"{self.base_url}/email/batch"
++
++        payload = {
++            "from": self._build_email_address(from_address, from_name),
++            "subject": subject
++        }
++
++        # Add recipients
++        if to:
++            payload["to"] = to
++
++        if cc:
++            payload["cc"] = cc
++
++        if bcc:
++            payload["bcc"] = bcc
++
++        # Add content
++        if html_body:
++            payload["htmlbody"] = html_body
++
++        if text_body:
++            payload["textbody"] = text_body
++
++        # Add tracking options
++        payload["track_clicks"] = track_clicks
++        payload["track_opens"] = track_opens
++
++        # Add optional parameters
++        if client_reference:
++            payload["client_reference"] = client_reference
++
++        if mime_headers:
++            payload["mime_headers"] = mime_headers
++
++        if attachments:
++            payload["attachments"] = attachments
++
++        if inline_images:
++            payload["inline_images"] = inline_images
++
++        if merge_info:
++            payload["merge_info"] = merge_info
++
++        response = requests.post(url, headers=self.headers, data=json.dumps(payload))
++        return response.json()
++
++    # Helper methods for common operations
+
+# 2025-02-26 20:34:13.084763
++
++        if cc:
++            payload["cc"] = cc
++
++        if bcc:
++            payload["bcc"] = bcc
++
++        if reply_to:
++            payload["reply_to"] = reply_to
++
++        # Add content
++        if html_body:
++            payload["htmlbody"] = html_body
++
++        if text_body:
++            payload["textbody"] = text_body
++
++        # Add tracking options
++        payload["track_clicks"] = track_clicks
++        payload["track_opens"] = track_opens
++
++        # Add optional parameters
++        if client_reference:
++            payload["client_reference"] = client_reference
++
++        if mime_headers:
++            payload["mime_headers"] = mime_headers
++
++        if attachments:
++            payload["attachments"] = attachments
++
++        if inline_images:
++            payload["inline_images"] = inline_images
++ cover these lines in send_email
+
+# 2025-02-26 20:35:20.472188
++   if cc:
++            payload["cc"] = cc
++
++        if bcc:
++            payload["bcc"] = bcc
++
++        AND----- 
++        if mime_headers:
++            payload["mime_headers"] = mime_headers
++
++        if attachments:
++            payload["attachments"] = attachments
++
++        if inline_images:
++            payload["inline_images"] = inline_images
++
++        if merge_info: lines are not covered in `send_batch_email`
+
+# 2025-02-26 20:36:15.913138
++/clear
+
+# 2025-02-26 20:36:42.398138
++lets verify, if these responses are properly processed by the client! Success response parameters
++Parameter	Data Type 	Description
++Data	JSON array 	It consists of code, additional_info and message parameters
++code	String	The code corresponding to a success response
++additional_info	JSON array	Provides additional information about the action performed in the request
++message	String	The action taken for this request
++message	String	The status of the request made
++request_id	String	A unique id which is generated for every request
++object	Email	It signifies that the response is for email API
++Failure response parameters
++Parameter	Data Type 	Description
++error	JSON object 	It consists of code, details, message and request_id parameters
++code	String	The code corresponding to the status of the request made
++details	JSON array	Consists of code, message and target parameters
++code	String	Code of the error found
++message	String	Reason for the error
++target	String	The field that caused the error
++message	String	The status of the request made
++request_id 	String	Unique id generated for every request
++
+
+# 2025-02-26 20:37:14.074181
++D
+
+# 2025-02-26 20:45:25.558041
++/clear
+
+# 2025-02-26 20:45:44.483178
++Error Code	Sub Code	Reason	Solution
++TM_3201	GE_102	Mandatory Field "subject" was set as Empty Value.	Set the Mandatory Fields as proper values instead of setting Empty in the API.
++Mandatory Field "from" is missing.	Add the mandatory "from" field.
++No recipient field found.	Add either "to", "cc" or "bcc" fields.
++Mandatory field "Mail Template Key" is missing.	Add the mandatory "Mail Template Key" field.
++TM_3301	SM_101	Invalid JSON.	
++Kindly check your API syntax.
++
++SM_120	Invalid Mimetype found	Kindly check if the attachment added and the Mimetype specified match.
++TM_3501	UE_106	Invalid File Cache Key. 	
++Obtain proper File Cache Key from the respective Mail Agent in your File Cache tab. 
++
++MTR_101	Invalid Template Key. 	
++Obtain proper Template Key from the respective Mail Agent.
++
++LE_101	Credits expired.	Purchase new credits from the ZeptoMail Subscription page.
++TM_3601	SERR_156	Email sending IP is not in the allowed IPs list.	You need to add the relevant IP to the allowed IPs list from the settings. Learn more
++SM_133	Trial mail sending limit exceeded.	Get your account reviewed to start sending emails again.
++SMI_115	Per day limit exhausted, try after some time.	Wait till the next day to send your emails.
++AE_101	Account blocked	Contact ZeptoMail support 
++TM_4001	SM_111	Sender address domain is not verified in your Mail Agent.	Use the sender address domain that is verified in your Mail Agent.
++SM_113	Mandatory Field "from" has Invalid Value.	
++Set the Mandatory Fields as proper values in the API.
++
++Note: target_value in the error response shows the field where an invalid email address is set.​
++Same error response if an Invalid Values is set in any of these fields: cc, bcc, mime-type in attachments, reply_to, File Cache Key. 
++
++Mandatory Field "to" has Invalid Value.
++Mandatory Field "bounce_address" is missing or has Invalid Value.
++SM_128	Your ZeptoMail account is yet to be reviewed and approved by us.	Get your account reviewed and then send your emails using API.
++SERR_157	Sendmail token is invalid. 	Obtain proper Sendmail token from the configuration settings within your Mail Agent.
++TM_5001	LE_102	Credit exhausted.	Purchase new credits from the ZeptoMail Subscription page.
++TM_8001	SM_127	Total number of attachments exceeding the limit.	Allowed total number of attachments < = 60.
++Fields exceeding limits.	
++Total number of addresses exceeding the limit. The allowed number of unique values is 500 for each of these fields :
++
++i) reply_to 
++
++ii) to 
++
++iii) cc 
++
++iv) bcc 
++
++SM_129	Character limit exceeded for the name field for any of these parameters - from, to, reply_to, cc, bcc.	Allowed character limit < = 250.
++Subject field exceeding the character count limit.	Allowed subject line character count < = 500.
++Attachment size exceeding the limit.​	Allowed attachment size < = 15 MB.​​
++Exceeding the character limit in attachment filename.​	Allowed Attachment FileName Characters Length <=150.​​ let's incorporate these error codes into the API (provide possible solution in response)
+
+# 2025-02-26 20:46:37.280326
++y
+
+# 2025-02-26 20:46:44.808978
++n
+
+# 2025-02-26 20:47:12.888027
++/clear
+
+# 2025-02-26 20:47:19.437779
++                    detail_messages.append(f"{target}: {detail_msg}")
++                elif detail_msg:
++                    detail_messages.append(detail_msg)
++            
++            if detail_messages: these lines are not covered in zeptomailerror
+
+# 2025-02-26 20:47:38.174216
++D
+
+# 2025-02-26 20:47:55.333555
++/clear
+
+# 2025-02-26 20:47:59.453903
++let's cover these lines!          # If the sub-code solution is a string, return it directly
++                if isinstance(sub_code_solution, str):
++                    return sub_code_solution
++                
++                # If it's a dict, try to find a more specific solution based on details
++                elif isinstance(sub_code_solution, dict) and details:
++                    for detail in details:
++                        target = detail.get("target", "")
++                        if target in sub_code_solution:
++                            return sub_code_solution[target]
++                    
++                    # If no specific target match, return the first solution
++                    return next(iter(sub_code_solution.values()), None)
++        
+
+# 2025-02-26 20:54:17.605311
++/drop
+
+# 2025-02-26 20:54:24.462643
++/map-refresh
+
+# 2025-02-26 20:54:27.906298
++/add zeptomail/
+
+# 2025-02-26 20:54:31.351721
++/add README.md
+
+# 2025-02-26 20:54:38.331087
++update readme, add shields and add emojis!
+
+# 2025-02-26 21:06:52.845067
++add disclaimer that this is not an official SDK, Namilink Kft is not affiliated of Zeptomail. Also bump version to be able to republish
+
+# 2025-02-26 21:08:10.026318
++Also please add, that only Email sending API, Batch email sending API is implemented, Templates API, TEamplates management API is not implemented in this library but i welcome contribs
+
+# 2025-02-26 22:38:27.261670
++/add zeptomail/client.py
+
+# 2025-02-26 22:38:29.969386
++/add zeptomail/__init__.py
+
+# 2025-02-26 22:38:32.729901
++Error sending email: Object of type bytes is not JSON serializable
++Error processing email message: Object of type bytes is not JSON serializable
++ERROR:    Exception in ASGI application
++Traceback (most recent call last):
++  File "/Users/valkom/.uve/crewmailer/lib/python3.12/site-packages/uvicorn/protocols/http/httptools_impl.py", line 409, in run_asgi
++    result = await app(  # type: ignore[func-returns-value]
++             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
++  File "/Users/valkom/.uve/crewmailer/lib/python3.12/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
++    return await self.app(scope, receive, send)
++           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
++  File "/Users/valkom/.uve/crewmailer/lib/python3.12/site-packages/fastapi/applications.py", line 1054, in __call__
++    await super().__call__(scope, receive, send)
++  File "/Users/valkom/.uve/crewmailer/lib/python3.12/site-packages/starlette/applications.py", line 112, in __call__
++    await self.middleware_stack(scope, receive, send)
++  File "/Users/valkom/.uve/crewmailer/lib/python3.12/site-packages/starlette/middleware/errors.py", line 187, in __call__
++    raise exc
++  File "/Users/valkom/.uve/crewmailer/lib/python3.12/site-packages/starlette/middleware/errors.py", line 165, in __call__
++    await self.app(scope, receive, _send)
++  File "/Users/valkom/.uve/crewmailer/lib/python3.12/site-packages/starlette/middleware/cors.py", line 93, in __call__
++    await self.simple_response(scope, receive, send, request_headers=headers)
++  File "/Users/valkom/.uve/crewmailer/lib/python3.12/site-packages/starlette/middleware/cors.py", line 144, in simple_response
++    await self.app(scope, receive, send)
++  File "/Users/valkom/.uve/crewmailer/lib/python3.12/site-packages/starlette/middleware/sessions.py", line 85, in __call__
++    await self.app(scope, receive, send_wrapper)
++  File "/Users/valkom/.uve/crewmailer/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
++    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
++  File "/Users/valkom/.uve/crewmailer/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
++    raise exc
++  File "/Users/valkom/.uve/crewmailer/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
++    await app(scope, receive, sender)
++  File "/Users/valkom/.uve/crewmailer/lib/python3.12/site-packages/starlette/routing.py", line 715, in __call__
++    await self.middleware_stack(scope, receive, send)
++  File "/Users/valkom/.uve/crewmailer/lib/python3.12/site-packages/starlette/routing.py", line 735, in app
++    await route.handle(scope, receive, send)
++  File "/Users/valkom/.uve/crewmailer/lib/python3.12/site-packages/starlette/routing.py", line 288, in handle
++    await self.app(scope, receive, send)
++  File "/Users/valkom/.uve/crewmailer/lib/python3.12/site-packages/starlette/routing.py", line 76, in app
++    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
++  File "/Users/valkom/.uve/crewmailer/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
++    raise exc
++  File "/Users/valkom/.uve/crewmailer/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
++    await app(scope, receive, sender)
++  File "/Users/valkom/.uve/crewmailer/lib/python3.12/site-packages/starlette/routing.py", line 74, in app
++    await response(scope, receive, send)
++  File "/Users/valkom/.uve/crewmailer/lib/python3.12/site-packages/starlette/responses.py", line 159, in __call__
++    await self.background()
++  File "/Users/valkom/.uve/crewmailer/lib/python3.12/site-packages/starlette/background.py", line 41, in __call__
++    await task()
++  File "/Users/valkom/.uve/crewmailer/lib/python3.12/site-packages/starlette/background.py", line 26, in __call__
++    await self.func(*self.args, **self.kwargs)
++  File "/Users/valkom/Documents/GitHub/crewmailer/src/utils/mailing.py", line 202, in process_email_message
++    response = self.client.send_email(
++               ^^^^^^^^^^^^^^^^^^^^^^^
++  File "/Users/valkom/.uve/crewmailer/lib/python3.12/site-packages/zeptomail/client.py", line 284, in send_email
++    response = requests.post(url, headers=self.headers, data=json.dumps(payload))
++                                                             ^^^^^^^^^^^^^^^^^^^
++  File "/opt/homebrew/Cellar/python@3.12/3.12.7_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/json/__init__.py", line 231, in dumps
++    return _default_encoder.encode(obj)
++           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
++  File "/opt/homebrew/Cellar/python@3.12/3.12.7_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/json/encoder.py", line 200, in encode
++    chunks = self.iterencode(o, _one_shot=True)
++             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
++  File "/opt/homebrew/Cellar/python@3.12/3.12.7_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/json/encoder.py", line 258, in iterencode
++    return _iterencode(o, 0)
++           ^^^^^^^^^^^^^^^^^
++  File "/opt/homebrew/Cellar/python@3.12/3.12.7_1/Frameworks/Python.framework/Versions/3.12/lib/python3.12/json/encoder.py", line 180, in default
++    raise TypeError(f'Object of type {o.__class__.__name__} '
++TypeError: Object of type bytes is not JSON serializable
+
+# 2025-02-26 22:38:53.211441
++N
+
+# 2025-02-26 22:38:57.411983
++/add zeptomail/errors.py
+
+# 2025-02-26 22:39:00.867012
++make changes to errors if needed
+
+# 2025-02-26 22:39:09.956986
++/clear
+
+# 2025-02-26 22:53:36.662478
++/add zeptomail/
+
+# 2025-02-26 22:54:42.215613
++{'email_address': {'address': 'valkomate@gmail.com', 'name': 'Szeava'}} this looks pretty ugly for recipint object, can we just use a single level like this: {'email': 'valkomate@gmail.com', 'name': 'Szeava'}??
+
+# 2025-02-26 22:54:58.638060
++D
+
+# 2025-02-26 22:55:05.148113
++N
+
+# 2025-02-26 22:55:08.390546
++/add examples/send_email.py
+
+# 2025-02-26 22:55:11.593376
++/add tests/test_client.py
+
+# 2025-02-26 22:55:18.825092
++update example and test_client if needed
+
+# 2025-02-26 22:55:46.302928
++D
+
+# 2025-02-26 22:55:49.941783
++/add README.md
+
+# 2025-02-26 22:55:53.267703
++update readme if needed
+
+# 2025-02-26 22:56:42.885245
++
++Error
++Traceback (most recent call last):
++  File "/opt/local/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/unittest/mock.py", line 1336, in patched
++    return func(*newargs, **newkeywargs)
++  File "/Users/valkom/Documents/GitHub/namilink/zeptomail-python-api/tests/test_client.py", line 343, in test_send_batch_email
++    self.assertEqual(payload["from"]["address"], "test@example.com")
++KeyError: 'address'
++
++
++Error
++Traceback (most recent call last):
++  File "/opt/local/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/unittest/mock.py", line 1336, in patched
++    return func(*newargs, **newkeywargs)
++  File "/Users/valkom/Documents/GitHub/namilink/zeptomail-python-api/tests/test_client.py", line 463, in test_send_batch_email_with_all_parameters
++    self.assertEqual(payload["from"]["address"], "sender@example.com")
++KeyError: 'address'
++
++
++Error
++Traceback (most recent call last):
++  File "/opt/local/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/unittest/mock.py", line 1336, in patched
++    return func(*newargs, **newkeywargs)
++  File "/Users/valkom/Documents/GitHub/namilink/zeptomail-python-api/tests/test_client.py", line 282, in test_send_email_with_all_parameters
++    self.assertEqual(payload["from"]["address"], "sender@example.com")
++KeyError: 'address'
++
++
+
+# 2025-02-26 22:56:56.461445
++/clear
+
+# 2025-02-26 22:57:24.879185
++lets somehow create a tooling that can generate documentation using the docstrings
+
+# 2025-02-26 22:58:48.985886
++/clear
+
+# 2025-02-26 22:58:52.302100
++lets somehow create a tooling that can generate documentation using the docstrings use MkDocs with mkdocstrings
++
+
+# 2025-02-26 23:01:30.802214
++N
+
+# 2025-02-26 23:01:32.207196
++y
+
+# 2025-02-26 23:01:39.362597
++N
+
+# 2025-02-26 23:05:09.703165
++Traceback (most recent call last):
++  File "/Users/valkom/.uve/zeptomail/bin/mkdocs", line 10, in <module>
++    sys.exit(cli())
++  File "/Users/valkom/.uve/zeptomail/lib/python3.9/site-packages/click/core.py", line 1161, in __call__
++    return self.main(*args, **kwargs)
++  File "/Users/valkom/.uve/zeptomail/lib/python3.9/site-packages/click/core.py", line 1082, in main
++    rv = self.invoke(ctx)
++  File "/Users/valkom/.uve/zeptomail/lib/python3.9/site-packages/click/core.py", line 1697, in invoke
++    return _process_result(sub_ctx.command.invoke(sub_ctx))
++  File "/Users/valkom/.uve/zeptomail/lib/python3.9/site-packages/click/core.py", line 1443, in invoke
++    return ctx.invoke(self.callback, **ctx.params)
++  File "/Users/valkom/.uve/zeptomail/lib/python3.9/site-packages/click/core.py", line 788, in invoke
++    return __callback(*args, **kwargs)
++  File "/Users/valkom/.uve/zeptomail/lib/python3.9/site-packages/mkdocs/__main__.py", line 288, in build_command
++    build.build(cfg, dirty=not clean)
++  File "/Users/valkom/.uve/zeptomail/lib/python3.9/site-packages/mkdocs/commands/build.py", line 265, in build
++    config = config.plugins.on_config(config)
++  File "/Users/valkom/.uve/zeptomail/lib/python3.9/site-packages/mkdocs/plugins.py", line 587, in on_config
++    return self.run_event('config', config)
++  File "/Users/valkom/.uve/zeptomail/lib/python3.9/site-packages/mkdocs/plugins.py", line 566, in run_event
++    result = method(item, **kwargs)
++  File "/Users/valkom/.uve/zeptomail/lib/python3.9/site-packages/mkdocstrings/plugin.py", line 168, in on_config
++    handlers._download_inventories()
++  File "/Users/valkom/.uve/zeptomail/lib/python3.9/site-packages/mkdocstrings/handlers/base.py", line 704, in _download_inventories
++    handler = self.get_handler(handler_name)
++  File "/Users/valkom/.uve/zeptomail/lib/python3.9/site-packages/mkdocstrings/handlers/base.py", line 682, in get_handler
++    self._handlers[name] = module.get_handler(**kwargs)
++  File "/Users/valkom/.uve/zeptomail/lib/python3.9/site-packages/mkdocstrings_handlers/python/handler.py", line 373, in get_handler
++    config=PythonConfig.from_data(**handler_config),
++  File "/Users/valkom/.uve/zeptomail/lib/python3.9/site-packages/mkdocstrings_handlers/python/config.py", line 997, in from_data
++    return cls(**cls.coerce(**data))
++TypeError: __init__() got an unexpected keyword argument 'selection'
+
+# 2025-02-26 23:05:46.472381
++N
+
+# 2025-02-26 23:06:18.193058
++    self.socket.bind(self.server_address)
++OSError: [Errno 48] Address already in use
++Error building documentation: Command '['mkdocs', 'serve']' returned non-zero exit status 1.
++Failed to build documentation. can we set port to different?
+
+# 2025-02-26 23:06:42.795632
++N
+
+# 2025-02-26 23:07:35.053154
++/clear
+
+# 2025-02-26 23:07:52.035694
++ how can i create a markdown output of the api reference? create it as  llms.txt
+
+# 2025-02-26 23:08:08.552325
++nah, do NOT write it, it needs to be generated via mkdocs
+
+# 2025-02-26 23:10:05.522432
++/clear
+
+# 2025-02-26 23:10:22.808055
++To expand the documentation for the `ZeptoMail` client class while keeping it in Markdown format with MkDocs, you need to use the `mkdocstrings` extension. This extension allows you to auto-generate documentation from your Python docstrings directly into your Markdown files.
++
++## Setup mkdocstrings
++
++First, install the necessary packages:
++
++```bash
++pip install mkdocs mkdocstrings mkdocstrings-python
++```
++
++Then, update your `mkdocs.yml` configuration file to include the mkdocstrings extension:
++
++```yaml
++markdown_extensions:
++  - pymdownx.highlight
++  - pymdownx.superfences
++
++plugins:
++  - search
++  - mkdocstrings:
++      handlers:
++        python:
++          selection:
++            docstring_style: google  # or numpy, sphinx, etc.
++          rendering:
++            show_source: true  # Set to false if you don't want to show source code
++            show_category_heading: true
++            show_submodules: true
++```
++
++## Document Your ZeptoMail Class
++
++In your Markdown file, you're using the `:::` syntax which is the correct way to reference a Python object with mkdocstrings. The syntax you've used:
++
++```markdown
++# ZeptoMail Client
++
++This page documents the main `ZeptoMail` client class and its methods.
++
++::: zeptomail.client.ZeptoMail
++```
++
++This is the correct format for mkdocstrings to expand your documentation. When MkDocs processes this file, it will replace the `::: zeptomail.client.ZeptoMail` line with the full documentation generated from your docstrings.
++
++## Enhance Your Documentation
++
++To make your documentation more comprehensive, you can customize how mkdocstrings renders your documentation:
++
++1. **Add options to your reference**:
++
++```markdown
++::: zeptomail.client.ZeptoMail
++    options:
++      show_root_heading: true
++      show_source: false
++      heading_level: 2
++```
++
++2. **Add usage examples**:
++
++```markdown
++# ZeptoMail Client
++
++This page documents the main `ZeptoMail` client class and its methods.
++
++## Installation
++
++```
++pip install zeptomail
++```
++
++## Basic Usage
++
++```
++from zeptomail.client import ZeptoMail
++
++# Initialize the client
++client = ZeptoMail(api_key="your_api_key")
++
++# Use the client methods
++response = client.send_email(...)
++```
++
++::: zeptomail.client.ZeptoMail
++```
++
++## Ensure Good Docstrings
++
++For mkdocstrings to generate comprehensive documentation, make sure your Python code has well-formatted docstrings[8]. For example:
++
++```python
++class ZeptoMail:
++    """Client for interacting with the ZeptoMail API.
++    
++    This class provides methods to send emails and manage email-related
++    operations through the ZeptoMail service.
++    
++    Attributes:
++        api_key (str): The API key for authentication with ZeptoMail.
++        base_url (str): The base URL for the ZeptoMail API.
++    """
++    
++    def __init__(self, api_key, base_url="https://api.zeptomail.com/v1/"):
++        """Initialize the ZeptoMail client.
++        
++        Args:
++            api_key (str): Your ZeptoMail API key.
++            base_url (str, optional): The base URL for the API. Defaults to "https://api.zeptomail.com/v1/".
++        """
++        self.api_key = api_key
++        self.base_url = base_url
++        
++    def send_email(self, from_email, to_email, subject, content):
++        """Send an email using ZeptoMail.
++        
++        Args:
++            from_email (str): Sender email address.
++            to_email (str): Recipient email address.
++            subject (str): Email subject.
++            content (str): Email content in HTML format.
++            
++        Returns:
++            dict: The API response.
++            
++        Raises:
++            ZeptoMailError: If the API request fails.
++        """
++        # Implementation details
++```
++
++When you build your documentation with `mkdocs build` or serve it with `mkdocs serve`, the docstrings will be expanded into properly formatted Markdown documentation.
++
++Citations:
++[1] https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/
++[2] https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/
++[3] https://squidfunk.github.io/mkdocs-material/reference/grids/
++[4] https://www.mkdocs.org/user-guide/writing-your-docs/
++[5] https://www.sitepoint.com/building-product-documentation-mkdocs/
++[6] https://www.markdownguide.org/tools/mkdocs/
++[7] https://stackoverflow.com/questions/48029165/is-there-a-way-to-make-the-headings-sections-and-subsections-numbering-in-markd
++[8] https://realpython.com/python-project-documentation-with-mkdocs/
++[9] https://stackoverflow.com/questions/62136017/how-to-add-expand-collapse-to-mkdocs-material-theme-rightbar
++[10] https://stackoverflow.com/questions/66686855/how-to-add-an-index-page-to-a-sub-sections-with-mkdocs
++[11] https://stackoverflow.com/questions/65867653/how-to-make-pages-in-mkdocss-side-menu-expandable
++[12] https://example-mkdocs-basic.readthedocs.io
++[13] https://github.com/squidfunk/mkdocs-material/issues/4414
++[14] https://github.com/squidfunk/mkdocs-material/discussions/3692
++[15] https://github.com/squidfunk/mkdocs-material/discussions/6406
++[16] https://github.com/mkdocs/mkdocs/issues/2399
++[17] https://github.com/squidfunk/mkdocs-material/discussions/6288
++[18] https://mkdocs.readthedocs.io/en/0.10/user-guide/writing-your-docs/
++[19] https://squidfunk.github.io/mkdocs-material/reference/
++[20] https://learn.openwaterfoundation.org/owf-learn-mkdocs/edit/
++[21] https://mkdocs-macros-plugin.readthedocs.io/en/latest/advanced/
++[22] https://squidfunk.github.io/mkdocs-material/
++[23] https://www.blimped.nl/creating-a-beautiful-documentation-site-with-mkdocs/
++[24] https://www.mkdocs.org/getting-started/
++[25] https://github.com/squidfunk/mkdocs-material/discussions/3161
++[26] https://squidfunk.github.io/mkdocs-material/creating-your-site/
++[27] https://docs.readthedocs.com/platform/stable/intro/mkdocs.html
++[28] https://squidfunk.github.io/mkdocs-material/customization/
++[29] https://mkdocstrings.github.io/recipes/
+
+# 2025-02-26 23:10:23.468604
++S
+
+# 2025-02-26 23:11:25.044080
++y
+
+# 2025-02-26 23:11:29.678030
++/run python build_docs.py --serve
+
+# 2025-02-26 23:11:29.678248
++/run python build_docs.py --serve
+
+# 2025-02-26 23:11:37.141125
++D
+
+# 2025-02-26 23:12:00.310105
++/clear
+
+# 2025-02-26 23:12:24.746760
++/drop
+
+# 2025-02-26 23:12:37.311859
++/add mkdocs.yml docs/api/client.md docs/api/errors.md
+
+# 2025-02-26 23:13:00.041963
++i want to generate a version of mkdocs, which STILL markdon format, but has ::: zeptomail.client.ZeptoMail
++ expanded!!!
+
+# 2025-02-26 23:13:19.022514
++/add mkdocs.yml docs/api/client.md docs/api/errors.md
+
+# 2025-02-26 23:13:36.119567
++/add build_docs.py
+
+# 2025-02-26 23:14:33.921778
++# mkdocs-llmstxt
++
++[![ci](https://github.com/pawamoy/mkdocs-llmstxt/workflows/ci/badge.svg)](https://github.com/pawamoy/mkdocs-llmstxt/actions?query=workflow%3Aci)
++[![documentation](https://img.shields.io/badge/docs-mkdocs-708FCC.svg?style=flat)](https://pawamoy.github.io/mkdocs-llmstxt/)
++[![pypi version](https://img.shields.io/pypi/v/mkdocs-llmstxt.svg)](https://pypi.org/project/mkdocs-llmstxt/)
++[![gitter](https://badges.gitter.im/join%20chat.svg)](https://app.gitter.im/#/room/#mkdocs-llmstxt:gitter.im)
++
++MkDocs plugin to generate an [/llms.txt file](https://llmstxt.org/).
++
++> /llms.txt - A proposal to standardise on using an /llms.txt file to provide information to help LLMs use a website at inference time. 
++
++See our own dynamically generated [/llms.txt](https://pawamoy.github.io/mkdocs-llmstxt/llms.txt) as a demonstration.
++
++## Installation
++
++```bash
++pip install mkdocs-llmstxt
++```
++
++## Usage
++
++Enable the plugin in `mkdocs.yml`:
++
++```yaml title="mkdocs.yml"
++plugins:
++- llmstxt:
++    files:
++    - output: llms.txt
++      inputs:
++      - file1.md
++      - folder/file2.md
++```
++
++You can generate several files, each from its own set of input files.
++
++File globbing is supported:
++
++```yaml title="mkdocs.yml"
++plugins:
++- llmstxt:
++    files:
++    - output: llms.txt
++      inputs:
++      - file1.md
++      - reference/*/*.md
++```
++
++The plugin will concatenate the rendered HTML of these input pages, clean it up a bit (with [BeautifulSoup](https://pypi.org/project/beautifulsoup4/)), convert it back to Markdown (with [Markdownify](https://pypi.org/project/markdownify)), and format it (with [Mdformat](https://pypi.org/project/mdformat)). By concatenating HTML instead of Markdown, we ensure that dynamically generated contents (API documentation, executed code blocks, snippets from other files, Jinja macros, etc.) are part of the generated text files. Credits to [Petyo Ivanov](https://github.com/petyosi) for the original idea ✨
++
++You can disable auto-cleaning of the HTML:
++
++```yaml title="mkdocs.yml"
++plugins:
++- llmstxt:
++    autoclean: false
++```
++
++You can also pre-process the HTML before it is converted back to Markdown:
++
++```yaml title="mkdocs.yml"
++plugins:
++- llmstxt:
++    preprocess: path/to/script.py
++```
++
++The specified `script.py` must expose a `preprocess` function that accepts the `soup` and `output` arguments:
++
++```python
++from typing import TYPE_CHECKING
++
++if TYPE_CHECKING:
++    from bs4 import BeautifulSoup
++
++def preprocess(soup: BeautifulSoup, output: str) -> None:
++    ...  # modify the soup
++```
++
++The `output` argument lets you modify the soup *depending on which file is being generated*.
++
++Have a look at [our own pre-processing function](https://pawamoy.github.io/mkdocs-llmstxt/reference/mkdocs_llmstxt/preprocess/#mkdocs_llmstxt.preprocess.autoclean) to get inspiration. Let's implement this tool to create llms.txt file
+
+# 2025-02-26 23:14:35.186571
++D
+
+# 2025-02-26 23:14:36.588272
++s
+
+# 2025-02-26 23:15:09.954568
++S
+
+# 2025-02-26 23:15:13.123161
++y
+
+# 2025-02-26 23:15:17.387581
++N
+
+# 2025-02-26 23:19:52.607413
++/clear
+
+# 2025-02-26 23:19:53.450889
++Documentation built successfully. Opening site/index.html...
++Unexpected error: relative path can't be expressed as a file URI
++Failed to build documentation.
+
+# 2025-02-26 23:20:02.735434
++D
+
+# 2025-02-26 23:20:51.344515
++only include client.md into the llmstext
+
+# 2025-02-26 23:23:16.870438
++do not include source code in llms! Source code in `zeptomail/client.py`
++
++```
++class ZeptoMail: only inlcude any (dynamicly added) source code, only just function singantrues and return types
+
+# 2025-02-26 23:23:21.303127
++N
+
+# 2025-02-26 23:26:47.156438
++/add docs/api/client.md
+
+# 2025-02-26 23:27:46.461484
++let's impelment some code with mkdocstrings, that expands client.md into a complete markdown file, which will include all function defs signratures, and docstring comments. so the output is a llms.md file
+
+# 2025-02-26 23:28:08.239040
++N
+
+# 2025-02-26 23:28:09.486968
++y
+
+# 2025-02-26 23:39:30.740220
++/drop
+
+# 2025-02-26 23:39:33.237264
++/add zeptomail/client.py
+
+# 2025-02-26 23:39:37.456619
++INFO:     192.168.107.1:0 - "POST /api/projects/e901e68f-e05a-499a-8d5f-b6a292dabdef/messages/send HTTP/1.1" 200 OK
++Failed to send email to valkomate@gmail.com: ZeptoMail API Error: Mandatory Field missing (Code: TM_3201)
++Details: from: Mandatory field found empty
++Failed to send email to mate@namilink.com: ZeptoMail API Error: Mandatory Field missing (Code: TM_3201)
++Details: from: Mandatory field found empty
++Failed to send 2 emails. These were committed with failed status.
+
+# 2025-02-26 23:39:43.867290
++/clear
+
+# 2025-02-26 23:39:46.419289
++INFO:     192.168.107.1:0 - "POST /api/projects/e901e68f-e05a-499a-8d5f-b6a292dabdef/messages/send HTTP/1.1" 200 OK
++Failed to send email to valkomate@gmail.com: ZeptoMail API Error: Mandatory Field missing (Code: TM_3201)
++Details: from: Mandatory field found empty
++Failed to send email to mate@namilink.com: ZeptoMail API Error: Mandatory Field missing (Code: TM_3201)
++Details: from: Mandatory field found empty
++Failed to send 2 emails. These were committed with failed status.
+
+# 2025-02-26 23:40:17.683158
++/add zeptomail/client.py
+
+# 2025-02-26 23:40:19.369673
++INFO:     192.168.107.1:0 - "POST /api/projects/e901e68f-e05a-499a-8d5f-b6a292dabdef/messages/send HTTP/1.1" 200 OK
++Failed to send email to valkomate@gmail.com: ZeptoMail API Error: Mandatory Field missing (Code: TM_3201)
++Details: from: Mandatory field found empty
++Failed to send email to mate@namilink.com: ZeptoMail API Error: Mandatory Field missing (Code: TM_3201)
++Details: from: Mandatory field found empty
++Failed to send 2 emails. These were committed with failed status.
+
+# 2025-02-26 23:40:35.424889
++/add zeptomail/errors.py
+
+# 2025-02-26 23:40:36.961315
++/clear
+
+# 2025-02-26 23:40:37.906868
++INFO:     192.168.107.1:0 - "POST /api/projects/e901e68f-e05a-499a-8d5f-b6a292dabdef/messages/send HTTP/1.1" 200 OK
++Failed to send email to valkomate@gmail.com: ZeptoMail API Error: Mandatory Field missing (Code: TM_3201)
++Details: from: Mandatory field found empty
++Failed to send email to mate@namilink.com: ZeptoMail API Error: Mandatory Field missing (Code: TM_3201)
++Details: from: Mandatory field found empty
++Failed to send 2 emails. These were committed with failed status.
+
+# 2025-02-26 23:47:20.376716
++ugh. d '{
++    "from": { "address": "accounts@info.zylker.com", "name": "Paula" },
++    "to": [ { "email_address": { "address": "Sara.d@zylker.com", "name": "Sara" } } ],
++    "cc": [ { "email_address": { "address": "Devin.jo@zylker.com", "name": "Devin" } } ], from and to needs to be constructed differently. can you help me fix that?
+
+# 2025-02-26 23:48:39.433431
++/add zeptomail/
+
+# 2025-02-26 23:49:02.769859
++d '{
++    "from": { "address": "accounts@info.zylker.com", "name": "Paula" },
++    "to": [ { "email_address": { "address": "Sara.d@zylker.com", "name": "Sara" } } ],
++    "cc": [ { "email_address": { "address": "Devin.jo@zylker.com", "name": "Devin" } } ], can you instead of modifying it at the paylod, create a dedicated fucntion to create sender dict ?
+
+# 2025-02-26 23:51:18.110554
++you've misunderstood. sender (from, reply to ) HAS to be this:     "from": { "address": "accounts@info.zylker.com", "name": "Paula" },     "reply_to": [ { "address": "Kevin@zylker.com", "name": "Kevin" } ],
++
++recipient (to, cc, bcc) has to be     "to": [ { "email_address": { "address": "Sara.d@zylker.com", "name": "Sara" } } ],
++
+
+# 2025-02-26 23:56:55.210823
++/clear
+
+# 2025-02-26 23:57:05.871966
++move _get_error_solution into `errors`.py class!
+
+# 2025-02-27 00:46:53.360642
++/add zeptomail/__init__.py
+
+# 2025-02-27 00:52:06.466168
++let's create a SUPER lightweight fastapi router, that can preprocess webhook queries for zeptomail: Standard Reported Data
++Bounce webhook
++event_name - the type of event. This will be either hard bounce or soft bounce
++event_message - details about the event
++email_info - This provides the details of the bounced email, like:
++email_reference - used to trace the email
++client_reference - it is the customer's unique reference to identify the mail
++is_smtp_trigger - true means the webhook is triggered using an SMTP
++subject - subject of the bounced email
++bounce_address - the bounce email address configured in the Mail Agent and the name 
++from - the sender email address details
++address - the sender email address
++name - the sender name
++​to - email address to which the bounce details are to be sent. You can add any number of "to" addresses here
++​email_address - JSON array to add multiple email addresses
++address - the email address to which the bounce details are to be sent
++​​​​processed_time - timestamp of when the email was sent
++object - event_message data is for the object email
++event_data - this field provides the reason for the bounce, time of bounce, and the diagnostic message
++details - details of the bounce like reason, time, and diagnostic_message
++reason - the reason for the bounce
++time - the time of bounce
++diagnostic_message - helps in trouble-shooting
++​object - event_data is for the object bounce. It can be softbounce or hardbounce
++​request_id - unique identifier of your email that was bounced
++​mailagent_key - the unique identifier of the Mail Agent
++webhook_request_id - this is the unique id for a specific webhook transaction.
++Email Opens webhook
++event_name - the type of event. The event tracked here is email opens.
++event_message - details about the event
++email_info - this provides the details of the email that was opened, like:
++email_reference - used to trace the email
++client_reference - it is the customer's unique reference to identify the mail
++is_smtp_trigger - true means the webhook is triggered using an SMTP
++subject - subject of the email that was opened
++bounce_address - the bounce address configured
++from - the sender email address details
++address - the sender email address
++name - the sender name
++​to - email address to which the bounce details are to be sent. You can add any number of "to" addresses here
++​email_address - JSON array to add multiple email addresses
++address - the email address to which the bounce details are to be sent
++​​​​processed_time - timestamp of when the email was sent
++object - event_message data is for the object email
++event_data - this field provides the details about the event
++details - details like email_client, modified_time, ip_location_info, browser, operating_system, time, and device
++email_client - details of the recipient email client 
++name - name of the recipient email client
++version - version of the recipient email client
++modified_time - time the open event occurred
++ip_location_info - details of the recipient ip location
++zipcode - zipcode of the recipient
++country_code - country_code of the recipient
++city - city of the recipient while the event occurred
++latitude - latitude of the recipient while the event occurred
++country_name - city of the recipient where the event occurred
++ip_address - ip address used by the recipient while opening the email
++time_zone - the recipient time zone
++region - the region of the recipient
++longitude - the longitude of the recipient
++​browser - the browser details used by the recipient to open the email
++​name - name of the browser
++version - the browser version
++operating_system - the details of the operating system used by the recipient
++name - name of the recipient operating system
++version - version of the recipient operating system
++​time - the time of the event occurrence
++​device - the details of the recipient device
++​name - name of the recipient device
++​object - event_data is for the object email_open
++​request_id - unique identifier of your email that was opened
++​mailagent_key - the unique identifier of the Mail Agent
++webhook_request_id - this is the unique id for a specific webhook transaction
++Link Clicks webhook
++event_name - the type of event. The event tracked here is email clicks.
++event_message - details about the event
++email_info - this provides the details of the email that was clicked, like:
++email_reference - used to trace the email
++client_reference - it is the customer's unique reference to identify the mail
++is_smtp_trigger - true means the webhook is triggered using an SMTP
++subject - subject of the email that was clicked
++bounce_address - the bounce address configured
++from - the sender email address details
++address - the sender email address
++name - the sender name
++​to - email address to which the bounce details are to be sent. You can add any number of "to" addresses here
++​email_address - JSON array to add multiple email addresses
++address - the email address to which the bounce details are to be sent
++​​​​processed_time - timestamp of when the email was sent
++object - event_message data is for the object email
++event_data - this field provides the details about the event
++details - details like email_client, modified_time, ip_location_info, browser, operating_system, time, and device
++email_client - details of the recipient email client 
++name - name of the recipient email client
++version - version of the recipient email client
++modified_time - time the open event occurred
++ip_location_info - details of the recipient ip location
++zipcode - zipcode of the recipient
++country_code - country_code of the recipient
++city - city of the recipient while the event occurred
++latitude - latitude of the recipient while the event occurred
++country_name - city of the recipient where the event occurred
++ip_address - ip address used by the recipient while opening the email
++time_zone - the recipient time zone
++region - the region of the recipient
++longitude - the longitude of the recipient
++​browser - the browser details used by the recipient to open the email
++​name - name of the browser
++version - version of the recipient operating system
++operating_system - the details of the operating system used by the recipient
++name - name of the recipient operating system
++version - version of the recipient operating system
++​time - the time of the event occurrence
++​device - the details of the recipient device
++​name - name of the recipient device
++​object - event_data is for the object email_link_click
++​request_id - unique identifier of your email that was clicked
++​mailagent_key - the unique identifier of the Mail Agent.
++webhook_request_id - This is the unique id for a specific webhook transaction.
++Securing Webhooks
++Securing your webhooks is recommended as it helps you determine if the requests have actually originated from ZeptoMail. To enable you to verify the webhooks, ZeptoMail adds a signature to all its webhook requests. This adds an extra layer of security to your webhooks. 
++
++Validating Webhook requests
++Each webhook request contains a producer-signature in their request header that is used to verify whether the request is generated by ZeptoMail. The producer signature consists of 3 parts - timestamp, signature, and signing algorithm. 
++
++ts- timestamp is the time when the webhook request was initiated from ZeptoMail server to user-configured URL
++s - the signature is the MAC message generated on encoding the webhook event notification with the authentication key added by you in your Mail Agent
++s-algorithm - signing algorithm is the standard HMAC SHA256 algorithm used to sign the payload of the webhook request
++Sample producer-signature format: ts=1596109465823;s=dN0yVozgabP5NPlxMDfP1r5u65bVO9kTGEZMIQlqI2o%3D;s-algorithm=HmacSHA256 Aslo, here are some examples: {
++   "event_name": [
++      "softbounce"
++   ],
++   "event_message": [
++      {
++         "email_info": {
++            "cc": [
++               {
++                  "email_address": {
++                     "address": "cc@zylker.com",
++                     "name": "TestCC"
++                  }
++               }
++            ],
++            "client_reference": "customer-unique-reference-to-identify-the-mail",
++            "bcc": [
++               {
++                  "email_address": {
++                     "address": "bcc@zylker.com",
++                     "name": "TestBCC"
++                  }
++               }
++            ],
++            "is_smtp_trigger": false,
++            "subject": "webhook test email",
++            "bounce_address": "webhooktest@zylker.com",
++            "email_reference": "13ef.7f162c7f75cdf545.m1.a2766b80-f49c-11ef-9fa4-e23f717f7d6f.19544ac6a38@zylker.com",
++            "reply_to": [
++               {
++                  "address": "replyto@zylker.com",
++                  "name": "TestReplyTo"
++               }
++            ],
++            "from": {
++               "address": "webhooktest@zylker.com",
++               "name": "webhooktest"
++            },
++            "to": [
++               {
++                  "email_address": {
++                     "address": "bouncerecipient@zylker.com",
++                     "name": "BounceRecipient"
++                  }
++               },
++               {
++                  "email_address": {
++                     "address": "testrecipient@zylker.com",
++                     "name": "TestRecipient"
++                  }
++               }
++            ],
++            "tag": "unknown",
++            "processed_time": "2025-02-26T23:51:44Z",
++            "object": "email"
++         },
++         "event_data": [
++            {
++               "details": [
++                  {
++                     "reason": "relaying-issues",
++                     "bounced_recipient": "bouncerecipient@zylker.com",
++                     "time": "2025-02-26T23:51:44Z",
++                     "diagnostic_message": "policy-related"
++                  }
++               ],
++               "object": "softbounce"
++            }
++         ],
++         "request_id": "13ef.7f162c7f75cdf545.m1.a2766b80-f49c-11ef-9fa4-e23f717f7d6f.19544ac6a38"
++      }
++   ],
++   "mailagent_key": "13ef.7f162c7f75cdf545.5fe3175b5d6ec90e",
++   "webhook_request_id": "13ef.7f162c7f75cdf545.w1.a2769290-f49c-11ef-9fa4-e23f717f7d6f.19544ac6a39"
++}{
++   "event_name": [
++      "hardbounce"
++   ],
++   "event_message": [
++      {
++         "email_info": {
++            "cc": [
++               {
++                  "email_address": {
++                     "address": "cc@zylker.com",
++                     "name": "TestCC"
++                  }
++               }
++            ],
++            "client_reference": "customer-unique-reference-to-identify-the-mail",
++            "bcc": [
++               {
++                  "email_address": {
++                     "address": "bcc@zylker.com",
++                     "name": "TestBCC"
++                  }
++               }
++            ],
++            "is_smtp_trigger": false,
++            "subject": "webhook test email",
++            "bounce_address": "webhooktest@zylker.com",
++            "email_reference": "13ef.7f162c7f75cdf545.m1.a9609790-f49c-11ef-9fa4-e23f717f7d6f.19544ac9789@zylker.com",
++            "reply_to": [
++               {
++                  "address": "replyto@zylker.com",
++                  "name": "TestReplyTo"
++               }
++            ],
++            "from": {
++               "address": "webhooktest@zylker.com",
++               "name": "webhooktest"
++            },
++            "to": [
++               {
++                  "email_address": {
++                     "address": "bouncerecipient@zylker.com",
++                     "name": "BounceRecipient"
++                  }
++               },
++               {
++                  "email_address": {
++                     "address": "testrecipient@zylker.com",
++                     "name": "TestRecipient"
++                  }
++               }
++            ],
++            "tag": "unknown",
++            "processed_time": "2025-02-26T23:51:56Z",
++            "object": "email"
++         },
++         "event_data": [
++            {
++               "details": [
++                  {
++                     "reason": "relaying-issues",
++                     "bounced_recipient": "bouncerecipient@zylker.com",
++                     "time": "2025-02-26T23:51:56Z",
++                     "diagnostic_message": "bad-mailbox"
++                  }
++               ],
++               "object": "hardbounce"
++            }
++         ],
++         "request_id": "13ef.7f162c7f75cdf545.m1.a9609790-f49c-11ef-9fa4-e23f717f7d6f.19544ac9789"
++      }
++   ],
++   "mailagent_key": "13ef.7f162c7f75cdf545.5fe3175b5d6ec90e",
++   "webhook_request_id": "13ef.7f162c7f75cdf545.w1.a960bea0-f49c-11ef-9fa4-e23f717f7d6f.19544ac978a"
++}{
++   "event_name": [
++      "email_open"
++   ],
++   "event_message": [
++      {
++         "email_info": {
++            "cc": [
++               {
++                  "email_address": {
++                     "address": "cc@zylker.com",
++                     "name": "TestCC"
++                  }
++               }
++            ],
++            "client_reference": "customer-unique-reference-to-identify-the-mail",
++            "bcc": [
++               {
++                  "email_address": {
++                     "address": "bcc@zylker.com",
++                     "name": "TestBCC"
++                  }
++               }
++            ],
++            "is_smtp_trigger": false,
++            "subject": "webhook test email",
++            "bounce_address": "webhooktest@zylker.com",
++            "email_reference": "13ef.7f162c7f75cdf545.m1.abc49f40-f49c-11ef-9fa4-e23f717f7d6f.19544aca734@zylker.com",
++            "reply_to": [
++               {
++                  "address": "replyto@zylker.com",
++                  "name": "TestReplyTo"
++               }
++            ],
++            "from": {
++               "address": "webhooktest@zylker.com",
++               "name": "webhooktest"
++            },
++            "to": [
++               {
++                  "email_address": {
++                     "address": "bouncerecipient@zylker.com",
++                     "name": "BounceRecipient"
++                  }
++               },
++               {
++                  "email_address": {
++                     "address": "testrecipient@zylker.com",
++                     "name": "TestRecipient"
++                  }
++               }
++            ],
++            "tag": "unknown",
++            "processed_time": "2025-02-26T23:52:00Z",
++            "object": "email"
++         },
++         "event_data": [
++            {
++               "details": [
++                  {
++                     "email_client": {
++                        "name": "unknown",
++                        "version": "unknown"
++                     },
++                     "modified_time": "2025-02-26T23:52:00Z",
++                     "ip_location_info": {
++                        "zipcode": "9023",
++                        "country_code": "HU",
++                        "city": "GYOR",
++                        "latitude": "47.67",
++                        "country_name": "HUNGARY",
++                        "ip_address": "92.249.227.52",
++                        "time_zone": "+100",
++                        "region": "GYORMOSONSOPRON",
++                        "longitude": "17.65"
++                     },
++                     "browser": {
++                        "name": "Chrome",
++                        "version": "78.0.3904.87"
++                     },
++                     "operating_system": {
++                        "name": "Mac OS X",
++                        "version": "10_13_6"
++                     },
++                     "time": "2025-02-26T23:52:00Z",
++                     "device": {
++                        "name": "Computer"
++                     },
++                     "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.87 Safari/537.36"
++                  }
++               ],
++               "object": "email_open"
++            }
++         ],
++         "request_id": "13ef.7f162c7f75cdf545.m1.abc49f40-f49c-11ef-9fa4-e23f717f7d6f.19544aca734"
++      }
++   ],
++   "mailagent_key": "13ef.7f162c7f75cdf545.5fe3175b5d6ec90e",
++   "webhook_request_id": "13ef.7f162c7f75cdf545.w1.abceff80-f49c-11ef-9fa4-e23f717f7d6f.19544aca778"
++}{
++   "event_name": [
++      "email_link_click"
++   ],
++   "event_message": [
++      {
++         "email_info": {
++            "cc": [
++               {
++                  "email_address": {
++                     "address": "cc@zylker.com",
++                     "name": "TestCC"
++                  }
++               }
++            ],
++            "client_reference": "customer-unique-reference-to-identify-the-mail",
++            "bcc": [
++               {
++                  "email_address": {
++                     "address": "bcc@zylker.com",
++                     "name": "TestBCC"
++                  }
++               }
++            ],
++            "is_smtp_trigger": false,
++            "subject": "webhook test email",
++            "bounce_address": "webhooktest@zylker.com",
++            "email_reference": "13ef.7f162c7f75cdf545.m1.adc8aca0-f49c-11ef-9fa4-e23f717f7d6f.19544acb46a@zylker.com",
++            "reply_to": [
++               {
++                  "address": "replyto@zylker.com",
++                  "name": "TestReplyTo"
++               }
++            ],
++            "from": {
++               "address": "webhooktest@zylker.com",
++               "name": "webhooktest"
++            },
++            "to": [
++               {
++                  "email_address": {
++                     "address": "bouncerecipient@zylker.com",
++                     "name": "BounceRecipient"
++                  }
++               },
++               {
++                  "email_address": {
++                     "address": "testrecipient@zylker.com",
++                     "name": "TestRecipient"
++                  }
++               }
++            ],
++            "tag": "unknown",
++            "processed_time": "2025-02-26T23:52:03Z",
++            "object": "email"
++         },
++         "event_data": [
++            {
++               "details": [
++                  {
++                     "email_client": {
++                        "name": "unknown",
++                        "version": "unknown"
++                     },
++                     "modified_time": "2025-02-26T23:52:03Z",
++                     "ip_location_info": {
++                        "zipcode": "9023",
++                        "country_code": "HU",
++                        "city": "GYOR",
++                        "latitude": "47.67",
++                        "country_name": "HUNGARY",
++                        "ip_address": "92.249.227.52",
++                        "time_zone": "+100",
++                        "region": "GYORMOSONSOPRON",
++                        "longitude": "17.65"
++                     },
++                     "browser": {
++                        "name": "Chrome",
++                        "version": "78.0.3904.87"
++                     },
++                     "operating_system": {
++                        "name": "Mac OS X",
++                        "version": "10_13_6"
++                     },
++                     "time": "2025-02-26T23:52:03Z",
++                     "clicked_link": "https://www.zoho.com",
++                     "device": {
++                        "name": "Computer"
++                     },
++                     "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.87 Safari/537.36"
++                  }
++               ],
++               "object": "email_link_click"
++            }
++         ],
++         "request_id": "13ef.7f162c7f75cdf545.m1.adc8aca0-f49c-11ef-9fa4-e23f717f7d6f.19544acb46a"
++      }
++   ],
++   "mailagent_key": "13ef.7f162c7f75cdf545.5fe3175b5d6ec90e",
++   "webhook_request_id": "13ef.7f162c7f75cdf545.w1.adcb44b0-f49c-11ef-9fa4-e23f717f7d6f.19544acb47b"
++}
+
+# 2025-02-27 00:52:08.947996
++D
+
+# 2025-02-27 00:52:57.916514
++y
+
+# 2025-02-27 00:53:02.701606
++D
+
+# 2025-02-27 00:53:15.362304
++/clear
+
+# 2025-02-27 00:53:34.061481
++/add pyproject.toml
+
+# 2025-02-27 00:54:36.980607
++/ask what command should i run to add optional packages to install like fastapi and uvicorn if i want to use webhooks (zeptomail[webhooks] to only install dependencies needed for webhooks, zeptomail[email] for install deps only for emailing, and then pure zeptomail can install all deps
+
+# 2025-02-27 00:55:08.487422
++lets edit pyproject.toml
+
+# 2025-02-27 00:55:49.938823
++N
+
+# 2025-02-27 01:03:57.944968
++/clear
+
+# 2025-02-27 01:04:09.842858
++let's just use mailagent_key for validation
+
+# 2025-02-27 01:08:15.991282
++/clear
+
+# 2025-02-27 01:08:19.925255
++/ask how can i run this app?
+
+# 2025-02-27 10:42:50.682691
++/drop webhooks/
+
+# 2025-02-27 10:42:58.960676
++/drop
+
+# 2025-02-27 10:43:06.021813
++/add tests/test_client.py tests/test_client.py
+
+# 2025-02-27 10:43:15.269445
++add zeptomail/client.py
+
+# 2025-02-27 10:43:16.917778
++y
+
+# 2025-02-27 10:43:20.135780
++/clear
+
+# 2025-02-27 10:43:38.603994
++let's fix faailing unit tests: /Users/valkom/.uve/zeptomail/bin/python3 /Users/valkom/Library/Application Support/JetBrains/IntelliJIdea2024.1/plugins/python/helpers/coverage_runner/run_coverage.py run --omit="/Users/valkom/Library/Application Support/JetBrains/IntelliJIdea2024.1/plugins/python/helpers*" /Users/valkom/Library/Application Support/JetBrains/IntelliJIdea2024.1/plugins/python/helpers/pycharm/_jb_unittest_runner.py --target test_client.TestZeptoMail.test_add_batch_recipient --target test_client.TestZeptoMail.test_build_recipient --target test_client.TestZeptoMail.test_get_error_solution --target test_client.TestZeptoMail.test_handle_error_response --target test_client.TestZeptoMail.test_handle_success_response --target test_client.TestZeptoMail.test_invalid_json_response --target test_client.TestZeptoMail.test_send_batch_email --target test_client.TestZeptoMail.test_send_batch_email_with_all_parameters --target test_client.TestZeptoMail.test_send_email --target test_client.TestZeptoMail.test_send_email_with_all_parameters --target test_client.TestZeptoMail.test_specific_error_codes --target test_client.TestZeptoMail.test_zeptomail_error_detail_messages 
++Testing started at 10:43 ...
++Launching unittests with arguments python -m unittest test_client.TestZeptoMail.test_add_batch_recipient test_client.TestZeptoMail.test_build_recipient test_client.TestZeptoMail.test_get_error_solution test_client.TestZeptoMail.test_handle_error_response test_client.TestZeptoMail.test_handle_success_response test_client.TestZeptoMail.test_invalid_json_response test_client.TestZeptoMail.test_send_batch_email test_client.TestZeptoMail.test_send_batch_email_with_all_parameters test_client.TestZeptoMail.test_send_email test_client.TestZeptoMail.test_send_email_with_all_parameters test_client.TestZeptoMail.test_specific_error_codes test_client.TestZeptoMail.test_zeptomail_error_detail_messages in /Users/valkom/Documents/GitHub/namilink/zeptomail-python-api/tests
++
++
++
++{'email': 'recipient@example.com',
++ 'merge_info': {'first_name': 'Recipient',
++                'last_name': 'Name',
++                'order_id': '12345'},
++ 'name': 'Recipient Name'} != {'email_address': {'address': 'recipient@example.com',
++                   'name': 'Recipient Name'},
++ 'merge_info': {'first_name': 'Recipient',
++                'last_name': 'Name',
++                'order_id': '12345'}}
++
++<Click to see difference>
++
++Traceback (most recent call last):
++  File "/Users/valkom/Documents/GitHub/namilink/zeptomail-python-api/tests/test_client.py", line 486, in test_add_batch_recipient
++    self.assertEqual(result, {
++AssertionError: {'email_address': {'address': 'recipient@example[113 chars]45'}} != {'email': 'recipient@example.com', 'name': 'Reci[92 chars]45'}}
++- {'email_address': {'address': 'recipient@example.com',
++?        --------  ------------
++
+++ {'email': 'recipient@example.com',
++-                    'name': 'Recipient Name'},
++   'merge_info': {'first_name': 'Recipient',
++                  'last_name': 'Name',
++-                 'order_id': '12345'}}
++?                                     ^
++
+++                 'order_id': '12345'},
++?                                     ^
++
+++  'name': 'Recipient Name'}
++
++
++
++{'email': 'test@example.com', 'name': 'Test User'} != {'address': 'test@example.com', 'name': 'Test User'}
++
++Expected :{'address': 'test@example.com', 'name': 'Test User'}
++Actual   :{'email': 'test@example.com', 'name': 'Test User'}
++<Click to see difference>
++
++Traceback (most recent call last):
++  File "/Users/valkom/Documents/GitHub/namilink/zeptomail-python-api/tests/test_client.py", line 13, in test_build_recipient
++    self.assertEqual(result, {"email": "test@example.com", "name": "Test User"})
++AssertionError: {'address': 'test@example.com', 'name': 'Test User'} != {'email': 'test@example.com', 'name': 'Test User'}
++- {'address': 'test@example.com', 'name': 'Test User'}
++?    ^^^^^^
++
+++ {'email': 'test@example.com', 'name': 'Test User'}
++?   ++ ^^
++
++
++
++Error
++Traceback (most recent call last):
++  File "/Users/valkom/Documents/GitHub/namilink/zeptomail-python-api/tests/test_client.py", line 178, in test_get_error_solution
++    solution = client._get_error_solution(
++AttributeError: 'ZeptoMail' object has no attribute '_get_error_solution'
++
++
++Error
++Traceback (most recent call last):
++  File "/opt/local/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/unittest/mock.py", line 1336, in patched
++    return func(*newargs, **newkeywargs)
++  File "/Users/valkom/Documents/GitHub/namilink/zeptomail-python-api/tests/test_client.py", line 93, in test_handle_error_response
++    with self.assertRaises(ZeptoMailError) as context:
++NameError: name 'ZeptoMailError' is not defined
++
++
++Error
++Traceback (most recent call last):
++  File "/opt/local/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/unittest/mock.py", line 1336, in patched
++    return func(*newargs, **newkeywargs)
++  File "/Users/valkom/Documents/GitHub/namilink/zeptomail-python-api/tests/test_client.py", line 59, in test_handle_success_response
++    response = self.client.send_email(
++TypeError: send_email() got an unexpected keyword argument 'from_address'
++
++
++Error
++Traceback (most recent call last):
++  File "/opt/local/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/unittest/mock.py", line 1336, in patched
++    return func(*newargs, **newkeywargs)
++  File "/Users/valkom/Documents/GitHub/namilink/zeptomail-python-api/tests/test_client.py", line 211, in test_invalid_json_response
++    with self.assertRaises(ZeptoMailError) as context:
++NameError: name 'ZeptoMailError' is not defined
++
++
++Error
++Traceback (most recent call last):
++  File "/opt/local/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/unittest/mock.py", line 1336, in patched
++    return func(*newargs, **newkeywargs)
++  File "/Users/valkom/Documents/GitHub/namilink/zeptomail-python-api/tests/test_client.py", line 320, in test_send_batch_email
++    response = self.client.send_batch_email(
++TypeError: send_batch_email() got an unexpected keyword argument 'from_address'
++
++
++
++Ran 12 tests in 0.018s
++
++FAILED (failures=2, errors=10)
++
++Error
++Traceback (most recent call last):
++  File "/opt/local/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/unittest/mock.py", line 1336, in patched
++    return func(*newargs, **newkeywargs)
++  File "/Users/valkom/Documents/GitHub/namilink/zeptomail-python-api/tests/test_client.py", line 437, in test_send_batch_email_with_all_parameters
++    response = self.client.send_batch_email(
++TypeError: send_batch_email() got an unexpected keyword argument 'from_address'
++
++
++Error
++Traceback (most recent call last):
++  File "/opt/local/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/unittest/mock.py", line 1336, in patched
++    return func(*newargs, **newkeywargs)
++  File "/Users/valkom/Documents/GitHub/namilink/zeptomail-python-api/tests/test_client.py", line 27, in test_send_email
++    response = self.client.send_email(
++TypeError: send_email() got an unexpected keyword argument 'from_address'
++
++
++Error
++Traceback (most recent call last):
++  File "/opt/local/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/unittest/mock.py", line 1336, in patched
++    return func(*newargs, **newkeywargs)
++  File "/Users/valkom/Documents/GitHub/namilink/zeptomail-python-api/tests/test_client.py", line 256, in test_send_email_with_all_parameters
++    response = self.client.send_email(
++TypeError: send_email() got an unexpected keyword argument 'from_address'
++
++
++Error
++Traceback (most recent call last):
++  File "/opt/local/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/unittest/mock.py", line 1336, in patched
++    return func(*newargs, **newkeywargs)
++  File "/Users/valkom/Documents/GitHub/namilink/zeptomail-python-api/tests/test_client.py", line 125, in test_specific_error_codes
++    with self.assertRaises(ZeptoMailError) as context:
++NameError: name 'ZeptoMailError' is not defined
++
++
++Error
++Traceback (most recent call last):
++  File "/Users/valkom/Documents/GitHub/namilink/zeptomail-python-api/tests/test_client.py", line 138, in test_zeptomail_error_detail_messages
++    error = ZeptoMailError(
++NameError: name 'ZeptoMailError' is not defined
++
++Wrote XML report to /Users/valkom/Library/Caches/JetBrains/IntelliJIdea2024.1/coverage/zeptomail_python_api$.xml
++
++Process finished with exit code 0
++
+
+# 2025-02-27 10:44:15.142348
++N
+
+# 2025-02-27 10:44:24.127884
++/clear
+
+# 2025-02-27 10:44:43.454394
++
++Failure
++Traceback (most recent call last):
++  File "/Users/valkom/Documents/GitHub/namilink/zeptomail-python-api/tests/test_client.py", line 201, in test_get_error_solution
++    self.assertIsNone(solution)
++AssertionError: 'Unknown error happened' is not None
++
++
+
+# 2025-02-27 10:45:00.591065
++y
+
+# 2025-02-27 10:45:07.605109
++try again
+
+# 2025-02-27 10:45:15.772052
++N
+
+# 2025-02-27 10:45:33.276476
++what if, it returns "Unknown error happened" or ["Unknown error happened"] instead of None? hah?
+
+# 2025-02-27 10:49:46.605369
++D
+
+# 2025-02-27 10:49:47.837625
++/clear
+
+# 2025-02-27 10:50:11.420337
++let's implement unti tests, only for client.py! errors.py doesn't need testing burh
+
+# 2025-02-27 10:51:38.174432
++D
+
+# 2025-02-27 10:51:39.592655
++/clear
+
+# 2025-02-27 10:51:43.110903
++  # Validate required fields
++        if not from_address:
++            raise ZeptoMailError(
++                "Missing required field: 'from_address' cannot be empty",
++                code="VALIDATION_ERROR"
++            )
++            
++        if not (to or cc or bcc):
++            raise ZeptoMailError(
++                "Missing required field: at least one recipient (to, cc, or bcc) is required",
++                code="VALIDATION_ERROR"
++            )
++            
++        if not (html_body or text_body):
++            raise ZeptoMailError(
++                "Missing required field: either 'html_body' or 'text_body' must be provided",
++                code="VALIDATION_ERROR"
++            )
++            
++        url = f"{self.base_url}/email/batch" Cover these liens
+
+# 2025-02-27 10:52:41.966576
++/Users/valkom/.uve/zeptomail/bin/python3 /Users/valkom/Library/Application Support/JetBrains/IntelliJIdea2024.1/plugins/python/helpers/coverage_runner/run_coverage.py run --omit="/Users/valkom/Library/Application Support/JetBrains/IntelliJIdea2024.1/plugins/python/helpers*" /Users/valkom/Library/Application Support/JetBrains/IntelliJIdea2024.1/plugins/python/helpers/pycharm/_jb_unittest_runner.py --path /Users/valkom/Documents/GitHub/namilink/zeptomail-python-api/tests/test_client.py 
++Testing started at 10:52 ...
++Launching unittests with arguments python -m unittest /Users/valkom/Documents/GitHub/namilink/zeptomail-python-api/tests/test_client.py in /Users/valkom/Documents/GitHub/namilink/zeptomail-python-api/tests
++
++
++Error
++Traceback (most recent call last):
++TypeError: test_send_email_validation_errors() missing 1 required positional argument: 'mock_post'
++
++
++
++Ran 13 tests in 0.011s
++
++FAILED (errors=2)
++
++Error
++Traceback (most recent call last):
++  File "/opt/local/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/unittest/mock.py", line 1336, in patched
++    return func(*newargs, **newkeywargs)
++TypeError: test_validate_email_params() takes 1 positional argument but 2 were given
++
++Wrote XML report to /Users/valkom/Library/Caches/JetBrains/IntelliJIdea2024.1/coverage/zeptomail_python_api$.xml
++
++Process finished with exit code 0
++
+
+# 2025-02-27 10:52:43.978038
++. /Users/valkom/.uve/zeptomail/bin/python3 /Users/valkom/Library/Application Support/JetBrains/IntelliJIdea2024.1/plugins/python/helpers/coverage_runner/run_coverage.py run --omit="/Users/valkom/Library/Application Support/JetBrains/IntelliJIdea2024.1/plugins/python/helpers*" /Users/valkom/Library/Application Support/JetBrains/IntelliJIdea2024.1/plugins/python/helpers/pycharm/_jb_unittest_runner.py --path /Users/valkom/Documents/GitHub/namilink/zeptomail-python-api/tests/test_client.py 
++Testing started at 10:52 ...
++Launching unittests with arguments python -m unittest /Users/valkom/Documents/GitHub/namilink/zeptomail-python-api/tests/test_client.py in /Users/valkom/Documents/GitHub/namilink/zeptomail-python-api/tests
++
++
++Error
++Traceback (most recent call last):
++TypeError: test_send_email_validation_errors() missing 1 required positional argument: 'mock_post'
++
++
++
++Ran 13 tests in 0.011s
++
++FAILED (errors=2)
++
++Error
++Traceback (most recent call last):
++  File "/opt/local/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/unittest/mock.py", line 1336, in patched
++    return func(*newargs, **newkeywargs)
++TypeError: test_validate_email_params() takes 1 positional argument but 2 were given
++
++Wrote XML report to /Users/valkom/Library/Caches/JetBrains/IntelliJIdea2024.1/coverage/zeptomail_python_api$.xml
++
++Process finished with exit code 0
++
+
+# 2025-02-27 10:53:15.528164
++/clear
+
+# 2025-02-27 10:53:20.776168
++
++        if cc:
++            payload["cc"] = cc
++
++        if bcc:
++            payload["bcc"] = bcc
++
++        # Add content
++        if html_body:
++            payload["htmlbody"] = html_body
++
++        if text_body:
++            payload["textbody"] = text_body
++
++        # Add tracking options
++        payload["track_clicks"] = track_clicks
++        payload["track_opens"] = track_opens
++
++        # Add optional parameters
++        if client_reference:
++            payload["client_reference"] = client_reference
++
++        if mime_headers:
++            payload["mime_headers"] = mime_headers
++
++        if attachments:
++            payload["attachments"] = attachments
++
++        if inline_images:
++            payload["inline_images"] = inline_images
++
++        if merge_info:
++            payload["merge_info"] = merge_info cover these lines in unit tests
+
+# 2025-02-27 10:56:22.172718
++  if cc:
++            payload["cc"] = cc
++
++        if bcc:
++            payload["bcc"] = bcc
++
++        if reply_to:
++            payload["reply_to"] = reply_to
++
++        # Add content
++        if html_body:
++            payload["htmlbody"] = html_body
++
++        if text_body:
++            payload["textbody"] = text_body
++
++        # Add tracking options
++        payload["track_clicks"] = track_clicks
++        payload["track_opens"] = track_opens
++
++        # Add optional parameters
++        if client_reference:
++            payload["client_reference"] = client_reference
++
++        if mime_headers:
++            payload["mime_headers"] = mime_headers
++
++        if attachments:
++            payload["attachments"] = attachments
++
++        if inline_images:
++            payload["inline_images"] = inline_images
++ these lines STILL NOT COVERED
+
+# 2025-02-27 10:57:00.378437
++/add examples/send_email.py
+
+# 2025-02-27 10:57:10.652542
++let's create a new example, that sends a txt attachments as swell
+
+# 2025-02-27 10:57:32.907611
++y
+
+# 2025-02-27 10:57:40.763305
++D
+
+# 2025-02-27 13:58:46.631452
++/add README.md zeptomail/client.py
+
+# 2025-02-27 13:58:54.161395
++update README.md according what's in client.py
