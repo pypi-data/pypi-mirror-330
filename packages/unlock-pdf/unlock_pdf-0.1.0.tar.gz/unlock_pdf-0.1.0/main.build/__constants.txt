@@ -1,0 +1,488 @@
+{
+  "__bytecode.const": {
+    "blob_name": ".bytecode",
+    "blob_size": 6411037,
+    "input_size": 6435154
+  },
+  "__constants.const": {
+    "blob_name": "",
+    "blob_size": 866,
+    "input_size": 2206
+  },
+  "module.PIL.BlpImagePlugin.const": {
+    "blob_name": "PIL.BlpImagePlugin",
+    "blob_size": 5401,
+    "input_size": 8292
+  },
+  "module.PIL.BmpImagePlugin.const": {
+    "blob_name": "PIL.BmpImagePlugin",
+    "blob_size": 3764,
+    "input_size": 6389
+  },
+  "module.PIL.BufrStubImagePlugin.const": {
+    "blob_name": "PIL.BufrStubImagePlugin",
+    "blob_size": 1114,
+    "input_size": 1936
+  },
+  "module.PIL.CurImagePlugin.const": {
+    "blob_name": "PIL.CurImagePlugin",
+    "blob_size": 802,
+    "input_size": 1601
+  },
+  "module.PIL.DcxImagePlugin.const": {
+    "blob_name": "PIL.DcxImagePlugin",
+    "blob_size": 891,
+    "input_size": 1719
+  },
+  "module.PIL.DdsImagePlugin.const": {
+    "blob_name": "PIL.DdsImagePlugin",
+    "blob_size": 6580,
+    "input_size": 12817
+  },
+  "module.PIL.EpsImagePlugin.const": {
+    "blob_name": "PIL.EpsImagePlugin",
+    "blob_size": 4462,
+    "input_size": 7069
+  },
+  "module.PIL.ExifTags.const": {
+    "blob_name": "PIL.ExifTags",
+    "blob_size": 6760,
+    "input_size": 14537
+  },
+  "module.PIL.FliImagePlugin.const": {
+    "blob_name": "PIL.FliImagePlugin",
+    "blob_size": 1584,
+    "input_size": 3035
+  },
+  "module.PIL.FpxImagePlugin.const": {
+    "blob_name": "PIL.FpxImagePlugin",
+    "blob_size": 2067,
+    "input_size": 3672
+  },
+  "module.PIL.FtexImagePlugin.const": {
+    "blob_name": "PIL.FtexImagePlugin",
+    "blob_size": 2780,
+    "input_size": 3739
+  },
+  "module.PIL.GbrImagePlugin.const": {
+    "blob_name": "PIL.GbrImagePlugin",
+    "blob_size": 1044,
+    "input_size": 1977
+  },
+  "module.PIL.GifImagePlugin.const": {
+    "blob_name": "PIL.GifImagePlugin",
+    "blob_size": 9673,
+    "input_size": 14142
+  },
+  "module.PIL.GimpGradientFile.const": {
+    "blob_name": "PIL.GimpGradientFile",
+    "blob_size": 1531,
+    "input_size": 2674
+  },
+  "module.PIL.GimpPaletteFile.const": {
+    "blob_name": "PIL.GimpPaletteFile",
+    "blob_size": 602,
+    "input_size": 1206
+  },
+  "module.PIL.GribStubImagePlugin.const": {
+    "blob_name": "PIL.GribStubImagePlugin",
+    "blob_size": 1110,
+    "input_size": 1922
+  },
+  "module.PIL.Hdf5StubImagePlugin.const": {
+    "blob_name": "PIL.Hdf5StubImagePlugin",
+    "blob_size": 1117,
+    "input_size": 1939
+  },
+  "module.PIL.IcnsImagePlugin.const": {
+    "blob_name": "PIL.IcnsImagePlugin",
+    "blob_size": 4518,
+    "input_size": 7149
+  },
+  "module.PIL.IcoImagePlugin.const": {
+    "blob_name": "PIL.IcoImagePlugin",
+    "blob_size": 3991,
+    "input_size": 6256
+  },
+  "module.PIL.ImImagePlugin.const": {
+    "blob_name": "PIL.ImImagePlugin",
+    "blob_size": 3025,
+    "input_size": 5749
+  },
+  "module.PIL.Image.const": {
+    "blob_name": "PIL.Image",
+    "blob_size": 74694,
+    "input_size": 88851
+  },
+  "module.PIL.ImageChops.const": {
+    "blob_name": "PIL.ImageChops",
+    "blob_size": 5145,
+    "input_size": 6189
+  },
+  "module.PIL.ImageCms.const": {
+    "blob_name": "PIL.ImageCms",
+    "blob_size": 28695,
+    "input_size": 31558
+  },
+  "module.PIL.ImageColor.const": {
+    "blob_name": "PIL.ImageColor",
+    "blob_size": 4865,
+    "input_size": 6000
+  },
+  "module.PIL.ImageFile.const": {
+    "blob_name": "PIL.ImageFile",
+    "blob_size": 9924,
+    "input_size": 13666
+  },
+  "module.PIL.ImageFilter.const": {
+    "blob_name": "PIL.ImageFilter",
+    "blob_size": 10303,
+    "input_size": 12974
+  },
+  "module.PIL.ImageMath.const": {
+    "blob_name": "PIL.ImageMath",
+    "blob_size": 5388,
+    "input_size": 7619
+  },
+  "module.PIL.ImageMode.const": {
+    "blob_name": "PIL.ImageMode",
+    "blob_size": 1381,
+    "input_size": 2108
+  },
+  "module.PIL.ImageOps.const": {
+    "blob_name": "PIL.ImageOps",
+    "blob_size": 14728,
+    "input_size": 16681
+  },
+  "module.PIL.ImagePalette.const": {
+    "blob_name": "PIL.ImagePalette",
+    "blob_size": 3471,
+    "input_size": 5060
+  },
+  "module.PIL.ImageSequence.const": {
+    "blob_name": "PIL.ImageSequence",
+    "blob_size": 1359,
+    "input_size": 1928
+  },
+  "module.PIL.ImageShow.const": {
+    "blob_name": "PIL.ImageShow",
+    "blob_size": 4431,
+    "input_size": 6200
+  },
+  "module.PIL.ImageTk.const": {
+    "blob_name": "PIL.ImageTk",
+    "blob_size": 4603,
+    "input_size": 6165
+  },
+  "module.PIL.ImageWin.const": {
+    "blob_name": "PIL.ImageWin",
+    "blob_size": 5695,
+    "input_size": 6994
+  },
+  "module.PIL.ImtImagePlugin.const": {
+    "blob_name": "PIL.ImtImagePlugin",
+    "blob_size": 753,
+    "input_size": 1669
+  },
+  "module.PIL.IptcImagePlugin.const": {
+    "blob_name": "PIL.IptcImagePlugin",
+    "blob_size": 2407,
+    "input_size": 4142
+  },
+  "module.PIL.Jpeg2KImagePlugin.const": {
+    "blob_name": "PIL.Jpeg2KImagePlugin",
+    "blob_size": 4631,
+    "input_size": 7427
+  },
+  "module.PIL.JpegImagePlugin.const": {
+    "blob_name": "PIL.JpegImagePlugin",
+    "blob_size": 8411,
+    "input_size": 15015
+  },
+  "module.PIL.JpegPresets.const": {
+    "blob_name": "PIL.JpegPresets",
+    "blob_size": 4109,
+    "input_size": 4953
+  },
+  "module.PIL.McIdasImagePlugin.const": {
+    "blob_name": "PIL.McIdasImagePlugin",
+    "blob_size": 801,
+    "input_size": 1592
+  },
+  "module.PIL.MicImagePlugin.const": {
+    "blob_name": "PIL.MicImagePlugin",
+    "blob_size": 1143,
+    "input_size": 2068
+  },
+  "module.PIL.MpegImagePlugin.const": {
+    "blob_name": "PIL.MpegImagePlugin",
+    "blob_size": 1030,
+    "input_size": 1945
+  },
+  "module.PIL.MpoImagePlugin.const": {
+    "blob_name": "PIL.MpoImagePlugin",
+    "blob_size": 2464,
+    "input_size": 4020
+  },
+  "module.PIL.MspImagePlugin.const": {
+    "blob_name": "PIL.MspImagePlugin",
+    "blob_size": 1475,
+    "input_size": 2852
+  },
+  "module.PIL.PaletteFile.const": {
+    "blob_name": "PIL.PaletteFile",
+    "blob_size": 513,
+    "input_size": 1053
+  },
+  "module.PIL.PalmImagePlugin.const": {
+    "blob_name": "PIL.PalmImagePlugin",
+    "blob_size": 3458,
+    "input_size": 4428
+  },
+  "module.PIL.PcdImagePlugin.const": {
+    "blob_name": "PIL.PcdImagePlugin",
+    "blob_size": 705,
+    "input_size": 1488
+  },
+  "module.PIL.PcxImagePlugin.const": {
+    "blob_name": "PIL.PcxImagePlugin",
+    "blob_size": 1642,
+    "input_size": 3107
+  },
+  "module.PIL.PdfImagePlugin.const": {
+    "blob_name": "PIL.PdfImagePlugin",
+    "blob_size": 2656,
+    "input_size": 4650
+  },
+  "module.PIL.PdfParser.const": {
+    "blob_name": "PIL.PdfParser",
+    "blob_size": 11062,
+    "input_size": 17433
+  },
+  "module.PIL.PixarImagePlugin.const": {
+    "blob_name": "PIL.PixarImagePlugin",
+    "blob_size": 730,
+    "input_size": 1528
+  },
+  "module.PIL.PngImagePlugin.const": {
+    "blob_name": "PIL.PngImagePlugin",
+    "blob_size": 12396,
+    "input_size": 19619
+  },
+  "module.PIL.PpmImagePlugin.const": {
+    "blob_name": "PIL.PpmImagePlugin",
+    "blob_size": 3438,
+    "input_size": 5935
+  },
+  "module.PIL.PsdImagePlugin.const": {
+    "blob_name": "PIL.PsdImagePlugin",
+    "blob_size": 2499,
+    "input_size": 4241
+  },
+  "module.PIL.SgiImagePlugin.const": {
+    "blob_name": "PIL.SgiImagePlugin",
+    "blob_size": 1967,
+    "input_size": 3537
+  },
+  "module.PIL.SpiderImagePlugin.const": {
+    "blob_name": "PIL.SpiderImagePlugin",
+    "blob_size": 2626,
+    "input_size": 4685
+  },
+  "module.PIL.SunImagePlugin.const": {
+    "blob_name": "PIL.SunImagePlugin",
+    "blob_size": 1051,
+    "input_size": 2003
+  },
+  "module.PIL.TgaImagePlugin.const": {
+    "blob_name": "PIL.TgaImagePlugin",
+    "blob_size": 1857,
+    "input_size": 3386
+  },
+  "module.PIL.TiffImagePlugin.const": {
+    "blob_name": "PIL.TiffImagePlugin",
+    "blob_size": 24039,
+    "input_size": 36454
+  },
+  "module.PIL.TiffTags.const": {
+    "blob_name": "PIL.TiffTags",
+    "blob_size": 7571,
+    "input_size": 11933
+  },
+  "module.PIL.WebPImagePlugin.const": {
+    "blob_name": "PIL.WebPImagePlugin",
+    "blob_size": 3337,
+    "input_size": 5602
+  },
+  "module.PIL.WmfImagePlugin.const": {
+    "blob_name": "PIL.WmfImagePlugin",
+    "blob_size": 1735,
+    "input_size": 3089
+  },
+  "module.PIL.XVThumbImagePlugin.const": {
+    "blob_name": "PIL.XVThumbImagePlugin",
+    "blob_size": 848,
+    "input_size": 1766
+  },
+  "module.PIL.XbmImagePlugin.const": {
+    "blob_name": "PIL.XbmImagePlugin",
+    "blob_size": 1345,
+    "input_size": 2465
+  },
+  "module.PIL.XpmImagePlugin.const": {
+    "blob_name": "PIL.XpmImagePlugin",
+    "blob_size": 1139,
+    "input_size": 2415
+  },
+  "module.PIL._binary.const": {
+    "blob_name": "PIL._binary",
+    "blob_size": 1474,
+    "input_size": 2088
+  },
+  "module.PIL._deprecate.const": {
+    "blob_name": "PIL._deprecate",
+    "blob_size": 1502,
+    "input_size": 1960
+  },
+  "module.PIL._tkinter_finder.const": {
+    "blob_name": "PIL._tkinter_finder",
+    "blob_size": 287,
+    "input_size": 544
+  },
+  "module.PIL._typing.const": {
+    "blob_name": "PIL._typing",
+    "blob_size": 647,
+    "input_size": 1303
+  },
+  "module.PIL._util.const": {
+    "blob_name": "PIL._util",
+    "blob_size": 677,
+    "input_size": 1092
+  },
+  "module.PIL._version.const": {
+    "blob_name": "PIL._version",
+    "blob_size": 142,
+    "input_size": 295
+  },
+  "module.PIL.const": {
+    "blob_name": "PIL",
+    "blob_size": 1871,
+    "input_size": 2372
+  },
+  "module.PIL.features.const": {
+    "blob_name": "PIL.features",
+    "blob_size": 5913,
+    "input_size": 7922
+  },
+  "module.__main__.const": {
+    "blob_name": "__main__",
+    "blob_size": 661,
+    "input_size": 1282
+  },
+  "module.lxml.const": {
+    "blob_name": "lxml",
+    "blob_size": 507,
+    "input_size": 805
+  },
+  "module.pikepdf._augments.const": {
+    "blob_name": "pikepdf._augments",
+    "blob_size": 3209,
+    "input_size": 4185
+  },
+  "module.pikepdf._cpphelpers.const": {
+    "blob_name": "pikepdf._cpphelpers",
+    "blob_size": 1605,
+    "input_size": 2580
+  },
+  "module.pikepdf._exceptions.const": {
+    "blob_name": "pikepdf._exceptions",
+    "blob_size": 394,
+    "input_size": 690
+  },
+  "module.pikepdf._io.const": {
+    "blob_name": "pikepdf._io",
+    "blob_size": 1580,
+    "input_size": 2307
+  },
+  "module.pikepdf._methods.const": {
+    "blob_name": "pikepdf._methods",
+    "blob_size": 13197,
+    "input_size": 17636
+  },
+  "module.pikepdf._version.const": {
+    "blob_name": "pikepdf._version",
+    "blob_size": 149,
+    "input_size": 302
+  },
+  "module.pikepdf._xml.const": {
+    "blob_name": "pikepdf._xml",
+    "blob_size": 781,
+    "input_size": 1281
+  },
+  "module.pikepdf.codec.const": {
+    "blob_name": "pikepdf.codec",
+    "blob_size": 3422,
+    "input_size": 4483
+  },
+  "module.pikepdf.const": {
+    "blob_name": "pikepdf",
+    "blob_size": 2712,
+    "input_size": 2975
+  },
+  "module.pikepdf.exceptions.const": {
+    "blob_name": "pikepdf.exceptions",
+    "blob_size": 1056,
+    "input_size": 1183
+  },
+  "module.pikepdf.jbig2.const": {
+    "blob_name": "pikepdf.jbig2",
+    "blob_size": 2564,
+    "input_size": 3811
+  },
+  "module.pikepdf.models._content_stream.const": {
+    "blob_name": "pikepdf.models._content_stream",
+    "blob_size": 4114,
+    "input_size": 4919
+  },
+  "module.pikepdf.models._transcoding.const": {
+    "blob_name": "pikepdf.models._transcoding",
+    "blob_size": 4533,
+    "input_size": 5963
+  },
+  "module.pikepdf.models.const": {
+    "blob_name": "pikepdf.models",
+    "blob_size": 1462,
+    "input_size": 1690
+  },
+  "module.pikepdf.models.encryption.const": {
+    "blob_name": "pikepdf.models.encryption",
+    "blob_size": 3329,
+    "input_size": 4693
+  },
+  "module.pikepdf.models.image.const": {
+    "blob_name": "pikepdf.models.image",
+    "blob_size": 17724,
+    "input_size": 24402
+  },
+  "module.pikepdf.models.metadata.const": {
+    "blob_name": "pikepdf.models.metadata",
+    "blob_size": 16216,
+    "input_size": 22625
+  },
+  "module.pikepdf.models.outlines.const": {
+    "blob_name": "pikepdf.models.outlines",
+    "blob_size": 8158,
+    "input_size": 10259
+  },
+  "module.pikepdf.objects.const": {
+    "blob_name": "pikepdf.objects",
+    "blob_size": 7839,
+    "input_size": 9452
+  },
+  "module.pikepdf.settings.const": {
+    "blob_name": "pikepdf.settings",
+    "blob_size": 331,
+    "input_size": 452
+  },
+  "total": 17800
+}
