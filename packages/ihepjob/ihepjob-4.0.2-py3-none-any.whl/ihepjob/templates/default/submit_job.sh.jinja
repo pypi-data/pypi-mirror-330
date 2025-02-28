@@ -1,0 +1,38 @@
+#!/bin/bash
+###############################################################################
+# Author: Xuefeng DING <dingxf@ihep.ac.cn> @ IHEP-CAS
+#
+# Project: Qctr3 reco MT check
+# Date: 2025 February 19th
+# Description:
+#   submit jobs at IHEP @ lxlogin.ihep.ac.cn
+#
+# History:
+# v1.0 2025.02.23 dingxf@ihep.ac.cn first version, a default template
+#
+# Maintainer:
+#   Xuefeng Ding <dingxf@ihep.ac.cn>
+#
+# All rights reserved. 2024 copyrighted.
+###############################################################################
+# Submission script for {{ project }}
+
+# for hep_submit command
+export PATH=/afs/ihep.ac.cn/soft/common/sysgroup/hep_job/bin:$PATH
+
+PYTHON_EXE={{ python_exe }}
+CONFIG_YAML={{ config_yaml }}
+JOBS_YAML={{ jobs_yaml }}
+
+{% for job_id in range(jobs | length) %}
+{% set task = jobs[job_id] %}
+OUT={{ name_manager.out_path(task.task_id) }}
+ERR={{ name_manager.err_path(task.task_id) }}
+JOB_ID={{ job_id }}
+
+ARGU="-m ihepjob.single_job --project-config $CONFIG_YAML --jobs-config $JOBS_YAML --job-id $JOB_ID --proc-id %{ProcId}"
+hep_submit -argu "$ARGU" \
+    -o ${OUT}.%{ClusterId}.%{ProcId} \
+    -e ${ERR}.%{ClusterId}.%{ProcId} \
+    --cleanenv -cpu 1 -mem 3000 -g juno $PYTHON_EXE
+{% endfor %}
