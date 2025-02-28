@@ -1,0 +1,41 @@
+---
+
+service:
+  name: "data_logger"
+  echo_colors: true
+  echo_level: debug
+
+external:
+  data_logger_input: {}
+
+brokers:
+  data_logger_input_broker:
+    import_template: "data_logger_sdk.brokers.data_logger_input_broker:DataLoggerInputBroker"
+
+messages:
+  integration:
+    import_template: "data_aggregator_sdk.integration_message:IntegrationV0MessageGateway"
+
+  bs_data_logger_input:
+    import_template: "data_logger_sdk.messages.{{name}}_message:{{name|camel}}V0Message"
+
+  universal_api_data_logger_input:
+    import_template: "data_logger_sdk.messages.universal_api_data_logger_input_message:UniversalApiDataLoggerInputV0Message"
+
+workers:
+  __default__:
+    import_template: "src.data_gateway__uni_worker.workers.{{name}}:{{name|camel}}Worker"
+    topic: "{{name}}"
+
+  data_logger_input:
+    broker: data_logger_input_broker
+    input_message: integration
+    external: data_logger_input
+
+  bs_data_logger_input:
+    broker: data_logger_input_broker
+    input_message: bs_data_logger_input
+
+  universal_api_data_logger_input:
+    broker: data_logger_input_broker
+    input_message: universal_api_data_logger_input
