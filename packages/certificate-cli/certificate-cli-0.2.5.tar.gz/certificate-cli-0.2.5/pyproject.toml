@@ -1,0 +1,32 @@
+[project.urls]
+Homepage = "https://github.com/tukanuk/certificate_server"
+Issues = "https://github.com/tukanuk/certificate_server/issues"
+
+[tool.poetry]
+name = "certificate-cli"
+version = "0.2.5"
+description = "A collection of tools to aid in certificate testing"
+authors = ["Ben Davidson <ben.davidson@dynatrace.com>"]
+repository = "https://github.com/tukanuk/certificate_server"
+homepage = "https://github.com/tukanuk/certificate_server"
+readme = "README.md"
+packages = [{include = "certificate_cli"}]
+classifiers = [
+     "Programming Language :: Python :: 3",
+     "License :: OSI Approved :: MIT License",
+     "Operating System :: OS Independent",
+]
+
+[tool.poetry.scripts]
+certificate_cli = "certificate_cli.main:start_cli"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+Flask = "^3.0.3"
+typer = {extras = ["all"], version = "^0.12.4"}
+cryptography = "^43.0.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
