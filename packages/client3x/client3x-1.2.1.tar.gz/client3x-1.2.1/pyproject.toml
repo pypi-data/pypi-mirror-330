@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "client3x"
+version = "1.2.1"
+authors = [
+    { name = "Wert-Rar", email = "wert-rar@mail.ru" }
+]
+description = "A python Client for 3X-UI client"
+readme = "README.md"
+requires-python = ">=3.6"
+license = { text = "MIT" }
+dependencies = [
+    "aiohttp>=3.11.11",
+    "requests>=2.32.3",
+]
+
+[project.urls]
+Homepage = "https://github.com/wert-rar/ThreeX-Python-Client.git"
+Repository = "https://github.com/wert-rar/ThreeX-Python-Client.git"
+
+[tool.setuptools.packages.find]
+where = ["."]
+exclude = ["tests*"]
