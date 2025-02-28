@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="94fbed39-f2f3-4658-bc0f-ee9c1ef0e320" name="Changes" comment="feat: add search_knowledge_graph API on KB">
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autoflow/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/autoflow/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements-dev.lock" beforeDir="false" afterPath="$PROJECT_DIR$/requirements-dev.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.lock" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.lock" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+    </option>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/.venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_api.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/.venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/.venv/lib/python3.12/site-packages/sqlalchemy/util/deprecations.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/.venv/lib/python3.12/site-packages/sqlmodel-0.0.22.dist-info/INSTALLER" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/.venv/lib/python3.12/site-packages/sqlmodel-0.0.22.dist-info/METADATA" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/.venv/lib/python3.12/site-packages/sqlmodel-0.0.22.dist-info/licenses/LICENSE" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/.venv/lib/python3.12/site-packages/sqlmodel/ext/asyncio/session.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/.venv/lib/python3.12/site-packages/sqlmodel/main.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/.venv/lib/python3.12/site-packages/sqlmodel/orm/__init__.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/.venv/lib/python3.12/site-packages/sqlmodel/orm/session.py" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2tKlUQMrxONOS5kBkabaLkylRWY" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python tests.Python tests for test_knowledge_base.test_crate_datasource.executor": "Run",
+    "Python tests.Python tests for test_knowledge_base.test_create_knowledge_base.executor": "Run",
+    "Python tests.Python tests for test_knowledge_base.test_import_documents_from_datasource.executor": "Run",
+    "Python tests.Python tests for test_knowledge_base.test_import_documents_from_files.executor": "Run",
+    "Python tests.Python tests for test_knowledge_base.test_search_documents.executor": "Run",
+    "Python tests.Python tests for test_knowledge_base.test_search_knowledge_graph.executor": "Run",
+    "Python tests.Python tests for test_llm.test_embedding_model.executor": "Run",
+    "Python tests.Python tests for test_llm.test_model_provider.executor": "Run",
+    "Python tests.Python tests for test_llm.test_reranker_model.executor": "Run",
+    "Python tests.Python tests for test_sql_model.test_extend_a_base_sqlmodel.executor": "Run",
+    "Python.decl_api.executor": "Debug",
+    "Python.test_sql_model.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "rag-framework",
+    "last_opened_file_path": "/Users/liangzhiyuan/Projects/tidb.ai/core/autoflow/db_models",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "tidb"
+    ]
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/autoflow/db_models" />
+      <recent name="$PROJECT_DIR$/autoflow/stores" />
+      <recent name="$PROJECT_DIR$/autoflow" />
+      <recent name="$PROJECT_DIR$/autoflow/storage" />
+      <recent name="$PROJECT_DIR$/tests" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/autoflow/utils" />
+      <recent name="$PROJECT_DIR$/autoflow/transformers" />
+      <recent name="$PROJECT_DIR$/autoflow/storage" />
+      <recent name="$PROJECT_DIR$/autoflow" />
+      <recent name="$PROJECT_DIR$/tests/fixtures" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python tests.Python tests for test_knowledge_base.test_search_knowledge_graph">
+    <configuration name="Python tests for test_knowledge_base.test_import_documents_from_datasource" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="core" />
+      <option name="ENV_FILES" value="$PROJECT_DIR$/tests/.env" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="uv (core)" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_knowledge_base.test_import_documents_from_datasource&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_knowledge_base.test_import_documents_from_files" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="core" />
+      <option name="ENV_FILES" value="$PROJECT_DIR$/tests/.env" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="uv (core)" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_knowledge_base.test_import_documents_from_files&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_knowledge_base.test_search_documents" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="core" />
+      <option name="ENV_FILES" value="$PROJECT_DIR$/tests/.env" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="uv (core)" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_knowledge_base.test_search_documents&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_knowledge_base.test_search_knowledge_graph" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="core" />
+      <option name="ENV_FILES" value="$PROJECT_DIR$/tests/.env" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="uv (core)" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_knowledge_base.test_search_knowledge_graph&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for tests.test_knowledge_base.test_import_documents_from_datasource" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="core" />
+      <option name="ENV_FILES" value="$PROJECT_DIR$/tests/.env" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="uv (core)" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;tests.test_knowledge_base.test_import_documents_from_datasource&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Autodetect">
+      <module name="core" />
+      <option name="ENV_FILES" value="$PROJECT_DIR$/tests/.env" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="uv (core)" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="py.test">
+      <module name="core" />
+      <option name="ENV_FILES" value="$PROJECT_DIR$/tests/.env" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="uv (core)" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python tests.Python tests for test_knowledge_base.test_search_knowledge_graph" />
+        <item itemvalue="Python tests.Python tests for test_knowledge_base.test_search_documents" />
+        <item itemvalue="Python tests.Python tests for test_knowledge_base.test_import_documents_from_datasource" />
+        <item itemvalue="Python tests.Python tests for test_knowledge_base.test_import_documents_from_files" />
+        <item itemvalue="Python tests.Python tests for tests.test_knowledge_base.test_import_documents_from_datasource" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-76f8388c3a79-JavaScript-PY-243.24978.54" />
+        <option value="bundled-python-sdk-91e3b7efe1d4-466328ff949b-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-243.24978.54" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="94fbed39-f2f3-4658-bc0f-ee9c1ef0e320" name="Changes" comment="" />
+      <created>1740108661717</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1740108661717</updated>
+      <workItem from="1740108662778" duration="37217000" />
+      <workItem from="1740232867695" duration="130139000" />
+      <workItem from="1740644453800" duration="21111000" />
+      <workItem from="1740670411651" duration="37554000" />
+    </task>
+    <task id="LOCAL-00001" summary="refactor: refine directory structure">
+      <option name="closed" value="true" />
+      <created>1740729207030</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1740729207030</updated>
+    </task>
+    <task id="LOCAL-00002" summary="feat: add search_knowledge_graph API on KB">
+      <option name="closed" value="true" />
+      <created>1740732240058</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1740732240058</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="refactor: refine directory structure" />
+    <MESSAGE value="feat: add search_knowledge_graph API on KB" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add search_knowledge_graph API on KB" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/.venv/lib/python3.12/site-packages/sqlalchemy/sql/schema.py</url>
+          <line>461</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/autoflow/storage/graph_store/algorithms/weighted.py</url>
+          <line>73</line>
+          <option name="timeStamp" value="51" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/.venv/lib/python3.12/site-packages/pydantic/main.py</url>
+          <line>1045</line>
+          <option name="timeStamp" value="55" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/core$decl_api.coverage" NAME="decl_api Coverage Results" MODIFIED="1740131428812" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/.venv/lib/python3.12/site-packages/sqlalchemy/orm" />
+    <SUITE FILE_PATH="coverage/core$.coverage" NAME=" Coverage Results" MODIFIED="1740732102030" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/core$test_sql_model.coverage" NAME="test_sql_model Coverage Results" MODIFIED="1740133237865" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests/sqlmodel" />
+  </component>
+</project>
