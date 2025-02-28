@@ -1,0 +1,41 @@
+# Important all  will be removed when marturin published is executed in the gitlab-ci! If you want to publish by hand, do the same. And make sure all files are copied to the local directory.
+
+[build-system]
+# requires = ["maturin>=0.14,<0.15"]
+requires = ["maturin>=1.8.2"]
+build-backend = "maturin"
+
+[project]
+dynamic = ["version"]
+name = "ipaacar-python"
+requires-python = ">=3.8"
+description = "Incremental Processing Architecture for Artificial Conversational Agents, implemented in Rust"
+classifiers = [
+    "Programming Language :: Rust",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python :: Implementation :: PyPy",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",  
+    "Programming Language :: Python :: 3.11",   
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+]
+dependencies = ["nest-asyncio>=1.5.7"]
+license = {file = "LICENSE"}
+readme = "README.md"
+keywords = ["ipaaca", "ipaacar", "rust", "messaging", "incremental", "mqtt"]
+
+[project.urls]
+homepage = "https://scs.techfak.uni-bielefeld.de"
+documentation = "https://scs.pages.ub.uni-bielefeld.de/ipaacar/ipaacar-python/ipaacar.html"
+repository = "https://gitlab.ub.uni-bielefeld.de/scs/ipaacar"
+
+[tool.maturin]
+features = ["pyo3/extension-module"]
+python-source = "python"
+module-name = "ipaacar.components"
+python-packages = ["ipaacar"]
+sdist-include = ["LICENSE", "README.md"]
+manifest-path = "ipaacar-python/Cargo.toml"
