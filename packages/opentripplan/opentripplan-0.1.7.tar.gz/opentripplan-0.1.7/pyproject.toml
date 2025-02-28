@@ -1,0 +1,43 @@
+[project]
+name = "opentripplan"
+version = "0.1.7"
+description = "A tool to plan your next trip"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "folium>=0.19.4",
+    "pyqt6-webengine>=6.8.0",
+    "pyqt6>=6.8.1",
+]
+authors = [{ name = "Gaël de Chalendar (aka Kleag)", email = "kleagg@gmail.com" }]
+license = { text = "AGPL" }
+
+[project.scripts]
+opentripplan = "opentripplan.main:main"
+
+[project.optional-dependencies]
+dev = ["pytest", "black", "ruff", "mypy"]   # Development tools
+build = ["build", "bumpver", "twine"]                   # For packaging and uploading
+deploy = ["uv"]                               # Add tools needed for deployment
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+# [tool.uv]
+# virtualenvs.in-project = true
+[bumpver]
+current_version = "0.1.7"
+version_pattern = "MAJOR.MINOR.PATCH"
+commit = true
+tag = true
+push = true  # Set to true if you want to push automatically
+
+[bumpver.file_patterns]
+"pyproject.toml" = [
+    'version = "{version}"',
+]
+"src/opentripplan/__init__.py" = [
+    '__version__ = "{version}"',
+]
+
