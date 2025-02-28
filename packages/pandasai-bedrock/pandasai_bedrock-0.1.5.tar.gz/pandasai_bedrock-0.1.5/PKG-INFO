@@ -1,0 +1,31 @@
+Metadata-Version: 2.3
+Name: pandasai-bedrock
+Version: 0.1.5
+Summary: AWS Bedrock integration for PandaAI
+License: MIT
+Author: Gabriele Venturi
+Requires-Python: >=3.8,<3.12
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: boto3 (>=1.34.0,<2.0.0)
+Requires-Dist: pandasai (>=3.0.0b4)
+Project-URL: Documentation, https://docs.getpanda.ai/
+Project-URL: Repository, https://github.com/sinaptik-ai/pandas-ai
+Description-Content-Type: text/markdown
+
+# Google AI Extension for PandaAI
+
+This extension integrates Google AI with PandaAI, providing Google AI LLMs support.
+
+## Installation
+
+You can install this extension using poetry:
+
+```bash
+poetry add pandasai-google
+```
+
