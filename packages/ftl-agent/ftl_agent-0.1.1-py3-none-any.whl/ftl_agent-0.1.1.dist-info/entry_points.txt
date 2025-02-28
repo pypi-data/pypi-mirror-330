@@ -1,0 +1,4 @@
+[console_scripts]
+ftl-agent = ftl_agent.cli:main
+ftl-agent-shell = ftl_agent.shell:main
+ftl-agent-ui = ftl_agent.ui:main
