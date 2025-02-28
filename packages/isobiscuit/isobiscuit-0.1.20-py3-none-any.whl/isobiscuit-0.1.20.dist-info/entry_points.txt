@@ -1,0 +1,4 @@
+[console_scripts]
+biscuit=isobiscuit.cli:main
+isobiscuit-run=isobiscuit.run:main
+
