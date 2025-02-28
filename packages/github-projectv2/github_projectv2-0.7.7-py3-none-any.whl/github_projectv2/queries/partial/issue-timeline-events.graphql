@@ -1,0 +1,81 @@
+timelineItems(first:100) {
+	edges {
+		node {
+            __typename
+			{% include "partial/timeline-events/added-to-project.graphql" %}
+            {% include "partial/timeline-events/assigned.graphql" %}
+            {% include "partial/timeline-events/unassigned.graphql" %}
+            {% include "partial/timeline-events/closed.graphql" %}
+            {% include "partial/timeline-events/comment-deleted.graphql" %}
+            ... on ConnectedEvent {
+                    id
+                }
+            ... on ConvertedNoteToIssueEvent {
+                    id
+                }
+            ... on ConvertedToDiscussionEvent {
+                    id
+                }
+            {% include "partial/timeline-events/cross-referenced.graphql" %}
+            ... on DemilestonedEvent {
+                    id
+                }
+            ... on DisconnectedEvent {
+                    id
+                }
+            {% include "partial/timeline-events/issue-comment.graphql" %}
+            {% include "partial/timeline-events/labeled.graphql" %}
+            ... on LockedEvent {
+                    id
+                    createdAt
+                    lockReason
+                    lockable {
+                        activeLockReason
+                        locked
+                    }
+                    actor {
+                        login
+                    }
+                }
+            ... on MarkedAsDuplicateEvent {
+                    id
+                }
+            {% include "partial/timeline-events/mentioned.graphql" %}
+            ... on MilestonedEvent {
+                    id
+                }
+            {% include "partial/timeline-events/moved-columns-in-project.graphql" %}
+            ... on PinnedEvent {
+                    id
+                }
+            {% include "partial/timeline-events/referenced.graphql" %}
+            ... on RemovedFromProjectEvent {
+                    id
+                }
+            {% include "partial/timeline-events/renamed-title.graphql" %}
+            {% include "partial/timeline-events/reopened.graphql" %}
+            {% include "partial/timeline-events/subscribed.graphql" %}
+            ... on TransferredEvent {
+                    id
+                }
+            {% include "partial/timeline-events/subscribed.graphql" %}
+            {% include "partial/timeline-events/unlabeled.graphql" %}
+            ... on UnlockedEvent {
+                    id
+                }
+            ... on UnmarkedAsDuplicateEvent {
+                    id
+                }
+            ... on UnpinnedEvent {
+                    id
+                }
+            {% include "partial/timeline-events/unsubscribed.graphql" %}
+            ... on UserBlockedEvent {
+                    id
+                }
+            ... on MovedColumnsInProjectEvent {
+                    id
+                }
+        }
+	}
+}
