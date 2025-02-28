@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+hydra_search/__init__.py
+hydra_search/core.py
+hydra_search/utils.py
+hydra_search.egg-info/PKG-INFO
+hydra_search.egg-info/SOURCES.txt
+hydra_search.egg-info/dependency_links.txt
+hydra_search.egg-info/requires.txt
+hydra_search.egg-info/top_level.txt
+tests/test_hsa.py
