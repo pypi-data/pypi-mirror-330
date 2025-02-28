@@ -1,0 +1,48 @@
+[project]
+name = "pyfolioclient"
+dynamic = ["version"]
+description = "A Python client for interacting with FOLIO's APIs."
+license = "MIT"
+license-files = ["LICEN[CS]E*"]
+readme = "README.md"
+authors = [
+    { name = "Håkan Sundblad", email = "hakan.sundblad@liu.se" }
+]
+requires-python = ">=3.9"
+dependencies = [
+    "httpx>=0.28.1",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Internet :: WWW/HTTP",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Typing :: Typed",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3.4",
+    "python-dotenv>=1.0.1",
+]
+
+[tool.hatch.version]
+path = "src/pyfolioclient/__version__.py"
+
+[tool.black]
+line-length = 88
+
+[project.urls]
+Homepage = "https://github.com/balljok/pyfolioclient"
+Issues = "https://github.com/balljok/pyfolioclient/issues"
