@@ -1,0 +1,194 @@
+# Information Extraction Datasets
+
+This package takes care of all of the tedium when loading various information extraction datasets, providing the data in fully validated and typed Pydantic objects.
+
+## Datasets
+
+### [BioRED](./src/ie_datasets/datasets/biored/README.md)
+
+<details>
+  <summary>Example</summary>
+
+  ```py
+  from ie_datasets import BioRED
+  BioRED.load_units("Train")
+  BioRED.load_units("Dev")
+  BioRED.load_units("Test")
+  ```
+</details>
+
+
+### [ChemProt](./src/ie_datasets/datasets/chemprot/README.md)
+
+<details>
+  <summary>Example</summary>
+
+  ```py
+  from ie_datasets import ChemProt
+  ChemProt.load_units("train")
+  ChemProt.load_units("validation")
+  ChemProt.load_units("test")
+  ```
+</details>
+
+
+### [CrossRE](./src/ie_datasets/datasets/crossre/README.md)
+
+<details>
+  <summary>Example</summary>
+
+  ```py
+  from ie_datasets import CrossRE
+  for domain in ("ai", "literature", "music", "news", "politics", "science"):
+      CrossRE.load_units("train")
+      CrossRE.load_units("dev")
+      CrossRE.load_units("test")
+  ```
+</details>
+
+
+### [CUAD](./src/ie_datasets/datasets/cuad/README.md)
+
+<details>
+  <summary>Example</summary>
+
+  ```py
+  from ie_datasets import CUAD
+  CUAD.load_units()
+  ```
+</details>
+
+
+### [DocRED](./src/ie_datasets/datasets/docred/README.md)
+
+<details>
+  <summary>Example</summary>
+
+  ```py
+  from ie_datasets import DocRED
+  DocRED.load_schema()
+  DocRED.load_units("train_annotated")
+  DocRED.load_units("train_distant")
+  DocRED.load_units("validation")
+  DocRED.load_units("test")
+  ```
+
+  > **NOTE**: DocRED has been superseded by [Re-DocRED](#re-docred)
+</details>
+
+
+### [HyperRED](./src/ie_datasets/datasets/hyperred/README.md)
+
+<details>
+  <summary>Example</summary>
+
+  ```py
+  from ie_datasets import HyperRED
+  HyperRED.load_units("train")
+  HyperRED.load_units("validation")
+  HyperRED.load_units("test")
+  ```
+</details>
+
+
+### [KnowledgeNet](./src/ie_datasets/datasets/knowledgenet/README.md)
+
+<details>
+  <summary>Example</summary>
+
+  ```py
+  from ie_datasets import KnowledgeNet
+  KnowledgeNet.load_units("train")
+  KnowledgeNet.load_units("test-no-facts") # unlabelled
+  ```
+</details>
+
+
+### [SciERC](./src/ie_datasets/datasets/scierc/README.md)
+
+<details>
+  <summary>Example</summary>
+
+  ```py
+  from ie_datasets import SciERC
+  SciERC.load_units("train")
+  SciERC.load_units("dev")
+  SciERC.load_units("test")
+  ```
+</details>
+
+
+### [SoMeSci](./src/ie_datasets/datasets/somesci/README.md)
+
+<details>
+  <summary>Example</summary>
+
+  ```py
+  from ie_datasets import SoMeSci
+  SoMeSci.load_schema()
+  for group in ("Creation_sentences", "PLoS_methods", "PLoS_sentences", "Pubmed_fulltext"):
+      SoMeSci.load_units(group=group, split="train")
+      SoMeSci.load_units(group=group, split="devel")
+      SoMeSci.load_units(group=group, split="test")
+  ```
+</details>
+
+
+### [Re-DocRED](./src/ie_datasets/datasets/re_docred/README.md)
+
+<details>
+  <summary>Example</summary>
+
+  ```py
+  from ie_datasets import ReDocRED
+  ReDocRED.load_schema()
+  ReDocRED.load_units("train")
+  ReDocRED.load_units("validation")
+  ReDocRED.load_units("test")
+  ```
+</details>
+
+
+### [TPLinker/NYT](./src/ie_datasets/datasets/tplinker/README.md)
+
+<details>
+  <summary>Example</summary>
+
+  ```py
+  from ie_datasets import TPLinkerNYT
+  TPLinkerNYT.load_schema()
+  TPLinkerNYT.load_units("train")
+  TPLinkerNYT.load_units("valid")
+  TPLinkerNYT.load_units("test")
+  ```
+</details>
+
+
+### [TPLinker/WebNLG](./src/ie_datasets/datasets/tplinker/README.md)
+
+<details>
+  <summary>Example</summary>
+
+  ```py
+  from ie_datasets import TPLinkerWebNLG
+  TPLinkerWebNLG.load_schema()
+  TPLinkerWebNLG.load_units("train")
+  TPLinkerWebNLG.load_units("valid")
+  TPLinkerWebNLG.load_units("test")
+  ```
+</details>
+
+
+### [WikiEvents](./src/ie_datasets/datasets/wikievents/README.md)
+
+<details>
+  <summary>Example</summary>
+
+  ```py
+  from ie_datasets import WikiEvents
+  WikiEvents.load_ontology()
+  WikiEvents.load_units("train")
+  WikiEvents.load_units("dev")
+  WikiEvents.load_units("test")
+  ```
+</details>
