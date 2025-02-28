@@ -1,0 +1,23 @@
+Metadata-Version: 2.3
+Name: pbsq
+Version: 0.1.1
+Summary: Python-based PBS job submission
+License: Apache-2
+Author: Kâmuran İmran
+Author-email: c.mcmenamie@unsw.edu.au
+Requires-Python: >=3.9,<4.0
+Classifier: License :: Other/Proprietary License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Dist: click (>=8.1.8,<9.0.0)
+Requires-Dist: loguru (>=0.7.3,<0.8.0)
+Requires-Dist: sshconf (>=0.2.7,<0.3.0)
+Description-Content-Type: text/markdown
+
+# pbsq
+Wrapper for q commands on PBS
+
