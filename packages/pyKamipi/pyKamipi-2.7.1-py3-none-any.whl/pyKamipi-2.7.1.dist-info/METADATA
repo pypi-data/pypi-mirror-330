@@ -1,0 +1,451 @@
+Metadata-Version: 2.2
+Name: pyKamipi
+Version: 2.7.1
+Summary: A Python Library For Kamibot-Pi
+Home-page: http://www.moyalab.com
+Author: devdio
+Author-email: kei.devdio@gmail.com
+License: GNU GPLv3
+Keywords: Kamibot Pi,KamibotPi,Robot
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Education
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: termcolor
+Requires-Dist: pyserial==3.5
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: license
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+## Package for KamibotPi
+
+Library for KamibotPi  
+We need a Kamibot dongle for the operation.
+
+### example
+
+#### 콘트롤 모드
+
+```
+#-*-coding:utf-8-*-
+import random
+from pyKamipi.pibot import *
+
+# 카미봇 연결
+kamibot = KamibotPi('COM8', 57600)
+
+# ------------------------------------------------
+# 콘트롤모드 go_dir_speed
+# ------------------------------------------------
+kamibot.go_dir_speed("f", 100, "f", 100)
+kamibot.delay(1)
+
+kamibot.go_dir_speed("b", 100, "f", 100)
+kamibot.delay(1)
+
+kamibot.go_dir_speed("f", 100, "b", 100)
+kamibot.delay(1)
+
+kamibot.go_dir_speed("b", 100, "b", 100)
+kamibot.delay(1)
+kamibot.stop()
+
+# ------------------------------------------------
+# 콘트롤모드 go_forward_speed
+# ------------------------------------------------
+kamibot.go_forward_speed(50, 50)
+kamibot.delay(1)
+
+kamibot.go_forward_speed(100, 50)
+kamibot.delay(1)
+kamibot.stop()
+
+# ------------------------------------------------
+# 콘트롤모드 go_backward_speed
+# ------------------------------------------------
+kamibot.go_backward_speed(50, 50)
+kamibot.delay(1)
+
+kamibot.go_backward_speed(100, 50)
+kamibot.delay(1)
+kamibot.stop()
+
+# ------------------------------------------------
+# 콘트롤모드 go_left_speed
+# ------------------------------------------------
+kamibot.go_left_speed(50)
+kamibot.delay(1)
+
+kamibot.go_left_speed(100)
+kamibot.delay(1)
+kamibot.stop()
+
+# ------------------------------------------------
+# 콘트롤모드 go_right_speed
+# ------------------------------------------------
+kamibot.go_right_speed(50)
+kamibot.delay(1)
+
+kamibot.go_right_speed(100)
+kamibot.delay(1)
+kamibot.stop()
+
+# 카미봇 연결 해제
+kamibot.close()
+
+```
+
+#### LED
+
+```
+import random
+from pyKamipi.pibot import *
+
+# 카미봇 연결
+kamibot = KamibotPi('COM3', 57600)
+
+# ------------------------------------------------
+# LED
+# ------------------------------------------------
+kamibot.turn_led(255, 0, 0)
+kamibot.delay(1)
+kamibot.turn_led(0, 255, 0)
+kamibot.delay(1)
+kamibot.turn_led(0, 0, 255)
+kamibot.delay(1)
+
+
+for i in range(8):
+    kamibot.turn_led_idx(i)
+    kamibot.delay(0.5)
+
+for i in range(10):
+    kamibot.turn_led(random.randrange(0,255), random.randrange(0,255), random.randrange(0,255))
+    kamibot.delay(0.5)
+
+for i in range(100):
+    kamibot.turn_led(255, 0, 0)
+    kamibot.turn_led(0, 0, 255)
+
+
+# 카미봇 연결 해제
+kamibot.close()
+```
+
+#### 거리를 지정해서 움직이기
+
+```
+import random
+from pyKamipi.pibot import *
+
+# 카미봇 연결
+kamibot = KamibotPi('COM3', 57600)
+
+# ------------------------------------------------
+# 정밀제어  move_forward_unit
+# ------------------------------------------------
+kamibot.move_forward_unit(10, "-l") # 10cm
+kamibot.delay(1)
+kamibot.stop()
+
+kamibot.move_forward_unit(3, "-t") # 3sec
+kamibot.delay(1)
+kamibot.stop()
+
+
+kamibot.move_forward_unit(50, "-s") # 50 step
+kamibot.delay(1)
+kamibot.stop()
+
+
+# ------------------------------------------------
+# 정밀제어  move_right_unit
+# ------------------------------------------------
+kamibot.move_right_unit(160, "-l")
+kamibot.delay(1)
+kamibot.stop()
+
+# ------------------------------------------------
+# 정밀제어  move_left_unit
+# ------------------------------------------------
+kamibot.move_left_unit(160, "-l")
+kamibot.delay(1)
+kamibot.stop()
+
+
+# ------------------------------------------------
+# 정밀제어  move_backward_unit
+# ------------------------------------------------
+kamibot.move_backward_unit(10, "-l")
+kamibot.delay(1)
+kamibot.stop()
+
+# ------------------------------------------------
+# 정밀제어  turn_continous
+# ------------------------------------------------
+kamibot.turn_continous("r", 100)
+kamibot.delay(1)
+kamibot.stop()
+
+
+# ------------------------------------------------
+# 정밀제어  move_step
+# ------------------------------------------------
+kamibot.move_step("f", 100, "f", 100)
+kamibot.delay(1)
+kamibot.stop()
+
+
+# ------------------------------------------------
+# 정밀제어  move_time
+# ------------------------------------------------
+kamibot.move_time("f", 10, "f", 10)
+kamibot.delay(1)
+kamibot.stop()
+
+# ------------------------------------------------
+# 제자리 회전 turn_right_speed, turn_left_speed
+# ------------------------------------------------
+kamibot.turn_right_speed(90, speed=100)
+kamibot.delay(1)
+kamibot.turn_left_speed(90, speed=100)
+kamibot.delay(1)
+kamibot.stop()
+
+
+# 카미봇 연결 해제
+kamibot.close()
+
+```
+
+#### 센서값 확인
+
+```
+import random
+from pyKamipi.pibot import *
+
+# 카미봇 연결
+kamibot = KamibotPi('COM3', 57600)
+
+# ------------------------------------------------
+# 물체감지 get_object_detect
+# ------------------------------------------------
+left, right = kamibot.get_object_detect()
+print(f"left={left}, right={right}")
+kamibot.delay(1)
+kamibot.get_object_detect(False)
+
+
+# ------------------------------------------------
+# 라인센서 get_line_sensor
+# ------------------------------------------------
+left, center, right = kamibot.get_line_sensor()
+print(f"left={left}, center={center}, right={right}")
+kamibot.delay(1)
+
+# ------------------------------------------------
+# 컬러센서 get_color_sensor
+# ------------------------------------------------
+r, g, b = kamibot.get_color_elements()
+print(f"r={r}, g={g}, b={b}")
+idx = kamibot.get_color_sensor()
+print(f"idx={idx}")
+kamibot.get_color_elements(False)
+
+# ------------------------------------------------
+# 배터리 get_battery
+# ------------------------------------------------
+battery = kamibot.get_battery()
+print(f"battery={battery}")
+kamibot.delay(1)
+
+
+# ------------------------------------------------
+# 멜로디  melody
+# ------------------------------------------------
+kamibot.melody(45, 1)
+kamibot.delay(1)
+
+kamibot.beep()
+kamibot.delay(1)
+
+
+# 카미봇 연결 해제
+kamibot.close()
+```
+
+#### Top모터 기본 동작
+
+```
+import random
+from pyKamipi.pibot import *
+
+# 카미봇 연결
+kamibot = KamibotPi('COM3', 57600)
+
+# ------------------------------------------------
+# 탑모터 제어  top_motor_degree
+# ------------------------------------------------
+kamibot.top_motor_degree("l", 180)  # 왼쪽 방향으로
+kamibot.delay(1)
+
+kamibot.top_motor_degree("r", 180)  # 오른쪽 방향으로
+kamibot.delay(1)
+
+# 카미봇 연결 해제
+kamibot.close()
+```
+
+#### Top모터 절대위치
+
+```
+import random
+from pyKamipi.pibot import *
+
+# 카미봇 연결
+kamibot = KamibotPi('COM3', 57600)
+
+kamibot.top_motor_abspos(0)
+kamibot.delay(1)
+
+kamibot.top_motor_abspos(90)
+kamibot.delay(1)
+
+kamibot.top_motor_abspos(180)
+kamibot.delay(1)
+
+# 카미봇 연결 해제
+kamibot.close()
+
+```
+
+#### TOP모터 정해진 시간만큼 회전
+
+```
+import random
+from pyKamipi.pibot import *
+
+# 카미봇 연결
+kamibot = KamibotPi('COM3', 57600)
+
+kamibot.top_motor_time("l", 10)
+kamibot.delay(1)
+
+kamibot.top_motor_time("r", 10)
+kamibot.delay(1)
+
+# 카미봇 연결 해제
+kamibot.close()
+```
+
+#### 그리기
+
+```
+import random
+from pyKamipi.pibot import *
+
+# 카미봇 연결
+kamibot = KamibotPi('COM3', 57600)
+
+# ------------------------------------------------
+# 삼각형
+# ------------------------------------------------
+kamibot.draw_tri(10)
+kamibot.delay(1)
+
+# ------------------------------------------------
+# 사각형
+# ------------------------------------------------
+kamibot.draw_rect(10)
+kamibot.delay(1)
+
+# ------------------------------------------------
+# 오각형
+# ------------------------------------------------
+kamibot.draw_penta(10)
+kamibot.delay(1)
+
+# ------------------------------------------------
+# 육각형
+# ------------------------------------------------
+kamibot.draw_hexa(10)
+kamibot.delay(1)
+
+# ------------------------------------------------
+# 별
+# ------------------------------------------------
+kamibot.draw_star(10)
+kamibot.delay(1)
+
+# ------------------------------------------------
+# 원그리기
+# ------------------------------------------------
+kamibot.draw_circle(10)
+kamibot.delay(1)
+
+# ------------------------------------------------
+# 반원그리기
+# ------------------------------------------------
+kamibot.draw_semicircle(10, "l")
+kamibot.delay(1)
+
+# ------------------------------------------------
+# 원호그리기
+# ------------------------------------------------
+kamibot.draw_arc(10, 3)
+kamibot.delay(1)
+
+# 카미봇 연결 해제
+kamibot.close()
+
+```
+
+#### 맵보드
+
+```
+import random
+from pyKamipi.pibot import *
+
+# 카미봇 연결
+kamibot = KamibotPi('COM3', 57600)
+
+# ------------------------------------------------
+# 라인트레이서
+# ------------------------------------------------
+kamibot.toggle_linetracer(True, 100)
+kamibot.delay(10)
+kamibot.toggle_linetracer(False)
+
+# ------------------------------------------------
+# 블록 맵보드
+# ------------------------------------------------
+kamibot.move_forward(1, '-b')
+kamibot.move_backward(1)
+kamibot.turn_left(1, "-b")
+kamibot.turn_right(1, "-b")
+kamibot.turn_back(1, "-b")
+
+# ------------------------------------------------
+# 라인 맵보드
+# ------------------------------------------------
+kamibot.move_forward(1)
+kamibot.turn_left()
+kamibot.turn_right()
+kamibot.turn_back()
+
+
+# 카미봇 연결 해제
+kamibot.close()
+
+```
