@@ -1,0 +1,16 @@
+LICENSE
+README.md
+setup.py
+autokattis/__init__.py
+autokattis.egg-info/PKG-INFO
+autokattis.egg-info/SOURCES.txt
+autokattis.egg-info/dependency_links.txt
+autokattis.egg-info/requires.txt
+autokattis.egg-info/top_level.txt
+autokattis/api/__init__.py
+autokattis/api/databasemanager.py
+autokattis/api/enums.py
+autokattis/api/loginmanager.py
+autokattis/api/nuskattis.py
+autokattis/api/openkattis.py
+autokattis/api/utils.py
