@@ -1,0 +1,37 @@
+patterns = {
+    'GLOBAL': {
+        'VISA_CARD': r"^(4\d{3}([-\s]?(\d{4})){3})$",
+        'MASTER_CARD': r"^(?:5[1-5]\d{2}|2(2[2-9][1-9]|[3-6]\d{2}|7[01]\d|720))([-\s]?(\d{4})){3}$",
+        'AMEX_CARD': r"^(3[47]\d{2})([-\s]?)\d{6}\2\d{5}$",
+        'RUPAY_CARD': r"^(?:6[05]\d{2}|8[12]\d{2}|508\d|35[36]\d)([-\s]?(\d{4})){3}$",
+        'MAESTRO_CARD': r"^(?:5[0678]\d{2}|6013|6[237]\d{2})([-\s]?)\d{4}\1\d{4}\1\d{4}\1\d{0,3}$",
+        'IP_ADDRESS': r"^(?:(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9]?[0-9])(\.(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9]?[0-9])){3}|((([0-9A-Fa-f]{1,4}:){7}([0-9A-Fa-f]{1,4}|:))|(([0-9A-Fa-f]{1,4}:){1,6}:([0-9A-Fa-f]{1,4}|:))|(([0-9A-Fa-f]{1,4}:){1,5}:([0-9A-Fa-f]{1,4}:){1,1}([0-9A-Fa-f]{1,4}|:))|(([0-9A-Fa-f]{1,4}:){1,4}:([0-9A-Fa-f]{1,4}:){1,2}([0-9A-Fa-f]{1,4}|:))|(([0-9A-Fa-f]{1,4}:){1,3}:([0-9A-Fa-f]{1,4}:){1,3}([0-9A-Fa-f]{1,4}|:))|(([0-9A-Fa-f]{1,4}:){1,2}:([0-9A-Fa-f]{1,4}:){1,4}([0-9A-Fa-f]{1,4}|:))|([0-9A-Fa-f]{1,4}:([0-9A-Fa-f]{1,4}:){1,5}([0-9A-Fa-f]{1,4}|:))|(:((:[0-9A-Fa-f]{1,4}){1,6}))|(::(ffff(:0{1,4})?:)?((25[0-5]|(2[0-4]|1{0,1}[0-9])?[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9])?[0-9])|([0-9A-Fa-f]{1,4}:){1,4}:([0-9]{1,3}\.){3}[0-9]{1,3})))$",
+        'MAC_ADDRESS': r"^([0-9A-Fa-f]{2}:){5}[0-9A-Fa-f]{2}$|^([0-9A-Fa-f]{2}-){5}[0-9A-Fa-f]{2}$|^[0-9A-Fa-f]{12}$|^([0-9A-Fa-f]{4}\.){2}[0-9A-Fa-f]{4}$",
+        'IFSC': r"^[A-Z]{4}0[A-Z0-9]{6}$",
+        'GENDER': r"\b(Male|Female|Other|M|F|O)\b",
+        'NATIONALITY': r"\b(Indian|American|British|Canadian|Australian|Nationality)\b",
+        'ADDRESS': r"\b\d{1,5}\s\w+\s(?:St|Street|Ave|Avenue|Rd|Road|Blvd|Boulevard|Ln|Lane|Dr|Drive)\b",
+        'ZIPCODE': r"\b\d{5}(-\d{4})?\b",
+        'PASSWORD': r"\b(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).{8,}\b",
+        'POBOX': r"\bPO Box \d{1,5}\b",
+        'PHONE_NUMBER': r"\b\d{3}[-. ]?\d{3}[-. ]?\d{4}\b",
+        'TITLE': r"\b(Mr|Mrs|Miss)\b",
+        'CVV': r"^(?!000$|999$|0000$|9999$)[0-9]{3,4}$",
+        'IMEI': r"^\d{2}[-\s]?\d{2}[-\s]?\d{2}[-\s]?\d{2}[-\s]?\d{6}[-\s]?\d{1}$",
+        'IMSI': r"^(404|405)(40|44|82|71)\d{10,12}$",
+        'EMAIL': r"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$",
+    },
+    'IN' : {
+        'UPI_ID': r"^[0-9A-Za-z.-]{2,256}@[A-Za-z]{2,64}$",
+        'VOTERID': r"^[A-Z]{3}[0-9]{7}$",   
+        'PASSPORT': r"^[A-PR-WY-Z][0-9]{7}$",
+        'GST_NUMBER': r"^\d{2}[A-Z]{5}\d{4}[A-Z]\d[Z][A-Z\d]$",
+        'BANK_ACCOUNT_NUMBER': r"^\d{9,18}$",
+        'DRIVER_LICENSE': r"^([A-Z]{2}[0-9]{2})([ -])([0-9]{4})[0-9]{7}$",
+        'RATION_CARD_NUMBER': r"^(AN|AP|AR|AS|BR|CH|CT|DN|DD|DL|GA|GJ|HR|HP|JK|JH|KA|KL|LD|MP|MH|MN|ML|MZ|NL|OR|PY|PB|RJ|SK|TN|TG|TR|UP|UT|UK|WB)[0-9]{10}$",
+        'VEHICLE_IDENTIFICATION_NUMBER': r"^(AN|AP|AR|AS|BR|CH|CT|DN|DD|DL|GA|GJ|HR|HP|JK|JH|KA|KL|LD|MP|MH|MN|ML|MZ|NL|OR|PY|PB|RJ|SK|TN|TG|TR|UP|UT|UK|WB)[ -]?[0-9]{2}[ -]?[A-Z]{1,2}[ -]?[0-9]{4}$",
+        'AADHAAR_CARD': r"^([2-9][0-9]{3})([-\s]?(\d{4})){2}$",
+        'PAN_CARD': r"^[A-Z]{5}[0-9]{4}[A-Z]$",
+
+    }
+}
