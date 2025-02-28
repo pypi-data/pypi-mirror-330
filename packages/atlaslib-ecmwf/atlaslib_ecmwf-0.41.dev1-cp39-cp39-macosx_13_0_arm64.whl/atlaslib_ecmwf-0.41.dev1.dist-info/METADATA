@@ -1,0 +1,8 @@
+Metadata-Version: 2.2
+Name: atlaslib-ecmwf
+Version: 0.41.dev1
+Summary: "atlaslib-ecmwf"
+Author: file: AUTHORS
+Description-Content-Type: text/markdown
+Requires-Dist: eckitlib<2,>=1.28.5
+Dynamic: requires-dist
