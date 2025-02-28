@@ -1,0 +1,19 @@
+{
+    "config": {
+        "error": {
+            "invalid_auth": "Authentication failed. Your API key is invalid or CSRF protection is turned on, preventing authentication."
+        }
+    },
+    "entity": {
+        "sensor": {
+            "movie_requests": {
+                "name": "Film requests"
+            }
+        }
+    },
+    "exceptions": {
+        "auth_error": {
+            "message": "Invalid API key."
+        }
+    }
+}

@@ -1,0 +1,8 @@
+{
+    "options": {
+        "abort": {
+            "local_adapters_no_passive_support": "Local Bluetooth adapters that do not support passive scanning cannot be configured.",
+            "remote_adapters_not_supported": ""
+        }
+    }
+}

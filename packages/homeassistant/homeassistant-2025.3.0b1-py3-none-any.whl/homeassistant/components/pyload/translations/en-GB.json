@@ -1,0 +1,28 @@
+{
+    "config": {
+        "step": {
+            "reauth_confirm": {
+                "data_description": {
+                    "password": "The password associated with the pyLoad account.",
+                    "username": "The username used to access the pyLoad instance."
+                }
+            },
+            "reconfigure": {
+                "data_description": {
+                    "password": "The password associated with the pyLoad account.",
+                    "ssl": "If enabled, the connection to the pyLoad instance will use HTTPS.",
+                    "username": "The username used to access the pyLoad instance.",
+                    "verify_ssl": "If checked, the SSL certificate will be validated to ensure a secure connection."
+                }
+            },
+            "user": {
+                "data_description": {
+                    "password": "The password associated with the pyLoad account.",
+                    "ssl": "If enabled, the connection to the pyLoad instance will use HTTPS.",
+                    "username": "The username used to access the pyLoad instance.",
+                    "verify_ssl": "If checked, the SSL certificate will be validated to ensure a secure connection."
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "config": {
+        "abort": {
+            "authorize_url_timeout": "Timeout generating authorise URL."
+        }
+    },
+    "entity": {
+        "button": {
+            "preferred_position": {
+                "name": ""
+            }
+        }
+    }
+}

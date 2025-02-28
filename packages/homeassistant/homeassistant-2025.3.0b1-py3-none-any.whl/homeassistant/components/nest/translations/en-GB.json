@@ -1,0 +1,27 @@
+{
+    "config": {
+        "abort": {
+            "authorize_url_timeout": "Timeout generating authorise URL.",
+            "unknown_authorize_url_generation": "Unknown error generating an authorise URL."
+        },
+        "step": {
+            "pubsub_topic_confirm": {
+                "description": "",
+                "submit": "",
+                "title": ""
+            }
+        }
+    },
+    "selector": {
+        "subscription_name": {
+            "options": {
+                "create_new_subscription": "Create new subscription"
+            }
+        },
+        "topic_name": {
+            "options": {
+                "create_new_topic": "Create new topic"
+            }
+        }
+    }
+}

@@ -1,0 +1,33 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Dispositivo j\u00e1 est\u00e1 configurado"
+        },
+        "error": {
+            "already_configured": "Dispositivo j\u00e1 est\u00e1 configurado",
+            "cannot_connect": "Falha ao conectar"
+        },
+        "step": {
+            "network": {
+                "data": {
+                    "host": "Host",
+                    "password": "Senha",
+                    "port": "Porta",
+                    "tls": "Use TLS (conex\u00e3o segura)"
+                },
+                "title": "Configura\u00e7\u00e3o TCP/IP"
+            },
+            "usbselect": {
+                "data": {
+                    "port": "Porta"
+                },
+                "title": "Configura\u00e7\u00e3o USB"
+            },
+            "user": {
+                "data": {
+                    "port": "String de conex\u00e3o"
+                }
+            }
+        }
+    }
+}

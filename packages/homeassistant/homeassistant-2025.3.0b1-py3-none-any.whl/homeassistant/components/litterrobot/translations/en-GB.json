@@ -1,0 +1,24 @@
+{
+    "config": {
+        "step": {
+            "reauth_confirm": {
+                "data_description": {
+                    "password": ""
+                }
+            },
+            "user": {
+                "data_description": {
+                    "password": "",
+                    "username": ""
+                }
+            }
+        }
+    },
+    "entity": {
+        "button": {
+            "reset": {
+                "name": ""
+            }
+        }
+    }
+}

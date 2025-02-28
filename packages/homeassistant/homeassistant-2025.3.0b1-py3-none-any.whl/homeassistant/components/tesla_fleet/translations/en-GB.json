@@ -1,0 +1,47 @@
+{
+    "entity": {
+        "sensor": {
+            "battery_energy_exported": {
+                "name": ""
+            },
+            "battery_energy_imported_from_generator": {
+                "name": ""
+            },
+            "battery_energy_imported_from_grid": {
+                "name": ""
+            },
+            "battery_energy_imported_from_solar": {
+                "name": ""
+            },
+            "consumer_energy_imported_from_battery": {
+                "name": ""
+            },
+            "consumer_energy_imported_from_generator": {
+                "name": ""
+            },
+            "consumer_energy_imported_from_grid": {
+                "name": ""
+            },
+            "consumer_energy_imported_from_solar": {
+                "name": ""
+            },
+            "generator_energy_exported": {
+                "name": ""
+            },
+            "grid_energy_exported_from_battery": {
+                "name": ""
+            },
+            "grid_energy_exported_from_generator": {
+                "name": ""
+            },
+            "grid_energy_exported_from_solar": {
+                "name": ""
+            }
+        },
+        "switch": {
+            "charge_state_charging_state": {
+                "name": "Charge"
+            }
+        }
+    }
+}

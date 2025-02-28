@@ -1,0 +1,16 @@
+{
+    "entity": {
+        "sensor": {
+            "drink_stats_coffee": {
+                "unit_of_measurement": "coffees"
+            },
+            "drink_stats_coffee_key": {
+                "name": "Coffees made Key {key}",
+                "unit_of_measurement": "coffees"
+            },
+            "drink_stats_flushing": {
+                "unit_of_measurement": "flushes"
+            }
+        }
+    }
+}
