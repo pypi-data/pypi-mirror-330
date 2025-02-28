@@ -1,0 +1,2 @@
+[sushy.resources.system.oems]
+contoso = sushy.resources.oem.fake:get_extension
