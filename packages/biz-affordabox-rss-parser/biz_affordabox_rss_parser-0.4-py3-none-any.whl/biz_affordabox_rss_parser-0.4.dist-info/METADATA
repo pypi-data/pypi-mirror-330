@@ -1,0 +1,13 @@
+Metadata-Version: 2.2
+Name: biz-affordabox-rss-parser
+Version: 0.4
+Requires-Dist: beautifulsoup4
+Requires-Dist: boto3
+Requires-Dist: botocore
+Requires-Dist: dateparser
+Requires-Dist: feedparser
+Requires-Dist: lxml
+Requires-Dist: pytz
+Requires-Dist: requests
+Requires-Dist: s3fs
+Dynamic: requires-dist
