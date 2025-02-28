@@ -1,0 +1,17 @@
+.gitignore
+LICENSE
+README.md
+aide-memoire.md
+pyproject.toml
+simple_client.py
+saur_client/__init__.py
+saur_client/__init__.pyi
+saur_client/_version.py
+saur_client/_version.pyi
+saur_client/saur_client.py
+saur_client/saur_client.pyi
+saur_client.egg-info/PKG-INFO
+saur_client.egg-info/SOURCES.txt
+saur_client.egg-info/dependency_links.txt
+saur_client.egg-info/requires.txt
+saur_client.egg-info/top_level.txt
