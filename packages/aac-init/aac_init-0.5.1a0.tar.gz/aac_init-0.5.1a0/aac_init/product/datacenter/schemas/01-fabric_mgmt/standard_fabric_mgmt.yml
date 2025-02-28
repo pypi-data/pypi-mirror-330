@@ -1,0 +1,20 @@
+---
+apic:
+  node_policies:
+    inb_endpoint_group: str(required=False)
+    oob_endpoint_group: enum("default", required=False)
+    nodes: list(include("node"))
+  tenants: list(required=False)
+
+---
+node:
+  id: int(min=1, max=4000)
+  pod: int(min=1, max=9)
+  role: enum("apic", "leaf", "spine", "Border-Gateway")
+  serial_number: regex("^[a-zA-Z0-9_.:-]{1,16}$")
+  name: regex("^[a-zA-Z0-9_.:-]{1,64}$")
+  oob_address: ip()
+  oob_gateway: ip()
+  inb_address: ip(required=False)
+  inb_gateway: ip(required=False)
+  fabric_policy_group: str(required=False)
