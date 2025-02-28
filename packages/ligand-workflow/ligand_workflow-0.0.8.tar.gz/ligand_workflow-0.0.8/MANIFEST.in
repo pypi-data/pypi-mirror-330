@@ -1,0 +1,7 @@
+recursive-include ligand_workflow *
+
+include README.md
+#include LICENSE
+
+recursive-include tests *
+include structure.png
