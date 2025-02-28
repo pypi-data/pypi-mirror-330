@@ -1,0 +1,100 @@
+Metadata-Version: 2.2
+Name: brightway25
+Version: 1.1.0
+Summary: A wrapper library for documentation and easy installation of Brightway 2.5
+Author-email: Chris Mutel <cmutel@gmail.com>
+Maintainer-email: Chris Mutel <cmutel@gmail.com>
+Project-URL: source, https://github.com/brightway-lca/brightway25
+Project-URL: homepage, https://github.com/brightway-lca/brightway25
+Project-URL: tracker, https://github.com/brightway-lca/brightway25/issues
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Scientific/Engineering
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: bw2analyzer>=0.11.1
+Requires-Dist: bw2calc>=2.0.1
+Requires-Dist: bw2data>=4.4.2
+Requires-Dist: bw2io>=0.9.6
+Requires-Dist: bw2parameters>=1.1.0
+Requires-Dist: bw_migrations>=0.2
+Requires-Dist: bw_processing>=1.0
+Requires-Dist: bw_simapro_csv>=0.4
+Requires-Dist: ecoinvent_interface>=3.1
+Requires-Dist: matrix_utils>=0.6
+Requires-Dist: mrio_common_metadata>=0.2.1
+Requires-Dist: multifunctional>=1.0
+Requires-Dist: numpy<2
+Requires-Dist: randonneur>=0.6.1
+Requires-Dist: randonneur_data>=0.5.5
+Requires-Dist: scipy
+Requires-Dist: stats_arrays>=0.7
+Provides-Extra: testing
+Requires-Dist: brightway25; extra == "testing"
+Requires-Dist: pytest; extra == "testing"
+Requires-Dist: pytest-cov; extra == "testing"
+Requires-Dist: python-coveralls; extra == "testing"
+Provides-Extra: dev
+Requires-Dist: build; extra == "dev"
+Requires-Dist: pre-commit; extra == "dev"
+Requires-Dist: pylint; extra == "dev"
+Requires-Dist: pytest; extra == "dev"
+Requires-Dist: pytest-cov; extra == "dev"
+Requires-Dist: pytest-randomly; extra == "dev"
+Requires-Dist: setuptools; extra == "dev"
+
+Brightway2.5
+============
+
+Brightway 2.5 is the next generation of the [Brightway2](https://brightway.dev/) framework for life cycle assessment. It provides new capabilities for cloud computing and model interaction, with the use of a new [processed data library](https://github.com/brightway-lca/bw_processing) and a separation between the calculation library and a library for [matrix construction and manipulation](https://github.com/brightway-lca/matrix_utils).
+
+Note that this library does not import anything, so running `from brightway25 import *` won't do anything useful. Instead, import each constituent library separately. A good default is:
+
+```python
+
+import bw2analyzer as ba
+import bw2data as bd
+import bw2calc as bc
+import bw2io as bi
+import matrix_utils as mu
+import bw_processing as bp
+
+```
+# Installing
+
+The package is currently hosted in the [cmutel channel of anaconda.org](https://anaconda.org/cmutel/brightway25). **This might change in the future for the conda-forge channel** 
+
+You can install brightway25 with:
+
+```
+conda create -n bw25 -c conda-forge -c defaults -c cmutel brightway25
+```
+# Upgrading
+
+Brightway 2.5 can be use in parallel with Brightway 2, but each project must be either version 2 or 2.5. Brightway 2.5 projects have a different processed data format, and no longer use the `mapping` object.
+
+To upgrade an existing project to version 2.5, use the function `bw2data.projects.migrate_project_25()`.
+
+To maintain a clean separation between these two sets of projects, you can use some type of naming convention, or use an [environment variable](https://2.docs.brightway.dev/faq.html?#how-do-i-find-where-my-data-is-saved) for a new data directory.
+
+
+Official site:
+
+* https://brightway.dev
+
+Online documentation:
+
+* https://25.docs.brightway.dev/
+
+Development blog:
+
+* http://chris.mutel.org
