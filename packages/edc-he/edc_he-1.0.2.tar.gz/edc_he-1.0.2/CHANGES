@@ -1,0 +1,15 @@
+Changes
+-------
+
+0.1.20
+------
+- update tests
+- modify metadata rules to update the CrfMetadata of previous
+  timpoints if forms are filled in over more than one timepoint
+
+<=0.1.19
+--------
+- add models and other classes (edc-he)
+- move model, admin, form, etc from intecomm to edc-he (edc-he)
+- add new code for revised HE crf (edc-he)
+- add mixins for new HE crf (edc-he)
