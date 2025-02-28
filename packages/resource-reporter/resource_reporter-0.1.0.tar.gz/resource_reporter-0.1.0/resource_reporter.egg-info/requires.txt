@@ -1,0 +1,6 @@
+requests>=2.25.0
+psutil>=5.8.0
+google-cloud-pubsub>=2.0.0
+
+[gpu]
+pynvml>=11.0.0

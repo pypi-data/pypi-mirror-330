@@ -1,0 +1,46 @@
+Metadata-Version: 2.2
+Name: resource-reporter
+Version: 0.1.0
+Summary: A library for monitoring and reporting resource usage in containerized applications
+Home-page: https://github.com/yourusername/resource-reporter
+Author: Your Name
+Author-email: your.email@example.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: requests>=2.25.0
+Requires-Dist: psutil>=5.8.0
+Requires-Dist: google-cloud-pubsub>=2.0.0
+Provides-Extra: gpu
+Requires-Dist: pynvml>=11.0.0; extra == "gpu"
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: provides-extra
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# Resource Reporter
+
+A Python library for monitoring and reporting resource usage in containerized applications, with support for asynchronous event reporting and command listening.
+
+## Features
+
+- Regular resource usage reporting (CPU, memory, network, GPU)
+- Asynchronous event reporting
+- Command listening via Google PubSub for remote control of containers
+- Support for graceful shutdown and restart
+
+## Installation
+
+### Basic Installation
+
+```bash
+pip install resource-reporter
