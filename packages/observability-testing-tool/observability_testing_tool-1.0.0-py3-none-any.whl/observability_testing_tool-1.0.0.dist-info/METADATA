@@ -1,0 +1,13 @@
+Metadata-Version: 2.2
+Name: observability-testing-tool
+Version: 1.0.0
+Project-URL: Homepage, https://github.com/fmestrone/observability-testing-tool
+Requires-Python: >=3.12
+License-File: LICENSE
+Requires-Dist: google-cloud-logging==3.11.4
+Requires-Dist: google-cloud-monitoring==2.26.0
+Requires-Dist: pyyaml==6.0.2
+Requires-Dist: jsonschema==4.23.0
+Provides-Extra: build
+Requires-Dist: twine; extra == "build"
+Requires-Dist: build; extra == "build"
