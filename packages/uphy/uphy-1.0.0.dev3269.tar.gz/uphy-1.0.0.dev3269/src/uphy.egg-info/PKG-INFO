@@ -1,0 +1,25 @@
+Metadata-Version: 2.2
+Name: uphy
+Version: 1.0.0.dev3269
+Author-email: RT-Labs <support@rt-labs.com>
+License: Copyright rt-labs AB, Sweden.
+        All rights reserved.
+        
+        You may not use this software in a commercial product without
+        purchasing a license. Contact sales@rt-labs.com for more information.
+        
+Project-URL: RT-Labs, https://rt-labs.com
+Project-URL: U-Phy, https://rt-labs.com/u-phy
+Project-URL: Documentation, https://docs.rt-labs.com/u-phy
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+Requires-Dist: typer>=0.12.5
+Requires-Dist: uphy-device>=1.0.0
+Requires-Dist: uphy-controller>=1.0.0
+Requires-Dist: rich>=13.9.4
+
+# U-Phy
+
+One software, All protocols.
+
+Command line tooling for working with U-Phy based devices.

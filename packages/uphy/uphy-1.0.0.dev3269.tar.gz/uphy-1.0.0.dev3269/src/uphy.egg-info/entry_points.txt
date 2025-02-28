@@ -1,0 +1,2 @@
+[console_scripts]
+uphy = uphy.cli.__main__:app
