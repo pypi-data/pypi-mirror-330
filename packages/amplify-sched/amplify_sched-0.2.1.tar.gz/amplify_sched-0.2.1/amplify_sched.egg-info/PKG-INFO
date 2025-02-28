@@ -1,0 +1,35 @@
+Metadata-Version: 2.2
+Name: amplify-sched
+Version: 0.2.1
+Summary: Fixstars Amplify Scheduling Engine SDK
+Home-page: https://amplify.fixstars.com
+Author: Fixstars Amplify Corporation
+Author-email: "Yoshiki Matsuda" <y_matsuda@fixstars.com>
+Maintainer: Yoshiki Matsuda, Kosuke Suzuki, Yuki Minamoto, Takuma Saito
+Maintainer-email: "Yoshiki Matsuda" <y_matsuda@fixstars.com>, "Kosuke Suzuki" <kosuke.suzuki@fixstars.com>, "Yuki Minamoto" <yuki.minamoto@fixstars.com>, "Takuma Saito" <takuma.saito@fixstars.com>
+Keywords: fixstars,amplify,sdk,job-shop,scheduling,operations research,optimization
+Classifier: Environment :: Console
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Scientific/Engineering
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: plotly
+Requires-Dist: nbformat>=4.2.0
+Requires-Dist: pandas
+Requires-Dist: jsonschema
+Requires-Dist: requests
+
+# Amplify Scheduling Engine SDK
