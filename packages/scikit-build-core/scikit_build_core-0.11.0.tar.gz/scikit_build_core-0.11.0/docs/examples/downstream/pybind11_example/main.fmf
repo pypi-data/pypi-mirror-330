@@ -1,0 +1,4 @@
+summary: Pybind downstream example
+require+:
+  - gcc-c++
+  - python3dist(pybind11)
