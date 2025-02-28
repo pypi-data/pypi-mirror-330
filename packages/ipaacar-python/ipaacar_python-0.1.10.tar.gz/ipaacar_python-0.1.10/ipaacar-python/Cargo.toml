@@ -1,0 +1,24 @@
+[package]
+name = "ipaacar-python"
+version = "0.1.10"
+edition = "2021"
+authors = ["AG-SCS"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[lib]
+# this needs to match the function name in lib.rs
+name = "ipaacar"
+crate-type = ["cdylib"]
+
+[dependencies]
+pyo3 = { version = "0.21.2", features = ["extension-module"] }
+# https://github.com/awestlake87/pyo3-asyncio/issues/119
+pyo3-asyncio-0-21 = { version = "0.21.0", features = ["tokio-runtime"] }
+pyo3-log = "0.11.0"
+log = "0.4.22"
+ipaacar-core = { path = "../ipaacar-core" }
+serde_json = "1.0.128"
+uuid = {version = "1.10.0", features = ["v4", "fast-rng", "macro-diagnostics", "serde"]}
+tokio = {version = "1.40.0", features = ["sync"]}
+
+
