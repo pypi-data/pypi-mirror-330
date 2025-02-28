@@ -1,0 +1,33 @@
+redis:
+  servicePort: 6379
+  pvc:
+    enabled: true
+    storageClassName: ""
+    accessModes:
+      - ReadWriteOnce
+    size: 1Gi
+  service:
+    port: 6379
+
+stacServer:
+  enabled: true
+  image:
+    repository: "eccr.ecmwf.int/qubed/stac_server"
+    tag: "latest"
+    pullPolicy: Always
+  servicePort: 80
+  environment:
+    REDIS_HOST: "redis"
+
+webQueryBuilder:
+  enabled: true
+  image:
+    repository: "eccr.ecmwf.int/qubed/web_query_builder"
+    tag: "latest"
+    pullPolicy: Always
+  servicePort: 80
+
+ingress:
+  enabled: True
+  tlsSecretName: "lumi-wildcard-tls"
+  hostname: "climate-catalogue.lumi.apps.dte.destination-earth.eu"
