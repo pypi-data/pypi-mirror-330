@@ -1,0 +1,4 @@
+[run]
+include = edc_model_to_dataframe/*
+omit = edc_model_to_dataframe/tests/*,edc_model_to_dataframe/migrations/*
+branch = 1

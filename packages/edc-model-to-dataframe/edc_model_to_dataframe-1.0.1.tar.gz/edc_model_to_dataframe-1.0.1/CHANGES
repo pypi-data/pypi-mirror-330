@@ -1,0 +1,9 @@
+Changes
+-------
+
+1.0.0
+-----
+- move to this module from edc_pdutils.model_to_dataframe
+- improve performance by changing the handling of M2M
+  fields
+- import tests from edc_export specific to model_to_dataframe
