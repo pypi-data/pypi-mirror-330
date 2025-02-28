@@ -1,0 +1,67 @@
+Metadata-Version: 2.1
+Name: srttools
+Version: 0.7.2
+Summary: SRT single dish tools: Tools for the analysis and conversion of SRT data
+Author: Giuseppe Carboni, The Disc Team
+Author-email: Matteo Bachetti <matteo@matteobachetti.it>
+License: 3-clause BSD
+Project-URL: homepage, https://srt-single-dish-tools.readthedocs.io
+Project-URL: documentation, https://srt-single-dish-tools.readthedocs.io
+Project-URL: repository, https://github.com/discos/srt-single-dish-tools
+Keywords: astronomy,astrophysics,time series,X-ray,data analysis,black holes,neutron stars,pulsars,space,science
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: C
+Classifier: Programming Language :: Cython
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Topic :: Scientific/Engineering :: Astronomy
+Classifier: Topic :: Scientific/Engineering :: Physics
+Requires-Python: >=3.8
+Description-Content-Type: text/x-rst
+Requires-Dist: numpy>=1.17
+Requires-Dist: astropy>=4.0
+Requires-Dist: scipy>=1.1.0
+Requires-Dist: matplotlib!=3.4.00,!=3.8.0,>=3.0
+Requires-Dist: stingray>=2.2.3
+Requires-Dist: tqdm
+Requires-Dist: h5py
+Requires-Dist: pyyaml
+Requires-Dist: colorama
+Provides-Extra: test
+Requires-Dist: pytest; extra == "test"
+Requires-Dist: pytest-astropy; extra == "test"
+Requires-Dist: pytest-asyncio; extra == "test"
+Provides-Extra: test-all
+Requires-Dist: matplotlib; extra == "test-all"
+Requires-Dist: mahotas; extra == "test-all"
+Requires-Dist: numba; extra == "test-all"
+Requires-Dist: regions; extra == "test-all"
+Requires-Dist: watchdog; extra == "test-all"
+Requires-Dist: tornado; extra == "test-all"
+Requires-Dist: statsmodels>=0.8.0; extra == "test-all"
+Requires-Dist: sunpy; extra == "test-all"
+Provides-Extra: recommended
+Requires-Dist: numba; extra == "recommended"
+Requires-Dist: statsmodels; extra == "recommended"
+Requires-Dist: pyfftw; extra == "recommended"
+Provides-Extra: all
+Requires-Dist: srttools[recommended]; extra == "all"
+Requires-Dist: mahotas; extra == "all"
+Requires-Dist: regions; extra == "all"
+Requires-Dist: watchdog; extra == "all"
+Requires-Dist: tornado; extra == "all"
+Requires-Dist: statsmodels>=0.8.0; extra == "all"
+Requires-Dist: sunpy; extra == "all"
+Provides-Extra: docs
+Requires-Dist: tomli>=1.1.0; python_version < "3.11" and extra == "docs"
+Requires-Dist: jinja2==3.1.3; extra == "docs"
+Requires-Dist: docutils; extra == "docs"
+Requires-Dist: sphinx-astropy; extra == "docs"
+Requires-Dist: sphinx-toolbox; extra == "docs"
+Requires-Dist: nbsphinx!=0.8.8,>=0.8.3; extra == "docs"
+Requires-Dist: nbconvert<7.14; extra == "docs"
+Requires-Dist: pandoc; extra == "docs"
+Requires-Dist: ipython; extra == "docs"
+Requires-Dist: towncrier; extra == "docs"
