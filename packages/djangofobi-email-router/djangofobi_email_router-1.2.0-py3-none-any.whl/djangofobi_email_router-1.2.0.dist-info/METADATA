@@ -1,0 +1,46 @@
+Metadata-Version: 2.3
+Name: djangofobi-email-router
+Version: 1.2.0
+Summary: A django-fobi handler plugin to send the content of a form to different e-mails addresses, depending on a value of a form field.
+License: GPL-3.0-or-later
+Author: KAPT dev team
+Author-email: dev@kapt.mobi
+Requires-Python: >=3.10,<4.0
+Classifier: License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Dist: Django (>=1.11)
+Requires-Dist: django-fobi (>=0.17.0)
+Project-URL: Repository, https://gitlab.com/kapt/open-source/djangofobi-email-router
+Description-Content-Type: text/markdown
+
+# Django fobi email router
+
+A django-fobi handler plugin to send the content of a form to different e-mails addresses, depending on a value of a form field.
+
+## Install
+
+1. Install module
+   ```bash
+   python3 -m pip install djangofobi-email-router
+   ```
+
+2. Add it to your INSTALLED_APPS
+   ```
+   "djangofobi_email_router",
+   ```
+
+3. Create a fobi form with at least one choice field (select, select multiple, checkbox select multiple or radio)
+4. Add an `E-mail router` handler, fill in the name of your choice field and the e-mails corresponding to the different possible values
+
+### Requirements
+
+* `django-fobi`
+
+## Screenshot
+
+![preview djangofobi-email-router](https://gitlab.com/kapt/open-source/djangofobi-email-router/-/raw/main/preview.png)
+
