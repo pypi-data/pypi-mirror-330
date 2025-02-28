@@ -1,0 +1,29 @@
+Metadata-Version: 2.2
+Name: iterart
+Version: 0.1.0
+Summary: A collection of tools to generate renderings based on iterative functions.
+Home-page: https://github.com/karzunn/iterart
+Author: Carson O'Ffill
+Author-email: offillcarson@gmail.com
+License: MIT
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.12
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pyopencl==2025.1
+Requires-Dist: numpy==2.1.3
+Requires-Dist: pillow==11.1.0
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# iterart
+A collection of tools to generate renderings based on iterative functions.
