@@ -1,0 +1,239 @@
+{
+  "data": {
+    "stopPlace": {
+      "name": "Godlia",
+      "estimatedCalls": [
+        {
+          "quay": {
+            "id": "NSR:Quay:10948",
+            "description": "Retning Mortensrud"
+          },
+          "expectedDepartureTime": "2025-01-26T20:29:38+01:00",
+          "actualDepartureTime": null,
+          "realtime": true,
+          "realtimeState": "updated",
+          "destinationDisplay": {
+            "frontText": "Mortensrud"
+          },
+          "serviceJourney": {
+            "line": {
+              "id": "RUT:Line:3",
+              "publicCode": "3",
+              "presentation": {
+                "colour": "EC700C",
+                "textColour": "FFFFFF"
+              }
+            }
+          }
+        },
+        {
+          "quay": {
+            "id": "NSR:Quay:10949",
+            "description": "Retning sentrum"
+          },
+          "expectedDepartureTime": "2025-01-26T20:30:00+01:00",
+          "actualDepartureTime": null,
+          "realtime": true,
+          "realtimeState": "updated",
+          "destinationDisplay": {
+            "frontText": "Kols\u00e5s"
+          },
+          "serviceJourney": {
+            "line": {
+              "id": "RUT:Line:3",
+              "publicCode": "3",
+              "presentation": {
+                "colour": "EC700C",
+                "textColour": "FFFFFF"
+              }
+            }
+          }
+        },
+        {
+          "quay": {
+            "id": "NSR:Quay:10948",
+            "description": "Retning Mortensrud"
+          },
+          "expectedDepartureTime": "2025-01-26T20:43:23+01:00",
+          "actualDepartureTime": null,
+          "realtime": true,
+          "realtimeState": "updated",
+          "destinationDisplay": {
+            "frontText": "Mortensrud"
+          },
+          "serviceJourney": {
+            "line": {
+              "id": "RUT:Line:3",
+              "publicCode": "3",
+              "presentation": {
+                "colour": "EC700C",
+                "textColour": "FFFFFF"
+              }
+            }
+          }
+        },
+        {
+          "quay": {
+            "id": "NSR:Quay:10949",
+            "description": "Retning sentrum"
+          },
+          "expectedDepartureTime": "2025-01-26T20:45:00+01:00",
+          "actualDepartureTime": null,
+          "realtime": true,
+          "realtimeState": "updated",
+          "destinationDisplay": {
+            "frontText": "Kols\u00e5s"
+          },
+          "serviceJourney": {
+            "line": {
+              "id": "RUT:Line:3",
+              "publicCode": "3",
+              "presentation": {
+                "colour": "EC700C",
+                "textColour": "FFFFFF"
+              }
+            }
+          }
+        },
+        {
+          "quay": {
+            "id": "NSR:Quay:10948",
+            "description": "Retning Mortensrud"
+          },
+          "expectedDepartureTime": "2025-01-26T20:58:00+01:00",
+          "actualDepartureTime": null,
+          "realtime": true,
+          "realtimeState": "updated",
+          "destinationDisplay": {
+            "frontText": "Mortensrud"
+          },
+          "serviceJourney": {
+            "line": {
+              "id": "RUT:Line:3",
+              "publicCode": "3",
+              "presentation": {
+                "colour": "EC700C",
+                "textColour": "FFFFFF"
+              }
+            }
+          }
+        },
+        {
+          "quay": {
+            "id": "NSR:Quay:10949",
+            "description": "Retning sentrum"
+          },
+          "expectedDepartureTime": "2025-01-26T21:00:00+01:00",
+          "actualDepartureTime": null,
+          "realtime": true,
+          "realtimeState": "updated",
+          "destinationDisplay": {
+            "frontText": "Kols\u00e5s"
+          },
+          "serviceJourney": {
+            "line": {
+              "id": "RUT:Line:3",
+              "publicCode": "3",
+              "presentation": {
+                "colour": "EC700C",
+                "textColour": "FFFFFF"
+              }
+            }
+          }
+        },
+        {
+          "quay": {
+            "id": "NSR:Quay:10948",
+            "description": "Retning Mortensrud"
+          },
+          "expectedDepartureTime": "2025-01-26T21:13:00+01:00",
+          "actualDepartureTime": null,
+          "realtime": true,
+          "realtimeState": "updated",
+          "destinationDisplay": {
+            "frontText": "Mortensrud"
+          },
+          "serviceJourney": {
+            "line": {
+              "id": "RUT:Line:3",
+              "publicCode": "3",
+              "presentation": {
+                "colour": "EC700C",
+                "textColour": "FFFFFF"
+              }
+            }
+          }
+        },
+        {
+          "quay": {
+            "id": "NSR:Quay:10949",
+            "description": "Retning sentrum"
+          },
+          "expectedDepartureTime": "2025-01-26T21:15:00+01:00",
+          "actualDepartureTime": null,
+          "realtime": true,
+          "realtimeState": "updated",
+          "destinationDisplay": {
+            "frontText": "Kols\u00e5s"
+          },
+          "serviceJourney": {
+            "line": {
+              "id": "RUT:Line:3",
+              "publicCode": "3",
+              "presentation": {
+                "colour": "EC700C",
+                "textColour": "FFFFFF"
+              }
+            }
+          }
+        },
+        {
+          "quay": {
+            "id": "NSR:Quay:10948",
+            "description": "Retning Mortensrud"
+          },
+          "expectedDepartureTime": "2025-01-26T21:28:00+01:00",
+          "actualDepartureTime": null,
+          "realtime": true,
+          "realtimeState": "updated",
+          "destinationDisplay": {
+            "frontText": "Mortensrud"
+          },
+          "serviceJourney": {
+            "line": {
+              "id": "RUT:Line:3",
+              "publicCode": "3",
+              "presentation": {
+                "colour": "EC700C",
+                "textColour": "FFFFFF"
+              }
+            }
+          }
+        },
+        {
+          "quay": {
+            "id": "NSR:Quay:10949",
+            "description": "Retning sentrum"
+          },
+          "expectedDepartureTime": "2025-01-26T21:30:00+01:00",
+          "actualDepartureTime": null,
+          "realtime": true,
+          "realtimeState": "updated",
+          "destinationDisplay": {
+            "frontText": "Kols\u00e5s"
+          },
+          "serviceJourney": {
+            "line": {
+              "id": "RUT:Line:3",
+              "publicCode": "3",
+              "presentation": {
+                "colour": "EC700C",
+                "textColour": "FFFFFF"
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

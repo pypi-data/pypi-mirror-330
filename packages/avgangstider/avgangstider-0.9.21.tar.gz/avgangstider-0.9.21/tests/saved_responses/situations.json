@@ -1,0 +1,164 @@
+{
+  "data": {
+    "lines": [
+      {
+        "id": "RUT:Line:2",
+        "publicCode": "2",
+        "transportMode": "metro",
+        "presentation": {
+          "textColour": "FFFFFF",
+          "colour": "EC700C"
+        },
+        "situations": [
+          {
+            "summary": [
+              {
+                "value": "Linje 2: Endret kj\u00f8rem\u00f8nster p\u00e5 kveldstid",
+                "language": "no"
+              },
+              {
+                "value": "Linje 2: Endret kj\u00f8rem\u00f8nster p\u00e5 kveldstid",
+                "language": "en"
+              }
+            ],
+            "description": [
+              {
+                "value": "Linje 2 kj\u00f8rer strekningen \u00d8ster\u00e5s - Stortinget, og  Brynseng -Ellingsrud\u00e5sen fra s\u00f8ndag til torsdag mellom 21:00 og 02:00 p\u00e5 grunn av oppgradering av signalanlegget i perioden 27. januar til 13. mars.",
+                "language": "no"
+              },
+              {
+                "value": "Line 2 operates the route \u00d8ster\u00e5s - Stortinget and Brynseng - Ellingsrud\u00e5sen from Sunday to Thursday between 9:00 PM and 2:00 AM due to signal system upgrades from January 27 to March 13.",
+                "language": "en"
+              }
+            ],
+            "advice": [
+              {
+                "value": "Vi kj\u00f8rer erstatningsbuss 3B fra plattform H (ved Byporten) mellom Jernbanetorget og Brynseng.  Erstatningsbussen stopper p\u00e5 Jernbanetorget, Gr\u00f8nland, T\u00f8yen, Ensj\u00f8, Helsfyr bru og Brynseng",
+                "language": "no"
+              },
+              {
+                "value": "Due to the upgrade of the signaling system from January 27 to March 13, it will not stop at Jernbanetorget, Gr\u00f8nland, T\u00f8yen, Ensj\u00f8, and Helsfyr.",
+                "language": "en"
+              }
+            ],
+            "validityPeriod": {
+              "startTime": "2025-01-27T21:00:00+01:00",
+              "endTime": "2025-03-14T02:00:00+01:00"
+            }
+          },
+          {
+            "summary": [
+              {
+                "value": "T-banen stopper ikke p\u00e5 Nationaltheatret i vestg\u00e5ende retning",
+                "language": "no"
+              },
+              {
+                "value": "The metro does not stop at Nationaltheatret in westbound direction.",
+                "language": "en"
+              }
+            ],
+            "description": [
+              {
+                "value": "Tog i vestg\u00e5ende retning kj\u00f8rer forbi uten \u00e5 stoppe. Dette skyldes skader p\u00e5 infrastruktur ved plattformen. Reisende mot vest fra Nationaltheatret, kan ta T-banen i \u00f8stg\u00e5ende retning til Stortinget, og bytte til vestg\u00e5ende tog der. ",
+                "language": "no"
+              },
+              {
+                "value": "Westbound trains are passing by without stopping. This is due to damage to the infrastructure at the platform. Travelers heading west from Nationaltheatret can use the eastbound metro to Stortinget, and change to a westbound train there.",
+                "language": "en"
+              }
+            ],
+            "advice": [
+              {
+                "value": "",
+                "language": null
+              }
+            ],
+            "validityPeriod": {
+              "startTime": "2025-01-26T17:50:00+01:00",
+              "endTime": "2025-01-27T02:00:00+01:00"
+            }
+          }
+        ]
+      },
+      {
+        "id": "RUT:Line:3",
+        "publicCode": "3",
+        "transportMode": "metro",
+        "presentation": {
+          "textColour": "FFFFFF",
+          "colour": "EC700C"
+        },
+        "situations": [
+          {
+            "summary": [
+              {
+                "value": "Linje 3: Endret kj\u00f8rem\u00f8nster p\u00e5 kveldstid ",
+                "language": "no"
+              },
+              {
+                "value": " Line 3: Changed driving pattern in the evening",
+                "language": "en"
+              }
+            ],
+            "description": [
+              {
+                "value": "Linje 3 kj\u00f8rer strekningen Kols\u00e5s - Stortinget og Brynseng - Mortensrud fra s\u00f8ndag til torsdag mellom kl.21:00 og kl.02:00 p\u00e5 grunn av oppgradering av signalanlegget i perioden 27. januar. til 13. mars.  ",
+                "language": "no"
+              },
+              {
+                "value": "Line 3 operates the route Kols\u00e5s - Stortinget and Brynseng - Mortensrud from Sunday to Thursday between 9:00 PM and 2:00 AM due to the signal system upgrades from January 27 to March 13.",
+                "language": "en"
+              }
+            ],
+            "advice": [
+              {
+                "value": "Vi kj\u00f8rer erstatningsbuss 3B fra plattform H (ved Byporten) mellom Jernbanetorget og Brynseng.  Erstatningsbussen stopper p\u00e5 Jernbanetorget, Gr\u00f8nland, T\u00f8yen, Ensj\u00f8, Helsfyr bru og Brynseng",
+                "language": "no"
+              },
+              {
+                "value": "We are operating replacement bus 3B from platform H (near Byporten) between Jernbanetorget and Brynseng. The replacement bus stops at Jernbanetorget, Gr\u00f8nland, T\u00f8yen, Ensj\u00f8, Helsfyr Bridge, and Brynseng.",
+                "language": "en"
+              }
+            ],
+            "validityPeriod": {
+              "startTime": "2025-01-27T21:00:00+01:00",
+              "endTime": "2025-03-14T02:00:00+01:00"
+            }
+          },
+          {
+            "summary": [
+              {
+                "value": "T-banen stopper ikke p\u00e5 Nationaltheatret i vestg\u00e5ende retning",
+                "language": "no"
+              },
+              {
+                "value": "The metro does not stop at Nationaltheatret in westbound direction.",
+                "language": "en"
+              }
+            ],
+            "description": [
+              {
+                "value": "Tog i vestg\u00e5ende retning kj\u00f8rer forbi uten \u00e5 stoppe. Dette skyldes skader p\u00e5 infrastruktur ved plattformen. Reisende mot vest fra Nationaltheatret, kan ta T-banen i \u00f8stg\u00e5ende retning til Stortinget, og bytte til vestg\u00e5ende tog der. ",
+                "language": "no"
+              },
+              {
+                "value": "Westbound trains are passing by without stopping. This is due to damage to the infrastructure at the platform. Travelers heading west from Nationaltheatret can use the eastbound metro to Stortinget, and change to a westbound train there.",
+                "language": "en"
+              }
+            ],
+            "advice": [
+              {
+                "value": "",
+                "language": null
+              }
+            ],
+            "validityPeriod": {
+              "startTime": "2025-01-26T17:50:00+01:00",
+              "endTime": "2025-01-27T02:00:00+01:00"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

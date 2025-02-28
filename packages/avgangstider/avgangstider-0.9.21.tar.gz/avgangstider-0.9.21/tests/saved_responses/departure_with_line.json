@@ -1,0 +1,219 @@
+{
+  "data": {
+    "stopPlace": {
+      "name": "Jernbanetorget",
+      "estimatedCalls": [
+        {
+          "expectedArrivalTime": "2025-01-26T20:28:00+01:00",
+          "expectedDepartureTime": "2025-01-26T20:28:00+01:00",
+          "quay": {
+            "id": "NSR:Quay:7184",
+            "description": "Retning vest"
+          },
+          "destinationDisplay": {
+            "frontText": "Kols\u00e5s"
+          },
+          "serviceJourney": {
+            "line": {
+              "id": "RUT:Line:3",
+              "publicCode": "3",
+              "presentation": {
+                "colour": "EC700C",
+                "textColour": "FFFFFF"
+              }
+            }
+          }
+        },
+        {
+          "expectedArrivalTime": "2025-01-26T20:30:23+01:00",
+          "expectedDepartureTime": "2025-01-26T20:30:23+01:00",
+          "quay": {
+            "id": "NSR:Quay:7183",
+            "description": "Retning \u00f8st"
+          },
+          "destinationDisplay": {
+            "frontText": "Mortensrud"
+          },
+          "serviceJourney": {
+            "line": {
+              "id": "RUT:Line:3",
+              "publicCode": "3",
+              "presentation": {
+                "colour": "EC700C",
+                "textColour": "FFFFFF"
+              }
+            }
+          }
+        },
+        {
+          "expectedArrivalTime": "2025-01-26T20:43:00+01:00",
+          "expectedDepartureTime": "2025-01-26T20:43:00+01:00",
+          "quay": {
+            "id": "NSR:Quay:7184",
+            "description": "Retning vest"
+          },
+          "destinationDisplay": {
+            "frontText": "Kols\u00e5s"
+          },
+          "serviceJourney": {
+            "line": {
+              "id": "RUT:Line:3",
+              "publicCode": "3",
+              "presentation": {
+                "colour": "EC700C",
+                "textColour": "FFFFFF"
+              }
+            }
+          }
+        },
+        {
+          "expectedArrivalTime": "2025-01-26T20:45:00+01:00",
+          "expectedDepartureTime": "2025-01-26T20:45:00+01:00",
+          "quay": {
+            "id": "NSR:Quay:7183",
+            "description": "Retning \u00f8st"
+          },
+          "destinationDisplay": {
+            "frontText": "Mortensrud"
+          },
+          "serviceJourney": {
+            "line": {
+              "id": "RUT:Line:3",
+              "publicCode": "3",
+              "presentation": {
+                "colour": "EC700C",
+                "textColour": "FFFFFF"
+              }
+            }
+          }
+        },
+        {
+          "expectedArrivalTime": "2025-01-26T20:58:00+01:00",
+          "expectedDepartureTime": "2025-01-26T20:58:00+01:00",
+          "quay": {
+            "id": "NSR:Quay:7184",
+            "description": "Retning vest"
+          },
+          "destinationDisplay": {
+            "frontText": "Kols\u00e5s"
+          },
+          "serviceJourney": {
+            "line": {
+              "id": "RUT:Line:3",
+              "publicCode": "3",
+              "presentation": {
+                "colour": "EC700C",
+                "textColour": "FFFFFF"
+              }
+            }
+          }
+        },
+        {
+          "expectedArrivalTime": "2025-01-26T21:00:00+01:00",
+          "expectedDepartureTime": "2025-01-26T21:00:00+01:00",
+          "quay": {
+            "id": "NSR:Quay:7183",
+            "description": "Retning \u00f8st"
+          },
+          "destinationDisplay": {
+            "frontText": "Mortensrud"
+          },
+          "serviceJourney": {
+            "line": {
+              "id": "RUT:Line:3",
+              "publicCode": "3",
+              "presentation": {
+                "colour": "EC700C",
+                "textColour": "FFFFFF"
+              }
+            }
+          }
+        },
+        {
+          "expectedArrivalTime": "2025-01-26T21:13:00+01:00",
+          "expectedDepartureTime": "2025-01-26T21:13:00+01:00",
+          "quay": {
+            "id": "NSR:Quay:7184",
+            "description": "Retning vest"
+          },
+          "destinationDisplay": {
+            "frontText": "Kols\u00e5s"
+          },
+          "serviceJourney": {
+            "line": {
+              "id": "RUT:Line:3",
+              "publicCode": "3",
+              "presentation": {
+                "colour": "EC700C",
+                "textColour": "FFFFFF"
+              }
+            }
+          }
+        },
+        {
+          "expectedArrivalTime": "2025-01-26T21:15:00+01:00",
+          "expectedDepartureTime": "2025-01-26T21:15:00+01:00",
+          "quay": {
+            "id": "NSR:Quay:7183",
+            "description": "Retning \u00f8st"
+          },
+          "destinationDisplay": {
+            "frontText": "Mortensrud"
+          },
+          "serviceJourney": {
+            "line": {
+              "id": "RUT:Line:3",
+              "publicCode": "3",
+              "presentation": {
+                "colour": "EC700C",
+                "textColour": "FFFFFF"
+              }
+            }
+          }
+        },
+        {
+          "expectedArrivalTime": "2025-01-26T21:28:00+01:00",
+          "expectedDepartureTime": "2025-01-26T21:28:00+01:00",
+          "quay": {
+            "id": "NSR:Quay:7184",
+            "description": "Retning vest"
+          },
+          "destinationDisplay": {
+            "frontText": "Kols\u00e5s"
+          },
+          "serviceJourney": {
+            "line": {
+              "id": "RUT:Line:3",
+              "publicCode": "3",
+              "presentation": {
+                "colour": "EC700C",
+                "textColour": "FFFFFF"
+              }
+            }
+          }
+        },
+        {
+          "expectedArrivalTime": "2025-01-26T21:30:00+01:00",
+          "expectedDepartureTime": "2025-01-26T21:30:00+01:00",
+          "quay": {
+            "id": "NSR:Quay:7183",
+            "description": "Retning \u00f8st"
+          },
+          "destinationDisplay": {
+            "frontText": "Mortensrud"
+          },
+          "serviceJourney": {
+            "line": {
+              "id": "RUT:Line:3",
+              "publicCode": "3",
+              "presentation": {
+                "colour": "EC700C",
+                "textColour": "FFFFFF"
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

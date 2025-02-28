@@ -1,0 +1,18 @@
+@font-face{
+	font-family:Din;
+	src:url(../fonts/Din/DIN-Regular-webfont.eot);
+	src:url(../fonts/Din/DIN-Regular-webfont.eot?#iefix) format('embedded-opentype'),url(../fonts/Din/DIN-Regular-webfont.woff) format('woff'),url(../fonts/Din/DIN-Regular-webfont.ttf) format('truetype');
+	font-style:normal
+}
+@font-face{
+	font-family:Din;
+	src:url(../fonts/Din/din-medium.eot);
+	src:url(../fonts/Din/din-medium.eot?#iefix) format('embedded-opentype'),url(../fonts/Din/din-medium.woff) format('woff'),url(../fonts/Din/din-medium.ttf) format('truetype');	
+	font-style:normal
+}
+@font-face{
+	font-family:Din;
+	src:url(../fonts/Din/DIN-Bold-webfont.eot);
+	src:url(../fonts/Din/DIN-Bold-webfont.eot?#iefix) format('embedded-opentype'),url(../fonts/Din/DIN-Bold-webfont.woff) format('woff'), url(../fonts/Din/DIN-Bold-webfont.ttf) format('truetype');	
+	font-style:normal
+}

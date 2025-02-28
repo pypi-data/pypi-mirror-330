@@ -1,0 +1,44 @@
+site_name: avgangstider
+site_url: !ENV READTHEDOCS_CANONICAL_URL
+repo_url: https://github.com/marhoy/avgangstider
+repo_name: marhoy/avgangstider
+
+nav:
+  - Home: index.md
+  - Running: running.md
+  - FastAPI usage: flask_app.md
+  - Developing: developing.md
+
+theme:
+  name: material
+  palette:
+    primary: green
+  favicon: images/favicon.ico
+  icon:
+    logo: material/bus-clock
+    repo: fontawesome/brands/github
+  custom_dir: docs/overrides
+  features:
+    - navigation.expand
+    - navigation.footer
+    - content.code.copy
+    - search.highlight
+    - search.share
+
+extra:
+  generator: false
+
+markdown_extensions:
+  - admonition
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+
+plugins:
+  - search
+  - git-revision-date-localized:
+      enable_creation_date: true
+
+extra_javascript:
+  #  - javascript/readthedocs-search.js
+  - javascript/readthedocs-menu.js
