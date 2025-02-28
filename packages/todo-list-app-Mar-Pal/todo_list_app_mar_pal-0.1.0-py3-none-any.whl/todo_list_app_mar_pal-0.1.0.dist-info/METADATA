@@ -1,0 +1,84 @@
+Metadata-Version: 2.2
+Name: todo_list_app_Mar_Pal
+Version: 0.1.0
+Summary: A todo list app
+Home-page: https://github.com/mp9466/todo-list-app
+Author: Marko Palinec
+Author-email: marko.palin@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Requires-Dist: fastapi
+Requires-Dist: uvicorn
+Requires-Dist: sqlalchemy
+Requires-Dist: pydantic
+Requires-Dist: pydantic-settings
+Requires-Dist: psycopg2-binary
+Requires-Dist: alembic
+Requires-Dist: python-dotenv
+Requires-Dist: pytest
+Requires-Dist: httpx
+Requires-Dist: pytest-asyncio
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# To-Do List App
+
+## Database Setup
+
+1. Install PostgreSQL and create a new database:
+    ```sh
+    sudo apt-get install postgresql postgresql-contrib
+    sudo -u postgres createdb todo_db
+    ```
+
+2. Create a [.env](http://_vscodecontentref_/3) file in the backend directory with the following content:
+    ```plaintext
+    DATABASE_URL=postgresql://username:password@localhost/todo_db
+    SECRET_KEY=your_secret_key
+    ```
+
+3. Apply database migrations using Alembic:
+    ```sh
+    cd backend
+    alembic upgrade head
+    ```
+
+## Installation
+
+1. Clone the repository:
+    ```sh
+    git clone https://github.com/yourusername/todo-list-app.git
+    cd todo-list-app
+    ```
+
+2. Create and activate a virtual environment:
+    ```sh
+    python -m venv venv
+    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+    ```
+
+3. Install the backend package:
+    ```sh
+    cd backend
+    pip install .
+    ```
+
+## Running the Application
+
+1. Start the backend server:
+    ```sh
+    cd backend
+    uvicorn main:app --reload
+    ```
+
+2. Open the [index.html](http://_vscodecontentref_/4) file in your web browser.
