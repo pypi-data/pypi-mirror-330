@@ -1,0 +1,22 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "observerutil"
+version = "0.1.3"
+authors = [
+  { name="Andrey Smirnov", email="smirnovcode@mail.ru" },
+]
+description = "Let you implement observer pattern from the box"
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Github repo" = "https://github.com/akvilary/observerutil"
+"Bug tracker" = "https://github.com/akvilary/observerutil/issues"
