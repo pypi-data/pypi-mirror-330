@@ -1,0 +1,16 @@
+numba
+numpy
+Z0Z_tools
+
+[testing]
+autoflake
+mypy
+more_itertools
+numba_progress
+pytest-cov
+pytest-env
+pytest-xdist
+pytest
+python_minifier
+pyupgrade
+updateCitation
