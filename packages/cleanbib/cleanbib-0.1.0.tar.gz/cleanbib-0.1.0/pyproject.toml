@@ -1,0 +1,27 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "cleanbib"
+version = "0.1.0"
+description = 'A tool for parsing and cleaning BibTex and BibLaTex files for better LaTex bibliography formatting.'
+readme = "README.md"
+requires-python = ">=3.8"
+license = "MIT"
+keywords = ["LaTex", "BibLaTex", "BibTex"]
+authors = [
+  { name = "Harry He", email = "zih028@ucsd.edu" },
+]
+dependencies = ["requests", "tqdm"]
+
+[project.urls]
+Documentation = "https://github.com/harryziyuhe/cleanbib#readme"
+Issues = "https://github.com/harryziyuhe/cleanbib/issues"
+Source = "https://github.com/harryziyuhe/cleanbib"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/cleanbib"]
+
+[tool.hatch.publish.testpypi]
+repository = "https://test.pypi.org/legacy/"
