@@ -1,0 +1,2 @@
+# Включаем миграции и другие файлы
+recursive-include app/migrations *
