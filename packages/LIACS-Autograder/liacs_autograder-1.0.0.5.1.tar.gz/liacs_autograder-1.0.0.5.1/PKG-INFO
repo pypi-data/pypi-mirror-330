@@ -1,0 +1,62 @@
+Metadata-Version: 2.2
+Name: LIACS_Autograder
+Version: 1.0.0.5.1
+Summary: A package to autograde
+Home-page: https://github.com/jjgsherwood/LIACS_Autograder
+Author: Jonne Goedhart; Irina Epure
+Author-email: j.j.goedhart@liacs.leidenuniv.nl
+License: Creative Commons CC BY-NC-SA 4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: PyYAML>=6.0.1
+Requires-Dist: numpy>=1.26.4
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# autograding
+Autograder and custommagics for python
+
+# How to run
+```
+conda create -n autograding_env
+conda init
+conda activate autograding_env
+
+pip install -r requirements.txt
+
+python main.py
+```
+
+# How to make unittest
+
+Example:
+
+```python
+from autograde_module import ExtendTestCase  # Adds extra tests
+
+"""
+Student code can be accessed using the module student which is dynamically import by the autograder.
+Do not add the code "import student"
+"""
+
+class Test1Basics(ExtendTestCase):
+    def test_add(self):
+        self.assertEqual(3+5, student.add(3, 5))
+```
+
+Make sure that in the assignment .yml file contains:
+ - SUITES_AND_UNITTESTS
+ - Where the first input is the name of the unittest without "unit_test_"
+ - And the second input is the number of unittests
+ - The name of the unittest must be unique within each assignments.
