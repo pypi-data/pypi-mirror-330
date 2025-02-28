@@ -1,0 +1,40 @@
+Metadata-Version: 2.1
+Name: starknet-devnet
+Version: 0.6.5
+Summary: A local testnet for Starknet
+Home-page: https://github.com/0xSpaceShard/starknet-devnet
+License: MIT
+Keywords: starknet,cairo,testnet,local,server
+Author: FabijanC
+Author-email: fabijan.corak@gmail.com
+Requires-Python: >=3.9,<3.10
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: Flask[async] (>=2.0.3,<2.1.0)
+Requires-Dist: Werkzeug (>=2.0.3,<2.1.0)
+Requires-Dist: cairo-lang (==0.12.2)
+Requires-Dist: cloudpickle (>=2.1.0,<2.2.0)
+Requires-Dist: crypto-cpp-py (>=1.4.0,<1.5.0)
+Requires-Dist: flask-cors (>=3.0.10,<3.1.0)
+Requires-Dist: gunicorn (>=20.1.0,<20.2.0)
+Requires-Dist: jsonschema (>=4.17.0,<4.18.0)
+Requires-Dist: marshmallow (>=3.17.0,<3.18.0)
+Requires-Dist: marshmallow-dataclass (>=8.4,<8.5)
+Requires-Dist: poseidon-py (>=0.1.3,<0.2.0)
+Requires-Dist: pyyaml (>=6.0.1,<6.1.0)
+Requires-Dist: typing-extensions (>=4.3.0,<4.4.0)
+Requires-Dist: web3 (>=6.0.0,<6.1.0)
+Project-URL: Repository, https://github.com/0xSpaceShard/starknet-devnet
+Description-Content-Type: text/markdown
+
+<!-- logo / title -->
+<p align="center" style="margin-bottom: 0px !important">
+  <img width="200" src="https://user-images.githubusercontent.com/2848732/193076972-da6fa36e-11f7-4cb3-aa29-673224f8576d.png" alt="Devnet" align="center">
+</p>
+<h1 align="center" style="margin-top: 0px !important">Starknet Devnet</h1>
+
+## ❗ Migrating to Rust
+
+This repository (Devnet in Python) is not maintained anymore, so you are advised to switch to [Devnet in Rust](https://github.com/0xSpaceShard/starknet-devnet-rs), which aims to continue where Devnet in Python left off, but without the sequencer/gateway API.
+
