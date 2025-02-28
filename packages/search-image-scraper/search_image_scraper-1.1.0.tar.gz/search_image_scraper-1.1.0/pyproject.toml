@@ -1,0 +1,29 @@
+[project]
+name = "search_image_scraper"
+version = "1.1.0"
+authors = [
+  { name = "Yoad", email = "botenyoad@gmail.com" }
+]
+description = "A package for downloading images from Google search."
+readme = "README.md"
+requires-python = ">=3.8"
+
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent"
+]
+
+license = { file = "LICENSE" }
+
+dependencies = [
+    "requests",
+    "selenium",
+    "beautifulsoup4",
+    "Pillow",
+    "imagehash"
+]
+
+[project.urls]
+Homepage = "https://github.com/GoatYoad/search_image_scraper"
+Repository = "https://github.com/GoatYoad/search_image_scraper"
