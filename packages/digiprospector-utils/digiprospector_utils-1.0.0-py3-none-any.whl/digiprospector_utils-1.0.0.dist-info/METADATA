@@ -1,0 +1,23 @@
+Metadata-Version: 2.2
+Name: digiprospector_utils
+Version: 1.0.0
+Summary: python utils for digiprospector
+Home-page: https://github.com/digiprospector/digiprospector_utils
+Author: digiprospector
+Author-email: digiprospector <digiprospector@protonmail.com>
+Project-URL: Homepage, https://github.com/digiprospector/digiprospector_utils
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pathlib
+Requires-Dist: logging
+Requires-Dist: colorlog
+Dynamic: author
+Dynamic: home-page
+Dynamic: requires-python
+
+# digiprospector_utils
+python utils packages for me
