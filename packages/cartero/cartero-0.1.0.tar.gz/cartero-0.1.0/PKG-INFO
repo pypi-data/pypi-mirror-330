@@ -1,0 +1,22 @@
+Metadata-Version: 2.2
+Name: cartero
+Version: 0.1.0
+Summary: Utilidad muy básica para enviar correos electrónicos.
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: logutils-serpucga>=0.2.1
+Requires-Dist: pydantic>=2.10.6
+
+# cartero
+
+Utilidad para facilitarme la vida en todas aquellas tareas que requieren envío
+de correos a través de una interfaz unificada con todas las opciones más
+comunes, incluyendo:
+
+- Envío con/sin autenticación y SSL
+- Texto plano y HTML
+- Reply address
+- Unsusbscribe URL
+- Archivos adjuntos
+- logger configurable (por defecto usa logutils-serpucga)
+- Dry run para testeo sin envío efectivo de correos

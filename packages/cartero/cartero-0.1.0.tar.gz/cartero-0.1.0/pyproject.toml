@@ -1,0 +1,10 @@
+[project]
+name = "cartero"
+version = "0.1.0"
+description = "Utilidad muy básica para enviar correos electrónicos."
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "logutils-serpucga>=0.2.1",
+    "pydantic>=2.10.6",
+]
