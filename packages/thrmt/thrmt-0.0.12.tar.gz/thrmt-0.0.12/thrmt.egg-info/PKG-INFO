@@ -1,0 +1,33 @@
+Metadata-Version: 2.2
+Name: thrmt
+Version: 0.0.12
+Summary: Torched Random Matrix Theory
+Home-page: https://github.com/emaballarin/thrmt
+Author: Emanuele Ballarin
+Author-email: emanuele@ballarin.cc
+License: MIT
+Keywords: Deep Learning,Differentiable Programming,Machine Learning,PyTorch,Random Matrices,Random Matrix Theory
+Classifier: Development Status :: 3 - Alpha
+Classifier: Topic :: Scientific/Engineering :: Mathematics
+Classifier: Environment :: Console
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: torch>=2
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: license
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# 🔥🎲 `ThRMT`
+
+*Torched* Random Matrix Theory
