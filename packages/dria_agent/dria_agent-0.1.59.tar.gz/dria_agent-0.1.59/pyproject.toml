@@ -1,0 +1,42 @@
+[tool.poetry]
+name = "dria_agent"
+version = "0.1.59"
+description = "speedy, performant and small tool calling agents"
+authors = ["andthattoo <omer@firstbatch.xyz>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+ollama = "^0.4.7"
+sentence-transformers = {version = "^3.4.1", optional = true}
+transformers = {version = "^4.48.3", optional = true}
+mlx-lm = {version = "^0.21.4", optional = true}
+openai = "^1.61.1"
+rich = "^13.9.4"
+scikit-learn = {version = "^1.6.1", optional = true}
+docker = {version = "^7.1.0", optional = true}
+numpy = "^2.2.2"
+urllib3 = "^2.3.0"
+requests = "^2.32.3"
+mlx = {version = "^0.22.1", optional = true}
+markdownify = {version = "^0.14.1", optional = true}
+duckduckgo-search = {version = "^7.3.2", optional = true}
+smolagents = {version = "^1.8.1", optional = true}
+slack-sdk = {version="^3.34.0", optional = true}
+beautifulsoup4 = {version = "^4.13.3", optional = true}
+pygithub = {version = "^2.6.0", optional = true}
+mcp = {version="^1.3.0", optional=true}
+
+[tool.poetry.extras]
+mcp = ["mcp"]
+huggingface = ["transformers", "sentence-transformers"]
+mlx = ["mlx", "mlx-lm", "sentence-transformers"]
+tools = ["pygithub", "beautifulsoup4", "slack-sdk", "python-telegram", "scikit-learn", "docker", "google-api-python-client", "google-auth-oauthlib", "docker", "markdownify", "duckduckgo-search", "smolagents"]
+
+[tool.poetry.scripts]
+dria_agent = "dria_agent.__main__:main"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
