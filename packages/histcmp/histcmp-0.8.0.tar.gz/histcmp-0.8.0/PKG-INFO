@@ -1,0 +1,17 @@
+Metadata-Version: 2.4
+Name: histcmp
+Version: 0.8.0
+Summary: Compare histograms
+Author-email: Paul Gessinger <hello@paulgessinger.com>
+License-Expression: MIT
+Requires-Python: >=3.10
+Requires-Dist: hist[plot]>=2.8.0
+Requires-Dist: jinja2>=3.1.4
+Requires-Dist: matplotlib>=3.9.2
+Requires-Dist: mplhep>=0.3.55
+Requires-Dist: numpy>=2.1.3
+Requires-Dist: pydantic>=2.10.1
+Requires-Dist: pyyaml>=6.0.2
+Requires-Dist: rich>=13.9.4
+Requires-Dist: scipy>=1.14.1
+Requires-Dist: typer>=0.13.1
