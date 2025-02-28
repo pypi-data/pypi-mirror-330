@@ -1,0 +1,17 @@
+LICENSE
+README.md
+pyproject.toml
+markdown_scrolly/__init__.py
+markdown_scrolly/animation.py
+markdown_scrolly/cli.py
+markdown_scrolly/mdparser.py
+markdown_scrolly.egg-info/PKG-INFO
+markdown_scrolly.egg-info/SOURCES.txt
+markdown_scrolly.egg-info/dependency_links.txt
+markdown_scrolly.egg-info/entry_points.txt
+markdown_scrolly.egg-info/requires.txt
+markdown_scrolly.egg-info/top_level.txt
+markdown_scrolly/resources/anima.js
+markdown_scrolly/resources/anima_base.css
+markdown_scrolly/resources/anima_build.css
+markdown_scrolly/resources/md.css

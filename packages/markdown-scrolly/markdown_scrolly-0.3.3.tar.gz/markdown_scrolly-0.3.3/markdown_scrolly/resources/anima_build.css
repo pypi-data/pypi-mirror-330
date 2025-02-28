@@ -1,0 +1,222 @@
+#bg_01_01 {
+    background-image: url('../imgs/south_america.jpg');
+    width:  2552px;
+    height: 1483px;
+    animation: animation_01_01 100s linear;
+    animation-delay: calc(var(--scroll_01) * -1s);
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+    animation-play-state: paused;
+}       
+
+#bg_01_02 {
+    background-image: url('../imgs/south_field.png');
+    width:  7975px;
+    height: 4634px;
+    animation: animation_01_02 100s linear;
+    animation-delay: calc(var(--scroll_01) * -1s);
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+    animation-play-state: paused;
+}       
+
+#bg_01_03 {
+    background-image: url('../imgs/south_field_gm.jpg');
+    width:  2552px;
+    height: 1483px;
+    animation: animation_01_03 100s linear;
+    animation-delay: calc(var(--scroll_01) * -1s);
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+    animation-play-state: paused;
+}       
+
+#bg_01_04 {
+    background-image: url('../imgs/perito.png');
+    width:  7975px;
+    height: 4634px;
+    animation: animation_01_04 100s linear;
+    animation-delay: calc(var(--scroll_01) * -1s);
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+    animation-play-state: paused;
+}       
+
+@keyframes animation_01_01{
+	from {
+		transform: translateY(100%) ;
+		opacity: 1;
+	}
+	14.3% {
+		transform: translateY(0%) ;
+	}
+	38.6% {
+		opacity: 1;
+	}
+	43.7% {
+		opacity: 0;
+	}
+	to {
+		opacity: 0;
+	}
+}
+
+@keyframes animation_01_02{
+	from {
+		opacity: 0;
+	}
+	19.7% {
+		opacity: 0;
+	}
+	24.9% {
+		opacity: 1;
+	}
+	38.6% {
+		opacity: 1;
+	}
+	43.7% {
+		opacity: 0;
+	}
+	to {
+		opacity: 0;
+	}
+}
+
+@keyframes animation_01_03{
+	from {
+		scale: .05;
+		transform: translate(-30%,90%);
+		opacity: 0;
+	}
+	35.1% {
+		opacity: 0;
+	}
+	37.7% {
+		scale:.05;
+		transform: translate(-30%,90%);
+	}
+	40.3% {
+		opacity: 1;
+	}
+	51.4% {
+		scale:1;
+		transform: translate(0%,0%);
+	}
+	85.7% {
+		scale: 1;
+		transform: translateY(0%) translate(0%,0%);
+		opacity: 1;
+	}
+	to {
+		scale: 1;
+		transform: translateY(-100%) translate(0%,0%);
+	}
+}
+
+@keyframes animation_01_04{
+	from {
+		opacity: 0;
+	}
+	66.0% {
+		opacity: 0;
+	}
+	71.1% {
+		opacity: 1;
+	}
+	85.7% {
+		transform: translateY(0%) ;
+		opacity: 1;
+	}
+	to {
+		transform: translateY(-100%) ;
+	}
+}
+
+#bg_02_01 {
+    background-image: url('../imgs/12_1985.jpg');
+    width:  2552px;
+    height: 1483px;
+    animation: animation_02_01 100s linear;
+    animation-delay: calc(var(--scroll_02) * -1s);
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+    animation-play-state: paused;
+}       
+
+#bg_02_02 {
+    background-image: url('../imgs/03_2016.jpg');
+    width:  2552px;
+    height: 1483px;
+    animation: animation_02_02 100s linear;
+    animation-delay: calc(var(--scroll_02) * -1s);
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+    animation-play-state: paused;
+}       
+
+#bg_02_03 {
+    background-image: url('../imgs/02_2021.jpg');
+    width:  2552px;
+    height: 1483px;
+    animation: animation_02_03 100s linear;
+    animation-delay: calc(var(--scroll_02) * -1s);
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+    animation-play-state: paused;
+}       
+
+@keyframes animation_02_01{
+	from {
+		transform: translateY(100%) ;
+		opacity: 1;
+	}
+	17.2% {
+		transform: translateY(0%) ;
+	}
+	82.8% {
+		transform: translateY(0%) ;
+		opacity: 1;
+	}
+	to {
+		transform: translateY(-100%) ;
+	}
+}
+
+@keyframes animation_02_02{
+	from {
+		opacity: 0;
+	}
+	38.3% {
+		opacity: 0;
+	}
+	44.5% {
+		opacity: 1;
+	}
+	82.8% {
+		transform: translateY(0%) ;
+		opacity: 1;
+	}
+	to {
+		transform: translateY(-100%) ;
+	}
+}
+
+@keyframes animation_02_03{
+	from {
+		opacity: 0;
+	}
+	59.0% {
+		opacity: 0;
+	}
+	65.2% {
+		opacity: 1;
+	}
+	82.8% {
+		transform: translateY(0%) ;
+		opacity: 1;
+	}
+	to {
+		transform: translateY(-100%) ;
+	}
+}
+
