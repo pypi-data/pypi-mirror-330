@@ -1,0 +1,55 @@
+Metadata-Version: 2.1
+Name: AveyTense
+Version: 0.3.40
+Summary: Library written in Python, includes several extensions for inbuilt Python solutions
+Home-page: https://aveyzan.glitch.me/tense/
+Author: Aveyzan
+Author-email: aveyzan@gmail.com
+License: MIT
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+Requires-Dist: typing_extensions
+
+# AveyTense
+
+**AveyTense** (formally *Tense*) is a library written by Aveyzan using Python, which provides especially extensions to inbuilt Python solutions.
+
+## Features
+
+Features are included in [this page](https://aveyzan.glitch.me/tense#documentation).
+
+## Getting started
+
+To install AveyTense, you only need to have Python 3.9 or above, and run the following command:
+
+```
+pip install AveyTense
+```
+
+If you are out-of-date, consider checking out [releases section](https://pypi.org/project/AveyTense/#history), then
+use this command in the following way: `pip install AveyTense==<version>`, like `pip install AveyTense==0.3.31`.
+
+> **Note**: It is highly recommended to install latest final version of AveyTense. Do not rely on alpha, beta releases, and
+> release candidates before their final counterparts are published.
+
+> **Warning**: Since AveyTense 0.3.30, archive files will no longer be available on [this page](https://aveyzan.glitch.me/tense),
+> due to expiry of formula after orienting publication of next versions to PyPi. Instead of providing change log via file
+> `./tense/information/changes.txt` normally included in zip/7-zip files, changes will be now provided in [this Google document](https://docs.google.com/document/d/1GC_KAOXML65jNfBZA8GhVViqPnrMoFtbLv_jHvUhBlg/edit?usp=sharing).
+
+After installation process, you can import module `aveytense` (version 0.3.39 was the last version, which had name `tense` instead), which is heart of AveyTense project.
+
+## Example programs
+
+```py
+from aveytense import *
+
+print(Color("Hello World!", 8, 69) % Color.BOLD_ITALIC_UNDERLINE)
+# prints "Hello World!" colored blue, with bolded oblique font and line under
+
+print(Tense.repeat(33, 3))
+# prints list with number 33 repeated 3 times
+
+```
