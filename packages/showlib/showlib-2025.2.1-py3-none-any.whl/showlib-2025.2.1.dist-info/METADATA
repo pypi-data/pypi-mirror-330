@@ -1,0 +1,39 @@
+Metadata-Version: 2.2
+Name: showlib
+Version: 2025.2.1
+Summary: Research and development libraries developed at the University of Saskatchewan for the SHOW instrument
+Author: usask-arg developers
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy
+Requires-Dist: netcdf4
+Requires-Dist: xarray
+Requires-Dist: skretrieval
+Provides-Extra: test
+Requires-Dist: pytest; extra == "test"
+Provides-Extra: plotting
+Requires-Dist: matplotlib; extra == "plotting"
+
+# showlib
+
+[![Documentation Status](https://readthedocs.org/projects/showlib/badge/?version=latest)](https://showlib.readthedocs.io/en/latest/?badge=latest)
+[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/usask-arg/showlib/main.svg)](https://results.pre-commit.ci/latest/github/usask-arg/showlib/main)
+
+Research and development libraries developed at the University of Saskatchewan for the SHOW instrument
+
+## Installation
+The package can be installed through
+
+`pip install showlib`
+
+## Usage
+Documentation can be found at  https://showlib.readthedocs.io/
+
+## License
+This project is licensed under the MIT license
