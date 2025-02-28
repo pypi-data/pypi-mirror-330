@@ -1,0 +1,39 @@
+Metadata-Version: 2.2
+Name: lead_md
+Version: 1.1.2
+Summary: Renders markdown to the terminal using producesyntaxed
+Author-email: Pittab <Pittab.0001@gmail.com>
+License:            DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
+                           Version 2, December 2004
+         
+        Copyright (C) 2004 Sam Hocevar <sam@hocevar.net>
+        
+        Everyone is permitted to copy and distribute verbatim or modified
+        copies of this license document, and changing it is allowed as long
+        as the name is changed.
+         
+                   DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
+          TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
+        
+         0. You just DO WHAT THE FUCK YOU WANT TO.
+        
+Description-Content-Type: text/markdown
+License-File: LICENCE
+Requires-Dist: producesyntaxed
+
+# lead
+Lead is a markdown renderer written in python to be used by python programs
+
+## Why is it different?
+Unlike other markdown renderers, lead doesn't just convert your markdown to HTML, and leverages the power of EyeScary Development's producesyntaxed library to colour text depending on what tag the text is.
+
+## Ok, what can it do?
+In its current state, lead can interpret:
+* Headings up to h4 
+* Bullet lists
+* Bold text
+* Strikethroughs
+* And just plain text
+
+## Why does this exist?
+Because it does, and it's kinda cool bc it renders markdown in the terminal instead of tkinter w o w
