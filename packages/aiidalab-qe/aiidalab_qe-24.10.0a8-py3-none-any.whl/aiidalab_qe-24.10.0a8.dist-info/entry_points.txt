@@ -1,0 +1,7 @@
+[aiida.workflows]
+aiidalab_qe.bands_workchain = aiidalab_qe.plugins.bands.bands_workchain:BandsWorkChain
+
+[aiidalab_qe.properties]
+bands = aiidalab_qe.plugins.bands:bands
+electronic_structure = aiidalab_qe.plugins.electronic_structure:electronic_structure
+pdos = aiidalab_qe.plugins.pdos:pdos

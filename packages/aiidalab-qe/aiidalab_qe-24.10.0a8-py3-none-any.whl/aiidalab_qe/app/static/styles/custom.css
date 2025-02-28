@@ -1,0 +1,125 @@
+/*
+  Override Jupyter width limitation to
+  make apps take full notebook width
+*/
+.output_subarea {
+  max-width: none !important;
+}
+/* end override */
+
+.app-header {
+  margin-bottom: 1em;
+}
+
+.logo {
+  text-align: center;
+}
+
+#subtitle {
+  text-align: center;
+  font-style: italic;
+}
+
+.app-controls {
+  margin: 0 auto;
+  align-items: center;
+}
+.app-controls button,
+.app-controls .link-button {
+  width: fit-content;
+  margin: 2px 0.5em;
+}
+.app-controls button:focus {
+  outline: none !important;
+}
+
+/* replicate jupyter button behavior */
+.link-button:hover,
+.link-button:focus {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, var(--md-shadow-key-penumbra-opacity)),
+    0 3px 1px -2px rgba(0, 0, 0, var(--md-shadow-key-umbra-opacity)),
+    0 1px 5px 0 rgba(0, 0, 0, var(--md-shadow-ambient-shadow-opacity));
+}
+
+.link-button {
+  padding: 0;
+  width: fit-content;
+}
+
+.link-button a {
+  display: block;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.link-button a,
+.link-button a:hover,
+.link-button a:focus {
+  color: inherit;
+  text-decoration: none;
+}
+
+.link-button.disabled {
+  opacity: var(--jp-widgets-disabled-opacity);
+  cursor: unset;
+}
+.link-button.disabled a {
+  pointer-events: none;
+}
+
+.loading {
+  margin: 0 auto;
+  padding: 5px;
+  font-size: large;
+  justify-content: center;
+}
+
+.warning {
+  color: red;
+  font-weight: bold;
+}
+
+.pseudo-text {
+  line-height: 140%;
+  padding: 5px 0;
+}
+
+footer {
+  text-align: right;
+}
+
+.p-Accordion-child:has(.qe-app-step-ready) > .p-Collapse-header {
+  background-color: var(--color-ready);
+}
+
+.p-Accordion-child:has(.qe-app-step-configured) > .p-Collapse-header {
+  background-color: var(--color-ready);
+  filter: brightness(0.95);
+  -webkit-filter: brightness(0.95);
+}
+
+.p-Accordion-child:has(.qe-app-step-active) > .p-Collapse-header {
+  background-color: var(--color-active);
+}
+
+.p-Accordion-child:has(.qe-app-step-success) > .p-Collapse-header {
+  background-color: var(--color-success);
+}
+
+.p-Accordion-child:has(.qe-app-step-fail) > .p-Collapse-header {
+  background-color: var(--color-failed);
+}
+
+.p-TabBar-tab {
+  min-width: fit-content !important;
+}
+
+.alert-inline {
+  padding: 0 5px;
+  margin: -1px;
+}
+
+.blocker-messages .alert {
+  margin-bottom: 0;
+  padding: 10px;
+}
