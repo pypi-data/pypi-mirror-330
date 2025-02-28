@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.poetry]
+name = "dit-activity-stream"
+version = "0.2.4"
+description = "DIT Activity Stream"
+authors = ["Cameron Lamb <live.services@digital.trade.gov.uk>"]
+license = "MIT"
+readme = "README.md"
+keywords = ["django"]
+homepage = "https://github.com/uktrade/dit-activity-stream"
+
+[tool.poetry.dependencies]
+python = ">=3.10,<4.0"
+django = ">=3.2,<5.2"
+django-hawk = "^1.2.3"
+
+[tool.poetry.group.testing]
+optional = true
+
+[tool.poetry.group.testing.dependencies]
+tox = "^4"
+freezegun = "*"
+coverage = "*"
+
+[tool.poetry.group.utils]
+optional = true
+
+[tool.poetry.group.utils.dependencies]
+isort = "*"
+flake8 = "*"
+black = "*"
+mypy = "*"
+django-stubs = "*"
+types-freezegun = "*"
+sqlparse = "^0.5.1"
+zipp = "^3.20.2"
