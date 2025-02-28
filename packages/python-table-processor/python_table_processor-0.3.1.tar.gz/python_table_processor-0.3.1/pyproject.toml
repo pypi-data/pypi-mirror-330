@@ -1,0 +1,34 @@
+[tool.poetry]
+name = "python-table-processor"
+version = "0.3.1"
+description = "A table data processor"
+authors = ["Akiva Miura <akiva.miura@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/akivajp/python-table-processor"
+packages = [
+    { include = "table_processor" },
+]
+
+[tool.poetry-dynamic-versioning]
+enable = false
+style = "pep440"
+
+[tool.poetry.scripts]
+table-processor = "table_processor.cli:main"
+convert-tables = "table_processor.cli:command_convert_tables"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+icecream = "^2.1.3"
+logzero = "^1.7.0"
+tqdm = "^4.67.0"
+pandas = "^2.2.3"
+openpyxl = "^3.1.5"
+pyyaml = "^6.0.2"
+xlsxwriter = "^3.2.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
