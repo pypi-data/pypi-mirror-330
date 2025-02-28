@@ -1,0 +1,518 @@
+[
+  {
+    "Named entity recogniser-files": {
+      "af.input.test.txt": [
+        {
+          "doc": {
+            "p": [
+              {
+                "lid": "NONE",
+                "tokenised": true,
+                "sent": {
+                  "tokens": [
+                    {
+                      "start_char": 0,
+                      "pos": "SVS",
+                      "end_char": 3,
+                      "ner": "OUT",
+                      "id": 1,
+                      "text": "TOT"
+                    },
+                    {
+                      "start_char": 4,
+                      "pos": "RL",
+                      "end_char": 5,
+                      "ner": "OUT",
+                      "id": 2,
+                      "text": "U"
+                    },
+                    {
+                      "start_char": 6,
+                      "pos": "RL",
+                      "end_char": 11,
+                      "ner": "OUT",
+                      "id": 3,
+                      "text": "DIENS"
+                    }
+                  ]
+                }
+              },
+              {
+                "lid": "NONE",
+                "tokenised": true,
+                "sent": {
+                  "tokens": [
+                    {
+                      "start_char": 0,
+                      "pos": "NSM",
+                      "end_char": 4,
+                      "ner": "OUT",
+                      "id": 1,
+                      "text": "Vrae"
+                    },
+                    {
+                      "start_char": 5,
+                      "pos": "KN",
+                      "end_char": 7,
+                      "ner": "OUT",
+                      "id": 2,
+                      "text": "en"
+                    },
+                    {
+                      "start_char": 8,
+                      "pos": "NSM",
+                      "end_char": 17,
+                      "ner": "OUT",
+                      "id": 3,
+                      "text": "Antwoorde"
+                    }
+                  ]
+                }
+              },
+              {
+                "lid": "NONE",
+                "tokenised": true,
+                "sent": {
+                  "tokens": [
+                    {
+                      "start_char": 0,
+                      "pos": "PV",
+                      "end_char": 3,
+                      "ner": "OUT",
+                      "id": 1,
+                      "text": "Wie"
+                    },
+                    {
+                      "start_char": 4,
+                      "pos": "VTHOK",
+                      "end_char": 6,
+                      "ner": "OUT",
+                      "id": 2,
+                      "text": "is"
+                    },
+                    {
+                      "start_char": 7,
+                      "pos": "RL",
+                      "end_char": 10,
+                      "ner": "OUT",
+                      "id": 3,
+                      "text": "GEP"
+                    },
+                    {
+                      "start_char": 10,
+                      "pos": "ZE",
+                      "end_char": 11,
+                      "ner": "OUT",
+                      "id": 4,
+                      "text": "?"
+                    }
+                  ]
+                }
+              },
+              {
+                "lid": "NONE",
+                "tokenised": true,
+                "sent": {
+                  "tokens": [
+                    {
+                      "start_char": 0,
+                      "pos": "LB",
+                      "end_char": 3,
+                      "ner": "OUT",
+                      "id": 1,
+                      "text": "Die"
+                    },
+                    {
+                      "start_char": 4,
+                      "pos": "NEE",
+                      "end_char": 11,
+                      "ner": "B-ORG",
+                      "id": 2,
+                      "text": "Gauteng"
+                    },
+                    {
+                      "start_char": 12,
+                      "pos": "NEE",
+                      "end_char": 22,
+                      "ner": "I-ORG",
+                      "id": 3,
+                      "text": "Enterprise"
+                    },
+                    {
+                      "start_char": 23,
+                      "pos": "NEE",
+                      "end_char": 32,
+                      "ner": "I-ORG",
+                      "id": 4,
+                      "text": "Propeller"
+                    },
+                    {
+                      "start_char": 33,
+                      "pos": "ZPL",
+                      "end_char": 34,
+                      "ner": "OUT",
+                      "id": 5,
+                      "text": "("
+                    },
+                    {
+                      "start_char": 34,
+                      "pos": "RL",
+                      "end_char": 37,
+                      "ner": "B-ORG",
+                      "id": 6,
+                      "text": "GEP"
+                    },
+                    {
+                      "start_char": 37,
+                      "pos": "ZPR",
+                      "end_char": 38,
+                      "ner": "OUT",
+                      "id": 7,
+                      "text": ")"
+                    },
+                    {
+                      "start_char": 39,
+                      "pos": "VTHOK",
+                      "end_char": 41,
+                      "ner": "OUT",
+                      "id": 8,
+                      "text": "is"
+                    },
+                    {
+                      "start_char": 42,
+                      "pos": "LO",
+                      "end_char": 44,
+                      "ner": "OUT",
+                      "id": 9,
+                      "text": "'n"
+                    },
+                    {
+                      "start_char": 45,
+                      "pos": "NSE",
+                      "end_char": 54,
+                      "ner": "OUT",
+                      "id": 10,
+                      "text": "agentskap"
+                    },
+                    {
+                      "start_char": 55,
+                      "pos": "PB",
+                      "end_char": 58,
+                      "ner": "OUT",
+                      "id": 11,
+                      "text": "wat"
+                    },
+                    {
+                      "start_char": 59,
+                      "pos": "SVS",
+                      "end_char": 63,
+                      "ner": "OUT",
+                      "id": 12,
+                      "text": "deur"
+                    },
+                    {
+                      "start_char": 64,
+                      "pos": "LB",
+                      "end_char": 67,
+                      "ner": "OUT",
+                      "id": 13,
+                      "text": "die"
+                    },
+                    {
+                      "start_char": 68,
+                      "pos": "ASA",
+                      "end_char": 77,
+                      "ner": "B-ORG",
+                      "id": 14,
+                      "text": "Gautengse"
+                    },
+                    {
+                      "start_char": 78,
+                      "pos": "ASA",
+                      "end_char": 89,
+                      "ner": "I-ORG",
+                      "id": 15,
+                      "text": "Provinsiale"
+                    },
+                    {
+                      "start_char": 90,
+                      "pos": "NSE",
+                      "end_char": 98,
+                      "ner": "I-ORG",
+                      "id": 16,
+                      "text": "Regering"
+                    },
+                    {
+                      "start_char": 99,
+                      "pos": "VVHOG",
+                      "end_char": 107,
+                      "ner": "OUT",
+                      "id": 17,
+                      "text": "ingestel"
+                    },
+                    {
+                      "start_char": 108,
+                      "pos": "VVUOP",
+                      "end_char": 110,
+                      "ner": "OUT",
+                      "id": 18,
+                      "text": "is"
+                    },
+                    {
+                      "start_char": 111,
+                      "pos": "SVS",
+                      "end_char": 116,
+                      "ner": "OUT",
+                      "id": 19,
+                      "text": "onder"
+                    },
+                    {
+                      "start_char": 117,
+                      "pos": "NA",
+                      "end_char": 127,
+                      "ner": "OUT",
+                      "id": 20,
+                      "text": "beskerming"
+                    },
+                    {
+                      "start_char": 128,
+                      "pos": "SVS",
+                      "end_char": 131,
+                      "ner": "OUT",
+                      "id": 21,
+                      "text": "van"
+                    },
+                    {
+                      "start_char": 132,
+                      "pos": "LB",
+                      "end_char": 135,
+                      "ner": "OUT",
+                      "id": 22,
+                      "text": "die"
+                    },
+                    {
+                      "start_char": 136,
+                      "pos": "NSE",
+                      "end_char": 147,
+                      "ner": "B-ORG",
+                      "id": 23,
+                      "text": "Departement"
+                    },
+                    {
+                      "start_char": 148,
+                      "pos": "SVS",
+                      "end_char": 151,
+                      "ner": "I-ORG",
+                      "id": 24,
+                      "text": "van"
+                    },
+                    {
+                      "start_char": 152,
+                      "pos": "ASA",
+                      "end_char": 162,
+                      "ner": "I-ORG",
+                      "id": 25,
+                      "text": "Ekonomiese"
+                    },
+                    {
+                      "start_char": 163,
+                      "pos": "NA",
+                      "end_char": 175,
+                      "ner": "I-ORG",
+                      "id": 26,
+                      "text": "Ontwikkeling"
+                    },
+                    {
+                      "start_char": 175,
+                      "pos": "ZM",
+                      "end_char": 176,
+                      "ner": "OUT",
+                      "id": 27,
+                      "text": ","
+                    },
+                    {
+                      "start_char": 177,
+                      "pos": "SVS",
+                      "end_char": 180,
+                      "ner": "OUT",
+                      "id": 28,
+                      "text": "met"
+                    },
+                    {
+                      "start_char": 181,
+                      "pos": "LO",
+                      "end_char": 183,
+                      "ner": "OUT",
+                      "id": 29,
+                      "text": "'n"
+                    },
+                    {
+                      "start_char": 184,
+                      "pos": "ASA",
+                      "end_char": 194,
+                      "ner": "OUT",
+                      "id": 30,
+                      "text": "spesifieke"
+                    },
+                    {
+                      "start_char": 195,
+                      "pos": "NSE",
+                      "end_char": 202,
+                      "ner": "OUT",
+                      "id": 31,
+                      "text": "mandaat"
+                    },
+                    {
+                      "start_char": 203,
+                      "pos": "SVS",
+                      "end_char": 205,
+                      "ner": "OUT",
+                      "id": 32,
+                      "text": "om"
+                    },
+                    {
+                      "start_char": 206,
+                      "pos": "NA",
+                      "end_char": 219,
+                      "ner": "OUT",
+                      "id": 33,
+                      "text": "ondersteuning"
+                    },
+                    {
+                      "start_char": 220,
+                      "pos": "KN",
+                      "end_char": 222,
+                      "ner": "OUT",
+                      "id": 34,
+                      "text": "en"
+                    },
+                    {
+                      "start_char": 223,
+                      "pos": "NA",
+                      "end_char": 235,
+                      "ner": "OUT",
+                      "id": 35,
+                      "text": "ontwikkeling"
+                    },
+                    {
+                      "start_char": 236,
+                      "pos": "SVS",
+                      "end_char": 239,
+                      "ner": "OUT",
+                      "id": 36,
+                      "text": "aan"
+                    },
+                    {
+                      "start_char": 240,
+                      "pos": "NSM",
+                      "end_char": 246,
+                      "ner": "OUT",
+                      "id": 37,
+                      "text": "KMMO's"
+                    },
+                    {
+                      "start_char": 247,
+                      "pos": "SVS",
+                      "end_char": 249,
+                      "ner": "OUT",
+                      "id": 38,
+                      "text": "in"
+                    },
+                    {
+                      "start_char": 250,
+                      "pos": "LB",
+                      "end_char": 253,
+                      "ner": "OUT",
+                      "id": 39,
+                      "text": "die"
+                    },
+                    {
+                      "start_char": 254,
+                      "pos": "NSE",
+                      "end_char": 263,
+                      "ner": "OUT",
+                      "id": 40,
+                      "text": "provinsie"
+                    },
+                    {
+                      "start_char": 264,
+                      "pos": "UPW",
+                      "end_char": 271,
+                      "ner": "OUT",
+                      "id": 41,
+                      "text": "Gauteng"
+                    },
+                    {
+                      "start_char": 272,
+                      "pos": "UPI",
+                      "end_char": 274,
+                      "ner": "OUT",
+                      "id": 42,
+                      "text": "te"
+                    },
+                    {
+                      "start_char": 275,
+                      "pos": "VTHOG",
+                      "end_char": 282,
+                      "ner": "OUT",
+                      "id": 43,
+                      "text": "verleen"
+                    },
+                    {
+                      "start_char": 283,
+                      "pos": "SVS",
+                      "end_char": 287,
+                      "ner": "OUT",
+                      "id": 44,
+                      "text": "deur"
+                    },
+                    {
+                      "start_char": 288,
+                      "pos": "ASA",
+                      "end_char": 298,
+                      "ner": "OUT",
+                      "id": 45,
+                      "text": "finansiële"
+                    },
+                    {
+                      "start_char": 299,
+                      "pos": "KN",
+                      "end_char": 301,
+                      "ner": "OUT",
+                      "id": 46,
+                      "text": "en"
+                    },
+                    {
+                      "start_char": 302,
+                      "pos": "ASA",
+                      "end_char": 315,
+                      "ner": "OUT",
+                      "id": 47,
+                      "text": "niefinansiële"
+                    },
+                    {
+                      "start_char": 316,
+                      "pos": "NSM",
+                      "end_char": 325,
+                      "ner": "OUT",
+                      "id": 48,
+                      "text": "maatreëls"
+                    },
+                    {
+                      "start_char": 325,
+                      "pos": "ZE",
+                      "end_char": 326,
+                      "ner": "OUT",
+                      "id": 49,
+                      "text": "."
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+]

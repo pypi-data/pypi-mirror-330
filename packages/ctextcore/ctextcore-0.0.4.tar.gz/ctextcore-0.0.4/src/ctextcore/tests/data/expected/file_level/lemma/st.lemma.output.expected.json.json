@@ -1,0 +1,610 @@
+[
+  {
+    "Lemmatiser-files": {
+      "st.input.test.txt": [
+        {
+          "doc": {
+            "p": [
+              {
+                "lid": "NONE",
+                "tokenised": false
+              },
+              {
+                "lid": "NONE",
+                "tokenised": true,
+                "sent": {
+                  "tokens": [
+                    {
+                      "start_char": 0,
+                      "pos": "N09",
+                      "end_char": 13,
+                      "lemma": "sebetsa",
+                      "id": 1,
+                      "text": "TSHEBELETSONG"
+                    },
+                    {
+                      "start_char": 14,
+                      "pos": "POSSC09",
+                      "end_char": 16,
+                      "lemma": "ya",
+                      "id": 2,
+                      "text": "YA"
+                    },
+                    {
+                      "start_char": 17,
+                      "pos": "N09",
+                      "end_char": 20,
+                      "lemma": "hao",
+                      "id": 3,
+                      "text": "HAO"
+                    }
+                  ]
+                }
+              },
+              {
+                "lid": "NONE",
+                "tokenised": true,
+                "sent": {
+                  "tokens": [
+                    {
+                      "start_char": 0,
+                      "pos": "N10",
+                      "end_char": 7,
+                      "lemma": "potso",
+                      "id": 1,
+                      "text": "Dipotso"
+                    },
+                    {
+                      "start_char": 8,
+                      "pos": "PART",
+                      "end_char": 10,
+                      "lemma": "le",
+                      "id": 2,
+                      "text": "le"
+                    },
+                    {
+                      "start_char": 11,
+                      "pos": "N10",
+                      "end_char": 19,
+                      "lemma": "karabo",
+                      "id": 3,
+                      "text": "Dikarabo"
+                    }
+                  ]
+                }
+              },
+              {
+                "lid": "NONE",
+                "tokenised": true,
+                "sent": {
+                  "tokens": [
+                    {
+                      "start_char": 0,
+                      "pos": "V",
+                      "end_char": 3,
+                      "lemma": "gep",
+                      "id": 1,
+                      "text": "GEP"
+                    },
+                    {
+                      "start_char": 4,
+                      "pos": "PART",
+                      "end_char": 6,
+                      "lemma": "ke",
+                      "id": 2,
+                      "text": "ke"
+                    },
+                    {
+                      "start_char": 7,
+                      "pos": "N01a",
+                      "end_char": 11,
+                      "lemma": "mang",
+                      "id": 3,
+                      "text": "mang"
+                    },
+                    {
+                      "start_char": 11,
+                      "pos": "ZE",
+                      "end_char": 12,
+                      "lemma": "?",
+                      "id": 4,
+                      "text": "?"
+                    }
+                  ]
+                }
+              },
+              {
+                "lid": "NONE",
+                "tokenised": true,
+                "sent": {
+                  "tokens": [
+                    {
+                      "start_char": 0,
+                      "pos": "V",
+                      "end_char": 7,
+                      "lemma": "gauta",
+                      "id": 1,
+                      "text": "Gauteng"
+                    },
+                    {
+                      "start_char": 8,
+                      "pos": "FOR",
+                      "end_char": 18,
+                      "lemma": "enterprise",
+                      "id": 2,
+                      "text": "Enterprise"
+                    },
+                    {
+                      "start_char": 19,
+                      "pos": "FOR",
+                      "end_char": 28,
+                      "lemma": "propeller",
+                      "id": 3,
+                      "text": "Propeller"
+                    },
+                    {
+                      "start_char": 29,
+                      "pos": "ZPL",
+                      "end_char": 30,
+                      "lemma": "(",
+                      "id": 4,
+                      "text": "("
+                    },
+                    {
+                      "start_char": 30,
+                      "pos": "ABBR",
+                      "end_char": 33,
+                      "lemma": "gep",
+                      "id": 5,
+                      "text": "GEP"
+                    },
+                    {
+                      "start_char": 33,
+                      "pos": "ZPR",
+                      "end_char": 34,
+                      "lemma": ")",
+                      "id": 6,
+                      "text": ")"
+                    },
+                    {
+                      "start_char": 35,
+                      "pos": "VCOP",
+                      "end_char": 37,
+                      "lemma": "ke",
+                      "id": 7,
+                      "text": "ke"
+                    },
+                    {
+                      "start_char": 38,
+                      "pos": "N05",
+                      "end_char": 44,
+                      "lemma": "kala",
+                      "id": 8,
+                      "text": "Lekala"
+                    },
+                    {
+                      "start_char": 45,
+                      "pos": "POSSC05",
+                      "end_char": 47,
+                      "lemma": "la",
+                      "id": 9,
+                      "text": "la"
+                    },
+                    {
+                      "start_char": 48,
+                      "pos": "N14",
+                      "end_char": 55,
+                      "lemma": "emedi",
+                      "id": 10,
+                      "text": "Boemedi"
+                    },
+                    {
+                      "start_char": 56,
+                      "pos": "PART",
+                      "end_char": 58,
+                      "lemma": "le",
+                      "id": 11,
+                      "text": "le"
+                    },
+                    {
+                      "start_char": 59,
+                      "pos": "VAUX",
+                      "end_char": 64,
+                      "lemma": "ile",
+                      "id": 12,
+                      "text": "ileng"
+                    },
+                    {
+                      "start_char": 65,
+                      "pos": "SC05",
+                      "end_char": 67,
+                      "lemma": "la",
+                      "id": 13,
+                      "text": "la"
+                    },
+                    {
+                      "start_char": 68,
+                      "pos": "V",
+                      "end_char": 74,
+                      "lemma": "theha",
+                      "id": 14,
+                      "text": "thehwa"
+                    },
+                    {
+                      "start_char": 75,
+                      "pos": "PART",
+                      "end_char": 77,
+                      "lemma": "ke",
+                      "id": 15,
+                      "text": "ke"
+                    },
+                    {
+                      "start_char": 78,
+                      "pos": "N03",
+                      "end_char": 83,
+                      "lemma": "mmuso",
+                      "id": 16,
+                      "text": "Mmuso"
+                    },
+                    {
+                      "start_char": 84,
+                      "pos": "POSSC03",
+                      "end_char": 86,
+                      "lemma": "wa",
+                      "id": 17,
+                      "text": "wa"
+                    },
+                    {
+                      "start_char": 87,
+                      "pos": "N09",
+                      "end_char": 95,
+                      "lemma": "provense",
+                      "id": 18,
+                      "text": "Provense"
+                    },
+                    {
+                      "start_char": 96,
+                      "pos": "POSSC09",
+                      "end_char": 98,
+                      "lemma": "ya",
+                      "id": 19,
+                      "text": "ya"
+                    },
+                    {
+                      "start_char": 99,
+                      "pos": "N09",
+                      "end_char": 106,
+                      "lemma": "gaute",
+                      "id": 20,
+                      "text": "Gauteng"
+                    },
+                    {
+                      "start_char": 106,
+                      "pos": "ZM",
+                      "end_char": 107,
+                      "lemma": ",",
+                      "id": 21,
+                      "text": ","
+                    },
+                    {
+                      "start_char": 108,
+                      "pos": "NLOC",
+                      "end_char": 113,
+                      "lemma": "tlasa",
+                      "id": 22,
+                      "text": "tlasa"
+                    },
+                    {
+                      "start_char": 114,
+                      "pos": "N09",
+                      "end_char": 119,
+                      "lemma": "taolo",
+                      "id": 23,
+                      "text": "taolo"
+                    },
+                    {
+                      "start_char": 120,
+                      "pos": "POSSC09",
+                      "end_char": 122,
+                      "lemma": "ya",
+                      "id": 24,
+                      "text": "ya"
+                    },
+                    {
+                      "start_char": 123,
+                      "pos": "N05",
+                      "end_char": 130,
+                      "lemma": "fapha",
+                      "id": 25,
+                      "text": "Lefapha"
+                    },
+                    {
+                      "start_char": 131,
+                      "pos": "POSSC05",
+                      "end_char": 133,
+                      "lemma": "la",
+                      "id": 26,
+                      "text": "la"
+                    },
+                    {
+                      "start_char": 134,
+                      "pos": "N09",
+                      "end_char": 146,
+                      "lemma": "ntsha",
+                      "id": 27,
+                      "text": "Ntshetsopele"
+                    },
+                    {
+                      "start_char": 147,
+                      "pos": "POSSC09",
+                      "end_char": 149,
+                      "lemma": "ya",
+                      "id": 28,
+                      "text": "ya"
+                    },
+                    {
+                      "start_char": 150,
+                      "pos": "N03",
+                      "end_char": 155,
+                      "lemma": "ruo",
+                      "id": 29,
+                      "text": "Moruo"
+                    },
+                    {
+                      "start_char": 155,
+                      "pos": "ZM",
+                      "end_char": 156,
+                      "lemma": ",",
+                      "id": 30,
+                      "text": ","
+                    },
+                    {
+                      "start_char": 157,
+                      "pos": "PART",
+                      "end_char": 159,
+                      "lemma": "ka",
+                      "id": 31,
+                      "text": "ka"
+                    },
+                    {
+                      "start_char": 160,
+                      "pos": "N07",
+                      "end_char": 166,
+                      "lemma": "pheo",
+                      "id": 32,
+                      "text": "sepheo"
+                    },
+                    {
+                      "start_char": 167,
+                      "pos": "SC07",
+                      "end_char": 169,
+                      "lemma": "se",
+                      "id": 33,
+                      "text": "se"
+                    },
+                    {
+                      "start_char": 170,
+                      "pos": "V",
+                      "end_char": 179,
+                      "lemma": "ikgetha",
+                      "id": 34,
+                      "text": "ikgethang"
+                    },
+                    {
+                      "start_char": 180,
+                      "pos": "POSSC07",
+                      "end_char": 182,
+                      "lemma": "sa",
+                      "id": 35,
+                      "text": "sa"
+                    },
+                    {
+                      "start_char": 183,
+                      "pos": "NPRE",
+                      "end_char": 185,
+                      "lemma": "ho",
+                      "id": 36,
+                      "text": "ho"
+                    },
+                    {
+                      "start_char": 186,
+                      "pos": "V",
+                      "end_char": 190,
+                      "lemma": "fana",
+                      "id": 37,
+                      "text": "fana"
+                    },
+                    {
+                      "start_char": 191,
+                      "pos": "PART",
+                      "end_char": 193,
+                      "lemma": "ka",
+                      "id": 38,
+                      "text": "ka"
+                    },
+                    {
+                      "start_char": 194,
+                      "pos": "N09",
+                      "end_char": 203,
+                      "lemma": "tshehetsa",
+                      "id": 39,
+                      "text": "tshehetso"
+                    },
+                    {
+                      "start_char": 204,
+                      "pos": "PART",
+                      "end_char": 206,
+                      "lemma": "le",
+                      "id": 40,
+                      "text": "le"
+                    },
+                    {
+                      "start_char": 207,
+                      "pos": "N09",
+                      "end_char": 219,
+                      "lemma": "ntsha",
+                      "id": 41,
+                      "text": "ntshetsopele"
+                    },
+                    {
+                      "start_char": 220,
+                      "pos": "POSSC09",
+                      "end_char": 222,
+                      "lemma": "ya",
+                      "id": 42,
+                      "text": "ya"
+                    },
+                    {
+                      "start_char": 223,
+                      "pos": "ABBR",
+                      "end_char": 227,
+                      "lemma": "smme",
+                      "id": 43,
+                      "text": "SMME"
+                    },
+                    {
+                      "start_char": 228,
+                      "pos": "PART",
+                      "end_char": 230,
+                      "lemma": "ka",
+                      "id": 44,
+                      "text": "ka"
+                    },
+                    {
+                      "start_char": 231,
+                      "pos": "NLOC",
+                      "end_char": 235,
+                      "lemma": "hara",
+                      "id": 45,
+                      "text": "hara"
+                    },
+                    {
+                      "start_char": 236,
+                      "pos": "N09",
+                      "end_char": 244,
+                      "lemma": "provense",
+                      "id": 46,
+                      "text": "Provense"
+                    },
+                    {
+                      "start_char": 245,
+                      "pos": "POSSC09",
+                      "end_char": 247,
+                      "lemma": "ya",
+                      "id": 47,
+                      "text": "ya"
+                    },
+                    {
+                      "start_char": 248,
+                      "pos": "N09",
+                      "end_char": 255,
+                      "lemma": "gaute",
+                      "id": 48,
+                      "text": "Gauteng"
+                    },
+                    {
+                      "start_char": 256,
+                      "pos": "PART",
+                      "end_char": 258,
+                      "lemma": "ka",
+                      "id": 49,
+                      "text": "ka"
+                    },
+                    {
+                      "start_char": 259,
+                      "pos": "N04",
+                      "end_char": 265,
+                      "lemma": "kgwa",
+                      "id": 50,
+                      "text": "mekgwa"
+                    },
+                    {
+                      "start_char": 266,
+                      "pos": "POSSC04",
+                      "end_char": 268,
+                      "lemma": "ya",
+                      "id": 51,
+                      "text": "ya"
+                    },
+                    {
+                      "start_char": 269,
+                      "pos": "N10",
+                      "end_char": 280,
+                      "lemma": "tshehetso",
+                      "id": 52,
+                      "text": "ditshehetso"
+                    },
+                    {
+                      "start_char": 281,
+                      "pos": "POSSC10",
+                      "end_char": 284,
+                      "lemma": "tsa",
+                      "id": 53,
+                      "text": "tsa"
+                    },
+                    {
+                      "start_char": 285,
+                      "pos": "N09",
+                      "end_char": 293,
+                      "lemma": "tjhelete",
+                      "id": 54,
+                      "text": "tjhelete"
+                    },
+                    {
+                      "start_char": 294,
+                      "pos": "PART",
+                      "end_char": 296,
+                      "lemma": "le",
+                      "id": 55,
+                      "text": "le"
+                    },
+                    {
+                      "start_char": 297,
+                      "pos": "DEM10",
+                      "end_char": 301,
+                      "lemma": "tseo",
+                      "id": 56,
+                      "text": "tseo"
+                    },
+                    {
+                      "start_char": 302,
+                      "pos": "V",
+                      "end_char": 307,
+                      "lemma": "esa",
+                      "id": 57,
+                      "text": "eseng"
+                    },
+                    {
+                      "start_char": 308,
+                      "pos": "POSSC10",
+                      "end_char": 311,
+                      "lemma": "tsa",
+                      "id": 58,
+                      "text": "tsa"
+                    },
+                    {
+                      "start_char": 312,
+                      "pos": "N09",
+                      "end_char": 320,
+                      "lemma": "tjhelete",
+                      "id": 59,
+                      "text": "tjhelete"
+                    },
+                    {
+                      "start_char": 320,
+                      "pos": "ZE",
+                      "end_char": 321,
+                      "lemma": ".",
+                      "id": 60,
+                      "text": "."
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+]

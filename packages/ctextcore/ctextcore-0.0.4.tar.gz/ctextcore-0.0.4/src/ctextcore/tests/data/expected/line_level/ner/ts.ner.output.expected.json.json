@@ -1,0 +1,656 @@
+[
+  {
+    "doc": {
+      "p": [
+        {
+          "lid": "NONE",
+          "tokenised": true,
+          "sent": {
+            "tokens": [
+              {
+                "start_char": 0,
+                "pos": "FOR",
+                "end_char": 2,
+                "ner": "OUT",
+                "id": 1,
+                "text": "HA"
+              },
+              {
+                "start_char": 3,
+                "pos": "FOR",
+                "end_char": 5,
+                "ner": "OUT",
+                "id": 2,
+                "text": "KU"
+              },
+              {
+                "start_char": 6,
+                "pos": "FOR",
+                "end_char": 15,
+                "ner": "OUT",
+                "id": 3,
+                "text": "KORHOKELA"
+              }
+            ]
+          }
+        },
+        {
+          "lid": "NONE",
+          "tokenised": true,
+          "sent": {
+            "tokens": [
+              {
+                "start_char": 0,
+                "pos": "N08",
+                "end_char": 9,
+                "ner": "OUT",
+                "id": 1,
+                "text": "Swivutiso"
+              },
+              {
+                "start_char": 10,
+                "pos": "CONJ",
+                "end_char": 12,
+                "ner": "OUT",
+                "id": 2,
+                "text": "na"
+              },
+              {
+                "start_char": 13,
+                "pos": "N10",
+                "end_char": 23,
+                "ner": "OUT",
+                "id": 3,
+                "text": "Tinhlamulo"
+              }
+            ]
+          }
+        },
+        {
+          "lid": "NONE",
+          "tokenised": true,
+          "sent": {
+            "tokens": [
+              {
+                "start_char": 0,
+                "pos": "INTER",
+                "end_char": 4,
+                "ner": "OUT",
+                "id": 1,
+                "text": "Xana"
+              },
+              {
+                "start_char": 5,
+                "pos": "PART",
+                "end_char": 6,
+                "ner": "OUT",
+                "id": 2,
+                "text": "i"
+              },
+              {
+                "start_char": 7,
+                "pos": "INTER",
+                "end_char": 11,
+                "ner": "OUT",
+                "id": 3,
+                "text": "yini"
+              },
+              {
+                "start_char": 12,
+                "pos": "FOR",
+                "end_char": 15,
+                "ner": "OUT",
+                "id": 4,
+                "text": "GEP"
+              },
+              {
+                "start_char": 15,
+                "pos": "ZE",
+                "end_char": 16,
+                "ner": "OUT",
+                "id": 5,
+                "text": "?"
+              }
+            ]
+          }
+        },
+        {
+          "lid": "NONE",
+          "tokenised": true,
+          "sent": {
+            "tokens": [
+              {
+                "start_char": 0,
+                "pos": "N07",
+                "end_char": 10,
+                "ner": "OUT",
+                "id": 1,
+                "text": "Xindzuluti"
+              },
+              {
+                "start_char": 11,
+                "pos": "POSSC07",
+                "end_char": 13,
+                "ner": "OUT",
+                "id": 2,
+                "text": "xa"
+              },
+              {
+                "start_char": 14,
+                "pos": "N06",
+                "end_char": 22,
+                "ner": "B-MISC",
+                "id": 3,
+                "text": "Mabindzu"
+              },
+              {
+                "start_char": 23,
+                "pos": "POSSC06",
+                "end_char": 25,
+                "ner": "I-MISC",
+                "id": 4,
+                "text": "ya"
+              },
+              {
+                "start_char": 26,
+                "pos": "FOR",
+                "end_char": 33,
+                "ner": "I-MISC",
+                "id": 5,
+                "text": "Gauteng"
+              },
+              {
+                "start_char": 34,
+                "pos": "ZM",
+                "end_char": 35,
+                "ner": "OUT",
+                "id": 6,
+                "text": "-"
+              },
+              {
+                "start_char": 36,
+                "pos": "FOR",
+                "end_char": 43,
+                "ner": "B-MISC",
+                "id": 7,
+                "text": "Gauteng"
+              },
+              {
+                "start_char": 44,
+                "pos": "FOR",
+                "end_char": 54,
+                "ner": "I-MISC",
+                "id": 8,
+                "text": "Enterprise"
+              },
+              {
+                "start_char": 55,
+                "pos": "FOR",
+                "end_char": 64,
+                "ner": "I-MISC",
+                "id": 9,
+                "text": "Propeller"
+              },
+              {
+                "start_char": 65,
+                "pos": "ZPL",
+                "end_char": 66,
+                "ner": "OUT",
+                "id": 10,
+                "text": "("
+              },
+              {
+                "start_char": 66,
+                "pos": "FOR",
+                "end_char": 69,
+                "ner": "B-MISC",
+                "id": 11,
+                "text": "GEP"
+              },
+              {
+                "start_char": 69,
+                "pos": "ZPR",
+                "end_char": 70,
+                "ner": "OUT",
+                "id": 12,
+                "text": ")"
+              },
+              {
+                "start_char": 71,
+                "pos": "PART",
+                "end_char": 72,
+                "ner": "OUT",
+                "id": 13,
+                "text": "i"
+              },
+              {
+                "start_char": 73,
+                "pos": "N07",
+                "end_char": 80,
+                "ner": "OUT",
+                "id": 14,
+                "text": "xiyenge"
+              },
+              {
+                "start_char": 81,
+                "pos": "DEM07",
+                "end_char": 85,
+                "ner": "OUT",
+                "id": 15,
+                "text": "lexi"
+              },
+              {
+                "start_char": 86,
+                "pos": "V",
+                "end_char": 99,
+                "ner": "OUT",
+                "id": 16,
+                "text": "tumbuluxiweke"
+              },
+              {
+                "start_char": 100,
+                "pos": "PART",
+                "end_char": 102,
+                "ner": "OUT",
+                "id": 17,
+                "text": "hi"
+              },
+              {
+                "start_char": 103,
+                "pos": "N03",
+                "end_char": 108,
+                "ner": "B-ORG",
+                "id": 18,
+                "text": "Mfumo"
+              },
+              {
+                "start_char": 109,
+                "pos": "POSSC03",
+                "end_char": 111,
+                "ner": "I-ORG",
+                "id": 19,
+                "text": "wa"
+              },
+              {
+                "start_char": 112,
+                "pos": "N07",
+                "end_char": 125,
+                "ner": "I-ORG",
+                "id": 20,
+                "text": "Xifundzankulu"
+              },
+              {
+                "start_char": 126,
+                "pos": "POSSC07",
+                "end_char": 128,
+                "ner": "I-ORG",
+                "id": 21,
+                "text": "xa"
+              },
+              {
+                "start_char": 129,
+                "pos": "FOR",
+                "end_char": 136,
+                "ner": "I-ORG",
+                "id": 22,
+                "text": "Gauteng"
+              },
+              {
+                "start_char": 136,
+                "pos": "ZM",
+                "end_char": 137,
+                "ner": "OUT",
+                "id": 23,
+                "text": ","
+              },
+              {
+                "start_char": 138,
+                "pos": "PART",
+                "end_char": 140,
+                "ner": "OUT",
+                "id": 24,
+                "text": "hi"
+              },
+              {
+                "start_char": 141,
+                "pos": "NPRE",
+                "end_char": 143,
+                "ner": "OUT",
+                "id": 25,
+                "text": "ku"
+              },
+              {
+                "start_char": 144,
+                "pos": "V",
+                "end_char": 150,
+                "ner": "OUT",
+                "id": 26,
+                "text": "landza"
+              },
+              {
+                "start_char": 151,
+                "pos": "N08",
+                "end_char": 160,
+                "ner": "OUT",
+                "id": 27,
+                "text": "swipimelo"
+              },
+              {
+                "start_char": 161,
+                "pos": "POSSC08",
+                "end_char": 164,
+                "ner": "OUT",
+                "id": 28,
+                "text": "swa"
+              },
+              {
+                "start_char": 165,
+                "pos": "N09",
+                "end_char": 173,
+                "ner": "B-ORG",
+                "id": 29,
+                "text": "Ndzawulo"
+              },
+              {
+                "start_char": 174,
+                "pos": "POSSC09",
+                "end_char": 176,
+                "ner": "I-ORG",
+                "id": 30,
+                "text": "ya"
+              },
+              {
+                "start_char": 177,
+                "pos": "N03",
+                "end_char": 187,
+                "ner": "I-ORG",
+                "id": 31,
+                "text": "Nhluvukiso"
+              },
+              {
+                "start_char": 188,
+                "pos": "POSSC03",
+                "end_char": 190,
+                "ner": "I-ORG",
+                "id": 32,
+                "text": "wa"
+              },
+              {
+                "start_char": 191,
+                "pos": "N03",
+                "end_char": 199,
+                "ner": "I-ORG",
+                "id": 33,
+                "text": "Ikhonomi"
+              },
+              {
+                "start_char": 199,
+                "pos": "ZM",
+                "end_char": 200,
+                "ner": "OUT",
+                "id": 34,
+                "text": ","
+              },
+              {
+                "start_char": 201,
+                "pos": "PART",
+                "end_char": 203,
+                "ner": "OUT",
+                "id": 35,
+                "text": "hi"
+              },
+              {
+                "start_char": 204,
+                "pos": "N07",
+                "end_char": 211,
+                "ner": "OUT",
+                "id": 36,
+                "text": "xirhumo"
+              },
+              {
+                "start_char": 212,
+                "pos": "POSSC07",
+                "end_char": 214,
+                "ner": "OUT",
+                "id": 37,
+                "text": "xo"
+              },
+              {
+                "start_char": 215,
+                "pos": "V",
+                "end_char": 220,
+                "ner": "OUT",
+                "id": 38,
+                "text": "nyika"
+              },
+              {
+                "start_char": 221,
+                "pos": "N03",
+                "end_char": 230,
+                "ner": "OUT",
+                "id": 39,
+                "text": "nseketelo"
+              },
+              {
+                "start_char": 231,
+                "pos": "CONJ",
+                "end_char": 233,
+                "ner": "OUT",
+                "id": 40,
+                "text": "na"
+              },
+              {
+                "start_char": 234,
+                "pos": "N03",
+                "end_char": 242,
+                "ner": "OUT",
+                "id": 41,
+                "text": "nhluvuko"
+              },
+              {
+                "start_char": 243,
+                "pos": "NLOC",
+                "end_char": 246,
+                "ner": "OUT",
+                "id": 42,
+                "text": "eka"
+              },
+              {
+                "start_char": 247,
+                "pos": "N10",
+                "end_char": 253,
+                "ner": "OUT",
+                "id": 43,
+                "text": "tiSMME"
+              },
+              {
+                "start_char": 254,
+                "pos": "CONJ",
+                "end_char": 257,
+                "ner": "OUT",
+                "id": 44,
+                "text": "eka"
+              },
+              {
+                "start_char": 258,
+                "pos": "N07",
+                "end_char": 271,
+                "ner": "B-LOC",
+                "id": 45,
+                "text": "Xifundzankulu"
+              },
+              {
+                "start_char": 272,
+                "pos": "POSSC07",
+                "end_char": 274,
+                "ner": "I-LOC",
+                "id": 46,
+                "text": "xa"
+              },
+              {
+                "start_char": 275,
+                "pos": "FOR",
+                "end_char": 282,
+                "ner": "I-LOC",
+                "id": 47,
+                "text": "Gauteng"
+              },
+              {
+                "start_char": 283,
+                "pos": "PART",
+                "end_char": 285,
+                "ner": "OUT",
+                "id": 48,
+                "text": "hi"
+              },
+              {
+                "start_char": 286,
+                "pos": "NPRE",
+                "end_char": 288,
+                "ner": "OUT",
+                "id": 49,
+                "text": "ku"
+              },
+              {
+                "start_char": 289,
+                "pos": "V",
+                "end_char": 296,
+                "ner": "OUT",
+                "id": 50,
+                "text": "tirhisa"
+              },
+              {
+                "start_char": 297,
+                "pos": "N10",
+                "end_char": 303,
+                "ner": "OUT",
+                "id": 51,
+                "text": "timali"
+              },
+              {
+                "start_char": 304,
+                "pos": "PART",
+                "end_char": 306,
+                "ner": "OUT",
+                "id": 52,
+                "text": "na"
+              },
+              {
+                "start_char": 307,
+                "pos": "DEM08",
+                "end_char": 312,
+                "ner": "OUT",
+                "id": 53,
+                "text": "leswi"
+              },
+              {
+                "start_char": 313,
+                "pos": "PART",
+                "end_char": 316,
+                "ner": "OUT",
+                "id": 54,
+                "text": "nga"
+              },
+              {
+                "start_char": 317,
+                "pos": "V",
+                "end_char": 321,
+                "ner": "OUT",
+                "id": 55,
+                "text": "riki"
+              },
+              {
+                "start_char": 322,
+                "pos": "N09",
+                "end_char": 326,
+                "ner": "OUT",
+                "id": 56,
+                "text": "mali"
+              },
+              {
+                "start_char": 326,
+                "pos": "ZE",
+                "end_char": 327,
+                "ner": "OUT",
+                "id": 57,
+                "text": "."
+              }
+            ]
+          }
+        },
+        {
+          "lid": "NONE",
+          "tokenised": true,
+          "sent": {
+            "tokens": [
+              {
+                "start_char": 0,
+                "pos": "INTER",
+                "end_char": 4,
+                "ner": "OUT",
+                "id": 1,
+                "text": "Xana"
+              },
+              {
+                "start_char": 5,
+                "pos": "CONJ",
+                "end_char": 16,
+                "ner": "OUT",
+                "id": 2,
+                "text": "hikokwalaho"
+              },
+              {
+                "start_char": 17,
+                "pos": "POSSC17",
+                "end_char": 19,
+                "ner": "OUT",
+                "id": 3,
+                "text": "ka"
+              },
+              {
+                "start_char": 20,
+                "pos": "INTER",
+                "end_char": 24,
+                "ner": "OUT",
+                "id": 4,
+                "text": "yini"
+              },
+              {
+                "start_char": 25,
+                "pos": "NPRE",
+                "end_char": 27,
+                "ner": "OUT",
+                "id": 5,
+                "text": "ku"
+              },
+              {
+                "start_char": 28,
+                "pos": "V",
+                "end_char": 41,
+                "ner": "OUT",
+                "id": 6,
+                "text": "tumbuluxiwile"
+              },
+              {
+                "start_char": 42,
+                "pos": "FOR",
+                "end_char": 45,
+                "ner": "B-MISC",
+                "id": 7,
+                "text": "GEP"
+              },
+              {
+                "start_char": 45,
+                "pos": "ZE",
+                "end_char": 46,
+                "ner": "OUT",
+                "id": 8,
+                "text": "?"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+]
