@@ -1,0 +1,83 @@
+[build-system]
+requires = ["hatchling", "hatch-vcs"]
+build-backend = "hatchling.build"
+
+[project]
+name = "ansiblecall"
+dynamic = ["version"]
+description = 'Call ansible modules with python script'
+readme = "README.md"
+requires-python = ">=3.10"
+license = "GPL-3.0-or-later"
+keywords = []
+authors = [
+  { name = "cheburakshu", email = "cheburakshu@gmail.com" },
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Programming Language :: Python :: Implementation :: PyPy",
+]
+dependencies = [
+  "ansible",
+]
+
+
+[project.urls]
+Documentation = "https://github.com/cheburakshu/ansible-call#readme"
+Issues = "https://github.com/cheburakshu/ansible-call/issues"
+Source = "https://github.com/cheburakshu/ansible-call"
+
+[tool.hatch.version]
+# path = "src/ansiblecall/__about__.py"
+source = "vcs"
+
+[tool.hatch.build.hooks.vcs]
+version-file = "_version.py"
+
+[tool.hatch.envs.test]
+dependencies = [
+  "pytest",
+]
+
+[tool.hatch.envs.test.scripts]
+all = "pytest -vv --log-cli-level=DEBUG tests/"
+
+[[tool.hatch.envs.test.matrix]]
+python = ["3.12"]
+
+[tool.hatch.envs.dev]
+template = "test"
+extra-dependencies = [
+  "ipykernel",
+]
+
+[tool.coverage.run]
+source_pkgs = ["ansiblecall", "tests"]
+branch = true
+parallel = true
+omit = []
+
+[tool.coverage.paths]
+ansiblecall = ["src/ansiblecall", "*/ansiblecall/src/ansiblecall"]
+tests = ["tests", "*/ansiblecall/tests"]
+
+[tool.coverage.report]
+exclude_lines = [
+  "no cov",
+  "if __name__ == .__main__.:",
+  "if TYPE_CHECKING:",
+]
+
+[tool.hatch.build.targets.sdist]
+exclude = [
+  "/.github",
+  "/docs",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/ansiblecall"]
