@@ -1,0 +1,14 @@
+README.md
+pyproject.toml
+setup.py
+livekit/plugins/playai/__init__.py
+livekit/plugins/playai/log.py
+livekit/plugins/playai/models.py
+livekit/plugins/playai/py.typed
+livekit/plugins/playai/tts.py
+livekit/plugins/playai/version.py
+livekit_plugins_playai.egg-info/PKG-INFO
+livekit_plugins_playai.egg-info/SOURCES.txt
+livekit_plugins_playai.egg-info/dependency_links.txt
+livekit_plugins_playai.egg-info/requires.txt
+livekit_plugins_playai.egg-info/top_level.txt
