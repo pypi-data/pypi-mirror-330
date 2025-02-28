@@ -1,0 +1,5 @@
+huggingface_hub>=0.20.2
+transformers>=4.35.0
+diffusers>=0.24.0
+fuzzywuzzy>=0.18.0
+vllm>=0.2.0

@@ -1,0 +1,45 @@
+[project]
+name = "univlm"
+version = "1.0.0"
+authors = [
+  { name = "Tyagi", email = "siddhant.tyagizx@gmail.com" },
+  { name = "Singh", email = "sk.singharyan99@gmail.com" }
+]
+description = "Unified wrapper for HF, VLLM and other models"
+readme = "README.md"
+requires-python = ">=3.10"
+
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Operating System :: POSIX :: Linux",
+  "License :: OSI Approved :: Apache Software License",
+]
+
+license = { text = "Apache License 2.0" }
+
+dependencies = [
+    "huggingface_hub>=0.20.2",
+    "transformers>=4.35.0",
+    "diffusers>=0.24.0",
+    "fuzzywuzzy>=0.18.0",
+    "vllm>=0.2.0"  # Added vllm as a direct dependency
+]
+
+[project.scripts]
+univlm-install = "univlm.scripts.install_and_test:run_script"
+
+[build-system]
+requires = ["setuptools >= 40.8.0", "wheel"]  # Added wheel
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["univlm"]
+package-dir = {"" = "src"}
+license-files = ["LICENSE"]
+
+[tool.setuptools.package-data]
+univlm = [
+    "scripts/*.sh",
+    "scripts/*.py",
+    "Package_Backbone/*.py"  # Added Package_Backbone
+]

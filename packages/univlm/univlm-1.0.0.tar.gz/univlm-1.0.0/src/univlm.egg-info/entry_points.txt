@@ -1,0 +1,2 @@
+[console_scripts]
+univlm-install = univlm.scripts.install_and_test:run_script
