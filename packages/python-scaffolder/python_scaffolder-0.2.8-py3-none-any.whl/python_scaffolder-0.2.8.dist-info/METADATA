@@ -1,0 +1,12 @@
+Metadata-Version: 2.4
+Name: python-scaffolder
+Version: 0.2.8
+Summary: Add your description here
+Author-email: Derek Worthen <worthend.derek@gmail.com>
+Requires-Python: >=3.11
+Requires-Dist: python-scaffolder-darwin-arm64==0.2.8; sys_platform == 'darwin' and platform_machine == 'arm64'
+Requires-Dist: python-scaffolder-darwin-x64==0.2.8; sys_platform == 'darwin' and platform_machine == 'x86_64'
+Requires-Dist: python-scaffolder-linux-arm64==0.2.8; sys_platform == 'linux' and platform_machine == 'aarch64'
+Requires-Dist: python-scaffolder-linux-x64==0.2.8; sys_platform == 'linux' and platform_machine == 'x86_64'
+Requires-Dist: python-scaffolder-win32-arm64==0.2.8; sys_platform == 'win32' and platform_machine == 'ARM64'
+Requires-Dist: python-scaffolder-win32-x64==0.2.8; sys_platform == 'win32' and platform_machine == 'AMD64'
