@@ -1,0 +1,78 @@
+Metadata-Version: 2.4
+Name: dm4
+Version: 1.0.3
+Summary: A Digital Micrograph 4 (DM4) file reader.
+Author-email: James Anderson <james.r.anderson@utah.edu>
+Description-Content-Type: text/x-rst
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Scientific/Engineering :: Bio-Informatics
+License-File: LICENSE
+Requires-Dist: numpy ; extra == "test"
+Project-URL: Home, https://github.com/nornir/dm4
+Project-URL: Issues, https://github.com/nornir/dm4/issues
+Provides-Extra: test
+
+###
+dm4
+###
+
+A pure python file reader for Digital Micrograph's DM4 file format
+
+This package would not have been possible without the documentation provided by Dr Chris Boothroyd at http://www.er-c.org/cbb/info/dmformat/ Thank you.
+
+############
+Installation
+############
+
+Install using pip from the command line::
+
+   pip install dm4
+
+#######
+Example
+#######
+   
+Below is a short example of reading the image data from a dm4 file.  A more complete example can be found in the tests.::
+
+   import dm4
+   import PIL
+
+   input_path = "your_filename_here.dm4"
+
+   with dm4.DM4File.open(input_path) as dm4file:
+       tags = dm4file.read_directory()
+
+       image_data_tag = tags.named_subdirs['ImageList'].unnamed_subdirs[1].named_subdirs['ImageData']
+       image_tag = image_data_tag.named_tags['Data']
+
+       XDim = dm4file.read_tag_data(image_data_tag.named_subdirs['Dimensions'].unnamed_tags[0])
+       YDim = dm4file.read_tag_data(image_data_tag.named_subdirs['Dimensions'].unnamed_tags[1])
+
+       image_array = np.array(dm4file.read_tag_data(image_tag), dtype=np.uint16)
+       image_array = np.reshape(image_array, (YDim, XDim))
+
+       output_fullpath = "sample.tif"
+       image = PIL.Image.fromarray(image_array, 'I;16')
+       image.save(output_fullpath)
+
+############
+Script usage
+############
+
+The dm4 module can be invoked as a script to print a dm4 file's full directory to the command line.  This is helpful when determining the exact structure of a specific DM4 file: ::
+
+    python -m dm4 your_dm4_file.dm4
+
+
+####
+Todo
+####
+
+Reading arrays of groups has not been implemented.
+
