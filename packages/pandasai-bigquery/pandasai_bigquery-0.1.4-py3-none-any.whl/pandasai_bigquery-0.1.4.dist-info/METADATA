@@ -1,0 +1,37 @@
+Metadata-Version: 2.3
+Name: pandasai-bigquery
+Version: 0.1.4
+Summary: Google BigQuery connector integration for PandaAI
+License: Proprietary
+Author: Gabriele Venturi
+Requires-Python: >=3.9,<3.12
+Classifier: License :: Other/Proprietary License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: google-cloud-bigquery (>=3.27.0,<4.0.0)
+Requires-Dist: pandasai (>=3.0.0b4)
+Requires-Dist: pandasai-sql (>=0.1.0,<0.2.0)
+Requires-Dist: sqlalchemy-bigquery (>=1.8.0,<2.0.0)
+Project-URL: Documentation, https://docs.getpanda.ai/v3/data-ingestion
+Project-URL: Repository, https://github.com/sinaptik-ai/pandas-ai
+Description-Content-Type: text/markdown
+
+# Google BigQuery Extension for PandaAI
+
+This extension integrates Google BigQuery connectors with PandaAI, providing support for Google BigQuery.
+
+## Installation
+
+You can install this extension using poetry:
+
+```bash
+poetry install pandasai-bigquery
+```
+
+## License
+
+This package is licensed under the Sinaptik GmbH Enterprise License.  
+For commercial use, please contact [pm@sinaptik.ai](mailto:pm@sinaptik.ai).
+
