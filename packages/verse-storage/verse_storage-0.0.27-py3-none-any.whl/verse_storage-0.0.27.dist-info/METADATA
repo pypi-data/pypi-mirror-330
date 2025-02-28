@@ -1,0 +1,101 @@
+Metadata-Version: 2.1
+Name: verse-storage
+Version: 0.0.27
+Summary: Verse Storage Components
+Home-page: https://github.com/rapidverse/verse
+License: MIT
+Keywords: verse,storage,components
+Author: Verse
+Author-email: admin@rapidverse.com
+Requires-Python: >=3.9
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Provides-Extra: all
+Provides-Extra: config-store-aws-parameter-store
+Provides-Extra: config-store-azure-app-configuration
+Provides-Extra: config-store-default
+Provides-Extra: config-store-document-store-provider
+Provides-Extra: config-store-env-file
+Provides-Extra: config-store-environment
+Provides-Extra: config-store-google-runtime-configurator
+Provides-Extra: config-store-hosted
+Provides-Extra: config-store-local
+Provides-Extra: config-store-yaml-file
+Provides-Extra: document-store-amazon-dynamodb
+Provides-Extra: document-store-azure-cosmos-db
+Provides-Extra: document-store-default
+Provides-Extra: document-store-elasticsearch
+Provides-Extra: document-store-google-firestore
+Provides-Extra: document-store-hosted
+Provides-Extra: document-store-local
+Provides-Extra: document-store-memory
+Provides-Extra: document-store-mongodb
+Provides-Extra: document-store-postgresql
+Provides-Extra: document-store-redis
+Provides-Extra: document-store-sqlite
+Provides-Extra: key-value-store-default
+Provides-Extra: key-value-store-hosted
+Provides-Extra: key-value-store-memcached
+Provides-Extra: key-value-store-redis
+Provides-Extra: object-store-amazon-s3
+Provides-Extra: object-store-azure-blob-storage
+Provides-Extra: object-store-default
+Provides-Extra: object-store-file-system
+Provides-Extra: object-store-google-cloud-storage
+Provides-Extra: object-store-hosted
+Provides-Extra: object-store-local
+Provides-Extra: search-store-elasticsearch
+Provides-Extra: secret-store-amazon-secrets-manager
+Provides-Extra: secret-store-azure-key-vault
+Provides-Extra: secret-store-default
+Provides-Extra: secret-store-document-store-provider
+Provides-Extra: secret-store-env-file
+Provides-Extra: secret-store-environment
+Provides-Extra: secret-store-google-secret-manager
+Provides-Extra: secret-store-hashicorp-vault
+Provides-Extra: secret-store-hosted
+Provides-Extra: secret-store-local
+Provides-Extra: secret-store-yaml-file
+Provides-Extra: vector-store-chroma
+Provides-Extra: vector-store-default
+Provides-Extra: vector-store-hosted
+Provides-Extra: vector-store-local
+Provides-Extra: vector-store-milvus
+Provides-Extra: vector-store-pinecone
+Provides-Extra: vector-store-qdrant
+Provides-Extra: vector-store-weaviate
+Requires-Dist: PyYAML ; extra == "config-store-yaml-file" or extra == "secret-store-yaml-file" or extra == "all"
+Requires-Dist: aiohttp ; extra == "config-store-azure-app-configuration" or extra == "secret-store-azure-key-vault" or extra == "all"
+Requires-Dist: azure-appconfiguration ; extra == "config-store-azure-app-configuration" or extra == "all"
+Requires-Dist: azure-cosmos ; extra == "document-store-azure-cosmos-db" or extra == "all"
+Requires-Dist: azure-identity ; extra == "config-store-azure-app-configuration" or extra == "secret-store-azure-key-vault" or extra == "document-store-azure-cosmos-db" or extra == "object-store-azure-blob-storage" or extra == "all"
+Requires-Dist: azure-keyvault-secrets ; extra == "secret-store-azure-key-vault" or extra == "all"
+Requires-Dist: azure-storage-blob ; extra == "object-store-azure-blob-storage" or extra == "all"
+Requires-Dist: boto3 ; extra == "config-store-aws-parameter-store" or extra == "secret-store-amazon-secrets-manager" or extra == "document-store-amazon-dynamodb" or extra == "object-store-amazon-s3" or extra == "all"
+Requires-Dist: chromadb ; extra == "vector-store-chroma" or extra == "vector-store-local" or extra == "all"
+Requires-Dist: elasticsearch[async] ; extra == "document-store-elasticsearch" or extra == "search-store-elasticsearch" or extra == "all"
+Requires-Dist: google-api-python-client ; extra == "config-store-google-runtime-configurator" or extra == "document-store-google-firestore" or extra == "all"
+Requires-Dist: google-cloud-firestore ; extra == "document-store-google-firestore" or extra == "all"
+Requires-Dist: google-cloud-secret-manager ; extra == "secret-store-google-secret-manager" or extra == "all"
+Requires-Dist: google-cloud-storage ; extra == "object-store-google-cloud-storage" or extra == "all"
+Requires-Dist: httpx ; extra == "config-store-hosted" or extra == "secret-store-hosted" or extra == "document-store-hosted" or extra == "object-store-hosted" or extra == "vector-store-hosted" or extra == "key-value-store-hosted" or extra == "all"
+Requires-Dist: hvac ; extra == "secret-store-hashicorp-vault" or extra == "all"
+Requires-Dist: motor (>=3.6.0,<4.0.0) ; extra == "document-store-mongodb" or extra == "all"
+Requires-Dist: pinecone-client ; extra == "vector-store-pinecone" or extra == "all"
+Requires-Dist: psycopg[binary] ; extra == "document-store-postgresql" or extra == "all"
+Requires-Dist: pymemcache ; extra == "key-value-store-memcached" or extra == "all"
+Requires-Dist: pymilvus ; extra == "vector-store-milvus" or extra == "all"
+Requires-Dist: pymongo ; extra == "document-store-mongodb" or extra == "all"
+Requires-Dist: python-dotenv ; extra == "config-store-env-file" or extra == "secret-store-env-file" or extra == "all"
+Requires-Dist: qdrant-client ; extra == "vector-store-qdrant" or extra == "all"
+Requires-Dist: redis ; extra == "document-store-redis" or extra == "key-value-store-redis" or extra == "all"
+Requires-Dist: weaviate-client ; extra == "vector-store-weaviate" or extra == "all"
+Project-URL: Documentation, https://github.com/rapidverse/verse
+Project-URL: Repository, https://github.com/rapidverse/verse
+Description-Content-Type: text/markdown
+
+
