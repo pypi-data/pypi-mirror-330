@@ -1,0 +1,10 @@
+Metadata-Version: 2.4
+Name: opentripplan
+Version: 0.1.0
+Summary: A tool to plan your next trip
+Author-email: "Gaël de Chalendar (aka Kleag)" <kleagg@gmail.com>
+License: AGPL
+Requires-Python: >=3.13
+Requires-Dist: folium>=0.19.4
+Requires-Dist: pyqt6-webengine>=6.8.0
+Requires-Dist: pyqt6>=6.8.1
