@@ -1,0 +1,16 @@
+README.md
+pyproject.toml
+requirements.txt
+src/opensim_model_creator/Create_Model.py
+src/opensim_model_creator/__init__.py
+src/opensim_model_creator.egg-info/PKG-INFO
+src/opensim_model_creator.egg-info/SOURCES.txt
+src/opensim_model_creator.egg-info/dependency_links.txt
+src/opensim_model_creator.egg-info/requires.txt
+src/opensim_model_creator.egg-info/top_level.txt
+src/opensim_model_creator/Functions/_init_.py
+src/opensim_model_creator/Functions/bone_utils.py
+src/opensim_model_creator/Functions/file_utils.py
+src/opensim_model_creator/Functions/general_utils.py
+src/opensim_model_creator/Functions/muscle_utils.py
+test/test_create_model.py
