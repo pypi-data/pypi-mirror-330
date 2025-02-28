@@ -1,0 +1,14 @@
+/archived-*
+focused
+!.gitignore
+!selected-services.yaml
+!manual-annotations
+stats-cache
+index
+alexa-top-1m-*
+examples/**
+!examples/serps.jsonl
+!examples/serps.zip
+!examples/results.jsonl
+!examples/results.zip
+cache
