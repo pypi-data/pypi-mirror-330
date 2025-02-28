@@ -1,0 +1,14 @@
+ophyd
+
+[dev]
+ophyd_async
+black
+isort
+pytest
+pytest-mypy
+build
+twine
+flake8
+ruff
+pytest-mock
+caproto
