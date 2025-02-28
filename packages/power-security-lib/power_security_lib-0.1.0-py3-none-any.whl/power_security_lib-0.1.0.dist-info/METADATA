@@ -1,0 +1,16 @@
+Metadata-Version: 2.2
+Name: power_security_lib
+Version: 0.1.0
+Summary: A library for assessing the security of power infrastructure for any geographic location.
+Author: Your Name
+Requires-Python: >=3.7
+License-File: LICENSE
+Requires-Dist: osmnx
+Requires-Dist: geopandas
+Requires-Dist: shapely
+Requires-Dist: matplotlib
+Requires-Dist: pandas
+Dynamic: author
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
