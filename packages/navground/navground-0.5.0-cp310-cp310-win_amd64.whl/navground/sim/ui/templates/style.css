@@ -1,0 +1,64 @@
+/*svg{
+  style=stroke-width: 0px;
+}
+*/
+circle.obstacle{
+  fill: gray; 
+  stroke:none;
+}
+polyline.wall{
+  stroke:black;
+  stroke-width:0.01;
+}
+
+.shape {
+  fill: none;
+  stroke: black;
+  stroke-width: 0.01;
+  stroke-dasharray: 0.01;
+}
+
+.quadrotor {
+  fill: #A0A0A0;
+  stroke: none;
+  stroke-width: 0.05;
+}
+
+
+.robomaster_ep {
+  fill: #121212;
+  stroke: none;
+  stroke-width: 0.05;
+}
+
+
+.thymio {
+  fill: #e6e6e6;
+  stroke: none;
+  stroke-width: 0.05;
+}
+
+.human {
+  fill: #666666;
+  stroke: none;
+  stroke-width: 0.05;
+}
+
+.agent {
+  fill: gray;
+  stroke: none;
+  stroke-width: 0.05;
+}
+
+.wheelchair {
+  fill: #483e37;
+  stroke: none;
+  stroke-width: 0.05;
+}
+
+/*.body {
+    all: inherit;
+}
+*/
+
+
