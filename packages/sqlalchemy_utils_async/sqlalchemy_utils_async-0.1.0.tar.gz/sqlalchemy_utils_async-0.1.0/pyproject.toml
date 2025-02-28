@@ -1,0 +1,21 @@
+[build-system]
+# AVOID CHANGING REQUIRES: IT WILL BE UPDATED BY PYSCAFFOLD!
+requires = ["setuptools>=46.1.0", "setuptools_scm[toml]>=5"]
+build-backend = "setuptools.build_meta"
+
+[project]
+dynamic = ["version"]
+requires-python = ">= 3.6"
+name = "sqlalchemy_utils_async"
+dependencies = [
+    "SQLAlchemy==2.0.7"
+]
+authors = [
+    {name = "Tiny Twist", email = "tiny.mahua@gmail.com"},
+]
+maintainers = [
+  {name = "Tiny Twist", email = "tiny.mahua@gmail.com"}
+]
+description = "A sqlalchemy async utils lib"
+
+[project.scripts]
