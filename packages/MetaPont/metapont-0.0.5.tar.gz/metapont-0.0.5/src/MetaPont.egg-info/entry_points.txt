@@ -1,0 +1,7 @@
+[console_scripts]
+Extract-By-Function = MetaPont.Extract_By_Function:main
+Extract-By-Taxa = MetaPont.Extract_By_Taxa:main
+Extract-Reads-By-Function = MetaPont.Extract_Reads_By_Function:main
+extract-by-function = MetaPont.Extract_By_Function:main
+extract-by-taxa = MetaPont.Extract_By_Taxa:main
+extract-reads-by-function = MetaPont.Extract_Reads_By_Function:main
