@@ -1,0 +1,24 @@
+LICENSE.txt
+MANIFEST.in
+README.md
+pyproject.toml
+setup.py
+src/SpotDIPy/SpotDIPy.py
+src/SpotDIPy/__init__.py
+src/SpotDIPy/cutils.c
+src/SpotDIPy/cutils.pyx
+src/SpotDIPy/main-2.py
+src/SpotDIPy/main.py
+src/SpotDIPy/main_example.py
+src/SpotDIPy/main_for_project.py
+src/SpotDIPy/main_meeting.py
+src/SpotDIPy/plot_GUI.py
+src/SpotDIPy/setup.py
+src/SpotDIPy/utils.py
+src/SpotDIPy/version.py
+src/SpotDIPy.egg-info/PKG-INFO
+src/SpotDIPy.egg-info/PKG-INFO (eng's conflicted copy 2025-01-01)
+src/SpotDIPy.egg-info/SOURCES.txt
+src/SpotDIPy.egg-info/dependency_links.txt
+src/SpotDIPy.egg-info/requires.txt
+src/SpotDIPy.egg-info/top_level.txt
