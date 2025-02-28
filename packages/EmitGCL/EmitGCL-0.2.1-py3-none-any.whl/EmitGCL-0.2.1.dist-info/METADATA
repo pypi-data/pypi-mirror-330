@@ -1,0 +1,48 @@
+Metadata-Version: 2.1
+Name: EmitGCL
+Version: 0.2.1
+Summary: MarsGT: A Python library for rare cell identification (Internal testing only)
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Requires-Python: >=3.8.0, <3.9
+Description-Content-Type: text/markdown
+Requires-Dist: anndata (==0.8.0)
+Requires-Dist: dill (==0.3.4)
+Requires-Dist: matplotlib (==3.5.1)
+Requires-Dist: numpy (==1.22.3)
+Requires-Dist: pandas (==1.4.2)
+Requires-Dist: scipy (==1.9.1)
+Requires-Dist: seaborn (==0.11.2)
+Requires-Dist: scikit-learn (==1.1.2)
+Requires-Dist: torch-geometric (==2.1.0.post1)
+Requires-Dist: bioservices (==1.11.2)
+Requires-Dist: h5py (==3.10.0)
+Requires-Dist: torchmetrics (==0.9.3)
+Requires-Dist: tqdm (==4.64.0)
+Requires-Dist: scanpy (==1.9.1)
+Requires-Dist: leidenalg (==0.8.10)
+Requires-Dist: ipywidgets (==8.0.6)
+Requires-Dist: upsetplot (==0.8.0)
+
+## Title：EmitGCL: Early Metastatic cell Identification Tool based on Graph Contrastive Learning
+**Note: This project is for internal testing purposes only. Do not use it in a production environment.**
+
+MarsGT, We developed EmitGCL, a graph contrastive learning model that integrates metastatic knowledge to detect subtle differences in cell groups at primary and metastatic sites.
+## Installation
+
+### System Requirements
+
+* Python 3.8.0 or higher
+
+### Installation Steps
+* Install the required dependencies using pip:
+```bash
+pip install -r requirements.txt
+```
+* use pip to install EmitGCL:
+```bash
+pip install EmitGCL
+```
+
+
