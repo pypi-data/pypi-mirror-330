@@ -1,0 +1,11 @@
+[console_scripts]
+buda_ig_from_disk = util_lib.GetFromBUDA:buda_ig_from_disk
+deep-archive = archive_ops.DeepArchive:deep_archive_shell
+disk_ig_from_buda = util_lib.GetFromBUDA:disk_ig_from_buda
+disk_igs_for_work = util_lib.GetFromBUDA:get_ig_folders_from_igs
+get_buda_image_count = util_lib.GetFromBUDA:get_image_count
+get_works_for_activity = archive_ops.GetReadyWorksForStates:get_works_states_shell
+locate_archive = archive_ops.shell_ws:locate_archive
+log_dip = archive_ops.DipLog:dip_log_shell
+update_work_facts = archive_ops.SaveWorkFacts:save_work_facts_shell
+validate_glacier = migrate_works.measure_archive_fixity:maf_main
