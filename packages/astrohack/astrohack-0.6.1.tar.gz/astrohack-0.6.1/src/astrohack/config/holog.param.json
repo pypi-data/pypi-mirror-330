@@ -1,0 +1,66 @@
+{
+    "holog":{
+        "holog_name":{
+            "type":"string",
+            "required": true
+        },
+        "grid_size": {
+            "type": ["int", "ndarray", "list"],
+            "nullable": true
+        },
+        "cell_size": {
+            "type": ["int", "float" ,"ndarray", "list"],
+            "nullable": true
+        },
+        "image_name":{
+            "type":["str"],
+            "nullable": true
+        },
+        "padding_factor":{
+            "type":["int"],
+            "nullable": true
+        },
+        "grid_interpolation_mode":{
+            "type":["str"],
+            "allowed": ["linear", "nearest", "cubic", "gaussian"]
+        },
+        "chan_average":{
+            "type":["boolean"]
+        },
+        "chan_tolerance_factor":{
+            "type":["float"],
+            "nullable": false
+        },
+        "scan_average":{
+            "type":["boolean"]
+        },
+        "alma_osf_pad": {
+            "type": ["str"],
+            "nullable": true
+        },
+        "ant":{
+            "type":["list", "str"],
+            "struct type": ["str"],
+            "nullable": false
+        },
+        "ddi":{
+            "type":["ndarray", "int", "list", "str"],
+            "struct type": ["int", "str"],
+            "nullable": false
+        },
+        "to_stokes":{
+            "type":["boolean"]
+        },
+        "phase_fit":{
+            "type":["boolean", "list", "ndarray"],
+            "minlength": 5,
+            "maxlength": 5
+        },
+        "parallel":{
+            "type":["boolean"]
+        },
+        "overwrite":{
+            "type":["boolean"]
+        }
+    }
+}
