@@ -1,0 +1,109 @@
+Metadata-Version: 2.2
+Name: web-archive-api
+Version: 1.0.0
+Summary: Unified, type-safe access to web archive APIs.
+Author-email: Jan Heinrich Merker <heinrich.merker@uni-jena.de>
+Project-URL: Homepage, https://github.com/janheinrichmerker/web-archive-api
+Project-URL: Bug Tracker, https://github.com/janheinrichmerker/web-archive-api/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: importlib-metadata<9.0,>=6.5
+Requires-Dist: requests~=2.28
+Requires-Dist: tqdm~=4.64
+Requires-Dist: warcio~=1.7
+Provides-Extra: tests
+Requires-Dist: bandit[toml]~=1.7; extra == "tests"
+Requires-Dist: mypy~=1.6; extra == "tests"
+Requires-Dist: pytest<9.0,>=7.2; extra == "tests"
+Requires-Dist: pytest-cov<6,>=4; extra == "tests"
+Requires-Dist: ruff~=0.2.1; extra == "tests"
+Requires-Dist: types-requests~=2.31; extra == "tests"
+Requires-Dist: types-tqdm~=4.66; extra == "tests"
+
+[![PyPi](https://img.shields.io/pypi/v/web-archive-api?style=flat-square)](https://pypi.org/project/web-archive-api/)
+[![CI](https://img.shields.io/github/actions/workflow/status/janheinrichmerker/web-archive-api/ci.yml?branch=main&style=flat-square)](https://github.com/janheinrichmerker/web-archive-api/actions/workflows/ci.yml)
+[![Code coverage](https://img.shields.io/codecov/c/github/janheinrichmerker/web-archive-api?style=flat-square)](https://codecov.io/github/janheinrichmerker/web-archive-api/)
+[![Python](https://img.shields.io/pypi/pyversions/web-archive-api?style=flat-square)](https://pypi.org/project/web-archive-api/)
+[![Issues](https://img.shields.io/github/issues/janheinrichmerker/web-archive-api?style=flat-square)](https://github.com/janheinrichmerker/web-archive-api/issues)
+[![Commit activity](https://img.shields.io/github/commit-activity/m/janheinrichmerker/web-archive-api?style=flat-square)](https://github.com/janheinrichmerker/web-archive-api/commits)
+[![Downloads](https://img.shields.io/pypi/dm/web-archive-api?style=flat-square)](https://pypi.org/project/web-archive-api/)
+[![License](https://img.shields.io/github/license/janheinrichmerker/web-archive-api?style=flat-square)](LICENSE)
+
+# 🗃️ web-archive-api
+
+Unified, type-safe access to web archive APIs.
+
+## Installation
+
+Install the package from PyPI:
+
+```shell
+pip install web-archive-api
+```
+
+## Usage
+
+Web archives offer two main APIs: the [CDX API](#cdx-api) to list available captures and the [Memento API](#memento-api) to download individual captures.
+
+### CDX API
+
+TODO
+
+### Memento API
+
+TODO
+
+## Development
+
+To build this package and contribute to its development you need to install the `build`, and `setuptools` and `wheel` packages:
+
+```shell
+pip install build setuptools wheel
+```
+
+(On most systems, these packages are already pre-installed.)
+
+Then, install the package and test dependencies:
+
+```shell
+pip install -e .[tests]
+```
+
+You can now verify your changes against the test suite.
+
+```shell
+ruff check .                   # Code format and LINT
+mypy .                         # Static typing
+bandit -c pyproject.toml -r .  # Security
+pytest .                       # Unit tests
+```
+
+Please also add tests for your newly developed code.
+
+### Build wheels
+
+Wheels for this package can be built with:
+
+```shell
+python -m build
+```
+
+## Support
+
+If you hit any problems using this package, please file an [issue](https://github.com/janheinrichmerker/web-archive-api/issues/new).
+We're happy to help!
+
+## License
+
+This repository is released under the [MIT license](LICENSE).
