@@ -1,0 +1,47 @@
+---
+fabric:
+  global_policies:
+    aci_local_username: regex('^[a-zA-Z0-9_.:-]{1,64}$')
+    aci_local_password: str(min=8, max=64)
+    apic_cimc_username: regex('^[a-zA-Z0-9_.:-]{1,64}$')
+    apic_cimc_password: str(min=8, max=64)
+    fabric_name: regex('^[a-zA-Z0-9_.:-]{1,64}$')
+    fabric_id: int(min=1, max=128)
+    fabric_active_controllers: int(min=1, max=9)
+    tep_pool: ip()
+    infra_vlan: int(min=2, max=4094)
+    gipo: ip()
+    strong_password: enum('Y', 'N')
+    aci_image_path: regex('^http[s]?://.+')
+    apic_image: regex('(?:aci-apic-dk9\.)(\d+\.\d+\.\d+[a-z])\.iso')
+    switch_image: regex('(?:aci-n9000-dk9\.)(\d+\.\d+\.\d+[a-z])\.bin')
+    dns_server: ip()
+    ntp_server: any(regex('^[a-zA-Z0-9:][a-zA-Z0-9.:-]{0,254}$'), ip())
+    timezone: regex('([A-Za-z]+\/[A-Za-z_]+)')
+    apic_netmask: int(min=1, max=30)
+    apic_gateway: ip()
+
+  apic_nodes_connection: list(include('apic_node_connection'), required=False)
+  switch_nodes_connection: list(include('switch_node_connection'), required=False)
+
+---
+apic_node_connection:
+  id: int(min=1, max=9)
+  hostname: regex('^[a-zA-Z0-9_.:-]{1,64}$')
+  description: regex('^[a-zA-Z0-9\\\\!#$%()*,-./:;@ _{|}~?&+]{1,128}$')
+  serial_number: regex('^[a-zA-Z0-9_.:-]{1,16}$')
+  cimc_address: ip()
+  apic_address: ip()
+  pod: int(min=1, max=9)
+  standby_controller: enum('YES', 'NO')
+  enable_ipv6_oob: enum('Y', 'N')
+  interface_mode: enum("auto")
+
+---
+switch_node_connection:
+  id: int()
+  hostname: regex('^[a-zA-Z0-9_.:-]{1,64}$')
+  console_address: ip()
+  console_port: int(min=23, max=4000)
+  console_address_secondary: ip(required=False)
+  console_port_secondary: int(min=23, max=4000, required=False)
