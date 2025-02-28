@@ -1,0 +1,4 @@
+grr_response_proto==3.4.9post0
+cryptography>=3.3.2
+requests<3,>=2.25.1
+Werkzeug<3,>=2.1.2
