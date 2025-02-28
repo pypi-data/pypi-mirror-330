@@ -1,0 +1,48 @@
+Metadata-Version: 2.1
+Name: amiyahttp
+Version: 0.0.2
+Summary: 对 FastApi 进行二次封装的简易 HTTP Web 服务 SDK
+Home-page: https://www.amiyabot.com/develop/advanced/httpSupport.html
+Author: vivien8261
+Author-email: 826197021@qq.com
+License: MIT Licence
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: bcrypt ==4.0.1
+Requires-Dist: fastapi-utils ~=0.2.1
+Requires-Dist: fastapi ~=0.79.0
+Requires-Dist: passlib ~=1.7.4
+Requires-Dist: pydantic ~=1.10.21
+Requires-Dist: python-jose ~=3.4.0
+Requires-Dist: python-multipart ~=0.0.20
+Requires-Dist: setuptools ~=68.2.0
+Requires-Dist: starlette ~=0.19.1
+Requires-Dist: uvicorn ~=0.18.2
+
+# AmiyaHttp
+
+![PyPI](https://img.shields.io/pypi/v/amiyahttp)
+
+对 [FastAPI](https://fastapi.tiangolo.com/) 进行二次封装的简易 HTTP Web 服务 SDK
+
+```python
+import asyncio
+from amiyahttp import HttpServer
+
+server = HttpServer(host='0.0.0.0', port=8088)
+
+
+@server.controller
+class Bot:
+    @server.route(method='get')
+    async def get_name(self):
+        return 'AmiyaBot'
+
+    @server.route(method='post')
+    async def say_hello(self):
+        return server.response(message='hello')
+
+
+asyncio.run(server.serve())
+```
