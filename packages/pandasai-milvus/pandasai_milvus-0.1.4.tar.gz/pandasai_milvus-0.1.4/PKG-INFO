@@ -1,0 +1,35 @@
+Metadata-Version: 2.3
+Name: pandasai-milvus
+Version: 0.1.4
+Summary: Milvus integration for PandaAI
+License: Proprietary
+Author: Gabriele Venturi
+Requires-Python: >=3.8,<3.12
+Classifier: License :: Other/Proprietary License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: numpy (==1.23.2)
+Requires-Dist: onnxruntime (==1.15.1)
+Requires-Dist: pandasai (>=3.0.0b4)
+Requires-Dist: pymilvus[model] (>=2.3.6,<3.0.0)
+Requires-Dist: sentence-transformers (>=2.2.2,<3.0.0)
+Project-URL: Documentation, https://docs.getpanda.ai/
+Project-URL: Repository, https://github.com/sinaptik-ai/pandas-ai
+Description-Content-Type: text/markdown
+
+# Milvus Extension for PandaAI
+
+This extension integrates Milvus with PandaAI, providing vector storage capabilities for enhanced data analysis and machine learning tasks.
+
+## Installation
+
+You can install this extension using poetry:
+
+## License
+
+This package is licensed under the Sinaptik GmbH Enterprise License.  
+For commercial use, please contact [pm@sinaptik.ai](mailto:pm@sinaptik.ai).
+
