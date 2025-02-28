@@ -1,0 +1,7 @@
+
+[tests]
+pytest>=7.1.2
+pyvisa-sim
+
+[tests:platform_system != "Windows"]
+pywin32
