@@ -1,0 +1,33 @@
+[project]
+name = "atlas_actris"
+dynamic = ["version"]
+authors = [
+    { name="Nikolaos Siomos", email="nikolaos.siomos@lmu.de" },
+    ]
+license = {file = "LICENSE"}
+readme = "README.md"
+requires-python = ">=3.9"
+
+dependencies = [
+    "numpy>=2.0.0",
+    "pandas>=2.2.3",
+    "xarray>=2023.6.0",
+    "netCDF4>=1.6.3",
+    "scipy>=1.13.0",
+    "matplotlib>=3.8.0",
+    "bokeh>=3.4.3",
+    "Pillow>=11.1.0"
+    ]
+
+classifiers = [
+    "Programming Language :: Python :: 3.9",
+    "Operating System :: OS Independent"
+]
+
+[project.urls]
+Homepage = "https://github.com/nikolaos-siomos/ATLAS"
+Issues = "https://github.com/nikolaos-siomos/ATLAS/issues"
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
