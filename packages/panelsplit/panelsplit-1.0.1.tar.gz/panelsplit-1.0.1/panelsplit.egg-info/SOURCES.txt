@@ -1,0 +1,26 @@
+CITATION.cff
+LICENSE
+README.md
+setup.py
+examples/An introduction to PanelSplit.ipynb
+panelsplit/__init__.py
+panelsplit/application.py
+panelsplit/cross_validation.py
+panelsplit/pipeline.py
+panelsplit/plot.py
+panelsplit.egg-info/PKG-INFO
+panelsplit.egg-info/SOURCES 2.txt
+panelsplit.egg-info/SOURCES.txt
+panelsplit.egg-info/dependency_links 2.txt
+panelsplit.egg-info/dependency_links.txt
+panelsplit.egg-info/requires 2.txt
+panelsplit.egg-info/requires.txt
+panelsplit.egg-info/top_level 2.txt
+panelsplit.egg-info/top_level.txt
+panelsplit/utils/__init__.py
+panelsplit/utils/utils.py
+panelsplit/utils/validation.py
+tests/__init__.py
+tests/test_cross_validation.py
+tests/test_pipeline.py
+tests/test_search.py
