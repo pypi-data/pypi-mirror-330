@@ -1,0 +1,49 @@
+Metadata-Version: 2.2
+Name: atai-ebook-tool
+Version: 0.0.2
+Summary: A command-line tool for parsing ebooks (such as EPUB and MOBI) and converting them into a structured JSON file.
+Home-page: https://github.com/AtomGradient/atai-ebook-tool
+Author: AtomGradient
+Author-email: AtomGradient <alex@atomgradient.com>
+License: MIT
+Project-URL: Homepage, https://github.com/AtomGradient/atai-ebook-tool
+Project-URL: Bug Tracker, https://github.com/AtomGradient/atai-ebook-tool/issues
+Keywords: pdf,ocr,text-extraction,document-processing
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: ebooklib
+Requires-Dist: beautifulsoup4
+Requires-Dist: mobi
+Dynamic: author
+Dynamic: home-page
+Dynamic: requires-python
+
+# atai-ebook-tool
+
+A command-line tool for parsing ebooks (such as EPUB and MOBI) and converting them into a structured JSON file.
+
+## Installation
+
+```bash
+pip install atai-ebook-tool
+```
+
+## Usage
+Run the CLI tool from the command line:
+
+```bash
+atai-ebook-tool path/to/ebook.epub -o output.json
+```
+
+This command will parse the specified ebook and output the result to book folder
+
+## Supported Formats
+- EPUB
+- Mobi
+
+## License
+This project is licensed under the MIT License.
