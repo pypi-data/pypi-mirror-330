@@ -1,0 +1,11 @@
+exclude .env
+exclude docker-compose.yaml
+exclude Dockerfile
+exclude package
+exclude package/*
+exclude lambda_function.py
+exclude requirements.txt
+exclude server.py
+exclude test.py
+exclude venv
+exclude venv/*
