@@ -1,0 +1,70 @@
+.spacer {
+    margin:  0;
+    height:  120vh; /* To ensure space between content sections */
+    opacity: 0;
+}
+
+.page_container {
+    margin: 0;
+    height: 120vh;
+    vertical-align: top;
+}
+
+.text_container {
+    margin: 0;
+    background-color: var(--main-bg-color);
+    border-radius: 15px;
+    padding:6px 3px;
+}
+
+.back_container {
+    position: fixed;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -2;
+    transform-origin: left top;
+    transform: scale(var(--scale));
+}
+
+.back {
+        margin: 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-position: left top;
+        background-repeat: no-repeat;
+        opacity: 0;  /* Fully invisible from start */
+        z-index: -1; /* Behind the text */
+        transform-origin: left top;
+        visibility: visible;
+    }
+
+.animation {
+        margin: 0;
+        padding: 0;
+    }
+
+   
+/* Override md.css backgrounds for animation text */
+.animation .text_container,
+.animation .text_container p,
+.animation .text_container ul,
+.animation .text_container ol,
+.animation .text_container table {
+    background-color: transparent;  /* Use the inline style background color */
+}
+
+.on_stage {
+    opacity: 1;
+    transition: opacity 1s;
+}
+
+.off_stage {
+    opacity: 0;
+    transition: opacity 1s;
+}
