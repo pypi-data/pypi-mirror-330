@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: wish-sh
+Version: 0.0.0a1
+Summary: LLM-assisted shell for penetration testing
+Keywords: wish,llm,ai,shell
+Author-Email: Security & Development Lab <lay.sakura+secdevlab@gmail.com>
+Maintainer-Email: Sho Nakatani <lay.sakura@gmail.com>
+License: MIT
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: System :: Shells
+Project-URL: Homepage, https://github.com/SecDev-Lab/wish
+Project-URL: Documentation, https://github.com/SecDev-Lab/wish
+Project-URL: Repository, https://github.com/SecDev-Lab/wish.git
+Project-URL: Issues, https://github.com/SecDev-Lab/wish/issues
+Requires-Python: >=3.13
+Requires-Dist: wish-models>=0.0.1
+Description-Content-Type: text/markdown
+
+# wish-sh
+
+[![PyPI version](https://img.shields.io/pypi/v/wish-sh.svg)](https://pypi.org/project/wish-sh)
