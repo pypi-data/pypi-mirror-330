@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "markdowntopdf"
+version = "0.1.3"
+description = "Convert Markdown files to PDF with syntax highlighting for fenced code"
+authors = ["Fernando López <fernando.e.lopez@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/fernandolopez/markdowntopdf"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+markdown2 = "^2.4.13"
+weasyprint = "^64.1"
+Pygments = "^2.17.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+markdowntopdf = 'markdowntopdf.markdowntopdf:run'
