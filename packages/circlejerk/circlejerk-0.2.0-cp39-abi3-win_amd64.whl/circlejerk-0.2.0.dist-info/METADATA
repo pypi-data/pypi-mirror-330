@@ -1,0 +1,29 @@
+Metadata-Version: 2.4
+Name: circlejerk
+Version: 0.2.0
+Summary: Fit a circle on a mask as accurately as possible by brute-forcing a location from an approximate location
+Author: Peter Evers <peter@tetmet.com>
+Author-email: Peter Evers <peter@tetmet.com>
+License: MIT
+Description-Content-Type: text/markdown; charset=UTF-8; variant=GFM
+
+# circlejerk
+
+Instead of using the Hough-Transform, this approach is fitting a circle using a brute-force algorithm. This is more accurate but not really fast, hence we implemented it in Rust so that we can use a *dumb-but-it-works* approach to accurately get the centerpoint of the circle.
+
+Our exapmle mask is not great, because we also need to catch the reflective part of the sphere. We then applied the algorithm to find the centerpoint of the sphere.
+
+&nbsp; | &nbsp;
+--- | ---
+![](data/mask.png) | ![](data/result.png)
+
+## Example Usage
+
+```console
+pip install circlejerk
+```
+    
+```python
+from circlejerk import circle_fit
+optimum = circle_fit(mask, initial_guess, radius, search_space=search_space)
+```
