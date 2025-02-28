@@ -1,0 +1,138 @@
+Metadata-Version: 2.2
+Name: bitads-client
+Version: 0.1.1
+Summary: Asynchronous Python client for BitAds.ai API
+Author-email: YDC <yellowduckcoders.dev@gmail.com>
+License: MIT License
+        
+        Copyright (c) 2025 Yellow Duck Coders
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE.
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pydantic<3.0,>=2.0
+Requires-Dist: aiohttp<4.0,>=3.8
+Provides-Extra: dev
+Requires-Dist: pytest; extra == "dev"
+Requires-Dist: mypy; extra == "dev"
+Requires-Dist: black; extra == "dev"
+
+# BitAds Client Library
+
+![BitAds Logo](https://bitads.ai/logo.png)
+
+## 🚀 Overview
+BitAds Client is an asynchronous Python client for interacting with the **BitAds.ai API**. It allows users to integrate with the **BitAds network** to retrieve campaign details, validate miners, and interact with the BitAds infrastructure.
+
+## 📦 Installation
+
+Install the package using pip:
+
+```sh
+pip install bitads-client
+```
+
+## 🔧 Configuration
+
+### Importing the Client
+```python
+from bitads_client.client.impl import AsyncBitAdsClient
+```
+
+### Initializing the Client
+```python
+client = AsyncBitAdsClient(
+    base_url="https://prod-s.a.bitads.ai/api",
+    hot_key="your-hot-key",
+)
+```
+
+## 📡 API Usage
+
+### ✅ **Ping BitAds API**
+```python
+import asyncio
+
+async def main():
+    response = await client.ping()
+    print(response)
+    await client.close()
+
+asyncio.run(main())
+```
+
+### 🔗 **Generate Miner URL**
+```python
+async def main():
+    response = await client.generate_miner_url("campaign_id")
+    print(response.data)
+    await client.close()
+
+asyncio.run(main())
+```
+
+### 📊 **Send Server Load Data**
+```python
+from bitads_client.schemas import SendServerLoadRequest
+
+async def main():
+    data = SendServerLoadRequest(
+        timestamp="2024-06-08 19:33:07",
+        hostname="server1",
+        load_average={"1min": 3.5, "5min": 4.2, "15min": 4.0},
+    )
+    await client.send_server_load(data)
+    await client.close()
+
+asyncio.run(main())
+```
+
+### 📡 **Send User IP Activity**
+```python
+from bitads_client.schemas import SendUserIpActivityRequest
+
+async def main():
+    data = SendUserIpActivityRequest(
+        user_activity={
+            "user1": [{"ip": "192.168.1.1", "date": "2024-06-08", "count": 5}]
+        }
+    )
+    await client.send_user_ip_activity(data)
+    await client.close()
+
+asyncio.run(main())
+```
+
+## ✅ Running Tests
+To run unit tests:
+```sh
+pytest tests/
+```
+
+## 📝 License
+This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
+
+## 📬 Contact
+For issues, please open a GitHub issue or contact support at [Discord](https://discord.com/channels/799672011265015819/1189234502669697064).
+
+---
+🚀 **Enjoy seamless integration with BitAds.ai!**
+
+    
