@@ -1,0 +1,24 @@
+Metadata-Version: 2.1
+Name: SolarSage
+Version: 1.0
+Summary: astrologers for astrologers
+Home-page: http://www.xxxxx.com/
+Author: jiunie9n
+Author-email: xxxxxxx@qq.com
+License: MIT
+Requires-Dist: astropy
+Requires-Dist: python-data
+Requires-Dist: numpy
+Requires-Dist: packaging
+Requires-Dist: pandas
+Requires-Dist: pyerfa
+Requires-Dist: pyswisseph
+Requires-Dist: pytz
+Requires-Dist: PyYAML
+Requires-Dist: six
+Requires-Dist: tabulate
+Requires-Dist: tzdata
+Requires-Dist: requests
+
+SolarSage is an open-source backend solution for generating precise astrological charts with modern tooling and
+developer-friendly APIs.
