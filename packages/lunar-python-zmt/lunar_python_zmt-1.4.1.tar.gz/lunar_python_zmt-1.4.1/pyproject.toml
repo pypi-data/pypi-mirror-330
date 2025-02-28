@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lunar_python_zmt"
+version = "1.4.1"
+description = "lunar is a calendar library for Solar and Chinese Lunar."
+authors = [
+    {name = "6tail", email = "6tail@6tail.cn"}
+]
+readme = "README.md"
+license = {text = "MIT"}
+keywords = ["solar", "lunar", "calendar"]
