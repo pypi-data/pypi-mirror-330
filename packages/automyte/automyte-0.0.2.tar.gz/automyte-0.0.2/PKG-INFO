@@ -1,0 +1,16 @@
+Metadata-Version: 2.4
+Name: automyte
+Version: 0.0.2
+Summary: Tool for automation of code updates.
+Author: Artur Shyshko
+License-Expression: MIT
+License-File: LICENSE
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Software Development :: Code Generators
+Requires-Python: >=3.10
