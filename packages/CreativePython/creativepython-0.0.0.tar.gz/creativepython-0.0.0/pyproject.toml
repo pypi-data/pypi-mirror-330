@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=75.0", "pyglet>=2.1.2", "tinysoundfont>=0.3.6", "osc4py3>=1.0.8"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "CreativePython"
+version = "0.0.0"
+authors = [
+	{ name="Dr. Bill Manaris", email="manaris@cofc.edu" },
+	{ name="Taj Ballinger", email="ballingertj@g.cofc.edu" },
+	{ name="Trevor Ritchie", email="ritchiets@g.cofc.edu" },
+]
+maintainers = []
+description = "CreativePython is a Python-based software environment for developing algorithmic art projects."
+readme = "README.md"
+requires-python = ">=3.12.4"
+classifiers = [
+	"Programming Language :: Python :: 3",
+	"Operating System :: OS Independent",
+	"License :: OSI Approved :: MIT License",
+]
+
+[project.urls]
+Homepage = "https://jythonmusic.me"
