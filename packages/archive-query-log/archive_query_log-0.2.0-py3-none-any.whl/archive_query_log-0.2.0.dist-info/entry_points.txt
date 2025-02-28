@@ -1,0 +1,4 @@
+[console_scripts]
+aql = archive_query_log.cli:cli
+archive-query-log = archive_query_log.cli:cli
+archive_query_log = archive_query_log.cli:cli
