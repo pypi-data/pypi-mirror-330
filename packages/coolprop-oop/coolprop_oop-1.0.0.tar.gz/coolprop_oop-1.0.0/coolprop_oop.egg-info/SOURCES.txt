@@ -1,0 +1,15 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.py
+coolprop_oop/__init__.py
+coolprop_oop/coolprop_oop.py
+coolprop_oop.egg-info/PKG-INFO
+coolprop_oop.egg-info/SOURCES.txt
+coolprop_oop.egg-info/dependency_links.txt
+coolprop_oop.egg-info/requires.txt
+coolprop_oop.egg-info/top_level.txt
+examples/usage_examples.py
+tests/__init__.py
+tests/test_coolprop_oop.py
