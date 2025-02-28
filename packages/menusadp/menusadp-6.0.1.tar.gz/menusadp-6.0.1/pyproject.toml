@@ -1,0 +1,63 @@
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+name = "menusadp"
+version = "6.0.1"
+description = "Vins et Menus"
+authors = ["Nicolas Cordier <nicolas@cordier.io>" ]
+maintainers = ["Nicolas Cordier <nicolas@cordier.io>" ]
+readme = "README.rst"
+include = [
+	{ path = "data"},
+	]
+
+[[tool.poetry.source]]
+name = "PyPI"
+
+
+
+[tool.poetry.dependencies]
+python = ">=3.11,<3.13"
+# pandas = {version = "^2.2", extras=["performance"] }
+# numpy="^1"
+# openpyxl = "^3.1.4"
+# tabulate = "^0.9.0"
+# xlsxwriter = "^3.2.0"
+click = "*"
+pandas = "*"
+tabulate="*"
+appdirs = "*"
+openpyxl = "^3.1.5"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "*"
+pytest-cov = "*"
+ipython = "*"
+pdbpp = "*"
+ipykernel = "*"
+black = "*"
+isort = "*"
+bump2version = "*"
+# snakeviz = "*"
+
+
+[tool.pytest.ini_options]
+#collect_ignore = ["setup.py"]
+doctest_optionflags = "NORMALIZE_WHITESPACE ELLIPSIS"
+addopts = "--doctest-modules --cov=menusadp --cov-report html --cov-append --ignore=notebooks"
+
+
+[tool.isort]
+profile = "black"
+
+[tool.black]
+exclude = "notebooks/.*"
+
+[tool.poetry.scripts]
+# command_name = module_for_handler : function_for_handler
+madp = 'menusadp.cli:cli'
+
+
