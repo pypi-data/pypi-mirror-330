@@ -1,0 +1,3 @@
+[console_scripts]
+gui_coor_trans = pyflexlab.auxiliary:Flakes.gui_coor_transition
+gui_pan_color = pyflexlab.data_plot:DataPlot.gui_pan_color
