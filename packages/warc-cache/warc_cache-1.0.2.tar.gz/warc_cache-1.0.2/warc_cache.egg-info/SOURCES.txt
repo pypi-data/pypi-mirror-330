@@ -1,0 +1,14 @@
+.gitignore
+LICENSE
+README.md
+pyproject.toml
+.github/dependabot.yml
+.github/release.yml
+.github/workflows/ci.yml
+warc_cache/__init__.py
+warc_cache/test_dummy.py
+warc_cache.egg-info/PKG-INFO
+warc_cache.egg-info/SOURCES.txt
+warc_cache.egg-info/dependency_links.txt
+warc_cache.egg-info/requires.txt
+warc_cache.egg-info/top_level.txt
