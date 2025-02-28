@@ -1,0 +1,12 @@
+entries:
+  Total:
+    fields:
+      - LayerAttachment
+    operator: sum
+  UniqueAccNumbers:
+    fields:
+      - AccNumber
+    operator: count_unique
+  NumRows:
+    operator: count
+  
