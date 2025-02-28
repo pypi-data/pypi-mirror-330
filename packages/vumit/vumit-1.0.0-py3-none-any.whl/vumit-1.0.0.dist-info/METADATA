@@ -1,0 +1,109 @@
+Metadata-Version: 2.4
+Name: vumit
+Version: 1.0.0
+Summary: AI-powered Git analysis tool using Gemini AI
+Project-URL: Documentation, https://github.com/vumit/vumit#readme
+Project-URL: Issues, https://github.com/vumit/vumit/issues
+Author: Vumit Contributors
+License: MIT License
+        
+        Copyright (c) 2025 Vumit Contributors
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE.
+License-File: LICENSE
+Keywords: ai,code-review,git,merge-request
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Software Development :: Version Control :: Git
+Requires-Python: >=3.9
+Requires-Dist: click>=8.1.8
+Requires-Dist: gitpython>=3.1.44
+Requires-Dist: google-generativeai>=0.8.4
+Requires-Dist: hatchling>=1.27.0
+Requires-Dist: rich>=13.9.4
+Description-Content-Type: text/markdown
+
+# Vumit - AI-powered Git Analysis Tool
+
+Vumit is a command-line tool that uses Google's Gemini AI to analyze Git changes and generate merge request descriptions.
+
+Version: 0.1.0
+
+## Installation
+
+```bash
+pip install -e .
+```
+
+## Configuration
+
+Vumit requires a Google Gemini API key to function. There are several ways to configure this:
+
+1. Environment Variable (Recommended for Development):
+   ```bash
+   export GEMINI_API_KEY='your-api-key'
+   ```
+
+2. Configuration File (Recommended for Production):
+   Create a file at `~/.config/vumit/config.ini`:
+   ```ini
+   [gemini]
+   api_key = your-api-key
+   ```
+
+Never commit your API key to version control or include it directly in your code.
+
+## Usage
+
+### Commands
+
+1. Check code changes:
+```bash
+vumit check
+```
+or
+```bash
+vumit check --target <target-branch> # Default: dev
+```
+
+Analyzes diff commits (compared with target branch) in your Git repository and provides AI-powered recommendations.
+
+2. Generate merge request description:
+```bash
+vumit report
+```
+or
+
+```bash
+vumit report --target <target-branch> # Default: dev
+```
+Generates a detailed merge request description based on your changes and repository context.
+
+## Requirements
+
+- Python 3.9 or higher
+- Git repository
+- Google Gemini API key
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
