@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+bitads_client/__init__.py
+bitads_client/codes.py
+bitads_client/schemas.py
+bitads_client.egg-info/PKG-INFO
+bitads_client.egg-info/SOURCES.txt
+bitads_client.egg-info/dependency_links.txt
+bitads_client.egg-info/requires.txt
+bitads_client.egg-info/top_level.txt
+tests/test_client.py
+tests/test_schemas.py
