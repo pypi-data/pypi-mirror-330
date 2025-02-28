@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "verse-ql"
+version = "0.0.27"
+description = "Verse QL"
+authors = ["Verse <admin@rapidverse.com>"]
+license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/rapidverse/verse"
+repository = "https://github.com/rapidverse/verse"
+documentation = "https://github.com/rapidverse/verse"
+keywords = ["verse", "ql", "verseql"]
+
+[tool.poetry.dependencies]
+python = ">=3.9"
+antlr4-python3-runtime = ">=4.13.0"
+
+[[tool.poetry.packages]]
+include = "verse"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
