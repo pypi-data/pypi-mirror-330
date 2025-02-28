@@ -1,0 +1,85 @@
+[project]
+name = "web-archive-api"
+authors = [
+    {name = "Jan Heinrich Merker", email = "heinrich.merker@uni-jena.de"},
+]
+description = "Unified, type-safe access to web archive APIs."
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering",
+]
+dependencies = [
+    "importlib-metadata>=6.5,<9.0",
+    "requests~=2.28",
+    "tqdm~=4.64",
+    "warcio~=1.7",
+]
+dynamic = ["version"]
+
+[project.optional-dependencies]
+tests =[
+    "bandit[toml]~=1.7",
+    "mypy~=1.6",
+    "pytest>=7.2,<9.0",
+    "pytest-cov>=4,<6",
+    "ruff~=0.2.1",
+    "types-requests~=2.31",
+    "types-tqdm~=4.66",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/janheinrichmerker/web-archive-api"
+"Bug Tracker" = "https://github.com/janheinrichmerker/web-archive-api/issues"
+
+[build-system]
+requires = ["setuptools>=50", "setuptools_scm[toml]>=6.2", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+exclude = [
+    "build",
+    "venv",
+]
+
+[tool.setuptools.package-data]
+"*" = ["*.txt", "*.md", "*.rst"]
+
+[tool.setuptools_scm]
+
+[tool.ruff]
+exclude = [
+    "build",
+    "venv",
+]
+
+[tool.mypy]
+ignore_missing_imports = true
+exclude = [
+    "build",
+    "venv",
+]
+
+[tool.bandit]
+exclude_dirs = [
+    "build",
+    "venv",
+]
+
+[tool.bandit.assert_used]
+skips = ["**/test_*.py"]
+
+[tool.pytest.ini_options]
+log_cli = "True"

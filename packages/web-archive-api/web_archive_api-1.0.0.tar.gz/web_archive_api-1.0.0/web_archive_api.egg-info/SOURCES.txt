@@ -1,0 +1,17 @@
+.gitignore
+LICENSE
+README.md
+pyproject.toml
+.github/dependabot.yml
+.github/release.yml
+.github/workflows/ci.yml
+web_archive_api/__init__.py
+web_archive_api/cdx.py
+web_archive_api/memento.py
+web_archive_api/test_memento.py
+web_archive_api/warc.py
+web_archive_api.egg-info/PKG-INFO
+web_archive_api.egg-info/SOURCES.txt
+web_archive_api.egg-info/dependency_links.txt
+web_archive_api.egg-info/requires.txt
+web_archive_api.egg-info/top_level.txt
