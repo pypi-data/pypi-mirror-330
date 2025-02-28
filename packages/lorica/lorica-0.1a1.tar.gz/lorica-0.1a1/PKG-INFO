@@ -1,0 +1,117 @@
+Metadata-Version: 2.4
+Name: lorica
+Version: 0.1a1
+Summary: A python package to interact with products from Lorica Cybersecurity
+Author-email: Lorica Cybersecurity <support@loricacyber.com>
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.7
+Requires-Dist: ohttpy==0.1a7
+Description-Content-Type: text/markdown
+
+# Lorica Package
+
+## Introduction
+This package provides functionality for interaction with Lorica Cybersecurity products. The following capabilities are currently offered:
+- OHTTP encapsulation for secure interaction with Lorica AI deployment.
+
+## Lorica AI OHTTP Encapsulation using Requests Session
+To encapsulate requests and responses through a `requests.Session`, simply replace the object construction with `lorica.ohttp.Session`:
+```python
+import lorica.ohttp
+
+# Create lorica.ohttp.Session that inherits from requests.Session.
+session = lorica.ohttp.Session()
+
+lorica_api_key = "LORICA_API_KEY"
+deployment_url = "DEPLOYMENT_URL"
+
+# Use session like a request.Session.
+resp = session.post(
+    f"{deployment_url}/v1/chat/completions",
+    headers={"Authorization": f"Bearer {lorica_api_key}"},
+    json={
+        "model": "meta-llama/Llama-3.2-3B-Instruct",
+        "messages": [
+            {"role": "system", "content": "You are a helpful AI assistant."},
+            {"role": "user", "content": "where does the sun rise from?"},
+        ],
+        "temperature": 0.7,
+        "max_tokens": 1024,
+        "stream": False,
+    },
+)
+print(resp.text)
+
+```
+
+## Lorica AI OHTTP Encapsulation using HTTPX Transport
+To encapsulate requests and responses through a `httpx.Transport`, simply replace the object construction with `lorica.ohttp.Transport`:
+```python
+import httpx
+import lorica.ohttp
+
+# Initialize httpx client with the lorica.ohttp.Transport that inherits from httpx.Transport
+httpx_client = httpx.Client(transport=lorica.ohttp.Transport())
+
+lorica_api_key = "LORICA_API_KEY"
+deployment_url = "DEPLOYMENT_URL"
+
+# Use client as normal including chunked-encoding response support.
+method = "POST"
+url = deployment_url
+data = {
+    "model": "meta-llama/Llama-3.2-3B-Instruct",
+    "messages": [
+        {"role": "system", "content": "You are a helpful AI assistant."},
+        {"role": "user", "content": "where does the sun rise from?"},
+    ],
+    "temperature": 0.7,
+    "max_tokens": 1024,
+    "stream": True,
+}
+headers = {"Authorization": f"Bearer {lorica_api_key}"}
+with httpx_client.stream(method, url, json=data, headers=headers) as resp:
+    print(resp.status_code)
+    print(resp.headers)
+    for chunk in resp.stream:
+        print(chunk.decode(), end="", flush=True)
+```
+
+## Lorica AI OHTTP Encapsulation using OpenAI Client
+This is also applicable to clients that utilize `httpx` for their HTTP communication, for example `openai` client:
+```python
+import httpx
+import openai
+import lorica.ohttp
+
+# Initialize httpx client with lorica.ohttp.Transport that inherits from httpx.Transport
+httpx_client = httpx.Client(transport=lorca.ohttp.Transport())
+deployment_url = "DEPLOYMENT_URL"
+lorica_api_key = "LORICA_API_KEY"
+
+# Configure OpenAI client with httpx client
+client = openai.OpenAI(
+    api_key=lorica_api_key,
+    http_client=httpx_client,
+    base_url=deployment_url + "/v1")
+
+# Use OpenAI SDK as normal for example llama chat (including stream capability)
+is_stream=True
+completion = client.chat.completions.create(
+    model="meta-llama/Llama-3.2-3B-Instruct",
+    messages=[
+        {"role": "system", "content": "You are a helpful AI assistant."},
+        {"role": "user", "content": "where does the sun rise from?"},
+    ],
+    temperature=0.2,
+    top_p=0.7,
+    max_tokens=1024,
+    stream=is_stream,
+)
+if is_stream:
+    for chunk in completion:
+        print(chunk.choices[0].delta.content or "", end="", flush=True)
+else:
+    print(completion.choices[0].message.content)
+```
