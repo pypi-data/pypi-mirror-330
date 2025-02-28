@@ -1,0 +1,9 @@
+include ed_design/style/*.mplstyle
+include ed_design/style/_fonts/_satoshi/*.otf
+include ed_design/style/_fonts/_satoshi/*.txt
+include ed_design/style/_fonts/_segoe_ui/*.otf
+include ed_design/style/_fonts/_segoe_ui/*.txt
+include ed_design/logo/*.jpg
+include ed_design/logo/*.png
+include ed_design/_example_data/*.csv
+include ed_design/style/*.pdf
