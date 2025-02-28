@@ -1,0 +1,21 @@
+Metadata-Version: 2.2
+Name: fk_audit_flask
+Version: 0.1.4
+Home-page: https://gitlab.com/f3315/team-back-end/cross/packages/package_audit_flask
+Author: José Luis Rosales Meza
+Author-email: jrosalesmeza@gmail.com
+License: MIT
+Description-Content-Type: text/markdown
+Requires-Dist: flask
+Requires-Dist: mongoengine
+Requires-Dist: blinker
+Requires-Dist: sqlalchemy
+Dynamic: author
+Dynamic: author-email
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license
+Dynamic: requires-dist
+
+Library for auditing models made with SQLAlchemy and Mongoengine
