@@ -1,0 +1,16 @@
+Metadata-Version: 2.2
+Name: ppbs
+Version: 0.1.0
+Summary: Python API for PBS HPC job submission
+Author-email: Kâmuran İmran <c.mcmenamie@unsw.edu.au>
+Project-URL: Homepage, https://github.com/kamurani/pybs
+Project-URL: Issues, https://github.com/kamurani/pybs/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Classifier: License :: OSI Approved :: Apache Software License
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# pybs
+Python-based PBS job submission 
