@@ -1,0 +1,137 @@
+[tool.poetry]
+name = "verse-storage"
+version = "0.0.27"
+description = "Verse Storage Components"
+authors = ["Verse <admin@rapidverse.com>"]
+license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/rapidverse/verse"
+repository = "https://github.com/rapidverse/verse"
+documentation = "https://github.com/rapidverse/verse"
+keywords = ["verse", "storage", "components"]
+
+[tool.poetry.dependencies]
+python = ">=3.9"
+python-dotenv = { version = "*", optional = true }
+PyYAML = { version = "*", optional = true }
+boto3 = { version = "*", optional = true }
+azure-storage-blob = { version = "*", optional = true }
+azure-identity = { version = "*", optional = true }
+google-cloud-storage = { version = "*", optional = true }
+azure-appconfiguration = { version = "*", optional = true }
+aiohttp = { version = "*", optional = true }
+google-api-python-client = { version = "*", optional = true }
+azure-keyvault-secrets = { version = "*", optional = true }
+google-cloud-secret-manager = { version = "*", optional = true }
+hvac = { version = "*", optional = true }
+azure-cosmos = { version = "*", optional = true }
+google-cloud-firestore = { version = "*", optional = true }
+pymongo = { version = "*", optional = true }
+motor = { version = "^3.6.0", optional = true }
+redis = { version = "*", optional = true }
+psycopg = { version = "*", optional = true, extras = ["binary"] }
+pinecone-client = { version = "*", optional = true }
+pymilvus = { version = "*", optional = true }
+qdrant-client = { version = "*", optional = true }
+chromadb = { version = "*", optional = true }
+weaviate-client = { version = "*", optional = true }
+elasticsearch = { version = "*", optional = true, extras = ["async"] }
+pymemcache = { version = "*", optional = true }
+httpx = { version = "*", optional = true }
+
+[tool.poetry.extras]
+config-store-aws-parameter-store = ["boto3"]
+config-store-azure-app-configuration = ["azure-appconfiguration", "azure-identity", "aiohttp"]
+config-store-google-runtime-configurator = ["google-api-python-client"]
+config-store-env-file = ["python-dotenv"]
+config-store-yaml-file = ["PyYAML"]
+config-store-environment = []
+config-store-document-store-provider = []
+config-store-local = []
+config-store-default = []
+config-store-hosted = ["httpx"]
+
+secret-store-amazon-secrets-manager = ["boto3"]
+secret-store-azure-key-vault = ["azure-keyvault-secrets", "azure-identity", "aiohttp"]
+secret-store-google-secret-manager = ["google-cloud-secret-manager"]
+secret-store-hashicorp-vault = ["hvac"]
+secret-store-env-file = ["python-dotenv"]
+secret-store-yaml-file = ["PyYAML"]
+secret-store-environment = []
+secret-store-document-store-provider = []
+secret-store-local = []
+secret-store-default = []
+secret-store-hosted = ["httpx"]
+
+document-store-amazon-dynamodb = ["boto3"]
+document-store-azure-cosmos-db = ["azure-cosmos", "azure-identity"]
+document-store-google-firestore = ["google-cloud-firestore", "google-api-python-client"]
+document-store-mongodb = ["pymongo", "motor"]
+document-store-redis = ["redis"]
+document-store-postgresql = ["psycopg"]
+document-store-elasticsearch = ["elasticsearch"]
+document-store-sqlite = []
+document-store-memory = []
+document-store-local = []
+document-store-default = []
+document-store-hosted = ["httpx"]
+
+object-store-amazon-s3 = ["boto3"]
+object-store-azure-blob-storage = ["azure-storage-blob", "azure-identity"]
+object-store-google-cloud-storage = ["google-cloud-storage"]
+object-store-file-system = []
+object-store-local = []
+object-store-default = []
+object-store-hosted = ["httpx"]
+
+vector-store-pinecone = ["pinecone-client"]
+vector-store-milvus = ["pymilvus"]
+vector-store-qdrant = ["qdrant-client"]
+vector-store-chroma = ["chromadb"]
+vector-store-weaviate = ["weaviate-client"]
+vector-store-local = ["chromadb"]
+vector-store-default = []
+vector-store-hosted = ["httpx"]
+
+search-store-elasticsearch = ["elasticsearch"]
+
+key-value-store-redis = ["redis"]
+key-value-store-memcached = ["pymemcache"]
+key-value-store-default = []
+key-value-store-hosted = ["httpx"]
+
+all = [
+  "python-dotenv",
+  "PyYAML",
+  "boto3",
+  "azure-storage-blob",
+  "azure-identity",
+  "google-cloud-storage",
+  "azure-appconfiguration",
+  "google-api-python-client",  
+  "azure-keyvault-secrets",
+  "aiohttp",
+  "google-cloud-secret-manager",
+  "hvac",
+  "azure-cosmos",
+  "google-cloud-firestore",
+  "pymongo",
+  "motor",
+  "redis",
+  "psycopg",
+  "pinecone-client",
+  "pymilvus",
+  "qdrant-client",
+  "chromadb",
+  "weaviate-client",
+  "elasticsearch",
+  "pymemcache",
+  "httpx"
+]
+
+[[tool.poetry.packages]]
+include = "verse"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
