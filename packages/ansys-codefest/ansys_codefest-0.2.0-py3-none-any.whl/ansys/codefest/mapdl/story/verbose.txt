@@ -1,0 +1,54 @@
+## BridgeBuilder Challenge
+
+```
+$ascii_chamber_drawing
+
+    y
+    ^ $ymax
+    |
+    |
+$xmin
+<---+---> x
+        $xmax
+    |
+    |
+    v $ymin
+```
+
+This is a cavern, viewed side-on. You must build a bridge
+that gets from 1 to 2 and supports 1 ton of weight on each
+node of the path between them. You have a working design
+already (see suggested design), but it's too expensive!
+It's just made out of solid steel and it's way over budget.
+How cheap can you make it without the bridge collapsing?
+
+>>> design = lab.suggest_a_design()
+
+Fixed nodes, like the rocks and the start/end points are not
+included in this design. You can get a list of all the fixed
+nodes and their numbers with the get_fixed_nodes method.
+
+>>> fixed = lab.get_fixed_nodes()
+
+How much does the suggestion cost (in dollars)?
+
+>>> cost = lab.calculate_design_cost(design)
+
+Build the bridge & simulate it.
+
+>>> bridge = lab.build_bridge(design)
+
+Process the results.
+
+>>> success, feedback, beams = bridge.assess_for_breaks()
+
+beams is a list of 'Beam' objects and each has a property 'stress',
+that tells you how much that beam experienced.
+
+View available materials:
+
+>>> for mat in self.MATERIALS.values():
+        print(mat)
+
+docs: https://developer.ansys.com/codefest/docs/one-page
+

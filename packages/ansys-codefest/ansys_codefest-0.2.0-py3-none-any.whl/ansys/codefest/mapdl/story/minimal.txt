@@ -1,0 +1,17 @@
+## BridgeBuilder Challenge
+
+```
+$ascii_chamber_drawing
+
+    y
+    ^ $ymax
+    |
+    |
+$xmin
+<---+---> x
+        $xmax
+    |
+    |
+    v $ymin
+
+```
