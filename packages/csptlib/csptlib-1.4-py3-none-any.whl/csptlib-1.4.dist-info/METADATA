@@ -1,0 +1,28 @@
+Metadata-Version: 2.2
+Name: csptlib
+Version: 1.4
+Summary: The CSPTLIB Project is a library of tools for evaluating the coordination performance of transportation arteries, designed to help traffic engineers improve the efficiency of their assessments. It supports the Python programming language and provides two use cases.
+Home-page: https://github.com/PeppaZhao/csptlib-project.git
+Author: Cheney ZHAO
+Author-email: cheneyzhao@126.com
+License: MIT
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license
+Dynamic: requires-python
+Dynamic: summary
+
+The CSPTLIB Project is a library of tools for evaluating the coordination performance of transportation arteries, designed to help traffic engineers improve the efficiency of their assessments. It supports the Python programming language and provides two use cases.
