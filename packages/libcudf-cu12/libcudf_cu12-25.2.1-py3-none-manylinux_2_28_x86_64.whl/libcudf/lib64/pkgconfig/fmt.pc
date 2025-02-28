@@ -1,0 +1,11 @@
+prefix=/tmp/tmpl3wqmicz/wheel/platlib/libcudf
+exec_prefix=/tmp/tmpl3wqmicz/wheel/platlib/libcudf
+libdir=${exec_prefix}/lib64
+includedir=${prefix}/include
+
+Name: fmt
+Description: A modern formatting library
+Version: 11.0.2
+Libs: -L${libdir} -lfmt
+Cflags: -I${includedir}
+
