@@ -1,0 +1,14 @@
+nevesdb/__init__.py,sha256=301TNU0SfUL_Fhx948JPFTcKknEuZz-KGtycJOBiff4,77
+nevesdb/core/__init__.py,sha256=e8jlwkPkdh710nO171yJbiPb5a3QLYkHDXugPuPle5g,161
+nevesdb/core/logger.py,sha256=eTpj13UpD6JbUlVwmArpZYZaK78X-DF7-KSHvvd-lMM,145
+nevesdb/core/model.py,sha256=I0XSadQZRmuBrSsX2cq70GhTumkgwJhnqUWyone_N-s,641
+nevesdb/core/nevesdb.py,sha256=onCBIepAEvOYb2AaAmW7F_mQZz9FE4w7aT7fQzs9Qn0,2196
+nevesdb/core/adapters/__init__.py,sha256=WRzLkxALA2EFeYYQpXpaka1xYViKOAUVgmlpZhlMQfc,197
+nevesdb/core/adapters/adapter.py,sha256=BmSkPbWGKyokdd1VGgplq38m71Sj7pwWV0EO_Y8K63s,488
+nevesdb/core/adapters/mongo_db.py,sha256=w7HiYbQsvDRvWtugdKv6-psPH2w0VSQaV5p92qMv0RY,2330
+nevesdb/core/adapters/sql_db.py,sha256=3pdkLfHMQ8wKTYzk9AcM2fafd-dEznPddF6bcN61uKU,3749
+nevesdb-0.1.5.dist-info/LICENSE,sha256=2XLeKcy3rlGr_F_BkyOYzM65hD3YJmdsqYk0ety4HYg,11354
+nevesdb-0.1.5.dist-info/METADATA,sha256=TTpo7TWFResXN5abcpaJBioa4fyiAZ4IKOoBV36eWCQ,15704
+nevesdb-0.1.5.dist-info/WHEEL,sha256=jB7zZ3N9hIM9adW7qlTAyycLYW9npaWKLRzaoVcLKcM,91
+nevesdb-0.1.5.dist-info/top_level.txt,sha256=OmmTLm1yf9yl96zqz3xrd0iMjd1PSdSpp7OZZ3HDXog,8
+nevesdb-0.1.5.dist-info/RECORD,,
