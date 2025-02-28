@@ -1,0 +1,24 @@
+[project]
+name = "jupyshark"
+version = "0.1.1"
+description = "A collection of jupyterlab extensions as a meta package for a more pleasant (and productive) UX."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "jedi-language-server>=0.43.1",
+    "jupyter-resource-usage>=1.1.0",
+    "jupyterlab>=4.3.5",
+    "jupyterlab-execute-time>=3.2.0",
+    "jupyterlab-lsp>=5.1.0",
+    "jupyterlab-spreadsheet-editor>=0.7.2",
+    "jupyterlab-unfold>=0.3.3",
+    "lckr-jupyterlab-variableinspector>=3.2.4",
+]
+keywords = ['jupyter', 'jupyterlab', 'notebook']
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["jupyshark"]
