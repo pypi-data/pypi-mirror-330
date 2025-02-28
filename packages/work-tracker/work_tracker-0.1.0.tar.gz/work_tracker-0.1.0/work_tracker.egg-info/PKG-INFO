@@ -1,0 +1,71 @@
+Metadata-Version: 2.2
+Name: work-tracker
+Version: 0.1.0
+Summary: A Python library that helps tracking your work time.
+Author-email: Karol Kiszka <karolkisz22@gmail.com>
+License: MIT
+Project-URL: source, https://github.com/kiszkacy/work-tracker
+Keywords: work,time,tracker
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Development Status :: 3 - Alpha
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Environment :: Console
+Requires-Python: <4.0,>=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: workalendar~=17.0.0
+Requires-Dist: pydantic~=2.10.5
+Requires-Dist: appdirs~=1.4.4
+Requires-Dist: path~=17.1.0
+Requires-Dist: PyYAML~=6.0.2
+Requires-Dist: pyperclip~=1.9.0
+Requires-Dist: colorama~=0.4.6
+Requires-Dist: multimethod~=2.0
+Requires-Dist: prompt_toolkit~=3.0.48
+Provides-Extra: dev
+Requires-Dist: pytest~=8.3.4; extra == "dev"
+Requires-Dist: pytest-mock~=3.14.0; extra == "dev"
+Requires-Dist: pytest-order~=1.3.0; extra == "dev"
+Requires-Dist: pytest-random-order~=1.1.1; extra == "dev"
+Requires-Dist: pytest-cov~=6.0.0; extra == "dev"
+
+
+# WorkTracker
+
+
+![Python version](https://img.shields.io/badge/python-%3E%3D%203.10-blue.svg)
+![License](https://img.shields.io/badge/license-MIT-green.svg)
+![PyPI](https://img.shields.io/pypi/v/work-tracker.svg)
+[![wakatime](https://wakatime.com/badge/user/92cf3ac1-102d-4d79-b9a8-c960cf206839/project/8c8f1653-1d14-4d7e-90bc-01591ea36159.svg)](https://wakatime.com/badge/user/92cf3ac1-102d-4d79-b9a8-c960cf206839/project/8c8f1653-1d14-4d7e-90bc-01591ea36159 "Total time spent coding")
+
+**WorkTracker** is a Python library that helps you track your time spent at work and manage your work schedule, providing a simple way to monitor your working hours.
+
+> **Note:** This library is still in very early development. Many features may not be fully stable, and things could and probably will break with future updates until the final release.
+
+
+## Installation
+
+Before installing **WorkTracker**, ensure you have Python 3.10 or a newer version installed. You can download and install it from the [official Python website](https://www.python.org/downloads/).
+
+To install the latest **WorkTracker** version, run the following command in your terminal:
+
+```bash
+pip install work-tracker
+```
+
+## Usage
+
+Once installed, you can launch the **WorkTracker** by running the following command in your terminal:
+
+```bash
+work-tracker
+```
+
+## License
+
+This project is licensed under the MIT License.
