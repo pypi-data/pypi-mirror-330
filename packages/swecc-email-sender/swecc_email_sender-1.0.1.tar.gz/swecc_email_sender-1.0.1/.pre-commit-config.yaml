@@ -1,0 +1,41 @@
+repos:
+- repo: https://github.com/astral-sh/ruff-pre-commit
+  rev: v0.1.11
+  hooks:
+    - id: ruff
+      args: [--fix]
+      files: ^swecc_email_sender/
+    - id: ruff-format
+      files: ^swecc_email_sender/
+
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v4.5.0
+  hooks:
+    - id: trailing-whitespace
+    - id: end-of-file-fixer
+    - id: check-yaml
+    - id: check-toml
+    - id: check-added-large-files
+    - id: debug-statements
+    - id: check-case-conflict
+
+- repo: https://github.com/pre-commit/mirrors-mypy
+  rev: v1.8.0
+  hooks:
+    - id: mypy
+      files: ^swecc_email_sender/
+      additional_dependencies: ["markdown>=3.3.0"]
+      args:
+        - --python-version=3.8
+        - --warn-return-any
+        - --warn-unused-configs
+        - --disallow-untyped-defs
+        - --disallow-incomplete-defs
+        - --check-untyped-defs
+        - --disallow-untyped-decorators
+        - --no-implicit-optional
+        - --warn-redundant-casts
+        - --warn-unused-ignores
+        - --warn-no-return
+        - --warn-unreachable
+        - --disable-error-code=import-untyped
