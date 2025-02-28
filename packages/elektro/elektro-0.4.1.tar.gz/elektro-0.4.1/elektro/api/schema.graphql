@@ -1,0 +1,600 @@
+"""Make string uppercase"""
+directive @upper on FIELD
+
+directive @replace(old: String!, new: String!) on FIELD
+
+"""Make get stuff uppercase"""
+directive @relation(on: String!) on FIELD
+
+type Query {
+  traces(filters: TraceFilter, order: TraceOrder, pagination: OffsetPaginationInput): [Trace!]!
+  rois(filters: ROIFilter, pagination: OffsetPaginationInput): [ROI!]!
+  datasets(filters: DatasetFilter, pagination: OffsetPaginationInput): [Dataset!]!
+  mydatasets(filters: DatasetFilter, pagination: OffsetPaginationInput): [Dataset!]!
+  files(filters: FileFilter, pagination: OffsetPaginationInput): [File!]!
+  myfiles(filters: FileFilter, pagination: OffsetPaginationInput): [File!]!
+  randomTrace: Trace!
+
+  """Returns a single image by ID"""
+  trace(
+    """The unique identifier of an object"""
+    id: ID!
+  ): Trace!
+  roi(
+    """The unique identifier of an object"""
+    id: ID!
+  ): ROI!
+  file(
+    """The unique identifier of an object"""
+    id: ID!
+  ): File!
+  dataset(
+    """The unique identifier of an object"""
+    id: ID!
+  ): Dataset!
+}
+
+type Trace {
+  id: ID!
+
+  """The name of the image"""
+  name: String!
+
+  """The store where the image data is stored."""
+  store: ZarrStore!
+
+  """The dataset this image belongs to"""
+  dataset: Dataset
+
+  """History of changes to this image"""
+  history(pagination: OffsetPaginationInput): [History!]!
+
+  """Who created this image"""
+  creator: User
+
+  """Is this image pinned by the current user"""
+  pinned: Boolean!
+
+  """The tags of this image"""
+  tags: [String!]!
+  events(filters: ROIFilter): [ROI!]!
+}
+
+type ZarrStore {
+  id: ID!
+
+  """The path to the data. Relative to the bucket."""
+  path: String
+
+  """The shape of the data."""
+  shape: [Int!]
+
+  """The dtype of the data."""
+  dtype: String
+
+  """The bucket where the data is stored."""
+  bucket: String!
+
+  """The key where the data is stored."""
+  key: String!
+
+  """The chunks of the data."""
+  chunks: [Int!]
+
+  """Whether the zarr store was populated (e.g. was a dataset created)."""
+  populated: Boolean!
+}
+
+type Dataset {
+  id: ID!
+  images(filters: TraceFilter, order: TraceOrder, pagination: OffsetPaginationInput): [Trace!]!
+  files(filters: FileFilter, pagination: OffsetPaginationInput): [File!]!
+  children(filters: DatasetFilter, pagination: OffsetPaginationInput): [Dataset!]!
+  description: String
+  name: String!
+  history(pagination: OffsetPaginationInput): [History!]!
+  isDefault: Boolean!
+  createdAt: DateTime!
+  creator: User
+  pinned: Boolean!
+  tags: [String!]!
+}
+
+input TraceFilter {
+  name: StrFilterLookup
+  ids: [ID!]
+  dataset: DatasetFilter
+  notDerived: Boolean = null
+  provenance: ProvenanceFilter
+  AND: TraceFilter
+  OR: TraceFilter
+}
+
+input StrFilterLookup {
+  exact: String
+  iExact: String
+  contains: String
+  iContains: String
+  inList: [String!]
+  gt: String
+  gte: String
+  lt: String
+  lte: String
+  startsWith: String
+  iStartsWith: String
+  endsWith: String
+  iEndsWith: String
+  range: [String!]
+  isNull: Boolean
+  regex: String
+  iRegex: String
+  nExact: String
+  nIExact: String
+  nContains: String
+  nIContains: String
+  nInList: [String!]
+  nGt: String
+  nGte: String
+  nLt: String
+  nLte: String
+  nStartsWith: String
+  nIStartsWith: String
+  nEndsWith: String
+  nIEndsWith: String
+  nRange: [String!]
+  nIsNull: Boolean
+  nRegex: String
+  nIRegex: String
+}
+
+input DatasetFilter {
+  id: ID
+  name: StrFilterLookup
+  provenance: ProvenanceFilter
+  AND: DatasetFilter
+  OR: DatasetFilter
+}
+
+input ProvenanceFilter {
+  during: String
+  AND: ProvenanceFilter
+  OR: ProvenanceFilter
+}
+
+input TraceOrder {
+  createdAt: Ordering
+}
+
+enum Ordering {
+  ASC
+  DESC
+}
+
+input OffsetPaginationInput {
+  offset: Int! = 0
+  limit: Int! = -1
+}
+
+type File {
+  id: ID!
+  name: String!
+  origins(filters: TraceFilter, order: TraceOrder, pagination: OffsetPaginationInput): [Trace!]!
+  store: BigFileStore!
+}
+
+type BigFileStore {
+  id: ID!
+  path: String!
+  bucket: String!
+  key: String!
+  presignedUrl: String!
+}
+
+input FileFilter {
+  ids: [ID!]
+  search: String
+  id: ID
+  name: StrFilterLookup
+  provenance: ProvenanceFilter
+  AND: FileFilter
+  OR: FileFilter
+}
+
+type History {
+  app: App
+  user: User
+  kind: HistoryKind!
+  date: DateTime!
+  during: String
+  id: ID!
+  effectiveChanges: [ModelChange!]!
+}
+
+"""An app."""
+type App {
+  id: ID!
+  name: String!
+  clientId: String!
+}
+
+"""A user."""
+type User {
+  id: ID!
+  sub: String!
+  username: String!
+  email: String!
+  password: String!
+}
+
+enum HistoryKind {
+  CREATE
+  UPDATE
+  DELETE
+}
+
+"""Date with time (isoformat)"""
+scalar DateTime
+
+type ModelChange {
+  field: String!
+  oldValue: String
+  newValue: String
+}
+
+type ROI {
+  id: ID!
+  trace: Trace!
+  kind: RoiKind!
+  vectors: [FiveDVector!]!
+  createdAt: DateTime!
+  creator: User
+  history(pagination: OffsetPaginationInput): [History!]!
+  pinned: Boolean!
+  name: String!
+}
+
+enum RoiKind {
+  ELLIPSIS
+  POLYGON
+  LINE
+  RECTANGLE
+  SPECTRAL_RECTANGLE
+  TEMPORAL_RECTANGLE
+  CUBE
+  SPECTRAL_CUBE
+  TEMPORAL_CUBE
+  HYPERCUBE
+  SPECTRAL_HYPERCUBE
+  PATH
+  FRAME
+  SLICE
+  POINT
+}
+
+"""The `Vector` scalar type represents a matrix values as specified by"""
+scalar FiveDVector
+
+input ROIFilter {
+  ids: [ID!]
+  id: ID
+  kind: RoiKindChoices
+  image: ID = null
+  search: String
+  AND: ROIFilter
+  OR: ROIFilter
+}
+
+enum RoiKindChoices {
+  ELLIPSIS
+  POLYGON
+  LINE
+  RECTANGLE
+  SPECTRAL_RECTANGLE
+  TEMPORAL_RECTANGLE
+  CUBE
+  SPECTRAL_CUBE
+  TEMPORAL_CUBE
+  HYPERCUBE
+  SPECTRAL_HYPERCUBE
+  PATH
+  UNKNOWN
+  FRAME
+  SLICE
+  POINT
+}
+
+type Mutation {
+  """Request credentials to upload a new image"""
+  requestUpload(input: RequestUploadInput!): Credentials!
+
+  """Request credentials to access an image"""
+  requestAccess(input: RequestAccessInput!): AccessCredentials!
+
+  """Request credentials for media file upload"""
+  requestMediaUpload(input: RequestMediaUploadInput!): PresignedPostCredentials!
+
+  """Request credentials to upload a new file"""
+  requestFileUpload(input: RequestFileUploadInput!): Credentials!
+
+  """Request presigned credentials for file upload"""
+  requestFileUploadPresigned(input: RequestFileUploadInput!): PresignedPostCredentials!
+
+  """Request credentials to access a file"""
+  requestFileAccess(input: RequestFileAccessInput!): AccessCredentials!
+
+  """Create an image from array-like data"""
+  fromTraceLike(input: FromTraceLikeInput!): Trace!
+
+  """Pin an image for quick access"""
+  pinImage(input: PinImageInput!): Trace!
+
+  """Update an existing image's metadata"""
+  updateImage(input: UpdateTraceInput!): Trace!
+
+  """Delete an existing image"""
+  deleteImage(input: DeleteTraceInput!): ID!
+
+  """Create a file from file-like data"""
+  fromFileLike(input: FromFileLike!): File!
+
+  """Delete an existing file"""
+  deleteFile(input: DeleteFileInput!): ID!
+
+  """Create a new dataset to organize data"""
+  createDataset(input: CreateDatasetInput!): Dataset!
+
+  """Update dataset metadata"""
+  updateDataset(input: ChangeDatasetInput!): Dataset!
+
+  """Revert dataset to a previous version"""
+  revertDataset(input: RevertInput!): Dataset!
+
+  """Pin a dataset for quick access"""
+  pinDataset(input: PinDatasetInput!): Dataset!
+
+  """Delete an existing dataset"""
+  deleteDataset(input: DeleteDatasetInput!): ID!
+
+  """Add datasets as children of another dataset"""
+  putDatasetsInDataset(input: AssociateInput!): Dataset!
+
+  """Remove datasets from being children of another dataset"""
+  releaseDatasetsFromDataset(input: DesociateInput!): Dataset!
+
+  """Add images to a dataset"""
+  putImagesInDataset(input: AssociateInput!): Dataset!
+
+  """Remove images from a dataset"""
+  releaseImagesFromDataset(input: DesociateInput!): Dataset!
+
+  """Add files to a dataset"""
+  putFilesInDataset(input: AssociateInput!): Dataset!
+
+  """Remove files from a dataset"""
+  releaseFilesFromDataset(input: DesociateInput!): Dataset!
+
+  """Create a new region of interest"""
+  createRoi(input: RoiInput!): ROI!
+
+  """Update an existing region of interest"""
+  updateRoi(input: UpdateRoiInput!): ROI!
+
+  """Pin a region of interest for quick access"""
+  pinRoi(input: PinROIInput!): ROI!
+
+  """Delete an existing region of interest"""
+  deleteRoi(input: DeleteRoiInput!): ID!
+}
+
+"""
+Temporary Credentials for a file upload that can be used by a Client (e.g. in a python datalayer)
+"""
+type Credentials {
+  status: String!
+  accessKey: String!
+  secretKey: String!
+  sessionToken: String!
+  datalayer: String!
+  bucket: String!
+  key: String!
+  store: String!
+}
+
+input RequestUploadInput {
+  key: String!
+  datalayer: String!
+}
+
+"""
+Temporary Credentials for a file download that can be used by a Client (e.g. in a python datalayer)
+"""
+type AccessCredentials {
+  accessKey: String!
+  secretKey: String!
+  sessionToken: String!
+  bucket: String!
+  key: String!
+  path: String!
+}
+
+input RequestAccessInput {
+  store: ID!
+  duration: Int = null
+}
+
+"""
+Temporary Credentials for a file upload that can be used by a Client (e.g. in a python datalayer)
+"""
+type PresignedPostCredentials {
+  key: String!
+  xAmzAlgorithm: String!
+  xAmzCredential: String!
+  xAmzDate: String!
+  xAmzSignature: String!
+  policy: String!
+  datalayer: String!
+  bucket: String!
+  store: String!
+}
+
+input RequestMediaUploadInput {
+  key: String!
+  datalayer: String!
+}
+
+input RequestFileUploadInput {
+  key: String!
+  datalayer: String!
+}
+
+input RequestFileAccessInput {
+  store: ID!
+  duration: Int
+}
+
+"""Input type for creating an image from an array-like object"""
+input FromTraceLikeInput {
+  """The array-like object to create the image from"""
+  array: TraceLike!
+
+  """The name of the image"""
+  name: String!
+
+  """Optional dataset ID to associate the image with"""
+  dataset: ID = null
+
+  """Optional list of tags to associate with the image"""
+  tags: [String!] = null
+}
+
+"""
+The `ArrayLike` scalar type represents a reference to a store previously created by the user n a datalayer
+"""
+scalar TraceLike
+
+input PinImageInput {
+  id: ID!
+  pin: Boolean!
+}
+
+input UpdateTraceInput {
+  id: ID!
+  tags: [String!] = null
+  name: String = null
+}
+
+input DeleteTraceInput {
+  id: ID!
+}
+
+input FromFileLike {
+  name: String!
+  file: FileLike!
+  origins: [ID!] = null
+  dataset: ID = null
+}
+
+"""
+The `FileLike` scalar type represents a reference to a big file storage previously created by the user n a datalayer
+"""
+scalar FileLike
+
+input DeleteFileInput {
+  id: ID!
+}
+
+input CreateDatasetInput {
+  name: String!
+}
+
+input ChangeDatasetInput {
+  name: String!
+  id: ID!
+}
+
+input RevertInput {
+  id: ID!
+  historyId: ID!
+}
+
+input PinDatasetInput {
+  id: ID!
+  pin: Boolean!
+}
+
+input DeleteDatasetInput {
+  id: ID!
+}
+
+input AssociateInput {
+  selfs: [ID!]!
+  other: ID!
+}
+
+input DesociateInput {
+  selfs: [ID!]!
+  other: ID!
+}
+
+input RoiInput {
+  """The image this ROI belongs to"""
+  image: ID!
+
+  """The vector coordinates defining the ROI"""
+  vectors: [FiveDVector!]!
+
+  """The type/kind of ROI"""
+  kind: RoiKind!
+}
+
+input UpdateRoiInput {
+  roi: ID!
+  vectors: [FiveDVector!] = null
+  kind: RoiKind = null
+  entity: ID = null
+  entityKind: ID = null
+  entityGroup: ID = null
+  entityParent: ID = null
+}
+
+input PinROIInput {
+  id: ID!
+  pin: Boolean!
+}
+
+input DeleteRoiInput {
+  id: ID!
+}
+
+type Subscription {
+  """Subscribe to real-time image history events"""
+  historyEvents: Trace!
+
+  """Subscribe to real-time ROI updates"""
+  rois(image: ID!): RoiEvent!
+
+  """Subscribe to real-time image updates"""
+  traces(dataset: ID = null): TraceEvent!
+
+  """Subscribe to real-time file updates"""
+  files(dataset: ID = null): FileEvent!
+}
+
+type RoiEvent {
+  create: ROI
+  delete: ID
+  update: ROI
+}
+
+type TraceEvent {
+  create: Trace
+  delete: ID
+  update: Trace
+}
+
+type FileEvent {
+  create: File
+  delete: ID
+  update: File
+  moved: File
+}
