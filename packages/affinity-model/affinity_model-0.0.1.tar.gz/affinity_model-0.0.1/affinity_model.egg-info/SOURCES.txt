@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+affinity_model/__init__.py
+affinity_model/v1.py
+affinity_model/v2.py
+affinity_model.egg-info/PKG-INFO
+affinity_model.egg-info/SOURCES.txt
+affinity_model.egg-info/dependency_links.txt
+affinity_model.egg-info/top_level.txt
+affinity_model/tests/__init__.py
+affinity_model/tests/test_v1.py

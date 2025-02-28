@@ -1,0 +1,20 @@
+[project]
+name = "affinity-model"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+]
+dynamic = ["authors", "classifiers", "version", "description"]
+
+[dependency-groups]
+dev = [
+    "datamodel-code-generator>=0.28.1",
+    "freezegun>=1.5.1",
+    "pydantic>=2.10.6",
+    "pytest-watcher>=0.4.3",
+    "pytest>=8.3.4",
+    "syrupy>=4.8.2",
+]
+
+[tool.black]
+include = '.*py$'
