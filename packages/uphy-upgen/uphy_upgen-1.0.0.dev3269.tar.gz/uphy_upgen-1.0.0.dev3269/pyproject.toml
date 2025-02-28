@@ -1,0 +1,47 @@
+[project]
+name = "uphy-upgen"
+version = "1.0.0.dev3269"
+description = "U-Phy Generator"
+readme = "README.md"
+license = {file = "LICENSE.txt"}
+authors = [
+    {name="RT-Labs", email="support@rt-labs.com"}
+]
+requires-python = ">=3.8"
+
+dependencies = [
+    "pydantic (>=1.10.7,<2.0.0)",
+    "jinja2 (>=3.1.2,<4.0.0)",
+    "crc8 (>=0.2.0,<1.0.0)",
+    "xmlschema (>=3.0.1,<4.0.0)",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest (>=7.4.4,<8.0.0)",
+    "pytest-cov (>=5.0.0,<6.0.0)"
+]
+compile = [
+    "nuitka (>=2.4.11,<3.0.0)"
+]
+
+[project.scripts]
+upgen = 'upgen.cli:run'
+
+[project.urls]
+"RT-Labs" = "https://rt-labs.com/"
+"U-Phy" = "https://rt-labs.com/u-phy"
+"Documentation" = "https://docs.rt-labs.com/u-phy"
+
+[tool.poetry]
+packages = [
+    { include = "upgen" },
+]
+requires-poetry = ">=2.0"
+
+[tool.pytest.ini_options]
+addopts = "--cov=upgen --cov-report term-missing"
+
+[build-system]
+requires = ["poetry-core>=2.0"]
+build-backend = "poetry.core.masonry.api"
