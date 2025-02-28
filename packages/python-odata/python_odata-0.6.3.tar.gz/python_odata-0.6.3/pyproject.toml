@@ -1,0 +1,38 @@
+[tool.poetry]
+name = "python-odata"
+version = "0.6.3"
+description = "A simple library for read/write access to OData services."
+license="MIT"
+authors = ["Tuomas Mursu <tuomas.mursu@kapsi.fi>", "Cristian Libotean <eblis102@gmail.com>"]
+readme = "README.md"
+packages = [
+	{ include = "odata/*.py" },
+]
+include = [
+  { path = "odata/reflect-templates", format = ["sdist", "wheel"] }
+]
+
+[tool.poetry.dependencies]
+python = ">=3.8"
+requests = ">=2.32.0"
+python-dateutil = ">=2.8.2"
+rich = ">=13.3.1"
+mako = ">=1.2.4"
+
+
+[tool.poetry.group.dev.dependencies]
+responses = ">=0.22.0"
+pytz = ">=2022.7.1"
+
+[tool.poetry.group.docs]
+optional = true
+
+[tool.poetry.group.docs.dependencies]
+myst-parser = ">=0.16"
+sphinx = ">=4.0"
+sphinx-autobuild = ">=2021.0"
+sphinx-rtd-theme = ">=1.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
