@@ -1,0 +1,18 @@
+// How to use:
+// The file is split into sections, each section is used to determine the behaviour of the script.
+// The sections are:
+// - exclude: files to exclude from the context using regex, one regex per line
+// - include: files to include in the context using regex, one regex per line (doesn't work yet)
+// - messsage: starting message before the file data, used to help prompt the LLM
+//
+// Exclude takes precedence over include.
+// No section is required, grabit will still run without a .grabit file, this just helps control it.
+// Comments are denoted by `//` at the start of a line.
+// The message is prepended to the start of the context and is used to guide the LLM.
+
+## exclude
+
+## include
+
+## message
+
