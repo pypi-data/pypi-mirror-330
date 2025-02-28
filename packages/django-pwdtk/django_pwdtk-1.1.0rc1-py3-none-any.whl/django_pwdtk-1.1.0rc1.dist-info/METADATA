@@ -1,0 +1,39 @@
+Metadata-Version: 2.1
+Name: django-pwdtk
+Version: 1.1.0rc1
+Summary: Package to tune Django password authentication
+Author-email: MHComm <info@mhcomm.fr>
+License: MIT
+Project-URL: Homepage, https://github.com/mhcomm/django-pwdtk
+Project-URL: Documentation, https://github.com/mhcomm/django-pwdtk
+Project-URL: Source, https://github.com/mhcomm/django-pwdtk
+Project-URL: SayThanks, https://github.com/mhcomm
+Project-URL: Funding, https://donate.pypi.org
+Project-URL: Tracker, https://github.com/mhcomm/django-pwdtk/issues
+Keywords: django,authentication,password
+Classifier: Development Status :: 3 - Alpha
+Requires-Python: <4,>=3.7
+Description-Content-Type: text/x-rst
+License-File: LICENSE
+Requires-Dist: django-jsonfield-backport
+Requires-Dist: future
+Requires-Dist: minibelt
+Requires-Dist: python-dateutil
+Requires-Dist: pytz
+
+PWDTK Password Tool Kit for Django
+====================================
+
+.. image:: https://api.travis-ci.com/mhcomm/django-pwdtk.svg?branch=master
+    :target: https://travis-ci.com/mhcomm/django-pwdtk
+
+
+You use Django's default password authentification, but miss some tweaks
+like:
+* lockout after too many failed logins
+* max life time for passwords
+* password reset (send mail with reset link) (not implemented so far)
+
+This package provides solutions for these problems.
+PWDTK is compatible with python 2.7, and >=3.5
+It is compatible with django 1.11, 2.2
