@@ -1,0 +1,3 @@
+[console_scripts]
+clean_mails = imio.email.dms.main:clean_mails
+process_mails = imio.email.dms.main:process_mails

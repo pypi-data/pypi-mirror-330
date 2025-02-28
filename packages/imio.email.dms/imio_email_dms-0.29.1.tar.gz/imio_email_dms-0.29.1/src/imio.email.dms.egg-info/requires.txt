@@ -1,0 +1,11 @@
+setuptools
+docopt
+zc.lockfile
+imio.email.parser
+imio.pyutils
+requests
+six
+configparser
+
+[:python_version < "3.0"]
+pathlib2
