@@ -1,0 +1,6 @@
+Metadata-Version: 2.2
+Name: JW96_Solver
+Version: 0.1.0
+Summary: A Python library for solving the Traveling Salesperson Problem using various algorithms.
+Author-email: Justin <justin.williams1@students.cau.edu>
+Requires-Dist: numpy
