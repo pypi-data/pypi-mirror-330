@@ -1,0 +1,84 @@
+Metadata-Version: 2.3
+Name: textforge
+Version: 0.0.8
+Summary: Automated Synthetic Data Generation, Distillation, Quantization and Deployment Pipeline.
+License: MIT
+Author: ameen-91
+Author-email: mohammedameen9011@gmail.com
+Requires-Python: >=3.11,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Dist: datasets (>=3.2.0,<4.0.0)
+Requires-Dist: evaluate (>=0.4.3,<0.5.0)
+Requires-Dist: fastapi[standard] (>=0.115.8,<0.116.0)
+Requires-Dist: google-genai (>=1.2.0,<2.0.0)
+Requires-Dist: ipywidgets (>=8.1.5,<9.0.0)
+Requires-Dist: onnx (>=1.17.0,<2.0.0)
+Requires-Dist: onnxruntime (>=1.20.1,<2.0.0)
+Requires-Dist: openai (>=1.63.0,<2.0.0)
+Requires-Dist: pandas (>=2.2.3,<3.0.0)
+Requires-Dist: peft (>=0.14.0,<0.15.0)
+Requires-Dist: pytest (>=8.3.4,<9.0.0)
+Requires-Dist: python-dotenv (>=1.0.1,<2.0.0)
+Requires-Dist: scikit-learn (>=1.6.1,<2.0.0)
+Requires-Dist: seaborn (>=0.13.2,<0.14.0)
+Requires-Dist: tqdm (>=4.67.1,<5.0.0)
+Requires-Dist: transformers (>=4.48.3,<5.0.0)
+Requires-Dist: typer (>=0.15.1,<0.16.0)
+Description-Content-Type: text/markdown
+
+# Infero
+
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/textforge)
+![PyPI - Version](https://img.shields.io/pypi/v/textforge)
+![PyPI - Downloads](https://img.shields.io/pypi/dw/textforge)
+[![CI](https://github.com/norsulabs/textforge/actions/workflows/ci.yaml/badge.svg)](https://github.com/norsulabs/textforge/actions/workflows/ci.yaml)
+![Coverage](static/coverage.svg)
+
+## Overview
+
+TextForge automates model distillation, training, quantization, and deployment for text classification. It simplifies synthetic data generation, model optimization using ONNX runtime, and FastAPI serving.
+
+### Features
+
+- Automated synthetic data generation
+- Transformer model training
+- ONNX conversion with 8-bit quantization
+- Automated model API serving with FastAPI
+<!-- - Customizable hyperparameter control -->
+
+### Installation
+
+```bash
+pip install textforge
+```
+
+## Usage
+
+```python
+import pandas as pd
+from textforge.pipeline import Pipeline
+from textforge.pipeline import PipelineConfig
+
+pipeline_config = PipelineConfig(
+    api_key,
+    labels=["positive", "negative"],
+    model_name="distilbert-base-uncased",
+    max_length=512,
+    epochs=3
+)
+
+pipeline = Pipeline(pipeline_config)
+
+data = pd.read_csv("unlabelled_data.csv")
+
+pipeline.run(data=data, save=True, serve=True)
+```
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
