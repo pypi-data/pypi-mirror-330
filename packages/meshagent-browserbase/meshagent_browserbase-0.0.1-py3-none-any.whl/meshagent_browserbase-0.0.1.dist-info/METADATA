@@ -1,0 +1,26 @@
+Metadata-Version: 2.2
+Name: meshagent-browserbase
+Version: 0.0.1
+Summary: Browserbase support for Meshagent
+Home-page: 
+License: MIT
+Project-URL: Documentation, https://meshagent.com
+Project-URL: Website, https://meshagent.com
+Project-URL: Source, https://github.com/meshagent
+Requires-Python: >=3.9.0
+Description-Content-Type: text/markdown
+Requires-Dist: pytest>=8.3.4
+Requires-Dist: pytest-asyncio>=0.24.0
+Requires-Dist: meshagent-api>=0.0.1
+Requires-Dist: meshagent-tools>=0.0.1
+Requires-Dist: meshagent-agents>=0.0.1
+Requires-Dist: browserbase>=1.0.5
+Requires-Dist: playwright>=1.48.0
+Requires-Dist: browser-use>=0.1.36
+Requires-Dist: langchain-openai>=0.3.1
+Dynamic: description-content-type
+Dynamic: license
+Dynamic: project-url
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
