@@ -1,0 +1,55 @@
+{
+    "request": {
+      "method": "POST",
+      "urlPath": "/v1/search/test/test-collection/semantic",
+      "headers": {
+        "Authorization": {
+          "contains": "Bearer testkey"
+        }
+      },
+      "bodyPatterns": [
+        {
+          "equalToJson": {
+            "text": "Test search",
+            "options": {
+              "embedding_thresholds": {
+                "default": 0.5
+              }
+            }
+          }
+        }
+      ]
+    },
+    "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "request_id": 1718109280970,
+      "status": 200,
+      "message": "Success.",
+      "results": [
+        {
+          "id": "id_28",
+          "score": 0.6328849792480469,
+          "sort_score": 0.6328849792480469,
+          "variants": []
+        },
+        {
+          "id": "id_15",
+          "score": 0.6328849792480469,
+          "sort_score": 0.6328849792480469,
+          "variants": []
+        },
+        {
+          "id": "id_22",
+          "score": 0.6328849792480469,
+          "sort_score": 0.6328849792480469,
+          "variants": []
+        }
+      ],
+      "execution_time": 7
+    }
+  }
+  }

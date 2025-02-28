@@ -1,0 +1,17 @@
+{
+    "request": {
+      "method": "DELETE",
+      "urlPath": "/v1/account/test/collection/collection-to-delete",
+      "headers": {
+        "Authorization": {
+          "contains": "Bearer testkey"
+        }
+      }
+    },
+    "response": {
+      "status": 200,
+      "headers": {
+        "Content-Type": "application/json"
+      }
+    }
+  }
