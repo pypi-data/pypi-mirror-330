@@ -1,0 +1,12 @@
+dtcc-core
+dtcc-data
+
+[docs]
+sphinx
+sphinx-immaterial
+
+[test]
+pytest
+
+[viewer]
+dtcc-viewer
