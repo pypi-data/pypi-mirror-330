@@ -1,0 +1,58 @@
+Metadata-Version: 2.3
+Name: pgtg
+Version: 0.5.0
+Summary: Python simulation of a driving challange. Compatible with the Gymnasium API standard.
+Author: Timo P. Gros
+Author-email: timopgros@cs.uni-saarland.de
+Requires-Python: >=3.10,<4.0
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Science/Research
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Requires-Dist: Pillow (>=10.1,<11.0)
+Requires-Dist: graph-theory (>=2022.4.3,<2023.0.0)
+Requires-Dist: gymnasium (>=0.28.1,<0.29.0)
+Requires-Dist: jupyter (>=1.0.0,<2.0.0)
+Requires-Dist: matplotlib (>=3.4.3,<4.0.0)
+Requires-Dist: numpy (>=1.26.3,<2.0.0)
+Requires-Dist: pygame (>=2.5.2,<3.0.0)
+Description-Content-Type: text/markdown
+
+# ProcGrid Traffic Gym (PGTG)
+
+ProcGrid Traffic Gym (PGTG) is a driving simulation on a grid with procedural generated maps and traffic. It is fully compatible with the [Gymnasium API standard](https://gymnasium.farama.org/).
+
+## Getting Started
+
+### Installation
+PGTG is available on [PyPi](https://pypi.org/project/pgtg/) and can be installed with all major package managers:
+```bash
+pip install pgtg
+```
+
+### Usage
+The easiest way to use PGTG is to create the environment with gymnasium:
+```python
+import pgtg
+env = gymnasium.make("pgtg-v2")
+```
+
+The package relies on ```import``` side-effects to register the environment name so, even though the package is never explicitly used, its import is necessary to access the environment.  
+
+The environment constructor can also be used directly:
+```python
+from pgtg import PGTGEnv
+env = PGTGEnv()
+```
+
+## [Documentation](https://pgtg-org.github.io/pgtg)
+
+1. [Getting Started](https://pgtg-org.github.io/pgtg/Getting_Started.md)
+2. [The Environment](https://pgtg-org.github.io/pgtg/Environment.md)
+3. [Customizing PGTG](https://pgtg-org.github.io/pgtg/Constructor_Arguments.md)
+4. [Version History](https://pgtg-org.github.io/pgtg/Version_History.md)
