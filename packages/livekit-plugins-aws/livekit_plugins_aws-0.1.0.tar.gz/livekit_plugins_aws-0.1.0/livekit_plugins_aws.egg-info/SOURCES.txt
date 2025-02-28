@@ -1,0 +1,17 @@
+README.md
+pyproject.toml
+setup.py
+livekit/plugins/aws/__init__.py
+livekit/plugins/aws/_utils.py
+livekit/plugins/aws/llm.py
+livekit/plugins/aws/log.py
+livekit/plugins/aws/models.py
+livekit/plugins/aws/py.typed
+livekit/plugins/aws/stt.py
+livekit/plugins/aws/tts.py
+livekit/plugins/aws/version.py
+livekit_plugins_aws.egg-info/PKG-INFO
+livekit_plugins_aws.egg-info/SOURCES.txt
+livekit_plugins_aws.egg-info/dependency_links.txt
+livekit_plugins_aws.egg-info/requires.txt
+livekit_plugins_aws.egg-info/top_level.txt
