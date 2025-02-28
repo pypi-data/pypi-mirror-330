@@ -1,0 +1,17 @@
+LICENSE.md
+README.md
+setup.py
+src/fleming/__init__.py
+src/fleming/code_summary/__init__.py
+src/fleming/code_summary/fourO_mini_summary.py
+src/fleming/code_summary/repo_contents_tokenisation.py
+src/fleming/discovery/__init__.py
+src/fleming/discovery/corpus_creation.py
+src/fleming/discovery/model_query.py
+src/fleming/discovery/model_serve.py
+src/fleming/discovery/model_train_register.py
+src/project_fleming.egg-info/PKG-INFO
+src/project_fleming.egg-info/SOURCES.txt
+src/project_fleming.egg-info/dependency_links.txt
+src/project_fleming.egg-info/requires.txt
+src/project_fleming.egg-info/top_level.txt
