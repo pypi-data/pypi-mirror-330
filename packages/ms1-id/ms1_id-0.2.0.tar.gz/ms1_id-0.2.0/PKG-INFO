@@ -1,0 +1,359 @@
+Metadata-Version: 2.1
+Name: ms1_id
+Version: 0.2.0
+Summary: Annotate LC-MS1 data, MS imaging data or pseudo MS/MS spectra using reference MS/MS libraries
+Author-email: Shipei Xing <philipxsp@hotmail.com>
+License:                                  Apache License
+                                   Version 2.0, January 2004
+                                http://www.apache.org/licenses/
+        
+           TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
+        
+           1. Definitions.
+        
+              "License" shall mean the terms and conditions for use, reproduction,
+              and distribution as defined by Sections 1 through 9 of this document.
+        
+              "Licensor" shall mean the copyright owner or entity authorized by
+              the copyright owner that is granting the License.
+        
+              "Legal Entity" shall mean the union of the acting entity and all
+              other entities that control, are controlled by, or are under common
+              control with that entity. For the purposes of this definition,
+              "control" means (i) the power, direct or indirect, to cause the
+              direction or management of such entity, whether by contract or
+              otherwise, or (ii) ownership of fifty percent (50%) or more of the
+              outstanding shares, or (iii) beneficial ownership of such entity.
+        
+              "You" (or "Your") shall mean an individual or Legal Entity
+              exercising permissions granted by this License.
+        
+              "Source" form shall mean the preferred form for making modifications,
+              including but not limited to software source code, documentation
+              source, and configuration files.
+        
+              "Object" form shall mean any form resulting from mechanical
+              transformation or translation of a Source form, including but
+              not limited to compiled object code, generated documentation,
+              and conversions to other media types.
+        
+              "Work" shall mean the work of authorship, whether in Source or
+              Object form, made available under the License, as indicated by a
+              copyright notice that is included in or attached to the work
+              (an example is provided in the Appendix below).
+        
+              "Derivative Works" shall mean any work, whether in Source or Object
+              form, that is based on (or derived from) the Work and for which the
+              editorial revisions, annotations, elaborations, or other modifications
+              represent, as a whole, an original work of authorship. For the purposes
+              of this License, Derivative Works shall not include works that remain
+              separable from, or merely link (or bind by name) to the interfaces of,
+              the Work and Derivative Works thereof.
+        
+              "Contribution" shall mean any work of authorship, including
+              the original version of the Work and any modifications or additions
+              to that Work or Derivative Works thereof, that is intentionally
+              submitted to Licensor for inclusion in the Work by the copyright owner
+              or by an individual or Legal Entity authorized to submit on behalf of
+              the copyright owner. For the purposes of this definition, "submitted"
+              means any form of electronic, verbal, or written communication sent
+              to the Licensor or its representatives, including but not limited to
+              communication on electronic mailing lists, source code control systems,
+              and issue tracking systems that are managed by, or on behalf of, the
+              Licensor for the purpose of discussing and improving the Work, but
+              excluding communication that is conspicuously marked or otherwise
+              designated in writing by the copyright owner as "Not a Contribution."
+        
+              "Contributor" shall mean Licensor and any individual or Legal Entity
+              on behalf of whom a Contribution has been received by Licensor and
+              subsequently incorporated within the Work.
+        
+           2. Grant of Copyright License. Subject to the terms and conditions of
+              this License, each Contributor hereby grants to You a perpetual,
+              worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+              copyright license to reproduce, prepare Derivative Works of,
+              publicly display, publicly perform, sublicense, and distribute the
+              Work and such Derivative Works in Source or Object form.
+        
+           3. Grant of Patent License. Subject to the terms and conditions of
+              this License, each Contributor hereby grants to You a perpetual,
+              worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+              (except as stated in this section) patent license to make, have made,
+              use, offer to sell, sell, import, and otherwise transfer the Work,
+              where such license applies only to those patent claims licensable
+              by such Contributor that are necessarily infringed by their
+              Contribution(s) alone or by combination of their Contribution(s)
+              with the Work to which such Contribution(s) was submitted. If You
+              institute patent litigation against any entity (including a
+              cross-claim or counterclaim in a lawsuit) alleging that the Work
+              or a Contribution incorporated within the Work constitutes direct
+              or contributory patent infringement, then any patent licenses
+              granted to You under this License for that Work shall terminate
+              as of the date such litigation is filed.
+        
+           4. Redistribution. You may reproduce and distribute copies of the
+              Work or Derivative Works thereof in any medium, with or without
+              modifications, and in Source or Object form, provided that You
+              meet the following conditions:
+        
+              (a) You must give any other recipients of the Work or
+                  Derivative Works a copy of this License; and
+        
+              (b) You must cause any modified files to carry prominent notices
+                  stating that You changed the files; and
+        
+              (c) You must retain, in the Source form of any Derivative Works
+                  that You distribute, all copyright, patent, trademark, and
+                  attribution notices from the Source form of the Work,
+                  excluding those notices that do not pertain to any part of
+                  the Derivative Works; and
+        
+              (d) If the Work includes a "NOTICE" text file as part of its
+                  distribution, then any Derivative Works that You distribute must
+                  include a readable copy of the attribution notices contained
+                  within such NOTICE file, excluding those notices that do not
+                  pertain to any part of the Derivative Works, in at least one
+                  of the following places: within a NOTICE text file distributed
+                  as part of the Derivative Works; within the Source form or
+                  documentation, if provided along with the Derivative Works; or,
+                  within a display generated by the Derivative Works, if and
+                  wherever such third-party notices normally appear. The contents
+                  of the NOTICE file are for informational purposes only and
+                  do not modify the License. You may add Your own attribution
+                  notices within Derivative Works that You distribute, alongside
+                  or as an addendum to the NOTICE text from the Work, provided
+                  that such additional attribution notices cannot be construed
+                  as modifying the License.
+        
+              You may add Your own copyright statement to Your modifications and
+              may provide additional or different license terms and conditions
+              for use, reproduction, or distribution of Your modifications, or
+              for any such Derivative Works as a whole, provided Your use,
+              reproduction, and distribution of the Work otherwise complies with
+              the conditions stated in this License.
+        
+           5. Submission of Contributions. Unless You explicitly state otherwise,
+              any Contribution intentionally submitted for inclusion in the Work
+              by You to the Licensor shall be under the terms and conditions of
+              this License, without any additional terms or conditions.
+              Notwithstanding the above, nothing herein shall supersede or modify
+              the terms of any separate license agreement you may have executed
+              with Licensor regarding such Contributions.
+        
+           6. Trademarks. This License does not grant permission to use the trade
+              names, trademarks, service marks, or product names of the Licensor,
+              except as required for reasonable and customary use in describing the
+              origin of the Work and reproducing the content of the NOTICE file.
+        
+           7. Disclaimer of Warranty. Unless required by applicable law or
+              agreed to in writing, Licensor provides the Work (and each
+              Contributor provides its Contributions) on an "AS IS" BASIS,
+              WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+              implied, including, without limitation, any warranties or conditions
+              of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A
+              PARTICULAR PURPOSE. You are solely responsible for determining the
+              appropriateness of using or redistributing the Work and assume any
+              risks associated with Your exercise of permissions under this License.
+        
+           8. Limitation of Liability. In no event and under no legal theory,
+              whether in tort (including negligence), contract, or otherwise,
+              unless required by applicable law (such as deliberate and grossly
+              negligent acts) or agreed to in writing, shall any Contributor be
+              liable to You for damages, including any direct, indirect, special,
+              incidental, or consequential damages of any character arising as a
+              result of this License or out of the use or inability to use the
+              Work (including but not limited to damages for loss of goodwill,
+              work stoppage, computer failure or malfunction, or any and all
+              other commercial damages or losses), even if such Contributor
+              has been advised of the possibility of such damages.
+        
+           9. Accepting Warranty or Additional Liability. While redistributing
+              the Work or Derivative Works thereof, You may choose to offer,
+              and charge a fee for, acceptance of support, warranty, indemnity,
+              or other liability obligations and/or rights consistent with this
+              License. However, in accepting such obligations, You may act only
+              on Your own behalf and on Your sole responsibility, not on behalf
+              of any other Contributor, and only if You agree to indemnify,
+              defend, and hold each Contributor harmless for any liability
+              incurred by, or claims asserted against, such Contributor by reason
+              of your accepting any such warranty or additional liability.
+        
+           END OF TERMS AND CONDITIONS
+        
+           APPENDIX: How to apply the Apache License to your work.
+        
+              To apply the Apache License to your work, attach the following
+              boilerplate notice, with the fields enclosed by brackets "[]"
+              replaced with your own identifying information. (Don't include
+              the brackets!)  The text should be enclosed in the appropriate
+              comment syntax for the file format. We also recommend that a
+              file or class name and description of purpose be included on the
+              same "printed page" as the copyright notice for easier
+              identification within third-party archives.
+        
+           Copyright 2024 Shipei Xing
+        
+           Licensed under the Apache License, Version 2.0 (the "License");
+           you may not use this file except in compliance with the License.
+           You may obtain a copy of the License at
+        
+               http://www.apache.org/licenses/LICENSE-2.0
+        
+           Unless required by applicable law or agreed to in writing, software
+           distributed under the License is distributed on an "AS IS" BASIS,
+           WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+           See the License for the specific language governing permissions and
+           limitations under the License.
+        
+Project-URL: Homepage, https://github.com/Philipbear/ms1_id
+Project-URL: Bug Tracker, https://github.com/Philipbear/ms1_id/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: masscube==1.0.11
+Requires-Dist: numba>=0.56.4
+Requires-Dist: pyimzML>=1.5.4
+Requires-Dist: requests>=2.28.2
+Requires-Dist: pyImagingMSpec>=0.1.4
+
+# ms1_id
+[![Developer](https://img.shields.io/badge/Developer-Shipei_Xing-orange?logo=github&logoColor=white)](https://scholar.google.ca/citations?user=en0zumcAAAAJ&hl=en)
+[![PyPI](https://img.shields.io/pypi/v/ms1_id?color=green)](https://pypi.org/project/ms1_id/)
+![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg?style=flat&logo=apache)
+![Python](https://img.shields.io/badge/Python-3.9+-green.svg?style=flat&logo=python&logoColor=lightblue)
+
+Full-scan MS data from both LC-MS and MS imaging capture multiple ion forms, including their in/post-source fragments. 
+Here we leverage such fragments to structurally annotate full-scan data from **LC-MS** or **MS imaging** by matching against MS/MS spectral libraries.
+
+`ms1_id` is a Python package that annotates full-scan MS data using tandem MS libraries, specifically:
+- annotate pseudo MS/MS spectra: **mgf** files
+- annotate LC-MS data: **mzML** or **mzXML** files
+- annotate MS imaging data: **imzML** and **ibd** files
+- build indexed MS/MS libraries from **mgf** or **msp** files (see [Flash entropy](https://github.com/YuanyueLi/FlashEntropySearch) for more details)
+
+#### Workflow
+![Annotation workflow](fig/workflow.png)
+
+
+#### Example annotations
+![Example annotation](fig/eg_annotation.png)
+
+## Installation
+```bash
+pip install ms1_id
+```
+Python 3.9+ is required. It has been tested on macOS (14.6, M2 Max) and Linux (Ubuntu 20.04).
+
+
+## Usage
+
+Note: Indexed libraries are needed for the workflow. You can download the indexed GNPS library [here](https://github.com/Philipbear/ms1_id/releases).
+```bash
+# For LC-MS data
+wget https://github.com/Philipbear/ms1_id/releases/latest/download/gnps.zip
+unzip gnps.zip -d db
+
+# For MS imaging data
+wget https://github.com/Philipbear/ms1_id/releases/latest/download/gnps_minmz100.zip
+unzip gnps_minmz100.zip -d db
+```
+
+---------
+
+### Annotate pseudo MS/MS spectra
+If you have pseudo MS/MS spectra in **mgf** format, you can directly annotate them:
+  ```bash
+  ms1_id annotate --input_file pseudo_msms.mgf --libs db/gnps.pkl db/gnps_k10.pkl --min_score 0.7 --min_matched_peak 3
+  ```
+Here, two indexed libraries are searched against, and the result tsv files will be saved in the same directory as the input file.
+
+For more options, run:
+  ```bash
+  ms1_id annotate --help
+  ```
+
+---------
+
+### Annotate LC-MS data
+To annotate LC-MS data, here is an example command:
+  ```bash
+  ms1_id lcms --project_dir lc_ms --sample_dir data --ms1_id_libs db/gnps.pkl db/gnps_k10.pkl --ms2_id_lib db/gnps.pkl
+  ```
+Here, `lc_ms` is the project directory. Raw mzML or mzXML files are stored in the `lc_ms/data` folder. Both MS1 and MS/MS annotations will be performed. For MS1 annotation, both gnps.pkl and gnps_k10.pkl libraries are used. For MS/MS annotation, the gnps.pkl library is used. Results can be accessed from `aligned_feature_table.tsv`.
+
+For more options, run:
+  ```bash
+  ms1_id lcms --help
+  ```
+Expected runtime is <5 min for a single LC-MS file. If it takes longer than 10 min, please increase the `--mass_detect_int_tol` parameter (default: 2e5 for Orbitraps, 5e2 for QTOFs).
+
+---------
+
+### Annotate MS imaging data
+To annotate MS imaging data, here is an example command:
+  ```bash
+  ms1_id msi --input_dir msi --libs db/gnps_minmz100.pkl db/gnps_minmz100_k10.pkl --n_cores 12
+  ```
+Here, `msi` is the input directory consisting of the imzML and ibd files. All the imzML files in the directory will be annotated individually.
+Two libraries are used simultaneously, and 12 cores will be used for parallel processing. Annotation results can be accessed from `ms1_id_annotations_derep.tsv`
+
+For more options, run:
+  ```bash
+  ms1_id msi --help
+  ```
+Expected runtime is ~2-10 min for a single MS imaging dataset if at least 12 cores are available.
+
+---------
+
+### Build indexed MS/MS libraries
+To build your own indexed library, run:
+  ```bash
+  ms1_id index --ms2db library.msp --peak_scale_k 10 --peak_intensity_power 0.5
+  ```
+
+For more options, run:
+  ```bash
+  ms1_id index --help
+  ```
+
+## Demo
+We provide [a demo script](https://github.com/Philipbear/ms1_id/blob/main/run.sh) to prepare the environment, download libraries, download LC-MS data and run the annotation workflow. 
+```bash
+bash run.sh
+```
+
+
+## Citation
+> Shipei Xing, Vincent Charron-Lamoureux, Yasin El Abiead, Huaxu Yu, Oliver Fiehn, Theodore Alexandrov, Pieter C. Dorrestein. Annotating full-scan MS data using tandem MS libraries. [bioRxiv 2024](https://www.biorxiv.org/content/10.1101/2024.10.14.618269v1).
+
+
+## Data
+- GNPS MS/MS library
+  - [ALL_GNPS_NO_PROPOGATED.msp](https://external.gnps2.org/gnpslibrary), downloaded on July 17, 2024
+  - Indexed version [available here](https://github.com/Philipbear/ms1_id/releases)
+- LC-MS data
+  - Pooled chemical standards ([GNPS/MassIVE MSV000095789](https://massive.ucsd.edu/ProteoSAFe/QueryMSV?id=MSV000095789))
+  - NIST human feces (Q Exactive) ([GNPS/MassIVE MSV000095787](https://massive.ucsd.edu/ProteoSAFe/QueryMSV?id=MSV000095787))
+  - IBD dataset (Q Exactive) ([original paper](https://www.nature.com/articles/s41586-019-1237-9), [PR000639 data](https://www.metabolomicsworkbench.org/data/DRCCMetadata.php?Mode=Project&ProjectID=PR000639))
+  - Mouse feces (lipidomics, Q-TOF) ([GNPS/MassIVE MSV000095868](https://massive.ucsd.edu/ProteoSAFe/QueryMSV?id=MSV000095868))
+  - Komagataella phaffii (yeast, Q Exactive) ([GNPS/MassIVE MSV000090053](https://massive.ucsd.edu/ProteoSAFe/QueryMSV?id=MSV000090053))
+  - Bacterial isolates (Q Exactive) ([GNPS/MassIVE MSV000085024](https://massive.ucsd.edu/ProteoSAFe/QueryMSV?id=MSV000085024))
+  - Environmental fungal strains (Q Exactive) ([GNPS/MassIVE MSV000090000](https://massive.ucsd.edu/ProteoSAFe/QueryMSV?id=MSV000090000))
+  - Isolated bacteria (Lactobacillus paracasei, Bifidobacterium longum) (TripleTOF) ([GNPS/MassIVE MSV000090025](https://massive.ucsd.edu/ProteoSAFe/QueryMSV?id=MSV000090025))
+  - Sea water DOM (Q Exactive) ([GNPS/MassIVE MSV000094338](https://massive.ucsd.edu/ProteoSAFe/QueryMSV?id=MSV000094338))
+  - Foam DOM (Q Exactive) ([GNPS/MassIVE MSV000083888](https://massive.ucsd.edu/ProteoSAFe/QueryMSV?id=MSV000083888))
+  - Ocean DOM (Q Exactive) ([GNPS/MassIVE MSV000083632](https://massive.ucsd.edu/ProteoSAFe/QueryMSV?id=MSV000083632))
+  - Plant extracts (Q-TOF) ([GNPS/MassIVE MSV000090975](https://massive.ucsd.edu/ProteoSAFe/QueryMSV?id=MSV000090975))
+  - 32 plant species (Q Exactive) ([GNPS/MassIVE MSV000090968](https://massive.ucsd.edu/ProteoSAFe/QueryMSV?id=MSV000090968))
+- MS imaging data
+  - Mouse liver with spotted standards (MALDI-Orbitrap) ([METASPACE dataset](https://metaspace2020.org/dataset/2020-12-07_03h16m14s))
+  - Mouse brain (MALDI-FTICR) ([original paper](https://www.nature.com/articles/nmeth.4072), [data](https://www.ebi.ac.uk/metabolights/editor/MTBLS313))
+  - Mouse body (MALDI-FTICR) ([METASPACE dataset](https://metaspace2020.eu/dataset/2022-07-08_20h45m00s))
+  - Hepatocytes (MALDI-Orbitrap) ([METASPACE dataset](https://metaspace2020.eu/project/Rappez_2021_SpaceM))
+
+
+## License
+This project is licensed under the Apache 2.0 License (Copyright 2024 Shipei Xing).
