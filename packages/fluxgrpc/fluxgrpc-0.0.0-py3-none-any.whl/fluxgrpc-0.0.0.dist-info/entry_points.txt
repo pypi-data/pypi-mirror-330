@@ -1,0 +1,2 @@
+[console_scripts]
+flux-grpc = fluxgrpc.client.submit:main

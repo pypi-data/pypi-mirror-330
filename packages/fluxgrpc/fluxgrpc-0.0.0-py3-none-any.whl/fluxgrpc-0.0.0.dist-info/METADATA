@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: fluxgrpc
+Version: 0.0.0
+Summary: Python gRPC functions for Flux Framework (core)
+Home-page: https://github.com/flux-framework/flux-go/tree/main/python/v1
+Author: Vanessasaurus
+Author-email: vsoch@users.noreply.github.com
+Maintainer: Vanessasaurus
+License: MIT
+Keywords: flux-framework,scheduler
+Classifier: Intended Audience :: Science/Research
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: C
+Classifier: Programming Language :: Python
+Classifier: Topic :: Software Development
+Classifier: Topic :: Scientific/Engineering
+Classifier: Operating System :: Unix
+Classifier: Programming Language :: Python :: 3.7
+Description-Content-Type: text/markdown
+Requires-Dist: grpcio
+Requires-Dist: grpcio-tools
+Requires-Dist: jsonschema
+Requires-Dist: pyyaml
+
+Python gRPC functions for Flux Framework (core)
