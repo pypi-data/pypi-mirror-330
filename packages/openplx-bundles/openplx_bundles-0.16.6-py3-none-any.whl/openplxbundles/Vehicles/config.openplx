@@ -1,0 +1,5 @@
+
+config is BundleConfig:
+    name: "Vehicles"
+    version: "0.16.6"
+    dependencies: ["Physics3D==0.16.6", "DriveTrain==0.16.6"]
