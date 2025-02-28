@@ -1,0 +1,13 @@
+numpy>=1.24.0
+scipy>=1.10.0
+matplotlib>=3.7.0
+torch>=2.0.0
+disba>=0.6.0
+torchinfo
+segyio
+ncg_optimizer
+pysdtw
+geomloss
+h5py
+obspy
+tqdm

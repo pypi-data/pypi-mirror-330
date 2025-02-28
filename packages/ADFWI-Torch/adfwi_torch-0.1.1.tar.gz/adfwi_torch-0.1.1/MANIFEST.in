@@ -1,0 +1,14 @@
+# 包含的文件
+include README_PIP.md
+include LICENSE
+
+# 排除的文件和目录
+exclude backup/*
+exclude ADFWI/dip/model_multi/*
+exclude ADFWI/dip/model2/*
+exclude ADFWI/dip/model3/*
+exclude ADFWI/dip/model4/*
+exclude ADFWI/dip/dip_acoustic_model_vp_rho.py
+exclude ADFWI/dip/dip_elastic_model_vp_vs.py
+exclude ADFWI/dip/dip_elastic_model_vp_vs_rho.py
+exclude ADFWI/dip/dip_vti_model_o4a.py
