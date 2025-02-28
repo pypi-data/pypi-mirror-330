@@ -1,0 +1,33 @@
+Metadata-Version: 2.2
+Name: uphy-device
+Version: 1.0.0.dev3269
+Author-email: RT-Labs <support@rt-labs.com>
+License: Copyright rt-labs AB, Sweden.
+        All rights reserved.
+        
+        You may not use this software in a commercial product without
+        purchasing a license. Contact sales@rt-labs.com for more information.
+        
+Project-URL: RT-Labs, https://rt-labs.com
+Project-URL: U-Phy, https://rt-labs.com/u-phy
+Project-URL: Documentation, https://docs.rt-labs.com/u-phy
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+Requires-Dist: yarl>=1.15.2
+Requires-Dist: typer>=0.12.5
+Requires-Dist: rich>=13.9.2
+Requires-Dist: dearpygui>=2.0.0
+Requires-Dist: uphy-upgen>=1.0.0
+Requires-Dist: yarl>=1.12.1
+Requires-Dist: pyserial>=3.5
+Requires-Dist: psutil>=6.1.0
+Requires-Dist: uphy
+
+# U-Phy Device Tools
+
+## Introduction
+
+U-Phy Device tools with support for controlling and executing a U-Phy server for simulation and execution of a fieldbus device inside a python program.
+
+See documentation at [https://docs.rt-labs.com/u-phy](https://docs.rt-labs.com/u-phy)
