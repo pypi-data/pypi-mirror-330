@@ -1,0 +1,3 @@
+[console_scripts]
+rclone-api-copylarge-s3 = rclone_api.cmd.copy_large_s3:main
+rclone-api-listfiles = rclone_api.cmd.list_files:main
