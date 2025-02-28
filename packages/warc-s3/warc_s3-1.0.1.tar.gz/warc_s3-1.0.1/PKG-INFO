@@ -1,0 +1,103 @@
+Metadata-Version: 2.2
+Name: warc-s3
+Version: 1.0.1
+Summary: Scalable and easy WARC records storage on S3.
+Author-email: Jan Heinrich Merker <heinrich.merker@uni-jena.de>
+Project-URL: Homepage, https://github.com/janheinrichmerker/warc-s3
+Project-URL: Bug Tracker, https://github.com/janheinrichmerker/warc-s3/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: boto3<=1.35.99,~=1.28
+Requires-Dist: importlib-metadata<9.0,>=6.5
+Requires-Dist: more-itertools<11.0,>=9.0
+Requires-Dist: tqdm~=4.64
+Requires-Dist: warcio~=1.7
+Provides-Extra: tests
+Requires-Dist: bandit[toml]~=1.7; extra == "tests"
+Requires-Dist: boto3-stubs[s3]~=1.28; extra == "tests"
+Requires-Dist: mypy~=1.6; extra == "tests"
+Requires-Dist: pytest<9.0,>=7.2; extra == "tests"
+Requires-Dist: pytest-cov<7,>=4; extra == "tests"
+Requires-Dist: ruff~=0.2.1; extra == "tests"
+Requires-Dist: types-tqdm~=4.66; extra == "tests"
+
+[![PyPi](https://img.shields.io/pypi/v/warc-s3?style=flat-square)](https://pypi.org/project/warc-s3/)
+[![CI](https://img.shields.io/github/actions/workflow/status/janheinrichmerker/warc-s3/ci.yml?branch=main&style=flat-square)](https://github.com/janheinrichmerker/warc-s3/actions/workflows/ci.yml)
+[![Code coverage](https://img.shields.io/codecov/c/github/janheinrichmerker/warc-s3?style=flat-square)](https://codecov.io/github/janheinrichmerker/warc-s3/)
+[![Python](https://img.shields.io/pypi/pyversions/warc-s3?style=flat-square)](https://pypi.org/project/warc-s3/)
+[![Issues](https://img.shields.io/github/issues/janheinrichmerker/warc-s3?style=flat-square)](https://github.com/janheinrichmerker/warc-s3/issues)
+[![Commit activity](https://img.shields.io/github/commit-activity/m/janheinrichmerker/warc-s3?style=flat-square)](https://github.com/janheinrichmerker/warc-s3/commits)
+[![Downloads](https://img.shields.io/pypi/dm/warc-s3?style=flat-square)](https://pypi.org/project/warc-s3/)
+[![License](https://img.shields.io/github/license/janheinrichmerker/warc-s3?style=flat-square)](LICENSE)
+
+# 💾 warc-s3
+
+Scalable and easy WARC records storage on S3.
+
+## Installation
+
+Install the package from PyPI:
+
+```shell
+pip install warc-s3
+```
+
+## Usage
+
+TODO
+
+## Development
+
+To build this package and contribute to its development you need to install the `build`, and `setuptools` and `wheel` packages:
+
+```shell
+pip install build setuptools wheel
+```
+
+(On most systems, these packages are already pre-installed.)
+
+Then, install the package and test dependencies:
+
+```shell
+pip install -e .[tests]
+```
+
+You can now verify your changes against the test suite.
+
+```shell
+ruff check .                   # Code format and LINT
+mypy .                         # Static typing
+bandit -c pyproject.toml -r .  # Security
+pytest .                       # Unit tests
+```
+
+Please also add tests for your newly developed code.
+
+### Build wheels
+
+Wheels for this package can be built with:
+
+```shell
+python -m build
+```
+
+## Support
+
+If you hit any problems using this package, please file an [issue](https://github.com/janheinrichmerker/warc-s3/issues/new).
+We're happy to help!
+
+## License
+
+This repository is released under the [MIT license](LICENSE).
