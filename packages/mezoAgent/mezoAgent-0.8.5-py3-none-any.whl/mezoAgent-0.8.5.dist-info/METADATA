@@ -1,0 +1,9 @@
+Metadata-Version: 2.1
+Name: mezoAgent
+Version: 0.8.5
+Summary: A Python package for Mezo Agent tools with LangChain tools
+Author: Dreadwulf, Duck, Digi
+Requires-Dist: python-dotenv
+Requires-Dist: web3
+Requires-Dist: langchain
+Requires-Dist: langchain_openai
