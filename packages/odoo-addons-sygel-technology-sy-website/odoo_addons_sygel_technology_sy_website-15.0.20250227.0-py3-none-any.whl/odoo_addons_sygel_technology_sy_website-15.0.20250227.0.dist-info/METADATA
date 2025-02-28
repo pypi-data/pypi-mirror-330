@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: odoo-addons-sygel-technology-sy-website
+Version: 15.0.20250227.0
+Summary: Meta package for sygel-technology-sy-website Odoo addons
+Classifier: Programming Language :: Python
+Classifier: Framework :: Odoo
+Classifier: Framework :: Odoo :: 15.0
+Requires-Dist: odoo-addon-website-sale-partner-firstname<15.1dev,>=15.0dev
+Requires-Dist: odoo-addon-website-sale-partner-second-lastname<15.1dev,>=15.0dev
+Requires-Dist: odoo-addon-website-signup-additional-fields<15.1dev,>=15.0dev
+Requires-Dist: odoo-addon-website-task-state-filter<15.1dev,>=15.0dev
+
+UNKNOWN
