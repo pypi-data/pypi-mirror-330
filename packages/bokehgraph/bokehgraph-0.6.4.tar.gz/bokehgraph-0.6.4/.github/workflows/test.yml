@@ -1,0 +1,47 @@
+name: Tox Test Suite
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_call:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.9', '3.12']
+    steps:
+      #----------------------------------------------
+      #       check-out repo and set-up python
+      #----------------------------------------------
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Install uv and set the python version
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+          cache-dependency-glob: "**/pyproject.toml"
+          python-version: ${{ matrix.python-version }}
+      #----------------------------------------------
+      #  ----- Setup Firefox driver for Selenium-----
+      #----------------------------------------------
+      - uses: browser-actions/setup-geckodriver@latest
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      #----------------------------------------------
+      #  -----  install & configure poetry  -----
+      #----------------------------------------------
+      - name: Install environment
+        run: uv sync --all-extras --dev
+      #----------------------------------------------
+      #    add matrix specifics and run test suite
+      #----------------------------------------------
+      - name: Install dependencies
+        run: |
+          uv tool install tox --with tox-uv
+          uv pip install tox-gh-actions
+      - name: Test with tox
+        run: tox
