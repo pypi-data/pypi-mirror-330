@@ -1,0 +1,26 @@
+###############################################################################
+# Author: Xuefeng DING <dingxf@ihep.ac.cn> @ IHEP-CAS
+#
+# Project: Qctr3 reco MT check
+# Date: 2025 February 23th
+# Description:
+#   submit jobs at IHEP @ lxlogin.ihep.ac.cn
+#
+# History:
+# v1.0 2025.02.23 dingxf@ihep.ac.cn first version, a default template
+#
+# Maintainer:
+#   Xuefeng Ding <dingxf@ihep.ac.cn>
+#
+# All rights reserved. 2024 copyrighted.
+###############################################################################
+
+scripts:
+  - name: single_job.sh
+    template: single_job.sh.jinja
+  - name: submit_job.sh
+    template: submit_job.sh.jinja
+large_output:
+  - .*\.root
+small_output:
+  - .*\.profiling

@@ -1,0 +1,3 @@
+[console_scripts]
+ihepjob-single = ihepjob.single_job:main
+ihepjob-submit = ihepjob.prepare_submit:main
