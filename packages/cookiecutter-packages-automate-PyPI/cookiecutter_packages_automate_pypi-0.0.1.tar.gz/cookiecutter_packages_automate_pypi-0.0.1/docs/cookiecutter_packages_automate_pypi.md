@@ -1,0 +1,4 @@
+ 
+# cookiecutter_packages_automate_pypi module
+
+::: cookiecutter_packages_automate_pypi.cookiecutter_packages_automate_pypi
