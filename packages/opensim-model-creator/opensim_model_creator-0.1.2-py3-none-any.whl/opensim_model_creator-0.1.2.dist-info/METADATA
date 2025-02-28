@@ -1,0 +1,13 @@
+Metadata-Version: 2.2
+Name: opensim-model-creator
+Version: 0.1.2
+Summary: Python code for OpenSim model creation using an articulated statistical shape model.
+Author-email: Josh Plummer <jplu752@aucklanduni.ac.nz>, Timothy Salemink <tim.nicolas@outlook.com>
+Project-URL: Repository, https://github.com/Josh10203/opensim_model_creator
+Requires-Dist: numpy
+Requires-Dist: scipy
+Requires-Dist: pandas
+Requires-Dist: trimesh
+Requires-Dist: pyvista
+Requires-Dist: plotly
+Requires-Dist: articulated-ssm
