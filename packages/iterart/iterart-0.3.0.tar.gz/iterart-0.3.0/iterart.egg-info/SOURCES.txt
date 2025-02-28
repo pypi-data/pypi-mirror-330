@@ -1,0 +1,16 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+iterart/__init__.py
+iterart/shared.py
+iterart.egg-info/PKG-INFO
+iterart.egg-info/SOURCES.txt
+iterart.egg-info/dependency_links.txt
+iterart.egg-info/requires.txt
+iterart.egg-info/top_level.txt
+iterart/attractors/__init__.py
+iterart/attractors/clifford.py
+iterart/nebulabrot/__init__.py
+iterart/nebulabrot/kernel.py
+iterart/nebulabrot/render.py
