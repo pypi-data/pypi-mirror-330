@@ -1,0 +1,15 @@
+Metadata-Version: 2.4
+Name: promptrefiner
+Version: 0.0.1
+Summary: Reserved package name for a future project.
+Project-URL: Homepage, https://github.com/darshit7/promptrefiner
+Author-email: Darshit Patoliya <darshit7@gmail.com>
+License-File: LICENSE
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+
+# promptrefiner
+A lightweight Python library that enhances LLM prompts, improving clarity, precision, and effectiveness with minimal configuration.
