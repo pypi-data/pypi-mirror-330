@@ -1,0 +1,15 @@
+LICENSE
+README.md
+pyproject.toml
+env_manager/__init__.py
+env_manager/dev_tools.py
+env_manager/env_manager.py
+env_manager/program_state.py
+python_env_manager.egg-info/PKG-INFO
+python_env_manager.egg-info/SOURCES.txt
+python_env_manager.egg-info/dependency_links.txt
+python_env_manager.egg-info/top_level.txt
+tests/test_env_manager.py
+tests/test_env_manager_integration.py
+tests/test_program_state.py
+tests/test_version.py
