@@ -1,0 +1,42 @@
+[project]
+name = "pyd2d"
+version = "0.1.0"
+description = "A Python wrapper for the Windows Direct2D and DirectWrite APIs"
+readme = "README.md"
+license = { file = "LICENSE.txt" }
+requires-python = ">=3.9"
+
+[dependency-groups]
+dev = [
+    "cython>=3.0.12",
+    "poethepoet>=0.32.2",
+    "pytest>=8.3.4",
+    "ruff>=0.9.7",
+    "setuptools>=75.8.2",
+]
+
+[build-system]
+requires = ["setuptools>=75", "cython>=3"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+py-modules = []
+ext-modules = [
+    { name = "pyd2d._pyd2d", sources = ["src/pyd2d/pyd2d.pyx"], language = "c++", libraries = ["d2d1", "dwrite", "ole32"] }
+]
+exclude-package-data = { pyd2d = ["*.pyx"] }
+
+[tool.setuptools.packages.find]
+where = ["src/"]
+
+[tool.poe.tasks.build]
+cmd = "uv build"
+
+[tool.poe.tasks.format]
+cmd = "ruff format *.py *.pyi"
+
+[tool.poe.tasks.lint]
+cmd = "ruff check *.py *.pyi"
+
+[tool.poe.tasks.test]
+cmd = "pytest test.py"
