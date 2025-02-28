@@ -1,0 +1,9 @@
+[console_scripts]
+execute-benchmark = feelpp.benchmarking.reframe.__main__:main_cli
+girder-download = feelpp.benchmarking.scripts.girder:download_cli
+girder-move = feelpp.benchmarking.scripts.girder:move_cli
+girder-upload = feelpp.benchmarking.scripts.girder:upload_cli
+hpc-dispatch = feelpp.benchmarking.scripts.hpcSystems:hpcSystemDispatcher_cli
+merge-json-configs = feelpp.benchmarking.scripts.misc:jsonConfigMerge_cli
+render-benchmarks = feelpp.benchmarking.report.__main__:main_cli
+update-stage-config = feelpp.benchmarking.scripts.misc:upldateStageConfig_cli
