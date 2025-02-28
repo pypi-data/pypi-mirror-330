@@ -1,0 +1,44 @@
+Metadata-Version: 2.2
+Name: elfi-python-sdk
+Version: 1.0.6
+Summary: ELFi Protocol python sdk
+Home-page: https://github.com/0xCedar/elfi_python_sdk
+Author: 0xELFi
+Author-email: 0xELFi@elfi.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: Requests==2.32.3
+Requires-Dist: web3==7.4.0
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# ELFi Protocol Python SDK
+
+## Pip Install
+
+The SDK can be installed via pip:
+
+```
+pip install elfi-python-sdk
+```
+
+## Requirements
+
+Developed using:
+```python
+  python=3.10.5
+```
+
+## Examples
+
+There are several examples which can be run and can be found in [examples.](https://github.com/0xCedar/elfi_python_sdk/blob/main/examples/)
