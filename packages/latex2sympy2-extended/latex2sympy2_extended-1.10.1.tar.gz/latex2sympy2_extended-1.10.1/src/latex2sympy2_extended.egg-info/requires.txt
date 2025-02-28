@@ -1,0 +1,14 @@
+sympy
+antlr4-python3-runtime<=4.13.2,>=4.9.3
+
+[antlr4_11_0]
+antlr4-python3-runtime==4.11.0
+
+[antlr4_13_2]
+antlr4-python3-runtime==4.13.2
+
+[antlr4_9_3]
+antlr4-python3-runtime==4.9.3
+
+[dev]
+pytest
