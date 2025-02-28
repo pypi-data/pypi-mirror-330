@@ -1,0 +1,21 @@
+Metadata-Version: 2.4
+Name: greaterprompt
+Version: 0.2.0
+Summary: A Gradient-based Prompt Optimizer for Text Generation
+Project-URL: Homepage, https://github.com/WenliangZhoushan/GreaterPrompt
+Author-email: Wenliang Zheng <wenliangz2004@gmail.com>, Sarkar Snigdha Sarathi Das <sfd5525@psu.edu>, Rui Zhang <rmz5227@psu.edu>
+Maintainer-email: Wenliang Zheng <wenliangz2004@gmail.com>
+License-Expression: MIT
+License-File: LICENSE
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Requires-Dist: streamlit
+Requires-Dist: torch
+Requires-Dist: tqdm
+Requires-Dist: transformers
+Description-Content-Type: text/markdown
+
+🤗 check our [Github](https://github.com/WenliangZhoushan/GreaterPrompt) page for more details
