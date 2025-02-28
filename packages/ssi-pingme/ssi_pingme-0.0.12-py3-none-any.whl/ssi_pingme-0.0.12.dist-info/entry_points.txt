@@ -1,0 +1,7 @@
+[console_scripts]
+core_hello_world = pingme.core:cli
+pingme = pingme.pingme_class:cli
+start_pingme_webservice = pingme.api:webservice
+
+[nbdev]
+pingme = pingme._modidx:d
