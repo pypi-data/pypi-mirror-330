@@ -1,0 +1,33 @@
+Metadata-Version: 2.1
+Name: mhfirstpack
+Version: 0.1.1
+Summary: 
+Author: MohmadHabib
+Author-email: mohmad.habib@gmail.com
+Requires-Python: >=3.12,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Description-Content-Type: text/markdown
+
+# MHFirstPack
+
+this pack is simple and `not useable` package
+
+## Installation
+
+``` bash
+pip install mhfirstpack
+
+```
+
+## Usage
+
+``` python
+from mhfirstpack.hello import sayHello
+
+sayHello()
+
+
+```
+
