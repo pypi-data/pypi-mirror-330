@@ -1,0 +1,8 @@
+__pycache__/
+build/
+*.root
+prof/
+.env
+*.egg-info/
+.venv
+src/ihepjob/_version.py

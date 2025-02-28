@@ -1,0 +1,12 @@
+Metadata-Version: 2.2
+Name: ihepjob
+Version: 4.0.1
+Requires-Dist: loguru
+Requires-Dist: psutil
+Requires-Dist: jinja2
+Requires-Dist: pyyaml
+Requires-Dist: xrootd
+Provides-Extra: test
+Requires-Dist: pytest>=7.0; extra == "test"
+Requires-Dist: pyfakefs>=5.7; extra == "test"
+Requires-Dist: ruff; extra == "test"

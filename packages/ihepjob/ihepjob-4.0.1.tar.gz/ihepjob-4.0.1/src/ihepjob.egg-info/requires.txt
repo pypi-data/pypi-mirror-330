@@ -1,0 +1,10 @@
+loguru
+psutil
+jinja2
+pyyaml
+xrootd
+
+[test]
+pytest>=7.0
+pyfakefs>=5.7
+ruff

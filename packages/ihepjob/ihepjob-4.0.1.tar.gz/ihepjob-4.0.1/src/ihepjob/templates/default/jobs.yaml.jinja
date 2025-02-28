@@ -1,0 +1,37 @@
+###############################################################################
+# Author: Xuefeng DING <dingxf@ihep.ac.cn> @ IHEP-CAS
+#
+# Project: Qctr3 reco MT check
+# Date: 2025 February 19th
+# Description:
+#   submit jobs at IHEP @ lxlogin.ihep.ac.cn
+#
+# History:
+# v1.0 2025.02.23 dingxf@ihep.ac.cn first version, default template
+#
+# Maintainer:
+#   Xuefeng Ding <dingxf@ihep.ac.cn>
+#
+# All rights reserved. 2024 copyrighted.
+###############################################################################
+
+# Default task list for {{ project }}
+{% set job_configs = [
+    {"script": "single_job.sh", "task_id": "test"},
+    {"script": "single_job.sh", "task_id": "task_1"},
+    {"script": "single_job.sh", "task_id": "task_2"},
+    {"script": "single_job.sh", "task_id": "task_3"}
+] %}
+{%- for config in job_configs %}
+- script: {{ working_dir }}/{{ config.script }}
+  inputs: /eos/juno/esd/test
+  args:
+    {% if config.task_id == "test" -%}
+    - "{{ config.task_id }}.root"
+    - "--evtmax"
+    - "200"
+    {%- else -%}
+    - "{{ config.task_id }}.root"
+    {%- endif %}
+  task_id: {{ config.task_id }}
+{%- endfor %}

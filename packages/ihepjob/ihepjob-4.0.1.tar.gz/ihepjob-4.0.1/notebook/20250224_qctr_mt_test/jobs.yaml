@@ -1,0 +1,31 @@
+###############################################################################
+# Author: Xuefeng DING <dingxf@ihep.ac.cn> @ IHEP-CAS
+#
+# Project: Qctr3 reco MT check
+# Date: 2025 February 19th
+# Description:
+#   submit jobs at IHEP @ lxlogin.ihep.ac.cn
+#
+# History:
+# v1.0 2025.02.23 dingxf@ihep.ac.cn first version, default template
+#
+# Maintainer:
+#   Xuefeng Ding <dingxf@ihep.ac.cn>
+#
+# All rights reserved. 2024 copyrighted.
+###############################################################################
+
+# Default task list for 20250224_qctr_mt_test
+
+
+- script: /hpcfs/juno/junogpu/dingxf/neutrino-physics/ihep-analysis-framework/ihepjob/notebook/20250224_qctr_mt_test/single_job.sh
+  args: [ /eos/juno/user/dingxf/Ding_data/20250224_qctr_mt_test/task_1_rec_EDM.root ]
+  task_id: task_1
+
+- script: /hpcfs/juno/junogpu/dingxf/neutrino-physics/ihep-analysis-framework/ihepjob/notebook/20250224_qctr_mt_test/single_job.sh
+  args: [ /eos/juno/user/dingxf/Ding_data/20250224_qctr_mt_test/task_2_rec_EDM.root ]
+  task_id: task_2
+
+- script: /hpcfs/juno/junogpu/dingxf/neutrino-physics/ihep-analysis-framework/ihepjob/notebook/20250224_qctr_mt_test/single_job.sh
+  args: [ /eos/juno/user/dingxf/Ding_data/20250224_qctr_mt_test/task_3_rec_EDM.root ]
+  task_id: task_3
