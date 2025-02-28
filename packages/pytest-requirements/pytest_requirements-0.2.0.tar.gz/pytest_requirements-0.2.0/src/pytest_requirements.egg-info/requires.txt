@@ -1,0 +1,17 @@
+pytest
+
+[all]
+pytest-requirements[dev,doc,test]
+
+[dev]
+setuptools_scm
+towncrier
+
+[doc]
+sphinx
+numpydoc
+ctao-sphinx-theme~=0.1.2
+sphinx-changelog
+
+[test]
+pytest-cov

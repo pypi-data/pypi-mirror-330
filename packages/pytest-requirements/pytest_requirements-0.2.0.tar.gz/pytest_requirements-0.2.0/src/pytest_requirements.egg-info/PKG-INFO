@@ -1,0 +1,32 @@
+Metadata-Version: 2.2
+Name: pytest-requirements
+Version: 0.2.0
+Summary: pytest plugin for using custom markers to relate tests to requirements and usecases
+Author-email: Maximilian Linhoff <maximilian.linhoff@tu-dortmund.de>
+License: BSD-3-Clause
+Project-URL: repository, https://gitlab.cta-observatory.org/cta-computing/common/pytest-requirements
+Project-URL: documentation, http://cta-computing.gitlab-pages.cta-observatory.org/common/pytest-requirements
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pytest
+Provides-Extra: test
+Requires-Dist: pytest-cov; extra == "test"
+Provides-Extra: doc
+Requires-Dist: sphinx; extra == "doc"
+Requires-Dist: numpydoc; extra == "doc"
+Requires-Dist: ctao-sphinx-theme~=0.1.2; extra == "doc"
+Requires-Dist: sphinx-changelog; extra == "doc"
+Provides-Extra: dev
+Requires-Dist: setuptools_scm; extra == "dev"
+Requires-Dist: towncrier; extra == "dev"
+Provides-Extra: all
+Requires-Dist: pytest-requirements[dev,doc,test]; extra == "all"
+
+# pytest-requirements
+
+
+pytest plugin providing markers to link tests to requirements and usecases.
+
+
+Please see the [quickstart documentation](http://cta-computing.gitlab-pages.cta-observatory.org/common/pytest-requirements/latest/quickstart.html) to get started.
