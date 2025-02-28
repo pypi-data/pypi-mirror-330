@@ -1,0 +1,13 @@
+numpy
+sasktran2
+netcdf4
+appdirs
+numba>0.55
+aliprocessing
+skretrieval
+showlib
+sf-hamilton
+hitran-api
+
+[test]
+pytest

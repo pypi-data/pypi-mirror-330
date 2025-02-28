@@ -1,0 +1,41 @@
+Metadata-Version: 2.2
+Name: hawcsimulator
+Version: 2025.2.1
+Summary: HAWCsat simulator package
+Author-email: Daniel Zawada <daniel.zawada@usask.ca>
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy
+Requires-Dist: sasktran2
+Requires-Dist: netcdf4
+Requires-Dist: appdirs
+Requires-Dist: numba>0.55
+Requires-Dist: aliprocessing
+Requires-Dist: skretrieval
+Requires-Dist: showlib
+Requires-Dist: sf-hamilton
+Requires-Dist: hitran-api
+Provides-Extra: test
+Requires-Dist: pytest; extra == "test"
+
+# HAWCsat Simulator Package
+
+[![Documentation Status](https://readthedocs.org/projects/hawc-simulator/badge/?version=latest)](https://usask_arg_example.readthedocs.io/en/latest/?badge=latest)
+[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/usask-arg/hawc-simulator/main.svg)](https://results.pre-commit.ci/latest/github/usask-arg/usask_arg_example/main)
+
+## Installation
+The package can be installed through
+
+`pip install hawcsimulator`
+
+## Usage
+Documentation can be found at  https://hawc-simulator.readthedocs.io/
+
+## License
+This project is licensed under the MIT license
