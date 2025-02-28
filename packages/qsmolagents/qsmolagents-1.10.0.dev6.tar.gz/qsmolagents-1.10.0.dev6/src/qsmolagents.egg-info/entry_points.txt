@@ -1,0 +1,3 @@
+[console_scripts]
+qsmolagent = qsmolagents.cli:main
+webagent = qsmolagents.vision_web_browser:main
