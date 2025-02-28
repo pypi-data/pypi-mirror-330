@@ -1,0 +1,51 @@
+Metadata-Version: 2.2
+Name: cetpy
+Version: 0.2.0b3
+Summary: Congruent Engineering Toolbox
+Home-page: https://github.com/CongruentEngineeringToolbox/cetpy
+Author: CET developers
+Keywords: engineering,system engineering,congruent engineering
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3 :: Only
+Requires-Python: >=3.10, <4
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: CoolProp
+Requires-Dist: tomli
+Requires-Dist: tabulate
+Requires-Dist: smt
+Requires-Dist: pytest
+Requires-Dist: matplotlib
+Requires-Dist: statsmodels
+Requires-Dist: scikit-learn
+Requires-Dist: networkx
+Dynamic: author
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# Congruent Engineering Toolbox
+
+This toolbox aims to provide convenient tools for early system and 
+component design and operation optimization. It does so through combining a 
+low-overhead implementation of basic SysML elements with a decentralised solver
+logic.
+
+This tool is not released on PyPI. Instead install it from git directly:
+
+```bash
+pip install git+https://github.com/CongruentEngineeringToolbox/cetpy.git
+```
