@@ -1,0 +1,3 @@
+[console_scripts]
+dbt-opiner=dbt_opiner.cli:main
+
