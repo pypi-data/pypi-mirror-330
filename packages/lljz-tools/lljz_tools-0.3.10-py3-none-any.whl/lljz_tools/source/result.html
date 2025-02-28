@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .contains {
+            width: 80%;
+            margin: 0 auto;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #e4e2e2;
+        }
+
+        th {
+            background-color: #5470C6;
+            color: white;
+        }
+
+        td {
+            border-bottom: 1px solid #969494;
+        }
+    </style>
+</head>
+<body>
+<div class="contains">
+    <h1>{{ title }}</h1>
+<div style="padding: 20px 0">
+    {% for item in arguments %}
+       <span>{{ item }}</span><br>
+    {% endfor %}
+</div>
+    <div class="table" style="padding: 20px 0;">
+        <table style="width:100%">
+            <thead>
+
+            <tr>
+                {% for h in table["header"] %}
+                <th>{{ h }}</th>
+                {% endfor %}
+            </tr>
+            </thead>
+            <tbody>
+
+                {% for row in table["rows"] %}
+                <tr>
+                    {% for c in row %}
+                    <td>{{ c }}</td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+
+            </tbody>
+        </table>
+    </div>
+    <div id="rps" style="width: 100%;height:400px;"></div>
+    <div id="response" style="width: 100%;height:400px;"></div>
+    <div id="qps" style="width: 100%;height:400px;"></div>
+</div>
+<script>{{ echartJs | safe }}</script>
+<script>
+    function initChart(id, title, xAxisData, seriesData) {
+        let chart = echarts.init(document.getElementById(id));
+        let _seriesData = []
+        for (const s of seriesData) {
+            _seriesData.push({
+                    data: s.data,
+                    type: 'line',
+                    smooth: true,
+                    name: s.name,
+                })
+        }
+        let option = {
+            tooltip: {show: true, trigger: "axis"},
+            legend: {
+                orient: 'horizontal',
+            },
+            title: {
+                text: title
+            },
+            xAxis: {
+                data: xAxisData
+            },
+            yAxis: {
+                type: 'value'
+            },
+            series: _seriesData
+        };
+        chart.setOption(option)
+        return chart
+    }
+    let rpsData = '{{ rpsData | safe}}';
+    let qpsData = '{{ qpsData | safe}}';
+    let responseData = '{{ responseData | safe}}';
+    rpsData = JSON.parse(rpsData)
+    qpsData = JSON.parse(qpsData)
+    responseData = JSON.parse(responseData)
+    const rpsChart = initChart('rps', 'RPS（每秒响应数）', rpsData.keys, rpsData.values)
+    const responseChart = initChart('response', '响应时间（毫秒）', responseData.keys, responseData.values);
+    const qpsChart = initChart('qps', 'QPS（每秒请求数） ', qpsData.keys, qpsData.values);
+
+</script>
+</body>
+</html>
