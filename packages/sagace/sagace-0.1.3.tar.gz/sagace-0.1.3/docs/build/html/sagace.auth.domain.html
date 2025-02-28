@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>sagace.auth.domain package &#8212; sagace 2025 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=27fed22d" />
+    <script src="_static/documentation_options.js?v=cb975c41"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="sagace.auth.infrastructure package" href="sagace.auth.infrastructure.html" />
+    <link rel="prev" title="sagace.auth.application package" href="sagace.auth.application.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="sagace-auth-domain-package">
+<h1>sagace.auth.domain package<a class="headerlink" href="#sagace-auth-domain-package" title="Link to this heading">¶</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">¶</a></h2>
+</section>
+<section id="module-sagace.auth.domain.authentication_repository">
+<span id="sagace-auth-domain-authentication-repository-module"></span><h2>sagace.auth.domain.authentication_repository module<a class="headerlink" href="#module-sagace.auth.domain.authentication_repository" title="Link to this heading">¶</a></h2>
+<hr class="docutils" />
+<section id="descricao">
+<h3>Descrição:<a class="headerlink" href="#descricao" title="Link to this heading">¶</a></h3>
+<p>Este módulo implementa a autenticação de usuários no sistema SAGACE, utilizando um repositório de autenticação
+para verificação das credenciais e armazenamento do token de acesso.</p>
+<p>Principais funcionalidades:</p>
+<ul class="simple">
+<li><p>Autenticação de usuários por meio de credenciais.</p></li>
+<li><p>Armazenamento do token JWT retornado pela API.</p></li>
+<li><p>Interface para diferentes métodos de armazenamento de tokens.</p></li>
+</ul>
+<p>Classes:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">AuthenticateUser</span></code>: Classe responsável por gerenciar a autenticação de usuários.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">AuthenticationRepository</span></code>: Interface abstrata para repositórios de autenticação.</p></li>
+</ul>
+<p>Exemplo de uso:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sagace.auth</span><span class="w"> </span><span class="kn">import</span> <span class="n">AuthenticateUser</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sagace.domain</span><span class="w"> </span><span class="kn">import</span> <span class="n">AuthenticationRepository</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sagace.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">TokenStorage</span>
+
+<span class="n">repo</span> <span class="o">=</span> <span class="n">AuthenticationRepository</span><span class="p">()</span>
+<span class="n">token_storage</span> <span class="o">=</span> <span class="n">TokenStorage</span><span class="p">()</span>
+<span class="n">auth</span> <span class="o">=</span> <span class="n">AuthenticateUser</span><span class="p">(</span><span class="n">repo</span><span class="p">)</span>
+<span class="n">token</span> <span class="o">=</span> <span class="n">auth</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;https://api.sagace.online&quot;</span><span class="p">,</span> <span class="s2">&quot;usuario&quot;</span><span class="p">,</span> <span class="s2">&quot;senha&quot;</span><span class="p">,</span> <span class="s2">&quot;app_token&quot;</span><span class="p">,</span> <span class="n">token_storage</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="simple">
+<dt>Autor:</dt><dd><p>Diego Yosiura</p>
+</dd>
+<dt>Última Atualização:</dt><dd><p>27/02/2025 15:31</p>
+</dd>
+<dt>Criado em:</dt><dd><p>27/02/2025 15:31</p>
+</dd>
+<dt>Copyright:</dt><dd><ol class="loweralpha simple" start="3">
+<li><p>Ampere Consultoria Ltda</p></li>
+</ol>
+</dd>
+<dt>Projeto Original:</dt><dd><p>sagace-v2-package</p>
+</dd>
+<dt>IDE:</dt><dd><p>PyCharm</p>
+</dd>
+</dl>
+</section>
+<dl class="py class">
+<dt class="sig sig-object py" id="sagace.auth.domain.authentication_repository.AuthenticationRepository">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sagace.auth.domain.authentication_repository.</span></span><span class="sig-name descname"><span class="pre">AuthenticationRepository</span></span><a class="reference internal" href="_modules/sagace/auth/domain/authentication_repository.html#AuthenticationRepository"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sagace.auth.domain.authentication_repository.AuthenticationRepository" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></p>
+<p>Interface abstrata para repositórios de autenticação.</p>
+<p>Esta interface define o contrato para qualquer classe que implemente um repositório
+de autenticação, garantindo a padronização do método de autenticação.</p>
+<p>Princípios aplicados:</p>
+<ul class="simple">
+<li><p><strong>Dependency Inversion (D - SOLID)</strong>: Depende de abstração para desacoplamento, garantindo flexibilidade
+na implementação sem afetar os consumidores dessa interface.</p></li>
+</ul>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sagace.auth.domain.authentication_repository.AuthenticationRepository._abc_impl">
+<span class="sig-name descname"><span class="pre">_abc_impl</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;_abc._abc_data</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#sagace.auth.domain.authentication_repository.AuthenticationRepository._abc_impl" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sagace.auth.domain.authentication_repository.AuthenticationRepository.authenticate">
+<em class="property"><span class="k"><span class="pre">abstractmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">authenticate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">username</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">application_token</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">token_storage</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="sagace.core.html#sagace.core.token_storage.TokenStorage" title="sagace.core.token_storage.TokenStorage"><span class="pre">TokenStorage</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="sagace.core.html#sagace.core.token.Token" title="sagace.core.token.Token"><span class="pre">Token</span></a></span></span><a class="reference internal" href="_modules/sagace/auth/domain/authentication_repository.html#AuthenticationRepository.authenticate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sagace.auth.domain.authentication_repository.AuthenticationRepository.authenticate" title="Link to this definition">¶</a></dt>
+<dd><p>Autentica um usuário e retorna um token JWT.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>base_url</strong> (<em>str</em>) – URL base da API de autenticação.</p></li>
+<li><p><strong>username</strong> (<em>str</em>) – Nome de usuário para autenticação.</p></li>
+<li><p><strong>password</strong> (<em>str</em>) – Senha do usuário.</p></li>
+<li><p><strong>application_token</strong> (<em>str</em>) – Token da aplicação para autenticação.</p></li>
+<li><p><strong>token_storage</strong> (<a class="reference internal" href="sagace.core.html#sagace.core.token_storage.TokenStorage" title="sagace.core.token_storage.TokenStorage"><em>TokenStorage</em></a>) – Objeto responsável por armazenar o token JWT.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Token JWT retornado pela API.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="sagace.core.html#sagace.core.token.Token" title="sagace.core.token.Token">Token</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-sagace.auth.domain">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-sagace.auth.domain" title="Link to this heading">¶</a></h2>
+<hr class="docutils" />
+<section id="description">
+<h3>Description:<a class="headerlink" href="#description" title="Link to this heading">¶</a></h3>
+<p>Obs.:</p>
+<p>Author:           &#64;diego.yosiura
+Last Update:      27/02/2025 15:29
+Created:          27/02/2025 15:29
+Copyright:        (c) Ampere Consultoria Ltda
+Original Project: sagace-v2-package
+IDE:              PyCharm</p>
+</section>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">sagace</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Conteúdo:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">sagace</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="sagace.html">sagace package</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="modules.html">sagace</a><ul>
+  <li><a href="sagace.html">sagace package</a><ul>
+  <li><a href="sagace.auth.html">sagace.auth package</a><ul>
+      <li>Previous: <a href="sagace.auth.application.html" title="previous chapter">sagace.auth.application package</a></li>
+      <li>Next: <a href="sagace.auth.infrastructure.html" title="next chapter">sagace.auth.infrastructure package</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2025, Ampere Consultoria.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.2.1</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="_sources/sagace.auth.domain.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

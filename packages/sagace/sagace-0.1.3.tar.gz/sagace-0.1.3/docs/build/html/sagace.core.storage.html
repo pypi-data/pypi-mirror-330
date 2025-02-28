@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>sagace.core.storage package &#8212; sagace 2025 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=27fed22d" />
+    <script src="_static/documentation_options.js?v=cb975c41"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="sagace.exceptions package" href="sagace.exceptions.html" />
+    <link rel="prev" title="sagace.core package" href="sagace.core.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="sagace-core-storage-package">
+<h1>sagace.core.storage package<a class="headerlink" href="#sagace-core-storage-package" title="Link to this heading">¶</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">¶</a></h2>
+</section>
+<section id="module-sagace.core.storage.file_storage">
+<span id="sagace-core-storage-file-storage-module"></span><h2>sagace.core.storage.file_storage module<a class="headerlink" href="#module-sagace.core.storage.file_storage" title="Link to this heading">¶</a></h2>
+<hr class="docutils" />
+<section id="descricao">
+<h3>Descrição:<a class="headerlink" href="#descricao" title="Link to this heading">¶</a></h3>
+<p>Este módulo define uma estrutura para gerenciamento de tokens de autenticação dentro do sistema SAGACE.
+A classe <cite>FileTokenStorage</cite> implementa a interface <cite>TokenStorage</cite> para armazenar tokens em um arquivo JSON,
+permitindo a persistência do token mesmo após reinicializações do sistema.</p>
+<p>Principais funcionalidades:</p>
+<ul class="simple">
+<li><p>Armazena tokens de autenticação em um arquivo JSON.</p></li>
+<li><p>Recupera tokens armazenados garantindo sua reutilização.</p></li>
+<li><p>Implementa a interface <cite>TokenStorage</cite>, garantindo flexibilidade e substituição de implementação.</p></li>
+</ul>
+<p>Princípios de Design Aplicados:</p>
+<ul class="simple">
+<li><p><strong>Single Responsibility Principle (SRP - SOLID)</strong>: A classe tem a única responsabilidade de armazenar tokens em arquivos.</p></li>
+<li><p><strong>Open/Closed Principle (OCP - SOLID)</strong>: <cite>FileTokenStorage</cite> pode ser estendida sem modificar seu código-fonte.</p></li>
+<li><p><strong>Dependency Inversion Principle (DIP - SOLID)</strong>: <cite>FileTokenStorage</cite> depende da abstração <cite>TokenStorage</cite>, permitindo flexibilidade.</p></li>
+</ul>
+<p>Classes:
+- <code class="docutils literal notranslate"><span class="pre">FileTokenStorage</span></code>: Implementação concreta de <cite>TokenStorage</cite> utilizando arquivos JSON.</p>
+<p>Exemplo de uso:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sagace.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">Token</span><span class="p">,</span> <span class="n">FileTokenStorage</span>
+
+<span class="n">token_storage</span> <span class="o">=</span> <span class="n">FileTokenStorage</span><span class="p">(</span><span class="s2">&quot;token.json&quot;</span><span class="p">)</span>
+<span class="n">token</span> <span class="o">=</span> <span class="n">Token</span><span class="p">(</span>
+    <span class="n">base_url</span><span class="o">=</span><span class="s2">&quot;https://api.sagace.online&quot;</span><span class="p">,</span>
+    <span class="n">access_token</span><span class="o">=</span><span class="s2">&quot;abc123&quot;</span><span class="p">,</span>
+    <span class="n">application_name</span><span class="o">=</span><span class="s2">&quot;Meu App&quot;</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Token de acesso persistente.&quot;</span>
+<span class="p">)</span>
+<span class="n">token_storage</span><span class="o">.</span><span class="n">save_token</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
+<span class="n">retrieved_token</span> <span class="o">=</span> <span class="n">token_storage</span><span class="o">.</span><span class="n">get_token</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">retrieved_token</span><span class="o">.</span><span class="n">get_auth_header</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>Autor: Diego Yosiura
+Última Atualização: 27/02/2025 16:24
+Criado em: 27/02/2025 16:24
+Copyright: (c) Ampere Consultoria Ltda
+Projeto Original: sagace-v2-package
+IDE: PyCharm</p>
+</section>
+<dl class="py class">
+<dt class="sig sig-object py" id="sagace.core.storage.file_storage.FileTokenStorage">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sagace.core.storage.file_storage.</span></span><span class="sig-name descname"><span class="pre">FileTokenStorage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">token_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sagace/core/storage/file_storage.html#FileTokenStorage"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sagace.core.storage.file_storage.FileTokenStorage" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="sagace.core.html#sagace.core.token_storage.TokenStorage" title="sagace.core.token_storage.TokenStorage"><code class="xref py py-class docutils literal notranslate"><span class="pre">TokenStorage</span></code></a></p>
+<p>Implementação de <cite>TokenStorage</cite> para persistência de tokens em arquivos JSON.</p>
+<p>Esta classe permite armazenar tokens de autenticação em arquivos JSON para garantir sua persistência,
+garantindo que as credenciais sejam mantidas mesmo após reinicializações do sistema.</p>
+<p>Princípios aplicados:</p>
+<ul class="simple">
+<li><p><strong>Single Responsibility Principle (S - SOLID)</strong>: Responsável apenas por salvar e recuperar tokens de arquivos.</p></li>
+<li><p><strong>Dependency Inversion Principle (D - SOLID)</strong>: Depende da abstração <cite>TokenStorage</cite>, garantindo desacoplamento.</p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>token_file</strong> (<em>str</em>) – Caminho do arquivo onde o token será armazenado.</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sagace.core.storage.file_storage.FileTokenStorage._abc_impl">
+<span class="sig-name descname"><span class="pre">_abc_impl</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;_abc._abc_data</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#sagace.core.storage.file_storage.FileTokenStorage._abc_impl" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sagace.core.storage.file_storage.FileTokenStorage.get_token">
+<span class="sig-name descname"><span class="pre">get_token</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="sagace.core.html#sagace.core.token.Token" title="sagace.core.token.Token"><span class="pre">Token</span></a></span></span><a class="reference internal" href="_modules/sagace/core/storage/file_storage.html#FileTokenStorage.get_token"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sagace.core.storage.file_storage.FileTokenStorage.get_token" title="Link to this definition">¶</a></dt>
+<dd><p>Recupera o token armazenado no arquivo JSON.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Instância do token armazenado.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="sagace.core.html#sagace.core.token.Token" title="sagace.core.token.Token">Token</a></p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – Se o arquivo de token não for encontrado.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sagace.core.storage.file_storage.FileTokenStorage.save_token">
+<span class="sig-name descname"><span class="pre">save_token</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">token</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="sagace.core.html#sagace.core.token.Token" title="sagace.core.token.Token"><span class="pre">Token</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sagace/core/storage/file_storage.html#FileTokenStorage.save_token"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sagace.core.storage.file_storage.FileTokenStorage.save_token" title="Link to this definition">¶</a></dt>
+<dd><p>Armazena o token em um arquivo JSON.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>token</strong> (<a class="reference internal" href="sagace.core.html#sagace.core.token.Token" title="sagace.core.token.Token"><em>Token</em></a>) – Instância do token a ser armazenado.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-sagace.core.storage.memory_storage">
+<span id="sagace-core-storage-memory-storage-module"></span><h2>sagace.core.storage.memory_storage module<a class="headerlink" href="#module-sagace.core.storage.memory_storage" title="Link to this heading">¶</a></h2>
+<hr class="docutils" />
+<section id="id1">
+<h3>Descrição:<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h3>
+<p>Este módulo define uma estrutura para gerenciamento de tokens de autenticação dentro do sistema SAGACE.
+A classe <cite>MemoryTokenStorage</cite> implementa a interface <cite>TokenStorage</cite> para armazenar tokens temporariamente na memória,
+permitindo acesso rápido sem necessidade de persistência em arquivos ou banco de dados.</p>
+<p>Principais funcionalidades:</p>
+<ul class="simple">
+<li><p>Armazena tokens de autenticação apenas em memória.</p></li>
+<li><p>Recupera tokens armazenados durante a execução do programa.</p></li>
+<li><p>Implementa a interface <cite>TokenStorage</cite>, garantindo flexibilidade e substituição de implementação.</p></li>
+</ul>
+<p>Princípios de Design Aplicados:</p>
+<ul class="simple">
+<li><p><strong>Single Responsibility Principle (SRP - SOLID)</strong>: A classe tem a única responsabilidade de armazenar tokens em memória.</p></li>
+<li><p><strong>Open/Closed Principle (OCP - SOLID)</strong>: <cite>MemoryTokenStorage</cite> pode ser estendida sem modificar seu código-fonte.</p></li>
+<li><p><strong>Dependency Inversion Principle (DIP - SOLID)</strong>: <cite>MemoryTokenStorage</cite> depende da abstração <cite>TokenStorage</cite>, permitindo flexibilidade.</p></li>
+</ul>
+<p>Classes:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">MemoryTokenStorage</span></code>: Implementação concreta de <cite>TokenStorage</cite> utilizando armazenamento em memória.</p></li>
+</ul>
+<p>Exemplo de uso:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sagace.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">Token</span><span class="p">,</span> <span class="n">MemoryTokenStorage</span>
+
+<span class="n">token_storage</span> <span class="o">=</span> <span class="n">MemoryTokenStorage</span><span class="p">()</span>
+<span class="n">token</span> <span class="o">=</span> <span class="n">Token</span><span class="p">(</span>
+    <span class="n">base_url</span><span class="o">=</span><span class="s2">&quot;https://api.sagace.online&quot;</span><span class="p">,</span>
+    <span class="n">access_token</span><span class="o">=</span><span class="s2">&quot;abc123&quot;</span><span class="p">,</span>
+    <span class="n">application_name</span><span class="o">=</span><span class="s2">&quot;Meu App&quot;</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Token de acesso temporário.&quot;</span>
+<span class="p">)</span>
+<span class="n">token_storage</span><span class="o">.</span><span class="n">save_token</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
+<span class="n">retrieved_token</span> <span class="o">=</span> <span class="n">token_storage</span><span class="o">.</span><span class="n">get_token</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">retrieved_token</span><span class="o">.</span><span class="n">get_auth_header</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>Autor: Diego Yosiura
+Última Atualização: 27/02/2025 16:24
+Criado em: 27/02/2025 16:24
+Copyright: (c) Ampere Consultoria Ltda
+Projeto Original: sagace-v2-package
+IDE: PyCharm</p>
+</section>
+<dl class="py class">
+<dt class="sig sig-object py" id="sagace.core.storage.memory_storage.MemoryTokenStorage">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sagace.core.storage.memory_storage.</span></span><span class="sig-name descname"><span class="pre">MemoryTokenStorage</span></span><a class="reference internal" href="_modules/sagace/core/storage/memory_storage.html#MemoryTokenStorage"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sagace.core.storage.memory_storage.MemoryTokenStorage" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="sagace.core.html#sagace.core.token_storage.TokenStorage" title="sagace.core.token_storage.TokenStorage"><code class="xref py py-class docutils literal notranslate"><span class="pre">TokenStorage</span></code></a></p>
+<p>Implementação de <cite>TokenStorage</cite> para armazenamento temporário de tokens na memória.</p>
+<p>Esta classe permite armazenar tokens de autenticação em memória para acesso rápido,
+garantindo que os tokens sejam descartados ao final da execução do programa.</p>
+<p>Princípios aplicados:</p>
+<ul class="simple">
+<li><p><strong>Single Responsibility Principle (S - SOLID)</strong>: Responsável apenas por armazenar e recuperar tokens na memória.</p></li>
+<li><p><strong>Dependency Inversion Principle (D - SOLID)</strong>: Depende da abstração <cite>TokenStorage</cite>, garantindo desacoplamento.</p></li>
+</ul>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sagace.core.storage.memory_storage.MemoryTokenStorage._abc_impl">
+<span class="sig-name descname"><span class="pre">_abc_impl</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;_abc._abc_data</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#sagace.core.storage.memory_storage.MemoryTokenStorage._abc_impl" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sagace.core.storage.memory_storage.MemoryTokenStorage.get_token">
+<span class="sig-name descname"><span class="pre">get_token</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="sagace.core.html#sagace.core.token.Token" title="sagace.core.token.Token"><span class="pre">Token</span></a></span></span><a class="reference internal" href="_modules/sagace/core/storage/memory_storage.html#MemoryTokenStorage.get_token"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sagace.core.storage.memory_storage.MemoryTokenStorage.get_token" title="Link to this definition">¶</a></dt>
+<dd><p>Recupera o token armazenado na memória.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Instância do token armazenado.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="sagace.core.html#sagace.core.token.Token" title="sagace.core.token.Token">Token</a></p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – Se o token não estiver armazenado na memória.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sagace.core.storage.memory_storage.MemoryTokenStorage.save_token">
+<span class="sig-name descname"><span class="pre">save_token</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">token</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="sagace.core.html#sagace.core.token.Token" title="sagace.core.token.Token"><span class="pre">Token</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sagace/core/storage/memory_storage.html#MemoryTokenStorage.save_token"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sagace.core.storage.memory_storage.MemoryTokenStorage.save_token" title="Link to this definition">¶</a></dt>
+<dd><p>Armazena o token na memória.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>token</strong> (<a class="reference internal" href="sagace.core.html#sagace.core.token.Token" title="sagace.core.token.Token"><em>Token</em></a>) – Instância do token a ser armazenado.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-sagace.core.storage.redis_storage">
+<span id="sagace-core-storage-redis-storage-module"></span><h2>sagace.core.storage.redis_storage module<a class="headerlink" href="#module-sagace.core.storage.redis_storage" title="Link to this heading">¶</a></h2>
+<hr class="docutils" />
+<section id="id2">
+<h3>Descrição:<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h3>
+<p>Este módulo define uma estrutura para gerenciamento de tokens de autenticação dentro do sistema SAGACE.
+A classe <cite>RedisTokenStorage</cite> implementa a interface <cite>TokenStorage</cite> para armazenar tokens em um banco Redis,
+permitindo recuperação eficiente e persistente dos tokens.</p>
+<p>Principais funcionalidades:</p>
+<ul class="simple">
+<li><p>Armazena tokens de autenticação no Redis.</p></li>
+<li><p>Recupera tokens armazenados garantindo sua reutilização.</p></li>
+<li><p>Implementa a interface <cite>TokenStorage</cite>, garantindo flexibilidade e substituição de implementação.</p></li>
+</ul>
+<p>Princípios de Design Aplicados:</p>
+<ul class="simple">
+<li><p><strong>Single Responsibility Principle (SRP - SOLID)</strong>: A classe tem a única responsabilidade de armazenar tokens no Redis.</p></li>
+<li><p><strong>Open/Closed Principle (OCP - SOLID)</strong>: <cite>RedisTokenStorage</cite> pode ser estendida sem modificar seu código-fonte.</p></li>
+<li><p><strong>Dependency Inversion Principle (DIP - SOLID)</strong>: <cite>RedisTokenStorage</cite> depende da abstração <cite>TokenStorage</cite>, permitindo flexibilidade.</p></li>
+</ul>
+<p>Classes:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">RedisTokenStorage</span></code>: Implementação concreta de <cite>TokenStorage</cite> utilizando Redis.</p></li>
+</ul>
+<p>Exemplo de uso:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sagace.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">Token</span><span class="p">,</span> <span class="n">RedisTokenStorage</span>
+
+<span class="n">token_storage</span> <span class="o">=</span> <span class="n">RedisTokenStorage</span><span class="p">(</span><span class="s2">&quot;redis://localhost:6379/0&quot;</span><span class="p">)</span>
+<span class="n">token</span> <span class="o">=</span> <span class="n">Token</span><span class="p">(</span>
+    <span class="n">base_url</span><span class="o">=</span><span class="s2">&quot;https://api.sagace.online&quot;</span><span class="p">,</span>
+    <span class="n">access_token</span><span class="o">=</span><span class="s2">&quot;abc123&quot;</span><span class="p">,</span>
+    <span class="n">application_name</span><span class="o">=</span><span class="s2">&quot;Meu App&quot;</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Token de acesso persistente.&quot;</span>
+<span class="p">)</span>
+<span class="n">token_storage</span><span class="o">.</span><span class="n">save_token</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
+<span class="n">retrieved_token</span> <span class="o">=</span> <span class="n">token_storage</span><span class="o">.</span><span class="n">get_token</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">retrieved_token</span><span class="o">.</span><span class="n">get_auth_header</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>Autor: Diego Yosiura
+Última Atualização: 27/02/2025 16:24
+Criado em: 27/02/2025 16:24
+Copyright: (c) Ampere Consultoria Ltda
+Projeto Original: sagace-v2-package
+IDE: PyCharm</p>
+</section>
+<dl class="py class">
+<dt class="sig sig-object py" id="sagace.core.storage.redis_storage.RedisTokenStorage">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sagace.core.storage.redis_storage.</span></span><span class="sig-name descname"><span class="pre">RedisTokenStorage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">redis_url</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'redis://localhost:6379/0'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sagace/core/storage/redis_storage.html#RedisTokenStorage"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sagace.core.storage.redis_storage.RedisTokenStorage" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="sagace.core.html#sagace.core.token_storage.TokenStorage" title="sagace.core.token_storage.TokenStorage"><code class="xref py py-class docutils literal notranslate"><span class="pre">TokenStorage</span></code></a></p>
+<p>Implementação de <cite>TokenStorage</cite> para persistência de tokens no Redis.</p>
+<p>Esta classe permite armazenar tokens de autenticação em Redis para garantir recuperação rápida
+e persistência, mesmo após a reinicialização do sistema.</p>
+<p>Princípios aplicados:</p>
+<ul class="simple">
+<li><p><strong>Single Responsibility Principle (S - SOLID)</strong>: Responsável apenas por salvar e recuperar tokens no Redis.</p></li>
+<li><p><strong>Dependency Inversion Principle (D - SOLID)</strong>: Depende da abstração <cite>TokenStorage</cite>, garantindo desacoplamento.</p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>redis_url</strong> (<em>str</em>) – URL de conexão com o servidor Redis.</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="sagace.core.storage.redis_storage.RedisTokenStorage._abc_impl">
+<span class="sig-name descname"><span class="pre">_abc_impl</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;_abc._abc_data</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#sagace.core.storage.redis_storage.RedisTokenStorage._abc_impl" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sagace.core.storage.redis_storage.RedisTokenStorage.get_token">
+<span class="sig-name descname"><span class="pre">get_token</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="sagace.core.html#sagace.core.token.Token" title="sagace.core.token.Token"><span class="pre">Token</span></a></span></span><a class="reference internal" href="_modules/sagace/core/storage/redis_storage.html#RedisTokenStorage.get_token"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sagace.core.storage.redis_storage.RedisTokenStorage.get_token" title="Link to this definition">¶</a></dt>
+<dd><p>Recupera o token armazenado no Redis.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Instância do token armazenado.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="sagace.core.html#sagace.core.token.Token" title="sagace.core.token.Token">Token</a></p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – Se o token não for encontrado no Redis.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sagace.core.storage.redis_storage.RedisTokenStorage.save_token">
+<span class="sig-name descname"><span class="pre">save_token</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">token</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="sagace.core.html#sagace.core.token.Token" title="sagace.core.token.Token"><span class="pre">Token</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sagace/core/storage/redis_storage.html#RedisTokenStorage.save_token"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sagace.core.storage.redis_storage.RedisTokenStorage.save_token" title="Link to this definition">¶</a></dt>
+<dd><p>Armazena o token no Redis.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>token</strong> (<a class="reference internal" href="sagace.core.html#sagace.core.token.Token" title="sagace.core.token.Token"><em>Token</em></a>) – Instância do token a ser armazenado.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-sagace.core.storage">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-sagace.core.storage" title="Link to this heading">¶</a></h2>
+<hr class="docutils" />
+<section id="description">
+<h3>Description:<a class="headerlink" href="#description" title="Link to this heading">¶</a></h3>
+<p>Obs.:</p>
+<p>Author:           &#64;diego.yosiura
+Last Update:      27/02/2025 16:24
+Created:          27/02/2025 16:24
+Copyright:        (c) Ampere Consultoria Ltda
+Original Project: sagace-v2-package
+IDE:              PyCharm</p>
+</section>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">sagace</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Conteúdo:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">sagace</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="sagace.html">sagace package</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="modules.html">sagace</a><ul>
+  <li><a href="sagace.html">sagace package</a><ul>
+  <li><a href="sagace.core.html">sagace.core package</a><ul>
+      <li>Previous: <a href="sagace.core.html" title="previous chapter">sagace.core package</a></li>
+      <li>Next: <a href="sagace.exceptions.html" title="next chapter">sagace.exceptions package</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2025, Ampere Consultoria.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.2.1</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="_sources/sagace.core.storage.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
