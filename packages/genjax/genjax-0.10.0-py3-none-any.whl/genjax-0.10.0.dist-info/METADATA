@@ -1,0 +1,45 @@
+Metadata-Version: 2.1
+Name: genjax
+Version: 0.10.0
+Summary: Probabilistic programming with Gen, built on top of JAX.
+Home-page: https://github.com/chisym/genjax
+License: Apache 2.0
+Keywords: artificial-intelligence,probabilistic-programming,bayesian-inference,differentiable-programming
+Author: McCoy R. Becker
+Author-email: mccoyb@mit.edu
+Maintainer: McCoy R. Becker
+Maintainer-email: mccoyb@mit.edu
+Requires-Python: >=3.11,<4.0
+Classifier: Development Status :: 4 - Beta
+Classifier: License :: Other/Proprietary License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Programming Language :: Python :: 3.10
+Provides-Extra: all
+Provides-Extra: genstudio
+Requires-Dist: beartype (>=0.20.0,<0.21.0)
+Requires-Dist: deprecated (>=1.2.14,<2.0.0)
+Requires-Dist: genstudio (>=2025.2.1) ; extra == "genstudio" or extra == "all"
+Requires-Dist: jax (>=0.4.24,<0.5.0)
+Requires-Dist: jaxtyping (>=0.2.24,<0.3.0)
+Requires-Dist: numpy (>=1.22,<2.0.0)
+Requires-Dist: penzai (>=0.2.2,<0.3.0)
+Requires-Dist: tensorflow-probability (>=0.23.0,<0.24.0)
+Requires-Dist: treescope (>=0.1.5,<0.2.0)
+Project-URL: Changelog, https://github.com/chisym/genjax/releases
+Project-URL: Documentation, https://chisym.github.io/genjax/
+Project-URL: Repository, https://github.com/chisym/genjax
+Description-Content-Type: text/markdown
+
+# GenJAX
+
+[Full documentation available here](https://chisym.github.io/genjax/).
+
+## Installation
+
+```bash
+pip install genjax
+```
+
