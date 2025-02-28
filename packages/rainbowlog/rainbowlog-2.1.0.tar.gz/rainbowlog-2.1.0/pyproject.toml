@@ -1,0 +1,25 @@
+[project]
+name = "rainbowlog"
+# Version is overwritten at build time by CI based on git tag
+version = "2.1.0"
+description = "Format your python logs with colours based on the log levels."
+authors = [{ name = "Abraham Murciano", email = "abrahammurciano@gmail.com" }]
+license = "MIT"
+readme = "README.md"
+keywords = ["logging", "color"]
+requires-python = ">=3.8"
+dependencies = [
+	"constyle>=2.0.5",
+]
+
+[project.urls]
+homepage = "https://github.com/abrahammurciano/rainbowlog"
+documentation = "https://abrahammurciano.github.io/rainbowlog/rainbowlog/"
+repository = "https://github.com/abrahammurciano/rainbowlog"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = ["black>=23.3.0", "mypy>=1.4.1", "pdoc3>=0.11.0", "pytest>=7.4.4"]
