@@ -1,0 +1,23 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "blackjack-api"
+version = "1.0.1"
+authors = [
+  { name="Evan Abbott", email="evanabbott04@gmail.com" },
+]
+description = "A 1-on-1 blackjack game library for simulating games, usable for any blackjack needs."
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+license = "MIT"
+license-files = ["LICEN[CS]E*"]
+
+[project.urls]
+Homepage = "https://github.com/EvanA4/blackjack-api"
+Issues = "https://github.com/EvanA4/blackjack-api/issues"
