@@ -1,0 +1,90 @@
+Metadata-Version: 2.2
+Name: planqk-quantum
+Version: 2.16.0rc1
+Summary: Python SDK for the PLANQK Platform
+Home-page: https://gitlab.com/planqk-foss/planqk-quantum
+Author: Kipu Quantum GmbH
+Author-email: info@kipu-quantum.com
+License: apache-2.0
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: requests>=2
+Requires-Dist: pydantic>=2
+Requires-Dist: qiskit-ibm-runtime==0.34.0
+Requires-Dist: qiskit-ionq==0.5.6
+Requires-Dist: qiskit-ibm-provider==0.10.0
+Requires-Dist: qiskit-braket-provider==0.4.1
+Requires-Dist: qiskit==1.3
+Requires-Dist: pyqir==0.10.6
+Requires-Dist: qsharp[qiskit]==1.13.2
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# PLANQK Quantum SDK
+
+[![PyPI version](https://badge.fury.io/py/planqk-quantum.svg)](https://badge.fury.io/py/planqk-quantum)
+
+The PLANQK Quantum SDK is for developing quantum circuits using [Qiskit](https://pypi.org/project/qiskit) to be run on
+quantum devices provided by the [PLANQK Platform](https://docs.planqk.de).
+This library is an **extension** for Qiskit.
+This means that you are able to seamlessly integrate and reuse your existing Qiskit code, leveraging the power and
+familiarity of a framework you are already accustomed to.
+
+## Getting Started
+
+Check out the following guides on how to get started with PLANQK:
+
+- [PLANQK Quickstart Guide](https://docs.planqk.de/quickstart.html)
+- [Using the PLANQK Quantum SDK](https://docs.planqk.de/using-sdk.html)
+
+## Installation
+
+The package is released on PyPI and can be installed via `pip`:
+
+```bash
+pip install --upgrade planqk-quantum
+```
+
+To install a pre-release version, use the following command:
+
+```bash
+pip install --pre --upgrade planqk-quantum
+```
+
+## Development
+
+To create a new Conda environment, run:
+
+```bash
+conda env create -f environment.yml
+```
+
+Then, to activate the environment:
+
+```bash
+conda activate planqk-quantum
+```
+
+To install the package in development mode, run:
+
+```bash
+pip install -e .
+```
+
+To update the environment, run:
+
+```bash
+conda env update -f environment.yml
+```
