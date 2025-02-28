@@ -1,0 +1,92 @@
+Metadata-Version: 2.2
+Name: batch_downloader
+Version: 0.1.2
+Summary: A simple batch downloader with chunked downloads
+Home-page: https://github.com/Zzhenping/batch_downloader
+Author: zhenpingzhan
+Author-email: stallzhan@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: requests>=2.25.1
+Requires-Dist: aiohttp>=3.8.0
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# Batch Downloader
+
+A simple Python package for downloading multiple files in parallel with chunked downloads.
+
+## Installation
+
+```bash
+pip install batch_downloader
+```
+
+## Usage
+
+```python
+def progress_callback(url: str, downloaded_size: int, total_size: int):
+    if total_size > 0:
+        progress = (downloaded_size / total_size) * 100
+        print(f"Downloading {url}: {progress:.2f}%")
+    else:
+        print(f"Downloading {url}: {downloaded_size} bytes (total size unknown)")
+
+downloader = BatchDownloader(
+    urls=[
+        "xxx",
+        "xxx",
+        ],
+    output_dir="downloads",
+    progress_callback=progress_callback,
+)
+
+results = downloader.download_all()
+```
+
+## Async Usage
+
+```python
+
+class TestAsyncBatchDownloader(unittest.TestCase):
+
+    def progress_callback(self, url: str, downloaded_size: int, total_size: int):
+        if total_size > 0:
+            progress = (downloaded_size / total_size) * 100
+            print(f"Downloading {url.split('/')[-1]}: {progress:.2f}% ({downloaded_size}/{total_size} bytes)")
+        else:
+            print(f"Downloading {url.split('/')[-1]}: {downloaded_size} bytes (total size unknown)")
+
+    async def async_test_download(self):
+        downloader = AsyncBatchDownloader(
+            urls=[
+                "xxx",
+                "xxx",
+            ],
+            output_dir="downloads",
+            progress_callback=self.progress_callback,
+        )
+        results = await downloader.download_all()
+        self.assertTrue(isinstance(results, list))
+
+    def test_download(self):
+        asyncio.run(self.async_test_download())
+
+if __name__ == "__main__":
+    unittest.main()
+```
+
+
+
+
