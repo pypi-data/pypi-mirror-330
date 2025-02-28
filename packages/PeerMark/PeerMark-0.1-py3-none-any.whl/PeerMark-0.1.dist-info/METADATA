@@ -1,0 +1,32 @@
+Metadata-Version: 2.1
+Name: PeerMark
+Version: 0.1
+Summary: Python package for building/grading Peer Marking Spreadsheets
+Home-page: https://github.com/abrown41/PeerMark
+Author: Andrew Brown
+Author-email: andrew.brown@qub.ac.uk
+License: BSD (3-clause)
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.7
+License-File: COPYING
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: openpyxl
+Requires-Dist: canvas-selector
+Requires-Dist: tqdm
+
+===============
+canvas_selector
+===============
+
+Python package for selecting objects from the canvasapi
+
+* Free software: 3-clause BSD license
+* Documentation: (COMING SOON!) https://abrown41.github.io/canvas_selector
+
+Features
+--------
+
+* TODO
