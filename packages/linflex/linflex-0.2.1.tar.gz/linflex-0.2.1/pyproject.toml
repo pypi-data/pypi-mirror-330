@@ -1,0 +1,32 @@
+[project]
+name = "linflex"
+version = "0.2.1"
+description = "A linear algebra package written in Python"
+authors = [
+    { name = "Havsalt", email = "77575424+Havsalt@users.noreply.github.com" }
+]
+dependencies = [
+    "typing-extensions>=4.4.0",
+]
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">= 3.10"
+
+[project.urls]
+Source = "https://github.com/havsalt/linflex.git"
+
+[build-system]
+requires = ["hatchling==1.26.3"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = [
+    "pytest>=8.3.4",
+]
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["linflex"]
