@@ -1,0 +1,12 @@
+Metadata-Version: 2.2
+Name: ma-kyc-ri-pfpy
+Version: 0.1.6
+Summary: A library providing utils for PassFort 3rd party integrations.
+Author-email: Fazal Khan <fazal.khan@moodys.com>
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.13
+Requires-Dist: freezegun>=1.5.1
+Requires-Dist: pydantic>=2.10.6
+Requires-Dist: pytest>=8.3.4
