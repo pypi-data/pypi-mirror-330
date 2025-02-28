@@ -1,0 +1,8 @@
+astropy
+xarray
+
+[all]
+pytest
+
+[tests]
+pytest
