@@ -1,0 +1,10 @@
+numpy
+scipy
+matplotlib
+jadapy
+
+[all]
+pytest
+
+[test]
+pytest
