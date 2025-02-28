@@ -1,0 +1,30 @@
+Metadata-Version: 2.3
+Name: pandasai-docker
+Version: 0.1.4
+Summary: 
+License: MIT
+Author: ArslanSaleem
+Author-email: khan.arslan38@gmail.com
+Requires-Python: >=3.8,<3.12
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: docker (>=7.1.0,<8.0.0)
+Requires-Dist: pandasai (>=3.0.0b4)
+Project-URL: Documentation, https://docs.getpanda.ai/v3/privacy-security
+Project-URL: Repository, https://github.com/sinaptik-ai/pandas-ai
+Description-Content-Type: text/markdown
+
+# Docker Sandbox Extension for PandasAI
+
+## Installation
+
+You can install this extension using poetry:
+
+```bash
+poetry add pandasai-docker
+```
+
