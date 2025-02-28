@@ -1,0 +1,9 @@
+[browser]
+width = 1536
+height = 1152
+headless = true
+
+[runtime]
+fail_fast = true
+output_dir = "lila-output"
+concurrent_workers = 4
