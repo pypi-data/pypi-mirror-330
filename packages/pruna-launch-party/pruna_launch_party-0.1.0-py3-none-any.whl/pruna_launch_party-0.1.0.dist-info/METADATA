@@ -1,0 +1,63 @@
+Metadata-Version: 2.1
+Name: pruna-launch-party
+Version: 0.1.0
+Summary: A fun package celebrating Pruna's open-source launch!
+Home-page: https://github.com/pruna-ai/pruna
+Author: Pruna Team
+Author-email: team@pruna.dev
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: colorama>=0.4.6
+Requires-Dist: tqdm>=4.65.0
+
+# 🎉 Pruna Launch Party
+
+Celebrate Pruna's open-source launch with this fun package!
+
+## Installation
+
+```bash
+pip install pruna-launch-party --extra-index-url "<Event Location>"
+```
+
+## What's this?
+
+Pruna is now open-source, and we're throwing a party to celebrate our most public commit yet! This package brings the party to your terminal.
+
+When you install this package, you'll see:
+- Launch confirmation
+- AI jokes (compressed, of course)
+- High-energy vibes
+- And more surprises!
+
+## Features
+
+- 🚀 Simulated launch sequence
+- 🤖 AI-powered party vibes
+- 🎵 Terminal celebrations
+- 🎨 Colorful output
+
+## Usage
+
+After installation, just run:
+
+```bash
+pruna-party
+```
+
+And watch the celebration unfold!
+
+## Note
+
+We've spent months pruning, quantizing, distilling... Now it's time to decompress (for once, that means us! Don't worry, we're still compressing models.)
+
+Come for the `pip install pruna`, stay for the `pip install fun`. 🎉 
