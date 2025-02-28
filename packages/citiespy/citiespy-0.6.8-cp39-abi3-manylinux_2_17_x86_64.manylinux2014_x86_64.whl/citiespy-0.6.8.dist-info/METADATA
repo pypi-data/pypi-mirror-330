@@ -1,0 +1,17 @@
+Metadata-Version: 2.4
+Name: citiespy
+Version: 0.6.8
+Classifier: Programming Language :: Rust
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Summary: Cities.
+License: Unlicense
+Requires-Python: >=3.9
+Project-URL: Source Code, https://github.com/ringsaturn/go-cities.json
+Project-URL: Issues, https://github.com/ringsaturn/go-cities.json/issues
+Project-URL: Documentation, https://github.com/ringsaturn/go-cities.json
