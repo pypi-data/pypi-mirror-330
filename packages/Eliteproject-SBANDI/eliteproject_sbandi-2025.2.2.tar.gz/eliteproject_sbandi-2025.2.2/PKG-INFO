@@ -1,0 +1,22 @@
+Metadata-Version: 2.2
+Name: Eliteproject-SBANDI
+Version: 2025.2.2
+Summary: OEC ELITE LOG PARSER
+Home-page: https://github.com/users/Egorroico/projects/1/views/1
+Author: Stefano Bandini
+Author-email: stefano.bandini@email.it
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-python
+Dynamic: summary
+
+Parse a compressed log  file from OEC ELITE Equipment, now can choose file to parse with merged file and historical data. Add filer by data range and time range. Restyling.
