@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: base-scraper
+Version: 1.0.1
+Summary: Wrapper class for Selenium (base for scrapers, rpa software)
+Home-page: https://github.com/ktxo/main-scraper
+Author: ktxo
+Author-email: ktxotec@gmail.com
+Keywords: scraper rpa selenium
+Classifier: Programming Language :: Python :: 3.10
+Requires-Python: >=3.10
+Requires-Dist: selenium
+Requires-Dist: beautifulsoup4
+Requires-Dist: fake-useragent
+Requires-Dist: undetected-chromedriver
+
