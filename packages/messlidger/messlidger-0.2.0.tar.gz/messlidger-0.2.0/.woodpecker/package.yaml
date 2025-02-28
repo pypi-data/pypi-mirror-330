@@ -1,0 +1,53 @@
+when:
+  event: [ push, tag, pull_request ]
+  path: [ "${CI_REPO_NAME}/**/*", "pyproject.toml", "uv.lock", "README.md" ]
+
+variables:
+  - &image codeberg.org/slidge/woodpecker-${CI_REPO_NAME}
+  - &only-main-tag
+    when:
+      branch: main
+      event: tag
+
+steps:
+  version:
+    image: codeberg.org/slidge/woodpecker-version
+    pull: true
+
+  changelog:
+    image: codeberg.org/slidge/woodpecker-generate-changelog
+    pull: true
+
+  build:
+    image: *image
+    commands:
+      - uv build
+
+  codeberg-pypi:
+    when:
+      event: [ push, tag ]
+    image: *image
+    environment:
+      CODEBERG_TOKEN:
+        from_secret: CODEBERG_TOKEN
+    commands:
+      - uv publish --index codeberg --token $CODEBERG_TOKEN
+
+  pypi:
+    image: *image
+    <<: *only-main-tag
+    environment:
+      PYPI_TOKEN:
+        from_secret: PYPI_TOKEN
+    commands:
+      - uv publish --token $PYPI_TOKEN
+
+  codeberg-release:
+    image: woodpeckerci/plugin-release
+    <<: *only-main-tag
+    settings:
+      files:
+        - dist/${CI_REPO_NAME}*
+      api_key:
+        from_secret: CODEBERG_TOKEN
+      note: CHANGELOG
