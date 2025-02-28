@@ -1,0 +1,161 @@
+Metadata-Version: 2.1
+Name: pydolphindb
+Version: 1.1.1
+Summary: A python DolphinDB API based on DBAPI2.0 Specification
+Home-page: https://dolphindb.com
+Author: DolphinDB, Inc.
+Author-email: support@dolphindb.com
+License: DolphinDB
+Platform: any
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: dolphindb >=3.0.2.3
+Requires-Dist: sqlalchemy <2.0,>=1.4
+Requires-Dist: importlib-metadata >=0.23
+
+# pydolphindb
+
+- [pydolphindb](#pydolphindb)
+  - [1. Installing pydolphindb](#1-installing-pydolphindb)
+    - [1.1 Prerequisites](#11-prerequisites)
+    - [1.2 Installation](#12-installation)
+  - [2. Functions](#2-functions)
+    - [2.1 Function Reference](#21-function-reference)
+    - [2.2 Sample Code](#22-sample-code)
+  - [3. Connecting to DolphinDB Using SQLAlchemy](#3-connecting-to-dolphindb-using-sqlalchemy)
+  - [Related Links](#related-links)
+
+
+*pydolphindb* is a library that enables you to connect to the DolphinDB server in Python. It implements the classes and methods as defined in the [DolphinDB Python API specification](https://github.com/dolphindb/api_python3/blob/master/README.md) and is compliant with the Python Database API v2.0 specification ([PEP-249](https://www.python.org/dev/peps/pep-0249/)). *pydolphindb* contains a Python DolphinDB client library and supports connecting to DolphinDB using [SQLAlchemy](https://www.sqlalchemy.org/). 
+
+## 1. Installing pydolphindb
+
+### 1.1 Prerequisites
+
+Make sure you use:
+
+- Python 3.7 or higher
+- DolphinDB 1.30.21 or higher can also 2.00.9 or higher
+
+Install the following libraries:
+
+- dolphindb 3.0.2.3 or higher
+- sqlalchemy 1.4 or higher while lower than 2.0 
+
+### 1.2 Installation 
+
+Execute the following `pip` command:
+
+```
+pip install pydolphindb
+```
+
+## 2. Functions
+
+### 2.1 Function Reference
+
+| **Function**                                         | **Parameters**                                               | **Description**                                              |
+| :--------------------------------------------------- | :----------------------------------------------------------- | :----------------------------------------------------------- |
+| `pydolphindb.connect(host, port username, password)` | host (*string*) - hostname of the server to connect to.port (*integer*) *-* port number of the server to connect to.username (*string*) - username for login.password (*string*) - password for login. | Connect to database.                                         |
+| `connection.cursor()`                                | -                                                            | Create a cursor object.                                      |
+| `cursor.execute(script,Parameters = None)`           | script (*string*) - script to execute.parameters (*tuple, list or dictionary*) - Optional. Parameters used with script. | Execute script.If *parameters* is a list or tuple, use `%s` as a placeholder in the script. If *parameters* is a dict, use `%(name)s` as a placeholder in the script. |
+| `cursor.executemany(script,seq_of_parameters)`       | script (*string*) - script to execute.seq_of_parameters (*list* or *tuple*) - a sequence (list or tuple) of lists or tuples used with script. | Execute the script against all parameter sequences specified in `seq_of_parameters`. Use this function for a batch insert operation. |
+| `cursor.fetchone()`                                  | -                                                            | Fetch the next record.                                       |
+| `cursor.fetchmany(size)`                             | size (*integer*) - number of records to fetch.               | Fetch multiple (as specified by *size*) records.             |
+| `cursor.fetchall()`                                  | -                                                            | Fetch all records.                                           |
+
+Note: *pydolphindb* does not support functions to *commit* or *rollback* a transaction.
+
+### 2.2 Sample Code
+
+In this example, we import *pydolphindb* with the `import` command, then connect to DolphinDB with the `connect` function. Functions `execute` and `executemany` are called to create and write to a database, respectively, through the specified DolphinDB script. Functions `fetchone`, `fetchmany`, and `fetchall` are called to fetch data from the database. The connection is closed with the `close` function.
+
+```python
+import pydolphindb
+
+# connect to database server
+db = pydolphindb.connect(host='localhost',
+                         port=8848,
+                         username='admin',
+                         password='123456')
+
+# create a cursor object
+cursor = db.cursor()
+
+# DolphinDB script for creating a database
+script = """
+    t = table(100:0, `id`time`vol, [SYMBOL, DATE, INT])
+"""
+
+# execute DolphinDB script with execute()
+cursor.execute(script)
+
+# execute DolphinDB script with executemany()
+cursor.executemany('insert into t values(`%s, %s, %d)', [
+    ("APPL", "2012.01.02", 12), ("IBM", "2012.01.03", 16),
+    ("APPL", "2012.01.03", 20), ("AMZN", "2012.01.03", 100),
+])
+
+# get the next record with fetchone()
+data = cursor.fetchone()
+
+# the result is None
+print("Result:", data)
+
+cursor.execute("select * from t")
+
+# get the next two records with fetchmany()
+data = cursor.fetchmany(size=2)
+print("Result: ", data)
+
+# get all records with fetchall()
+data = cursor.fetchall()
+print("Result: ", data)
+
+# close connection
+db.close()
+```
+
+## 3. Connecting to DolphinDB Using SQLAlchemy
+
+[SQLAlchemy](https://www.sqlalchemy.org/) is a Python SQL toolkit and Object Relational Mapper which is designed for efficient database access. *pydolphindb* is a Python [DB API 2.0 (PEP 249)](https://peps.python.org/pep-0249/) client for DolphinDB. The DolphinDB SQLAlchemy dialect is supported so you can connect to the DolphinDB databases through a SQLAlchemy engine.
+
+The following script shows how to connect to and interact with DolphinDB through SQLAlchemy in Python:
+
+```python
+from sqlalchemy import create_engine
+
+# create an engine for connection
+engine = create_engine("dolphindb://admin:123456@localhost:8848")
+
+# DolphinDB script for a database query
+script = """
+    t = table([1, 2, 3] as a, ["a", "b", "c"] as b)
+    select * from t
+"""
+
+# run script with execute()
+result = engine.execute(script)
+
+# print all results
+print(result.all())
+```
+
+Note:
+
+- The DolphinDB SQLAlchemy currently does not support ORM (object-relational mapping).
+- When creating engine, pass the DolphinDB database URL to `create_engine` as a string in the following pattern: `dolphindb://{user}:{password}@{host}:{port}`
+
+## Related Links
+
+- [DB API 2.0 (PEP 249)](https://peps.python.org/pep-0249/)
+- [DolphinDB Manual](https://dolphindb.com/help200/index.html)
+- [DolphinDB Python API](https://github.com/dolphindb/api_python3) 

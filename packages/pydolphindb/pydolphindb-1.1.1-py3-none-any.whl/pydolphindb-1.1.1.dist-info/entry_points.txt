@@ -1,0 +1,5 @@
+[sqlalchemy.dialects]
+dolphindb = pydolphindb:DolphinDBDialect
+
+[superset.db_engine_specs]
+dolphindb = pydolphindb.superset:DolphinDBEngineSpec
