@@ -1,0 +1,123 @@
+Metadata-Version: 2.4
+Name: mitosisanalyzer
+Version: 0.0.1
+Summary: Tool to track spindle pole movements in fluorescently labeled mitotic cells.
+Project-URL: Homepage, https://github.com/uvarc/mitosisanalyzer
+Project-URL: Issues, https://github.com/uvarc/mitosisanalyzer/issues
+Author: Karsten Siller
+License: 
+        Copyright (c) 2025, Karsten Siller
+        All rights reserved.
+        
+        Redistribution and use in source and binary forms, with or without
+        modification, are permitted provided that the following conditions are met:
+        
+        * Redistributions of source code must retain the above copyright notice, this
+          list of conditions and the following disclaimer.
+        
+        * Redistributions in binary form must reproduce the above copyright notice,
+          this list of conditions and the following disclaimer in the documentation
+          and/or other materials provided with the distribution.
+        
+        * Neither the name of copyright holder nor the names of its
+          contributors may be used to endorse or promote products derived from
+          this software without specific prior written permission.
+        
+        THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+        AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+        IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+        DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+        FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+        DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+        SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+        CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+        OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+        OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+License-File: LICENSE
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.9
+Requires-Dist: argparse
+Requires-Dist: cellpose
+Requires-Dist: ffmpeg
+Requires-Dist: matplotlib
+Requires-Dist: nd2reader
+Requires-Dist: opencv-python-headless
+Requires-Dist: pandas
+Requires-Dist: prefect
+Requires-Dist: prefect-dask
+Requires-Dist: scikit-image
+Requires-Dist: scipy
+Requires-Dist: seaborn
+Requires-Dist: tifffile
+Requires-Dist: tiffile
+Requires-Dist: typing
+Provides-Extra: napari
+Requires-Dist: mitosisanalyzer-napari; extra == 'napari'
+Description-Content-Type: text/markdown
+
+# mitosisanalyzer
+
+[![License BSD-3](https://img.shields.io/pypi/l/mitosisanalyzer.svg?color=green)](https://github.com/uvarc/mitosisanalyzer/raw/main/LICENSE)
+[![PyPI](https://img.shields.io/pypi/v/mitosisanalyzer.svg?color=green)](https://pypi.org/project/mitosisanalyzer)
+[![Python Version](https://img.shields.io/pypi/pyversions/mitosisanalyzer.svg?color=green)](https://python.org)
+[![codecov](https://codecov.io/gh/uvarc/mitosisanalyzer/branch/main/graph/badge.svg)](https://codecov.io/gh/uvarc/mitosisanalyzer)
+
+Plugin to track spindle poles in mitotic cells over time. It leverages [Cellpose](https://www.cellpose.org/), [OpenCV](https://github.com/opencv/opencv-python), and [Scikit-Image](https://scikit-image.org/) for segmentation and [Prefect](https://www.prefect.io/) and [Dask](https://www.dask.org/) for workflow orchestration.
+
+## Installation 
+
+You can install `mitosisanalyzer` via [pip]:
+
+    pip install mitosisanalyzer
+
+
+To install latest development version :
+
+    pip install git+https://github.com/uvarc/mitosisanalyzer.git
+
+
+## Running the MitosisAnalyzer application
+
+In a command line shell, run the following command:
+```
+mitosisanalyzer -i imagestack.nd2 -o my_outputdir -s 1 -d 2 -r 1
+```
+
+**Command line arguments:**
+
+```
+    -h, --help                                show this help message and exit
+    -i INPUT, --input INPUT                   .nd2 file or directory with .nd2 files to be processed
+    -o OUTPUT, --output OUTPUT                output file or directory
+    -s SPINDLE, --spindle SPINDLE             channel # for tracking spindle poles
+    -d DNA, --dna DNA                         channel # for tracking dna
+    -r REFFRAME, --refframe REFFRAME          reference frame to determine spindle pole axis (0=autodetect based on cell long axis)
+    -t THRESHOLD, --threshold THRESHOLD       threshold of cytoplasmic background signal in spindle channel; value relative to max 
+                                              spindle intensity 0.0-1.0 (0.0=autodetect using Otsu)
+    -b BLUR, --blur BLUR                      applies a gaussian blur before segmenting spindle poles. The value determines the 
+                                              blurring radius; a value of 0 omits blurring.
+    -c, --cellpose, --no-cellpose             use Cellpose to detect cell contour
+    -f FRAMERATE, --framerate FRAMERATE       number of frames per second
+    -e EXECUTOR, --executor EXECUTOR          set executor. Options: sequential, concurrent, dask
+    -p PROCESSES, --processes PROCESSES       number or parallel processes
+```                  
+
+## Contributing
+
+Contributions are very welcome.
+
+## License
+
+Distributed under the terms of the [BSD-3] license, "mitosisanalyzer" is free and open source software
+
+## Issues
+
+If you encounter any problems, please [file an issue] along with a detailed description.
+
+[BSD-3]: http://opensource.org/licenses/BSD-3-Clause
+
+[file an issue]: https://github.com/uvarc/mitosisanalyzer/issues
+
+[pip]: https://pypi.org/project/pip/
+[PyPI]: https://pypi.org/
+
