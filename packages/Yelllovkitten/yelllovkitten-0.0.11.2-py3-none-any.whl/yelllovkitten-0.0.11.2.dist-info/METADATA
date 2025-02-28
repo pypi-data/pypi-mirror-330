@@ -1,0 +1,111 @@
+Metadata-Version: 2.4
+Name: Yelllovkitten
+Version: 0.0.11.2
+Summary: Just a package
+Project-URL: Homepage, https://t.me/yelllovkitten
+Project-URL: Issues, https://t.me/yelllovkitten/1373
+Author-email: yelllovkitten <yelllovkitten@gmail.com>
+License-File: LICENSE
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+
+this project is made yelllovkitten for convenience
+
+yelllovkitten.text:
+
+    yelllovkitten.text.font(text_,font) - changes the font of the text
+        text_: str | Text
+        font: str=None | It can be bold/italic/underline/reverse
+        return: Modified text
+        
+    yelllovkitten.text.color(text_,color,color_light) - changes the color of the text
+        text_: str | Text
+        color: str=None | It can be cyan/red/yelllov(yellow) and others
+        color_light: bool=True | True if you need light color else False
+        return: Modified text
+        
+    yelllovkitten.text.background(text_,color,color_light) - changes the background of the text
+        text_: str | Text
+        color: str=None | It can be cyan/red/yelllov(yellow) and others
+        color_light: bool=True | True if you need light color else False
+        return: Modified text
+        
+    yelllovkitten.text.info(text_,settings) - Outputs the green text to the console
+        text_: str | Text
+        settings: TimeData=None | It can be TimeData(yelllovkitten.TimeData.TimeData)
+        return: None
+        
+    yelllovkitten.text.info(text_,settings) - Outputs the green text to the console
+        text_: str | Text
+        settings: TimeData=None | It can be TimeData(yelllovkitten.TimeData.TimeData)
+        return: None
+        
+    yelllovkitten.text.warn(text_,settings) - Outputs the yelllov(yellow) text to the console
+        text: str | Text
+        settings: TimeData=None | It can be TimeData(yelllovkitten.TimeData.TimeData)
+        return: None
+        
+    yelllovkitten.text.error(text_,settings) - Outputs the red text to the console
+        text: str | Text    
+        settings: TimeData=None | It can be TimeData(yelllovkitten.TimeData.TimeData)
+        return: None
+        
+    yelllovkitten.text.out(text,settings,return_time_info,only_return,out_time) - Outputs the text to the console.
+        text: str | Text
+        settings: TimeData=None | It can be TimeData(yelllovkitten.TimeData.TimeData)
+        return_time_info: bool=True | If True return time + text, else return only text
+        only_return: bool=False | If True the text will not be output to the console
+        out_time: bool=True | If True outputs the text to the console with time, else only text
+        return: If return_time_info is False return text, else time + text
+        
+    yelllovkitten.text.text(text_,color_text,color_text_light,color_background,color_background_light,font_text)
+        text_: str | Text
+        color_text: str=None | Color of text
+        color_text_light: bool=True | True if you need light color of text, else dark color of text
+        color_background: str=None | Color of background
+        color_background_light: bool=True | True if you need light color of background of text, else dark color of background of text
+        font_text: str=None | Font, bold, italic, underline or reverse.
+        return: Modified text
+yelllovkitten.protection:
+    
+    I do not recommend using
+    
+    yelllovkitten.protection.encode(text_,password)
+        encrypts the text into a code
+        text_: str | Text
+        password: int=66 | password
+        return: Int code
+        
+    yelllovkitten.protection.decode(code,password)
+        decrypts the code into text
+        code: str/int | Text
+        password: int=66 | password
+        return: Text
+        
+yelllovkitten.TimeData:
+
+    yelllovkitten.TimeData.TimeData(self,utc_edit_hours,time12,mdy,cdat,end,data,sec)
+        It is class TimeData
+        utc_edit_hours: int=0 | (positive or negative numbers) add or remove hours to utc, example: time now 7:00, if utc_edit_hours = 2 then time 9:00 
+        time12: bool=True | twelve-hour format
+        mdy: bool=True | date format MDY if True else YMD
+        cdat: str=' | ' | text between date and time
+        end: str='' | the text at the end
+        data: bool=True | show data if True
+        sec: bool=False | show sec if True
+        return: TimeData
+    yelllovkitten.TimeData.timedata(settings,utc_edit_hours,time12,mdy,cdat,end,data,sec)
+        There will be an update soon, it is not recommended to use it before the update.
+        
+        settings: TimeData=None
+        mdy: bool=True | date format MDY if True else YMD
+        cdat: str=' | ' | text between date and time
+        end: str='' | the text at the end
+        data: bool=True | show data if True
+        sec: bool=False | show sec if True
+        return: str
+        
+        
