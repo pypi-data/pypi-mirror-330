@@ -1,0 +1,85 @@
+topic_split: |
+  Next, I will present you with a lengthy section of "timestamped text," sourced from a video segment. You are required to analyze and summarize the content, "in chronological order," breaking it down into different thematic topics. Then, under each thematic topic, place the corresponding "start and end times" of the timestamps, for example:
+  ```
+  # Topic 1
+  0.0-14.6
+  # Topic 2
+  14.6-22.28
+  # Topic 3
+  start-end
+  ```
+  Determining the start and end, as well as the topics, necessitates a thorough reading of the following text.
+  Here is the text you need to process:
+  ```
+  {context}
+  ```
+  Please directly output the processed result, without any additional analysis:
+
+identify_paras: | #todo: structure the output
+  The following is an article in markdown format where paragraphs are split down to individual sentences. Identify the paragraph boundaries so that each paragraph contains related content.
+
+extract_relevant: Extract all relevant information from the chunks processed so far to answer the original query.
+
+rewrite_query_in_context: |
+  You are a helpful assistant. You are given a query and a list of previous queries and answers. You need to rewrite the query in light of the previous queries and answers.
+  ```
+  Query: {{query}}
+  Previous queries and answers: {{memory}}
+  ```
+  Rewrite the query:
+  {{rewrite_query}}
+
+rewrite_query_standalone: |
+  Given the following conversation and a follow up question, rephrase the 
+  follow up question to be a standalone question, in its original language.
+
+  Chat History:
+  {{chat_history}}
+  Follow Up Input: {{question}}
+  Standalone question:
+
+adapt_query: |
+  Adapt and rewrite the following generic query so that the output query elicits specific information from the document.
+  Input Query: {{query}}
+  Document Context: {{doc_context}}
+  Output Specific Query: 
+
+
+code_agents:
+  fix_rewrite: |
+    Dont rewrite the code. Only fix errors. Use deep chain of thought reasoning to find root cause or errors and then fix them one by one. 
+    First analyze the code file, only fix errors in specific lines that are causing issues, don't regenerate complete code for that page
+
+  
+gen_questions: |
+  You are an investor, stock analyst and financial expert. You will be presented an image of a document page from a report published by the Norwegian Government Pension Fund Global (GPFG). The report may be annual or quarterly reports, or policy reports, on topics such as responsible investment, risk etc.
+  Your task is to generate retrieval queries and questions that you would use to retrieve this document (or ask based on this document) in a large corpus.
+  Please generate 3 different types of retrieval queries and questions.
+  A retrieval query is a keyword based query, made up of 2-5 words, that you would type into a search engine to find this document.
+  A question is a natural language question that you would ask, for which the document contains the answer.
+  The queries should be of the following types:
+  1. A broad topical query: This should cover the main subject of the document.
+  2. A specific detail query: This should cover a specific detail or aspect of the document.
+  3. A visual element query: This should cover a visual element of the document, such as a chart, graph, or image.
+
+  Important guidelines:
+  - Ensure the queries are relevant for retrieval tasks, not just describing the page content.
+  - Use a fact-based natural language style for the questions.
+  - Frame the queries as if someone is searching for this document in a large corpus.
+  - Make the queries diverse and representative of different search strategies.
+
+  Format your response as a JSON object with the structure of the following example:
+
+  {
+      "broad_topical_question": "What was the Responsible Investment Policy in 2019?",
+      "broad_topical_query": "responsible investment policy 2019",
+      "specific_detail_question": "What is the percentage of investments in renewable energy?",
+      "specific_detail_query": "renewable energy investments percentage",
+      "visual_element_question": "What is the trend of total holding value over time?",
+      "visual_element_query": "total holding value trend"
+  }
+
+  If there are no relevant visual elements, provide an empty string for the visual element question and query.
+  Here is the document image to analyze:
+  Generate the queries based on this image and provide the response in the specified JSON format.
+  Only return JSON. Don't return any extra explanation text.
