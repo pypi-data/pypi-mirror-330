@@ -1,0 +1,41 @@
+[build-system]
+requires = ["hatchling", "hatch-vcs"]
+build-backend = "hatchling.build"
+
+[project]
+name = "sphinx_tamer"
+description = "Python library for easy parsing of Sphinx documentation "
+authors = [
+  { name = "David V. Lu!!", email = "davidvlu@gmail.com" },
+]
+maintainers = [
+  { name = "David V. Lu!!", email = "davidvlu@gmail.com" },
+]
+
+dependencies = [
+  'click',
+  'docutils',
+  'pyyaml',
+  'sphinx',
+]
+
+requires-python = ">=3.9"
+
+dynamic = ["version"]
+
+[project.scripts]
+sphinx_sentence_scan = "sphinx_tamer.sentence_scan:main"
+
+[project.optional-dependencies]
+test = [
+  "pytest>=4",
+  "pytest-cov>=2",
+]
+
+[project.urls]
+Homepage = "https://github.com/DLu/sphinx_tamer"
+"Bug Tracker" = "https://github.com/DLu/sphinx_tamer/issues"
+
+[tool.hatch]
+version.source = "vcs"
+build.hooks.vcs.version-file = "src/sphinx_tamer/_version.py"

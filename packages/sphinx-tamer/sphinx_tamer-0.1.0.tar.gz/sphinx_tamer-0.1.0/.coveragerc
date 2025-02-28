@@ -1,0 +1,3 @@
+[run]
+source = sphinx_tamer
+omit = *_version.py
