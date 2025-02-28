@@ -1,0 +1,14 @@
+LICENSE.txt
+README.md
+pyproject.toml
+src/uphy/__init__.py
+src/uphy/controller/__init__.py
+src/uphy/controller/__main__.py
+src/uphy/controller/gui.py
+src/uphy/controller/modbus.py
+src/uphy_controller.egg-info/PKG-INFO
+src/uphy_controller.egg-info/SOURCES.txt
+src/uphy_controller.egg-info/dependency_links.txt
+src/uphy_controller.egg-info/entry_points.txt
+src/uphy_controller.egg-info/requires.txt
+src/uphy_controller.egg-info/top_level.txt

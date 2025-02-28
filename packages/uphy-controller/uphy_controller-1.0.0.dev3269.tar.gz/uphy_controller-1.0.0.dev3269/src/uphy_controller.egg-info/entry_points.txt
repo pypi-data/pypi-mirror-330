@@ -1,0 +1,5 @@
+[console_scripts]
+uphy-controller = uphy.controller.__main__:app
+
+[uphy.cli]
+controller = uphy.controller.__main__:app

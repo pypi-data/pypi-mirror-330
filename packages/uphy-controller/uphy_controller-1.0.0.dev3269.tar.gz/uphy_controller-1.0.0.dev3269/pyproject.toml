@@ -1,0 +1,31 @@
+[project]
+name = "uphy-controller"
+version = "1.0.0.dev3269"
+description = "U-Phy Controller"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "dearpygui>=2.0.0",
+    "pymodbus (>=3.8.3,<3.9.0)",
+    "requests>=2.32.3",
+    "rich>=13.9.2",
+    "typer>=0.12.5",
+    "uphy",
+    "zeroconf>=0.135.0",
+]
+license = {file = "LICENSE.txt"}
+
+
+[project.urls]
+RT-Labs = "https://rt-labs.com"
+U-Phy = "https://rt-labs.com/u-phy"
+Documentation  = "https://docs.rt-labs.com/u-phy"
+
+[project.scripts]
+uphy-controller = "uphy.controller.__main__:app"
+
+[project.entry-points.'uphy.cli']
+controller = 'uphy.controller.__main__:app'
+
+[tool.uv.sources]
+uphy = { workspace = true }

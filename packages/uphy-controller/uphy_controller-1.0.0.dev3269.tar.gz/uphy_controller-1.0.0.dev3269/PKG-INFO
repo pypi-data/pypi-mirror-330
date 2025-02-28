@@ -1,0 +1,51 @@
+Metadata-Version: 2.2
+Name: uphy-controller
+Version: 1.0.0.dev3269
+Summary: U-Phy Controller
+License: Copyright rt-labs AB, Sweden.
+        All rights reserved.
+        
+        You may not use this software in a commercial product without
+        purchasing a license. Contact sales@rt-labs.com for more information.
+        
+Project-URL: RT-Labs, https://rt-labs.com
+Project-URL: U-Phy, https://rt-labs.com/u-phy
+Project-URL: Documentation, https://docs.rt-labs.com/u-phy
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+Requires-Dist: dearpygui>=2.0.0
+Requires-Dist: pymodbus<3.9.0,>=3.8.3
+Requires-Dist: requests>=2.32.3
+Requires-Dist: rich>=13.9.2
+Requires-Dist: typer>=0.12.5
+Requires-Dist: uphy
+Requires-Dist: zeroconf>=0.135.0
+
+# U-Phy Controller
+
+This contain a python based U-Phy device controller that act as a fieldbus master/controller.
+
+Supported fieldbuses:
+
+- modbus
+
+## Install
+
+```sh
+uv pip install uphy-controller
+```
+
+## Workflow
+
+```sh
+# Start up controller against an existing device
+uphy-controller modbus --model [PATH_TO_MODEL] --target [UUID]:[HOST]:[PORT]
+```
+
+
+```sh
+# Start up controller against discovered devices that expose their model via
+# mdns.
+uphy-controller mdns
+```
