@@ -1,0 +1,20 @@
+Metadata-Version: 2.2
+Name: ceilr-py-sdk
+Version: 1.0.1
+Summary: CeilR Python SDK for feature access, usage tracking, and entitlements
+Home-page: https://github.com/GouniManikumar12/ceilr-py-sdk
+Author: Mani Kumar Gouni
+Author-email: support@ceilr.com
+License: MIT
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+License-File: LICENSE
+Requires-Dist: requests
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: home-page
+Dynamic: license
+Dynamic: requires-dist
+Dynamic: summary
