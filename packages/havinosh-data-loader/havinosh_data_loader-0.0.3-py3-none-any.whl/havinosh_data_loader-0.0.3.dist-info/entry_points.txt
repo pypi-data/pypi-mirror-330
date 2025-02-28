@@ -1,0 +1,2 @@
+[console_scripts]
+data-loader = havinosh_data_loader.scripts.ingest:main
