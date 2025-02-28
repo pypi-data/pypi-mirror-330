@@ -1,0 +1,16 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+src/rda_python_icoads/PgIMMA.py
+src/rda_python_icoads/README_R3.0_Subset.html
+src/rda_python_icoads/__init__.py
+src/rda_python_icoads/imma1_subset.py
+src/rda_python_icoads/rdimma1_csv.f
+src/rda_python_icoads.egg-info/PKG-INFO
+src/rda_python_icoads.egg-info/SOURCES.txt
+src/rda_python_icoads.egg-info/dependency_links.txt
+src/rda_python_icoads.egg-info/entry_points.txt
+src/rda_python_icoads.egg-info/requires.txt
+src/rda_python_icoads.egg-info/top_level.txt
+tests/test_icoads.py
