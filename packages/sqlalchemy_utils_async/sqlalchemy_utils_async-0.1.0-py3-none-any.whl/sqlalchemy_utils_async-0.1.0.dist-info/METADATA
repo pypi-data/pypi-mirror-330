@@ -1,0 +1,9 @@
+Metadata-Version: 2.4
+Name: sqlalchemy_utils_async
+Version: 0.1.0
+Summary: A sqlalchemy async utils lib
+Author-email: Tiny Twist <tiny.mahua@gmail.com>
+Maintainer-email: Tiny Twist <tiny.mahua@gmail.com>
+Requires-Python: >= 3.6
+License-File: LICENSE.txt
+Requires-Dist: SQLAlchemy==2.0.7
