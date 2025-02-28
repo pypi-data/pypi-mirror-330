@@ -1,0 +1,4 @@
+[console_scripts]
+convert-tables=table_processor.cli:command_convert_tables
+table-processor=table_processor.cli:main
+
