@@ -1,0 +1,44 @@
+*.py[cod]
+*.swp
+.DS_store
+__pycache__/
+
+# build
+/dist/
+/build/
+/.cache/
+/*.egg-info/
+/.eggs/
+/requests_pelican/_version.py
+
+# testing
+.pytest_cache/
+/.coverage*
+/coverage*.xml
+/junit*.xml
+/htmlcov/
+
+# sphinx
+*.automodapi
+*.automodsumm
+/docs/_build/
+/docs/api/
+/docs/requests_pelican*.rst
+!/docs/requests_pelican.config.rst
+!/docs/requests_pelican.director.rst
+!/docs/requests_pelican.federation.rst
+!/docs/requests_pelican.utils.rst
+/html/
+
+# debian
+/debian/.debhelper/
+/debian/*.debhelper.log
+/debian/*.postinst.debhelper
+/debian/*.prerm.debhelper
+/debian/*.substvars
+/debian/*requests-scitokens/
+/debian/files
+/.pybuild/
+
+# RPM
+*.rpm

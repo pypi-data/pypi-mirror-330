@@ -1,0 +1,101 @@
+Metadata-Version: 2.2
+Name: requests-pelican
+Version: 0.2.0
+Summary: A requests addon for Pelican data federations
+Author-email: Duncan Macleod <duncan.macleod@ligo.org>
+License: MIT
+Project-URL: Homepage, https://git.ligo.org/computing/software/requests-pelican
+Project-URL: Bug Tracker, https://git.ligo.org/computing/software/requests-pelican/-/issues
+Project-URL: Documentation, https://requests-pelican.readthedocs.io/en/stable
+Project-URL: Source Code, https://git.ligo.org/computing/software/requests-pelican
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Topic :: Scientific/Engineering :: Astronomy
+Classifier: Topic :: Scientific/Engineering :: Physics
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: requests>=2.32.3
+Provides-Extra: docs
+Requires-Dist: furo; extra == "docs"
+Requires-Dist: Sphinx; extra == "docs"
+Requires-Dist: sphinx-automodapi; extra == "docs"
+Provides-Extra: scitokens
+Requires-Dist: requests-scitokens>=0.1.0; extra == "scitokens"
+Provides-Extra: test
+Requires-Dist: pytest>=3.9.1; extra == "test"
+Requires-Dist: pytest-cov; extra == "test"
+Requires-Dist: pytest-remotedata; extra == "test"
+Requires-Dist: requests-mock; extra == "test"
+
+# Python-requests interface for Pelican Platform
+
+This project provides [`requests`](https://github.com/psf/requests) addons
+to support HTTP requests to a [Pelican Federation](https://pelicanplatform.org/).
+
+The main component is a new `PelicanAdapter` class that handles translating
+Pelican URIs into HTTP URLs to enable standard `GET` requests, including
+looping over Pelican caches.
+
+This project also provides wrappers around `requests.get` (and friends) and
+`requests.Session` to simplify configuring support for Pelican URIs.
+
+## Install
+
+To install this project, use `pip`:
+
+```shell
+pip install requests-pelican
+```
+
+To include support for [SciTokens](https://scitokens.org/)
+include the `[scitokens]` extra:
+
+```shell
+pip install requests-pelican[scitokens]
+```
+
+## Examples
+
+### 1. Public data
+
+```python
+import requests_pelican
+print(requests_pelican.get("osdf:///gwdata/zenodo/README.zenodo").text)
+```
+
+### 2. Private data requiring token authorisation
+
+Requests for data from a Private Pelican federation require a Bearer token.
+`requests-pelican` will attempt to automatically discover a valid
+[SciToken](https://scitokens.org/) before `GET`ting the data.
+
+```python
+import requests_pelican
+print(requests_pelican.get("osdf:///igwn/ligo/README").text)
+```
+
+### 3. Integrating with other requests plugins
+
+The `requests_pelican.PelicanAdapter` object can be integrated with the
+standard `requests.Session` to simplify combining Pelican support with other
+plugins, for example:
+
+```python
+from requests_pelican import PelicanAdapter
+from igwn_auth_utils import Session
+with Session() as sess:
+    sess.mount("osdf://", PelicanAdapter("osdf"))
+    resp = sess.get("osdf:///igwn/ligo/README", token_scope="read:/ligo")
+    ...
+```

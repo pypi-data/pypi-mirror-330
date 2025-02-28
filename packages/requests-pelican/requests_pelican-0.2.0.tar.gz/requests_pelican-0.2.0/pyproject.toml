@@ -1,0 +1,155 @@
+[build-system]
+requires = [
+  "setuptools >= 70",
+  "setuptools_scm[toml] >= 3.4.3",
+  "wheel",
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "requests-pelican"
+description = "A requests addon for Pelican data federations"
+readme = "README.md"
+authors = [
+  { name = "Duncan Macleod", email = "duncan.macleod@ligo.org" },
+]
+license = { text = "MIT" }
+classifiers = [
+  "Development Status :: 2 - Pre-Alpha",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: MIT License",
+  "Natural Language :: English",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Scientific/Engineering :: Astronomy",
+  "Topic :: Scientific/Engineering :: Physics",
+]
+
+# requirements
+requires-python = ">=3.9"
+dependencies = [
+  "requests >= 2.32.3",
+]
+
+# dynamic properties set by tools
+dynamic = [
+  "version",
+]
+
+[project.optional-dependencies]
+docs = [
+  "furo",
+  "Sphinx",
+  "sphinx-automodapi",
+]
+scitokens = [
+  "requests-scitokens >= 0.1.0"
+]
+test = [
+  "pytest >= 3.9.1",
+  "pytest-cov",
+  "pytest-remotedata",
+  "requests-mock",
+]
+
+[project.urls]
+"Homepage" = "https://git.ligo.org/computing/software/requests-pelican"
+"Bug Tracker" = "https://git.ligo.org/computing/software/requests-pelican/-/issues"
+"Documentation" = "https://requests-pelican.readthedocs.io/en/stable"
+"Source Code" = "https://git.ligo.org/computing/software/requests-pelican"
+
+# -- pytest
+
+[tool.coverage.paths]
+source = [
+  "requests_pelican/",
+  "*/requests_pelican/",
+]
+
+[tool.coverage.run]
+source = [ "requests_pelican" ]
+
+[tool.coverage.report]
+exclude_lines = [
+  # ignore when asked
+  "pragma: no( |-)cover",
+  # don't complain about typing blocks
+  "if (typing\\.)?TYPE_CHECKING",
+]
+omit = [
+  "requests_pelican/_version.py",
+]
+precision = 1
+
+# -- mypy
+
+[tool.mypy]
+ignore_missing_imports = true
+check_untyped_defs = true
+
+# -- pytest
+
+[tool.pytest.ini_options]
+addopts = "-r a"
+filterwarnings = [
+  "error",
+]
+minversion = "3.9.1"
+
+# -- ruff
+
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = [
+  "ANN003",  # type annotations for **kwargs
+  "D203",  # blank line before class docstring
+  "D213",  # docstring summary on second line
+  "D413",  # blank line after last section
+  "ICN001",  # unconventional import alias
+  "PLR0913",  # too many arguments
+  "SIM108",  # if-else instead of ternary if
+  "TID252",  # relative imports
+]
+
+[tool.ruff.lint.isort]
+combine-as-imports = true
+force-wrap-aliases = true
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = [
+  "F401",  # unused import
+  "F403",  # from ... import *
+]
+"*/tests/*" = [
+  "ANN",  # type annotations
+  "PLR2004",  # magic value used in comparison
+  "S101",  # assert
+]
+"docs/*" = [
+  "A",  # builtins
+  "ANN",  # type annotations
+  "D",  # docstrings
+  "INP001",  # implicit namespace package
+]
+
+# -- setuptools
+
+[tool.setuptools]
+license-files = [ "LICENSE" ]
+
+[tool.setuptools.package-data]
+"*" = [
+  "py.typed",
+]
+
+# -- setuptools-scm
+
+[tool.setuptools_scm]
+write_to = "requests_pelican/_version.py"
+
