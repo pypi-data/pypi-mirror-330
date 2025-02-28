@@ -1,0 +1,50 @@
+Metadata-Version: 2.2
+Name: pytenter
+Version: 0.1.10
+Summary: pdfjinja fork with updated libraries
+Home-page: https://github.com/boiledsteak/pytenter
+Author: Timothy
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: jinja2==3.1.5
+Requires-Dist: pdfminer.six==20240706
+Requires-Dist: pypdf==5.3.0
+Requires-Dist: Pillow==11.1.0
+Requires-Dist: reportlab==4.3.1
+Requires-Dist: fdfgen==0.16.1
+Dynamic: author
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+```bash
+pytenter/
+├── .github/                      # for gh actions 
+├── pytenter/                     # Main package folder 
+│   ├── __init__.py               # Makes the folder a package
+│   └── pytenter.py               # the main code
+├── LICENSE                       # the license
+├── README.md                     # Project documentation
+├── setup.py                      # Package setup file
+└── requirements.txt              # Dependencies list
+
+```
+# Introduction
+Hi this is my fork from the original [pdfjinja](https://github.com/rammie/pdfjinja)
+
+# Install
+
+# Usage
+
+# Documentation
+
+
+# Dependencies
