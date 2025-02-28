@@ -1,0 +1,27 @@
+Metadata-Version: 2.2
+Name: wallman
+Version: 1.5.2.8
+Summary: A simple program to set dynamic wallpapers on standalone X11 Windows Managers and Wayland compositors
+Author-email: Emma Nora Theuer <wallman@entheuer.de>
+License: MIT
+Project-URL: Homepage, https://git.entheuer.de/emma/Wallman
+Project-URL: Issues, https://git.entheuer.de/emma/Wallman/issues
+Keywords: Desktop,Wallpapers
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Operating System :: POSIX :: GNU Hurd
+Classifier: Operating System :: POSIX :: BSD
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: APScheduler
+Requires-Dist: pillow
+Requires-Dist: pystray
+Requires-Dist: importlib-metadata; python_version < "3.10"
+
+# Wallman
+
+For the full documentation, please see: **[README.org](https://git.entheuer.de/emma/Wallman/src/branch/main/README.org)**
