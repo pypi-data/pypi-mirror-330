@@ -1,0 +1,82 @@
+[project]
+name = "cookiecutter-packages-automate-PyPI"
+version = "0.0.2"
+dynamic = [
+    "dependencies",
+]
+description = "A demo for building python packages using cookiecutter and update automatically via GitHub Actions, with version management through bump-my-version"
+readme = "README.md"
+requires-python = ">=3.8"
+keywords = [
+    "cookiecutter-packages-automate-PyPI",
+]
+license = {text = "MIT License"}
+authors = [
+  {name = "ZiyeLi", email = "liziye725@gmail.com"},
+]
+classifiers = [
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: English",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+
+[project.entry-points."console_scripts"]
+cookiecutter_packages_automate_pypi = "cookiecutter_packages_automate_pypi.cli:main"
+
+[project.optional-dependencies]
+all = [
+    "cookiecutter-packages-automate-PyPI[extra]",
+]
+
+extra = [
+    "pandas",
+]
+
+
+[tool]
+[tool.setuptools.packages.find]
+include = ["cookiecutter_packages_automate_pypi*"]
+exclude = ["docs*"]
+
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}
+
+
+[tool.distutils.bdist_wheel]
+universal = true
+
+
+[tool.bumpversion]
+current_version = "0.0.2"
+commit = true
+tag = true
+
+[[tool.bumpversion.files]]
+filename = "pyproject.toml"
+search = 'version = "{current_version}"'
+replace = 'version = "{new_version}"'
+
+[[tool.bumpversion.files]]
+filename = "cookiecutter_packages_automate_pypi/__init__.py"
+search = '__version__ = "{current_version}"'
+replace = '__version__ = "{new_version}"'
+
+
+[tool.flake8]
+exclude = [
+    "docs",
+]
+max-line-length = 88
+
+
+[project.urls]
+Homepage = "https://github.com/Liziye725/cookiecutter-packages-automate-PyPI"
+
+[build-system]
+requires = ["setuptools>=64", "setuptools_scm>=8"]
+build-backend = "setuptools.build_meta"

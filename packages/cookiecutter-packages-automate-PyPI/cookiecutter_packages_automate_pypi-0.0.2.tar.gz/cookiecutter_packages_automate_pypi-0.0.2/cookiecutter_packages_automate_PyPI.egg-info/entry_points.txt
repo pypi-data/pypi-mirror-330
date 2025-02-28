@@ -1,0 +1,2 @@
+[console_scripts]
+cookiecutter_packages_automate_pypi = cookiecutter_packages_automate_pypi.cli:main
