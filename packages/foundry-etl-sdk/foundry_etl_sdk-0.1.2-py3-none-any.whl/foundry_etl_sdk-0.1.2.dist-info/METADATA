@@ -1,0 +1,7 @@
+Metadata-Version: 2.2
+Name: foundry_etl_sdk
+Version: 0.1.2
+Requires-Dist: pandas>=1.5.0
+Requires-Dist: numpy>=1.21.0
+Requires-Dist: foundry-db>=0.1.5
+Dynamic: requires-dist
