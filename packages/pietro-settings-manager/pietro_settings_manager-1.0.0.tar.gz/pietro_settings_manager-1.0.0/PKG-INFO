@@ -1,0 +1,33 @@
+Metadata-Version: 2.2
+Name: pietro-settings-manager
+Version: 1.0.0
+Summary: A Python settings manager package that allows you to make settings handling easy.
+Author-email: P1etrodev <undefinedpietro@gmail.com>
+Project-URL: Homepage, https://github.com/P1etrodev/settings-manager
+Project-URL: Issues, https://github.com/P1etrodev/settings-manager/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Classifier: License :: OSI Approved :: MIT License
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# SettingsManager
+
+A simple Python class for managing configuration settings using an INI file. The class provides methods to load, save, get, and set configuration values, with support for default settings and type conversion.
+
+## Features
+
+- Load and save settings from/to an INI file.
+- Apply default settings if the configuration file does not exist.
+- Get configuration values with optional type conversion (`bool`, `int`, `float`, `list`, `dict`).
+- Set configuration values, ensuring the section exists before setting the key-value pair.
+- Uses Python's `configparser` module for parsing INI files.
+
+## Installation
+
+You can install the package via pip (once it's published to PyPi):
+
+```bash
+pip install settingsmanager
+```

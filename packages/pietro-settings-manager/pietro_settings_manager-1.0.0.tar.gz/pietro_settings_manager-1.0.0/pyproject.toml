@@ -1,0 +1,18 @@
+[project]
+name = "pietro-settings-manager"
+version = "1.0.0"
+authors = [
+	{ name="P1etrodev", email="undefinedpietro@gmail.com" },
+]
+description = "A Python settings manager package that allows you to make settings handling easy."
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+	"Programming Language :: Python :: 3",
+	"Operating System :: OS Independent",
+	"License :: OSI Approved :: MIT License",
+]
+
+[project.urls]
+Homepage = "https://github.com/P1etrodev/settings-manager"
+Issues = "https://github.com/P1etrodev/settings-manager/issues"
