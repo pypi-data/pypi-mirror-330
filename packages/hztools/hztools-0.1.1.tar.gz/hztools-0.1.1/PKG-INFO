@@ -1,0 +1,8 @@
+Metadata-Version: 2.1
+Name: hztools
+Version: 0.1.1
+Summary: A Python package for qinfeng only
+Author: qinfeng
+Author-email: Reqinfeng2008@gmail.com
+Requires-Dist: numpy>=1.18.0
+Requires-Dist: scipy>=1.10.1
