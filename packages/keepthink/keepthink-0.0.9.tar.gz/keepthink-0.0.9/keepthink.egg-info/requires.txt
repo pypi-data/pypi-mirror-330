@@ -1,0 +1,10 @@
+openai
+tqdm
+requests
+Flask
+click
+
+[dev]
+pytest
+black
+flake8
