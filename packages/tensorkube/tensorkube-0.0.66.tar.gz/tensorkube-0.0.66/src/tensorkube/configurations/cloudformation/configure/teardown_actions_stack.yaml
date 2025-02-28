@@ -1,0 +1,24 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: All resources used by tensorkube
+Parameters:
+  ClusterName:
+    Type: String
+    Description: "Cluster Name"
+  EksAccessLambdaFunctionArn:
+    Type: String
+    Description: "EKS Access Lambda Function ARN"
+  AwsAccessLambdaFunctionArn:
+    Type: String
+    Description: "AWS Access Lambda Function ARN"
+
+Resources:
+  TeardownKsvcsScaledJobs:
+    Type: Custom::InvokeLambdaFunction
+    Properties:
+      Region: !Sub "${AWS::Region}"
+      ClusterName: !Ref ClusterName
+      Operation: "teardown-ksvcs-scaledjobs"
+      AWSAccountId: !Sub "${AWS::AccountId}"
+      Parameters:
+        ClusterName: !Ref ClusterName
+      ServiceToken: !Ref EksAccessLambdaFunctionArn
