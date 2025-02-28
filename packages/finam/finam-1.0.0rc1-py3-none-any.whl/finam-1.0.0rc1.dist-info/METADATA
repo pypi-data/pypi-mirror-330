@@ -1,0 +1,80 @@
+Metadata-Version: 2.4
+Name: finam
+Version: 1.0.0rc1
+Summary: FINAM is not a model.
+Project-URL: Homepage, https://FINAM.pages.ufz.de/
+Project-URL: Documentation, https://FINAM.pages.ufz.de/finam/
+Project-URL: Source, https://git.ufz.de/FINAM/finam
+Project-URL: Tracker, https://git.ufz.de/FINAM/finam/-/issues
+Project-URL: Changelog, https://git.ufz.de/FINAM/finam/-/blob/main/CHANGELOG.md
+Author-email: FINAM Developers <finam@ufz.de>
+License-Expression: LGPL-3.0
+License-File: AUTHORS.md
+License-File: COPYING
+License-File: COPYING.LESSER
+License-File: LICENSE.md
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)
+Classifier: Natural Language :: English
+Classifier: Operating System :: MacOS
+Classifier: Operating System :: Microsoft
+Classifier: Operating System :: Unix
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Software Development
+Classifier: Topic :: Utilities
+Requires-Python: >=3.8
+Requires-Dist: numpy>=1.17.0
+Requires-Dist: opensimplex>=0.4
+Requires-Dist: packaging
+Requires-Dist: pandas>=1.3
+Requires-Dist: pint!=0.24.0,>=0.20
+Requires-Dist: pyevtk>=1.6.0
+Requires-Dist: pyproj>=3.4
+Requires-Dist: scipy>=1.9.0
+Provides-Extra: doc
+Requires-Dist: ablog>=0.10; extra == 'doc'
+Requires-Dist: docutils>=0.18; extra == 'doc'
+Requires-Dist: matplotlib>=3; extra == 'doc'
+Requires-Dist: myst-parser>=1.0; extra == 'doc'
+Requires-Dist: numpydoc>=1.1; extra == 'doc'
+Requires-Dist: pydata-sphinx-theme==0.13; extra == 'doc'
+Requires-Dist: sphinx-design>=0.4; extra == 'doc'
+Requires-Dist: sphinx>=6; extra == 'doc'
+Requires-Dist: sphinxcontrib-mermaid>=0.7; extra == 'doc'
+Provides-Extra: test
+Requires-Dist: pygal==3.0.0; extra == 'test'
+Requires-Dist: pytest-benchmark[histogram]>=4.0; extra == 'test'
+Requires-Dist: pytest-cov>=3; extra == 'test'
+Description-Content-Type: text/markdown
+
+# FINAM
+
+FINAM is an open-source component-based model coupling framework for environmental models.
+It aims at enabling bi-directional online couplings of models for different compartments like geo-, hydro-, pedo- and biosphere.
+
+<a href="https://finam.pages.ufz.de" title="FINAM homepage" target="_blank">
+  <img width="300" src="https://git.ufz.de/FINAM/finam/-/raw/main/docs/source/_static/logo_large.svg" />
+</a>
+
+The framework is built in Python, with well-defined interfaces for data exchange.
+This approach allows for coupling of models irrespective of their internal structure, architecture or programming language.
+
+## Resources
+
+* FINAM [homepage](https://finam.pages.ufz.de)
+* FINAM [documentation](https://finam.pages.ufz.de/finam/)
+* FINAM [source code](https://git.ufz.de/FINAM/finam)
+* FINAM [GitLab group](https://git.ufz.de/FINAM), containing further related projects
+
+## License
+
+LGPLv3, Copyright © 2021-2025, the FINAM developers from Helmholtz-Zentrum für Umweltforschung GmbH - UFZ. All rights reserved.
