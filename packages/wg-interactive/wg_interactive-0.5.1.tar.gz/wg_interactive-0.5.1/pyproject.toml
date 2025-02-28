@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wg-interactive"
+dynamic = ["version"]
+
+authors = [
+    { name="Julian", email="mail@kaesebrot.eu" }
+]
+
+description = "A cli utility for interactively modifying wireguard servers."
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    
+    "Development Status :: 4 - Beta",
+
+    "Intended Audience :: System Administrators",
+]
+
+dependencies=[
+  "wgconfig==0.3.0",
+  "termcolor==2.5.0",
+  "netifaces2==0.0.22",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/das-kaesebrot/wg-interactive"
+"Bug Tracker" = "https://github.com/das-kaesebrot/wg-interactive/issues"
+
+[project.scripts]
+wg-interactive = "wginteractive.wginteractive:main"
+
+[tool.setuptools.dynamic]
+version = {attr = "wginteractive.__version__"}  # any module attribute compatible with ast.literal_eval
