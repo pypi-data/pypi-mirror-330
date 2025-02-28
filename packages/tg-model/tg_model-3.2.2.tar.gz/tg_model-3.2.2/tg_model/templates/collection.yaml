@@ -1,0 +1,174 @@
+# This template collects a lot of potential xpaths for a set of mandatory and optional attributes
+#
+# **Specifix Syntax:**
+#   {} set an additional (maybe element-sprecific) namespace
+#       e.g.:
+#           xml-element: <reprintCount xmlns="http://distantreading.net/eltec/ns" key="low"/>
+#           xpath: //profileDesc//@{http://distantreading.net/eltec/ns}:reprintCount
+collection:
+    title:
+        short:
+        long:
+    rights_holder:
+        #  examples:
+        # - fullname: Lanegan, Mark
+        #   url: https://en.wikipedia.org/wiki/Mark_Lanegan
+        # - fullname: Gossard, Stone
+        #   url: https://en.wikipedia.org/wiki/Stone_Gossard
+    collector:
+        #  examples:
+        # - fullname: Vedder, Eddie
+        #   url: https://en.wikipedia.org/wiki/Eddie_Vedder
+        # - fullname: Cornell, Chris
+        #   url: https://en.wikipedia.org/wiki/Chris_Cornell
+    # define an xpath for each attribute within TEI file
+    attributes:
+        work:
+            title:
+                xpath:
+                proposals:
+                    - //fileDesc//titleStmt//title
+                    - //fileDesc//titleStmt//name
+            author:
+                id:
+                    xpath:
+                    proposals:
+                        - //sourceDesc//author//idno[@type='gnd']/@type
+                        - //fileDesc//titleStmt//author/@ref
+                fullname:
+                    xpath:
+                    proposals:
+                        - //fileDesc/titleStmt//author//name[@type="full"]
+                        - //fileDesc/titleStmt//author
+                firstname:
+                    xpath:
+                    proposals:
+                        - //sourceDesc//author//forename
+                        - //sourceDesc//author//firstname
+                        - //fileDesc/titleStmt//author//persName//forename
+                lastname:
+                    xpath:
+                    proposals:
+                        - //sourceDesc//author//surname
+                        - //sourceDesc//author//lastname
+            genre:
+                xpath:
+                proposals:
+                    - //profileDesc//term[@type='text.form']
+                    - //profileDesc//term[@type='text.genre']
+            dateOfCreation:
+                date:
+                    xpath:
+                    proposals:
+                        - //listBibl//bibl[@type="print-source"]//date
+                        - //sourceDesc//biblFull//publicationStmt//date
+                        - //sourceDesc//bibl[@type="printSource"]//date
+                notBefore:
+                    xpath:
+                    proposals:
+                notAfter:
+                    xpath:
+                    proposals:
+            place:
+                xpath:
+                proposals:
+                    - //listBibl//bibl[@type="print-source"]//pubPlace
+                    - //sourceDesc//biblFull//publicationStmt//pubPlace
+                    - //sourceDesc//bibl[@type="printSource"]//pubPlace
+            id:
+                xpath:
+                proposals:
+                    - //sourceDesc//title//idno[@type]/@corresp
+
+        edition:
+            title:
+                xpath:
+                proposals:
+                    - //sourceDesc//bibl[@type="firstEdition"]//title
+            author:
+                id:
+                    xpath:
+                    proposals:
+                        - //sourceDesc//bibl[@type="firstEdition"]//author/@ref
+                fullname:
+                    xpath:
+                    proposals:
+                        - //sourceDesc//bibl[@type="firstEdition"]//author
+                firstname:
+                    xpath:
+                    proposals:
+                        - //sourceDesc//bibl[@type="firstEdition"]//forename
+                        - //sourceDesc//bibl[@type="firstEdition"]//firstname
+                lastname:
+                    xpath:
+                    proposals:
+                        - //sourceDesc//bibl[@type="firstEdition"]//surname
+                        - //sourceDesc//bibl[@type="firstEdition"]//lastname
+            date:
+                xpath:
+                proposals:
+                    - //sourceDesc//bibl[@type="firstEdition"]//date
+                    - //publicationStmt/date
+            place:
+                xpath:
+                proposals:
+                    - //sourceDesc//bibl[@type="firstEdition"]//pubPlace
+            language:
+                xpath:
+                proposals:
+                    - //profileDesc//term[@type='text.language']
+                    - //profileDesc//term[@type='text.lang']
+                    - //profileDesc/languageUsage/language
+                    - //profileDesc/langUsage/language
+            wordcount:
+                xpath:
+                proposals:
+                    - //fileDesc/extent/measure[@unit='ws']
+                    - //fileDesc/extent/measure[@unit='words']
+
+    basic_classifications:
+        # examples:
+        # - id:
+        #      value:
+        #      xpath: //find_me[@via="this"]/xpath
+        #   url:
+        #      value: https://d-nb.info/gnd/
+        #      xpath:
+        #   value:
+        #      value: I am a fixed value
+        #      xpath:
+    gnd_subjects:
+        # examples:
+        # - id:
+        #      value:
+        #      xpath: //keywords[@scheme="https://d-nb.info/gnd/"]/term/@ref
+        #   url:
+        #      value: https://d-nb.info/gnd/
+        #      xpath:
+        #   value:
+        #      value:
+        #      xpath: //keywords[@scheme="https://d-nb.info/gnd/"]/term
+    eltec_specs:
+        time_slot:
+            xpath:
+            proposals:
+                # - //profileDesc//@{http://distantreading.net/eltec/ns}/@timeSlot
+        author_gender:
+            xpath:
+            proposals:
+                - //profileDesc//term[@type='author.gender']
+                - //profileDesc//term[@type='author.sex']
+                - //fileDesc//notesStmt/note[@type='author-gender']
+                # - //profileDesc//@{http://distantreading.net/eltec/ns}/@authorGender
+        size:
+            xpath:
+            proposals:
+                # - //profileDesc//@{http://distantreading.net/eltec/ns}/@size
+        reprintCount:
+            xpath:
+            proposals:
+                # - //profileDesc//@{http://distantreading.net/eltec/ns}/@reprintCount
+        corpus_collection:
+            xpath:
+            proposals:
+    elements: []

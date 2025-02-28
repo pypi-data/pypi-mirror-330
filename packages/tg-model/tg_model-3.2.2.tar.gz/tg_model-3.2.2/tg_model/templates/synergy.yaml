@@ -1,0 +1,42 @@
+filepath:
+title:
+    short:
+        xpath:
+        proposals:
+            - //teiHeader/sourceDesc//title[@type="short"]
+    long:
+        xpath:
+        proposals:
+            - //teiHeader/sourceDesc//title[@type="long"]
+rights_holder:
+    fullname:
+        xpath:
+        proposals:
+            - //teiHeader/fileDesc/titleStmt/principal/fullname
+    firstname:
+        xpath:
+        proposals:
+            - //teiHeader/fileDesc/titleStmt/principal/forename
+            - //teiHeader/fileDesc/titleStmt/principal/firstname
+    lastname:
+        xpath:
+        proposals:
+            - //teiHeader/fileDesc/titleStmt/principal/surname
+            - //teiHeader/fileDesc/titleStmt/principal/lastname
+    url:
+        xpath:
+        proposals:
+            - //teiHeader/fileDesc/titleStmt/principal/@ref
+collector:
+    fullname:
+        xpath:
+        proposals:
+    firstname:
+        xpath:
+        proposals:
+    lastname:
+        xpath:
+        proposals:
+    url:
+        xpath:
+        proposals:
