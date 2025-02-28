@@ -1,0 +1,39 @@
+Metadata-Version: 2.1
+Name: menusadp
+Version: 6.0.1
+Summary: Vins et Menus
+Author: Nicolas Cordier
+Author-email: nicolas@cordier.io
+Maintainer: Nicolas Cordier
+Maintainer-email: nicolas@cordier.io
+Requires-Python: >=3.11,<3.13
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: appdirs
+Requires-Dist: click
+Requires-Dist: openpyxl (>=3.1.5,<4.0.0)
+Requires-Dist: pandas
+Requires-Dist: tabulate
+Description-Content-Type: text/x-rst
+
+========
+MenusADP
+========
+
+Vins et Menus
+
+* Free software: MIT license
+
+Features
+--------
+
+* TODO
+
+Credits
+-------
+
+This package was created with Cookiecutter_ 
+
+.. _Cookiecutter: https://github.com/audreyr/cookiecutter
+
