@@ -1,0 +1,6 @@
+from canvas_selector.canvas_selector import update_grade
+from canvas_selector.canvas_selector import get_submissions
+from canvas_selector.canvas_selector import mkdir
+from canvas_selector.canvas_selector import choose_options
+from canvas_selector.canvas_selector import nameFile
+from canvas_selector.canvas_selector import cleanup
