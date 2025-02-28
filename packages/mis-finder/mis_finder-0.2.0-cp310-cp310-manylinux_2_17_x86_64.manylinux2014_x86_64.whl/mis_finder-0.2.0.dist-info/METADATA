@@ -1,0 +1,16 @@
+Metadata-Version: 2.2
+Name: mis_finder
+Version: 0.2.0
+Summary: Python package for finding Max Independent Set in a graph represented as numpy adjacency matrix
+Author-email: Aleksander Wojnarowicz <alwojnarowicz@gmail.com>
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: typing-extensions
+Provides-Extra: dev
+Requires-Dist: numpy; extra == "dev"
+
+# python-mis
+Python package for solving Max Independent Set graph problem.
+
+Available at [PyPI](https://pypi.org/project/mis-finder).
