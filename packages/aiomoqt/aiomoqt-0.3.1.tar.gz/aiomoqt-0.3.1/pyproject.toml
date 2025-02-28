@@ -1,0 +1,33 @@
+[project]
+name = "aiomoqt"
+dynamic = ["version"]
+description = "Python asyncio implementation of the MoQT protocol"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [
+    { name = "Giovanni Marzot", email = "gmarzot@marzresearch.net" }
+]
+dependencies = [
+    "asyncio>=3.4.3",
+    "aioquic>=1.2.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/gmarzot/aiomoqt-python"
+Repository = "https://github.com/gmarzot/aiomoqt-python.git"
+
+[project.optional-dependencies]
+test = [
+    "pytest",
+]
+
+examples = [
+    "argparse",
+]
+
+[build-system]
+requires = ["setuptools>=45", "setuptools_scm[toml]>=6.2"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools_scm]
