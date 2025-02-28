@@ -1,0 +1,17 @@
+job-metadata-inputs:
+  - Organization
+  - Availability
+  - "System Name"
+  - "# of Nodes"
+  - Processor
+  - Accelerator
+  - "# of Accelerators"
+  - "Model MLC"
+  - Scenario
+  - "Host Processor Core Count"
+
+job-metadata-outputs:
+  - tokens_per_second
+
+
+
