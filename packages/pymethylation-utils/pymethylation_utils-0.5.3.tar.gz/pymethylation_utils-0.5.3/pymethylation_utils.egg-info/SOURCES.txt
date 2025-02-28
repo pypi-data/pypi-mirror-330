@@ -1,0 +1,12 @@
+LICENSE
+README.md
+setup.py
+pymethylation_utils/__init__.py
+pymethylation_utils/utils.py
+pymethylation_utils.egg-info/PKG-INFO
+pymethylation_utils.egg-info/SOURCES.txt
+pymethylation_utils.egg-info/dependency_links.txt
+pymethylation_utils.egg-info/top_level.txt
+pymethylation_utils/bin/epimetheus
+tests/__init__.py
+tests/test_run_methylation_utils.py
