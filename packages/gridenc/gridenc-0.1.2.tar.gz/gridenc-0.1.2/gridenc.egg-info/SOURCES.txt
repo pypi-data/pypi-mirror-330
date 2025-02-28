@@ -1,0 +1,10 @@
+LICENCE
+README.md
+pyproject.toml
+gridenc/__init__.py
+gridenc/gridenclib.py
+gridenc.egg-info/PKG-INFO
+gridenc.egg-info/SOURCES.txt
+gridenc.egg-info/dependency_links.txt
+gridenc.egg-info/top_level.txt
+test/test_gridenc.py
