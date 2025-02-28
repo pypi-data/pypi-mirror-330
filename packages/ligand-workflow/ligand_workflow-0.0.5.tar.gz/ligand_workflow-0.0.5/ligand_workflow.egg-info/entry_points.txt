@@ -1,0 +1,5 @@
+[console_scripts]
+json-to-csv = ligand_workflow._20_convert_json_to_csv:main
+ligand-align = ligand_workflow._00_align_ligand:align_ligands
+ligand-contacts = ligand_workflow._10_calculate_contacts:main
+ligand-workflow = ligand_workflow.90_ligand_workflow:main
