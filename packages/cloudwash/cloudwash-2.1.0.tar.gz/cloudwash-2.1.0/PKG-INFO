@@ -1,0 +1,67 @@
+Metadata-Version: 2.2
+Name: cloudwash
+Version: 2.1.0
+Summary: The cloud resources cleanup utility
+Home-page: https://github.com/RedHatQE/cloudwash
+Author: Jitendra Yejare
+Author-email: jyejare@redhat.com
+License: Apache license
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Operating System :: OS Independent
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: System Administrators
+Classifier: Topic :: Software Development
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Software Development :: Quality Assurance
+Classifier: Topic :: System :: Systems Administration
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: wrapanapi
+Requires-Dist: dynaconf
+Requires-Dist: click
+Requires-Dist: wget
+Requires-Dist: dominate
+Provides-Extra: setup
+Requires-Dist: setuptools; extra == "setup"
+Requires-Dist: setuptools-scm; extra == "setup"
+Requires-Dist: wheel; extra == "setup"
+Requires-Dist: twine; extra == "setup"
+Provides-Extra: dev
+Requires-Dist: pre-commit; extra == "dev"
+Requires-Dist: flake8; extra == "dev"
+
+# Cloudwash
+
+[![PyPi & Quay Releases](https://github.com/RedHatQE/cloudwash/actions/workflows/new_release.yml/badge.svg)](https://github.com/RedHatQE/cloudwash/actions/workflows/new_release.yml)
+[![CodeQL](https://github.com/RedHatQE/cloudwash/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/RedHatQE/cloudwash/actions/workflows/codeql-analysis.yml)
+[![Dependabot Updates](https://github.com/RedHatQE/cloudwash/actions/workflows/dependabot/dependabot-updates/badge.svg)](https://github.com/RedHatQE/cloudwash/actions/workflows/dependabot/dependabot-updates)
+[![pages-build-deployment](https://github.com/RedHatQE/cloudwash/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/RedHatQE/cloudwash/actions/workflows/pages/pages-build-deployment)
+
+## Introduction
+
+`cloudwash` is a library written in python that can be used to monitor and remove the unused cloud resources in public and private cloud providers.
+
+Most importantly, `cloudwash` provides the CLI command utility called '`swach`' to fire commands to cleanup the resources on cloud.
+
+cloudwash supports following cloud providers:
+
+| Cloud Providers  | VMs     | NICs    | DISCs   | IMAGEs  | Groups  | OCPs    | PIPs    | Stacks   |
+|------------------|---------|---------|---------|---------|---------|---------|---------|----------|
+| Amazon EC2       | &check; | &check; | &check; | &check; | &cross; | **DRY** | &check; | &check;  |
+| Microsoft Azure  | &check; | &check; | &check; | &check; | &check; | &cross; | &check; | **NA**   |
+| Google Cloud     | &check; | &cross; | &cross; | &cross; | &cross; | &cross; | &cross; | **NA**   |
+| VMWare           | &check; | &check; | &check; | &cross; | &cross; | &cross; | **NA**  | **NA**   |
+
+| Podman | Containers &check; |
+|--------|--------------------|
+
+The list of resource types Cloudwash helps to clean should be found under [settings.yaml.template](https://github.com/RedHatQE/cloudwash/blob/master/settings.yaml.template) file for individual cloud providers along with cleanup criteria.
+
+
+## Guidelines for Users and Contributors:
+- [Contributing](https://github.com/RedHatQE/cloudwash/blob/master/Docs/CONTRIBUTING.md)
+- [User Guide](https://github.com/RedHatQE/cloudwash/blob/master/Docs/USER_GUIDE.md)
