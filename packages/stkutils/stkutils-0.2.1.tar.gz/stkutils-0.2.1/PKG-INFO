@@ -1,0 +1,18 @@
+Metadata-Version: 2.2
+Name: stkutils
+Version: 0.2.1
+Summary: Utils for compile/decompile X-Ray game engine files
+Author: bardak
+Author-email: "Mikhail Belov(mishka251)" <mishkabelka251@gmail.com>
+Project-URL: Homepage, https://github.com/mishka251/perl_binary_packing
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Description-Content-Type: text/markdown
+Requires-Dist: perl_binary_packing==0.4.0
+
+Python Universal ACDC
+Утилита для компиляции и декомпиляции .spawn-файлов от игрового движка X-Ray (сталкер)
+
+Utility for compiling and decompiling .spawn files from the X-Ray game engine (stalker)
