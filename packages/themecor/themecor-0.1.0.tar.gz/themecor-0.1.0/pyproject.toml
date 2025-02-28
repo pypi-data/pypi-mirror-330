@@ -1,0 +1,40 @@
+[tool.poetry]
+name = "themecor"
+version = "0.1.0"
+description = "`themecor` is a Python package that provides a centralized theme manager to ensure visual consistency across different packages within an application. It offers styles and methods to display messages, prompts, and progress bars in a uniform manner."
+authors = ["infocornouaille <90894019+infocornouaille@users.noreply.github.com>"]
+license = "MIT"
+readme = "README.md"
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Programming Language :: Python :: 3.12",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+typer = "^0.15.1"
+rich = "^13.9.4"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.4"
+black = "^25.1.0"
+isort = "^6.0.1"
+
+
+
+
+[tool.black]
+line-length = 88
+
+[tool.isort]
+profile = "black"
+
+[tool.poetry.scripts]
+themecor = "themecor.cli:app"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
