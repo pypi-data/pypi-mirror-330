@@ -1,0 +1,2 @@
+[console_scripts]
+secret_scanner = vcs_scanner.secret_scanners.cli:scan_repository_from_cli
