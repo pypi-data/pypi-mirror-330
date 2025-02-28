@@ -1,0 +1,35 @@
+## BridgeBuilder Challenge
+
+```
+$ascii_chamber_drawing
+
+    y
+    ^ $ymax
+    |
+    |
+$xmin
+<---+---> x
+        $xmax
+    |
+    |
+    v $ymin
+```
+
+What's the cheapest bridge design you can come up with?
+To get the suggested design (if there is one) run the following.
+
+>>> suggested_design = buildy.suggest_a_design()
+
+How much does it cost?
+
+>>> cost = buildy.calculate_design_cost(suggested_design)
+
+Build the bridge & simulate it.
+
+>>> bridge = buildy.build_bridge(suggested_design)
+
+Process the results.
+
+>>> success, feedback, beams = bridge.assess_for_breaks()
+
+docs: https://developer.ansys.com/codefest/docs/one-page
