@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: my-blog-app
+Version: 0.1.0
+Summary: Django blog application for learning and testing
+Home-page: https://github.com/yourusername/blog-app
+Author: Elberd
+Author-email: your.email@example.com
+Classifier: Framework :: Django
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+
+# Django Blog App
+
+A simple Django DRF app for managing blog posts.
+
+## Installation
+
+```bash
+pip install django-blog-app
