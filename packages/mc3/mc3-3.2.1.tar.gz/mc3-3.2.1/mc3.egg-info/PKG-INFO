@@ -1,0 +1,78 @@
+Metadata-Version: 2.2
+Name: mc3
+Version: 3.2.1
+Summary: Multi-core Markov-chain Monte Carlo package
+Author-email: Patricio Cubillos <patricio.cubillos@oeaw.ac.at>
+License: Copyright (c) 2015-2022 Patricio Cubillos and contributors.
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in
+        all copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+        THE SOFTWARE.
+        
+Project-URL: Homepage, https://github.com/pcubillos/mc3
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy>=1.23.5
+Requires-Dist: scipy>=1.5.4
+Requires-Dist: matplotlib>=3.3.4
+Provides-Extra: test
+Requires-Dist: pytest>=6.0; extra == "test"
+
+# mc3: Multi-core Markov-chain Monte Carlo
+> A Python implementation of the Markov-chain Monte Carlo algorithm.
+
+[![Tests](https://github.com/pcubillos/mc3/actions/workflows/python-package.yml/badge.svg?branch=master)](https://github.com/pcubillos/mc3/actions/workflows/python-package.yml)
+[![Documentation Status](https://readthedocs.org/projects/mc3/badge/?version=latest)](https://mc3.readthedocs.io/en/latest/?badge=latest)
+[![PyPI](https://img.shields.io/pypi/v/mc3.svg)](https://pypi.org/project/mc3)
+[![Conda Version](https://img.shields.io/conda/vn/conda-forge/mc3.svg)](https://anaconda.org/conda-forge/mc3)
+[![GitHub](https://img.shields.io/github/license/pcubillos/mc3.svg?color=blue)](https://mc3.readthedocs.io/en/latest/license.html)
+
+### Install as:
+```
+pip install mc3
+```
+or:
+```
+conda install -c conda-forge mc3
+```
+
+### Docs at:
+<https://mc3.readthedocs.io/en/latest/>
+
+### Cite as:
+```bibtex
+@ARTICLE{CubillosEtal2017apjRednoise,
+       author = {{Cubillos}, Patricio and {Harrington}, Joseph and {Loredo}, Thomas J. and {Lust}, Nate B. and {Blecic}, Jasmina and {Stemm}, Madison},
+        title = "{On Correlated-noise Analyses Applied to Exoplanet Light Curves}",
+      journal = {\aj},
+     keywords = {methods: statistical, planets and satellites: fundamental parameters, techniques: photometric, Astrophysics - Earth and Planetary Astrophysics},
+         year = 2017,
+        month = jan,
+       volume = {153},
+       number = {1},
+          eid = {3},
+        pages = {3},
+          doi = {10.3847/1538-3881/153/1/3},
+archivePrefix = {arXiv},
+       eprint = {1610.01336},
+ primaryClass = {astro-ph.EP},
+       adsurl = {https://ui.adsabs.harvard.edu/abs/2017AJ....153....3C},
+      adsnote = {Provided by the SAO/NASA Astrophysics Data System}
+}
+```
+
