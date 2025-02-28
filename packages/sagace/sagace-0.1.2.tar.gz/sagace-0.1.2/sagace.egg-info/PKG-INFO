@@ -1,0 +1,206 @@
+Metadata-Version: 2.2
+Name: sagace
+Version: 0.1.2
+Summary: SAGACE Package - Auxiliary package for developing integrations with the SAGACE system.
+Home-page: https://gitlab.com/ampere.consultoria/sagace-python-sdk.git
+Author: Ampere Consultoria Empresaria LTDA
+Author-email: Ampere Consultoria Empresaria LTDA <desenvolvimento@ampereconsultoria.com.br>
+License: MIT
+Project-URL: homepage, https://gitlab.com/ampere.consultoria/sagace-python-sdk
+Project-URL: repository, https://gitlab.com/ampere.consultoria/sagace-python-sdk
+Keywords: sagace,energy,integrations,ampere
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Libraries
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: author
+Dynamic: home-page
+Dynamic: requires-python
+
+# SAGACE Python SDK
+
+[![Latest Release](https://gitlab.com/ampere.consultoria/sagace-python-sdk/-/badges/release.svg)](https://gitlab.com/ampere.consultoria/sagace-python-sdk/-/releases)
+[![pipeline status](https://gitlab.com/ampere.consultoria/sagace-python-sdk/badges/main/pipeline.svg)](https://gitlab.com/ampere.consultoria/sagace-python-sdk/-/commits/main)
+[![coverage report](https://gitlab.com/ampere.consultoria/sagace-python-sdk/badges/main/coverage.svg)](https://gitlab.com/ampere.consultoria/sagace-python-sdk/-/commits/main)
+
+
+## Visão Geral
+O **SAGACE Python SDK** é um SDK para interação com o sistema **SAGACE**, que fornece funcionalidades de autenticação, gerenciamento de tokens e comunicação com APIs REST.
+
+## Funcionalidades
+- **Autenticação Segura**: Implementação de autenticação via API.
+- **Cliente API**: Interface para envio de requisições HTTP.
+- **Gerenciamento de Tokens**: Armazenamento em memória, arquivo ou Redis.
+- **Exceções Personalizadas**: Tratamento de erros e falhas comuns.
+- **Testes Automatizados**: Cobertura de testes unitários para todas as funcionalidades principais.
+
+## Requisitos
+Antes de instalar o SDK, certifique-se de que possui os seguintes requisitos:
+- Python 3.8+
+- `pip` atualizado
+- Redis (opcional, se for utilizar armazenamento de token via Redis)
+
+## Instalação
+Para instalar a versão mais recente do **SAGACE Python SDK**, utilize:
+
+```bash
+pip install sagace-sdk
+```
+
+Se estiver instalando a partir do código-fonte:
+
+```bash
+git clone https://github.com/ampereconsultoria/sagace-python-sdk.git
+cd sagace-python-sdk
+pip install -r requirements.txt
+```
+
+## Uso
+
+### Autenticação
+Para autenticar e obter um token:
+
+```python
+from sagace.auth.application.authentication_use_case import AuthenticationUseCase
+
+auth_use_case = AuthenticationUseCase()
+token = auth_use_case.authenticate("usuario", "senha")
+print("Token obtido:", token)
+```
+
+### Requisição para a API
+Exemplo de requisição GET usando o **APIClient**:
+
+```python
+from sagace.core.http_api_client import HttpApiClient
+
+api = HttpApiClient(token)
+response = api.get("/endpoint/desejado")
+print(response.json())
+```
+
+### Armazenamento de Token
+O SDK permite armazenar tokens em diferentes formatos:
+
+#### **Memória**
+```python
+from sagace.core.storage.memory_storage import MemoryStorage
+
+storage = MemoryStorage()
+storage.save(token)
+print("Token armazenado em memória!")
+```
+
+#### **Arquivo**
+```python
+from sagace.core.storage.file_storage import FileStorage
+
+storage = FileStorage("token.json")
+storage.save(token)
+print("Token salvo no arquivo token.json!")
+```
+
+#### **Redis**
+```python
+from sagace.core.storage.redis_storage import RedisStorage
+
+storage = RedisStorage()
+storage.save(token)
+print("Token armazenado no Redis!")
+```
+
+## Estrutura do Projeto
+```
+sagace-sdk/
+├── sagace/
+│   ├── auth/
+│   │   ├── application/
+│   │   │   ├── authentication_use_case.py
+│   │   ├── domain/
+│   │   │   ├── authentication_repository.py
+│   │   ├── infrastructure/
+│   │   │   ├── authentication_api.py
+│   │   ├── interfaces/
+│   │       ├── authentication_service.py
+│   ├── core/
+│   │   ├── api_client.py
+│   │   ├── http_api_client.py
+│   │   ├── token.py
+│   │   ├── token_storage.py
+│   │   ├── storage/
+│   │       ├── file_storage.py
+│   │       ├── memory_storage.py
+│   │       ├── redis_storage.py
+│   ├── exceptions/
+│   │   ├── application/
+│   │   │   ├── application_error.py
+│   │   ├── domain/
+│   │   │   ├── api_request_error.py
+│   │   │   ├── domain_error.py
+│   │   │   ├── permission_denied_error.py
+│   │   │   ├── token_expired_error.py
+│   │   ├── infrastructure/
+│   │   │   ├── authentication_error.py
+│   │   │   ├── infrastructure_error.py
+│   │   ├── interfaces/
+│   │       ├── interface_error.py
+│   ├── samples/
+│   │   ├── basic_autentication.py
+│
+├── tests/               # Testes unitários
+│   ├── auth/
+│   │   ├── test_authentication_api.py
+│   │   ├── test_authentication_use_case.py
+│   ├── core/
+│   │   ├── test_api_client.py
+│   │   ├── test_http_api_client.py
+│   │   ├── storage/
+│   │       ├── test_file_storage.py
+│   │       ├── test_memory_storage.py
+│   │       ├── test_redis_storage.py
+│   ├── exceptions/
+│   │   ├── test_domain_exceptions.py
+│   │   ├── test_infrastructure_exceptions.py
+│
+├── docs/                # Documentação Sphinx
+│   ├── conf.py
+├── setup.py             # Script de instalação do pacote
+├── requirements.txt     # Dependências do projeto
+├── README.md            # Documentação principal
+├── LICENSE              # Licença do projeto
+```
+
+## Testes
+Para rodar os testes unitários:
+
+```bash
+pytest tests/
+```
+
+## Contribuição
+Se desejar contribuir para o projeto, siga os passos:
+1. **Clone o repositório**:
+   ```bash
+   git clone https://github.com/ampereconsultoria/sagace-python-sdk.git
+   ```
+2. **Crie um branch para sua contribuição**:
+   ```bash
+   git checkout -b minha-contribuicao
+   ```
+3. **Implemente e documente suas mudanças**.
+4. **Execute os testes** para garantir que tudo funciona corretamente.
+5. **Crie um Pull Request** para revisão.
+
+## Licença
+Este projeto está licenciado sob a **MIT License**. Consulte o arquivo `LICENSE` para mais detalhes.
+
+## Contato
+Para suporte e dúvidas:
+- **Email**: [desenvolvimento@ampereconsultoria.com.br](mailto:suporte@sagace.com.br)
+- **GitHub Issues**: [Reportar Problema](https://github.com/ampereconsultoria/sagace-python-sdk/issues)
+
