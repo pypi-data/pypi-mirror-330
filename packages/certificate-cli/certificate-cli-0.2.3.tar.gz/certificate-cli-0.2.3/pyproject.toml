@@ -1,0 +1,41 @@
+# [project]
+# name = "certificate-cli"
+# version = "0.2.2"
+# authors = [
+#   { name="Ben Davidson", email="author@example.com" },
+# ]
+# description = "A small example package"
+# readme = "README.md"
+# requires-python = ">=3.8"
+# classifiers = [
+#     "Programming Language :: Python :: 3",
+#     "License :: OSI Approved :: MIT License",
+#     "Operating System :: OS Independent",
+# ]
+# # [Packaging Python Projects - Python Packaging User Guide](https://packaging.python.org/en/latest/tutorials/packaging-projects/#creating-pyproject-toml)
+
+[project.urls]
+Homepage = "https://github.com/pypa/sampleproject"
+Issues = "https://github.com/pypa/sampleproject/issues"
+
+[tool.poetry]
+name = "certificate-cli"
+version = "0.2.3"
+description = ""
+authors = ["Ben Davidson <ben.davidson@dynatrace.com>"]
+readme = "README.md"
+packages = [{include = "certificate_cli"}]
+
+[tool.poetry.scripts]
+certificate_cli = "certificate_cli.main:start_cli"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+Flask = "^3.0.3"
+typer = {extras = ["all"], version = "^0.12.4"}
+cryptography = "^43.0.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
