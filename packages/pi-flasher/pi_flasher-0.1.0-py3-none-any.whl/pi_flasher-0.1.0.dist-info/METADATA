@@ -1,0 +1,110 @@
+Metadata-Version: 2.4
+Name: pi-flasher
+Version: 0.1.0
+Summary: A safe tool for flashing Raspberry Pi OS images to SD cards
+Project-URL: Repository, https://github.com/yourusername/pi-flasher
+Project-URL: Documentation, https://github.com/yourusername/pi-flasher#readme
+Author-email: Your Name <your.email@example.com>
+License: MIT
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: System :: Hardware
+Classifier: Topic :: Utilities
+Requires-Python: >=3.11
+Requires-Dist: build>=1.2.2.post1
+Requires-Dist: psutil>=7.0.0
+Requires-Dist: python-magic>=0.4.27
+Requires-Dist: pyudev>=0.24.3
+Requires-Dist: requests>=2.32.3
+Requires-Dist: rich>=13.9.4
+Requires-Dist: twine>=6.1.0
+Description-Content-Type: text/markdown
+
+# Raspberry Pi OS Flasher
+
+A command-line tool for safely flashing Raspberry Pi OS images to SD cards. This tool automatically downloads the latest 64-bit Raspberry Pi OS and configures it with SSH enabled for remote access.
+
+## Features
+
+- Automatic download of the latest Raspberry Pi OS 64-bit
+- Safe device detection to prevent accidental system drive formatting
+- SSH enabled by default for headless setup
+- Progress monitoring with health checks
+- Verification of flashed images
+- Simulation mode for testing
+
+## Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/pi-flasher.git
+cd pi-flasher
+
+# Install the package
+pip install .
+```
+
+## Usage
+
+1. Basic usage (will automatically detect SD card):
+```bash
+pi-flasher
+```
+
+2. For testing in simulation mode:
+```bash
+pi-flasher --simulate
+```
+
+3. Specify a custom image and device:
+```bash
+pi-flasher --image path/to/image.img --device /dev/sdX
+```
+
+## Options
+
+- `--simulate`: Run in simulation mode (no actual device writes)
+- `--force`: Skip confirmation prompts (use with caution!)
+- `--image PATH`: Specify a local image file
+- `--device PATH`: Specify a target device path
+
+## Safety Features
+
+- Detects only removable devices (USB drives and SD cards)
+- Verifies device size is appropriate for Raspberry Pi OS
+- Prevents writing to system drives
+- Shows clear warnings before writing
+- Verifies written data
+
+## Requirements
+
+- Python 3.11+
+- Linux-based system with USB/SD card support
+- Required Python packages (installed automatically):
+  - rich
+  - requests
+  - pyudev
+
+## After Flashing
+
+1. Insert the SD card into your Raspberry Pi
+2. Connect your Pi to your network via ethernet
+3. Power on the Pi - SSH will be enabled by default
+4. Find your Pi's IP address and connect:
+   ```bash
+   ssh pi@<raspberry-pi-ip>
+   ```
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
