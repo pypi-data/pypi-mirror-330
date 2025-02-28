@@ -1,0 +1,250 @@
+"""SynchroniserHalfAdvancedTimeSteppingAnalysisForModulation"""
+
+from __future__ import annotations
+
+from typing import TYPE_CHECKING, ClassVar
+
+from mastapy._private._internal import constructor, utility
+from mastapy._private._internal.cast_exception import CastException
+from mastapy._private._internal.dataclasses import extended_dataclass
+from mastapy._private._internal.python_net import (
+    python_net_import,
+    pythonnet_property_get,
+)
+from mastapy._private.system_model.analyses_and_results.advanced_time_stepping_analyses_for_modulation import (
+    _7064,
+)
+
+_SYNCHRONISER_HALF_ADVANCED_TIME_STEPPING_ANALYSIS_FOR_MODULATION = python_net_import(
+    "SMT.MastaAPI.SystemModel.AnalysesAndResults.AdvancedTimeSteppingAnalysesForModulation",
+    "SynchroniserHalfAdvancedTimeSteppingAnalysisForModulation",
+)
+
+if TYPE_CHECKING:
+    from typing import Any, Type, TypeVar
+
+    from mastapy._private.system_model.analyses_and_results import _2723, _2725, _2729
+    from mastapy._private.system_model.analyses_and_results.advanced_time_stepping_analyses_for_modulation import (
+        _6971,
+        _6985,
+        _7026,
+        _7028,
+    )
+    from mastapy._private.system_model.analyses_and_results.analysis_cases import (
+        _7704,
+        _7707,
+    )
+    from mastapy._private.system_model.analyses_and_results.static_loads import _7655
+    from mastapy._private.system_model.analyses_and_results.system_deflections import (
+        _2895,
+    )
+    from mastapy._private.system_model.part_model.couplings import _2681
+
+    Self = TypeVar(
+        "Self", bound="SynchroniserHalfAdvancedTimeSteppingAnalysisForModulation"
+    )
+    CastSelf = TypeVar(
+        "CastSelf",
+        bound="SynchroniserHalfAdvancedTimeSteppingAnalysisForModulation._Cast_SynchroniserHalfAdvancedTimeSteppingAnalysisForModulation",
+    )
+
+
+__docformat__ = "restructuredtext en"
+__all__ = ("SynchroniserHalfAdvancedTimeSteppingAnalysisForModulation",)
+
+
+@extended_dataclass(frozen=True, slots=True, weakref_slot=True)
+class _Cast_SynchroniserHalfAdvancedTimeSteppingAnalysisForModulation:
+    """Special nested class for casting SynchroniserHalfAdvancedTimeSteppingAnalysisForModulation to subclasses."""
+
+    __parent__: "SynchroniserHalfAdvancedTimeSteppingAnalysisForModulation"
+
+    @property
+    def synchroniser_part_advanced_time_stepping_analysis_for_modulation(
+        self: "CastSelf",
+    ) -> "_7064.SynchroniserPartAdvancedTimeSteppingAnalysisForModulation":
+        return self.__parent__._cast(
+            _7064.SynchroniserPartAdvancedTimeSteppingAnalysisForModulation
+        )
+
+    @property
+    def coupling_half_advanced_time_stepping_analysis_for_modulation(
+        self: "CastSelf",
+    ) -> "_6985.CouplingHalfAdvancedTimeSteppingAnalysisForModulation":
+        from mastapy._private.system_model.analyses_and_results.advanced_time_stepping_analyses_for_modulation import (
+            _6985,
+        )
+
+        return self.__parent__._cast(
+            _6985.CouplingHalfAdvancedTimeSteppingAnalysisForModulation
+        )
+
+    @property
+    def mountable_component_advanced_time_stepping_analysis_for_modulation(
+        self: "CastSelf",
+    ) -> "_7026.MountableComponentAdvancedTimeSteppingAnalysisForModulation":
+        from mastapy._private.system_model.analyses_and_results.advanced_time_stepping_analyses_for_modulation import (
+            _7026,
+        )
+
+        return self.__parent__._cast(
+            _7026.MountableComponentAdvancedTimeSteppingAnalysisForModulation
+        )
+
+    @property
+    def component_advanced_time_stepping_analysis_for_modulation(
+        self: "CastSelf",
+    ) -> "_6971.ComponentAdvancedTimeSteppingAnalysisForModulation":
+        from mastapy._private.system_model.analyses_and_results.advanced_time_stepping_analyses_for_modulation import (
+            _6971,
+        )
+
+        return self.__parent__._cast(
+            _6971.ComponentAdvancedTimeSteppingAnalysisForModulation
+        )
+
+    @property
+    def part_advanced_time_stepping_analysis_for_modulation(
+        self: "CastSelf",
+    ) -> "_7028.PartAdvancedTimeSteppingAnalysisForModulation":
+        from mastapy._private.system_model.analyses_and_results.advanced_time_stepping_analyses_for_modulation import (
+            _7028,
+        )
+
+        return self.__parent__._cast(
+            _7028.PartAdvancedTimeSteppingAnalysisForModulation
+        )
+
+    @property
+    def part_static_load_analysis_case(
+        self: "CastSelf",
+    ) -> "_7707.PartStaticLoadAnalysisCase":
+        from mastapy._private.system_model.analyses_and_results.analysis_cases import (
+            _7707,
+        )
+
+        return self.__parent__._cast(_7707.PartStaticLoadAnalysisCase)
+
+    @property
+    def part_analysis_case(self: "CastSelf") -> "_7704.PartAnalysisCase":
+        from mastapy._private.system_model.analyses_and_results.analysis_cases import (
+            _7704,
+        )
+
+        return self.__parent__._cast(_7704.PartAnalysisCase)
+
+    @property
+    def part_analysis(self: "CastSelf") -> "_2729.PartAnalysis":
+        from mastapy._private.system_model.analyses_and_results import _2729
+
+        return self.__parent__._cast(_2729.PartAnalysis)
+
+    @property
+    def design_entity_single_context_analysis(
+        self: "CastSelf",
+    ) -> "_2725.DesignEntitySingleContextAnalysis":
+        from mastapy._private.system_model.analyses_and_results import _2725
+
+        return self.__parent__._cast(_2725.DesignEntitySingleContextAnalysis)
+
+    @property
+    def design_entity_analysis(self: "CastSelf") -> "_2723.DesignEntityAnalysis":
+        from mastapy._private.system_model.analyses_and_results import _2723
+
+        return self.__parent__._cast(_2723.DesignEntityAnalysis)
+
+    @property
+    def synchroniser_half_advanced_time_stepping_analysis_for_modulation(
+        self: "CastSelf",
+    ) -> "SynchroniserHalfAdvancedTimeSteppingAnalysisForModulation":
+        return self.__parent__
+
+    def __getattr__(self: "CastSelf", name: str) -> "Any":
+        try:
+            return self.__getattribute__(name)
+        except AttributeError:
+            class_name = utility.camel(name)
+            raise CastException(
+                f'Detected an invalid cast. Cannot cast to type "{class_name}"'
+            ) from None
+
+
+@extended_dataclass(frozen=True, slots=True, weakref_slot=True, eq=False)
+class SynchroniserHalfAdvancedTimeSteppingAnalysisForModulation(
+    _7064.SynchroniserPartAdvancedTimeSteppingAnalysisForModulation
+):
+    """SynchroniserHalfAdvancedTimeSteppingAnalysisForModulation
+
+    This is a mastapy class.
+    """
+
+    TYPE: ClassVar["Type"] = (
+        _SYNCHRONISER_HALF_ADVANCED_TIME_STEPPING_ANALYSIS_FOR_MODULATION
+    )
+
+    wrapped: "Any"
+
+    def __post_init__(self: "Self") -> None:
+        """Override of the post initialisation magic method."""
+        if not hasattr(self.wrapped, "reference_count"):
+            self.wrapped.reference_count = 0
+
+        self.wrapped.reference_count += 1
+
+    @property
+    def component_design(self: "Self") -> "_2681.SynchroniserHalf":
+        """mastapy.system_model.part_model.couplings.SynchroniserHalf
+
+        Note:
+            This property is readonly.
+        """
+        temp = pythonnet_property_get(self.wrapped, "ComponentDesign")
+
+        if temp is None:
+            return None
+
+        type_ = temp.GetType()
+        return constructor.new(type_.Namespace, type_.Name)(temp)
+
+    @property
+    def component_load_case(self: "Self") -> "_7655.SynchroniserHalfLoadCase":
+        """mastapy.system_model.analyses_and_results.static_loads.SynchroniserHalfLoadCase
+
+        Note:
+            This property is readonly.
+        """
+        temp = pythonnet_property_get(self.wrapped, "ComponentLoadCase")
+
+        if temp is None:
+            return None
+
+        type_ = temp.GetType()
+        return constructor.new(type_.Namespace, type_.Name)(temp)
+
+    @property
+    def system_deflection_results(
+        self: "Self",
+    ) -> "_2895.SynchroniserHalfSystemDeflection":
+        """mastapy.system_model.analyses_and_results.system_deflections.SynchroniserHalfSystemDeflection
+
+        Note:
+            This property is readonly.
+        """
+        temp = pythonnet_property_get(self.wrapped, "SystemDeflectionResults")
+
+        if temp is None:
+            return None
+
+        type_ = temp.GetType()
+        return constructor.new(type_.Namespace, type_.Name)(temp)
+
+    @property
+    def cast_to(
+        self: "Self",
+    ) -> "_Cast_SynchroniserHalfAdvancedTimeSteppingAnalysisForModulation":
+        """Cast to another type.
+
+        Returns:
+            _Cast_SynchroniserHalfAdvancedTimeSteppingAnalysisForModulation
+        """
+        return _Cast_SynchroniserHalfAdvancedTimeSteppingAnalysisForModulation(self)
