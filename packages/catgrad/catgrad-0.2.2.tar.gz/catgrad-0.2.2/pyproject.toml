@@ -1,0 +1,39 @@
+[project]
+name = "catgrad"
+version = "0.2.2"
+authors = [
+  { name="Paul Wilson", email="paul@statusfailed.com" }
+]
+description = "deep learning with reverse derivatives"
+readme = "README.md"
+requires-python = ">= 3.8"
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+]
+dependencies = [
+  "numpy~=1.26.4",
+  "open-hypergraphs~=0.1.3",
+]
+[project.optional-dependencies]
+dev = [
+  "hypothesis",
+  "pytest",
+  "scipy~=1.15.1",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/statusfailed/catgrad/"
+"Github" = "https://github.com/statusfailed/catgrad/"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build]
+packages = ["catgrad"]
+
+[tool.pytest.ini_options]
+testpaths = [
+  "tests"
+]
