@@ -1,0 +1,25 @@
+Metadata-Version: 2.1
+Name: ami-data-parser
+Version: 0.2.0
+Summary: AMI parser data
+Author: Tatianno Alves
+Author-email: tferreiraalves@gmail.com
+License: MIT License
+Keywords: asterisk manager interface ami parser data
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+
+# AMI Data Parser
+This repository aims to provide a tool to interpret and process data received from the Asterisk Manager Interface (AMI). It identifies and exposes status changes in queues and extensions in real-time, enabling more efficient integration with external systems or monitoring dashboards.
+
+## Key Features
+- Parsing data from the AMI.
+- Detecting status changes in queues and extensions.
+- Exposing processed data in an integration-friendly format.
+
+## Repository
+Github: https://github.com/tatianno/ami-data-parser
+
+## Requirements
+ - Python 3.10 +
