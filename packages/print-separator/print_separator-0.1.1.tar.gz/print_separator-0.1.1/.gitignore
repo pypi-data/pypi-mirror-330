@@ -1,0 +1,75 @@
+# Cache
+.cache
+**/__pycache__
+**/*.pyc
+__pycache__
+.mypy_cache
+.idea/
+__pycache__/
+*.log
+.venv/
+
+# IDE
+.idea
+.idea/*
+**/.DS_Store+
+*_i.c
+*_p.c
+*_h.h
+*.ilk
+*.meta
+*.obj
+*.iobj
+*.pch
+*.pdb
+*.ipdb
+*.pgc
+*.pgd
+*.rsp
+*.sbr
+*.tlb
+*.tli
+*.tlh
+*.tmp
+*.tmp_proj
+*_wpftmp.csproj
+*.vspscc
+*.vssscc
+.builds
+*.pidb
+*.svclog
+*.scc
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Logs
+*.log
+
+# Environments
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+.venv
+.env
+
+# Data # Depending on the project, you may want to remove this section
+src/data/*
+!src/data/.gitkeep
+
+
+# Other
+.ipynb_checkpoints
+.pybuilder/
+target/
+local_settings.py!
+/uv.lock
+.DS_Store
+
+app/fe-openapi.json
+
+.pypirc

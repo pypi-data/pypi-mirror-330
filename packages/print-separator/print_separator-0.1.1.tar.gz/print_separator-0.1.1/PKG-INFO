@@ -1,0 +1,9 @@
+Metadata-Version: 2.4
+Name: print-separator
+Version: 0.1.1
+Summary: A simple, colorful gradient banner/separator for your terminal
+Author-email: Jean Michel Battirola <jeanbattirola@gmail.com>
+License: MIT
+License-File: LICENSE
+Provides-Extra: dev
+Requires-Dist: pytest; extra == 'dev'
