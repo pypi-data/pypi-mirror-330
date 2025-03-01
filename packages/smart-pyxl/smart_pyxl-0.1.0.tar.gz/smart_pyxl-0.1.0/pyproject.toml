@@ -1,0 +1,16 @@
+[project]
+name = "smart_pyxl"
+version = "0.1.0"
+description = ""
+authors = []
+license = {file = "LICENSE.txt"}
+readme = "README.txt"
+dependencies = [
+    "pandas>=2.2.3",
+    "openpyxl >= 3.1.0",
+]
+
+[build-system]
+requires = ["setuptools>=65.0"]
+build-backend = "setuptools.build_meta"
+
