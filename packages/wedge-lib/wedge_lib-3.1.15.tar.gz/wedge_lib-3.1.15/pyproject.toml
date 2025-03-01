@@ -1,0 +1,71 @@
+[tool.poetry]
+name = "wedge-lib"
+version = "3.1.15"
+description = "Wedge library for django application"
+authors = ["François Schneider <francois.schneider@wedge-digital.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{ include = "w" }]
+exclude = ["w/tests/fixtures/resultsets", "w/tests/fixtures/sandbox", "w/tests/services"]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+arrow = "*"
+cloudinary = "*"
+cryptography = "*"
+django = "*"
+djangorestframework = "*"
+djangorestframework-api-key = "*"
+factory-boy = "*"
+mergedeep = "*"
+openpyxl = "*"
+pandas = "*"
+python-dateutil = "*"
+python-keycloak = "*"
+pyyaml = "*"
+pyzstd = "*"
+requests = "*"
+serpy = "*"
+validators = "*"
+var-dump = "*"
+weasyprint = "*"
+boto3 = "*"
+botocore = "*"
+moto = "==4.1.10"
+argon2-cffi = "*"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "*"
+django-extensions = "*"
+flake8 = "*"
+pytest = "*"
+pytest-cov = "*"
+pytest-django = "*"
+setuptools = "*"
+twine = "*"
+wheel = "*"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+python_files = "test_*.py"
+addopts = "--reuse-db --nomigrations -p no:warnings --tb=short"
+testpaths = "w/tests"
+
+[tool.coverage.run]
+omit = [
+    "*/.local/*",
+    "w/debug.py",
+    "w/utils.py",
+    "w/tests/*",
+    "w/django/models.py",
+    "w/django/tests/*",
+    "w/drf/viewsets.py",
+    "w/drf/tests/*",
+    "w/drf/exception_handler.py",
+    "w/**/*mixin.py",
+    "w/exceptions.py",
+]
