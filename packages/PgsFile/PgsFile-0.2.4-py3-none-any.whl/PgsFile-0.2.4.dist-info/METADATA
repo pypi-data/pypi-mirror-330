@@ -1,0 +1,41 @@
+Metadata-Version: 2.1
+Name: PgsFile
+Version: 0.2.4
+Summary: This module streamlines Python package management, script execution, file handling, web scraping, multimedia downloads, data cleaning, and NLP tasks such as word tokenization and POS tagging. It also assists with generating word lists and plotting data, making these tasks more accessible and convenient for literary students. Whether you need to scrape data from websites, clean text, or analyze language, this module provides user-friendly tools to simplify your workflow.
+Home-page: https://mp.weixin.qq.com/s/12-KVLfaPszoZkCxuRd-nQ?token=1589547443&lang=zh_CN
+Author: Pan Guisheng
+Author-email: 895284504@qq.com
+License: Educational free
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: Free For Educational Use
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: chardet
+Requires-Dist: pandas
+Requires-Dist: python-docx
+Requires-Dist: pip
+Requires-Dist: requests
+Requires-Dist: fake-useragent
+Requires-Dist: lxml
+Requires-Dist: pimht
+Requires-Dist: pysbd
+Requires-Dist: nlpir-python
+Requires-Dist: pillow
+
+Purpose: This module is designed to make complex tasks accessible and convenient, even for beginners. By providing a unified set of tools, it simplifies the workflow for data collection, processing, and analysis. Whether you're scraping data from the web, cleaning text, or performing NLP tasks, this module ensures you can focus on your research without getting bogged down by technical challenges.
+
+Key Features:
+1. Web Scraping: Easily scrape data from websites and download multimedia content.
+2. Package Management: Install, uninstall, and manage Python packages with simple commands.
+3. Data Retrieval: Extract data from various file formats like text, JSON, TSV, Excel, and HTML (both online and offline).
+4. Data Storage: Write and append data to text files, Excel, JSON, and JSON lines.
+5. File and Folder Processing: Manage file paths, create directories, move or copy files, and search for files with specific keywords.
+6. Data Cleaning: Clean text, handle punctuation, remove stopwords, and prepare data for analysis.
+7. NLP: Perform tokenization, generate n-grams, and create word lists for text analysis.
+8. Math Operations: Format numbers, convert decimals to percentages, and validate data.
+9. Visualization: Process images (e.g., make white pixels transparent) and manage fonts for rendering text.
+
+Author: Pan Guisheng, a PhD student at the Graduate Institute of Interpretation and Translation of Shanghai International Studies University
+E-mail: 895284504@qq.com
