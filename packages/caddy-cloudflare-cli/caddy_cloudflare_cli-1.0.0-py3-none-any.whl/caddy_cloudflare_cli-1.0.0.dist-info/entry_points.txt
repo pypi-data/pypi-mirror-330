@@ -1,0 +1,5 @@
+[console_scripts]
+caddy-cloudflare = caddy_cloudflare_cli.cli:main
+
+[gui_scripts]
+
