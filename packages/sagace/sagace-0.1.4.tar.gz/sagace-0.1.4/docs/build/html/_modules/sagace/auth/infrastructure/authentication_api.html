@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>sagace.auth.infrastructure.authentication_api &#8212; sagace 2025 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/alabaster.css?v=27fed22d" />
+    <script src="../../../../_static/documentation_options.js?v=cb975c41"></script>
+    <script src="../../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+   
+  <link rel="stylesheet" href="../../../../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <h1>Source code for sagace.auth.infrastructure.authentication_api</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">--------------------------------------------------------------------------------------------------------------------</span>
+
+<span class="sd">Descrição:</span>
+<span class="sd">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
+
+<span class="sd">Este módulo implementa a autenticação de usuários no sistema SAGACE utilizando uma API externa.</span>
+<span class="sd">A classe `AuthenticationAPI` herda de `AuthenticationRepository`, garantindo a conformidade com o princípio de **Dependency Inversion** (D do SOLID),</span>
+<span class="sd">permitindo a substituição da implementação sem afetar os consumidores da interface.</span>
+
+<span class="sd">Principais funcionalidades:</span>
+
+<span class="sd">- Realiza autenticação via API externa.</span>
+<span class="sd">- Armazena o token JWT utilizando `TokenStorage`.</span>
+<span class="sd">- Lança exceções apropriadas em caso de falha.</span>
+
+<span class="sd">Classes:</span>
+
+<span class="sd">- ``AuthenticationAPI``: Implementação do repositório de autenticação via API.</span>
+
+<span class="sd">Exemplo de uso:</span>
+
+<span class="sd">.. code-block:: python</span>
+
+<span class="sd">    from sagace.infrastructure import AuthenticationAPI</span>
+<span class="sd">    from sagace.core import TokenStorage</span>
+
+<span class="sd">    auth_api = AuthenticationAPI()</span>
+<span class="sd">    token_storage = TokenStorage()</span>
+<span class="sd">    token = auth_api.authenticate(&quot;https://api.sagace.online&quot;, &quot;usuario&quot;, &quot;senha&quot;, &quot;app_token&quot;, token_storage)</span>
+<span class="sd">    print(token)</span>
+
+
+<span class="sd">Autor: Diego Yosiura</span>
+<span class="sd">Última Atualização: 27/02/2025 15:31</span>
+<span class="sd">Criado em: 27/02/2025 15:31</span>
+<span class="sd">Copyright: (c) Ampere Consultoria Ltda</span>
+<span class="sd">Projeto Original: sagace-v2-package</span>
+<span class="sd">IDE: PyCharm</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..domain</span><span class="w"> </span><span class="kn">import</span> <span class="n">AuthenticationRepository</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">...core</span><span class="w"> </span><span class="kn">import</span> <span class="n">TokenStorage</span><span class="p">,</span> <span class="n">Token</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">...exceptions.domain</span><span class="w"> </span><span class="kn">import</span> <span class="n">APIRequestError</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">...exceptions.infrastructure</span><span class="w"> </span><span class="kn">import</span> <span class="n">AuthenticationFailedError</span>
+
+
+<div class="viewcode-block" id="AuthenticationAPI">
+<a class="viewcode-back" href="../../../../sagace.auth.infrastructure.html#sagace.auth.infrastructure.authentication_api.AuthenticationAPI">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">AuthenticationAPI</span><span class="p">(</span><span class="n">AuthenticationRepository</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Implementação da autenticação via API externa.</span>
+
+<span class="sd">    Esta classe implementa `AuthenticationRepository`, garantindo que qualquer mudança na forma</span>
+<span class="sd">    de autenticação possa ser feita sem impactar os consumidores desta interface.</span>
+
+<span class="sd">    Princípios utilizados:</span>
+<span class="sd">    - **Dependency Inversion (D - SOLID)**: Utiliza uma abstração (`AuthenticationRepository`) para evitar dependências diretas.</span>
+<span class="sd">    - **Single Responsibility (S - SOLID)**: Responsável exclusivamente por autenticação via API.</span>
+<span class="sd">    - **Clean Architecture**: Implementação no nível de infraestrutura, garantindo separação entre domínio e serviços externos.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">BASE_URL</span> <span class="o">=</span> <span class="s2">&quot;https://demo.sagace.online/&quot;</span>
+    <span class="n">AUTH_URL</span> <span class="o">=</span> <span class="s2">&quot;auth/base/login/&quot;</span>
+
+<div class="viewcode-block" id="AuthenticationAPI.authenticate">
+<a class="viewcode-back" href="../../../../sagace.auth.infrastructure.html#sagace.auth.infrastructure.authentication_api.AuthenticationAPI.authenticate">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">authenticate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">base_url</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">username</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">password</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">token</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+                     <span class="n">token_storage</span><span class="p">:</span> <span class="n">TokenStorage</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Token</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Autentica um usuário via API e retorna um token JWT.</span>
+
+<span class="sd">        :param base_url: URL base da API de autenticação.</span>
+<span class="sd">        :type base_url: str</span>
+<span class="sd">        :param username: Nome de usuário para autenticação.</span>
+<span class="sd">        :type username: str</span>
+<span class="sd">        :param password: Senha do usuário.</span>
+<span class="sd">        :type password: str</span>
+<span class="sd">        :param token: Token da aplicação para autenticação.</span>
+<span class="sd">        :type token: str</span>
+<span class="sd">        :param token_storage: Instância responsável por armazenar o token JWT.</span>
+<span class="sd">        :type token_storage: TokenStorage</span>
+<span class="sd">        :return: Token JWT retornado pela API.</span>
+<span class="sd">        :rtype: Token</span>
+<span class="sd">        :raises APIRequestError: Se a API retornar um erro na requisição.</span>
+<span class="sd">        :raises AuthenticationFailedError: Se os dados esperados não estiverem presentes na resposta.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="c1"># Constrói a URL completa garantindo que a barra não seja duplicada ou omitida</span>
+        <span class="n">full_url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">base_url</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">AUTH_URL</span><span class="o">.</span><span class="n">lstrip</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+
+        <span class="c1"># Envia uma requisição HTTP POST para a API de autenticação</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+            <span class="n">url</span><span class="o">=</span><span class="n">full_url</span><span class="p">,</span>
+            <span class="n">json</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;username&quot;</span><span class="p">:</span> <span class="n">username</span><span class="p">,</span> <span class="s2">&quot;password&quot;</span><span class="p">:</span> <span class="n">password</span><span class="p">},</span>
+            <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="n">token</span><span class="p">}</span>
+        <span class="p">)</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="c1"># Garante que a resposta HTTP não contenha erros (4xx ou 5xx)</span>
+            <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+            <span class="c1"># Lança uma exceção caso a requisição falhe</span>
+            <span class="k">raise</span> <span class="n">APIRequestError</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">,</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+
+        <span class="n">data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+        <span class="c1"># Verifica se a chave &#39;data&#39; está presente na resposta</span>
+        <span class="k">if</span> <span class="s1">&#39;data&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">AuthenticationFailedError</span><span class="p">()</span>
+
+        <span class="c1"># Garante que os campos essenciais existam antes de criar o token</span>
+        <span class="n">required_fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;ds_application_name&#39;</span><span class="p">,</span> <span class="s1">&#39;ds_description&#39;</span><span class="p">,</span> <span class="s1">&#39;authorization_token&#39;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">all</span><span class="p">(</span><span class="n">field</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">required_fields</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="n">AuthenticationFailedError</span><span class="p">()</span>
+
+        <span class="c1"># Cria um objeto Token com os dados retornados pela API</span>
+        <span class="n">token</span> <span class="o">=</span> <span class="n">Token</span><span class="p">(</span>
+            <span class="n">base_url</span><span class="o">=</span><span class="n">base_url</span><span class="p">,</span>
+            <span class="n">application_name</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="s2">&quot;ds_application_name&quot;</span><span class="p">],</span>
+            <span class="n">description</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="s2">&quot;ds_description&quot;</span><span class="p">],</span>
+            <span class="n">access_token</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="s2">&quot;authorization_token&quot;</span><span class="p">]</span>
+        <span class="p">)</span>
+
+        <span class="c1"># Salva o token no armazenamento definido</span>
+        <span class="n">token_storage</span><span class="o">.</span><span class="n">save_token</span><span class="p">(</span><span class="n">token</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">token</span></div>
+</div>
+
+</pre></div>
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../../index.html">sagace</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Conteúdo:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../modules.html">sagace</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../../index.html">Module code</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2025, Ampere Consultoria.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.2.1</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

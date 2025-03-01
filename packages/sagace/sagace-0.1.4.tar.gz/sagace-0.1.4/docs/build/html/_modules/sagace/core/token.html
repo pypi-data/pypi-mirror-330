@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>sagace.core.token &#8212; sagace 2025 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/alabaster.css?v=27fed22d" />
+    <script src="../../../_static/documentation_options.js?v=cb975c41"></script>
+    <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+   
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <h1>Source code for sagace.core.token</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">--------------------------------------------------------------------------------------------------------------------</span>
+
+<span class="sd">Descrição:</span>
+<span class="sd">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
+
+<span class="sd">Este módulo define uma estrutura para gerenciamento de tokens de autenticação dentro do sistema SAGACE.</span>
+<span class="sd">A classe `Token` fornece um modelo estruturado para manipulação de tokens de acesso JWT.</span>
+
+<span class="sd">Principais funcionalidades:</span>
+
+<span class="sd">- Armazena e gerencia informações sobre o token JWT.</span>
+<span class="sd">- Gera cabeçalhos de autenticação padronizados para requisições HTTP.</span>
+
+<span class="sd">Classes:</span>
+
+<span class="sd">- ``Token``: Representa um token de autenticação utilizado no sistema.</span>
+
+<span class="sd">Exemplo de uso:</span>
+
+<span class="sd">.. code-block:: python</span>
+
+<span class="sd">    from sagace.core import Token</span>
+
+<span class="sd">    token = Token(</span>
+<span class="sd">        base_url=&quot;https://api.sagace.online&quot;,</span>
+<span class="sd">        access_token=&quot;abc123&quot;,</span>
+<span class="sd">        application_name=&quot;Meu App&quot;,</span>
+<span class="sd">        description=&quot;Token de acesso para integração.&quot;</span>
+<span class="sd">    )</span>
+<span class="sd">    headers = token.get_auth_header()</span>
+<span class="sd">    print(headers)</span>
+
+<span class="sd">Autor: Diego Yosiura</span>
+<span class="sd">Última Atualização: 27/02/2025 15:30</span>
+<span class="sd">Criado em: 27/02/2025 15:30</span>
+<span class="sd">Copyright: (c) Ampere Consultoria Ltda</span>
+<span class="sd">Projeto Original: sagace-v2-package</span>
+<span class="sd">IDE: PyCharm</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span>
+
+
+<div class="viewcode-block" id="Token">
+<a class="viewcode-back" href="../../../sagace.core.html#sagace.core.token.Token">[docs]</a>
+<span class="nd">@dataclass</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Token</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Representa um token de autenticação utilizado no sistema SAGACE.</span>
+
+<span class="sd">    A classe `Token` encapsula informações sobre tokens JWT, garantindo que</span>
+<span class="sd">    as requisições API possuam autenticação padronizada.</span>
+
+<span class="sd">    Princípios aplicados:</span>
+<span class="sd">    - **Single Responsibility (S - SOLID)**: A classe é responsável apenas pelo gerenciamento de tokens.</span>
+<span class="sd">    - **Encapsulamento**: Centraliza o controle dos tokens dentro da aplicação.</span>
+
+<span class="sd">    :param base_url: URL base da API autenticada.</span>
+<span class="sd">    :type base_url: str</span>
+<span class="sd">    :param access_token: Token de acesso JWT.</span>
+<span class="sd">    :type access_token: str</span>
+<span class="sd">    :param application_name: Nome da aplicação associada ao token.</span>
+<span class="sd">    :type application_name: str</span>
+<span class="sd">    :param description: Descrição do token.</span>
+<span class="sd">    :type description: str</span>
+<span class="sd">    :param token_type: Tipo do token (por padrão, JWT).</span>
+<span class="sd">    :type token_type: str, optional</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">base_url</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">access_token</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">application_name</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">description</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">token_type</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;JWT&quot;</span>
+
+<div class="viewcode-block" id="Token.get_auth_header">
+<a class="viewcode-back" href="../../../sagace.core.html#sagace.core.token.Token.get_auth_header">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_auth_header</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Retorna um cabeçalho HTTP contendo o token de autenticação.</span>
+
+<span class="sd">        Este método é utilizado para garantir que todas as requisições HTTP realizadas</span>
+<span class="sd">        dentro do sistema incluam a autenticação necessária.</span>
+
+<span class="sd">        :return: Dicionário contendo o cabeçalho de autorização.</span>
+<span class="sd">        :rtype: dict</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">token_type</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">access_token</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">}</span></div>
+</div>
+
+</pre></div>
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../index.html">sagace</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Conteúdo:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules.html">sagace</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../index.html">Module code</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2025, Ampere Consultoria.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.2.1</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>sagace.exceptions.domain.domain_error &#8212; sagace 2025 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/alabaster.css?v=27fed22d" />
+    <script src="../../../../_static/documentation_options.js?v=cb975c41"></script>
+    <script src="../../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+   
+  <link rel="stylesheet" href="../../../../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <h1>Source code for sagace.exceptions.domain.domain_error</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">--------------------------------------------------------------------------------------------------------------------</span>
+
+<span class="sd">Descrição:</span>
+<span class="sd">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span>
+
+<span class="sd">Este módulo define classes de exceções para tratamento de erros na camada de domínio do sistema SAGACE.</span>
+<span class="sd">A classe `DomainError` serve como exceção base para erros relacionados ao domínio da aplicação,</span>
+<span class="sd">permitindo a criação de exceções especializadas de forma estruturada.</span>
+
+<span class="sd">Principais funcionalidades:</span>
+
+<span class="sd">- Define uma exceção base para o domínio da aplicação.</span>
+<span class="sd">- Pode ser herdada por outras exceções específicas do domínio.</span>
+
+<span class="sd">Princípios de Design Aplicados:</span>
+
+<span class="sd">- **Single Responsibility Principle (SRP - SOLID)**: Cada classe tem uma única responsabilidade clara.</span>
+<span class="sd">- **Open/Closed Principle (OCP - SOLID)**: `DomainError` pode ser estendida sem modificar seu código-fonte.</span>
+<span class="sd">- **Encapsulamento**: Centraliza a manipulação de mensagens de erro dentro da exceção base.</span>
+
+<span class="sd">Classes:</span>
+
+<span class="sd">- ``DomainError``: Exceção base para erros no domínio.</span>
+
+<span class="sd">Exemplo de uso:</span>
+
+<span class="sd">.. code-block:: python</span>
+
+<span class="sd">    from sagace.exceptions import DomainError</span>
+
+<span class="sd">    class CustomDomainError(DomainError):</span>
+<span class="sd">        # Exceção específica do domínio da aplicação.</span>
+<span class="sd">        pass</span>
+
+<span class="sd">    try:</span>
+<span class="sd">        raise CustomDomainError(&quot;Erro específico no domínio.&quot;)</span>
+<span class="sd">    except DomainError as e:</span>
+<span class="sd">        print(f&quot;Erro capturado: {e}&quot;)</span>
+
+<span class="sd">Autor: Diego Yosiura</span>
+<span class="sd">Última Atualização: 27/02/2025 16:05</span>
+<span class="sd">Criado em: 27/02/2025 16:05</span>
+<span class="sd">Copyright: (c) Ampere Consultoria Ltda</span>
+<span class="sd">Projeto Original: sagace-v2-package</span>
+<span class="sd">IDE: PyCharm</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+
+<div class="viewcode-block" id="DomainError">
+<a class="viewcode-back" href="../../../../sagace.exceptions.domain.html#sagace.exceptions.domain.domain_error.DomainError">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">DomainError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Exceção base para erros no domínio.</span>
+
+<span class="sd">    Esta classe deve ser utilizada como base para definir novas exceções específicas do domínio.</span>
+
+<span class="sd">    Princípios aplicados:</span>
+<span class="sd">    - **Single Responsibility Principle (S - SOLID)**: Representa exclusivamente erros do domínio.</span>
+<span class="sd">    - **Open/Closed Principle (O - SOLID)**: Pode ser estendida para criar novas exceções sem modificar seu código-fonte.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">pass</span></div>
+
+</pre></div>
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../../../../index.html">sagace</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="../../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Conteúdo:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../modules.html">sagace</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../../index.html">Module code</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2025, Ampere Consultoria.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.2.1</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

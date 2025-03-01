@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>sagace.exceptions.domain package &#8212; sagace 2025 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=27fed22d" />
+    <script src="_static/documentation_options.js?v=cb975c41"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="sagace.exceptions.infrastructure package" href="sagace.exceptions.infrastructure.html" />
+    <link rel="prev" title="sagace.exceptions.application package" href="sagace.exceptions.application.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="sagace-exceptions-domain-package">
+<h1>sagace.exceptions.domain package<a class="headerlink" href="#sagace-exceptions-domain-package" title="Link to this heading">¶</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">¶</a></h2>
+</section>
+<section id="module-sagace.exceptions.domain.api_request_error">
+<span id="sagace-exceptions-domain-api-request-error-module"></span><h2>sagace.exceptions.domain.api_request_error module<a class="headerlink" href="#module-sagace.exceptions.domain.api_request_error" title="Link to this heading">¶</a></h2>
+<hr class="docutils" />
+<section id="descricao">
+<h3>Descrição:<a class="headerlink" href="#descricao" title="Link to this heading">¶</a></h3>
+<p>Este módulo define classes de exceções para tratamento de erros na camada de domínio do sistema SAGACE.
+A classe <cite>APIRequestError</cite> representa erros de requisições feitas à API, garantindo um tratamento estruturado
+para falhas durante chamadas externas.</p>
+<p>Principais funcionalidades:</p>
+<ul class="simple">
+<li><p>Define uma exceção específica para falhas em requisições à API.</p></li>
+<li><p>Herdada de <cite>DomainError</cite>, garantindo consistência no tratamento de erros do domínio.</p></li>
+</ul>
+<p>Princípios de Design Aplicados:</p>
+<ul class="simple">
+<li><p><strong>Single Responsibility Principle (SRP - SOLID)</strong>: Cada classe tem uma única responsabilidade clara.</p></li>
+<li><p><strong>Open/Closed Principle (OCP - SOLID)</strong>: <cite>APIRequestError</cite> pode ser estendida sem modificar seu código-fonte.</p></li>
+<li><p><strong>Encapsulamento</strong>: Centraliza a manipulação de mensagens de erro dentro da exceção.</p></li>
+</ul>
+<p>Classes:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">APIRequestError</span></code>: Representa erros em requisições à API.</p></li>
+</ul>
+<p>Exemplo de uso:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sagace.exceptions</span><span class="w"> </span><span class="kn">import</span> <span class="n">APIRequestError</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="k">raise</span> <span class="n">APIRequestError</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="s2">&quot;Erro interno no servidor&quot;</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">APIRequestError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Erro capturado: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Autor: Diego Yosiura
+Última Atualização: 27/02/2025 16:46
+Criado em: 27/02/2025 16:46
+Copyright: (c) Ampere Consultoria Ltda
+Projeto Original: sagace-v2-package
+IDE: PyCharm</p>
+</section>
+<dl class="py exception">
+<dt class="sig sig-object py" id="sagace.exceptions.domain.api_request_error.APIRequestError">
+<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sagace.exceptions.domain.api_request_error.</span></span><span class="sig-name descname"><span class="pre">APIRequestError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">status_code</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sagace/exceptions/domain/api_request_error.html#APIRequestError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sagace.exceptions.domain.api_request_error.APIRequestError" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#sagace.exceptions.domain.domain_error.DomainError" title="sagace.exceptions.domain.domain_error.DomainError"><code class="xref py py-class docutils literal notranslate"><span class="pre">DomainError</span></code></a></p>
+<p>Exceção para erros em requisições à API.</p>
+<p>Esta classe é usada para capturar erros retornados por chamadas de API,
+fornecendo uma estrutura padronizada para tratamento dessas falhas.</p>
+<p>Princípios aplicados:
+- <strong>Single Responsibility Principle (S - SOLID)</strong>: Responsável apenas por representar erros de requisição à API.
+- <strong>Encapsulamento</strong>: Centraliza a manipulação das mensagens de erro.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>status_code</strong> (<em>int</em>) – Código de status HTTP retornado pela API.</p></li>
+<li><p><strong>error</strong> (<em>str</em>) – Mensagem de erro retornada pela API.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-sagace.exceptions.domain.domain_error">
+<span id="sagace-exceptions-domain-domain-error-module"></span><h2>sagace.exceptions.domain.domain_error module<a class="headerlink" href="#module-sagace.exceptions.domain.domain_error" title="Link to this heading">¶</a></h2>
+<hr class="docutils" />
+<section id="id1">
+<h3>Descrição:<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h3>
+<p>Este módulo define classes de exceções para tratamento de erros na camada de domínio do sistema SAGACE.
+A classe <cite>DomainError</cite> serve como exceção base para erros relacionados ao domínio da aplicação,
+permitindo a criação de exceções especializadas de forma estruturada.</p>
+<p>Principais funcionalidades:</p>
+<ul class="simple">
+<li><p>Define uma exceção base para o domínio da aplicação.</p></li>
+<li><p>Pode ser herdada por outras exceções específicas do domínio.</p></li>
+</ul>
+<p>Princípios de Design Aplicados:</p>
+<ul class="simple">
+<li><p><strong>Single Responsibility Principle (SRP - SOLID)</strong>: Cada classe tem uma única responsabilidade clara.</p></li>
+<li><p><strong>Open/Closed Principle (OCP - SOLID)</strong>: <cite>DomainError</cite> pode ser estendida sem modificar seu código-fonte.</p></li>
+<li><p><strong>Encapsulamento</strong>: Centraliza a manipulação de mensagens de erro dentro da exceção base.</p></li>
+</ul>
+<p>Classes:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">DomainError</span></code>: Exceção base para erros no domínio.</p></li>
+</ul>
+<p>Exemplo de uso:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sagace.exceptions</span><span class="w"> </span><span class="kn">import</span> <span class="n">DomainError</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">CustomDomainError</span><span class="p">(</span><span class="n">DomainError</span><span class="p">):</span>
+    <span class="c1"># Exceção específica do domínio da aplicação.</span>
+    <span class="k">pass</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="k">raise</span> <span class="n">CustomDomainError</span><span class="p">(</span><span class="s2">&quot;Erro específico no domínio.&quot;</span><span class="p">)</span>
+<span class="k">except</span> <span class="n">DomainError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Erro capturado: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Autor: Diego Yosiura
+Última Atualização: 27/02/2025 16:05
+Criado em: 27/02/2025 16:05
+Copyright: (c) Ampere Consultoria Ltda
+Projeto Original: sagace-v2-package
+IDE: PyCharm</p>
+</section>
+<dl class="py exception">
+<dt class="sig sig-object py" id="sagace.exceptions.domain.domain_error.DomainError">
+<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sagace.exceptions.domain.domain_error.</span></span><span class="sig-name descname"><span class="pre">DomainError</span></span><a class="reference internal" href="_modules/sagace/exceptions/domain/domain_error.html#DomainError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sagace.exceptions.domain.domain_error.DomainError" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>Exceção base para erros no domínio.</p>
+<p>Esta classe deve ser utilizada como base para definir novas exceções específicas do domínio.</p>
+<p>Princípios aplicados:
+- <strong>Single Responsibility Principle (S - SOLID)</strong>: Representa exclusivamente erros do domínio.
+- <strong>Open/Closed Principle (O - SOLID)</strong>: Pode ser estendida para criar novas exceções sem modificar seu código-fonte.</p>
+</dd></dl>
+
+</section>
+<section id="module-sagace.exceptions.domain.permission_denied_error">
+<span id="sagace-exceptions-domain-permission-denied-error-module"></span><h2>sagace.exceptions.domain.permission_denied_error module<a class="headerlink" href="#module-sagace.exceptions.domain.permission_denied_error" title="Link to this heading">¶</a></h2>
+<hr class="docutils" />
+<section id="module-permission-errors">
+<h3>Module: Permission Errors<a class="headerlink" href="#module-permission-errors" title="Link to this heading">¶</a></h3>
+<p>Este módulo define a exceção <cite>PermissionDeniedError</cite>, que é utilizada para indicar falhas de autenticação de usuário.</p>
+<p>Obs.:</p>
+<ul class="simple">
+<li><p>Segue os princípios da Clean Architecture ao separar claramente as exceções do domínio da aplicação.</p></li>
+<li><p>Aplica o princípio <strong>Liskov Substitution Principle (LSP)</strong>, pois a exceção <cite>PermissionDeniedError</cite> estende <cite>DomainError</cite>
+sem alterar seu comportamento esperado.</p></li>
+</ul>
+<p>Author:           &#64;diego.yosiura
+Last Update:      27/02/2025 16:45
+Created:          27/02/2025 16:45
+Copyright:        (c) Ampere Consultoria Ltda
+Original Project: sagace-v2-package
+IDE:              PyCharm</p>
+</section>
+<dl class="py exception">
+<dt class="sig sig-object py" id="sagace.exceptions.domain.permission_denied_error.PermissionDeniedError">
+<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sagace.exceptions.domain.permission_denied_error.</span></span><span class="sig-name descname"><span class="pre">PermissionDeniedError</span></span><a class="reference internal" href="_modules/sagace/exceptions/domain/permission_denied_error.html#PermissionDeniedError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sagace.exceptions.domain.permission_denied_error.PermissionDeniedError" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#sagace.exceptions.domain.domain_error.DomainError" title="sagace.exceptions.domain.domain_error.DomainError"><code class="xref py py-class docutils literal notranslate"><span class="pre">DomainError</span></code></a></p>
+<p>Exceção que representa erro de permissão negada ao autenticar um usuário.</p>
+<p>Esta exceção deve ser lançada quando um usuário tenta acessar um recurso para o qual
+não tem permissão adequada.</p>
+<dl>
+<dt>Herda de:</dt><dd><p>DomainError: Classe base para erros do domínio da aplicação.</p>
+</dd>
+<dt>Exemplo de uso:</dt><dd><div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">raise</span> <span class="n">PermissionDeniedError</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-sagace.exceptions.domain.token_expired_error">
+<span id="sagace-exceptions-domain-token-expired-error-module"></span><h2>sagace.exceptions.domain.token_expired_error module<a class="headerlink" href="#module-sagace.exceptions.domain.token_expired_error" title="Link to this heading">¶</a></h2>
+<hr class="docutils" />
+<section id="module-token-expiration-error">
+<h3>Module: Token Expiration Error<a class="headerlink" href="#module-token-expiration-error" title="Link to this heading">¶</a></h3>
+<p>Este módulo define a exceção <cite>TokenExpiredError</cite>, utilizada para indicar a expiração de um token de autenticação.</p>
+<p>Obs.:</p>
+<ul class="simple">
+<li><p>Segue os princípios da <strong>Clean Architecture</strong>, separando a lógica de erro do domínio da aplicação.</p></li>
+<li><p>Aplica o princípio <strong>Liskov Substitution Principle (LSP)</strong>, pois <cite>TokenExpiredError</cite> estende <cite>DomainError</cite>
+sem modificar o comportamento esperado da classe base.</p></li>
+</ul>
+<p>Author:           &#64;diego.yosiura
+Last Update:      27/02/2025 16:46
+Created:          27/02/2025 16:46
+Copyright:        (c) Ampere Consultoria Ltda
+Original Project: sagace-v2-package
+IDE:              PyCharm</p>
+</section>
+<dl class="py exception">
+<dt class="sig sig-object py" id="sagace.exceptions.domain.token_expired_error.TokenExpiredError">
+<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">sagace.exceptions.domain.token_expired_error.</span></span><span class="sig-name descname"><span class="pre">TokenExpiredError</span></span><a class="reference internal" href="_modules/sagace/exceptions/domain/token_expired_error.html#TokenExpiredError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sagace.exceptions.domain.token_expired_error.TokenExpiredError" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#sagace.exceptions.domain.domain_error.DomainError" title="sagace.exceptions.domain.domain_error.DomainError"><code class="xref py py-class docutils literal notranslate"><span class="pre">DomainError</span></code></a></p>
+<p>Exceção que representa um erro de autenticação devido à expiração do token.</p>
+<p>Esta exceção deve ser lançada sempre que um token de autenticação não for mais válido,
+exigindo que o usuário obtenha um novo token antes de continuar.</p>
+<dl>
+<dt>Herda de:</dt><dd><p>DomainError: Classe base para erros do domínio da aplicação.</p>
+</dd>
+<dt>Exemplo de uso:</dt><dd><div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">raise</span> <span class="n">TokenExpiredError</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-sagace.exceptions.domain">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-sagace.exceptions.domain" title="Link to this heading">¶</a></h2>
+<hr class="docutils" />
+<section id="description">
+<h3>Description:<a class="headerlink" href="#description" title="Link to this heading">¶</a></h3>
+<p>Obs.:</p>
+<p>Author:           &#64;diego.yosiura
+Last Update:      27/02/2025 16:03
+Created:          27/02/2025 16:03
+Copyright:        (c) Ampere Consultoria Ltda
+Original Project: sagace-v2-package
+IDE:              PyCharm</p>
+</section>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">sagace</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Conteúdo:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">sagace</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="sagace.html">sagace package</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="modules.html">sagace</a><ul>
+  <li><a href="sagace.html">sagace package</a><ul>
+  <li><a href="sagace.exceptions.html">sagace.exceptions package</a><ul>
+      <li>Previous: <a href="sagace.exceptions.application.html" title="previous chapter">sagace.exceptions.application package</a></li>
+      <li>Next: <a href="sagace.exceptions.infrastructure.html" title="next chapter">sagace.exceptions.infrastructure package</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2025, Ampere Consultoria.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.2.1</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="_sources/sagace.exceptions.domain.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
