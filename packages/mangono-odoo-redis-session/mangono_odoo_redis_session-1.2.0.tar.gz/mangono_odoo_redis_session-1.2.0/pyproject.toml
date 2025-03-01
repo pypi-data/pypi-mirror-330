@@ -1,0 +1,112 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "mangono-odoo-redis-session"
+description = "Module to store session on a redis"
+authors = [
+    { name = "Alexis PASQUIER", email = "alexis.pasquier@mangono.fr" }
+]
+dependencies = [
+    "redis~=5.0"
+]
+version = "1.2.0"
+readme = "README.md"
+requires-python = ">= 3.8.19"
+
+
+[tool.hatch.build.targets.wheel]
+only-packages = true
+packages = ["redis_session_store"]
+
+[tool.hatch.build.targets.wheel.sources]
+"redis_session_store" = "odoo/addons/redis_session_store"
+
+
+[tool.ruff]
+line-length = 120 # Allow lines to be as long as 120 characters
+show-fixes = true # By default, always enumerate fixed violations
+output-format = "full" # Always show source code snippets
+target-version = "py38"
+fix = true
+
+[tool.ruff.lint]
+extend-select = [
+    "B",
+    "C90",
+    "E501", # line too long (default 88)
+    "I", # isort
+    "UP", # pyupgrade
+    "PERF",
+]
+extend-safe-fixes = ["UP008"]
+exclude = ["setup/*"]
+
+[tool.ruff.format]
+exclude = ["setup/*"]
+docstring-code-format = true
+
+[tool.ruff.lint.isort]
+section-order = ["future", "standard-library", "third-party", "odoo", "odoo-addons", "first-party", "local-folder"]
+
+[tool.ruff.lint.isort.sections]
+"odoo" = ["odoo"]
+"odoo-addons" = ["odoo.addons"]
+
+[tool.ruff.lint.mccabe]
+max-complexity = 16
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = ["F401", "I001"]  # ignore unused and unsorted imports in __init__.py
+"__manifest__.py" = ["B018"]  # useless expression
+"*/tests/**/*.py" = [
+    "ANN201", # Disable expected return type on test function
+    # at least this three should be fine in tests:
+    "S101", # asserts allowed in tests...
+    "ARG", # Unused function args -> fixtures nevertheless are functionally relevant...
+    "FBT", # Don't care about booleans as positional arguments in tests, e.g. via @pytest.mark.parametrize()
+    # The below are debateable
+    "PLR2004", # Magic value used in comparison, ...
+    "S311", # Standard pseudo-random generators are not suitable for cryptographic purposes
+]
+
+[tool.runbot]
+modules = ["redis_session_store_tests"]
+
+[tool.runbot.step.test]
+test-tags = ["/redis_session_store_tests"]
+
+[tool.runbot.step.test_http]
+modules = ["test_http"]
+test-tags = [
+    "/test_http:TestHttpSession",
+    "/test_http:TestSessionStore.test01_session_nan",
+]
+
+[tool.pytest.ini_options]
+addopts = [
+    "--ignore=redis_session_store",
+]
+testpaths = [
+    "tests",
+    "integration",
+]
+
+[dependency-groups]
+lint = [
+    "ruff>=0.9.7",
+]
+dev = [
+    "pytest>=8.3.4",
+    "pytest",
+    "pytest-cov",
+    "pytest-mock",
+    "setuptools", # Pycharm need it
+]
+doc = [
+    "mkdocs",
+    "mkdocstrings[python]",
+    "mkdocs-material",
+    "mkdocs-autoapi",
+]

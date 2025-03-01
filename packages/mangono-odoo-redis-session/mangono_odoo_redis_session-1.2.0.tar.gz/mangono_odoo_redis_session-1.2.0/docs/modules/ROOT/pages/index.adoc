@@ -1,0 +1,24 @@
+= Odoo Session inside Redis
+
+This module allow to store Odoo session inside a redis instead of the filesysteme (a.k.a filestore)
+
+== Support Odoo
+
+- [x] Odoo 18 `1.2.0`
+- [x] Odoo 17 `1.2.0`
+- [x] Odoo 16 `1.1.0`
+- [x] Odoo 15 `1.1.0`
+- [x] Odoo 14 `1.1.0`
+- [x] Odoo 13 `1.1.0`
+- [x] Odoo 12 `1.1.0`
+
+== Reference
+
+Inspired by :
+
+- https://github.com/odoo/odoo-extra/commit/99265410bf396fc476c0a4502a44549a1dd29ef2
+- https://gist.github.com/carlopires/1451947
+- https://github.com/Smile-SA/odoo_addons/commit/d90e23f6fbc078beb0cb14080a2b18de332200ef
+- https://github.com/camptocamp/odoo-cloud-platform/tree/16.0/session_redis
+
+Compare to https://github.com/camptocamp/odoo-cloud-platform/tree/16.0/session_redis[Camp2Camp session_redis], this module don;t need to be installed as addons. So the locale dev environmeent don't need this module in addons path.

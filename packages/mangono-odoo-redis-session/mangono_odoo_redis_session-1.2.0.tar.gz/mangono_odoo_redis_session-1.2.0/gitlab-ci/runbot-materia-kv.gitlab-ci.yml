@@ -1,0 +1,79 @@
+include:
+  - component: $CI_SERVER_FQDN/gitlab-ci/odoo-quality/runbot@1
+    inputs:
+      name: "runbot:materia"
+      odoo_version: "12.0"
+      runbot_args: "--steps=test"
+  - component: $CI_SERVER_FQDN/gitlab-ci/odoo-quality/runbot@1
+    inputs:
+      name: "runbot:materia"
+      odoo_version: "13.0"
+      runbot_args: "--steps=test"
+  - component: $CI_SERVER_FQDN/gitlab-ci/odoo-quality/runbot@1
+    inputs:
+      name: "runbot:materia"
+      odoo_version: "14.0"
+      runbot_args: "--steps=test"
+  - component: $CI_SERVER_FQDN/gitlab-ci/odoo-quality/runbot@1
+    inputs:
+      name: "runbot:materia"
+      odoo_version: "15.0"
+      runbot_args: "--steps=test"
+  - component: $CI_SERVER_FQDN/gitlab-ci/odoo-quality/runbot@1
+    inputs:
+      name: "runbot:materia"
+      odoo_version: "16.0"
+      runbot_args: "--steps=test --steps=test_http"
+  - component: $CI_SERVER_FQDN/gitlab-ci/odoo-quality/runbot@1
+    inputs:
+      name: "runbot:materia"
+      odoo_version: "17.0"
+      runbot_args: "--steps=test --steps=test_http"
+  - component: $CI_SERVER_FQDN/gitlab-ci/odoo-quality/runbot@1
+    inputs:
+      name: "runbot:materia"
+      odoo_version: "18.0"
+      runbot_args: "--steps=test --steps=test_http"
+
+
+.tmpl:runbot:materia:
+  variables:
+    LOAD_REDIS_SESSION_STORE: "redis_session_store"
+    KV_HOST: "materiakv.eu-fr-1.services.clever-cloud.com"
+    KV_PORT: "6379"
+    KV_TOKEN: "EmwKAhgDEiQIABIgEvA7jCvCRMyJQkoTh-cQqUOmcKvdAADS3s52CLvfxewaQCt85BTOhVtJ962WEOmdscNtLkLOSZkG0aBUR4idbJqFmLZiZF8OzDSzypZSPUn7Rw6am1tFM3rGVhNyxyxS8AYaiwEKIQoMTWF0ZXJpYURCLUtWGAMyDwoNCgIIGxIHCAwSAxiACBIkCAASIH2_b1ZypLMS79dRPsQb_re2iNx5n8esPFQUdWaTqdRkGkDSreYSp1JxlzwP2Ohw6pVRgsPJJpNAmHfGX_DPRnYed0umJz37shkKF4aHid07x2i12Ne7OEl2ZkLswauBJewHGrYCCmIKKW9yZ2FfYzAwZjgxNmQtZjBlMC00NmQ3LWE5NmItMGYxNDFhODY5NjQwCh1rdl8wMUo0Vk1RMUdGMk5YUURCUjNTMEpDNFgxUxgEIgkKBwgHEgMYgAgiCQoHCAISAxiBCBIkCAASIDX549hwhJ12xcMt5Ghyf1uEhMHzkrQH81nqlDEJfcbvGkD6z25hq_5hsPfqDQGGd5phw3QEf-3z0VVA07MpjDYV6DSZYeJduaw2sIo4Quzx4ELW-jvmGut6W4C2MFVqqecEImgKQIAxgRIY1ZoF5KEpEERGoVJNnAi05bFVgOVzmpj6W0R-pm5y9GIcG10e-TdVhF6pEqjKSk553UF-4uF6N_JgagoSJAgAEiBnIJB4Ep8Gl6KsnOD-y3d7r-tgVJU1Qg_po_LLoQYQfyIiCiCFf6h4Vb_Kgj0vfkpccHXIn-cSJMAbCqrqcgNs2-v62g=="
+    KV_TOKEN_ID: "biscuit_724f9737-e963-4dba-8845-c808610b910d"
+    REDIS_CLI_URL: "rediss://EmwKAhgDEiQIABIgEvA7jCvCRMyJQkoTh-cQqUOmcKvdAADS3s52CLvfxewaQCt85BTOhVtJ962WEOmdscNtLkLOSZkG0aBUR4idbJqFmLZiZF8OzDSzypZSPUn7Rw6am1tFM3rGVhNyxyxS8AYaiwEKIQoMTWF0ZXJpYURCLUtWGAMyDwoNCgIIGxIHCAwSAxiACBIkCAASIH2_b1ZypLMS79dRPsQb_re2iNx5n8esPFQUdWaTqdRkGkDSreYSp1JxlzwP2Ohw6pVRgsPJJpNAmHfGX_DPRnYed0umJz37shkKF4aHid07x2i12Ne7OEl2ZkLswauBJewHGrYCCmIKKW9yZ2FfYzAwZjgxNmQtZjBlMC00NmQ3LWE5NmItMGYxNDFhODY5NjQwCh1rdl8wMUo0Vk1RMUdGMk5YUURCUjNTMEpDNFgxUxgEIgkKBwgHEgMYgAgiCQoHCAISAxiBCBIkCAASIDX549hwhJ12xcMt5Ghyf1uEhMHzkrQH81nqlDEJfcbvGkD6z25hq_5hsPfqDQGGd5phw3QEf-3z0VVA07MpjDYV6DSZYeJduaw2sIo4Quzx4ELW-jvmGut6W4C2MFVqqecEImgKQIAxgRIY1ZoF5KEpEERGoVJNnAi05bFVgOVzmpj6W0R-pm5y9GIcG10e-TdVhF6pEqjKSk553UF-4uF6N_JgagoSJAgAEiBnIJB4Ep8Gl6KsnOD-y3d7r-tgVJU1Qg_po_LLoQYQfyIiCiCFf6h4Vb_Kgj0vfkpccHXIn-cSJMAbCqrqcgNs2-v62g==@materiakv.eu-fr-1.services.clever-cloud.com:6379"
+    REDIS_HOST: "materiakv.eu-fr-1.services.clever-cloud.com"
+    REDIS_PASSWORD: "EmwKAhgDEiQIABIgEvA7jCvCRMyJQkoTh-cQqUOmcKvdAADS3s52CLvfxewaQCt85BTOhVtJ962WEOmdscNtLkLOSZkG0aBUR4idbJqFmLZiZF8OzDSzypZSPUn7Rw6am1tFM3rGVhNyxyxS8AYaiwEKIQoMTWF0ZXJpYURCLUtWGAMyDwoNCgIIGxIHCAwSAxiACBIkCAASIH2_b1ZypLMS79dRPsQb_re2iNx5n8esPFQUdWaTqdRkGkDSreYSp1JxlzwP2Ohw6pVRgsPJJpNAmHfGX_DPRnYed0umJz37shkKF4aHid07x2i12Ne7OEl2ZkLswauBJewHGrYCCmIKKW9yZ2FfYzAwZjgxNmQtZjBlMC00NmQ3LWE5NmItMGYxNDFhODY5NjQwCh1rdl8wMUo0Vk1RMUdGMk5YUURCUjNTMEpDNFgxUxgEIgkKBwgHEgMYgAgiCQoHCAISAxiBCBIkCAASIDX549hwhJ12xcMt5Ghyf1uEhMHzkrQH81nqlDEJfcbvGkD6z25hq_5hsPfqDQGGd5phw3QEf-3z0VVA07MpjDYV6DSZYeJduaw2sIo4Quzx4ELW-jvmGut6W4C2MFVqqecEImgKQIAxgRIY1ZoF5KEpEERGoVJNnAi05bFVgOVzmpj6W0R-pm5y9GIcG10e-TdVhF6pEqjKSk553UF-4uF6N_JgagoSJAgAEiBnIJB4Ep8Gl6KsnOD-y3d7r-tgVJU1Qg_po_LLoQYQfyIiCiCFf6h4Vb_Kgj0vfkpccHXIn-cSJMAbCqrqcgNs2-v62g=="
+    REDIS_PORT: "6379"
+    REDIS_URL: "rediss://:EmwKAhgDEiQIABIgEvA7jCvCRMyJQkoTh-cQqUOmcKvdAADS3s52CLvfxewaQCt85BTOhVtJ962WEOmdscNtLkLOSZkG0aBUR4idbJqFmLZiZF8OzDSzypZSPUn7Rw6am1tFM3rGVhNyxyxS8AYaiwEKIQoMTWF0ZXJpYURCLUtWGAMyDwoNCgIIGxIHCAwSAxiACBIkCAASIH2_b1ZypLMS79dRPsQb_re2iNx5n8esPFQUdWaTqdRkGkDSreYSp1JxlzwP2Ohw6pVRgsPJJpNAmHfGX_DPRnYed0umJz37shkKF4aHid07x2i12Ne7OEl2ZkLswauBJewHGrYCCmIKKW9yZ2FfYzAwZjgxNmQtZjBlMC00NmQ3LWE5NmItMGYxNDFhODY5NjQwCh1rdl8wMUo0Vk1RMUdGMk5YUURCUjNTMEpDNFgxUxgEIgkKBwgHEgMYgAgiCQoHCAISAxiBCBIkCAASIDX549hwhJ12xcMt5Ghyf1uEhMHzkrQH81nqlDEJfcbvGkD6z25hq_5hsPfqDQGGd5phw3QEf-3z0VVA07MpjDYV6DSZYeJduaw2sIo4Quzx4ELW-jvmGut6W4C2MFVqqecEImgKQIAxgRIY1ZoF5KEpEERGoVJNnAi05bFVgOVzmpj6W0R-pm5y9GIcG10e-TdVhF6pEqjKSk553UF-4uF6N_JgagoSJAgAEiBnIJB4Ep8Gl6KsnOD-y3d7r-tgVJU1Qg_po_LLoQYQfyIiCiCFf6h4Vb_Kgj0vfkpccHXIn-cSJMAbCqrqcgNs2-v62g==@materiakv.eu-fr-1.services.clever-cloud.com:6379"
+    REDISCLI_AUTH: "EmwKAhgDEiQIABIgEvA7jCvCRMyJQkoTh-cQqUOmcKvdAADS3s52CLvfxewaQCt85BTOhVtJ962WEOmdscNtLkLOSZkG0aBUR4idbJqFmLZiZF8OzDSzypZSPUn7Rw6am1tFM3rGVhNyxyxS8AYaiwEKIQoMTWF0ZXJpYURCLUtWGAMyDwoNCgIIGxIHCAwSAxiACBIkCAASIH2_b1ZypLMS79dRPsQb_re2iNx5n8esPFQUdWaTqdRkGkDSreYSp1JxlzwP2Ohw6pVRgsPJJpNAmHfGX_DPRnYed0umJz37shkKF4aHid07x2i12Ne7OEl2ZkLswauBJewHGrYCCmIKKW9yZ2FfYzAwZjgxNmQtZjBlMC00NmQ3LWE5NmItMGYxNDFhODY5NjQwCh1rdl8wMUo0Vk1RMUdGMk5YUURCUjNTMEpDNFgxUxgEIgkKBwgHEgMYgAgiCQoHCAISAxiBCBIkCAASIDX549hwhJ12xcMt5Ghyf1uEhMHzkrQH81nqlDEJfcbvGkD6z25hq_5hsPfqDQGGd5phw3QEf-3z0VVA07MpjDYV6DSZYeJduaw2sIo4Quzx4ELW-jvmGut6W4C2MFVqqecEImgKQIAxgRIY1ZoF5KEpEERGoVJNnAi05bFVgOVzmpj6W0R-pm5y9GIcG10e-TdVhF6pEqjKSk553UF-4uF6N_JgagoSJAgAEiBnIJB4Ep8Gl6KsnOD-y3d7r-tgVJU1Qg_po_LLoQYQfyIiCiCFf6h4Vb_Kgj0vfkpccHXIn-cSJMAbCqrqcgNs2-v62g=="
+
+".tmpl:odoo:runbot:materia:12.0":
+  extends:
+    - ".tmpl:runbot:materia"
+
+".tmpl:odoo:runbot:materia:13.0":
+  extends:
+    - ".tmpl:runbot:materia"
+
+".tmpl:odoo:runbot:materia:14.0":
+  extends:
+    - ".tmpl:runbot:materia"
+
+".tmpl:odoo:runbot:materia:15.0":
+  extends:
+    - ".tmpl:runbot:materia"
+
+".tmpl:odoo:runbot:materia:16.0":
+  extends:
+    - ".tmpl:runbot:materia"
+
+".tmpl:odoo:runbot:materia:17.0":
+  extends:
+    - ".tmpl:runbot:materia"
+
+".tmpl:odoo:runbot:materia:18.0":
+  extends:
+    - ".tmpl:runbot:materia"

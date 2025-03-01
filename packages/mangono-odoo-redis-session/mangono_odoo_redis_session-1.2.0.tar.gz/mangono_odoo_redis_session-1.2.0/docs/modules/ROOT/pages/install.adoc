@@ -1,0 +1,30 @@
+= Installation
+
+== Via `pypi`
+
+```shell
+pip install mangono-odoo-redis-session~=1.2.0
+```
+
+NOTE: Then you will have the odoo addons `redis_session_store` available in your odoo `addons-path`
+
+== Via `addons-installer`
+
+```shell
+export ADDONS_GIT_REDIS_SESSION=odoo-cloud/redis-session
+export ADDONS_GIT_REDIS_SESSION_BRANCH=1.2.0
+export ADDONS_GIT_REDIS_SESSION_SERVER=gitlab.mangono.io
+export ADDONS_GIT_REDIS_SESSION_PROTOCOLE=public
+
+addons-installer -i REDIS_SESSION # or --all
+```
+
+CAUTION: You need to add this module to your `addons-path`
+
+== Via `git`
+
+```shell
+git clone https://gitlab.mangono.io/odoo-cloud/redis-session redis-session
+```
+
+CAUTION: You need to add this module to your `addons-path`

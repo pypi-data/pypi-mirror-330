@@ -1,0 +1,7 @@
+= Add new Odoo version
+
+Edit the ci files to include `runbot` for the new version.
+
+Look on `odoo.http.Application.session_store`
+
+Launch the test of the module `redis_session_store_tests`.

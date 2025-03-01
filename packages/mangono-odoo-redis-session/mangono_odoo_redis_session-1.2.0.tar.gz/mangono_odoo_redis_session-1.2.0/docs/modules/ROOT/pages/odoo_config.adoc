@@ -1,0 +1,42 @@
+= Odoo Configuration
+
+== Activate module
+
+You need to `load` this module inside your odoo config file.
+
+```ini
+[options]
+...
+server_wide_modules = ...,redis_session_store
+```
+
+or with the odoo cli `--load=redis_session_store`
+
+
+== Configuration
+
+You can use environement variables or odoo config file `misc` section `redis_sessions_store`
+
+```shell
+export REDIS_PREFIX="redis" # the prefix key to use
+export REDIS_HOST="redis"
+export REDIS_PORT="redis"
+export REDIS_URL="redis"
+export REDIS_PASSWORD="XXXXX"
+export ODOO_SESSION_REDIS_EXPIRATION="redis" # time in sec
+export ODOO_SESSION_REDIS_EXPIRATION_ANONYMOUS="1" # time in sec
+```
+
+of in your odoo config file
+```ini
+[redis_session_store]
+host=host
+port=6066
+prefix="prefix"
+password="password"
+url="url
+expiration=1
+anon_expiration=1
+```
+
+CAUTION: The environment variable or predececent over `ini` config.

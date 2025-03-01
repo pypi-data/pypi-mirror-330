@@ -1,0 +1,91 @@
+include:
+  - component: $CI_SERVER_FQDN/gitlab-ci/odoo-quality/runbot@1
+    inputs:
+      name: "runbot:redis"
+      odoo_version: "12.0"
+      runbot_args: "--steps=test"
+      other_services:
+        - name: redis
+          alias: redis
+  - component: $CI_SERVER_FQDN/gitlab-ci/odoo-quality/runbot@1
+    inputs:
+      name: "runbot:redis"
+      odoo_version: "13.0"
+      runbot_args: "--steps=test"
+      other_services:
+        - name: redis
+          alias: redis
+  - component: $CI_SERVER_FQDN/gitlab-ci/odoo-quality/runbot@1
+    inputs:
+      name: "runbot:redis"
+      odoo_version: "14.0"
+      runbot_args: "--steps=test"
+      other_services:
+        - name: redis
+          alias: redis
+  - component: $CI_SERVER_FQDN/gitlab-ci/odoo-quality/runbot@1
+    inputs:
+      name: "runbot:redis"
+      odoo_version: "15.0"
+      runbot_args: "--steps=test"
+      other_services:
+        - name: redis
+          alias: redis
+  - component: $CI_SERVER_FQDN/gitlab-ci/odoo-quality/runbot@1
+    inputs:
+      name: "runbot:redis"
+      odoo_version: "16.0"
+      runbot_args: "--steps=test --steps=test_http"
+      other_services:
+        - name: redis
+          alias: redis
+  - component: $CI_SERVER_FQDN/gitlab-ci/odoo-quality/runbot@1
+    inputs:
+      name: "runbot:redis"
+      odoo_version: "17.0"
+      runbot_args: "--steps=test --steps=test_http"
+      other_services:
+        - name: redis
+          alias: redis
+  - component: $CI_SERVER_FQDN/gitlab-ci/odoo-quality/runbot@1
+    inputs:
+      name: "runbot:redis"
+      odoo_version: "18.0"
+      runbot_args: "--steps=test --steps=test_http"
+      other_services:
+        - name: redis
+          alias: redis
+
+.tmpl:runbot:redis:
+  variables:
+    LOAD_REDIS_SESSION_STORE: redis_session_store
+    REDIS_HOST: "redis"
+    REDIS_PORT: 6379
+
+".tmpl:odoo:runbot:redis:12.0":
+  extends:
+    - ".tmpl:runbot:redis"
+
+".tmpl:odoo:runbot:redis:13.0":
+  extends:
+    - ".tmpl:runbot:redis"
+
+".tmpl:odoo:runbot:redis:14.0":
+  extends:
+    - ".tmpl:runbot:redis"
+
+".tmpl:odoo:runbot:redis:15.0":
+  extends:
+    - ".tmpl:runbot:redis"
+
+".tmpl:odoo:runbot:redis:16.0":
+  extends:
+    - ".tmpl:runbot:redis"
+
+".tmpl:odoo:runbot:redis:17.0":
+  extends:
+    - ".tmpl:runbot:redis"
+
+".tmpl:odoo:runbot:redis:18.0":
+  extends:
+    - ".tmpl:runbot:redis"
