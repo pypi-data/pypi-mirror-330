@@ -1,0 +1,25 @@
+[project]
+name = "tarragon"
+version = "0.0.1rc0"
+description = "Text analogue of dill library"
+authors = [
+    { name = "pyizi", email = "pyizi@proton.me" }
+]
+readme = "README.md"
+license = "AVL v1.0"
+requires-python = ">=3.12"
+dependencies = [
+]
+
+[[tool.poetry.source]]
+name = "testpypi"
+url = "https://test.pypi.org/legacy/"
+
+[tool.poetry.urls]
+# Custom project links
+Repository = "https://github.com/pyizi/tarragon"
+License = "https://github.com/pyizi/tarragon?tab=License-1-ov-file"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
