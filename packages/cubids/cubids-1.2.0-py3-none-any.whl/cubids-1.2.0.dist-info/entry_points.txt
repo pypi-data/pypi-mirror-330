@@ -1,0 +1,14 @@
+[console_scripts]
+bids-sidecar-merge = cubids.cli:_enter_bids_sidecar_merge
+cubids = cubids.cli:_main
+cubids-add-nifti-info = cubids.cli:_enter_add_nifti_info
+cubids-apply = cubids.cli:_enter_apply
+cubids-bids-version = cubids.cli:_enter_bids_version
+cubids-copy-exemplars = cubids.cli:_enter_copy_exemplars
+cubids-datalad-save = cubids.cli:_enter_datalad_save
+cubids-group = cubids.cli:_enter_group
+cubids-print-metadata-fields = cubids.cli:_enter_print_metadata_fields
+cubids-purge = cubids.cli:_enter_purge
+cubids-remove-metadata-fields = cubids.cli:_enter_remove_metadata_fields
+cubids-undo = cubids.cli:_enter_undo
+cubids-validate = cubids.cli:_enter_validate

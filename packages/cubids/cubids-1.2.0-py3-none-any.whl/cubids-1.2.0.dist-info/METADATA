@@ -1,0 +1,115 @@
+Metadata-Version: 2.4
+Name: cubids
+Version: 1.2.0
+Summary: Curation of BIDS (CuBIDS): A sanity-preserving software package for processing BIDS datasets.
+Project-URL: Homepage, https://github.com/PennLINC/cubids
+Project-URL: Documentation, https://www.cubids.readthedocs.io
+Project-URL: Paper, https://doi.org/10.1016/j.neuroimage.2022.119609
+Project-URL: Docker Images, https://hub.docker.com/r/pennlinc/cubids/tags/
+Author: Neuroinformatics Team of PennLINC
+License: MIT License
+        
+        Copyright (c) 2020  Lifespan Informatics and Neuroimaging Center
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE.
+License-File: AUTHORS.rst
+License-File: LICENSE
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Topic :: Scientific/Engineering :: Image Recognition
+Requires-Python: >=3.9
+Requires-Dist: datalad!=0.16.1,!=0.17.0,!=0.17.3,>=0.13.5
+Requires-Dist: numpy<=2.2.3
+Requires-Dist: pandas<=2.2.3
+Requires-Dist: pybids<=0.18.1
+Requires-Dist: pyyaml
+Requires-Dist: scikit-learn<=1.6.1
+Requires-Dist: tqdm
+Provides-Extra: all
+Requires-Dist: codespell; extra == 'all'
+Requires-Dist: coverage; extra == 'all'
+Requires-Dist: flake8; extra == 'all'
+Requires-Dist: flake8-absolute-import; extra == 'all'
+Requires-Dist: flake8-black; extra == 'all'
+Requires-Dist: flake8-docstrings; extra == 'all'
+Requires-Dist: flake8-isort; extra == 'all'
+Requires-Dist: flake8-pyproject; extra == 'all'
+Requires-Dist: flake8-unused-arguments; extra == 'all'
+Requires-Dist: flake8-use-fstring; extra == 'all'
+Requires-Dist: flake8-warnings; extra == 'all'
+Requires-Dist: fuzzywuzzy; extra == 'all'
+Requires-Dist: nbsphinx; extra == 'all'
+Requires-Dist: niworkflows; extra == 'all'
+Requires-Dist: packaging; extra == 'all'
+Requires-Dist: pep8-naming; extra == 'all'
+Requires-Dist: pytest; extra == 'all'
+Requires-Dist: pytest-cov; extra == 'all'
+Requires-Dist: python-levenshtein; extra == 'all'
+Requires-Dist: recommonmark; extra == 'all'
+Requires-Dist: sphinx-argparse; extra == 'all'
+Requires-Dist: sphinx-copybutton; extra == 'all'
+Requires-Dist: sphinx-design; extra == 'all'
+Requires-Dist: sphinx-gallery; extra == 'all'
+Requires-Dist: sphinx-hoverxref; extra == 'all'
+Requires-Dist: sphinx-markdown-tables; extra == 'all'
+Requires-Dist: sphinx-rtd-theme; extra == 'all'
+Requires-Dist: sphinx>=2.2; extra == 'all'
+Requires-Dist: sphinxcontrib-bibtex; extra == 'all'
+Requires-Dist: tomli; extra == 'all'
+Provides-Extra: doc
+Requires-Dist: nbsphinx; extra == 'doc'
+Requires-Dist: packaging; extra == 'doc'
+Requires-Dist: recommonmark; extra == 'doc'
+Requires-Dist: sphinx-argparse; extra == 'doc'
+Requires-Dist: sphinx-copybutton; extra == 'doc'
+Requires-Dist: sphinx-design; extra == 'doc'
+Requires-Dist: sphinx-gallery; extra == 'doc'
+Requires-Dist: sphinx-hoverxref; extra == 'doc'
+Requires-Dist: sphinx-markdown-tables; extra == 'doc'
+Requires-Dist: sphinx-rtd-theme; extra == 'doc'
+Requires-Dist: sphinx>=2.2; extra == 'doc'
+Requires-Dist: sphinxcontrib-bibtex; extra == 'doc'
+Provides-Extra: maint
+Requires-Dist: fuzzywuzzy; extra == 'maint'
+Requires-Dist: python-levenshtein; extra == 'maint'
+Provides-Extra: tests
+Requires-Dist: codespell; extra == 'tests'
+Requires-Dist: coverage; extra == 'tests'
+Requires-Dist: flake8; extra == 'tests'
+Requires-Dist: flake8-absolute-import; extra == 'tests'
+Requires-Dist: flake8-black; extra == 'tests'
+Requires-Dist: flake8-docstrings; extra == 'tests'
+Requires-Dist: flake8-isort; extra == 'tests'
+Requires-Dist: flake8-pyproject; extra == 'tests'
+Requires-Dist: flake8-unused-arguments; extra == 'tests'
+Requires-Dist: flake8-use-fstring; extra == 'tests'
+Requires-Dist: flake8-warnings; extra == 'tests'
+Requires-Dist: niworkflows; extra == 'tests'
+Requires-Dist: pep8-naming; extra == 'tests'
+Requires-Dist: pytest; extra == 'tests'
+Requires-Dist: pytest-cov; extra == 'tests'
+Requires-Dist: tomli; extra == 'tests'
