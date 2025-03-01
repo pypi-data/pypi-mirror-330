@@ -1,0 +1,10 @@
+[console_scripts]
+pingme_class_cli = pingme.pingme_class:cli
+pingme_core_hello_world = pingme.core:cli
+pingme_start_webservice = pingme.api:webservice
+pingme_webhook_card = pingme.services:pingme_send_card_to_webhook
+pingme_webhook_default = pingme.services:pingme_send_default_card_to_webhook
+pingme_webhook_simple = pingme.services:pingme_send_simple_card_to_webhook
+
+[nbdev]
+pingme = pingme._modidx:d
