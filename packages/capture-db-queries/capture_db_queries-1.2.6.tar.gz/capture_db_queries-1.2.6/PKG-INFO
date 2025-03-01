@@ -1,0 +1,198 @@
+Metadata-Version: 2.2
+Name: capture_db_queries
+Version: 1.2.6
+Summary: Decorator for measuring the time and number of database queries
+Home-page: https://github.com/Friskes/capture-db-queries
+Author: Friskes
+Author-email: Friskes <friskesx@gmail.com>
+License: MIT License
+        
+        Copyright (c) 2024 Friskes
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE.
+        
+Project-URL: Homepage, https://github.com/Friskes/capture-db-queries
+Project-URL: Changelog, https://github.com/Friskes/capture-db-queries/releases/
+Project-URL: Issues, https://github.com/Friskes/capture-db-queries/issues
+Keywords: Django,Database
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Web Environment
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: OS Independent
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Framework :: Django :: 3.2
+Classifier: Framework :: Django :: 4.0
+Classifier: Framework :: Django :: 4.1
+Classifier: Framework :: Django :: 4.2
+Classifier: Topic :: Internet :: WWW/HTTP
+Classifier: Topic :: Documentation
+Classifier: Topic :: Software Development :: Code Generators
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: django>=3.2.25
+Requires-Dist: sqlparse==0.4.2
+Requires-Dist: pygments==2.18.0
+Provides-Extra: dev
+Requires-Dist: pytest-django>=4.8.0; extra == "dev"
+Requires-Dist: pre-commit>=3.5.0; extra == "dev"
+Requires-Dist: ruff==0.8.0; extra == "dev"
+Requires-Dist: pytest>=7.0.1; extra == "dev"
+Requires-Dist: mypy>=1.10.0; extra == "dev"
+Requires-Dist: pytest-cov>=5.0.0; extra == "dev"
+Provides-Extra: ci
+Requires-Dist: pytest-django>=4.8.0; extra == "ci"
+Requires-Dist: ruff==0.8.0; extra == "ci"
+Requires-Dist: pytest>=7.0.1; extra == "ci"
+Requires-Dist: mypy>=1.10.0; extra == "ci"
+Requires-Dist: pytest-cov>=5.0.0; extra == "ci"
+
+# Class to simplify the search for slow and suboptimal sql queries to the database in django projects.
+
+<div align="center">
+
+| Project   |     | Status                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+|-----------|:----|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| CI/CD     |     | [![Latest Release](https://github.com/Friskes/capture-db-queries/actions/workflows/publish-to-pypi.yml/badge.svg)](https://github.com/Friskes/capture-db-queries/actions/workflows/publish-to-pypi.yml)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| Quality   |     | [![Coverage](https://codecov.io/github/Friskes/capture-db-queries/graph/badge.svg?token=vKez4Pycrc)](https://codecov.io/github/Friskes/capture-db-queries)                                                                                                                                                                                                                                                                                                                               |
+| Package   |     | [![PyPI - Version](https://img.shields.io/pypi/v/capture-db-queries?labelColor=202235&color=edb641&logo=python&logoColor=edb641)](https://badge.fury.io/py/capture-db-queries) ![PyPI - Support Python Versions](https://img.shields.io/pypi/pyversions/capture-db-queries?labelColor=202235&color=edb641&logo=python&logoColor=edb641) ![Project PyPI - Downloads](https://img.shields.io/pypi/dm/capture-db-queries?logo=python&label=downloads&labelColor=202235&color=edb641&logoColor=edb641)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| Meta      |     | [![types - Mypy](https://img.shields.io/badge/types-Mypy-202235.svg?logo=python&labelColor=202235&color=edb641&logoColor=edb641)](https://github.com/python/mypy) [![License - MIT](https://img.shields.io/badge/license-MIT-202235.svg?logo=python&labelColor=202235&color=edb641&logoColor=edb641)](https://spdx.org/licenses/) [![code style - Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/format.json&labelColor=202235)](https://github.com/astral-sh/ruff) |
+
+</div>
+
+## About class
+- Class allows you to track any sql queries that are executed inside the body of a loop, a decorated function, or a context manager, the body can be executed a specified number of times to get the average query execution time.
+
+- The class allows you to display formatted output data containing brief information about the current iteration of the measurement, display sql queries and explain information on them, as well as summary information containing data on all measurements.
+
+> **Do not use the class inside the business logic of your application, this will greatly slow down the execution of the queries, the class is intended only for the test environment.**
+
+## Install
+1. Install package
+    ```bash
+    pip install capture-db-queries
+    ```
+
+## About class parameters
+> *All parameters are purely optional.*
+
+- Optional parameters:
+    - `assert_q_count`: The expected number of database queries during all `number_runs`, otherwise an exception will be raised: **"AssertionError: `N` not less than or equal to `N` queries"**.
+    - `number_runs`: The number of runs of the decorated function or test for loop.
+    - `verbose`: Displaying the final results of test measurements within all `number_runs`.
+    - `advanced_verb`: Displaying the result of each test measurement.
+    - `auto_call_func`: Autorun of the decorated function. *(without passing arguments to the function, since the launch takes place inside the class)*.
+    - `queries`: Displaying colored and formatted SQL queries to the database.
+    - `explain`: Displaying explain information about each query. (has no effect on the original query).
+    - `explain_opts`: Parameters for explain. *(for more information about the parameters for explain, see the documentation for your DBMS).*
+    - `connection`: Connecting to your database, by default: django.db.connection
+
+## Usage examples
+
+```python
+from capture_db_queries import CaptureQueries
+```
+
+```python
+for ctx in CaptureQueries(number_runs=2, advanced_verb=True):
+    response = self.client.get(url)
+
+>>> Test №1 | Queries count: 10 | Execution time: 0.04s
+>>> Test №2 | Queries count: 10 | Execution time: 0.04s
+>>> Tests count: 2  |  Total queries count: 20  |  Total execution time: 0.08s  |  Median time one test is: 0.041s  |  Vendor: sqlite
+```
+
+#### OR
+
+```python
+@CaptureQueries(number_runs=2, advanced_verb=True)
+def test_request():
+    response = self.client.get(url)
+
+>>> Test №1 | Queries count: 10 | Execution time: 0.04s
+>>> Test №2 | Queries count: 10 | Execution time: 0.04s
+>>> Tests count: 2  |  Total queries count: 20  |  Total execution time: 0.08s  |  Median time one test is: 0.041s  |  Vendor: sqlite
+```
+
+#### OR
+
+```python
+# NOTE: The with context manager does not support multi-launch number_runs > 1
+# NOTE: Also you can use `async with` if you capture queries in async context.
+with CaptureQueries(number_runs=1, advanced_verb=True) as ctx:
+    response = self.client.get(url)
+
+>>> Queries count: 10  |  Execution time: 0.04s  |  Vendor: sqlite
+```
+
+> ### Example of output when using queries and explain:
+
+```python
+for _ in CaptureQueries(advanced_verb=True, queries=True, explain=True):
+    list(Reporter.objects.filter(pk=1))
+    list(Article.objects.filter(pk=1))
+
+>>> Test №1 | Queries count: 2 | Execution time: 0.22s
+>>>
+>>>
+>>> №[1] time=[0.109] explain=['2 0 0 SEARCH TABLE tests_reporter USING INTEGER PRIMARY KEY (rowid=?)']
+>>> SELECT "tests_reporter"."id",
+>>>     "tests_reporter"."full_name"
+>>> FROM "tests_reporter"
+>>> WHERE "tests_reporter"."id" = 1
+>>>
+>>>
+>>> №[2] time=[0.109] explain=['2 0 0 SEARCH TABLE tests_article USING INTEGER PRIMARY KEY (rowid=?)']
+>>> SELECT "tests_article"."id",
+>>>     "tests_article"."pub_date",
+>>>     "tests_article"."headline",
+>>>     "tests_article"."content",
+>>>     "tests_article"."reporter_id"
+>>> FROM "tests_article"
+>>> WHERE "tests_article"."id" = 1
+>>>
+>>>
+>>> Tests count: 1  |  Total queries count: 2  |  Total execution time: 0.22s  |  Median time one test is: 0.109s  |  Vendor: sqlite
+```
+
+### Customization of the display
+> To customize the display of SQL queries, you can import a list with handlers and remove handlers from it or expand it with your own handlers.
+
+```python
+from capture_db_queries import settings, IHandler
+
+# NOTE: The handler must comply with the specified interface.
+class SomeHandler(IHandler):
+    def handle(self, queries_log):
+        for query in queries_log:
+            query.sql = "Hello World!"
+        return queries_log
+
+settings.PRINTER_HANDLERS.remove("capture_db_queries.handlers.ColorizeSqlHandler")
+settings.PRINTER_HANDLERS.append("path.to.your.handler.SomeHandler")
+```
+
+## TODO:
+1. Add support for async loop and async func decorator, __acall__, __aiter__, __anext__
+2. Add support for other ORM's, SQLAlchemy, etc.
