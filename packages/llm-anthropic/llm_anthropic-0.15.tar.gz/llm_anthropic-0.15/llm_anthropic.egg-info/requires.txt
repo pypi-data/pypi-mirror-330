@@ -1,0 +1,8 @@
+llm>=0.23
+anthropic>=0.47.2
+
+[test]
+pytest
+pytest-recording
+pytest-asyncio
+cogapp
