@@ -1,0 +1,15 @@
+Metadata-Version: 2.3
+Name: pangea-llm-translator
+Version: 1.0.0
+Summary: Pangea LLM Input translators SDKs
+Author: Pangea
+Author-email: eng@pangea.cloud
+Requires-Python: >=3.10,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Dist: jsonpath-ng (>=1.7.0,<2.0.0)
+Requires-Dist: jsonschema (>=4.22.0,<5.0.0)
+Requires-Dist: pytest (>=8.3.4,<9.0.0)
