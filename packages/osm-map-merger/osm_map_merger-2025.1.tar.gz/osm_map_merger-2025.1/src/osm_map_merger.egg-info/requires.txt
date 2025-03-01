@@ -1,0 +1,7 @@
+osmium>=3.2.0
+lxml
+beautifulsoup4
+click
+
+[dev]
+pytest
