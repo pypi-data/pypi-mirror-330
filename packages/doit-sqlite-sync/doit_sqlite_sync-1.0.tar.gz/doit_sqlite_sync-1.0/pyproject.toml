@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "doit-sqlite-sync"
+version = "1.0"
+description = "A SQLite backend that keeps the db file synchronized with the doit's state."
+requires-python = ">=3.8"
+license = { file = "LICENSE" }
+readme = "README.md"
+authors = [
+    { name = "Julien Pontabry", email = "jpontabry@unistra.fr" }
+]
+dependencies = [
+    "doit>=0.36.0",
+    "cloudpickle>=3.1.1",
+]
+keywords = ["doit", "backend"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: CeCILL-B Free Software License Agreement (CECILL-B)",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Software Development :: Build Tools",
+    "Topic :: Software Development :: Libraries :: Python Modules",]
+
+[project.entry-points."doit.BACKEND"]
+sqlite3sync = "doit_sqlite_sync:SqliteDBSync"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.package-data]
+doit_sqlite_sync = ["py.typed"]
