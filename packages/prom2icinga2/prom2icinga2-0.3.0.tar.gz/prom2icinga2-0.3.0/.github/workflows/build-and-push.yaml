@@ -1,0 +1,73 @@
+# SPDX-FileCopyrightText: none
+# SPDX-License-Identifier: CC0-1.0
+
+name: Docker Build
+
+on:
+  push:
+    branches: ['**']
+    tags: ['**']
+    paths-ignore:
+      - 'README.md'
+      - 'LICENSE'
+  pull_request:
+    types: [opened, reopened]
+    branches: [main]
+    paths-ignore:
+      - 'README.md'
+      - 'LICENSE'
+  release:
+    types: [published]
+
+jobs:
+  call-docker-build:
+    name: Call Docker Build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+      pull-requests: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@9780b0c442fbb1117ed29e0efdff1e18412f7567 # v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Collect Docker metadata
+        id: meta
+        uses: docker/metadata-action@369eb591f429131d6889c46b94e711f089e6ca96 # v5
+        with:
+          flavor: latest=false
+          images: ghcr.io/${{ github.repository }}
+          tags: |
+            type=raw,value=latest,enable=${{ github.event_name == 'release' }}
+            type=semver,pattern={{major}}.{{minor}}.{{patch}}
+            type=semver,pattern={{major}}.{{minor}}
+            type=semver,pattern={{major}}
+            type=ref,event=branch
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@4574d27a4764455b42196d70a065bc6853246a25 # v3
+        with:
+          platforms: amd64,arm64
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@f7ce87c1d6bead3e36075b2ce75da1f6cc28aaca # v3
+
+      - name: Build and publish Docker image
+        uses: docker/build-push-action@0adf9959216b96bec444f325f1e493d4aa344497 # v6
+        with:
+          context: .
+          push: ${{ github.ref == 'refs/heads/main' || github.event_name == 'release' }}
+          platforms: |
+            linux/amd64
+            linux/arm64/v8
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-to: type=gha,mode=min
+          cache-from: type=gha

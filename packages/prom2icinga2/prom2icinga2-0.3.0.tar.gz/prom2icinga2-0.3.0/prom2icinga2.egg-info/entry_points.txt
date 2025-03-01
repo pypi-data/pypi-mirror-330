@@ -1,0 +1,2 @@
+[console_scripts]
+prom2icinga2 = prom2icinga2.server:app
