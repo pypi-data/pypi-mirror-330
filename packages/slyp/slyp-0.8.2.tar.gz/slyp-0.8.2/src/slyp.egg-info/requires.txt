@@ -1,0 +1,4 @@
+libcst>=1
+
+[:python_version < "3.10"]
+typing_extensions>=4.0
