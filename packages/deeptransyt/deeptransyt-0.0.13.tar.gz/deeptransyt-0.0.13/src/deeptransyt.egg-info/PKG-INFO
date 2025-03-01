@@ -1,0 +1,74 @@
+Metadata-Version: 2.2
+Name: deeptransyt
+Version: 0.0.13
+Summary: Transporters annotation using LLM's
+Home-page: https://github.com/Apolinario8/deeptransyt
+Author: Gonçalo Apolinário Cardoso
+Author-email: goncalocardoso2016@gmail.com
+License: MIT
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+Requires-Dist: Bio==1.6.2
+Requires-Dist: numpy==1.24.4
+Requires-Dist: pandas==2.0.3
+Requires-Dist: pytorch_lightning==2.4.0
+Requires-Dist: torch==2.4.1
+Requires-Dist: transformers==4.46.3
+Dynamic: author
+Dynamic: author-email
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# deeptransyt
+
+![Downloads per month](https://pepy.tech/badge/deeptransyt/month)
+![License](https://img.shields.io/pypi/l/deeptransyt.svg)
+![Wheel Support](https://img.shields.io/pypi/wheel/deeptransyt.svg)
+![Python Versions](https://img.shields.io/pypi/pyversions/deeptransyt.svg)
+
+## 🚀 Installation  
+
+You can install `deeptransyt` in two ways:
+
+### **1. Install via `pip`**
+```bash
+pip install deeptransyt
+```
+
+### **2. Cloning the repository**
+If you want the latest development version:
+```bash
+git clone https://github.com/yourusername/deeptransyt.git
+cd deeptransyt
+pip install .
+```
+
+---
+
+## Dataset and Models
+
+The dataset and trained models used for this project are available on Zenodo:
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14946179.svg)](https://doi.org/10.5281/zenodo.14946179)
+
+
+## API Reference and User Guide available on [Read the Docs](https://deeptransyt.readthedocs.io/)
+
+<!-- [![Read the Docs](https://raw.githubusercontent.com/psf/requests/main/ext/ss.png)](https://requests.readthedocs.io) -->
+
+
+## 📜 License
+This project is licensed under the MIT License. See the `LICENSE` file for details.
+
+
+## DeepTransyt's Workflow
+![alt text](https://github.com/Apolinario8/deeptransyt/blob/main/annotation_tool_workflow.png?raw=true)
+
+
+
