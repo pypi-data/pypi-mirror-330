@@ -1,0 +1,73 @@
+[project]
+name = "omop-cdm-graphql"
+version = "0.4.0"
+description = "GraphQL service for exposing OMOP CDM records."
+readme = "README.rst"
+authors = [
+    { name = "Jaideep Sundaram", email = "jai.python3@gmail.com" }
+]
+maintainers = [
+  {name = "Jaideep Sundaram", email = "jai.python3@gmail.com"}
+]
+requires-python = ">=3.10"
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Natural Language :: English",
+    "Programming Language :: Python :: 3.10",
+]
+license = {text = "Not open source"}
+keywords = ["OMOP", "CDM", "GraphQL"]
+dependencies = [
+    "Click>=7.0",
+    "PyYAML",
+    "Rich",
+    "singleton-decorator",
+    "strawberry-graphql ",
+    "sqlalchemy",
+    "fastapi",
+    "uvicorn",
+    "databases[sqlite]"
+]
+
+[project.optional-dependencies]
+dev = [
+    "coverage",  # testing
+    "mypy",  # linting
+    "pytest",  # testing
+    "ruff"  # linting
+]
+
+[project.urls]
+Homepage = "https://github.com/jai-python3/omop-cdm-graphql"
+
+[project.scripts]
+run-omop-cdm-graphql-app = "omop_cdm_graphql.main:main"
+load-omop-cdm-db-records = "omop_cdm_graphql.loader:main"
+
+[tool.setuptools]
+zip-safe = false
+include-package-data = true
+
+[tool.setuptools.packages.find]
+include = ["omop_cdm_graphql", "omop_cdm_graphql.*"]
+
+# [tool.setuptools.package-data]
+# omop-cdm-graphql = ["conf/config.yaml"]
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.deadcode]
+exclude = ["tests", "venv", "docs", "build"]
+# ignore_decorators = ["@app.route", "@require_*"]
+# ignore_names = ["visit_*", "do_*"]
+# make_whitelist = true
+# min_confidence = 80
+# paths = ["myscript.py", "mydir", "whitelist.py"]
+sort_by_size = true
+# verbose = true
+
+[tool.vulture]
+exclude = ["tests", "venv", "docs", "build"]

@@ -1,0 +1,4 @@
+---
+port: 8081
+url: http://localhost
+database_file: /tmp/omop-cdm-graphql/omop-cdm-v1.db
