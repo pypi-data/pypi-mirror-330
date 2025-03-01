@@ -1,0 +1,63 @@
+[project]
+name = "marsopt"
+version = "0.1.0"  # Changed to semantic versioning format
+description = "Mixed Adaptive Random Search for Optimization"
+readme = "README.md"
+license = {text = "MIT License"}
+authors = [
+    { name = "Samet Copur", email = "sametcopur@yahoo.com" },
+    { name = "Ilker Birbil", email = "sibirbil@gmail.com" },
+]
+keywords = [
+    "python",
+    "optimization",
+    "adaptive-random-search",
+    "hyperparameter-tuning",
+    "hyperparameter-optimization",
+    "mixed-parameter-space",
+    "categorical-parameters",
+    "machine-learning",
+    "data-science",
+    "metaheuristics",
+]
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Intended Audience :: Science/Research",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3 :: Only",
+  "Topic :: Scientific/Engineering",
+  "Topic :: Scientific/Engineering :: Mathematics",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+  "Topic :: Software Development",
+  "Topic :: Software Development :: Libraries",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+]
+requires-python = ">=3.8"
+dependencies = ["numpy"]
+
+
+[project.optional-dependencies]
+extra = ["scipy"]
+
+[tool.setuptools.dynamic]
+version = {attr = "marsopt.__version__"}
+
+[tool.setuptools.packages.find]
+include = ["marsopt"]
+
+[project.urls]
+Documentation = "https://marsopt.readthedocs.io/en/latest/"
+Repository = "https://github.com/sibirbil/marsopt"
+Tracker = "https://github.com/sibirbil/marspot/issues"
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
