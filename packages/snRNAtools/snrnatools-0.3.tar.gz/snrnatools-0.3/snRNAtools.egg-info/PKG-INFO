@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: snRNAtools
+Version: 0.2
+Summary: A Python package utils to support scanpy usage and network analysis
+Author: brainfo
+Author-email: brainfo <scilavisher@gmail.com>
+Project-URL: Homepage, https://github.com/brainfo/snRNAtools
+Project-URL: Issues, https://github.com/brainfo/snRNAtools/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+
+#snRNAtools
+This is actually for general omics analysis where
+## gene level analysis
+- Plot the bar output from gene ontology enrichment analysis
+- Network analysis given any edge list
+## scanpy support
+For another snakemake easier evoke of a snRNA-seq pipeline using scanpy
