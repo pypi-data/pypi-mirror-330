@@ -1,0 +1,571 @@
+====================
+OMOP CDM GraphQL
+====================
+
+GraphQL service for exposing OMOP CDM records.
+
+Exported scripts
+================
+
+* load-omop-cdm-db-records
+* run-omop-cdm-graphql-app
+
+Step 1 - Create Python virtual environment
+==========================================
+
+.. code-block:: shell
+
+    python3 -m venv venv
+
+Step 2 - Activate Python virtual environment
+============================================
+
+.. code-block:: shell
+
+    source venv/bin/activate
+
+Step 3 - Install
+================
+
+.. code-block:: shell
+
+    pip install omop-cdm-graphql
+
+Step 4 - Update the configuration file
+======================================
+
+.. code-block:: yaml
+
+    ---
+    port: 8081
+    url: http://localhost
+    database_file: /tmp/omop-cdm-graphql/omop-cdm-v1.db
+
+Step 5 - Copy configuration file to launch directory
+====================================================
+
+.. code-block:: bash
+
+    cp venv/lib/python3.10/site-packages/omop_cdm_graphql/conf/config.yaml .
+
+Step 6 - Load the database
+==========================
+
+Run the loader to load mock records.
+
+.. code-block:: bash
+
+    load-omop-cdm-db-records
+
+Step 7 - Run the app
+====================
+
+.. code-block:: bash
+
+    run-omop-cdm-graphql-app
+
+Step 8 - Open browser
+=====================
+
+`http://localhost:8080/graphql <http://localhost:8080/graphql>`_
+
+Step 9 - Execute queries
+========================
+
+Query 1 - Retrieve person 1
+===========================
+
+.. code-block:: graphql
+
+    query {
+      person(personId: 1) {
+        personId
+        genderConceptId
+        birthDatetime
+        observations {
+          observationId
+          observationConceptId
+          observationDate
+        }
+        conditions {
+          conditionOccurrenceId
+          conditionConceptId
+          conditionStartDate
+        }
+      }
+    }
+
+Result:
+
+.. code-block:: json
+
+    {
+      "data": {
+        "person": {
+          "personId": 1,
+          "genderConceptId": 8507,
+          "birthDatetime": "1990-01-01T00:00:00",
+          "observations": [
+            {
+              "observationId": 1,
+              "observationConceptId": 123,
+              "observationDate": "2023-01-01T00:00:00"
+            },
+            {
+              "observationId": 7,
+              "observationConceptId": 129,
+              "observationDate": "2023-07-10T00:00:00"
+            }
+          ],
+          "conditions": [
+            {
+              "conditionOccurrenceId": 1,
+              "conditionConceptId": 456,
+              "conditionStartDate": "2023-02-01T00:00:00"
+            },
+            {
+              "conditionOccurrenceId": 7,
+              "conditionConceptId": 462,
+              "conditionStartDate": "2023-08-20T00:00:00"
+            }
+          ]
+        }
+      }
+    }
+
+Query 2 - Retrieve all persons
+==============================
+
+.. code-block:: graphql
+
+    query {
+      allPersons {
+        personId
+        genderConceptId
+        birthDatetime
+      }
+    }
+
+Result:
+
+.. code-block:: json
+
+    {
+      "data": {
+        "allPersons": [
+          {
+            "personId": 1,
+            "genderConceptId": 8507,
+            "birthDatetime": "1990-01-01T00:00:00"
+          },
+          {
+            "personId": 2,
+            "genderConceptId": 8532,
+            "birthDatetime": "1985-05-15T00:00:00"
+          },
+          {
+            "personId": 3,
+            "genderConceptId": 8507,
+            "birthDatetime": "1978-03-22T00:00:00"
+          },
+          {
+            "personId": 4,
+            "genderConceptId": 8532,
+            "birthDatetime": "1995-07-10T00:00:00"
+          },
+          {
+            "personId": 5,
+            "genderConceptId": 8507,
+            "birthDatetime": "1982-11-30T00:00:00"
+          },
+          {
+            "personId": 6,
+            "genderConceptId": 8532,
+            "birthDatetime": "2000-04-15T00:00:00"
+          }
+        ]
+      }
+    }
+
+Query 3 - Filter Persons by Gender
+==================================
+
+Purpose: Shows how GraphQL lets clients filter data without needing a separate endpoint.
+
+.. code-block:: graphql
+
+    query {
+      personsByGender(genderConceptId: 8532) {
+        personId
+        birthDatetime
+        observations {
+          observationId
+          observationDate
+        }
+      }
+    }
+
+Returns only female persons (gender_concept_id = 8532) with their observations.
+Client specifies exactly what fields they want (e.g., skipping conditions or genderConceptId), avoiding over-fetching.
+
+Result:
+
+.. code-block:: json
+
+    {
+      "data": {
+        "personsByGender": [
+          {
+            "personId": 2,
+            "birthDatetime": "1985-05-15T00:00:00",
+            "observations": [
+              {
+                "observationId": 2,
+                "observationDate": "2023-03-15T00:00:00"
+              }
+            ]
+          },
+          {
+            "personId": 4,
+            "birthDatetime": "1995-07-10T00:00:00",
+            "observations": [
+              {
+                "observationId": 4,
+                "observationDate": "2023-05-20T00:00:00"
+              }
+            ]
+          },
+          {
+            "personId": 6,
+            "birthDatetime": "2000-04-15T00:00:00",
+            "observations": [
+              {
+                "observationId": 6,
+                "observationDate": "2023-06-01T00:00:00"
+              }
+            ]
+          }
+        ]
+      }
+    }
+
+Query 4 - Recent Observations
+=============================
+
+Purpose: Demonstrates time-based filtering and standalone access to related entities.
+
+.. code-block:: graphql
+
+    query {
+      recentObservations(afterDate: "2023-03-01") {
+        observationId
+        observationConceptId
+        observationDate
+      }
+    }
+
+Returns observations after March 1, 2023 (e.g., observation IDs 2, 4, 6, 7).
+No need to fetch persons first; GraphQL lets you query related data directly, reducing round trips.
+
+Result:
+
+.. code-block:: json
+
+    {
+      "data": {
+        "recentObservations": [
+          {
+            "observationId": 2,
+            "observationConceptId": 124,
+            "observationDate": "2023-03-15T00:00:00"
+          },
+          {
+            "observationId": 4,
+            "observationConceptId": 126,
+            "observationDate": "2023-05-20T00:00:00"
+          },
+          {
+            "observationId": 6,
+            "observationConceptId": 128,
+            "observationDate": "2023-06-01T00:00:00"
+          },
+          {
+            "observationId": 7,
+            "observationConceptId": 129,
+            "observationDate": "2023-07-10T00:00:00"
+          }
+        ]
+      }
+    }
+
+Query 5 - Persons with a Specific Condition
+===========================================
+
+Purpose: Highlights nested relationship traversal and conditional filtering.
+
+.. code-block:: graphql
+
+    query {
+      personsWithCondition(conditionConceptId: 456) {
+        personId
+        genderConceptId
+        conditions {
+          conditionOccurrenceId
+          conditionStartDate
+        }
+        observations {
+          observationId
+        }
+      }
+    }
+
+Returns persons with condition_concept_id 456 (just person 1) and their conditions and observations.
+Combines filtering with flexible field selection across relationships in one request—impossible in REST without multiple calls or a custom endpoint.
+
+Query - Nested Data with Selective Fields
+=========================================
+
+Purpose: Shows how clients can pick and choose fields across relationships.
+
+.. code-block:: graphql
+
+    query {
+      allPersons {
+        personId
+        birthDatetime
+        observations {
+          observationDate
+        }
+        conditions {
+          conditionConceptId
+        }
+      }
+    }
+
+Returns all 6 persons with only their birth dates, observation dates, and condition concept IDs.
+Avoids over-fetching unused fields (e.g., gender_concept_id, observation_id) and simplifies frontend logic—no need to parse bloated responses.
+
+Results:
+
+.. code-block:: json
+
+    {
+      "data": {
+        "allPersons": [
+          {
+            "personId": 1,
+            "birthDatetime": "1990-01-01T00:00:00",
+            "observations": [
+              {
+                "observationDate": "2023-01-01T00:00:00"
+              },
+              {
+                "observationDate": "2023-07-10T00:00:00"
+              }
+            ],
+            "conditions": [
+              {
+                "conditionConceptId": 456
+              },
+              {
+                "conditionConceptId": 462
+              }
+            ]
+          },
+          {
+            "personId": 2,
+            "birthDatetime": "1985-05-15T00:00:00",
+            "observations": [
+              {
+                "observationDate": "2023-03-15T00:00:00"
+              }
+            ],
+            "conditions": [
+              {
+                "conditionConceptId": 457
+              }
+            ]
+          },
+          {
+            "personId": 3,
+            "birthDatetime": "1978-03-22T00:00:00",
+            "observations": [
+              {
+                "observationDate": "2022-12-10T00:00:00"
+              }
+            ],
+            "conditions": [
+              {
+                "conditionConceptId": 458
+              }
+            ]
+          },
+          {
+            "personId": 4,
+            "birthDatetime": "1995-07-10T00:00:00",
+            "observations": [
+              {
+                "observationDate": "2023-05-20T00:00:00"
+              }
+            ],
+            "conditions": [
+              {
+                "conditionConceptId": 459
+              }
+            ]
+          },
+          {
+            "personId": 5,
+            "birthDatetime": "1982-11-30T00:00:00",
+            "observations": [
+              {
+                "observationDate": "2023-01-25T00:00:00"
+              }
+            ],
+            "conditions": [
+              {
+                "conditionConceptId": 460
+              }
+            ]
+          },
+          {
+            "personId": 6,
+            "birthDatetime": "2000-04-15T00:00:00",
+            "observations": [
+              {
+                "observationDate": "2023-06-01T00:00:00"
+              }
+            ],
+            "conditions": [
+              {
+                "conditionConceptId": 461
+              }
+            ]
+          }
+        ]
+      }
+    }
+
+Query - Single Person Deep Dive
+===============================
+
+Purpose: Demonstrates deep nesting and customization.
+
+.. code-block:: graphql
+
+    query {
+      person(personId: 1) {
+        personId
+        birthDatetime
+        observations {
+          observationId
+          observationConceptId
+          observationDate
+        }
+        conditions {
+          conditionOccurrenceId
+          conditionConceptId
+          conditionStartDate
+        }
+      }
+    }
+
+Returns person 1 with all observation and condition details.
+Replaces multiple REST calls (e.g., /persons/1, /persons/1/observations, /persons/1/conditions) with one precise query.
+
+Result:
+
+.. code-block:: json
+
+    {
+      "data": {
+        "person": {
+          "personId": 1,
+          "birthDatetime": "1990-01-01T00:00:00",
+          "observations": [
+            {
+              "observationId": 1,
+              "observationConceptId": 123,
+              "observationDate": "2023-01-01T00:00:00"
+            },
+            {
+              "observationId": 7,
+              "observationConceptId": 129,
+              "observationDate": "2023-07-10T00:00:00"
+            }
+          ],
+          "conditions": [
+            {
+              "conditionOccurrenceId": 1,
+              "conditionConceptId": 456,
+              "conditionStartDate": "2023-02-01T00:00:00"
+            },
+            {
+              "conditionOccurrenceId": 7,
+              "conditionConceptId": 462,
+              "conditionStartDate": "2023-08-20T00:00:00"
+            }
+          ]
+        }
+      }
+    }
+
+Step 10 - Execute queries via CLI using httpie
+==============================================
+
+Query 1 - Retrieve person 1
+===========================
+
+.. code-block:: shell
+
+    http POST http://localhost:8081/graphql query=@examples/query1.graphql
+
+Result:
+
+Query 2 - Retrieve all persons
+==============================
+
+.. code-block:: shell
+
+    http POST http://localhost:8081/graphql query=@examples/query2.graphql
+
+Query 3 - Filter Persons by Gender
+==================================
+
+.. code-block:: shell
+
+    http POST http://localhost:8081/graphql query=@examples/query3.graphql
+
+Query 4 - Recent Observations
+=============================
+
+.. code-block:: shell
+
+    http POST http://localhost:8081/graphql query=@examples/query4.graphql
+
+Query 5 - Persons with a Specific Condition
+===========================================
+
+.. code-block:: shell
+
+    http POST http://localhost:8081/graphql query=@examples/query5.graphql
+
+Query 6 - Nested Data with Selective Fields
+===========================================
+
+.. code-block:: shell
+
+    http POST http://localhost:8081/graphql query=@examples/query6.graphql
+
+Query 7 - Single Person Deep Dive
+=================================
+
+.. code-block:: shell
+
+    http POST http://localhost:8081/graphql query=@examples/query7.graphql
+
+References
+==========
+
+- `GitHub <https://github.com/jai-python3/omop-cdm-graphql>`_
+- `PYPI <https://pypi.org/project/omop-cdm-graphql/>`_

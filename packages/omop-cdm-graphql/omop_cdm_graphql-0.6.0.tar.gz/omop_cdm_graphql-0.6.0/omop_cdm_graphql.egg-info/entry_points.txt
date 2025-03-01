@@ -1,0 +1,3 @@
+[console_scripts]
+load-omop-cdm-db-records = omop_cdm_graphql.loader:main
+run-omop-cdm-graphql-app = omop_cdm_graphql.main:main
