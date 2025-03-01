@@ -1,0 +1,107 @@
+Metadata-Version: 2.2
+Name: omop-cdm-graphql
+Version: 0.2.0
+Summary: CollectionGraphQL service for exposing OMOP CDM records.
+Author-email: Jaideep Sundaram <jai.python3@gmail.com>
+Maintainer-email: Jaideep Sundaram <jai.python3@gmail.com>
+License: Not open source
+Project-URL: Homepage, https://github.com/jai-python3/omop-cdm-graphql
+Keywords: OMOP,CDM,GraphQL
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3.10
+Requires-Python: >=3.10
+Description-Content-Type: text/x-rst
+License-File: AUTHORS.rst
+Requires-Dist: Click>=7.0
+Requires-Dist: PyYAML
+Requires-Dist: Rich
+Requires-Dist: singleton-decorator
+Requires-Dist: strawberry-graphql
+Requires-Dist: sqlalchemy
+Requires-Dist: fastapi
+Requires-Dist: uvicorn
+Requires-Dist: databases[sqlite]
+Provides-Extra: dev
+Requires-Dist: coverage; extra == "dev"
+Requires-Dist: mypy; extra == "dev"
+Requires-Dist: pytest; extra == "dev"
+Requires-Dist: ruff; extra == "dev"
+
+====================
+OMOP CDM GraphQL
+====================
+
+GraphQL service for exposing OMOP CDM records.
+
+Exported scripts
+================
+
+* load-omop-cdm-db-records
+* run-omop-cdm-graphql-app
+
+Step 1 - Create Python virtual environment
+==========================================
+
+.. code-block:: shell
+
+    python3 -m venv venv
+
+Step 2 - Activate Python virtual environment
+============================================
+
+.. code-block:: shell
+
+    source venv/bin/activate
+
+Step 3 - Install
+================
+
+.. code-block:: shell
+
+    pip install omop-cdm-graphql
+
+Step 4 - Update the configuration file
+======================================
+
+.. code-block:: yaml
+
+    ---
+    port: 8081
+    url: http://localhost
+    database_file: /tmp/omop-cdm-graphql/omop-cdm-v1.db
+
+Step 5 - Copy configuration file to launch directory
+====================================================
+
+.. code-block:: bash
+
+    cp venv/lib/python3.10/site-packages/omop_cdm_graphql/conf/config.yaml .
+
+Step 6 - Load the database
+==========================
+
+Run the loader to load mock records.
+
+.. code-block:: bash
+
+    load-omop-cdm-db-records
+
+Step 7 - Run the app
+====================
+
+.. code-block:: bash
+
+    run-omop-cdm-graphql-app
+
+Step 8 - Open browser
+=====================
+
+`http://localhost:8080/graphql <http://localhost:8080/graphql>`_
+
+References
+==========
+
+- `GitHub <https://github.com/jai-python3/omop-cdm-graphql>`_
+- `PYPI <https://pypi.org/project/omop-cdm-graphql/>`_
