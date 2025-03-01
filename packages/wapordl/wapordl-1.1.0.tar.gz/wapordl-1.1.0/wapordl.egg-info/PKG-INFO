@@ -1,0 +1,18 @@
+Metadata-Version: 2.2
+Name: wapordl
+Version: 1.1.0
+Requires-Python: >=3.10
+License-File: LICENSE
+Requires-Dist: requests
+Requires-Dist: pandas<3,>=2.1.0
+Requires-Dist: numpy<3,>=1.15
+Requires-Dist: gdal<4,>=3.6.4
+Provides-Extra: full
+Requires-Dist: xarray; extra == "full"
+Requires-Dist: rioxarray; extra == "full"
+Requires-Dist: dask; extra == "full"
+Requires-Dist: matplotlib; extra == "full"
+Requires-Dist: tqdm; extra == "full"
+Dynamic: provides-extra
+Dynamic: requires-dist
+Dynamic: requires-python
