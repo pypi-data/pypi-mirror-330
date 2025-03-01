@@ -1,0 +1,30 @@
+Metadata-Version: 2.1
+Name: spetlrbootstrap
+Version: 0.0.4
+Summary: Standalone job-start library for Databricks.
+Home-page: https://github.com/spetlr-org/spetlr-boot
+Author: Spetlr.Org
+Author-email: spetlr.org@gmail.com
+Project-URL: Documentation, https://github.com/spetlr-org/spetlr-boot
+Project-URL: Bug Reports, https://github.com/spetlr-org/spetlr-boot/issues
+Project-URL: Source Code, https://github.com/spetlr-org/spetlr-boot
+Keywords: databricks,pyspark,spetlr
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# spetlr-boot
+A tiny project that can install libraries from a folder before running an entry point
+
+# Design principles
+The library has no dependencies and this should always be maintained. This is what allows this library to 
+function as a bootstrap.
+

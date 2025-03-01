@@ -1,0 +1,3 @@
+[console_scripts]
+spetlrboot_download = spetlrbootstrap.download:download
+spetlrbootstrap = spetlrbootstrap.bootstrap:bootstrap

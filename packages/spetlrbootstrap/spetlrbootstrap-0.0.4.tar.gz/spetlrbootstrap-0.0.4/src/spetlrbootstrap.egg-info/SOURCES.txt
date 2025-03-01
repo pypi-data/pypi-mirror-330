@@ -1,0 +1,17 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+src/spetlrbootstrap/__init__.py
+src/spetlrbootstrap/arguments.py
+src/spetlrbootstrap/bootstrap.py
+src/spetlrbootstrap/download.py
+src/spetlrbootstrap/introspect_entrypoint.py
+src/spetlrbootstrap/libraries.py
+src/spetlrbootstrap.egg-info/PKG-INFO
+src/spetlrbootstrap.egg-info/SOURCES.txt
+src/spetlrbootstrap.egg-info/dependency_links.txt
+src/spetlrbootstrap.egg-info/entry_points.txt
+src/spetlrbootstrap.egg-info/not-zip-safe
+src/spetlrbootstrap.egg-info/top_level.txt
