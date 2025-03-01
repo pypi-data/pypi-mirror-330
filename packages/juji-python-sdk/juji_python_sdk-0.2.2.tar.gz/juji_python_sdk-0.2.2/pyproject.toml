@@ -1,0 +1,19 @@
+[project]
+name = "juji-python-sdk"
+version = "0.2.2"
+description = "Juji Python SDK"
+authors = [
+    {name = "Wenxi Chen",email = "wchen@juji-inc.com"}
+]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "requests (>=2.32.3,<3.0.0)",
+    "websocket-client (>=1.8.0,<2.0.0)",
+    "python-dotenv (>=1.0.1,<2.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
