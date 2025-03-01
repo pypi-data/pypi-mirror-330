@@ -1,0 +1,2 @@
+[console_scripts]
+bids_qc = bids_qc.cli:run
