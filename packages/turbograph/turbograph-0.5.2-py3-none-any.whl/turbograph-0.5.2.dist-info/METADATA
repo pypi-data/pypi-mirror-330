@@ -1,0 +1,108 @@
+Metadata-Version: 2.4
+Name: turbograph
+Version: 0.5.2
+Summary: A Library for Quick Dependency-based Computation
+Project-URL: Homepage, https://gitlab.cern.ch/particlepredatorinvasion/turbograph
+Project-URL: Documentation, https://turbograph.docs.cern.ch
+Project-URL: Repository, https://gitlab.cern.ch/particlepredatorinvasion/turbograph
+Project-URL: Issues, https://gitlab.cern.ch/particlepredatorinvasion/turbograph/issues
+Project-URL: Changelog, https://gitlab.cern.ch/particlepredatorinvasion/turbograph/-/blob/master/CHANGELOG.md
+Author-email: Anthony Correia <anthony.correia@cern.ch>
+License: Apache License (2.0)
+License-File: LICENSE
+Keywords: DAG,computation,dataflow,dependency graph,graph,python library,turbo,workflow
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Topic :: Scientific/Engineering
+Requires-Python: >=3.11
+Provides-Extra: igraph
+Requires-Dist: igraph>=0.10.0; extra == 'igraph'
+Provides-Extra: networkx
+Requires-Dist: networkx>=2.5; extra == 'networkx'
+Description-Content-Type: text/markdown
+
+![TurboGraph logo](https://gitlab.cern.ch/particlepredatorinvasion/turbograph/raw/master/docs/source/_static/logo.png)
+
+<h2 align="center">Quick Dependency-based Computation</h2>
+
+
+<p align="center">
+  <a href="https://gitlab.cern.ch/particlepredatorinvasion/turbograph/-/pipelines/">
+    <img alt="Pipeline Status" src="https://gitlab.cern.ch/particlepredatorinvasion/turbograph/badges/master/pipeline.svg" />
+  </a>
+  <a href="https://gitlab.cern.ch/particlepredatorinvasion/turbograph/pipelines/latest">
+    <img alt="Test Coverage" src="https://gitlab.cern.ch/particlepredatorinvasion/turbograph/badges/master/coverage.svg" />
+  </a>
+  <a href="https://gitlab.cern.ch/particlepredatorinvasion/turbograph/-/blob/master/LICENSE">
+    <img alt="License" src="https://img.shields.io/pypi/l/turbograph" />
+  </a>
+  <a href="https://gitlab.cern.ch/particlepredatorinvasion/turbograph/-/releases">
+    <img alt="Latest Release" src="https://gitlab.cern.ch/particlepredatorinvasion/turbograph/-/badges/release.svg" />
+  </a>
+  <a href="https://pypi.org/project/turbograph/">
+    <img alt="PyPI - Version" src="https://img.shields.io/pypi/v/turbograph" />
+  </a>
+  <a href="https://pypi.org/project/turbograph/">
+    <img alt="Python Version" src="https://img.shields.io/pypi/pyversions/turbograph" />
+  </a>
+</p>
+
+
+📖 **Documentation:** https://turbograph.docs.cern.ch/master
+
+TurboGraph is a lightweight Python library for defining and computing values based
+on dependencies.
+
+It builds a directed dependency graph automatically—leveraging either
+the **`networkx`** or **`igraph`** backend—to ensure computations run in the correct order.
+
+
+## 🚀 Quick Example
+
+TurboGraph infers dependencies from function signatures:
+
+```python
+from turbograph import compute
+
+specifications = {
+    "a": 2,
+    "sum": lambda a, b: a + b,  # "sum" depends on "a" and "b"
+}
+
+result = compute(specifications, ["sum"], {"b": 3})
+print(result)  # Output: {"sum": 5}
+```
+TurboGraph detects that `"sum"` depends on both `"a"` and `"b"`
+and executes the computations accordingly.
+
+📌 Check out the [Quick-Start Guide](https://gitlab.cern.ch/particlepredatorinvasion/turbograph/-/blob/master/guide/quickstart.ipynb) for more details.
+
+
+## 📥 Installation
+
+TurboGraph requires **Python ≥ 3.11** and supports
+**NetworkX (≥2.5)** and **iGraph (≥0.10.0)** as graph backends.
+
+```bash
+# Install with NetworkX backend
+pip install "turbograph[networkx]"
+
+
+# Or with the iGraph backend
+pip install "turbograph[igraph]"
+```
+
+📚 For more installation options, check out
+the [Installation Guide](https://turbograph.docs.cern.ch/master/installation.html) 
+or [Development Guide](https://turbograph.docs.cern.ch/master/development.html).
+
+
+*The TurboGraph logo was created using the following fonts:  
+[Speedway](https://www.dafont.com/speedway.font) and [Speed Solid](https://www.dafont.com/speed-solid.font).*
