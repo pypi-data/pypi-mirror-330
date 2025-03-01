@@ -1,0 +1,5 @@
+include ':app'
+include ':lib-a'
+include ':lib-b'
+include ':lib-c'
+include ':lib-d'
