@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: steiner-tree
+Version: 1.2.0
+Summary: Steiner Tree algorithms
+Home-page: https://github.com/binh-vu/steiner-tree
+License: MIT
+Author: Binh Vu
+Author-email: binh@toan2.com
+Requires-Python: >=3.9,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Dist: graph-wrapper (>=1.7.1,<2.0.0)
+Requires-Dist: networkx (>=2.6.3,<3.0.0)
