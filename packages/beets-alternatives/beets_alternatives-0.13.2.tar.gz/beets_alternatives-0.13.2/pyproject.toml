@@ -1,0 +1,89 @@
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+name = "beets-alternatives"
+version = "0.13.2"
+description = "beets plugin to manage multiple files"
+authors = [
+  "Thomas Scholtes <geigerzaehler@axiom.fm>",
+  "wisp3rwind <wisp3rwind@posteo.eu>",
+]
+license = "MIT"
+readme = "README.md"
+include = ["CHANGELOG.md"]
+packages = [{ include = "beetsplug" }]
+homepage = "http://www.github.com/geigerzaehler/beets-alternatives"
+repository = "http://www.github.com/geigerzaehler/beets-alternatives"
+classifiers = [
+  "Topic :: Multimedia :: Sound/Audio",
+  "Topic :: Multimedia :: Sound/Audio :: Players :: MP3",
+  "License :: OSI Approved :: MIT License",
+  "Environment :: Console",
+  "Programming Language :: Python",
+]
+
+[tool.poetry.dependencies]
+python = ">=3.10, <4"
+beets = ">=1.6.0, <3"
+
+[tool.poetry.group.dev.dependencies]
+confuse = "^2.0.1"
+coverage = "^7.4.4"
+mediafile = "^0.13.0"
+mock = "^5.0.2"
+pyright = "^1.1.340"
+pytest = "^8.0.2"
+pytest-cov = "^6.0.0"
+ruff = "^0.9.0"
+typeguard = "^4.1.5"
+typing-extensions = "^4.9.0"
+pillow = "^11.1.0"
+
+[tool.pytest.ini_options]
+addopts = "--cov --cov-report=term --cov-report=html --cov-branch --doctest-modules"
+filterwarnings = [
+  "error",
+  "ignore:.*imghdr.*:DeprecationWarning:mediafile",
+  "ignore:.*setlocale.*:DeprecationWarning:beets.util",
+  "ignore:.*pkgutil.get_loader.*:DeprecationWarning:confuse.util",
+]
+
+[tool.pyright]
+typeCheckingMode = "strict"
+reportMissingTypeStubs = "none"
+# We haven’t made an effort to fix the following issues. Most are caused by
+# missing type annotations from beets.
+reportUnknownMemberType = "none"
+reportUnknownArgumentType = "none"
+reportUnknownVariableType = "none"
+
+[tool.ruff]
+target-version = "py310"
+unsafe-fixes = true
+preview = true
+
+[tool.ruff.lint]
+extend-select = [
+  "I",    # Sort imports
+  "C",    # Pyflakes conventions
+  "PTH",  # Use pathlib instead of os
+  "PIE",  # Misc. lints
+  "UP",   # Enforce modern Python syntax
+  "FURB", # Also enforce more modern Python syntax
+  "PT",   # Pytest style
+  "B",    # Bugbear, avoid common sources of bugs
+  "SIM",  # Simplify
+  "T20",  # Warn about `print()`
+  "RUF",
+  "C4",   # List comprehension
+]
+ignore = [
+  # Pyright checks for unused imports and does it better.
+  "F401",
+  # ternary can be less readable
+  "SIM108",
+]
+
+allowed-confusables = ["’"]
