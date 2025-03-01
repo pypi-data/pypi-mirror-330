@@ -1,0 +1,13 @@
+Metadata-Version: 2.2
+Name: useful--hl
+Version: 0.3.3
+Summary: A simple package with random functions
+Author: ktsolakidis
+Requires-Python: >=3.10,<3.11
+Requires-Dist: numpy
+Requires-Dist: pylibCZIrw
+Requires-Dist: cmake
+Dynamic: author
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
