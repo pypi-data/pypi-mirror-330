@@ -1,0 +1,14 @@
+README.md
+setup.py
+ncompasslib/__init__.py
+ncompasslib/immutable.py
+ncompasslib/trait.py
+ncompasslib.egg-info/PKG-INFO
+ncompasslib.egg-info/SOURCES.txt
+ncompasslib.egg-info/dependency_links.txt
+ncompasslib.egg-info/requires.txt
+ncompasslib.egg-info/top_level.txt
+tests/__init__.py
+tests/test_immutable.py
+tests/test_package.py
+tests/test_trait.py
