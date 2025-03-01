@@ -1,0 +1,28 @@
+Metadata-Version: 2.2
+Name: steinlurks
+Version: 0.1.0
+Summary: A Python package for user info, username generation, Instagram checking, and email validation.
+Home-page: https://github.com/yourusername/steinlurks
+Author: Your Name
+Author-email: your.email@example.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Requires-Dist: Topython
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# steinjack
+
+A Python package for checking email providers, validating Instagram usernames, generating usernames, and fetching user info.
+
+## Installation
