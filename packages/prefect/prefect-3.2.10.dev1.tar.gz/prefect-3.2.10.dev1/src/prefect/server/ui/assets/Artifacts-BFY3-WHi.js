@@ -1,0 +1,2 @@
+import{d as o,c as r,h as a,i as c,o as n,j as e,k as t,aQ as _,aR as f}from"./index-BpfyxaoD.js";import{u as p}from"./usePageTitle-BARztYm3.js";const h=o({__name:"Artifacts",setup(u){return p("Artifacts"),(l,i)=>{const s=c("p-layout-default");return n(),r(s,{class:"artifacts"},{header:a(()=>[e(t(_))]),default:a(()=>[e(t(f))]),_:1})}}});export{h as default};
+//# sourceMappingURL=Artifacts-BFY3-WHi.js.map
