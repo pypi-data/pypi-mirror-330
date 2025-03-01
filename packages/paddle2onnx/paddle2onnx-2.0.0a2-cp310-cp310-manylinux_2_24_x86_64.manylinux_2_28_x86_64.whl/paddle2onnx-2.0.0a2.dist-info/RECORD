@@ -1,0 +1,17 @@
+paddle2onnx/CMakeLists.txt,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+paddle2onnx/__init__.py,sha256=SEpdM5vTDWh-I9m4IGFgx_67i3Ja_zlCQh3o_sY7oaU,3306
+paddle2onnx/command.py,sha256=ANP__a_FqTjcTgs64TaTsuZfzRIlGpYSu86ZG-hCkik,5801
+paddle2onnx/convert.py,sha256=hlW-HlC7R73GfIB5LTX035ADcKxUiReANATolfisVaQ,9474
+paddle2onnx/convert_to_fp16.py,sha256=r3UfjDT5OUHklj86bxJqhpdJcTRDAoGksDaoeFFnpwY,1348
+paddle2onnx/optimize.py,sha256=xKSnTptU753_fOxjE0RCPAKNbcBynvMv-mlRgkGz11I,1640
+paddle2onnx/paddle2onnx_cpp2py_export.cpython-310-x86_64-linux-gnu.so,sha256=NZz7yW9eWBxIXtFEamzDT-ew2l1KqHgtGshXrPb05pE,10893728
+paddle2onnx/utils.py,sha256=FcMSCLfeXaDmVXete2eJj_OY8PRC1ZFVioFu2A_D604,5170
+paddle2onnx/version.py,sha256=hwum9P103Ke9qj7lqKSDRioN5iqLe-RxBomC3UBWfnM,513
+paddle2onnx/proto/CMakeLists.txt,sha256=if9LJbBt5T1SBbAHHJWvoKd6v2w3K8aKC2Mt6RXoEEc,430
+paddle2onnx/proto/p2o_paddle.proto,sha256=Bj5_qwEV0MBmva0H8kB9_UFmStNzt9tu-LbZ1VyZBf8,7254
+paddle2onnx-2.0.0a2.dist-info/LICENSE,sha256=unfdYjtkQWOBINBvBCbbgPkDLEV9rBj0rY8fBv2X4ts,11437
+paddle2onnx-2.0.0a2.dist-info/METADATA,sha256=xe54oGkqJHUVcbnn-GL8WS8u0jgF89AHbBavIFznmsw,5789
+paddle2onnx-2.0.0a2.dist-info/WHEEL,sha256=wdxN9HBZAP22YgvbTXz2RXSOncj94FiCPo-UMduon_0,152
+paddle2onnx-2.0.0a2.dist-info/entry_points.txt,sha256=SRI9Ej_kX_0WOPSKjcrKxycMY7s6Po67XU9OqeoQDcI,57
+paddle2onnx-2.0.0a2.dist-info/top_level.txt,sha256=PhCD8iFooa9uVSW4Yp2u9LfJF0e_XsunzshpXj9rtvc,12
+paddle2onnx-2.0.0a2.dist-info/RECORD,,
