@@ -1,0 +1,115 @@
+Model Name,Company,Context Length,Cost per Million Tokens,Performance,license,Support
+Yi-34B,01-ai,2048,0.5,8.5,1,4
+Yi1.5-6|9|34B,01-ai,200000,0.1,6.5,1,4
+Yi-VL-6B|34B,01-ai,200000,0.1,6.5,1,4
+Luminous,Aleph Alpha,2048,31.9,7,0,3
+Qwen-1.8B|7B|14B|72B,Alibaba,8192,0.5,8,1,7
+Qwen1.5-0.5B|1.8B|4B|7B|14B|32B|72B|110B|MoE-A2.7B,Alibaba,32768,0.9,9,1,7
+Qwen2-0.5B|1.5B|7B|57B-A14B-MoE|72B,Alibaba,131072,1,9,1,7
+Qwen2.5-0.5B|1.5B|3B|7B|14B|32B|72B,Alibaba,131072,1,9.5,1,7
+CodeQwen1.5-7B,Alibaba,64000,0.2,9,0,7
+Qwen2.5-Coder-1.5B,Alibaba,131072,0.1,5,1,7
+Qwen2.5-Coder-7B,Alibaba,131072,0.3,8.5,1,7
+Qwen2.5-Coder-32B,Alibaba,131072,0.8,9.5,1,7
+Qwen2-Math-1.5B,Alibaba,4096,0.1,5,1,7
+Qwen2-Math-7B,Alibaba,4096,0.2,7.5,1,7
+Qwen2-Math-72B,Alibaba,4096,0.9,9,1,7
+Qwen2.5-Math-1.5B,Alibaba,4096,0.1,8,1,7
+Qwen2.5-Math-7B,Alibaba,4096,0.3,9,1,7
+Qwen2.5-Math-72B,Alibaba,4096,1.2,9.5,0,7
+Qwen-VL-7B,Alibaba,8192,0.3,7.5,0,7
+Qwen2-VL-2B,Alibaba,131072,0.15,6,1,7
+Qwen2-VL-7B,Alibaba,131072,0.3,8,1,7
+Qwen2-VL-72B,Alibaba,131072,1.2,9,0,7
+Qwen2-Audio-7B,Alibaba,128000,0.2,7,1,7
+Qwen2.5-VL-3B,Alibaba,131072,0.15,8,1,7
+Qwen2.5-VL-7B,Alibaba,131072,0.4,8.5,1,7
+Qwen2.5-VL-72B,Alibaba,131072,1.2,9.5,0,7
+Qwen2.5-1M-7|14B,Alibaba,1000000,0.05,7.5,1,7
+OLMo-7B,AllenAI,4096,0.1,6,1,6
+Claude 1,Anthropic,9000,30,7,0,9
+Claude 2,Anthropic,100000,14,8,0,9
+Claude 3,Anthropic,200000,15,9,0,9
+Claude 3.7 Sonnet,Anthropic,200000,3,9,0,9
+Claude 3.5 Sonnet,Anthropic,150000,2.5,8.5,0,9
+OpenELM-1.1|3B,Apple,2048,0.02,3.5,1,4
+Baichuan-7B,Baichuan,4096,1.8,6.5,1,7
+Baichuan-13B,Baichuan,4096,1.8,7.5,1,7
+Baichuan2-7B,Baichuan,4096,1.8,7,1,7
+Baichuan2-13B,Baichuan,4096,1.8,8,1,7
+StarCoder-1B,BigCode,2048,0.1,4,1,7
+StarCoder-3B,BigCode,2048,0.1,5,1,7
+StarCoder-7B,BigCode,8192,0.1,6.5,1,7
+StarCoder2-3B,BigCode,16384,0.1,5.5,1,7
+StarCoder2-7B,BigCode,16384,0.1,7,1,7
+StarCoder2-15B,BigCode,16384,0.1,8.5,1,7
+BLOOM,BLOOM,2048,20,6,1,6
+BLOOMZ&mT0,BLOOM,2048,20,6.5,1,6
+Command R-35B,Cohere,128000,4.4,9,1,4
+MPT-7B,Databricks,65000,0.1,6,1,8
+DBRX-132B-MoE,Databricks,32000,0.1,9,0,8
+DeepSeek-Math-7B,DeepSeek,4096,0.2,7,1,9
+DeepSeek-Coder-1.3|6.7|7|33B,DeepSeek,16384,0.1,8,1,9
+DeepSeek-VL-1.3|7B,DeepSeek,4096,0.15,5,1,9
+DeepSeek-MoE-16B,DeepSeek,4096,0.3,4,1,9
+DeepSeek-v2-236B-MoE,DeepSeek,4096,2.4,9,1,9
+DeepSeek-Coder-v2-16|236B-MoE,DeepSeek,131072,1.5,9.5,1,9
+DeepSeek-V2.5,DeepSeek,4096,2.4,9.5,1,9
+DeepSeek-V3,DeepSeek,131072,1.25,9.5,1,9
+DeepSeek-R1,DeepSeek,4096,4,9.5,1,9
+Pythia-1B,EleutherAI,2048,0.1,2.5,1,5
+Pythia-1.4B,EleutherAI,2048,0.1,3,1,5
+Pythia-2.8B,EleutherAI,2048,0.1,4,1,5
+Pythia-6.9B,EleutherAI,2048,0.1,5.5,1,5
+Pythia-12B,EleutherAI,2048,0.1,6,1,5
+Gemma2-9|27B,Google,8192,0.06,7,1,10
+Gemma-2|7B,Google,8192,0.1,6.5,1,10
+RecurrentGemma-2B,Google,9999999,0.05,5.5,1,10
+T5,Google,512,0.1,5,1,6
+Gemini,Google,2000000,5,9,0.1,9
+Gemini 2.0 Flash-Lite,Google,1000000,1.5,8,0,9
+Gemini 2.0 Pro,Google,2000000,2.5,9,0,9
+Jais,Inception AI (G42),2048,0.1,6.5,1,6
+Llama 3.2-1|3|11|90B,Meta,128000,0.12,7,1,10
+Llama 3.1-8|70|405B,Meta,128000,0.9,9,1,10
+Llama 3-8|70B,Meta,8000,0.23,6.5,1,10
+Llama 2-7|13|70B,Meta,4096,1,7,1,10
+Llama 1-7|13|33|65B,Meta,2048,0.1,6.5,1,10
+OPT-1.3|6.7|13|30|66B,Meta,2048,0.1,4.5,1,10
+Phi1-1.3B,Microsoft,2048,0.05,5.5,1,7
+Phi2-2.7B,Microsoft,2048,0.11,7,1,7
+Phi3-3.8|7|14B,Microsoft,128000,0.15,7.5,1,7
+Codestral-7|22B,Mistral AI,256000,0.1,7.5,1,8.5
+Mistral-7B,Mistral AI,8192,0.03,6.5,1,8.5
+Mixtral-8x7B,Mistral AI,32768,0.24,8,1,8.5
+Mixtral-8x22B,Mistral AI,65536,0.5,9,1,8.5
+Nemotron-4-340B,Nvidia,4096,30,9,1,7
+GPT-3,OpenAI,2048,20,6.5,0,9
+GPT-3.5,OpenAI,16384,2,7.5,0,9
+GPT-4,OpenAI,32768,60,9.5,0,9
+GPT-4-turbo,OpenAI,128000,150,10,0,9
+GPT-4o,OpenAI,128000,10,9,0,9
+GPT-4.5,OpenAI,128000,2.5,9.5,0,9
+GPT-o3-mini,OpenAI,200000,4.4,8,0,9
+GPT-o3-mini-high,OpenAI,200000,4.4,8.5,0,9
+MiniCPM-2B,OpenBMB,128000,0.1,6.5,1,6.5
+OmniLLM-12B,OpenBMB,32000,0.1,7.5,1,6.5
+VisCPM-10B,OpenBMB,2048,0.1,5,1,6.5
+CPM-Bee-1B,OpenBMB,2048,0.1,3,1,6.5
+CPM-Bee-2B,OpenBMB,2048,0.1,4,1,6.5
+CPM-Bee-5B,OpenBMB,2048,0.1,5.5,1,6.5
+CPM-Bee-10B,OpenBMB,2048,0.1,6.5,1,6.5
+RWKV-v4,RWKV Foundation,9999999,0.1,6,1,6
+RWKV-v5,RWKV Foundation,9999999,0.1,7,1,6
+RWKV-v6,RWKV Foundation,9999999,0.1,7.5,1,6
+StableLM-3B,Stability AI,4096,0.1,3.5,1,8
+StableLM-v2-1.6B,Stability AI,2048,0.1,2.5,1,8
+StableLM-v2-12B,Stability AI,2048,0.1,6.5,1,8
+StableCode-3B,Stability AI,2048,0.1,6,1,8
+Grok-1-314B-MoE,xAI,8192,50,9,1,7
+GLM-2B,Zhipu AI,2048,0.5,3,1,4
+GLM-6B,Zhipu AI,2048,1.5,5,1,4
+GLM-10B,Zhipu AI,2048,2,5.5,1,4
+GLM-13B,Zhipu AI,2048,1.8,6.5,1,4
+GLM-70B,Zhipu AI,128000,30,9.5,0,4
+CogVLM2-19B,Zhipu AI,8192,5,9,1,4
