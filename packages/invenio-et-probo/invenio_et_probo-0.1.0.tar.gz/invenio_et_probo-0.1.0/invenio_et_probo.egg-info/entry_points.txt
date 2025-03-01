@@ -1,0 +1,2 @@
+[console_scripts]
+invenio-test-runner = invenio_et_probo.cli:main
