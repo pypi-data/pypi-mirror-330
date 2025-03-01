@@ -1,0 +1,53 @@
+# HTML Generator
+
+Библиотека для генерации HTML-страниц. Поддерживает добавление заголовков, CSS- и JS-файлов, а также секций контента.
+
+## Установка
+
+Установите библиотеку через pip:
+
+```bash
+pip install htmlgenim
+```
+
+## Использование
+```bash
+from htmlgenim.generator import HTML, Table
+
+# Создаем экземпляр HTML
+page = HTML()
+
+# Устанавливаем заголовок
+page.set_title("Моя страница")
+
+# Добавляем CSS-файлы
+page.css_link_add("styles.css")
+# page.css_link_add("https://example.com/styles.css")
+
+# Добавляем JS-файлы
+page.js_link_add("script.js")
+# page.js_link_add("https://example.com/script.js")
+
+# Добавляем элементы с атрибутами
+page.add_element("h1", "Привет, мир!", class_="header", id="main-header")
+page.add_element("p", "Это пример использования HTML генератора.", class_="content")
+page.add_element("a", "Ссылка на Example", href="https://example.com", class_="link")
+page.add_element("input", type="radio", name="season", id="spring", value="Весна")
+page.add_element("img", src="image.jpg", alt="Описание изображения", class_="image")
+
+# Создаем таблицу
+table = Table()
+table.add_class("my-table")
+table.add_attr("border", "1")
+table.add_row(["Ячейка 1", "Ячейка 2"])
+table.add_row(["Ячейка 3", "Ячейка 4"])
+page.table_add(table)
+
+# Сохраняем HTML в файл
+page.save_to_file("output.html")
+```
+
+## Upgrade
+1. Возможность добавление таблицы.
+2. Можно указывать стили CSS и другие атрибуты к тегам.
+3. Создается log-файл, в котором отображается информация генерации страницы.
