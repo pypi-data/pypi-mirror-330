@@ -1,0 +1,23 @@
+site_name: muck_out
+watch: [docs, muck_out, mkdocs.yml]
+theme:
+  name: material
+plugins:
+  - search
+  - mkdocstrings:
+      enable_inventory: true
+      handlers:
+        python:
+          inventories:
+            - https://docs.python.org/3/objects.inv
+
+          options:
+            docstring_style: sphinx
+            heading_level: 1
+            show_submodules: true
+            show_root_heading: true
+            extensions:
+              - griffe_fieldz: { include_inherited: true }
+            separate_signature: true
+            show_signature_annotations: true
+            signature_crossrefs: true

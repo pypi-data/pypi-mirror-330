@@ -1,0 +1,27 @@
+when:
+  - branch: [main]
+    event: [pull_request, push]
+
+steps:
+  build:
+    image: ghcr.io/astral-sh/uv:python3.12-alpine
+    commands:
+      - apk add curl
+      - uv sync
+      - mkdir -p test_data
+      - curl https://inputs.funfedi.dev/assets/samples.zip -o test_data/samples.zip
+      - curl https://funfedi.dev/assets/samples.zip -o test_data/funfedi-samples.zip
+  test_format:
+    image: ghcr.io/astral-sh/uv:python3.12-alpine
+    commands:
+      - uv run ruff format .
+      - uv run ruff check .
+  test_pytest:
+    image: ghcr.io/astral-sh/uv:python3.12-alpine
+    commands:
+      - uv run pytest
+  test_typing:
+    image: ghcr.io/astral-sh/uv:python3.11-alpine
+    commands:
+      - apk add libstdc++ libgcc
+      - uv run pyright
