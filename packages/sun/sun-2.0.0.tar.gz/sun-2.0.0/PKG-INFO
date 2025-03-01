@@ -1,0 +1,41 @@
+Metadata-Version: 2.4
+Name: sun
+Version: 2.0.0
+Summary: Tray notification applet for informing about package updates in Slackware.
+Keywords: tray,notify,slackware,desktop
+Author-email: Dimitris Zlatanidis <dslackw@gmail.com>
+Maintainer-email: Dimitris Zlatanidis <dslackw@gmail.com>
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Desktop Environment
+Classifier: Topic :: System :: Monitoring
+Classifier: Topic :: System :: Software Distribution
+Classifier: Topic :: System :: Installation/Setup
+Classifier: Topic :: System :: Systems Administration
+Classifier: Topic :: System :: Software Distribution
+License-File: LICENSE.txt
+Project-URL: Changelog, https://gitlab.com/dslackw/sun/-/blob/master/CHANGELOG.md
+Project-URL: Documentation, https://dslackw.gitlab.io/sun/
+Project-URL: Homepage, https://dslackw.gitlab.io/sun/
+Project-URL: Repository, https://gitlab.com/dslackw/sun.git
+
+## About
+
+Let's SUN!
+
+SUN (Slackware Update Notifier) is a tray notification applet
+and daemon for informing about package updates in Slackware.
+It also serves as a CLI tool for monitoring upgraded packages.
+
+SUN works by default with slackpkg, as well as with other tools
+like slpkg. You can probably use SUN with other Slackware-based
+Linux distributions as well.
+
+## Documentation
+
+https://dslackw.gitlab.io/sun/
+

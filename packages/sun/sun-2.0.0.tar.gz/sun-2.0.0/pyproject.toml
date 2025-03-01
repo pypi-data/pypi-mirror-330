@@ -1,0 +1,51 @@
+[build-system]
+requires = ["flit_core>=3.10.0,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "sun"
+version = "2.0.0"
+authors = [
+    {name = "Dimitris Zlatanidis", email = "dslackw@gmail.com"},
+]
+maintainers = [
+    {name = "Dimitris Zlatanidis", email = "dslackw@gmail.com"},
+]
+description = "Tray notification applet for informing about package updates in Slackware."
+readme = "README.md"
+requires-python = ">=3.9"
+keywords = ["tray", "notify", "slackware", "desktop"]
+license = {text = "GNU General Public License v3 (GPLv3)"}
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3.9",
+    "Topic :: Desktop Environment",
+    "Topic :: System :: Monitoring",
+    "Topic :: System :: Software Distribution",
+    "Topic :: System :: Installation/Setup",
+    "Topic :: System :: Systems Administration",
+    "Topic :: System :: Software Distribution"
+]
+
+[tool.flit_core]
+name = "sun"
+
+[tool.pylint.MASTER]
+extension-pkg-allow-list = ["PyQt5"]
+
+[tool.pylint.MESSAGES_CONTROL]
+disable = "missing-module-docstring"
+
+[project.urls]
+Homepage = "https://dslackw.gitlab.io/sun/"
+Documentation = "https://dslackw.gitlab.io/sun/"
+Repository = "https://gitlab.com/dslackw/sun.git"
+Changelog = "https://gitlab.com/dslackw/sun/-/blob/master/CHANGELOG.md"
+
+[project.scripts]
+sun = "sun.cli.tool:main"
+sun-daemon = "sun.daemon:main"
+sun-tray = "sun.tray_app.tray_icon:main"
+sun-autostart = "sun.autostart:autostart"
