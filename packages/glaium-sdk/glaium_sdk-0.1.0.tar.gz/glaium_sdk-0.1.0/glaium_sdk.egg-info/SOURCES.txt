@@ -1,0 +1,12 @@
+README.md
+pyproject.toml
+glaium_sdk/__init__.py
+glaium_sdk/agent.py
+glaium_sdk/client.py
+glaium_sdk/optimization.py
+glaium_sdk.egg-info/PKG-INFO
+glaium_sdk.egg-info/SOURCES.txt
+glaium_sdk.egg-info/dependency_links.txt
+glaium_sdk.egg-info/requires.txt
+glaium_sdk.egg-info/top_level.txt
+tests/test_sdk.py

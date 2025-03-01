@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "glaium_sdk"
+version = "0.1.0"
+description = "Glaium SDK in Python for managing your Systems and Optimization"
+authors = [
+  { name = "Amine", email = "amine@glaium.io" }
+]
+readme = "README.md"
+requires-python = ">=3.9"
+keywords = ["Glaium", "AI_System", "Optimization"]
+dependencies= ["requests>=2.25.0"]
+urls = { Homepage = "https://glaium.io/" }
+
+[tool.setuptools.packages.find]
+exclude = ["tests", "tests.*"]
