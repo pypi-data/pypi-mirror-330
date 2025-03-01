@@ -1,0 +1,54 @@
+Metadata-Version: 2.3
+Name: monkdb
+Version: 1.0.0
+Summary: MonkDB Python Client to interact with MonkDB's database engine
+License: Apache-2.0
+Keywords: monkdb,db,api,dbapi,database,sql,http,rdbms,olap
+Author: MonkDB Development Team
+Author-email: devs@monkdb.com
+Requires-Python: >=3.6
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Classifier: Topic :: Database
+Provides-Extra: test
+Requires-Dist: orjson (<4) ; python_version >= "3.8"
+Requires-Dist: urllib3
+Requires-Dist: verlib2
+Project-URL: homepage, https://bitbucket.org/atomstatedev/monkpy
+Description-Content-Type: text/markdown
+
+# MonkDB Python Client Driver
+
+## Introduction
+
+This is a python sdk client library of MonkDB. It is compliant with [PEP0249](https://peps.python.org/pep-0249/) to interact with database engines using Python's established goto practices. 
+
+## Installation
+
+One can use the regular pip to install monkdb client driver.
+
+```sh
+pip install monkpy
+```
+
+One can also use other python package managers. For example, below is the command to install with `Poetry`.
+
+```sh
+poetry add monkpy
+```
+
+
