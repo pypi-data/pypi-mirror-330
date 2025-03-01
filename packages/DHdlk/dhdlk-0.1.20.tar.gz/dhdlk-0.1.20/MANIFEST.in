@@ -1,0 +1,32 @@
+include README.md
+include LICENSE.txt
+include requirements.txt
+global-include *.py
+global-include *.pyd
+include *.py
+include pyarmor_runtime/*.so
+include pyarmor_runtime/*.dll
+include pyarmor_runtime/*.dylib
+include pyarmor_runtime/*.pyd
+global-include *.pyc
+recursive-include pyarmor_runtime *.pyc
+recursive-include xntwoger/dist/pyarmor_runtime_000000 *
+global-include *.pyd
+recursive-include pyarmor_runtime *.pyd
+recursive-include pyarmor_runtime_000000 *.pyd
+recursive-include pyarmor_runtime_000000 *.pyd
+recursive-include pyarmor_runtime_000000 __pycache__/*
+include pyarmor_runtime_000000/__init__.py
+recursive-include xntwoger/dist/pyarmor_runtime_000000 *.pyd
+recursive-include xntwoger/dist/pyarmor_runtime_000000 __pycache__/*
+include xntwoger/dist/pyarmor_runtime_000000/__init__.py
+recursive-include xntwoger/dist/pyarmor_runtime_000000 *.pyd
+
+
+
+
+
+
+
+
+
