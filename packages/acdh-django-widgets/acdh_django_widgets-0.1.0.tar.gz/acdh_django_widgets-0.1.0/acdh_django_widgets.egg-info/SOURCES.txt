@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+acdh_django_widgets/__init__.py
+acdh_django_widgets/widgets.py
+acdh_django_widgets.egg-info/PKG-INFO
+acdh_django_widgets.egg-info/SOURCES.txt
+acdh_django_widgets.egg-info/dependency_links.txt
+acdh_django_widgets.egg-info/requires.txt
+acdh_django_widgets.egg-info/top_level.txt
+acdh_django_widgets/templates/acdh_django_widgets/range_datepicker_widget.html
+acdh_django_widgets/templates/acdh_django_widgets/range_one_line.html
+acdh_django_widgets/templates/acdh_django_widgets/range_slider_widget.html
