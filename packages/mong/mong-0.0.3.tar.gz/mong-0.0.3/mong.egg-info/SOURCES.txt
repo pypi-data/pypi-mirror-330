@@ -1,0 +1,16 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+mong/__init__.py
+mong/create_dict.py
+mong/moby_dict.json
+mong/name_generator.py
+mong/py.typed
+mong.egg-info/PKG-INFO
+mong.egg-info/SOURCES.txt
+mong.egg-info/dependency_links.txt
+mong.egg-info/top_level.txt
+tests/test_create_dict.py
+tests/test_name_generator.py
