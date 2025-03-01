@@ -1,0 +1,14 @@
+annotated-types
+numpy
+hydra-core
+polars
+pytest
+meds==0.3.3
+pyarrow
+pytimeparse
+
+[dev]
+pre-commit<4
+
+[tests]
+pytest-cov
