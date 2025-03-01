@@ -1,0 +1,44 @@
+# Lintr Configuration File
+# This file configures how lintr checks your GitHub repositories
+
+# GitHub configuration
+github_token: null  # Set your token here or use GITHUB_TOKEN environment variable
+
+# Repository filtering
+repository_filter:
+  include_patterns:
+    - "owner/*"  # All repositories for an owner
+    # - "owner/specific-repo"  # A specific repository
+  exclude_patterns:
+    - "owner/legacy-repo"  # Skip checking this repository
+
+# Default rule set to use if not overridden per repository
+default_rule_set: "repository-basics"
+
+# Repository-specific rule set overrides
+repository_rule_sets:
+  "owner/special-repo": "python-library"  # Use python-library rules for this repo
+
+# Rule set definitions
+rule_sets:
+  # Basic repository hygiene checks
+  repository-basics:
+    name: "repository-basics"
+    rules:
+      - "has_readme"
+      - "has_license"
+      - "has_contributing"
+      - "has_code_of_conduct"
+    rule_sets: []  # No nested rule sets
+  
+  # Python library specific rules
+  python-library:
+    name: "python-library"
+    rules:
+      - "has_readme"
+      - "has_license"
+      - "has_contributing"
+      - "has_setup_py"
+      - "has_requirements"
+    rule_sets: 
+      - "repository-basics"  # Include all basic checks too
