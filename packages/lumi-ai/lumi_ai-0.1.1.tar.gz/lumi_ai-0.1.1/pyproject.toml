@@ -1,0 +1,58 @@
+[project]
+name = "lumi-ai"
+version = "0.1.1"
+description = "Speech-to-text utility with hotkey activation"
+readme = "README.md"
+requires-python = ">=3.12"
+authors = [
+    {name = "Lumi Developers"}
+]
+license = {text = "MIT"}
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: MacOS",
+    "Topic :: Utilities",
+    "Intended Audience :: End Users/Desktop",
+]
+dependencies = [
+    "elevenlabs>=1.52.0",
+    "groq>=0.18.0",
+    "mlx-whisper>=0.4.2",
+    "nava>=0.7",
+    "pyaudio>=0.2.14",
+    "pynput>=1.7.7",
+    "pyperclip>=1.9.0",
+    "requests>=2.32.3",
+]
+
+[tool.setuptools]
+packages = ["lumi", "lumi.cli"]
+package-dir = {"" = "src"}
+
+[tool.setuptools.package-data]
+lumi = ["*.mp3"]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.3.4",
+    "ruff>=0.9.8",
+]
+
+[project.scripts]
+lumi = "lumi.cli.s2t_cli:main"
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "B", "I"]
+ignore = []
+
+[tool.ruff.lint.isort]
+known-first-party = ["lumi"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
