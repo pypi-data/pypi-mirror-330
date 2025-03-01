@@ -1,0 +1,22 @@
+stages:
+    - linting
+    - testing
+
+flake8:
+    stage: linting
+    image: python:3.10
+
+    script:
+        - pip install flake8 pep8-naming
+        - flake8 . --count --max-complexity=20 --max-line-length=127 --statistics
+    only:
+        - merge_requests
+
+pytest:
+    stage: testing
+    image: python:3.10
+    script:
+        - pip install -r requirements.txt
+        - python -m pytest
+    only:
+        - merge_requests
