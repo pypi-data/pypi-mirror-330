@@ -1,0 +1,4 @@
+[console_scripts]
+hmd = hmd.main:main
+init = c0001_cli_transform_mf4.controller:initialize [pyshortcuts, PyQt5]
+transform-mf4 = c0001_cli_transform_mf4.controller:run_transform [argparse, PyQt5]
