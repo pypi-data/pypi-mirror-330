@@ -1,0 +1,3 @@
+[console_scripts]
+dynflowparser = dynflowparser.bin.dynflowparser:main
+dynflowparser-export-tasks = dynflowparser.bin.dynflowparser:export_tasks
