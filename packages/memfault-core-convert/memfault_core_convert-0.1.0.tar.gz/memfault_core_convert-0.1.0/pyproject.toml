@@ -1,0 +1,20 @@
+[project]
+name = "memfault-core-convert"
+version = "0.1.0"
+description = "Utility for converting Memfault core dumps to ELF coredump format"
+license = { file = "LICENSE" }
+authors = [
+  { name = "Memfault", email = "hello@memfault.com" }
+]
+readme = "README.md"
+requires-python = ">=3.10, <4.0"
+dependencies = ["pyelftools"]
+
+# see https://github.com/astral-sh/uv/issues/9513
+# use hatchling instead of setuptools backend, metadata is broken
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project.scripts]
+memfault-core-convert = 'memfault_core_convert:main'

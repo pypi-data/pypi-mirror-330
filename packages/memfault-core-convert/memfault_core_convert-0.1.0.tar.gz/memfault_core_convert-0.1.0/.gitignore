@@ -1,0 +1,111 @@
+# NOTE: don't add 'build' here -- it would ignore sdk/bort/patches/android-8/build
+
+.env
+.envrc
+/tmp
+__pycache__
+pip-wheel-metadata/
+venv
+.venv
+.venv2
+instance
+node_modules
+*.log
+*.tmp
+*.pyc
+dist
+.DS_Store
+.cache-loader
+stats.json
+*.egg-info
+.idea/
+.coverage*
+coverage
+coverage.xml
+*.prof
+lcov-report
+lcov.info
+htmlcov
+cscope.out
+*.xcuserdatad
+*cscope*
+*.code-workspace
+.mypy_cache
+.grimp_cache
+
+sdk/bort/*/*.apk
+sdk/bort/MemfaultPackages/MemfaultBort.x509.pem
+sdk/bort/MemfaultPackages/MemfaultBortOta.x509.pem
+sdk/bort/MemfaultPackages/settings/settings.json
+validate-sdk-integration.log*
+
+# `uv` artifacts
+py-packages/*/build
+
+# Generated Storybook
+www/static/storybook
+
+# Stray ESP32 sdkconfig that gets generated at the root by CLion's invocation of CMake:
+/sdkconfig
+.phutil_module_cache
+
+celerybeat-schedule*
+celerybeat.pid
+Brewfile.lock.json
+
+# Test Results
+test-results/
+junit.xml
+snapshots.out
+playwright-report
+
+# Python Linters
+.dmypy.json
+.pyre/
+.pyre_configuration
+.watchmanconfig
+monkeytype.sqlite3
+
+# Yarn
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+.pnp.*
+
+# CircleCI
+process.yml
+
+# serverless (AWS Lambda helper)
+.serverless
+
+# Docker
+.docker
+
+# SWC
+.swc
+
+# sdk/embedded
+sdk/embedded/tests/gcov/
+sdk/embedded/aarch64-test/
+# these repos are pulled when the tests build
+sdk/embedded/examples/esp32/esp-idf
+sdk/embedded/examples/stm32/cube/
+sdk/embedded/examples/wiced/wiced_sdk
+
+# nrf5 is no longer pulled during tests but might be added if docker
+# container for port-playground nrf5 sdk is built locally
+sdk/embedded/examples/nrf5/nrf5_sdk
+
+# tsc cache
+*.tsbuildinfo
+
+# local overrides for lefthook
+lefthook-local.yml
+.lefthookrc
+
+# Cloudflare Wrangler
+.wrangler
+
+packages/infra-tools/**/*.gen.tsx
