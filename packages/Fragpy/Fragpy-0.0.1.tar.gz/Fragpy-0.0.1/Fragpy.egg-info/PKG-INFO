@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: Fragpy
+Version: 0.0.1
+Summary: An async A Python library for interacting with fragment.com API, supporting session-based authentication and real-time updates.
+Home-page: https://github.com/aamole/fragpy
+Author: Muamel Ameer
+Author-email: amowallet@gmail.com
+License: MIT
+Project-URL: Source, https://github.com/aamole/fragpy
+Project-URL: Tracker, https://github.com/aamole/fragpy/issues
+Keywords: sync,asyncio,aiohttp,sqlite3,kvsqlite,fragment-apis,fragment,client
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# fragpy
+An async A Python library for interacting with fragment.com API, supporting session-based authentication and real-time updates.
