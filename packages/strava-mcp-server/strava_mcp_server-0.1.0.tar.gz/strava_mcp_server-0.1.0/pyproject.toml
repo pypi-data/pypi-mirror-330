@@ -1,0 +1,22 @@
+[project]
+name = "strava-mcp-server"
+version = "0.1.0"
+description = "MCP server for Strava API integration"
+readme = "README.md"
+authors = [
+    { name = "Tomek Korbak", email = "tomasz.korbak@gmail.com" }
+]
+requires-python = ">=3.10"
+dependencies = [
+    "httpx>=0.24.0",
+    "python-dotenv>=1.0.0",
+    "fastmcp>=0.1.0",
+    "rich>=13.0.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project.scripts]
+strava-mcp-server = "strava_mcp_server.src:main"
