@@ -1,0 +1,22 @@
+Metadata-Version: 2.2
+Name: mogptw
+Version: 1.0.1
+Summary: Mixture of Gaussian Processes Model for Sparse Longitudinal Data
+Home-page: https://github.com/fraenkel-lab/mogp
+Author: Divya Ramamoorthy
+Author-email: divyar@mit.edu
+License: MIT
+Requires-Python: >=3.8
+License-File: LICENSE
+Requires-Dist: numpy<2,>=1.25
+Requires-Dist: GPy==1.13.2
+Requires-Dist: scikit-learn
+Requires-Dist: matplotlib
+Requires-Dist: pytest
+Dynamic: author
+Dynamic: author-email
+Dynamic: home-page
+Dynamic: license
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
