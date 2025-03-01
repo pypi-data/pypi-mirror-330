@@ -1,0 +1,2 @@
+[console_scripts]
+gel-pydantic-codegen = gel_pydantic_codegen.__main__:cli
