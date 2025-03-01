@@ -1,0 +1,6 @@
+[console_scripts]
+sun=sun.cli.tool:main
+sun-autostart=sun.autostart:autostart
+sun-daemon=sun.daemon:main
+sun-tray=sun.tray_app.tray_icon:main
+
