@@ -1,0 +1,2 @@
+[console_scripts]
+authenticate = stratdev.authenticate:authenticate_alpaca
