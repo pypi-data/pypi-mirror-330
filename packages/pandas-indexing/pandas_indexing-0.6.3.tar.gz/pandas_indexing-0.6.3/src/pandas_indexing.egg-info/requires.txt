@@ -1,0 +1,7 @@
+pandas>=1.2
+deprecated
+attrs
+
+[units]
+pint>=0.21
+openscm-units
