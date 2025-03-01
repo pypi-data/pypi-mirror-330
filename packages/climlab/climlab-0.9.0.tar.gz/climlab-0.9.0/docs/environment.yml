@@ -1,0 +1,25 @@
+name: climlab-docs
+channels:
+  - conda-forge
+dependencies:
+  - python
+  - numpy
+  - pandas
+  - scipy
+  - matplotlib
+  - netCDF4
+  - xarray
+  - pooch
+  - sphinx <8.2
+  - ipython
+  - jupyter
+  - future
+  - sphinx_rtd_theme
+  - nbsphinx
+  - sphinxcontrib-bibtex
+  - graphviz
+  - numpydoc
+  - climlab-rrtmg
+  - climlab-cam3-radiation
+  - climlab-emanuel-convection
+  - climlab-sbm-convection
