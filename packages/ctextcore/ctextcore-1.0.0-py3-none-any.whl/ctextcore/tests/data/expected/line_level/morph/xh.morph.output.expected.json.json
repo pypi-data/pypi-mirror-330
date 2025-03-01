@@ -1,0 +1,424 @@
+[
+  {
+    "doc": {
+      "p": [
+        {
+          "lid": "NONE",
+          "tokenised": true,
+          "sent": {
+            "tokens": [
+              {
+                "start_char": 0,
+                "pos": "V",
+                "end_char": 8,
+                "id": 1,
+                "text": "SIKHONZA",
+                "morph": "SIKHONZ[Abbr]-A[Foreign]"
+              },
+              {
+                "start_char": 9,
+                "pos": "V",
+                "end_char": 13,
+                "id": 2,
+                "text": "WENA",
+                "morph": "WEN[Abbr]-A[Foreign]"
+              }
+            ]
+          }
+        },
+        {
+          "lid": "NONE",
+          "tokenised": true,
+          "sent": {
+            "tokens": [
+              {
+                "start_char": 0,
+                "pos": "N04",
+                "end_char": 7,
+                "id": 1,
+                "text": "Imibuzo",
+                "morph": "I[NPrePre4]-mi[BPre4]-buzo[NStem]"
+              },
+              {
+                "start_char": 8,
+                "pos": "ADV",
+                "end_char": 19,
+                "id": 2,
+                "text": "neeMpendulo",
+                "morph": "n[BPre9]-z[CopPre]-e[LocPre]-M[BPre5]-pendulo[NStem]"
+              }
+            ]
+          }
+        },
+        {
+          "lid": "NONE",
+          "tokenised": true,
+          "sent": {
+            "tokens": [
+              {
+                "start_char": 0,
+                "pos": "COP",
+                "end_char": 7,
+                "id": 1,
+                "text": "Yintoni",
+                "morph": "Yi[AdvPre]-n[BPre9]-to[NStem]-ni[InterrogSuf]"
+              },
+              {
+                "start_char": 8,
+                "pos": "N09",
+                "end_char": 13,
+                "id": 2,
+                "text": "i-GEP",
+                "morph": "i[NPrePre9]-GEP[Abbr]"
+              },
+              {
+                "start_char": 13,
+                "pos": "PUNC",
+                "end_char": 14,
+                "id": 3,
+                "text": "?",
+                "morph": "?[Punc]"
+              }
+            ]
+          }
+        },
+        {
+          "lid": "NONE",
+          "tokenised": true,
+          "sent": {
+            "tokens": [
+              {
+                "start_char": 0,
+                "pos": "N09",
+                "end_char": 9,
+                "id": 1,
+                "text": "I-Gauteng",
+                "morph": "I[Abbr]-Gauteng[ProperName]"
+              },
+              {
+                "start_char": 10,
+                "pos": "FOR",
+                "end_char": 20,
+                "id": 2,
+                "text": "Enterprise",
+                "morph": "E[AdvPre]-i[NPrePre9]-n[BPre9]-terprise[NStem]"
+              },
+              {
+                "start_char": 21,
+                "pos": "FOR",
+                "end_char": 30,
+                "id": 3,
+                "text": "Propeller",
+                "morph": "Propeller[Foreign]"
+              },
+              {
+                "start_char": 31,
+                "pos": "PUNC",
+                "end_char": 32,
+                "id": 4,
+                "text": "(",
+                "morph": "([Punc]"
+              },
+              {
+                "start_char": 32,
+                "pos": "N09",
+                "end_char": 37,
+                "id": 5,
+                "text": "i-GEP",
+                "morph": "i[NPrePre9]-GEP[Abbr]"
+              },
+              {
+                "start_char": 37,
+                "pos": "PUNC",
+                "end_char": 38,
+                "id": 6,
+                "text": ")",
+                "morph": ")[Punc]"
+              },
+              {
+                "start_char": 39,
+                "pos": "PUNC",
+                "end_char": 40,
+                "id": 7,
+                "text": "(",
+                "morph": "([Punc]"
+              },
+              {
+                "start_char": 40,
+                "pos": "N05",
+                "end_char": 46,
+                "id": 8,
+                "text": "iLinge",
+                "morph": "i[CopPre]-li[CopPre]-Linge[ProperName]"
+              },
+              {
+                "start_char": 47,
+                "pos": "POSS05",
+                "end_char": 56,
+                "id": 9,
+                "text": "lesiQhubi",
+                "morph": "la[PossConc5]-i[NPrePre9]-siQhubi[ProperName]"
+              },
+              {
+                "start_char": 57,
+                "pos": "POSS05",
+                "end_char": 68,
+                "id": 10,
+                "text": "laseGauteng",
+                "morph": "lasa[AdvPre]-i[NPrePre9]-Gauteng[ProperName]"
+              },
+              {
+                "start_char": 68,
+                "pos": "PUNC",
+                "end_char": 69,
+                "id": 11,
+                "text": ")",
+                "morph": ")[Punc]"
+              },
+              {
+                "start_char": 70,
+                "pos": "COP",
+                "end_char": 79,
+                "id": 12,
+                "text": "yiArhente",
+                "morph": "yiArhente[Adv]"
+              },
+              {
+                "start_char": 80,
+                "pos": "REL",
+                "end_char": 88,
+                "id": 13,
+                "text": "eyasekwa",
+                "morph": "e[RelConc9]-ya[Pres]-sek[VRoot]-w[PassExt]-a[VerbTerm]"
+              },
+              {
+                "start_char": 89,
+                "pos": "COP",
+                "end_char": 102,
+                "id": 14,
+                "text": "nguRhulumente",
+                "morph": "ng[CopPre]-u[NPrePre1a]-Rhulumente[ProperName]"
+              },
+              {
+                "start_char": 103,
+                "pos": "POSS01",
+                "end_char": 111,
+                "id": 15,
+                "text": "wePhondo",
+                "morph": "wa[PossConc1a]-i[NPrePre9]-Phondo[ProperName]"
+              },
+              {
+                "start_char": 112,
+                "pos": "POSS05",
+                "end_char": 123,
+                "id": 16,
+                "text": "laseGauteng",
+                "morph": "lasa[AdvPre]-i[NPrePre9]-Gauteng[ProperName]"
+              },
+              {
+                "start_char": 123,
+                "pos": "PUNC",
+                "end_char": 124,
+                "id": 17,
+                "text": ",",
+                "morph": ",[Punc]"
+              },
+              {
+                "start_char": 125,
+                "pos": "ADV",
+                "end_char": 132,
+                "id": 18,
+                "text": "phantsi",
+                "morph": "phantsi[Adv]"
+              },
+              {
+                "start_char": 133,
+                "pos": "POSS15",
+                "end_char": 145,
+                "id": 19,
+                "text": "koququzelelo",
+                "morph": "kwa[PossConc15]-u[NPrePre11]-ququzelelo[NStem]"
+              },
+              {
+                "start_char": 146,
+                "pos": "POSS11",
+                "end_char": 153,
+                "id": 20,
+                "text": "lweSebe",
+                "morph": "lwa[PossConc11]-i[NPrePre5]-li[BPre5]-Sebe[AuxVStem]"
+              },
+              {
+                "start_char": 154,
+                "pos": "POSS05",
+                "end_char": 166,
+                "id": 21,
+                "text": "lezoPhuhliso",
+                "morph": "la[PossConc5]-e[RelConc8]-za[PossConc8]-u[NPrePre11]-lu[BPre11]-Phuhliso[NStem]"
+              },
+              {
+                "start_char": 167,
+                "pos": "POSS05",
+                "end_char": 176,
+                "id": 22,
+                "text": "loQoqosho",
+                "morph": "lwa[PossConc11]-u[NPrePre11]-luQoqosho[NStem]"
+              },
+              {
+                "start_char": 176,
+                "pos": "PUNC",
+                "end_char": 177,
+                "id": 23,
+                "text": ",",
+                "morph": ",[Punc]"
+              },
+              {
+                "start_char": 178,
+                "pos": "ADV",
+                "end_char": 188,
+                "id": 24,
+                "text": "ngomyalelo",
+                "morph": "nga[AdvPre]-u[NPrePre3]-m[BPre3]-yalelo[NStem]"
+              },
+              {
+                "start_char": 189,
+                "pos": "REL",
+                "end_char": 195,
+                "id": 25,
+                "text": "owodwa",
+                "morph": "o[RelConc3]-wo[QuantConc3]-dwa[QuantStem]"
+              },
+              {
+                "start_char": 196,
+                "pos": "POSS03",
+                "end_char": 208,
+                "id": 26,
+                "text": "wokubonelela",
+                "morph": "wa[PossConc3]-u[NPrePre15]-ku[BPre15]-bonelel[VRoot]-a[VerbTerm]"
+              },
+              {
+                "start_char": 209,
+                "pos": "N10",
+                "end_char": 216,
+                "id": 27,
+                "text": "ii-SMME",
+                "morph": "i[NPrePre8]-zi[BPre8]-SMME[NStem]"
+              },
+              {
+                "start_char": 217,
+                "pos": "ADV",
+                "end_char": 226,
+                "id": 28,
+                "text": "ngenkxaso",
+                "morph": "nga[AdvPre]-i[NPrePre9]-n[BPre9]-kxaso[NStem]"
+              },
+              {
+                "start_char": 227,
+                "pos": "ADV",
+                "end_char": 237,
+                "id": 29,
+                "text": "nophuhliso",
+                "morph": "na[CopPre]-u[NPrePre11]-lu[BPre11]-phuhliso[NStem]"
+              },
+              {
+                "start_char": 238,
+                "pos": "NLOC",
+                "end_char": 247,
+                "id": 30,
+                "text": "kwiPhondo",
+                "morph": "ku[LocPre]-i[NPrePre9]-Phondo[ProperName]"
+              },
+              {
+                "start_char": 248,
+                "pos": "POSS05",
+                "end_char": 257,
+                "id": 31,
+                "text": "leGauteng",
+                "morph": "la[PossConc5]-i[NPrePre9]-Gauteng[ProperName]"
+              },
+              {
+                "start_char": 258,
+                "pos": "ADV",
+                "end_char": 271,
+                "id": 32,
+                "text": "ngamanyathelo",
+                "morph": "nga[AdvPre]-a[NPrePre6]-ma[BPre6]-nyathelo[NStem]"
+              },
+              {
+                "start_char": 272,
+                "pos": "REL",
+                "end_char": 279,
+                "id": 33,
+                "text": "ezemali",
+                "morph": "e[RelConc6]-za[PossConc10]-i[NPrePre9]-mali[NStem]"
+              },
+              {
+                "start_char": 280,
+                "pos": "ADV",
+                "end_char": 290,
+                "id": 34,
+                "text": "nangengawo",
+                "morph": "na[AdvPre]-nga[AdvPre]-i[NPrePre9]-nga[NegPre]-wo[PronStem3]"
+              },
+              {
+                "start_char": 291,
+                "pos": "REL",
+                "end_char": 298,
+                "id": 35,
+                "text": "ezemali",
+                "morph": "e[RelConc6]-za[PossConc10]-i[NPrePre9]-mali[NStem]"
+              },
+              {
+                "start_char": 298,
+                "pos": "PUNC",
+                "end_char": 299,
+                "id": 36,
+                "text": ".",
+                "morph": ".[Punc]"
+              }
+            ]
+          }
+        },
+        {
+          "lid": "NONE",
+          "tokenised": true,
+          "sent": {
+            "tokens": [
+              {
+                "start_char": 0,
+                "pos": "COP",
+                "end_char": 7,
+                "id": 1,
+                "text": "Kungani",
+                "morph": "Ku[ProperName]-ngan[VRoot]-i[VerbTerm]"
+              },
+              {
+                "start_char": 8,
+                "pos": "V",
+                "end_char": 16,
+                "id": 2,
+                "text": "kwasekwa",
+                "morph": "kua[RelConc11]-sek[VRoot]-w[PassExt]-a[VerbTerm]"
+              },
+              {
+                "start_char": 17,
+                "pos": "N09",
+                "end_char": 22,
+                "id": 3,
+                "text": "i-GEP",
+                "morph": "i[NPrePre9]-GEP[Abbr]"
+              },
+              {
+                "start_char": 22,
+                "pos": "PUNC",
+                "end_char": 23,
+                "id": 4,
+                "text": "?",
+                "morph": "?[Punc]"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+]

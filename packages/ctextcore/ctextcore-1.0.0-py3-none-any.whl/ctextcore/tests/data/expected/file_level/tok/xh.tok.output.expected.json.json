@@ -1,0 +1,336 @@
+[
+  {
+    "Tokeniser-files": {
+      "xh.input.test.txt": [
+        {
+          "doc": {
+            "p": [
+              {
+                "lid": "NONE",
+                "tokenised": true,
+                "sent": {
+                  "tokens": [
+                    {
+                      "start_char": 0,
+                      "end_char": 8,
+                      "id": 1,
+                      "text": "SIKHONZA"
+                    },
+                    {
+                      "start_char": 9,
+                      "end_char": 13,
+                      "id": 2,
+                      "text": "WENA"
+                    }
+                  ]
+                }
+              },
+              {
+                "lid": "NONE",
+                "tokenised": true,
+                "sent": {
+                  "tokens": [
+                    {
+                      "start_char": 0,
+                      "end_char": 7,
+                      "id": 1,
+                      "text": "Imibuzo"
+                    },
+                    {
+                      "start_char": 8,
+                      "end_char": 19,
+                      "id": 2,
+                      "text": "neeMpendulo"
+                    }
+                  ]
+                }
+              },
+              {
+                "lid": "NONE",
+                "tokenised": true,
+                "sent": {
+                  "tokens": [
+                    {
+                      "start_char": 0,
+                      "end_char": 7,
+                      "id": 1,
+                      "text": "Yintoni"
+                    },
+                    {
+                      "start_char": 8,
+                      "end_char": 13,
+                      "id": 2,
+                      "text": "i-GEP"
+                    },
+                    {
+                      "start_char": 13,
+                      "end_char": 14,
+                      "id": 3,
+                      "text": "?"
+                    }
+                  ]
+                }
+              },
+              {
+                "lid": "NONE",
+                "tokenised": true,
+                "sent": {
+                  "tokens": [
+                    {
+                      "start_char": 0,
+                      "end_char": 9,
+                      "id": 1,
+                      "text": "I-Gauteng"
+                    },
+                    {
+                      "start_char": 10,
+                      "end_char": 20,
+                      "id": 2,
+                      "text": "Enterprise"
+                    },
+                    {
+                      "start_char": 21,
+                      "end_char": 30,
+                      "id": 3,
+                      "text": "Propeller"
+                    },
+                    {
+                      "start_char": 31,
+                      "end_char": 32,
+                      "id": 4,
+                      "text": "("
+                    },
+                    {
+                      "start_char": 32,
+                      "end_char": 37,
+                      "id": 5,
+                      "text": "i-GEP"
+                    },
+                    {
+                      "start_char": 37,
+                      "end_char": 38,
+                      "id": 6,
+                      "text": ")"
+                    },
+                    {
+                      "start_char": 39,
+                      "end_char": 40,
+                      "id": 7,
+                      "text": "("
+                    },
+                    {
+                      "start_char": 40,
+                      "end_char": 46,
+                      "id": 8,
+                      "text": "iLinge"
+                    },
+                    {
+                      "start_char": 47,
+                      "end_char": 56,
+                      "id": 9,
+                      "text": "lesiQhubi"
+                    },
+                    {
+                      "start_char": 57,
+                      "end_char": 68,
+                      "id": 10,
+                      "text": "laseGauteng"
+                    },
+                    {
+                      "start_char": 68,
+                      "end_char": 69,
+                      "id": 11,
+                      "text": ")"
+                    },
+                    {
+                      "start_char": 70,
+                      "end_char": 79,
+                      "id": 12,
+                      "text": "yiArhente"
+                    },
+                    {
+                      "start_char": 80,
+                      "end_char": 88,
+                      "id": 13,
+                      "text": "eyasekwa"
+                    },
+                    {
+                      "start_char": 89,
+                      "end_char": 102,
+                      "id": 14,
+                      "text": "nguRhulumente"
+                    },
+                    {
+                      "start_char": 103,
+                      "end_char": 111,
+                      "id": 15,
+                      "text": "wePhondo"
+                    },
+                    {
+                      "start_char": 112,
+                      "end_char": 123,
+                      "id": 16,
+                      "text": "laseGauteng"
+                    },
+                    {
+                      "start_char": 123,
+                      "end_char": 124,
+                      "id": 17,
+                      "text": ","
+                    },
+                    {
+                      "start_char": 125,
+                      "end_char": 132,
+                      "id": 18,
+                      "text": "phantsi"
+                    },
+                    {
+                      "start_char": 133,
+                      "end_char": 145,
+                      "id": 19,
+                      "text": "koququzelelo"
+                    },
+                    {
+                      "start_char": 146,
+                      "end_char": 153,
+                      "id": 20,
+                      "text": "lweSebe"
+                    },
+                    {
+                      "start_char": 154,
+                      "end_char": 166,
+                      "id": 21,
+                      "text": "lezoPhuhliso"
+                    },
+                    {
+                      "start_char": 167,
+                      "end_char": 176,
+                      "id": 22,
+                      "text": "loQoqosho"
+                    },
+                    {
+                      "start_char": 176,
+                      "end_char": 177,
+                      "id": 23,
+                      "text": ","
+                    },
+                    {
+                      "start_char": 178,
+                      "end_char": 188,
+                      "id": 24,
+                      "text": "ngomyalelo"
+                    },
+                    {
+                      "start_char": 189,
+                      "end_char": 195,
+                      "id": 25,
+                      "text": "owodwa"
+                    },
+                    {
+                      "start_char": 196,
+                      "end_char": 208,
+                      "id": 26,
+                      "text": "wokubonelela"
+                    },
+                    {
+                      "start_char": 209,
+                      "end_char": 216,
+                      "id": 27,
+                      "text": "ii-SMME"
+                    },
+                    {
+                      "start_char": 217,
+                      "end_char": 226,
+                      "id": 28,
+                      "text": "ngenkxaso"
+                    },
+                    {
+                      "start_char": 227,
+                      "end_char": 237,
+                      "id": 29,
+                      "text": "nophuhliso"
+                    },
+                    {
+                      "start_char": 238,
+                      "end_char": 247,
+                      "id": 30,
+                      "text": "kwiPhondo"
+                    },
+                    {
+                      "start_char": 248,
+                      "end_char": 257,
+                      "id": 31,
+                      "text": "leGauteng"
+                    },
+                    {
+                      "start_char": 258,
+                      "end_char": 271,
+                      "id": 32,
+                      "text": "ngamanyathelo"
+                    },
+                    {
+                      "start_char": 272,
+                      "end_char": 279,
+                      "id": 33,
+                      "text": "ezemali"
+                    },
+                    {
+                      "start_char": 280,
+                      "end_char": 290,
+                      "id": 34,
+                      "text": "nangengawo"
+                    },
+                    {
+                      "start_char": 291,
+                      "end_char": 298,
+                      "id": 35,
+                      "text": "ezemali"
+                    },
+                    {
+                      "start_char": 298,
+                      "end_char": 299,
+                      "id": 36,
+                      "text": "."
+                    }
+                  ]
+                }
+              },
+              {
+                "lid": "NONE",
+                "tokenised": true,
+                "sent": {
+                  "tokens": [
+                    {
+                      "start_char": 0,
+                      "end_char": 7,
+                      "id": 1,
+                      "text": "Kungani"
+                    },
+                    {
+                      "start_char": 8,
+                      "end_char": 16,
+                      "id": 2,
+                      "text": "kwasekwa"
+                    },
+                    {
+                      "start_char": 17,
+                      "end_char": 22,
+                      "id": 3,
+                      "text": "i-GEP"
+                    },
+                    {
+                      "start_char": 22,
+                      "end_char": 23,
+                      "id": 4,
+                      "text": "?"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+]
