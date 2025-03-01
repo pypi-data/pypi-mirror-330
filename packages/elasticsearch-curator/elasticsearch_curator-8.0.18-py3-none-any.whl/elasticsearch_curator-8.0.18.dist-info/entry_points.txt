@@ -1,0 +1,4 @@
+[console_scripts]
+curator = curator.cli:cli
+curator_cli = curator.singletons:curator_cli
+es_repo_mgr = curator.repomgrcli:repo_mgr_cli
