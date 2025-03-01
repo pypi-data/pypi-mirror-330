@@ -1,0 +1,25 @@
+Metadata-Version: 2.2
+Name: DPTool
+Version: 1.0.6
+Summary: Some scripts for Baidu SEO purpose
+Home-page: 
+Author: Jiayu Tan
+Author-email: jtan010@uottawa.ca
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: DrissionPage>=4.1.0
+Requires-Dist: lxml>=5.3.0
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: requires-dist
+Dynamic: summary
+
+# SEO小工具
+* Ver 1.0.6
+暂无更多信息
