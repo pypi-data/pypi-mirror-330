@@ -1,0 +1,72 @@
+[project]
+name = "ujson5"
+description = "TODO"
+authors = [
+    {name = "Austin Yu",email = "yuxm.austin1023@gmail.com"}
+]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+]
+dynamic = []
+version = "0.0.1a0"
+
+
+[build-system]
+requires = ["poetry-core>=1.0.0", "poetry-dynamic-versioning>=1.0.0,<2.0.0"]
+build-backend = "poetry_dynamic_versioning.backend"
+
+[tool.poetry]
+[tool.poetry.requires-plugins]
+poetry-dynamic-versioning = { version = ">=1.0.0,<2.0.0", extras = ["plugin"] }
+
+[tool.poetry.group.dev]
+optional = true
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.4"
+pytest-cov = "^6.0.0"
+pytest-codspeed = "^3.2.0"
+black = "^25.1.0"
+flake8 = "^7.1.1"
+pylint = "^3.3.4"
+mypy = "^1.15.0"
+flake8-simplify = "^0.21.0"
+flake8-mutable = "^1.2.0"
+flake8-print = "^5.0.0"
+flake8-use-fstring = "^1.4"
+flake8-builtins = "^2.5.0"
+flake8-functions-names = "^0.4.0"
+flake8-variables-names = "^0.0.6"
+flake8-no-implicit-concat = "^0.3.7"
+pytest-test-groups = "^1.1.0"
+
+
+[tool.poetry.group.docs.dependencies]
+mkdocs = "^1.6.1"
+mkdocs-material = "^9.6.5"
+mkdocstrings-python = "^1.16.2"
+
+[tool.bandit]
+skips = ["B101", "B311"]
+
+[tool.pytest.ini_options]
+addopts = """
+    --cov .
+    --cov-report xml:tests/.coverage/cov.xml
+    --cov-report html:tests/.coverage/html
+"""
+
+[tool.coverage.report]
+exclude_also = [
+    'pytest.skip',
+]
+
+[tool.coverage.run]
+omit = [
+    "tests/generate_snapshots.py"
+]
+
+[tool.poetry-dynamic-versioning]
+enable = false
