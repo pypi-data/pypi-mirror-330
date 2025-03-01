@@ -1,0 +1,11 @@
+Metadata-Version: 2.4
+Name: schema-alchemist
+Version: 0.1.2
+Summary: turn your DB tables to python code
+Author: akin
+License-File: LICENSE
+Requires-Python: >=3.8
+Requires-Dist: inflect>=7.4.0
+Requires-Dist: psycopg2>=2.9.10
+Requires-Dist: sqlalchemy>=2.0.38
+Requires-Dist: sqlmodel>=0.0.20
