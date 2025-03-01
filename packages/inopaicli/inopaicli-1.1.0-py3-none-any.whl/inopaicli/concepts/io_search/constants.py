@@ -1,0 +1,8 @@
+import os
+
+CHUNK_SIZE = int(os.environ.get('INOPAICLI_CHUNK_SIZE', 10000))
+RELATION_LEVELS = {
+    'NO_RELATIONS': 0,
+    'WITH_RELATIONS': 1,
+    'WITH_DEEP_RELATIONS': 2,
+}
