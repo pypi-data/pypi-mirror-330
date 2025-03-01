@@ -1,0 +1,77 @@
+Metadata-Version: 2.1
+Name: openapi-httpx-client
+Version: 0.2.1
+Summary: A Python client for OpenAPI specifications using httpx
+Home-page: https://github.com/lloydzhou/openapiclient
+Author: lloydzhou
+Author-email: lloydzhou@qq.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Requires-Dist: httpx >=0.23.0
+Requires-Dist: pyyaml >=6.0
+Requires-Dist: nanoid >=0.2.1
+
+# OpenAPI Client for Python
+
+A Python implementation inspired by [openapi-client-axios](https://github.com/openapistack/openapi-client-axios) that provides a dynamic client for OpenAPI specifications. This implementation uses httpx for HTTP requests and Python's metaprogramming capabilities to dynamically generate a client.
+
+## Installation
+
+```bash
+pip install openapi-httpx-client
+```
+
+## Usage
+
+```python
+from openapiclient import OpenAPIClient
+import asyncio
+
+async def main():
+    # Initialize the client with the OpenAPI definition
+    api = OpenAPIClient(definition="https://petstore3.swagger.io/api/v3/openapi.json")
+
+    try:
+        # Initialize and get the dynamic client
+        client = await api.init()
+        print("client", client, dir(client))
+
+        print("client.operations", client.operations)
+        print("client.paths", client.paths)
+        print("client.functions", client.functions)
+        print("client.tools", client.tools)  # get function call tools
+
+        # Call an operation using the generated method
+        response = await client.getPetById(petId=1)
+
+        # Print the response
+        print(f"Status code: {response['status']}")
+        print(f"Pet data: {response['data']}")
+    finally:
+        # Close the HTTP session
+        await api.close()
+
+if __name__ == "__main__":
+    asyncio.run(main())
+```
+
+## Features
+
+- Dynamic client generation using Python metaprogramming
+- Supports OpenAPI 3.0 and 3.1
+- Supports JSON and YAML specification formats
+- Supports specification loading from URL, file, or dictionary
+- Asynchronous API using httpx
+- Response format similar to axios (data, status, headers, config)
+
+## Author
+lloydzhou (2025-02-27)
+
+
+
+
