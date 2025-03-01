@@ -1,0 +1,21 @@
+[project]
+name = "comment_format"
+version = "0.0.1"
+authors = [
+  { name="Alex Fabre", email="m.alexfabre@gmail.com" },
+]
+description = "A tool to check code comment format"
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+license = {file = "LICENSE"}
+
+[project.urls]
+Homepage = "https://github.com/AlexFabre/comment-format"
+Issues = "https://github.com/AlexFabre/comment-format/issues"
+
+[project.scripts]
+comment-format = "comment_format.comment_format:main"
