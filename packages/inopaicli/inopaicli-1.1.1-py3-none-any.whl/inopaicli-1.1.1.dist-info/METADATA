@@ -1,0 +1,83 @@
+Metadata-Version: 2.2
+Name: inopaicli
+Version: 1.1.1
+Summary: Cli interface to execute inopai related tasks
+Author-email: Daniel Rech <dr@netsyno.com>, Ryan Arbai <ra@netsyno.com>
+Project-URL: Homepage, https://inopai.com
+Classifier: Development Status :: 3 - Alpha
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: tablib>=3.3.0
+Requires-Dist: openpyxl>=3.0.10
+Requires-Dist: requests>=2.28.2
+Requires-Dist: aiohttp[speedups]>=3.11.11
+Requires-Dist: python-dotenv>=0.21.1
+Provides-Extra: dev
+Requires-Dist: pylint~=2.14.0; extra == "dev"
+Requires-Dist: toml~=0.10.2; extra == "dev"
+Requires-Dist: yapf~=0.32.0; extra == "dev"
+Provides-Extra: test
+Requires-Dist: pytest~=7.1.0; extra == "test"
+Requires-Dist: pytest-cov~=4.0.0; extra == "test"
+Provides-Extra: doc
+
+# Inopai CLI
+
+### This package is intended to help with inopai related automation tasks
+
+Install this package via pip:
+
+```pip install inopaicli``
+
+## Context
+
+inopaicli needs an inopai installation url as a parameter, i.e.
+
+```
+inopaicli --url https://inopai.com
+```
+
+## Commands
+
+Possible commands:
+
+```
+actions_download_all
+actions_update
+app_get
+app_get_element_definitions
+app_get_schema
+app_get_workflow_states
+app_update
+commands_print
+curl_print
+download_files
+entries_export
+entries_export_excel
+entries_sync
+entries_update
+exports_download_all
+exports_update
+flatt_app_schema_and_export_entries
+group_get
+update_app_instance
+```
+
+## Usage example
+
+With credentials stored in 
+
+## Plugins
+
+You can add plugins to your project that has the package installed, that act as package commands
+
+The plugins folder must be called `inopaicli-plugins` and it has to be in your current working directory
