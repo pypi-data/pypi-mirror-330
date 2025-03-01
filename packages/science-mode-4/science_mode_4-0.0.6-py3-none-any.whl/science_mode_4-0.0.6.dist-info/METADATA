@@ -1,0 +1,47 @@
+Metadata-Version: 2.4
+Name: science_mode_4
+Version: 0.0.6
+Summary: Native ScienceMode4 protocol implementation
+Project-URL: Homepage, https://github.com/nextroundwinner/ScienceModePython
+Author-email: Marc Hofmann <marc-hofmann@gmx.de>
+License-Expression: MIT
+License-File: LICENSE
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.11
+Requires-Dist: keyboard>=0.13.5
+Requires-Dist: pyserial>=3.5
+Description-Content-Type: text/markdown
+
+# ScienceModePython
+
+## Introduction
+
+Python implementation of ScienceMode 4 protocol (https://github.com/ScienceMode/ScienceMode4_P24)
+
+## Requirements
+
+Python 3.11 or higher
+
+## Installation
+
+Coming soon
+
+## Dependencies
+
+- PySerial
+  - https://pypi.org/project/pyserial/
+  - `pip install pyserial`
+- Keyboard (only for examples)
+  - https://pypi.org/project/keyboard/
+  - `pip install keyboard`
+
+## Build library
+
+- Create Python environment (e.g. with venv or conda)
+- Install dependencies
+  - `python -m pip install --upgrade build`
+- Build project
+  - `python -m build`
+- Install local library
+  - `pip install .\dist\science_mode_4-0.0.1-py3-none-any.whl` (adjust path accordingly)
