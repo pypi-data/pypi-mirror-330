@@ -1,0 +1,22 @@
+imgviz>=0.11
+natsort>=7.1.0
+numpy<=1.26.4
+Pillow>=2.8
+PyYAML
+termcolor
+opencv-python-headless
+onnx==1.13.1
+qimage2ndarray==1.10.0
+lapx==0.5.5
+darkdetect==0.8.0
+tqdm
+scipy
+shapely
+pyclipper
+filterpy
+tokenizers
+jsonlines
+onnxruntime==1.16.0
+
+[:platform_system != "Darwin"]
+PyQt5>=5.15.7
