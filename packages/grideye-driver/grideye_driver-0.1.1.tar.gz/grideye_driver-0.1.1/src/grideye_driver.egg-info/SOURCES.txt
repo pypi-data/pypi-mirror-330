@@ -1,0 +1,15 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/grideye/__init__.py
+src/grideye/conversion.py
+src/grideye/grideye.py
+src/grideye/py.typed
+src/grideye_driver.egg-info/PKG-INFO
+src/grideye_driver.egg-info/SOURCES.txt
+src/grideye_driver.egg-info/dependency_links.txt
+src/grideye_driver.egg-info/requires.txt
+src/grideye_driver.egg-info/top_level.txt
+src/grideye_driver.egg-info/zip-safe
+tests/test_grideye.py
