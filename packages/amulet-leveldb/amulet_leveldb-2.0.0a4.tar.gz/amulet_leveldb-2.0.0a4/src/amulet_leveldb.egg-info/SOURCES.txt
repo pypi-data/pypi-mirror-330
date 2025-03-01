@@ -1,0 +1,17 @@
+CMakeLists.txt
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.py
+src/amulet_leveldb.egg-info/PKG-INFO
+src/amulet_leveldb.egg-info/SOURCES.txt
+src/amulet_leveldb.egg-info/dependency_links.txt
+src/amulet_leveldb.egg-info/requires.txt
+src/amulet_leveldb.egg-info/top_level.txt
+src/leveldb/__init__.py
+src/leveldb/__init__leveldb.py.cpp
+src/leveldb/_version.py
+src/leveldb/leveldb_mcpeConfig.cmake
+src/leveldb/py.typed
+src/leveldb/include/leveldb.hpp

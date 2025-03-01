@@ -1,0 +1,5 @@
+recursive-include src/leveldb *.hpp *.cpp *Config.cmake
+
+include CMakeLists.txt
+
+prune tests
