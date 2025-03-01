@@ -1,0 +1,14 @@
+
+[dev]
+pre-commit<3,>=2
+
+[extra]
+rfc3986>=1
+requests
+cachier
+tqdm
+beautifulsoup4
+
+[test]
+pytest>=7
+pytest-cov>=2
