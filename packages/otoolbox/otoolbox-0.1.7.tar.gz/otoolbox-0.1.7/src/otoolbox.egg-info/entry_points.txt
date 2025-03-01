@@ -1,0 +1,4 @@
+[console_scripts]
+otoolbox = otoolbox:run
+otoolbox-repo = otoolbox.repositories:run
+otoolbox-workspace = otoolbox.workspace:run
