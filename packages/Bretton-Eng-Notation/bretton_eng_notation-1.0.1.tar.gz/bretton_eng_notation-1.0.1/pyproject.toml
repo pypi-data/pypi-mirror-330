@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "Bretton_Eng_Notation"
+version = "1.0.1"
+description = "Converts Numbers Into Engineering Notation"
+authors = [{ name = "Bretton Scarbrough", email = "bretton.scarbrough@gmail.com" }]
+readme = "README.md"
+license = { file = "LICENSE" }
+dependencies = ["numpy"]  # List dependencies here
+
+# [project.urls]
+# Homepage = "https://github.com/yourusername/my_package"
+
