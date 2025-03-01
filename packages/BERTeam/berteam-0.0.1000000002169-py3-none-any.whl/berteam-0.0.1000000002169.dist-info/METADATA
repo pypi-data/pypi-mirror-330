@@ -1,0 +1,19 @@
+Metadata-Version: 2.2
+Name: BERTeam
+Version: 0.0.1000000002169
+Summary: Transformer architecture designed to learn optimal team choice in multi-agent adversarial games
+Author-email: Pranav <pranavraj575@gmail.com>
+Project-URL: Homepage, https://github.com/pranavraj575/BERTeam
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: dill
+Requires-Dist: torch
+Provides-Extra: test
+Requires-Dist: matplotlib; extra == "test"
+
+# BERTeam
+Transformer architecture designed to learn optimal team choice in multi-agent adversarial games
