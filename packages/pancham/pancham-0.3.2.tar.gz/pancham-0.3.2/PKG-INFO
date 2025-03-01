@@ -1,0 +1,15 @@
+Metadata-Version: 2.2
+Name: pancham
+Version: 0.3.2
+Project-URL: Homepage, https://github.com/Loqui-Tech/pancham
+Requires-Python: >=3.11
+License-File: LICENSE
+Requires-Dist: numpy>=2.2.0
+Requires-Dist: openpyxl>=3.1.0
+Requires-Dist: pandas>=2.0.0
+Requires-Dist: pandera>=0.20.0
+Requires-Dist: SQLAlchemy>=2.0.0
+Requires-Dist: pyyaml
+Requires-Dist: typer
+Requires-Dist: python-benedict
+Requires-Dist: halo
