@@ -1,0 +1,24 @@
+Metadata-Version: 2.1
+Name: e2b-charts
+Version: 0.0.3
+Summary: Package for extracting data for E2B Code Interpreter
+Home-page: https://e2b.dev/
+License: Apache-2.0
+Author: e2b
+Author-email: hello@e2b.dev
+Requires-Python: >=3.10,<4.0
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: matplotlib (>=3.9.2,<4.0.0)
+Requires-Dist: numpy (>=1.26.4,<2.0.0)
+Requires-Dist: pydantic (>=2.8.2,<3.0.0)
+Project-URL: Bug Tracker, https://github.com/e2b-dev/code-interpreter/issues
+Project-URL: Repository, https://github.com/e2b-dev/e2b-code-interpreter/tree/python
+Description-Content-Type: text/markdown
+
+# Extracting Data for Code Interpreter SDK
+
+This package is a utility used to extract data in the Code Interpreter SDK from, e.g., DataFrames and matplotlib plots.
+
