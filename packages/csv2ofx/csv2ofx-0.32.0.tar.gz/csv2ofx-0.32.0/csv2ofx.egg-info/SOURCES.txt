@@ -1,0 +1,35 @@
+LICENSE
+MANIFEST.in
+README.md
+dev-requirements.txt
+pyproject.toml
+requirements.txt
+csv2ofx/__init__.py
+csv2ofx/main.py
+csv2ofx/ofx.py
+csv2ofx/qif.py
+csv2ofx/utils.py
+csv2ofx.egg-info/PKG-INFO
+csv2ofx.egg-info/SOURCES.txt
+csv2ofx.egg-info/dependency_links.txt
+csv2ofx.egg-info/entry_points.txt
+csv2ofx.egg-info/requires.txt
+csv2ofx.egg-info/top_level.txt
+docs/OFX 2.1.1.pdf
+docs/OFXAudit.xls
+docs/OFX_Message_Support.doc
+docs/QIF Specification.html
+docs/qif-file-format.txt
+docs/QIF Specification_files/a.html
+docs/QIF Specification_files/a_002.html
+docs/QIF Specification_files/a_003.html
+docs/QIF Specification_files/a_004.html
+docs/QIF Specification_files/a_005.html
+docs/QIF Specification_files/bootstrap.js
+docs/QIF Specification_files/jquery.js
+docs/QIF Specification_files/sitecss.css
+helpers/check-stage
+helpers/clean
+helpers/srcdist
+helpers/wheel
+tests/test.py
