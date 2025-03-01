@@ -1,0 +1,44 @@
+Metadata-Version: 2.1
+Name: scrapy-webarchive
+Version: 0.4.0
+Summary: A webarchive extension for Scrapy
+Project-URL: Documentation, https://developers.thequestionmark.org/scrapy-webarchive/
+Project-URL: Repository, https://github.com/q-m/scrapy-webarchive
+Keywords: Scrapy,Webarchive,WARC,WACZ
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python
+Requires-Python: <3.13,>=3.7
+Description-Content-Type: text/markdown
+Requires-Dist: Scrapy<2.12,>=2.9
+Requires-Dist: warcio==1.7.4
+Requires-Dist: warc-knot==0.2.5
+Requires-Dist: wacz==0.5.0
+Requires-Dist: cdxj-indexer==1.4.5
+Provides-Extra: aws
+Requires-Dist: boto3; extra == "aws"
+Provides-Extra: gcs
+Requires-Dist: google-cloud-storage; extra == "gcs"
+Provides-Extra: all
+Requires-Dist: boto3; extra == "all"
+Requires-Dist: google-cloud-storage; extra == "all"
+
+# Scrapy Webarchive
+
+[![Docs](https://github.com/q-m/scrapy-webarchive/actions/workflows/docs.yml/badge.svg)](https://github.com/q-m/scrapy-webarchive/actions/workflows/docs.yml)
+
+Scrapy Webarchive is a plugin for Scrapy that allows users to capture and export web archives in the WARC and WACZ formats during crawling.
+
+## Features
+
+* Save web crawls in WACZ format (multiple storages supported; local and cloud).
+* Crawl against WACZ format archives.
+* Integrate seamlessly with Scrapy’s spider request and response cycle.
+
+## Compatibility
+
+* Python 3.7, 3.8, 3.9, 3.10, 3.11 and 3.12
+
+## Documentation
+
+Documentation is available online at [developers.thequestionmark.org/scrapy-webarchive/](https://developers.thequestionmark.org/scrapy-webarchive/)

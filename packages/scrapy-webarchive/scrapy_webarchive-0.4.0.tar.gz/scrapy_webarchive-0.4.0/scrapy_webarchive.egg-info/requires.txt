@@ -1,0 +1,15 @@
+Scrapy<2.12,>=2.9
+warcio==1.7.4
+warc-knot==0.2.5
+wacz==0.5.0
+cdxj-indexer==1.4.5
+
+[all]
+boto3
+google-cloud-storage
+
+[aws]
+boto3
+
+[gcs]
+google-cloud-storage
