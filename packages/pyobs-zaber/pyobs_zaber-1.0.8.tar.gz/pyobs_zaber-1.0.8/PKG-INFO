@@ -1,0 +1,15 @@
+Metadata-Version: 2.3
+Name: pyobs-zaber
+Version: 1.0.8
+Summary: pyobs model for Zaber motors
+License: MIT
+Author: Leon Meerwart
+Author-email: leon.meerwart@uni-goettingen.de
+Requires-Python: >=3.9,<3.12
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: pyobs-core (>=1.6.7,<2.0.0)
+Requires-Dist: zaber-motion (>=4.7.0,<5.0.0)
