@@ -1,0 +1,10 @@
+.venv/
+.venv_test/
+
+.idea/
+.vscode/
+
+**/__pycache__/
+*.pyc
+dist/
+build/
