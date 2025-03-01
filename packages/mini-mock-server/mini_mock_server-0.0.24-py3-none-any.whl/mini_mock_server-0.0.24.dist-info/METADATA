@@ -1,0 +1,85 @@
+Metadata-Version: 2.2
+Name: mini-mock-server
+Version: 0.0.24
+Summary: A mini mock server for http requests
+Author: Igor Rodrigues
+License: MIT
+Keywords: mock server restapi resful
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+Dynamic: author
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: keywords
+Dynamic: license
+Dynamic: requires-python
+Dynamic: summary
+
+# Mini Mock Server
+
+A mini mock server for http requests.
+
+## Features
+- Start a http mock server using the lib ```http.server```.
+- Delay requests to simulate slow endpoints.
+- Return random responses on the same route to simulates success and error cases.
+
+## Installation
+
+```shell
+pip install mini-mock-server
+```
+
+### Usage
+
+1. Create ```mock-api.json``` file to routes especifications.
+```
+{
+    "/": [
+        {
+            "url": "/users",
+            "method": "GET",
+            "response": [
+                {
+                    "status_code": 200,
+                    "body": [
+                        {"id": 1, "name": "Mario"},
+                        {"id": 2, "name": "Luigi"}
+                    ]
+                },
+                {
+                    "status_code": 400,
+                    "body": {"error": "Bad request custom message"}
+                }
+            ]
+        }
+    ],
+    "/api": [
+        {
+            "url": "/products/:id",
+            "method": "GET",
+            "response": {
+                "status_code": 200,
+                "body": {
+                    "id": 1,
+                    "name": "Product 001",
+                    "price": 115.51
+                }
+            }
+        }
+    ]
+}
+```
+2. Start the mock server
+
+```shell
+mini-mock-server mock-api.json
+```
+
