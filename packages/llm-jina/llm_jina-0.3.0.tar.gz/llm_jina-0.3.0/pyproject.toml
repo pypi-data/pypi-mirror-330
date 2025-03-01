@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "llm-jina"
+version = "0.3.0"
+description = "LLM plugin for Jina AI"
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+]
+
+dependencies = [
+    "llm>=0.20",
+    "httpx>=0.27.0",
+    "sqlite-utils>=3.36",
+    "requests>=2.25.0"
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "pytest-cov", "black", "flake8", "mypy", "isort"]
+
+
+[project.entry-points.llm]
+jina = "llm_jina"

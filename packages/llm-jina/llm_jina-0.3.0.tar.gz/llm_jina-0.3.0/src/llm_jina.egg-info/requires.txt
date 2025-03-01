@@ -1,0 +1,12 @@
+llm>=0.20
+httpx>=0.27.0
+sqlite-utils>=3.36
+requests>=2.25.0
+
+[dev]
+pytest
+pytest-cov
+black
+flake8
+mypy
+isort
