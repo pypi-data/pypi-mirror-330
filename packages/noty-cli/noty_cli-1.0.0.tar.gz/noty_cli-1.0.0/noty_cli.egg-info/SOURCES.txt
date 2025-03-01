@@ -1,0 +1,14 @@
+README.md
+pyproject.toml
+setup.py
+noty/__init__.py
+noty/cli.py
+noty/editor.py
+noty/file_manager.py
+noty/ui.py
+noty_cli.egg-info/PKG-INFO
+noty_cli.egg-info/SOURCES.txt
+noty_cli.egg-info/dependency_links.txt
+noty_cli.egg-info/entry_points.txt
+noty_cli.egg-info/requires.txt
+noty_cli.egg-info/top_level.txt

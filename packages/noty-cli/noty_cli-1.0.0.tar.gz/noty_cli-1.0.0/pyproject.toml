@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "noty-cli"
+version = "1.0.0"
+description = "A terminal-based note-taking application with vim-like navigation"
+authors = [
+    {name = "Replit User", email = "user@replit.com"}
+]
+readme = "README.md"
+requires-python = ">=3.6"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Environment :: Console :: Curses",
+    "Topic :: Text Editors :: Text Processing",
+]
+dependencies = [
+    "windows-curses;platform_system=='Windows'"
+]
+
+[project.scripts]
+noty = "noty.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/replit/noty"
