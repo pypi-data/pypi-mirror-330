@@ -1,0 +1,68 @@
+repos:
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v5.0.0
+  hooks:
+    - id: trailing-whitespace
+      exclude: compliance_checker/tests/data
+    - id: check-ast
+    - id: debug-statements
+    - id: end-of-file-fixer
+      exclude: compliance_checker/tests/data
+    - id: check-docstring-first
+    - id: check-added-large-files
+    - id: check-json
+    - id: check-merge-conflict
+    - id: check-yaml
+    - id: requirements-txt-fixer
+      args:
+        - requirements.txt
+        - test_requirements.txt
+
+- repo: https://github.com/psf/black
+  rev: 25.1.0
+  hooks:
+  - id: black
+    language_version: python3
+
+- repo: https://github.com/asottile/add-trailing-comma
+  rev: v3.1.0
+  hooks:
+    - id: add-trailing-comma
+
+
+- repo: https://github.com/astral-sh/ruff-pre-commit
+  rev: v0.9.6
+  hooks:
+    - id: ruff
+      args: ["--fix", "--show-fixes"]
+
+- repo: https://github.com/tox-dev/pyproject-fmt
+  rev: v2.5.0
+  hooks:
+    - id: pyproject-fmt
+
+- repo: https://github.com/codespell-project/codespell
+  rev: v2.4.1
+  hooks:
+    - id: codespell
+      args:
+        - --ignore-words-list=degreee,varn,poit,uint,sur,herat,claus,tung,messsages,assertin,abd
+      exclude: >
+          (?x)^(
+              .*\.xml|
+              .*\.cdl|
+              .*\.yaml|
+              .*_version.py|
+              .*versioneer.py
+          )$
+
+ci:
+    autofix_commit_msg: |
+        [pre-commit.ci] auto fixes from pre-commit.com hooks
+
+        for more information, see https://pre-commit.ci
+    autofix_prs: false
+    autoupdate_commit_msg: '[pre-commit.ci] pre-commit autoupdate'
+    autoupdate_schedule: monthly
+    skip: []
+    submodules: false
