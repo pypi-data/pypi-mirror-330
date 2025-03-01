@@ -1,0 +1,25 @@
+Metadata-Version: 2.4
+Name: shmview
+Version: 0.0.9
+Summary: Python-based shared memory live viewer
+Project-URL: Homepage, https://github.com/fmartinache/shmview/
+Project-URL: Issues, https://github.com/fmartinache/shmview/issues
+Author-email: Frantz Martinache <frantz.martinache@oca.eu>
+License-Expression: MIT
+License-File: LICENSE.txt
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.9
+Requires-Dist: numpy
+Requires-Dist: pyqt5
+Requires-Dist: pyqtgraph
+Requires-Dist: qtpy
+Requires-Dist: xaosim
+Description-Content-Type: text/markdown
+
+# shmview: a simple python viewer of the "classic" shared memory data structures of Guyon & Martinache
+
+## Installation
+
+> pip install shmview
+
