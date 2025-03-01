@@ -1,0 +1,5 @@
+[console_scripts]
+ppm = python_project_manager.cli_commands:cli
+ppm-builtin-exe-setup = python_project_manager.builtin_setups.builtin_exe:exe_setup
+ppm-builtin-package-setup = python_project_manager.builtin_setups.builtin_package:package_setup
+ppm-fix = python_project_manager.dev_only:fix
