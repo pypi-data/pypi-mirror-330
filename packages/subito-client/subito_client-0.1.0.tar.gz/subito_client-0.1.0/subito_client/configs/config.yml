@@ -1,0 +1,13 @@
+server:
+  api_base: "http://127.0.0.1:8888" # todo
+  ws_base: "ws://127.0.0.1:8888" # todo
+  upload_path: "/translation/upload"
+  translate_path: "/translation/translate/{file_id}"
+  download_path: "/translation/download/{file_id}"
+  ws_path: "/translation/ws-updates"
+  websocket_timeout: 40
+
+retry:
+  websocket_reconnect_attempts: 3
+
+prefix: "_ fa - "
