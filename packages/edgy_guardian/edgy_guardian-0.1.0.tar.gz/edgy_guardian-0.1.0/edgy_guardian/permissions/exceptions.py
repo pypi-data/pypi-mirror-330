@@ -1,0 +1,16 @@
+from __future__ import annotations
+
+
+class ProtectorError(Exception): ...
+
+
+class NotUserNorGroup(ProtectorError): ...
+
+
+class ObjectNotPersisted(ProtectorError): ...
+
+
+class WrongAppError(ProtectorError): ...
+
+
+class MultipleIdentityAndObjectError(ProtectorError): ...
