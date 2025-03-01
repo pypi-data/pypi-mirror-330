@@ -1,0 +1,29 @@
+Metadata-Version: 2.2
+Name: escrowai-encrypt
+Version: 0.0.1
+Summary: This package allows EscrowAI users to programmatically encrypt their artifacts and add encryption to their workflows.
+Home-page: https://github.com/BeeKeeperAI/escrowai-encrypt
+Author: BeeKeeperAI
+Author-email: engineering@beekeeperai.com
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.13
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Requires-Dist: azure-storage-blob
+Requires-Dist: cryptography
+Requires-Dist: pyyaml
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# escrowai-encrypt
+A module for encryption of artifacts and keys to be uploaded to EscrowAI.
