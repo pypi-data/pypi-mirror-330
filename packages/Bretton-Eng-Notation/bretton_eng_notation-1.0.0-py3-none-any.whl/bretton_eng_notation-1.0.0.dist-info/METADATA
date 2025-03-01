@@ -1,0 +1,11 @@
+Metadata-Version: 2.2
+Name: Bretton_Eng_Notation
+Version: 1.0.0
+Summary: Converts Numbers Into Engineering Notation
+Author-email: Bretton Scarbrough <bretton.scarbrough@gmail.com>
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy
+
+# Readme
+Returns inputted numbers in engineering notation.
