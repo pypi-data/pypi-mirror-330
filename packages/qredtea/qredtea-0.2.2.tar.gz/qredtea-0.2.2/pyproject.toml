@@ -1,0 +1,9 @@
+[tool.black]
+extend-exclude = 'Examples/'
+
+[tool.isort]
+profile = "black"
+known_third_party = ["qtealeaves"]
+
+[tool.pytest.ini_options]
+python_files = "tests/**/test*.py"
