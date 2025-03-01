@@ -1,0 +1,83 @@
+Metadata-Version: 2.2
+Name: smsmobileapi-send-email
+Version: 0.1.0
+Summary: A Python module for sending emails using SMSMobileAPI directly from mailbox account
+Home-page: https://github.com/SmsMobileApi/smsmobileapi-python-email
+Author: Quest-Concept
+Author-email: info@smsmobileapi.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: requests
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# 📧 SMSMobileAPI Send Email
+
+A Python module to send emails using [SMSMobileAPI](https://smsmobileapi.com/email/) after linking your email account to the API.
+
+## 🌐 Service Overview
+- Learn more about the service: [SMSMobileAPI Email](https://smsmobileapi.com/email/)
+- Full documentation: [API Documentation](https://smsmobileapi.com/doc-email/)
+- Don't have an account? [Sign up here](https://smsmobileapi.com/signup/?source_page=email)
+- Already have an account? [Login to SMSMobileAPI Dashboard](https://smsmobileapi.com/connect)
+
+## 🔑 Getting Started
+
+### 1️⃣ **Create an Account & Configure Your Email**
+Once logged into the **SMSMobileAPI Dashboard**, navigate to: MailBox -> MailConfig
+
+Here, you can manage your connected email accounts and configure your email API settings.
+
+### 2️⃣  **Generate Your API Keys**
+- **Primary API Key** → Linked to your SMSMobileAPI account
+- **Email API Key** → Linked to your connected email account
+
+Once your SMTP credentials are saved, an **Email API Key** will be generated for your email. Use both API keys to authenticate and send emails via Python.
+
+## 📦 Installation
+
+```sh
+pip install smsmobileapi-send-email
+
+```
+
+## 📧 SMSMobileAPI Send Email
+
+from smsmobileapi_send_email import SMSMobileAPIEmailSender
+
+apikey = "your_account_api_key"
+apikeybox = "your_email_api_key"
+
+sender = SMSMobileAPIEmailSender(apikey, apikeybox)
+
+response = sender.send_email(
+    sender_name="John Doe",
+    sender_email="john.doe@example.com",
+    recipient_email="recipient@example.com",
+    mail_subject="Test Email",
+    mail_body="Hello, this is a test email!",
+    allow_self_signed="yes"
+)
+
+print(response)
+
+
+## 🔒 Why Use SMSMobileAPI for Sending Emails?
+1) Secure Email Sending – No need to store plaintext passwords in your Python scripts.
+2) Email Tracking – All sent emails are visible in the SMSMobileAPI dashboard with detailed logs.
+3) Easy Maintenance – If you change your email password, update it in the dashboard, not in your script.
+4) Response Handling – The API returns a response indicating whether the email was successfully sent.
+
+## 📝 License
+This module is licensed under the MIT License.
