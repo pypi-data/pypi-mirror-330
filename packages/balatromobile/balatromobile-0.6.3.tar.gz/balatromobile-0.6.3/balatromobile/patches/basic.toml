@@ -1,0 +1,29 @@
+description = "Basic set of patches needed to make the game run on mobile"
+authors = ["blake502", "TheCatRiX", "PGgamer2"]
+supported_platforms = ["android"]
+
+[[patch_lists]]
+  version = 0
+  supported_game_versions = ["1.0.1o-FULL", "1.0.1n-FULL", "1.0.1m-FULL", "1.0.1g-FULL", "1.0.1f-FULL", "1.0.1e-FULL", "1.0.1c-FULL"]
+  [[patch_lists.patch_files]]
+    target_file = "globals.lua"
+    [[patch_lists.patch_files.patches]]
+      search_string = "loadstring"
+      patch_content = """
+    if love.system.getOS() == 'Android' then
+        self.F_DISCORD = true
+        self.F_NO_ACHIEVEMENTS = true
+        self.F_SOUND_THREAD = true
+        self.F_VIDEO_SETTINGS = false
+        self.F_QUIT_BUTTON = false
+        self.F_MOBILE_UI = true
+    end
+"""
+
+  [[patch_lists.patch_files]]
+    target_file = "functions/button_callbacks.lua"
+    [[patch_lists.patch_files.patches]]
+      search_string = "G.CONTROLLER.text_input_hook == e and G.CONTROLLER.HID.controller"
+      patch_content = """
+  if G.CONTROLLER.text_input_hook == e and (G.CONTROLLER.HID.controller or G.CONTROLLER.HID.touch) then
+"""
