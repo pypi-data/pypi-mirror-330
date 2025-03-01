@@ -1,0 +1,15 @@
+# PassGenPyJS
+
+Simple password generator for python. It allows users to generate secure passwords with options for uppercase letters, lowercase letters, numbers, and symbols.
+
+Calling the function: 
+```py
+def generate_password(length: int = 8, letters: bool = True, uppercase: bool = True, numbers: bool = True, symbols: bool = True) -> str:
+```
+
+### Parameters:
+- `length` (int): Length of the password (default: 8).
+- `letters` (bool): Include lowercase letters (default: True).
+- `uppercase` (bool): Include uppercase letters (default: True).
+- `numbers` (bool): Include numbers (default: True).
+- `symbols` (bool): Include special characters (default: True).

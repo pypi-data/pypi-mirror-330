@@ -1,0 +1,10 @@
+[project]
+name = "passgejs25-workspace"
+version = "0.0.4"
+description = "A simple password generator"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = []
+
+[tool.uv.workspace]
+members = ["passGJS25"]
