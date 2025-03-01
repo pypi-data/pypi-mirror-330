@@ -1,0 +1,15 @@
+Metadata-Version: 2.2
+Name: FNC-python
+Version: 0.2.0
+Summary: Python implementations accompanying 'Fundamentals of Numerical Computation', with fixes.
+Author-email: Toby Driscoll <driscoll@udel.edu>, Zhang Maiyun <me@maiyun.me>
+Project-URL: Homepage, https://github.com/myzhang1029/FNC-python
+Project-URL: Issues, https://github.com/myzhang1029/FNC-python/issues
+Classifier: Intended Audience :: Education
+Classifier: Intended Audience :: Science/Research
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.6
+License-File: LICENSE
+Requires-Dist: numpy>=1.21.0
+Requires-Dist: scipy>=1.7.0

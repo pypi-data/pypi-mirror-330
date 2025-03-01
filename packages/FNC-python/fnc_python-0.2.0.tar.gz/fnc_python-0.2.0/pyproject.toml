@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "FNC-python"
+version = "0.2.0"
+authors = [
+  { name="Toby Driscoll", email="driscoll@udel.edu" },
+  { name="Zhang Maiyun", email="me@maiyun.me" },
+]
+description = "Python implementations accompanying 'Fundamentals of Numerical Computation', with fixes."
+requires-python = ">=3.6"
+classifiers = [
+    "Intended Audience :: Education",
+    "Intended Audience :: Science/Research",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+]
+dependencies = [
+    "numpy >= 1.21.0",
+    "scipy >= 1.7.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/myzhang1029/FNC-python"
+Issues = "https://github.com/myzhang1029/FNC-python/issues"
