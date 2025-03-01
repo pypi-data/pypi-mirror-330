@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hello_world-lion3l123"
+version = "0.1.0"
+authors = [
+    { name = "Lionel Saputra", email = "LionelSaputra22@gmail.com" }
+]
+description = "Tugas Hello World"
+readme = "README.md"
+license = { text = "MIT" }
+
+[project.scripts]
+hello-world = "hello_world.main:hello"
