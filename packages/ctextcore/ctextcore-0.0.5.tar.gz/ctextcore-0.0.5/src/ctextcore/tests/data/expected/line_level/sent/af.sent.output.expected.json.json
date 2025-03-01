@@ -1,0 +1,364 @@
+[
+  {
+    "doc": {
+      "p": [
+        {
+          "lid": "NONE",
+          "tokenised": false,
+          "sent": {
+            "tokens": [
+              {
+                "start_char": 0,
+                "end_char": 3,
+                "id": 1,
+                "text": "TOT"
+              },
+              {
+                "start_char": 4,
+                "end_char": 5,
+                "id": 2,
+                "text": "U"
+              },
+              {
+                "start_char": 6,
+                "end_char": 11,
+                "id": 3,
+                "text": "DIENS"
+              }
+            ]
+          }
+        },
+        {
+          "lid": "NONE",
+          "tokenised": false,
+          "sent": {
+            "tokens": [
+              {
+                "start_char": 0,
+                "end_char": 4,
+                "id": 1,
+                "text": "Vrae"
+              },
+              {
+                "start_char": 5,
+                "end_char": 7,
+                "id": 2,
+                "text": "en"
+              },
+              {
+                "start_char": 8,
+                "end_char": 17,
+                "id": 3,
+                "text": "Antwoorde"
+              }
+            ]
+          }
+        },
+        {
+          "lid": "NONE",
+          "tokenised": false,
+          "sent": {
+            "tokens": [
+              {
+                "start_char": 0,
+                "end_char": 3,
+                "id": 1,
+                "text": "Wie"
+              },
+              {
+                "start_char": 4,
+                "end_char": 6,
+                "id": 2,
+                "text": "is"
+              },
+              {
+                "start_char": 7,
+                "end_char": 11,
+                "id": 3,
+                "text": "GEP?"
+              }
+            ]
+          }
+        },
+        {
+          "lid": "NONE",
+          "tokenised": false,
+          "sent": {
+            "tokens": [
+              {
+                "start_char": 0,
+                "end_char": 3,
+                "id": 1,
+                "text": "Die"
+              },
+              {
+                "start_char": 4,
+                "end_char": 11,
+                "id": 2,
+                "text": "Gauteng"
+              },
+              {
+                "start_char": 12,
+                "end_char": 22,
+                "id": 3,
+                "text": "Enterprise"
+              },
+              {
+                "start_char": 23,
+                "end_char": 32,
+                "id": 4,
+                "text": "Propeller"
+              },
+              {
+                "start_char": 33,
+                "end_char": 38,
+                "id": 5,
+                "text": "(GEP)"
+              },
+              {
+                "start_char": 19,
+                "end_char": 21,
+                "id": 6,
+                "text": "is"
+              },
+              {
+                "start_char": 42,
+                "end_char": 44,
+                "id": 7,
+                "text": "'n"
+              },
+              {
+                "start_char": 45,
+                "end_char": 54,
+                "id": 8,
+                "text": "agentskap"
+              },
+              {
+                "start_char": 55,
+                "end_char": 58,
+                "id": 9,
+                "text": "wat"
+              },
+              {
+                "start_char": 59,
+                "end_char": 63,
+                "id": 10,
+                "text": "deur"
+              },
+              {
+                "start_char": 64,
+                "end_char": 67,
+                "id": 11,
+                "text": "die"
+              },
+              {
+                "start_char": 68,
+                "end_char": 77,
+                "id": 12,
+                "text": "Gautengse"
+              },
+              {
+                "start_char": 78,
+                "end_char": 89,
+                "id": 13,
+                "text": "Provinsiale"
+              },
+              {
+                "start_char": 90,
+                "end_char": 98,
+                "id": 14,
+                "text": "Regering"
+              },
+              {
+                "start_char": 99,
+                "end_char": 107,
+                "id": 15,
+                "text": "ingestel"
+              },
+              {
+                "start_char": 19,
+                "end_char": 21,
+                "id": 16,
+                "text": "is"
+              },
+              {
+                "start_char": 111,
+                "end_char": 116,
+                "id": 17,
+                "text": "onder"
+              },
+              {
+                "start_char": 117,
+                "end_char": 127,
+                "id": 18,
+                "text": "beskerming"
+              },
+              {
+                "start_char": 128,
+                "end_char": 131,
+                "id": 19,
+                "text": "van"
+              },
+              {
+                "start_char": 64,
+                "end_char": 67,
+                "id": 20,
+                "text": "die"
+              },
+              {
+                "start_char": 136,
+                "end_char": 147,
+                "id": 21,
+                "text": "Departement"
+              },
+              {
+                "start_char": 128,
+                "end_char": 131,
+                "id": 22,
+                "text": "van"
+              },
+              {
+                "start_char": 152,
+                "end_char": 162,
+                "id": 23,
+                "text": "Ekonomiese"
+              },
+              {
+                "start_char": 163,
+                "end_char": 176,
+                "id": 24,
+                "text": "Ontwikkeling,"
+              },
+              {
+                "start_char": 177,
+                "end_char": 180,
+                "id": 25,
+                "text": "met"
+              },
+              {
+                "start_char": 42,
+                "end_char": 44,
+                "id": 26,
+                "text": "'n"
+              },
+              {
+                "start_char": 184,
+                "end_char": 194,
+                "id": 27,
+                "text": "spesifieke"
+              },
+              {
+                "start_char": 195,
+                "end_char": 202,
+                "id": 28,
+                "text": "mandaat"
+              },
+              {
+                "start_char": 156,
+                "end_char": 158,
+                "id": 29,
+                "text": "om"
+              },
+              {
+                "start_char": 206,
+                "end_char": 219,
+                "id": 30,
+                "text": "ondersteuning"
+              },
+              {
+                "start_char": 8,
+                "end_char": 10,
+                "id": 31,
+                "text": "en"
+              },
+              {
+                "start_char": 223,
+                "end_char": 235,
+                "id": 32,
+                "text": "ontwikkeling"
+              },
+              {
+                "start_char": 236,
+                "end_char": 239,
+                "id": 33,
+                "text": "aan"
+              },
+              {
+                "start_char": 240,
+                "end_char": 246,
+                "id": 34,
+                "text": "KMMO's"
+              },
+              {
+                "start_char": 82,
+                "end_char": 84,
+                "id": 35,
+                "text": "in"
+              },
+              {
+                "start_char": 64,
+                "end_char": 67,
+                "id": 36,
+                "text": "die"
+              },
+              {
+                "start_char": 254,
+                "end_char": 263,
+                "id": 37,
+                "text": "provinsie"
+              },
+              {
+                "start_char": 4,
+                "end_char": 11,
+                "id": 38,
+                "text": "Gauteng"
+              },
+              {
+                "start_char": 7,
+                "end_char": 9,
+                "id": 39,
+                "text": "te"
+              },
+              {
+                "start_char": 275,
+                "end_char": 282,
+                "id": 40,
+                "text": "verleen"
+              },
+              {
+                "start_char": 59,
+                "end_char": 63,
+                "id": 41,
+                "text": "deur"
+              },
+              {
+                "start_char": 288,
+                "end_char": 298,
+                "id": 42,
+                "text": "finansiële"
+              },
+              {
+                "start_char": 8,
+                "end_char": 10,
+                "id": 43,
+                "text": "en"
+              },
+              {
+                "start_char": 302,
+                "end_char": 315,
+                "id": 44,
+                "text": "niefinansiële"
+              },
+              {
+                "start_char": 316,
+                "end_char": 326,
+                "id": 45,
+                "text": "maatreëls."
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+]

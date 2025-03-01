@@ -1,0 +1,534 @@
+[
+  {
+    "doc": {
+      "p": [
+        {
+          "lid": "NONE",
+          "tokenised": true
+        },
+        {
+          "lid": "NONE",
+          "tokenised": true,
+          "sent": {
+            "tokens": [
+              {
+                "start_char": 0,
+                "end_char": 13,
+                "upos": "NOUN",
+                "id": 1,
+                "text": "TSHEBELETSONG"
+              },
+              {
+                "start_char": 14,
+                "end_char": 16,
+                "upos": "PART",
+                "id": 2,
+                "text": "YA"
+              },
+              {
+                "start_char": 17,
+                "end_char": 20,
+                "upos": "NOUN",
+                "id": 3,
+                "text": "HAO"
+              }
+            ]
+          }
+        },
+        {
+          "lid": "NONE",
+          "tokenised": true,
+          "sent": {
+            "tokens": [
+              {
+                "start_char": 0,
+                "end_char": 7,
+                "upos": "NOUN",
+                "id": 1,
+                "text": "Dipotso"
+              },
+              {
+                "start_char": 8,
+                "end_char": 10,
+                "upos": "PART",
+                "id": 2,
+                "text": "le"
+              },
+              {
+                "start_char": 11,
+                "end_char": 19,
+                "upos": "NOUN",
+                "id": 3,
+                "text": "Dikarabo"
+              }
+            ]
+          }
+        },
+        {
+          "lid": "NONE",
+          "tokenised": true,
+          "sent": {
+            "tokens": [
+              {
+                "start_char": 0,
+                "end_char": 3,
+                "upos": "NOUN",
+                "id": 1,
+                "text": "GEP"
+              },
+              {
+                "start_char": 4,
+                "end_char": 6,
+                "upos": "VERB",
+                "id": 2,
+                "text": "ke"
+              },
+              {
+                "start_char": 7,
+                "end_char": 11,
+                "upos": "PART",
+                "id": 3,
+                "text": "mang"
+              },
+              {
+                "start_char": 11,
+                "end_char": 12,
+                "upos": "PUNCT",
+                "id": 4,
+                "text": "?"
+              }
+            ]
+          }
+        },
+        {
+          "lid": "NONE",
+          "tokenised": true,
+          "sent": {
+            "tokens": [
+              {
+                "start_char": 0,
+                "end_char": 7,
+                "upos": "NOUN",
+                "id": 1,
+                "text": "Gauteng"
+              },
+              {
+                "start_char": 8,
+                "end_char": 18,
+                "upos": "VERB",
+                "id": 2,
+                "text": "Enterprise"
+              },
+              {
+                "start_char": 19,
+                "end_char": 28,
+                "upos": "NOUN",
+                "id": 3,
+                "text": "Propeller"
+              },
+              {
+                "start_char": 29,
+                "end_char": 30,
+                "upos": "PUNCT",
+                "id": 4,
+                "text": "("
+              },
+              {
+                "start_char": 30,
+                "end_char": 33,
+                "upos": "NOUN",
+                "id": 5,
+                "text": "GEP"
+              },
+              {
+                "start_char": 33,
+                "end_char": 34,
+                "upos": "PUNCT",
+                "id": 6,
+                "text": ")"
+              },
+              {
+                "start_char": 35,
+                "end_char": 37,
+                "upos": "VERB",
+                "id": 7,
+                "text": "ke"
+              },
+              {
+                "start_char": 38,
+                "end_char": 44,
+                "upos": "NOUN",
+                "id": 8,
+                "text": "Lekala"
+              },
+              {
+                "start_char": 45,
+                "end_char": 47,
+                "upos": "PART",
+                "id": 9,
+                "text": "la"
+              },
+              {
+                "start_char": 48,
+                "end_char": 55,
+                "upos": "NOUN",
+                "id": 10,
+                "text": "Boemedi"
+              },
+              {
+                "start_char": 56,
+                "end_char": 58,
+                "upos": "PRON",
+                "id": 11,
+                "text": "le"
+              },
+              {
+                "start_char": 59,
+                "end_char": 64,
+                "upos": "AUX",
+                "id": 12,
+                "text": "ileng"
+              },
+              {
+                "start_char": 65,
+                "end_char": 67,
+                "upos": "PRON",
+                "id": 13,
+                "text": "la"
+              },
+              {
+                "start_char": 68,
+                "end_char": 74,
+                "upos": "VERB",
+                "id": 14,
+                "text": "thehwa"
+              },
+              {
+                "start_char": 75,
+                "end_char": 77,
+                "upos": "PART",
+                "id": 15,
+                "text": "ke"
+              },
+              {
+                "start_char": 78,
+                "end_char": 83,
+                "upos": "NOUN",
+                "id": 16,
+                "text": "Mmuso"
+              },
+              {
+                "start_char": 84,
+                "end_char": 86,
+                "upos": "PART",
+                "id": 17,
+                "text": "wa"
+              },
+              {
+                "start_char": 87,
+                "end_char": 95,
+                "upos": "NOUN",
+                "id": 18,
+                "text": "Provense"
+              },
+              {
+                "start_char": 96,
+                "end_char": 98,
+                "upos": "PART",
+                "id": 19,
+                "text": "ya"
+              },
+              {
+                "start_char": 99,
+                "end_char": 106,
+                "upos": "NOUN",
+                "id": 20,
+                "text": "Gauteng"
+              },
+              {
+                "start_char": 106,
+                "end_char": 107,
+                "upos": "PUNCT",
+                "id": 21,
+                "text": ","
+              },
+              {
+                "start_char": 108,
+                "end_char": 113,
+                "upos": "NOUN",
+                "id": 22,
+                "text": "tlasa"
+              },
+              {
+                "start_char": 114,
+                "end_char": 119,
+                "upos": "NOUN",
+                "id": 23,
+                "text": "taolo"
+              },
+              {
+                "start_char": 120,
+                "end_char": 122,
+                "upos": "PART",
+                "id": 24,
+                "text": "ya"
+              },
+              {
+                "start_char": 123,
+                "end_char": 130,
+                "upos": "NOUN",
+                "id": 25,
+                "text": "Lefapha"
+              },
+              {
+                "start_char": 131,
+                "end_char": 133,
+                "upos": "PART",
+                "id": 26,
+                "text": "la"
+              },
+              {
+                "start_char": 134,
+                "end_char": 146,
+                "upos": "NOUN",
+                "id": 27,
+                "text": "Ntshetsopele"
+              },
+              {
+                "start_char": 147,
+                "end_char": 149,
+                "upos": "PART",
+                "id": 28,
+                "text": "ya"
+              },
+              {
+                "start_char": 150,
+                "end_char": 155,
+                "upos": "NOUN",
+                "id": 29,
+                "text": "Moruo"
+              },
+              {
+                "start_char": 155,
+                "end_char": 156,
+                "upos": "PUNCT",
+                "id": 30,
+                "text": ","
+              },
+              {
+                "start_char": 157,
+                "end_char": 159,
+                "upos": "PART",
+                "id": 31,
+                "text": "ka"
+              },
+              {
+                "start_char": 160,
+                "end_char": 166,
+                "upos": "NOUN",
+                "id": 32,
+                "text": "sepheo"
+              },
+              {
+                "start_char": 167,
+                "end_char": 169,
+                "upos": "PRON",
+                "id": 33,
+                "text": "se"
+              },
+              {
+                "start_char": 170,
+                "end_char": 179,
+                "upos": "VERB",
+                "id": 34,
+                "text": "ikgethang"
+              },
+              {
+                "start_char": 180,
+                "end_char": 182,
+                "upos": "PART",
+                "id": 35,
+                "text": "sa"
+              },
+              {
+                "start_char": 183,
+                "end_char": 185,
+                "upos": "NOUN",
+                "id": 36,
+                "text": "ho"
+              },
+              {
+                "start_char": 186,
+                "end_char": 190,
+                "upos": "VERB",
+                "id": 37,
+                "text": "fana"
+              },
+              {
+                "start_char": 191,
+                "end_char": 193,
+                "upos": "PART",
+                "id": 38,
+                "text": "ka"
+              },
+              {
+                "start_char": 194,
+                "end_char": 203,
+                "upos": "NOUN",
+                "id": 39,
+                "text": "tshehetso"
+              },
+              {
+                "start_char": 204,
+                "end_char": 206,
+                "upos": "PART",
+                "id": 40,
+                "text": "le"
+              },
+              {
+                "start_char": 207,
+                "end_char": 219,
+                "upos": "NOUN",
+                "id": 41,
+                "text": "ntshetsopele"
+              },
+              {
+                "start_char": 220,
+                "end_char": 222,
+                "upos": "PART",
+                "id": 42,
+                "text": "ya"
+              },
+              {
+                "start_char": 223,
+                "end_char": 227,
+                "upos": "NOUN",
+                "id": 43,
+                "text": "SMME"
+              },
+              {
+                "start_char": 228,
+                "end_char": 230,
+                "upos": "PART",
+                "id": 44,
+                "text": "ka"
+              },
+              {
+                "start_char": 231,
+                "end_char": 235,
+                "upos": "NOUN",
+                "id": 45,
+                "text": "hara"
+              },
+              {
+                "start_char": 236,
+                "end_char": 244,
+                "upos": "NOUN",
+                "id": 46,
+                "text": "Provense"
+              },
+              {
+                "start_char": 245,
+                "end_char": 247,
+                "upos": "PART",
+                "id": 47,
+                "text": "ya"
+              },
+              {
+                "start_char": 248,
+                "end_char": 255,
+                "upos": "NOUN",
+                "id": 48,
+                "text": "Gauteng"
+              },
+              {
+                "start_char": 256,
+                "end_char": 258,
+                "upos": "PART",
+                "id": 49,
+                "text": "ka"
+              },
+              {
+                "start_char": 259,
+                "end_char": 265,
+                "upos": "NOUN",
+                "id": 50,
+                "text": "mekgwa"
+              },
+              {
+                "start_char": 266,
+                "end_char": 268,
+                "upos": "PART",
+                "id": 51,
+                "text": "ya"
+              },
+              {
+                "start_char": 269,
+                "end_char": 280,
+                "upos": "NOUN",
+                "id": 52,
+                "text": "ditshehetso"
+              },
+              {
+                "start_char": 281,
+                "end_char": 284,
+                "upos": "PART",
+                "id": 53,
+                "text": "tsa"
+              },
+              {
+                "start_char": 285,
+                "end_char": 293,
+                "upos": "NOUN",
+                "id": 54,
+                "text": "tjhelete"
+              },
+              {
+                "start_char": 294,
+                "end_char": 296,
+                "upos": "PART",
+                "id": 55,
+                "text": "le"
+              },
+              {
+                "start_char": 297,
+                "end_char": 301,
+                "upos": "PRON",
+                "id": 56,
+                "text": "tseo"
+              },
+              {
+                "start_char": 302,
+                "end_char": 307,
+                "upos": "VERB",
+                "id": 57,
+                "text": "eseng"
+              },
+              {
+                "start_char": 308,
+                "end_char": 311,
+                "upos": "PART",
+                "id": 58,
+                "text": "tsa"
+              },
+              {
+                "start_char": 312,
+                "end_char": 320,
+                "upos": "NOUN",
+                "id": 59,
+                "text": "tjhelete"
+              },
+              {
+                "start_char": 320,
+                "end_char": 321,
+                "upos": "PUNCT",
+                "id": 60,
+                "text": "."
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+]

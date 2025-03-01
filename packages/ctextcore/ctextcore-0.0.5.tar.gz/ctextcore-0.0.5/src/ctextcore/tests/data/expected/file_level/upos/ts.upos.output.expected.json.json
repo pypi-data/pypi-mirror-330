@@ -1,0 +1,586 @@
+[
+  {
+    "Universal part of speech-files": {
+      "ts.input.test.txt": [
+        {
+          "doc": {
+            "p": [
+              {
+                "lid": "NONE",
+                "tokenised": true,
+                "sent": {
+                  "tokens": [
+                    {
+                      "start_char": 0,
+                      "end_char": 2,
+                      "upos": "VERB",
+                      "id": 1,
+                      "text": "HA"
+                    },
+                    {
+                      "start_char": 3,
+                      "end_char": 5,
+                      "upos": "NOUN",
+                      "id": 2,
+                      "text": "KU"
+                    },
+                    {
+                      "start_char": 6,
+                      "end_char": 15,
+                      "upos": "NOUN",
+                      "id": 3,
+                      "text": "KORHOKELA"
+                    }
+                  ]
+                }
+              },
+              {
+                "lid": "NONE",
+                "tokenised": true,
+                "sent": {
+                  "tokens": [
+                    {
+                      "start_char": 0,
+                      "end_char": 9,
+                      "upos": "NOUN",
+                      "id": 1,
+                      "text": "Swivutiso"
+                    },
+                    {
+                      "start_char": 10,
+                      "end_char": 12,
+                      "upos": "CCONJ",
+                      "id": 2,
+                      "text": "na"
+                    },
+                    {
+                      "start_char": 13,
+                      "end_char": 23,
+                      "upos": "NOUN",
+                      "id": 3,
+                      "text": "Tinhlamulo"
+                    }
+                  ]
+                }
+              },
+              {
+                "lid": "NONE",
+                "tokenised": true,
+                "sent": {
+                  "tokens": [
+                    {
+                      "start_char": 0,
+                      "end_char": 4,
+                      "upos": "PART",
+                      "id": 1,
+                      "text": "Xana"
+                    },
+                    {
+                      "start_char": 5,
+                      "end_char": 6,
+                      "upos": "PART",
+                      "id": 2,
+                      "text": "i"
+                    },
+                    {
+                      "start_char": 7,
+                      "end_char": 11,
+                      "upos": "PART",
+                      "id": 3,
+                      "text": "yini"
+                    },
+                    {
+                      "start_char": 12,
+                      "end_char": 15,
+                      "upos": "NOUN",
+                      "id": 4,
+                      "text": "GEP"
+                    },
+                    {
+                      "start_char": 15,
+                      "end_char": 16,
+                      "upos": "PUNCT",
+                      "id": 5,
+                      "text": "?"
+                    }
+                  ]
+                }
+              },
+              {
+                "lid": "NONE",
+                "tokenised": true,
+                "sent": {
+                  "tokens": [
+                    {
+                      "start_char": 0,
+                      "end_char": 10,
+                      "upos": "NOUN",
+                      "id": 1,
+                      "text": "Xindzuluti"
+                    },
+                    {
+                      "start_char": 11,
+                      "end_char": 13,
+                      "upos": "PART",
+                      "id": 2,
+                      "text": "xa"
+                    },
+                    {
+                      "start_char": 14,
+                      "end_char": 22,
+                      "upos": "NOUN",
+                      "id": 3,
+                      "text": "Mabindzu"
+                    },
+                    {
+                      "start_char": 23,
+                      "end_char": 25,
+                      "upos": "PART",
+                      "id": 4,
+                      "text": "ya"
+                    },
+                    {
+                      "start_char": 26,
+                      "end_char": 33,
+                      "upos": "NOUN",
+                      "id": 5,
+                      "text": "Gauteng"
+                    },
+                    {
+                      "start_char": 34,
+                      "end_char": 35,
+                      "upos": "PUNCT",
+                      "id": 6,
+                      "text": "-"
+                    },
+                    {
+                      "start_char": 36,
+                      "end_char": 43,
+                      "upos": "NOUN",
+                      "id": 7,
+                      "text": "Gauteng"
+                    },
+                    {
+                      "start_char": 44,
+                      "end_char": 54,
+                      "upos": "NOUN",
+                      "id": 8,
+                      "text": "Enterprise"
+                    },
+                    {
+                      "start_char": 55,
+                      "end_char": 64,
+                      "upos": "NOUN",
+                      "id": 9,
+                      "text": "Propeller"
+                    },
+                    {
+                      "start_char": 65,
+                      "end_char": 66,
+                      "upos": "PUNCT",
+                      "id": 10,
+                      "text": "("
+                    },
+                    {
+                      "start_char": 66,
+                      "end_char": 69,
+                      "upos": "NOUN",
+                      "id": 11,
+                      "text": "GEP"
+                    },
+                    {
+                      "start_char": 69,
+                      "end_char": 70,
+                      "upos": "PUNCT",
+                      "id": 12,
+                      "text": ")"
+                    },
+                    {
+                      "start_char": 71,
+                      "end_char": 72,
+                      "upos": "PART",
+                      "id": 13,
+                      "text": "i"
+                    },
+                    {
+                      "start_char": 73,
+                      "end_char": 80,
+                      "upos": "NOUN",
+                      "id": 14,
+                      "text": "xiyenge"
+                    },
+                    {
+                      "start_char": 81,
+                      "end_char": 85,
+                      "upos": "PRON",
+                      "id": 15,
+                      "text": "lexi"
+                    },
+                    {
+                      "start_char": 86,
+                      "end_char": 99,
+                      "upos": "VERB",
+                      "id": 16,
+                      "text": "tumbuluxiweke"
+                    },
+                    {
+                      "start_char": 100,
+                      "end_char": 102,
+                      "upos": "PART",
+                      "id": 17,
+                      "text": "hi"
+                    },
+                    {
+                      "start_char": 103,
+                      "end_char": 108,
+                      "upos": "NOUN",
+                      "id": 18,
+                      "text": "Mfumo"
+                    },
+                    {
+                      "start_char": 109,
+                      "end_char": 111,
+                      "upos": "PART",
+                      "id": 19,
+                      "text": "wa"
+                    },
+                    {
+                      "start_char": 112,
+                      "end_char": 125,
+                      "upos": "NOUN",
+                      "id": 20,
+                      "text": "Xifundzankulu"
+                    },
+                    {
+                      "start_char": 126,
+                      "end_char": 128,
+                      "upos": "PART",
+                      "id": 21,
+                      "text": "xa"
+                    },
+                    {
+                      "start_char": 129,
+                      "end_char": 136,
+                      "upos": "NOUN",
+                      "id": 22,
+                      "text": "Gauteng"
+                    },
+                    {
+                      "start_char": 136,
+                      "end_char": 137,
+                      "upos": "PUNCT",
+                      "id": 23,
+                      "text": ","
+                    },
+                    {
+                      "start_char": 138,
+                      "end_char": 140,
+                      "upos": "PART",
+                      "id": 24,
+                      "text": "hi"
+                    },
+                    {
+                      "start_char": 141,
+                      "end_char": 143,
+                      "upos": "NOUN",
+                      "id": 25,
+                      "text": "ku"
+                    },
+                    {
+                      "start_char": 144,
+                      "end_char": 150,
+                      "upos": "VERB",
+                      "id": 26,
+                      "text": "landza"
+                    },
+                    {
+                      "start_char": 151,
+                      "end_char": 160,
+                      "upos": "NOUN",
+                      "id": 27,
+                      "text": "swipimelo"
+                    },
+                    {
+                      "start_char": 161,
+                      "end_char": 164,
+                      "upos": "PART",
+                      "id": 28,
+                      "text": "swa"
+                    },
+                    {
+                      "start_char": 165,
+                      "end_char": 173,
+                      "upos": "NOUN",
+                      "id": 29,
+                      "text": "Ndzawulo"
+                    },
+                    {
+                      "start_char": 174,
+                      "end_char": 176,
+                      "upos": "PART",
+                      "id": 30,
+                      "text": "ya"
+                    },
+                    {
+                      "start_char": 177,
+                      "end_char": 187,
+                      "upos": "NOUN",
+                      "id": 31,
+                      "text": "Nhluvukiso"
+                    },
+                    {
+                      "start_char": 188,
+                      "end_char": 190,
+                      "upos": "PART",
+                      "id": 32,
+                      "text": "wa"
+                    },
+                    {
+                      "start_char": 191,
+                      "end_char": 199,
+                      "upos": "NOUN",
+                      "id": 33,
+                      "text": "Ikhonomi"
+                    },
+                    {
+                      "start_char": 199,
+                      "end_char": 200,
+                      "upos": "PUNCT",
+                      "id": 34,
+                      "text": ","
+                    },
+                    {
+                      "start_char": 201,
+                      "end_char": 203,
+                      "upos": "PART",
+                      "id": 35,
+                      "text": "hi"
+                    },
+                    {
+                      "start_char": 204,
+                      "end_char": 211,
+                      "upos": "NOUN",
+                      "id": 36,
+                      "text": "xirhumo"
+                    },
+                    {
+                      "start_char": 212,
+                      "end_char": 214,
+                      "upos": "PART",
+                      "id": 37,
+                      "text": "xo"
+                    },
+                    {
+                      "start_char": 215,
+                      "end_char": 220,
+                      "upos": "VERB",
+                      "id": 38,
+                      "text": "nyika"
+                    },
+                    {
+                      "start_char": 221,
+                      "end_char": 230,
+                      "upos": "NOUN",
+                      "id": 39,
+                      "text": "nseketelo"
+                    },
+                    {
+                      "start_char": 231,
+                      "end_char": 233,
+                      "upos": "CCONJ",
+                      "id": 40,
+                      "text": "na"
+                    },
+                    {
+                      "start_char": 234,
+                      "end_char": 242,
+                      "upos": "NOUN",
+                      "id": 41,
+                      "text": "nhluvuko"
+                    },
+                    {
+                      "start_char": 243,
+                      "end_char": 246,
+                      "upos": "CCONJ",
+                      "id": 42,
+                      "text": "eka"
+                    },
+                    {
+                      "start_char": 247,
+                      "end_char": 253,
+                      "upos": "NOUN",
+                      "id": 43,
+                      "text": "tiSMME"
+                    },
+                    {
+                      "start_char": 254,
+                      "end_char": 257,
+                      "upos": "CCONJ",
+                      "id": 44,
+                      "text": "eka"
+                    },
+                    {
+                      "start_char": 258,
+                      "end_char": 271,
+                      "upos": "NOUN",
+                      "id": 45,
+                      "text": "Xifundzankulu"
+                    },
+                    {
+                      "start_char": 272,
+                      "end_char": 274,
+                      "upos": "PART",
+                      "id": 46,
+                      "text": "xa"
+                    },
+                    {
+                      "start_char": 275,
+                      "end_char": 282,
+                      "upos": "NOUN",
+                      "id": 47,
+                      "text": "Gauteng"
+                    },
+                    {
+                      "start_char": 283,
+                      "end_char": 285,
+                      "upos": "PART",
+                      "id": 48,
+                      "text": "hi"
+                    },
+                    {
+                      "start_char": 286,
+                      "end_char": 288,
+                      "upos": "NOUN",
+                      "id": 49,
+                      "text": "ku"
+                    },
+                    {
+                      "start_char": 289,
+                      "end_char": 296,
+                      "upos": "VERB",
+                      "id": 50,
+                      "text": "tirhisa"
+                    },
+                    {
+                      "start_char": 297,
+                      "end_char": 303,
+                      "upos": "NOUN",
+                      "id": 51,
+                      "text": "timali"
+                    },
+                    {
+                      "start_char": 304,
+                      "end_char": 306,
+                      "upos": "PART",
+                      "id": 52,
+                      "text": "na"
+                    },
+                    {
+                      "start_char": 307,
+                      "end_char": 312,
+                      "upos": "PRON",
+                      "id": 53,
+                      "text": "leswi"
+                    },
+                    {
+                      "start_char": 313,
+                      "end_char": 316,
+                      "upos": "PART",
+                      "id": 54,
+                      "text": "nga"
+                    },
+                    {
+                      "start_char": 317,
+                      "end_char": 321,
+                      "upos": "VERB",
+                      "id": 55,
+                      "text": "riki"
+                    },
+                    {
+                      "start_char": 322,
+                      "end_char": 326,
+                      "upos": "NOUN",
+                      "id": 56,
+                      "text": "mali"
+                    },
+                    {
+                      "start_char": 326,
+                      "end_char": 327,
+                      "upos": "PUNCT",
+                      "id": 57,
+                      "text": "."
+                    }
+                  ]
+                }
+              },
+              {
+                "lid": "NONE",
+                "tokenised": true,
+                "sent": {
+                  "tokens": [
+                    {
+                      "start_char": 0,
+                      "end_char": 4,
+                      "upos": "PART",
+                      "id": 1,
+                      "text": "Xana"
+                    },
+                    {
+                      "start_char": 5,
+                      "end_char": 16,
+                      "upos": "CCONJ",
+                      "id": 2,
+                      "text": "hikokwalaho"
+                    },
+                    {
+                      "start_char": 17,
+                      "end_char": 19,
+                      "upos": "PART",
+                      "id": 3,
+                      "text": "ka"
+                    },
+                    {
+                      "start_char": 20,
+                      "end_char": 24,
+                      "upos": "PART",
+                      "id": 4,
+                      "text": "yini"
+                    },
+                    {
+                      "start_char": 25,
+                      "end_char": 27,
+                      "upos": "NOUN",
+                      "id": 5,
+                      "text": "ku"
+                    },
+                    {
+                      "start_char": 28,
+                      "end_char": 41,
+                      "upos": "VERB",
+                      "id": 6,
+                      "text": "tumbuluxiwile"
+                    },
+                    {
+                      "start_char": 42,
+                      "end_char": 45,
+                      "upos": "NOUN",
+                      "id": 7,
+                      "text": "GEP"
+                    },
+                    {
+                      "start_char": 45,
+                      "end_char": 46,
+                      "upos": "PUNCT",
+                      "id": 8,
+                      "text": "?"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+]

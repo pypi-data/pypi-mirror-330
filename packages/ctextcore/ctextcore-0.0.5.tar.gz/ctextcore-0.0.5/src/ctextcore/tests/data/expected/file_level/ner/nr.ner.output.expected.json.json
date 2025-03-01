@@ -1,0 +1,430 @@
+[
+  {
+    "Named entity recogniser-files": {
+      "nr.input.test.txt": [
+        {
+          "doc": {
+            "p": [
+              {
+                "lid": "NONE",
+                "tokenised": true,
+                "sent": {
+                  "tokens": [
+                    {
+                      "start_char": 0,
+                      "pos": "CDEM01",
+                      "end_char": 5,
+                      "ner": "B-MISC",
+                      "id": 1,
+                      "text": "LAPHA"
+                    },
+                    {
+                      "start_char": 6,
+                      "pos": "V",
+                      "end_char": 14,
+                      "ner": "I-MISC",
+                      "id": 2,
+                      "text": "USEBENZA"
+                    },
+                    {
+                      "start_char": 15,
+                      "pos": "PROEMP15",
+                      "end_char": 20,
+                      "ner": "I-MISC",
+                      "id": 3,
+                      "text": "KHONA"
+                    }
+                  ]
+                }
+              },
+              {
+                "lid": "NONE",
+                "tokenised": true,
+                "sent": {
+                  "tokens": [
+                    {
+                      "start_char": 0,
+                      "pos": "N04",
+                      "end_char": 7,
+                      "ner": "OUT",
+                      "id": 1,
+                      "text": "Imibuzo"
+                    },
+                    {
+                      "start_char": 8,
+                      "pos": "ADV",
+                      "end_char": 19,
+                      "ner": "OUT",
+                      "id": 2,
+                      "text": "neempendulo"
+                    }
+                  ]
+                }
+              },
+              {
+                "lid": "NONE",
+                "tokenised": true,
+                "sent": {
+                  "tokens": [
+                    {
+                      "start_char": 0,
+                      "pos": "INTER",
+                      "end_char": 5,
+                      "ner": "OUT",
+                      "id": 1,
+                      "text": "Iyini"
+                    },
+                    {
+                      "start_char": 6,
+                      "pos": "N04",
+                      "end_char": 8,
+                      "ner": "OUT",
+                      "id": 2,
+                      "text": "i-"
+                    },
+                    {
+                      "start_char": 9,
+                      "pos": "ABBR",
+                      "end_char": 12,
+                      "ner": "B-MISC",
+                      "id": 3,
+                      "text": "GEP"
+                    },
+                    {
+                      "start_char": 12,
+                      "pos": "PUNC",
+                      "end_char": 13,
+                      "ner": "OUT",
+                      "id": 4,
+                      "text": "?"
+                    }
+                  ]
+                }
+              },
+              {
+                "lid": "NONE",
+                "tokenised": true,
+                "sent": {
+                  "tokens": [
+                    {
+                      "start_char": 0,
+                      "pos": "N04",
+                      "end_char": 8,
+                      "ner": "OUT",
+                      "id": 1,
+                      "text": "IGauteng"
+                    },
+                    {
+                      "start_char": 9,
+                      "pos": "FOR",
+                      "end_char": 19,
+                      "ner": "B-MISC",
+                      "id": 2,
+                      "text": "Enterprise"
+                    },
+                    {
+                      "start_char": 20,
+                      "pos": "FOR",
+                      "end_char": 29,
+                      "ner": "I-MISC",
+                      "id": 3,
+                      "text": "Propeller"
+                    },
+                    {
+                      "start_char": 30,
+                      "pos": "PUNC",
+                      "end_char": 31,
+                      "ner": "OUT",
+                      "id": 4,
+                      "text": "("
+                    },
+                    {
+                      "start_char": 31,
+                      "pos": "N04",
+                      "end_char": 36,
+                      "ner": "B-MISC",
+                      "id": 5,
+                      "text": "i-GEP"
+                    },
+                    {
+                      "start_char": 36,
+                      "pos": "PUNC",
+                      "end_char": 37,
+                      "ner": "OUT",
+                      "id": 6,
+                      "text": ")"
+                    },
+                    {
+                      "start_char": 38,
+                      "pos": "COP",
+                      "end_char": 47,
+                      "ner": "B-MISC",
+                      "id": 7,
+                      "text": "yi-Ejensi"
+                    },
+                    {
+                      "start_char": 48,
+                      "pos": "REL",
+                      "end_char": 58,
+                      "ner": "I-MISC",
+                      "id": 8,
+                      "text": "eyahlonywa"
+                    },
+                    {
+                      "start_char": 59,
+                      "pos": "N03",
+                      "end_char": 64,
+                      "ner": "I-MISC",
+                      "id": 9,
+                      "text": "mBuso"
+                    },
+                    {
+                      "start_char": 65,
+                      "pos": "POSS01",
+                      "end_char": 76,
+                      "ner": "I-MISC",
+                      "id": 10,
+                      "text": "wePhrovinsi"
+                    },
+                    {
+                      "start_char": 77,
+                      "pos": "POSS04",
+                      "end_char": 86,
+                      "ner": "I-MISC",
+                      "id": 11,
+                      "text": "yeGauteng"
+                    },
+                    {
+                      "start_char": 86,
+                      "pos": "PUNC",
+                      "end_char": 87,
+                      "ner": "OUT",
+                      "id": 12,
+                      "text": ","
+                    },
+                    {
+                      "start_char": 88,
+                      "pos": "ADV",
+                      "end_char": 96,
+                      "ner": "OUT",
+                      "id": 13,
+                      "text": "ngaphasi"
+                    },
+                    {
+                      "start_char": 97,
+                      "pos": "POSS15",
+                      "end_char": 106,
+                      "ner": "OUT",
+                      "id": 14,
+                      "text": "kwesekelo"
+                    },
+                    {
+                      "start_char": 107,
+                      "pos": "POSS05",
+                      "end_char": 116,
+                      "ner": "B-ORG",
+                      "id": 15,
+                      "text": "lomNyango"
+                    },
+                    {
+                      "start_char": 117,
+                      "pos": "POSS03",
+                      "end_char": 131,
+                      "ner": "I-ORG",
+                      "id": 16,
+                      "text": "wokuThuthukisa"
+                    },
+                    {
+                      "start_char": 132,
+                      "pos": "POSS10",
+                      "end_char": 140,
+                      "ner": "I-ORG",
+                      "id": 17,
+                      "text": "zomNotho"
+                    },
+                    {
+                      "start_char": 140,
+                      "pos": "PUNC",
+                      "end_char": 141,
+                      "ner": "OUT",
+                      "id": 18,
+                      "text": ","
+                    },
+                    {
+                      "start_char": 142,
+                      "pos": "ADV",
+                      "end_char": 153,
+                      "ner": "OUT",
+                      "id": 19,
+                      "text": "ngokwegunya"
+                    },
+                    {
+                      "start_char": 154,
+                      "pos": "REL",
+                      "end_char": 165,
+                      "ner": "OUT",
+                      "id": 20,
+                      "text": "elibunqopha"
+                    },
+                    {
+                      "start_char": 166,
+                      "pos": "POSS05",
+                      "end_char": 176,
+                      "ner": "OUT",
+                      "id": 21,
+                      "text": "lokunikela"
+                    },
+                    {
+                      "start_char": 177,
+                      "pos": "N06",
+                      "end_char": 185,
+                      "ner": "B-MISC",
+                      "id": 22,
+                      "text": "ama-SMME"
+                    },
+                    {
+                      "start_char": 186,
+                      "pos": "N05",
+                      "end_char": 193,
+                      "ner": "OUT",
+                      "id": 23,
+                      "text": "isekelo"
+                    },
+                    {
+                      "start_char": 194,
+                      "pos": "ADV",
+                      "end_char": 199,
+                      "ner": "OUT",
+                      "id": 24,
+                      "text": "kanye"
+                    },
+                    {
+                      "start_char": 200,
+                      "pos": "ADV",
+                      "end_char": 209,
+                      "ner": "OUT",
+                      "id": 25,
+                      "text": "netuthuko"
+                    },
+                    {
+                      "start_char": 210,
+                      "pos": "NLOC",
+                      "end_char": 222,
+                      "ner": "B-MISC",
+                      "id": 26,
+                      "text": "ePhrovinsini"
+                    },
+                    {
+                      "start_char": 223,
+                      "pos": "POSS04",
+                      "end_char": 232,
+                      "ner": "I-MISC",
+                      "id": 27,
+                      "text": "yeGauteng"
+                    },
+                    {
+                      "start_char": 233,
+                      "pos": "V",
+                      "end_char": 241,
+                      "ner": "I-MISC",
+                      "id": 28,
+                      "text": "Province"
+                    },
+                    {
+                      "start_char": 242,
+                      "pos": "ADV",
+                      "end_char": 253,
+                      "ner": "OUT",
+                      "id": 29,
+                      "text": "ngokweemali"
+                    },
+                    {
+                      "start_char": 254,
+                      "pos": "ADV",
+                      "end_char": 259,
+                      "ner": "OUT",
+                      "id": 30,
+                      "text": "kanye"
+                    },
+                    {
+                      "start_char": 260,
+                      "pos": "ADV",
+                      "end_char": 267,
+                      "ner": "OUT",
+                      "id": 31,
+                      "text": "nalokho"
+                    },
+                    {
+                      "start_char": 268,
+                      "pos": "REL",
+                      "end_char": 278,
+                      "ner": "OUT",
+                      "id": 32,
+                      "text": "okungafaki"
+                    },
+                    {
+                      "start_char": 279,
+                      "pos": "N04",
+                      "end_char": 285,
+                      "ner": "OUT",
+                      "id": 33,
+                      "text": "iimali"
+                    },
+                    {
+                      "start_char": 285,
+                      "pos": "PUNC",
+                      "end_char": 286,
+                      "ner": "OUT",
+                      "id": 34,
+                      "text": "."
+                    }
+                  ]
+                }
+              },
+              {
+                "lid": "NONE",
+                "tokenised": true,
+                "sent": {
+                  "tokens": [
+                    {
+                      "start_char": 0,
+                      "pos": "N15",
+                      "end_char": 8,
+                      "ner": "OUT",
+                      "id": 1,
+                      "text": "Kubayini"
+                    },
+                    {
+                      "start_char": 9,
+                      "pos": "V",
+                      "end_char": 19,
+                      "ner": "OUT",
+                      "id": 2,
+                      "text": "kwahlonywa"
+                    },
+                    {
+                      "start_char": 20,
+                      "pos": "N09",
+                      "end_char": 25,
+                      "ner": "B-MISC",
+                      "id": 3,
+                      "text": "i-GEP"
+                    },
+                    {
+                      "start_char": 25,
+                      "pos": "PUNC",
+                      "end_char": 26,
+                      "ner": "OUT",
+                      "id": 4,
+                      "text": "?"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+]

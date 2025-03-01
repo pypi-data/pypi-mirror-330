@@ -1,0 +1,383 @@
+[
+  {
+    "Universal part of speech-files": {
+      "nr.input.test.txt": [
+        {
+          "doc": {
+            "p": [
+              {
+                "lid": "NONE",
+                "tokenised": true,
+                "sent": {
+                  "tokens": [
+                    {
+                      "start_char": 0,
+                      "end_char": 5,
+                      "upos": "PART",
+                      "id": 1,
+                      "text": "LAPHA"
+                    },
+                    {
+                      "start_char": 6,
+                      "end_char": 14,
+                      "upos": "NOUN",
+                      "id": 2,
+                      "text": "USEBENZA"
+                    },
+                    {
+                      "start_char": 15,
+                      "end_char": 20,
+                      "upos": "PRON",
+                      "id": 3,
+                      "text": "KHONA"
+                    }
+                  ]
+                }
+              },
+              {
+                "lid": "NONE",
+                "tokenised": true,
+                "sent": {
+                  "tokens": [
+                    {
+                      "start_char": 0,
+                      "end_char": 7,
+                      "upos": "NOUN",
+                      "id": 1,
+                      "text": "Imibuzo"
+                    },
+                    {
+                      "start_char": 8,
+                      "end_char": 19,
+                      "upos": "ADV",
+                      "id": 2,
+                      "text": "neempendulo"
+                    }
+                  ]
+                }
+              },
+              {
+                "lid": "NONE",
+                "tokenised": true,
+                "sent": {
+                  "tokens": [
+                    {
+                      "start_char": 0,
+                      "end_char": 5,
+                      "upos": "PART",
+                      "id": 1,
+                      "text": "Iyini"
+                    },
+                    {
+                      "start_char": 6,
+                      "end_char": 8,
+                      "upos": "NOUN",
+                      "id": 2,
+                      "text": "i-"
+                    },
+                    {
+                      "start_char": 9,
+                      "end_char": 12,
+                      "upos": "PART",
+                      "id": 3,
+                      "text": "GEP"
+                    },
+                    {
+                      "start_char": 12,
+                      "end_char": 13,
+                      "upos": "PUNCT",
+                      "id": 4,
+                      "text": "?"
+                    }
+                  ]
+                }
+              },
+              {
+                "lid": "NONE",
+                "tokenised": true,
+                "sent": {
+                  "tokens": [
+                    {
+                      "start_char": 0,
+                      "end_char": 8,
+                      "upos": "NOUN",
+                      "id": 1,
+                      "text": "IGauteng"
+                    },
+                    {
+                      "start_char": 9,
+                      "end_char": 19,
+                      "upos": "PART",
+                      "id": 2,
+                      "text": "Enterprise"
+                    },
+                    {
+                      "start_char": 20,
+                      "end_char": 29,
+                      "upos": "NOUN",
+                      "id": 3,
+                      "text": "Propeller"
+                    },
+                    {
+                      "start_char": 30,
+                      "end_char": 31,
+                      "upos": "PUNCT",
+                      "id": 4,
+                      "text": "("
+                    },
+                    {
+                      "start_char": 31,
+                      "end_char": 36,
+                      "upos": "NOUN",
+                      "id": 5,
+                      "text": "i-GEP"
+                    },
+                    {
+                      "start_char": 36,
+                      "end_char": 37,
+                      "upos": "PUNCT",
+                      "id": 6,
+                      "text": ")"
+                    },
+                    {
+                      "start_char": 38,
+                      "end_char": 47,
+                      "upos": "PART",
+                      "id": 7,
+                      "text": "yi-Ejensi"
+                    },
+                    {
+                      "start_char": 48,
+                      "end_char": 58,
+                      "upos": "PART",
+                      "id": 8,
+                      "text": "eyahlonywa"
+                    },
+                    {
+                      "start_char": 59,
+                      "end_char": 64,
+                      "upos": "NOUN",
+                      "id": 9,
+                      "text": "mBuso"
+                    },
+                    {
+                      "start_char": 65,
+                      "end_char": 76,
+                      "upos": "PART",
+                      "id": 10,
+                      "text": "wePhrovinsi"
+                    },
+                    {
+                      "start_char": 77,
+                      "end_char": 86,
+                      "upos": "PART",
+                      "id": 11,
+                      "text": "yeGauteng"
+                    },
+                    {
+                      "start_char": 86,
+                      "end_char": 87,
+                      "upos": "PUNCT",
+                      "id": 12,
+                      "text": ","
+                    },
+                    {
+                      "start_char": 88,
+                      "end_char": 96,
+                      "upos": "ADV",
+                      "id": 13,
+                      "text": "ngaphasi"
+                    },
+                    {
+                      "start_char": 97,
+                      "end_char": 106,
+                      "upos": "PART",
+                      "id": 14,
+                      "text": "kwesekelo"
+                    },
+                    {
+                      "start_char": 107,
+                      "end_char": 116,
+                      "upos": "PART",
+                      "id": 15,
+                      "text": "lomNyango"
+                    },
+                    {
+                      "start_char": 117,
+                      "end_char": 131,
+                      "upos": "PART",
+                      "id": 16,
+                      "text": "wokuThuthukisa"
+                    },
+                    {
+                      "start_char": 132,
+                      "end_char": 140,
+                      "upos": "PART",
+                      "id": 17,
+                      "text": "zomNotho"
+                    },
+                    {
+                      "start_char": 140,
+                      "end_char": 141,
+                      "upos": "PUNCT",
+                      "id": 18,
+                      "text": ","
+                    },
+                    {
+                      "start_char": 142,
+                      "end_char": 153,
+                      "upos": "ADV",
+                      "id": 19,
+                      "text": "ngokwegunya"
+                    },
+                    {
+                      "start_char": 154,
+                      "end_char": 165,
+                      "upos": "PART",
+                      "id": 20,
+                      "text": "elibunqopha"
+                    },
+                    {
+                      "start_char": 166,
+                      "end_char": 176,
+                      "upos": "PART",
+                      "id": 21,
+                      "text": "lokunikela"
+                    },
+                    {
+                      "start_char": 177,
+                      "end_char": 185,
+                      "upos": "NOUN",
+                      "id": 22,
+                      "text": "ama-SMME"
+                    },
+                    {
+                      "start_char": 186,
+                      "end_char": 193,
+                      "upos": "NOUN",
+                      "id": 23,
+                      "text": "isekelo"
+                    },
+                    {
+                      "start_char": 194,
+                      "end_char": 199,
+                      "upos": "ADV",
+                      "id": 24,
+                      "text": "kanye"
+                    },
+                    {
+                      "start_char": 200,
+                      "end_char": 209,
+                      "upos": "ADV",
+                      "id": 25,
+                      "text": "netuthuko"
+                    },
+                    {
+                      "start_char": 210,
+                      "end_char": 222,
+                      "upos": "NOUN",
+                      "id": 26,
+                      "text": "ePhrovinsini"
+                    },
+                    {
+                      "start_char": 223,
+                      "end_char": 232,
+                      "upos": "PART",
+                      "id": 27,
+                      "text": "yeGauteng"
+                    },
+                    {
+                      "start_char": 233,
+                      "end_char": 241,
+                      "upos": "NOUN",
+                      "id": 28,
+                      "text": "Province"
+                    },
+                    {
+                      "start_char": 242,
+                      "end_char": 253,
+                      "upos": "NOUN",
+                      "id": 29,
+                      "text": "ngokweemali"
+                    },
+                    {
+                      "start_char": 254,
+                      "end_char": 259,
+                      "upos": "ADV",
+                      "id": 30,
+                      "text": "kanye"
+                    },
+                    {
+                      "start_char": 260,
+                      "end_char": 267,
+                      "upos": "ADV",
+                      "id": 31,
+                      "text": "nalokho"
+                    },
+                    {
+                      "start_char": 268,
+                      "end_char": 278,
+                      "upos": "PART",
+                      "id": 32,
+                      "text": "okungafaki"
+                    },
+                    {
+                      "start_char": 279,
+                      "end_char": 285,
+                      "upos": "NOUN",
+                      "id": 33,
+                      "text": "iimali"
+                    },
+                    {
+                      "start_char": 285,
+                      "end_char": 286,
+                      "upos": "PUNCT",
+                      "id": 34,
+                      "text": "."
+                    }
+                  ]
+                }
+              },
+              {
+                "lid": "NONE",
+                "tokenised": true,
+                "sent": {
+                  "tokens": [
+                    {
+                      "start_char": 0,
+                      "end_char": 8,
+                      "upos": "NOUN",
+                      "id": 1,
+                      "text": "Kubayini"
+                    },
+                    {
+                      "start_char": 9,
+                      "end_char": 19,
+                      "upos": "PART",
+                      "id": 2,
+                      "text": "kwahlonywa"
+                    },
+                    {
+                      "start_char": 20,
+                      "end_char": 25,
+                      "upos": "NOUN",
+                      "id": 3,
+                      "text": "i-GEP"
+                    },
+                    {
+                      "start_char": 25,
+                      "end_char": 26,
+                      "upos": "PUNCT",
+                      "id": 4,
+                      "text": "?"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+]

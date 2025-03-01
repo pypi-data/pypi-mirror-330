@@ -1,0 +1,512 @@
+[
+  {
+    "doc": {
+      "p": [
+        {
+          "lid": "NONE",
+          "tokenised": true,
+          "sent": {
+            "tokens": [
+              {
+                "start_char": 0,
+                "pos": "SVS",
+                "end_char": 3,
+                "lemma": "tot",
+                "id": 1,
+                "text": "TOT"
+              },
+              {
+                "start_char": 4,
+                "pos": "RL",
+                "end_char": 5,
+                "lemma": "u",
+                "id": 2,
+                "text": "U"
+              },
+              {
+                "start_char": 6,
+                "pos": "RL",
+                "end_char": 11,
+                "lemma": "diens",
+                "id": 3,
+                "text": "DIENS"
+              }
+            ]
+          }
+        },
+        {
+          "lid": "NONE",
+          "tokenised": true,
+          "sent": {
+            "tokens": [
+              {
+                "start_char": 0,
+                "pos": "NSM",
+                "end_char": 4,
+                "lemma": "vraag",
+                "id": 1,
+                "text": "Vrae"
+              },
+              {
+                "start_char": 5,
+                "pos": "KN",
+                "end_char": 7,
+                "lemma": "en",
+                "id": 2,
+                "text": "en"
+              },
+              {
+                "start_char": 8,
+                "pos": "NSM",
+                "end_char": 17,
+                "lemma": "antwoord",
+                "id": 3,
+                "text": "Antwoorde"
+              }
+            ]
+          }
+        },
+        {
+          "lid": "NONE",
+          "tokenised": true,
+          "sent": {
+            "tokens": [
+              {
+                "start_char": 0,
+                "pos": "PV",
+                "end_char": 3,
+                "lemma": "wie",
+                "id": 1,
+                "text": "Wie"
+              },
+              {
+                "start_char": 4,
+                "pos": "VTHOK",
+                "end_char": 6,
+                "lemma": "is",
+                "id": 2,
+                "text": "is"
+              },
+              {
+                "start_char": 7,
+                "pos": "RL",
+                "end_char": 10,
+                "lemma": "gep",
+                "id": 3,
+                "text": "GEP"
+              },
+              {
+                "start_char": 10,
+                "pos": "ZE",
+                "end_char": 11,
+                "lemma": "?",
+                "id": 4,
+                "text": "?"
+              }
+            ]
+          }
+        },
+        {
+          "lid": "NONE",
+          "tokenised": true,
+          "sent": {
+            "tokens": [
+              {
+                "start_char": 0,
+                "pos": "LB",
+                "end_char": 3,
+                "lemma": "die",
+                "id": 1,
+                "text": "Die"
+              },
+              {
+                "start_char": 4,
+                "pos": "NEE",
+                "end_char": 11,
+                "lemma": "gauteng",
+                "id": 2,
+                "text": "Gauteng"
+              },
+              {
+                "start_char": 12,
+                "pos": "NEE",
+                "end_char": 22,
+                "lemma": "enterprise",
+                "id": 3,
+                "text": "Enterprise"
+              },
+              {
+                "start_char": 23,
+                "pos": "NEE",
+                "end_char": 32,
+                "lemma": "propeller",
+                "id": 4,
+                "text": "Propeller"
+              },
+              {
+                "start_char": 33,
+                "pos": "ZPL",
+                "end_char": 34,
+                "lemma": "(",
+                "id": 5,
+                "text": "("
+              },
+              {
+                "start_char": 34,
+                "pos": "RL",
+                "end_char": 37,
+                "lemma": "gep",
+                "id": 6,
+                "text": "GEP"
+              },
+              {
+                "start_char": 37,
+                "pos": "ZPR",
+                "end_char": 38,
+                "lemma": ")",
+                "id": 7,
+                "text": ")"
+              },
+              {
+                "start_char": 39,
+                "pos": "VTHOK",
+                "end_char": 41,
+                "lemma": "is",
+                "id": 8,
+                "text": "is"
+              },
+              {
+                "start_char": 42,
+                "pos": "LO",
+                "end_char": 44,
+                "lemma": "'n",
+                "id": 9,
+                "text": "'n"
+              },
+              {
+                "start_char": 45,
+                "pos": "NSE",
+                "end_char": 54,
+                "lemma": "agentskap",
+                "id": 10,
+                "text": "agentskap"
+              },
+              {
+                "start_char": 55,
+                "pos": "PB",
+                "end_char": 58,
+                "lemma": "wat",
+                "id": 11,
+                "text": "wat"
+              },
+              {
+                "start_char": 59,
+                "pos": "SVS",
+                "end_char": 63,
+                "lemma": "deur",
+                "id": 12,
+                "text": "deur"
+              },
+              {
+                "start_char": 64,
+                "pos": "LB",
+                "end_char": 67,
+                "lemma": "die",
+                "id": 13,
+                "text": "die"
+              },
+              {
+                "start_char": 68,
+                "pos": "ASA",
+                "end_char": 77,
+                "lemma": "gautengs",
+                "id": 14,
+                "text": "Gautengse"
+              },
+              {
+                "start_char": 78,
+                "pos": "ASA",
+                "end_char": 89,
+                "lemma": "provinsiaal",
+                "id": 15,
+                "text": "Provinsiale"
+              },
+              {
+                "start_char": 90,
+                "pos": "NSE",
+                "end_char": 98,
+                "lemma": "regering",
+                "id": 16,
+                "text": "Regering"
+              },
+              {
+                "start_char": 99,
+                "pos": "VVHOG",
+                "end_char": 107,
+                "lemma": "instel",
+                "id": 17,
+                "text": "ingestel"
+              },
+              {
+                "start_char": 108,
+                "pos": "VVUOP",
+                "end_char": 110,
+                "lemma": "is",
+                "id": 18,
+                "text": "is"
+              },
+              {
+                "start_char": 111,
+                "pos": "SVS",
+                "end_char": 116,
+                "lemma": "onder",
+                "id": 19,
+                "text": "onder"
+              },
+              {
+                "start_char": 117,
+                "pos": "NA",
+                "end_char": 127,
+                "lemma": "beskerming",
+                "id": 20,
+                "text": "beskerming"
+              },
+              {
+                "start_char": 128,
+                "pos": "SVS",
+                "end_char": 131,
+                "lemma": "van",
+                "id": 21,
+                "text": "van"
+              },
+              {
+                "start_char": 132,
+                "pos": "LB",
+                "end_char": 135,
+                "lemma": "die",
+                "id": 22,
+                "text": "die"
+              },
+              {
+                "start_char": 136,
+                "pos": "NSE",
+                "end_char": 147,
+                "lemma": "departement",
+                "id": 23,
+                "text": "Departement"
+              },
+              {
+                "start_char": 148,
+                "pos": "SVS",
+                "end_char": 151,
+                "lemma": "van",
+                "id": 24,
+                "text": "van"
+              },
+              {
+                "start_char": 152,
+                "pos": "ASA",
+                "end_char": 162,
+                "lemma": "ekonomies",
+                "id": 25,
+                "text": "Ekonomiese"
+              },
+              {
+                "start_char": 163,
+                "pos": "NA",
+                "end_char": 175,
+                "lemma": "ontwikkeling",
+                "id": 26,
+                "text": "Ontwikkeling"
+              },
+              {
+                "start_char": 175,
+                "pos": "ZM",
+                "end_char": 176,
+                "lemma": ",",
+                "id": 27,
+                "text": ","
+              },
+              {
+                "start_char": 177,
+                "pos": "SVS",
+                "end_char": 180,
+                "lemma": "met",
+                "id": 28,
+                "text": "met"
+              },
+              {
+                "start_char": 181,
+                "pos": "LO",
+                "end_char": 183,
+                "lemma": "'n",
+                "id": 29,
+                "text": "'n"
+              },
+              {
+                "start_char": 184,
+                "pos": "ASA",
+                "end_char": 194,
+                "lemma": "spesifiek",
+                "id": 30,
+                "text": "spesifieke"
+              },
+              {
+                "start_char": 195,
+                "pos": "NSE",
+                "end_char": 202,
+                "lemma": "mandaat",
+                "id": 31,
+                "text": "mandaat"
+              },
+              {
+                "start_char": 203,
+                "pos": "SVS",
+                "end_char": 205,
+                "lemma": "om",
+                "id": 32,
+                "text": "om"
+              },
+              {
+                "start_char": 206,
+                "pos": "NA",
+                "end_char": 219,
+                "lemma": "ondersteuning",
+                "id": 33,
+                "text": "ondersteuning"
+              },
+              {
+                "start_char": 220,
+                "pos": "KN",
+                "end_char": 222,
+                "lemma": "en",
+                "id": 34,
+                "text": "en"
+              },
+              {
+                "start_char": 223,
+                "pos": "NA",
+                "end_char": 235,
+                "lemma": "ontwikkeling",
+                "id": 35,
+                "text": "ontwikkeling"
+              },
+              {
+                "start_char": 236,
+                "pos": "SVS",
+                "end_char": 239,
+                "lemma": "aan",
+                "id": 36,
+                "text": "aan"
+              },
+              {
+                "start_char": 240,
+                "pos": "NSM",
+                "end_char": 246,
+                "lemma": "kmmo",
+                "id": 37,
+                "text": "KMMO's"
+              },
+              {
+                "start_char": 247,
+                "pos": "SVS",
+                "end_char": 249,
+                "lemma": "in",
+                "id": 38,
+                "text": "in"
+              },
+              {
+                "start_char": 250,
+                "pos": "LB",
+                "end_char": 253,
+                "lemma": "die",
+                "id": 39,
+                "text": "die"
+              },
+              {
+                "start_char": 254,
+                "pos": "NSE",
+                "end_char": 263,
+                "lemma": "provinsie",
+                "id": 40,
+                "text": "provinsie"
+              },
+              {
+                "start_char": 264,
+                "pos": "UPW",
+                "end_char": 271,
+                "lemma": "gauteng",
+                "id": 41,
+                "text": "Gauteng"
+              },
+              {
+                "start_char": 272,
+                "pos": "UPI",
+                "end_char": 274,
+                "lemma": "te",
+                "id": 42,
+                "text": "te"
+              },
+              {
+                "start_char": 275,
+                "pos": "VTHOG",
+                "end_char": 282,
+                "lemma": "verleen",
+                "id": 43,
+                "text": "verleen"
+              },
+              {
+                "start_char": 283,
+                "pos": "SVS",
+                "end_char": 287,
+                "lemma": "deur",
+                "id": 44,
+                "text": "deur"
+              },
+              {
+                "start_char": 288,
+                "pos": "ASA",
+                "end_char": 298,
+                "lemma": "finansieel",
+                "id": 45,
+                "text": "finansiële"
+              },
+              {
+                "start_char": 299,
+                "pos": "KN",
+                "end_char": 301,
+                "lemma": "en",
+                "id": 46,
+                "text": "en"
+              },
+              {
+                "start_char": 302,
+                "pos": "ASA",
+                "end_char": 315,
+                "lemma": "niefinansieel",
+                "id": 47,
+                "text": "niefinansiële"
+              },
+              {
+                "start_char": 316,
+                "pos": "NSM",
+                "end_char": 325,
+                "lemma": "maatreël",
+                "id": 48,
+                "text": "maatreëls"
+              },
+              {
+                "start_char": 325,
+                "pos": "ZE",
+                "end_char": 326,
+                "lemma": ".",
+                "id": 49,
+                "text": "."
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+]
