@@ -1,0 +1,15 @@
+MANIFEST.in
+README.md
+pyproject.toml
+setup.py
+modelscout/__init__.py
+modelscout/cli.py
+modelscout/engine.py
+modelscout/models.csv
+modelscout.egg-info/PKG-INFO
+modelscout.egg-info/SOURCES.txt
+modelscout.egg-info/dependency_links.txt
+modelscout.egg-info/entry_points.txt
+modelscout.egg-info/requires.txt
+modelscout.egg-info/top_level.txt
+tests/test_engine.py
