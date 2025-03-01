@@ -1,0 +1,20 @@
+beancount-gocardless
+====================
+
+This package provides a basic client for interacting with the GoCardless API (formerly Nordigen), a command-line interface (CLI) tool for authorization, and a Beancount importer for seamless integration with your financial data.  It streamlines the process of fetching bank account data via the GoCardless API and incorporating it into your Beancount ledger.
+
+**Key Features:**
+
+*   **GoCardless API Client:**  A client for interacting with the GoCardless API. The client has built-in caching via `requests-cache`, which helps during testing as GoCardLess API limits the number of requests to 4/day/account.
+*   **GoCardLess CLI:** A command-line interface to manage authorization with the GoCardless API. The CLI supports:
+    *   Listing available banks in a specified country (default: GB).
+    *   Creating a link to a specific bank using its ID.
+    *   Listing authorized accounts.
+    *   Deleting an existing link.
+    *   Uses environment variables (`NORDIGEN_SECRET_ID`, `NORDIGEN_SECRET_KEY`) or command-line arguments for API credentials.
+*   **Beancount Importer:**  A `beangulp.Importer` implementation to easily import transactions fetched from the GoCardless API directly into your Beancount ledger.
+
+**Installation:**
+
+```bash
+pip install beancount-gocardless
