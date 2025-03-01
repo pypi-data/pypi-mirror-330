@@ -1,0 +1,83 @@
+#!/bin/bash
+set -e  # Exit on error
+
+# Helper functions
+print_status() {
+    local status=$1
+    local message=$2
+    if [ "$status" == "ok" ]; then
+        echo "✓ $message"
+    else
+        echo "✗ $message"
+        if [ "$3" != "continue" ]; then
+            exit 1
+        fi
+    fi
+}
+
+echo "Running charstyle code quality checks..."
+
+# Check formatting with Black
+echo -e "\nChecking code formatting with Black..."
+if pdm run format-check > /dev/null 2>&1; then
+    print_status "ok" "Code formatting is correct"
+else
+    print_status "error" "Code formatting issues found" "continue"
+    echo "Run 'pdm run format' to fix formatting issues"
+fi
+
+# Check linting with Ruff
+echo -e "\nChecking code with Ruff linter..."
+if pdm run lint-check > /dev/null 2>&1; then
+    print_status "ok" "Linting passed"
+else
+    print_status "error" "Linting issues found" "continue"
+    echo "Run 'pdm run lint' to fix auto-fixable issues"
+    pdm run lint-check
+fi
+
+# Run type checking with mypy
+echo -e "\nRunning type checking with mypy..."
+if pdm run typecheck > /dev/null 2>&1; then
+    print_status "ok" "Type checking passed"
+else
+    print_status "error" "Type checking issues found" "continue"
+    pdm run typecheck
+fi
+
+# Run tests
+echo -e "\nRunning tests..."
+if pdm run test > /dev/null 2>&1; then
+    print_status "ok" "All tests passed"
+else
+    print_status "error" "Some tests failed" "continue"
+    pdm run test
+fi
+
+# Check for .new files
+echo -e "\nChecking for temporary .new files..."
+NEW_FILES=$(find . -name "*.new" -type f | grep -v "node_modules" | grep -v ".git")
+if [ -z "$NEW_FILES" ]; then
+    print_status "ok" "No temporary .new files found"
+else
+    print_status "error" "Temporary .new files found:" "continue"
+    echo "$NEW_FILES"
+    echo "Consider removing these files if they are no longer needed"
+fi
+
+# Check for __pycache__ directories
+echo -e "\nChecking for __pycache__ directories..."
+if [ -z "$(find . -name "__pycache__" -type d | grep -v "node_modules" | grep -v ".git" | grep -v ".venv")" ]; then
+    print_status "ok" "No __pycache__ directories found"
+else
+    print_status "ok" "__pycache__ directories found (this is normal during development)"
+fi
+
+# Summary
+echo -e "\nCheck summary:"
+echo "Run 'pdm run pre-commit' to automatically fix formatting and linting issues"
+echo "Run 'pdm run check-all' to run all checks without fixing issues"
+echo "Run 'pdm run clean' to remove all cache and build artifacts"
+
+# Make the script executable
+chmod +x "$0"
