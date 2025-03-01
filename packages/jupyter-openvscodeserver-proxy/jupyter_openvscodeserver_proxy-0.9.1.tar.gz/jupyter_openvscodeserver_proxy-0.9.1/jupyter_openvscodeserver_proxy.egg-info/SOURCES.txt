@@ -1,0 +1,17 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+jupyter_openvscodeserver_proxy/__init__.py
+jupyter_openvscodeserver_proxy.egg-info/PKG-INFO
+jupyter_openvscodeserver_proxy.egg-info/SOURCES.txt
+jupyter_openvscodeserver_proxy.egg-info/dependency_links.txt
+jupyter_openvscodeserver_proxy.egg-info/entry_points.txt
+jupyter_openvscodeserver_proxy.egg-info/not-zip-safe
+jupyter_openvscodeserver_proxy.egg-info/requires.txt
+jupyter_openvscodeserver_proxy.egg-info/top_level.txt
+jupyter_openvscodeserver_proxy/bin/openvscode-server.in
+jupyter_openvscodeserver_proxy/icons/openvscode-server-logo.svg
+test/test_nothing.py
+test/test_setupcall.py
