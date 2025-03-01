@@ -1,0 +1,38 @@
+[console_scripts]
+lintr = lintr.cli:main
+
+[lintr.rule_sets]
+default = lintr.rules.default_ruleset:get_default_ruleset
+empty = lintr.rules.empty_ruleset:get_empty_ruleset
+
+[lintr.rules]
+auto_merge_disabled = lintr.rules.general:AutoMergeDisabledRule
+auto_merge_enabled = lintr.rules.general:AutoMergeEnabledRule
+branch_ruleset = lintr.rules.permission_rules:BranchRulesetRule
+delete_branch_on_merge_disabled = lintr.rules.general:DeleteBranchOnMergeDisabledRule
+delete_branch_on_merge_enabled = lintr.rules.general:DeleteBranchOnMergeEnabledRule
+discussions_disabled = lintr.rules.general:DiscussionsDisabledRule
+discussions_enabled = lintr.rules.general:DiscussionsEnabledRule
+gitflow_branch_naming = lintr.rules.gitflow:GitFlowBranchNamingRule
+gitflow_default_branch = lintr.rules.gitflow:GitFlowDefaultBranchRule
+gitflow_develop_branch_ruleset = lintr.rules.gitflow:GitFlowDevelopBranchRulesetRule
+gitflow_main_branch_ruleset = lintr.rules.gitflow:GitFlowMainBranchRulesetRule
+issues_disabled = lintr.rules.general:IssuesDisabledRule
+issues_enabled = lintr.rules.general:IssuesEnabledRule
+merge_commits_disabled = lintr.rules.general:MergeCommitsDisabledRule
+merge_commits_enabled = lintr.rules.general:MergeCommitsEnabledRule
+no_classic_branch_protection = lintr.rules.permission_rules:NoClassicBranchProtectionRule
+no_collaborators = lintr.rules.permission_rules:NoCollaboratorsRule
+preserve_repository_disabled = lintr.rules.general:PreserveRepositoryDisabledRule
+preserve_repository_enabled = lintr.rules.general:PreserveRepositoryEnabledRule
+projects_disabled = lintr.rules.general:ProjectsDisabledRule
+projects_enabled = lintr.rules.general:ProjectsEnabledRule
+rebase_merge_disabled = lintr.rules.general:RebaseMergeDisabledRule
+rebase_merge_enabled = lintr.rules.general:RebaseMergeEnabledRule
+single_owner = lintr.rules.permission_rules:SingleOwnerRule
+squash_merge_disabled = lintr.rules.general:SquashMergeDisabledRule
+squash_merge_enabled = lintr.rules.general:SquashMergeEnabledRule
+web_commit_signoff_required_disabled = lintr.rules.general:WebCommitSignoffRequiredDisabledRule
+web_commit_signoff_required_enabled = lintr.rules.general:WebCommitSignoffRequiredEnabledRule
+wikis_disabled = lintr.rules.general:WikisDisabledRule
+wikis_enabled = lintr.rules.general:WikisEnabledRule
