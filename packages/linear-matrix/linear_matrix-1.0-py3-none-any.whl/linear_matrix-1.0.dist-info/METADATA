@@ -1,0 +1,66 @@
+Metadata-Version: 2.2
+Name: linear_matrix
+Version: 1.0
+Summary: A Python library for linear algebra matrix operations.
+Home-page: https://sourceduty.com
+Author: Sourceduty
+Author-email: sourceduty@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-python
+Dynamic: summary
+
+# Linear Matrix
+
+Linear Matrix is a Python library for performing linear algebra matrix operations.
+
+## Features
+- Matrix Addition
+- Matrix Multiplication
+- Determinants
+- Inverse Matrices
+- Transposition
+- Eigenvalues & Eigenvectors
+
+## Installation
+```sh
+pip install linear-matrix
+```
+
+## Usage
+
+```python
+from linear_matrix.matrix import Matrix
+
+A = Matrix([[1, 2], [3, 4]])
+B = Matrix([[5, 6], [7, 8]])
+
+# Matrix addition
+C = A + B
+print(C)
+
+# Matrix multiplication
+D = A * B
+print(D)
+
+# Transpose
+print(A.transpose())
+
+# Determinant
+print(A.determinant())
+
+# Inverse
+print(A.inverse())
+```
+
+## License
+MIT License
