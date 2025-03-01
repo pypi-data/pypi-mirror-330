@@ -1,0 +1,15 @@
+Click>=7.0
+PyYAML
+Rich
+singleton-decorator
+strawberry-graphql
+sqlalchemy
+fastapi
+uvicorn
+databases[sqlite]
+
+[dev]
+coverage
+mypy
+pytest
+ruff
