@@ -1,0 +1,4 @@
+[console_scripts]
+kadtk=kadtk.__main__:main
+kadtk-embeds=kadtk.embeds:main
+
