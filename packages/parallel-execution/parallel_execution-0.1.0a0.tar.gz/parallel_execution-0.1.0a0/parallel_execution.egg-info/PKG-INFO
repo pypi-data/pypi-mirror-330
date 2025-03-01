@@ -1,0 +1,65 @@
+Metadata-Version: 2.2
+Name: parallel_execution
+Version: 0.1.0a0
+Summary: parallel execution in python; multithreading
+Home-page: https://github.com/QuintessenceLabs
+Author: Michael E. Vinyard
+Author-email: mvinyard.ai@gmail.com
+License: MIT
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering :: Bio-Informatics
+Requires-Python: >3.9.0
+Description-Content-Type: text/markdown
+Requires-Dist: ABCParse
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# Parallel Execution
+
+Simple parallel execution of functions.
+
+## Installation
+
+```bash
+git clone https://github.com/QuintessenceLabs/parallel_execution.git; cd parallel_execution
+pip install -e .
+```
+
+## Usage
+
+```python
+import parallel_execution
+
+# define the function to execute
+def function(a, b):
+    return a + b
+
+input_values = [
+    {'a': 1, 'b': 2},
+    {'a': 3, 'b': 4},
+    {'a': 5, 'b': 6},
+]
+
+parallel_input = {en: kwargs for en, kwargs in enumerate(input_values)}
+
+# initialize the executor
+executor = parallel_execution.ParallelExecutor(max_threads=8)
+executor(function, parallel_input)
+```
+
+You could also use the `parallel_execution` function to call the executor:
+
+```python
+parallel_execution.parallel_execution(function, parallel_input)
+```
+
