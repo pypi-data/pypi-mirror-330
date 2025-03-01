@@ -1,0 +1,25 @@
+Metadata-Version: 2.3
+Name: git-draft
+Version: 0.3.0
+Summary: Version-controlled code assistant
+Author: Matthieu Monsch
+Author-email: mtth@apache.org
+Requires-Python: >=3.12,<4
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Dist: gitpython (>=3.1.44,<4.0.0)
+Requires-Dist: openai (>=1.64.0,<2.0.0)
+Project-URL: Repository, https://github.com/mtth/git-draft
+Description-Content-Type: text/markdown
+
+# `git-draft(1)`
+
+> [!NOTE]
+> WIP: Not quite functional yet.
+
+## Highlights
+
+* Concurrent editing. Continue editing while the assistant runs, without any
+  risks of interference.
+
