@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: grader-service
+Version: 0.7.2
+Summary: Grader service
+Author: Florian Jäger, Matthias Matt
+License: BSD-3-Clause
+Project-URL: Homepage, https://github.com/TU-Wien-dataLAB/grader-service
+Project-URL: Repository, https://github.com/TU-Wien-dataLAB/grader-service
+Project-URL: Documentation, https://grader-service.readthedocs.io/en/latest/index.html
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Development Status :: 3 - Alpha
+Classifier: Framework :: Jupyter
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Python: >=3.8
+License-File: LICENSE
