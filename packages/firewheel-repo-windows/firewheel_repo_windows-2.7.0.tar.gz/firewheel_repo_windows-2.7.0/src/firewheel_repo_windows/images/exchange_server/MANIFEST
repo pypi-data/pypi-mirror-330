@@ -1,0 +1,10 @@
+name: windows.exchange_server
+attributes:
+    depends: []
+    provides: []
+model_components:
+    depends:
+        - windows.windows_server_2012_r2
+model_component_objects: model_component_objects.py
+vm_resources:
+    - vm_resources/*

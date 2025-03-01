@@ -1,0 +1,11 @@
+name: windows.utils
+attributes:
+    depends:
+        - graph
+    provides: []
+model_components:
+    depends:
+        - base_objects
+plugin: plugin.py
+vm_resources:
+    - vm_resources/*

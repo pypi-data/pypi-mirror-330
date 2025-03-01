@@ -1,0 +1,13 @@
+name: windowstests.router_tree
+attributes:
+    depends:
+      - graph
+    provides:
+      - topology
+model_components:
+    depends:
+      - base_objects
+      - generic_vm_objects
+      - windows.base_objects
+      - windows.windows_7_enterprise
+plugin: plugin.py
