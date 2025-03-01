@@ -1,0 +1,21 @@
+{
+  "default": "postgresql_rus",
+  "connections": {
+    "prod": {
+      "driver": "postgresql",
+      "host": "localhost",
+      "port": 5432,
+      "database": "warehouse",
+      "user": "groovinads",
+      "password": "grxlM0dj1!022"
+    },
+    "dev": {
+      "driver": "postgresql",
+      "host": "localhost",
+      "port": 5432,
+      "database": "warehouse-dev",
+      "user": "groovinads",
+      "password": "grxlM0dj1!022"
+    }
+  }
+}
