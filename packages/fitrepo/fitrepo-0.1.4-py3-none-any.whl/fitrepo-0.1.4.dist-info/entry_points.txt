@@ -1,0 +1,4 @@
+[console_scripts]
+fit = src.fitrepo.fitrepo:main
+fitrepo = src.fitrepo.fitrepo:main
+fossil-import-tool = src.fitrepo.fitrepo:main
