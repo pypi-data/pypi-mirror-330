@@ -1,0 +1,10 @@
+!= tfe [ ] { true false equal }
+push ~ { !tfe [ ] }
+push ~! {
+    push ~ {
+        if {
+            pop0
+        }
+    }
+    sha256
+}
