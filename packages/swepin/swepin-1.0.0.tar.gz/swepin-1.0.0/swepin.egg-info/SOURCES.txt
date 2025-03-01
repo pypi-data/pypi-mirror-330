@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+swepin/__init__.py
+swepin/generate.py
+swepin/swedish_personal_identity_number.py
+swepin.egg-info/PKG-INFO
+swepin.egg-info/SOURCES.txt
+swepin.egg-info/dependency_links.txt
+swepin.egg-info/top_level.txt
+tests/test_swedish_personal_identity_number.py
