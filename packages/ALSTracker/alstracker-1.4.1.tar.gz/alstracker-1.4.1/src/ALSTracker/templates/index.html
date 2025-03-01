@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>ALSTracker</title>
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+        .content-container {
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 30px;
+            margin-top: 30px;
+        }
+        .main-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        h1, h2, h3 {
+            color: #343a40;
+        }
+        ul {
+            margin-top: 15px;
+        }
+        .disclaimer {
+            color: #8a8a8a;
+            font-size: 0.9em;
+        }
+        .btn-secondary {
+            margin-bottom: 10px;
+            display: block;
+            width: fit-content;
+        }
+        .center {
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+          width: 100%;
+        }
+        .center2 {
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+          width: 50%;
+        }
+        .git {
+          margin-left: auto;
+          margin-right: auto;
+          width: 10%;
+        }
+         .row {
+          display: flex;
+        }
+
+        .column {
+          flex: 50%;
+          padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content-container">
+
+            <p>Last update: {{ last_update }} - Version: {{ version }}</br>
+            <a href="https://github.com/MPI-Dortmund/ALSTracker/releases" target="_blank" rel="noopener noreferrer">Changelog</a> - <a href="https://github.com/MPI-Dortmund/ALSTracker/blob/main/src/ALSTracker/doc/details.md" target="_blank" rel="noopener noreferrer">Technical background</a> - <a href="https://alstracker.mpi-dortmund.mpg.de/tools/alsfrs.html">ALSFRS-R-SE (German)</a></p>
+            <div class="main-header">
+                <h1>ALSTracker</h1>
+                <h2>Bayesian ALS Tracking and Phase Evaluation</h2>
+                 <img src="img/regressions.png" class='center'>
+            </div>
+
+            <p>
+                The idea of the ALSTracker is that at some point during your illness you will have certain 'interventions'. You might take part in a clinical trial, take a drug (other than riluzole), or start taking a supplement. <a href="https://www.alsuntangled.com/" target="_blank" rel="noopener noreferrer">Many pwALS want to experiment</a>. In this case, you may want to know whether or not something helps you to slow down the disease. This tool is designed to help you assess this.
+            </p>
+
+            <b>What is Bayesian statistics, and why is it useful?</b><br>
+            <p>
+                Bayesian statistics is great at dealing with uncertainty. Instead of giving a single "best guess", it provides a range of possible outcomes and their likelihoods. This is really important when you want to make informed decisions.
+            </p>
+
+            <b>Can this tool prove whether a therapy/supplement slows down the disease?</b><br>
+            <p>
+                No. The only way to do this is through well-designed clinical trials. However, this tool can give you an indication if something is working for you. Due to the non-linear nature of ALS, caution is advised when interpreting the ALSTracker report.
+            </p>
+
+            <h3>How does it work?</h3>
+            <p>
+                The idea is that you take measurements of your physical decline. Next, you define phases such as a reference phase with no intervention (other than riluzole) and a phase with some intervention (e.g., treatment, supplementation). ALSTracker estimates the probability distribution of the decline rate:
+                 <div class="row">
+                  <div class="column">
+                    <img src="img/dref.png" style="width:100%">
+                  </div>
+                  <div class="column">
+                    <img src="img/dtreat.png" style="width:100%">
+                  </div>
+                </div><br>
+It also supports measurements that do not show a decline, but rather a change in the level of the value. One example is the serum biomarker "neurofilament light chain", which has recently attracted a lot of scientific attention. With ALSTracker you can get an idea of whether such a level measurement has changed:<br><br>
+            <img src="img/nfl.png" class='center'>
+
+            </p>
+
+            <b>Measure yourself</b>
+            <p>
+                The common method is the ALSFRS-R questionnaire score (<a href="https://alstracker.mpi-dortmund.mpg.de/tools/alsfrs.html">Here in german</a>). But it requires quite some physical decline before it changes and does not allow you to follow the decline in a more fine-grained way over time. Depending on the type of ALS you have, there might be some other indicative measurements that may be used as a measure for your disease progression. Measurements you can use additionally to the ALSFRS-R score could be:
+            </p>
+            <ul>
+                <li>Grip Strength via GRIPX Digitaler Handdynamometer (~45 Euro on Amazon)</li>
+                <li>Peak Expiratory Flow via OMRON PFM20 (~25 Euro on Amazon)</li>
+                <li>Vital capacity (measured by your doctor)</li>
+                <li>Serum Neurofilament light chain (measured by your doctor, ~70 Euro in Germany)</li>
+            </ul>
+
+            <b>Make a reference</b>
+            <p>
+                Before experimenting, quantify your decline rate / your measurement level without intervention. Maintain these measurements until the uncertainty about the decline rate / level is small enough, indicating high accuracy. This is the reference phase. Note that the delcine in ALS can be non-linear, so a meaningful reference period is crucial.
+            </p>
+
+            <b>Phase comparisons</b>
+            <p>
+                Once you have a solid reference phase, compare it with an intervention phase. Bayesian regressions will provide probability distributions of the relative difference between phases.<br>
+                <img src="img/diff.png" class="center2">
+            </p>
+
+            <b>Progression prediction</b>
+            <p>
+                ALSTracker can also predict how your disease will progress by using a method created by Ramamoorthy et al (see <a href="https://github.com/MPI-Dortmund/ALSTracker/blob/main/src/ALSTracker/doc/details.md" target="_blank" rel="noopener noreferrer">Technical background</a>). In their work, they found 92 different patterns that the disease can progress. Using the ALSFRS data from your Excel sheet, the method will estimate how likely each of these 92 ways is to happen and makes an prediction for each of them. ALSTracker will then show you the three ways that are most likely to happen.  It will also tell you how certain the model is for each prediction. To get meaningful results, you should have measurements for at least one year since onset. <br><br>
+                <img src="img/progression_example.png" class="center2">
+            </p>
+
+            <h3>How to use it?</h3>
+            <p>
+                <b>Template</b><br>
+                Upload an Excel sheet following specified conventions. A template is available for download. Please <a href="https://github.com/MPI-Dortmund/ALSTracker/blob/main/src/ALSTracker/doc/instructions.md" target="_blank" rel="noopener noreferrer">follow the instructions</a> when filling it out:
+            </p>
+            <a href="https://github.com/MPI-Dortmund/ALSTracker/raw/refs/heads/main/src/ALSTracker/doc/other/database_template.xlsx" class="btn btn-secondary" download>Download Excel Template</a><br>
+
+            <p>
+                <b>Simulated data</b><br>
+                We also provide an example Excel file with simulated data that you can download and test the ALSTracker. We simulated data for the ALSFRS-R score, Vital Capacity (VC) and Neurofilaments (NfL) for one year. The measurement dates were made random between 20 and 80 days. The decline in ALSFRS score was 0.8 points / month during the reference phase and 0.4 points / month during phase "TreatmentA". The decline in VC score was 2% / month during the reference phase and 1% / month during  phase 'TreatmentA'. The level of NfL was 50 pg/mL during reference and 35 pg/mL during phase 'TreatmentA':
+            </p>
+            <a href="https://github.com/MPI-Dortmund/ALSTracker/raw/refs/heads/main/src/ALSTracker/doc/other/database_simulated.xlsx" class="btn btn-secondary" download>Download Excel Example</a><br>
+
+            <h3>Calculate the ALSTracker Report</h3>
+            <p>Upload your Excel sheet here. The report is created in the background, which may take 1-2 minutes.</p>
+            <form id="upload-form" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="file">Choose Excel file</label>
+                    <input type="file" class="form-control-file" id="file" name="file" accept=".xlsx" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Upload</button>
+            </form>
+            <p class="disclaimer"><b>Disclaimer:</b> We do not collect any data, and all uploaded Excel sheets and generated reports are deleted every night. Ensure sheets do not contain personal data like names or addresses.</p>
+            <div id="result" class="mt-3"></div>
+
+            <h3>About us</h3>
+            <p>ALSTracker was developed by Dr. Thorsten Wagner and Dr. Markus Stabrin. We are both scientists at the Max Planck Institute for Molecular Physiology in Dortmund, Germany. We both work in the field of structural biology, mainly in machine learning, software development and high performance computing, with backgrounds in computer science (Thorsten) and physics (Markus). Due to personal involvement we decided to develop this tool.</p>
+
+            <h3>Contact</h3>
+            <p>If you have questions regarding the tool, please contact us via thorsten.wagner@mpi-dortmund.mpg.de</p>
+
+            <h3>Code</h3>
+            <p>The ALSTracker code is open source and can be found on github </p>
+            <a href="https://github.com/MPI-Dortmund/ALSTracker"><img src="img/git.png" class="git"></a>
+
+        </div>
+
+    </div>
+
+    <script>
+        document.getElementById('upload-form').onsubmit = async (event) => {
+            event.preventDefault();
+            const formData = new FormData();
+            formData.append('file', document.getElementById('file').files[0]);
+
+            const response = await fetch('/upload/', {
+                method: 'POST',
+                body: formData
+            });
+
+            const result = await response.json();
+            if (response.ok) {
+                document.getElementById('result').innerHTML = `File uploaded successfully: ID=${result.unique_id} <a href="/download/${result.unique_id}" target="_blank">Download PDF</a>`;
+            } else {
+                document.getElementById('result').innerHTML = `Error: ${result.detail}`;
+            }
+        };
+    </script>
+</body>
+</html>

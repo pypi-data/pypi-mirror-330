@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=61.0",  "wheel", "setuptools_scm"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools_scm]
+version_file = "src/ALSTracker/_version.py"
+
+[project]
+name = "ALSTracker"
+dynamic = ["version"]
+authors = [
+  { name="Thorsten Wagner", email="thorsten.wagner@mpi-dortmund.mpg.de" },
+    { name="Markus Stabrin", email="markus.stabrin@mpi-dortmund.mpg.de" },
+]
+description = "Bayesian ALS Tracking and Phase Evaluation"
+readme = "README.md"
+requires-python = ">=3.11.9,<3.13"
+dependencies = [
+    "pymc",
+    "bambi",
+    "statsmodels",
+    "numpy",
+    "pandas",
+    "markdown-pdf",
+    "matplotlib",
+    "seaborn",
+    "fastapi",
+    "jinja2",
+    "gunicorn",
+    "python-multipart",
+    "uvicorn",
+    "openpyxl",
+    "mogptw"
+
+]
+
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+license = {file = "LICENSE"}
+
+[project.urls]
+Homepage = "https://alstracker.mpi-dortmund.mpg.de/"
+Issues = "https://alstracker.mpi-dortmund.mpg.de/"

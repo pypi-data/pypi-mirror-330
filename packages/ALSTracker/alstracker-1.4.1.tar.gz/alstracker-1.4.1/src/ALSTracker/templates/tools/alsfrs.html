@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALSFRS-R-SE Fragebogen</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <style>
+        .questionair {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .frage {
+            margin-bottom: 20px;
+        }
+
+        .antwort {
+            margin-left: 20px;
+        }
+
+        .explanation {
+            color: #666;
+            font-size: 0.9em;
+            margin-left: 25px;
+            font-style: italic;
+        }
+
+        .cite {
+            color: #666;
+            font-size: 0.7em;
+            margin-left: 25px;
+            font-style: italic;
+        }
+
+        .button-container {
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin-right: 10px;
+        }
+
+        .ergebnis {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            margin-top: 20px;
+            margin-right: 20px;
+            font-weight: bold;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="questionair">
+        <h1>ALSFRS-R-SE Fragebogen</h1>
+        <div class="cite">Basierend auf Maier, A., Boentert, M., Reilich, P. et al. ALSFRS-R-SE: an adapted, annotated, and self-explanatory version of the revised amyotrophic lateral sclerosis functional rating scale. Neurol. Res. Pract. 4, 60 (2022). https://doi.org/10.1186/s42466-022-00224-6</div>
+        <!-- Fragen werden hier platziert -->
+        <!-- Frage 1 -->
+        <div class="frage">
+          <h3>Frage 1: Sprechen</h3>
+            <p>Bitte wählen Sie eine der folgenden Antworten:</p>
+            <div class="antwort">
+                <input onclick="calculateTotal()" type="radio" name="frage1" id="frage1_4" checked value="4" data-score="4" >
+                <label for="frage1_4">Ungestört (4 Punkte)</label>
+                <div class="explanation">Das Sprechen bzw. die Artikulation ist genauso wie vor dem Auftreten der ersten ALS-Symptome.</div><br>
+
+                <input onclick="calculateTotal()" type="radio" name="frage1" id="frage1_3" value="3" data-score="3">
+                <label for="frage1_3">Wahrnehmbare Sprechstörungen (3 Punkte)</label>
+                <div class="explanation">Eine neu aufgetretene Veränderung beim Sprechen, der Artikulation oder der Stimmgebung (Phonation), z.B. im Sinne verwaschenen Sprechens oder einer Heiserkeit, wird entweder selbst oder vom näheren Umfeld bemerkt.</div><br>
+
+                <input onclick="calculateTotal()" type="radio" name="frage1" id="frage1_2" value="2" data-score="2">
+                <label for="frage1_2">Wiederholung zur Verständigung notwendig (2 Punkte)</label>
+                <div class="explanation">Es bedarf öfters einer Wiederholung einzelner Worte oder Satzteile, um sich verständlich zu machen.</div><br>
+
+                <input onclick="calculateTotal()" type="radio" name="frage1" id="frage1_1" value="1" data-score="1">
+                <label for="frage1_1">Das Sprechen wird mit nonverbaler Kommunikation kombiniert (1 Punkt)</label>
+                <div class="explanation">Das Sprechen wird mit nonverbalen Kommunikationstechniken wie Schreiben oder Nutzung von Kommunikationshilfen ergänzt.</div><br>
+
+                <input onclick="calculateTotal()" type="radio" name="frage1" id="frage1_0" value="0" data-score="0">
+                <label for="frage1_0">Verlust des verständlichen Sprechens (0 Punkte)</label>
+                <div class="explanation">Der Einsatz von Kommunikationshilfen oder ähnlichen Methoden ist durchgehend notwendig.</div>
+            </div>
+        </div>
+
+<!-- Frage 2 -->
+<div class="frage">
+    <h3>Frage 2: Speichelfluss</h3>
+    <p>Bitte wählen Sie eine der folgenden Antworten:</p>
+    <div class="antwort">
+        <input onclick="calculateTotal()" type="radio" name="frage2" id="frage2_4" checked value="4" data-score="4">
+        <label for="frage2_4">Ungestört (4 Punkte)</label>
+        <div class="explanation">Es sammelt sich kein vermehrter Speichel im Mund.</div><br>
+
+        <input onclick="calculateTotal()" type="radio" name="frage2" id="frage2_3" value="3" data-score="3">
+        <label for="frage2_3">Geringfügig, aber eindeutiges Übermaß an Speichel im Mund (3 Punkte)</label>
+        <div class="explanation">Vermehrte Speichelansammlung im Mund, jedoch ohne subjektive Beeinträchtigung und ohne Speichelverlust am Tage.</div><br>
+
+        <input onclick="calculateTotal()" type="radio" name="frage2" id="frage2_2" value="2" data-score="2">
+        <label for="frage2_2">Mäßig vermehrter Speichelfluss; geringer Speichelverlust möglich (2 Punkte)</label>
+        <div class="explanation">Gelegentlich wird ein Taschentuch verwendet, um tagsüber die Mundwinkel abzutrocknen.</div><br>
+
+        <input onclick="calculateTotal()" type="radio" name="frage2" id="frage2_1" value="1" data-score="1">
+        <label for="frage2_1">Deutlich vermehrter Speichelfluss mit etwas Speichelverlust (1 Punkt)</label>
+        <div class="explanation">Speichelverlust ist regelmäßig vorhanden, und ein Taschentuch wird oft, aber nicht immer, verwendet.</div><br>
+
+        <input onclick="calculateTotal()" type="radio" name="frage2" id="frage2_0" value="0" data-score="0">
+        <label for="frage2_0">Ausgeprägter Speichelverlust aus dem Mund (0 Punkte)</label>
+        <div class="explanation">Die ständige Verwendung eines Taschentuchs oder einer Absaugung ist erforderlich.</div>
+    </div>
+</div>
+
+<!-- Frage 3 -->
+<div class="frage">
+    <h3>Frage 3: Schlucken</h3>
+    <p>Bitte wählen Sie eine der folgenden Antworten:</p>
+    <div class="antwort">
+        <input onclick="calculateTotal()" type="radio" name="frage3" id="frage3_4" checked value="4" data-score="4">
+        <label for="frage3_4">Ungestört (4 Punkte)</label>
+        <div class="explanation">Das Schlucken jeglicher Nahrung und von Flüssigkeiten erfolgt ohne Probleme.</div><br>
+
+        <input onclick="calculateTotal()" type="radio" name="frage3" id="frage3_3" value="3" data-score="3">
+        <label for="frage3_3">Beginnende Essprobleme mit gelegentlichem Verschlucken (3 Punkte)</label>
+        <div class="explanation">Es wird mehr Zeit zur Nahrungsaufnahme benötigt oder es werden kleinere Bissen zu sich genommen und mit Vorsicht geschluckt. Es kommt gelegentlich zum Verschlucken oder zu vermehrtem Husten.</div><br>
+
+        <input onclick="calculateTotal()" type="radio" name="frage3" id="frage3_2" value="2" data-score="2">
+        <label for="frage3_2">Änderung der Nahrungskonsistenzen erforderlich (2 Punkte)</label>
+        <div class="explanation">Die Beschaffenheit von Speisen und Getränken wird verändert oder Schwierigkeiten beim Schlucken führen zur Vermeidung bestimmter Konsistenzen (z.B. Fleisch, trockene Kekse, Nüsse). Ggf. werden wegen einer Schluckstörung ergänzende Andickungsmittel verwendet.</div><br>
+
+        <input onclick="calculateTotal()" type="radio" name="frage3" id="frage3_1" value="1" data-score="1">
+        <label for="frage3_1">Ergänzende Sondenernährung erforderlich (1 Punkt)</label>
+        <div class="explanation">Die Nahrungsaufnahme ist aufgrund der Schluckstörung so schwierig, dass eine Ernährungssonde (PEG) bereits angelegt oder aus ärztlicher Sicht dringend empfohlen wurde, um die Kalorienzufuhr zu ergänzen bzw. die Gefahr des Verschluckens zu vermindern.</div><br>
+
+        <input onclick="calculateTotal()" type="radio" name="frage3" id="frage3_0" value="0" data-score="0">
+        <label for="frage3_0">Ernährung ausschließlich über eine Ernährungssonde (0 Punkte)</label>
+        <div class="explanation">Die Aufnahme von Nahrung und Flüssigkeit erfolgt ausschließlich über eine Ernährungssonde. Die orale Nahrungsaufnahme ist aufgrund einer hochgradigen Schluckstörung unmöglich.</div>
+    </div>
+</div>
+
+<!-- Frage 4 -->
+<div class="frage">
+    <h3>Frage 4: Handschrift</h3>
+    <p>Bewertet wird das Schreiben mit der Schreibhand in üblicher Haltung. Bitte wählen Sie eine der folgenden Antworten:</p>
+    <div class="antwort">
+        <input onclick="calculateTotal()" type="radio" name="frage4" id="frage4_4" checked value="4" data-score="4">
+        <label for="frage4_4">Ungestört (4 Punkte)</label>
+        <div class="explanation">Das Schreiben mit der üblich verwendeten Schreibhand ist ohne Probleme möglich.</div><br>
+
+        <input onclick="calculateTotal()" type="radio" name="frage4" id="frage4_3" value="3" data-score="3">
+        <label for="frage4_3">Langsamer oder unsauber, alle Wörter sind lesbar (3 Punkte)</label>
+        <div class="explanation">Das Schreiben gestaltet sich schwieriger oder die Schrift hat sich verändert, selbst wenn die geschriebenen Wörter gut lesbar sind.</div><br>
+
+        <input onclick="calculateTotal()" type="radio" name="frage4" id="frage4_2" value="2" data-score="2">
+        <label for="frage4_2">Nicht alle Wörter sind lesbar (2 Punkte)</label>
+        <div class="explanation">Im geschriebenen Text sind einzelne Wörter nicht lesbar. Um lesbar zu schreiben, werden Hilfsmittel wie Schreibhilfen verwendet.</div><br>
+
+        <input onclick="calculateTotal()" type="radio" name="frage4" id="frage4_1" value="1" data-score="1">
+        <label for="frage4_1">Das Halten des Stiftes ist möglich, aber nicht das lesbare Schreiben (1 Punkt)</label>
+        <div class="explanation">Der Stift kann gehalten werden, es gelingt jedoch nicht, den eigenen Namen oder die eigene Unterschrift hinaus zu schreiben oder zu malen.</div><br>
+
+        <input onclick="calculateTotal()" type="radio" name="frage4" id="frage4_0" value="0" data-score="0">
+        <label for="frage4_0">Kann Stift nicht halten (0 Punkte)</label>
+        <div class="explanation">Das Halten eines Stiftes, z.B. zum Unterschreiben, ist nicht möglich.</div>
+    </div>
+</div>
+
+<!-- Frage 5a -->
+<div class="frage-xor" id="frage5a">
+    <h3>Frage 5a: Essen schneiden und Gebrauch von Besteck</h3>
+    <p>Für Personen, die nicht regelmäßig eine Ernährungssonde zur Kalorienzufuhr nutzen. Bitte wählen Sie eine der folgenden Antworten:</p>
+    <div class="antwort">
+        <input onclick="handleFrage5a();calculateTotal();" type="radio" name="frage5a" id="frage5a_4" checked value="4" data-score="4">
+        <label for="frage5a_4">Ungestört (4 Punkte)</label>
+        <div class="explanation">Die Benutzung von Besteck ist ohne Probleme möglich (als Probleme gelten z. B. Messer und Gabel statt Essstäbchen oder die Neigung, vermehrt einen Löffel zu benutzen).</div><br>
+
+        <input onclick="handleFrage5a();calculateTotal();" type="radio" name="frage5a" id="frage5a_3" value="3" data-score="3">
+        <label for="frage5a_3">Etwas langsam und unbeholfen, aber keine Hilfe erforderlich (3 Punkte)</label>
+        <div class="explanation">Aufgrund der Beeinträchtigung der Hände wird mehr Zeit zum Essen benötigt. Die Benutzung von Besteck ist verändert, jedoch selbständig möglich.</div><br>
+
+        <input onclick="handleFrage5a();calculateTotal();" type="radio" name="frage5a" id="frage5a_2" value="2" data-score="2">
+        <label for="frage5a_2">Kann die meisten Speisen schneiden, aber langsam und unbeholfen, braucht teilweise Hilfe (2 Punkte)</label>
+        <div class="explanation">Beim Schneiden bestimmter Speisen wird gelegentlich die Hilfe von einer anderen Person benötigt, oder es werden Hilfsmittel, z. B. in Form von speziellem Besteck, verwendet.</div><br>
+
+        <input onclick="handleFrage5a();calculateTotal();" type="radio" name="frage5a" id="frage5a_1" value="1" data-score="1">
+        <label for="frage5a_1">Essen muss geschnitten werden, kann langsam alleine essen (1 Punkt)</label>
+        <div class="explanation">Für das Schneiden von festen Lebensmitteln ist meistens oder immer eine Unterstützung erforderlich. Selbständiges Essen ist aber möglich (z. B. mit Gabel oder Löffel).</div><br>
+
+        <input onclick="handleFrage5a();calculateTotal();" type="radio" name="frage5a" id="frage5a_0" value="0" data-score="0">
+        <label for="frage5a_0">Essen muss gereicht werden (0 Punkte)</label>
+        <div class="explanation">Nahrung wird immer angereicht. Die selbständige Benutzung von Besteck (z. B. Gabel oder Löffel) ist nicht möglich.</div>
+    </div>
+</div>
+
+<!-- Frage 5 -->
+<div class="frage-xor" id="frage5b">
+    <h3>Frage 5b: Ernährungssonde und Zubehör handhaben</h3>
+    <p>Für Personen, die regelmäßig eine Ernährungssonde zur Kalorienzufuhr nutzen. Bewertet werden soll die vorhandene manuelle Fähigkeit. Bitte wählen Sie eine der folgenden Antworten:</p>
+    <div class="antwort">
+        <input onclick="handleFrage5b();calculateTotal();" type="radio" name="frage5b" id="frage5b_4" value="4" data-score="4">
+        <label for="frage5b_4">Ungestört (4 Punkte)</label>
+        <div class="explanation">Die Sonde kann problemlos selbst versorgt und Verschlüsse und Packungen können selbständig geöffnet oder geschlossen werden.</div><br>
+
+        <input onclick="handleFrage5b();calculateTotal();" type="radio" name="frage5b" id="frage5b_3" value="3" data-score="3">
+        <label for="frage5b_3">Etwas langsam und unbeholfen, aber alle Handgriffe können selbständig ausgeführt werden (3 Punkte)</label>
+        <div class="explanation">Es wird keine Unterstützung bei der Handhabung der Ernährungssonde benötigt, allerdings ist der Umgang erschwert.</div><br>
+
+        <input onclick="handleFrage5b();calculateTotal();" type="radio" name="frage5b" id="frage5b_2" value="2" data-score="2">
+        <label for="frage5b_2">Beim Umgang mit Verschlüssen und Deckeln teilweise Hilfe erforderlich (2 Punkte)</label>
+        <div class="explanation">Der Umgang mit der Sonde ist überwiegend selbständig möglich. Hilfe wird jedoch z. B. beim Öffnen von Verschlüssen benötigt.</div><br>
+
+        <input onclick="handleFrage5b();calculateTotal();" type="radio" name="frage5b" id="frage5b_1" value="1" data-score="1">
+        <label for="frage5b_1">Minimale Unterstützung kann bei der Sondenversorgung gegeben werden (1 Punkt)</label>
+        <div class="explanation">Die Versorgung der Ernährungssonde muss überwiegend von einer anderen Person übernommen werden. Minimale Handgriffe können selbständig getätigt werden.</div><br>
+
+        <input onclick="handleFrage5b();calculateTotal();" type="radio" name="frage5b" id="frage5b_0" value="0" data-score="0">
+        <label for="frage5b_0">Kann an keiner Stelle bei der Sondenversorgung mithelfen (0 Punkte)</label>
+        <div class="explanation">Die Versorgung der Ernährungssonde muss vollständig von einer anderen Person übernommen werden. Es können keine Handgriffe selbst getätigt werden.</div>
+    </div>
+</div>
+
+
+
+
+<!-- Frage 6 -->
+<div class="frage">
+    <h3>Frage 6: Ankleiden und Körperpflege</h3>
+    <p>Bitte wählen Sie eine der folgenden Antworten:</p>
+    <div class="antwort">
+        <input onclick="calculateTotal()" type="radio" name="frage6" id="frage6_4" checked value="4" data-score="4">
+        <label for="frage6_4">Ungestört (4 Punkte)</label>
+        <div class="explanation">Das Ankleiden und die Körperpflege sind ohne Probleme möglich.</div><br>
+
+        <input onclick="calculateTotal()" type="radio" name="frage6" id="frage6_3" value="3" data-score="3">
+        <label for="frage6_3">Keine Hilfe erforderlich, jedoch mit Mühe verbunden (3 Punkte)</label>
+        <div class="explanation">Das Ankleiden oder die Körperpflege sind langsamer als zuvor, bleiben jedoch unabhängig und ohne Unterstützung durch Hilfsverfahren oder durch eine andere Person möglich.</div><br>
+
+        <input onclick="calculateTotal()" type="radio" name="frage6" id="frage6_2" value="2" data-score="2">
+        <label for="frage6_2">Zeitweilig sind Hilfe oder Hilfsverfahren erforderlich (2 Punkte)</label>
+        <div class="explanation">Es wird gelegentlich Hilfe durch eine Person in Anspruch genommen, oder es werden Strategien entwickelt, um Beeinträchtigungen auszugleichen (z. B. leicht an- und ausziehbare Kleidung, Sitzen beim Ankleiden oder Duschen, Nutzung von Hilfsmitteln).</div><br>
+
+        <input onclick="calculateTotal()" type="radio" name="frage6" id="frage6_1" value="1" data-score="1">
+        <label for="frage6_1">Hilfe durch andere Personen erforderlich (1 Punkt)</label>
+        <div class="explanation">Beim Ankleiden und der Körperpflege ist regelmäßig die Unterstützung durch eine andere Person notwendig.</div><br>
+
+        <input onclick="calculateTotal()" type="radio" name="frage6" id="frage6_0" value="0" data-score="0">
+        <label for="frage6_0">Vollständige Abhängigkeit (0 Punkte)</label>
+        <div class="explanation">Das Ankleiden und die Körperpflege müssen vollständig von einer anderen Person übernommen werden.</div>
+    </div>
+</div>
+
+<!-- Frage 7 -->
+<div class="frage">
+    <h3>Frage 7: Umdrehen im Bett und Richten der Bettdecke</h3>
+    <p>Bitte wählen Sie eine der folgenden Antworten:</p>
+    <div class="antwort">
+        <input onclick="calculateTotal()" type="radio" name="frage7" id="frage7_4" checked value="4" data-score="4">
+        <label for="frage7_4">Ungestört (4 Punkte)</label>
+        <div class="explanation">Das Umdrehen im Bett und Richten der Bettdecke lassen sich ohne Probleme durchführen.</div><br>
+
+        <input onclick="calculateTotal()" type="radio" name="frage7" id="frage7_3" value="3" data-score="3">
+        <label for="frage7_3">Etwas langsam und unbeholfen, aber keine Hilfe erforderlich (3 Punkte)</label>
+        <div class="explanation">Es ist schwieriger, sich im Bett umzudrehen oder die Bettdecke zu richten.</div><br>
+
+        <input onclick="calculateTotal()" type="radio" name="frage7" id="frage7_2" value="2" data-score="2">
+        <label for="frage7_2">Selbständig möglich, jedoch mit großer Mühe verbunden (2 Punkte)</label>
+        <div class="explanation">Das Umdrehen im Bett und Richten der Bettdecke sind nur mit großer Mühe möglich. Eventuell wird eine der beiden Tätigkeiten unterstützt oder es wird zum Umdrehen ein Haltegriff verwendet.</div><br>
+
+        <input onclick="calculateTotal()" type="radio" name="frage7" id="frage7_1" value="1" data-score="1">
+        <label for="frage7_1">Kann zum Umdrehen oder Richten der Bettdecke ansetzen, aber die Bewegung nicht selbstständig vollenden (1 Punkt)</label>
+        <div class="explanation">Das Drehen im Bett oder Richten der Bettdecke kann begonnen werden. Es wird jedoch Unterstützung durch eine Person oder Hilfsmittel benötigt, um die jeweilige Tätigkeit zu vollenden.</div><br>
+
+        <input onclick="calculateTotal()" type="radio" name="frage7" id="frage7_0" value="0" data-score="0">
+        <label for="frage7_0">Vollständige Abhängigkeit (0 Punkte)</label>
+        <div class="explanation">Beim Umdrehen im Bett und dem Richten der Bettdecke ist durchgehend Hilfe erforderlich.</div>
+    </div>
+</div>
+
+<!-- Frage 8 -->
+<div class="frage">
+    <h3>Frage 8: Gehen</h3>
+    <p>Bitte wählen Sie eine der folgenden Antworten:</p>
+    <div class="antwort">
+        <input onclick="calculateTotal()" type="radio" name="frage8" id="frage8_4" checked value="4" data-score="4">
+        <label for="frage8_4">Ungestört (4 Punkte)</label>
+        <div class="explanation">Es besteht keine Veränderung der Gehfähigkeit.</div><br>
+
+        <input onclick="calculateTotal()" type="radio" name="frage8" id="frage8_3" value="3" data-score="3">
+        <label for="frage8_3">Beginnende Gehschwierigkeiten (3 Punkte)</label>
+        <div class="explanation">Es zeigen sich Veränderungen, die eine Verlangsamung, Unsicherheit oder Stolpern einschließen. Hilfe in Form einer anderen Person, durch Festhalten an Gegenständen oder durch die Verwendung von Gehhilfen außerhalb des Wohnbereichs (z. B. Fußheberschiene, Gehstock, Rollator) wird jedoch nicht regelhaft benötigt.</div><br>
+
+        <input onclick="calculateTotal()" type="radio" name="frage8" id="frage8_2" value="2" data-score="2">
+        <label for="frage8_2">Gehen nur mit Unterstützung möglich (2 Punkte)</label>
+        <div class="explanation">Das Gehen erfordert regelhaft ein Festhalten oder - außerhalb des Wohnbereichs - Hilfe durch Fußheberschienen, Gehhilfen oder durch eine andere Person.</div><br>
+
+        <input onclick="calculateTotal()" type="radio" name="frage8" id="frage8_1" value="1" data-score="1">
+        <label for="frage8_1">Nicht gehfähig, aber gezielte Bewegungen der Beine möglich (1 Punkt)</label>
+        <div class="explanation">Die Beine können gezielt bewegt werden. Das Stehen mit Unterstützung, z. B. zum Transfer, kann möglich sein. Auch mit Unterstützung anderer Personen oder Gehhilfen besteht keine Gehfähigkeit.</div><br>
+
+        <input onclick="calculateTotal()" type="radio" name="frage8" id="frage8_0" value="0" data-score="0">
+        <label for="frage8_0">Keine zielgerichtete Beinbewegung möglich (0 Punkte)</label>
+        <div class="explanation">Die Beine können das Körpergewicht nicht tragen (z. B. zum Transfer), und es können keine zweckdienlichen Beinbewegungen z. B. zur Erleichterung der Pflege ausgeführt werden.</div>
+    </div>
+</div>
+
+<!-- Frage 9 -->
+<div class="frage">
+    <h3>Frage 9: Treppen hinaufsteigen</h3>
+    <p>Bitte wählen Sie eine der folgenden Antworten:</p>
+    <div class="antwort">
+        <input onclick="calculateTotal()" type="radio" name="frage9" id="frage9_4" checked value="4" data-score="4">
+        <label for="frage9_4">Ungestört (4 Punkte)</label>
+        <div class="explanation">Es besteht keine Veränderung beim Hinaufsteigen einer Treppe.</div><br>
+
+        <input onclick="calculateTotal()" type="radio" name="frage9" id="frage9_3" value="3" data-score="3">
+        <label for="frage9_3">Langsam (3 Punkte)</label>
+        <div class="explanation">Das Hinaufsteigen einer Treppe erfolgt verlangsamt, ist aber ohne Ruhepausen oder Unsicherheit möglich.</div><br>
+
+        <input onclick="calculateTotal()" type="radio" name="frage9" id="frage9_2" value="2" data-score="2">
+        <label for="frage9_2">Leichte Unsicherheit oder Ermüdung (2 Punkte)</label>
+        <div class="explanation">Das Hinaufsteigen einer Treppe ist unsicherer. Eventuell sind Ruhepausen nötig. Hilfe, z. B. durch einen Handlauf oder eine andere Person, ist nicht zwingend erforderlich.</div><br>
+
+        <input onclick="calculateTotal()" type="radio" name="frage9" id="frage9_1" value="1" data-score="1">
+        <label for="frage9_1">Unterstützung erforderlich (1 Punkt)</label>
+        <div class="explanation">Das Hinaufsteigen einer Treppe ist ohne die Verwendung eines Handlaufs oder die Hilfe einer Person nicht möglich.</div><br>
+
+        <input onclick="calculateTotal()" type="radio" name="frage9" id="frage9_0" value="0" data-score="0">
+        <label for="frage9_0">Nicht möglich (0 Punkte)</label>
+        <div class="explanation">Treppen können auch mit Hilfe nicht hinaufgestiegen werden.</div>
+    </div>
+</div>
+
+<!-- Frage 10 -->
+<div class="frage">
+    <h3>Frage 10: Luftnot und Kurzatmigkeit</h3>
+    <p>Bitte wählen Sie eine der folgenden Antworten:</p>
+    <div class="antwort">
+        <input onclick="calculateTotal()" type="radio" name="frage10" id="frage10_4" checked value="4" data-score="4">
+        <label for="frage10_4">Ungestört (4 Punkte)</label>
+        <div class="explanation">Luftnot oder Kurzatmigkeit tritt bei üblicher Belastung im Alltag nicht auf.</div><br>
+
+        <input onclick="calculateTotal()" type="radio" name="frage10" id="frage10_3" value="3" data-score="3">
+        <label for="frage10_3">Beim Gehen (3 Punkte)</label>
+        <div class="explanation">Luftnot oder Kurzatmigkeit tritt beim Gehen in Schritteschwindigkeit oder bei mäßiger Belastung auf.</div><br>
+
+        <input onclick="calculateTotal()" type="radio" name="frage10" id="frage10_2" value="2" data-score="2">
+        <label for="frage10_2">Auftreten bei Aktivitäten des täglichen Lebens (2 Punkte)</label>
+        <div class="explanation">Luftnot oder Kurzatmigkeit tritt bei geringer Belastung oder längerem Sprechen auf, einschließlich Essen, Baden, Ankleiden.</div><br>
+
+        <input onclick="calculateTotal()" type="radio" name="frage10" id="frage10_1" value="1" data-score="1">
+        <label for="frage10_1">Auftreten in Ruhe, im Sitzen oder im Liegen (1 Punkt)</label>
+        <div class="explanation">Luftnot oder Kurzatmigkeit besteht ohne Belastung entweder im Sitzen oder im Liegen oder in beiden Positionen.</div><br>
+
+        <input onclick="calculateTotal()" type="radio" name="frage10" id="frage10_0" value="0" data-score="0">
+        <label for="frage10_0">Erhebliche Luftnot oder Kurzatmigkeit in Ruhe (0 Punkte)</label>
+        <div class="explanation">Luftnot oder Kurzatmigkeit ist in Ruhe immer deutlich vorhanden und/oder eine Maskenbeatmung (nicht-invasive Beatmung) oder Beatmung über Lufttröhenschnitt (Tracheostoma) muss zur Linderung von Luftnot und Kurzatmigkeit eingesetzt werden. Eine mechanische Beatmung wird aufgrund der Luftnot oder einer Kurzatmigkeit genutzt oder empfohlen.</div>
+    </div>
+</div>
+
+<!-- Frage 11 -->
+<div class="frage">
+    <h3>Frage 11: Atmungsbedingte Schlafstörung</h3>
+    <p>Wenn eine nächtliche Beatmung vorgesehen ist, das Schlafen jedoch ohne diese erfolgt, soll die nächtliche Atmung ohne die Nutzung der Beatmung beurteilt werden. Bitte wählen Sie eine der folgenden Antworten:</p>
+    <div class="antwort">
+        <input onclick="calculateTotal()" type="radio" name="frage11" id="frage11_4" checked value="4" data-score="4">
+        <label for="frage11_4">Ungestört (4 Punkte)</label>
+        <div class="explanation">Das Ein- und Durchschlafen ist nicht durch Luftnot oder Kurzatmigkeit beeinträchtigt.</div><br>
+
+        <input onclick="calculateTotal()" type="radio" name="frage11" id="frage11_3" value="3" data-score="3">
+        <label for="frage11_3">Wiederholte Schlafstörung durch Luftnot oder Kurzatmigkeit (3 Punkte)</label>
+        <div class="explanation">Es bestehen bereits beim Hinlegen oder während der Nacht Luftnot oder Kurzatmigkeit. Das Schlafen auf der Seite kann die Atmung verbessern. Der Oberkörper wird nicht durch mehr als zwei Kopfkissen oder mittels eines um mehr als 30 Grad hochgestellten Kopfteils aufgerichtet.</div><br>
+
+        <input onclick="calculateTotal()" type="radio" name="frage11" id="frage11_2" value="2" data-score="2">
+        <label for="frage11_2">Regelmäßige Verwendung von mehr als zwei Kissen zum Schlafen erforderlich (2 Punkte)</label>
+        <div class="explanation">In flacher Rückenlage ist das Atmen merklich unangenehm und das Ein- oder Durchschlafen dadurch gestört. Der Oberkörper wird durch drei oder mehr Kissen oder mittels eines um mehr als 30 Grad hochgestellten Kopfteils aufgerichtet.</div><br>
+
+        <input onclick="calculateTotal()" type="radio" name="frage11" id="frage11_1" value="1" data-score="1">
+        <label for="frage11_1">Schlafen nur im Sitzen möglich (1 Punkt)</label>
+        <div class="explanation">Zum Schlafen ist eine Sitzposition entweder im Bett oder in einem Stuhl notwendig.</div><br>
+
+        <input onclick="calculateTotal()" type="radio" name="frage11" id="frage11_0" value="0" data-score="0">
+        <label for="frage11_0">Hochgradige Schlafstörung aufgrund von Luftnot oder Kurzatmigkeit (0 Punkte)</label>
+        <div class="explanation">Aufgrund von Luftnot oder Kurzatmigkeit ist das Schlafen ohne Maskenbeatmung (nicht-invasive Beatmung) oder Beatmung über Lufttröhenschnitt (Tracheostoma) nicht möglich. Eine mechanische Beatmung wird zur Beschwerdelinderung regelhaft genutzt.</div>
+    </div>
+</div>
+
+<!-- Frage 12 -->
+<div class="frage">
+    <h3>Frage 12: Mechanische Beatmung</h3>
+    <p>Bitte wählen Sie eine der folgenden Antworten:</p>
+    <div class="antwort">
+        <input onclick="calculateTotal()" type="radio" name="frage12" id="frage12_4" checked value="4" data-score="4">
+        <label for="frage12_4">Nicht erforderlich (4 Punkte)</label>
+        <div class="explanation">Die Atmung erfolgt immer selbstständig ohne die Nutzung einer mechanischen Beatmung. Eine nächtliche Druckunterstützung (z. B. CPAP-Therapie zur Behandlung eines Schlafapnoe-Syndroms) zählt nicht als mechanische Beatmung.</div><br>
+
+        <input onclick="calculateTotal()" type="radio" name="frage12" id="frage12_3" value="3" data-score="3">
+        <label for="frage12_3">Zeitweilige Nutzung einer nicht-invasiven Beatmung (3 Punkte)</label>
+        <div class="explanation">Eine Maskenbeatmung (nicht-invasive Beatmung, z. B. BiPAP) wird unregelmäßig oder für weniger als die Dauer des Nachtschlafs eingesetzt.</div><br>
+
+        <input onclick="calculateTotal()" type="radio" name="frage12" id="frage12_2" value="2" data-score="2">
+        <label for="frage12_2">Ständige Nutzung einer nicht-invasiven Beatmung in der Nacht oder zusätzlich stundenweise am Tag (2 Punkte)</label>
+        <div class="explanation">Eine Maskenbeatmung (nicht-invasive Beatmung) wird regelmäßig während der Nacht oder zusätzlich stundenweise während des Tages eingesetzt (insgesamt 8 bis 22 Stunden täglich bezogen auf 24 Stunden).</div><br>
+
+        <input onclick="calculateTotal()" type="radio" name="frage12" id="frage12_1" value="1" data-score="1">
+        <label for="frage12_1">Kontinuierliche Nutzung einer nicht-invasiven Beatmung (Tag und Nacht) (1 Punkt)</label>
+        <div class="explanation">Eine Maskenbeatmung (nicht-invasive Beatmung) wird nahezu die gesamte Zeit eingesetzt (mehr als 22 Stunden täglich bezogen auf 24 Stunden).</div><br>
+
+        <input onclick="calculateTotal()" type="radio" name="frage12" id="frage12_0" value="0" data-score="0">
+        <label for="frage12_0">Mechanische Beatmung über Intubation oder Luftröhrenschnitt (Tracheostoma) (0 Punkte)</label>
+        <div class="explanation">Es erfolgt eine kontinuierliche mechanische Beatmung über einen Beatmungsschlauch (Intubation) oder einen Luftröhrenschnitt (Tracheostoma).</div>
+    </div>
+</div>
+
+
+    </div>
+
+    <div class="ergebnis" id="ergebnis">
+        Gesamtpunktzahl: <span id="total">48</span> Punkte
+                <div class="button-container">
+            <button onclick="saveAsPDF()">Speichern als PDF</button>
+        </div>
+
+    </div>
+
+    <script>
+
+
+        function handleFrage5a() {
+          // Clear and disable Frage 2
+          const frage2Inputs = document.querySelectorAll('#frage5b input');
+          frage2Inputs.forEach(input => {
+            input.checked = false;
+            input.disabled = true;
+          });
+        }
+
+        function handleFrage5b() {
+          // Clear and disable Frage 1
+          const frage1Inputs = document.querySelectorAll('#frage5a input');
+          frage1Inputs.forEach(input => {
+            input.checked = false;
+            input.disabled = true;
+          });
+        }
+        function calculateTotal() {
+            let total = 0;
+            // Handle mutually exclusive questions (Frage 1 and Frage 2)
+            const frage1Checked = document.querySelector('#frage5a input[type="radio"]:checked');
+            const frage2Checked = document.querySelector('#frage5b input[type="radio"]:checked');
+
+            // Check if both are checked (handle as needed, e.g., prioritize one)
+            if (frage1Checked) {
+            total += parseInt(frage1Checked.getAttribute('data-score'));
+            } else if (frage2Checked) {
+            total += parseInt(frage2Checked.getAttribute('data-score'));
+            }
+            document.querySelectorAll('.frage input[type="radio"]:checked').forEach(radio => {
+                total += parseInt(radio.getAttribute('data-score'));
+            });
+            document.getElementById('total').textContent = total;
+        }
+
+        function saveAsPDF() {
+            window.jsPDF = window.jspdf.jsPDF;
+            const doc = new jsPDF();
+            const currentDate = new Date();
+            const year = currentDate.getFullYear();
+            const month = String(currentDate.getMonth() + 1).padStart(2, '0'); // Adding 1 since months are 0-based
+            const day = String(currentDate.getDate()).padStart(2, '0');
+            const totalScore = document.getElementById('total').textContent;
+
+            const title = `ALSFRS-R-SE Fragebogen - ${day}.${month}.${year} - Punkte: ${totalScore}`;
+
+            // PDF-Inhalt erstellen
+            doc.setFontSize(14);
+            doc.text(title, 10, 20);
+
+            let y = 30;
+            const questions = document.querySelectorAll("[class^='frage']")//#'.frage');
+            pageHeight= doc.internal.pageSize.height;
+
+
+            questions.forEach(question => {
+                if (y >= pageHeight-30)
+                {
+                    doc.addPage();
+                    y = 30 // Restart height position
+                }
+                const selectedAnswer = question.querySelector('input[type="radio"]:checked');
+
+                if (selectedAnswer === null) {
+                    return;
+                }
+
+                const questionText = question.querySelector('h3').textContent;
+                const score = selectedAnswer.dataset.score;
+                const explanation = selectedAnswer.nextElementSibling.nextElementSibling.textContent;
+
+                doc.setFontSize(12);
+                doc.text(`${questionText}`, 10, y);
+                doc.setFontSize(10);
+                doc.text(`Punkte: ${score}`, 10, y + 5);
+                doc.text(`Erklärung: ${explanation}`, 10, y + 10, { maxWidth: 180 });
+                y += 25;
+            });
+             const formattedDate = ``;
+
+            doc.save(`${year}${month}${day}_ALSFRS-R-SE.pdf`);
+        }
+    </script>
+</body>
+</html>
