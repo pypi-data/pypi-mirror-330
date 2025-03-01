@@ -1,0 +1,28 @@
+Metadata-Version: 2.2
+Name: pydorado
+Version: 2.5.4
+Summary: dorado - Lagrangian particle routing routine via weighted random walks
+Home-page: https://github.com/passaH2O/dorado
+Author: J. Hariharan, K. Wright, P. Passalacqua
+Author-email: jayaram.hariharan@utexas.edu
+License: MIT
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Programming Language :: Python :: 3.14
+License-File: LICENSE
+Requires-Dist: numpy
+Requires-Dist: matplotlib
+Requires-Dist: scipy
+Requires-Dist: future
+Requires-Dist: tqdm
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: home-page
+Dynamic: license
+Dynamic: requires-dist
+Dynamic: summary
+
+See project webpage for details: https://github.com/passaH2O/dorado
