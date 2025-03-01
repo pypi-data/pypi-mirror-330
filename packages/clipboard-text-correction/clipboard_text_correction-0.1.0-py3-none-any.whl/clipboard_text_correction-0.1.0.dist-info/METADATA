@@ -1,0 +1,64 @@
+Metadata-Version: 2.1
+Name: clipboard-text-correction
+Version: 0.1.0
+Summary: Program that collects text from clipboard and improves text writing
+Home-page: https://github.com/trucomanx/ClipboardTextCorrection
+Author: Fernando Pujaico Rivera
+Author-email: fernando.pujaico.rivera@gmail.com
+Maintainer: Fernando Pujaico Rivera
+Maintainer-email: fernando.pujaico.rivera@gmail.com
+License: UNKNOWN
+Project-URL: Bug Reports, https://github.com/trucomanx/ClipboardTextCorrection/issues
+Project-URL: Funding, https://trucomanx.github.io/en/funding.html
+Project-URL: Source, https://github.com/trucomanx/ClipboardTextCorrection/
+Keywords: tts,server
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: PyQt5
+Requires-Dist: deep-consultation
+Requires-Dist: langdetect
+
+# clipboard-text-correction
+
+Program that improves text writing.
+
+## 1. Installing
+
+### 1.1. Install the package pip
+
+To install the package from `pypi`, follow the instructions below:
+
+
+```bash
+pip install clipboard-text-correction
+```
+
+Execute `which clipboard-text-correction` to see where it was installed, probably in `/home/USERNAME/.local/bin/clipboard-text-correction`.
+
+
+### 1.2. Add clipboard-text-correction to the Linux start session
+
+Adding bar indicator to Linux start session (`~/.config/autostart/clipboard-text-correction-indicator.desktop`)
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/trucomanx/ClipboardTextCorrection/main/install_linux_indicator_session.sh | sh
+```
+
+## 2. Using
+
+If the program was not added to the Linux start session, then to start use the command below:
+
+```bash
+clipboard-text-correction-indicator
+```
+
+## 3. License
+
+This project is licensed under the GPL license. See the `LICENSE` file for more details.
+
+
