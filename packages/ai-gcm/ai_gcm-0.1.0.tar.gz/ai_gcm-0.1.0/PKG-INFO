@@ -1,0 +1,106 @@
+Metadata-Version: 2.3
+Name: ai-gcm
+Version: 0.1.0
+Summary: AI powered Git Commit Message Generator
+License: MIT
+Keywords: git,commit,ai,ollama
+Author: Rahul Katariya
+Author-email: rahulkatariya@me.com
+Requires-Python: >=3.8,<4.0
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Topic :: Software Development :: Version Control :: Git
+Requires-Dist: click (>=8.1.7,<9.0.0)
+Requires-Dist: ollama (>=0.1.6,<0.2.0)
+Requires-Dist: pydantic (>=2.0.0,<3.0.0)
+Project-URL: Homepage, https://github.com/rahul0x24/ai-gcm
+Project-URL: Repository, https://github.com/rahul0x24/ai-gcm
+Description-Content-Type: text/markdown
+
+# AI GCM
+
+A command-line tool that uses AI to generate meaningful git commit messages.
+
+## Features
+
+- Analyzes git diff to understand code changes
+- Generates human-readable summaries of changes
+- Creates conventional commit messages
+- Supports custom AI models
+- Interactive prompts for staging changes
+
+## Prerequisites
+
+1. Install [Ollama](https://ollama.ai):
+   ```bash
+   brew install ollama
+   ```
+
+2. Pull required models:
+   ```bash
+   ollama pull qwen2.5-coder  # for code analysis
+   ollama pull llama3.2       # for commit message generation
+   ```
+
+## Installation
+
+```bash
+pip install ai-gcm
+```
+
+## Usage
+
+### Generate Commit Message
+
+```bash
+# Stage your changes first
+git add .
+
+# Generate commit message with default models
+ai-gcm commit
+
+# Show detailed output including code changes summary
+ai-gcm commit --verbose
+
+# Use custom models
+ai-gcm commit --summary-model qwen2.5-coder --commit-model llama3.2
+```
+
+### Options
+
+- `--summary-model, -s`: Model to use for code summary generation (default: qwen2.5-coder)
+- `--commit-model, -c`: Model to use for commit message generation (default: llama3.2)
+- `--verbose, -v`: Show detailed output including summary
+
+### Check Version
+
+```bash
+ai-gcm version
+```
+
+## Development
+
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   poetry install
+   ```
+3. Activate the virtual environment:
+   ```bash
+   poetry shell
+   ```
+
+## License
+
+MIT
+
