@@ -1,0 +1,27 @@
+[workspace]
+members = ["molar", "molar_molfile", "molar_xdrfile", "molar_gromacs", "molar_powersasa", "molar_python"]
+resolver = "2"
+
+[workspace.package]
+version = "0.8.1"
+rust-version = "1.83"
+edition = "2021"
+authors = ["Semen Yesylevskyy <yesint4@yahoo.com>"]
+license = "Artistic-2.0"
+homepage = "https://github.com/yesint/molar"
+repository = "https://github.com/yesint/molar"
+documentation = "https://docs.rs/molar"
+readme = "README.md"
+keywords = ["MD", "science", "trajectory", "modeling"]
+categories = ["science", "simulation", "external-ffi-bindings"]
+description = "Molar is a rust library for analysis of MD trajectories and molecular modeling"
+
+[workspace.dependencies]
+nalgebra = "0.33.2"
+peg = "0.8.1"
+regex = "1.11.1"
+thiserror = "2.0.8"
+log = "0.4.22"
+cc = { version = "1.2.5", features = ["parallel"] }
+comfy-table = "7.1"
+sorted-vec = "0.8.5"
