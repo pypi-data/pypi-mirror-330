@@ -1,0 +1,144 @@
+# MNIST Hub
+
+A collection of MNIST classifiers and tools including:
+- Generic methods for training, saving and evaluating models
+- Interactive GUI for drawing and recognition
+- A mini contest mode for comparing different models
+
+## Installation
+
+Have Python 3.10 of higher installed. Use Python for which numpy is already compiled which means 3.12 on most platform.
+
+```bash
+# Create a new conda environment
+micromamba create -y -n mnist python=3.12
+
+# Activate the environment
+micromamba activate mnist
+```
+
+Install the package:
+
+```bash
+pip install mnist-hub --upgrade
+```
+
+To install in development mode, clone the source and in the `mnist_hub` directory type:
+
+```bash
+pip install -e .
+```
+
+## The main runner
+
+The first run will a long time a bit because it has to parse the entire scipy/numpy codebase.
+
+```bash
+mnist
+```
+
+
+then it will print somethinw like
+
+```
+Usage: mnist [OPTIONS] COMMAND [ARGS]...
+
+  MNIST Hub - A collection of MNIST classifiers and tools.
+
+Options:
+  -h, --help  Show this message and exit.
+
+Commands:
+  train    Train a model and save the fitted model to a file
+  eval     Load a model stored in a file and evaluate it
+  gui      Launch the MNIST GUI application.
+  contest  Run the MNIST contest evaluation.
+```
+
+## Usage
+
+The package provides a command line interface with several subcommands:
+
+```bash
+# Launch the GUI application that you can use
+# to test the performance of the models.
+mnist gui
+
+# Train a custom model, on just 100 training samples and save to a file.
+mnist train mnist.svm.Network --limit 100 --fname foo.gz
+
+# Evaluate the saved model
+mnist eval --fname foo.gz 
+
+# Run the contest evaluation
+mnist contest
+```
+
+## Development
+
+In development mode clone the archive and install in editable mode.
+
+```bash
+# Create environment
+micromamba create -y -n mnist python
+
+# Activate the environment
+micromamba activate mnist
+
+# Install in editable mode
+pip install -e .
+```
+
+## Training different models
+
+Your can train any valid Python class that implements the `train(trainig_data)`and `predict(data)` methods.
+
+Look at the `minst.toy.Toy` class for an example API.
+
+* [src/mnist/toy.py](src/mnist/toy.py)
+
+You can train new models using the CLI:
+
+```bash
+# Move the toy model to current directory
+cp src/mnist/toy.py foo.py
+
+# Train the new model
+mnist train foo.Toy --fname toy_model.gz
+
+# Evaluate the model in the file.
+mnist eval --fname toy_model.gz
+```
+
+If you cannot import a valid python module it probabaly means it is not on the `PYTHONPATH`:
+
+```bash
+# Add the current directory to the PYTHONPATH
+export PYTHONPATH=$PYTHONPATH:.
+```
+
+## Interesting observations
+
+Neural Network models are massively faster to evaluate than SVM models.
+
+Evaluating a pre-trained Neural Network model on 10000 test data takes just 0.15 seconds, while an SVM model takes about 61 seconds for the same task.
+
+## The MNIST Contest
+
+Can you beat a neural model? Try the contest mode:
+
+```bash
+mnist contest
+```
+
+Keep guessing!
+
+
+
+
+
+
+
+
+
+
