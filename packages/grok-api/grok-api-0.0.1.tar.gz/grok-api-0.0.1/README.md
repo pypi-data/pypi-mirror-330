@@ -1,0 +1,106 @@
+# 🪐 Unofficial Grok API Wrapper
+
+A simple Python wrapper for interacting with the unofficial Grok API, providing easy access to creating conversations, sending follow-up messages, and checking rate limits.
+
+## Features
+
+- **Create new conversations** with Grok
+- **Send follow-up messages** within existing conversations
+- **Fetch rate limit information** for base and reasoning (thinking) requests
+
+## Requirements
+
+- Python 3.x
+- `requests` library
+
+## Installation
+
+```bash
+pip install requests
+```
+
+## Usage
+
+**Note:** Obtain cookies (`sso`, `x-anonuserid`, `x-challenge`, `x-signature`) securely from your browser after logging into Grok. Never share or expose these cookies publicly.
+
+### Authentication Setup
+
+You can initialize authentication either through a cookie dictionary or a cookie string.
+
+**Using a Cookie Dictionary:**
+
+```python
+from grok_api_wrapper import GrokAPIWrapper, GrokAPIAuth
+
+COOKIES = {
+    "sso":             "[INSERT_SSO_HERE]",
+    "x-anonuserid":    "[INSERT_X_ANONUSERID_HERE]",
+    "x-challenge":     "[INSERT_X_CHALLENGE_HERE]",
+    "x-signature":     "[INSERT_X_SIGNATURE_HERE]",
+}
+
+auth = GrokAPIAuth(cookies=COOKIES)
+api = GrokAPIWrapper(auth)
+```
+
+**Using a Cookie String:**
+
+```python
+from grok_api_wrapper import GrokAPIWrapper, GrokAPIAuth
+
+COOKIE_STRING = "[INSERT_COOKIE_STRING_HERE]"
+
+auth = GrokAPIAuth(cookie_string=COOKIE_STRING)
+api = GrokAPIWrapper(auth)
+```
+
+### Creating a Conversation
+
+Initiate a new conversation and stream response tokens:
+
+```python
+prompt = "Explain quantum computing."
+
+for tok in api.create_conversation(prompt):
+    print(tok, end='', sep='')
+```
+
+### Sending a Follow-up Message
+
+Continue an existing conversation:
+
+```python
+followup_message = "Can you simplify that explanation?"
+
+for tok in api.send_followup(followup_message):
+    print(tok, end='', sep='')
+```
+
+### Fetching Rate Limits
+
+Check your current API usage and limits:
+
+```python
+import json
+
+limits = api.fetch_rate_limits()
+print(json.dumps(limits, indent=4))
+```
+
+## SuperGrok Usage Limits
+
+| Request Type    | Limit                      |
+| --------------- | -------------------------- |
+| Grok 3 Base     | 100 messages every 2 hours |
+| Grok 3 Thinking | 30 messages every 2 hours  |
+
+## Important Notes
+
+- Replace placeholders like `[INSERT_SSO_HERE]` with your actual cookies.
+- Keep your cookies secure and never expose them publicly.
+- Ensure cookie strings are valid and contain all necessary authentication components.
+
+## License
+
+This project is provided as-is without warranty. Use responsibly and adhere to Grok's Terms of Service.
+
