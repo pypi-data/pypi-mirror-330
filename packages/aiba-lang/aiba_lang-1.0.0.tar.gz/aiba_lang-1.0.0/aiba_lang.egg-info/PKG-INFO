@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: aiba-lang
+Version: 1.0.0
+Summary: AIBA - Linguagem de Programação para Inteligência Artificial
+Home-page: https://github.com/seu-usuario/aiba-lang
+Author: Seu Nome
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Requires-Dist: pygments
+Requires-Dist: jedi
+Requires-Dist: diffusers
+Requires-Dist: transformers
+Requires-Dist: torch
+Requires-Dist: requests
+Requires-Dist: boto3
+Requires-Dist: psutil
+Requires-Dist: tensorflow
+Requires-Dist: opencv-python
+Requires-Dist: numba
+Requires-Dist: llvmlite
+Requires-Dist: tk
+
+AIBA Ã© uma linbguagem de programaÃ§Ã£o voltada a InteligÃªncia Artificial.

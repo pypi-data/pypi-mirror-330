@@ -1,0 +1,1 @@
+AIBA é uma linbguagem de programação voltada a Inteligência Artificial.

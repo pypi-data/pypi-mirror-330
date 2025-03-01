@@ -1,0 +1,4 @@
+[console_scripts]
+aiba = aiba_compiler:main
+aiba-ide = aiba_ide:main
+aiba-pkg = aiba_pkg_manager:main
