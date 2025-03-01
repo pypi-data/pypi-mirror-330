@@ -1,0 +1,14 @@
+Metadata-Version: 2.2
+Name: poshcar
+Version: 2.0.2
+License-File: LICENSE
+Requires-Dist: ase
+Requires-Dist: pyvis
+Requires-Dist: rdkit
+Requires-Dist: scipy
+Requires-Dist: pymatgen
+Requires-Dist: chgnet
+Requires-Dist: nglview
+Requires-Dist: pandas
+Requires-Dist: networkx
+Dynamic: requires-dist
