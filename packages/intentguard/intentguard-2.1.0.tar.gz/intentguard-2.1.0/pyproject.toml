@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "intentguard"
+version = "2.1.0"
+description = "A Python library for verifying code properties using natural language assertions."
+authors = ["Kosma Dunikowski <kosmadunikowski@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/kdunee/intentguard"
+keywords = ["testing", "pytest", "unittest", "ai-testing", "llm", "code-verification", "natural-language", "test-automation", "code-quality", "language-models"]
+classifiers = [
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Quality Assurance",
+    "Topic :: Software Development :: Testing",
+]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.6.9"
+mypy = "^1.13.0"
+
+[tool.mypy]
+files = "intentguard/**/*.py"
+ignore_missing_imports = true
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
