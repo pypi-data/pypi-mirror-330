@@ -1,0 +1,2 @@
+[console_scripts]
+impruver = impruver._cli._parser:main

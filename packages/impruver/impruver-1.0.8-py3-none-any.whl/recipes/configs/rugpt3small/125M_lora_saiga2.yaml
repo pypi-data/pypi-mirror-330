@@ -1,0 +1,64 @@
+output_dir: ./models/rugpt3small_lora_saiga2
+train_path: ./train.rugpt3small_saiga2.jsonl
+val_path: ./val.rugpt3small_saiga2.jsonl
+
+datasets:
+  - name: IlyaGusev/ru_turbo_alpaca
+    converter: impruver.instruction_to_messages
+  - name: IlyaGusev/ru_turbo_alpaca_evol_instruct
+    converter: impruver.instruction_to_messages
+  - name: IlyaGusev/ru_turbo_saiga
+    converter: impruver.dialog_to_messages
+  - name: IlyaGusev/ru_sharegpt_cleaned
+    converter: impruver.dialog_to_messages
+  - name: IlyaGusev/oasst1_ru_main_branch
+    converter: impruver.dialog_to_messages
+  - name: lksy/ru_instruct_gpt4
+    converter: impruver.instruction_to_messages
+#  - name: IlyaGusev/gpt_roleplay_realm
+#    converter: impruver.char_dialog_to_messages
+#    split: ru
+
+model:
+  class: transformers.AutoModelForCausalLM
+  name: ai-forever/rugpt3small_based_on_gpt2
+  load_in_4bit: false
+  load_in_8bit: true
+  dtype: bf16
+
+lora:
+  r: 32
+  lora_alpha: 16
+  lora_dropout: 0.0
+  bias: none
+  target_modules: [ c_attn, c_proj, c_fc ]
+  modules_to_save: [ lm_head ]
+
+tokenizer:
+  class: transformers.AutoTokenizer
+  name: ai-forever/rugpt3small_based_on_gpt2
+
+trainer:
+  eval_strategy: steps
+  save_strategy: steps
+  eval_steps: 100
+  save_steps: 100
+  per_device_train_batch_size: 7
+  per_device_eval_batch_size: 1
+  gradient_accumulation_steps: 5
+  logging_steps: 1
+  learning_rate: 0.0006
+  num_train_epochs: 2
+  lr_scheduler_type: cosine
+  warmup_steps: 2000
+  optim: paged_adamw_8bit
+  metric_for_best_model: eval_loss
+  load_best_model_at_end: true
+  save_total_limit: 2
+  seed: 42
+  remove_unused_columns: false
+  max_grad_norm: 1.0
+  weight_decay: 0.1
+
+#ddp:
+#  ddp_find_unused_parameters: false
