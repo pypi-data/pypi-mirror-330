@@ -1,0 +1,53 @@
+Metadata-Version: 2.1
+Name: crosscorr
+Version: 0.1.2
+Summary: Calculate Binary Cross Correlation Functions
+Home-page: https://github.com/gummiks/crosscorr/
+Author: Gudmundur Stefansson, Te Han
+Author-email: gummiks@gmail.com, tehanhunter@gmail.com
+Keywords: Spectra Astronomy
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Topic :: Scientific/Engineering :: Astronomy
+Description-Content-Type: text/markdown
+Requires-Dist: numpy ==1.24.3
+Requires-Dist: barycorrpy
+Requires-Dist: h5py
+Requires-Dist: seaborn
+
+# crosscorr
+Easily calculate Cross Correlation Functions (CCFs) from different high resolution spectra. Includes masks from HARPS, ESPRESSO, and HPF. Uses Fortran for speed. The fortran code used here is originally derived from <a href='https://github.com/rabrahm/ceres'>ceres</a>. The notebooks/ directory shows an example on how to calculate CCFs with HPF spectra.
+
+# Installation instructions
+To install, run the following commands:
+```
+git clone https://github.com/TeHanHunter/crosscorr.git
+cd crosscorr
+python3 setup.py install
+```
+This should build the fortran code as well.
+
+# More detailed installation instructions
+Normally the setup.py should fully take care of the installation (including the fotran compilation), but listing instructions to build the fotran code in python just in case.
+
+## Fortran installation instructions
+
+In case the fortran code does not build, run the following commands:
+
+### Linux
+
+```
+cd crosscorr/
+f2py -c -m CCF_1d CCF_1d.f
+f2py -c -m CCF_3d CCF_3d.f
+f2py -c -m CCF_pix CCF_pix.f
+```
+
+## Mac
+On mac you might need to try sudo (verified that this works on my mac).
+
+```
+cd crosscorr/
+sudo f2py -c -m CCF_1d CCF_1d.f
+sudo f2py -c -m CCF_3d CCF_3d.f
+sudo f2py -c -m CCF_pix CCF_pix.f
+```
