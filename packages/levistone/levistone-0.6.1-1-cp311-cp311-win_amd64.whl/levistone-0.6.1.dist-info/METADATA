@@ -1,0 +1,47 @@
+Metadata-Version: 2.2
+Name: levistone
+Version: 0.6.1
+Summary: Endstone offers a plugin API for Bedrock Dedicated Servers, supporting both Python and C++.
+Author-email: Vincent Wu <magicdroidx@gmail.com>
+Project-URL: Changelog, https://endstone.readthedocs.io/en/latest/changelog
+Project-URL: Discussions, https://github.com/orgs/EndstoneMC/discussions
+Project-URL: Documentation, https://endstone.readthedocs.io
+Project-URL: Homepage, https://github.com/EndstoneMC/endstone
+Project-URL: Issues, https://github.com/EndstoneMC/endstone/issues
+Keywords: plugin,python,minecraft,bedrock
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: Microsoft :: Windows
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+Requires-Dist: click
+Requires-Dist: endstone-bstats
+Requires-Dist: importlib-metadata
+Requires-Dist: importlib-resources
+Requires-Dist: numpy
+Requires-Dist: packaging
+Requires-Dist: pkginfo
+Requires-Dist: psutil
+Requires-Dist: pyyaml
+Requires-Dist: requests
+Requires-Dist: rich
+Requires-Dist: tomlkit
+Requires-Dist: typing-extensions
+Provides-Extra: test
+Requires-Dist: pytest; extra == "test"
+
+# LeviStone
+
+A runtime for running Endstone plugins on LeviLamina
+
+## Installation
+
+```bash
+pip install levistone --target plugins/EndstoneRuntime
+```
