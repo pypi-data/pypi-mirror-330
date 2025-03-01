@@ -1,0 +1,113 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "larigira"
+version = "1.4.0"
+dependencies = [
+  "Babel==2.17.0",
+  "Flask-Babel==4.0.*",
+  "Flask-WTF==1.2.*",
+  "Jinja2==3.1.4",
+  "cachelib==0.1",
+  "croniter==3.0.*",
+  "flask-bootstrap==3.3.*",
+  "flask==3.1.0; python_version >= '3.9'",
+  "flask==3.0.*; python_version  < '3.9'",
+  "gevent==24.11.1 ; python_version >= '3.9'",
+  "gevent==23.9.* ; python_version  < '3.9'",
+  "itsdangerous==2.2.0",
+  "lxml==5.3.1",
+  "python-mpd2",
+  "pytimeparse==1.1.8",
+  "pyxdg==0.26",
+  "requests==2.*",
+  "tinydb==3.12.2",
+  "urllib3==1.*",
+  "werkzeug==3.1.3; python_version >= '3.9'",
+  "werkzeug==3.0.*; python_version  < '3.9'",
+  "wtforms==2.2.1",
+]
+requires-python=">=3.8"
+readme = "README.md"
+authors = [
+{name = "boyska", email = "piuttosto@logorroici.org"},
+]
+description = "A radio automation based on MPD"
+license = { text = "AGPL-3.0-only" }
+keywords = ["radio automation", "music"]
+classifiers = [
+    "License :: OSI Approved :: GNU Affero General Public License v3",
+    "Development Status :: 5 - Production/Stable",
+    "Programming Language :: Python :: 3.4",
+    "Programming Language :: Python :: 3.5",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Topic :: Multimedia :: Sound/Audio",
+]
+
+[project.optional-dependencies]
+percentwait = ["mutagen==1.47.*"]
+dev = ["pytest"]
+all = ["larigira[percentwait,dev]"]
+docs = [
+"sphinx-multiversion==0.2.4",
+"Sphinx==7.1.2",
+"sphinxcontrib-applehelp==1.0.4",
+"sphinxcontrib-devhelp==1.0.2",
+"sphinxcontrib-htmlhelp==2.0.1",
+"sphinxcontrib-jsmath==1.0.1",
+"sphinxcontrib-qthelp==1.0.3",
+"sphinxcontrib-serializinghtml==1.1.5",
+]
+
+["project.entry-points.console_scripts"]
+larigira = "larigira.main:main"
+larigira-timegen = "larigira.timegen:main"
+larigira-audiogen = "larigira.audiogen:main"
+larigira-dbmanage = "larigira.event_manage:main"
+
+
+["project.entry-points.larigira.audiogenerators"]
+mpd = "larigira.audiogen_mpdrandom:generate_by_artist"
+static = "larigira.audiogen_static:generate"
+http = "larigira.audiogen_http:generate"
+podcast = "larigira.audiogen_podcast:generate"
+randomdir = "larigira.audiogen_randomdir:generate"
+mostrecent = "larigira.audiogen_mostrecent:generate"
+script = "larigira.audiogen_script:generate"
+
+["project.entry-points.larigira.timegenerators"]
+frequency = "larigira.timegen_every:FrequencyAlarm"
+single = "larigira.timegen_every:SingleAlarm"
+cron = "larigira.timegen_cron:CronAlarm"
+["project.entry-points.larigira.timeform_create"]
+single = "larigira.timeform_base:SingleAlarmForm"
+frequency = "larigira.timeform_base:FrequencyAlarmForm"
+cron = "larigira.timeform_cron:CronAlarmForm"
+["project.entry-points.larigira.timeform_receive"]
+
+single = "larigira.timeform_base:SingleAlarmForm.form_receive"
+frequency = "larigira.timeform_base:FrequencyAlarmForm.form_receive"
+cron = "larigira.timeform_cron:CronAlarmForm.form_receive"
+["project.entry-points.larigira.audioform_create"]
+
+static = "larigira.audioform_static:StaticAudioForm"
+http = "larigira.audioform_http:AudioForm"
+podcast = "larigira.audioform_podcast:AudioForm"
+script = "larigira.audioform_script:ScriptAudioForm"
+randomdir = "larigira.audioform_randomdir:Form"
+mostrecent = "larigira.audioform_mostrecent:AudioForm"
+
+["project.entry-points.larigira.audioform_receive"]
+static = "larigira.audioform_static:staticaudio_receive"
+http = "larigira.audioform_http:audio_receive"
+podcast = "larigira.audioform_podcast:audio_receive"
+script = "larigira.audioform_script:scriptaudio_receive"
+randomdir = "larigira.audioform_randomdir:receive"
+mostrecent = "larigira.audioform_mostrecent:audio_receive"
+
+["project.entry-points.larigira.eventfilter"]
+maxwait = "larigira.filters:maxwait"
+percentwait = "larigira.filters:percentwait"
