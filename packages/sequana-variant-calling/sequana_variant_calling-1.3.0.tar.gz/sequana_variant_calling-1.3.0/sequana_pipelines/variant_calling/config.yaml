@@ -1,0 +1,337 @@
+# ============================================================================
+# Config file for  Variant Calling
+#
+# ==========================================[ Sections for the users ]========
+#
+# One of input_directory, input_pattern and input_samples must be provided
+# If input_directory provided, use it otherwise if input_pattern provided,
+# use it, otherwise use input_samples.
+# ============================================================================
+#
+sequana_wrappers: "v24.1.14"
+
+
+# Mandatory fields
+input_directory:
+input_readtag: _R[12]_
+input_pattern: '*fastq.gz'
+exclude_pattern: 
+
+###########################################################################
+# General section:
+#
+# :Parameters:
+#
+#
+# - aligner_choice: either bwa or minimap2 or bwa_split
+#
+general:
+    aligner_choice: bwa
+    annotation_file:
+    reference_file:
+
+apptainers:
+    #bwa: https://zenodo.org/record/7970243/files/bwa_0.7.17.img
+    bwa: "https://zenodo.org/record/14945560/files/sequana_tools_0.19.1.img"
+    samtools: https://zenodo.org/record/7437898/files/samtools_1.16.1.img
+    seqkit: https://zenodo.org/record/7821924/files/seqkit_2.4.0.img
+    sequana_coverage: https://zenodo.org/record/14945560/files/sequana_tools_0.19.1.img
+    sequana_tools: "https://zenodo.org/record/14945560/files/sequana_tools_0.19.1.img"
+    graphviz: "https://zenodo.org/record/7928262/files/graphviz_7.0.5.img"
+    minimap2: "https://zenodo.org/record/5799482/files/minimap2_2.23.0.img"
+    multiqc: "https://zenodo.org/record/10205070/files/multiqc_1.16.0.img"
+    freebayes: "https://zenodo.org/record/14930911/files/freebayes_1.3.9.img"
+    fastqc: https://zenodo.org/record/7015004/files/fastqc_0.11.9-py3.img
+    fastp: https://zenodo.org/record/7319782/files/fastp_0.23.2.img
+
+# you may add ID, PF, SM, PU, LB read tags
+#
+add_read_group:
+    #PU: Illumina
+    options: ''
+
+
+minimap2:
+    options: "-x map-ont"
+    threads: 4
+    resources:
+        mem: 8G
+
+
+##############################################################################
+# samtools_depth
+#
+# :Parameters:
+#
+# - max_depth: by default max depth is 20,000 but can be changed here
+samtools_depth:
+    max_depth: 20000
+    resources:
+        mem: 8G
+
+
+##############################################################################
+# BWA - Mapping
+#
+# :Parameters:
+#
+# - reference_file: the name of the reference file.
+# - index_algorithm: the BWA index algorithm (is or bwtsw).
+#     is:	IS linear-time algorithm for constructing suffix array. It requires 
+#           5.37N memory where N is the size of the database. IS is moderately fast, but 
+#           does not work with database larger than 2GB. IS is the default algorithm due 
+#           to its simplicity. The current codes for IS algorithm are reimplemented by Yuta Mori.
+#     bwtsw	Algorithm implemented in BWT-SW. This method works with the whole human genome, 
+#           but it does not work with database smaller than 10MB and it is usually slower than IS.
+# - options: any options recognised by BWA MEM tool.
+# - threads: number of threads to be used.
+# - tmp_directory: temporary directory
+#
+bwa:
+    index_algorithm: is
+    options: -T 30
+    threads: 4
+    tmp_directory: ./tmp/
+    resources:
+        mem: 8G
+
+#############################################################################
+# BWA MEM indexing
+#
+bwa_index:
+    options: ''
+    threads: 4
+    resources:
+        mem: 8G
+
+
+
+bwa_split:
+    nreads: 100000
+    index_algorithm: is
+    options: -T 30 -M
+    threads: 4
+    tmp_directory: ./tmp
+    resources:
+        mem: 8G
+
+
+##############################################################################
+# SnpEff - Annotate variants detected
+#
+# :Parameters:
+#
+# - do: if unchecked, this rule is ignored.
+# - options: any options recognised by snpEff.
+# - build_options: use at the build stage of snpEff.
+#       depending on the GFF, you may need to add options to skip some sanity checks
+#       such as noCheckProtein or -noCheckCds. Note also that newest version of snpeff
+#       may need more memory. To do so, you must set the -XmxNg option where N is to be 
+#       replaced by the required memory in Gb. Version of snpEff 5.1 does not seem to accept
+#       that option though.
+# Requires the annotation file
+#
+#   Results filter options:
+#	    -no-downstream: Do not show DOWNSTREAM changes
+#	    -no-intergenic: Do not show INTERGENIC changes
+#	    -no-intron: Do not show INTRON changes
+#	    -no-upstream: Do not show UPSTREAM changes
+#	    -no-utr: Do not show 5_PRIME_UTR or 3_PRIME_UTR changes
+#
+snpeff:
+    do: true
+    build_options: " -noCheckCds -noCheckProtein"
+    options: -no-downstream -no-upstream
+    resources:
+        mem: 8G
+
+##############################################################################
+# Freebayes - Variant caller
+#
+# :Parameters:
+#
+# - ploidy: set the ploidy of your samples.
+# - options: any options recognised by freebayes.
+#
+freebayes:
+    ploidy: 1
+    chunksize: 100000
+    options: --legacy-gls
+    resources:
+        mem: 8G
+
+##############################################################################
+# Joint Freebayes - Variant caller
+#
+# :Parameters:
+#
+# - options: any options recognised by freebayes.
+# - Note that ploidy is the one from the 'freebayes' section
+joint_freebayes:
+    do: false
+    options: ''
+    resources:
+        mem: 8G
+
+##############################################################################
+# Sambamba - Marks or removes duplicates
+#
+# :Parameters:
+#
+# - do: if unchecked, this rule is ignored.
+# - remove_duplicates: boolean if you want remove or not duplicated reads.
+# - tmp_directory: set the temporary directory.
+#
+sambamba_markdup:
+    do: true
+    remove_duplicates: false
+    tmp_directory: ./tmp/
+    options:
+
+##############################################################################
+# Filter reads with a mapping score lower than an integer 
+#
+# :Parameters:
+#
+# - do: if unchecked, this rule is ignored.
+# - threshold: mapping score threshold (between 0 and 60).
+#
+sambamba_filter:
+    do: true
+    threshold: 30
+    options:
+
+##############################################################################
+# Sequana coverage - Analyse the coverage of the mapping 
+#
+# :Parameters:
+#
+# - do: if unchecked, this rule is ignored.
+# - mixture_models: number of gaussian predicted.
+# - circular: if your genome is circular.
+# - window_size: window size to compute the running median.
+# - low_threshold: threshold to detect low coverage regions.
+# - high_threshold: threshold to detect high coverage regions.
+# - gc_window_size: window size to compute GC content.
+#
+sequana_coverage:
+    do: false
+    circular: false
+    window_size: 10001
+    chunksize: 5000000
+    double_threshold: 0.5
+    gc_window_size: 201
+    high_threshold: 4.0
+    low_threshold: -4.0
+    mixture_models: 2
+    options: ""
+    resources:
+        mem: 8G
+
+
+##############################################################################
+# Filter VCF
+#
+# :Parameters:
+#
+# - freebayes_score: threshold for minimum freebayes quality score.
+# - frequency: threshold for minimum alternative allele frequency.
+# - min_depth: threshold for minimum coverage depth.
+# - forward_depth: threshold for minimum coverage depth of forward strand.
+# - reverse_depth: threshold for minimum coverage depth of reverse strand.
+# - strand_ratio: threshold for minimum strand ratio between 0 and 0.5.
+#
+freebayes_vcf_filter:
+    freebayes_score: 20
+    frequency: 0.1
+    min_depth: 10
+    forward_depth: 3
+    reverse_depth: 3
+    strand_ratio: 0.2
+    keep_polymorphic: True
+
+##############################################################################
+# Filter Joint VCF
+#
+# :Parameters:
+#
+# - freebayes_score: threshold for minimum freebayes score.
+# - frequency: threshold for minimum alternative allele frequency.
+# - min_depth: threshold for minimum coverage depth.
+#
+joint_freebayes_vcf_filter:
+    freebayes_score: 200
+    frequency: 0.8
+    min_depth: 20
+
+
+#############################################################################
+# -Q should disable the quality filter
+#
+# Quality filtering only limits the N base number (-n, --n_base_limit) 
+# meaning if 5 Ns are found, the read is discarded, 
+# -q is the quality value se to Q15 to be qualified; If more than 40% of bases
+# are unqualified, the read is discarded.
+# You can also filter reads by average quality score using -e QUAL_score
+#
+# minimum length is set to 15 by default
+#
+# Adapter trimming is set by default. Can be disable with -A
+# For adapters, this is automatic but you can be specific using 
+# --adapter_sequence for read1, and --adapter_sequence_r2 for read2.
+# The --cut_tail moves a sliding window from tail (3') to front, drop the bases 
+# in the window if its mean quality is below cut_mean_quality, stop otherwise. 
+# Use cut_tail_window_size to set the widnow size (default 4)), and 
+# cut_tail_mean_quality to set the mean quality threshold (default 20)
+# Other useful options: --disable_adapter_trimming and --disable_quality_filtering.
+# or -n 5 (minimum number of Ns required to discard a read)
+fastp:
+    do: true
+    options: ' --cut_tail '
+    minimum_length: 20
+    adapters: ''
+    quality: 15
+    threads: 4
+    disable_adapter_trimming: false
+    disable_quality_filtering: false
+    resources:
+        mem: 8G
+
+#################################################################
+# FastQC section
+#
+# :Parameters:
+#
+# - options: string with any valid FastQC options
+#
+fastqc:
+    options: --nogroup
+    threads: 4
+    resources:
+        mem: 4G
+
+
+
+
+
+
+
+#############################################################################
+#   MultiQC aggregates results from bioinformatics analyses across many
+#   samples into a single report.
+#
+# :Parameters:
+#
+# - options: any options recognised by multiqc
+# - output-directory: Create report in the specified output directory
+# - config_file: by default, we use sequana RNA-seq multiqc_config file. 
+#       If you want your own multiqc, fill this entry
+multiqc:
+    options: -p -f 
+    modules: snpeff sequana_coverage fastqc bcftools fastp
+    input_directory: .
+    config_file: multiqc_config.yaml
+    resources:
+        mem: 8G
+
+

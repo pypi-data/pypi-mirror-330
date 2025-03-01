@@ -1,0 +1,889 @@
+#
+#  This file is part of Sequana software
+#
+#  Copyright (c) 2016-2021 - Sequana Development Team
+#
+#  Distributed under the terms of the 3-clause BSD license.
+#  The full license is in the LICENSE file, distributed with this software.
+#
+#  website: https://github.com/sequana/sequana
+#  documentation: http://sequana.readthedocs.io
+#
+##############################################################################
+"""
+Author: Dimitri Desvillechabrol, Thomas Cokelaer
+Affiliation: Institut Pasteur
+Aim: Variant calling
+Data: paired end or single reads
+Run: snakemake -s variant_calling.rules
+"""
+import os
+import shutil
+import glob
+import json
+
+import pandas as pd
+
+import sequana
+from sequana_pipetools import snaketools as sm
+from sequana_pipetools.snaketools import PipelineManager
+
+
+# This must be defined before the include
+configfile: "config.yaml"
+
+# A convenient manager
+manager = PipelineManager("variant_calling", config)
+
+chunksize = config['freebayes']['chunksize']
+
+# ================================================= some sanity checks
+# if there are more than one sample lets do a joint calling with all samples
+if len(manager.samples) == 1:
+    config["joint_freebayes"]["do"] = False
+
+
+# ================================================== Define outputs
+expected_output = []
+
+others = ["multiqc/multiqc_report.html"]
+
+if config['joint_freebayes']['do']:
+    others += ["joint_calling/variant_calling.html"]
+
+
+rule all:
+    input:
+        ".sequana/rulegraph.svg",
+        "outputs/stats.csv",
+        others
+
+
+reference_file  = config["general"]["reference_file"]
+annotation_file = config["general"]["annotation_file"]
+new_reference = f"reference/{os.path.basename(reference_file)}"
+
+
+# ========================================================= snpeff
+# Add locus in FASTA file for snpEff
+if config["snpeff"]["do"]:
+
+    rule snpeff_add_locus_in_fasta:
+        input:
+            reference_file,
+            annotation_file
+        output:
+            new_reference
+        params:
+            options=config["snpeff"]["build_options"]
+        log:
+            "common_logs/snpeff_add_locus_in_fasta.log"
+        resources:
+            **config["snpeff"]["resources"]
+        container:
+            config['apptainers']['sequana_tools']
+        wrapper:
+            f"{manager.wrappers}/wrappers/snpeff_add_locus_in_fasta"
+
+# Copy the reference index if it exists
+elif not os.path.isfile(reference_file + ".fai"):
+    rule copy:
+        input:
+            src=reference_file
+        output:
+            src=new_reference
+        shell:
+            """
+            cp {input.src} {output.src}
+            """
+else:
+    new_reference = reference_file
+
+# Cleaning the data (or not)
+#
+def get_input_data():
+    if manager.config.fastp.do is False:
+        return manager.getrawdata()
+    else:
+        __clean_fastq__output = ["{sample}/fastp/{sample}_R1_.fastq.gz"]
+        if manager.paired:
+            __clean_fastq__output += ["{sample}/fastp/{sample}_R2_.fastq.gz"]
+        return __clean_fastq__output 
+
+if manager.config.fastp.do:
+
+    fastp_outputs = get_input_data()
+
+    _quality = config["fastp"].get("quality", 15)
+    _minlen = config["fastp"].get("minimum_length", 20)
+    options_fastp = config["fastp"].get("options", "")
+    options_fastp += f" --qualified_quality_phred {_quality}"
+    options_fastp += f" -l {_minlen}"
+    if config["fastp"].get("disable_adapter_trimming", False) is True:
+        options_fastp += "--disable_adapter_trimming"
+    if config["fastp"].get("disable_quality_filtering", False) is True:
+        options_fastp += "--disable_quality_filtering"
+
+    rule fastp:
+        input:
+            sample=manager.getrawdata()
+        output:
+            trimmed=fastp_outputs,
+            html="{sample}/fastp/fastp_{sample}.html",
+            json="{sample}/fastp/fastp_{sample}.json", # must be named fastp
+        log:
+            "logs/fastp/{sample}.log"
+        params:
+            options=options_fastp,
+            adapters=config["fastp"]["adapters"]
+        threads:
+            config["fastp"].get("threads", 4)
+        resources:
+            **config['fastp']['resources']
+        container:
+            config['apptainers']['fastp']
+        wrapper:
+            f"{manager.wrappers}/wrappers/fastp"
+
+
+
+rule fastqc:
+    input:
+        get_input_data()
+    output:
+        done = "{sample}/fastqc/fastqc.done"
+    params:
+        options= config["fastqc"]["options"],
+        working_directory= "{sample}/fastqc"
+    threads: config["fastqc"]["threads"]
+    log:
+        "{sample}/fastqc/fastqc.log"
+    resources:
+        **config["fastqc"]['resources']
+    container:
+        config['apptainers']['fastqc']
+    wrapper:
+        f"{manager.wrappers}/wrappers/fastqc"
+expected_output.extend(expand("{sample}/fastqc/fastqc.done", sample=manager.samples))
+
+
+
+# ========================================================= BWA
+# The pipeline can be started with sorted BAM files
+#
+aligner = config["general"]["aligner_choice"]
+if not config["input_pattern"].endswith("bam"):
+
+    if aligner in ["bwa", "bwa_split"]:
+        reference = config["general"]["reference_file"]
+
+        # ========================================================= bwa indexing
+        rule bwa_index:
+            input:
+                reference=new_reference
+            output:
+                bwa_bwt=new_reference + ".bwt",
+                fai=new_reference + ".fai"
+            log:
+                "reference/build.log"
+            params:
+                options=config['bwa'].get('index_options', ""),
+                index_algorithm=config['bwa'].get('index_algorithm', "is")
+            container:
+                config['apptainers']['sequana_tools']
+            threads: 2
+            resources:
+                **config["bwa_index"]["resources"],
+            wrapper:
+                f"{manager.wrappers}/wrappers/bwa/build"
+
+    if aligner == "bwa":
+
+        # ========================================================= bwa mapping
+        rule bwa:
+            input:
+                fastq=get_input_data(),
+                bwa_bwt=new_reference + ".bwt",
+                fai=new_reference + ".fai",
+                reference=new_reference
+            output:
+                sorted="{sample}/bwa/{sample}.sorted.bam"
+            log:
+                "{sample}/bwa/{sample}.log"
+            params:
+                options=config["bwa"]["options"],
+                tmp_directory=config["bwa"]["tmp_directory"]
+            container:
+                config['apptainers']['sequana_tools']
+            threads: 2
+            resources:
+                **config["bwa"]["resources"]
+            wrapper:
+                f"{manager.wrappers}/wrappers/bwa/align"
+
+    elif aligner == "bwa_split":
+
+        checkpoint split_fasta:
+            input:
+                get_input_data()
+            output:
+                directory("{sample}/split/"),
+            params:
+                nreads=config["bwa_split"]["nreads"],
+            container:
+                config["apptainers"]["seqkit"]
+            shell:
+                """
+                seqkit split2 --by-size {params.nreads} -O {wildcards.sample}/split -1 {input[0]} -2 {input[1]}
+                """
+
+        def get_bwa_input():
+            if manager.paired is True:
+                return (
+                    "{sample}/split/{sample}_R1_.{splitid}.fastq.gz",
+                    "{sample}/split/{sample}_R2_.{splitid}.fastq.gz",
+                )
+            else:
+                return "{sample}/split/{sample}_R1_.{splitid}.fastq.gz"
+
+        # intermediate
+        rule bwa_intermediate:
+            input:
+                fastq=get_bwa_input(),
+                bwa_bwt=new_reference + ".bwt",
+                fai=new_reference + ".fai",
+                reference=new_reference
+            output:
+                sorted="{sample}/split/{sample}.sorted.{splitid}.bam",
+            log:
+                "{sample}/split/{sample}.{splitid}.log",
+            params:
+                options=config["bwa"]["options"],
+                tmp_directory=config["bwa"]["tmp_directory"],
+            threads: 2
+            resources:
+                **config["bwa"]["resources"],
+            container:
+                config["apptainers"]["bwa"]
+            wrapper:
+                f"{manager.wrappers}/wrappers/bwa/align"
+
+        def aggregate_bwa(wildcards):
+            checkpoint_output = checkpoints.split_fasta.get(**wildcards).output[0]
+            splitter = glob.glob(checkpoint_output + "/*.gz")
+            splitter = [
+                x.split(".")[-3]
+                for x in splitter
+                if x.endswith(".gz") and "_R1_" in x or "_R1." or "_1." in x
+            ]
+            filenames = expand(
+                "{{sample}}/split/{{sample}}.sorted.{splitid}.bam", splitid=splitter
+            )
+            # prevent R1 and R2 to be provided at same time.
+            filenames = list(set(filenames))
+            return filenames
+
+        rule bwa_merge:
+            input:
+                aggregate_bwa,
+            output:
+                bam="{sample}/bwa_split/{sample}.bam",
+            container:
+                config["apptainers"]["samtools"]
+            shell:
+                """
+                samtools merge {output} {input}
+                """
+
+        rule sorting_bam:
+            input:
+                rules.bwa_merge.output.bam
+            output:
+                sorted="{sample}/bwa_split/{sample}.sorted.bam"
+            container:
+                config["apptainers"]["samtools"]
+            shell:
+                """
+                samtools sort {input} > {output}
+                samtools index {output} 
+                """
+
+    elif aligner == "minimap2":
+        rule minimap2:
+            input:
+                fastq=get_input_data(),
+                reference=new_reference
+            output:
+                sorted="{sample}/minimap2/{sample}.sorted.bam"
+            threads:
+                config["minimap2"]["threads"]
+            params:
+                options=config['minimap2']['options']
+            container:
+                config['apptainers']['minimap2']
+            resources:
+                **config["minimap2"]["resources"]
+            wrapper:
+                f"{manager.wrappers}/wrappers/minimap2"
+    else:
+        raise ValueError(f"aligner_choice must be set to bwa or minimap2. You set {aligner}")
+
+
+# ========================================================= add read group
+#
+rule add_read_group:
+    input:
+        get_input_data() if config["input_pattern"].endswith(".bam") 
+            else "{sample}/" + aligner + "/{sample}.sorted.bam"
+    output:
+        bam="{sample}/add_read_group/{sample}.sorted.bam"
+    log:
+        "{sample}/add_read_group/{sample}.log"
+    params:
+        options=config["add_read_group"]["options"],
+        SM="{sample}"
+    container:
+        config['apptainers']['sequana_tools']
+    wrapper:
+        f"{manager.wrappers}/wrappers/add_read_group"
+
+
+
+# ============================================= Mark duplicates with sambamba markdup
+if config["sambamba_markdup"]["do"]:
+
+    rule sambamba_markdup:
+        input:
+            "{sample}/add_read_group/{sample}.sorted.bam"
+        output:
+            bam="{sample}/sambamba_markdup/{sample}.sorted.bam"
+        log: "{sample}/sambamba_markdup.log",
+        params:
+            options=config["sambamba_markdup"]["options"],
+            tmp_directory=config["sambamba_markdup"]["tmp_directory"],
+            remove_duplicates=config["sambamba_markdup"]["remove_duplicates"]
+        container:
+            config['apptainers']['sequana_tools']
+        wrapper:
+            f"{manager.wrappers}/wrappers/sambamba_markdup"
+
+    __sambamba_filter__input = rules.sambamba_markdup.output.bam
+    __freebayes__input       = rules.sambamba_markdup.output.bam
+    __samtools_depth__input  = rules.sambamba_markdup.output.bam
+else:
+    __sambamba_filter__input  = rules.add_read_group.output.bam
+    __samtools_depth__input   = rules.add_read_group.output.bam
+    __freebayes__input        = rules.add_read_group.output.bam
+
+# ============================================== bam quality filter with sambamba
+if config["sambamba_filter"]["do"]:
+
+    rule sambamba_filter:
+        input:
+            __sambamba_filter__input
+        output:
+            "{sample}/sambamba_filter/{sample}.filter.sorted.bam"
+        log:
+            "{sample}/sambamba_filter/{sample}_sambamba_filter.log",
+        params:
+            threshold=config["sambamba_filter"]["threshold"],
+            options=config["sambamba_filter"]["options"]
+        container:
+            config['apptainers']['sequana_tools']
+        wrapper:
+            f"{manager.wrappers}/wrappers/sambamba_filter"
+
+    __freebayes__input = rules.sambamba_filter.output[0]
+    __samtools_depth__input = [
+        "{sample}/sambamba_filter/{sample}.filter.sorted.bam",
+    ]
+
+
+# ========================================================= sequana_coverage analysis
+if config["sequana_coverage"]["do"]:
+    config["sequana_coverage"]["reference_file"] = new_reference
+
+    rule bedtools_depth:
+        input:
+            __samtools_depth__input
+        output:
+            "{sample}/bedtools_depth/{sample}.bed"
+        log:
+            "{sample}/bedtools_depth/{sample}.log"
+        resources:
+            **config["sequana_coverage"]["resources"]
+        container:
+            config['apptainers']['sequana_tools']
+        shell:
+            """
+            bedtools genomecov -d -ibam {input} > {output}
+            """
+
+    rule samtools_depth:
+        input:
+            __samtools_depth__input
+        output:
+            "{sample}/samtools_depth/{sample}.bed"
+        log:
+            "{sample}/samtools_depth/{sample}.log"
+        params:
+            # change -m to higher value would you have a large coverage
+            options="-m " + str(config['samtools_depth'].get("max_depth", 20000))
+        resources:
+            **config["samtools_depth"]["resources"]
+        container:
+            config['apptainers']['sequana_tools']
+        wrapper:
+            f"{manager.wrappers}/wrappers/samtools_depth"
+
+
+    rule double_bed:
+        input:
+            bed1="{sample}/samtools_depth/{sample}.bed",
+            bed2="{sample}/bedtools_depth/{sample}.bed"
+        output:
+            "{sample}/double_bed/{sample}.bed"
+        run:
+            with open(input.bed1) as fin1, open(input.bed2) as fin2, open(output[0], "w") as fout:
+                for line1, line2 in zip(fin1, fin2):
+                    name1, pos1, count1 = line1.split()
+                    name2, pos2, count2 = line2.split()
+                    assert name1==name2
+                    assert pos1==pos2
+                    fout.write(f"{name1}\t{pos1}\t{count1}\t{count2}\n")
+
+
+
+    def get_sequana_coverage_input(config):
+        input_file = {
+            "bed": "{sample}/double_bed/{sample}.bed",
+            "fasta": reference_file
+        }
+        if config["general"]["annotation_file"]:
+            input_file['gbk'] = config["general"]["annotation_file"]
+
+        return input_file
+
+    rule sequana_coverage:
+        input:
+            **get_sequana_coverage_input(config)
+        output:
+            "{sample}/sequana_coverage/sequana_coverage.html"
+        params:
+            annotation=annotation_file,
+            circular=config["sequana_coverage"]["circular"],
+            chunksize=config["sequana_coverage"]["chunksize"],
+            double_threshold=config["sequana_coverage"]["double_threshold"],
+            gc_window_size=config["sequana_coverage"]["gc_window_size"],
+            high_threshold=config["sequana_coverage"]["high_threshold"],
+            low_threshold=config["sequana_coverage"]["low_threshold"],
+            mixture_models=config["sequana_coverage"]["mixture_models"],
+            options=config["sequana_coverage"]["options"],
+            gbk=annotation_file if config["snpeff"]["do"] else None,
+            window_size=config["sequana_coverage"]["window_size"],
+            output_directory="{sample}/sequana_coverage"
+        log:
+            "logs/sequana_coverage/{sample}_sequana_coverage.log"
+        resources:
+            **config["sequana_coverage"]["resources"]
+        container:
+            config["apptainers"]["sequana_coverage"]
+        wrapper:
+            f"{manager.wrappers}/wrappers/sequana_coverage"
+
+    expected_output += expand("{sample}/sequana_coverage/sequana_coverage.html",
+             sample=manager.samples)
+
+
+# ========================================================= freebayes
+# Variant calling with Freebayes
+checkpoint get_regions:
+    input:
+        fai= f"{new_reference}.fai"
+    output:
+        dir=directory("resources/regions"),
+        ready="resources/regions/ready"
+    params:
+        chunks=chunksize
+    container:
+        config['apptainers']['freebayes']
+    shell:
+        """
+        # script from freebayes to decompose the input ref into smaller chunks
+        mkdir -p resources && mkdir -p resources/regions
+        # fasta_generate_regions requires a prefix (here data)
+        fasta_generate_regions.py {input.fai} {params.chunks} --bed resources/regions/data
+        touch {output.ready}
+        """
+
+def get_freebayes_input():
+    return "resources/regions/data.{chrom}.region.{chunk}.bed"
+
+
+rule freebayes_intermediate:
+    input:
+        #rules.get_regions.output.ready,
+        ref= new_reference,
+        fai= f"{new_reference}.fai",
+        bam="{sample}/add_read_group/{sample}.sorted.bam",
+        region=get_freebayes_input()
+    params:
+        ploidy=config["freebayes"]["ploidy"],
+        options=config["freebayes"]["options"]
+    output:
+        vcf="{sample}/freebayes_split/data.{chrom}.region.{chunk}.vcf"
+    #log:
+    #    "{sample}/freebayes/{sample}_freebayes.log"
+    resources:
+        **config["freebayes"]["resources"]
+    container:
+        config['apptainers']['freebayes']
+    shell:
+        """
+        freebayes {params.options} -p {params.ploidy} -f {input.ref} -t {input.region} {input.bam} > {output.vcf}
+        """
+
+
+def aggregate_freebayes(wildcards):
+    checkpoint_output = checkpoints.get_regions.get(**wildcards).output["dir"]
+    files = glob.glob(checkpoint_output + "/*bed")
+
+    # Extract values using list comprehension
+    split = lambda x: x.split('/')[-1]
+    chroms = list(set([split(f).split(".region.")[0].strip(".data") for f in files]))
+    chunks = list(set([split(f).split('.region')[1].strip(".bed") for f in files]))
+
+    filenames = expand(
+            "{{sample}}/freebayes_split/data.{chrom}.region.{chunk}.vcf", 
+            chrom=chroms, chunk=chunks
+    )
+    return filenames
+
+
+
+
+rule freebayes_merge:
+    input:
+        calls=aggregate_freebayes,
+    output:
+        vcf="{sample}/freebayes/{sample}.raw.vcf.tmp"
+    log:
+        "{sample}/freebayes/concat_vcf.log"
+    container:
+        config['apptainers']['sequana_tools']
+    shell:
+        """
+        bcftools concat {input.calls} > {output.vcf} 2>{log}
+        """
+
+rule vcf_merge:
+    input:
+        vcf="{sample}/freebayes/{sample}.raw.vcf.tmp"
+    output:
+        vcf="{sample}/freebayes/{sample}.raw.vcf"
+    container:
+        config['apptainers']['freebayes']
+    shell:
+        """
+
+        cat {input.vcf} | vcffirstheader | vcfstreamsort > {output.vcf}
+        """
+
+
+
+# =========================================================== annotation snpeff
+# Annotate detected variants with snpEff
+if config["snpeff"]["do"]:
+
+    rule snpeff:
+        input:
+            vcf = "{sample}/freebayes/{sample}.raw.vcf",
+            ann = annotation_file
+        output:
+            html="{sample}/snpeff/{sample}.snpeff.html",
+            csv="{sample}/snpeff/{sample}.snpeff.csv",
+            vcf="{sample}/snpeff/{sample}.ann.vcf"
+        log:
+            "{sample}/snpeff/{sample}_snpeff.log"
+        params:
+            options=config["snpeff"]["options"]
+        resources:
+            **config["snpeff"]["resources"]
+        container:
+            config['apptainers']['sequana_tools']
+        wrapper:
+            f"{manager.wrappers}/wrappers/snpeff"
+
+
+    __freebayes_vcf_filter__input = "{sample}/snpeff/{sample}.ann.vcf"
+    expected_output += expand("{sample}/snpeff/{sample}.ann.vcf", sample=manager.samples)
+else:
+    __freebayes_vcf_filter__input = "{sample}/freebayes/{sample}.raw.vcf"
+
+expected_output += expand("{sample}/freebayes/{sample}.raw.vcf", sample=manager.samples)
+
+
+# ================================================================== Freebayes filter
+#
+#
+rule freebayes_vcf_filter:
+    input:
+        __freebayes_vcf_filter__input
+    output:
+        vcf="{sample}/freebayes_vcf_filter/{sample}.filter.vcf",
+        csv="{sample}/freebayes_vcf_filter/{sample}.filter.csv",
+        html="{sample}/variant_calling.html"
+    params:
+        filter_dict=config["freebayes_vcf_filter"]
+    resources:
+        **config["freebayes"]["resources"]
+    container:
+        config['apptainers']['sequana_tools']
+    wrapper:
+        f"{manager.wrappers}/wrappers/freebayes_vcf_filter"
+
+
+rule vcf2bcf:
+    input:
+        vcf_filter="{sample}/freebayes_vcf_filter/{sample}.filter.vcf"
+    output:
+        bcf_filter="{sample}/freebayes_vcf_filter/{sample}.filter.bcf"
+    container:
+        config['apptainers']['sequana_tools']
+    shell:
+        """
+        bgzip -c {input.vcf_filter} > {input.vcf_filter}.gz
+        tabix {input.vcf_filter}.gz
+        bcftools view {input.vcf_filter}.gz -O b -o {output.bcf_filter}
+        """
+
+expected_output += expand("{sample}/freebayes_vcf_filter/{sample}.filter.bcf", sample=manager.samples)
+
+# ========================================= Joint variant calling with freebayes
+#
+#
+if config["joint_freebayes"]["do"]:
+
+    rule joint_freebayes:
+        input:
+            bam=expand(__freebayes__input, sample=manager.samples),
+            ref=new_reference
+        output:
+            "joint_calling/joint_calling.raw.vcf"
+        log:
+            "joint_calling/joint_calling.log"
+        params:
+            ploidy=config["freebayes"]["ploidy"],
+            options=config["joint_freebayes"]["options"]
+        resources:
+            **config["joint_freebayes"]["resources"]
+        container:
+            config['apptainers']['freebayes']
+        wrapper:
+            f"{manager.wrappers}/wrappers/freebayes"
+
+    # ============================================= snpeff
+    if config["snpeff"]["do"]:
+
+        rule snpeff_joint:
+            input:
+                vcf = "joint_calling/joint_calling.raw.vcf",
+                ann = annotation_file
+            output:
+                html="joint_calling/snpeff.html",
+                csv="joint_calling/joint_calling.csv",
+                vcf="joint_calling/joint_calling.ann.vcf"
+            log:
+                "joint_calling/snpeff.log"
+            params:
+                options=config["snpeff"]["options"]
+            container:
+                config['apptainers']['sequana_tools']
+            wrapper:
+                f"{manager.wrappers}/wrappers/snpeff"
+
+        expected_output+=["joint_calling/joint_calling.ann.vcf"]
+        expected_output+=["joint_calling/snpeff.html"]
+    else:
+        expected_output+=["joint_calling/joint_calling.raw.vcf"]
+
+    # ============================================= freebayes vcf filter
+    #
+    def get_joint_freebayes_vcf_filter_input():
+        if config["snpeff"]["do"]:
+            return "joint_calling/joint_calling.ann.vcf"
+        else:
+            return "joint_calling/joint_calling.raw.vcf"
+
+    rule joint_freebayes_vcf_filter:
+        input:
+            get_joint_freebayes_vcf_filter_input()
+        output:
+            vcf="joint_calling/joint_calling.filter.vcf",
+            csv="joint_calling/joint_calling.filter.csv",
+            html="joint_calling/variant_calling.html"
+        params:
+            filter_dict=config["freebayes_vcf_filter"],
+            report_dir="joint_calling"
+        container:
+            config['apptainers']['sequana_tools']
+        resources:
+            **config["freebayes"]["resources"]
+        wrapper:
+            f"{manager.wrappers}/wrappers/freebayes_vcf_filter"
+    expected_output+=["joint_calling/variant_calling.html"]
+
+    rule vcf2bcf_joint:
+        input:
+            vcf="joint_calling/joint_calling.filter.vcf"
+        output:
+            bcf="joint_calling/joint_calling.filter.bcf"
+        container:
+            config['apptainers']['sequana_tools']
+        shell:
+            """
+            bgzip -c {input.vcf} > {input.vcf}.gz
+            tabix {input.vcf}.gz
+            bcftools view {input.vcf}.gz -O b -o {output.bcf}
+            """
+    expected_output += ["joint_calling/joint_calling.filter.bcf"]
+
+
+# ================================================================= some stats for HTML report
+rule stats:
+    input:
+        raw = expand("{sample}/freebayes/{sample}.raw.vcf", sample=manager.samples),
+        filter = expand("{sample}/freebayes_vcf_filter/{sample}.filter.vcf", sample=manager.samples)
+    output:
+        "outputs/stats.csv"
+    run:
+        samples = []
+        raw_counts = []
+        filter_counts = []
+
+        for raw, filter in zip(sorted(input.raw), sorted(input.filter)):
+            sample = raw.split("/")[0]
+            with open(raw, "r") as fin:
+                C = 0
+                for line in fin.readlines():
+                    if not line.startswith("#"):
+                        C +=1
+            raw_counts.append(C)
+            with open(filter, "r") as fin:
+                C = 0
+                for line in fin.readlines():
+                    if not line.startswith("#"):
+                        C +=1
+            filter_counts.append(C)
+            samples.append(sample)
+        df = pd.DataFrame({'name': samples, 'raw': raw_counts, 'filter': filter_counts})
+        os.makedirs("outputs", exist_ok=True)
+        df.to_csv(output[0], index=False)
+
+
+# ======================================================================================== multiqc
+#
+rule multiqc:
+    input:
+        expected_output
+    output:
+       "multiqc/multiqc_report.html"
+    params:
+        options=config["multiqc"]["options"],
+        input_directory=config['multiqc']['input_directory'],
+        config_file=config['multiqc']['config_file'],
+        modules=config['multiqc']['modules']
+    log:
+        "multiqc/multiqc.log"
+    resources:
+        **config["multiqc"]["resources"],
+    container:
+        config["apptainers"]["multiqc"]
+    wrapper:
+       f"{manager.wrappers}/wrappers/multiqc"
+
+
+# ======================================================================================== rulegraph
+sequana_rulegraph_mapper = {}
+if config["joint_freebayes"]["do"]:
+    sequana_rulegraph_mapper["joint_freebayes"] = "../joint_calling/variant_calling.html"
+
+
+
+# ========================================================== rulegraph
+rule rulegraph:
+    input: str(manager.snakefile)
+    output:
+        svg = "rulegraph/rulegraph.dot"
+    params:
+        mapper = {"multiqc": "../multiqc/multiqc_report.html"},
+        configname = "config.yaml"
+    wrapper:
+        f"{manager.wrappers}/wrappers/rulegraph"
+
+
+rule dot2svg:
+    input:
+        "rulegraph/rulegraph.dot"
+    output:
+        ".sequana/rulegraph.svg"
+    container:
+        config['apptainers']['graphviz']
+    shell:
+        """dot -Tsvg {input} -o {output}"""
+
+
+localrules: rulegraph, multiqc, stats
+
+# =========================================================================== success
+#
+onsuccess:
+    from sequana.utils import config as conf
+    from sequana.utils.datatables_js import DataTable
+    from sequana.modules_report.summary import SequanaReport
+    from sequana import logger
+    logger.setLevel("INFO")
+
+
+    try:
+        # with some options, multiqc is not created
+        manager.clean_multiqc("multiqc/multiqc_report.html")
+        intro = """<h2>Overview</h2>
+            This pipeline calls variants on a set of samples. Individual reports are available
+            as well as a <a href="multiqc/multiqc_report.html">multiqc report</a>."""
+    except:
+        intro = """<h2>Overview</h2>
+            This pipeline calls variants on a set of samples. Please see individual reports for details."""
+
+
+    intro += "<h2>Individual Reports</h2>"
+    intro += "<p> Each individual reports can be accessed via the links here below. The number of variants found in each sample in shown in the following table where raw accounts for all variants without any filtering. The 'filter' columns applied a filtering as described in the individual report page. </p>"
+
+    df = pd.read_csv("outputs/stats.csv")
+    df['links'] = [f"{x}/variant_calling.html" for x in df['name']]
+    dt = DataTable(df, "stats")
+    dt.datatable.datatable_options = {'pageLength': len(manager.samples),
+                                       'dom': 'Bfrtip',
+                                       'buttons': ['copy', 'csv']}
+    dt.datatable.set_links_to_column("links", "name")
+    intro +=  dt.create_javascript_function() +  dt.create_datatable()
+
+
+    if config["joint_freebayes"]["do"]:
+        intro += "<h2>Joint calling Report</h2>"
+        intro += """Joint calling was requested. A HTML report is available: <a href="joint_calling/variant_calling.html">here</a>"""
+
+    conf.output_dir = os.path.abspath(".")
+
+    data = manager.getmetadata()
+    s = SequanaReport(data, intro=intro, workflow=True)
+
+
+    manager.teardown(extra_files_to_remove=["snpEff.config"],
+            extra_dirs_to_remove=["tmp", "common_logs"])
+    shell("chmod -R g+w .")
+
+onerror:
+    manager.onerror()
+
+

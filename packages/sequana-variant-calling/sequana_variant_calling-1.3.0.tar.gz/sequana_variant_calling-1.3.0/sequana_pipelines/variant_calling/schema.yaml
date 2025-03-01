@@ -1,0 +1,352 @@
+# Schema validator for the variant_calling pipeline
+# author: Thomas Cokelaer
+
+type: map
+mapping:
+    "sequana_wrappers":
+        type: str
+    "input_directory":
+        type: str
+        required: True
+    "input_readtag":
+        type: str
+        required: True
+    "input_pattern":
+        type: str
+        required: True
+    "exclude_pattern":
+        type: str
+        required: False
+    "apptainers":
+        type: any
+
+
+    "general":
+        type: map
+        mapping:
+            "annotation_file":
+                type: str
+                required: False
+            "reference_file":
+                type: str
+                required: True
+            "aligner_choice":
+                type: str
+                required: True
+                enum: [bwa, bwa_split, minimap2]
+
+
+
+    "bwa_index":
+        type: map
+        mapping:
+            "options":
+                type: str
+                required: False
+            "threads":
+                type: int
+                required: True
+                range: { min: 1 }
+            "resources":
+                type: any
+                required: True
+
+    "bwa":
+        type: map
+        mapping:
+            "index_algorithm":
+                type: str
+            "options":
+                type: str
+            "threads":
+                type: int
+                required: True
+                range: { min: 1 }
+            "tmp_directory":
+                type: str
+            "resources":
+                 type: map
+                 mapping:
+                     "mem":
+                        type: str
+
+
+    "bwa_split":
+        type: map
+        mapping:
+            "nreads":
+                type: int
+                required: False
+            "index_algorithm":
+                type: str
+                required: False
+            "options":
+                type: str
+                required: False
+            "threads":
+                type: int
+                required: True
+                range: { min: 1 }
+            "tmp_directory":
+                type: str
+                required: False
+            "resources":
+                type: any
+                required: True
+
+
+
+
+    "sequencing":
+        type: map
+        mapping:
+          "platform":
+            type: str
+          "instrument":
+            type: str
+          "flowcell":
+            type: str
+
+
+    "multiqc":
+        type: map
+        mapping:
+            "options":
+                type: str
+            "modules":
+                type: str
+            "config_file":
+                type: str
+            "input_directory":
+                type: str
+            "resources":
+                type: any
+                required: true
+
+    "minimap2":
+        type: map
+        mapping:
+            "options":
+                type: str
+            "threads":
+                type: int
+                range: { min: 1 }
+            "resources":
+                type: map
+                mapping:
+                    "mem":
+                        type: str
+
+
+    "snpeff":
+        type: map
+        mapping:
+            "do":
+                type: bool
+            "build_options":
+                type: str
+            "options":
+                type: str
+            "resources":
+                 type: map
+                 mapping:
+                     "mem":
+                        type: str
+
+    "sambamba_markdup":
+        type: map
+        mapping:
+            "do":
+                type: bool
+            "remove_duplicates":
+                type: bool
+            "tmp_directory":
+                type: str
+            "options":
+                type: str
+
+    "sambamba_filter":
+        type: map
+        mapping:
+            "do":
+                type: bool
+            "threshold":
+                type: int
+                range: { min: 0 }
+            "options":
+                type: str
+
+    "freebayes":
+        type: map
+        mapping:
+            "options":
+                type: str
+            "chunksize":
+                type: int
+                range: { min: 10000 }
+            "ploidy":
+                type: int
+                range: { min: 1 }
+            "resources":
+                 type: map
+                 mapping:
+                     "mem":
+                        type: str
+
+
+    "joint_freebayes":
+        type: map
+        mapping:
+            "options":
+                type: str
+            "do":
+                type: bool
+            "resources":
+                 type: map
+                 mapping:
+                     "mem":
+                        type: str
+
+    "sequana_coverage":
+        type: map
+        mapping:
+            "do":
+                type: bool
+                default: False
+                required: True
+            "circular":
+                type: bool
+                default: True
+                required: True
+            "double_threshold":
+                type: float
+                range: { min: 0, max: 1}
+                required: False
+                default: 0.5
+            "high_threshold":
+                type: float
+                range: { min: 2 }
+            "low_threshold":
+                type: float
+                range: { max: -2 }
+            "mixture_models":
+                type: int
+                required: True
+                range: { min: 1, max: 3 }
+            "chunksize":
+                type: int
+                required: False
+                default: 5000000
+            "window_size":
+                default: 20001
+                type: int
+                range: { min: 3 }
+            "binning":
+                type: int
+                range: { min: -1 }
+            "cnv_clustering":
+                type: int
+                range: { min: -1 }
+            "gc_window_size":
+                type: int
+                range: { min: 2}
+            "options":
+              type: str
+            "resources":
+                 type: map
+                 mapping:
+                     "mem":
+                        type: str
+
+    "samtools_depth":
+        type: map
+        mapping:
+            "max_depth":
+                type: int
+                range: { min: 1 }
+            "resources":
+                 type: map
+                 mapping:
+                     "mem":
+                        type: str
+
+    "freebayes_vcf_filter":
+        type: map
+        mapping:
+          "freebayes_score":
+            type: int
+          "frequency":
+            type: float
+          "min_depth":
+            type: int
+          "forward_depth":
+            type: int
+          "reverse_depth":
+            type: int
+          "strand_ratio":
+            type: float
+          "keep_polymorphic":
+            type: bool
+
+    "joint_freebayes_vcf_filter":
+        type: map
+        mapping:
+          "freebayes_score":
+              type: int
+          "frequency": 
+              type: float
+          "min_depth": 
+              type: int
+
+
+    "add_read_group":
+        type: map
+        mapping:
+            "options":
+                type: str
+
+
+    "fastqc":
+        type: map
+        mapping:
+            "options":
+                type: str
+                required: True
+            "threads":
+                type: int
+                required: True
+                range: { min: 1 }
+            "resources":
+                type: any
+                required: true
+
+    "fastp":
+      type: map
+      mapping:
+        "do":
+            type: bool
+            required: True
+        "options":
+            type: str
+        "minimum_length":
+            required: True
+            type: int
+        "adapters":
+            type: str
+            required: False
+        "quality":
+            type: int
+            range: {max: 40, min: 0}
+            required: False
+        "threads":
+            type: int
+            required: True
+            range: { min: 1 }
+        "disable_adapter_trimming":
+            type: bool
+        "disable_quality_filtering":
+            type: bool
+        "resources":
+            type: any
+            required: true
+
