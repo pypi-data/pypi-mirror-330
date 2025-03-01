@@ -1,0 +1,13 @@
+name: windows.windows_server_2008_r2
+attributes:
+    depends: []
+    provides: []
+model_components:
+    depends:
+        - windows.base_objects
+        - base_objects
+images:
+    - paths:
+        - windows-server-2008-r2-sp1.qc2.xz
+      architecture: x86_64
+model_component_objects: model_component_objects.py

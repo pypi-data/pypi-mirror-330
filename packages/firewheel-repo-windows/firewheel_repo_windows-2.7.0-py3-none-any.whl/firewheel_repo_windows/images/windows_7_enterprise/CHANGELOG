@@ -1,0 +1,39 @@
+Windows 7 Enterprise x64 SP1
+----------------------------
+
+2018-02-20:
+
+    o  Install Windows 7 Enterprise
+        -Using ISO from bridge
+        -Default partitioning (Click "Next" on the raw disk)
+        -virtio drivers from Fedora Project, version 0.1-141
+        -Username: User
+        -Hostname: User-PC (default)
+        -Password: user
+        -Time zone: UTC-8, Mountain Time (USA)
+        -No clock adjustment
+        -Windows Update: "Ask Me Later"
+    o  Install virtio networking drivers
+        -From same virtio ISO version 0.1-141
+        -Using Device Manager
+    o  Disable Automatic Update
+        -Set Control Panel to "Large icons" view
+        -Control Panel -> Windows Update -> "Let me choose my settings"
+         -> Select "Never check for updates (not recommended)" -> "Ok"
+        -(Close windows)
+    o  Install Python 3.6 x64
+        -Installing from executable importing via HTTP download
+        -Install for all users (default)
+        -Install to C:\Python36 (default)
+        -Install all features (default)
+        -Click "Finish"
+    o  Start -> "Shut Down"
+    o Update environment variables
+        - Add python to system path: Control Panel > System and Security > System
+          > Advanced System Settings > Environment Variables
+          Append "C:\Python36" to system %Path%
+        - Add .py extension as executable: Control Panel > System and Security >
+          System > Advanced System Settings > Environment Variables
+          Append ".py" to system %PATHEXT%
+    o Change PowerShell execution policy to Unrestricted
+      (Set-ExecutionPolicy Unrestricted)

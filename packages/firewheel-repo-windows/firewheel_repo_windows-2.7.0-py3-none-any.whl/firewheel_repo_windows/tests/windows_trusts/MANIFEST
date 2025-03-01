@@ -1,0 +1,13 @@
+name: windowstests.domain_trusts
+attributes:
+    depends:
+        - graph
+    provides:
+        - topology
+model_components:
+    depends:
+        - base_objects
+        - windows.windows_7_enterprise
+        - windows.windows_server_2008_r2
+        - windows.domain_controller
+plugin: plugin.py

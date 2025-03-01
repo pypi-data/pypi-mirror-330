@@ -1,0 +1,12 @@
+name: windows.windows_10_enterprise
+attributes:
+    depends: []
+    provides: []
+model_components:
+    depends:
+        - windows.base_objects
+images:
+    - paths:
+        - windows-10-enterprise.qcow2.xz
+      architecture: x86_64
+model_component_objects: model_component_objects.py

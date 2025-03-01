@@ -1,0 +1,13 @@
+name: windows.windows_7_enterprise
+attributes:
+    depends: []
+    provides: []
+model_components:
+    depends:
+        - windows.base_objects
+        - base_objects
+images:
+    - paths:
+        - windows-7-enterprise-sp1.qc2.xz
+      architecture: x86_64
+model_component_objects: model_component_objects.py

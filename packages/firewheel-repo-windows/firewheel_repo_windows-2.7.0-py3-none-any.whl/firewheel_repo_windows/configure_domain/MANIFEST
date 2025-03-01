@@ -1,0 +1,13 @@
+name: windows.configure_domain
+attributes:
+    depends:
+        - graph
+    provides:
+        - windows_domain
+model_components:
+    depends:
+        - windows.base_objects
+        - dns.dns_objects
+plugin: plugin.py
+vm_resources:
+    - vm_resources/*

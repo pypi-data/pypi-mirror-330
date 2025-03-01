@@ -1,0 +1,12 @@
+name: windows.firefox
+attributes:
+    depends:
+        - graph
+    provides:
+        - firefox
+model_components:
+    depends:
+        - windows.base_objects
+plugin: plugin.py
+vm_resources:
+    - vm_resources/*
