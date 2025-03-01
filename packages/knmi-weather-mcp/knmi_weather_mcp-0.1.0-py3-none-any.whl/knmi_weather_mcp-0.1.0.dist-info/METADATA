@@ -1,0 +1,16 @@
+Metadata-Version: 2.4
+Name: knmi-weather-mcp
+Version: 0.1.0
+Summary: KNMI Weather MCP Server
+Author-email: Stijn Meijers <stijn@wolk.work>, Nathan Clerkx <nathan@wolk.work>
+License-File: LICENSE
+Requires-Python: >=3.10
+Requires-Dist: fastmcp
+Requires-Dist: httpx
+Requires-Dist: netcdf4
+Requires-Dist: numpy
+Requires-Dist: polars
+Requires-Dist: pydantic
+Requires-Dist: pytest
+Requires-Dist: python-dotenv
+Requires-Dist: xarray
