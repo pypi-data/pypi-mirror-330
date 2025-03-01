@@ -1,0 +1,47 @@
+Metadata-Version: 2.4
+Name: cosmic_sdk
+Version: 0.3.28
+Summary: Collection of service connectors
+Project-URL: Homepage, https://github.com/deepkalilabs/cosmic_sdk
+Project-URL: Bug Tracker, https://github.com/deepkalilabs/cosmic_sdk/issues
+Author-email: Charles Javelona <charlesjavelona@gmail.com>, Shikhar Sakhuja <shikharsakhuja@gmail.com>
+License-File: LICENSE.md
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.7
+Requires-Dist: boto3>=1.35.0
+Requires-Dist: pydantic>=2.0.0
+Requires-Dist: requests>=2.31.0
+Requires-Dist: slack-sdk>=4.15.0
+Description-Content-Type: text/markdown
+
+# cosmic_sdk
+python package for cosmic
+
+
+## Installation
+
+```bash
+pip install cosmic_sdk
+```
+
+## Example
+
+```python
+from cosmic_sdk.secrets import SecretsManager
+from cosmic_sdk.connectors import PostHogService
+
+secrets_manager = SecretsManager()
+
+credentials = secrets_manager.get_secrets(org_id="org_123", connector_type="posthog")
+posthog_service = PostHogService(credentials)
+
+posthog_service.get_user_logins("2024-01-01")
+```
+
+
+# TODO
+- [ ] Move to uv package manager 
+- [ ] Support doc per connector 
+- [ ] Add github actions deploy to pypi
