@@ -1,0 +1,26 @@
+Metadata-Version: 2.2
+Name: echo_downloader
+Version: 1.0.0
+Summary: A downloader for Echo360 lectures
+Author-email: Andreas Marten Viks <andreasviks0@gmail.com>
+Project-URL: Homepage, https://github.com/anviks/echo-downloader/
+Project-URL: Issues, https://github.com/anviks/echo-downloader/issues
+Project-URL: Changelog, https://github.com/anviks/echo-downloader/blob/main/CHANGELOG.md
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: aiofiles
+Requires-Dist: aiohttp
+Requires-Dist: beautifulsoup4
+Requires-Dist: objectify
+Requires-Dist: platformdirs
+Requires-Dist: prompt-toolkit
+Requires-Dist: pyyaml
+Requires-Dist: requests
+Requires-Dist: wxpython
+Provides-Extra: dev
+Requires-Dist: jsonpickle; extra == "dev"
+Requires-Dist: pytest; extra == "dev"
