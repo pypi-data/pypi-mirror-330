@@ -1,0 +1,67 @@
+Metadata-Version: 2.2
+Name: PhotoTextSearcher
+Version: 0.1.2
+Summary: Библиотека для распознавания текста на изображениях
+Home-page: https://github.com/KinderModddins/PhotoTextSearcher
+Author: MAKCNMOB
+Author-email: support@modkey.fun
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: easyocr
+Requires-Dist: Pillow
+Requires-Dist: numpy
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+
+# PhotoTextSearcher
+
+Библиотека для распознавания текста на изображениях с помощью Tesseract OCR.
+
+## Установка
+
+Для установки библиотеки требуется Python версии 3.9 или выше.
+
+Установите библиотеку с помощью pip:
+
+```bash
+pip install PhotoTextSearcher
+```
+
+И всё готово!
+
+## Пример использования
+
+Вот пример того, как можно использовать библиотеку для распознавания текста на изображении:
+
+```python
+from PhotoTextSearcher import TextRecognizer
+
+recognizer = TextRecognizer()
+text = recognizer.recognize_text("example.jpg")
+print("📜 Распознанный текст:\n", text)
+
+```
+
+## Зависимости
+
+- `easyocr`
+- `Pillow`
+- `numpy`
+
+Эти библиотеки автоматически установятся при установке `PhotoTextSearcher`.
+
+## Лицензия
+
+Этот проект лицензирован под лицензией MIT. См. файл LICENSE для подробностей.
