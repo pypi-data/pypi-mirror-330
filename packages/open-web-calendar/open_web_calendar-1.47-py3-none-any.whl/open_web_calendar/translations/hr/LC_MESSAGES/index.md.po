@@ -1,0 +1,126 @@
+# Milo Ivir <mail@milotype.de>, 2024, 2025.
+# Nicco Kunzmann <niccokunzmann@googlemail.com>, 2025.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: niccokunzmann@rambler.ru\n"
+"POT-Creation-Date: 2024-05-25 07:31+0200\n"
+"PO-Revision-Date: 2025-01-24 22:37+0000\n"
+"Last-Translator: Nicco Kunzmann <niccokunzmann@googlemail.com>\n"
+"Language-Team: Croatian <https://hosted.weblate.org/projects/open-web-calendar/documentation-index/hr/>\n"
+"Language: hr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Weblate 5.10-dev\n"
+
+msgid "Customize Your Own Online Calendar Display"
+msgstr "Prilagodi prikaz tvog internetskog kalendara"
+
+msgid "See the features or try the Open Web Calendar yourself!"
+msgstr "Pogledaj značajke ili isprobaj „Otvoreni web kalendar”!"
+
+msgid "![](/assets/img/logo/github-social-preview.svg)"
+msgstr ""
+
+msgid "A highly flexible calendar display for your website."
+msgstr "Vrlo fleksibilan prikaz kalendara za tvoju web stranicu."
+
+msgid "Give a calendar your personal touch within minutes!"
+msgstr "Dizajniraj vlastiti kalendar u roku od par minuta!"
+
+msgid "**[Try it out now!](https://open-web-calendar.hosted.quelltext.eu)**"
+msgstr "**[Isprobaj!](https://open-web-calendar.hosted.quelltext.eu)**"
+
+msgid "Features"
+msgstr "Značajke"
+
+msgid "Instant Event Syncing"
+msgstr "Trenutno sinkroniziranje događaja"
+
+msgid "<center>✔</center>"
+msgstr "<center>✔</center>"
+
+msgid "Embed with an HTML snippet"
+msgstr "Ugradi s HTML isječkom"
+
+msgid "Desktop and Mobile"
+msgstr "Desktop i mobitel"
+
+msgid "Multi-Language Support"
+msgstr "Višejezična podrška"
+
+msgid "Fixed and Automatic Timezone"
+msgstr "Fiksna i automatska vremenska zona"
+
+msgid "Easy Editing"
+msgstr "Jednostavno uređivanje"
+
+msgid "Designs To Choose"
+msgstr "Izbor izgleda"
+
+msgid "Multiple Calendar Sources"
+msgstr "Višebrojni izvori kalendara"
+
+msgid "Style per Calendar, Category and more"
+msgstr "Stilovi za kalendare, kategorije i još više"
+
+msgid "Custom CSS"
+msgstr "Prilagođeni CSS"
+
+msgid "Day, Week, Month, Agenda"
+msgstr "Dan, tjedan, mjesec, dnevni red"
+
+msgid "Work Week"
+msgstr "Radni tjedan"
+
+msgid "Custom Date & Time Range"
+msgstr "Prilagođeni raspon datuma i vremena"
+
+msgid "Custom Title & Icon"
+msgstr "Prilagođeni naslov i ikona"
+
+msgid "Click on Event Location"
+msgstr "Prikaz mjesta događaja"
+
+msgid "Styled Event Descriptions"
+msgstr "Stilizirani opisi događaja"
+
+msgid "FOSS - No Vendor Lock-In"
+msgstr "FOSS – Bez ovisnosti o dobavljaču"
+
+msgid "Subscribe Link"
+msgstr "Poveznica za pretplatu"
+
+msgid "Community and Paid Support"
+msgstr "Zajednica i naplativa podrška"
+
+msgid "[See Examples](templates)"
+msgstr "[Pogledaj primjere](templates)"
+
+msgid ""
+"[Hosted](https://open-web-calendar.hosted.quelltext.eu) and [Self-"
+"Hosted](host/self)"
+msgstr ""
+"[Eksterni server](https://open-web-calendar.hosted.quelltext.eu) i [vlastiti"
+" server](host/self)"
+
+msgid "[Developer API](dev/api)"
+msgstr "[API za programere](dev/api)"
+
+#~ msgid "Getting Started"
+#~ msgstr "Početak"
+
+#~ msgid "[See Examples](templates.md)"
+#~ msgstr "[Pogledaj primjere](templates.md)"
+
+#~ msgid ""
+#~ "[Hosted](https://open-web-calendar.hosted.quelltext.eu) and [Self-"
+#~ "Hosted](host/self.md)"
+#~ msgstr ""
+#~ "[Hosting](https://open-web-calendar.hosted.quelltext.eu) i [vlastiti "
+#~ "hosting](host/self.md)"
+
+#~ msgid "[Developer API](dev/api.md)"
+#~ msgstr "[API za programere](dev/api.md)"
