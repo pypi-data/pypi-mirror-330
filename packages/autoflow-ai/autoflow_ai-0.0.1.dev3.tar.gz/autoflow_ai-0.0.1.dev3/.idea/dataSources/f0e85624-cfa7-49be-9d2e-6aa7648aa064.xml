@@ -1,0 +1,873 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="local">
+  <database-model serializer="dbm" dbms="TIDB" family-id="TIDB" format-version="4.53">
+    <root id="1">
+      <Dbms>TIDB</Dbms>
+      <DefaultCasing>mixed/mixed</DefaultCasing>
+      <DefaultEngine>InnoDB</DefaultEngine>
+      <DefaultTmpEngine>InnoDB</DefaultTmpEngine>
+      <Grants>|root||root||ALTER|G
+|root||root||ALTER ROUTINE|G
+|root||root||CONFIG|G
+|root||root||CREATE|G
+|root||root||CREATE ROLE|G
+|root||root||CREATE ROUTINE|G
+|root||root||CREATE TABLESPACE|G
+|root||root||CREATE TEMPORARY TABLES|G
+|root||root||CREATE USER|G
+|root||root||CREATE VIEW|G
+|root||root||DELETE|G
+|root||root||DROP|G
+|root||root||DROP ROLE|G
+|root||root||EVENT|G
+|root||root||EXECUTE|G
+|root||root||FILE|G
+|root||root||INDEX|G
+|root||root||INSERT|G
+|root||root||LOCK TABLES|G
+|root||root||PROCESS|G
+|root||root||REFERENCES|G
+|root||root||RELOAD|G
+|root||root||REPLICATION CLIENT|G
+|root||root||REPLICATION SLAVE|G
+|root||root||SELECT|G
+|root||root||SHOW DATABASES|G
+|root||root||SHOW VIEW|G
+|root||root||SHUTDOWN|G
+|root||root||SUPER|G
+|root||root||TRIGGER|G
+|root||root||UPDATE|G
+|root||root||grant option|G</Grants>
+      <ServerVersion>8.5.0</ServerVersion>
+    </root>
+    <collation id="2" parent="1" name="ascii_bin">
+      <Charset>ascii</Charset>
+      <DefaultForCharset>1</DefaultForCharset>
+    </collation>
+    <collation id="3" parent="1" name="binary">
+      <Charset>binary</Charset>
+      <DefaultForCharset>1</DefaultForCharset>
+    </collation>
+    <collation id="4" parent="1" name="gbk_bin">
+      <Charset>gbk</Charset>
+    </collation>
+    <collation id="5" parent="1" name="gbk_chinese_ci">
+      <Charset>gbk</Charset>
+      <DefaultForCharset>1</DefaultForCharset>
+    </collation>
+    <collation id="6" parent="1" name="latin1_bin">
+      <Charset>latin1</Charset>
+      <DefaultForCharset>1</DefaultForCharset>
+    </collation>
+    <collation id="7" parent="1" name="utf8_bin">
+      <Charset>utf8</Charset>
+      <DefaultForCharset>1</DefaultForCharset>
+    </collation>
+    <collation id="8" parent="1" name="utf8_general_ci">
+      <Charset>utf8</Charset>
+    </collation>
+    <collation id="9" parent="1" name="utf8_unicode_ci">
+      <Charset>utf8</Charset>
+    </collation>
+    <collation id="10" parent="1" name="utf8mb4_0900_ai_ci">
+      <Charset>utf8mb4</Charset>
+    </collation>
+    <collation id="11" parent="1" name="utf8mb4_0900_bin">
+      <Charset>utf8mb4</Charset>
+    </collation>
+    <collation id="12" parent="1" name="utf8mb4_bin">
+      <Charset>utf8mb4</Charset>
+      <DefaultForCharset>1</DefaultForCharset>
+    </collation>
+    <collation id="13" parent="1" name="utf8mb4_general_ci">
+      <Charset>utf8mb4</Charset>
+    </collation>
+    <collation id="14" parent="1" name="utf8mb4_unicode_ci">
+      <Charset>utf8mb4</Charset>
+    </collation>
+    <schema id="15" parent="1" name="autoflow_0_4_1_2">
+      <CollationName>utf8mb4_bin</CollationName>
+    </schema>
+    <schema id="16" parent="1" name="autoflow_0_4_1_test">
+      <CollationName>utf8mb4_bin</CollationName>
+    </schema>
+    <schema id="17" parent="1" name="autoflow_0_4_test">
+      <CollationName>utf8mb4_bin</CollationName>
+    </schema>
+    <schema id="18" parent="1" name="autoflow_ut">
+      <CollationName>utf8mb4_bin</CollationName>
+    </schema>
+    <schema id="19" parent="1" name="INFORMATION_SCHEMA">
+      <CollationName>utf8mb4_bin</CollationName>
+    </schema>
+    <schema id="20" parent="1" name="METRICS_SCHEMA">
+      <CollationName>utf8mb4_bin</CollationName>
+    </schema>
+    <schema id="21" parent="1" name="mysql">
+      <CollationName>utf8mb4_bin</CollationName>
+    </schema>
+    <schema id="22" parent="1" name="PERFORMANCE_SCHEMA">
+      <CollationName>utf8mb4_bin</CollationName>
+    </schema>
+    <schema id="23" parent="1" name="pingcap_support_copilot">
+      <CollationName>utf8mb4_bin</CollationName>
+    </schema>
+    <schema id="24" parent="1" name="support_copilot_dev">
+      <CollationName>utf8mb4_bin</CollationName>
+    </schema>
+    <schema id="25" parent="1" name="sys">
+      <CollationName>utf8mb4_bin</CollationName>
+    </schema>
+    <schema id="26" parent="1" name="test">
+      <CollationName>utf8mb4_bin</CollationName>
+    </schema>
+    <schema id="27" parent="1" name="tidb_ai_local">
+      <CollationName>utf8mb4_bin</CollationName>
+    </schema>
+    <schema id="28" parent="1" name="autoflow_framework">
+      <LastIntrospectionLocalTimestamp>2025-02-28.09:26:10</LastIntrospectionLocalTimestamp>
+      <CollationName>utf8mb4_bin</CollationName>
+    </schema>
+    <user id="29" parent="1" name="root"/>
+    <table id="30" parent="28" name="chunks_01973588-65aa-4954-99fd-71eb5ecce167">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_bin</CollationName>
+    </table>
+    <table id="31" parent="28" name="chunks_daf20644-70e7-4f64-8e6f-067101cdab37">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_bin</CollationName>
+    </table>
+    <table id="32" parent="28" name="chunks_f790db79-29e0-4ec8-bbeb-14234bdc896a">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_bin</CollationName>
+    </table>
+    <table id="33" parent="28" name="documents">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_bin</CollationName>
+    </table>
+    <table id="34" parent="28" name="entities_01973588-65aa-4954-99fd-71eb5ecce167">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_bin</CollationName>
+    </table>
+    <table id="35" parent="28" name="entities_daf20644-70e7-4f64-8e6f-067101cdab37">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_bin</CollationName>
+    </table>
+    <table id="36" parent="28" name="entities_f790db79-29e0-4ec8-bbeb-14234bdc896a">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_bin</CollationName>
+    </table>
+    <table id="37" parent="28" name="relationships_01973588-65aa-4954-99fd-71eb5ecce167">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_bin</CollationName>
+    </table>
+    <table id="38" parent="28" name="relationships_daf20644-70e7-4f64-8e6f-067101cdab37">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_bin</CollationName>
+    </table>
+    <table id="39" parent="28" name="relationships_f790db79-29e0-4ec8-bbeb-14234bdc896a">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_bin</CollationName>
+    </table>
+    <column id="40" parent="30" name="id">
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StoredType>char(32)|0s</StoredType>
+    </column>
+    <column id="41" parent="30" name="hash">
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+      <StoredType>varchar(64)|0s</StoredType>
+    </column>
+    <column id="42" parent="30" name="text">
+      <Position>3</Position>
+      <StoredType>text|0s</StoredType>
+    </column>
+    <column id="43" parent="30" name="text_vec">
+      <Position>4</Position>
+      <StoredType>vector(1536)|0s</StoredType>
+    </column>
+    <column id="44" parent="30" name="meta">
+      <Position>5</Position>
+      <StoredType>json|0s</StoredType>
+    </column>
+    <column id="45" parent="30" name="document_id">
+      <Position>6</Position>
+      <StoredType>int|0s</StoredType>
+    </column>
+    <column id="46" parent="30" name="source_uri">
+      <Position>7</Position>
+      <StoredType>varchar(512)|0s</StoredType>
+    </column>
+    <column id="47" parent="30" name="kg_index_status">
+      <NotNull>1</NotNull>
+      <Position>8</Position>
+      <StoredType>enum(&apos;NOT_STARTED&apos;, &apos;PENDING&apos;, &apos;RUNNING&apos;, &apos;COMPLETED&apos;, &apos;FAILED&apos;)|0e</StoredType>
+    </column>
+    <column id="48" parent="30" name="kg_index_result">
+      <Position>9</Position>
+      <StoredType>text|0s</StoredType>
+    </column>
+    <column id="49" parent="30" name="created_at">
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+      <Position>10</Position>
+      <StoredType>datetime|0s</StoredType>
+    </column>
+    <column id="50" parent="30" name="updated_at">
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+      <Position>11</Position>
+      <StoredType>datetime|0s</StoredType>
+    </column>
+    <foreign-key id="51" parent="30" name="fk_1">
+      <ColNames>document_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>documents</RefTableName>
+    </foreign-key>
+    <index id="52" parent="30" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="53" parent="30" name="vec_idx_text_vec">
+      <ColNames>text_vec</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="54" parent="30" name="fk_1">
+      <ColNames>document_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="55" parent="30" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="56" parent="31" name="id">
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StoredType>char(32)|0s</StoredType>
+    </column>
+    <column id="57" parent="31" name="hash">
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+      <StoredType>varchar(64)|0s</StoredType>
+    </column>
+    <column id="58" parent="31" name="text">
+      <Position>3</Position>
+      <StoredType>text|0s</StoredType>
+    </column>
+    <column id="59" parent="31" name="text_vec">
+      <Position>4</Position>
+      <StoredType>vector(1536)|0s</StoredType>
+    </column>
+    <column id="60" parent="31" name="meta">
+      <Position>5</Position>
+      <StoredType>json|0s</StoredType>
+    </column>
+    <column id="61" parent="31" name="document_id">
+      <Position>6</Position>
+      <StoredType>int|0s</StoredType>
+    </column>
+    <column id="62" parent="31" name="source_uri">
+      <Position>7</Position>
+      <StoredType>varchar(512)|0s</StoredType>
+    </column>
+    <column id="63" parent="31" name="kg_index_status">
+      <NotNull>1</NotNull>
+      <Position>8</Position>
+      <StoredType>enum(&apos;NOT_STARTED&apos;, &apos;PENDING&apos;, &apos;RUNNING&apos;, &apos;COMPLETED&apos;, &apos;FAILED&apos;)|0e</StoredType>
+    </column>
+    <column id="64" parent="31" name="kg_index_result">
+      <Position>9</Position>
+      <StoredType>text|0s</StoredType>
+    </column>
+    <column id="65" parent="31" name="created_at">
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+      <Position>10</Position>
+      <StoredType>datetime|0s</StoredType>
+    </column>
+    <column id="66" parent="31" name="updated_at">
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+      <Position>11</Position>
+      <StoredType>datetime|0s</StoredType>
+    </column>
+    <foreign-key id="67" parent="31" name="fk_1">
+      <ColNames>document_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>documents</RefTableName>
+    </foreign-key>
+    <index id="68" parent="31" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="69" parent="31" name="vec_idx_text_vec">
+      <ColNames>text_vec</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="70" parent="31" name="fk_1">
+      <ColNames>document_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="71" parent="31" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="72" parent="32" name="id">
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StoredType>char(32)|0s</StoredType>
+    </column>
+    <column id="73" parent="32" name="hash">
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+      <StoredType>varchar(64)|0s</StoredType>
+    </column>
+    <column id="74" parent="32" name="text">
+      <Position>3</Position>
+      <StoredType>text|0s</StoredType>
+    </column>
+    <column id="75" parent="32" name="text_vec">
+      <Position>4</Position>
+      <StoredType>vector(1536)|0s</StoredType>
+    </column>
+    <column id="76" parent="32" name="meta">
+      <Position>5</Position>
+      <StoredType>json|0s</StoredType>
+    </column>
+    <column id="77" parent="32" name="document_id">
+      <Position>6</Position>
+      <StoredType>int|0s</StoredType>
+    </column>
+    <column id="78" parent="32" name="source_uri">
+      <Position>7</Position>
+      <StoredType>varchar(512)|0s</StoredType>
+    </column>
+    <column id="79" parent="32" name="kg_index_status">
+      <NotNull>1</NotNull>
+      <Position>8</Position>
+      <StoredType>enum(&apos;NOT_STARTED&apos;, &apos;PENDING&apos;, &apos;RUNNING&apos;, &apos;COMPLETED&apos;, &apos;FAILED&apos;)|0e</StoredType>
+    </column>
+    <column id="80" parent="32" name="kg_index_result">
+      <Position>9</Position>
+      <StoredType>text|0s</StoredType>
+    </column>
+    <column id="81" parent="32" name="created_at">
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+      <Position>10</Position>
+      <StoredType>datetime|0s</StoredType>
+    </column>
+    <column id="82" parent="32" name="updated_at">
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+      <Position>11</Position>
+      <StoredType>datetime|0s</StoredType>
+    </column>
+    <foreign-key id="83" parent="32" name="fk_1">
+      <ColNames>document_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>documents</RefTableName>
+    </foreign-key>
+    <index id="84" parent="32" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="85" parent="32" name="vec_idx_text_vec">
+      <ColNames>text_vec</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="86" parent="32" name="fk_1">
+      <ColNames>document_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="87" parent="32" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="88" parent="33" name="id">
+      <AutoIncrement>481</AutoIncrement>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StoredType>int|0s</StoredType>
+    </column>
+    <column id="89" parent="33" name="hash">
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+      <StoredType>varchar(32)|0s</StoredType>
+    </column>
+    <column id="90" parent="33" name="name">
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+      <StoredType>varchar(256)|0s</StoredType>
+    </column>
+    <column id="91" parent="33" name="content">
+      <Position>4</Position>
+      <StoredType>mediumtext|0s</StoredType>
+    </column>
+    <column id="92" parent="33" name="mime_type">
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+      <StoredType>varchar(100)|0s</StoredType>
+    </column>
+    <column id="93" parent="33" name="meta">
+      <Position>6</Position>
+      <StoredType>json|0s</StoredType>
+    </column>
+    <column id="94" parent="33" name="data_source_id">
+      <Position>7</Position>
+      <StoredType>char(32)|0s</StoredType>
+    </column>
+    <column id="95" parent="33" name="knowledge_base_id">
+      <Position>8</Position>
+      <StoredType>char(32)|0s</StoredType>
+    </column>
+    <column id="96" parent="33" name="created_at">
+      <Position>9</Position>
+      <StoredType>datetime|0s</StoredType>
+    </column>
+    <column id="97" parent="33" name="updated_at">
+      <Position>10</Position>
+      <StoredType>datetime|0s</StoredType>
+    </column>
+    <index id="98" parent="33" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="99" parent="33" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="100" parent="34" name="id">
+      <AutoIncrement>80</AutoIncrement>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StoredType>int|0s</StoredType>
+    </column>
+    <column id="101" parent="34" name="entity_type">
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+      <StoredType>enum(&apos;original&apos;, &apos;synopsis&apos;)|0e</StoredType>
+    </column>
+    <column id="102" parent="34" name="name">
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+      <StoredType>varchar(512)|0s</StoredType>
+    </column>
+    <column id="103" parent="34" name="description">
+      <Position>4</Position>
+      <StoredType>text|0s</StoredType>
+    </column>
+    <column id="104" parent="34" name="description_vec">
+      <Position>5</Position>
+      <StoredType>vector(1536)|0s</StoredType>
+    </column>
+    <column id="105" parent="34" name="meta">
+      <Position>6</Position>
+      <StoredType>json|0s</StoredType>
+    </column>
+    <column id="106" parent="34" name="meta_vec">
+      <Position>7</Position>
+      <StoredType>vector(1536)|0s</StoredType>
+    </column>
+    <column id="107" parent="34" name="synopsis_info">
+      <Position>8</Position>
+      <StoredType>json|0s</StoredType>
+    </column>
+    <index id="108" parent="34" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="109" parent="34" name="idx_entity_type">
+      <ColNames>entity_type</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="110" parent="34" name="idx_entity_name">
+      <ColNames>name</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="111" parent="34" name="vec_idx_description_vec">
+      <ColNames>description_vec</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="112" parent="34" name="vec_idx_meta_vec">
+      <ColNames>meta_vec</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="113" parent="34" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="114" parent="35" name="id">
+      <AutoIncrement>0</AutoIncrement>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StoredType>int|0s</StoredType>
+    </column>
+    <column id="115" parent="35" name="entity_type">
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+      <StoredType>enum(&apos;original&apos;, &apos;synopsis&apos;)|0e</StoredType>
+    </column>
+    <column id="116" parent="35" name="name">
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+      <StoredType>varchar(512)|0s</StoredType>
+    </column>
+    <column id="117" parent="35" name="description">
+      <Position>4</Position>
+      <StoredType>text|0s</StoredType>
+    </column>
+    <column id="118" parent="35" name="description_vec">
+      <Position>5</Position>
+      <StoredType>vector(1536)|0s</StoredType>
+    </column>
+    <column id="119" parent="35" name="meta">
+      <Position>6</Position>
+      <StoredType>json|0s</StoredType>
+    </column>
+    <column id="120" parent="35" name="meta_vec">
+      <Position>7</Position>
+      <StoredType>vector(1536)|0s</StoredType>
+    </column>
+    <column id="121" parent="35" name="synopsis_info">
+      <Position>8</Position>
+      <StoredType>json|0s</StoredType>
+    </column>
+    <index id="122" parent="35" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="123" parent="35" name="idx_entity_type">
+      <ColNames>entity_type</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="124" parent="35" name="idx_entity_name">
+      <ColNames>name</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="125" parent="35" name="vec_idx_description_vec">
+      <ColNames>description_vec</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="126" parent="35" name="vec_idx_meta_vec">
+      <ColNames>meta_vec</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="127" parent="35" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="128" parent="36" name="id">
+      <AutoIncrement>0</AutoIncrement>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StoredType>int|0s</StoredType>
+    </column>
+    <column id="129" parent="36" name="entity_type">
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+      <StoredType>enum(&apos;original&apos;, &apos;synopsis&apos;)|0e</StoredType>
+    </column>
+    <column id="130" parent="36" name="name">
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+      <StoredType>varchar(512)|0s</StoredType>
+    </column>
+    <column id="131" parent="36" name="description">
+      <Position>4</Position>
+      <StoredType>text|0s</StoredType>
+    </column>
+    <column id="132" parent="36" name="description_vec">
+      <Position>5</Position>
+      <StoredType>vector(1536)|0s</StoredType>
+    </column>
+    <column id="133" parent="36" name="meta">
+      <Position>6</Position>
+      <StoredType>json|0s</StoredType>
+    </column>
+    <column id="134" parent="36" name="meta_vec">
+      <Position>7</Position>
+      <StoredType>vector(1536)|0s</StoredType>
+    </column>
+    <column id="135" parent="36" name="synopsis_info">
+      <Position>8</Position>
+      <StoredType>json|0s</StoredType>
+    </column>
+    <index id="136" parent="36" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="137" parent="36" name="idx_entity_type">
+      <ColNames>entity_type</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="138" parent="36" name="idx_entity_name">
+      <ColNames>name</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="139" parent="36" name="vec_idx_description_vec">
+      <ColNames>description_vec</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="140" parent="36" name="vec_idx_meta_vec">
+      <ColNames>meta_vec</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="141" parent="36" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="142" parent="37" name="id">
+      <AutoIncrement>79</AutoIncrement>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StoredType>int|0s</StoredType>
+    </column>
+    <column id="143" parent="37" name="description">
+      <Position>2</Position>
+      <StoredType>text|0s</StoredType>
+    </column>
+    <column id="144" parent="37" name="description_vec">
+      <Position>3</Position>
+      <StoredType>vector(1536)|0s</StoredType>
+    </column>
+    <column id="145" parent="37" name="source_entity_id">
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+      <StoredType>int|0s</StoredType>
+    </column>
+    <column id="146" parent="37" name="target_entity_id">
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+      <StoredType>int|0s</StoredType>
+    </column>
+    <column id="147" parent="37" name="meta">
+      <Position>6</Position>
+      <StoredType>json|0s</StoredType>
+    </column>
+    <column id="148" parent="37" name="weight">
+      <NotNull>1</NotNull>
+      <Position>7</Position>
+      <StoredType>int|0s</StoredType>
+    </column>
+    <column id="149" parent="37" name="chunk_id">
+      <Position>8</Position>
+      <StoredType>char(32)|0s</StoredType>
+    </column>
+    <column id="150" parent="37" name="document_id">
+      <Position>9</Position>
+      <StoredType>int|0s</StoredType>
+    </column>
+    <column id="151" parent="37" name="created_at">
+      <Position>10</Position>
+      <StoredType>datetime|0s</StoredType>
+    </column>
+    <column id="152" parent="37" name="updated_at">
+      <Position>11</Position>
+      <StoredType>datetime|0s</StoredType>
+    </column>
+    <foreign-key id="153" parent="37" name="fk_1">
+      <ColNames>source_entity_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>entities_01973588-65aa-4954-99fd-71eb5ecce167</RefTableName>
+    </foreign-key>
+    <foreign-key id="154" parent="37" name="fk_2">
+      <ColNames>target_entity_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>entities_01973588-65aa-4954-99fd-71eb5ecce167</RefTableName>
+    </foreign-key>
+    <index id="155" parent="37" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="156" parent="37" name="vec_idx_description_vec">
+      <ColNames>description_vec</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="157" parent="37" name="fk_1">
+      <ColNames>source_entity_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="158" parent="37" name="fk_2">
+      <ColNames>target_entity_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="159" parent="37" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="160" parent="38" name="id">
+      <AutoIncrement>0</AutoIncrement>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StoredType>int|0s</StoredType>
+    </column>
+    <column id="161" parent="38" name="description">
+      <Position>2</Position>
+      <StoredType>text|0s</StoredType>
+    </column>
+    <column id="162" parent="38" name="description_vec">
+      <Position>3</Position>
+      <StoredType>vector(1536)|0s</StoredType>
+    </column>
+    <column id="163" parent="38" name="source_entity_id">
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+      <StoredType>int|0s</StoredType>
+    </column>
+    <column id="164" parent="38" name="target_entity_id">
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+      <StoredType>int|0s</StoredType>
+    </column>
+    <column id="165" parent="38" name="meta">
+      <Position>6</Position>
+      <StoredType>json|0s</StoredType>
+    </column>
+    <column id="166" parent="38" name="weight">
+      <NotNull>1</NotNull>
+      <Position>7</Position>
+      <StoredType>int|0s</StoredType>
+    </column>
+    <column id="167" parent="38" name="chunk_id">
+      <Position>8</Position>
+      <StoredType>char(32)|0s</StoredType>
+    </column>
+    <column id="168" parent="38" name="document_id">
+      <Position>9</Position>
+      <StoredType>int|0s</StoredType>
+    </column>
+    <column id="169" parent="38" name="created_at">
+      <Position>10</Position>
+      <StoredType>datetime|0s</StoredType>
+    </column>
+    <column id="170" parent="38" name="updated_at">
+      <Position>11</Position>
+      <StoredType>datetime|0s</StoredType>
+    </column>
+    <foreign-key id="171" parent="38" name="fk_1">
+      <ColNames>source_entity_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>entities_daf20644-70e7-4f64-8e6f-067101cdab37</RefTableName>
+    </foreign-key>
+    <foreign-key id="172" parent="38" name="fk_2">
+      <ColNames>target_entity_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>entities_daf20644-70e7-4f64-8e6f-067101cdab37</RefTableName>
+    </foreign-key>
+    <index id="173" parent="38" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="174" parent="38" name="vec_idx_description_vec">
+      <ColNames>description_vec</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="175" parent="38" name="fk_1">
+      <ColNames>source_entity_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="176" parent="38" name="fk_2">
+      <ColNames>target_entity_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="177" parent="38" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="178" parent="39" name="id">
+      <AutoIncrement>0</AutoIncrement>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StoredType>int|0s</StoredType>
+    </column>
+    <column id="179" parent="39" name="description">
+      <Position>2</Position>
+      <StoredType>text|0s</StoredType>
+    </column>
+    <column id="180" parent="39" name="description_vec">
+      <Position>3</Position>
+      <StoredType>vector(1536)|0s</StoredType>
+    </column>
+    <column id="181" parent="39" name="source_entity_id">
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+      <StoredType>int|0s</StoredType>
+    </column>
+    <column id="182" parent="39" name="target_entity_id">
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+      <StoredType>int|0s</StoredType>
+    </column>
+    <column id="183" parent="39" name="meta">
+      <Position>6</Position>
+      <StoredType>json|0s</StoredType>
+    </column>
+    <column id="184" parent="39" name="weight">
+      <NotNull>1</NotNull>
+      <Position>7</Position>
+      <StoredType>int|0s</StoredType>
+    </column>
+    <column id="185" parent="39" name="chunk_id">
+      <Position>8</Position>
+      <StoredType>char(32)|0s</StoredType>
+    </column>
+    <column id="186" parent="39" name="document_id">
+      <Position>9</Position>
+      <StoredType>int|0s</StoredType>
+    </column>
+    <column id="187" parent="39" name="created_at">
+      <Position>10</Position>
+      <StoredType>datetime|0s</StoredType>
+    </column>
+    <column id="188" parent="39" name="updated_at">
+      <Position>11</Position>
+      <StoredType>datetime|0s</StoredType>
+    </column>
+    <foreign-key id="189" parent="39" name="fk_1">
+      <ColNames>source_entity_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>entities_f790db79-29e0-4ec8-bbeb-14234bdc896a</RefTableName>
+    </foreign-key>
+    <foreign-key id="190" parent="39" name="fk_2">
+      <ColNames>target_entity_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>entities_f790db79-29e0-4ec8-bbeb-14234bdc896a</RefTableName>
+    </foreign-key>
+    <index id="191" parent="39" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="192" parent="39" name="vec_idx_description_vec">
+      <ColNames>description_vec</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="193" parent="39" name="fk_1">
+      <ColNames>source_entity_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="194" parent="39" name="fk_2">
+      <ColNames>target_entity_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="195" parent="39" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+  </database-model>
+</dataSource>
