@@ -1,0 +1,3 @@
+[console_scripts]
+sm-ssh = sagemaker_ssh_helper.sm_ssh:main
+sm-ssh-deregister-instances = sagemaker_ssh_helper.deregister_old_instances_from_ssm:main

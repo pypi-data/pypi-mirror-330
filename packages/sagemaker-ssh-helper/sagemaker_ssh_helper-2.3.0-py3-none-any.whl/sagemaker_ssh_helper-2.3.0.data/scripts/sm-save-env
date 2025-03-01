@@ -1,0 +1,35 @@
+#!/bin/bash
+
+# When a user logs in with SSH or remote interpreter, we want env vars to be the same as set by SageMaker
+
+set -e
+set -o pipefail
+
+if [[ "$1" == "print-vars" ]]; then
+  # Wrap all vars into single quotes, wrap single quotes into double quotes
+  # Also works for multi-line variables
+  # A=test -> A='test'
+  # B='test' -> B=''"'"'test'"'"''
+  # C="test" -> C='"test"'
+  # D=te  -> D='te
+  # st       st'
+  shift
+  for arg in "$@"; do
+    key=$(echo "$arg" | perl -0777 -pe 's/^([^=]*)=?.*$/\1/s')
+    value=$(echo "$arg" | perl -0777 -pe 's/^[^=]*=?(.*)$/\1/s' | perl -0777 -pe s/\'/\'\"\'\"\'/gs)
+
+    if [[ $key =~ ^(BASH_FUNC_.*|HOME|USER|MAIL|LC_ALL|LS_COLORS|LANG|HOSTNAME|PWD|TERM|SHLVL|LANGUAGE|_)$ ]]; then
+      :  # skip vars that can cause problems
+    else
+      echo "$key='$value'"
+    fi
+
+  done
+  exit 0
+fi
+
+export START_SSH=false
+env -0 | xargs -0 sm-save-env print-vars > /etc/environment
+
+echo "sm-save-env: Dumping environment"
+cat /etc/environment

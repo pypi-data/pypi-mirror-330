@@ -1,0 +1,359 @@
+#!/bin/bash -l
+# Very important to start with 'bash -l' - to escape SageMaker Studio notebook environment
+
+# Commands:
+# configure [--ssh-only]
+# set-local-user-id <local_user_id>
+# set-jb-license-server <jb-license-server-hostname-without-http>
+# set-vnc-password <123456>
+# get-user-profile-name
+# get-domain-id
+# get-metadata
+
+set -e
+set -o pipefail
+
+dir=$(dirname "$0")
+dir=$(cd "$dir" && pwd)
+source "$dir"/sm-helper-functions
+
+if [[ "$1" == "install-helper-scripts" ]]; then
+    echo "sm-ssh-ide: Installing helper scripts to /usr/local/bin/"
+    _install_helper_scripts
+elif [[ "$1" == "configure" ]]; then
+    # Everything that requires Internet goes to 'configure'
+
+    sudo tee /etc/profile.d/sm-ssh-ide.sh >/dev/null <<EOF
+echo "Configuring SageMaker SSH Helper from /etc/profile.d/sm-ssh-ide.sh" >/dev/null
+export XAUTHORITY="/tmp/.Xauthority-\$USER"
+export ICEAUTHORITY="/tmp/.ICEauthority-\$USER"
+touch "/tmp/.Xauthority-\$USER"
+touch "/tmp/.ICEauthority-\$USER"
+chmod 600 "/tmp/.Xauthority-\$USER"
+chmod 600 "/tmp/.ICEauthority-\$USER"
+EOF
+
+    source /etc/profile.d/sm-ssh-ide.sh
+
+    if [[ -f /opt/sagemaker-ssh-helper/.ssh-ide-configured ]]; then
+        echo "sm-ssh-ide: Already configured. Remove /opt/sagemaker-ssh-helper/.ssh-ide-configured to force reconfiguration."
+        exit 0
+    fi
+
+    echo "sm-ssh-ide: Configuring services..."
+
+    OPTIONS=$2
+    sudo mkdir -p /opt/sagemaker-ssh-helper/
+    echo "$OPTIONS" | sudo tee /opt/sagemaker-ssh-helper/.sm-ssh-ide-options >/dev/null
+
+    sudo "$dir"/sm-ssh-ide install-helper-scripts
+
+    sudo sm-setup-ssh configure
+
+    if [[ "$OPTIONS" != "--ssh-only" ]]; then
+
+      echo "sm-ssh-ide: Installing VNC and GUI apps"
+
+      if _is_centos; then
+
+        # Based on https://repost.aws/knowledge-center/ec2-linux-2-install-gui
+        amazon-linux-extras install -y mate-desktop1.x
+        echo PREFERRED=/usr/bin/mate-session > /etc/sysconfig/desktop
+
+        yum install -y tigervnc-server
+        mkdir -p /etc/tigervnc/
+        echo localhost > /etc/tigervnc/vncserver-config-mandatory
+
+        amazon-linux-extras install -y epel
+        yum install -y chromium
+
+      else
+
+        apt-get -qq -y install mate-desktop-environment tigervnc-standalone-server
+
+        echo "/usr/bin/mate-session" > ~/.xsession
+        chmod +x ~/.xsession
+
+        # shellcheck disable=SC2016
+        sed -i -e 's~^ERRFILE=$HOME/.xsession-errors~ERRFILE=/var/log/apps/app_container.log__xsession-errors~' /etc/X11/Xsession
+      fi
+
+    else
+      echo "sm-ssh-ide: Skipping VNC and GUI apps install"
+    fi
+
+    sudo touch /opt/sagemaker-ssh-helper/.ssh-ide-configured
+
+    echo "sm-ssh-ide: Finished configuration. Done"
+
+elif [[ "$1" == "get-app-space-name" ]]; then
+  _assert_is_ssh_ide_inside_studio
+  USER_PROFILE=$(_print_sm_app_space_name)
+  echo "$USER_PROFILE"
+
+elif [[ "$1" == "get-domain-id" ]]; then
+  _assert_is_ssh_ide_inside_studio
+  DOMAIN_ID=$(_print_sm_domain_id)
+  echo "$DOMAIN_ID"
+
+elif [[ "$1" == "get-metadata" ]]; then
+  _assert_is_ssh_ide_inside_studio
+
+  echo "App name: $(_print_sm_app_name)"
+  echo "App space name: $(_print_sm_app_space_name)"
+  echo "Domain: $(_print_sm_domain_id)"
+  echo ""
+  echo "Connect from local machine: "
+  echo "sm-ssh connect $(_print_sm_app_name).studio.sagemaker"
+  echo "sm-ssh connect $(_print_sm_app_name).$(_print_sm_app_space_name).$(_print_sm_domain_id).studio.sagemaker"
+  echo "ssh -A $(_print_sm_app_name).studio.sagemaker"
+  echo "ssh -A $(_print_sm_app_name).$(_print_sm_app_space_name).$(_print_sm_domain_id).studio.sagemaker"
+
+elif [[ "$1" == "set-jb-license-server" ]]; then
+
+    JB_LICENSE_SERVER_HOST="$2"
+
+    if [ -f ~/.sm-jb-license-server ]; then
+        echo "sm-ssh-ide: PyCharm license server host is already configured in ~/.sm-jb-license-server, skipping override"
+    else
+        echo "sm-ssh-ide: Saving PyCharm License server host into ~/.sm-jb-license-server"
+        echo "$JB_LICENSE_SERVER_HOST" > ~/.sm-jb-license-server
+    fi
+
+    JB_LICENSE_SERVER_HOST="$(cat ~/.sm-jb-license-server)"
+
+    if grep -q "$JB_LICENSE_SERVER_HOST" /etc/hosts; then
+        echo "sm-ssh-ide: Skipping the update of /etc/hosts with PyCharm license server (already there)"
+    else
+        echo "sm-ssh-ide: Updating /etc/hosts with PyCharm license server from ~/.sm-jb-license-server"
+        echo "127.0.0.1  $JB_LICENSE_SERVER_HOST" | sudo tee -a /etc/hosts
+    fi
+
+elif [[ "$1" == "set-vnc-password" ]]; then
+    OPTIONS=$(cat /opt/sagemaker-ssh-helper/.sm-ssh-ide-options || echo "")
+
+    if [[ "$OPTIONS" == "--ssh-only" ]]; then
+      echo "sm-ssh-ide: Setting VNC password for SSH-only configuration has no effect, exiting."
+      exit 0
+    fi
+
+    VNC_PASSWORD="$2"
+
+    if [ -f ~/.vnc/passwd ]; then
+        echo "sm-ssh-ide: VNC password is already set in ~/.vnc/passwd, skipping override"
+    else
+        echo "sm-ssh-ide: Encrypting and saving VNC password to ~/.vnc/passwd"
+        mkdir -p ~/.vnc
+        echo "$VNC_PASSWORD" | vncpasswd -f > ~/.vnc/passwd
+        chmod 600 ~/.vnc/passwd
+    fi
+
+elif [[ "$1" == "set-local-user-id" ]]; then
+
+    LOCAL_USER_ID="$2"
+
+    if [ -f ~/.sm-ssh-owner ]; then
+        echo "sm-ssh-ide: Local user ID is already set in ~/.sm-ssh-owner, skipping override"
+        LOCAL_USER_ID="$(cat ~/.sm-ssh-owner)"
+    else
+        echo "sm-ssh-ide: Saving local user ID into ~/.sm-ssh-owner"
+        echo "$LOCAL_USER_ID" > ~/.sm-ssh-owner
+    fi
+
+elif [[ "$1" == "init-ssm" ]]; then
+    echo "sm-ssh-ide: Initializing SSM..."
+
+    LOCAL_USER_ID="$(cat ~/.sm-ssh-owner)"
+    echo "sm-ssh-ide: Will use local user ID: $LOCAL_USER_ID"
+
+    execution_role=$(_print_sm_execution_role)
+    echo "sm-ssh-ide: Detected SageMaker execution role ARN: $execution_role"
+
+    SSH_SSM_ROLE=$(echo "$execution_role" | sed -e 's/^.*:role\/\(.*\)/\1/')
+
+    if [[ -z "$SSH_SSM_ROLE" ]]; then
+      domain_json=$(aws sagemaker describe-domain \
+        --domain-id "$(_print_sm_domain_id)" \
+        | tr -d "\n")
+      execution_role=$(echo "$domain_json" | { grep "ExecutionRole" || true; } \
+        | sed -e 's/^.*"ExecutionRole": \"\([^"]*\)\".*$/\1/')
+
+      SSH_SSM_ROLE=$(echo "$execution_role" | sed -e 's/^.*:role\/\(.*\)/\1/')
+    fi
+
+    if [[ -z "$SSH_SSM_ROLE" ]]; then
+      echo "sm-ssh-ide: ERROR: Failed to determine IAM role associated with current user profile"
+    fi
+
+    echo "sm-ssh-ide: Will use SSM role: $SSH_SSM_ROLE"
+
+    export SSH_SSM_ROLE
+    export SSH_OWNER_TAG=$LOCAL_USER_ID
+
+    sm-init-ssm --sudo
+
+    echo "sm-ssh-ide: SSM initialized. Done"
+
+elif [[ "$1" == "start" ]]; then
+    echo "sm-ssh-ide: Starting services..."
+
+    OPTIONS=$(cat /opt/sagemaker-ssh-helper/.sm-ssh-ide-options || echo "")
+
+    if [[ -f /tmp/.ssh-ide-local-lock ]]; then
+        echo "sm-ssh-ide: Already running on this instance? Call stop first." && exit 1
+    fi
+
+    touch /tmp/.ssh-ide-local-lock
+
+    echo "sm-ssh-ide: Saving env variables for remote SSH interpreter"
+    sm-save-env
+
+    echo "sm-ssh-ide: Generating UTF-8 locales"
+    _locale_gen
+
+    echo "sm-ssh-ide: Starting Syslog service"
+    # FIXME: rsyslog: unrecognized service (recently)
+    _start_syslogd
+
+    echo "sm-ssh-ide: Starting SSH service"
+    _start_sshd
+
+    if [[ "$OPTIONS" != "--ssh-only" ]]; then
+
+      if _is_centos; then
+        :
+      else
+        echo "sm-ssh-ide: Starting DBUS service"
+        nohup /etc/init.d/dbus start &
+      fi
+
+      echo "sm-ssh-ide: Starting VNC server"
+      vncserver :1
+
+      SM_STUDIO_PYTHON=$(_print_sm_studio_python)
+      echo "sm-ssh-ide: Using SageMaker Studio Python: $SM_STUDIO_PYTHON"
+
+      "$SM_STUDIO_PYTHON" -m jupyter notebook --version >/dev/null 2>&1 || (
+        # Note: you should have access to Internet or have notebook module pre-installed in the container
+        echo "sm-ssh-ide: Installing Jupyter notebook"
+        "$SM_STUDIO_PYTHON" -m pip install notebook
+        # Note: reinstall of some libraries is needed for compatibility with SageMaker Studio:
+        "$SM_STUDIO_PYTHON" -m pip install --force-reinstall traitlets tornado
+      )
+
+      echo "sm-ssh-ide: Starting Jupyter notebook server"
+
+      "$SM_STUDIO_PYTHON" -m jupyter notebook --no-browser --port=8889 --ip=127.0.0.1 --allow-root \
+        >/tmp/jupyter-notebook.log 2>&1 &
+
+      sleep 2
+
+      tail /tmp/jupyter-notebook.log
+
+    else
+      echo "sm-ssh-ide: Skipping VNC and Jupyter start"
+    fi
+
+    echo "sm-ssh-ide: Started all services. Done"
+
+elif [[ "$1" == "ssm-agent" ]]; then
+
+    echo "sm-ssh-ide: Starting SSM agent"
+    /usr/bin/amazon-ssm-agent
+
+elif [[ "$1" == "status" ]]; then
+
+    netstat -nptl | grep '5901\|8889'
+
+elif [[ "$1" == "get-studio-python-path" ]]; then
+
+    SM_STUDIO_PYTHON=$(_print_sm_studio_python)
+    echo "$SM_STUDIO_PYTHON"
+
+elif [[ "$1" == "get-studio-python-version" ]]; then
+
+    SM_STUDIO_PYTHON=$(_print_sm_studio_python)
+    $SM_STUDIO_PYTHON --version
+
+elif [[ "$1" == "env-diagnostics" ]]; then
+    if _is_centos; then
+      echo "Operating system: CentOS/RHEL-based system detected"
+    else
+      echo "Operating system: Debian/Ubuntu-based system detected"
+    fi
+
+    head -2 /etc/os-release || :
+
+    echo "System Python location: $(which python || echo 'Not found')"
+    echo "System Python version: $(python --version || echo 'Not found')"
+
+    echo "Conda location: $(which conda || echo 'Not found')"
+    echo "Conda environments: $(conda env list || echo 'Not found')"
+
+    echo "SageMaker Studio Python location: $($0 get-studio-python-path || echo 'Not found')"
+    echo "SageMaker Studio Python version: $($0 get-studio-python-version || echo 'Not found')"
+
+    # Should be the same as `jupyter kernelspec list` executed from SageMaker Studio Python
+    echo "Jupyter Kernels: $(find "$JUPYTER_PATH" -name 'kernel.json')"
+    find "$JUPYTER_PATH" -name 'kernel.json' -print0 | xargs -0 cat
+
+elif [[ "$1" == "stop" ]]; then
+    echo "sm-ssh-ide: Stopping services..."
+
+    OPTIONS=$(cat /opt/sagemaker-ssh-helper/.sm-ssh-ide-options || echo "")
+
+    echo "sm-ssh-ide: Stopping SSM agent"
+    pkill -ef amazon-ssm-agent || echo "sm-ssh-ide: SSM agent already stopped?"
+
+    echo "sm-ssh-ide: Stopping SSH service"
+    if _is_centos; then
+      pkill -ef sshd || echo "sm-ssh-ide: SSH already stopped?"
+    else
+      service ssh stop
+    fi
+
+    if [[ "$OPTIONS" != "--ssh-only" ]]; then
+
+      echo "sm-ssh-ide: Stopping VNC server"
+      vncserver -kill :1 || echo "sm-ssh-ide: VNC server already stopped?"
+
+      # Wait dbus to stop and terminate manually, if it didn't
+      sleep 5
+      if _is_centos; then
+        :
+      else
+        echo "sm-ssh-ide: Stopping DBUS service"
+        /etc/init.d/dbus stop
+      fi
+      pkill -f dbus-daemon || :
+
+      pkill -e Xtigervnc || :
+      pkill -e Xtightvnc || :
+
+      echo "sm-ssh-ide: Stopping SSH and GPG agents"
+      pkill -e ssh-agent || :
+      pkill -e gpg-agent || :
+
+      echo "sm-ssh-ide: Stopping Jupyter notebook server"
+      pkill -fe jupyter-notebook || echo "sm-ssh-ide: Jupyter notebook already stopped?"
+
+    else
+      echo "sm-ssh-ide: Skipping VNC and Jupyter stop"
+    fi
+
+    # Wait all other services to stop
+    sleep 5
+    
+    if [[ -f /tmp/.ssh-ide-local-lock ]]; then
+        rm /tmp/.ssh-ide-local-lock
+    else
+        echo "sm-ssh-ide: Local lock is missing, was not not running on this instance?"
+    fi
+
+    echo "sm-ssh-ide: Stopped all services. Done"
+
+else
+
+    echo "sm-ssh-ide: Unknown command: $1"
+
+fi

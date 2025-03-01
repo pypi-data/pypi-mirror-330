@@ -1,0 +1,298 @@
+#!/bin/bash
+
+function _python() {
+  if [ -z "${SM_SSH_PYTHON}" ]; then
+    if python3 --version 2>&1 | grep '^Python 3' >/dev/null 2>&1; then
+      echo "python3"
+    else
+      echo "python"
+    fi
+  else
+    echo "${SM_SSH_PYTHON}"
+  fi
+}
+
+function _silent_install() {
+  install_path="/usr/local/bin"
+
+  dir=$(dirname "$0")
+  dir=$(cd "$dir" && pwd)
+  script=$1
+  mod=$2
+
+  install -C -v "$dir"/"$script" "$install_path"/
+  if [ -n "$mod" ]; then
+    chmod "$mod" "$install_path"/"$script"
+  fi
+}
+
+function _install_helper_scripts() {
+  dir=$(dirname "$0")
+  dir=$(cd "$dir" && pwd)
+
+  # Scripts may not be available in PATH during bootstrap, so we manually copy scripts into /usr/local/bin/.
+  _silent_install sm-helper-functions
+  _silent_install sm-connect-ssh-proxy +x
+  _silent_install sm-wait +x
+  _silent_install sm-save-env +x
+  _silent_install sm-init-ssm +x
+  _silent_install sm-ssh-ide +x
+  _silent_install sm-setup-ssh +x
+}
+
+function _is_centos() {
+  command -v yum >/dev/null 2>&1
+}
+
+function _is_macos() {
+  uname | grep ^Darwin >/dev/null
+}
+
+function _is_windows() {
+  uname | grep ^MINGW >/dev/null
+}
+
+function _install_unzip() {
+  if _is_macos || _is_windows; then
+    :  # noop, should be already installed
+  elif _is_centos; then
+    sudo yum install -y unzip
+  else
+    sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends unzip
+  fi
+}
+
+function _install_aws_cli_linux() {
+  curl -sS "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "/tmp/awscliv2.zip"
+  unzip -o -q -d /tmp/ /tmp/awscliv2.zip
+  sudo /tmp/aws/install --update
+}
+
+function _install_aws_cli_macos() {
+  curl -sS "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "/tmp/AWSCLIV2.pkg"
+  sudo installer -pkg /tmp/AWSCLIV2.pkg -target /
+}
+
+function _install_aws_cli() {
+  echo "sagemaker-ssh-helper: Installing AWS CLI v2"
+  which aws || echo "sagemaker-ssh-helper: No previous installation of AWS CLI detected"
+  which pip >/dev/null 2>&1 && pip uninstall -y awscli
+
+  # See: https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
+  if _is_windows; then
+    msiexec.exe //i https://awscli.amazonaws.com/AWSCLIV2.msi || echo "WARNING: msiexec.exe existed with non-zero code."
+  elif _is_macos; then
+    _install_aws_cli_macos
+  else
+    _install_aws_cli_linux
+  fi
+}
+
+function _install_ssm_agent_ubuntu() {
+  curl -sS -o /tmp/amazon-ssm-agent.deb "https://s3.amazonaws.com/ec2-downloads-windows/SSMAgent/latest/debian_amd64/amazon-ssm-agent.deb"
+  dpkg -i /tmp/amazon-ssm-agent.deb
+}
+
+function _install_ssm_agent_centos() {
+  yum install -y "https://s3.amazonaws.com/ec2-downloads-windows/SSMAgent/latest/linux_amd64/amazon-ssm-agent.rpm" \
+    || echo "Already installed?"
+}
+
+function _install_ssm_agent() {
+  echo "sagemaker-ssh-helper: Installing SSM Agent"
+  # See https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-manual-agent-install.html
+  if _is_centos; then
+    _install_ssm_agent_centos
+  else
+    _install_ssm_agent_ubuntu
+  fi
+}
+
+function _install_session_manager_plugin_ubuntu() {
+  curl -sS "https://s3.amazonaws.com/session-manager-downloads/plugin/latest/ubuntu_64bit/session-manager-plugin.deb" \
+    -o "/tmp/session-manager-plugin.deb"
+  sudo dpkg -i /tmp/session-manager-plugin.deb
+}
+
+function _install_session_manager_plugin_centos() {
+  sudo yum install -y "https://s3.amazonaws.com/session-manager-downloads/plugin/latest/linux_64bit/session-manager-plugin.rpm" \
+    || echo "Already installed?"
+}
+
+function _install_session_manager_plugin_macos() {
+  curl -sS "https://s3.amazonaws.com/session-manager-downloads/plugin/latest/mac/session-manager-plugin.pkg" \
+    -o "/tmp/session-manager-plugin.pkg"
+  sudo installer -pkg /tmp/session-manager-plugin.pkg -target /
+  sudo rm -f /usr/local/bin/session-manager-plugin
+  sudo ln -s /usr/local/sessionmanagerplugin/bin/session-manager-plugin /usr/local/bin/session-manager-plugin
+}
+
+function _install_session_manager_plugin_windows() {
+  curl -sS "https://s3.amazonaws.com/session-manager-downloads/plugin/latest/windows/SessionManagerPluginSetup.exe" \
+    -o "/tmp/SessionManagerPluginSetup.exe"
+  /tmp/SessionManagerPluginSetup.exe || echo "Warning: SessionManagerPluginSetup.exe existed with non-zero code."
+}
+
+function _install_session_manager_plugin() {
+  # See https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html
+  if _is_windows; then
+    _install_session_manager_plugin_windows
+  elif _is_centos; then
+    _install_session_manager_plugin_centos
+  elif _is_macos; then
+    _install_session_manager_plugin_macos
+  else
+    _install_session_manager_plugin_ubuntu
+  fi
+}
+
+
+
+function _install_curl_ubuntu() {
+  sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends curl
+}
+
+function _install_curl_centos() {
+  which curl || sudo yum install -y curl
+}
+
+function _install_curl() {
+  if _is_macos || _is_windows; then
+    :  # noop, should be already installed
+  elif _is_centos; then
+    _install_curl_centos
+  else
+    _install_curl_ubuntu
+  fi
+}
+
+function _install_jq() {
+  if _is_centos; then
+    yum install -y jq
+  else
+    apt-get install -y --no-install-recommends jq
+  fi
+}
+
+function _install_sudo() {
+  if _is_centos; then
+    yum install -y sudo
+  else
+    apt-get install -y --no-install-recommends sudo
+  fi
+}
+
+# shellcheck disable=SC2001
+function _print_sm_app_name() {
+  sm_resource_metadata_json=$(tr -d "\n" < /opt/ml/metadata/resource-metadata.json)
+  echo -n "$sm_resource_metadata_json" | sed -e 's/^.*"ResourceName":\"\([^"]*\)\".*$/\1/'
+}
+
+# shellcheck disable=SC2001
+function _print_sm_execution_role() {
+  sm_resource_metadata_json=$(tr -d "\n" < /opt/ml/metadata/resource-metadata.json)
+  echo -n "$sm_resource_metadata_json" | sed -e 's/^.*"ExecutionRoleArn":\"\([^"]*\)\".*$/\1/'
+}
+
+# shellcheck disable=SC2001
+function _print_sm_domain_id() {
+  sm_resource_metadata_json=$(tr -d "\n" < /opt/ml/metadata/resource-metadata.json)
+  echo -n "$sm_resource_metadata_json" | sed -e 's/^.*"DomainId":\"\([^"]*\)\".*$/\1/'
+}
+
+# shellcheck disable=SC2001
+function _print_sm_app_space_name() {
+  sm_resource_metadata_json=$(tr -d "\n" < /opt/ml/metadata/resource-metadata.json)
+  echo -n "$sm_resource_metadata_json" | sed -e 's/^.*"SpaceName":\"\([^"]*\)\".*$/\1/'
+}
+
+function _print_sm_studio_python() {
+  SM_STUDIO_PYTHON=$(/opt/.sagemakerinternal/conda/bin/python -c \
+      "from jupyter_client.kernelspec import KernelSpecManager; \
+      print(KernelSpecManager().get_all_specs()['python3']['spec']['argv'][0])")
+  echo -n "$SM_STUDIO_PYTHON"
+}
+
+function _is_ssh_ide_inside_studio() {
+  [[ -f /opt/ml/metadata/resource-metadata.json ]]
+}
+
+
+function _assert_is_ssh_ide_inside_studio() {
+  if _is_ssh_ide_inside_studio; then
+    :  # all good
+  else
+    echo "sm-ssh-ide: ERROR: must be running inside SageMaker Studio"
+    exit 2
+  fi
+}
+
+function _locale_gen() {
+  if _is_centos; then
+    :
+  else
+    # Generating UTF-8 locales only for Debian
+    locale-gen
+  fi
+}
+
+function _start_syslogd() {
+  if _is_centos; then
+    nohup /usr/sbin/rsyslogd &
+    nohup /usr/lib/systemd/systemd-journald &
+  else
+    service rsyslog start || (echo "ERROR: Failed to start syslogd service")
+  fi
+}
+
+function _start_sshd() {
+  if _is_centos; then
+    /usr/sbin/sshd
+  else
+    service ssh start || (echo "ERROR: Failed to start sshd service" && exit 255)
+  fi
+}
+
+function _export_ssh_key_env_var() {
+  SM_SSH_HOST_NAME=$1
+  SSH_KEY=~/.ssh/${SM_SSH_HOST_NAME}
+  export SSH_KEY
+}
+
+function _check_ssh_proxy_host_name() {
+  SM_SSH_HOST_NAME=$1
+  SM_RESOURCE_TYPE=$2
+
+  if [[ "$SM_SSH_HOST_NAME" =~ ^.*\."$SM_RESOURCE_TYPE"\.sagemaker ]]; then
+    :
+  else
+    echo "sm-local-ssh-$SM_RESOURCE_TYPE: Error: Host name must end with '.$SM_RESOURCE_TYPE.sagemaker'"
+    exit 1
+  fi
+}
+
+function _generate_key_and_print_instance_id() {
+  SM_SSH_FQDN=$1
+  DOMAIN_ID=$2
+  USER_PROFILE_NAME=$3
+
+  if [[ -f $SSH_KEY ]]; then
+    # Don't generate again, or it will confuse SSH
+    # Only touch the file so it can be easily identified when you sort by last access timestamp
+    touch "$SSH_KEY"
+  else
+    # echo "Generating $SSH_KEY keypair with ECDSA and uploading public key to $SSH_AUTHORIZED_KEYS"
+    echo 'yes' | ssh-keygen -t ecdsa -q -f "${SSH_KEY}" -N '' >/dev/null
+  fi
+
+  # shellcheck disable=SC2091  # execute python location
+  $(_python) <<EOF
+import logging
+logging.basicConfig(level=logging.ERROR);
+logging.getLogger('sagemaker.config').setLevel(logging.WARNING)
+logging.getLogger('botocore.credentials').setLevel(logging.WARNING)
+import sagemaker; from sagemaker_ssh_helper.wrapper import SSHEnvironmentWrapper;
+print(SSHEnvironmentWrapper.attach_to_resource("$SM_SSH_FQDN", "$DOMAIN_ID", "$USER_PROFILE_NAME").get_instance_id(timeout_in_sec=0));
+EOF
+
+}
