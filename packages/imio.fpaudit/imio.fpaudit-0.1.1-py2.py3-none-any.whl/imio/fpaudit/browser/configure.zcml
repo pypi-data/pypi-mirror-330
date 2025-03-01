@@ -1,0 +1,26 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="imio.fpaudit">
+
+    <browser:page
+        name="fpaudit-settings"
+        for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+        permission="plone.app.controlpanel.Site"
+        class=".settings.FPAuditSettingsView"
+        />
+
+    <browser:page
+        for="*"
+        name="document_generation_helper_view"
+        class="imio.fpaudit.browser.documentgenerator.FPAuditHelperView"
+        permission="zope2.View"
+        />
+
+    <subscriber
+        for="plone.registry.interfaces.IRecordModifiedEvent"
+        handler=".settings.settings_changed"
+        />
+
+</configure>
