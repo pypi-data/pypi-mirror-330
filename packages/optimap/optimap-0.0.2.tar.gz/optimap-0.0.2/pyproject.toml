@@ -1,0 +1,37 @@
+[build-system]
+requires = [
+    "setuptools>=42",
+    "wheel",
+    "setuptools_scm>=6.2",
+    "pybind11>=2.12,<3",
+    "extension-helpers",
+    "oldest-supported-numpy; python_version<='3.8'",
+    "numpy>=2.0,<3; python_version>'3.8'",
+]
+
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools_scm]
+write_to = "optimap/_version.py"
+fallback_version = "0.1.0"
+
+[tool.cibuildwheel]
+archs = ["auto64"]  # 64-bit only
+skip = "pp* *musllinux*"  # disable PyPy, musl-based wheels
+test-requires = ["pytest"]
+test-command = "pytest {project}/tests"
+manylinux-x86_64-image = "quay.io/pypa/manylinux_2_28_x86_64"  # TODO: temporary, remove after upgrade of cibuildwheel
+
+[tool.ruff.lint]
+exclude = [
+  "docs",
+]
+select = ['E', 'F', 'W', 'A', 'PLC', 'PLE', 'PLW', 'I', 'D', 'Q']
+target-version = "py39"
+line-length = 120
+ignore = [
+    "PLW2901",
+    "PLW0603",
+    "D401",
+    "D205",
+]
