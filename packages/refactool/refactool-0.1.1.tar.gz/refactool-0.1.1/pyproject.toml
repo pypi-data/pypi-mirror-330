@@ -1,0 +1,156 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "refactool"
+version = "0.1.1"
+description = "Uma ferramenta de refatoração de código usando IA"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {file = "LICENCE"}
+authors = [
+    {name = "Gabriel Alves", email = "gabriel.alves.dev@outlook.com"}
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: Portuguese (Brazilian)",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Software Development :: Quality Assurance"
+]
+dependencies = [
+    "fastapi>=0.100.0,<0.110.0",
+    "uvicorn[standard]>=0.23.0",
+    "pydantic>=2.6.0,<2.10.0",
+    "httpx>=0.24.0,<1.0.0",
+    "httpcore>=1.0.0,<2.0.0",
+    "celery>=5.3.0",
+    "redis>=5.0.0",
+    "mmh3>=4.0.0,<5.0.0",
+    "bitarray>=2.8.0,<3.0.0",
+    "openai>=1.0.0,<1.65.0",
+    "anthropic>=0.16.0,<0.49.0",
+    "langchain>=0.2.0,<0.3.0",
+    "langchain-core>=0.2.26,<0.3.0",
+    "langchain-openai>=0.1.0,<0.2.0",
+    "langchain-anthropic>=0.1.23,<0.2.0",
+    "google-ai-generativelanguage>=0.2.0,<0.3.0",
+    "PyGithub>=2.1.0,<3.0.0",
+    "gitpython>=3.1.0,<3.2.0",
+    "structlog>=22.1.0,<23.0.0",
+    "opentelemetry-api>=1.20.0",
+    "opentelemetry-sdk>=1.20.0",
+    "opentelemetry-exporter-prometheus>=0.41b0",
+    "opentelemetry-instrumentation-fastapi>=0.41b0",
+    "prometheus-client>=0.20.0,<0.21.0",
+    "psutil~=6.1.0",
+    "python-dotenv>=1.0.0",
+    "click>=8.0.0,<9.0.0",
+    "requests>=2.31.0,<3.0.0",
+    "aiohttp>=3.8.0,<4.0.0",
+    "slowapi>=0.1.8,<0.2.0"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "pytest-asyncio>=0.21.0",
+    "pytest-cov>=4.1.0",
+    "mypy>=1.5.0",
+    "black>=23.7.0",
+    "isort>=5.12.0",
+    "flake8>=6.1.0",
+    "bandit>=1.7.5",
+    "safety>=2.3.0"
+]
+
+[project.urls]
+Source = "https://github.com/gabrielsalvesdev/refactool"
+"Bug Reports" = "https://github.com/gabrielsalvesdev/refactool/issues"
+Documentation = "https://refactool.readthedocs.io/"
+
+[project.scripts]
+refactool = "api.cli:main"
+
+[tool.setuptools]
+packages = ["api"]
+
+[tool.black]
+line-length = 100
+target-version = ["py38"]
+include = '\.pyi?$'
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+line_length = 100
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+disallow_untyped_decorators = true
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_no_return = true
+warn_unreachable = true
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = "-ra -q --cov=api --cov-report=xml --cov-report=html"
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_functions = ["test_*"]
+asyncio_mode = "auto"
+markers = [
+    "unit: testes unitários",
+    "integration: testes de integração",
+    "system: testes de sistema",
+    "stress: testes de stress",
+]
+
+[tool.coverage.run]
+source = ["api"]
+omit = ["tests/*"]
+branch = true
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "if __name__ == .__main__.:",
+    "raise NotImplementedError",
+    "if TYPE_CHECKING:",
+    "pass",
+]
+show_missing = true
+fail_under = 80
+
+[tool.bandit]
+exclude_dirs = ["tests"]
+skips = ["B101", "B104"]
+targets = ["api"]
+
+[tool.pylint]
+max-line-length = 100
+disable = ["C0111", "R0903", "C0103"]
+ignore = ["CVS", ".git", ".pytest_cache", "build", "dist"]
+ignore-patterns = ["test_.*?py"]
+python_version = "3.8"
+good-names = ["i", "j", "k", "ex", "Run", "_"]
+
+[tool.safety]
+ignore-vulnerabilities = []
+ignore-cvss-severity-below = 4
+ignore-cvss-unknown-severity = false
+full-report = true
+json = true 
