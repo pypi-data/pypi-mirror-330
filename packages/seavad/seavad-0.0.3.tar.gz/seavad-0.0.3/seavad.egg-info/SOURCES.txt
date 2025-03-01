@@ -1,0 +1,16 @@
+LICENSE
+README.md
+pyproject.toml
+readme_for_pypi.md
+setup.cfg
+seavad/__init__.py
+seavad/main.py
+seavad/silero.py
+seavad/utils.py
+seavad/vad_analyzer.py
+seavad.egg-info/PKG-INFO
+seavad.egg-info/SOURCES.txt
+seavad.egg-info/dependency_links.txt
+seavad.egg-info/requires.txt
+seavad.egg-info/top_level.txt
+tests/test_seavad.py
