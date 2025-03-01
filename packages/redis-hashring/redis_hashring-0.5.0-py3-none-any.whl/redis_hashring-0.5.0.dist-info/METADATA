@@ -1,0 +1,24 @@
+Metadata-Version: 2.1
+Name: redis-hashring
+Version: 0.5.0
+Summary: Python library for distributed applications using a Redis hash ring
+Home-page: https://github.com/closeio/redis-hashring
+Author: Close Engineering
+Author-email: engineering@close.com
+License: MIT
+Platform: any
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+License-File: LICENSE
+Requires-Dist: redis>=3
+
