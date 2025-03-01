@@ -1,0 +1,30 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "shmview"
+version = "0.0.9"
+authors = [
+  { name = "Frantz Martinache", email="frantz.martinache@oca.eu"},
+]
+dependencies =["numpy", "xaosim", "PyQt5", "pyqtgraph", "qtpy"]
+
+description = "Python-based shared memory live viewer"
+
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Operating System :: POSIX :: Linux"
+]
+
+license = "MIT"
+license-file = ["LICEN[CS]E*"]
+
+[project.scripts]
+shmview = 'shmview.shmview:main'
+
+[project.urls]
+Homepage = "https://github.com/fmartinache/shmview/"
+Issues = "https://github.com/fmartinache/shmview/issues"
