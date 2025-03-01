@@ -1,0 +1,46 @@
+[project]
+name = "dynflow"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "pyyaml>=6.0.2",
+]
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.ruff]
+exclude = [
+    ".git",
+    ".ruff_cache",
+    ".venv",
+    ".vscode",
+]
+extend-include = []
+line-length = 120
+indent-width = 4
+target-version = "py39"
+
+[tool.ruff.lint]
+ignore = ["ANN204", "ANN401", "C408", "E731", "D", "DTZ005", "BLE001","B008", "CPY001","COM812", "ERA001", "EM101","EM102", "FA","FBT", "G004", "UP", "TRY","PTH","ISC001", "PD002", "PD015" ]
+select = ["ALL"]
+
+[tool.ruff.lint.pylint]
+max-args = 10
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
+docstring-code-format = false
+docstring-code-line-length = "dynamic"
+
+[tool.uv]
+dev-dependencies = [
+    "pyclean>=3.1.0",
+    "ruff>=0.9.9",
+]
