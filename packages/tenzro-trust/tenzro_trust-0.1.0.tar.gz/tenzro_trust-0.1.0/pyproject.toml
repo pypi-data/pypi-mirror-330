@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tenzro-trust"
+version = "0.1.0"
+description = "A flexible, extensible hardware-rooted trust framework for distributed ledger systems"
+readme = "README.md"
+authors = [
+    {name = "Hilal Agil", email = "hilaal@gmail.com"}
+]
+license = {text = "MIT"}
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Security :: Cryptography",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+keywords = ["security", "trust", "hsm", "tpm", "tee", "distributed-ledger"]
+dependencies = [
+    "cryptography>=3.4.0",
+    "pycryptodome>=3.10.0",
+]
+requires-python = ">=3.9"
+
+[project.urls]
+"Homepage" = "https://github.com/tenzro/tenzro-trust"
+"Bug Tracker" = "https://github.com/tenzro/tenzro-trust/issues"
+"Documentation" = "https://github.com/tenzro/tenzro-trust#readme"
+
+[tool.setuptools]
+packages = ["providers"]
