@@ -1,0 +1,3 @@
+[console_scripts]
+cosmap=cosmap.entrypoint:cli
+
