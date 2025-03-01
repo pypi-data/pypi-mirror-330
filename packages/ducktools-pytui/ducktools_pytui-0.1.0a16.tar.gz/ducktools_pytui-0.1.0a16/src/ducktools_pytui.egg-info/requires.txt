@@ -1,0 +1,9 @@
+ducktools-classbuilder>=0.7.5
+ducktools-pythonfinder>=0.7.8
+textual>=1.0
+shellingham~=1.5
+pip~=25.0
+
+[testing]
+pytest
+pytest-cov
