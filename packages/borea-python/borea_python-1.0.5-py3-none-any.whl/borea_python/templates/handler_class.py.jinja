@@ -1,0 +1,89 @@
+{% extends "base.jinja" %}
+
+{% block content %}
+# TODO: not implemented
+
+from typing import Any, Dict, List, Optional, Union, TYPE_CHECKING
+from ....models.models import *
+
+if TYPE_CHECKING:
+    from ...{{ parent_filename }} import {{ parent_class_name }}
+
+class {{ class_name }}:
+    def __init__(
+        self,
+        parent: "{{ parent_class_name }}"
+    ):
+        self.parent = parent
+
+    {%- set method_name = method_name %}
+    {%- set required_params = required_method_params %}
+    {%- set optional_params = optional_method_params %}
+    def {{ method_name }}(
+        self,
+        {%- for required_param in required_params %}
+        {{ required_param.name }}: {{ required_param.type }},
+        {%- endfor %}
+        {%- for optional_param in optional_params %}
+        {{ optional_param.name }}: Optional[{{ optional_param.type }}] = None,
+        {%- endfor %}
+    ) -> Any:
+        """
+        {{ description }}
+        {%- if required_method_params or optional_method_params or request_body %}
+
+        Args:
+            {%- for required_param in required_params %}
+            {{ required_param.name }}: {{ required_param.description }}
+            {%- endfor %}
+            {%- for optional_param in optional_params %}
+            {{ optional_param.name }}: {{ optional_param.description }}
+            {%- endfor %}
+        {%- endif %}
+
+        Returns:
+            Response data
+        """
+        path = f"{{ path }}"
+        {%- if http_params %}
+        params = {}
+        headers = {}
+        {%- for param in http_params %}
+        {%- if param.in_location == "query" %}
+        if {{ param.name }} is not None:
+            params["{{ param.original_name }}"] = {{ param.name }}
+        {%- endif %}
+        {%- if param.in_location == "header" %}
+        if {{ param.name }} is not None:
+            headers["{{ param.original_name }}"] = {{ param.name }}
+        {%- endif %}
+        {%- endfor %}
+        {%- else %}
+        params = None
+        headers = None
+        {%- endif %}
+
+        {%- if request_body %}
+        {%- if nested_schema and nested_schema.properties %}
+        json_data = {
+            {%- for prop_name in nested_schema.properties %}
+            "{{ prop_name }}": {{ prop_name }} if {{ prop_name }} is not None else None,
+        {%- endfor %}
+        }
+        json_data = {k: v for k, v in json_data.items() if v is not None}
+        {%- else %}
+        json_data = request_body.model_dump() if request_body else None
+        {%- endif %}
+        {%- else %}
+        json_data = None
+        {%- endif %}
+
+        response = self.parent._make_request(
+            method="{{ http_method }}",
+            path=path,
+            params=params,
+            headers=headers,
+            json_data=json_data,
+        )
+        return response.json()
+{% endblock %}
