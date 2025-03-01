@@ -1,0 +1,114 @@
+Metadata-Version: 2.4
+Name: textual-timepiece
+Version: 0.3.0
+Summary: Various time related widgets & functionality for Textual.
+Project-URL: Repository, https://github.com/ddkasa/textual-timepiece
+Project-URL: Issues, https://github.com/ddkasa/textual-timepiece/issues
+Project-URL: Changelog, https://github.com/ddkasa/textual-timepiece/tree/main/docs/CHANGELOG.md
+Project-URL: Coverage, https://app.codecov.io/gh/ddkasa/textual-timepiece
+Project-URL: Documentation, https://ddkasa.github.io/textual-timepiece/
+Project-URL: releasenotes, https://ddkasa.github.io/textual-timepiece/CHANGELOG
+Author-email: David Kasakaitis <davidkasakaitis@proton.me>
+License-Expression: MIT
+Keywords: activity,date,heatmap,textual,time,tui,whenever,widget
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Terminals
+Classifier: Typing :: Typed
+Requires-Python: >=3.10
+Requires-Dist: textual>=2.1.0
+Requires-Dist: whenever>=0.7.1
+Description-Content-Type: text/markdown
+
+[![PyPI - Version](https://img.shields.io/pypi/v/textual-timepiece)](https://pypi.org/project/textual-timepiece/)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/textual-timepiece?link=https%3A%2F%2Fpypi.org%2Fproject%2Ftextual-timepiece%2F)](https://pypi.org/project/textual-timepiece/)
+[![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/ddkasa/textual-timepiece/ci.yaml?link=https%3A%2F%2Fgithub.com%2Fddkasa%2Ftextual-timepiece%2Factions%2Fworkflows%2Fci.yaml)](https://github.com/ddkasa/textual-timepiece/actions/workflows/ci.yaml)
+
+# Textual Timepiece
+
+> Various time management related widgets for the [Textual](https://github.com/Textualize/textual) framework.
+
+[Documentation](https://ddkasa.github.io/textual-timepiece/) | [Changelog](/docs/CHANGELOG.md) | [PyPi](https://pypi.org/project/textual-timepiece/)
+
+## Demo
+
+Try the widgets out beforehand with [uv](https://docs.astral.sh/uv/):
+
+```sh
+uvx --from textual-timepiece demo
+```
+
+## Install
+
+```sh
+pip install textual-timepiece
+```
+
+```sh
+uv add textual-timepiece
+```
+
+```sh
+poetry add textual-timepiece
+```
+
+> [!NOTE]
+> Requires [whenever](https://github.com/ariebovenberg/whenever) as an additional dependency.
+
+## Quick Start
+
+#### DatePicker
+
+```py
+from textual.app import App, ComposeResult
+from textual_timepiece.pickers import DatePicker
+from whenever import Date
+
+class DatePickerApp(App[None]):
+    def compose(self) -> ComposeResult:
+        yield DatePicker(Date.today_in_system_tz())
+
+if __name__ == "__main__":
+    DatePickerApp().run()
+```
+
+#### DateTimePicker
+
+```py
+from textual.app import App, ComposeResult
+from textual_timepiece.pickers import DateTimePicker
+from whenever import SystemDateTime
+
+class DateTimePickerApp(App[None]):
+    def compose(self) -> ComposeResult:
+        yield DateTimePicker(SystemDateTime.now().local())
+
+if __name__ == "__main__":
+    DateTimePickerApp().run()
+```
+
+- More examples can be found [here](https://ddkasa.github.io/textual-timepiece/examples).
+
+## Included Widgets
+
+- `DatePicker`
+- `DurationPicker`
+- `TimePicker`
+- `DateTimePicker`
+- `DateRangePicker`
+- `DateTimeRangePicker`
+- `ActivityHeatmap`
+- `HeatmapManager`
+- _And more to come..._
+
+## License
+
+MIT. Check [LICENSE](LICENSE.md) for more information.
