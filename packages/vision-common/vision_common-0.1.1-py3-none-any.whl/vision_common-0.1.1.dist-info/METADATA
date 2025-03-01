@@ -1,0 +1,193 @@
+Metadata-Version: 2.1
+Name: vision-common
+Version: 0.1.1
+Summary: Common code for Vision-web3 off-chain components.
+Home-page: https://vision-web3.io
+License: GPL-3.0-only
+Author: Vision-web3-foundation GmbH
+Author-email: contact@vision-web3.io
+Requires-Python: >=3.13,<4.0
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.13
+Requires-Dist: celery (==5.3.1) ; python_version >= "3.13" and python_version < "4.0"
+Requires-Dist: cerberus (==1.3.4) ; python_version >= "3.13" and python_version < "4.0"
+Requires-Dist: flask-restful (==0.3.10) ; python_version >= "3.13" and python_version < "4.0"
+Requires-Dist: json-log-formatter (==0.5.2) ; python_version >= "3.13" and python_version < "4.0"
+Requires-Dist: pyyaml (==6.0.1) ; python_version >= "3.13" and python_version < "4.0"
+Requires-Dist: requests (==2.32.3) ; python_version >= "3.13" and python_version < "4.0"
+Requires-Dist: web3 (==6.5.0) ; python_version >= "3.13" and python_version < "4.0"
+Requires-Dist: pyaml-env (==1.2.1) ; python_version >= "3.13" and python_version < "4.0"
+Requires-Dist: python-dotenv (==1.0.1) ; python_version >= "3.13" and python_version < "4.0"
+Requires-Dist: pycryptodome (==3.20.0) ; python_version >= "3.13" and python_version < "4.0"
+Requires-Dist: hexbytes (==1.2.1) ; python_version >= "3.13" and python_version < "4"
+Requires-Dist: semantic-version (==2.10.0) ; python_version >= "3.13" and python_version < "4.0"
+Requires-Dist: eth-account (==0.13.0) ; python_version >= "3.13" and python_version < "4"
+Requires-Dist: marshmallow (==3.26.1) ; python_version >= "3.13" and python_version < "4.0"
+Requires-Dist: billiard (==4.2.1) ; python_version >= "3.13" and python_version < "4.0"
+Requires-Dist: click (==8.1.8) ; python_version >= "3.13" and python_version < "4.0"
+Requires-Dist: click-didyoumean (==0.3.1) ; python_version >= "3.13" and python_version < "4.0"
+Requires-Dist: click-plugins (==1.1.1) ; python_version >= "3.13" and python_version < "4.0"
+Requires-Dist: click-repl (==0.3.0) ; python_version >= "3.13" and python_version < "4.0"
+Requires-Dist: kombu (==5.4.2) ; python_version >= "3.13" and python_version < "4.0"
+Requires-Dist: python-dateutil (==2.9.0.post0) ; python_version >= "3.13" and python_version < "4.0"
+Requires-Dist: tzdata (==2025.1) ; python_version >= "3.13" and python_version < "4.0"
+Requires-Dist: vine (==5.1.0) ; python_version >= "3.13" and python_version < "4.0"
+Requires-Dist: setuptools (==75.8.0) ; python_version >= "3.13" and python_version < "4.0"
+Requires-Dist: aniso8601 (==10.0.0) ; python_version >= "3.13" and python_version < "4.0"
+Requires-Dist: flask (==3.1.0) ; python_version >= "3.13" and python_version < "4.0"
+Requires-Dist: pytz (==2025.1) ; python_version >= "3.13" and python_version < "4.0"
+Requires-Dist: six (==1.17.0) ; python_version >= "3.13" and python_version < "4.0"
+Requires-Dist: certifi (==2025.1.31) ; python_version >= "3.13" and python_version < "4.0"
+Requires-Dist: charset-normalizer (==3.4.1) ; python_version >= "3.13" and python_version < "4.0"
+Requires-Dist: idna (==3.10) ; python_version >= "3.13" and python_version < "4.0"
+Requires-Dist: urllib3 (==2.3.0) ; python_version >= "3.13" and python_version < "4.0"
+Requires-Dist: aiohttp (==3.11.12) ; python_version >= "3.13" and python_version < "4.0"
+Requires-Dist: eth-abi (==5.2.0) ; python_version >= "3.13" and python_version < "4"
+Requires-Dist: eth-hash (==0.7.1) ; python_version >= "3.13" and python_version < "4"
+Requires-Dist: eth-typing (==3.5.2) ; python_version >= "3.13" and python_version < "4"
+Requires-Dist: eth-utils (==2.3.2) ; python_version >= "3.13" and python_version < "4"
+Requires-Dist: jsonschema (==4.23.0) ; python_version >= "3.13" and python_version < "4.0"
+Requires-Dist: lru-dict (==1.3.0) ; python_version >= "3.13" and python_version < "4.0"
+Requires-Dist: protobuf (==5.29.3) ; python_version >= "3.13" and python_version < "4.0"
+Requires-Dist: pywin32 (==308) ; python_version >= "3.13" and python_version < "4.0" and platform_system == "Windows"
+Requires-Dist: websockets (==15.0) ; python_version >= "3.13" and python_version < "4.0"
+Requires-Dist: bitarray (==3.0.0) ; python_version >= "3.13" and python_version < "4"
+Requires-Dist: ckzg (==2.0.1) ; python_version >= "3.13" and python_version < "4"
+Requires-Dist: eth-keyfile (==0.9.1) ; python_version >= "3.13" and python_version < "4"
+Requires-Dist: eth-keys (==0.4.0) ; python_version >= "3.13" and python_version < "4"
+Requires-Dist: eth-rlp (==2.2.0) ; python_version >= "3.13" and python_version < "4"
+Requires-Dist: pydantic (==2.10.6) ; python_version >= "3.13" and python_version < "4"
+Requires-Dist: rlp (==3.0.0) ; python_version >= "3.13" and python_version < "4"
+Requires-Dist: packaging (==24.2) ; python_version >= "3.13" and python_version < "4.0"
+Requires-Dist: colorama (==0.4.6) ; python_version >= "3.13" and python_version < "4.0" and platform_system == "Windows"
+Requires-Dist: prompt-toolkit (==3.0.50) ; python_version >= "3.13" and python_version < "4.0"
+Requires-Dist: amqp (==5.3.1) ; python_version >= "3.13" and python_version < "4.0"
+Requires-Dist: blinker (==1.9.0) ; python_version >= "3.13" and python_version < "4.0"
+Requires-Dist: itsdangerous (==2.2.0) ; python_version >= "3.13" and python_version < "4.0"
+Requires-Dist: jinja2 (==3.1.5) ; python_version >= "3.13" and python_version < "4.0"
+Requires-Dist: werkzeug (==3.1.3) ; python_version >= "3.13" and python_version < "4.0"
+Requires-Dist: aiohappyeyeballs (==2.4.6) ; python_version >= "3.13" and python_version < "4.0"
+Requires-Dist: aiosignal (==1.3.2) ; python_version >= "3.13" and python_version < "4.0"
+Requires-Dist: attrs (==25.1.0) ; python_version >= "3.13" and python_version < "4.0"
+Requires-Dist: frozenlist (==1.5.0) ; python_version >= "3.13" and python_version < "4.0"
+Requires-Dist: multidict (==6.1.0) ; python_version >= "3.13" and python_version < "4.0"
+Requires-Dist: propcache (==0.2.1) ; python_version >= "3.13" and python_version < "4.0"
+Requires-Dist: yarl (==1.18.3) ; python_version >= "3.13" and python_version < "4.0"
+Requires-Dist: parsimonious (==0.10.0) ; python_version >= "3.13" and python_version < "4"
+Requires-Dist: typing-extensions (==4.12.2) ; python_version >= "3.13" and python_version < "4"
+Requires-Dist: cytoolz (==1.0.1) ; python_version >= "3.13" and python_version < "4" and implementation_name == "cpython"
+Requires-Dist: eth-hash (==0.7.1) ; python_version >= "3.13" and python_version < "4"
+Requires-Dist: toolz (==1.0.0) ; python_version >= "3.13" and python_version < "4" and (implementation_name == "pypy" or implementation_name == "cpython")
+Requires-Dist: jsonschema-specifications (==2024.10.1) ; python_version >= "3.13" and python_version < "4.0"
+Requires-Dist: referencing (==0.36.2) ; python_version >= "3.13" and python_version < "4.0"
+Requires-Dist: rpds-py (==0.22.3) ; python_version >= "3.13" and python_version < "4.0"
+Requires-Dist: py-ecc (==6.0.0) ; python_version >= "3.13" and python_version < "4"
+Requires-Dist: annotated-types (==0.7.0) ; python_version >= "3.13" and python_version < "4"
+Requires-Dist: pydantic-core (==2.27.2) ; python_version >= "3.13" and python_version < "4"
+Requires-Dist: wcwidth (==0.2.13) ; python_version >= "3.13" and python_version < "4.0"
+Requires-Dist: markupsafe (==3.0.2) ; python_version >= "3.13" and python_version < "4.0"
+Requires-Dist: regex (==2024.11.6) ; python_version >= "3.13" and python_version < "4"
+Requires-Dist: cached-property (==1.5.2) ; python_version >= "3.13" and python_version < "4"
+Requires-Dist: mypy-extensions (==0.4.4) ; python_version >= "3.13" and python_version < "4"
+Project-URL: Repository, https://github.com/vision-web3-foundation/common
+Description-Content-Type: text/markdown
+
+<img src="https://raw.githubusercontent.com/vision-web3-foundation/common/img/vision-web3-logo-full.svg" alt="Vision-web3 logo" align="right" width="120" />
+
+[![CI](https://github.com/vision-web3-foundation/common/actions/workflows/ci.yaml/badge.svg?branch=main)](https://github.com/vision-web3-foundation/common/actions/workflows/ci.yaml) 
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=vision-web3-foundation_common&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=vision-web3-foundation_common)
+
+# Common code for Vision-web3 off-chain components
+
+## 1. Introduction
+
+### 1.1 Overview
+
+Welcome to the documentation for Vision-web3 Common. This repository is a centralized hub for storing shared code components used across multiple projects within our organization.
+
+The primary purpose of the Common Repository is to promote code reusability, streamline collaboration, and maintain consistency across various projects. Centralizing shared code aims to enhance efficiency and reduce redundancy in our development processes.
+
+### 1.2 Features
+
+The Vision Common project currently offers the following functionalities:
+
+#### Signing module
+The **signer.py** module is used for signing and verifying signatures. The private key must be on the curve Ed25519 or Ed448 and encrypted in a PEM file.
+
+#### Service nodes module
+The **servicenodes.py** module is used for communicating with Vision-web3 service nodes. It can be used for querying the bids, sending transfers, and requesting the transfer status.
+
+#### Blockchain utility modules
+The blockchain utility modules extract common blockchain functionalities used across projects. Such functionalities include sending transactions or calling the blockchain nodes for read-only data.
+
+The blockchain utility modules can be found in the **blockchains** package. There is a Python module for each Vision-web3-supported blockchain.
+
+## 2. Installation
+
+### 2.1  Prerequisites
+
+Please make sure that your environment meets the following requirements:
+
+#### Python Version
+
+Vision-web3 Common supports **Python 3.13** or higher. Ensure that you have the correct Python version installed before the installation steps. You can download the latest version of Python from the official [Python website](https://www.python.org/downloads/).
+
+#### Library Versions
+
+The Vision-web3 Common project has been tested with the library versions specified in **poetry.lock**.
+
+#### Poetry
+
+Poetry is our tool of choice for dependency management and packaging.
+
+Installing: 
+https://python-poetry.org/docs/#installing-with-the-official-installer
+or
+https://python-poetry.org/docs/#installing-with-pipx
+
+By default poetry creates the venv directory under under ```{cache-dir}/virtualenvs```. If you opt for creating the virtualenv inside the project’s root directory, execute the following command:
+```bash
+poetry config virtualenvs.in-project true
+```
+
+### 2.2  Installation Steps
+
+#### From Pypi
+
+```bash
+$ pip install vision-common
+```
+
+#### From source code
+
+Create the virtual environment and install the dependencies:
+
+```bash
+$ poetry install --no-root
+```
+
+## 3. Usage
+
+The Vision-web3 Common project should be used as a utility library, for example as a submodule in an upstream project. After those steps, the modules can be imported directly from the Common library.
+
+### 3.1 Configuration
+
+The Vision-web3 Common library allows its configuration to be loaded from multiple predefined folders. This normally involves an environment file and a base YAML configuration file, which can be located in the following predefined paths:
+
+```
+    $PWD
+    $HOME
+    ~/.config
+    /etc/vision
+    /etc
+```
+
+Each service defines a default file name under which this file is searched. The service then expects the environment file to be present in the same location with the same name but with a different .env extension.
+
+Alternatively one can define the location of such files by using the `VISION-WEB3_CONFIG` and `VISION-WEB3_ENV_FILE` environment variables.
+
+### 3.2 Examples
+
+https://github.com/vision-web3-foundation/client-library/blob/main/vision/client/library/blockchains/base.py
+
