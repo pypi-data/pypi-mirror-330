@@ -1,0 +1,43 @@
+{% extends "dbadmin_base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{%block scripts%}
+<script src="{{url_for('static', filename='webshim/polyfiller.js')}}"
+				type="text/javascript"></script>
+<script src="{{url_for('static', filename='datetime.js')}}"
+				type="text/javascript"></script>
+{{super()}}
+{%endblock%}
+
+{% block title %}Larigira - DB add time "{{kind}}" {%endblock%}
+
+{% block content %}
+{% if form.errors %}
+<div class="alert alert-danger">
+	<strong>There were some error in your form;</strong> please fix them, then
+	resubmit
+</div>
+{% endif %}
+{% if mode == 'edit' %}
+<div class="alert alert-info">
+	<strong>Note:</strong> You can change parameters, but you cannot change the <em>kind</em> of this alarm (yet)
+</div>
+{% endif %}
+
+<div class="container-fluid">
+	{{wtf.quick_form(form)}}
+</div>
+
+{% if mode == 'edit' %}
+<div class="container-fluid">
+		<div class="alert alert-danger">
+			<form method="POST"
+						onsubmit="return confirm('Are you sure you want to delete?');"
+						action="{{ url_for ('db.delete_alarm', alarmid=alarmid) }}" >
+			<input type="submit" value="Cancella" class="btn btn-danger" />
+			</form>
+		</div>
+	</div>
+{% endif %}
+
+{% endblock content %}
+{# vim: set ts=2 sw=2 noet: #}
