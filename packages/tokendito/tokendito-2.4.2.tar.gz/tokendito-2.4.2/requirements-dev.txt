@@ -1,0 +1,23 @@
+-r ./requirements.txt
+black>=23.1.0,<24.0.0
+coverage>=7.0.0,<8.0.0
+docutils
+flake8>=5.0.0
+flake8-black
+flake8-docstrings
+flake8-import-order
+moto==4.2.10
+pep8-naming
+pexpect
+pydocstyle
+pylint
+pyotp
+pyroma
+pytest>=7.0.0,<8.0.0
+pytest-cov
+pytest-env
+pytest-mock
+pytest-ordering
+requests-mock
+semver
+tox
