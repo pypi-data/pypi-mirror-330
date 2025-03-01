@@ -1,0 +1,2 @@
+[console_scripts]
+lumi = lumi.cli.s2t_cli:main
