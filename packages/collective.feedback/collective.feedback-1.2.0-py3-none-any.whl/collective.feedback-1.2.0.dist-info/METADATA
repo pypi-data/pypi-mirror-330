@@ -1,0 +1,268 @@
+Metadata-Version: 2.1
+Name: collective.feedback
+Version: 1.2.0
+Summary: Feedback mechanism integration for io-comune
+Home-page: https://github.com/collective/collective.feedback
+Author: RedTurtle Technology
+Author-email: sviluppoplone@redturtle.it
+License: GPL version 2
+Project-URL: PyPI, https://pypi.org/project/collective.feedback/
+Project-URL: Source, https://github.com/collective/collective.feedback
+Project-URL: Tracker, https://github.com/collective/collective.feedback/issues
+Keywords: Python Plone CMS
+Classifier: Development Status :: 1 - Planning
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Plone
+Classifier: Framework :: Plone :: Addon
+Classifier: Framework :: Plone :: 5.2
+Classifier: Framework :: Plone :: 6.0
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Operating System :: OS Independent
+Classifier: License :: OSI Approved :: GNU General Public License v2 (GPLv2)
+Requires-Python: >=3.7
+License-File: LICENSE.GPL
+License-File: LICENSE.rst
+Requires-Dist: setuptools
+Requires-Dist: souper.plone
+Requires-Dist: collective.honeypot >=2.1
+Provides-Extra: test
+Requires-Dist: gocept.pytestlayer ; extra == 'test'
+Requires-Dist: plone.app.testing ; extra == 'test'
+Requires-Dist: plone.restapi[test] ; extra == 'test'
+Requires-Dist: pytest-cov ; extra == 'test'
+Requires-Dist: pytest-plone >=0.2.0 ; extra == 'test'
+Requires-Dist: pytest-docker ; extra == 'test'
+Requires-Dist: pytest-mock ; extra == 'test'
+Requires-Dist: pytest ; extra == 'test'
+Requires-Dist: zest.releaser[recommended] ; extra == 'test'
+Requires-Dist: zestreleaser.towncrier ; extra == 'test'
+Requires-Dist: requests-mock ; extra == 'test'
+
+.. This README is meant for consumption by humans and pypi. Pypi can render rst files so please do not use Sphinx features.
+   If you want to learn more about writing documentation, please check out: http://docs.plone.org/about/documentation_styleguide.html
+   This text does not appear on pypi or github. It is a comment.
+
+.. image:: https://img.shields.io/pypi/v/collective.feedback.svg
+    :target: https://pypi.python.org/pypi/collective.feedback/
+    :alt: Latest Version
+.. image:: https://img.shields.io/pypi/status/collective.feedback.svg
+    :target: https://pypi.python.org/pypi/collective.feedback
+    :alt: Egg Status
+.. image:: https://img.shields.io/pypi/pyversions/collective.feedback.svg?style=plastic
+    :target: https://pypi.python.org/pypi/collective.feedback
+    :alt: Supported - Python Versions
+.. image:: https://img.shields.io/pypi/l/collective.feedback.svg
+    :target: https://pypi.python.org/pypi/collective.feedback/
+    :alt: License
+
+
+===================
+collective.feedback
+===================
+
+Feedback mechanism integration for volto.
+Requires volto-feedback >= 0.6.0
+
+Users can add vote and a comment to every page on the site.
+
+Bot protection
+==============
+
+This product use `collective.honeypot <https://pypi.org/project/collective.honeypot/>`_ to prevent bot submissions.
+
+You just need to set two environment variables:
+
+- *EXTRA_PROTECTED_ACTIONS feedback-add*
+- *HONEYPOT_FIELD xxx*
+
+xxx should be a field name that bot should compile.
+
+If you get hacked, you could simply change that variable.
+
+Permissions
+===========
+
+There are two new specific permission:
+
+- collective.feedback.ManageFeedbacks (collective.feedback: Manage Feedbacks) Allows to reset data (by default Manager and Site Administrator).
+- collective.feedback.AccessFeedbacks (collective.feedback: Access Feedbacks) Allows users to list feedbacks on contents where they have that permission (by default Editor, Manager and Site Administrator)
+- collective.feedback.ShowDeletedFeedbacks (collective.feedback: Show Deleted Feedbacks) Allows manager to see feedbacks of deleted objects
+
+Feedbacks catalog
+=================
+
+Reviews are stored inside an internal catalog (based on `souper.plone <https://pypi.org/project/souper.plone/>`_).
+
+You can access/edit data through restapi routes (see below) or through a Plone utility::
+
+    from zope.component import getUtility
+    from collective.feedback.interfaces import ICollectiveFeedbackStore
+
+    tool = getUtility(ICollectiveFeedbackStore)
+
+Add a vote
+----------
+
+- Method ``add``
+- Parameters: ``data`` (dictionary with parameters)
+- Response: unique-id of new record
+- Context: only the navigation root
+
+``data`` should be a dictionary with the following parameters:
+
+- uid [required]: the uid of the Plone content
+- vote [required]: the vote
+- answer: a custom string, like a comment
+- title: the title of the Plone content
+- comment: an optional comment
+- content: path of the object or name of the view
+
+Others parameters will be ignored.
+
+Search reviews
+--------------
+
+- Method ``search``
+- Parameters: ``query`` (dictionary with parameters), ``sort_index`` (default=date), ``reverse`` (default=False)
+- Response: a list of results
+
+``query`` is a dictionary of indexes where perform the search.
+
+Right now data is not indexed so search filters does not work. You only need to call search method to get all data.
+
+
+List update
+-----------
+
+PATCH
+~~~~~
+
+This endpoint allows update feedbacks by list.
+By now you can only change "read" property
+
+
+Example::
+
+    curl http://localhost:8080/Plone/@feedback-list \
+        -X PATCH \
+        -H 'Accept: application/json' \
+        -H 'Content-Type: application/json' \
+        -d '{
+            "101010101": {"read": true},
+        }'
+
+
+Installation
+------------
+
+Install collective.feedback by adding it to your buildout::
+
+    [buildout]
+
+    ...
+
+    eggs =
+        collective.feedback
+
+
+and then running ``bin/buildout``
+
+Contribute
+------------
+
+- Issue Tracker: https://github.com/RedTurtle/collective.feedback/issues
+- Source Code: https://github.com/RedTurtle/collective.feedback
+
+Compatibility
+=============
+
+This product has been tested on Plone 6
+
+Authors
+=======
+
+This product was developed by RedTurtle Technology team.
+
+.. image:: http://www.redturtle.net/redturtle_banner.png
+   :alt: RedTurtle Technology Site
+   :target: http://www.redturtle.net/
+
+
+Contributors
+============
+
+- RedTurtle Technology, sviluppoplone@redturtle.it
+
+
+Changelog
+=========
+
+
+1.2.0 (2025-02-28)
+------------------
+
+- Feedback can now also be added for non-content paths. (Breaking) [eikichi18]
+
+
+1.1.5 (2024-11-07)
+------------------
+
+- Feedbacks list update endpoint @@feedback-list.
+  [folix-01]
+
+1.1.4 (2024-08-21)
+------------------
+
+- Add feedback update endpoint.
+  [folix-01]
+
+- Add read field to the comment.
+  [folix-01]
+
+
+1.1.3 (2024-04-29)
+------------------
+
+- add a plone2volto url conversion method on feedback download
+  [lucabel]
+
+
+1.1.2 (2024-03-15)
+------------------
+
+- Fix typo in actions.xml permission.
+  [cekk]
+
+
+1.1.1 (2024-03-13)
+------------------
+
+- re-add actions.xml file to have a user-action needed on Volto.
+  [cekk]
+
+
+1.1.0 (2024-03-12)
+------------------
+
+- Only managers can access deleted feedbacks.
+  [cekk]
+- Allow all authenticated users to access @feedback endpoint.
+  The endpoint will return only feedbacks on objects that they can edit.
+  [cekk]
+- Improve tests.
+  [cekk]
+- Install souper.plone to have its control-panel in backend.
+  [cekk]
+- Remove unused user action.
+  [cekk]
+- Add `actions` infos in @feedback endpoint, to let the frontend know what the user can do.
+  [cekk]
+
+1.0.0 (2023-02-16)
+------------------
+
+- Initial release.
+  [eikichi18]

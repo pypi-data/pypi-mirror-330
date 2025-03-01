@@ -1,0 +1,52 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="collective.feedback"
+    >
+
+  <i18n:registerTranslations directory="locales" />
+
+  <include file="permissions.zcml" />
+  <include file="upgrades.zcml" />
+
+  <include package=".controlpanels" />
+  <include package=".storage" />
+  <include package=".restapi" />
+
+
+  <genericsetup:registerProfile
+      name="default"
+      title="collective.feedback"
+      description="Installs the collective.feedback add-on."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      directory="profiles/default"
+      post_handler=".setuphandlers.post_install"
+      />
+
+  <genericsetup:registerProfile
+      name="uninstall"
+      title="collective.feedback (uninstall)"
+      description="Uninstalls the collective.feedback add-on."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      directory="profiles/uninstall"
+      post_handler=".setuphandlers.uninstall"
+      />
+
+  <genericsetup:registerProfile
+      name="to_1100"
+      title="collective.feedback (to_1100)"
+      description=""
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      directory="profiles/to_1100"
+      />
+
+  <utility
+      factory=".setuphandlers.HiddenProfiles"
+      name="collective.feedback-hiddenprofiles"
+      />
+
+  <!-- -*- extra stuff goes here -*- -->
+
+</configure>
