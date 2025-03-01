@@ -1,0 +1,15 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+google/cloud/spark_connect/__init__.py
+google/cloud/spark_connect/session.py
+google/cloud/spark_connect/client/__init__.py
+google/cloud/spark_connect/client/core.py
+google/cloud/spark_connect/client/proxy.py
+google_spark_connect.egg-info/PKG-INFO
+google_spark_connect.egg-info/SOURCES.txt
+google_spark_connect.egg-info/dependency_links.txt
+google_spark_connect.egg-info/requires.txt
+google_spark_connect.egg-info/top_level.txt
