@@ -1,0 +1,20 @@
+[project]
+name = "hhelper"
+version = "0.1.2"
+description = "Helper Functions for hledger plain text accounting"
+readme = "README.md"
+authors = [
+    { name = "plwg", email = "56353330+plwg@users.noreply.github.com" }
+]
+requires-python = ">=3.11"
+dependencies = [
+    "blessed>=1.20.0",
+    "yfinance>=0.2.54",
+]
+
+[project.scripts]
+hh = "hhelper:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
