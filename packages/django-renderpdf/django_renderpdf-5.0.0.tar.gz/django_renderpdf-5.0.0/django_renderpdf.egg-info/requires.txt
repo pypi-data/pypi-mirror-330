@@ -1,0 +1,9 @@
+django>=2.2
+weasyprint<63
+
+[docs]
+sphinx
+
+[lint]
+ruff
+mypy
