@@ -1,0 +1,71 @@
+[build-system]
+requires = ["setuptools >= 61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+requires-python = ">=3.8"
+name = "hiddenlayer-sdk"
+description = "Official HiddenLayer Python SDK"
+dependencies = [
+  "requests",
+  "pydantic>=1.10.9",
+  "python-dateutil>=2.0.0",
+  "numpy>=1.0.0",
+]
+readme = "README.md"
+license = {file = "LICENSE"}
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python",
+  "Intended Audience :: Developers",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+]
+authors = [
+  {name = "HiddenLayer Integrations Team", email = "integrations@hiddenlayer.com"}
+]
+maintainers = [
+  {name = "HiddenLayer Integrations Team", email = "integrations@hiddenlayer.com"}
+]
+dynamic = ["version"]
+
+[project.urls]
+Homepage = "https://hiddenlayer.com"
+Documentation = "https://hiddenlayer-python-sdk.readthedocs.io/en/latest/#"
+Repository = "https://github.com/hiddenlayerai/hiddenlayer-sdk-python"
+Issues = "https://github.com/hiddenlayerai/hiddenlayer-sdk-python/issues"
+
+[project.optional-dependencies]
+dev = [
+  "ruff>=0.2.2",
+  "pytest",
+  "pandas"
+]
+aws = [
+  "boto3>=1.0.0"
+]
+hf = [
+  "huggingface_hub"
+]
+azure = [
+  "azure-storage-blob",
+  "azure-identity"
+]
+
+[tool.pyright]
+venvPath = "."
+venv = ".venv"
+
+[tool.ruff]
+exclude = [".venv", "hiddenlayer/sdk/rest", "tests/rest", "docs/", "hiddenlayer/sdk/enterprise"]
+
+[tool.ruff.lint]
+select = [
+  "I" # isort formatting
+]
+
+[tool.setuptools.dynamic]
+version = {attr = "hiddenlayer.sdk.version.VERSION"}
