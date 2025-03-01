@@ -1,0 +1,8 @@
+Metadata-Version: 2.1
+Name: gogo_gemini
+Version: 0.1
+Summary: A package for interacting with the Gemini model
+Home-page: https://github.com/HaroldELight/gogo_gemini
+Author: Harold E Lightfoot
+Requires-Dist: google-generativeai
+Requires-Dist: python-dotenv
