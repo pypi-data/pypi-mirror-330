@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: bbbrisk
+Version: 1.0.0
+Summary: model for loan risk controll,i.e. score card
+Home-page: https://github.com/bbbdata/bbbrisk
+Author: bbbdata
+Author-email: yhbbbdata@163.com
+License: UNKNOWN
+Keywords: scorecard
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: sklearn
+
+本代码由bbbdata为评分卡专门开发的小贷风控包
+评分卡教程和本代码的使用说明请参考:https://www.bbbdata.com
+
