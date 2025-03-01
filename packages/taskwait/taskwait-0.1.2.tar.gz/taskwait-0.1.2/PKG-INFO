@@ -1,0 +1,28 @@
+Metadata-Version: 2.4
+Name: taskwait
+Version: 0.1.2
+Summary: Wait for a task to complete
+Project-URL: Documentation, https://github.com/reside-ic/taskwait#readme
+Project-URL: Issues, https://github.com/reside-ic/taskwait/issues
+Project-URL: Source, https://github.com/reside-ic/taskwait
+Author-email: Rich FitzJohn <r.fitzjohn@imperial.ac.uk>
+License-Expression: MIT
+License-File: LICENSE.txt
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+
+# taskwait
+
+[![PyPI - Version](https://img.shields.io/pypi/v/taskwait.svg)](https://pypi.org/project/taskwait)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/taskwait.svg)](https://pypi.org/project/taskwait)
+
+Wait for a task, printing logs if it produces them.  A Python port of our [`logwatch`](https://reside-ic.github.io/logwatch) R package.
