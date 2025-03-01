@@ -1,0 +1,11 @@
+Metadata-Version: 2.2
+Name: fairness_ranking
+Version: 0.1.0
+Summary: A package for generating synthetic data, reranking students based on tolerance, and calculating fairness metrics.
+Author: Mallak Alkhathlan
+Author-email: mnalkhathlan@wpi.edu
+Requires-Dist: pandas
+Dynamic: author
+Dynamic: author-email
+Dynamic: requires-dist
+Dynamic: summary
