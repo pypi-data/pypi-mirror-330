@@ -1,0 +1,3 @@
+[console_scripts]
+opentips = opentips.cli.main:main
+opentips-client = opentips.cli.client:main
