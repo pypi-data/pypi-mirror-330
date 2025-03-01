@@ -1,0 +1,22 @@
+# SPDX-FileCopyrightText: 2022 Maxwell G <gotmax@e.email>
+# SPDX-License-Identifier: GPL-2.0-or-later
+
+.*cache
+.pytype
+dist
+__pycache__
+/*.tar.gz
+/results_fedrq/
+*.src.rpm
+/.old
+fedrq.1
+/doc/fedrq.*.html
+/doc/fedrq*.tar.gz
+/venv/
+NEWS_FRAGMENT.md
+/doc/fedrq?.md
+/site/
+GIT_MSG
+.coverage
+/fedora/
+/.nox/
