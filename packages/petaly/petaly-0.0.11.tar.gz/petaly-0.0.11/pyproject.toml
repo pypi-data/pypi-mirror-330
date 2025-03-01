@@ -1,0 +1,54 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "petaly"
+version = "0.0.11"
+license = {file = "LICENSE.md"}
+description = "Python ETL tool"
+readme = {file = "README.md", content-type = "text/markdown"}
+authors = [{name = "Pavel Rabaev", email = "contact@petaly.org"},]
+maintainers = [{name = "Pavel Rabaev", email = "contact@petaly.org"},]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Topic :: Database :: Database Engines/Servers",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12"
+]
+requires-python = ">= 3.10"
+keywords = ["petaly", "etl", "ingestion", "database", "postgres", "postgresql", "mysql", "bigquery", "redshift", "s3", "gcs", "google storage", "bucket"]
+dependencies =[
+        "PyYAML",
+        "PyMySQL",
+        "cryptography",
+        "pyarrow",
+        "rich",
+        "psycopg",
+        "psycopg-binary",
+        "mysql-connector-python"
+        ]
+[project.optional-dependencies]
+gcp = [
+        "google-cloud",
+        "google-cloud-bigquery",
+        "google-cloud-storage",
+        "google-api-python-client",
+        "oauth2client"
+        ]
+aws = [
+        "redshift_connector[full]"
+        ]
+all = ["petaly[gcp,aws]"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"*" = ["*.ini","*.json","*.yaml","petaly/*.txt","*.sql"]
+
+[project.urls]
+Homepage = "https://petaly.org"
