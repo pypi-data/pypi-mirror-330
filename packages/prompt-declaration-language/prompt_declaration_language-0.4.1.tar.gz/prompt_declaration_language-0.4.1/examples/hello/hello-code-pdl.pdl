@@ -1,0 +1,9 @@
+description: Hello world showing call out to PDL
+lang: pdl
+code: |
+  description: Hello world
+  text:
+  - "Hello\n"
+  - model: ollama/granite-code:8b
+    parameters:
+      temperature: 0

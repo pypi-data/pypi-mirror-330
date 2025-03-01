@@ -1,0 +1,13 @@
+description: Variable def and use, model input
+text:
+- "Hello\n"
+- model: ollama/granite-code:8b
+  def: name
+  parameters:
+    stop: ["!"]
+- "\n"
+- model: ollama/granite-code:8b
+  input: "Translate the word ${ name | trim } to French\n"
+  parameters:
+    stop: ["\n"]
+    temperature: 0
