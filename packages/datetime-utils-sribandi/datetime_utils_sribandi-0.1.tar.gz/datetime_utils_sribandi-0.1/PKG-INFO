@@ -1,0 +1,16 @@
+Metadata-Version: 2.2
+Name: datetime_utils-sribandi
+Version: 0.1
+Summary: A Python library for date and time utilities
+Home-page: https://github.com/srinidhi-bandi/Datetime-Utilities
+Author: Srinidhi Bandi
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Requires-Python: >=3.6
+Requires-Dist: pytz
+Dynamic: author
+Dynamic: classifier
+Dynamic: home-page
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
