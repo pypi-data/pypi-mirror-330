@@ -1,0 +1,16 @@
+apkit-0.1.0.dist-info/METADATA,sha256=pzvM7S1b6rzxucS-tnA4dy2zfqnJWdV5MvMpUcNnwUo,1323
+apkit-0.1.0.dist-info/WHEEL,sha256=thaaA2w1JzcGC48WYufAs8nrYZjJm8LqNfnXFOFyCC4,90
+apkit-0.1.0.dist-info/entry_points.txt,sha256=6OYgBcLyFCUgeqLgnvMyOJxPCWzgy7se4rLPKtNonMs,34
+apkit/__init__.py,sha256=KSqb53y1TQ1cO1RYMpDsJW5ptpZ6jBnO0cFsC8aKxVg,24
+apkit/actor/fetch.py,sha256=t7PCb3oImpFv37gLRBDytM2-Xf51cjKokO0ASBMKrnc,1784
+apkit/apkit.py,sha256=iKrwGVPWvWGqaeUBCdn8NuWy3jF1pBaa_y_VYwW88yI,3263
+apkit/config.py,sha256=bGjqcStivhI_FgypgLUwKOuYvruvb4CbcjeX6rL_zLs,199
+apkit/req/request.py,sha256=m6muf4T7IqkVjkcD7ALh9Crp4E8sJCY45fzta6KYht0,3820
+apkit/sig/verify.py,sha256=wxE8z9rNaUd3XOC1BrsV_u1Sa-i-RivNZx5QKNG25Fs,1355
+apkit/store/base.py,sha256=KV3ZVaKqDiNg-MhT1dcEwUhK1l7SBroANcEZWjJJ-IQ,172
+apkit/store/kv/inmemory.py,sha256=y_89MjDt-M4k3EFw5CYAnaD0EyZAjL8yzRpWyF9oie4,615
+apkit/store/kv/redis.py,sha256=zkp3m8QIpdOwW0TWpd5ghnjEZZe3DDhuHjCQ9OyNPeE,704
+apkit/x/notturno.py,sha256=jSbE_jHoPQCEUCORXjZonZ_BKTSCv-JFev9hiR-cCCQ,414
+apkit/x/starlette.py,sha256=Db5QKJlB6f25ynMInmlHDQi_-6AQlntryM_x67XaJew,9422
+apkit/x/tools.py,sha256=0DHjniVyMF6uYizgtZOAsyj41D1k_fIsphuL_mNkFsA,735
+apkit-0.1.0.dist-info/RECORD,,
