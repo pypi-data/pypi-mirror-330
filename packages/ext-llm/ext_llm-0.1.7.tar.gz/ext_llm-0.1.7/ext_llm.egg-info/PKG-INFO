@@ -1,0 +1,39 @@
+Metadata-Version: 2.2
+Name: ext_llm
+Version: 0.1.7
+Summary: A wrapper library to abstract common llm providers
+Home-page: https://github.com/giovanni-grieco/ext_llm
+Author: Giovanni Pio Grieco
+Author-email: Giovanni Pio Grieco <gio.grieco@stud.uniroma3.it>
+License: GPL3
+Project-URL: Homepage, https://github.com/giovanni-grieco/ext_llm
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pyyaml
+Dynamic: author
+Dynamic: home-page
+
+# ext_llm - a wrapper library for common LLMs (WIP)
+## Installation
+```bash pip install ext_llm```
+## Usage
+```python
+import ext_llm as xllm
+#read config yaml file
+config : str = open("ext_llm_config.yaml").read()
+#initialize extllm library
+extllm = xllm.init(config)
+
+extllm.list_available_models()
+
+llm_client = extllm.get_model("aws")
+llm_client1 = extllm.get_model("groq")
+
+# non blocking calls
+future1 = llm_client.generate_text("You're an helpful assistant", "Say hello world", 10, 0.5)
+future2 = llm_client1.generate_text("You're an helpful assistant", "Say hello world", 10, 0.5)
+
+# blocking calls waiting for the result
+print(future2.result())
+print(future1.result())
+
