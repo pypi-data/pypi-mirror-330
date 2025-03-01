@@ -1,0 +1,131 @@
+Metadata-Version: 2.2
+Name: mlx-audio
+Version: 0.0.1
+Summary: MLX-Audio is a package for inference of text-to-speech (TTS) and speech-to-speech (STS) models locally on your Mac using MLX
+Home-page: https://github.com/Blaizzy/mlx-audio
+Author: Prince Canuma
+Author-email: prince.gdt@gmail.com
+License: MIT
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: misaki[en]>=0.8.2
+Requires-Dist: loguru>=0.7.3
+Requires-Dist: num2words>=0.5.14
+Requires-Dist: spacy>=3.8.4
+Requires-Dist: phonemizer>=3.3.0
+Requires-Dist: espeakng-loader>=0.2.4
+Requires-Dist: mlx>=0.22.0
+Requires-Dist: mlx-vlm>=0.1.14
+Requires-Dist: mlx-lm>=0.21.5
+Requires-Dist: numpy>=1.26.4
+Requires-Dist: torch>=2.5.1
+Requires-Dist: transformers>=4.49.0
+Requires-Dist: sentencepiece>=0.2.0
+Requires-Dist: huggingface_hub>=0.27.0
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# MLX-Audio
+
+A text-to-speech (TTS) and Speech-to-Speech (STS) library built on Apple's MLX framework, providing efficient speech synthesis on Apple Silicon.
+
+## Features
+
+- Fast inference on Apple Silicon (M series chips)
+- Multiple language support
+- Voice customization options
+- Quantization support for optimized performance
+
+## Installation
+
+```bash
+pip install mlx-audio
+```
+
+## Models
+
+### Kokoro
+
+Kokoro is a multilingual TTS model that supports various languages and voice styles.
+
+#### Example Usage
+
+```python
+from tts.models.kokoro import KokoroModel, KokoroPipeline
+from IPython.display import Audio
+import soundfile as sf
+
+# Initialize the model
+model = KokoroModel(repo_id='prince-canuma/Kokoro-82M')
+
+# Create a pipeline with American English
+pipeline = KokoroPipeline(lang_code='a', model=model)
+
+# Generate audio
+text = "The MLX King lives. Let him cook!"
+for _, _, audio in pipeline(text, voice='af_heart', speed=1, split_pattern=r'\n+'):
+    # Display audio in notebook (if applicable)
+    display(Audio(data=audio, rate=24000, autoplay=0))
+
+    # Save audio to file
+    sf.write('audio.wav', audio[0], 24000)
+```
+
+#### Language Options
+
+- 🇺🇸 `'a'` - American English
+- 🇬🇧 `'b'` - British English
+- 🇯🇵 `'j'` - Japanese (requires `pip install misaki[ja]`)
+- 🇨🇳 `'z'` - Mandarin Chinese (requires `pip install misaki[zh]`)
+
+## Advanced Features
+
+### Quantization
+
+You can quantize models for improved performance:
+
+```python
+from tts.models.kokoro import KokoroModel
+from tts.utils import quantize_model
+import json
+import mlx.core as mx
+
+model = KokoroModel(repo_id='prince-canuma/Kokoro-82M')
+config = model.config
+
+# Quantize to 8-bit
+weights, config = quantize_model(model, config, 64, 8)
+
+# Save quantized model
+with open('./8bit/config.json', 'w') as f:
+    json.dump(config, f)
+
+mx.save_safetensors("./8bit/kokoro-v1_0.safetensors", weights, metadata={"format": "mlx"})
+```
+
+## Requirements
+
+- MLX
+- Python 3.8+
+- Apple Silicon Mac (for optimal performance)
+
+## License
+
+[MIT License](LICENSE)
+
+## Acknowledgements
+
+- Thanks to the Apple MLX team for providing a great framework for building TTS and STS models.
+- This project uses the Kokoro model architecture for text-to-speech synthesis.
