@@ -1,0 +1,25 @@
+Metadata-Version: 2.1
+Name: swift-bench
+Version: 2.0.0
+Summary: Benchmark tool for OpenStack Swift
+Home-page: http://openstack.org
+Author: OpenStack
+Author-email: openstack-discuss@lists.openstack.org
+License: Apache License (2.0)
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Environment :: No Input/Output (Daemon)
+Classifier: Environment :: OpenStack
+License-File: LICENSE
+License-File: AUTHORS
+Requires-Dist: python-swiftclient >=3.2.0
+Requires-Dist: eventlet >=0.17.4
+
+Benchmark tool for OpenStack Swift
