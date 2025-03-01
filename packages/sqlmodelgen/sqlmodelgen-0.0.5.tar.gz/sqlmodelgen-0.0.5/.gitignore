@@ -1,0 +1,9 @@
+__pycache__/
+.pytest_cache/
+.venv/
+dist/
+
+.coverage
+htmlcov/
+
+src/sqlmodelgen.egg-info
