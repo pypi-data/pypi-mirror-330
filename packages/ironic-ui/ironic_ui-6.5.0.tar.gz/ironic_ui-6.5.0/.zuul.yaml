@@ -1,0 +1,45 @@
+- job:
+    name: ironic-ui-integration-tests
+    parent: horizon-integration-tests
+    required-projects:
+      - name: openstack/horizon
+      - name: openstack/ironic
+      - name: openstack/python-ironicclient
+      - name: openstack/ironic-ui
+    roles:
+      - zuul: openstack-infra/devstack
+      - zuul: openstack/horizon
+    irrelevant-files:
+      - ^.*\.rst$
+      - ^doc/.*$
+      - ^releasenotes/.*$
+    vars:
+      devstack_plugins:
+        ironic: https://opendev.org/openstack/ironic
+        ironic-ui: https://opendev.org/openstack/ironic-ui
+      devstack_services:
+        horizon: true
+      tox_envlist: integration
+
+- job:
+    name: ironic-ui-tox-codespell
+    parent: openstack-tox
+    timeout: 7200
+    vars:
+      tox_envlist: codespell
+
+- project:
+    templates:
+      - check-requirements
+      - openstack-cover-jobs
+      - horizon-nodejs-jobs
+      - horizon-non-primary-django-jobs
+      - openstack-python3-jobs
+      - publish-openstack-docs-pti
+      - release-notes-jobs-python3
+    check:
+      jobs:
+        - ironic-ui-integration-tests:
+            voting: false
+        - ironic-ui-tox-codespell:
+            voting: false
