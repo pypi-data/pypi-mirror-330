@@ -1,0 +1,14 @@
+codeallybasic>=1.10.0
+
+[demo]
+wxPython~=4.2.2
+
+[deploy]
+wheel==0.45.1
+setuptools==75.8.2
+twine==6.0.1
+build==1.2.2.post1
+
+[test]
+mypy==1.15.0
+html-testRunner~=1.2.1

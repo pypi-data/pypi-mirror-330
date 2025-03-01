@@ -1,0 +1,52 @@
+[build-system]
+requires = ['setuptools', 'wheel']
+build-backend = "setuptools.build_meta"
+
+[project]
+name='pyorthogonalrouting'
+dynamic = ["version"]
+description = 'Yet another orthogonal router'
+readme = "README.md"
+license = {text = 'GNU AFFERO GENERAL PUBLIC LICENSE'}
+authors = [{name = 'Humberto A. Sanchez II', email = 'Humbert.A.Sanchez.II@gmail.com'}]
+maintainers = [{name = 'Humberto A. Sanchez II', email = 'Humbert.A.Sanchez.II@gmail.com'}]
+keywords = ['orthogonal', 'routing', 'python', 'pyut']
+
+classifiers = [
+  "Programming Language :: Python",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: GNU Affero General Public License v3",
+  "Operating System :: MacOS :: MacOS X",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+dependencies = ['codeallybasic>=1.10.0']
+
+[project.urls]
+Repository = 'https://github.com/hasii2011/py-orthogonal-routing'
+
+[project.optional-dependencies]
+test = [
+    'mypy==1.15.0',
+    'html-testRunner~=1.2.1',
+]
+
+deploy = [
+    'wheel==0.45.1',
+    'setuptools==75.8.2',
+    'twine==6.0.1',
+    'build==1.2.2.post1',
+]
+
+demo = [
+    'wxPython~=4.2.2',
+]
+
+[tool.setuptools.packages.find]
+where = ['src']
+
+[tool.setuptools.package-data]
+pyutmodel = ['py.typed']
+
+[tool.setuptools.dynamic]
+version = {attr = 'pyorthogonalrouting.__version__'}
