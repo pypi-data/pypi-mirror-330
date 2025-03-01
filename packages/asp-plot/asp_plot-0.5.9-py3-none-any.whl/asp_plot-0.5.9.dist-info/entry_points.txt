@@ -1,0 +1,3 @@
+[console_scripts]
+asp_plot = asp_plot.cli.asp_plot:main
+csm_camera_plot = asp_plot.cli.csm_camera_plot:main
