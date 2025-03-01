@@ -1,0 +1,69 @@
+LICENSE
+MANIFEST.in
+README.md
+dev-requirements.txt
+pyproject.toml
+requirements.txt
+setup.cfg
+setup.py
+bin/csv2ofx
+csv2ofx/__init__.py
+csv2ofx/main.py
+csv2ofx/ofx.py
+csv2ofx/qif.py
+csv2ofx/utils.py
+csv2ofx.egg-info/PKG-INFO
+csv2ofx.egg-info/SOURCES.txt
+csv2ofx.egg-info/dependency_links.txt
+csv2ofx.egg-info/not-zip-safe
+csv2ofx.egg-info/requires.txt
+csv2ofx.egg-info/top_level.txt
+csv2ofx/mappings/__init__.py
+csv2ofx/mappings/abnamro.py
+csv2ofx/mappings/amazon.py
+csv2ofx/mappings/boursorama.py
+csv2ofx/mappings/capitalone.py
+csv2ofx/mappings/creditunion.py
+csv2ofx/mappings/custom.py
+csv2ofx/mappings/default.py
+csv2ofx/mappings/eqbank.py
+csv2ofx/mappings/exim.py
+csv2ofx/mappings/gls.py
+csv2ofx/mappings/ingdirect.py
+csv2ofx/mappings/ingesp.py
+csv2ofx/mappings/mdb.py
+csv2ofx/mappings/mint.py
+csv2ofx/mappings/mint_extra.py
+csv2ofx/mappings/mint_headerless.py
+csv2ofx/mappings/mintapi.py
+csv2ofx/mappings/msmoneyreport.py
+csv2ofx/mappings/n26.py
+csv2ofx/mappings/outbank.py
+csv2ofx/mappings/pcmastercard.py
+csv2ofx/mappings/rabobank.py
+csv2ofx/mappings/schwabchecking.py
+csv2ofx/mappings/split_account.py
+csv2ofx/mappings/starling.py
+csv2ofx/mappings/stripe.py
+csv2ofx/mappings/ubs-ch-fr.py
+csv2ofx/mappings/ubs.py
+csv2ofx/mappings/xero.py
+csv2ofx/mappings/yodlee.py
+docs/OFX 2.1.1.pdf
+docs/OFXAudit.xls
+docs/OFX_Message_Support.doc
+docs/QIF Specification.html
+docs/qif-file-format.txt
+docs/QIF Specification_files/a.html
+docs/QIF Specification_files/a_002.html
+docs/QIF Specification_files/a_003.html
+docs/QIF Specification_files/a_004.html
+docs/QIF Specification_files/a_005.html
+docs/QIF Specification_files/bootstrap.js
+docs/QIF Specification_files/jquery.js
+docs/QIF Specification_files/sitecss.css
+helpers/check-stage
+helpers/clean
+helpers/srcdist
+helpers/wheel
+tests/test.py
