@@ -1,0 +1,15 @@
+Metadata-Version: 2.2
+Name: SyncHive
+Version: 0.1.0
+Summary: Automated file backup and synchronization over SSH within a shared network for seamless data management.
+Author: Harsh Mistry
+Author-email: hmistry864@gmail.com
+Requires-Dist: paramiko
+Requires-Dist: watchdog
+Requires-Dist: setuptools
+Requires-Dist: wheel
+Requires-Dist: twine
+Dynamic: author
+Dynamic: author-email
+Dynamic: requires-dist
+Dynamic: summary
