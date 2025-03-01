@@ -1,0 +1,77 @@
+Metadata-Version: 2.3
+Name: pdf-mind
+Version: 0.1.1
+Summary: Agent for extracting structured content from PDFs using LangGraph
+Author: Bart de Goede
+Author-email: bdegoede+pdf-mind@gmail.com
+Requires-Python: >=3.10,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Dist: camelot-py[cv] (>=0.11.0,<0.12.0)
+Requires-Dist: click (>=8.1.7,<9.0.0)
+Requires-Dist: langchain (>=0.3.19,<0.4.0)
+Requires-Dist: langchain-openai (>=0.3.7,<0.4.0)
+Requires-Dist: langgraph (>=0.3.1,<0.4.0)
+Requires-Dist: openai (>=1.65.1,<2.0.0)
+Requires-Dist: pandas (>=2.2.0,<3.0.0)
+Requires-Dist: pdf2image (>=1.17.0,<2.0.0)
+Requires-Dist: pillow (>=10.2.0,<11.0.0)
+Requires-Dist: pydantic (>=2.10.6,<3.0.0)
+Requires-Dist: pypdf (>=4.0.2,<5.0.0)
+Requires-Dist: tabulate (>=0.9.0,<0.10.0)
+Description-Content-Type: text/markdown
+
+# PDFAgent
+
+An agent for extracting structured content from PDFs using LangGraph and OpenAI.
+
+## Features
+
+- Extract and format text content from PDFs
+- Convert tables to markdown format
+- Extract images with AI-generated descriptions
+- Use LangGraph for agent-based orchestration
+
+## Setup
+
+```bash
+# Install Poetry if you don't have it
+curl -sSL https://install.python-poetry.org | python3 -
+
+# Install dependencies
+poetry install
+# Or install from pypi
+pip install pdf_mind
+
+# Install other dependencies
+brew install ghostscript
+brew install poppler
+# apt install ghostscript poppler
+```
+
+## Usage
+
+```python
+from pdf_mind import PDFExtractionAgent
+
+agent = PDFExtractionAgent()
+result = agent.process("path/to/document.pdf")
+print(result)
+```
+
+Alternatively, look at [example.py](example.py) for an example that will output metadata on extracted items and token usage:
+
+## Development
+
+```bash
+# Run tests
+poetry run pytest
+
+# Lint code
+poetry run ruff check .
+poetry run black .
+```
+
