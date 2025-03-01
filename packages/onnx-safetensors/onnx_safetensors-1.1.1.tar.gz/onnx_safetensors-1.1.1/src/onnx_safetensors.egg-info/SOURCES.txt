@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+src/onnx_safetensors/__init__.py
+src/onnx_safetensors/_metadata.py
+src/onnx_safetensors/_safetensors_io.py
+src/onnx_safetensors/_tensors.py
+src/onnx_safetensors/_type_casting.py
+src/onnx_safetensors.egg-info/PKG-INFO
+src/onnx_safetensors.egg-info/SOURCES.txt
+src/onnx_safetensors.egg-info/dependency_links.txt
+src/onnx_safetensors.egg-info/requires.txt
+src/onnx_safetensors.egg-info/top_level.txt
