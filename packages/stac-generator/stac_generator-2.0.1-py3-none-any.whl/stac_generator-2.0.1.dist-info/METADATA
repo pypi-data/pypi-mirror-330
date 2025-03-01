@@ -1,0 +1,78 @@
+Metadata-Version: 2.3
+Name: stac-generator
+Version: 2.0.1
+Summary: Framework providing a plugin architecture for metadata extraction and the generation of STACs.
+License: BSD - See stac_generator/LICENSE file for details
+Keywords: stac,metadata,plugin,framework
+Author: Rhys Evans
+Author-email: rhys.r.evans@stfc.ac.uk
+Requires-Python: >=3.10, <4
+Classifier: License :: Other/Proprietary License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Provides-Extra: docs
+Provides-Extra: elasticsearch
+Provides-Extra: intake-esm
+Provides-Extra: rabbitmq
+Provides-Extra: thredds
+Requires-Dist: bokeh (>=3.6.3,<4.0.0)
+Requires-Dist: botocore (==1.21.44)
+Requires-Dist: cachetools (==4.2.4)
+Requires-Dist: certifi (==2023.7.22)
+Requires-Dist: click (==8.1.7)
+Requires-Dist: dask (>=2025.2.0,<2026.0.0)
+Requires-Dist: distributed (>=2025.2.0,<2026.0.0)
+Requires-Dist: docutils (==0.20)
+Requires-Dist: elasticsearch (==7.17.12)
+Requires-Dist: elasticsearch ; extra == "docs"
+Requires-Dist: elasticsearch ; extra == "elasticsearch"
+Requires-Dist: extraction-methods (==1.0.1)
+Requires-Dist: httpx (>=0.28.0,<0.29.0)
+Requires-Dist: httpx-auth (>=0.23.0,<0.24.0)
+Requires-Dist: intake-esm ; extra == "intake-esm"
+Requires-Dist: jinja2 (==3.1.3)
+Requires-Dist: jmespath (==0.10.0)
+Requires-Dist: packaging (==24.1)
+Requires-Dist: pika (==1.2.0)
+Requires-Dist: pika ; extra == "rabbitmq"
+Requires-Dist: pydantic (==2.1.1)
+Requires-Dist: pygments (==2.17.0)
+Requires-Dist: pyparsing (==2.4.7)
+Requires-Dist: python-dateutil (==2.8.2)
+Requires-Dist: python-magic (==0.4.25)
+Requires-Dist: pytz (==2021.1)
+Requires-Dist: pyyaml (==6.0.1)
+Requires-Dist: requests (==2.31.0)
+Requires-Dist: s3transfer (==0.5.0)
+Requires-Dist: setuptools (>=75.8.2,<75.9.0)
+Requires-Dist: siphon (==0.9)
+Requires-Dist: siphon ; extra == "thredds"
+Requires-Dist: snowballstemmer (==2.2.0)
+Requires-Dist: sphinx ; extra == "docs"
+Requires-Dist: sphinx-rtd-theme ; extra == "docs"
+Requires-Dist: sphinxcontrib-programoutput ; extra == "docs"
+Requires-Dist: tqdm (==4.62.3)
+Requires-Dist: typing-extensions (==4.7.1)
+Project-URL: Homepage, https://github.com/cedadev/stac-generator
+Description-Content-Type: text/markdown
+
+# STAC Generator
+
+[![Test](https://github.com/cedadev/stac-generator/actions/workflows/tests.yml/badge.svg)](https://github.com/cedadev/stac-generator/actions/workflows/tests.yml)
+[![Docs](https://github.com/cedadev/stac-generator/actions/workflows/docs_build.yml/badge.svg)](https://github.com/cedadev/stac-generator/actions/workflows/docs_build.yml)
+[![Documentation Status](https://readthedocs.org/projects/pip/badge/?version=stable)](https://pip.pypa.io/en/stable/?badge=stable)
+[![Upload Python Package](https://github.com/cedadev/stac-generator/actions/workflows/release.yml/badge.svg)](https://pypi.org/project/stac-generator/)
+<a href="https://github.com/psf/black"><img alt="Code style: black" src="https://img.shields.io/badge/code%20style-black-000000.svg"></a>
+
+Documentation: https://cedadev.github.io/stac-generator/
+
+The STAC Generator provides the framework and access to shared tools.
+The framework allows you to build generators to get metadata from file objects using plugins to change the source of the
+files, the output of the metadata and the processing chain which extracts the metadata.
+The framework leverages a modular, plugin architecture to allow users to modify the workflow to fit their needs.
+
+![STAC Generator Diagram](docs/source/images/stac_generator_diagram.png)
+
