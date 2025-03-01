@@ -1,0 +1,2 @@
+acme:
+  uv run powerconf run acme CONFIG-simple_layer.yml

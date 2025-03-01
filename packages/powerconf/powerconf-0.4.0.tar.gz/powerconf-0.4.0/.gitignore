@@ -1,0 +1,15 @@
+# python generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# venv
+.venv
+.python-version
+requirements-dev.lock
+requirements.lock
+doc/examples/cli/running_external_models_with_run_command/acme2/acme-workspace/output
+doc/examples/cli/running_external_models_with_run_command/acme/acme-workspace/output
