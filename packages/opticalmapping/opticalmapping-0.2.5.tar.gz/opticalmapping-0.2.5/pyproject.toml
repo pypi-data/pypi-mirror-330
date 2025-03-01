@@ -1,0 +1,15 @@
+[project]
+name = "opticalmapping"
+version = "0.2.5"
+description="Deprecated. Please use the 'optimap' package instead."
+readme = "README.md"
+requires-python = ">=3.6"
+authors = [
+    {name = "Jan Lebert", email = "mail@janlebert.com" }
+]
+dependencies = [
+    "optimap>=0.3.0"
+]
+
+[project.urls]
+Homepage = "https://github.com/cardiacvision/optimap"
