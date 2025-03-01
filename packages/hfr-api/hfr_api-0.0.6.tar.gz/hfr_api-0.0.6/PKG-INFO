@@ -1,0 +1,27 @@
+Metadata-Version: 2.2
+Name: hfr_api
+Version: 0.0.6
+Summary: A Python library to interface with forum.hardware.fr
+Home-page: https://gitea.ruk.info/roukine/hfr
+Author: MycRub
+Author-email: mycrub@mycrub.net
+License: MIT
+Requires-Python: >=3.13
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: requests==2.32.3
+Requires-Dist: beautifulsoup4==4.12.3
+Requires-Dist: sortedcontainers==2.4.0
+Dynamic: author
+Dynamic: author-email
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# HFR
+
+A python library to interface with forum.hardware.fr
