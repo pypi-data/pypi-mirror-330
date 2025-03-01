@@ -1,0 +1,12 @@
+[project]
+name = "amarillo-gtfs-exporter"
+version = "2.0.5"
+description = "GTFS export plugin for Amarillo"
+readme = "README.md"
+license = {file = "LICENSE"}
+dependencies = [
+    "amarillo"
+]
+
+[tool.setuptools.packages]
+find = {}
