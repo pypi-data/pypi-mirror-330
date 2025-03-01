@@ -1,0 +1,69 @@
+{
+    "entity": {
+        "sensor": {
+            "highest_price": {
+                "name": "Highest price",
+                "state_attributes": {
+                    "end": {
+                        "name": "End time"
+                    },
+                    "start": {
+                        "name": "Start time"
+                    }
+                }
+            },
+            "lowest_price": {
+                "name": "Lowest price",
+                "state_attributes": {
+                    "end": {
+                        "name": "End time"
+                    },
+                    "start": {
+                        "name": "Start time"
+                    }
+                }
+            }
+        }
+    },
+    "exceptions": {
+        "authentication_error": {
+            "message": "There was an authentication error as you tried to retrieve data too far in the past."
+        },
+        "connection_error": {
+            "message": "There was a connection error connecting to the API. Try again later."
+        },
+        "empty_response": {
+            "message": "Nord Pool has not posted market prices for the provided date."
+        },
+        "entry_not_found": {
+            "message": "The Nord Pool integration is not configured in Home Assistant."
+        },
+        "entry_not_loaded": {
+            "message": "The Nord Pool integration is currently not loaded or disabled in Home Assistant."
+        }
+    },
+    "services": {
+        "get_prices_for_date": {
+            "description": "Retrieve the prices for a specific date.",
+            "fields": {
+                "areas": {
+                    "description": "One or multiple areas to get prices for. If left empty, it will use the areas already configured.",
+                    "name": "Areas"
+                },
+                "config_entry": {
+                    "description": "Choose the configuration entry.",
+                    "name": "Select Nord Pool configuration entry"
+                },
+                "currency": {
+                    "description": "Currency to get prices in. If left empty, it will use the currency already configured.",
+                    "name": "Currency"
+                },
+                "date": {
+                    "description": "Only dates two months in the past and one day in the future is allowed.",
+                    "name": "Date"
+                }
+            },
+            "name": "Get prices for date"
+        }
+    }
+}

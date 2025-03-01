@@ -1,0 +1,14 @@
+{
+    "services": {
+        "get_travel_times": {
+            "fields": {
+                "excl_filter": {
+                    "description": "Exact street name which must NOT be part of the selected route."
+                },
+                "incl_filter": {
+                    "description": "Exact street name which must be part of the selected route."
+                }
+            }
+        }
+    }
+}

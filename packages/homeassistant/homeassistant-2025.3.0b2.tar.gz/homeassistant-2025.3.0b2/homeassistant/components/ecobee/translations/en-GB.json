@@ -1,0 +1,12 @@
+{
+    "services": {
+        "set_sensors_used_in_climate": {
+            "description": "Sets the participating sensors for a climate programme.",
+            "fields": {
+                "preset_mode": {
+                    "description": "Name of the climate programme to set the sensors active on.\nDefaults to currently active programme."
+                }
+            }
+        }
+    }
+}

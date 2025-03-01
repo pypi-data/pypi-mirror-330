@@ -1,0 +1,18 @@
+{
+    "issues": {
+        "automatic_backup_agents_unavailable": {
+            "description": "O local de backup ` {agent_id} ` n\u00e3o est\u00e1 dispon\u00edvel, mas ainda est\u00e1 configurado para backups autom\u00e1ticos. \n \n Visite a [p\u00e1gina de configura\u00e7\u00e3o de backup autom\u00e1tico]( {backup_settings} ) para revisar e atualizar seus locais de backup. Os backups n\u00e3o ser\u00e3o carregados para locais selecionados que n\u00e3o estejam dispon\u00edveis.",
+            "title": "O local de backup {agent_id} n\u00e3o est\u00e1 dispon\u00edvel"
+        }
+    },
+    "services": {
+        "create": {
+            "description": "Cria um novo backup.",
+            "name": "Criar backup"
+        },
+        "create_automatic": {
+            "description": "Cria um novo backup com configura\u00e7\u00f5es de backup autom\u00e1tico.",
+            "name": "Criar backup autom\u00e1tico"
+        }
+    }
+}

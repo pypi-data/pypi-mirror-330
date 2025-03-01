@@ -1,0 +1,114 @@
+{
+    "config": {
+        "abort": {
+            "authorize_url_timeout": "Timeout generating authorise URL.",
+            "oauth_unauthorized": "OAuth authorisation error while obtaining access token."
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "vehicle_state_tpms_soft_warning_fl": {
+                "name": "Tyre pressure warning front left"
+            },
+            "vehicle_state_tpms_soft_warning_fr": {
+                "name": "Tyre pressure warning front right"
+            },
+            "vehicle_state_tpms_soft_warning_rl": {
+                "name": "Tyre pressure warning rear left"
+            },
+            "vehicle_state_tpms_soft_warning_rr": {
+                "name": "Tyre pressure warning rear right"
+            }
+        },
+        "select": {
+            "climate_state_seat_heater_rear_center": {
+                "name": "Seat heater rear centre"
+            }
+        },
+        "sensor": {
+            "battery_energy_exported": {
+                "name": "Battery exported"
+            },
+            "battery_energy_imported_from_generator": {
+                "name": "Battery imported from generator"
+            },
+            "battery_energy_imported_from_grid": {
+                "name": "Battery imported from grid"
+            },
+            "battery_energy_imported_from_solar": {
+                "name": "Battery imported from solar"
+            },
+            "consumer_energy_imported_from_battery": {
+                "name": "Consumer imported from battery"
+            },
+            "consumer_energy_imported_from_generator": {
+                "name": "Consumer imported from generator"
+            },
+            "consumer_energy_imported_from_grid": {
+                "name": "Consumer imported from grid"
+            },
+            "consumer_energy_imported_from_solar": {
+                "name": "Consumer imported from solar"
+            },
+            "generator_energy_exported": {
+                "name": "Generator exported"
+            },
+            "grid_energy_exported_from_battery": {
+                "name": "Grid exported from battery"
+            },
+            "grid_energy_exported_from_generator": {
+                "name": "Grid exported from generator"
+            },
+            "grid_energy_exported_from_solar": {
+                "name": "Grid exported from solar"
+            },
+            "grid_energy_imported": {
+                "name": "Grid imported"
+            },
+            "grid_services_energy_exported": {
+                "name": "Grid services exported"
+            },
+            "grid_services_energy_imported": {
+                "name": "Grid services imported"
+            },
+            "solar_energy_exported": {
+                "name": "Solar exported"
+            },
+            "storm_mode_active": {
+                "name": "Storm Watch active"
+            },
+            "total_battery_charge": {
+                "name": "Battery charged"
+            },
+            "total_battery_discharge": {
+                "name": "Battery discharged"
+            },
+            "total_grid_energy_exported": {
+                "name": "Grid exported"
+            },
+            "total_home_usage": {
+                "name": "Home usage"
+            },
+            "total_solar_generation": {
+                "name": "Solar generated"
+            },
+            "vehicle_state_tpms_pressure_fl": {
+                "name": "Tyre pressure front left"
+            },
+            "vehicle_state_tpms_pressure_fr": {
+                "name": "Tyre pressure front right"
+            },
+            "vehicle_state_tpms_pressure_rl": {
+                "name": "Tyre pressure rear left"
+            },
+            "vehicle_state_tpms_pressure_rr": {
+                "name": "Tyre pressure rear right"
+            }
+        },
+        "switch": {
+            "charge_state_charging_state": {
+                "name": "Charge"
+            }
+        }
+    }
+}

@@ -1,0 +1,16 @@
+{
+    "entity": {
+        "climate": {
+            "heater": {
+                "state_attributes": {
+                    "preset_mode": {
+                        "state": {
+                            "bio_mode": "Modo Bio",
+                            "smart_mode": "Modo inteligente"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

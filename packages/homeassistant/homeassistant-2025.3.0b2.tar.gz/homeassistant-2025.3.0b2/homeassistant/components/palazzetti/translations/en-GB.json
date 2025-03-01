@@ -1,0 +1,62 @@
+{
+    "entity": {
+        "button": {
+            "silent": {
+                "name": "Silent"
+            }
+        },
+        "number": {
+            "combustion_power": {
+                "name": "Combustion power"
+            },
+            "fan_left_speed": {
+                "name": "Left fan speed"
+            },
+            "fan_right_speed": {
+                "name": "Right fan speed"
+            }
+        },
+        "sensor": {
+            "status": {
+                "name": "Status",
+                "state": {
+                    "burning": "Operating",
+                    "burning_mod": "Operating - Modulating",
+                    "chimney_alarm": "Chimney alarm",
+                    "clean_fire": "Burn pot cleaning",
+                    "cleaning_warning": "Cleaning warning",
+                    "cleanup": "Final cleaning",
+                    "cool_fluid": "Stand-by",
+                    "cooling": "Cooling in progress",
+                    "door_open": "Door open",
+                    "ecomode": "Ecomode",
+                    "exhaust_temp_high": "Too high exhaust gas temperature",
+                    "fire_stop": "Switch off",
+                    "firewood_finished": "Firewood finished",
+                    "flue_probe_failure": "Flue gas probe failure",
+                    "fuel_error": "Fuel error",
+                    "fueling": "Ignition",
+                    "general_error": "General error",
+                    "grate_error": "Grate error",
+                    "hatch_door_open": "Feed hatch or door open",
+                    "heatup": "Pellet feed",
+                    "ign_test": "Fuel check",
+                    "main_probe_failure": "Main probe failure",
+                    "pressure_error": "Safety pressure switch error",
+                    "t05_error": "T05 error disconnected or faulty probe",
+                    "temp_too_high": "Temperature too high",
+                    "test_fire": "Ignition test",
+                    "unknown": "Unknown"
+                }
+            }
+        }
+    },
+    "exceptions": {
+        "invalid_combustion_power": {
+            "message": "Combustion power {value} is invalid."
+        },
+        "invalid_fan_speed": {
+            "message": "Fan {name} speed {value} is invalid."
+        }
+    }
+}

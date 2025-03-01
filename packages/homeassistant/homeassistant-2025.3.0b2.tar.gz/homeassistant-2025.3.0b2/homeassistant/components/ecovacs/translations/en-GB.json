@@ -1,0 +1,23 @@
+{
+    "entity": {
+        "button": {
+            "reset_lifespan_base_station_filter": {
+                "name": "Reset station filter lifespan"
+            },
+            "station_action_empty_dustbin": {
+                "name": "Empty dustbin"
+            }
+        },
+        "sensor": {
+            "lifespan_base_station_filter": {
+                "name": "Station filter lifespan"
+            },
+            "station_state": {
+                "name": "Station state",
+                "state": {
+                    "emptying_dustbin": "Emptying dustbin"
+                }
+            }
+        }
+    }
+}

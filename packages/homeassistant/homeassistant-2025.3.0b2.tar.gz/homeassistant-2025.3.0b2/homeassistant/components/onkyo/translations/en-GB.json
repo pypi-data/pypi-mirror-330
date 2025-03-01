@@ -1,0 +1,55 @@
+{
+    "config": {
+        "error": {
+            "empty_listening_mode_list": "Listening mode list cannot be empty"
+        },
+        "step": {
+            "configure_receiver": {
+                "data": {
+                    "listening_modes": "Listening modes"
+                },
+                "data_description": {
+                    "listening_modes": "List of listening modes supported by the receiver."
+                }
+            }
+        }
+    },
+    "exceptions": {
+        "invalid_sound_mode": {
+            "message": "Cannot select sound mode \"{invalid_sound_mode}\" for entity: {entity_id}."
+        },
+        "invalid_source": {
+            "message": "Cannot select input source \"{invalid_source}\" for entity: {entity_id}."
+        }
+    },
+    "options": {
+        "error": {
+            "empty_input_source_list": "Input source list cannot be empty",
+            "empty_listening_mode_list": "Listening mode list cannot be empty"
+        },
+        "step": {
+            "init": {
+                "data": {
+                    "input_sources": "Input sources",
+                    "listening_modes": "Listening modes"
+                },
+                "data_description": {
+                    "input_sources": "List of input sources supported by the receiver.",
+                    "listening_modes": "List of listening modes supported by the receiver."
+                }
+            },
+            "names": {
+                "sections": {
+                    "input_sources": {
+                        "description": "Mappings of receiver's input sources to their names.",
+                        "name": "Input source names"
+                    },
+                    "listening_modes": {
+                        "description": "Mappings of receiver's listening modes to their names.",
+                        "name": "Listening mode names"
+                    }
+                }
+            }
+        }
+    }
+}

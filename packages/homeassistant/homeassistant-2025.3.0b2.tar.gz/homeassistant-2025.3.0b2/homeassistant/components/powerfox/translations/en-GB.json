@@ -1,0 +1,26 @@
+{
+    "config": {
+        "step": {
+            "reconfigure": {
+                "description": "Powerfox is already configured. Would you like to reconfigure it?",
+                "title": "Reconfigure your Powerfox account"
+            }
+        }
+    },
+    "entity": {
+        "sensor": {
+            "heat_delta_energy": {
+                "name": "Delta energy"
+            },
+            "heat_delta_volume": {
+                "name": "Delta volume"
+            },
+            "heat_total_energy": {
+                "name": "Total energy"
+            },
+            "heat_total_volume": {
+                "name": "Total volume"
+            }
+        }
+    }
+}

@@ -1,0 +1,29 @@
+{
+    "config": {
+        "step": {
+            "reconfigure": {
+                "data_description": {
+                    "port": "By default, your Smile uses port 80, normally you should not have to change this."
+                },
+                "description": "Update configuration for {title}."
+            },
+            "user": {
+                "data_description": {
+                    "port": "By default, your Smile uses port 80, normally you should not have to change this.",
+                    "username": "Default is `smile`, or `stretch` for the legacy Stretch."
+                }
+            }
+        }
+    },
+    "exceptions": {
+        "data_incomplete_or_missing": {
+            "message": "Data incomplete or missing."
+        },
+        "error_communicating_with_api": {
+            "message": "Error communicating with API: {error}."
+        },
+        "unsupported_hvac_mode_requested": {
+            "message": "Unsupported mode {hvac_mode} requested, valid modes are: {hvac_modes}."
+        }
+    }
+}

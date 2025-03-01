@@ -1,0 +1,7 @@
+{
+    "services": {
+        "lock_n_go": {
+            "description": "Unlocks the door, waits a few seconds then re-locks. The wait period can be customised through the app."
+        }
+    }
+}

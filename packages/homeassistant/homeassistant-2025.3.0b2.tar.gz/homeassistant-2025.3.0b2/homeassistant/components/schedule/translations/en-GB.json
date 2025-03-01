@@ -1,0 +1,8 @@
+{
+    "services": {
+        "get_schedule": {
+            "description": "Retrieve one or multiple schedules.",
+            "name": "Get schedule"
+        }
+    }
+}

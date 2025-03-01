@@ -1,0 +1,49 @@
+{
+    "config": {
+        "step": {
+            "user": {
+                "data": {
+                    "host": "Servidor"
+                }
+            }
+        }
+    },
+    "entity": {
+        "button": {
+            "silent": {
+                "name": "Silencioso"
+            }
+        },
+        "climate": {
+            "palazzetti": {
+                "state_attributes": {
+                    "fan_mode": {
+                        "state": {
+                            "auto": "Autom\u00e1tico"
+                        }
+                    }
+                }
+            }
+        },
+        "number": {
+            "fan_left_speed": {
+                "name": "Velocidade do ventilador esquerdo"
+            },
+            "fan_right_speed": {
+                "name": "Velocidade correta do ventilador"
+            }
+        },
+        "sensor": {
+            "status": {
+                "state": {
+                    "off": "Desligado"
+                }
+            }
+        }
+    },
+    "exceptions": {
+        "invalid_fan_speed": {
+            "message": "A velocidade {value} do ventilador {name} \u00e9 inv\u00e1lida."
+        }
+    }
+}
