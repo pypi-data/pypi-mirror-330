@@ -1,0 +1,72 @@
+Metadata-Version: 2.2
+Name: sarcharts
+Version: 0.2.9
+Summary: SarCharts gets sysstat files from provided sarfilespaths and generates dynamic HTML Charts
+Home-page: https://github.com/pafernanr/sarcharts
+Author: Pablo Fernández Rodríguez
+Classifier: Intended Audience :: Information Technology
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Description-Content-Type: text/markdown
+License-File: LICENSE
+License-File: AUTHORS
+Requires-Dist: pbr>=4.0.0
+Requires-Dist: Jinja2>=3.1.3
+Dynamic: author
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-dist
+Dynamic: summary
+
+### SarCharts
+SarCharts gets [sysstat](https://sysstat.github.io/) files from provided `sarfilespaths` and generates dynamic HTML Charts.
+
+**[Live Demo](https://pafernanr.github.io/sarcharts/)**
+
+### Requirements
+`sadf` command is needed to read sar files. Hence [sysstat](https://sysstat.github.io/) package is required.
+
+### Installation
+`pip install sarcharts`
+
+### Usage
+~~~
+usage: sarcharts [-h] [-c CONFIGFILE] [-d {D,I,W,E}] [-e EVENTFILE] [-f FROMDATE] [-m METRICFILE] [-o OUTPUTPATH] [-t TODATE] [-q] [sarfilespaths ...]
+
+SarCharts gets "sysstat" files from provided `sarfilespaths` and generates dynamic HTML Charts.
+
+positional arguments:
+  sarfilespaths         `sa` file/s to parse. Default: `./sa??`.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -c CONFIGFILE, --configfile CONFIGFILE
+                        Use alternative config file. Default `~/.sarcharts.cfg`.
+  -d {D,I,W,E}, --debug {D,I,W,E}
+                        Set debug level. Default `W`.
+  -e EVENTFILE, --eventfile EVENTFILE
+                        Add events csv file. Header: # date;hostname;eventname;eventdescription
+  -f FROMDATE, --fromdate FROMDATE
+                        Include metrics/events from this date.
+  -m METRICFILE, --metricfile METRICFILE
+                        Add metrics csv file. Header: # date;hostname;metricname;metricvalue
+  -o OUTPUTPATH, --outputpath OUTPUTPATH
+                        Path to put output files. Default `./sarcharts`.
+  -t TODATE, --todate TODATE
+                        Include metrics/events before this date.
+  -q, --quiet           Don't show progress.
+~~~
+
+| Example Chart |
+| --- |
+| ![](/docs/sarcharts.png) |
+
