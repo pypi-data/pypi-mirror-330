@@ -1,0 +1,26 @@
+[project]
+name = "yamlforge"
+version = "0.1.2"
+authors = [
+  { name = "Sebastian Sala", email = "sebastian.sala.alanis@hotmail.com" },
+]
+description = "YAMLForge is a library designed to automatically generate SQLModel models and shcemas from a configuration in YAML format or a dictionary."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "inflect>=7.5.0",
+    "pyyaml>=6.0.2",
+    "sqlmodel>=0.0.22",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3.4",
+]
+
+[tool.setuptools.package-data]
+"yamlforge" = ["README.md"] 
+
+[project.urls]
+"Homepage" = "https://github.com/sebas-sala/yamlforge"
+"Bug Tracker" = "https://github.com/sebas-sala/yamlforge/issues"
