@@ -1,0 +1,59 @@
+Metadata-Version: 2.2
+Name: litmodels
+Version: 0.1.0
+Summary: Lightning AI Model hub.
+Home-page: https://github.com/Lightning-AI/models
+Download-URL: https://github.com/Lightning-AI/models
+Author: Lightning-AI et al.
+Author-email: community@lightning.ai
+License: Apache-2.0
+Project-URL: Bug Tracker, https://github.com/Lightning-AI/models/issues
+Project-URL: Documentation, https://lightning-ai.github.io/models/
+Project-URL: Source Code, https://github.com/Lightning-AI/models
+Keywords: deep learning,pytorch,AI
+Classifier: Environment :: Console
+Classifier: Natural Language :: English
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Topic :: Scientific/Engineering :: Information Analysis
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: lightning-sdk>=0.1.56
+Requires-Dist: lightning-utilities
+Requires-Dist: joblib
+Provides-Extra: typing
+Requires-Dist: mypy==1.15.0; extra == "typing"
+Provides-Extra: test
+Requires-Dist: coverage>=5.0; extra == "test"
+Requires-Dist: pytest-cov; extra == "test"
+Requires-Dist: pytest-mock; extra == "test"
+Requires-Dist: pytest>=6.0; extra == "test"
+Requires-Dist: pytorch-lightning>=2.0; extra == "test"
+Requires-Dist: scikit-learn>=1.0; extra == "test"
+Provides-Extra: extra
+Requires-Dist: lightning>=2.0.0; extra == "extra"
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: download-url
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: license
+Dynamic: project-url
+Dynamic: provides-extra
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# Lit Models
