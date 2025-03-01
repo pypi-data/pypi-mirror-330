@@ -1,0 +1,12 @@
+# exclude all,
+**
+
+# except
+!pyproject.toml
+!MANIFEST.in
+!setup.cfg
+!setup.py
+!labtasker/
+
+# also exclude run caches
+**/__pycache__/
