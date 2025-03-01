@@ -1,0 +1,9 @@
+[console_scripts]
+asc_to_qsch=kupicelib.scripts.asc_to_qsch:main
+histogram=kupicelib.scripts.histogram:main
+ltsteps=kupicelib.scripts.ltsteps:main
+rawconvert=kupicelib.raw.raw_convert:main
+rawplot=kupicelib.scripts.rawplot:main
+readme_update=kupicelib.scripts.readme_update:main
+run_server=kupicelib.scripts.run_server:main
+
