@@ -1,0 +1,870 @@
+{
+  "persona_id": "sdr_persona_9447",
+  "conversations": [
+    {
+      "conversation_id": "sdr_persona_3521_single",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Hey, this is Chris. Got your email about the TechFlow Automation Platform. I\u2019m curious but honestly, I\u2019m a bit skeptical. We\u2019re a small team, and integrating new tech always feels like a headache.",
+          "turn": 1
+        },
+        {
+          "role": "assistant",
+          "content": "Hi Chris, thanks for taking the time to chat! I totally get where you\u2019re coming from\u2014integration can be a real pain, especially for smaller teams. That\u2019s actually one of the reasons we designed TechFlow with simplicity in mind. Our platform uses industry-specific automation templates and a no-code workflow builder, so you don\u2019t need a dedicated IT team to get started. Does that sound like something that could help ease the integration process for you?",
+          "turn": 1
+        },
+        {
+          "role": "user",
+          "content": "Hmm, no-code does sound appealing. But how customizable are these templates? We\u2019ve got some pretty specific workflows that might not fit a one-size-fits-all solution.",
+          "turn": 2
+        },
+        {
+          "role": "assistant",
+          "content": "Great question, Chris! The templates are actually just a starting point\u2014they\u2019re fully customizable using our no-code builder. You can tweak them to match your exact workflows without needing to write a single line of code. For example, one of our clients in your industry started with a basic template for order processing but ended up tailoring it to include their unique approval steps and notifications. Would you like me to walk you through how that customization process works?",
+          "turn": 2
+        },
+        {
+          "role": "user",
+          "content": "Yeah, that could be helpful. But honestly, I\u2019m also worried about the cost. We\u2019re a small company, and our budget\u2019s pretty tight\u2014around $63,000 for this kind of thing.",
+          "turn": 3
+        },
+        {
+          "role": "assistant",
+          "content": "Got it, Chris. Budget\u2019s always a big consideration, and I appreciate you sharing that. The good news is that TechFlow is designed to be cost-effective for small teams like yours. Our pricing scales with your needs, so you\u2019re not paying for features you don\u2019t use. Plus, by automating repetitive tasks, many of our clients see a return on investment within the first few months. Would it help if I broke down the pricing and ROI potential for your specific use case?",
+          "turn": 3
+        },
+        {
+          "role": "user",
+          "content": "Sure, that\u2019d be helpful. But I\u2019m still not convinced it\u2019s worth the effort. We\u2019ve tried other tools before, and they ended up being more trouble than they were worth.",
+          "turn": 4
+        },
+        {
+          "role": "assistant",
+          "content": "I hear you, Chris. It\u2019s frustrating when tools don\u2019t deliver on their promises. That\u2019s why we focus on making TechFlow as user-friendly and impactful as possible. For example, one of our clients in a similar situation was able to reduce their manual data entry by 70% within the first month. They also saved about 15 hours a week that they could reinvest into growing their business. Does that kind of impact align with what you\u2019re looking for?",
+          "turn": 4
+        },
+        {
+          "role": "user",
+          "content": "That does sound impressive. But how long does it take to get up and running? We can\u2019t afford to have our team tied up in a lengthy setup process.",
+          "turn": 5
+        },
+        {
+          "role": "assistant",
+          "content": "Totally valid concern, Chris. The setup process is actually one of the quickest parts. Most of our clients are up and running within a week, and that includes customizing their workflows. We also provide dedicated onboarding support to make sure everything goes smoothly. For example, one client had their first automated workflow live in just three days. How does that timeline sound for your team?",
+          "turn": 5
+        },
+        {
+          "role": "user",
+          "content": "Three days? That\u2019s faster than I expected. But what kind of support do you offer after setup? We\u2019re not exactly tech experts over here.",
+          "turn": 6
+        },
+        {
+          "role": "assistant",
+          "content": "I hear you, Chris. That\u2019s why we offer ongoing support to make sure you\u2019re never left hanging. You\u2019ll have access to a dedicated account manager, 24/7 chat support, and a library of video tutorials. Plus, our team is always just a call away if you need help tweaking workflows or troubleshooting. We\u2019re here to make sure TechFlow works for you, not the other way around. Does that help ease your concerns about the technical side?",
+          "turn": 6
+        },
+        {
+          "role": "user",
+          "content": "Yeah, that does sound reassuring. But I\u2019m still not sure if it\u2019s the right fit for us. We\u2019ve got a lot on our plate right now, and adding something new feels like a big commitment.",
+          "turn": 7
+        },
+        {
+          "role": "assistant",
+          "content": "I totally understand, Chris. It\u2019s a big decision, and you want to make sure it\u2019s the right one. That\u2019s why we offer a free trial\u2014no strings attached. It\u2019s a great way to test the platform and see if it fits your needs without any upfront commitment. Plus, I\u2019ll be here to guide you through the process every step of the way. How does that sound?",
+          "turn": 7
+        },
+        {
+          "role": "user",
+          "content": "A free trial? That\u2019s interesting. How long does it last, and what\u2019s included?",
+          "turn": 8
+        },
+        {
+          "role": "assistant",
+          "content": "The trial lasts 14 days, and you\u2019ll have full access to all the features, including the no-code builder and industry-specific templates. You\u2019ll also get onboarding support from me to help you set up your first workflow. It\u2019s a great way to see the platform in action and decide if it\u2019s the right fit. Would you like me to get you started with the trial today?",
+          "turn": 8
+        },
+        {
+          "role": "user",
+          "content": "Yeah, let\u2019s give it a shot. What do I need to do to get started?",
+          "turn": 9
+        },
+        {
+          "role": "assistant",
+          "content": "Awesome, Chris! I\u2019ll send you a link to sign up for the trial\u2014it only takes a few minutes. Once you\u2019re in, I\u2019ll schedule a quick call to walk you through the setup and answer any questions you have. Sound good?",
+          "turn": 9
+        },
+        {
+          "role": "user",
+          "content": "Sounds good. Send over the link, and we\u2019ll take it from there.",
+          "turn": 10
+        },
+        {
+          "role": "assistant",
+          "content": "Perfect, Chris! I\u2019ll send the link right over. Looking forward to helping you get started with TechFlow. Let me know if you have any questions in the meantime\u2014I\u2019m here to help!",
+          "turn": 10
+        }
+      ],
+      "metadata": {
+        "persona": {
+          "id": "sdr_persona_3521",
+          "domain": "sdr",
+          "attributes": {
+            "company_size": "1-10",
+            "pain_points": "technical integration",
+            "budget": 63000
+          },
+          "profile": {
+            "name": "Chris Miller",
+            "age": 55,
+            "location": "Boston",
+            "years_experience": 11
+          }
+        },
+        "memory_updates": [
+          {
+            "turn": 27,
+            "attribute": "pain_points",
+            "old_value": "technical integration",
+            "new_value": "budget constraints",
+            "reason": "Pain Points changed to budget constraints",
+            "severity": 0.9459101596347392
+          }
+        ],
+        "domain": "sdr",
+        "num_turns": 30,
+        "temperature": 0.7,
+        "final_state": {
+          "final_attributes": {
+            "company_size": "1-10",
+            "pain_points": "budget constraints",
+            "budget": 63000
+          },
+          "last_update_turn": {
+            "pain_points": 27
+          },
+          "unchanged_attributes": [
+            "company_size",
+            "budget"
+          ]
+        },
+        "timestamp": 1739212274.02944
+      }
+    },
+    {
+      "conversation_id": "sdr_persona_9524_single",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Hey, this is Pat. I\u2019ve been thinking about your platform since our last chat. I\u2019m still a bit unsure about how it\u2019ll fit with our current systems. We\u2019ve got some legacy software that\u2019s been around forever, and I\u2019m worried about compatibility.",
+          "turn": 1
+        },
+        {
+          "role": "assistant",
+          "content": "Hi Pat, great to hear from you again! I completely understand your concerns about legacy systems\u2014they can be tricky to integrate with. The good news is that TechFlow is designed to work seamlessly with a wide range of existing software, including older systems. We\u2019ve helped several clients with similar setups, and they\u2019ve been able to integrate without any major issues. Would you like me to walk you through how we\u2019ve handled these kinds of integrations before?",
+          "turn": 1
+        },
+        {
+          "role": "user",
+          "content": "Yeah, that\u2019d be helpful. But I\u2019m also worried about the time it\u2019ll take to get everything up and running. We\u2019re a small team, and we can\u2019t afford to have our workflow disrupted for too long.",
+          "turn": 2
+        },
+        {
+          "role": "assistant",
+          "content": "Totally get that, Pat. Time is precious, especially for smaller teams. The good news is that our onboarding process is designed to be as smooth and quick as possible. Most of our clients are up and running within a week, and that includes customizing workflows to fit their specific needs. For example, one of our clients with a similar setup had their first automated workflow live in just three days. Plus, we\u2019ll be there every step of the way to ensure minimal disruption. How does that timeline sound for your team?",
+          "turn": 2
+        },
+        {
+          "role": "user",
+          "content": "Three days sounds good, but what about the cost? We\u2019ve got a budget of around $94,000 for this kind of thing, and I\u2019m not sure if it\u2019s worth the investment.",
+          "turn": 3
+        },
+        {
+          "role": "assistant",
+          "content": "Thanks for sharing that, Pat. Budget\u2019s always a key consideration, and I\u2019m glad you brought it up. TechFlow is designed to be cost-effective, especially for smaller teams. Our pricing scales with your needs, so you\u2019re not paying for features you don\u2019t use. Plus, many of our clients see a return on investment within the first few months by automating repetitive tasks and freeing up time for more strategic work. Would it help if I broke down the pricing and ROI potential for your specific use case?",
+          "turn": 3
+        },
+        {
+          "role": "user",
+          "content": "Yeah, that\u2019d be helpful. But I\u2019m still not convinced it\u2019s worth the effort. We\u2019ve tried other tools before, and they ended up being more trouble than they were worth.",
+          "turn": 4
+        },
+        {
+          "role": "assistant",
+          "content": "I hear you, Pat. It\u2019s frustrating when tools don\u2019t deliver on their promises. That\u2019s why we focus on making TechFlow as user-friendly and impactful as possible. For example, one of our clients in a similar situation was able to reduce their manual data entry by 70% within the first month. They also saved about 15 hours a week that they could reinvest into growing their business. Does that kind of impact align with what you\u2019re looking for?",
+          "turn": 4
+        },
+        {
+          "role": "user",
+          "content": "That does sound impressive. But how customizable are these workflows? We\u2019ve got some pretty specific processes that might not fit a standard template.",
+          "turn": 5
+        },
+        {
+          "role": "assistant",
+          "content": "Great question, Pat! The templates are just a starting point\u2014they\u2019re fully customizable using our no-code builder. You can tweak them to match your exact workflows without needing to write a single line of code. For example, one of our clients in your industry started with a basic template for order processing but ended up tailoring it to include their unique approval steps and notifications. Would you like me to walk you through how that customization process works?",
+          "turn": 5
+        },
+        {
+          "role": "user",
+          "content": "Yeah, that could be helpful. But I\u2019m also worried about the learning curve. We\u2019re not exactly tech experts over here.",
+          "turn": 6
+        },
+        {
+          "role": "assistant",
+          "content": "I hear you, Pat. That\u2019s why we\u2019ve designed TechFlow to be as intuitive as possible. The no-code builder is super user-friendly, and we provide plenty of resources to help you get up to speed. You\u2019ll have access to a dedicated account manager, 24/7 chat support, and a library of video tutorials. Plus, our team is always just a call away if you need help tweaking workflows or troubleshooting. We\u2019re here to make sure TechFlow works for you, not the other way around. Does that help ease your concerns about the technical side?",
+          "turn": 6
+        },
+        {
+          "role": "user",
+          "content": "Yeah, that does sound reassuring. But I\u2019m still not sure if it\u2019s the right fit for us. We\u2019ve got a lot on our plate right now, and adding something new feels like a big commitment.",
+          "turn": 7
+        },
+        {
+          "role": "assistant",
+          "content": "I totally understand, Pat. It\u2019s a big decision, and you want to make sure it\u2019s the right one. That\u2019s why we offer a free trial\u2014no strings attached. It\u2019s a great way to test the platform and see if it fits your needs without any upfront commitment. Plus, I\u2019ll be here to guide you through the process every step of the way. How does that sound?",
+          "turn": 7
+        },
+        {
+          "role": "user",
+          "content": "A free trial? That\u2019s interesting. How long does it last, and what\u2019s included?",
+          "turn": 8
+        },
+        {
+          "role": "assistant",
+          "content": "The trial lasts 14 days, and you\u2019ll have full access to all the features, including the no-code builder and industry-specific templates. You\u2019ll also get onboarding support from me to help you set up your first workflow. It\u2019s a great way to see the platform in action and decide if it\u2019s the right fit. Would you like me to get you started with the trial today?",
+          "turn": 8
+        },
+        {
+          "role": "user",
+          "content": "Yeah, let\u2019s give it a shot. What do I need to do to get started?",
+          "turn": 9
+        },
+        {
+          "role": "assistant",
+          "content": "Awesome, Pat! I\u2019ll send you a link to sign up for the trial\u2014it only takes a few minutes. Once you\u2019re in, I\u2019ll schedule a quick call to walk you through the setup and answer any questions you have. Sound good?",
+          "turn": 9
+        },
+        {
+          "role": "user",
+          "content": "Sounds good. Send over the link, and we\u2019ll take it from there.",
+          "turn": 10
+        },
+        {
+          "role": "assistant",
+          "content": "Perfect, Pat! I\u2019ll send the link right over. Looking forward to helping you get started with TechFlow. Let me know if you have any questions in the meantime\u2014I\u2019m here to help!",
+          "turn": 10
+        },
+        {
+          "role": "user",
+          "content": "Got the link, thanks. I\u2019ll take a look and get back to you if I have any questions.",
+          "turn": 11
+        },
+        {
+          "role": "assistant",
+          "content": "Great to hear, Pat! Take your time exploring the platform, and don\u2019t hesitate to reach out if you need anything. I\u2019ll check in with you in a couple of days to see how it\u2019s going. Looking forward to hearing your thoughts!",
+          "turn": 11
+        },
+        {
+          "role": "user",
+          "content": "Sounds good. I\u2019ll let you know how it goes.",
+          "turn": 12
+        },
+        {
+          "role": "assistant",
+          "content": "Perfect, Pat! I\u2019m here if you need anything. Looking forward to hearing how it works out for you. Have a great day!",
+          "turn": 12
+        },
+        {
+          "role": "user",
+          "content": "Hey, I\u2019ve been playing around with the trial, and it\u2019s pretty intuitive so far. But I\u2019m still not sure how it\u2019ll handle our more complex workflows.",
+          "turn": 13
+        },
+        {
+          "role": "assistant",
+          "content": "That\u2019s great to hear, Pat! I\u2019m glad you\u2019re finding it intuitive. As for your complex workflows, TechFlow is designed to handle even the most intricate processes. The no-code builder allows you to create custom workflows that match your exact needs. For example, one of our clients had a multi-step approval process that they were able to automate seamlessly. Would you like me to walk you through how we can set up something similar for your team?",
+          "turn": 13
+        },
+        {
+          "role": "user",
+          "content": "Yeah, that\u2019d be helpful. But I\u2019m also worried about the cost. We\u2019ve got a budget of around $94,000, and I\u2019m not sure if it\u2019s worth the investment.",
+          "turn": 14
+        },
+        {
+          "role": "assistant",
+          "content": "Thanks for bringing that up, Pat. Budget\u2019s always a key consideration, and I\u2019m glad you shared that. TechFlow is designed to be cost-effective, especially for smaller teams. Our pricing scales with your needs, so you\u2019re not paying for features you don\u2019t use. Plus, many of our clients see a return on investment within the first few months by automating repetitive tasks and freeing up time for more strategic work. Would it help if I broke down the pricing and ROI potential for your specific use case?",
+          "turn": 14
+        },
+        {
+          "role": "user",
+          "content": "Yeah, that\u2019d be helpful. But I\u2019m still not convinced it\u2019s worth the effort. We\u2019ve tried other tools before, and they ended up being more trouble than they were worth.",
+          "turn": 15
+        },
+        {
+          "role": "assistant",
+          "content": "I hear you, Pat. It\u2019s frustrating when tools don\u2019t deliver on their promises. That\u2019s why we focus on making TechFlow as user-friendly and impactful as possible. For example, one of our clients in a similar situation was able to reduce their manual data entry by 70% within the first month. They also saved about 15 hours a week that they could reinvest into growing their business. Does that kind of impact align with what you\u2019re looking for?",
+          "turn": 15
+        },
+        {
+          "role": "user",
+          "content": "That does sound impressive. But how long does it take to get up and running? We can\u2019t afford to have our team tied up in a lengthy setup process.",
+          "turn": 16
+        },
+        {
+          "role": "assistant",
+          "content": "Totally valid concern, Pat. The setup process is actually one of the quickest parts. Most of our clients are up and running within a week, and that includes customizing their workflows. We also provide dedicated onboarding support to make sure everything goes smoothly. For example, one client had their first automated workflow live in just three days. How does that timeline sound for your team?",
+          "turn": 16
+        },
+        {
+          "role": "user",
+          "content": "Three days? That\u2019s faster than I expected. But what kind of support do you offer after setup? We\u2019re not exactly tech experts over here.",
+          "turn": 17
+        },
+        {
+          "role": "assistant",
+          "content": "I hear you, Pat. That\u2019s why we offer ongoing support to make sure you\u2019re never left hanging. You\u2019ll have access to a dedicated account manager, 24/7 chat support, and a library of video tutorials. Plus, our team is always just a call away if you need help tweaking workflows or troubleshooting. We\u2019re here to make sure TechFlow works for you, not the other way around. Does that help ease your concerns about the technical side?",
+          "turn": 17
+        },
+        {
+          "role": "user",
+          "content": "Yeah, that does sound reassuring. But I\u2019m still not sure if it\u2019s the right fit for us. We\u2019ve got a lot on our plate right now, and adding something new feels like a big commitment.",
+          "turn": 18
+        },
+        {
+          "role": "assistant",
+          "content": "I totally understand, Pat. It\u2019s a big decision, and you want to make sure it\u2019s the right one. That\u2019s why we offer a free trial\u2014no strings attached. It\u2019s a great way to test the platform and see if it fits your needs without any upfront commitment. Plus, I\u2019ll be here to guide you through the process every step of the way. How does that sound?",
+          "turn": 18
+        },
+        {
+          "role": "user",
+          "content": "A free trial? That\u2019s interesting. How long does it last, and what\u2019s included?",
+          "turn": 19
+        },
+        {
+          "role": "assistant",
+          "content": "The trial lasts 14 days, and you\u2019ll have full access to all the features, including the no-code builder and industry-specific templates. You\u2019ll also get onboarding support from me to help you set up your first workflow. It\u2019s a great way to see the platform in action and decide if it\u2019s the right fit. Would you like me to get you started with the trial today?",
+          "turn": 19
+        },
+        {
+          "role": "user",
+          "content": "Yeah, let\u2019s give it a shot. What do I need to do to get started?",
+          "turn": 20
+        },
+        {
+          "role": "assistant",
+          "content": "Awesome, Pat! I\u2019ll send you a link to sign up for the trial\u2014it only takes a few minutes. Once you\u2019re in, I\u2019ll schedule a quick call to walk you through the setup and answer any questions you have. Sound good?",
+          "turn": 20
+        },
+        {
+          "role": "user",
+          "content": "Sounds good. Send over the link, and we\u2019ll take it from there.",
+          "turn": 21
+        },
+        {
+          "role": "assistant",
+          "content": "Perfect, Pat! I\u2019ll send the link right over. Looking forward to helping you get started with TechFlow. Let me know if you have any questions in the meantime\u2014I\u2019m here to help!",
+          "turn": 21
+        },
+        {
+          "role": "user",
+          "content": "Got the link, thanks. I\u2019ll take a look and get back to you if I have any questions.",
+          "turn": 22
+        },
+        {
+          "role": "assistant",
+          "content": "Great to hear, Pat! Take your time exploring the platform, and don\u2019t hesitate to reach out if you need anything. I\u2019ll check in with you in a couple of days to see how it\u2019s going. Looking forward to hearing your thoughts!",
+          "turn": 22
+        },
+        {
+          "role": "user",
+          "content": "Sounds good. I\u2019ll let you know how it goes.",
+          "turn": 23
+        },
+        {
+          "role": "assistant",
+          "content": "Perfect, Pat! I\u2019m here if you need anything. Looking forward to hearing how it works out for you. Have a great day!",
+          "turn": 23
+        },
+        {
+          "role": "user",
+          "content": "Hey, I\u2019ve been playing around with the trial, and it\u2019s pretty intuitive so far. But I\u2019m still not sure how it\u2019ll handle our more complex workflows.",
+          "turn": 24
+        },
+        {
+          "role": "assistant",
+          "content": "That\u2019s great to hear, Pat! I\u2019m glad you\u2019re finding it intuitive. As for your complex workflows, TechFlow is designed to handle even the most intricate processes. The no-code builder allows you to create custom workflows that match your exact needs. For example, one of our clients had a multi-step approval process that they were able to automate seamlessly. Would you like me to walk you through how we can set up something similar for your team?",
+          "turn": 24
+        },
+        {
+          "role": "user",
+          "content": "Yeah, that\u2019d be helpful. But I\u2019m also worried about the cost. We\u2019ve got a budget of around $94,000, and I\u2019m not sure if it\u2019s worth the investment.",
+          "turn": 25
+        },
+        {
+          "role": "assistant",
+          "content": "Thanks for bringing that up, Pat. Budget\u2019s always a key consideration, and I\u2019m glad you shared that. TechFlow is designed to be cost-effective, especially for smaller teams. Our pricing scales with your needs, so you\u2019re not paying for features you don\u2019t use. Plus, many of our clients see a return on investment within the first few months by automating repetitive tasks and freeing up time for more strategic work. Would it help if I broke down the pricing and ROI potential for your specific use case?",
+          "turn": 25
+        },
+        {
+          "role": "user",
+          "content": "Yeah, that\u2019d be helpful. But I\u2019m still not convinced it\u2019s worth the effort. We\u2019ve tried other tools before, and they ended up being more trouble than they were worth.",
+          "turn": 26
+        },
+        {
+          "role": "assistant",
+          "content": "I hear you, Pat. It\u2019s frustrating when tools don\u2019t deliver on their promises. That\u2019s why we focus on making TechFlow as user-friendly and impactful as possible. For example, one of our clients in a similar situation was able to reduce their manual data entry by 70% within the first month. They also saved about 15 hours a week that they could reinvest into growing their business. Does that kind of impact align with what you\u2019re looking for?",
+          "turn": 26
+        },
+        {
+          "role": "user",
+          "content": "That does sound impressive. But how long does it take to get up and running? We can\u2019t afford to have our team tied up in a lengthy setup process.",
+          "turn": 27
+        },
+        {
+          "role": "assistant",
+          "content": "Totally valid concern, Pat. The setup process is actually one of the quickest parts. Most of our clients are up and running within a week, and that includes customizing their workflows. We also provide dedicated onboarding support to make sure everything goes smoothly. For example, one client had their first automated workflow live in just three days. How does that timeline sound for your team?",
+          "turn": 27
+        },
+        {
+          "role": "user",
+          "content": "Three days? That\u2019s faster than I expected. But what kind of support do you offer after setup? We\u2019re not exactly tech experts over here.",
+          "turn": 28
+        },
+        {
+          "role": "assistant",
+          "content": "I hear you, Pat. That\u2019s why we offer ongoing support to make sure you\u2019re never left hanging. You\u2019ll have access to a dedicated account manager, 24/7 chat support, and a library of video tutorials. Plus, our team is always just a call away if you need help tweaking workflows or troubleshooting. We\u2019re here to make sure TechFlow works for you, not the other way around. Does that help ease your concerns about the technical side?",
+          "turn": 28
+        },
+        {
+          "role": "user",
+          "content": "Yeah, that does sound reassuring. But I\u2019m still not sure if it\u2019s the right fit for us. We\u2019ve got a lot on our plate right now, and adding something new feels like a big commitment.",
+          "turn": 29
+        },
+        {
+          "role": "assistant",
+          "content": "I totally understand, Pat. It\u2019s a big decision, and you want to make sure it\u2019s the right one. That\u2019s why we offer a free trial\u2014no strings attached. It\u2019s a great way to test the platform and see if it fits your needs without any upfront commitment. Plus, I\u2019ll be here to guide you through the process every step of the way. How does that sound?",
+          "turn": 29
+        },
+        {
+          "role": "user",
+          "content": "A free trial? That\u2019s interesting. How long does it last, and what\u2019s included?",
+          "turn": 30
+        },
+        {
+          "role": "assistant",
+          "content": "The trial lasts 14 days, and you\u2019ll have full access to all the features, including the no-code builder and industry-specific templates. You\u2019ll also get onboarding support from me to help you set up your first workflow. It\u2019s a great way to see the platform in action and decide if it\u2019s the right fit. Would you like me to get you started with the trial today?",
+          "turn": 30
+        }
+      ],
+      "metadata": {
+        "persona": {
+          "id": "sdr_persona_9524",
+          "domain": "sdr",
+          "attributes": {
+            "company_size": "1-10",
+            "pain_points": "long sales cycles",
+            "budget": 94000
+          },
+          "profile": {
+            "name": "Pat Miller",
+            "age": 28,
+            "location": "Chicago",
+            "years_experience": 15
+          }
+        },
+        "memory_updates": [
+          {
+            "turn": 18,
+            "attribute": "budget",
+            "old_value": "63000",
+            "new_value": "67085",
+            "reason": "Budget updated from $63,000 to $67,085",
+            "severity": 0.0041754159995402995
+          },
+          {
+            "turn": 22,
+            "attribute": "company_size",
+            "old_value": "1-10",
+            "new_value": "201-500",
+            "reason": "Company Size changed to 201-500",
+            "severity": 0.3320921346182547
+          }
+        ],
+        "domain": "sdr",
+        "num_turns": 30,
+        "temperature": 0.7,
+        "final_state": {
+          "final_attributes": {
+            "company_size": "201-500",
+            "pain_points": "long sales cycles",
+            "budget": "67085"
+          },
+          "last_update_turn": {
+            "budget": 18,
+            "company_size": 22
+          },
+          "unchanged_attributes": [
+            "pain_points"
+          ]
+        },
+        "timestamp": 1739581273.5002391
+      }
+    },
+    {
+      "conversation_id": "sdr_persona_6798_single",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Hey, I\u2019ve been thinking more about the trial, and I\u2019m still a bit hesitant. The integration with our existing systems seems like it could be a headache. We\u2019ve got a lot of legacy software, and I\u2019m not sure how well TechFlow will play with it.",
+          "turn": 1
+        },
+        {
+          "role": "assistant",
+          "content": "That\u2019s a great point, Jordan. Integration can definitely be a concern, especially with legacy systems. The good news is that TechFlow is designed to be highly compatible with a wide range of software, including older systems. We\u2019ve worked with clients who had similar setups, and we were able to integrate seamlessly by using custom APIs and connectors. Would it help if I walked you through some specific examples of how we\u2019ve handled this in the past?",
+          "turn": 1
+        },
+        {
+          "role": "user",
+          "content": "Yeah, that\u2019d be helpful. But I\u2019m also worried about the cost. We\u2019ve got a budget of around $50,000, and I\u2019m not sure if it\u2019s worth the investment.",
+          "turn": 2
+        },
+        {
+          "role": "assistant",
+          "content": "Thanks for sharing that, Jordan. Budget\u2019s always a critical factor, and I\u2019m glad you brought it up. Given your budget, we can definitely tailor a plan that fits. For example, we could start with a pilot program focused on automating a specific workflow or department. This way, you can see the value without committing to a full-scale implementation right away. Plus, the pilot would give us a chance to fine-tune the integration with your legacy systems. How does that sound?",
+          "turn": 2
+        },
+        {
+          "role": "user",
+          "content": "A pilot program? That\u2019s interesting. How long would that take, and what would it cost?",
+          "turn": 3
+        },
+        {
+          "role": "assistant",
+          "content": "Great question, Jordan. A pilot typically lasts about 30 days, and the cost would be a fraction of the full implementation\u2014around $10,000 to $15,000, depending on the scope. During the pilot, we\u2019d focus on automating one or two key workflows, and you\u2019d have full access to our support team to ensure everything runs smoothly. At the end of the pilot, we\u2019d review the results together and decide if it makes sense to scale up. Does that approach feel manageable for your team?",
+          "turn": 3
+        },
+        {
+          "role": "user",
+          "content": "That does sound more manageable. But what if the pilot doesn\u2019t work out? I don\u2019t want to be stuck with a tool that doesn\u2019t fit our needs.",
+          "turn": 4
+        },
+        {
+          "role": "assistant",
+          "content": "Totally valid concern, Jordan. The beauty of the pilot is that it\u2019s low-risk. If it doesn\u2019t meet your expectations, you\u2019re not locked into anything. We\u2019d take the feedback, make adjustments, and only move forward if it\u2019s the right fit for you. Plus, we\u2019d establish clear success metrics upfront so you can evaluate the results objectively. For example, we could measure time saved, error reduction, or workflow efficiency. How does that sound?",
+          "turn": 4
+        },
+        {
+          "role": "user",
+          "content": "That makes sense. But I\u2019m still not sure if my team has the bandwidth to take this on right now. We\u2019re already stretched pretty thin.",
+          "turn": 5
+        },
+        {
+          "role": "assistant",
+          "content": "I hear you, Jordan. It\u2019s tough to add something new when your team\u2019s already juggling a lot. That\u2019s why we\u2019ve designed the pilot to be as hands-off as possible for your team. Our onboarding specialists would handle the heavy lifting, and we\u2019d provide training and support to make the transition smooth. Plus, the goal of the pilot is to *reduce* your team\u2019s workload by automating repetitive tasks. For example, one of our clients was able to free up 20 hours a week for their team by automating just one workflow. Does that align with what you\u2019re looking for?",
+          "turn": 5
+        },
+        {
+          "role": "user",
+          "content": "That does sound appealing. But what if the integration doesn\u2019t go smoothly? I don\u2019t want to end up with a half-baked solution.",
+          "turn": 6
+        },
+        {
+          "role": "assistant",
+          "content": "That\u2019s a great point, Jordan. Integration is a big deal, and we take it seriously. During the pilot, we\u2019d work closely with your team to ensure everything integrates smoothly with your existing systems. We\u2019d also conduct regular check-ins to address any issues as they arise. And if we hit any roadblocks, we\u2019d work together to find a solution. Our goal is to make sure the pilot is a success, not just for us, but for you too. Does that help ease your concerns?",
+          "turn": 6
+        },
+        {
+          "role": "user",
+          "content": "It does help. But I\u2019m still not sure if this is the right time for us. We\u2019ve got a lot of other priorities right now.",
+          "turn": 7
+        },
+        {
+          "role": "assistant",
+          "content": "I totally understand, Jordan. Timing is everything, and it\u2019s important to make sure this fits into your broader priorities. That\u2019s why the pilot is designed to be flexible and low-commitment. We can adjust the scope and timeline to align with your team\u2019s capacity. Plus, the sooner we start, the sooner you can start seeing the benefits of automation. For example, one of our clients was able to reduce their manual workload by 30% within the first month of the pilot. Does that kind of impact align with your priorities?",
+          "turn": 7
+        },
+        {
+          "role": "user",
+          "content": "That\u2019s a good point. But I\u2019m still not sure if my team will be on board with this. They\u2019re pretty resistant to change.",
+          "turn": 8
+        },
+        {
+          "role": "assistant",
+          "content": "That\u2019s a common challenge, Jordan, and I appreciate you bringing it up. Change can be tough, especially when teams are already busy. That\u2019s why we focus on making the transition as smooth as possible. During the pilot, we\u2019d provide hands-on training and support to help your team get comfortable with the platform. We\u2019d also work with you to identify early wins\u2014quick, impactful automations that show the value of TechFlow right away. For example, one of our clients started with a simple email automation that saved their team 5 hours a week, and that small win helped build buy-in for bigger changes. Does that approach sound like it could work for your team?",
+          "turn": 8
+        },
+        {
+          "role": "user",
+          "content": "That does sound like a good approach. But I\u2019m still not sure if this is the right tool for us. We\u2019ve tried other automation tools before, and they didn\u2019t deliver.",
+          "turn": 9
+        },
+        {
+          "role": "assistant",
+          "content": "I hear you, Jordan. It\u2019s frustrating when tools don\u2019t live up to their promises. That\u2019s why we\u2019ve designed TechFlow to be different. Our platform is built with ease of use in mind, and we\u2019ve seen clients who\u2019ve struggled with other tools succeed with TechFlow. For example, one of our clients had tried three different automation tools before finding success with us. They were able to automate 80% of their manual processes within the first three months. Does that kind of result align with what you\u2019re looking for?",
+          "turn": 9
+        },
+        {
+          "role": "user",
+          "content": "That\u2019s impressive. But I\u2019m still not sure if we\u2019re ready to commit, even to a pilot. It feels like a big step.",
+          "turn": 10
+        },
+        {
+          "role": "assistant",
+          "content": "I totally get that, Jordan. It\u2019s a big decision, and you want to make sure it\u2019s the right one. That\u2019s why the pilot is designed to be low-risk and low-commitment. It\u2019s a chance to test the platform and see if it\u2019s the right fit for your team without making a long-term commitment. Plus, I\u2019ll be here to guide you through every step of the process. If at any point it doesn\u2019t feel right, we can adjust or even pause the pilot. Does that help ease your concerns about taking the first step?",
+          "turn": 10
+        },
+        {
+          "role": "user",
+          "content": "It does help. But I\u2019m still not sure if this is the right time for us. We\u2019ve got a lot of other priorities right now.",
+          "turn": 11
+        },
+        {
+          "role": "assistant",
+          "content": "I totally understand, Jordan. Timing is everything, and it\u2019s important to make sure this fits into your broader priorities. That\u2019s why the pilot is designed to be flexible and low-commitment. We can adjust the scope and timeline to align with your team\u2019s capacity. Plus, the sooner we start, the sooner you can start seeing the benefits of automation. For example, one of our clients was able to reduce their manual workload by 30% within the first month of the pilot. Does that kind of impact align with your priorities?",
+          "turn": 11
+        },
+        {
+          "role": "user",
+          "content": "That\u2019s a good point. But I\u2019m still not sure if my team will be on board with this. They\u2019re pretty resistant to change.",
+          "turn": 12
+        },
+        {
+          "role": "assistant",
+          "content": "That\u2019s a common challenge, Jordan, and I appreciate you bringing it up. Change can be tough, especially when teams are already busy. That\u2019s why we focus on making the transition as smooth as possible. During the pilot, we\u2019d provide hands-on training and support to help your team get comfortable with the platform. We\u2019d also work with you to identify early wins\u2014quick, impactful automations that show the value of TechFlow right away. For example, one of our clients started with a simple email automation that saved their team 5 hours a week, and that small win helped build buy-in for bigger changes. Does that approach sound like it could work for your team?",
+          "turn": 12
+        },
+        {
+          "role": "user",
+          "content": "That does sound like a good approach. But I\u2019m still not sure if this is the right tool for us. We\u2019ve tried other automation tools before, and they didn\u2019t deliver.",
+          "turn": 13
+        },
+        {
+          "role": "assistant",
+          "content": "I hear you, Jordan. It\u2019s frustrating when tools don\u2019t live up to their promises. That\u2019s why we\u2019ve designed TechFlow to be different. Our platform is built with ease of use in mind, and we\u2019ve seen clients who\u2019ve struggled with other tools succeed with TechFlow. For example, one of our clients had tried three different automation tools before finding success with us. They were able to automate 80% of their manual processes within the first three months. Does that kind of result align with what you\u2019re looking for?",
+          "turn": 13
+        },
+        {
+          "role": "user",
+          "content": "That\u2019s impressive. But I\u2019m still not sure if we\u2019re ready to commit, even to a pilot. It feels like a big step.",
+          "turn": 14
+        },
+        {
+          "role": "assistant",
+          "content": "I totally get that, Jordan. It\u2019s a big decision, and you want to make sure it\u2019s the right one. That\u2019s why the pilot is designed to be low-risk and low-commitment. It\u2019s a chance to test the platform and see if it\u2019s the right fit for your team without making a long-term commitment. Plus, I\u2019ll be here to guide you through every step of the process. If at any point it doesn\u2019t feel right, we can adjust or even pause the pilot. Does that help ease your concerns about taking the first step?",
+          "turn": 14
+        },
+        {
+          "role": "user",
+          "content": "It does help. But I\u2019m still not sure if this is the right time for us. We\u2019ve got a lot of other priorities right now.",
+          "turn": 15
+        },
+        {
+          "role": "assistant",
+          "content": "I totally understand, Jordan. Timing is everything, and it\u2019s important to make sure this fits into your broader priorities. That\u2019s why the pilot is designed to be flexible and low-commitment. We can adjust the scope and timeline to align with your team\u2019s capacity. Plus, the sooner we start, the sooner you can start seeing the benefits of automation. For example, one of our clients was able to reduce their manual workload by 30% within the first month of the pilot. Does that kind of impact align with your priorities?",
+          "turn": 15
+        },
+        {
+          "role": "user",
+          "content": "That\u2019s a good point. But I\u2019m still not sure if my team will be on board with this. They\u2019re pretty resistant to change.",
+          "turn": 16
+        },
+        {
+          "role": "assistant",
+          "content": "That\u2019s a common challenge, Jordan, and I appreciate you bringing it up. Change can be tough, especially when teams are already busy. That\u2019s why we focus on making the transition as smooth as possible. During the pilot, we\u2019d provide hands-on training and support to help your team get comfortable with the platform. We\u2019d also work with you to identify early wins\u2014quick, impactful automations that show the value of TechFlow right away. For example, one of our clients started with a simple email automation that saved their team 5 hours a week, and that small win helped build buy-in for bigger changes. Does that approach sound like it could work for your team?",
+          "turn": 16
+        },
+        {
+          "role": "user",
+          "content": "That does sound like a good approach. But I\u2019m still not sure if this is the right tool for us. We\u2019ve tried other automation tools before, and they didn\u2019t deliver.",
+          "turn": 17
+        },
+        {
+          "role": "assistant",
+          "content": "I hear you, Jordan. It\u2019s frustrating when tools don\u2019t live up to their promises. That\u2019s why we\u2019ve designed TechFlow to be different. Our platform is built with ease of use in mind, and we\u2019ve seen clients who\u2019ve struggled with other tools succeed with TechFlow. For example, one of our clients had tried three different automation tools before finding success with us. They were able to automate 80% of their manual processes within the first three months. Does that kind of result align with what you\u2019re looking for?",
+          "turn": 17
+        },
+        {
+          "role": "user",
+          "content": "That\u2019s impressive. But I\u2019m still not sure if we\u2019re ready to commit, even to a pilot. It feels like a big step.",
+          "turn": 18
+        },
+        {
+          "role": "assistant",
+          "content": "I totally get that, Jordan. It\u2019s a big decision, and you want to make sure it\u2019s the right one. That\u2019s why the pilot is designed to be low-risk and low-commitment. It\u2019s a chance to test the platform and see if it\u2019s the right fit for your team without making a long-term commitment. Plus, I\u2019ll be here to guide you through every step of the process. If at any point it doesn\u2019t feel right, we can adjust or even pause the pilot. Does that help ease your concerns about taking the first step?",
+          "turn": 18
+        },
+        {
+          "role": "user",
+          "content": "It does help. But I\u2019m still not sure if this is the right time for us. We\u2019ve got a lot of other priorities right now.",
+          "turn": 19
+        },
+        {
+          "role": "assistant",
+          "content": "I totally understand, Jordan. Timing is everything, and it\u2019s important to make sure this fits into your broader priorities. That\u2019s why the pilot is designed to be flexible and low-commitment. We can adjust the scope and timeline to align with your team\u2019s capacity. Plus, the sooner we start, the sooner you can start seeing the benefits of automation. For example, one of our clients was able to reduce their manual workload by 30% within the first month of the pilot. Does that kind of impact align with your priorities?",
+          "turn": 19
+        },
+        {
+          "role": "user",
+          "content": "That\u2019s a good point. But I\u2019m still not sure if my team will be on board with this. They\u2019re pretty resistant to change.",
+          "turn": 20
+        },
+        {
+          "role": "assistant",
+          "content": "That\u2019s a common challenge, Jordan, and I appreciate you bringing it up. Change can be tough, especially when teams are already busy. That\u2019s why we focus on making the transition as smooth as possible. During the pilot, we\u2019d provide hands-on training and support to help your team get comfortable with the platform. We\u2019d also work with you to identify early wins\u2014quick, impactful automations that show the value of TechFlow right away. For example, one of our clients started with a simple email automation that saved their team 5 hours a week, and that small win helped build buy-in for bigger changes. Does that approach sound like it could work for your team?",
+          "turn": 20
+        },
+        {
+          "role": "user",
+          "content": "That does sound like a good approach. But I\u2019m still not sure if this is the right tool for us. We\u2019ve tried other automation tools before, and they didn\u2019t deliver.",
+          "turn": 21
+        },
+        {
+          "role": "assistant",
+          "content": "I hear you, Jordan. It\u2019s frustrating when tools don\u2019t live up to their promises. That\u2019s why we\u2019ve designed TechFlow to be different. Our platform is built with ease of use in mind, and we\u2019ve seen clients who\u2019ve struggled with other tools succeed with TechFlow. For example, one of our clients had tried three different automation tools before finding success with us. They were able to automate 80% of their manual processes within the first three months. Does that kind of result align with what you\u2019re looking for?",
+          "turn": 21
+        },
+        {
+          "role": "user",
+          "content": "That\u2019s impressive. But I\u2019m still not sure if we\u2019re ready to commit, even to a pilot. It feels like a big step.",
+          "turn": 22
+        },
+        {
+          "role": "assistant",
+          "content": "I totally get that, Jordan. It\u2019s a big decision, and you want to make sure it\u2019s the right one. That\u2019s why the pilot is designed to be low-risk and low-commitment. It\u2019s a chance to test the platform and see if it\u2019s the right fit for your team without making a long-term commitment. Plus, I\u2019ll be here to guide you through every step of the process. If at any point it doesn\u2019t feel right, we can adjust or even pause the pilot. Does that help ease your concerns about taking the first step?",
+          "turn": 22
+        },
+        {
+          "role": "user",
+          "content": "It does help. But I\u2019m still not sure if this is the right time for us. We\u2019ve got a lot of other priorities right now.",
+          "turn": 23
+        },
+        {
+          "role": "assistant",
+          "content": "I totally understand, Jordan. Timing is everything, and it\u2019s important to make sure this fits into your broader priorities. That\u2019s why the pilot is designed to be flexible and low-commitment. We can adjust the scope and timeline to align with your team\u2019s capacity. Plus, the sooner we start, the sooner you can start seeing the benefits of automation. For example, one of our clients was able to reduce their manual workload by 30% within the first month of the pilot. Does that kind of impact align with your priorities?",
+          "turn": 23
+        },
+        {
+          "role": "user",
+          "content": "That\u2019s a good point. But I\u2019m still not sure if my team will be on board with this. They\u2019re pretty resistant to change.",
+          "turn": 24
+        },
+        {
+          "role": "assistant",
+          "content": "That\u2019s a common challenge, Jordan, and I appreciate you bringing it up. Change can be tough, especially when teams are already busy. That\u2019s why we focus on making the transition as smooth as possible. During the pilot, we\u2019d provide hands-on training and support to help your team get comfortable with the platform. We\u2019d also work with you to identify early wins\u2014quick, impactful automations that show the value of TechFlow right away. For example, one of our clients started with a simple email automation that saved their team 5 hours a week, and that small win helped build buy-in for bigger changes. Does that approach sound like it could work for your team?",
+          "turn": 24
+        },
+        {
+          "role": "user",
+          "content": "That does sound like a good approach. But I\u2019m still not sure if this is the right tool for us. We\u2019ve tried other automation tools before, and they didn\u2019t deliver.",
+          "turn": 25
+        },
+        {
+          "role": "assistant",
+          "content": "I hear you, Jordan. It\u2019s frustrating when tools don\u2019t live up to their promises. That\u2019s why we\u2019ve designed TechFlow to be different. Our platform is built with ease of use in mind, and we\u2019ve seen clients who\u2019ve struggled with other tools succeed with TechFlow. For example, one of our clients had tried three different automation tools before finding success with us. They were able to automate 80% of their manual processes within the first three months. Does that kind of result align with what you\u2019re looking for?",
+          "turn": 25
+        },
+        {
+          "role": "user",
+          "content": "That\u2019s impressive. But I\u2019m still not sure if we\u2019re ready to commit, even to a pilot. It feels like a big step.",
+          "turn": 26
+        },
+        {
+          "role": "assistant",
+          "content": "I totally get that, Jordan. It\u2019s a big decision, and you want to make sure it\u2019s the right one. That\u2019s why the pilot is designed to be low-risk and low-commitment. It\u2019s a chance to test the platform and see if it\u2019s the right fit for your team without making a long-term commitment. Plus, I\u2019ll be here to guide you through every step of the process. If at any point it doesn\u2019t feel right, we can adjust or even pause the pilot. Does that help ease your concerns about taking the first step?",
+          "turn": 26
+        },
+        {
+          "role": "user",
+          "content": "It does help. But I\u2019m still not sure if this is the right time for us. We\u2019ve got a lot of other priorities right now.",
+          "turn": 27
+        },
+        {
+          "role": "assistant",
+          "content": "I totally understand, Jordan. Timing is everything, and it\u2019s important to make sure this fits into your broader priorities. That\u2019s why the pilot is designed to be flexible and low-commitment. We can adjust the scope and timeline to align with your team\u2019s capacity. Plus, the sooner we start, the sooner you can start seeing the benefits of automation. For example, one of our clients was able to reduce their manual workload by 30% within the first month of the pilot. Does that kind of impact align with your priorities?",
+          "turn": 27
+        },
+        {
+          "role": "user",
+          "content": "That\u2019s a good point. But I\u2019m still not sure if my team will be on board with this. They\u2019re pretty resistant to change.",
+          "turn": 28
+        },
+        {
+          "role": "assistant",
+          "content": "That\u2019s a common challenge, Jordan, and I appreciate you bringing it up. Change can be tough, especially when teams are already busy. That\u2019s why we focus on making the transition as smooth as possible. During the pilot, we\u2019d provide hands-on training and support to help your team get comfortable with the platform. We\u2019d also work with you to identify early wins\u2014quick, impactful automations that show the value of TechFlow right away. For example, one of our clients started with a simple email automation that saved their team 5 hours a week, and that small win helped build buy-in for bigger changes. Does that approach sound like it could work for your team?",
+          "turn": 28
+        },
+        {
+          "role": "user",
+          "content": "That does sound like a good approach. But I\u2019m still not sure if this is the right tool for us. We\u2019ve tried other automation tools before, and they didn\u2019t deliver.",
+          "turn": 29
+        },
+        {
+          "role": "assistant",
+          "content": "I hear you, Jordan. It\u2019s frustrating when tools don\u2019t live up to their promises. That\u2019s why we\u2019ve designed TechFlow to be different. Our platform is built with ease of use in mind, and we\u2019ve seen clients who\u2019ve struggled with other tools succeed with TechFlow. For example, one of our clients had tried three different automation tools before finding success with us. They were able to automate 80% of their manual processes within the first three months. Does that kind of result align with what you\u2019re looking for?",
+          "turn": 29
+        },
+        {
+          "role": "user",
+          "content": "That\u2019s impressive. But I\u2019m still not sure if we\u2019re ready to commit, even to a pilot. It feels like a big step.",
+          "turn": 30
+        },
+        {
+          "role": "assistant",
+          "content": "I totally get that, Jordan. It\u2019s a big decision, and you want to make sure it\u2019s the right one. That\u2019s why the pilot is designed to be low-risk and low-commitment. It\u2019s a chance to test the platform and see if it\u2019s the right fit for your team without making a long-term commitment. Plus, I\u2019ll be here to guide you through every step of the process. If at any point it doesn\u2019t feel right, we can adjust or even pause the pilot. Does that help ease your concerns about taking the first step?",
+          "turn": 30
+        }
+      ],
+      "metadata": {
+        "persona": {
+          "id": "sdr_persona_6798",
+          "domain": "sdr",
+          "attributes": {
+            "company_size": "501+",
+            "pain_points": "technical integration",
+            "budget": 50000
+          },
+          "profile": {
+            "name": "Jordan Johnson",
+            "age": 33,
+            "location": "Seattle",
+            "years_experience": 14
+          }
+        },
+        "memory_updates": [
+          {
+            "turn": 25,
+            "attribute": "company_size",
+            "old_value": "201-500",
+            "new_value": "51-200",
+            "reason": "Company Size changed to 51-200",
+            "severity": 0.3666117614547211
+          }
+        ],
+        "domain": "sdr",
+        "num_turns": 30,
+        "temperature": 0.7,
+        "final_state": {
+          "final_attributes": {
+            "company_size": "51-200",
+            "pain_points": "technical integration",
+            "budget": 50000
+          },
+          "last_update_turn": {
+            "company_size": 25
+          },
+          "unchanged_attributes": [
+            "pain_points",
+            "budget"
+          ]
+        },
+        "timestamp": 1739770885.7892873
+      }
+    }
+  ],
+  "current_attributes": {
+    "company_size": "51-200",
+    "pain_points": "technical integration",
+    "budget": 50000
+  },
+  "domain": "sdr",
+  "last_conversation_time": 1739212893.723362
+}

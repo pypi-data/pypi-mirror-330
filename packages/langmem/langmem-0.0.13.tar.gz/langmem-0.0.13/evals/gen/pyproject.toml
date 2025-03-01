@@ -1,0 +1,16 @@
+[project]
+name = "gen"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "fireworks>=2.0.4",
+    "langgraph>=0.2.68",
+    "langgraph-checkpoint-sqlite>=2.0.3",
+    "requests>=2.32.3",
+    "langchain-openai>=0.3.3",
+    "langchain-anthropic>=0.3.5",
+    "langchain>=0.3.17",
+    "langchain-fireworks>=0.2.7",
+]
