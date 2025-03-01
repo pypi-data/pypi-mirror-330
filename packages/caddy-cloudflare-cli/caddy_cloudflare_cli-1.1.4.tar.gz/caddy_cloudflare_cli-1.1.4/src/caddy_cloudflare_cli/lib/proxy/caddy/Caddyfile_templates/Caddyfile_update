@@ -1,0 +1,47 @@
+${domain} {
+    tls {
+        # Use standard dns.providers.cloudflare
+        dns cloudflare ${cloudflare_auth}
+        resolvers 1.1.1.1
+    }
+
+    reverse_proxy ${target} {
+        # Extended timeouts for better reliability
+        transport http {
+            read_timeout 300s
+            write_timeout 300s
+            dial_timeout 30s
+        }
+        
+        # Headers
+        header_up Host {host}
+        header_up X-Real-IP {remote_host}
+        header_up X-Forwarded-For {remote_host}
+        header_up X-Forwarded-Proto {scheme}
+    }
+    
+    # Security headers
+    header {
+        # Enable HSTS
+        Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+        # Prevent clickjacking
+        X-Frame-Options "DENY"
+        # XSS protection
+        X-Content-Type-Options "nosniff"
+        # Referrer policy
+        Referrer-Policy "strict-origin-when-cross-origin"
+        # Remove server header
+        -Server
+    }
+    
+    # Logging
+    log {
+        output file ${log_path} {
+            roll_size 10MB
+            roll_keep 10
+        }
+        format json
+    }
+    
+    # Additional configuration will be appended here
+}

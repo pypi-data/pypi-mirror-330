@@ -1,0 +1,60 @@
+[project]
+name = "caddy-cloudflare-cli"
+version = "1.1.4"
+description = "A powerful CLI tool for setting up and managing Cloudflare DNS records with Caddy reverse proxy. Easily deploy local services with public domains, automate DNS configuration, and manage SSL certificates using Cloudflare's API."
+authors = [
+    { name = "Tadeas Fort", email = "business@tadeasfort.com" },
+]
+dependencies = [
+    "pyyaml>=6.0.1",
+    "python-dotenv>=1.0.0",
+    "requests>=2.31.0",
+    "typer>=0.15.2",
+    "cloudflare>=4.0.0",
+]
+readme = "README.md"
+requires-python = ">= 3.11"
+
+[project.license]
+text = "GPL-3.0"
+
+[project.scripts]
+caddy-cloudflare = "caddy_cloudflare_cli.cli:main"
+
+[build-system]
+requires = [
+    "pdm-backend",
+]
+build-backend = "pdm.backend"
+
+[tool.rye]
+managed = true
+dev-dependencies = [
+    "pytest>=8.3.4",
+    "ruff>=0.9.7",
+    "ruff-lsp>=0.0.62",
+    "pytest-mock>=3.12.0",
+    "pytest-cov>=4.1.0",
+    "responses>=0.25.0",
+    "twine>=6.1.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = [
+    "src/caddy_cloudflare_cli/tests",
+]
+python_files = [
+    "test_*.py",
+]
+addopts = "-v --cov=src/caddy_cloudflare_cli --cov-report=term-missing"
+pythonpath = [
+    "src",
+]
+
+[tool.setuptools]
+packages = [
+    "caddy_cloudflare_cli",
+]
+
+[tool.setuptools.package-dir]
+"" = "src"
