@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ruleset xmlns='http://experience.univ-lyon1.fr/advene/ns/advenetool'>
+  <rule name='Package load warning'>
+    <event name='PackageLoad'/>
+    <action name='Message'>
+      <param name='message' value='string:Loaded package ${package/title}'/>
+    </action>
+  </rule>
+</ruleset>

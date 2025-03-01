@@ -1,0 +1,8 @@
+Checklist for the release of a new version :
+
+    * Update lib/advene/core/version.py (version)
+    * Update translations
+    * Update README
+    * Update CHANGES.txt
+    * Test
+    * Run scripts/release N.NN
