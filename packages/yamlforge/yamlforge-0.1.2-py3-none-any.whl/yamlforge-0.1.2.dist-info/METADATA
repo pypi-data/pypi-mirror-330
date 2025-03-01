@@ -1,0 +1,259 @@
+Metadata-Version: 2.2
+Name: yamlforge
+Version: 0.1.2
+Summary: YAMLForge is a library designed to automatically generate SQLModel models and shcemas from a configuration in YAML format or a dictionary.
+Author-email: Sebastian Sala <sebastian.sala.alanis@hotmail.com>
+Project-URL: Homepage, https://github.com/sebas-sala/yamlforge
+Project-URL: Bug Tracker, https://github.com/sebas-sala/yamlforge/issues
+Requires-Python: >=3.12
+Description-Content-Type: text/markdown
+Requires-Dist: inflect>=7.5.0
+Requires-Dist: pyyaml>=6.0.2
+Requires-Dist: sqlmodel>=0.0.22
+
+# YAMLForge
+
+YAMLForge is a library designed to automatically generate SQLModel models and shcemas from a configuration in YAML format or a dictionary. It simplifies the creation of models, relationships (OneToOne, OneToMany, ManyToMany), and link tables for relational databases. Additionally, it automatically generates model files and an `__init__.py` file to facilitate importing the models.
+
+---
+
+## Main Features
+
+- **Automatic model generation**: Define your models in a YAML file or dictionary, and YAMLForge will generate the corresponding `.py` files.
+- **Automatic schema generation**: Use the models defined in a YAML file or dictionary, and YAMLForge will generate the corresponding schemas/DTOs.
+- **Supported relationships**:
+  - **OneToOne**: One-to-one relationships between models.
+  - **OneToMany**: One-to-many relationships between models.
+  - **ManyToMany**: Many-to-many relationships with automatic link tables.
+- **Customizable fields**: Define fields with options such as `primary_key`, `required`, `index`, `unique`, etc.
+- **Automatic import generation**: Automatically includes the necessary imports for relationships and models.
+- **Generated `__init__.py` file**: Creates an `__init__.py` file to simplify model imports.
+
+---
+
+## Installation
+
+To use YAMLForge, simply install it with pip:
+
+```bash
+pip install yamlforge
+```
+
+## Basic Usage
+
+### 1. Define Your Models in YAML
+
+Create a YAML file with your model configuration. Here’s an example:
+
+```yaml
+User:
+  fields:
+    - name: id
+      type: int
+      primary_key: True
+    - name: name
+      type: str
+      required: True
+  relationships:
+    - type: OneToOne
+      model: Profile
+      back_populates: True
+
+Profile:
+  fields:
+    - name: id
+      type: int
+      primary_key: True
+    - name: bio
+      type: str
+  relationships:
+    - type: OneToOne
+      model: User
+      back_populates: True
+```
+
+### 2. Generate Models from YAML
+
+Use YAMLForge to generate the model files from the YAML file or objects:
+
+```python
+from yamlforge import generate
+
+# generate models and schemas
+generate(models_config)
+
+# Or
+from yamlforge import generate_models, generate_schemas
+
+generate_models(config_path="yamlforge.ymal")
+generate_schemas(config_path="yamlforge.ymal")
+```
+
+### 3. Generated Structure
+
+YAMLForge will generate the following files:
+
+```bash
+db/
+  models/
+    user.py
+    profile.py
+    __init__.py
+schemas/
+  user.py
+  profile.py
+```
+
+## Relationships
+
+### OneToOne
+
+```yaml
+User:
+  fields:
+    - name: id
+      type: int
+      primary_key: True
+    - name: name
+      type: str
+      required: True
+  relationships:
+    - type: OneToOne
+      model: Profile
+      back_populates: True
+
+Profile:
+  fields:
+    - name: id
+      type: int
+      primary_key: True
+    - name: bio
+      type: str
+  relationships:
+    - type: OneToOne
+      model: User
+      back_populates: True
+```
+
+### OneToMany
+
+```yaml
+Team:
+  fields:
+    - name: id
+      type: int
+      primary_key: True
+    - name: name
+      type: str
+      required: True
+  relationships:
+    - type: OneToMany
+      model: Hero
+      back_populates: True
+
+Hero:
+  fields:
+    - name: id
+      type: int
+      primary_key: True
+    - name: name
+      type: str
+      required: True
+```
+
+### ManyToMany
+
+```yaml
+Post:
+  fields:
+    - name: id
+      type: int
+      primary_key: True
+    - name: title
+      type: str
+      required: True
+  relationships:
+    - type: ManyToMany
+      model: Category
+      back_populates: True
+
+Category:
+  fields:
+    - name: id
+      type: int
+      primary_key: True
+    - name: name
+      type: str
+      required: True
+  relationships:
+    - type: ManyToMany
+      model: Post
+      back_populates: True
+```
+
+## Don'ts
+
+### 1. Do Not Define Relationships in Both Models
+
+If you define a relationship in both models, an extra model with additional attributes will be generated in both directions.
+
+#### Incorrecto
+
+```yaml
+Team:
+  ---
+  relationships:
+    - type: OneToMany
+      model: Hero
+Hero:
+  ---
+  relationships:
+    - type: OneToMany
+      model: Team
+```
+
+#### Correcto
+
+```yaml
+Team:
+  ---
+  relationships:
+    - type: OneToMany
+      model: Hero
+Hero:
+  ---
+```
+
+### 2. Do Not Manually Declare the Link Table in a ManyToMany Relationship
+
+YAMLForge automatically generates link tables for ManyToMany relationships. Do not attempt to manually define the link table.
+
+#### Incorrecto
+
+```yaml
+Post:
+  relationships:
+    - type: ManyToMany
+      model: Category
+Category:
+  ---
+PostCategoryLink: 
+  fields:
+    - name: post_id
+      type: int
+    - name: category_id
+      type: int
+```
+
+#### Correcto
+
+```yaml
+Post:
+  relationships:
+    - type: ManyToMany
+      model: Category
+Category:
+  ---
+```
+
+
