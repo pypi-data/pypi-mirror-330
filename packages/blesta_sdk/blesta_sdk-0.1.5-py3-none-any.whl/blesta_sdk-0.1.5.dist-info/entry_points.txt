@@ -1,0 +1,2 @@
+[console_scripts]
+blesta = blesta_sdk.cli.blesta_cli:cli
