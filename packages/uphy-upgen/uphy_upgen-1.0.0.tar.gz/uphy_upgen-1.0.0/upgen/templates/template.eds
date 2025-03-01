@@ -1,0 +1,149 @@
+$ Device designed and built with U-Phy Device Builder
+$ https://devicebuilder.rt-labs.com/
+
+[File]
+        DescText = "{{device.description}}";
+        CreateDate = {{ device.ethernetip.create_date | date }};
+        CreateTime = {{ device.ethernetip.create_time | time }};
+        ModDate = {{ device.ethernetip.modification_date | date }};
+        ModTime = {{ device.ethernetip.modification_time | time }};
+        Revision = {{device.ethernetip.revision}};
+        HomeURL = "{{device.ethernetip.home_url}}";
+
+[Device]
+        VendCode = {{model.ethernetip.vendor_id}};
+        VendName = "{{model.vendor}}";
+        ProdType = {{device.ethernetip.device_type}};
+        ProdTypeStr = "{{device.ethernetip.device_type_str}}";
+        ProdCode = {{device.ethernetip.product_code}};
+        MajRev = {{device.ethernetip.revision | enip_major_rev}};
+        MinRev = {{device.ethernetip.revision | enip_minor_rev}};
+        ProdName = "{{device.name}}";
+
+[Device Classification]
+        Class1 = EtherNetIP;
+
+[Params]
+{% for param in params %}
+        {{param.eds_ref}} =
+                0,                      $ reserved, shall equal 0
+                ,,                      $ Link Path Size, Link Path
+                {{ '0x{:04x},'.format(param.descriptor).ljust(24) }}$ Descriptor
+                {{ '{},'.format(param.eds_data_type).ljust(24) }}$ Data Type
+                {{ '{},'.format(param.size).ljust(24) }}$ Data Size in bytes
+                "{{param.name}}",
+                "",                     $ units
+                "{{param.help}}",
+                {{ '{},{},{},'.format(param.value_min, param.value_max, param.value_default).ljust(24) }}$ min, max, default data values
+                ,,,,                    $ mult, div, base, offset scaling
+                ,,,,                    $ mult, div, base, offset links
+                ;                       $ decimal places
+{% endfor %}
+
+[Assembly]
+        Object_Name = "Assembly Object";
+        Object_Class_Code = 0x04;
+        Number_Of_Static_Instances = {{ assemblies | length + 3}};
+{% for assembly in assemblies %}
+        {{assembly.eds_ref}} =
+                "{{assembly.name}}",
+                "",
+                {{assembly.get_size()}},
+                0x0000,
+{{assembly.subelements | assembly_elements_to_eds}}
+{% endfor %}
+
+[Connection Manager]
+        Revision = 1;
+        Object_Name = "Connection Manager Object";
+        Object_Class_Code = 0x06;
+        MaxInst = 1;
+        Number_Of_Static_Instances = 1;
+        Max_Number_Of_Dynamic_Instances = 0;
+{% for connection in connections %}
+        {{ connection["eds_ref"] }} =
+                {{ connection["trigger_and_transport"] }},             $ 0-15    = supported transport classes
+                                        $ 16      = trigger: cyclic
+                                        $ 17      = trigger: change of state
+                                        $ 18      = trigger: application
+                                        $ 19-23   = trigger: reserved
+                                        $ 24      = transport type: listen-only
+                                        $ 25      = transport type: input-only
+                                        $ 26      = transport type: exclusive-owner
+                                        $ 27      = transport type: redundant-owner
+                                        $ 28-30   = reserved
+                                        $ 31      = Client = 0 / Server = 1
+                {{ connection["connection_parameters"] }},             $ 0       = O->T fixed size supported
+                                        $ 1       = O->T variable size supported
+                                        $ 2       = T->O fixed size supported
+                                        $ 3       = T->O variable size supported
+                                        $ 4-5     = O->T number of bytes per slot (obsolete)
+                                        $ 6-7     = T->O number of bytes per slot (obsolete)
+                                        $ 8-10    = O->T Real time transfer format
+                                        $ 11      = reserved
+                                        $ 12-14   = T->O Real time transfer format
+                                        $ 15      = reserved
+                                        $ 16      = O->T connection type: NULL
+                                        $ 17      = O->T connection type: MULTICAST
+                                        $ 18      = O->T connection type: POINT2POINT
+                                        $ 19      = O->T connection type: reserved
+                                        $ 20      = T->O connection type: NULL
+                                        $ 21      = T->O connection type: MULTICAST
+                                        $ 22      = T->O connection type: POINT2POINT
+                                        $ 23      = T->O connection type: reserved
+                                        $ 24      = O->T priority: LOW
+                                        $ 25      = O->T priority: HIGH
+                                        $ 26      = O->T priority: SCHEDULED
+                                        $ 27      = O->T priority: reserved
+                                        $ 28      = T->O priority: LOW
+                                        $ 29      = T->O priority: HIGH
+                                        $ 30      = T->O priority: SCHEDULED
+                                        $ 31      = T->O priority: reserved
+                {{ '{},{},{},'.format( connection["output_rpi_param"],connection["output_size"],connection["output_format"]).ljust(24) }}$ O->T RPI, size, format
+                {{ '{},{},{},'.format( connection["input_rpi_param"],connection["input_size"],connection["input_format"]).ljust(24) }}$ T->O RPI, size, format
+                ,,                      $ config #1 size, format
+                {{ '{},{},'.format(connection["config_size"],connection["config_format"]).ljust(24) }}$ config #2 size, format
+                {{ '"{}",'.format(connection["name"]).ljust(24) }}$ Connection Name
+                {{ '"{}",'.format(connection["help"]).ljust(24) }}$ help string
+                {{ '"{}";'.format(connection["path"]).ljust(24) }}$ Path
+{% endfor %}
+
+[Capacity]
+        MaxMsgConnections = 6;
+        MaxIOProduceConsume = 2;
+        MaxIOMcastProducers = 1;
+        MaxIOMcastConsumers = 1;
+        MaxConsumersPerMcast = 6;
+        TSpec1 = TxRx, 32, 100;
+
+[TCP/IP Interface Class]
+        Revision = 4;
+        Object_Name = "TCP/IP Interface Object";
+        Object_Class_Code = 0xF5;
+        MaxInst = 1;
+        Number_Of_Static_Instances = 1;
+        Max_Number_Of_Dynamic_Instances = 0;
+
+[Ethernet Link Class]
+        Revision = 4;
+        Object_Name = "Ethernet Link Object";
+        Object_Class_Code = 0xF6;
+        MaxInst = 1;
+        Number_Of_Static_Instances = 1;
+        Max_Number_Of_Dynamic_Instances = 0;
+
+[Identity Class]
+        Revision = 1;
+        Object_Name = "Identity Object";
+        Object_Class_Code = 0x01;
+        MaxInst = 1;
+        Number_Of_Static_Instances = 1;
+        Max_Number_Of_Dynamic_Instances = 0;
+
+[QoS Class]
+        Revision = 1;
+        Object_Name = "QoS Object";
+        Object_Class_Code = 0x48;
+        MaxInst = 1;
+        Number_Of_Static_Instances = 1;
+        Max_Number_Of_Dynamic_Instances = 0;
