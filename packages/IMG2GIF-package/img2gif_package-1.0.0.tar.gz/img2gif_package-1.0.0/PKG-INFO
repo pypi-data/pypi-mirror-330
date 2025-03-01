@@ -1,0 +1,22 @@
+Metadata-Version: 2.2
+Name: IMG2GIF_package
+Version: 1.0.0
+Summary: Test package for distribution
+Home-page: 
+Download-URL: 
+Author: okorion
+Author-email: ok.or.orion@gmail.com
+Keywords: GIFCONVERTER,gifconverter
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3
+License-File: LICENSE
+Requires-Dist: pillow
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: keywords
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
