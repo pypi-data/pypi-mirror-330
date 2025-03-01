@@ -1,0 +1,277 @@
+# asp_plot
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14263122.svg)](https://doi.org/10.5281/zenodo.14263122)
+
+Scripts and notebooks to visualize output from the [NASA Ames Stereo Pipeline (ASP)](https://github.com/NeoGeographyToolkit/StereoPipeline).
+
+## Motivation
+
+Our objective is to release a modular Python package with a command-line interface (CLI) that can be run automatically on an ASP output directory to prepare a set of standard diagnostic plots, publication-quality output figures, and a pdf report with relevant information, similar to the reports prepared by many commercial SfM software packages (e.g., Agisoft Metashape, Pix4DMapper).
+
+
+## Status
+
+This is a work in progress.
+
+The directory `original_code/` contains initial notebooks compiled from recent projects using sample stereo images from the Maxar WorldView, Planet SkySat-C and BlackSky Global constellations.
+
+The functionality of these notebooks is being ported to the `asp_plot/` directory, which is the package `asp_plot`.
+
+## Files you will need from ASP processing
+
+During the `stereo` or `parallel_stereo` steps at the heart of the Ames Stereo Pipeline, you can add this to the command to ensure that the files needed for plotting are retained, and files that are not required are cleaned up:
+
+```
+--keep-only '.mask .txt .exr .match -L.tif -L_sub.tif -R_sub.tif -D_sub.tif -D.tif -RD.tif -F.tif -PC.tif'
+```
+
+Not all of those files are used in the plotting, but all are useful for re-processing and detailed analyses.
+
+## Installation
+
+To get started with `asp_plot`, [find the `environment.yml` file here](https://github.com/uw-cryo/asp_plot/blob/main/environment.yml), download it locally, and create a conda environment:
+
+```
+$ conda env create -f environment.yml
+```
+
+Then activate the environment:
+
+```
+$ conda activate asp_plot
+```
+
+And finally, install the `asp_plot` package and CLI tools with pip:
+
+```
+(asp_plot) $ pip install asp-plot
+```
+
+## Notebook example usage
+
+Examples of the modular usage of the package can be found in the [`notebooks/` directory here](https://github.com/uw-cryo/asp_plot/tree/main/notebooks).
+
+
+## CLI usage: `asp_plot`
+
+A full report can be output via the command-line. At its simplest, you can run:
+
+```
+$ asp_plot --directory ./ \
+           --stereo_directory stereo
+```
+
+with only the directory where the ASP processing was done (`--directory`) and the subdirectory inside of that where the stereo files were output (`--stereo`). The reference DEM used in ASP processing will also be searched for in the logs, and used for difference maps if found.
+
+If you also ran bundle adjustment and/or would like to specify a reference DEM to use for plotting (rather than searching the logs):
+
+```
+$ asp_plot --directory ./ \
+           --bundle_adjust_directory ba \
+           --stereo_directory stereo \
+           --map_crs EPSG:32604 \
+           --reference_dem ref_dem.tif
+```
+
+Before that, we recommend running `asp_plot --help` for details (and defaults) of all of the command-line flags:
+
+```
+ $ asp_plot --help
+Usage: asp_plot [OPTIONS]
+
+Options:
+  --directory TEXT                Required directory of ASP processing with
+                                  scenes and sub-directories for stereo and
+                                  optionally bundle adjustment. Default:
+                                  current directory.
+  --bundle_adjust_directory TEXT  Optional directory of bundle adjustment
+                                  files. If expected *residuals_pointmap.csv
+                                  files are not found in the supplied
+                                  directory, no bundle adjustment plots will
+                                  be generated. Default: None.
+  --stereo_directory TEXT         Required directory of stereo files. Default:
+                                  stereo.
+  --dem_filename TEXT             Optional DEM filename in the stereo
+                                  directory. Default: None, which will search
+                                  for the *-DEM.tif file in the stereo
+                                  directory. Specify it as the basename with
+                                  extension, e.g. my-custom-dem-name.tif.
+  --dem_gsd TEXT                  Optional ground sample distance of the DEM.
+                                  Default: None, which will search for the
+                                  *-DEM.tif file in the stereo directory. If
+                                  there is a GSD in the name of the file,
+                                  specify it here as a float or integer, e.g.
+                                  1, 1.5, etc.
+  --map_crs TEXT                  Projection for ICESat and bundle adjustment
+                                  plots. Default: None.
+  --reference_dem TEXT            Optional reference DEM used in ASP
+                                  processing. No default. If not supplied, the
+                                  logs will be examined to find it. If not
+                                  found, no difference plots will be
+                                  generated.
+  --add_basemap BOOLEAN           If True, add a basemaps to the figures,
+                                  which requires internet connection. Default:
+                                  True.
+  --plot_icesat BOOLEAN           If True, plot an ICESat-2 difference plot
+                                  with the DEM result. This requires internet
+                                  connection to pull ICESat data. Default:
+                                  True.
+  --report_filename TEXT          PDF file to write out for report into the
+                                  processing directory supplied by
+                                  --directory. Default: Directory name of ASP
+                                  processing.
+  --report_title TEXT             Title for the report. Default: Directory
+                                  name of ASP processing.
+```
+
+### Running without internet connection
+
+If you add these two flags as `False` to the `asp_plot` command, you can run it without internet connection:
+
+```
+--add_basemap False --plot_icesat False
+```
+
+Otherwise, basemaps will be fetched using contextly and ICESat-2 data will be fetched by SlideRule.
+
+## CLI usage: `csm_camera_plot`
+
+The `csm_camera_plot` command-line tool is a wrapper for outputting a summary plot after running tools like `bundle_adjust` and `jitter_solve`. The inputs must be [CSM camera files](https://stereopipeline.readthedocs.io/en/stable/examples/csm.html). Currently, this tool only supports CSM linescan cameras, such as those from WorldView satellites.
+
+At its simplest it can be run like:
+
+```
+$ csm_camera_plot --original_cameras path/to/original_camera_1,path/to/original_camera_2 \
+                      --optimized_cameras path/to/optimized_camera_1,path/to/optimized_camera_2
+```
+
+But, for more meaningful positions we at least recommend specifying a `map_crs` UTM EPSG code, and a directory to save the output figure to:
+
+```
+$ csm_camera_plot --original_cameras path/to/original_camera_1,path/to/original_camera_2 \
+                      --optimized_cameras path/to/optimized_camera_1,path/to/optimized_camera_2 \
+                      --map_crs 32728
+                      --save_dir path/to/save_directory/
+```
+
+If a second camera is not supplied, the tool will happily plot just the single camera:
+
+```
+$ csm_camera_plot --original_cameras path/to/original_camera_1 \
+                      --optimized_cameras path/to/optimized_camera_1 \
+                      --map_crs 32728
+                      --save_dir path/to/save_directory/
+```
+
+And there are many more options that can also be modified, by examining `csm_camera_plot --help`:
+
+```
+ $ csm_camera_plot --help
+Usage: csm_camera_plot [OPTIONS]
+
+Options:
+  --original_cameras TEXT         Original camera files, supplied as comma
+                                  separated list 'path/to/original_camera_1,path/to/original_camera_2'.
+                                  No default. Must be supplied.
+  --optimized_cameras TEXT        Optimized camera files, supplied as comma
+                                  separated list 'path/to/optimized_camera_1,path/to/optimized_camera_2'.
+                                  No default. Must be supplied.
+  --map_crs TEXT                  UTM EPSG code for map projection. If not
+                                  supplied, the map will be plotted in
+                                  original camera coordinates of EPSG:4978
+                                  (ECEF).
+  --title TEXT                    Optional short title to append to figure
+                                  output. Default: None.
+  --trim BOOLEAN                  Trim the beginning and end of the positions
+                                  plotted to the first and last camera image
+                                  lines. Default: True.
+  --shared_scales BOOLEAN         If True, the position and angle difference
+                                  scales are shared between for each camera.
+                                  Default: False.
+  --log_scale_positions BOOLEAN   If True, the position difference scales are
+                                  log scaled. Default: False.
+  --log_scale_angles BOOLEAN      If True, the angle difference scales are log
+                                  scaled. Default: False.
+  --upper_magnitude_percentile INTEGER
+                                  Percentile to use for the upper limit of the
+                                  mapview colorbars. Default: 95.
+  --figsize TEXT                  Figure size as width,height. Default: 20,15.
+  --save_dir TEXT                 Directory to save the figure. Default: None,
+                                  which does not save the figure.
+  --fig_fn TEXT                   Figure filename. Default:
+                                  csm_camera_plot_summary_plot.png.
+  --add_basemap BOOLEAN           If True, add a contextily basemap to the
+                                  figure, which requires internet connection.
+                                  Default: False.
+```
+
+## Development
+
+### Install from source
+
+If you instead want to install the source code for e.g. developing the project:
+
+```
+$ git clone git@github.com:uw-cryo/asp_plot.git
+$ cd asp_plot
+$ conda env create -f environment.yml
+$ conda activate asp_plot
+$ pre-commit install
+$ pip install -e .
+```
+
+**Please don't miss the `pre-commit install` step**, which does the linting prior to any commits using the `.pre-commit-config.yaml` file that is included in the repo.
+
+If you want to rebuild the package, for instance while testing changes to the CLI tool, then uninstall and reinstall via:
+
+```
+$ pip uninstall asp_plot
+$ pip install -e .
+```
+
+### Run tests
+
+To ensure the install was successful, tests can be run with:
+
+```
+$ pytest
+```
+
+When you add a new feature, add some test coverage as well.
+
+### Add a feature
+
+Checkout main and pull to get the latest changes:
+
+```
+$ git checkout main
+$ git pull
+```
+
+Create a feature branch:
+
+```
+$ git checkout -b my_feature
+```
+
+Make as many commits as you like while you work. When you are ready, submit the changes as a pull request.
+
+After some review, you may be asked to add a few tests for the new functionality. Add those in the `tests/` folder, and check that they work with:
+
+```
+$ pytest -s
+```
+
+When review of the pull request is complete [_squash_ and merge](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/about-merge-methods-on-github#squashing-your-merge-commits) the changes to `main`, combining your commits into a single, descriptive commit of _why_ the changes were made.
+
+### Package and upload
+
+Update version in `pyproject.toml`, then:
+
+```
+rm -rf dist/
+python3 -m pip install --upgrade build
+python3 -m build
+python3 -m pip install --upgrade twine
+python3 -m twine upload dist/*
+```
