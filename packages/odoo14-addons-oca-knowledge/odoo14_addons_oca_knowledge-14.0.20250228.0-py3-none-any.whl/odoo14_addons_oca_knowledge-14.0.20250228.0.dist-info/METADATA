@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: odoo14-addons-oca-knowledge
+Version: 14.0.20250228.0
+Summary: Meta package for oca-knowledge Odoo addons
+Classifier: Programming Language :: Python
+Classifier: Framework :: Odoo
+Classifier: Framework :: Odoo :: 14.0
+Requires-Dist: odoo14-addon-attachment-category
+Requires-Dist: odoo14-addon-attachment-preview
+Requires-Dist: odoo14-addon-attachment-zipped-download
+Requires-Dist: odoo14-addon-document-page
+Requires-Dist: odoo14-addon-document-page-access-group
+Requires-Dist: odoo14-addon-document-page-approval
+Requires-Dist: odoo14-addon-document-page-group
+Requires-Dist: odoo14-addon-document-page-portal
+Requires-Dist: odoo14-addon-document-page-project
+Requires-Dist: odoo14-addon-document-page-reference
+Requires-Dist: odoo14-addon-document-page-tag
+Requires-Dist: odoo14-addon-document-url
+Requires-Dist: odoo14-addon-knowledge
+
+UNKNOWN
