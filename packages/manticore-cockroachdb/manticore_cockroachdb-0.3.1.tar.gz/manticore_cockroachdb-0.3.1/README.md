@@ -1,0 +1,338 @@
+# Manticore CockroachDB
+
+A robust Python client library for CockroachDB that provides both synchronous and asynchronous interfaces, with features like connection pooling, transaction management, migrations, and high-level CRUD abstractions.
+
+## Features
+
+- **Dual interfaces**: Synchronous and asynchronous APIs for flexible integration
+- **Connection pooling**: Efficient database connection management
+- **Transaction management**: Simplified transaction handling with automatic retries
+- **Database migrations**: Forward and rollback migrations for schema management
+- **High-level abstractions**: Table classes for simplified CRUD operations
+- **Developer-friendly**: Intuitive APIs designed for developer productivity
+- **CockroachDB optimized**: Built with CockroachDB's distributed nature in mind
+
+## Installation
+
+```bash
+pip install manticore-cockroachdb
+```
+
+## Quick Start
+
+### Synchronous Usage
+
+```python
+from manticore_cockroachdb.database import Database
+from manticore_cockroachdb.crud.table import Table
+
+# Connect to database
+db = Database(database="my_database")
+
+# Create a table
+users_schema = {
+    "id": "UUID PRIMARY KEY DEFAULT gen_random_uuid()",
+    "name": "TEXT NOT NULL",
+    "email": "TEXT UNIQUE NOT NULL"
+}
+db.create_table("users", users_schema)
+
+# Create a Table instance for easier CRUD operations
+users = Table("users", db=db)
+
+# Create a user
+user = users.create({
+    "name": "John Doe",
+    "email": "john@example.com"
+})
+
+# Read the user
+retrieved_user = users.read(user["id"])
+
+# Update the user
+updated_user = users.update(user["id"], {"name": "Jane Doe"})
+
+# Delete the user
+deleted = users.delete(user["id"])
+
+# Close the database connection
+db.close()
+```
+
+### Asynchronous Usage
+
+```python
+import asyncio
+from manticore_cockroachdb.async_database import AsyncDatabase
+from manticore_cockroachdb.crud.async_table import AsyncTable
+
+async def main():
+    # Connect to database
+    db = AsyncDatabase(database="my_database")
+    await db.connect()
+    
+    try:
+        # Create a table
+        users_schema = {
+            "id": "UUID PRIMARY KEY DEFAULT gen_random_uuid()",
+            "name": "TEXT NOT NULL",
+            "email": "TEXT UNIQUE NOT NULL"
+        }
+        await db.create_table("async_users", users_schema)
+        
+        # Create a Table instance
+        users = AsyncTable("async_users", db=db)
+        await users.initialize()
+        
+        # Create a user
+        user = await users.create({
+            "name": "John Doe",
+            "email": "john@example.com"
+        })
+        
+        # Read the user
+        retrieved_user = await users.read(user["id"])
+        
+        # Update the user
+        updated_user = await users.update(user["id"], {"name": "Jane Doe"})
+        
+        # Delete the user
+        deleted = await users.delete(user["id"])
+    
+    finally:
+        # Close the database connection
+        await db.close()
+
+# Run the async example
+asyncio.run(main())
+```
+
+## Database Migrations
+
+### Synchronous Migrations
+
+```python
+from manticore_cockroachdb.database import Database
+from manticore_cockroachdb.migration import Migration
+
+# Connect to database
+db = Database(database="my_database")
+
+# Create migration instance
+migration = Migration(db, migrations_dir="./migrations")
+
+# Create a migration
+migration.create_migration(
+    "create users table",
+    """
+    CREATE TABLE users (
+        id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+        name TEXT NOT NULL,
+        email TEXT UNIQUE NOT NULL
+    );
+    """,
+    "DROP TABLE users;"
+)
+
+# Apply migrations
+applied = migration.migrate()
+print(f"Applied {applied} migrations")
+
+# Rollback a migration
+rollback_count = migration.rollback(count=1)
+print(f"Rolled back {rollback_count} migrations")
+```
+
+### Asynchronous Migrations
+
+```python
+import asyncio
+from manticore_cockroachdb.async_database import AsyncDatabase
+from manticore_cockroachdb.async_migration import AsyncMigrator
+
+async def main():
+    # Connect to database
+    db = AsyncDatabase(database="my_database")
+    await db.connect()
+    
+    try:
+        # Create migration instance
+        migration = AsyncMigrator(db, migrations_dir="./migrations")
+        
+        # Initialize the migrator (creates the _migrations table)
+        await migration.initialize()
+        
+        # Create a migration
+        await migration.create_migration(
+            "create async users table",
+            """
+            CREATE TABLE async_users (
+                id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+                name TEXT NOT NULL,
+                email TEXT UNIQUE NOT NULL
+            );
+            """,
+            "DROP TABLE async_users;"
+        )
+        
+        # Apply migrations
+        await migration.migrate()
+        print("Migrations applied successfully")
+        
+        # Method 1: Revert using migrate with target_version
+        # This will revert to version 0 (before any migrations)
+        await migration.migrate(target_version=0)
+        print("Reverted all migrations using migrate method")
+        
+        # Method 2: Manual migration reversion
+        # This approach gives you more control over the reversion process
+        migrations = await migration.load_migrations()
+        last_migration = max(migrations, key=lambda m: m.version)
+        
+        # Execute the down SQL directly
+        if last_migration.down_sql:
+            await db.execute(last_migration.down_sql)
+            await db.execute(
+                "DELETE FROM _migrations WHERE version = %s",
+                (last_migration.version,)
+            )
+            print(f"Manually reverted migration V{last_migration.version}")
+    
+    finally:
+        await db.close()
+
+# Run the async example
+asyncio.run(main())
+```
+
+## Advanced Usage
+
+### Transactions
+
+```python
+from manticore_cockroachdb.database import Database
+
+# Connect to database
+db = Database(database="my_database")
+
+# Define transaction operation
+def transfer_money(conn):
+    with conn.cursor() as cur:
+        # Deduct from one account
+        cur.execute(
+            "UPDATE accounts SET balance = balance - 100 WHERE id = %s",
+            ("account1",)
+        )
+        
+        # Add to another account
+        cur.execute(
+            "UPDATE accounts SET balance = balance + 100 WHERE id = %s",
+            ("account2",)
+        )
+        
+        # Get updated balances
+        cur.execute(
+            "SELECT * FROM accounts WHERE id IN (%s, %s)",
+            ("account1", "account2")
+        )
+        return cur.fetchall()
+
+# Run the transaction with automatic retries
+result = db.run_in_transaction(transfer_money)
+```
+
+### Batch Operations
+
+```python
+from manticore_cockroachdb.crud.table import Table
+from manticore_cockroachdb.database import Database
+
+# Connect to database
+db = Database(database="my_database")
+users = Table("users", db=db)
+
+# Batch create
+users_to_create = [
+    {"name": "User 1", "email": "user1@example.com"},
+    {"name": "User 2", "email": "user2@example.com"},
+    {"name": "User 3", "email": "user3@example.com"},
+]
+created_users = users.batch_create(users_to_create)
+
+# Batch update
+for user in created_users:
+    user["name"] = user["name"] + " (Updated)"
+updated_users = users.batch_update(created_users)
+```
+
+## Environment Variables
+
+- `DATABASE_URL`: Database connection URL in format `postgresql://user:password@host:port/dbname?sslmode=mode`
+
+## Examples
+
+The package includes several examples to help you get started:
+
+### Simple Example
+
+A basic example demonstrating the core functionality of the package:
+- Connecting to a database
+- Creating a table
+- Performing CRUD operations
+- Using transactions
+
+See the full example in [examples/simple_example.py](examples/simple_example.py).
+
+### Async Example
+
+An asynchronous example demonstrating the async features of the package:
+- Connecting to a database asynchronously
+- Creating a table
+- Performing CRUD operations with async/await
+- Using async transactions
+
+See the full example in [examples/async_example.py](examples/async_example.py).
+
+### Authentication System
+
+The package includes a complete authentication system example that demonstrates:
+- User registration and login
+- JWT token-based authentication
+- Session management
+- Secure password hashing
+
+```python
+from manticore_cockroachdb import Database, Table, ValidationError
+import jwt
+import datetime
+from uuid import UUID, uuid4
+
+# Initialize auth system
+auth = AuthSystem()
+
+# Register a new user
+user = auth.register("testuser", "password123")
+print(f"Registered user: {user}")
+
+# Login
+login_data = auth.login("testuser", "password123")
+print(f"Login successful: {login_data}")
+
+# Verify token
+user_data = auth.verify_token(login_data["token"])
+print(f"Token verified, user data: {user_data}")
+
+# Logout
+auth.logout(login_data["token"])
+print("Logout successful")
+```
+
+See the full example in [examples/auth_system.py](examples/auth_system.py).
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details. 
