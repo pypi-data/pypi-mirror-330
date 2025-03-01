@@ -1,0 +1,69 @@
+[project]
+name = "pysap-fmri"
+description = "Python Sparse data Analysis Package external fMRI plugin."
+authors = [{name="Pierre-antoine Comby", email="pierre-antoine.comby@crans.org"}]
+readme = "README.rst"
+
+dependencies = ["modopt", "numpy", "tqdm", "joblib", "scipy", "pywavelets", "mri-nufft[cufinufft]"]
+dynamic = ["version"]
+
+[project.optional-dependencies]
+test = ["pytest", "pytest-cov", "pytest-xdist", "pytest-sugar"]
+doc = ["pydata-sphinx-theme", "numpydoc", "sphinx_gallery", "sphinx", "sphinx-autoapi"]
+dev = ["black", "isort", "ruff"]
+
+[build-system]
+requires = ["setuptools", "setuptools-scm[toml]", "wheel"]
+
+######################
+# Tool configuration #
+######################
+
+[tool.setuptools_scm]
+write_to = "src/fmri/_version.py"
+version_scheme = "python-simplified-semver"
+local_scheme="no-local-version"
+fallback_version="v99-dev"
+
+
+
+#linting using ruff
+[tool.ruff]
+extend-exclude = [ "example_*.py" ]
+[tool.ruff.lint]
+select = ["E", "F", "B", "Q", "UP", "D"]
+ignore = [
+"B905", #zip() without an explicit strict= parameter
+"B028", #No explicit stacklevel keyword argument found
+]
+
+[tool.ruff.lint.pydocstyle]
+convention="numpy"
+
+[tool.coverage.run]
+omit = ["*tests*"]
+
+[tool.coverage.report]
+precision = 2
+exclude_lines = ["pragma: no cover", "raise NotImplementedError"]
+
+# Formatting using black.
+[tool.black]
+
+[tool.isort]
+profile = "black"
+
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = [
+    "--cov=denoiser",
+    "--cov-report=term-missing",
+]
+
+[tool.pylsp-mypy]
+enabled = false
+live_mode = false
+
+[tool.mypy]
+enabled = false
