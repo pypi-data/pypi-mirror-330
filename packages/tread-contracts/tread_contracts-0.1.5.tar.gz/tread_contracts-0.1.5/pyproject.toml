@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "tread-contracts"
+version = "0.1.5"
+description = ""
+authors = ["n-tread <n-tread@users.noreply.github.com>"]
+readme = "README.md"
+packages = [{include = "tread_contracts"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+web3 = "^7.1.0"
+eth-typing = "^5.0.0"
+requests = "^2.32.3"
+
+[tool.poetry.group.dev.dependencies]
+python-dotenv = "^1.0.1"
+jedi-language-server = "^0.41.4"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
