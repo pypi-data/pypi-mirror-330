@@ -1,0 +1,52 @@
+[project]
+name = "mondaytoframe"
+version = "0.1.0"
+description = "This python package helps converting data between the Monday API and Dataframes"
+readme = "README.md"
+authors = [
+    { name = "Bouke Postma", email = "33422940+boukepostma@users.noreply.github.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "monday>=2.0.1",
+    "pandas>=2.2.3",
+    "phonenumbers>=8.13.55",
+    "pycountry>=24.6.1",
+    "pydantic>=2.10.6",
+    "pydantic-extra-types>=2.10.2",
+    "requests>=2.32.3",
+]
+
+[project.urls]
+Homepage = "https://github.com/boukepostma/mondaytoframe"
+Repository = "https://github.com/boukepostma/mondaytoframe.git"
+Documentation = "https://github.com/boukepostma/mondaytoframe#readme"
+Issues = "https://github.com/boukepostma/mondaytoframe/issues"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "deepdiff>=8.2.0",
+    "graphql-core>=3.2.6",
+    "mypy>=1.15.0",
+    "pre-commit>=4.1.0",
+    "pytest>=8.3.4",
+    "pytest-mock>=3.14.0",
+    "requests>=2.32.3",
+    "ruff>=0.9.6",
+    "types-requests>=2.32.0.20241016",
+]
+
+[tool.mypy]
+mypy_path = "src"
+files = ["src/mondaytoframe", "tests"]
+strict = false
+ignore_missing_imports = true
+plugins = ['pydantic.mypy']
+disable_error_code = [
+    "no-untyped-def",  # Ignore missing type annotations for functions
+]
+
