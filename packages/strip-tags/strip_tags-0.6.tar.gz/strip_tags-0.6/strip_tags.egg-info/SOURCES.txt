@@ -1,0 +1,14 @@
+LICENSE
+README.md
+setup.py
+strip_tags/__init__.py
+strip_tags/__main__.py
+strip_tags/cli.py
+strip_tags/lib.py
+strip_tags.egg-info/PKG-INFO
+strip_tags.egg-info/SOURCES.txt
+strip_tags.egg-info/dependency_links.txt
+strip_tags.egg-info/entry_points.txt
+strip_tags.egg-info/requires.txt
+strip_tags.egg-info/top_level.txt
+tests/test_strip_tags.py
