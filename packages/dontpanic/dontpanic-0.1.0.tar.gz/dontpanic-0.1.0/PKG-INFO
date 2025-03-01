@@ -1,0 +1,57 @@
+Metadata-Version: 2.2
+Name: dontpanic
+Version: 0.1.0
+Summary: Suppress Ctrl+C traceback spam.
+Home-page: https://github.com/thunderpoot/dontpanic
+Author: T E Vaughan
+Author-email: T E Vaughan <underwood@underwood.network>
+License: MIT
+Project-URL: Homepage, https://github.com/thunderpoot/dontpanic
+Project-URL: Repository, https://github.com/thunderpoot/dontpanic
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: System :: Shells
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+
+# 🚀 dontpanic
+
+A very simple Python module to suppress `KeyboardInterrupt` traceback spam when pressing `^C`.
+
+## Why?
+By default, Python screams at you when you press `^C` to interrupt a script. (Proper languages like [Perl](https://www.perl.org/) don't do this.)
+
+This module catches `KeyboardInterrupt` signals and handles them gracefully.
+
+### Installation
+
+```
+pip install dontpanic
+```
+
+### Usage
+
+```python
+import dontpanic
+
+print('Press control-C to interrupt this program')
+while True:
+    pass  # Press ^C to interrupt
+```
+
+... or with a custom message:
+
+```python
+import dontpanic
+
+dontpanic.set_message("Exiting...")
+
+print('Press control-C to interrupt this program')
+while True:
+    pass  # Press ^C to interrupt
+```
+
+![Don't Panic](https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Don%27t_Panic.svg/512px-Don%27t_Panic.svg.png)
