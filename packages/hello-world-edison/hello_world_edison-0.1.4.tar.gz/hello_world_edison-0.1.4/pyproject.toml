@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hello_world_edison"
+version = "0.1.4"
+authors = [
+    { name = "Edison", email = "ERAMREG@proteccion.com.co" }
+]
+description = "Una librería simple que dice ¡Hola, mundo!"
+readme = "README.md"
+license = { file = "LICENSE" }
+dependencies = ["numpy"]
+requires-python = ">=3.7"
