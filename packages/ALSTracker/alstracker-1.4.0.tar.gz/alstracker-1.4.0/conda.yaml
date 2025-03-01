@@ -1,0 +1,19 @@
+name: alstracker
+channels:
+  - conda-forge
+  - nodefaults
+dependencies:
+  - fastapi
+  - python=3.12
+  - gunicorn
+  - uvicorn
+  - pymc
+  - bambi
+  - statsmodels
+  - numpy
+  - pandas
+  - seaborn
+  - openpyxl
+  - pip
+  - pip:
+    - markdown-pdf
