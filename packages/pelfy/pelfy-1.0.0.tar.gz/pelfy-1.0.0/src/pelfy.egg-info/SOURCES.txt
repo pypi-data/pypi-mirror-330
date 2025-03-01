@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+src/pelfy/__init__.py
+src/pelfy/fields_data.py
+src/pelfy/output_formatter.py
+src/pelfy.egg-info/PKG-INFO
+src/pelfy.egg-info/SOURCES.txt
+src/pelfy.egg-info/dependency_links.txt
+src/pelfy.egg-info/top_level.txt
+tests/test_example_elfs.py
