@@ -1,0 +1,5 @@
+include LICENSE
+include README.md
+recursive-include src/LimeSoDa/data *.npz
+recursive-include tests *.py
+recursive-include examples *.py
