@@ -1,0 +1,74 @@
+[project]
+name = "inopaicli"
+version = "1.1.1"
+authors = [
+  { name="Daniel Rech", email="dr@netsyno.com" },
+  { name="Ryan Arbai", email="ra@netsyno.com" },
+]
+description = "Cli interface to execute inopai related tasks"
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+]
+dependencies = [
+    "tablib >=3.3.0",
+    "openpyxl >=3.0.10",
+    "requests >=2.28.2",
+    "aiohttp[speedups] >=3.11.11",
+    "python-dotenv >=0.21.1",
+]
+
+[project.scripts]
+inopaicli = "inopaicli.manage:init"
+
+[project.urls]
+"Homepage" = "https://inopai.com"
+
+[project.optional-dependencies]
+dev = [
+    "pylint ~=2.14.0",
+    "toml ~=0.10.2",
+    "yapf ~=0.32.0",
+]
+test = [
+    "pytest ~=7.1.0",
+    "pytest-cov ~=4.0.0",
+]
+doc = []
+
+[tool.pytest.ini_options]
+addopts = "--cov=inopaicli --cov-report html --cov-report term-missing --cov-fail-under 95"
+
+[tool.coverage.run]
+source = ["src"]
+
+[tool.yapf]
+blank_line_before_nested_class_or_def = true
+column_limit = 88
+dedent_closing_brackets = true
+split_all_top_level_comma_separated_values = true
+split_penalty_import_names = 5
+
+[tool.pylint]
+max-line-length = 88
+ignore-long-lines = "^(import |from |DESCRIPTION|    \"|    '|        \"|        '|        help)"
+disable = [
+    "C0103", # (invalid-name)
+    "C0114", # (missing-module-docstring)
+    "C0115", # (missing-class-docstring)
+    "C0116", # (missing-function-docstring)
+    "R0903", # (too-few-public-methods)
+    "R0913", # (too-many-arguments)
+    "R0914", # (too-many-locals)
+    "W0105", # (pointless-string-statement)
+    "W0613", # (unused-argument)
+]

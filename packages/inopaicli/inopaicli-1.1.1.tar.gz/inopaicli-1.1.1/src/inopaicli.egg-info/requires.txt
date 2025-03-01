@@ -1,0 +1,16 @@
+tablib>=3.3.0
+openpyxl>=3.0.10
+requests>=2.28.2
+aiohttp[speedups]>=3.11.11
+python-dotenv>=0.21.1
+
+[dev]
+pylint~=2.14.0
+toml~=0.10.2
+yapf~=0.32.0
+
+[doc]
+
+[test]
+pytest~=7.1.0
+pytest-cov~=4.0.0
