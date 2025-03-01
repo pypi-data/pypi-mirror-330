@@ -1,0 +1,25 @@
+os: linux
+dist: jammy
+branches:
+  only:
+    - develop
+    - main
+
+# Testing stage
+before_script:
+  - sudo apt-get update
+  - sudo apt-get install -y awscli jq
+  - curl -LsSf https://astral.sh/uv/install.sh | sh
+  - uv python install 3.12
+  - uv sync
+  - CONSTELLATION_SECRET=$(aws secretsmanager get-secret-value --secret-id manifold-service-user-constellation-credentials --query SecretString --output text)
+  - export PYTEST_CONSTELLATION_USERNAME=$(jq -r '.username' <<< "$CONSTELLATION_SECRET")
+  - export PYTEST_CONSTELLATION_PASSWORD=$(jq -r '.password' <<< "$CONSTELLATION_SECRET")
+
+script:
+  - uv run pre-commit run --all-files --hook-stage=pre-push
+
+# Deploy
+deploy:
+  - provider: script
+    script: echo "coming soon..."

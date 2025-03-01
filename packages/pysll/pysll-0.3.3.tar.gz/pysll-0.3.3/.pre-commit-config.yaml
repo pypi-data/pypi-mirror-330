@@ -1,0 +1,31 @@
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+    -   id: end-of-file-fixer
+    -   id: trailing-whitespace
+-   repo: local
+    hooks:
+    -   id: pytest
+        stages: [pre-push]
+        types: [python]
+        name: pytest
+        entry: uv run pytest -n auto
+        language: system
+        pass_filenames: false
+        always_run: true
+    -   id: pyright
+        name: pyright
+        language: system
+        files: \.py$
+        entry: uv run pyright
+    -   id: ruff-format
+        name: format
+        language: system
+        files: \.py$
+        entry: uv run ruff format
+    -   id: ruff-lint
+        name: lint
+        language: system
+        files: \.py$
+        entry: uv run ruff check --fix
