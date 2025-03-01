@@ -1,0 +1,4 @@
+pydantic>=2,<3
+GitPython>=3.1.14,<4
+requests>=2,<3
+blocks-cli>=0.0.0,<1.0.0
