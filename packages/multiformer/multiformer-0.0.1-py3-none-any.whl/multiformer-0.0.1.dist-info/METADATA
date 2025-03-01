@@ -1,0 +1,42 @@
+Metadata-Version: 2.1
+Name: multiformer
+Version: 0.0.1
+Summary: Computer vision model for segmentation and depth for video data.
+Author-email: Kurt Stolle <k.h.w.stolle@gmail.com>
+Keywords: ai,computer vision,deep learning
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Requires-Python: >=3.12
+Description-Content-Type: text/markdown
+Requires-Dist: torch >=2.6
+Requires-Dist: torchvision
+Requires-Dist: unipercept
+Requires-Dist: unitrack
+Requires-Dist: laco
+Requires-Dist: tensordict
+Provides-Extra: docs
+Requires-Dist: sphinx ; extra == 'docs'
+Requires-Dist: sphinx-rtd-theme ; extra == 'docs'
+Requires-Dist: numpydoc ; extra == 'docs'
+Provides-Extra: notebooks
+Requires-Dist: jupyterlab ; extra == 'notebooks'
+Requires-Dist: ipywidgets ; extra == 'notebooks'
+Requires-Dist: ipykernel ; extra == 'notebooks'
+Requires-Dist: ipython-autotime ; extra == 'notebooks'
+Provides-Extra: tests
+Requires-Dist: hypothesis ; extra == 'tests'
+Requires-Dist: bandit[toml] ; extra == 'tests'
+Requires-Dist: check-manifest ; extra == 'tests'
+Requires-Dist: ruff ; extra == 'tests'
+Requires-Dist: pre-commit ; extra == 'tests'
+Requires-Dist: pytest ; extra == 'tests'
+Requires-Dist: pytest-sugar ; extra == 'tests'
+Requires-Dist: pytest-xdist ; extra == 'tests'
+Requires-Dist: pytest-benchmark ; extra == 'tests'
+Requires-Dist: pytest-cov ; extra == 'tests'
+Requires-Dist: pytest-mock ; extra == 'tests'
+Requires-Dist: pytest-runner ; extra == 'tests'
+Requires-Dist: mccabe ; extra == 'tests'
+
