@@ -1,0 +1,103 @@
+[project]
+name = 'duckboat'
+version = '0.16.0'
+description = 'A SQL-based Python dataframe library for ergonomic interactive data analysis and exploration.'
+authors = [
+    { name = 'AJ Friend', email = 'ajfriend@gmail.com' }
+]
+license = { file = 'LICENSE' }
+keywords = ['data-wrangling', 'duckdb', 'SQL', 'ETL', 'pipelines']
+readme = 'readme.md'
+requires-python = '>=3.9'
+
+dependencies = [
+    'duckdb',
+    'pyarrow',
+    'pandas',
+]
+
+[project.optional-dependencies]
+test = ['pytest', 'pytest-cov', 'ruff']
+dev = ['jupyterlab', 'ipykernel', 'jupyterlab_execute_time']
+docs = ['matplotlib']
+all = [
+    'duckboat[test]',
+    'duckboat[dev]',
+    'duckboat[docs]',
+    'polars',
+]
+
+[project.urls]
+homepage   = 'https://github.com/ajfriend/duckboat'
+repository = 'https://github.com/ajfriend/duckboat'
+documentation = 'https://ajfriend.github.io/duckboat'
+pypi = 'https://pypi.org/project/duckboat'
+
+[build-system]
+requires = ['hatchling']
+build-backend = 'hatchling.build'
+
+
+[tool.ruff]
+src = ['src']
+exclude = [
+    'notebooks/'
+]
+line-length = 88
+
+[tool.ruff.lint]
+flake8-quotes.inline-quotes = 'single'
+
+# https://docs.astral.sh/ruff/rules/
+preview = true  # https://docs.astral.sh/ruff/preview/#selecting-single-preview-rules
+select = [
+    'A',
+    # 'B',  # todo
+    # 'COM',  # todo
+    'E',
+    'F',
+    'Q',
+    'W',
+    # 'D',  # todo. this is nice!
+    # 'PL',  # todo. some interesting ideas
+    # 'DOC',  # todo: interesting
+]
+ignore = [
+    'E221',  # Multiple spaces before operator
+    'E231',  # Missing whitespace after ','
+    'E241',  # Multiple spaces after ','
+    'E251',  # Unexpected spaces around keyword / parameter equals
+    'E272',  # Multiple spaces before keyword
+    'E731',  # Do not assign a `lambda` expression, use a `def`
+    # 'PLR2004',
+    'A002',
+    'E226',  # Missing whitespace around arithmetic operator
+]
+
+[tool.ruff.lint.per-file-ignores]
+'*.ipynb' = [
+    'E501',  # Line too long (104 > 88)
+    'E305',
+    'E302',
+    'F821',
+    'W391',  # Extra newline at end of file
+]
+'test*.py' = [
+    # 'D',  # maybe just the need for docstring
+]
+'__init__.py' = [
+    'F401',
+]
+
+
+[tool.hatch.build.targets.sdist]
+include = [
+  'src/',
+]
+
+
+[tool.pytest.ini_options]
+addopts = "--cov=duckboat --cov=tests --cov-report=term-missing --cov-fail-under=100"
+
+[tool.coverage.run]
+omit = []
