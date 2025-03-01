@@ -1,0 +1,10 @@
+Metadata-Version: 2.1
+Name: eventbus_sdk
+Version: 1.0.1
+Summary: Internal SDK for event-driven microservices communication
+Home-page: https://github.com/WildWildLeads/eventbus
+Classifier: Programming Language :: Python :: 3
+Requires-Dist: celery
+Requires-Dist: kombu
+Requires-Dist: python-dotenv
+
