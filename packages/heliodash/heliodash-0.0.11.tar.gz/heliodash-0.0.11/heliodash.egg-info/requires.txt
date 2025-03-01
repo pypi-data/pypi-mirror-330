@@ -1,0 +1,11 @@
+streamlit
+pandas
+numpy
+matplotlib
+astropy[all]
+sunpy[all]
+ply
+beautifulsoup4
+
+[dev]
+ruff

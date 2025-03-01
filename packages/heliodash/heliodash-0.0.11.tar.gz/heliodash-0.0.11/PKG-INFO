@@ -1,0 +1,41 @@
+Metadata-Version: 2.2
+Name: heliodash
+Version: 0.0.11
+Summary: Heliosphere Dashboard (HelioDash) is an open-source tool for visualizing heliosphere-related data.
+Author: Mingyu Jeon
+Project-URL: Homepage, https://github.com/mgjeon/heliodash
+Project-URL: Repository, https://github.com/mgjeon/heliodash
+Project-URL: Issues, https://github.com/mgjeon/heliodash/issues
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: streamlit
+Requires-Dist: pandas
+Requires-Dist: numpy
+Requires-Dist: matplotlib
+Requires-Dist: astropy[all]
+Requires-Dist: sunpy[all]
+Requires-Dist: ply
+Requires-Dist: beautifulsoup4
+Provides-Extra: dev
+Requires-Dist: ruff; extra == "dev"
+
+# Heliosphere Dashboard (HelioDash)
+
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://heliodash.streamlit.app/) [![PyPI](https://img.shields.io/pypi/v/heliodash.svg)](https://pypi.org/pypi/heliodash/)
+   
+Heliosphere Dashboard (HelioDash) is an open-source tool for visualizing heliosphere-related data.
+
+## Running Locally
+
+Install the latest version of HelioDash:
+```
+pip install -U heliodash
+```
+
+Clone the repository and run the Streamlit app:
+```
+git clone https://github.com/mgjeon/heliodash
+cd heliodash
+streamlit run heliodash/app.py
+```
