@@ -1,0 +1,26 @@
+<minimalStructure>
+	<behaviorAlong>
+		<boundary>
+		  <longitudinal crossing=""/>
+		  <lateral>
+			<left crossing=""/>
+			<right crossing=""/>
+		  </lateral>
+		</boundary>
+		<reservation id="" type=""/>
+		<overtake permission=""/>
+		<speed max=""/>
+	</behaviorAlong>
+	<behaviorAgainst>
+		<boundary>
+		  <longitudinal crossing=""/>
+		  <lateral>
+			<left crossing=""/>
+			<right crossing=""/>
+		  </lateral>
+		</boundary>
+		<reservation id="" type=""/>
+		<overtake permission=""/>
+		<speed max=""/>
+	</behaviorAgainst>
+</minimalStructure>
