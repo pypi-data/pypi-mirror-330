@@ -1,0 +1,5 @@
+[console_scripts]
+trackrefiner-cli = Trackrefiner.cli:main
+trackrefiner-gui = Trackrefiner.gui:main
+trackrefiner-jitter-remover = Trackrefiner.utils.jitterRemover:main
+trackrefiner-track-editor = Trackrefiner.bacteriaTrackEditor:main
