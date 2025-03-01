@@ -1,0 +1,17 @@
+lightning-sdk>=0.1.56
+lightning-utilities
+joblib
+
+[extra]
+lightning>=2.0.0
+
+[test]
+coverage>=5.0
+pytest-cov
+pytest-mock
+pytest>=6.0
+pytorch-lightning>=2.0
+scikit-learn>=1.0
+
+[typing]
+mypy==1.15.0
