@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "curvanato"
+version = "1.2.0"
+description = "Anatomical curvature processing for medical images."
+readme = "README.md"
+authors = [
+    {name = "Brian B. Avants", email = "stnava@gmail.com"},
+    {name = "Dorian Pustina"}
+]
+keywords = ["curvanato", "caudate", "medical image processing"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "numpy",
+    "antspyx>=0.4.2",
+    "antspynet",
+    "antspyt1w>=0.9.4",
+    "antspymm",
+    "scikit-learn",
+    "requests",
+    "statsmodels",
+    "matplotlib"
+]
+
+[project.urls]
+homepage = "https://github.com/stnava/curvanato"
+
+[tool.setuptools.packages]
+find = { include = ["curvanato", "curvanato.*"] }
+
+[tool.setuptools.package-data]
+"curvanato" = ["data/*"]  
