@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+smsmobileapi_send_email/__init__.py
+smsmobileapi_send_email/email_sender.py
+smsmobileapi_send_email.egg-info/PKG-INFO
+smsmobileapi_send_email.egg-info/SOURCES.txt
+smsmobileapi_send_email.egg-info/dependency_links.txt
+smsmobileapi_send_email.egg-info/requires.txt
+smsmobileapi_send_email.egg-info/top_level.txt
+tests/test_email_sender.py
