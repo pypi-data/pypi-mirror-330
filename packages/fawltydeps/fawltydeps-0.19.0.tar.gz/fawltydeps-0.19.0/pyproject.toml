@@ -1,0 +1,247 @@
+[tool.poetry]
+name = "fawltydeps"
+version = "0.19.0"
+description = "Find undeclared and unused 3rd-party dependencies in your Python project."
+authors = [
+    "Maria Knorps <maria.knorps@tweag.io>",
+    "Nour El Mawass <nour.elmawass@tweag.io>",
+    "Johan Herland <johan.herland@tweag.io>",
+    "Vince Reuter <vince.reuter@tweag.io>",
+    "Zhihan Zhang <zhihan.zhang@tweag.io>",
+]
+readme = "README.md"
+license = "MIT"
+repository = "https://github.com/tweag/FawltyDeps"
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Software Development :: Quality Assurance",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Utilities",
+    "Typing :: Typed",
+]
+
+[tool.poetry.scripts]
+fawltydeps = "fawltydeps.main:main"
+
+[tool.poetry.dependencies]
+# These are the main dependencies for fawltydeps at runtime.
+# Do not add anything here that is only needed by CI/tests/linters/developers
+python = ">=3.8"
+importlib_metadata = ">=6.6.0"
+isort = [
+    # v6 drops support for Python v3.8:
+    {version = ">=5.10", python = ">=3.9"},
+    {version = ">=5.10,<6", python = "<3.9"},
+]
+packaging = ">=24.0"
+pip-requirements-parser = ">=32.0.1"
+pydantic = ">=1.10.4,<3.0.0"
+PyYAML = ">=6.0.1"
+tomli = {version = "^2.0.1", python = "<3.11"}
+
+# Optional dependencies, covered by .extras below:
+uv = {version = ">=0.1.6", optional = true}
+
+[tool.poetry.extras]
+uv = ["uv"]
+
+[tool.poetry.group.nox]
+optional = true
+
+[tool.poetry.group.nox.dependencies]
+nox = {version="^2024.03.02", extras=["uv"]}
+
+[tool.poetry.group.test]
+optional = true
+
+[tool.poetry.group.test.dependencies]
+hypothesis = "^6.68.2"
+pytest = "^7.1.0"
+
+[tool.poetry.group.lint]
+optional = true
+
+[tool.poetry.group.lint.dependencies]
+hypothesis = "^6.68.2"
+mypy = "^1.0.1"
+nox = "^2024.03.02"
+pytest = "^7.1.0"
+ruff = ">=0.3"
+types-PyYAML = ">=6.0.12.12"
+
+[tool.poetry.group.format]
+optional = true
+
+[tool.poetry.group.format.dependencies]
+codespell = "^2.2.4"
+ruff = ">=0.3"
+
+[tool.poetry.group.dev]
+optional = true
+
+[tool.poetry.group.dev.dependencies]
+# The dev group is a convenience group for FawltyDeps developers. When adding
+# something to the above groups (i.e. something that targets a specific purpose
+# (e.g. a CI action), consider whether it's also useful to have this available
+# in a developers environment
+codespell = "^2.2.4"
+hypothesis = "^6.68.2"
+mypy = "^1.0.1"
+nox = {version="^2024.03.02", extras=["uv"]}
+pytest = "^7.1.0"
+ruff = ">=0.3"
+
+[tool.poetry.group.docs]
+optional = true
+
+[tool.poetry.group.docs.dependencies]
+mkdocs = "*"
+mkdocs-material = "^9.5.49"
+
+[tool.mypy]
+files = ['*.py', 'fawltydeps/*.py', 'tests/*.py']
+plugins = ["pydantic.mypy"]
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_return_any = true
+warn_unreachable = true
+enable_error_code = ["ignore-without-code"]
+
+[[tool.mypy.overrides]]
+module = "fawltydeps.*"
+disallow_untyped_defs = true
+disallow_untyped_calls = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+disallow_any_unimported = true
+disallow_any_explicit = true
+disallow_any_generics = true
+disallow_subclassing_any = true
+implicit_optional = false
+strict_optional = true
+
+[tool.pytest.ini_options]
+minversion = 7.0
+markers = [
+    "integration: marks integration tests (disabled by default, enable with '-m integration')",
+]
+addopts = "-m 'not integration'"
+cache_dir = "~/.cache/pytest"
+
+[tool.ruff]
+target-version = "py37"
+extend-include = ["*.ipynb"]
+extend-exclude = [
+    "tests/sample_projects/legacy_encoding/big5.py",  # Fails with E902 (not UTF-8)
+]
+
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = [
+    # Ignore some unwanted checks:
+    "ANN10",  # Deprecated: Missing type annotation for self/cls in (class)method
+    "ANN204",  # Missing return type annotation for special method
+    "D104",  # Missing docstring in public package
+    "D105",  # Missing docstring in magic method
+    "D107",  # Missing docstring in `__init__`
+    "D203",  # one-blank-line-before-class conflicts with D211: no-blank-line-before-class
+    "D213",  # multi-line-summary-second-line conflicts with D212: multi-line-summary-first-line
+    "EM",  # Exception must not use a (f-)string literal, assign to variable first
+
+    # Probably not fixed so soon:
+    "FIX002",  # Line contains TODO, consider resolving the issue
+    "G004",  # Logging statement uses f-string
+    "PERF203",  # `try`-`except` within a loop incurs performance overhead
+    "TD",  # Ignore checks on TODO comments
+    "TRY003",  # Avoid specifying long messages outside the exception class
+    "TRY301",  # Abstract `raise` to an inner function
+    "TRY400",  # Use `logging.exception` instead of `logging.error`
+
+    # To be fixed in a larger refactoring of our type annotations
+    "FA100",  # Missing `from __future__ import annotations`, but uses `typing.*`
+    "TCH002",  # Move third-party import `...` into a type-checking block
+    "TCH003",  # Move standard library import `...` into a type-checking block
+    "UP006",  # Use `list` instead of `List` for type annotation
+    "UP007",  # Use `X | Y` for type annotations
+
+    # Ruff recommends avoiding these checks when using `ruff format`.
+    # Details: https://docs.astral.sh/ruff/formatter/#conflicting-lint-rules
+    "W191",  # tab-indentation
+    "E111",  # indentation-with-invalid-multiple
+    "E114",  # indentation-with-invalid-multiple-comment
+    "E117",  # over-indented
+    "D206",  # indent-with-spaces
+    "D300",  # triple-single-quotes
+    "Q000",  # bad-quotes-inline-string
+    "Q001",  # bad-quotes-multiline-string
+    "Q002",  # bad-quotes-docstring
+    "Q003",  # avoidable-escaped-quote
+    "COM812",  # missing-trailing-comma
+    "COM819",  # prohibited-trailing-comma
+    "ISC001",  # single-line-implicit-string-concatenation
+    "ISC002",  # multi-line-implicit-string-concatenation
+    "E501",  # line-too-long
+]
+
+[tool.ruff.lint.per-file-ignores]
+"noxfile.py" = [
+    "ANN",  # Missing type annotations
+    "D",  # Missing docstrings
+]
+"tests/sample_projects/*" = [
+    "F401",  # Allow unused imports in sample projects
+    "ICN001",  # `<module>` should be imported as `<mod>`
+    "INP001",  # File `...` is part of an implicit namespace package. Add an `__init__.py`.
+]
+"tests/*" = [
+    # Ignore some groups of checks in our test code
+    "ANN",  # Type annotations
+    "D10",  # Missing docstrings
+    "TCH00",  # Imports and type checking blocks
+
+    # Ignore some more specific checks in our test code
+    "C408",  # Unnecessary `dict` call (rewrite as a literal)
+    "D401",  # First line of docstring should be in imperative mood
+    "N802",  # Function name `...` should be lowercase
+    "N806",  # Variable `...` in function should be lowercase
+    "PLR0913",  # Too many arguments in function definition
+    "PT018",  # Assertion should be broken down into multiple parts
+    "S101",  # Use of `assert` detected
+    "S603",  # `subprocess` call: check for execution of untrusted input
+    "T201",  # `print` found
+]
+
+[tool.codespell]
+skip = ".git,.mypy_cache,.nox,.vscode,__pycache__,poetry.lock"
+builtin = "clear,rare,informal,usage,code,names"
+ignore-words-list = "jupyter,iff,THIRDPARTY"
+check-filenames = true
+uri-ignore-words-list = "*"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.fawltydeps]
+code = ["fawltydeps"]
+deps = ["pyproject.toml"]
+ignore_unused = [
+    "codespell",
+    "hypothesis",
+    "mypy",
+    "nox",
+    "pytest",
+    "ruff",
+    "types-PyYAML",
+    "uv",
+    "mkdocs",
+    "mkdocs-material"
+]
