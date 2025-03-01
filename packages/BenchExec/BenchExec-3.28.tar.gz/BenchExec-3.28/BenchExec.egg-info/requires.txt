@@ -1,0 +1,13 @@
+PyYAML>=3.12
+
+[dev]
+pytest
+lxml
+
+[dev:platform_system != "Windows"]
+pystemd>=0.7.0
+
+[systemd]
+
+[systemd:platform_system != "Windows"]
+pystemd>=0.7.0
