@@ -1,0 +1,43 @@
+@startuml
+class A {
+  int testAdd(intx,inty)
+  int testDiv(intx,inty)
+  int testMul(intx,inty)
+  int testSub(intx,inty)
+}
+class B {
+  int testAdd(intx,inty)
+  int testDiv(intx,inty)
+  int testMul(intx,inty)
+  int testSub(intx,inty)
+}
+class C {
+  T testAdd(Tx,Ty)
+  T testDiv(Tx,Ty)
+  T testMul(Tx,Ty)
+  T testSub(Tx,Ty)
+}
+class E {
+  int testAdd(intx,inty)
+  int testSub(intx,inty)
+  int testMul(intx,inty)
+  int testDiv(intx,inty)
+}
+class D {
+  void addA(Aa)
+  void addB(Bb)
+  void addC(C<int>c)
+}
+A <|-- E
+A --> A
+A --> D
+B --> A
+B --> D
+C --> A
+C --> D
+E --> A
+E --> D
+D --> A
+D --> B
+D --> C
+@enduml
