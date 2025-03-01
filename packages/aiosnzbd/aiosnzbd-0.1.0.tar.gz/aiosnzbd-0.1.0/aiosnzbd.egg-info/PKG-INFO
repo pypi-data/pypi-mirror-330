@@ -1,0 +1,78 @@
+Metadata-Version: 2.2
+Name: aiosnzbd
+Version: 0.1.0
+Summary: Complete Asynchronous API wrapper for the usenet downloading tool SABnzbd
+Author: Andrews Jack
+Author-email: 
+License: MIT
+Keywords: sabnzbd async client api wrapper
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: httpx
+Requires-Dist: urllib3
+Dynamic: author
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: keywords
+Dynamic: license
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# aiosnzbd
+
+`aiosnzbd` is a lightweight and easy-to-use Asynchronous Python library that simplifies interactions with the SABnzbd API. It provides a convenient way to integrate SABnzbd functionality into your asynchronous Python applications, allowing you to manage and automate NZB downloads programmatically.
+
+## Features
+
+- Authenticate using your API key.
+- Access SABnzbd's API endpoints with minimal setup.
+- Includes All Functionalities
+
+
+## Installation
+
+Install the library using pip:
+
+```bash
+pip install aiosnzbd
+```
+
+## Usage
+
+Here's a quick example of how to use the library:
+
+```python
+
+from aiosnzbd import SabnzbdClient
+import asyncio
+
+async def add_download_(file_path):
+	client = SabnzbdClient(host="http://localhost", api_key="your_api_key")
+
+	add_nzb = await client.add_uri(file=nzb_file)
+
+	progress = await client.get_downloads(nzo_ids=add_nzb.get("nzo_ids")[0])
+
+	print(progress)
+
+	await client.close()
+
+
+nzb_file = "file.nzb"
+asyncio.run(add_download_(nzb_file))
+
+```
+
+## Requirements
+
+- Python 3.9+
+
+## Credits
+
+This package was inspired by and built upon the work of **anasty17**.
