@@ -1,0 +1,14 @@
+name: metator
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - python<3.13
+  - micomplete
+  - bowtie2
+  - bwa
+  - samtools
+  - prodigal
+  - hmmer
+  - openjdk
