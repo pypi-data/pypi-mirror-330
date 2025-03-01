@@ -1,0 +1,53 @@
+Metadata-Version: 2.1
+Name: terminaide
+Version: 0.0.1
+Summary: Serve Python CLI applications in the browser using ttyd
+Home-page: https://github.com/anotherbazeinthewall/terminaide
+License: MIT
+Author: Alex Basile
+Author-email: basileaw@gmail.com
+Requires-Python: >=3.12,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Dist: chatline (>=0.0.5)
+Requires-Dist: fastapi (>=0.104.0)
+Requires-Dist: httpx (>=0.25.0)
+Requires-Dist: jinja2 (>=3.1.2)
+Requires-Dist: pydantic (>=2.4.2)
+Requires-Dist: uvicorn (>=0.24.0)
+Requires-Dist: websockets (>=12.0)
+Project-URL: Repository, https://github.com/anotherbazeinthewall/terminaide
+Description-Content-Type: text/markdown
+
+# terminaide
+
+A Python package for serving CLI applications in the browser using ttyd.
+
+## Installation
+
+```bash
+pip install terminaide
+```
+
+## Usage
+
+```python
+from fastapi import FastAPI
+from terminaide import serve_tty
+
+app = FastAPI()
+
+serve_tty(app, client_script="path/to/your/script.py")
+```
+
+## Development
+
+```bash
+# Install dependencies
+poetry install
+
+# Run test server
+poetry run python test-server/main.py
+```
