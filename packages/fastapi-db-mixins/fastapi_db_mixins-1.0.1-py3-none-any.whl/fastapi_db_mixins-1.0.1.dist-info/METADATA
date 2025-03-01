@@ -1,0 +1,8 @@
+Metadata-Version: 2.2
+Name: fastapi_db_mixins
+Version: 1.0.1
+Summary: FastAPI database mixins
+License-File: LICENSE
+Requires-Dist: sqlalchemy
+Dynamic: requires-dist
+Dynamic: summary
