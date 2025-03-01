@@ -1,0 +1,18 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "fastcms"
+authors = [
+    { name = "Azat (@azataiot)", email = "8280770+azataiot@users.noreply.github.com " },
+]
+readme = "README.md"
+license = { file = "LICENSE" }
+classifiers = [
+    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+]
+dynamic = ["version", "description"]
+
+[project.urls]
+Home = "https://azat.cc "
