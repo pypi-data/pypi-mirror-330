@@ -1,0 +1,13 @@
+{% if debug %}<!-- django_notifications/admin/snippets/subject.html -->{% endif %}
+{% load static i18n %}
+{{ object.subject }}<br>
+{% if object.sent_at %}
+  {% translate "Sent" as sent_text %}
+  <span {# djLint:off #}style="white-space: nowrap;"{# djLint:on #}>
+    <img src="{% static "admin/img/icon-yes.svg" %}" alt="{{ sent_text }}" title="{{ sent_text }}">
+    {{ sent_text }} {{ object.sent_at|date:"d/m/y H:i" }}
+  </span>
+{% else %}
+  {% translate "Not sent" as sent_text %}
+  <img src="{% static "admin/img/icon-no.svg" %}" alt="{{ sent_text }}" title="{{ sent_text }}">&nbsp;{{ sent_text }}
+{% endif %}

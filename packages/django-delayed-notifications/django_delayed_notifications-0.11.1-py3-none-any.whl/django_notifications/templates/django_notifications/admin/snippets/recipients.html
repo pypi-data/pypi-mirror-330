@@ -1,0 +1,18 @@
+{% if debug %}<!-- django_notifications/templates/notifications/admin/snippets/recipients.html -->{% endif %}
+{% load i18n %}
+{% if object.recipients.all %}
+  <section>
+    <h4>{% translate "Users" %}</h4>
+    <ul {# djLint:off #}style="list-style-type: none; list-style-position: outside;"{# djLint:on #}>
+      {% for recipient in object.recipients.all %}
+        <li>{{ recipient.get_full_name|default:recipient.username }}</li>
+      {% endfor %}
+    </ul>
+  </section>
+{% endif %}
+{% if object.email_recipients %}
+  <section>
+    <h4>{% translate "Emails" %}</h4>
+    {{ object.email_recipients|linebreaksbr }}
+  </section>
+{% endif %}
