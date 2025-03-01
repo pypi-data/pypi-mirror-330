@@ -1,0 +1,25 @@
+Metadata-Version: 2.2
+Name: llm-req
+Version: 0.1.5
+Summary: llm req client
+Home-page: https://gitee.com/dark.H/llm-cli.git
+Author: auth
+Author-email: xxx@gmail.com
+License: MIT
+Requires-Dist: requests
+Requires-Dist: aiohttp
+Requires-Dist: loguru
+Requires-Dist: tqdm
+Provides-Extra: server
+Requires-Dist: pandas; extra == "server"
+Requires-Dist: flask; extra == "server"
+Requires-Dist: loguru; extra == "server"
+Requires-Dist: flask_socketio; extra == "server"
+Requires-Dist: flask_sqlalchemy; extra == "server"
+Dynamic: author
+Dynamic: author-email
+Dynamic: home-page
+Dynamic: license
+Dynamic: provides-extra
+Dynamic: requires-dist
+Dynamic: summary
