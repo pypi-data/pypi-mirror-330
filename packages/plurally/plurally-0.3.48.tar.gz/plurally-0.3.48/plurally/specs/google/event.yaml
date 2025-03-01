@@ -1,0 +1,80 @@
+openapi: 3.0.3
+info:
+  title: Google Calendar API
+  version: 1.0.0
+  description: API to create events in a Google Calendar.
+servers:
+  - url: https://www.googleapis.com/calendar/v3
+paths:
+  /calendars/primary/events:
+    post:
+      summary: Creates an event in the specified calendar
+      operationId: insertEvent
+      parameters:
+        - name: sendUpdates
+          type: string
+          in: query
+          required: true
+          schema:
+            type: string
+            enum:
+              - all
+          description: Whether to send notifications about the event update.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Event'
+      responses:
+        '200':
+          description: Event created successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Event'
+      security:
+        - plurally_google:
+            - https://www.googleapis.com/auth/calendar.events.owned
+components:
+  schemas:
+    Event:
+      type: object
+      required:
+        - start
+        - end
+      properties:
+        start:
+          type: object
+          properties:
+            dateTime:
+              type: string
+              format: date-time
+            timeZone:
+              type: string
+              description: The time zone of the event start time.
+        end:
+          type: object
+          properties:
+            dateTime:
+              type: string
+              format: date-time
+            timeZone:
+              type: string
+              description: The time zone of the event end time.
+        summary:
+          type: string
+          description: Title of the event.
+        description:
+          type: string
+          description: Description of the event.
+        attendees:
+          type: array
+          items:
+            type: object
+            properties:
+              email:
+                type: string
+                format: email
+              displayName:
+                type: string
