@@ -1,0 +1,25 @@
+Metadata-Version: 2.4
+Name: snRNAtools
+Version: 0.3.1
+Summary: A Python package utils to support scanpy usage and enrichment and network analysis given gene list
+Project-URL: Homepage, https://github.com/brainfo/snRNAtools
+Project-URL: Issues, https://github.com/brainfo/snRNAtools/issues
+Author-email: brainfo <scilavisher@gmail.com>
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+
+#snRNAtools
+
+This is for scRNAseq data analysis where
+## gene level analysis
+- Plot the bar output from gene ontology enrichment analysis
+- Network analysis given any edge list
+## scanpy support
+utils for handy using scanpy
+
+The zarr version should be below 3. Likely 2.18.2.
+
+usage: import sc_utils.scanpy_utils as scu

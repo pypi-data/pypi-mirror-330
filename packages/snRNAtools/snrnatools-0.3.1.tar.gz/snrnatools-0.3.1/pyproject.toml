@@ -1,0 +1,22 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+[project]
+name = 'snRNAtools'
+version='0.3.1'
+description='A Python package utils to support scanpy usage and enrichment and network analysis given gene list'
+authors = [
+  { name="brainfo", email="scilavisher@gmail.com" },
+]
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+[tool.hatch.build.targets.wheel]
+packages = ["sc_utils", "gene_level"]
+[project.urls]
+Homepage = "https://github.com/brainfo/snRNAtools"
+Issues = "https://github.com/brainfo/snRNAtools/issues"
