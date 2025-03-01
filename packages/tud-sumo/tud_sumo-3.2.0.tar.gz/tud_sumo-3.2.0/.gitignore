@@ -1,0 +1,10 @@
+*.egg-info
+*.py[cod]
+*.xml
+!*.add.xml
+!*.net.xml
+!*.rou.xml
+/dist
+dev/*
+build/*
+scenarios.py
