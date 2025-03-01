@@ -1,0 +1,4 @@
+[console_scripts]
+CNRein = CNRein.pipeline:scriptRunEverything
+CNReinBasicRespondCheck = CNRein.pipeline:respondCheck
+CNReinSecondRespondCheck = CNRein.pipeline:scriptCheck
