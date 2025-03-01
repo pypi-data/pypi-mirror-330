@@ -1,0 +1,13 @@
+{
+    "config": {
+        "step": {
+            "user": {
+                "data_description": {
+                    "password": "The password of the Fibaro hub user.",
+                    "url": "The URL of the Fibaro hub in the format `http(s)://IP`.",
+                    "username": "The username of the Fibaro hub user."
+                }
+            }
+        }
+    }
+}

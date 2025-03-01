@@ -1,0 +1,12 @@
+{
+    "entity": {
+        "sensor": {
+            "ambient_humidity_status": {
+                "name": "Ambient humidity status"
+            },
+            "ambient_temperature_status": {
+                "name": "Ambient temperature status"
+            }
+        }
+    }
+}

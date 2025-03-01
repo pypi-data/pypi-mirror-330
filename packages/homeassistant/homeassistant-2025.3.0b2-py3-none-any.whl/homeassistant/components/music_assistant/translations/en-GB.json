@@ -1,0 +1,129 @@
+{
+    "selector": {
+        "album_type": {
+            "options": {
+                "album": "Album",
+                "compilation": "Compilation",
+                "ep": "EP",
+                "single": "Single",
+                "unknown": "Unknown"
+            }
+        },
+        "media_type": {
+            "options": {
+                "audiobook": "Audiobook",
+                "folder": "Folder",
+                "podcast": "Podcast"
+            }
+        },
+        "order_by": {
+            "options": {
+                "artist_name": "Artist name",
+                "artist_name_desc": "Artist name (desc)",
+                "last_played": "Last played",
+                "last_played_desc": "Last played (desc)",
+                "name": "Name",
+                "name_desc": "Name (desc)",
+                "play_count": "Play count",
+                "play_count_desc": "Play count (desc)",
+                "position": "Position",
+                "position_desc": "Position (desc)",
+                "random": "Random",
+                "random_play_count": "Random + least played",
+                "sort_name": "Sort name",
+                "sort_name_desc": "Sort name (desc)",
+                "timestamp_added": "Added",
+                "timestamp_added_desc": "Added (desc)",
+                "year": "Year",
+                "year_desc": "Year (desc)"
+            }
+        }
+    },
+    "services": {
+        "get_library": {
+            "description": "Get items from a Music Assistant library.",
+            "fields": {
+                "album_artists_only": {
+                    "description": "Only return Album Artists when listing the Artists library items.",
+                    "name": "Enable album artists filter (only for artist library)"
+                },
+                "album_type": {
+                    "description": "Filter albums by type.",
+                    "name": "Album type filter (albums library only)"
+                },
+                "config_entry_id": {
+                    "description": "Select the Music Assistant instance to perform the search on.",
+                    "name": "Music Assistant instance"
+                },
+                "favorite": {
+                    "description": "Filter items so only favourites items are returned.",
+                    "name": "Favourites only"
+                },
+                "limit": {
+                    "description": "Maximum number of items to return."
+                },
+                "media_type": {
+                    "name": "Media type"
+                },
+                "offset": {
+                    "description": "Offset to start the list from.",
+                    "name": "Offset"
+                },
+                "order_by": {
+                    "description": "Sort the list by this field.",
+                    "name": "Order By"
+                },
+                "search": {
+                    "description": "Optional search string to search through this library.",
+                    "name": "Search"
+                }
+            },
+            "name": "Get Library items"
+        },
+        "get_queue": {
+            "description": "Retrieves the details of the currently active queue of a Music Assistant player.",
+            "name": "Get playerQueue details (advanced)"
+        },
+        "search": {
+            "description": "Performs a global search on the Music Assistant library and all providers.",
+            "fields": {
+                "album": {
+                    "description": "When specifying a track name in the name field, you can optionally restrict results by this album name.",
+                    "name": "Album name"
+                },
+                "artist": {
+                    "description": "When specifying a track or album name in the name field, you can optionally restrict results by this artist name.",
+                    "name": "Artist name"
+                },
+                "config_entry_id": {
+                    "description": "Select the Music Assistant instance to perform the search on.",
+                    "name": "Music Assistant instance"
+                },
+                "library_only": {
+                    "description": "Only include results that are in the library.",
+                    "name": "Only library items"
+                },
+                "limit": {
+                    "description": "Maximum number of items to return (per media type).",
+                    "name": "Limit"
+                },
+                "media_type": {
+                    "description": "The type of the content to search. Such as artist, album, track, radio, or playlist. All types if omitted.",
+                    "name": "Media type(s)"
+                },
+                "name": {
+                    "description": "The name/title to search for.",
+                    "name": "Search name"
+                }
+            },
+            "name": "Search Music Assistant"
+        },
+        "transfer_queue": {
+            "fields": {
+                "auto_play": {
+                    "description": "Start playing the queue on the target player. Omit to use the default behaviour."
+                }
+            }
+        }
+    }
+}

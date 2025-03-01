@@ -1,0 +1,19 @@
+{
+    "entity": {
+        "sensor": {
+            "cell_id": {
+                "name": "Cell ID"
+            }
+        }
+    },
+    "services": {
+        "resume_integration": {
+            "description": "Resumes suspended integration.",
+            "fields": {
+                "url": {
+                    "description": "URL of router to resume integration for; optional when only one is configured."
+                }
+            }
+        }
+    }
+}

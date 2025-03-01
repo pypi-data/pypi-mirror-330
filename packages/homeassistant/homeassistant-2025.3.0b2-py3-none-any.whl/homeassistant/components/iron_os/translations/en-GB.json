@@ -1,0 +1,77 @@
+{
+    "common": {
+        "fast": "Fast",
+        "slow": "Slow"
+    },
+    "entity": {
+        "binary_sensor": {
+            "tip_connected": {
+                "name": "Soldering tip"
+            }
+        },
+        "number": {
+            "min_voltage_per_cell": {
+                "name": "Min. voltage per cell"
+            }
+        },
+        "select": {
+            "animation_speed": {
+                "name": "Animation speed"
+            },
+            "autostart_mode": {
+                "name": "Start-up behaviour"
+            },
+            "desc_scroll_speed": {
+                "state": {
+                    "slow": "Slow"
+                }
+            },
+            "locking_mode": {
+                "name": "Button locking mode",
+                "state": {
+                    "boost_only": "Boost only",
+                    "full_locking": "Full locking"
+                }
+            },
+            "logo_duration": {
+                "name": "Boot logo duration",
+                "state": {
+                    "loop": "Loop",
+                    "seconds_1": "1 second",
+                    "seconds_2": "2 second",
+                    "seconds_3": "3 second",
+                    "seconds_4": "4 second",
+                    "seconds_5": "5 second"
+                }
+            },
+            "min_dc_voltage_cells": {
+                "name": "Power source",
+                "state": {
+                    "battery_3s": "3S (3 cells)",
+                    "battery_4s": "4S (4 cells)",
+                    "battery_5s": "5S (5 cells)",
+                    "battery_6s": "6S (6 cells)",
+                    "no_battery": "External power supply (DC)"
+                }
+            },
+            "orientation_mode": {
+                "name": "Display orientation mode",
+                "state": {
+                    "auto": "Auto",
+                    "left_handed": "Left-handed",
+                    "right_handed": "Right-handed"
+                }
+            },
+            "temp_unit": {
+                "name": "Temperature display unit",
+                "state": {
+                    "celsius": "Celsius (\u00b0C)",
+                    "fahrenheit": "Fahrenheit (\u00b0F)"
+                }
+            },
+            "usb_pd_mode": {
+                "name": "Power Delivery 3.1 EPR"
+            }
+        }
+    }
+}

@@ -1,0 +1,111 @@
+{
+    "config": {
+        "error": {
+            "license_error": "Maximum number of connections was reached. An additional licence key is required."
+        },
+        "step": {
+            "reconfigure": {
+                "data_description": {
+                    "ip_address": "IP address or hostname of the PCHK server.",
+                    "password": "Password for authorisation on the PCHK server.",
+                    "port": "Port used by the PCHK server.",
+                    "sk_num_tries": "If you have a segment coupler in your LCN installation, increase this number to at least 3, so all segment couplers are identified correctly.",
+                    "username": "Username for authorisation on the PCHK server."
+                }
+            },
+            "user": {
+                "data_description": {
+                    "host": "Name of the LCN integration entry.",
+                    "ip_address": "IP address or hostname of the PCHK server.",
+                    "password": "Password for authorisation on the PCHK server.",
+                    "port": "Port used by the PCHK server.",
+                    "sk_num_tries": "If you have a segment coupler in your LCN installation, increase this number to at least 3, so all segment couplers are identified correctly.",
+                    "username": "Username for authorisation on the PCHK server."
+                }
+            }
+        }
+    },
+    "exceptions": {
+        "invalid_address": {
+            "message": "LCN device for given address has not been configured."
+        },
+        "invalid_device_id": {
+            "message": "LCN device for given device ID has not been configured."
+        },
+        "no_device_identifier": {
+            "message": "No device identifier provided. Please provide the device ID."
+        }
+    },
+    "issues": {
+        "deprecated_address_parameter": {
+            "description": "The 'address' parameter in the LCN action calls is deprecated. The 'device ID' parameter should be used going forward.\n\nPlease adjust your automations or scripts to fix this issue.",
+            "title": "Deprecated 'address' parameter"
+        }
+    },
+    "services": {
+        "address_to_device_id": {
+            "description": "Convert LCN address to device ID.",
+            "fields": {
+                "host": {
+                    "description": "Host name as given in the integration panel.",
+                    "name": "Host name"
+                },
+                "id": {
+                    "description": "Target module or group ID.",
+                    "name": "Module or group ID"
+                },
+                "segment_id": {
+                    "description": "Target segment ID.",
+                    "name": "Segment ID"
+                },
+                "type": {
+                    "description": "Target type.",
+                    "name": "Type"
+                }
+            },
+            "name": "Address to device ID"
+        },
+        "dyn_text": {
+            "fields": {
+                "device_id": {
+                    "description": "The device ID of the LCN module or group."
+                }
+            }
+        },
+        "led": {
+            "fields": {
+                "device_id": {
+                    "description": "The device ID of the LCN module or group."
+                }
+            }
+        },
+        "lock_keys": {
+            "fields": {
+                "device_id": {
+                    "description": "The device ID of the LCN module or group."
+                }
+            }
+        },
+        "lock_regulator": {
+            "fields": {
+                "device_id": {
+                    "description": "The device ID of the LCN module or group."
+                }
+            }
+        },
+        "output_abs": {
+            "fields": {
+                "device_id": {
+                    "description": "The device ID of the LCN module or group."
+                }
+            }
+        },
+        "output_rel": {
+            "fields": {
+                "device_id": {
+                    "description": "The device ID of the LCN module or group."
+                }
+            }
+        }
+    }
+}

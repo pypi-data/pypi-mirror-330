@@ -1,0 +1,36 @@
+{
+    "entity": {
+        "event": {
+            "command": {
+                "state_attributes": {
+                    "event_type": {
+                        "state": {
+                            "program": "Programme"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "set_device_options": {
+                "data": {
+                    "data_bits": "Number of data bits"
+                }
+            }
+        }
+    },
+    "services": {
+        "send": {
+            "description": "Sends a raw event on radio.",
+            "fields": {
+                "event": {
+                    "description": "A hexadecimal string to send.",
+                    "name": "Event"
+                }
+            },
+            "name": "Send"
+        }
+    }
+}

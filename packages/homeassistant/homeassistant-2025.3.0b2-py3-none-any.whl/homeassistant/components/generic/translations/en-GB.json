@@ -1,0 +1,24 @@
+{
+    "config": {
+        "step": {
+            "user_confirm": {
+                "data": {
+                    "confirmed_ok": "Everything looks good."
+                },
+                "description": "Please wait for previews to load...",
+                "title": "Confirmation"
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "user_confirm": {
+                "data": {
+                    "confirmed_ok": "Everything looks good."
+                },
+                "description": "Please wait for previews to load...",
+                "title": "Confirmation"
+            }
+        }
+    }
+}

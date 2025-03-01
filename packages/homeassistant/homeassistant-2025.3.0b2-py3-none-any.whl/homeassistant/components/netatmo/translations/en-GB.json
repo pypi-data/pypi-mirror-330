@@ -1,0 +1,15 @@
+{
+    "config": {
+        "abort": {
+            "authorize_url_timeout": "Timeout generating authorise URL.",
+            "oauth_unauthorized": "OAuth authorisation error while obtaining access token."
+        }
+    },
+    "entity": {
+        "button": {
+            "preferred_position": {
+                "name": "Preferred position"
+            }
+        }
+    }
+}

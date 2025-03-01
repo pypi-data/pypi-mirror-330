@@ -1,0 +1,47 @@
+{
+    "config": {
+        "step": {
+            "user": {
+                "data_description": {
+                    "device_id": "The device ID of the Flexit Nordic device",
+                    "ip_address": "The IP address of the Flexit Nordic device"
+                }
+            }
+        }
+    },
+    "entity": {
+        "number": {
+            "fireplace_mode_runtime": {
+                "name": "Fireplace mode runtime"
+            }
+        },
+        "switch": {
+            "cooker_hood_mode": {
+                "name": "Cooker hood mode"
+            },
+            "fireplace_mode": {
+                "name": "Fireplace mode"
+            }
+        }
+    },
+    "exceptions": {
+        "not_ready": {
+            "message": "Timeout whilst connecting to {ip}."
+        },
+        "set_hvac_mode": {
+            "message": "Failed to set HVAC mode {mode}."
+        },
+        "set_preset_mode": {
+            "message": "Failed to set preset mode {preset}."
+        },
+        "set_temperature": {
+            "message": "Failed to set temperature {temperature}."
+        },
+        "set_value_error": {
+            "message": "Failed setting the value {value}."
+        },
+        "switch_turn": {
+            "message": "Failed to turn the switch {state}."
+        }
+    }
+}

@@ -1,0 +1,34 @@
+{
+    "entity": {
+        "sensor": {
+            "flow_sensor_consumed_liters": {
+                "name": "Flow sensor consumed litres"
+            }
+        }
+    },
+    "services": {
+        "stop_program": {
+            "name": "Stop programme"
+        },
+        "stop_zone": {
+            "description": "Stops a zone.",
+            "name": "Stop zone"
+        },
+        "unpause_watering": {
+            "fields": {
+                "device_id": {
+                    "description": "The controller whose watering activities should be unpaused."
+                }
+            },
+            "name": "Unpause all watering"
+        },
+        "unrestrict_watering": {
+            "fields": {
+                "device_id": {
+                    "description": "The controller whose watering activities should be unrestricted."
+                }
+            },
+            "name": "Unrestrict all watering"
+        }
+    }
+}

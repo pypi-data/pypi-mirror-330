@@ -1,0 +1,25 @@
+{
+    "config": {
+        "abort": {
+            "unique_id_mismatch": "Please ensure you reconfigure against the same device."
+        }
+    },
+    "entity": {
+        "sensor": {
+            "raw_pm02": {
+                "name": "Raw PM2.5"
+            }
+        }
+    },
+    "exceptions": {
+        "communication_error": {
+            "message": "An error occurred while communicating with the Airgradient device: {error}"
+        },
+        "unknown_error": {
+            "message": "An unknown error occurred while communicating with the Airgradient device: {error}"
+        },
+        "update_error": {
+            "message": "An error occurred while communicating with the Airgradient device: {error}"
+        }
+    }
+}

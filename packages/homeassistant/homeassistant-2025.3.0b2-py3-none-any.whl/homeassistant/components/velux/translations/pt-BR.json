@@ -1,0 +1,14 @@
+{
+    "config": {
+        "step": {
+            "discovery_confirm": {
+                "description": "Por favor, digite a senha para {name} ( {host} )"
+            },
+            "user": {
+                "data": {
+                    "password": "Senha"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,172 @@
+{
+    "common": {
+        "long_press_release": "Release of long press",
+        "long_press_timeout": "Long press",
+        "short_press_release": "Release of short press",
+        "very_long_press_release": "Release of very long press",
+        "very_long_press_timeout": "Very long press"
+    },
+    "entity": {
+        "event": {
+            "bluetooth": {
+                "name": "Bluetooth",
+                "state_attributes": {
+                    "event_type": {
+                        "state": {
+                            "long_press_release": "Release of long press",
+                            "long_press_timeout": "Long press",
+                            "short_press_release": "Release of short press",
+                            "very_long_press_release": "Release of very long press",
+                            "very_long_press_timeout": "Very long press"
+                        }
+                    }
+                }
+            },
+            "microphone": {
+                "name": "Microphone",
+                "state_attributes": {
+                    "event_type": {
+                        "state": {
+                            "long_press_release": "Release of long press",
+                            "long_press_timeout": "Long press",
+                            "short_press_release": "Release of short press",
+                            "very_long_press_release": "Release of very long press",
+                            "very_long_press_timeout": "Very long press"
+                        }
+                    }
+                }
+            },
+            "next": {
+                "name": "Next",
+                "state_attributes": {
+                    "event_type": {
+                        "state": {
+                            "long_press_release": "Release of long press",
+                            "long_press_timeout": "Long press",
+                            "short_press_release": "Release of short press",
+                            "very_long_press_release": "Release of very long press",
+                            "very_long_press_timeout": "Very long press"
+                        }
+                    }
+                }
+            },
+            "playpause": {
+                "name": "Play / Pause",
+                "state_attributes": {
+                    "event_type": {
+                        "state": {
+                            "long_press_release": "Release of long press",
+                            "long_press_timeout": "Long press",
+                            "short_press_release": "Release of short press",
+                            "very_long_press_release": "Release of very long press",
+                            "very_long_press_timeout": "Very long press"
+                        }
+                    }
+                }
+            },
+            "preset1": {
+                "name": "Favourite 1",
+                "state_attributes": {
+                    "event_type": {
+                        "state": {
+                            "long_press_release": "Release of long press",
+                            "long_press_timeout": "Long press",
+                            "short_press_release": "Release of short press",
+                            "very_long_press_release": "Release of very long press",
+                            "very_long_press_timeout": "Very long press"
+                        }
+                    }
+                }
+            },
+            "preset2": {
+                "name": "Favourite 2",
+                "state_attributes": {
+                    "event_type": {
+                        "state": {
+                            "long_press_release": "Release of long press",
+                            "long_press_timeout": "Long press",
+                            "short_press_release": "Release of short press",
+                            "very_long_press_release": "Release of very long press",
+                            "very_long_press_timeout": "Very long press"
+                        }
+                    }
+                }
+            },
+            "preset3": {
+                "name": "Favourite 3",
+                "state_attributes": {
+                    "event_type": {
+                        "state": {
+                            "long_press_release": "Release of long press",
+                            "long_press_timeout": "Long press",
+                            "short_press_release": "Release of short press",
+                            "very_long_press_release": "Release of very long press",
+                            "very_long_press_timeout": "Very long press"
+                        }
+                    }
+                }
+            },
+            "preset4": {
+                "name": "Favourite 4",
+                "state_attributes": {
+                    "event_type": {
+                        "state": {
+                            "long_press_release": "Release of long press",
+                            "long_press_timeout": "Long press",
+                            "short_press_release": "Release of short press",
+                            "very_long_press_release": "Release of very long press",
+                            "very_long_press_timeout": "Very long press"
+                        }
+                    }
+                }
+            },
+            "previous": {
+                "name": "Previous",
+                "state_attributes": {
+                    "event_type": {
+                        "state": {
+                            "long_press_release": "Release of long press",
+                            "long_press_timeout": "Long press",
+                            "short_press_release": "Release of short press",
+                            "very_long_press_release": "Release of very long press",
+                            "very_long_press_timeout": "Very long press"
+                        }
+                    }
+                }
+            },
+            "volume": {
+                "name": "Volume",
+                "state_attributes": {
+                    "event_type": {
+                        "state": {
+                            "long_press_release": "Release of long press",
+                            "long_press_timeout": "Long press",
+                            "short_press_release": "Release of short press",
+                            "very_long_press_release": "Release of very long press",
+                            "very_long_press_timeout": "Very long press"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "selector": {
+        "source_ids": {
+            "options": {
+                "aux_a": "Beolink Converter NL/ML AUX_A",
+                "beoradio": "ASE Beoradio",
+                "cd": "Beolink Converter NL/ML CD",
+                "deezer": "ASE / Mozart Deezer"
+            }
+        }
+    },
+    "services": {
+        "beolink_join": {
+            "fields": {
+                "source_id": {
+                    "description": "Specify which source to join, behaviour varies between hardware platforms. Source names prefaced by a platform name can only be used when connecting to that platform. For example \"ASE Beoradio\" can only be used when joining an ASE device, while \u201dASE / Mozart Deezer\u201d can be used with ASE or Mozart devices. A defined Beolink JID is required."
+                }
+            }
+        }
+    }
+}

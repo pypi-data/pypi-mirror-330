@@ -1,0 +1,125 @@
+{
+    "entity": {
+        "binary_sensor": {
+            "automatic_blind_spot_camera": {
+                "name": "Automatic blind spot camera"
+            },
+            "automatic_emergency_braking_off": {
+                "name": "Automatic emergency braking off"
+            },
+            "blind_spot_collision_warning_chime": {
+                "name": "Blind spot collision warning chime"
+            },
+            "bms_full_charge_complete": {
+                "name": "BMS full charge"
+            },
+            "brake_pedal": {
+                "name": "Brake pedal"
+            },
+            "charge_port_cold_weather_mode": {
+                "name": "Charge port cold weather mode"
+            },
+            "dc_dc_enable": {
+                "name": "DC to DC converter"
+            },
+            "drive_rail": {
+                "name": "Drive rail"
+            },
+            "driver_seat_belt": {
+                "name": "Driver seat belt"
+            },
+            "driver_seat_occupied": {
+                "name": "Driver seat occupied"
+            },
+            "emergency_lane_departure_avoidance": {
+                "name": "Emergency lane departure avoidance"
+            },
+            "europe_vehicle": {
+                "name": "European vehicle"
+            },
+            "fast_charger_present": {
+                "name": "Fast charger present"
+            },
+            "gps_state": {
+                "name": "GPS state"
+            },
+            "guest_mode_enabled": {
+                "name": "Guest mode enabled"
+            },
+            "homelink_nearby": {
+                "name": "Homelink nearby"
+            },
+            "located_at_favorite": {
+                "name": "Located at favourite"
+            },
+            "located_at_home": {
+                "name": "Located at home"
+            },
+            "located_at_work": {
+                "name": "Located at work"
+            },
+            "offroad_lightbar_present": {
+                "name": "Offroad lightbar"
+            },
+            "passenger_seat_belt": {
+                "name": "Passenger seat belt"
+            },
+            "pin_to_drive_enabled": {
+                "name": "Pin to drive enabled"
+            },
+            "rear_display_hvac_enabled": {
+                "name": "Rear display HVAC"
+            },
+            "right_hand_drive": {
+                "name": "Right hand drive"
+            },
+            "service_mode": {
+                "name": "Service mode"
+            },
+            "supercharger_session_trip_planner": {
+                "name": "Supercharger session trip planner"
+            },
+            "vehicle_state_tpms_soft_warning_fl": {
+                "name": "Tyre pressure warning front left"
+            },
+            "vehicle_state_tpms_soft_warning_fr": {
+                "name": "Tyre pressure warning front right"
+            },
+            "vehicle_state_tpms_soft_warning_rl": {
+                "name": "Tyre pressure warning rear left"
+            },
+            "vehicle_state_tpms_soft_warning_rr": {
+                "name": "Tyre pressure warning rear right"
+            },
+            "wiper_heat_enabled": {
+                "name": "Wiper heat"
+            }
+        },
+        "device_tracker": {
+            "origin": {
+                "name": "Origin"
+            }
+        },
+        "select": {
+            "climate_state_seat_heater_rear_center": {
+                "name": "Seat heater rear centre"
+            }
+        },
+        "sensor": {
+            "vehicle_state_tpms_pressure_fr": {
+                "name": "Tyre pressure front right"
+            },
+            "vehicle_state_tpms_pressure_rl": {
+                "name": "Tyre pressure rear left"
+            },
+            "vehicle_state_tpms_pressure_rr": {
+                "name": "Tyre pressure rear right"
+            }
+        },
+        "switch": {
+            "charge_state_charging_state": {
+                "name": "Charge"
+            }
+        }
+    }
+}

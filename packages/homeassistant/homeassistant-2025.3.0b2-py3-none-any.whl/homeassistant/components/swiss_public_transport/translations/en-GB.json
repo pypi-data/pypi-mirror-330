@@ -1,0 +1,30 @@
+{
+    "config": {
+        "step": {
+            "time_fixed": {
+                "data_description": {
+                    "time_fixed": "The time of day for the connection"
+                }
+            },
+            "time_offset": {
+                "data_description": {
+                    "time_offset": "The time offset added to the earliest possible connection"
+                }
+            },
+            "user": {
+                "data_description": {
+                    "from": "The station where the connection starts",
+                    "to": "The station where the connection ends",
+                    "via": "List of up to 5 stations the route must go through"
+                }
+            }
+        }
+    },
+    "entity": {
+        "sensor": {
+            "trip_duration": {
+                "name": "Trip duration"
+            }
+        }
+    }
+}

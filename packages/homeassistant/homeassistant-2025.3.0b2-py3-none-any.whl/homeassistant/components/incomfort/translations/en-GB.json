@@ -1,0 +1,37 @@
+{
+    "config": {
+        "step": {
+            "dhcp_auth": {
+                "data_description": {
+                    "password": "The password to log into the gateway, is printed at the bottom of the Gateway or is `intergas` for some older devices.",
+                    "username": "The username to log into the gateway. This is `admin` in most cases."
+                },
+                "description": "Please enter authentication details for gateway {host}",
+                "title": "Set up Intergas gateway"
+            },
+            "dhcp_confirm": {
+                "description": "Do you want to set up the discovered Intergas gateway ({host})?",
+                "title": "Set up Intergas gateway"
+            },
+            "reauth_confirm": {
+                "data_description": {
+                    "password": "Correct the gateway password."
+                },
+                "description": "Re-authenticate to the gateway."
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "legacy_setpoint_status": "Legacy setpoint handling"
+                },
+                "data_description": {
+                    "legacy_setpoint_status": "Some older gateway models with an older firmware versions might not update the thermostat setpoint and override settings correctly. Enable this option if you experience issues in updating the setpoint for your thermostat. It will use the actual setpoint of the thermostat instead of the override. As side effect is that it might take a few minutes before the setpoint is updated."
+                },
+                "title": "Intergas gateway options"
+            }
+        }
+    }
+}

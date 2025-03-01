@@ -1,0 +1,17 @@
+{
+    "config": {
+        "abort": {
+            "authorize_url_timeout": "Timeout generating authorise URL.",
+            "oauth_unauthorized": "OAuth authorisation error while obtaining access token.",
+            "user_rejected_authorize": "Account linking rejected: {error}"
+        },
+        "step": {
+            "auth": {
+                "title": "Link Google Account"
+            },
+            "reauth_confirm": {
+                "description": "The Google Photos integration needs to re-authenticate your account"
+            }
+        }
+    }
+}

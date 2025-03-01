@@ -1,0 +1,14 @@
+{
+    "entity": {
+        "binary_sensor": {
+            "override_program_change_prio": {
+                "name": "Programmed change has priority over override"
+            }
+        },
+        "button": {
+            "cancel_room_setpoint_override": {
+                "name": "Cancel room setpoint override"
+            }
+        }
+    }
+}

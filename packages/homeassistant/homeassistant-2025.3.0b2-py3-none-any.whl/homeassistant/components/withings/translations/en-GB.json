@@ -1,0 +1,17 @@
+{
+    "config": {
+        "abort": {
+            "authorize_url_timeout": "Timeout generating authorise URL."
+        }
+    },
+    "entity": {
+        "sensor": {
+            "extracellular_water": {
+                "name": "Extracellular water"
+            },
+            "intracellular_water": {
+                "name": "Intracellular water"
+            }
+        }
+    }
+}

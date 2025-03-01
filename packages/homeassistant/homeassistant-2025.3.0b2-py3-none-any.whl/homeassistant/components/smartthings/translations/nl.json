@@ -1,0 +1,145 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Account is al geconfigureerd",
+            "authorize_url_timeout": "Time-out bij het genereren van autorisatie-URL.",
+            "missing_configuration": "Integratie niet geconfigureerd. Raadpleeg de documentatie.",
+            "no_url_available": "Geen URL beschikbaar. Voor informatie over deze fout, [raadpleeg de documentatie]({docs_url})",
+            "oauth_error": "Ongeldige tokengegevens ontvangen.",
+            "oauth_failed": "Fout bij het verkrijgen van toegangstoken.",
+            "oauth_timeout": "Time-out bij het verkrijgen OAuth token.",
+            "oauth_unauthorized": "OAuth autorisatiefout tijdens het verkrijgen van een toegangstoken."
+        },
+        "error": {
+            "already_configured": "Account is al geconfigureerd"
+        },
+        "step": {
+            "pick_implementation": {
+                "title": "Kies een authenticatiemethode"
+            }
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "valve": {
+                "name": "Klep"
+            }
+        },
+        "sensor": {
+            "air_quality": {
+                "name": "Luchtkwaliteit"
+            },
+            "alarm": {
+                "state": {
+                    "off": "Uit"
+                }
+            },
+            "dishwasher_job_state": {
+                "state": {
+                    "cooling": "Koelen",
+                    "drying": "Drogen",
+                    "rinse": "Afspoelen",
+                    "wash": "Wassen"
+                }
+            },
+            "dishwasher_machine_state": {
+                "state": {
+                    "pause": "Gepauzeerd"
+                }
+            },
+            "dryer_job_state": {
+                "state": {
+                    "cooling": "Koelen",
+                    "drying": "Drogen"
+                }
+            },
+            "gas_meter": {
+                "name": "Gasmeter"
+            },
+            "media_input_source": {
+                "state": {
+                    "am": "AM",
+                    "cd": "CD",
+                    "fm": "FM",
+                    "hdmi": "HDMI",
+                    "hdmi1": "HDMI 1",
+                    "hdmi2": "HDMI 2",
+                    "hdmi3": "HDMI 3",
+                    "hdmi4": "HDMI 4",
+                    "hdmi5": "HDMI 5",
+                    "hdmi6": "HDMI 6",
+                    "network": "Netwerk",
+                    "usb": "USB",
+                    "youtube": "YouTube"
+                }
+            },
+            "oven_job_state": {
+                "state": {
+                    "cleaning": "Schoonmaken",
+                    "cooking": "Koken",
+                    "cooling": "Koelen",
+                    "defrosting": "Ontdooien",
+                    "preheat": "Voorverwarmen",
+                    "ready": "Gereed",
+                    "rinsing": "Spoelen"
+                }
+            },
+            "oven_machine_state": {
+                "state": {
+                    "paused": "Gepauzeerd",
+                    "ready": "Klaar"
+                }
+            },
+            "oven_mode": {
+                "state": {
+                    "defrosting": "Ontdooien",
+                    "heating": "Verwarmen",
+                    "microwave": "Magnetron"
+                }
+            },
+            "robot_cleaner_cleaning_mode": {
+                "state": {
+                    "stop": "Stoppen"
+                }
+            },
+            "robot_cleaner_movement": {
+                "state": {
+                    "charging": "Opladen",
+                    "cleaning": "Schoonmaken",
+                    "idle": "Inactief",
+                    "off": "Uit",
+                    "pause": "Gepauzeerd"
+                }
+            },
+            "robot_cleaner_turbo_mode": {
+                "state": {
+                    "off": "Uit",
+                    "on": "Aan",
+                    "silence": "Stil"
+                }
+            },
+            "washer_job_state": {
+                "state": {
+                    "cooling": "Koelen",
+                    "drying": "Drogen",
+                    "rinse": "Afspoelen",
+                    "wash": "Wassen"
+                }
+            },
+            "washer_machine_state": {
+                "state": {
+                    "pause": "Gepauzeerd"
+                }
+            },
+            "x_coordinate": {
+                "name": "X co\u00f6rdinaat"
+            },
+            "y_coordinate": {
+                "name": "Y co\u00f6rdinaat"
+            },
+            "z_coordinate": {
+                "name": "Z co\u00f6rdinaat"
+            }
+        }
+    }
+}

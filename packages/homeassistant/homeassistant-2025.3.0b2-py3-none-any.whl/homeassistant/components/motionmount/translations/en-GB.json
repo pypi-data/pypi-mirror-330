@@ -1,0 +1,51 @@
+{
+    "common": {
+        "incorrect_pin": "PIN is not correct"
+    },
+    "config": {
+        "error": {
+            "pin": "PIN is not correct"
+        },
+        "progress": {
+            "progress_action": "Too many incorrect PIN attempts. Please wait {timeout} s..."
+        },
+        "step": {
+            "auth": {
+                "data_description": {
+                    "pin": "The user level PIN configured on the MotionMount."
+                },
+                "description": "Your MotionMount requires a PIN to operate.",
+                "title": "Authenticate to your MotionMount"
+            },
+            "backoff": {
+                "description": "Too many incorrect PIN attempts.",
+                "title": "Authenticate to your MotionMount"
+            },
+            "user": {
+                "data_description": {
+                    "host": "The hostname or IP address of the MotionMount.",
+                    "port": "The port of the MotionMount."
+                }
+            }
+        }
+    },
+    "entity": {
+        "sensor": {
+            "motionmount_error_status": {
+                "state": {
+                    "hdmi_cec": "HDMI CEC",
+                    "obstruction": "Obstruction",
+                    "tv_width_constraint": "TV width constraint"
+                }
+            }
+        }
+    },
+    "exceptions": {
+        "incorrect_pin": {
+            "message": "PIN is not correct"
+        },
+        "no_pin_provided": {
+            "message": "No PIN provided"
+        }
+    }
+}
