@@ -1,0 +1,74 @@
+CHANGES
+=======
+
+0.4.0
+-----
+
+* Fix release note build
+* Remove Python 3.8 support
+* Use requirements.txt solely to manage dependencies
+* Add stestr as test requirement
+
+0.3.0
+-----
+
+* Drop direct usage of simplejson
+* Use stestr for testing
+
+0.2.0
+-----
+
+* Sort column order in cli output
+* Fix table formatter
+* Remove unused test dependencies
+* Remove AUTHORS file
+* Add TLS support
+* Drop unused --dev and --messy
+
+0.1.1
+-----
+
+* Update python classifier in setup.cfg
+* Add functional tests
+* Fix cli commands
+* Add i18n.py and use it in v1/base.py and v1/cli.py
+* Fix "\_" is shadowing Python builtin
+* Flake8 changes
+* Remove .github/
+
+0.1.0
+-----
+
+* Fix zuul testing
+* Add automated unit testing and a set of tests (#9)
+
+0.0.4
+-----
+
+* Fix setup.cfg
+* PyPI dist (#8)
+
+0.0.3
+-----
+
+* PyPI dist (#8)
+
+0.0.2
+-----
+
+* Prometheus interaction (#7)
+* Update README.md
+* Update README to reflect new params file changes
+* Removing README.rst
+* Merging additions from my notes
+* Fixed missing comma
+
+0.0.1
+-----
+
+* Update license file
+* Basic set of docs
+* Missing piece
+* Allow inventory overrides
+* Initial functionality (#1)
+* Initial commit
