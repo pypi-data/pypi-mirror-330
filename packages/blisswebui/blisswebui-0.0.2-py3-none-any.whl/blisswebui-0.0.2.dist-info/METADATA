@@ -1,0 +1,17 @@
+Metadata-Version: 2.2
+Name: blisswebui
+Version: 0.0.2
+Summary: Web User Interface for BLISS
+Author-email: ESRF <bcu@esrf.fr>
+Project-URL: Repository, https://gitlab.esrf.fr/bliss/blisswebui
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+
+# blisswebui
+
+![blisswebui](images/mockup.png 'blisswebui')
+
+Bliss Web UI provides a simple web user interface to consume the bliss [REST API](https://bliss.gitlab-pages.esrf.fr/bliss/master/blissapi.html).
