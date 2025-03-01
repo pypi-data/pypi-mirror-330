@@ -1,0 +1,76 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+
+
+[project]
+name = "pyflow_acdc"
+version = "0.2.6"
+license = {file = "LICENSE.txt"}
+requires-python = ">= 3.9"
+
+authors = [
+   {name = "Bernardo Castro Valerio", email = "bernardo.castro@upc.edu"}]
+ 
+
+maintainers = [
+  {name ="Bernardo Castro Valerio", email = "bernardo.castro@upc.edu"}
+]
+
+description = "A python-based tool for the design and analysis of hybrid AC/DC grids"
+
+readme = "README.md"
+
+classifiers = [
+    'Development Status :: 3 - Alpha',
+    'Intended Audience :: Science/Research',
+    'License :: OSI Approved :: BSD License',
+    'Programming Language :: C',
+    'Programming Language :: Python',
+    'Programming Language :: Python :: 3',
+    'Programming Language :: Python :: 3.9',
+    'Programming Language :: Python :: 3.10',
+    'Programming Language :: Python :: 3.11',
+    'Programming Language :: Python :: 3.12',
+    'Programming Language :: Python :: Implementation :: CPython',
+    'Topic :: Scientific/Engineering',
+]
+
+
+
+dependencies = ["numpy",
+                "pandas",
+                "networkx",
+                "matplotlib",
+                "scipy",
+                "prettytable",
+                "plotly",
+                "geopandas",
+                "pyyaml"]
+
+[project.optional-dependencies]
+Clustering = ["numpy <2.0.0",
+              "scikit-learn-extra",
+              "scikit-learn"]
+mapping = ["folium"]
+
+OPF = ["numpy <2.0.0",
+        "pyomo",
+         "ipopt"]
+Dash = ["dash"]
+
+[project.urls]
+
+Repository = "https://github.com/BernardoCV/pyflow_acdc/archive/refs/tags/v0.2.6.tar.gz"
+
+
+[tool.setuptools]
+packages = ["pyflow_acdc"]
+
+[tool.setuptools.package-data]
+"pyflow_acdc" = [
+    "folium_images/*.png",
+    "Cable_database/*.yaml"
+]
+
