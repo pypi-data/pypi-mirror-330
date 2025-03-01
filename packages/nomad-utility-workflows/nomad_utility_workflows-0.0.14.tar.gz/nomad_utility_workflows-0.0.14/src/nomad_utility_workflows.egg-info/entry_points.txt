@@ -1,0 +1,6 @@
+[nomad.plugin]
+app_entry_point = nomad_utility_workflows.apps:app_entry_point
+example_upload_entry_point = nomad_utility_workflows.example_uploads:example_upload_entry_point
+normalizer_entry_point = nomad_utility_workflows.normalizers:normalizer_entry_point
+parser_entry_point = nomad_utility_workflows.parsers:parser_entry_point
+schema_package_entry_point = nomad_utility_workflows.schema_packages:schema_package_entry_point
