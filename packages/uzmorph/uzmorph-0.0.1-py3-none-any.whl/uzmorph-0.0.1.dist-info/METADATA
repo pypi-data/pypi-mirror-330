@@ -1,0 +1,134 @@
+Metadata-Version: 2.1
+Name: uzmorph
+Version: 0.0.1
+Summary: uzmorph | Uzbek Morphological Analysing on Python
+Home-page: https://github.com/UlugbekSalaev/uzmorph
+Author: Ulugbek Salaev
+Author-email: ulugbek0302@gmail.com
+Project-URL: Bug Tracker, https://github.com/UlugbekSalaev/uzmorph/issues
+Keywords: mophology,uzbek-language
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: UzMorphAnalyser
+Requires-Dist: pandas
+
+# uztagger
+
+https://pypi.org/project/uzmorph <br>
+https://github.com/UlugbekSalaev/uzmorph
+
+uzmorph is focused to make morphological analyzer of Uzbek word based on morphemes and limited number of lexicon. The tool includes list of POS tagset, tagging method. 
+It is created as a python library and uploaded to [PyPI](https://pypi.org/). It is simply easy to use in your python project or other programming language projects via the API. 
+
+## About project
+The tool is focused to make morphological analyzer of Uzbek word based on morphemes.
+
+## Quick links
+
+- [Github](https://github.com/UlugbekSalaev/uzmorph)
+- [PyPI](https://pypi.org/project/uzmorph/)
+- [Web-UI](https://nlp.urdu.uz/?menu=uzmorph)
+
+## Demo
+
+You can use [web interface](http://nlp.urdu.uz/?menu=uzmorph).
+
+## Features
+
+- Morphological Analysing 
+- POS tag list
+- Help function
+
+## Usage
+
+Three options to run uzmorph:
+
+- pip
+- API 
+- Web interface
+
+### pip installation
+
+To install uzmorph, simply run:
+
+```code
+pip install uzmorph
+```
+
+After installation, use in python like following:
+```yml
+# import the library
+from uzmorph import Morph
+# create an object 
+tagger = Tagger()
+# call tagging method
+tagger.pos_tag('Bizlar bugun maktabga bormoqchimiz.')
+# output
+[('Bizlar','NOUN'),('bugun', 'NOUN'), ('maktabga', 'NOUN'), ('bormoqchimiz', 'VERB'), ('.', 'PUNC')]
+```
+
+### API
+API configurations: 
+ - Method: `GET`
+ - Response type: `string`
+ - URL: `https://nlp.urdu.uz:8080/uzmorph/pos_tag`
+   - Parameters: `text:string`
+ - Sample Request: `https://nlp.urdu.uz:8080/uzmorph/pos_tag?text=Ular%20maktabga%20borayaptilar.`
+ - Sample output: `[("Ular","NOUN"),("maktabga",""),("borayaptilar",""),(".","PUNC")]`
+
+### Web-UI
+
+The web interface created to use easily the library:
+You can use web interface [here](http://nlp.urdu.uz/?page=uzmorph).
+
+![Demo image](src/uzmorph/web-interface-ui.png)
+
+### POS tag list
+Tagger using following options as POS tag:<br>
+    `NOUN`  Noun {Ot}<br>
+    `VERB`  Verb {Fe'l}<br>
+    `ADJ `  Adjective {Sifat}<br>
+    `NUM `  Numeric {Son}<br>
+    `ADV `  Adverb {Ravish}<br>
+    `PRN `  Pronoun {Olmosh}<br>
+    `CNJ `  Conjunction {Bog'lovchi}<br>
+    `ADP `  Adposition {Ko'makchi}<br>
+    `PRT `  Particle {Yuklama}<br>
+    `INTJ`  Interjection {Undov}<br>
+    `MOD `  Modal {Modal}<br>
+    `IMIT`  Imitation {Taqlid}<br>
+    `AUX `  Auxiliary verb {Yordamchi fe'l}<br>
+    `PPN `  Proper noun {Atoqli ot}<br>
+    `PUNC`  Punctuation {Tinish belgi}<br>
+    `SYM `  Symbol {Belgi}<br>
+
+### Result Explaining
+
+The method ```pos_tag``` returns list, that an item of the list contain tuples for each token of the text with following format: ```(token, pos)```, for POS tag list, see <i>POS Tag List</i> section on above.  
+#### Result from `tagger` method
+`[('Bizlar','NOUN'),('bugun', 'NOUN'), ('maktabga', 'NOUN'), ('bormoqchimiz', 'VERB'), ('.', 'PUNC')]`
+
+## Documentation
+
+See [here](https://github.com/UlugbekSalaev/uzmorph).
+
+## Citation
+
+```tex
+@misc{uztagger,
+  title={{uztagger}: Morphological Part of Speech Tagger Tool for Uzbek},
+  url={https://github.com/UlugbekSalaev/uztagger},
+  note={Software available from https://github.com/UlugbekSalaev/uztagger},
+  author={
+    Ulugbek Salaev},
+  year={2022},
+}
+```
+
+## Contact
+
+For help and feedback, please feel free to contact [the author](https://github.com/UlugbekSalaev).
