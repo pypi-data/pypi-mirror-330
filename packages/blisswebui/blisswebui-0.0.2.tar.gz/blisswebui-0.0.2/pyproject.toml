@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=46.4"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "blisswebui"
+dynamic = ["version"]
+authors = [{ name = "ESRF", email = "bcu@esrf.fr" }]
+description = "Web User Interface for BLISS"
+readme = { file = "README.md", content-type = "text/markdown" }
+license = { file = "LICENSE.md" }
+classifiers = [
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+]
+requires-python = ">=3.8"
+
+[project.urls]
+Repository = "https://gitlab.esrf.fr/bliss/blisswebui"
+
+[tool.setuptools.dynamic]
+version = {attr = "blisswebui.__version__"}
+
+[tool.setuptools]
+package-dir = { "" = "pysrc" }
+
+[tool.setuptools.packages.find]
+where = ["pysrc"]
+
+[tool.setuptools.package-data]
+"blisswebui" = [
+  'static/*',
+  'static/*/*.*',
+  'static/*/*/*.*',
+]
