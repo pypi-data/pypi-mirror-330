@@ -1,0 +1,11 @@
+pygdbmi
+
+[test]
+pytest
+ruff
+numba
+mypy
+hypothesis
+syrupy
+nbconvert
+ipykernel

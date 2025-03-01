@@ -1,0 +1,34 @@
+[project]
+name = "profila"
+description = "A profiler for Numba"
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [{name = "Itamar Turner-Trauring"}]
+license = {text = "Apache-2.0"}
+classifiers = [
+    "License :: OSI Approved :: Apache Software License"
+]
+dependencies = [
+    "pygdbmi"
+]
+dynamic = ["version"]
+
+[build-system]
+requires = ["setuptools>60", "setuptools-scm>=8.0"]
+build-backend = "setuptools.build_meta"
+
+[project.urls]
+Homepage = "https://github.com/pythonspeed/profila"
+Issues = "https://github.com/pythonspeed/profila/issues"
+CI = "https://github.com/pythonspeed/profila/actions"
+
+[project.optional-dependencies]
+test = ["pytest", "ruff", "numba", "mypy", "hypothesis", "syrupy", "nbconvert", "ipykernel"]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools_scm]
