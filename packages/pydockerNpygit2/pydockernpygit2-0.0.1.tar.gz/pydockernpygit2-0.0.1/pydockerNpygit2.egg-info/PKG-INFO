@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: pydockerNpygit2
+Version: 0.0.1
+Summary: just install pydockerNpygit2 by require-pkg
+Home-page: https://github.com/FarAway6834/pydockerNpygit2
+Author: du7ec
+Author-email: dutec6834@gmail.com
+Keywords: py,docker,pydocker,and,N,n,&,pygit,git,pygit2,pydockerNpygit2,dockerNpygit2,docker&git
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Programming Language :: Python :: 3.14
+Requires-Python: >=3.4
+License-File: LICENSE
+Requires-Dist: docker
+Requires-Dist: pygit2
