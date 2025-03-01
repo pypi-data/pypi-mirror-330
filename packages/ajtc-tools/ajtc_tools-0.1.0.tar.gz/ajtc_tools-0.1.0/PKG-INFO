@@ -1,0 +1,20 @@
+Metadata-Version: 2.2
+Name: ajtc_tools
+Version: 0.1.0
+Summary: A utility module containing a variety of code I use regularly
+Author-email: Ainsworth Coultart <ainsworthcoultart@gmail.com>
+License: MIT
+Project-URL: Homepage, https://github.com/a-842/ajtc_tools
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+
+# ajtc_tools
+This is a module with tools that I have coded and may be useful to me or others in the future, below is a list of the included tools.
+## searching
+ - Binary Search
+## sorting
+ - Bubble Sort
+ - Merge Sort
+ - Quick Sort
+ - Insertion Sort
+ - Bogo Sort
