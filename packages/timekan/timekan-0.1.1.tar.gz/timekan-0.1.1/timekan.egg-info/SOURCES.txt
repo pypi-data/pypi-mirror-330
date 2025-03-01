@@ -1,0 +1,17 @@
+README.md
+setup.py
+timekan/__init__.py
+timekan.egg-info/PKG-INFO
+timekan.egg-info/SOURCES.txt
+timekan.egg-info/dependency_links.txt
+timekan.egg-info/requires.txt
+timekan.egg-info/top_level.txt
+timekan/layers/__init__.py
+timekan/layers/chebkan.py
+timekan/layers/fourierkan.py
+timekan/layers/kan.py
+timekan/models/__init__.py
+timekan/models/tkan_gru.py
+timekan/models/tkan_lstm.py
+timekan/utils/__init__.py
+timekan/utils/datasets.py
