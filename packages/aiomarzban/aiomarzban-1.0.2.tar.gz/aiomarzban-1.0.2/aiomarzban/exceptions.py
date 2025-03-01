@@ -1,0 +1,6 @@
+class MarzbanException(Exception):
+    ...
+
+
+class MarzbanNotFoundException(MarzbanException):
+    ...
