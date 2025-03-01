@@ -1,0 +1,6 @@
+graft src/imio
+include *.cfg
+include *.rst
+global-exclude *.pyc
+include *.txt
+include Makefile

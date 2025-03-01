@@ -1,0 +1,7 @@
+plone.api
+setuptools
+collective.fingerpointing
+collective.documentgenerator
+
+[test]
+plone.app.testing

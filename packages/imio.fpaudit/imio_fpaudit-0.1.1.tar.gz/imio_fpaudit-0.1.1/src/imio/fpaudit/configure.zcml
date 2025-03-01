@@ -1,0 +1,49 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    xmlns:zcml="http://namespaces.zope.org/zcml"
+    i18n_domain="imio.fpaudit">
+
+    <include package="collective.fingerpointing" />
+    <include package="collective.documentgenerator" />
+
+    <include zcml:condition="installed plone.app.controlpanel" package="plone.app.controlpanel" file="permissions.zcml" />
+    <include zcml:condition="have plone-60" package="Products.CMFPlone.controlpanel" file="permissions.zcml" />
+    <include package=".browser" />
+
+    <genericsetup:registerProfile
+        name="default"
+        title="imio.fpaudit"
+        directory="profiles/default"
+        description="Installs the imio.fpaudit add-on."
+        provides="Products.GenericSetup.interfaces.EXTENSION"
+        post_handler="imio.fpaudit.setuphandlers.post_install"
+        />
+
+    <genericsetup:registerProfile
+        name="uninstall"
+        title="imio.fpaudit (uninstall)"
+        directory="profiles/uninstall"
+        description="Uninstalls the imio.fpaudit add-on."
+        provides="Products.GenericSetup.interfaces.EXTENSION"
+        post_handler="imio.fpaudit.setuphandlers.uninstall"
+        />
+
+    <utility
+        factory="imio.fpaudit.setuphandlers.HiddenProfiles"
+        name="imio.fpaudit-hiddenprofiles"
+        />
+
+    <utility
+        provides="imio.fpaudit.interfaces.ILogsStorage"
+        factory="imio.fpaudit.storage.LogsStorageUtility"
+        />
+
+    <subscriber
+        for="zope.processlifetime.IProcessStarting"
+        handler="imio.fpaudit.subscribers.zope_ready"
+        />
+
+</configure>
