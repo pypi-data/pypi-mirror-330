@@ -1,0 +1,45 @@
+<ul class="menu bg-base-200 rounded-box h-full w-full mt-2" id="SIDEMENU">
+    {% for nav_item in nav %} {% if nav_item.children %}
+    <li>
+        <details id="SIDEMENU-DETAIL-{{ nav_item.title }}">
+            <summary>{{ nav_item.title }}</summary>
+            <ul>
+                {% for nav_item2 in nav_item.children %}
+                <li>
+                    <p
+                        onclick="clickSidemenu('{{ nav_item2.url| url }}', '{{ nav_item.title }}'+'.'+'{{ nav_item2.title }}')"
+                        id="SIDEMENU-P-{{ nav_item.title }}.{{ nav_item2.title }}"
+                    >
+                        {{ nav_item2.title }}
+                    </p>
+                </li>
+                {% endfor %}
+            </ul>
+        </details>
+    </li>
+    {% else %}
+    <li>
+        <p
+            onclick="clickSidemenu('{{ nav_item.url| url }}', '{{ nav_item.title }}')"
+            id="SIDEMENU-P-{{ nav_item.title }}"
+        >
+            {{ nav_item.title }}
+        </p>
+    </li>
+    {% endif %} {% endfor %}
+</ul>
+
+<script type="text/javascript">
+    let sel = getSidemenuSelected((level = 1));
+    if (sel) {
+        const elem = document.getElementById('SIDEMENU-DETAIL-' + sel);
+        if (elem) {
+            elem.setAttribute('open', '');
+        }
+    }
+    const sel2 = getSidemenuSelected();
+    const elem = document.getElementById('SIDEMENU-P-' + sel2);
+    if (elem) {
+        elem.style.backgroundColor = 'rgba(0.16,0.32, 0.96, 0.32)';
+    }
+</script>
