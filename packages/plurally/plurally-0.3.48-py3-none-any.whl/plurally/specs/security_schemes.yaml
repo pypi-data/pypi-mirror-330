@@ -1,0 +1,26 @@
+plurally_google: 
+  type: oauth2
+  flows:
+    authorizationCode:
+      authorizationUrl: https://accounts.google.com/o/oauth2/auth
+      authorizationUrlPayload: 
+        client_id: "{{ GOOGLE_CLIENT_ID }}"
+        scope: "{{ scopes | join(' ') | urlquote }}"
+        response_type: "code"
+        access_type: "offline"
+        prompt: "{{ 'consent select_account' | urlquote }}"
+        state: "{{ state }}"
+      tokenUrl: https://accounts.google.com/o/oauth2/token
+      tokenUrlPayload: 
+        code: "{{ code }}"
+        client_id: "{{ GOOGLE_CLIENT_ID }}"
+        client_secret: "{{ GOOGLE_CLIENT_SECRET }}"
+        redirect_uri: "{{ redirect_url }}"
+        grant_type: "authorization_code"
+      auth_config: 
+        auth_type: "oauth2"
+        token_refresh_endpoint: https://accounts.google.com/o/oauth2/token
+        refresh_token: "{{ refresh_token }}"
+        client_id: "{{ GOOGLE_CLIENT_ID }}"
+        client_secret: "{{ GOOGLE_CLIENT_SECRET }}"
+        grant_type: "refresh_token"
