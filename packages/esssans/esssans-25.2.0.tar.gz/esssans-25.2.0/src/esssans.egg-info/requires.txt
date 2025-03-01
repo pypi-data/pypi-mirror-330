@@ -1,0 +1,16 @@
+dask
+graphviz
+essreduce>=25.02.4
+numpy
+pandas
+plopp
+pythreejs
+sciline>=24.06.2
+scipp>=24.09.1
+scippneutron>=25.02.1
+scippnexus>=23.12.1
+
+[test]
+pytest
+pooch
+scipy>=1.15.0
