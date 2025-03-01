@@ -1,0 +1,67 @@
+Metadata-Version: 2.2
+Name: pluma-analysis
+Version: 0.10.0
+Summary: A low-level interface to data collected with the pluma urban data acquisition system
+Author-email: Goncalo Lopes <g.lopes@neurogears.org>, Bruno Cruz <b.cruz@neurogears.org>, Andrew Erskine <a.erskine@neurogears.org>
+License: MIT License
+Project-URL: Bug Tracker, https://github.com/emotional-cities/pluma-analysis/issues
+Project-URL: Source Code, https://github.com/emotional-cities/pluma-analysis
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Operating System :: OS Independent
+Classifier: License :: OSI Approved :: MIT License
+Requires-Python: >=3.9.0
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: geopandas
+Requires-Dist: matplotlib
+Requires-Dist: mapclassify
+Requires-Dist: folium
+Requires-Dist: numpy
+Requires-Dist: scipy
+Requires-Dist: scikit-learn
+Requires-Dist: pandas
+Requires-Dist: s3fs
+Requires-Dist: pyubx2
+Requires-Dist: tilemapbase
+Requires-Dist: dotmap
+Requires-Dist: mne
+Requires-Dist: defusedxml
+Requires-Dist: heartpy
+Requires-Dist: setuptools
+Requires-Dist: simplekml
+Requires-Dist: isodate
+Requires-Dist: jinja2
+Provides-Extra: dev
+Requires-Dist: ruff; extra == "dev"
+
+# pluma-analysis
+
+![build](https://github.com/emotional-cities/pluma-analysis/actions/workflows/build.yml/badge.svg?branch=main)
+
+A low-level interface to data collected with the [pluma](https://github.com/emotional-cities/pluma) urban data acquisition system. Data used in the notebooks has been made publicly available in Amazon Simple Storage Service (S3) buckets.
+
+More information about sample data sharing can be found in the [eMOTIONAL Cities data-share repository](https://github.com/emotional-cities/data-share).
+
+## Set-up Instructions
+
+We recommend [uv](https://docs.astral.sh/uv/) for python version, environment, and package dependency management. However, any other tool compatible with the `pyproject.toml` standard should work.
+
+### Install from PyPI
+
+```
+uv pip install pluma-analysis
+```
+
+### Install from source
+
+```
+git clone https://github.com/emotional-cities/pluma-analysis.git
+cd pluma-analysis
+uv sync --all-extras
+```
+
+This package was developed for the eMOTIONAL CITIES Project, which received funding from European Union’s Horizon 2020 research and innovation programme, under the grant agreement No 945307. The eMOTIONAL CITIES Project is a consortium of 12 partners co-coordinated by IGOT and FMUL, taking place between 2021 and 2025. More information at https://emotionalcities-h2020.eu/
