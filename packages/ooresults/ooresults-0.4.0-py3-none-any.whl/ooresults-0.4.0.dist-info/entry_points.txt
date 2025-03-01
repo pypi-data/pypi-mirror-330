@@ -1,0 +1,3 @@
+[console_scripts]
+ooresults-reader = ooresults._reader:main
+ooresults-server = ooresults._server:main
