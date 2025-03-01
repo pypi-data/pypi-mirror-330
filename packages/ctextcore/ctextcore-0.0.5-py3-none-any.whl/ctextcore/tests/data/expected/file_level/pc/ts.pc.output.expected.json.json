@@ -1,0 +1,662 @@
+[
+  {
+    "Phrase chunker-files": {
+      "ts.input.test.txt": [
+        {
+          "doc": {
+            "p": [
+              {
+                "lid": "NONE",
+                "tokenised": true,
+                "sent": {
+                  "tokens": [
+                    {
+                      "start_char": 0,
+                      "pc": "B-NOUN",
+                      "pos": "FOR",
+                      "end_char": 2,
+                      "id": 1,
+                      "text": "HA"
+                    },
+                    {
+                      "start_char": 3,
+                      "pc": "B-PREP",
+                      "pos": "FOR",
+                      "end_char": 5,
+                      "id": 2,
+                      "text": "KU"
+                    },
+                    {
+                      "start_char": 6,
+                      "pc": "B-NOUN",
+                      "pos": "FOR",
+                      "end_char": 15,
+                      "id": 3,
+                      "text": "KORHOKELA"
+                    }
+                  ]
+                }
+              },
+              {
+                "lid": "NONE",
+                "tokenised": true,
+                "sent": {
+                  "tokens": [
+                    {
+                      "start_char": 0,
+                      "pc": "B-NOUN",
+                      "pos": "N08",
+                      "end_char": 9,
+                      "id": 1,
+                      "text": "Swivutiso"
+                    },
+                    {
+                      "start_char": 10,
+                      "pc": "OUT",
+                      "pos": "CONJ",
+                      "end_char": 12,
+                      "id": 2,
+                      "text": "na"
+                    },
+                    {
+                      "start_char": 13,
+                      "pc": "B-NOUN",
+                      "pos": "N10",
+                      "end_char": 23,
+                      "id": 3,
+                      "text": "Tinhlamulo"
+                    }
+                  ]
+                }
+              },
+              {
+                "lid": "NONE",
+                "tokenised": true,
+                "sent": {
+                  "tokens": [
+                    {
+                      "start_char": 0,
+                      "pc": "OUT",
+                      "pos": "INTER",
+                      "end_char": 4,
+                      "id": 1,
+                      "text": "Xana"
+                    },
+                    {
+                      "start_char": 5,
+                      "pc": "B-VERB",
+                      "pos": "PART",
+                      "end_char": 6,
+                      "id": 2,
+                      "text": "i"
+                    },
+                    {
+                      "start_char": 7,
+                      "pc": "B-NOUN",
+                      "pos": "INTER",
+                      "end_char": 11,
+                      "id": 3,
+                      "text": "yini"
+                    },
+                    {
+                      "start_char": 12,
+                      "pc": "I-NOUN",
+                      "pos": "FOR",
+                      "end_char": 15,
+                      "id": 4,
+                      "text": "GEP"
+                    },
+                    {
+                      "start_char": 15,
+                      "pc": "OUT",
+                      "pos": "ZE",
+                      "end_char": 16,
+                      "id": 5,
+                      "text": "?"
+                    }
+                  ]
+                }
+              },
+              {
+                "lid": "NONE",
+                "tokenised": true,
+                "sent": {
+                  "tokens": [
+                    {
+                      "start_char": 0,
+                      "pc": "B-NOUN",
+                      "pos": "N07",
+                      "end_char": 10,
+                      "id": 1,
+                      "text": "Xindzuluti"
+                    },
+                    {
+                      "start_char": 11,
+                      "pc": "B-PREP",
+                      "pos": "POSSC07",
+                      "end_char": 13,
+                      "id": 2,
+                      "text": "xa"
+                    },
+                    {
+                      "start_char": 14,
+                      "pc": "B-NOUN",
+                      "pos": "N06",
+                      "end_char": 22,
+                      "id": 3,
+                      "text": "Mabindzu"
+                    },
+                    {
+                      "start_char": 23,
+                      "pc": "B-PREP",
+                      "pos": "POSSC06",
+                      "end_char": 25,
+                      "id": 4,
+                      "text": "ya"
+                    },
+                    {
+                      "start_char": 26,
+                      "pc": "B-NOUN",
+                      "pos": "FOR",
+                      "end_char": 33,
+                      "id": 5,
+                      "text": "Gauteng"
+                    },
+                    {
+                      "start_char": 34,
+                      "pc": "OUT",
+                      "pos": "ZM",
+                      "end_char": 35,
+                      "id": 6,
+                      "text": "-"
+                    },
+                    {
+                      "start_char": 36,
+                      "pc": "OUT",
+                      "pos": "FOR",
+                      "end_char": 43,
+                      "id": 7,
+                      "text": "Gauteng"
+                    },
+                    {
+                      "start_char": 44,
+                      "pc": "OUT",
+                      "pos": "FOR",
+                      "end_char": 54,
+                      "id": 8,
+                      "text": "Enterprise"
+                    },
+                    {
+                      "start_char": 55,
+                      "pc": "OUT",
+                      "pos": "FOR",
+                      "end_char": 64,
+                      "id": 9,
+                      "text": "Propeller"
+                    },
+                    {
+                      "start_char": 65,
+                      "pc": "OUT",
+                      "pos": "ZPL",
+                      "end_char": 66,
+                      "id": 10,
+                      "text": "("
+                    },
+                    {
+                      "start_char": 66,
+                      "pc": "B-NOUN",
+                      "pos": "FOR",
+                      "end_char": 69,
+                      "id": 11,
+                      "text": "GEP"
+                    },
+                    {
+                      "start_char": 69,
+                      "pc": "OUT",
+                      "pos": "ZPR",
+                      "end_char": 70,
+                      "id": 12,
+                      "text": ")"
+                    },
+                    {
+                      "start_char": 71,
+                      "pc": "B-VERB",
+                      "pos": "PART",
+                      "end_char": 72,
+                      "id": 13,
+                      "text": "i"
+                    },
+                    {
+                      "start_char": 73,
+                      "pc": "B-NOUN",
+                      "pos": "N07",
+                      "end_char": 80,
+                      "id": 14,
+                      "text": "xiyenge"
+                    },
+                    {
+                      "start_char": 81,
+                      "pc": "OUT",
+                      "pos": "DEM07",
+                      "end_char": 85,
+                      "id": 15,
+                      "text": "lexi"
+                    },
+                    {
+                      "start_char": 86,
+                      "pc": "B-VERB",
+                      "pos": "V",
+                      "end_char": 99,
+                      "id": 16,
+                      "text": "tumbuluxiweke"
+                    },
+                    {
+                      "start_char": 100,
+                      "pc": "B-PREP",
+                      "pos": "PART",
+                      "end_char": 102,
+                      "id": 17,
+                      "text": "hi"
+                    },
+                    {
+                      "start_char": 103,
+                      "pc": "B-NOUN",
+                      "pos": "N03",
+                      "end_char": 108,
+                      "id": 18,
+                      "text": "Mfumo"
+                    },
+                    {
+                      "start_char": 109,
+                      "pc": "B-PREP",
+                      "pos": "POSSC03",
+                      "end_char": 111,
+                      "id": 19,
+                      "text": "wa"
+                    },
+                    {
+                      "start_char": 112,
+                      "pc": "B-NOUN",
+                      "pos": "N07",
+                      "end_char": 125,
+                      "id": 20,
+                      "text": "Xifundzankulu"
+                    },
+                    {
+                      "start_char": 126,
+                      "pc": "B-PREP",
+                      "pos": "POSSC07",
+                      "end_char": 128,
+                      "id": 21,
+                      "text": "xa"
+                    },
+                    {
+                      "start_char": 129,
+                      "pc": "B-NOUN",
+                      "pos": "FOR",
+                      "end_char": 136,
+                      "id": 22,
+                      "text": "Gauteng"
+                    },
+                    {
+                      "start_char": 136,
+                      "pc": "OUT",
+                      "pos": "ZM",
+                      "end_char": 137,
+                      "id": 23,
+                      "text": ","
+                    },
+                    {
+                      "start_char": 138,
+                      "pc": "B-PREP",
+                      "pos": "PART",
+                      "end_char": 140,
+                      "id": 24,
+                      "text": "hi"
+                    },
+                    {
+                      "start_char": 141,
+                      "pc": "B-VERB",
+                      "pos": "NPRE",
+                      "end_char": 143,
+                      "id": 25,
+                      "text": "ku"
+                    },
+                    {
+                      "start_char": 144,
+                      "pc": "I-VERB",
+                      "pos": "V",
+                      "end_char": 150,
+                      "id": 26,
+                      "text": "landza"
+                    },
+                    {
+                      "start_char": 151,
+                      "pc": "B-NOUN",
+                      "pos": "N08",
+                      "end_char": 160,
+                      "id": 27,
+                      "text": "swipimelo"
+                    },
+                    {
+                      "start_char": 161,
+                      "pc": "B-PREP",
+                      "pos": "POSSC08",
+                      "end_char": 164,
+                      "id": 28,
+                      "text": "swa"
+                    },
+                    {
+                      "start_char": 165,
+                      "pc": "B-NOUN",
+                      "pos": "N09",
+                      "end_char": 173,
+                      "id": 29,
+                      "text": "Ndzawulo"
+                    },
+                    {
+                      "start_char": 174,
+                      "pc": "B-PREP",
+                      "pos": "POSSC09",
+                      "end_char": 176,
+                      "id": 30,
+                      "text": "ya"
+                    },
+                    {
+                      "start_char": 177,
+                      "pc": "B-NOUN",
+                      "pos": "N03",
+                      "end_char": 187,
+                      "id": 31,
+                      "text": "Nhluvukiso"
+                    },
+                    {
+                      "start_char": 188,
+                      "pc": "B-PREP",
+                      "pos": "POSSC03",
+                      "end_char": 190,
+                      "id": 32,
+                      "text": "wa"
+                    },
+                    {
+                      "start_char": 191,
+                      "pc": "B-NOUN",
+                      "pos": "N03",
+                      "end_char": 199,
+                      "id": 33,
+                      "text": "Ikhonomi"
+                    },
+                    {
+                      "start_char": 199,
+                      "pc": "OUT",
+                      "pos": "ZM",
+                      "end_char": 200,
+                      "id": 34,
+                      "text": ","
+                    },
+                    {
+                      "start_char": 201,
+                      "pc": "B-PREP",
+                      "pos": "PART",
+                      "end_char": 203,
+                      "id": 35,
+                      "text": "hi"
+                    },
+                    {
+                      "start_char": 204,
+                      "pc": "B-NOUN",
+                      "pos": "N07",
+                      "end_char": 211,
+                      "id": 36,
+                      "text": "xirhumo"
+                    },
+                    {
+                      "start_char": 212,
+                      "pc": "B-PREP",
+                      "pos": "POSSC07",
+                      "end_char": 214,
+                      "id": 37,
+                      "text": "xo"
+                    },
+                    {
+                      "start_char": 215,
+                      "pc": "B-VERB",
+                      "pos": "V",
+                      "end_char": 220,
+                      "id": 38,
+                      "text": "nyika"
+                    },
+                    {
+                      "start_char": 221,
+                      "pc": "B-NOUN",
+                      "pos": "N03",
+                      "end_char": 230,
+                      "id": 39,
+                      "text": "nseketelo"
+                    },
+                    {
+                      "start_char": 231,
+                      "pc": "OUT",
+                      "pos": "CONJ",
+                      "end_char": 233,
+                      "id": 40,
+                      "text": "na"
+                    },
+                    {
+                      "start_char": 234,
+                      "pc": "B-NOUN",
+                      "pos": "N03",
+                      "end_char": 242,
+                      "id": 41,
+                      "text": "nhluvuko"
+                    },
+                    {
+                      "start_char": 243,
+                      "pc": "B-PREP",
+                      "pos": "NLOC",
+                      "end_char": 246,
+                      "id": 42,
+                      "text": "eka"
+                    },
+                    {
+                      "start_char": 247,
+                      "pc": "B-NOUN",
+                      "pos": "N10",
+                      "end_char": 253,
+                      "id": 43,
+                      "text": "tiSMME"
+                    },
+                    {
+                      "start_char": 254,
+                      "pc": "B-PREP",
+                      "pos": "CONJ",
+                      "end_char": 257,
+                      "id": 44,
+                      "text": "eka"
+                    },
+                    {
+                      "start_char": 258,
+                      "pc": "B-NOUN",
+                      "pos": "N07",
+                      "end_char": 271,
+                      "id": 45,
+                      "text": "Xifundzankulu"
+                    },
+                    {
+                      "start_char": 272,
+                      "pc": "B-PREP",
+                      "pos": "POSSC07",
+                      "end_char": 274,
+                      "id": 46,
+                      "text": "xa"
+                    },
+                    {
+                      "start_char": 275,
+                      "pc": "B-NOUN",
+                      "pos": "FOR",
+                      "end_char": 282,
+                      "id": 47,
+                      "text": "Gauteng"
+                    },
+                    {
+                      "start_char": 283,
+                      "pc": "B-PREP",
+                      "pos": "PART",
+                      "end_char": 285,
+                      "id": 48,
+                      "text": "hi"
+                    },
+                    {
+                      "start_char": 286,
+                      "pc": "B-VERB",
+                      "pos": "NPRE",
+                      "end_char": 288,
+                      "id": 49,
+                      "text": "ku"
+                    },
+                    {
+                      "start_char": 289,
+                      "pc": "I-VERB",
+                      "pos": "V",
+                      "end_char": 296,
+                      "id": 50,
+                      "text": "tirhisa"
+                    },
+                    {
+                      "start_char": 297,
+                      "pc": "B-NOUN",
+                      "pos": "N10",
+                      "end_char": 303,
+                      "id": 51,
+                      "text": "timali"
+                    },
+                    {
+                      "start_char": 304,
+                      "pc": "OUT",
+                      "pos": "PART",
+                      "end_char": 306,
+                      "id": 52,
+                      "text": "na"
+                    },
+                    {
+                      "start_char": 307,
+                      "pc": "OUT",
+                      "pos": "DEM08",
+                      "end_char": 312,
+                      "id": 53,
+                      "text": "leswi"
+                    },
+                    {
+                      "start_char": 313,
+                      "pc": "B-VERB",
+                      "pos": "PART",
+                      "end_char": 316,
+                      "id": 54,
+                      "text": "nga"
+                    },
+                    {
+                      "start_char": 317,
+                      "pc": "I-VERB",
+                      "pos": "V",
+                      "end_char": 321,
+                      "id": 55,
+                      "text": "riki"
+                    },
+                    {
+                      "start_char": 322,
+                      "pc": "B-NOUN",
+                      "pos": "N09",
+                      "end_char": 326,
+                      "id": 56,
+                      "text": "mali"
+                    },
+                    {
+                      "start_char": 326,
+                      "pc": "OUT",
+                      "pos": "ZE",
+                      "end_char": 327,
+                      "id": 57,
+                      "text": "."
+                    }
+                  ]
+                }
+              },
+              {
+                "lid": "NONE",
+                "tokenised": true,
+                "sent": {
+                  "tokens": [
+                    {
+                      "start_char": 0,
+                      "pc": "B-NOUN",
+                      "pos": "INTER",
+                      "end_char": 4,
+                      "id": 1,
+                      "text": "Xana"
+                    },
+                    {
+                      "start_char": 5,
+                      "pc": "I-NOUN",
+                      "pos": "CONJ",
+                      "end_char": 16,
+                      "id": 2,
+                      "text": "hikokwalaho"
+                    },
+                    {
+                      "start_char": 17,
+                      "pc": "B-PREP",
+                      "pos": "POSSC17",
+                      "end_char": 19,
+                      "id": 3,
+                      "text": "ka"
+                    },
+                    {
+                      "start_char": 20,
+                      "pc": "B-NOUN",
+                      "pos": "INTER",
+                      "end_char": 24,
+                      "id": 4,
+                      "text": "yini"
+                    },
+                    {
+                      "start_char": 25,
+                      "pc": "B-VERB",
+                      "pos": "NPRE",
+                      "end_char": 27,
+                      "id": 5,
+                      "text": "ku"
+                    },
+                    {
+                      "start_char": 28,
+                      "pc": "I-VERB",
+                      "pos": "V",
+                      "end_char": 41,
+                      "id": 6,
+                      "text": "tumbuluxiwile"
+                    },
+                    {
+                      "start_char": 42,
+                      "pc": "B-NOUN",
+                      "pos": "FOR",
+                      "end_char": 45,
+                      "id": 7,
+                      "text": "GEP"
+                    },
+                    {
+                      "start_char": 45,
+                      "pc": "OUT",
+                      "pos": "ZE",
+                      "end_char": 46,
+                      "id": 8,
+                      "text": "?"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+]
