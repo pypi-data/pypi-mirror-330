@@ -1,0 +1,89 @@
+Metadata-Version: 2.3
+Name: fpml
+Version: 0.1.0
+Summary: The FHIRPath mapping language is a data DSL designed to convert data from QuestionnaireResponse (and not only) to any FHIR Resource.
+License: MIT
+Keywords: fhir,fhirpath
+Author: Beda Software
+Author-email: ilya@beda.software
+Maintainer: Vadim Laletin
+Maintainer-email: vadim@beda.software
+Requires-Python: >=3.9
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Web Environment
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Dist: fhirpathpy (>=1.2.1,<2.0.0)
+Project-URL: Bug Tracker, https://github.com/beda-software/FHIRPathMappingLanguage/issues
+Project-URL: Documentation, https://github.com/beda-software/FHIRPathMappingLanguage/tree/main/python/README.md
+Project-URL: Homepage, https://github.com/beda-software/FHIRPathMappingLanguage/tree/main/python
+Project-URL: Repository, https://github.com/beda-software/FHIRPathMappingLanguage/tree/main/python
+Description-Content-Type: text/markdown
+
+# FHIRPathMappingLanguage - fpml python package
+
+## Installation
+
+```bash
+pip install fpml
+```
+
+## Usage
+
+```python
+from fpml import resolve_template
+
+
+resource = {
+    "resourceType": "QuestionnaireResponse",
+    "status": "completed",
+    "item": [
+        {
+            "linkId": "name",
+            "answer": [
+                {
+                    "valueString": "Name"
+                }
+            ]
+        }
+    ]
+}
+
+template = {
+    "resourceType": "Patient",
+    "name": "{{ item.where(linkId='name').answer.valueString }}"
+}
+
+context = {}
+
+result = resolve_template(resource, template, context)
+
+print(result)
+# {'resourceType': 'Patient', 'name': 'Name'}
+```
+
+
+## Development
+
+In `./python` directory:
+
+Run in the shell
+```
+autohooks activate
+```
+
+And edit `../.git/hooks/pre-commit` by replacing the first line with
+```
+#!/usr/bin/env -S poetry --project=./python run python
+```
+
+
