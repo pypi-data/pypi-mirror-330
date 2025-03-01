@@ -1,0 +1,2 @@
+# flashrl
+Fast reinforcement learning 💨
