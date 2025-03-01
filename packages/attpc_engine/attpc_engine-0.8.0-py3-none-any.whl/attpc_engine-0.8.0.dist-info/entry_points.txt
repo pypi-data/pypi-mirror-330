@@ -1,0 +1,5 @@
+[console_scripts]
+convert-kinematics = attpc_engine.kinematics.convert_kinematics:main
+
+[gui_scripts]
+
