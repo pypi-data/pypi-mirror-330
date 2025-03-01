@@ -1,0 +1,4 @@
+[console_scripts]
+activate-promise = cadnaPromise.install:activate
+deactivate-promise = cadnaPromise.install:deactivate
+promise = cadnaPromise.run:runPromise
