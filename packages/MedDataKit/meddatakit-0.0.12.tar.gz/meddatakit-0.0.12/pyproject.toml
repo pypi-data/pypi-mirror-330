@@ -1,0 +1,37 @@
+[tool.poetry]
+name = "MedDataKit"
+version = "0.0.12"
+description = "Medical Public Data Kit"
+authors = ["Sitao Min <sitaomin1994@gmail.com>"]
+readme = "README.md"
+package-mode = true
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.13"
+pandas = "^2.2.2"
+kaggle = "^1.6.17"
+scikit-learn = "^1.5.2"
+pyreadr = "^0.5.2"
+matplotlib = "^3.9.2"
+pyunpack = "^0.3"
+patool = "^2.4.0"
+liac-arff = "^2.5.0"
+python-dotenv = "^1.0.1"
+openpyxl = "^3.1.5"
+rdata = "^0.11.2"
+lifelines = "^0.30.0"
+xgboost = "^2.1.4"
+shiny = "^1.2.1"
+shinyswatch = "^0.8.0"
+shinylive = "^0.7.3"
+ucimlrepo = "^0.0.7"
+xlrd = "^2.0.1"
+
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.29.5"
+pickleshare = "^0.7.5"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
