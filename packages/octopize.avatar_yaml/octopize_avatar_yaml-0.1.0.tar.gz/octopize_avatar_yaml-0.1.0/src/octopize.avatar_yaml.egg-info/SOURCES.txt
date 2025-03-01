@@ -1,0 +1,12 @@
+LICENSE.txt
+README.md
+pyproject.toml
+src/avatar_yaml/__init__.py
+src/avatar_yaml/yaml_utils.py
+src/avatar_yaml/models/common.py
+src/avatar_yaml/models/volume.py
+src/octopize.avatar_yaml.egg-info/PKG-INFO
+src/octopize.avatar_yaml.egg-info/SOURCES.txt
+src/octopize.avatar_yaml.egg-info/dependency_links.txt
+src/octopize.avatar_yaml.egg-info/requires.txt
+src/octopize.avatar_yaml.egg-info/top_level.txt

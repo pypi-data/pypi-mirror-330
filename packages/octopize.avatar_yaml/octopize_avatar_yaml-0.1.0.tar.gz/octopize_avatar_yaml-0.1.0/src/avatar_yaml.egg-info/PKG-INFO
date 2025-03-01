@@ -1,0 +1,11 @@
+Metadata-Version: 2.2
+Name: avatar_yaml
+Version: 0.1.0
+Summary: Add your description here
+Requires-Python: >=3.12
+Description-Content-Type: text/markdown
+Requires-Dist: pyyaml>=6.0.2
+
+# Folder structure
+
+Inspired by <https://blog.ionelmc.ro/2014/05/25/python-packaging/#the-structure%3E>

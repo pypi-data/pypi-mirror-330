@@ -1,0 +1,30 @@
+[project]
+name = "octopize.avatar_yaml"
+version = "0.1.0"
+description = "Helper functions to work with Octopize's avatar YAML files"
+readme = "README.md"
+requires-python = ">=3.12"
+authors = [{ name = "Octopize", email = "pypi-octopize@octopize.io" }]
+license = {file = "LICENSE.txt"}
+
+dependencies = ["pyyaml>=6.0.2"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = ["pytest>=8.3.4", "types-pyyaml>=6.0.12.20241230"]
+
+
+[tool.pytest.ini_options]
+addopts = [
+    # Recommended by pytest
+    # https://docs.pytest.org/en/stable/explanation/goodpractices.html#tests-outside-application-code
+    "--import-mode=importlib",
+]
+# Recommended by pytest
+pythonpath = "src"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/avatar_yaml"]
