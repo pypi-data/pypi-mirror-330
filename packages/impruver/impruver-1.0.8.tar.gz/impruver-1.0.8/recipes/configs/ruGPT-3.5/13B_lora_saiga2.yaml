@@ -1,0 +1,69 @@
+# Training time
+# - 1x RTX 4090 ~ 18.2GiB VRAM ~ 16h 58m
+
+output_dir: ./models/ruGPT-3.5_13B_lora_saiga2
+train_path: ./train.ruGPT-3.5_13B_saiga2.jsonl
+val_path: ./val.ruGPT-3.5_13B_saiga2.jsonl
+
+datasets:
+  - name: IlyaGusev/ru_turbo_alpaca
+    converter: impruver.instruction_to_messages
+  - name: IlyaGusev/ru_turbo_alpaca_evol_instruct
+    converter: impruver.instruction_to_messages
+  - name: IlyaGusev/ru_turbo_saiga
+    converter: impruver.dialog_to_messages
+  - name: IlyaGusev/ru_sharegpt_cleaned
+    converter: impruver.dialog_to_messages
+  - name: IlyaGusev/oasst1_ru_main_branch
+    converter: impruver.dialog_to_messages
+  - name: lksy/ru_instruct_gpt4
+    converter: impruver.instruction_to_messages
+#  - name: IlyaGusev/gpt_roleplay_realm
+#    converter: impruver.char_dialog_to_messages
+#    split: ru
+
+model:
+  class: transformers.AutoModelForCausalLM
+  name: ai-forever/ruGPT-3.5-13B
+  load_in_4bit: true
+  load_in_8bit: false
+  dtype: bf16
+
+lora:
+  r: 16
+  lora_alpha: 16
+  lora_dropout: 0.05
+  bias: none
+  target_modules: [ c_attn, c_fc, c_proj ]
+  task_type: CAUSAL_LM
+
+tokenizer:
+  class: transformers.AutoTokenizer
+  name: ai-forever/ruGPT-3.5-13B
+  max_tokens_count: 1024
+
+trainer:
+  eval_strategy: steps
+  save_strategy: steps
+  eval_steps: 100
+  save_steps: 100
+  per_device_train_batch_size: 1
+  per_device_eval_batch_size: 1
+  gradient_accumulation_steps: 128
+  logging_steps: 1
+  learning_rate: 0.0002
+  num_train_epochs: 2
+  lr_scheduler_type: cosine
+  warmup_steps: 16
+  optim: adamw_8bit
+  metric_for_best_model: eval_loss
+  load_best_model_at_end: true
+  save_total_limit: 2
+  seed: 42
+  remove_unused_columns: false
+  max_grad_norm: 1.0
+  weight_decay: 0.08
+  torch_compile: false
+
+#ddp:
+#  ddp_find_unused_parameters: false

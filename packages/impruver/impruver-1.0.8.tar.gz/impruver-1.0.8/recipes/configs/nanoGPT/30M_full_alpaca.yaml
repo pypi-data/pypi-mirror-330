@@ -1,0 +1,77 @@
+# Training time
+# - 1x RTX 4090 ~ 18.1Gb VRAM ~ 1h 11m
+
+output_dir: ./models/nanoGPT_full_alpaca
+train_path: ./train.nanoGPT_alpaca.jsonl
+val_path: ./val.nanoGPT_alpaca.jsonl
+
+datasets:
+  - name: IlyaGusev/ru_turbo_alpaca
+    converter: impruver.instruction_to_messages
+    only_target_loss: false
+
+model:
+  class: transformers.GPT2LMHeadModel
+  dtype: bf16
+  config_class: transformers.GPT2Config
+  config:
+    torch_dtype: float16
+    n_layer: 6
+    n_head: 6
+    n_inner: null
+    n_embd: 384
+    n_ctx: 256
+    _attn_implementation: eager
+    max_position_embeddings: 256
+    attn_pdrop: 0.2
+    embd_pdrop: 0.2
+    resid_pdrop: 0.2
+    initializer_range: 0.02
+    layer_norm_epsilon: 0.00001
+    vocab_size: 50304
+
+#tokenizer:
+#  class: transformers.GPT2Tokenizer
+#  name: ./models/nanoGPT-tokenizer
+tokenizer:
+  class: transformers.AutoTokenizer
+  name: ai-forever/rugpt3small_based_on_gpt2
+  max_tokens_count: 256
+  special_tokens:
+    pad_token_id: 0
+    pad_token: <pad>
+    bos_token_id: 1
+    bos_token: <s>
+    eos_token_id: 2
+    eos_token: </s>
+    unk_token_id: 3
+    unk_token: <unk>
+
+trainer:
+  eval_strategy: steps
+  save_strategy: steps
+  eval_steps: 10
+  save_steps: 10
+  per_device_train_batch_size: 64
+  per_device_eval_batch_size: 64
+  gradient_accumulation_steps: 5
+  logging_steps: 1
+  adam_beta1: 0.9
+  adam_beta2: 0.99
+  learning_rate: 0.001
+  #min_lr: 1e-4
+  num_train_epochs: 3
+  max_steps: 5000
+  lr_scheduler_type: cosine
+  warmup_steps: 100
+  optim: paged_adamw_8bit
+  metric_for_best_model: eval_loss
+  load_best_model_at_end: true
+  save_total_limit: 2
+  seed: 42
+  remove_unused_columns: false
+  max_grad_norm: 1.0
+  weight_decay: 0.08
+
+#ddp:
+#  ddp_find_unused_parameters: false
