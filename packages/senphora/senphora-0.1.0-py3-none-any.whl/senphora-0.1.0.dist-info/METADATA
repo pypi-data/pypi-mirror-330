@@ -1,0 +1,29 @@
+Metadata-Version: 2.2
+Name: senphora
+Version: 0.1.0
+Summary: Senphora Python library for working with sentinel API
+Author: Babahasko
+Author-email: zakutni4ek@gmail.com
+Requires-Python: >=3.12
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: python-dotenv==1.0.1
+Requires-Dist: requests==2.32.3
+Requires-Dist: pandas==2.2.3
+Requires-Dist: tqdm==4.67.1
+Requires-Dist: rasterio==1.4.3
+Dynamic: author
+Dynamic: author-email
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# senphora
+Р‘РёР±Р»РёРѕС‚РµРєР° РґР»СЏ СЂР°Р±РѕС‚С‹ СЃ API copernicus
+
+# РЈСЃС‚Р°РЅРѕРІРєР° РІ СЂРµР¶РёРјРµ СЂРµРґР°РєС‚РёСЂРѕРІР°РЅРёСЏ
+```cmd
+pip install -e .
+```
