@@ -1,0 +1,14 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+src/lotek_rpc/__init__.py
+src/lotek_rpc/api.py
+src/lotek_rpc/constants.py
+src/lotek_rpc/selfsigned.cert
+src/lotek_rpc.egg-info/PKG-INFO
+src/lotek_rpc.egg-info/SOURCES.txt
+src/lotek_rpc.egg-info/dependency_links.txt
+src/lotek_rpc.egg-info/top_level.txt
