@@ -1,0 +1,208 @@
+Metadata-Version: 2.4
+Name: keggtools
+Version: 1.1.0
+Summary: Enrichment analysis and visualisation toolkit for KEGG pathways
+Author-email: harryhaller001 <harryhaller001@gmail.com>
+Maintainer-email: harryhaller001 <harryhaller001@gmail.com>
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Healthcare Industry
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Typing :: Typed
+License-File: LICENSE
+Requires-Dist: matplotlib
+Requires-Dist: pandas
+Requires-Dist: pillow
+Requires-Dist: pybiomart
+Requires-Dist: pydantic-xml
+Requires-Dist: pydot
+Requires-Dist: requests
+Requires-Dist: scipy
+Requires-Dist: ipython ; extra == "docs"
+Requires-Dist: nbsphinx ; extra == "docs"
+Requires-Dist: sphinx ; extra == "docs"
+Requires-Dist: sphinx-autoapi ; extra == "docs"
+Requires-Dist: sphinx-autodoc-typehints ; extra == "docs"
+Requires-Dist: sphinx-book-theme ; extra == "docs"
+Requires-Dist: coverage ; extra == "test"
+Requires-Dist: flit ; extra == "test"
+Requires-Dist: ipykernel ; extra == "test"
+Requires-Dist: ipython ; extra == "test"
+Requires-Dist: ipywidgets ; extra == "test"
+Requires-Dist: isort ; extra == "test"
+Requires-Dist: mypy ; extra == "test"
+Requires-Dist: pandas-stubs ; extra == "test"
+Requires-Dist: pytest ; extra == "test"
+Requires-Dist: responses ; extra == "test"
+Requires-Dist: ruff ; extra == "test"
+Requires-Dist: setuptools ; extra == "test"
+Requires-Dist: twine ; extra == "test"
+Requires-Dist: types-requests ; extra == "test"
+Project-URL: Documentation, https://keggtools.org/
+Project-URL: Homepage, https://github.com/harryhaller001/keggtools
+Project-URL: Source, https://github.com/harryhaller001/keggtools
+Provides-Extra: docs
+Provides-Extra: test
+
+# keggtools
+
+[![Version](https://img.shields.io/pypi/v/keggtools)](https://pypi.org/project/keggtools/)
+[![codecov](https://codecov.io/gh/harryhaller001/keggtools/graph/badge.svg?token=3VBDIALBLK)](https://codecov.io/gh/harryhaller001/keggtools)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/keggtools)
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/harryhaller001/keggtools/testing.yml)
+[![DOI](https://zenodo.org/badge/304011676.svg)](https://doi.org/10.5281/zenodo.14808443)
+
+Library for KEGG pathway enrichment analysis.
+
+Documentation: [https://keggtools.org/](https://keggtools.org/)
+
+PyPi: [https://pypi.org/project/keggtools/](https://pypi.org/project/keggtools/)
+
+
+## Installation
+
+`keggtools` only supports `python>=3.10`.
+
+Dependencies
+
+* `graphviz`
+
+`python` dependencies
+
+* `requests`
+* `pydot`
+* `scipy`
+
+
+Installation `keggtools` package using `pip`:
+
+```bash
+python3 -m pip install keggtools
+```
+
+To get a more detailed list of install options, please read the `INSTALL.md`
+
+## API
+
+### Download and Parsing
+
+
+```python
+from keggtools import Resolver, IMMUNE_SYSTEM_PATHWAYS
+
+ORGANISM_ID = "hsa"
+resolver = Resolver()
+
+# Select first immune system pathway as example
+pathway_id = list(IMMUNE_SYSTEM_PATHWAYS.keys())[1]
+
+# Resolve pathway
+pathway = resolver.get_pathway(organism=ORGANISM_ID, code=pathway_id)
+print(pathway)
+```
+
+
+### Enrichment and Testing
+
+```python
+from keggtools import Enrichment
+
+# Add pathway object to list
+pathway_list = []
+
+# Init analysis with organism code
+analysis = Enrichment(pathways=pathway_list)
+
+# Study genes as list of entrez gene id's
+study_genes = []
+analysis.run_analysis(gene_list=study_genes)
+
+# to_dataframe method requires pandas installation
+result = analysis.to_dataframe()
+print(result.head())
+```
+
+### Rendering
+
+```python
+from keggtools.render import Renderer
+
+# Load and parse pathway
+renderer = Renderer(kegg_pathway=pathway)
+
+# Render to dot graph
+renderer.render()
+
+# Export to png
+renderer.to_file("output.png", extension="png")
+```
+
+## Development
+
+### Dev installation
+
+Fast install with `virtualenv` for development.
+
+```bash
+python3 -m virtualenv venv
+source ./venv/bin/activate
+pip install --upgrade pip
+
+# Install from requirements
+pip install -r requirements.txt
+
+# Or use makefile
+make install
+```
+
+
+
+### Linting
+
+`ruff` is used for linting and formatting.
+
+```bash
+# Run formatter
+make format
+```
+
+### Static code analysis
+
+Static code analysis using `mypy`.
+
+```bash
+# Run static code analysis
+make typing
+```
+
+### Testing
+
+Run unittest for `keggtools` package. This uses `pytest` and `coverage`.
+
+```bash
+# Run unittest for package
+make testing
+```
+
+### Install package from repo
+
+The package is using the `flit` backend with a `pyproject.toml` and `twine`. To install from repo use
+
+```bash
+# Install package from repo
+make build
+```
+
+
+### License
+
+MIT
+
