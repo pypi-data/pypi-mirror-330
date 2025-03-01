@@ -1,0 +1,4 @@
+exclude_paths:
+- ansible/prod/vars/secret.yml
+- ansible/staging/vars/secret.yml
+- ansible/sync/vars/secret.yml

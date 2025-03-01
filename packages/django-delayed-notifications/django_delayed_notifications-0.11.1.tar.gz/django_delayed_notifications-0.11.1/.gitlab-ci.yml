@@ -1,0 +1,32 @@
+---
+# CI integration
+stages:
+  - lint
+  - docs
+  - build
+  - upload
+  - release
+
+variables:
+  DEBUG: 1
+
+# Include the CI scripts from packages repository
+include:
+  - project: "fguerin/packages"
+    ref: main
+    file: "lint/ci-lint-django.yml"
+  - project: "fguerin/packages"
+    ref: main
+    file: "docs/ci-docs.yml"
+  - project: "fguerin/packages"
+    ref: main
+    file: "build/ci-build-package.yml"
+  - project: "fguerin/packages"
+    ref: main
+    file: "upload/ci-upload-gitlab.yml"
+  - project: "fguerin/packages"
+    ref: main
+    file: "upload/ci-upload-pypi.yml"
+  - project: "fguerin/packages"
+    ref: main
+    file: "release/ci-release-uploaded.yml"

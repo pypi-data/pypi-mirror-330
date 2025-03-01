@@ -1,0 +1,69 @@
+---
+# Pre-commit settings
+exclude: |
+  (?x)^(
+      tests/.*\.py|
+      django_notifications/migrations/.*\.py|
+      django_notifications/migrations/tests/.*\.py
+  )$
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: trailing-whitespace
+        exclude: src/assets/dist/.*
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-json
+      - id: fix-encoding-pragma
+        args: [ '--remove' ]
+      - id: mixed-line-ending
+        args: [ '--fix=lf' ]
+        description: Forces to replace line ending by the UNIX 'lf' character.
+      - id: no-commit-to-branch
+        args: [ --branch, master ]
+
+  - repo: https://github.com/jumanjihouse/pre-commit-hooks
+    rev: 3.0.0
+    hooks:
+      - id: script-must-have-extension
+      - id: shfmt
+      - id: shellcheck
+
+  - repo: https://github.com/adamchainz/django-upgrade
+    rev: 1.23.1
+    hooks:
+      - id: django-upgrade
+        args: [ --target-version, "3.2" ]   # Replace with Django version
+
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    # Ruff version.
+    rev: v0.9.8
+    hooks:
+      - id: ruff
+        args: [ --fix ]
+      - id: ruff-format
+
+  - repo: https://github.com/john-hen/Flake8-pyproject
+    rev: 1.2.3
+    hooks:
+      - id: Flake8-pyproject
+        additional_dependencies:
+          - flake8-django
+          - flake8-bugbear
+          - flake8-builtins
+          - flake8-comprehensions
+          - flake8-cognitive-complexity
+          - flake8-alfred
+          - flake8-logging-format
+          - flake8-printf-formatting
+          - flake8-pep3101
+          - flake8-docstrings
+          - flake8-rst-docstrings
+          - flake8-string-format
+          - flake8-print
+
+  - repo: https://github.com/Riverside-Healthcare/djLint
+    rev: v1.36.4
+    hooks:
+      - id: djlint-django

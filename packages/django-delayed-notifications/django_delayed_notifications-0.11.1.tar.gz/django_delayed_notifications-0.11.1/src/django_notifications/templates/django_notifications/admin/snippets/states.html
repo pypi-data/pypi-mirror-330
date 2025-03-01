@@ -1,0 +1,14 @@
+{% if debug %}<!-- django_notifications/templates/notifications/admin/snippets/states.html -->{% endif %}
+{% load i18n %}
+{% if object.state_from %}
+  <dl class="row">
+    <dt class="col-sm-3">{% translate "State from" %}</dt>
+    <dd class="col-sm-9">{{ object.state_from }}</dd>
+  </dl>
+{% endif %}
+{% if object.state_to %}
+  <dl class="row">
+    <dt class="col-sm-3">{% translate "State to" %}</dt>
+    <dd class="col-sm-9">{{ object.state_to }}</dd>
+  </dl>
+{% endif %}

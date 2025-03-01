@@ -1,0 +1,54 @@
+# https://editorconfig.org/
+
+root = true
+
+[*]
+indent_style = space
+indent_size = 4
+insert_final_newline = true
+trim_trailing_whitespace = true
+end_of_line = lf
+charset = utf-8
+
+# Docstrings and comments use max_line_length = 79
+[*.py]
+max_line_length = 120
+
+[*.{vue,js}]
+max_line_length = 120
+indent_size = 2
+
+# The JSON files contain newlines inconsistently
+[*.json]
+insert_final_newline = false
+
+[**/admin/js/vendor/**]
+charset = unset
+end_of_line = unset
+insert_final_newline = unset
+trim_trailing_whitespace = unset
+indent_style = unset
+indent_size = unset
+
+# Minified JavaScript files shouldn't be changed
+[**.min.js]
+charset = unset
+end_of_line = unset
+insert_final_newline = unset
+trim_trailing_whitespace = unset
+indent_style = unset
+indent_size = unset
+
+# Makefiles always use tabs for indentation
+[Makefile]
+indent_style = tab
+
+[*.{yaml,yml,yamllint}]
+max_line_length = 120
+indent_size = 2
+
+[*.html]
+indent_size = 2
+
+[*.puml]
+indent_size = 2

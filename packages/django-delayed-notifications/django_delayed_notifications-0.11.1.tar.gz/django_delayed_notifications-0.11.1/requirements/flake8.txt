@@ -1,0 +1,15 @@
+# Flake8 linting - used in CI
+flake8
+Flake8-pyproject
+flake8-alfred
+flake8-bugbear
+flake8-builtins
+flake8-cognitive-complexity
+flake8-comprehensions
+flake8-django
+flake8-docstrings
+flake8-functions
+flake8-logging-format
+flake8-pep3101
+flake8-printf-formatting
+flake8-rst-docstrings

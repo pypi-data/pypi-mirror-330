@@ -1,0 +1,12 @@
+{% if debug %}<!-- django_notifications/templates/notifications/admin/snippets/dates.html -->{% endif %}
+{% load i18n %}
+<dl class="row">
+  <dt class="col-sm-3">{% translate "Created at" %}</dt>
+  <dd class="col-sm-9" {# djLint:off #}style="white-space: nowrap;"{# djLint:on #}>{{ object.created_at|date:"d/m/y H:i" }}</dd>
+</dl>
+{% if object.delayed_sending_at %}
+  <dl class="row">
+    <dt class="col-sm-3">{% translate "Delayed seding" %}</dt>
+    <dd class="col-sm-9" {# djLint:off #}style="white-space: nowrap;"{# djLint:on #}>{{ object.delayed_sending_at|date:"d/m/y H:i" }}</dd>
+  </dl>
+{% endif %}
