@@ -1,0 +1,47 @@
+[project]
+name = "smtp_email_notifier_utils"
+version = "0.1.0"
+description = "A simple module for send SMTP-based notification emails."
+readme = "README.rst"
+authors = [
+    { name = "Jaideep Sundaram", email = "jai.python3@gmail.com" }
+]
+requires-python = ">=3.10"
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Intended Audience :: Developers",
+    "Natural Language :: English",
+    "Programming Language :: Python :: 3.12",
+]
+keywords = ["smtp_email_notifier_utils"]
+dependencies = [
+    "Click>=7.0",
+    "PyYAML",
+    "Rich",
+    "singleton-decorator",
+    "python-dotenv"
+]
+
+[project.urls]
+Homepage = "https://github.com/jai-python3/smtp-email-notifier-utils"
+
+[project.scripts]
+send-notification-email = "smtp_email_notifier_utils.send_notification_email:main"
+
+[tool.setuptools]
+zip-safe = false
+include-package-data = true
+
+[tool.setuptools.packages.find]
+include = ["smtp_email_notifier_utils", "smtp_email_notifier_utils.*"]
+
+[tool.setuptools.package-data]
+smtp_email_notifier_utils = ["conf/config.yaml"]
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+# Note: Test configuration would typically go under a tool-specific section
+# like [tool.pytest] if using pytest, but since tests_require is empty,
+# I've omitted it here

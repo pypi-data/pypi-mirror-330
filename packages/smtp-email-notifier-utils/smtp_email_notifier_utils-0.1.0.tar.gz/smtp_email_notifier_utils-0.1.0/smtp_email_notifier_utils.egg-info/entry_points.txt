@@ -1,0 +1,2 @@
+[console_scripts]
+send-notification-email = smtp_email_notifier_utils.send_notification_email:main

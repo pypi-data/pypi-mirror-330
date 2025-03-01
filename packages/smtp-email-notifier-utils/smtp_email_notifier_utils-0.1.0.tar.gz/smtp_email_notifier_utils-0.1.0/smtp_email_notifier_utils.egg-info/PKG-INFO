@@ -1,0 +1,52 @@
+Metadata-Version: 2.2
+Name: smtp_email_notifier_utils
+Version: 0.1.0
+Summary: A simple module for send SMTP-based notification emails.
+Author-email: Jaideep Sundaram <jai.python3@gmail.com>
+Project-URL: Homepage, https://github.com/jai-python3/smtp-email-notifier-utils
+Keywords: smtp_email_notifier_utils
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3.12
+Requires-Python: >=3.10
+Description-Content-Type: text/x-rst
+License-File: AUTHORS.rst
+Requires-Dist: Click>=7.0
+Requires-Dist: PyYAML
+Requires-Dist: Rich
+Requires-Dist: singleton-decorator
+Requires-Dist: python-dotenv
+
+=========================
+SMTP Email Notifier Utils
+=========================
+
+A simple module for sending SMTP-based notification emails.
+
+Usage
+=====
+
+.. code-block:: python
+
+    from smtp_email_notifier_utils.email_notifier import send_notification
+
+    # Example usage
+    recipient = "someone@example.com"
+    subject = "Important Notification"
+    message = "Hello, this is your notification message."
+
+    success = send_notification(recipient, subject, message)
+    if success:
+        print("Notification sent successfully!")
+    else:
+        print("Failed to send notification")
+
+Exported scripts
+================
+
+* send-notification-email
+
+.. code-block:: bash
+
+    send-notification-email --recipient someone@example.com --subject="Important Notification" --message="Hello, this is your notification message."
