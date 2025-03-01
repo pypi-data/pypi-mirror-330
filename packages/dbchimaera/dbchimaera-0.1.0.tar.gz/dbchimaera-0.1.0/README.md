@@ -1,0 +1,150 @@
+# DbChimaera
+
+[![PyPI version](https://badge.fury.io/py/dbchimaera.svg)](https://badge.fury.io/py/dbchimaera)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+## The Shapeshifting Database Adapter
+
+[DbChimaera](https://www.dbchimaera.com) is a lightweight and elegant Python library that provides a unified interface for working with multiple database backends. It automatically adapts query syntax between different database systems, allowing you to write your code once and run it with any supported database.
+
+## Features
+
+- **Seamless Switching**: Easily switch between SQLite, MySQL, and more without changing your query code
+- **Automatic Syntax Adaptation**: Write queries with one placeholder style, and let DbChimaera handle the translation
+- **Connection Management**: Simple, intuitive connection handling for different database types
+- **Query Utilities**: Convenient methods for common database operations
+
+## Installation
+
+```bash
+pip install dbchimaera
+```
+
+## Quick Start
+
+```python
+from dbchimaera import Chimaera
+
+# Connect to SQLite (default)
+db = Chimaera()
+
+# Or connect to MySQL
+mysql_config = {
+    "host": "localhost",
+    "user": "username",
+    "password": "password",
+    "database": "mydb"
+}
+db = Chimaera(mysql_config)
+
+# Run queries with the same syntax regardless of database backend
+users = db.execute_query("SELECT * FROM users WHERE age > %s", (25,))
+
+# Insert data easily
+user_data = {"name": "John Doe", "email": "john@example.com", "age": 30}
+db.insert_data("users", user_data)
+
+# Don't forget to close the connection when done
+db.close_connection()
+```
+
+## Detailed Usage
+
+### Creating a Connection
+
+DbChimaera defaults to SQLite if no connection details are provided:
+
+```python
+# Creates a connection to a local SQLite database named "database.db"
+db = Chimaera()
+```
+
+For MySQL, provide a dictionary with connection details:
+
+```python
+mysql_config = {
+    "host": "your_server.com",
+    "user": "your_username",
+    "password": "your_password",
+    "database": "your_database",
+    "port": 3306  # Optional, defaults to 3306
+}
+db = Chimaera(mysql_config)
+```
+
+### Executing Queries
+
+DbChimaera provides a unified interface for executing queries:
+
+```python
+# Select query with parameters
+results = db.execute_query(
+    "SELECT * FROM products WHERE category = %s AND price < %s",
+    ("electronics", 500)
+)
+
+# Insert query
+db.execute_query(
+    "INSERT INTO logs (timestamp, message) VALUES (%s, %s)",
+    (datetime.now(), "User logged in")
+)
+
+# Update query
+affected_rows = db.execute_query(
+    "UPDATE users SET last_login = %s WHERE id = %s",
+    (datetime.now(), 42)
+)
+```
+
+### Inserting Data
+
+The `insert_data` method provides a convenient way to insert dictionaries:
+
+```python
+new_product = {
+    "name": "Widget Pro",
+    "category": "gadgets",
+    "price": 29.99,
+    "stock": 100
+}
+
+new_id = db.insert_data("products", new_product)
+print(f"Inserted product with ID: {new_id}")
+```
+
+### Query Parameters
+
+Always use `%s` as your placeholder regardless of database type. DbChimaera will automatically translate to the appropriate syntax:
+
+```python
+# This works with both SQLite and MySQL
+db.execute_query("SELECT * FROM table WHERE id = %s", (123,))
+```
+
+## API Reference
+
+### Class: `Chimaera`
+
+#### Constructor
+
+```python
+Chimaera(connection_details=None)
+```
+
+- `connection_details`: Optional dictionary with database connection parameters. If None, connects to SQLite.
+
+#### Methods
+
+- `execute_query(query, params=None)`: Executes a query with optional parameters
+- `query_with_params(query, params=None)`: Alias for execute_query with a more explicit name
+- `insert_data(table, data)`: Inserts a dictionary of data into the specified table
+- `adapt_query(query)`: Translates query placeholders to the correct format for the current database
+- `close_connection()`: Closes the database connection
+
+## License
+
+MIT License
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
