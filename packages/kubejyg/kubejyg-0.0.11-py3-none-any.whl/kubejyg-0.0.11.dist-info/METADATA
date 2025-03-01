@@ -1,0 +1,34 @@
+Metadata-Version: 2.4
+Name: kubejyg
+Version: 0.0.11
+Summary: kubejyg: Kubernetes Resource Extraction with Namespace Grouping built for filtering with jq, yq and grep.
+Project-URL: Homepage, https://github.com/gpetrousov/kubejyg
+Project-URL: Issues, https://github.com/gpetrousov/kubejyg/issues
+Author-email: Ioannis Petrousov <contact@petrousoft.com>
+License-File: LICENSE
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+
+# Kubejyg
+## _Kubernetes Resource Extraction with Namespace Grouping ready for filtering with jq, yq and grep._
+
+## Installation
+
+## How it works
+
+`kubejyg` allows you to extract `kubernets` resources across multiple namespaces and groups them by namespace without the need to write convoluted filters. The output is in `JSON` or `YAML`, ready to be fed into well known processors, `jq` and `yq`.
+
+**Examples**
+
+
+## Naming
+**kubejyg** is named after the following utilities:
+1. `kubectl`
+2. `jq`
+3. `yq`
+
+
+## Features
