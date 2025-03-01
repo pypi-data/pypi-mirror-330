@@ -1,0 +1,32 @@
+[tool.poetry]
+name = "pangea-llm-translator"
+version = "1.0.1"
+description = "A library to transform messages for different LLMs like OpenAI, Mistral, LangChain, Gemini, DBRX, Cohere, Claude, and AWS Bedrock to Pangea messages format"
+readme = "README.md"
+authors = ["Pangea <eng@pangea.cloud>"]
+packages = [{include = "ai"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+jsonschema = "^4.22.0"
+pytest = "^8.3.4"
+jsonpath-ng = "^1.7.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+select = [
+    # ruff defaults
+    "E4",
+    "E7",
+    "E9",
+    "F",
+
+    "I",   # isort
+    "PTH", # flake8-use-pathlib
+]
