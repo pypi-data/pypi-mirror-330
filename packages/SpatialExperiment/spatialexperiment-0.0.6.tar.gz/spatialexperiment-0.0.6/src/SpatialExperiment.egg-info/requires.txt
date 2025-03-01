@@ -1,0 +1,21 @@
+biocframe>=0.6.1
+biocutils>=0.2
+summarizedexperiment>=0.5
+singlecellexperiment>=0.5.7
+pillow>=11.0
+scipy~=1.13
+geopandas
+
+[:python_version < "3.8"]
+importlib-metadata
+
+[optional]
+pandas
+requests
+
+[testing]
+setuptools
+pytest
+pytest-cov
+pandas
+requests
