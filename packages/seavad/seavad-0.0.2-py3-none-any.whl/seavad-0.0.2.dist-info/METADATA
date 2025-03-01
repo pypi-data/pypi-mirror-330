@@ -1,0 +1,70 @@
+Metadata-Version: 2.1
+Name: seavad
+Version: 0.0.2
+Summary: SeaVAD: Voice Activity Detection module with silero and state machine.
+Author-email: "Seasalt.ai" <info@seasalt.ai>
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pydantic >=2.10.6
+Requires-Dist: onnxruntime >=1.16.3
+Requires-Dist: onnxruntime-extensions >=0.11.0
+Requires-Dist: importlib-resources >=6.4.5
+Requires-Dist: pytest >=8.3.4
+Requires-Dist: pyloudnorm >=0.1.1
+Provides-Extra: build
+Requires-Dist: twine ==4.0.2 ; extra == 'build'
+Requires-Dist: build ==1.0.3 ; extra == 'build'
+Provides-Extra: dev
+Requires-Dist: black ==23.3.0 ; extra == 'dev'
+Requires-Dist: isort ==5.12.0 ; extra == 'dev'
+Requires-Dist: pyright ==1.1.314 ; extra == 'dev'
+Provides-Extra: test
+Requires-Dist: pytest ; extra == 'test'
+
+# SeaVAD
+
+SeaVAD is a Python package for Voice Activity Detection (VAD) using a state machine version of SileroVAD os you can control the performance.
+
+## Installation
+
+You can install SeaVAD using pip:
+
+```bash
+pip install SeaVAD
+```
+
+## Usage
+
+Here is a simple example of how to use SeaVAD:
+
+```python
+from seavad.main import SeaVAD
+
+# Load your audio file
+audio_path = 'path/to/your/audio/file.wav'
+
+# Local VAD onnx model path
+model_file_path = 'path/to/vad/onnx/model'
+
+# Create a SeaVAD object with the sample rate and sample width of your audio.
+vad = SeaVAD(model_file_path=model_file_path, sample_rate=16000, sample_width=2)
+
+# Detect voice activity
+segments = vad.get_vad_segments(audio_path)
+
+# Print the detected segments
+for (start, end) in segments:
+    print(f"Start: {start}, End: {end}")
+```
+
+## License
+
+See the [LICENSE](LICENSE) file for details.
+
+## Contact
+
+For any questions or inquiries, please contact us at info@seasalt.ai
