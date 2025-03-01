@@ -1,0 +1,5 @@
+[console_scripts]
+comic2pdf = pybw_comic.convert.image_to_pdf:main_concat
+comic2pdf2 = pybw_comic.convert.image_to_pdf:main
+wn = pybw_comic.scripts.wnacg:main
+
