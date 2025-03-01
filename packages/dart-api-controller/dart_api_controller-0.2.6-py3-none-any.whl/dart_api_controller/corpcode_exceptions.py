@@ -1,0 +1,4 @@
+
+CORPCODE_EXCEPTIONS = {
+    '다날8CB': '00389970'
+}
