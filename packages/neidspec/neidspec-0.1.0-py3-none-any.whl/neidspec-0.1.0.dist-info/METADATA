@@ -1,0 +1,36 @@
+Metadata-Version: 2.2
+Name: neidspec
+Version: 0.1.0
+Summary: Package to work with NEID Spectra
+Home-page: https://github.com/TeHanHunter/neidspec
+Author: Te Han, Gudmundur Stefansson (author of HPFSpec)
+Author-email: tehanhunter@gmail.com
+Keywords: NEID Spectra Astronomy
+Classifier: Topic :: Scientific/Engineering :: Astronomy
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Requires-Dist: numpy==1.24.3
+Requires-Dist: barycorrpy>=0.3.4
+Requires-Dist: astroquery
+Requires-Dist: crosscorr
+
+# NEIDspec
+
+A [NEID](https://neid.psu.edu/) spectrum class based on [HPFspec](https://github.com/gummiks/hpfspec). In development.
+
+# Installation
+We need to first install crosscor
+```
+git clone https://github.com/TeHanHunter/crosscorr.git
+cd crosscorr
+python3 setup.py install
+```
+Then, install NEIDSpec
+```
+git clone https://github.com/TeHanHunter/neidspec.git
+cd neidspec
+python3 setup.py install
+```
