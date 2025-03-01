@@ -1,0 +1,49 @@
+Metadata-Version: 2.2
+Name: otel-inst-py
+Version: 2.2.0
+Summary: Python package that provides the basic features required for Open-Telemetry instrumentation.
+Home-page: https://github.com/tombenke/otel-inst-py
+Author: Tamás Benke
+Author-email: tombenke@gmail.com
+License: MIT
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Development Status :: 4 - Beta
+Classifier: Natural Language :: English
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: opentelemetry-api<1.31.0
+Requires-Dist: opentelemetry-sdk<1.31.0
+Requires-Dist: opentelemetry-exporter-otlp-proto-grpc<1.31.0
+Requires-Dist: opentelemetry-exporter-otlp-proto-http<1.31.0
+Requires-Dist: opentelemetry-exporter-prometheus==0.51b0
+Provides-Extra: dev
+Requires-Dist: build; extra == "dev"
+Requires-Dist: coverage; extra == "dev"
+Requires-Dist: coverage-badge; extra == "dev"
+Requires-Dist: black; extra == "dev"
+Requires-Dist: httpx; extra == "dev"
+Requires-Dist: pylint; extra == "dev"
+Requires-Dist: pdoc; extra == "dev"
+Requires-Dist: pydeps; extra == "dev"
+Requires-Dist: python-dotenv; extra == "dev"
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license
+Dynamic: provides-extra
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+
+For further information, please visit the [project's homepage](https://github.com/tombenke/otel-inst-py).
