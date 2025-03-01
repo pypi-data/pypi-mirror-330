@@ -1,0 +1,49 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+      "fileContext": {
+        "type": "object",
+        "properties": {
+          "leftFileContent": {
+            "type": "string"
+          },
+          "rightFileContent": {
+            "type": "string"
+          },
+          "filename": {
+            "type": "string"
+          },
+          "programmingLanguage": {
+            "type": "object",
+            "properties": {
+              "languageName": {
+                "type": "string",
+                "enum": ["python"]
+              }
+            },
+            "required": ["languageName"]
+          }
+        },
+        "required": ["leftFileContent", "rightFileContent", "filename", "programmingLanguage"]
+      },
+      "maxResults": {
+        "type": "integer"
+      },
+      "referenceTrackerConfiguration": {
+        "type": "object",
+        "properties": {
+          "recommendationsWithReferences": {
+            "type": "string",
+            "enum": ["ALLOW", "BLOCK"]
+          }
+        },
+        "required": ["recommendationsWithReferences"]
+      },
+      "nextToken": {
+        "type": "string"
+      }
+    },
+    "required": ["fileContext", "maxResults", "referenceTrackerConfiguration", "nextToken"]
+}
+  

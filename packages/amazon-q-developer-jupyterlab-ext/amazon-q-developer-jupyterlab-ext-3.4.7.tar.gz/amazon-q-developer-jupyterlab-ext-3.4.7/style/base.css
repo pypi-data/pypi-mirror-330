@@ -1,0 +1,131 @@
+.cwspr-statusbarwidget-parent.jp-mod-clicked div span {
+    color: white;
+}
+
+.cwspr-statusbarwidget-menu {
+    width: 225px !important;
+}
+
+.cwspr-statusbarwidget, .cwspr-statusbarwidget-icon {
+    vertical-align: middle;
+}
+
+.cwspr-statusbarwidget-icon {
+    line-height: initial !important;
+    padding-right: 3px;
+}
+
+.cwspr-statusbarwidget span {
+    display: inline-block;
+}
+
+li[data-command^="codewhisperer:"] {
+    display: list-item;
+    width: 225px;
+}
+
+li[data-command^="codewhisperer:key-shortcut-"] .lm-Menu-itemLabel, .p-Menu-itemLabel, .cwspr-key-shortcut-menu {
+    color: var(--jp-ui-font-color1)
+}
+
+li[data-command^="codewhisperer:key-shortcut-"] .lm-Menu-itemIcon {
+    width: 0;
+    padding-right: 3px;
+}
+
+li[data-command^="codewhisperer:key-shortcut-"] .p-Menu-itemIcon {
+    width: 0;
+    padding-right: 3px;
+}
+
+li[data-command^="codewhisperer:toggle"] .lm-Menu-itemIcon {
+    width: 0;
+    padding-right: 3px;
+}
+
+li[data-command^="codewhisperer:toggle"] .p-Menu-itemIcon {
+    width: 0;
+    padding-right: 3px;
+}
+
+li[data-command^="codewhisperer:"] .lm-Menu-itemLabel {
+    padding-right: 0;
+}
+
+li[data-command^="codewhisperer:"] .p-Menu-itemLabel {
+    padding-right: 0;
+}
+
+li[data-command="codewhisperer:key-shortcut-title"] {
+    font-weight: bold;
+}
+
+li[data-command^="codewhisperer:"] svg {
+    vertical-align: text-top;
+    padding: 0 3px 0 5px;
+}
+
+.cwspr-key-shortcut-menu {
+    display: table-cell;
+    text-align: right;
+    width: inherit;
+    padding-right: 10px;
+}
+
+.cwspr-key-shortcut-button {
+    display: inline-block;
+    padding-left: 4px;
+    padding-right: 4px;
+    border: 2px solid #F4F4F4;
+    line-height: 17px;
+    margin-left: 4px;
+    border-radius: 2px;
+}
+
+.cwspr-learn-more-link {
+    color: #106ba3
+}
+
+.cwspr-spinner {
+    animation: cwspr-spinner-rotator 1.4s linear infinite;
+}
+
+@keyframes cwspr-spinner-rotator {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(270deg); }
+}
+
+.path {
+    fill: none;
+    stroke-dasharray: 187;
+    stroke-dashoffset: 0;
+    transform-origin: center;
+    animation:
+    dash 1.4s ease-in-out infinite;
+}
+
+@keyframes dash {
+    0% { stroke-dashoffset: 187; }
+    50% {
+        stroke-dashoffset: 46.75;
+        transform:rotate(135deg);
+    }
+    100% {
+        stroke-dashoffset: 187;
+        transform:rotate(450deg);
+    }
+}
+
+.cwspr-menu-toggle-button {
+    vertical-align: middle;
+    display: inline-flex;
+    padding-bottom: 2.5px;
+}
+
+.cwspr-menu-toggle-button:hover {
+    background-color: transparent;
+}
+
+.cw-inline:not(.jp-mod-active.jp-Notebook-cell *):not(.jp-FileEditor *){
+    display: none;
+}
