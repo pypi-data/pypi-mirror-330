@@ -1,0 +1,6 @@
+# SPDX-FileCopyrightText: 2023-present Xiang Wang <ramwin@qq.com>
+<<<<<<< HEAD
+__version__ = "0.20.3"
+=======
+__version__ = "0.21.0"
+>>>>>>> ba93f07 (feat: wait command support max times and batch size)
