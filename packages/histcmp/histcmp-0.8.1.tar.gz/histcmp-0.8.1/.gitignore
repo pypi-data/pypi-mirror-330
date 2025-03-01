@@ -1,0 +1,12 @@
+*.pyc
+.venv
+.mypy_cache
+.pytest_cache
+.vscode
+.idea
+.tox
+report
+.DS_Store
+.vim/
+Session.vim
+/.env
