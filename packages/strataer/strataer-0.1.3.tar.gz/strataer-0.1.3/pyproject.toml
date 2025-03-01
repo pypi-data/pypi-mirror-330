@@ -1,0 +1,45 @@
+[build-system]
+requires=["setuptools>64", "wheel", "setuptools-scm>=8.0"]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "strataer"
+dynamic = ["version"]
+description = "CanESM tools for processing stratospheric aerosol"
+authors = [{name = "Landon Rieger", email = "landon.rieger@ec.gc.ca"}]
+dependencies = [
+    "numpy",
+    "xarray >= 2024.01.0",
+    "click",
+    "dask",
+    "scipy"
+]
+requires-python = ">=3.10"
+license = {text = "MIT License"}
+readme = "README.md"
+
+
+[project.scripts]
+convert-cmip7 = "strataer.cli:run"
+
+
+[project.optional-dependencies]
+test = ["pytest", "pytest-cov"]
+lint = ["black"]
+
+
+[tool.pytest.ini_options]
+testpaths = [
+    "test",
+]
+log_cli = true
+log_cli_level = "INFO"
+
+
+[tool.black]
+line-length = 100
+target-version = ['py312']
+
+
+[tool.setuptools_scm]

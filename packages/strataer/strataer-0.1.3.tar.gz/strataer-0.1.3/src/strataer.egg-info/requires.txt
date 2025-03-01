@@ -1,0 +1,12 @@
+numpy
+xarray>=2024.01.0
+click
+dask
+scipy
+
+[lint]
+black
+
+[test]
+pytest
+pytest-cov
