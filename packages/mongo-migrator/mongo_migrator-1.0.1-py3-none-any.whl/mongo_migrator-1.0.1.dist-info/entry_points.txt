@@ -1,0 +1,3 @@
+[console_scripts]
+mongo-migrator=mongo_migrator.cli:main
+
