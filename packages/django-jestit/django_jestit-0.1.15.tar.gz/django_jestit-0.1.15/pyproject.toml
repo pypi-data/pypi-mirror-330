@@ -1,0 +1,36 @@
+[project]
+name = "django-jestit"
+version = "0.1.15"
+description = ""
+authors = [{ name = "Ian Starnes", email = "ian@311labs.com" }]
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.8,<4.0"
+dependencies = [
+    "django (>=4.2.18,<6.0.0)",
+    "requests (>=2.32.3,<3.0.0)",
+    "faker (>=35.2.0,<36.0.0)",
+    "ujson (>=5.10.0,<6.0.0)",
+    "pyjwt (>=2.10.1,<3.0.0)",
+    "pyobjict (>=2.0.0,<4.0.0)",
+    "redis (>=3.5.3,<6.0.0)",
+]
+
+[tool.poetry]
+packages = [
+    { include = "authit" },
+    { include = "jestit" },
+    { include = "metrics" },
+    { include = "renderit" },
+    { include = "taskit" },
+    { include = "testit" },
+]
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.4"
+pytest-django = "^4.9.0"
+twine = "^4.0.2"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
