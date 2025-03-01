@@ -1,0 +1,42 @@
+platformdirs>=4.0.0
+psutil
+uqbar>=0.7.3
+
+[docs]
+jupyterlab
+jupyterlab-rise
+librosa
+matplotlib
+mypy
+soxr
+sphinx
+sphinx-immaterial
+sphinxext-opengraph
+
+[docs:python_version >= "3.13"]
+standard-aifc
+standard-sunau
+
+[test]
+black>=24.0.0
+flake8>=7.0.0
+isort>=5.0.0
+jupyterlab
+librosa
+lxml
+matplotlib
+mypy>=1.8.0
+pytest
+pytest-asyncio
+pytest-cov
+pytest-mock
+pytest-rerunfailures
+types-PyYAML
+types-docutils
+
+[test:python_version >= "3.12"]
+setuptools
+
+[test:python_version >= "3.13"]
+standard-aifc
+standard-sunau
