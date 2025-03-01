@@ -1,0 +1,5 @@
+pbr>=6.0.0
+stevedore>=1.20.0
+oslo.messaging>=9.4.0
+Flask>=1.0.0
+prometheus_client>=0.6.0
