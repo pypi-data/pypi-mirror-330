@@ -1,0 +1,5 @@
+sentence_scan:
+   ignorable_prefixes:
+   - Ignorable
+   extra_patterns:
+   - 'sentence. This'  # This is valid, but included for testing purposes
