@@ -1,0 +1,23 @@
+Metadata-Version: 2.4
+Name: open-hypergraphs
+Version: 0.1.3
+Summary: open hypergraphs
+Project-URL: Homepage, https://github.com/statusfailed/open-hypergraphs/
+Project-URL: Github, https://github.com/statusfailed/open-hypergraphs/
+Author-email: Paul Wilson <paul@statusfailed.com>
+License-File: LICENSE
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.8
+Requires-Dist: numpy~=1.26.4
+Requires-Dist: scipy~=1.15.1
+Provides-Extra: dev
+Requires-Dist: hypothesis; extra == 'dev'
+Requires-Dist: pytest; extra == 'dev'
+Description-Content-Type: text/markdown
+
+# Open Hypergraphs
+
+[![Documentation Status](https://readthedocs.org/projects/open-hypergraphs/badge/?version=latest)](https://open-hypergraphs.readthedocs.io/en/latest/?badge=latest)
+
+Yet another implementation of open hypergraphs for string diagrams
