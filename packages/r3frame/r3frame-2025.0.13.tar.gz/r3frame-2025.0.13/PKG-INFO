@@ -1,0 +1,29 @@
+Metadata-Version: 2.2
+Name: r3frame
+Version: 2025.0.13
+Summary: A small but powerful pygame framework
+Home-page: https://github.com/r3shape/r3frame
+Author: Izaiyah Stokes
+Author-email: d34d0s.dev@gmail.com
+Classifier: Programming Language :: Python :: 3.12
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pygame-ce
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-dist
+Dynamic: summary
+
+r3frame  
+![PyPi Package version](https://img.shields.io/pypi/v/r3frame?style=for-the-badge&logo=pypi&logoColor=white&label=r3frame&labelColor=black&color=white&link=https%3A%2F%2Fpypi.org%2Fproject%2Fr3frame%2F2025.0.2%2F
+)
+
+A small but powerful pygame framework.
+
+
