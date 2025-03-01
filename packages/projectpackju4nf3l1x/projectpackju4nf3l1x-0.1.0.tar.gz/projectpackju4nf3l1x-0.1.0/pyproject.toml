@@ -1,0 +1,12 @@
+[project]
+name = "projectpackju4nf3l1x"
+version = "0.1.0"
+description = "just a pack for hello world"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "requests>=2.32.3",
+]
