@@ -1,0 +1,92 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ruuvitag_sensor"
+version = "3.1.0"
+authors = [
+  { name="Tomi Tuhkanen", email="tomi.tuhkanen@iki.fi" },
+]
+description = "Find RuuviTag sensors and get decoded data from selected sensors"
+readme = "README.md"
+license = { file="LICENSE" }
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Developers",
+    "Development Status :: 5 - Production/Stable",
+    "Framework :: AsyncIO",
+    "Framework :: Pytest"
+]
+keywords = ["RuuviTag", "BLE", "Bluetooth", "IoT", "Sensor"]
+dependencies = [
+    "reactivex",
+    "ptyprocess;platform_system=='Linux'",
+    "bleak",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-asyncio",
+    "ruff",
+    "mypy"
+]
+
+[project.urls]
+homepage = "https://github.com/ttu/ruuvitag-sensor"
+documentation = "https://ttu.github.io/ruuvitag-sensor/"
+source = "https://github.com/ttu/ruuvitag-sensor"
+changelog = "https://github.com/ttu/ruuvitag-sensor/blob/master/CHANGELOG.md"
+issues = "https://github.com/ttu/ruuvitag-sensor/issues"
+
+[tool.pytest.ini_options]
+testpaths = "tests/"
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+
+[tool.ruff]
+exclude = [".venv", ".git", ".eggs", "__pycache__", "build", "dist"]
+line-length = 120
+
+[tool.ruff.lint]
+select = [
+    "A",     # flake8-builtins
+    "C90",   # maccabe
+    "E",     # pycodestyle errors
+    "F",     # pyflakes
+    "G",     # flake8-logging-format
+    "I",     # isort
+    "PERF",  # perflint
+    "PIE",   # flake8-pie
+    "PL",    # pylint
+    "PTH",   # flake8-use-pathlib
+    "Q",     # flake8-quotes
+    "RUF",   # ruff-specific rules
+    "SIM",   # flake8-simplify
+    "W",     # pycodestyle warnings
+]
+ignore = [
+    "PLR2004", # Magic value used in comparison
+    "RUF006",  # Store a reference to the return value of asyncio.create_task
+]
+
+[tool.ruff.format]
+quote-style = "double"  
+indent-style = "space"
+skip-magic-trailing-comma = false
+
+[tool.ruff.lint.mccabe]
+max-complexity = 12
+
+[tool.mypy]
+python_version = 3.9
+ignore_missing_imports = true
