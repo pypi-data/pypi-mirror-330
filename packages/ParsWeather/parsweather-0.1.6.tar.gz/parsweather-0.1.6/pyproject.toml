@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "ParsWeather"
+version = "0.1.6"
+description = "A Python package for getting Iran's weather data, including temperature and RealFeel."
+authors = [
+    {name = "Ali Ayati Qaffari", email = "ayatiali910@gmail.com"}
+]
+readme = "README.md"
+license = {file = "LICENSE"}
+
+requires-python = ">=3.7"
+
+dependencies = [
+    "beautifulsoup4", 
+    "lxml",
+    "requests",
+    "numpy",
+    "matplotlib"
+]
+
+
+[project.urls]
+"Profile" = "https://github.com/MrAAQPy"
+"github" = "https://github.com/MrAAQPy/ParsWeather"
+"issue" = "https://github.com/MrAAQPy/ParsWeather/issues"
+"bale" = "https://ble.ir/aaq1386"
+
+[tool.setuptools.packages.find]
+where = ["src"]
