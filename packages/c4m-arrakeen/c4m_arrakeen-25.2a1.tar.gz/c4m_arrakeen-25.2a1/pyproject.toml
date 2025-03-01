@@ -1,0 +1,70 @@
+[project]
+name = "c4m-arrakeen"
+dynamic = []
+description = "Project Arrakeen, python framework for portable PDKs for digital and analog design."
+authors = [
+    { name = "Chips4Makers contributors" },
+]
+dependencies = [
+    "PDKMaster==0.11.5",
+    "pdkmaster-io-klayout==0.1.6",
+    "c4m-flexcell==0.4.5",
+    "c4m-flexio==0.4.8",
+    "c4m-pdk-sky130==0.2.6",
+    "c4m-pdk-gf180mcu==0.0.10",
+    "c4m-pdk-ihpsg13g2==0.1.2",
+]
+requires-python = ">=3.8"
+readme = "README.md"
+version = "25.2a1"
+
+[project.license]
+text = "AGPL-3.0-or-later OR GPL-2.0-or-later OR CERN-OHL-S-2.0+ OR Apache-2.0"
+
+[build-system]
+requires = [
+    "pdm-backend",
+]
+build-backend = "pdm.backend"
+
+[tool.pdm]
+ignore_package_warnings = [
+    "*",
+]
+distribution = true
+
+[tool.pdm.build]
+includes = [
+    "c4m/",
+]
+
+[tool.pdm.version]
+source = "scm"
+write_to = "version.txt"
+
+[tool.pdm.scripts]
+doit = "doit"
+upd = "pdm update --update-reuse-installed"
+updns = "pdm update --update-reuse-installed --no-sync"
+
+[dependency-groups]
+dev = [
+    "doit>=0.36.0",
+    "tomlkit>=0.12.4",
+]
+vscode = [
+    "pip",
+    "docutils",
+    "esbonio",
+]
+subprojects = [
+    "coverage>=7.5.3",
+    "volare>=0.19.1",
+]
+fixed_deps = [
+    "klayout==0.28.17.post1",
+]
+notebook = [
+    "jupyter",
+    "nbconvert",
+]
