@@ -1,0 +1,4 @@
+[console_scripts]
+betterosi-generate-descriptor-json = betterosi.descriptor:app
+betterosi-to-mcap = betterosi.osi2mcap:app
+betterosi-viewer = betterosi.viewer:main
