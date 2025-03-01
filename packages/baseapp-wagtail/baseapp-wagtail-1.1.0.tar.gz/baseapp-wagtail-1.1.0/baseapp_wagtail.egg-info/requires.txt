@@ -1,0 +1,6 @@
+Django>=3.2
+celery>=5.2
+djangorestframework>=3.14.0
+baseapp-core>=0.2.2
+wagtail<6.3,>=6.2
+wagtail-headless-preview==0.8
