@@ -1,0 +1,24 @@
+$def with (clubs)
+
+<input id="club.filter" oninput="filter_table('clb.table, 'tr', this.value)" placeholder="Search ...">
+<p/>
+
+<table class="dte" id="clb.table" onclick="clb_highlight(event)">
+    <thead>
+        <tr id="club.theader" class="dth">
+            <th class="dth">Name</th>
+        </tr>
+    </thead>
+    <tbody id="clubs_tbody">
+        $if clubs:
+            $ name = "Clubs&nbsp;&nbsp;(" + str(len(clubs)) + ")"
+            <tr class="dte h1">
+                <th class="dte h1" colspan="99">$:name</th>
+            </tr>
+            $for club in clubs:
+                <tr class="dte" id="$club.id">
+                    <td class="dte">$club.name</td>
+                </tr>
+    </tbody>
+</table>
+

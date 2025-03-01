@@ -1,0 +1,84 @@
+$def with (event, classes)
+
+
+$def format_time(time):
+    $if time is not None:
+        $return minutes_seconds(time)
+    $else:
+        $return ''
+
+$def format_date(time):
+    $if time is not None:
+        $return time.strftime('%H:%M:%S')
+    $else:
+        $return ''
+
+$def format_int(value):
+    $return str(value) if value is not None else ''
+
+$def format_voided_legs(legs):
+    $ s = []
+    $for i in legs:
+        $s.append(i.control_1 + '-' + i.control_2)
+    $return ', '.join(s)
+
+
+<div id="cls.event">
+    <table style="text-align: left">
+        <tr>
+            <th style="padding-right: 10px">Event name:</th>
+            <td id="clas.event_name">$(event.name if event is not None else '')</td>
+        </tr>
+        <tr>
+            <th style="padding-right: 10px">Event date:</th>
+            <td id="clas.event_date">$(event.date.isoformat() if event is not None else '')</td>
+        </tr>
+    </table>
+</div>
+
+<p/>
+
+<input id="clas.filter" oninput="filter_table('cls.table', 'tr', this.value)" placeholder="Search ...">
+<p/>
+
+<div>
+    <table class="dte" id="cls.table" onclick="cls_highlight(event)">
+        <thead>
+            <tr id="clas.theader" class="dth">
+                <th class="dth">Name</th>
+                <th class="dth">Short name</th>
+                <th class="dth">Course</th>
+                <th class="dth">Voided legs</th>
+                <th class="dth">Type</th>
+                <th class="dth">Use start control</th>
+                <th class="dth">Apply handicap</th>
+                <th class="dth">Mass start</th>
+                <th class="dth">Time limit</th>
+                <th class="dth">Penalty controls</th>
+                <th class="dth">Penalty time limit</th>
+            </tr>
+        </thead>
+        <tbody id="classes_tbody">
+            $if classes:
+                $ name = "Classes&nbsp;&nbsp;(" + str(len(classes)) + ")"
+                <tr class="dte h1">
+                    <th class="dte h1" colspan="99">$:name</th>
+                </tr>
+                $for class_ in classes:
+                    <tr class="dte" id="$class_.id">
+                        <td class="dte">$class_.name</td>
+                        <td class="dte">$(class_.short_name if class_.short_name is not None else '')</td>
+                        <td class="dte">$(class_.course_name if class_.course_name is not None else '')</td>
+                        <td class="dte">$format_voided_legs(class_.params.voided_legs)</td>
+                        <td class="dte">$({'standard': 'Standard', 'net': 'Net', 'score': 'Score'}.get(class_.params.otype, ''))</td>
+                        <td class="dte">$({'if_punched': 'If punched', 'no': 'No', 'yes': 'Yes'}.get(class_.params.using_start_control, ''))</td>
+                        <td class="dte">$('Yes' if class_.params.apply_handicap_rule else '')</td>
+                        <td class="dte" style="text-align:right">$format_date(class_.params.mass_start)</td>
+                        <td class="dte" style="text-align:right">$format_time(class_.params.time_limit)</td>
+                        <td class="dte" style="text-align:right">$format_int(class_.params.penalty_controls)</td>
+                        <td class="dte" style="text-align:right">$format_int(class_.params.penalty_overtime)</td>
+                    </tr>
+        </tbody>
+    </table>
+</div>
+

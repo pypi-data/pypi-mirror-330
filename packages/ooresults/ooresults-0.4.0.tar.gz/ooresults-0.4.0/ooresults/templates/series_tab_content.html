@@ -1,0 +1,193 @@
+$def with (results)
+
+<!-- Tab content -->
+<div id="Series" class="tabcontent">
+  <div class="actions">
+    <!-- Trigger/Open The Modal -->
+    <button id="ser.myBtnReload" onclick="ser_update()">Reload</button>
+    <button id="ser.myBtnSettings" onclick="ser_mySettings()">Settings ...</button>
+    <button id="ser.myBtnPdfResult" onclick="ser_myPdfResult()">Print results ...</button>
+    <button id="ser.myBtnCsvResult" onclick="ser_myCsvResult()">CSV results ...</button>
+  </div>
+
+  <div id="ser.results" class="data">
+    $:results
+  </div>
+
+  <!-- The Modal -->
+  <div class="modal" id="ser.settingsDialog">
+  </div>
+
+  <!-- The Modal -->
+  <div class="modal" id="ser.pdfResultDialog">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close" onclick="document.getElementById('ser.pdfResultDialog').style.display='none'">&times;</span>
+      <form id="ser.pdfResult.form" class="form-container" onsubmit="ser_submitPdfResult(); return false;">
+        <div>
+          <input id="oo_1" name="ser_landscape" type="checkbox" value="ser.landscape"/>
+          <label for="oo_1">Landscape (page orientation)</label>
+        </div>
+        <p></p>
+        <button type="submit" class="btn">Create PDF</button>
+        <button type="button" class="btn cancel" onclick="document.getElementById('ser.pdfResultDialog').style.display='none'">Cancel</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- The Modal -->
+  <div class="modal" id="ser.csvResultDialog">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close" onclick="document.getElementById('ser.csvResultDialog').style.display='none'">&times;</span>
+      <form id="ser.csvResult.form" class="form-container" onsubmit="ser_submitCsvResult(); return false;">
+        <div>
+            <input type="radio" id="scored" name="filter" value="scored" checked>
+            <label for="scored">All scored</label><br>
+        </div>
+        <p></p>
+        <button type="submit" class="btn">Create CSV</button>
+        <button type="button" class="btn cancel" onclick="document.getElementById('ser.csvResultDialog').style.display='none'">Cancel</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+    function ser_mySettings() {
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById('ser.settingsDialog').innerHTML = this.responseText;
+                document.getElementById('ser.settingsDialog').style.display='block';
+                align_form_table('ser.settingsFormTable');
+            }
+            if (this.readyState == 4 && this.status == 409) {
+                window.alert(this.responseText);
+            }
+            if (this.readyState == 4 && this.status == 500) {
+                window.alert(this.responseText);
+            }
+        };
+        xhr.onerror = function() {
+            window.alert("Network error");
+        };
+        xhr.open("POST", "series/fill_settings_form", true);
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
+        xhr.send();
+    }
+
+    function ser_myPdfResult() {
+        document.getElementById('ser.pdfResultDialog').style.display='block';
+    }
+
+    function ser_myCsvResult() {
+        document.getElementById('ser.csvResultDialog').style.display='block';
+    }
+
+    function ser_submitSettings() {
+        var form = document.getElementById('ser.formSettings');
+        var data = new FormData(form);
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                ser_updateResults(this.responseText);
+                document.getElementById('ser.SettingsDialog').style.display = "none";
+            }
+            if (this.readyState == 4 && this.status == 409) {
+                window.alert(this.responseText)
+            }
+            if (this.readyState == 4 && this.status == 500) {
+                window.alert(this.responseText);
+            }
+        };
+        xhr.onerror = function() {
+            window.alert("Network error");
+        };
+        xhr.open("POST", "series/settings", true);
+        xhr.send(data);
+    }
+
+    function ser_submitPdfResult() {
+        var filename = 'result.pdf';
+        var form = document.getElementById('ser.pdfResult.form');
+        var data = new FormData(form);
+        data.append('event_id', window.event_id);
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                download(filename, this.response, 'application/pdf');
+                document.getElementById('ser.pdfResultDialog').style.display = "none";
+            }
+            if (this.readyState == 4 && this.status == 409) {
+                window.alert(new TextDecoder().decode(this.response));
+            }
+            if (this.readyState == 4 && this.status == 500) {
+                window.alert(new TextDecoder().decode(this.response));
+            }
+        };
+        xhr.onerror = function() {
+            window.alert("Network error");
+        };
+        xhr.open("POST", "series/pdfResult", true);
+        xhr.responseType = "arraybuffer";
+        xhr.send(data);
+    }
+
+    function ser_submitCsvResult() {
+        var filename = 'result.csv';
+        var form = document.getElementById('ser.csvResult.form');
+        var data = new FormData(form);
+        data.append('event_id', window.event_id);
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                download(filename, this.response, 'text/csv');
+                document.getElementById('ser.csvResultDialog').style.display = "none";
+            }
+            if (this.readyState == 4 && this.status == 409) {
+                window.alert(new TextDecoder().decode(this.response));
+            }
+            if (this.readyState == 4 && this.status == 500) {
+                window.alert(new TextDecoder().decode(this.response));
+            }
+        };
+        xhr.onerror = function() {
+            window.alert("Network error");
+        };
+        xhr.open("POST", "series/csvResult", true);
+        xhr.responseType = "arraybuffer";
+        xhr.send(data);
+    }
+
+    function ser_update() {
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                ser_updateResults(this.responseText);
+            }
+            if (this.readyState == 4 && this.status == 409) {
+                window.alert(this.responseText);
+            }
+            if (this.readyState == 4 && this.status == 500) {
+                window.alert(this.responseText);
+            }
+        };
+        xhr.onerror = function() {
+            window.alert("Network error");
+        };
+        xhr.open("POST", "series/update", true);
+        var data = new FormData();
+        data.append('event_id', window.event_id);
+        xhr.send(data);
+    }
+
+    function ser_updateResults(content) {
+        // Get all elements with class="modal" and hide them
+        modal = document.getElementsByClassName("modal");
+        for (i = 0; i < modal.length; i++) {
+            modal[i].style.display = "none";
+        }
+        document.getElementById('ser.results').innerHTML = content;
+    }
+</script>

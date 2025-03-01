@@ -1,0 +1,34 @@
+$def with (competitors)
+
+<input id="comp.filter" oninput="filter_table('comp.table', 'tr', this.value)" placeholder="Search ..."/>
+<p/>
+
+<table class="dte" id="comp.table" onclick="comp_highlight(event)">
+    <thead>
+        <tr id="comp.theader" class="dth">
+            <th class="dth">First name</th>
+            <th class="dth">Last name</th>
+            <th class="dth">Gender</th>
+            <th class="dth">Year</th>
+            <th class="dth">Chip</th>
+            <th class="dth">Club</th>
+        </tr>
+    </thead>
+    <tbody id="competitors_tbody">
+        $if competitors:
+            $ name = "Competitors&nbsp;&nbsp;(" + str(len(competitors)) + ")"
+            <tr class="dte h1">
+                <th class="dte h1" colspan="99">$:name</th>
+            </tr>
+            $for competitor in competitors:
+                <tr class="dte" id="$competitor.id">
+                    <td class="dte">$competitor.first_name</td>
+                    <td class="dte">$competitor.last_name</td>
+                    <td class="dte">$competitor.gender</td>
+                    <td class="dte">$(str(competitor.year) if competitor.year is not None else '')</td>
+                    <td class="dte" style="text-align:right">$(competitor.chip if competitor.chip else "")</td>
+                    <td class="dte">$(competitor.club_name if competitor.club_name else "")</td>
+                </tr>
+    </tbody>
+</table>
+
