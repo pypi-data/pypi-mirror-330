@@ -1,0 +1,66 @@
+patch.linewidth: 0.5
+patch.facecolor: 348ABD  # blue
+patch.edgecolor: FFFFFF
+patch.antialiased: True
+
+text.usetex: True
+font.size: 18 # 16.0
+font.family: sans-serif
+font.sans-serif: Tex Gyre Heros, Helvetica, Nimbus Sans, FreeSans, Arial
+font.serif: Tex Gyre Termes, Times, Times Roman, Times New Roman, Nimbus Roman, FreeSerif
+font.monospace: Tex Gyre Cursor, Courier, Courier New, Nimbus Mono, FreeMono
+
+text.color: 000000
+
+mathtext.fontset: custom
+mathtext.bf:  Tex Gyre Heros, Helvetica, Nimbus Sans, FreeSans, Arial:bold
+mathtext.bfit: Tex Gyre Heros, Helvetica, Nimbus Sans, FreeSans, Arial:italic:bold
+mathtext.cal: TeX Gyre Chorus, Zapf Chancery, URW Chancery L, cursive
+mathtext.it:  Tex Gyre Heros, Helvetica, Nimbus Sans, FreeSans, Arial:italic
+mathtext.rm:  Tex Gyre Heros, Helvetica, Nimbus Sans, FreeSans, Arial
+mathtext.sf:  Tex Gyre Heros, Helvetica, Nimbus Sans, FreeSans, Arial
+mathtext.tt:  Tex Gyre Cursor, Courier, Courier New, Nimbus Mono, FreeMono, monospace
+mathtext.fallback: stixsans
+
+axes.facecolor: FFFFFF
+axes.edgecolor: 000000
+axes.linewidth: 1
+axes.grid: False
+axes.titlesize: 20 # 18
+axes.labelsize: 20 # 16
+axes.labelcolor: 000000
+axes.axisbelow: False
+axes.formatter.limits: -2, 4
+axes.formatter.use_mathtext: True
+axes.autolimit_mode: round_numbers
+
+# Hatching
+hatch.linewidth: 1
+
+# Legend
+legend.frameon: True
+legend.framealpha: 0.25
+legend.fancybox: True
+
+xtick.color: 000000
+xtick.major.size: 5
+xtick.minor.size: 3
+xtick.top: True
+xtick.bottom: True
+xtick.direction: in
+
+ytick.color: 000000
+ytick.major.size: 5
+ytick.minor.size: 3
+ytick.left: True
+ytick.right: True
+ytick.direction: in
+
+figure.dpi: 72
+figure.figsize: 11.111, 8.333
+figure.facecolor: FFFFFF
+figure.edgecolor: 0.50
+
+savefig.dpi: figure
+savefig.facecolor: FFFFFF00
+
