@@ -1,0 +1,5 @@
+[console_scripts]
+pz-rail-service-admin = rail_pz_service.db.cli.admin:admin_top
+pz-rail-service-client = rail_pz_service.client.cli.main:top
+pz-rail-service-server = rail_pz_service.server.main:main
+pz-rail-service-worker = rail_pz_service.server.worker:main
