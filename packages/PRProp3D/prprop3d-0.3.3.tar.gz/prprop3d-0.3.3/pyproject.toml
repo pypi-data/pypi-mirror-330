@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "PRProp3D"
+version = "0.3.3"
+description = "photorfractive propagator for CPU and GPU"
+authors = [
+    {name = "Mark Cronin-Golomb", email = "mark.croningolomb@gmail.com"}
+]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.6"
+dependencies = [
+    "scipy>=1.0", "tqdm", "matplotlib"
+]
+
+[project.urls]
+"Homepage" = "https://github.com/mcroning/PRProp3D/PRProp3D_package"
