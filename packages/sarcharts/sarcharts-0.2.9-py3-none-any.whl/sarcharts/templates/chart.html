@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sarcharts {{ hostname }}</title>
+    <link rel="stylesheet" href="html/css/sarcharts.css" />
+    <link rel="stylesheet" href="html/css/ul-select.css" />
+    <script src="html/js/jquery.js"></script>
+    <script src="html/js/hammer.min.js"></script>
+    <script src="html/js/ul-select.js"></script>
+    <script src="html/js/chart.umd.js"></script>
+    <script src="html/js/chartjs-plugin-zoom.min.js"></script>
+    <script src="html/js/chartjs-plugin-annotation.min.js"></script>
+    <script src="html/js/chartjs-adapter-date-fns.bundle.min.js"></script>
+
+</head>
+<body>
+<section class="container">
+  {% include "header.html" %}
+  <div class="activities">
+    <ul>
+  {% for item in details['datasets'].keys() %}
+    {% if item != "" %}
+      <li class="i_inactive"><a href='#'>{{ item }}</a></li>
+    {% endif %}
+  {% endfor %}
+    </ul>
+  </div>
+  <div class="custom">
+    <input type="checkbox" checked id="checkall"> <b>Show/Hide all</b>
+    <div class="extrametrics">
+    {% for c in range((details['datasets'].values()|list)[0]|length) %}
+    {% set axis = (details['datasets'].values()|list)[0][c] %}
+    {% if "yAxisID" in axis.keys() %}
+      {% set fullname = chart+":"+axis.label|replace('extrametric_', '') %}
+      <!-- {{ fullname }} -->
+      {% if fullname | is_hidden_custom() %}
+      <label><input type="checkbox" id="metric{{c}}" style="accent-color: rgb({{ colors[c] }});"> {{ axis.label|replace('extrametric_', '') }}</label>
+      {% else %}
+      <label><input type="checkbox" checked id="metric{{c}}" style="accent-color: rgb({{ colors[c] }});"> {{ axis.label|replace('extrametric_', '') }}</label>
+      {% endif %}
+    {% endif %}
+    {% endfor %}
+    </div>
+  </div>
+  <div class="chart">
+    <canvas id="chartcanvas"></canvas>
+  </div>
+  <div class="footer">
+    <div id="eventname"></div>
+    <div id="eventdescription"></div>
+    <div id="copyright">
+      <a href="https://github.com/pafernanr/sarcharts">© sarcharts</a>
+    </div>
+  </div>
+</section>
+<script>
+$('.i_inactive').click(function() {
+  $(".i_active").attr("class","i_inactive");
+  $(this).attr("class","i_active");
+  showChart($(this).text());
+});
+{% for c in range(events|length) %}
+  {% set event = (events.keys()|list)[c] %}
+  {% for i in range(events[event]|length) %}
+  {% set eventdata = events[event][i] %}
+  const event{{ c }}_{{ i }} = {
+    type: 'line',
+    enter: function({element}) {
+      $("#copyright").hide();
+      $("#eventdescription").show();
+      $("#eventdescription").html("{{ eventdata['description'] }}");
+      $("#eventdescription").css("color", element.label.options.color);
+      $("#eventname").show();
+      $("#eventname").html("{{ eventdata['date'] }} | {{ event }}");
+      // $("#eventname").css("border-color", element.label.options.color);
+      $("#eventname").css("color", element.label.options.color);
+      return true;
+    },
+    // leave: function({element}) {
+    //   $("#eventdescription").css("border-color", "#000");
+    //   $("#eventdescription").css("color", "#000");
+    //   return true;
+    // },
+    borderColor: "rgba({{ colors[c] }}, 0.4)",
+    borderWidth: 1,
+    display: true,
+    label: {
+      display: true,
+      position: 'start',
+      content: "{{ event }}",
+      backgroundColor: 'transparent',
+      opacity: 0,
+      rotation: 90,
+      xAdjust: 5,
+      yAdjust: 15,
+      font: { size: 11 },
+      color: 'rgba({{ colors[c] }})'
+    },
+    scaleID: 'x',
+    value: "{{ eventdata['date'] }}"
+  };
+  {% endfor %}
+{% endfor %}
+
+function showChart(name) {
+  myChart.destroy();
+  myChart = new Chart(ctx, {
+    type: 'line',
+      data: {
+        labels: myCharts[name]['labels'],
+        datasets: myCharts[name]['datasets']
+      },
+    options: {
+      maintainAspectRatio: false,
+      responsive: true,
+      scales: {
+        x: {
+          type: 'time',
+          time: {
+            tooltipFormat: 'yyyy:LL:dd HH:mm:ss',
+            displayFormats: { // https://github.com/moment/luxon/blob/master/docs/formatting.md
+              'millisecond': 'yyyy:LL:dd HH:mm:ss SSS',
+              'second': 'yyyy:LL:dd HH:mm:ss',
+              'minute': 'yyyy:LL:dd HH:mm:ss',
+              'hour': 'yyyy:LL:dd HH:mm:ss',
+              'day': 'yyyy:LL:dd HH:mm:ss',
+              'week': 'yyyy:LL:dd HH:mm:ss',
+              'month': 'yyyy:LL:dd HH:mm:ss',
+              'quarter': 'yyyy LL:dd HH:mm:ss',
+              'year': 'yyyy:LL:dd HH:mm:ss'
+            }
+          },
+          ticks: {
+            source: 'auto'
+          }
+        },
+        y: {
+          title: {
+            display: true,
+            text: '{{ chart }}'
+          }
+        },
+        {% for c in range((details['datasets'].values()|list)[0]|length) %}
+          {% set axis = (details['datasets'].values()|list)[0][c] %}
+          {% if "yAxisID" in axis.keys() %}
+        {{ axis['yAxisID'] }}: {
+          title: {
+            display: true,
+            text: '{{ axis.label }}',
+            color: 'rgb({{ colors[c] }})',
+          },
+          type: 'linear',
+          display: false,
+          position: 'right',
+          ticks: {
+            color: 'rgb({{ colors[c] }})',
+            backdropColor: 'rgb({{ colors[c] }})',
+            padding: 1,
+            backdropPadding: 1
+          },
+          grid: {
+            tickColor: 'rgb({{ colors[c] }}, 0.2)',
+            color: 'rgb({{ colors[c] }}, 0.2)'
+          }
+        },
+          {% endif %}
+        {% endfor %}
+      },
+      plugins: {
+        legend: {
+          position: 'top',
+          labels: {
+                    filter: item => item.text.indexOf('extrametric_') == -1
+          }
+        },
+        annotation: { annotations: { 
+          {% for c in range(events|length) %}
+            {% set event = (events.keys()|list)[c] %}{% for i in range(events[event]|length) %}event{{c}}_{{i}},{% endfor %}
+          {% endfor %}
+          }
+        },
+        zoom: {
+          limits: {
+            x: { min:'original', max:'original' }
+          },
+          zoom: {
+            drag: {
+              enabled: true
+            },
+            wheel: {
+              enabled: true,
+            },
+            pinch: {
+              enabled: true
+            },
+            mode: 'x',
+          }
+        }
+      }
+    }
+  });
+}
+
+var myCharts = {
+  {% for item, data in details['datasets'].items() %}
+  '{{ item }}': {
+    'datasets': [
+    {% for i in range(data|length) %}
+      {% if data[i]['values']|length > 0 %}
+        {
+        {% set fullname = chart+":"+item+":"+data[i]['label'] %}
+        // {{ fullname }}
+        {% if fullname | is_hidden_metric() %}
+          hidden: true,
+        {% endif %}
+        label: '{{ data[i]['label'] }}',
+        yAxisID: '{{ data[i]['yAxisID']|default('y') }}',
+        data: {{ data[i]['values'] }},
+        borderColor: 'rgb({{ colors[i] }})',
+        backgroundColor: 'rgb({{ colors[i] }}, 0.3)',
+        borderWidth: 1,
+        pointRadius: 2,
+        fill: 'origin',
+        }{{ ", " if not loop.last else "" }}
+      {% endif %}
+    {% endfor %}
+    ]
+  }{{ ", " if not loop.last else "" }}
+  {% endfor %}
+}
+
+var ctx = document.getElementById('chartcanvas').getContext('2d');
+var myChart = new Chart(ctx);
+var mousex = 0;
+var mousey = 0;
+$(document).ready(function () {
+  showChart($('.i_inactive').first().text());
+  $('.i_inactive').first().attr("class", "i_active");
+
+  selhost="{{ hostname }}"
+  $('#hostlist').ulSelect(function(elem) {
+    if (selhost != $(elem).text()) {
+      selhost=$(elem).text().replace(/\s+/g, "");
+      window.location = selhost+"_{{ pages[0] }}.html";
+    }
+  });
+  selchart="{{ chart }}"
+  $('#chartlist').ulSelect(function(elem) {
+      selchart=$(elem).text().replace(/\s+/g, "");
+      window.location = selhost+"_"+selchart+".html"
+  });
+  // $("body").on("click",function(e) {
+  //   if (!$(e.target).closest('#eventdescription').length) {
+  //       $('#eventname').hide();
+  //       $('#eventdescription').hide();
+  //       $("#footer").css("border-color", "#000");
+  //       $("#footer").css("color", "#000");
+  //       $("#copyright").show();
+  //   }
+  // });
+  $(".extrametrics").find('input[type=checkbox]').change(function() {
+    id = $(this).attr('id').replace('metric', '');
+    if(this.checked) {
+      myChart.show(id);
+    } else {
+      myChart.hide(id);
+    }
+  });
+  $("#checkall").click(function() {
+    $(document.body).css('cursor', 'wait');
+    if(this.checked) {
+      $(".extrametrics").find('input[type=checkbox]').prop( "checked", true );
+    } else {
+      $(".extrametrics").find('input[type=checkbox]').prop( "checked", false );
+    }
+    $(".extrametrics").find('input[type=checkbox]').trigger('change');
+    $(document.body).css('cursor', 'default');
+  });
+
+});
+
+
+</script>
+
+</body>
+</html>
