@@ -1,0 +1,31 @@
+/*
+ * (C) Copyright 1996- ECMWF.
+ *
+ * This software is licensed under the terms of the Apache Licence Version 2.0
+ * which can be obtained at http://www.apache.org/licenses/LICENSE-2.0.
+ *
+ * In applying this licence, ECMWF does not waive the privileges and immunities
+ * granted to it by virtue of its status as an intergovernmental organisation nor
+ * does it submit to any jurisdiction.
+ */
+
+
+#pragma once
+
+
+constexpr bool _to_bool(int x) {
+    return x != 0;
+}
+
+constexpr bool eckit_HAVE_ECKIT_CODEC     = _to_bool(1);
+constexpr bool eckit_HAVE_PROJ            = _to_bool(0);
+constexpr bool eckit_HAVE_GEO_CONVEX_HULL = _to_bool(0);
+
+constexpr bool eckit_HAVE_GEO_BITREPRODUCIBLE         = _to_bool(0);
+constexpr bool eckit_HAVE_GEO_CACHING                 = _to_bool(0);
+constexpr bool eckit_HAVE_GEO_GRID_ORCA               = _to_bool(1);
+constexpr bool eckit_HAVE_GEO_PROJECTION_PROJ_DEFAULT = _to_bool(0);
+
+
+constexpr const char* eckit_GEO_CACHE_PATH = "~/.local/share/eckit/geo";
+constexpr const char* eckit_GEO_SHARE_GRID = "~eckit/share/eckit/geo/grid.yaml:~eckit/share/eckit/geo/FESOM.yaml:~eckit/share/eckit/geo/ICON.yaml:~eckit/share/eckit/geo/ORCA.yaml";
