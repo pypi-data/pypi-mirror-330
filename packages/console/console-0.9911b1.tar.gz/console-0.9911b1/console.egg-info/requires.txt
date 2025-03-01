@@ -1,0 +1,17 @@
+ezenv>=0.92
+
+[:os_name == "nt"]
+jinxed
+
+[:os_name == "nt" and platform_version < "10.0.10586"]
+colorama
+
+[all]
+pyfiglet
+webcolors
+
+[figlet]
+pyfiglet
+
+[webcolors]
+webcolors
