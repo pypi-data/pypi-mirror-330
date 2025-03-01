@@ -1,0 +1,38 @@
+Metadata-Version: 2.4
+Name: p2s
+Version: 0.1.6
+Summary: Simple CLI Stats
+Author-email: Jonas Eschmann <jonas.eschmann@gmail.com>
+License: MIT
+Requires-Dist: numpy
+Description-Content-Type: text/markdown
+
+
+```
+pip install p2s
+```
+
+# General Stats
+```
+seq 0 100 | p2s
+```
+
+# Count
+```
+seq 0 100 | p2s.count
+```
+
+# Mean
+```
+seq 0 100 | p2s.mean
+```
+
+# Standard Deviation
+```
+seq 0 100 | p2s.std
+```
+
+# Quantile (in Percent)
+```
+seq 0 100 | p2s.q 25
+```
