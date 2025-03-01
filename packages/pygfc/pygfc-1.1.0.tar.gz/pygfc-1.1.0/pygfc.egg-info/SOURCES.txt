@@ -1,0 +1,13 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.py
+include/gfc/gfc.h
+pygfc.egg-info/PKG-INFO
+pygfc.egg-info/SOURCES.txt
+pygfc.egg-info/dependency_links.txt
+pygfc.egg-info/top_level.txt
+python/pygfc.c
+python/pygfc.pyx
+src/gfc.c
