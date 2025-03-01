@@ -1,0 +1,17 @@
+Metadata-Version: 2.2
+Name: olab_prediction_market_sdk
+Version: 0.0.90
+Summary: OpinionLabs Prediction Market SDK(beta)
+Home-page: 
+Author: nik.opinionlabs
+Author-email: nik_opinionlabs <nik@opinionlabs.xyz>
+Requires-Dist: urllib3>=2.3.0
+Requires-Dist: six>=1.17.0
+Requires-Dist: certifi>=2024.12.14
+Requires-Dist: python-dateutil>=2.9.0.post0
+Requires-Dist: hexbytes>=1.2.1
+Requires-Dist: web3>=7.6.1
+Requires-Dist: eth_account>=0.13.0
+Requires-Dist: poly_eip712_structs>=0.0.1
+Requires-Dist: olab_open_api>=0.0.6
+Dynamic: author
