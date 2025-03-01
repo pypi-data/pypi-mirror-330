@@ -1,0 +1,33 @@
+[project]
+name = "blesta_sdk"
+version = "0.1.5"
+description = "A SDK for integrating with Blesta"
+readme = "README.md"
+authors = [
+    { name = "jwogrady"}
+]
+requires-python = ">=3.13"
+dependencies = [
+    "python-dotenv>=1.0.1",
+    "requests>=2.32.3",
+]
+
+[project.scripts]
+blesta = "blesta_sdk.cli.blesta_cli:cli"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "black>=25.1.0",
+    "pytest>=8.3.4",
+    "pytest-cov>=6.0.0",
+    "ruff>=0.9.9",
+]
+
+[tool.uv]
+indexes = [
+    { name = "pypi", url = "https://pypi.org/simple/", publish-url = "https://upload.pypi.org/legacy/" }
+]
