@@ -1,0 +1,16 @@
+name: test_env
+channels:
+  - conda-forge
+dependencies:
+  - pip
+  - pooch
+  - xarray
+  - numpy
+  - scipy >=1.6
+  - pytest
+  - codecov
+  - pytest-cov
+  - climlab-rrtmg >=0.4.1
+  - climlab-emanuel-convection
+  - climlab-cam3-radiation >0.2
+  - climlab-sbm-convection
