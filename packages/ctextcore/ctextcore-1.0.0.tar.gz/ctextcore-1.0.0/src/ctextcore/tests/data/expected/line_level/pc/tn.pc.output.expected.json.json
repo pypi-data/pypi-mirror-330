@@ -1,0 +1,672 @@
+[
+  {
+    "doc": {
+      "p": [
+        {
+          "lid": "NONE",
+          "tokenised": true,
+          "sent": {
+            "tokens": [
+              {
+                "start_char": 0,
+                "pc": "B-NOUN",
+                "pos": "ABBR",
+                "end_char": 2,
+                "id": 1,
+                "text": "RE"
+              },
+              {
+                "start_char": 3,
+                "pc": "B-PREP",
+                "pos": "FOR",
+                "end_char": 7,
+                "id": 2,
+                "text": "RATA"
+              },
+              {
+                "start_char": 8,
+                "pc": "B-NOUN",
+                "pos": "FOR",
+                "end_char": 10,
+                "id": 3,
+                "text": "GO"
+              },
+              {
+                "start_char": 11,
+                "pc": "B-PREP",
+                "pos": "FOR",
+                "end_char": 13,
+                "id": 4,
+                "text": "GO"
+              },
+              {
+                "start_char": 14,
+                "pc": "B-NOUN",
+                "pos": "FOR",
+                "end_char": 19,
+                "id": 5,
+                "text": "THUSA"
+              }
+            ]
+          }
+        },
+        {
+          "lid": "NONE",
+          "tokenised": true,
+          "sent": {
+            "tokens": [
+              {
+                "start_char": 0,
+                "pc": "B-NOUN",
+                "pos": "N10",
+                "end_char": 7,
+                "id": 1,
+                "text": "Dipotso"
+              },
+              {
+                "start_char": 8,
+                "pc": "OUT",
+                "pos": "PART",
+                "end_char": 10,
+                "id": 2,
+                "text": "le"
+              },
+              {
+                "start_char": 11,
+                "pc": "B-NOUN",
+                "pos": "N10",
+                "end_char": 19,
+                "id": 3,
+                "text": "Dikarabo"
+              }
+            ]
+          }
+        },
+        {
+          "lid": "NONE",
+          "tokenised": true,
+          "sent": {
+            "tokens": [
+              {
+                "start_char": 0,
+                "pc": "B-NOUN",
+                "pos": "ABBR",
+                "end_char": 3,
+                "id": 1,
+                "text": "GEP"
+              },
+              {
+                "start_char": 4,
+                "pc": "B-PREP",
+                "pos": "PART",
+                "end_char": 6,
+                "id": 2,
+                "text": "ke"
+              },
+              {
+                "start_char": 7,
+                "pc": "B-NOUN",
+                "pos": "INTER",
+                "end_char": 11,
+                "id": 3,
+                "text": "mang"
+              },
+              {
+                "start_char": 11,
+                "pc": "OUT",
+                "pos": "ZE",
+                "end_char": 12,
+                "id": 4,
+                "text": "?"
+              }
+            ]
+          }
+        },
+        {
+          "lid": "NONE",
+          "tokenised": true,
+          "sent": {
+            "tokens": [
+              {
+                "start_char": 0,
+                "pc": "B-NOUN",
+                "pos": "V",
+                "end_char": 7,
+                "id": 1,
+                "text": "Gauteng"
+              },
+              {
+                "start_char": 8,
+                "pc": "B-PREP",
+                "pos": "FOR",
+                "end_char": 18,
+                "id": 2,
+                "text": "Enterprise"
+              },
+              {
+                "start_char": 19,
+                "pc": "B-NOUN",
+                "pos": "FOR",
+                "end_char": 28,
+                "id": 3,
+                "text": "Propeller"
+              },
+              {
+                "start_char": 29,
+                "pc": "OUT",
+                "pos": "ZPL",
+                "end_char": 30,
+                "id": 4,
+                "text": "("
+              },
+              {
+                "start_char": 30,
+                "pc": "OUT",
+                "pos": "ABBR",
+                "end_char": 33,
+                "id": 5,
+                "text": "GEP"
+              },
+              {
+                "start_char": 33,
+                "pc": "OUT",
+                "pos": "ZPR",
+                "end_char": 34,
+                "id": 6,
+                "text": ")"
+              },
+              {
+                "start_char": 35,
+                "pc": "B-VERB",
+                "pos": "PART",
+                "end_char": 37,
+                "id": 7,
+                "text": "ke"
+              },
+              {
+                "start_char": 38,
+                "pc": "B-NOUN",
+                "pos": "N07",
+                "end_char": 44,
+                "id": 8,
+                "text": "setheo"
+              },
+              {
+                "start_char": 45,
+                "pc": "OUT",
+                "pos": "DEM07",
+                "end_char": 47,
+                "id": 9,
+                "text": "se"
+              },
+              {
+                "start_char": 48,
+                "pc": "B-VERB",
+                "pos": "SC07",
+                "end_char": 50,
+                "id": 10,
+                "text": "se"
+              },
+              {
+                "start_char": 51,
+                "pc": "I-VERB",
+                "pos": "V",
+                "end_char": 62,
+                "id": 11,
+                "text": "tlhomilweng"
+              },
+              {
+                "start_char": 63,
+                "pc": "B-PREP",
+                "pos": "PART",
+                "end_char": 65,
+                "id": 12,
+                "text": "ke"
+              },
+              {
+                "start_char": 66,
+                "pc": "B-NOUN",
+                "pos": "N09",
+                "end_char": 70,
+                "id": 13,
+                "text": "Puso"
+              },
+              {
+                "start_char": 71,
+                "pc": "B-PREP",
+                "pos": "POSSC09",
+                "end_char": 73,
+                "id": 14,
+                "text": "ya"
+              },
+              {
+                "start_char": 74,
+                "pc": "B-NOUN",
+                "pos": "N09",
+                "end_char": 83,
+                "id": 15,
+                "text": "Porofense"
+              },
+              {
+                "start_char": 84,
+                "pc": "B-PREP",
+                "pos": "POSSC09",
+                "end_char": 86,
+                "id": 16,
+                "text": "ya"
+              },
+              {
+                "start_char": 87,
+                "pc": "B-NOUN",
+                "pos": "N09",
+                "end_char": 94,
+                "id": 17,
+                "text": "Gauteng"
+              },
+              {
+                "start_char": 94,
+                "pc": "OUT",
+                "pos": "ZM",
+                "end_char": 95,
+                "id": 18,
+                "text": ","
+              },
+              {
+                "start_char": 96,
+                "pc": "B-PREP",
+                "pos": "DEMLOC",
+                "end_char": 98,
+                "id": 19,
+                "text": "mo"
+              },
+              {
+                "start_char": 99,
+                "pc": "B-NOUN",
+                "pos": "V",
+                "end_char": 111,
+                "id": 20,
+                "text": "tlhokomelong"
+              },
+              {
+                "start_char": 112,
+                "pc": "B-PREP",
+                "pos": "POSSC09",
+                "end_char": 114,
+                "id": 21,
+                "text": "ya"
+              },
+              {
+                "start_char": 115,
+                "pc": "B-NOUN",
+                "pos": "N05",
+                "end_char": 122,
+                "id": 22,
+                "text": "Lefapha"
+              },
+              {
+                "start_char": 123,
+                "pc": "B-PREP",
+                "pos": "POSSC05",
+                "end_char": 125,
+                "id": 23,
+                "text": "la"
+              },
+              {
+                "start_char": 126,
+                "pc": "B-NOUN",
+                "pos": "N09",
+                "end_char": 136,
+                "id": 24,
+                "text": "Tlhabololo"
+              },
+              {
+                "start_char": 137,
+                "pc": "OUT",
+                "pos": "PART",
+                "end_char": 139,
+                "id": 25,
+                "text": "le"
+              },
+              {
+                "start_char": 140,
+                "pc": "B-NOUN",
+                "pos": "N09",
+                "end_char": 149,
+                "id": 26,
+                "text": "Tsweletso"
+              },
+              {
+                "start_char": 150,
+                "pc": "B-PREP",
+                "pos": "POSSC09",
+                "end_char": 152,
+                "id": 27,
+                "text": "ya"
+              },
+              {
+                "start_char": 153,
+                "pc": "B-NOUN",
+                "pos": "N09",
+                "end_char": 160,
+                "id": 28,
+                "text": "Ikonomi"
+              },
+              {
+                "start_char": 160,
+                "pc": "OUT",
+                "pos": "ZM",
+                "end_char": 161,
+                "id": 29,
+                "text": ","
+              },
+              {
+                "start_char": 162,
+                "pc": "B-VERB",
+                "pos": "SC07",
+                "end_char": 164,
+                "id": 30,
+                "text": "se"
+              },
+              {
+                "start_char": 165,
+                "pc": "I-VERB",
+                "pos": "VCOP",
+                "end_char": 167,
+                "id": 31,
+                "text": "na"
+              },
+              {
+                "start_char": 168,
+                "pc": "OUT",
+                "pos": "PART",
+                "end_char": 170,
+                "id": 32,
+                "text": "le"
+              },
+              {
+                "start_char": 171,
+                "pc": "B-NOUN",
+                "pos": "N09",
+                "end_char": 178,
+                "id": 33,
+                "text": "taolelo"
+              },
+              {
+                "start_char": 179,
+                "pc": "OUT",
+                "pos": "DEM09",
+                "end_char": 180,
+                "id": 34,
+                "text": "e"
+              },
+              {
+                "start_char": 181,
+                "pc": "B-VERB",
+                "pos": "SC09",
+                "end_char": 182,
+                "id": 35,
+                "text": "e"
+              },
+              {
+                "start_char": 183,
+                "pc": "I-VERB",
+                "pos": "V",
+                "end_char": 195,
+                "id": 36,
+                "text": "kgethegileng"
+              },
+              {
+                "start_char": 196,
+                "pc": "B-PREP",
+                "pos": "POSSC09",
+                "end_char": 198,
+                "id": 37,
+                "text": "ya"
+              },
+              {
+                "start_char": 199,
+                "pc": "B-VERB",
+                "pos": "SC15",
+                "end_char": 201,
+                "id": 38,
+                "text": "go"
+              },
+              {
+                "start_char": 202,
+                "pc": "I-VERB",
+                "pos": "V",
+                "end_char": 209,
+                "id": 39,
+                "text": "tlamela"
+              },
+              {
+                "start_char": 210,
+                "pc": "B-NOUN",
+                "pos": "N10",
+                "end_char": 216,
+                "id": 40,
+                "text": "diSMME"
+              },
+              {
+                "start_char": 217,
+                "pc": "B-PREP",
+                "pos": "PART",
+                "end_char": 219,
+                "id": 41,
+                "text": "ka"
+              },
+              {
+                "start_char": 220,
+                "pc": "B-NOUN",
+                "pos": "N09",
+                "end_char": 229,
+                "id": 42,
+                "text": "tshegetso"
+              },
+              {
+                "start_char": 230,
+                "pc": "B-PREP",
+                "pos": "DEMLOC",
+                "end_char": 232,
+                "id": 43,
+                "text": "mo"
+              },
+              {
+                "start_char": 233,
+                "pc": "B-NOUN",
+                "pos": "N09",
+                "end_char": 244,
+                "id": 44,
+                "text": "Porofenseng"
+              },
+              {
+                "start_char": 245,
+                "pc": "B-PREP",
+                "pos": "POSSC09",
+                "end_char": 247,
+                "id": 45,
+                "text": "ya"
+              },
+              {
+                "start_char": 248,
+                "pc": "B-NOUN",
+                "pos": "N09",
+                "end_char": 255,
+                "id": 46,
+                "text": "Gauteng"
+              },
+              {
+                "start_char": 256,
+                "pc": "B-PREP",
+                "pos": "PART",
+                "end_char": 258,
+                "id": 47,
+                "text": "ka"
+              },
+              {
+                "start_char": 259,
+                "pc": "B-NOUN",
+                "pos": "N10",
+                "end_char": 266,
+                "id": 48,
+                "text": "dithuso"
+              },
+              {
+                "start_char": 267,
+                "pc": "B-PREP",
+                "pos": "POSSC10",
+                "end_char": 270,
+                "id": 49,
+                "text": "tsa"
+              },
+              {
+                "start_char": 271,
+                "pc": "B-NOUN",
+                "pos": "N06",
+                "end_char": 278,
+                "id": 50,
+                "text": "matlole"
+              },
+              {
+                "start_char": 279,
+                "pc": "OUT",
+                "pos": "PART",
+                "end_char": 281,
+                "id": 51,
+                "text": "le"
+              },
+              {
+                "start_char": 282,
+                "pc": "B-PREP",
+                "pos": "PART",
+                "end_char": 284,
+                "id": 52,
+                "text": "ka"
+              },
+              {
+                "start_char": 285,
+                "pc": "B-NOUN",
+                "pos": "N10",
+                "end_char": 292,
+                "id": 53,
+                "text": "dithuso"
+              },
+              {
+                "start_char": 293,
+                "pc": "B-PREP",
+                "pos": "POSSC10",
+                "end_char": 296,
+                "id": 54,
+                "text": "tsa"
+              },
+              {
+                "start_char": 297,
+                "pc": "B-NOUN",
+                "pos": "N03",
+                "end_char": 303,
+                "id": 55,
+                "text": "mofuta"
+              },
+              {
+                "start_char": 304,
+                "pc": "B-VERB",
+                "pos": "DEM03",
+                "end_char": 305,
+                "id": 56,
+                "text": "o"
+              },
+              {
+                "start_char": 306,
+                "pc": "I-VERB",
+                "pos": "ADJ03",
+                "end_char": 312,
+                "id": 57,
+                "text": "mongwe"
+              },
+              {
+                "start_char": 313,
+                "pc": "B-ADV",
+                "pos": "CONJ",
+                "end_char": 317,
+                "id": 58,
+                "text": "fela"
+              },
+              {
+                "start_char": 317,
+                "pc": "OUT",
+                "pos": "ZE",
+                "end_char": 318,
+                "id": 59,
+                "text": "."
+              }
+            ]
+          }
+        },
+        {
+          "lid": "NONE",
+          "tokenised": true,
+          "sent": {
+            "tokens": [
+              {
+                "start_char": 0,
+                "pc": "B-NOUN",
+                "pos": "ABBR",
+                "end_char": 3,
+                "id": 1,
+                "text": "GEP"
+              },
+              {
+                "start_char": 4,
+                "pc": "B-VERB",
+                "pos": "SC09",
+                "end_char": 5,
+                "id": 2,
+                "text": "e"
+              },
+              {
+                "start_char": 6,
+                "pc": "I-VERB",
+                "pos": "V",
+                "end_char": 16,
+                "id": 3,
+                "text": "tlhometswe"
+              },
+              {
+                "start_char": 17,
+                "pc": "B-VERB",
+                "pos": "SC15",
+                "end_char": 19,
+                "id": 4,
+                "text": "go"
+              },
+              {
+                "start_char": 20,
+                "pc": "I-VERB",
+                "pos": "V",
+                "end_char": 24,
+                "id": 5,
+                "text": "dira"
+              },
+              {
+                "start_char": 25,
+                "pc": "B-NOUN",
+                "pos": "INTER",
+                "end_char": 28,
+                "id": 6,
+                "text": "eng"
+              },
+              {
+                "start_char": 28,
+                "pc": "OUT",
+                "pos": "ZE",
+                "end_char": 29,
+                "id": 7,
+                "text": "?"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+]
