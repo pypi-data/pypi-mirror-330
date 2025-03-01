@@ -1,0 +1,2969 @@
+from typing import Dict, Any, Optional, List, TypeVar
+from datetime import datetime, date
+from decimal import Decimal
+from groovindb.core.client import Table, Client, SchemaClient, DatabaseClient
+from groovindb.types import *
+
+T = TypeVar('T')
+
+class Prod_dwh_AUX_CAMPAIGNS_BUDGETSType:
+    IdBudget: Optional[int]
+    IdCampaign: Optional[int]
+    DateFrom: Optional[Any]
+    DateTo: Optional[Any]
+    IdCurrency: Optional[str]
+
+class Prod_dwh_CAT_ADVERTISERSType:
+    _KeyAdvertiser: Optional[str]
+    IdAdvertiser: Optional[int]
+    StatusAdvertiser: Optional[str]
+    Advertiser: Optional[str]
+    RegisterDate: Optional[Any]
+    IdBillingCompany: Optional[int]
+    BillingCompany: Optional[str]
+    IdBusiness: Optional[int]
+    Business: Optional[str]
+    TaxId: Optional[str]
+    Currency: Optional[str]
+    CurrencyDescription: Optional[str]
+    AdvertiserCountryCode: Optional[str]
+    AdvertiserCountry: Optional[str]
+    BusinessCountryCode: Optional[str]
+    BusinessCountry: Optional[str]
+    IdLocalAgency: Optional[int]
+    LocalAgency: Optional[str]
+    IdRegionalAgency: Optional[int]
+    RegionalAgency: Optional[str]
+    IdBusinessGroup: Optional[int]
+    BusinessGroup: Optional[str]
+    Withholdings: Optional[float]
+    CommissionsToPay: Optional[float]
+    IdVertical: Optional[int]
+    Vertical: Optional[str]
+    IdHeadOfImplementations: Optional[int]
+    HeadOfImplementations: Optional[str]
+    IdHeadOfProgrammatic: Optional[int]
+    HeadOfProgrammatic: Optional[str]
+    IdSalesManager: Optional[int]
+    SalesManager: Optional[str]
+    Active: Optional[str]
+    FirstSpent: Optional[str]
+    LostSince: Optional[str]
+    MaxSpent: Optional[date]
+    LastSpent: Optional[str]
+    LastSpentMonths: Optional[int]
+    MonthsSpent: Optional[int]
+    MonthsBetweenSpent: Optional[int]
+    Continuos: Optional[str]
+    Spent_LTD: Optional[Decimal]
+    Type: Optional[str]
+    SmbClient: Optional[int]
+    DCO_Score: Optional[Decimal]
+    Retargeting_Pixel: Optional[int]
+    Goal_Pixel: Optional[int]
+
+class Prod_dwh_CAT_BALANCESType:
+    IdCompany: Optional[int]
+    IdBank: Optional[int]
+    BankName: Optional[str]
+    BalanceTC: Optional[float]
+    BalanceUSD: Optional[Decimal]
+    IdDate: Optional[date]
+    IdCurrency: Optional[str]
+
+class Prod_dwh_CAT_BANKSType:
+    IdCompany: Optional[int]
+    IdBank: Optional[int]
+    Account: Optional[int]
+    PlanAccount: Optional[str]
+    BankType: Optional[str]
+    BankName: Optional[str]
+    IdCurrency: Optional[str]
+
+class Prod_dwh_CAT_CALENDARType:
+    IdDate: Optional[date]
+    Date: Optional[date]
+    Weekday: Optional[str]
+    WeekdayShort: Optional[str]
+    WeekdayNum: Optional[float]
+    MonthDay: Optional[float]
+    QuarterDay: Optional[int]
+    YearDay: Optional[float]
+    WeekNum: Optional[float]
+    WeekISO: Optional[str]
+    MonthNum: Optional[float]
+    YearMonthSeq: Optional[float]
+    Month: Optional[str]
+    MonthShort: Optional[str]
+    MonthStart: Optional[date]
+    MonthEnd: Optional[date]
+    QuarterStart: Optional[date]
+    QuarterEnd: Optional[date]
+    YearStart: Optional[date]
+    YearEnd: Optional[date]
+    QuarterNum: Optional[float]
+    Quarter: Optional[str]
+    Year: Optional[int]
+    YearMonth: Optional[str]
+    WeekendFlag: Optional[bool]
+
+class Prod_dwh_CAT_CALENDAR_FINANCEType:
+    IdDate: Optional[date]
+    Date: Optional[date]
+    Weekday: Optional[str]
+    WeekdayShort: Optional[str]
+    WeekdayNum: Optional[float]
+    MonthDay: Optional[float]
+    QuarterDay: Optional[int]
+    YearDay: Optional[float]
+    WeekNum: Optional[float]
+    WeekISO: Optional[str]
+    MonthNum: Optional[float]
+    YearMonthSeq: Optional[float]
+    Month: Optional[str]
+    MonthShort: Optional[str]
+    MonthStart: Optional[date]
+    MonthEnd: Optional[date]
+    QuarterStart: Optional[date]
+    QuarterEnd: Optional[date]
+    YearStart: Optional[date]
+    YearEnd: Optional[date]
+    QuarterNum: Optional[float]
+    Quarter: Optional[str]
+    Year: Optional[int]
+    YearMonth: Optional[str]
+    WeekendFlag: Optional[bool]
+
+class Prod_dwh_CAT_COMPANIESType:
+    IdCompany: Optional[int]
+    CompanyLegalName: Optional[str]
+    Company: Optional[str]
+    companytaxid: Optional[str]
+    IdCurrency: Optional[str]
+
+class Prod_dwh_CAT_COUNTRIESType:
+    IdCountry: Optional[str]
+    Country: Optional[str]
+
+class Prod_dwh_CAT_CURRENCIESType:
+    IdCurrency: Optional[str]
+    Currency: Optional[str]
+
+class Prod_dwh_CAT_CUSTOMERSType:
+    IdCustomer: Optional[int]
+    Customer: Optional[str]
+    CustomerLegalName: Optional[str]
+    CustomerRegistrationDate: Optional[Any]
+    CustomerActive: Optional[int]
+    CustomerPaymentCondition: Optional[int]
+    CustomerTax: Optional[int]
+    CustomerCountry: Optional[str]
+    CustomerIdCompany: Optional[int]
+    CustomerTaxId: Optional[str]
+    CustomerCUIT: Optional[str]
+
+class Prod_dwh_CAT_SERVICESType:
+    IdService: Optional[int]
+    Service: Optional[str]
+    ServiceType: Optional[str]
+    ContentType: Optional[str]
+    Medium: Optional[str]
+
+class Prod_dwh_CAT_SUPPLIERSType:
+    IdSupplier: Optional[int]
+    Supplier: Optional[str]
+    SupplierLegalName: Optional[str]
+    SupplierIdCompany: Optional[int]
+
+class Prod_dwh_NAV_BUDGETSType:
+    _KeyBudget: Optional[str]
+    IdBudget: Optional[int]
+    _KeyAdvertiser: Optional[str]
+    AdvertiserBudget: Optional[str]
+    Budget: Optional[str]
+    DateFrom: Optional[Any]
+    DateTo: Optional[Any]
+    BudgetAmountTC: Optional[Decimal]
+    BudgetAmountUSD: Optional[Decimal]
+    InvoiceAmountTC: Optional[Decimal]
+    InvoiceAmountUSD: Optional[Decimal]
+    SalesPAmountUSD: Optional[Decimal]
+    InvoiceAmountTC_Orig: Optional[Decimal]
+    InvoiceAmountUSD_Orig: Optional[Decimal]
+    SpentAmountTC_Bud: Optional[Decimal]
+    SpentAmountUSD_Bud: Optional[Decimal]
+    CostAmountTC_Bud: Optional[Decimal]
+    CostAmountUSD_Bud: Optional[Decimal]
+    IdPurchaseOrder: Optional[str]
+    BudgetReal: Optional[int]
+    id_currency: Optional[str]
+    id_kpi: Optional[int]
+    kpi: Optional[str]
+    kpi_value: Optional[Decimal]
+    external: Optional[int]
+    id_purchase_settings: Optional[int]
+    purchase_type: Optional[str]
+    purchase_value: Optional[str]
+    purchase_external: Optional[int]
+    Rebate: Optional[float]
+
+class Prod_dwh_NAV_Budgets_to_colppyType:
+    _KeyBudget: Optional[str]
+    AdvertiserBudget: Optional[str]
+    Budget: Optional[str]
+    DateFrom: Optional[Any]
+    DateTo: Optional[Any]
+    InvoiceAmountTC: Optional[Decimal]
+    InvoiceAmountUSD: Optional[Decimal]
+    IdEmpresa: Optional[int]
+    IdCurrency: Optional[str]
+    Rate: Optional[Decimal]
+    invoiceamount: Optional[Decimal]
+
+class Prod_dwh_NAV_CAMPAIGNSType:
+    Status: Optional[str]
+    IdAdvertiser: Optional[int]
+    IdCountry: Optional[str]
+    IdCampaign: Optional[int]
+    Campaign: Optional[str]
+    Audience: Optional[str]
+    IdService: Optional[int]
+
+class Prod_dwh_NAV_CURRENCY_RATESType:
+    IdDate: Optional[date]
+    Rate: Optional[Decimal]
+    IdCurrency: Optional[str]
+    NextMonthDate: Optional[date]
+    NextMonthRate: Optional[Decimal]
+
+class Prod_dwh_NAV_DIRECT_COSTSType:
+    IdCampaign: Optional[int]
+    IdDate: Optional[date]
+    IdCurrency: Optional[str]
+    IdProvider: Optional[str]
+    CostAmountTC: Optional[Decimal]
+    CostAmountUSD: Optional[Decimal]
+    cpc: Optional[Decimal]
+
+class Prod_dwh_NAV_FINANCE_FACTType:
+    IdSupplier: Optional[Decimal]
+    IdCustomer: Optional[int]
+    IdDate: Optional[Any]
+    Reference: Optional[str]
+    DueDate: Optional[date]
+    InvoiceDate: Optional[date]
+    TotalAmountTC: Optional[Decimal]
+    TotalAmountUSD: Optional[Decimal]
+    TotalAmountWithoutVATTC: Optional[Decimal]
+    TotalAmountWithoutVATUSD: Optional[Decimal]
+    CollectedAmountTC: Optional[Decimal]
+    CollectedAmountUSD: Optional[Decimal]
+    InvoicedAmountCollectedTC: Optional[Decimal]
+    InvoicedAmountCollectedUSD: Optional[Decimal]
+    PaidAmountTC: Optional[Decimal]
+    PaidAmountUSD: Optional[Decimal]
+    InvoicedPaidAmountTC: Optional[Decimal]
+    InvoicedPaidAmountUSD: Optional[Decimal]
+    CollectPendingAmountTC: Optional[Decimal]
+    CollectPendingAmountUSD: Optional[Decimal]
+    PayPendingAmountTC: Optional[Decimal]
+    PayPendingAmountUSD: Optional[Decimal]
+    InvoiceNumber: Optional[str]
+    StreetDays: Optional[Decimal]
+    RotationDays: Optional[Decimal]
+    PaymentMethod: Optional[Decimal]
+    Account: Optional[str]
+    Area: Optional[str]
+    Market: Optional[str]
+    Check: Optional[str]
+    Category: Optional[str]
+    InvoiceType: Optional[str]
+    IdCompany: Optional[int]
+    _KeyBudget: Optional[str]
+    IdBank: Optional[Decimal]
+    BankName: Optional[str]
+    BalanceTC: Optional[float]
+    BalanceUSD: Optional[Decimal]
+    AccountPlan: Optional[str]
+    AdvertisersWithSpent: Optional[Decimal]
+    AdvertisersWithSpentTotal: Optional[Decimal]
+    DateType: Optional[str]
+
+class Prod_dwh_NAV_FINANCE_FACT_ANTType:
+    IdSupplier: Optional[str]
+    IdCustomer: Optional[str]
+    IdDate: Optional[Any]
+    Reference: Optional[str]
+    DueDate: Optional[date]
+    InvoiceDate: Optional[date]
+    TotalAmountTC: Optional[str]
+    TotalAmountUSD: Optional[Decimal]
+    CollectedAmountTC: Optional[Decimal]
+    CollectedAmountUSD: Optional[Decimal]
+    InvoicedAmountCollectedTC: Optional[Decimal]
+    InvoicedAmountCollectedUSD: Optional[Decimal]
+    PaidAmountTC: Optional[Decimal]
+    PaidAmountUSD: Optional[Decimal]
+    InvoicedPaidAmountTC: Optional[Decimal]
+    InvoicedPaidAmountUSD: Optional[Decimal]
+    PendingAmountTC: Optional[Decimal]
+    PendingAmountUSD: Optional[Decimal]
+    InvoiceNumber: Optional[str]
+    StreetDays: Optional[int]
+    RotationDays: Optional[int]
+    PaymentMethod: Optional[str]
+    Account: Optional[str]
+    Check: Optional[str]
+    Category: Optional[str]
+    InvoiceType: Optional[str]
+    IdCompany: Optional[str]
+    _KeyBudget: Optional[str]
+
+class Prod_dwh_NAV_FINANCE_GOALSType:
+    id_sales_manager: Optional[int]
+    period: Optional[date]
+    amount: Optional[Decimal]
+    marketgoal: Optional[str]
+
+class Prod_dwh_NAV_INVOICEDType:
+    IdDate: Optional[date]
+    IdService: Optional[int]
+    IdAdvertiser: Optional[int]
+    IdCurrency: Optional[str]
+    BillAmountUSD: Optional[Decimal]
+
+class Prod_dwh_NAV_SPENT_ADXType:
+    SpentType: Optional[str]
+    IdCampaign: Optional[int]
+    IdDate: Optional[date]
+    IdService: Optional[int]
+    IdCurrency: Optional[str]
+    SpentAmountTC: Optional[Decimal]
+    Goals: Optional[int]
+    RevenueTC: Optional[Decimal]
+    Impressions: Optional[int]
+    Views: Optional[int]
+    Clicks: Optional[int]
+
+class Prod_dwh_NAV_SPENT_DCOType:
+    SpentType: Optional[str]
+    IdCampaign: Optional[int]
+    IdDate: Optional[date]
+    IdService: Optional[int]
+    IdCurrency: Optional[str]
+    SpentAmountTC: Optional[Decimal]
+    Goals: Optional[Decimal]
+    RevenueTC: Optional[Decimal]
+    Impressions: Optional[Decimal]
+    Views: Optional[Decimal]
+    Clicks: Optional[Decimal]
+
+class Prod_dwh_NAV_SPENT_SHOPType:
+    SpentType: Optional[str]
+    IdCampaign: Optional[int]
+    IdDate: Optional[date]
+    IdService: Optional[int]
+    IdCurrency: Optional[str]
+    SpentAmountTC: Optional[Decimal]
+    Goals: Optional[Decimal]
+    RevenueTC: Optional[Decimal]
+    Impressions: Optional[Decimal]
+    Views: Optional[Decimal]
+    Clicks: Optional[Decimal]
+
+class Prod_dwh_SchemaClient(SchemaClient):
+    AUX_CAMPAIGNS_BUDGETS: 'Table[Prod_dwh_AUX_CAMPAIGNS_BUDGETSType]'
+    CAT_ADVERTISERS: 'Table[Prod_dwh_CAT_ADVERTISERSType]'
+    CAT_BALANCES: 'Table[Prod_dwh_CAT_BALANCESType]'
+    CAT_BANKS: 'Table[Prod_dwh_CAT_BANKSType]'
+    CAT_CALENDAR: 'Table[Prod_dwh_CAT_CALENDARType]'
+    CAT_CALENDAR_FINANCE: 'Table[Prod_dwh_CAT_CALENDAR_FINANCEType]'
+    CAT_COMPANIES: 'Table[Prod_dwh_CAT_COMPANIESType]'
+    CAT_COUNTRIES: 'Table[Prod_dwh_CAT_COUNTRIESType]'
+    CAT_CURRENCIES: 'Table[Prod_dwh_CAT_CURRENCIESType]'
+    CAT_CUSTOMERS: 'Table[Prod_dwh_CAT_CUSTOMERSType]'
+    CAT_SERVICES: 'Table[Prod_dwh_CAT_SERVICESType]'
+    CAT_SUPPLIERS: 'Table[Prod_dwh_CAT_SUPPLIERSType]'
+    NAV_BUDGETS: 'Table[Prod_dwh_NAV_BUDGETSType]'
+    NAV_Budgets_to_colppy: 'Table[Prod_dwh_NAV_Budgets_to_colppyType]'
+    NAV_CAMPAIGNS: 'Table[Prod_dwh_NAV_CAMPAIGNSType]'
+    NAV_CURRENCY_RATES: 'Table[Prod_dwh_NAV_CURRENCY_RATESType]'
+    NAV_DIRECT_COSTS: 'Table[Prod_dwh_NAV_DIRECT_COSTSType]'
+    NAV_FINANCE_FACT: 'Table[Prod_dwh_NAV_FINANCE_FACTType]'
+    NAV_FINANCE_FACT_ANT: 'Table[Prod_dwh_NAV_FINANCE_FACT_ANTType]'
+    NAV_FINANCE_GOALS: 'Table[Prod_dwh_NAV_FINANCE_GOALSType]'
+    NAV_INVOICED: 'Table[Prod_dwh_NAV_INVOICEDType]'
+    NAV_SPENT_ADX: 'Table[Prod_dwh_NAV_SPENT_ADXType]'
+    NAV_SPENT_DCO: 'Table[Prod_dwh_NAV_SPENT_DCOType]'
+    NAV_SPENT_SHOP: 'Table[Prod_dwh_NAV_SPENT_SHOPType]'
+
+class Prod_public_contacts_dealsType:
+    hs_object_id: int
+    deal_id: int
+
+class Prod_public_contacts_emailsType:
+    hs_object_id: int
+    email_id: int
+
+class Prod_public_contacts_meetingsType:
+    hs_object_id: int
+    meeting_id: int
+
+class Prod_public_contacts_notesType:
+    hs_object_id: int
+    note_id: int
+
+class Prod_public_contacts_tasksType:
+    hs_object_id: int
+    task_id: int
+
+class Prod_public_contacts_ticketsType:
+    hs_object_id: int
+    ticket_id: int
+
+class Prod_public_operation_logType:
+    log_id: int
+    tablename: Optional[str]
+    operation_type: Optional[str]
+    operation_timestamp: Optional[Any]
+    username: Optional[str]
+    client_ip: Optional[str]
+
+class Prod_public_test_transactionType:
+    id: int
+    value: Optional[int]
+
+class Prod_public_SchemaClient(SchemaClient):
+    contacts_deals: 'Table[Prod_public_contacts_dealsType]'
+    contacts_emails: 'Table[Prod_public_contacts_emailsType]'
+    contacts_meetings: 'Table[Prod_public_contacts_meetingsType]'
+    contacts_notes: 'Table[Prod_public_contacts_notesType]'
+    contacts_tasks: 'Table[Prod_public_contacts_tasksType]'
+    contacts_tickets: 'Table[Prod_public_contacts_ticketsType]'
+    operation_log: 'Table[Prod_public_operation_logType]'
+    test_transaction: 'Table[Prod_public_test_transactionType]'
+
+class Prod_raw_colppy_clientesType:
+    id_cliente: int
+    razon_social: Optional[str]
+    nombre_fantasia: Optional[str]
+    fecha_alta: Optional[Any]
+    dir_postal: Optional[str]
+    dir_postal_ciudad: Optional[str]
+    dir_postal_codigo_postal: Optional[str]
+    dir_postal_provincia: Optional[str]
+    dir_postal_pais: Optional[str]
+    dir_fiscal: Optional[str]
+    dir_fiscal_ciudad: Optional[str]
+    dir_fiscal_codigo_postal: Optional[str]
+    dir_fiscal_provincia: Optional[str]
+    dir_fiscal_pais: Optional[str]
+    activo: Optional[int]
+    id_condicion_pago: Optional[int]
+    id_condicion_iva: Optional[int]
+    producto: Optional[str]
+    porcentaje_iva: Optional[Decimal]
+    email: Optional[str]
+    country_id: Optional[int]
+    saldo: Optional[Decimal]
+    id_empresa: Optional[int]
+    tax_id: Optional[str]
+    cuit: Optional[str]
+
+class Prod_raw_colppy_cobranzasType:
+    id_cliente: Optional[int]
+    comprobante_factura: Optional[str]
+    comprobante_recibo: Optional[str]
+    importe: Optional[Decimal]
+    fecha_cobro: Optional[date]
+    fecha_factura: Optional[date]
+    fecha_vencimiento: Optional[date]
+    id_empresa: Optional[int]
+
+class Prod_raw_colppy_empresasType:
+    id_empresa: int
+    razon_social: str
+    nombre: Optional[str]
+    cuit: Optional[str]
+    activa: Optional[int]
+
+class Prod_raw_colppy_facturas_a_cobrarType:
+    id_cliente: Optional[int]
+    id_factura_colppy: Optional[int]
+    comprobante: Optional[str]
+    descripcion: Optional[str]
+    tipo_comprobante: Optional[str]
+    fecha: Optional[date]
+    vencimiento: Optional[date]
+    id_plan_cuenta: Optional[str]
+    iva: Optional[Decimal]
+    subtotal: Optional[Decimal]
+    centro_costo_1: Optional[str]
+    centro_costo_2: Optional[str]
+    total: Optional[Decimal]
+    id_empresa: Optional[int]
+    id_estado_factura: Optional[int]
+
+class Prod_raw_colppy_facturas_a_pagarType:
+    id_proveedor: Optional[int]
+    id_factura_colppy: Optional[int]
+    comprobante: Optional[str]
+    descripcion: Optional[str]
+    tipo_comprobante: Optional[str]
+    fecha: Optional[date]
+    vencimiento: Optional[date]
+    id_plan_cuenta: Optional[str]
+    iva: Optional[Decimal]
+    subtotal: Optional[Decimal]
+    centro_costo_1: Optional[str]
+    centro_costo_2: Optional[str]
+    total: Optional[Decimal]
+    id_empresa: Optional[int]
+    id_estado_factura: Optional[int]
+
+class Prod_raw_colppy_movimientosType:
+    id_empresa: Optional[int]
+    id_banco: Optional[int]
+    fecha: Optional[date]
+    cliente_proveedor: Optional[str]
+    tipo: Optional[str]
+    comprobante: Optional[str]
+    descripcion: Optional[str]
+    ingresos: Optional[Decimal]
+    egresos: Optional[Decimal]
+    saldo: Optional[Decimal]
+    nro_registro: Optional[int]
+
+class Prod_raw_colppy_pagosType:
+    id_proveedor: Optional[int]
+    comprobante_factura: Optional[str]
+    comprobante_pago: Optional[str]
+    importe: Optional[Decimal]
+    fecha_pago: Optional[date]
+    fecha_factura: Optional[date]
+    fecha_vencimiento: Optional[date]
+    id_empresa: Optional[int]
+    tipo_comprobante_pago: Optional[str]
+    centro_costo_1: Optional[str]
+    centro_costo_2: Optional[str]
+    descripcion: Optional[str]
+
+class Prod_raw_colppy_proveedoresType:
+    id_empresa: Optional[int]
+    id_proveedor: int
+    razon_social: Optional[str]
+    nombre_fantasia: Optional[str]
+
+class Prod_raw_colppy_tesoreriaType:
+    id_empresa: Optional[int]
+    id_banco: Optional[int]
+    nro_cuenta: Optional[int]
+    id_plan_cuenta: Optional[str]
+    id_tipo: Optional[str]
+    nombre: Optional[str]
+    moneda: Optional[str]
+
+class Prod_raw_colppy_SchemaClient(SchemaClient):
+    clientes: 'Table[Prod_raw_colppy_clientesType]'
+    cobranzas: 'Table[Prod_raw_colppy_cobranzasType]'
+    empresas: 'Table[Prod_raw_colppy_empresasType]'
+    facturas_a_cobrar: 'Table[Prod_raw_colppy_facturas_a_cobrarType]'
+    facturas_a_pagar: 'Table[Prod_raw_colppy_facturas_a_pagarType]'
+    movimientos: 'Table[Prod_raw_colppy_movimientosType]'
+    pagos: 'Table[Prod_raw_colppy_pagosType]'
+    proveedores: 'Table[Prod_raw_colppy_proveedoresType]'
+    tesoreria: 'Table[Prod_raw_colppy_tesoreriaType]'
+
+class Prod_raw_hubspot_companiesType:
+    city: Optional[str]
+    createdate: Optional[Any]
+    domain: Optional[str]
+    hs_lastmodifieddate: Optional[Any]
+    company_id: int
+    industry: Optional[str]
+    name: Optional[str]
+    phone: Optional[str]
+    state: Optional[str]
+
+class Prod_raw_hubspot_companies_contactsType:
+    company_id: int
+    contact_id: int
+
+class Prod_raw_hubspot_companies_dealsType:
+    company_id: int
+    deal_id: int
+
+class Prod_raw_hubspot_companies_emailsType:
+    company_id: int
+    email_id: int
+
+class Prod_raw_hubspot_companies_meetingsType:
+    company_id: int
+    meeting_id: int
+
+class Prod_raw_hubspot_companies_notesType:
+    company_id: int
+    note_id: int
+
+class Prod_raw_hubspot_companies_tasksType:
+    company_id: int
+    task_id: int
+
+class Prod_raw_hubspot_companies_ticketsType:
+    company_id: int
+    ticket_id: int
+
+class Prod_raw_hubspot_contactsType:
+    contact_id: int
+    email: Optional[Any]
+    firstname: Optional[Any]
+    lastname: Optional[Any]
+    createdate: Optional[Any]
+    lastmodifieddate: Optional[Any]
+
+class Prod_raw_hubspot_contacts_dealsType:
+    contact_id: int
+    deal_id: int
+
+class Prod_raw_hubspot_contacts_emailsType:
+    contact_id: int
+    email_id: int
+
+class Prod_raw_hubspot_contacts_meetingsType:
+    contact_id: int
+    meeting_id: int
+
+class Prod_raw_hubspot_contacts_notesType:
+    contact_id: int
+    note_id: int
+
+class Prod_raw_hubspot_contacts_tasksType:
+    contact_id: int
+    task_id: int
+
+class Prod_raw_hubspot_contacts_ticketsType:
+    contact_id: int
+    ticket_id: int
+
+class Prod_raw_hubspot_dealsType:
+    deal_id: int
+    amount: Optional[int]
+    closedate: Optional[Any]
+    createdate: Optional[Any]
+    dealname: Optional[str]
+    dealstage: Optional[str]
+    hs_lastmodifieddate: Optional[Any]
+    pipeline: Optional[str]
+
+class Prod_raw_hubspot_deals_emailsType:
+    deal_id: int
+    email_id: int
+
+class Prod_raw_hubspot_deals_meetingsType:
+    deal_id: int
+    meeting_id: int
+
+class Prod_raw_hubspot_deals_notesType:
+    deal_id: int
+    note_id: int
+
+class Prod_raw_hubspot_deals_tasksType:
+    hs_object_is: int
+    task_id: int
+
+class Prod_raw_hubspot_deals_ticketsType:
+    deal_id: int
+    ticket_id: int
+
+class Prod_raw_hubspot_SchemaClient(SchemaClient):
+    companies: 'Table[Prod_raw_hubspot_companiesType]'
+    companies_contacts: 'Table[Prod_raw_hubspot_companies_contactsType]'
+    companies_deals: 'Table[Prod_raw_hubspot_companies_dealsType]'
+    companies_emails: 'Table[Prod_raw_hubspot_companies_emailsType]'
+    companies_meetings: 'Table[Prod_raw_hubspot_companies_meetingsType]'
+    companies_notes: 'Table[Prod_raw_hubspot_companies_notesType]'
+    companies_tasks: 'Table[Prod_raw_hubspot_companies_tasksType]'
+    companies_tickets: 'Table[Prod_raw_hubspot_companies_ticketsType]'
+    contacts: 'Table[Prod_raw_hubspot_contactsType]'
+    contacts_deals: 'Table[Prod_raw_hubspot_contacts_dealsType]'
+    contacts_emails: 'Table[Prod_raw_hubspot_contacts_emailsType]'
+    contacts_meetings: 'Table[Prod_raw_hubspot_contacts_meetingsType]'
+    contacts_notes: 'Table[Prod_raw_hubspot_contacts_notesType]'
+    contacts_tasks: 'Table[Prod_raw_hubspot_contacts_tasksType]'
+    contacts_tickets: 'Table[Prod_raw_hubspot_contacts_ticketsType]'
+    deals: 'Table[Prod_raw_hubspot_dealsType]'
+    deals_emails: 'Table[Prod_raw_hubspot_deals_emailsType]'
+    deals_meetings: 'Table[Prod_raw_hubspot_deals_meetingsType]'
+    deals_notes: 'Table[Prod_raw_hubspot_deals_notesType]'
+    deals_tasks: 'Table[Prod_raw_hubspot_deals_tasksType]'
+    deals_tickets: 'Table[Prod_raw_hubspot_deals_ticketsType]'
+
+class Prod_raw_panel_aux_campaign_budgetsType:
+    id_budget: int
+    id_campaign: int
+    date_from: Optional[Any]
+    date_to: Optional[Any]
+    id_currency: Optional[str]
+
+class Prod_raw_panel_cat_advertisersType:
+    id_advertiser: int
+    advertiser: Optional[str]
+    register_date: Optional[Any]
+    advertiser_details: Optional[str]
+    smb_client: Optional[int]
+    status: Optional[str]
+    dco_score: Optional[Decimal]
+    retargeting_pixel: Optional[int]
+    goal_pixel: Optional[int]
+
+class Prod_raw_panel_cat_countriesType:
+    country: Optional[str]
+    country_currency: Optional[str]
+    id_country: str
+
+class Prod_raw_panel_cat_currencyType:
+    currency: Optional[str]
+    id_currency: str
+
+class Prod_raw_panel_cat_servicesType:
+    id_service: int
+    service: Optional[str]
+    service_type: Optional[str]
+    content_type: Optional[str]
+    medium: Optional[str]
+    id_device: int
+    device: Optional[str]
+    channel: Optional[str]
+
+class Prod_raw_panel_nav_budgetsType:
+    id_budget: int
+    id_advertiser: Optional[int]
+    budget: Optional[str]
+    date_from: Optional[Any]
+    date_to: Optional[Any]
+    amount: Optional[Decimal]
+    invoice_amount: Optional[Decimal]
+    id_purchase_order: Optional[str]
+    id_kpi: Optional[int]
+    kpi: Optional[str]
+    kpi_value: Optional[Decimal]
+    external: Optional[int]
+    id_purchase_settings: Optional[int]
+    purchase_type: Optional[str]
+    purchase_value: Optional[str]
+    purchase_external: Optional[int]
+
+class Prod_raw_panel_nav_campaignsType:
+    status: Optional[int]
+    id_advertiser: Optional[int]
+    id_country: Optional[str]
+    campaign: Optional[str]
+    id_campaign: int
+    audiences: Optional[str]
+    id_service: Optional[int]
+    campaign_type: Optional[str]
+
+class Prod_raw_panel_nav_client_detailsType:
+    id_client: int
+    client_name: Optional[str]
+    id_billing_company: Optional[int]
+    billing_company: Optional[str]
+    id_business: Optional[int]
+    business: Optional[str]
+    currency: Optional[str]
+    currency_description: Optional[str]
+    business_country_code: Optional[str]
+    business_country: Optional[str]
+    id_local_agency: Optional[int]
+    local_agency: Optional[str]
+    id_regional_agency: Optional[int]
+    regional_agency: Optional[str]
+    id_business_group: Optional[int]
+    business_group: Optional[str]
+    withholdings: Optional[str]
+    commissions_to_pay: Optional[str]
+    id_vertical: Optional[int]
+    vertical: Optional[str]
+    id_head_of_implementations: Optional[int]
+    head_of_implementations: Optional[str]
+    head_of_implementations_email: Optional[str]
+    id_head_of_programmatic: Optional[int]
+    head_of_programmatic: Optional[str]
+    head_of_programmatic_email: Optional[str]
+    id_sales_manager: Optional[int]
+    sales_manager: Optional[str]
+    sales_manager_email: Optional[str]
+    tax_id: Optional[str]
+    advertiser_country: Optional[str]
+
+class Prod_raw_panel_nav_currency_ratesType:
+    id_currency: str
+    date: date
+    rate: Optional[Decimal]
+
+class Prod_raw_panel_nav_direct_costsType:
+    id_provider: str
+    id_campaign: int
+    date: date
+    amount: Optional[Decimal]
+    id_currency: str
+    cpc: Optional[Decimal]
+
+class Prod_raw_panel_nav_spent_adxType:
+    spent: Optional[Decimal]
+    id_currency: Optional[str]
+    id_campaign: int
+    hstdate: date
+    id_service: int
+
+class Prod_raw_panel_nav_spent_adx_goalsType:
+    goals: Optional[int]
+    revenue: Optional[Decimal]
+    id_campaign: int
+    hstdate: date
+    id_service: int
+
+class Prod_raw_panel_nav_spent_adx_impsType:
+    impressions: Optional[int]
+    views: Optional[int]
+    clicks: Optional[int]
+    id_campaign: int
+    hstdate: date
+    id_service: int
+
+class Prod_raw_panel_nav_spent_dcoType:
+    id_campaign: int
+    hstdate: date
+    id_service: int
+    spent: Optional[Decimal]
+    id_currency: Optional[str]
+
+class Prod_raw_panel_nav_spent_dco_goalsType:
+    id_campaign: int
+    hstdate: date
+    id_service: int
+    goals: Optional[Decimal]
+    revenue: Optional[Decimal]
+
+class Prod_raw_panel_nav_spent_dco_impsType:
+    id_campaign: int
+    hstdate: date
+    id_service: int
+    impressions: Optional[Decimal]
+    views: Optional[Decimal]
+    clicks: Optional[Decimal]
+
+class Prod_raw_panel_nav_spent_shopType:
+    id_campaign: int
+    hstdate: date
+    id_service: int
+    spent: Optional[Decimal]
+    id_currency: Optional[str]
+
+class Prod_raw_panel_nav_spent_shop_goalsType:
+    id_campaign: int
+    hstdate: date
+    id_service: int
+    goals: Optional[Decimal]
+    revenue: Optional[Decimal]
+
+class Prod_raw_panel_nav_spent_shop_impsType:
+    id_campaign: int
+    hstdate: date
+    id_service: int
+    impressions: Optional[Decimal]
+    views: Optional[Decimal]
+    clicks: Optional[Decimal]
+
+class Prod_raw_panel_SchemaClient(SchemaClient):
+    aux_campaign_budgets: 'Table[Prod_raw_panel_aux_campaign_budgetsType]'
+    cat_advertisers: 'Table[Prod_raw_panel_cat_advertisersType]'
+    cat_countries: 'Table[Prod_raw_panel_cat_countriesType]'
+    cat_currency: 'Table[Prod_raw_panel_cat_currencyType]'
+    cat_services: 'Table[Prod_raw_panel_cat_servicesType]'
+    nav_budgets: 'Table[Prod_raw_panel_nav_budgetsType]'
+    nav_campaigns: 'Table[Prod_raw_panel_nav_campaignsType]'
+    nav_client_details: 'Table[Prod_raw_panel_nav_client_detailsType]'
+    nav_currency_rates: 'Table[Prod_raw_panel_nav_currency_ratesType]'
+    nav_direct_costs: 'Table[Prod_raw_panel_nav_direct_costsType]'
+    nav_spent_adx: 'Table[Prod_raw_panel_nav_spent_adxType]'
+    nav_spent_adx_goals: 'Table[Prod_raw_panel_nav_spent_adx_goalsType]'
+    nav_spent_adx_imps: 'Table[Prod_raw_panel_nav_spent_adx_impsType]'
+    nav_spent_dco: 'Table[Prod_raw_panel_nav_spent_dcoType]'
+    nav_spent_dco_goals: 'Table[Prod_raw_panel_nav_spent_dco_goalsType]'
+    nav_spent_dco_imps: 'Table[Prod_raw_panel_nav_spent_dco_impsType]'
+    nav_spent_shop: 'Table[Prod_raw_panel_nav_spent_shopType]'
+    nav_spent_shop_goals: 'Table[Prod_raw_panel_nav_spent_shop_goalsType]'
+    nav_spent_shop_imps: 'Table[Prod_raw_panel_nav_spent_shop_impsType]'
+
+class Prod_raw_sheets_backup_key_accounts_goalsType:
+    id_client: Optional[int]
+    id_service: Optional[int]
+    period: Optional[str]
+    amount: Optional[Decimal]
+
+class Prod_raw_sheets_backup_new_clients_goalsType:
+    quantity_advertisers: Optional[int]
+    id_service: Optional[int]
+    id_agency: Optional[int]
+    id_client_category: Optional[int]
+    id_sales_manager: Optional[int]
+    id_country: Optional[str]
+    period: Optional[str]
+    amount: Optional[Decimal]
+
+class Prod_raw_sheets_colppy_countriesType:
+    country_id: Optional[int]
+    country_name: Optional[str]
+
+class Prod_raw_sheets_colppy_estadofacturaType:
+    id_estado_factura: Optional[int]
+    _estado_factura: Optional[str]
+
+class Prod_raw_sheets_colppy_saldos_inicialesType:
+    id_empresa: Optional[int]
+    _id_banco: Optional[int]
+    _fecha: Optional[int]
+    _saldo: Optional[int]
+
+class Prod_raw_sheets_facturadoType:
+    period: Optional[str]
+    id_client: Optional[int]
+    id_service: Optional[int]
+    bill_amount_usd: Optional[Decimal]
+
+class Prod_raw_sheets_key_accounts_goalsType:
+    id_client: Optional[int]
+    id_service: Optional[int]
+    period: Optional[str]
+    amount: Optional[Decimal]
+
+class Prod_raw_sheets_new_clients_goalsType:
+    quantity_advertisers: Optional[int]
+    id_service: Optional[int]
+    id_agency: Optional[int]
+    id_client_category: Optional[int]
+    id_sales_manager: Optional[int]
+    id_country: Optional[str]
+    period: Optional[str]
+    amount: Optional[Decimal]
+
+class Prod_raw_sheets_presupuestosType:
+    fecha: Optional[str]
+    area: Optional[str]
+    mercado: Optional[str]
+    presupuesto: Optional[Decimal]
+
+class Prod_raw_sheets_saldo_inicialType:
+    id_empresa: Optional[int]
+    id_banco: Optional[int]
+    fecha: Optional[date]
+    saldo: Optional[float]
+
+class Prod_raw_sheets_saldos_inicialesType:
+    id_empresa: Optional[int]
+    _id_banco: Optional[int]
+    _fecha: Optional[int]
+    _saldo: Optional[int]
+
+class Prod_raw_sheets_SchemaClient(SchemaClient):
+    backup_key_accounts_goals: 'Table[Prod_raw_sheets_backup_key_accounts_goalsType]'
+    backup_new_clients_goals: 'Table[Prod_raw_sheets_backup_new_clients_goalsType]'
+    colppy_countries: 'Table[Prod_raw_sheets_colppy_countriesType]'
+    colppy_estadofactura: 'Table[Prod_raw_sheets_colppy_estadofacturaType]'
+    colppy_saldos_iniciales: 'Table[Prod_raw_sheets_colppy_saldos_inicialesType]'
+    facturado: 'Table[Prod_raw_sheets_facturadoType]'
+    key_accounts_goals: 'Table[Prod_raw_sheets_key_accounts_goalsType]'
+    new_clients_goals: 'Table[Prod_raw_sheets_new_clients_goalsType]'
+    presupuestos: 'Table[Prod_raw_sheets_presupuestosType]'
+    saldo_inicial: 'Table[Prod_raw_sheets_saldo_inicialType]'
+    saldos_iniciales: 'Table[Prod_raw_sheets_saldos_inicialesType]'
+
+class Prod_stg_int_panel_nav_budgets_no_spentType:
+    IdCampaign: Optional[int]
+    IdDate: Optional[Any]
+
+class Prod_stg_int_panel_nav_budgets_no_spent_newType:
+    IdCampaign: Optional[int]
+    IdDate: Optional[Any]
+
+class Prod_stg_int_panel_nav_direct_costsType:
+    id_provider: Optional[str]
+    id_campaign: Optional[int]
+    hstdate: Optional[date]
+    amount: Optional[Decimal]
+    id_currency: Optional[str]
+    cpc: Optional[Decimal]
+
+class Prod_stg_int_panel_nav_spent_adxType:
+    id_campaign: Optional[int]
+    hstdate: Optional[date]
+    id_service: Optional[int]
+    spent: Optional[Decimal]
+    id_currency: Optional[str]
+
+class Prod_stg_int_panel_nav_spent_adx_goalsType:
+    id_campaign: Optional[int]
+    hstdate: Optional[date]
+    id_service: Optional[int]
+    goals: Optional[int]
+    revenue: Optional[Decimal]
+
+class Prod_stg_int_panel_nav_spent_adx_impsType:
+    id_campaign: Optional[int]
+    hstdate: Optional[date]
+    id_service: Optional[int]
+    impressions: Optional[int]
+    views: Optional[int]
+    clicks: Optional[int]
+
+class Prod_stg_int_panel_nav_spent_dcoType:
+    id_campaign: Optional[int]
+    hstdate: Optional[date]
+    id_service: Optional[int]
+    spent: Optional[Decimal]
+    id_currency: Optional[str]
+
+class Prod_stg_int_panel_nav_spent_dco_goalsType:
+    id_campaign: Optional[int]
+    hstdate: Optional[date]
+    id_service: Optional[int]
+    goals: Optional[Decimal]
+    revenue: Optional[Decimal]
+
+class Prod_stg_int_panel_nav_spent_dco_impsType:
+    id_campaign: Optional[int]
+    hstdate: Optional[date]
+    id_service: Optional[int]
+    impressions: Optional[Decimal]
+    views: Optional[Decimal]
+    clicks: Optional[Decimal]
+
+class Prod_stg_int_panel_nav_spent_shopType:
+    id_campaign: Optional[int]
+    hstdate: Optional[date]
+    id_service: Optional[int]
+    spent: Optional[Decimal]
+    id_currency: Optional[str]
+
+class Prod_stg_int_panel_nav_spent_shop_goalsType:
+    id_campaign: Optional[int]
+    hstdate: Optional[date]
+    id_service: Optional[int]
+    goals: Optional[Decimal]
+    revenue: Optional[Decimal]
+
+class Prod_stg_int_panel_nav_spent_shop_impsType:
+    id_campaign: Optional[int]
+    hstdate: Optional[date]
+    id_service: Optional[int]
+    impressions: Optional[Decimal]
+    views: Optional[Decimal]
+    clicks: Optional[Decimal]
+
+class Prod_stg_my_first_dbt_modelType:
+    id: Optional[int]
+
+class Prod_stg_SchemaClient(SchemaClient):
+    int_panel__nav_budgets_no_spent: 'Table[Prod_stg_int_panel_nav_budgets_no_spentType]'
+    int_panel__nav_budgets_no_spent_new: 'Table[Prod_stg_int_panel_nav_budgets_no_spent_newType]'
+    int_panel__nav_direct_costs: 'Table[Prod_stg_int_panel_nav_direct_costsType]'
+    int_panel__nav_spent_adx: 'Table[Prod_stg_int_panel_nav_spent_adxType]'
+    int_panel__nav_spent_adx_goals: 'Table[Prod_stg_int_panel_nav_spent_adx_goalsType]'
+    int_panel__nav_spent_adx_imps: 'Table[Prod_stg_int_panel_nav_spent_adx_impsType]'
+    int_panel__nav_spent_dco: 'Table[Prod_stg_int_panel_nav_spent_dcoType]'
+    int_panel__nav_spent_dco_goals: 'Table[Prod_stg_int_panel_nav_spent_dco_goalsType]'
+    int_panel__nav_spent_dco_imps: 'Table[Prod_stg_int_panel_nav_spent_dco_impsType]'
+    int_panel__nav_spent_shop: 'Table[Prod_stg_int_panel_nav_spent_shopType]'
+    int_panel__nav_spent_shop_goals: 'Table[Prod_stg_int_panel_nav_spent_shop_goalsType]'
+    int_panel__nav_spent_shop_imps: 'Table[Prod_stg_int_panel_nav_spent_shop_impsType]'
+    my_first_dbt_model: 'Table[Prod_stg_my_first_dbt_modelType]'
+
+class Dev_dwh_AUX_CAMPAIGNS_BUDGETSType:
+    IdBudget: Optional[int]
+    IdCampaign: Optional[int]
+    DateFrom: Optional[Any]
+    DateTo: Optional[Any]
+    IdCurrency: Optional[str]
+
+class Dev_dwh_CAT_ADVERTISERSType:
+    _KeyAdvertiser: Optional[str]
+    IdAdvertiser: Optional[int]
+    StatusAdvertiser: Optional[str]
+    Advertiser: Optional[str]
+    RegisterDate: Optional[Any]
+    IdBillingCompany: Optional[int]
+    BillingCompany: Optional[str]
+    IdBusiness: Optional[int]
+    Business: Optional[str]
+    TaxId: Optional[str]
+    Currency: Optional[str]
+    CurrencyDescription: Optional[str]
+    BusinessCountryCode: Optional[str]
+    BusinessCountry: Optional[str]
+    IdLocalAgency: Optional[int]
+    LocalAgency: Optional[str]
+    IdRegionalAgency: Optional[int]
+    RegionalAgency: Optional[str]
+    IdBusinessGroup: Optional[int]
+    BusinessGroup: Optional[str]
+    Withholdings: Optional[float]
+    CommissionsToPay: Optional[float]
+    IdVertical: Optional[int]
+    Vertical: Optional[str]
+    IdHeadOfImplementations: Optional[int]
+    HeadOfImplementations: Optional[str]
+    IdHeadOfProgrammatic: Optional[int]
+    HeadOfProgrammatic: Optional[str]
+    IdSalesManager: Optional[int]
+    SalesManager: Optional[str]
+    Active: Optional[str]
+    FirstSpent: Optional[str]
+    LostSince: Optional[str]
+    MaxSpent: Optional[date]
+    LastSpent: Optional[str]
+    LastSpentMonths: Optional[int]
+    MonthsSpent: Optional[int]
+    MonthsBetweenSpent: Optional[int]
+    Continuos: Optional[str]
+    Spent_LTD: Optional[Decimal]
+    Type: Optional[str]
+    SmbClient: Optional[int]
+
+class Dev_dwh_CAT_BALANCESType:
+    IdCompany: Optional[int]
+    IdBank: Optional[int]
+    BankName: Optional[str]
+    BalanceTC: Optional[Decimal]
+    BalanceUSD: Optional[Decimal]
+    IdDate: Optional[date]
+    IdCurrency: Optional[str]
+
+class Dev_dwh_CAT_BANKSType:
+    IdCompany: Optional[int]
+    IdBank: Optional[int]
+    Account: Optional[int]
+    PlanAccount: Optional[str]
+    BankType: Optional[str]
+    BankName: Optional[str]
+    IdCurrency: Optional[str]
+
+class Dev_dwh_CAT_CALENDARType:
+    IdDate: Optional[date]
+    Date: Optional[date]
+    Weekday: Optional[str]
+    WeekdayShort: Optional[str]
+    WeekdayNum: Optional[float]
+    MonthDay: Optional[float]
+    QuarterDay: Optional[int]
+    YearDay: Optional[float]
+    WeekNum: Optional[float]
+    WeekISO: Optional[str]
+    MonthNum: Optional[float]
+    YearMonthSeq: Optional[float]
+    Month: Optional[str]
+    MonthShort: Optional[str]
+    MonthStart: Optional[date]
+    MonthEnd: Optional[date]
+    QuarterStart: Optional[date]
+    QuarterEnd: Optional[date]
+    YearStart: Optional[date]
+    YearEnd: Optional[date]
+    QuarterNum: Optional[float]
+    Quarter: Optional[str]
+    Year: Optional[int]
+    YearMonth: Optional[str]
+    WeekendFlag: Optional[bool]
+
+class Dev_dwh_CAT_COMPANIESType:
+    IdCompany: Optional[int]
+    CompanyLegalName: Optional[str]
+    Company: Optional[str]
+    companytaxid: Optional[str]
+    IdCurrency: Optional[str]
+
+class Dev_dwh_CAT_COUNTRIESType:
+    IdCountry: Optional[str]
+    Country: Optional[str]
+
+class Dev_dwh_CAT_CURRENCIESType:
+    IdCurrency: Optional[str]
+    Currency: Optional[str]
+
+class Dev_dwh_CAT_CUSTOMERSType:
+    IdCustomer: Optional[int]
+    Customer: Optional[str]
+    CustomerLegalName: Optional[str]
+    CustomerRegistrationDate: Optional[Any]
+    CustomerActive: Optional[int]
+    CustomerPaymentCondition: Optional[int]
+    CustomerTax: Optional[int]
+    CustomerCountry: Optional[str]
+    CustomerIdCompany: Optional[int]
+    CustomerTaxId: Optional[str]
+    CustomerCUIT: Optional[str]
+
+class Dev_dwh_CAT_SERVICESType:
+    IdService: Optional[int]
+    Service: Optional[str]
+    ServiceType: Optional[str]
+    ContentType: Optional[str]
+    Medium: Optional[str]
+
+class Dev_dwh_CAT_SUPPLIERSType:
+    IdSupplier: Optional[int]
+    Supplier: Optional[str]
+    SupplierLegalName: Optional[str]
+    SupplierIdCompany: Optional[int]
+
+class Dev_dwh_NAV_BUDGETSType:
+    _KeyBudget: Optional[str]
+    IdBudget: Optional[int]
+    _KeyAdvertiser: Optional[str]
+    AdvertiserBudget: Optional[str]
+    Budget: Optional[str]
+    DateFrom: Optional[Any]
+    DateTo: Optional[Any]
+    BudgetAmountTC: Optional[Decimal]
+    BudgetAmountUSD: Optional[Decimal]
+    InvoiceAmountTC: Optional[Decimal]
+    InvoiceAmountUSD: Optional[Decimal]
+    SalesPAmountUSD: Optional[Decimal]
+    InvoiceAmountTC_Orig: Optional[Decimal]
+    InvoiceAmountUSD_Orig: Optional[Decimal]
+    SpentAmountTC_Bud: Optional[Decimal]
+    SpentAmountUSD_Bud: Optional[Decimal]
+    IdPurchaseOrder: Optional[str]
+    BudgetReal: Optional[int]
+    id_currency: Optional[str]
+    id_kpi: Optional[int]
+    kpi: Optional[str]
+    kpi_value: Optional[Decimal]
+    external: Optional[int]
+    id_purchase_settings: Optional[int]
+    purchase_type: Optional[str]
+    purchase_value: Optional[str]
+    purchase_external: Optional[int]
+
+class Dev_dwh_NAV_CAMPAIGNSType:
+    Status: Optional[str]
+    IdAdvertiser: Optional[int]
+    IdCountry: Optional[str]
+    IdCampaign: Optional[int]
+    Campaign: Optional[str]
+    Audience: Optional[str]
+    IdService: Optional[int]
+
+class Dev_dwh_NAV_CURRENCY_RATESType:
+    IdDate: Optional[date]
+    Rate: Optional[Decimal]
+    IdCurrency: Optional[str]
+    NextMonthDate: Optional[date]
+    NextMonthRate: Optional[Decimal]
+
+class Dev_dwh_NAV_DIRECT_COSTSType:
+    IdCampaign: Optional[int]
+    IdDate: Optional[date]
+    IdCurrency: Optional[str]
+    IdProvider: Optional[str]
+    CostAmountTC: Optional[Decimal]
+    cpc: Optional[Decimal]
+
+class Dev_dwh_NAV_FINANCE_FACTType:
+    IdSupplier: Optional[Decimal]
+    IdCustomer: Optional[int]
+    IdDate: Optional[Any]
+    Reference: Optional[str]
+    DueDate: Optional[date]
+    InvoiceDate: Optional[date]
+    TotalAmountTC: Optional[Decimal]
+    TotalAmountUSD: Optional[Decimal]
+    TotalAmountWithoutVATTC: Optional[Decimal]
+    TotalAmountWithoutVATUSD: Optional[Decimal]
+    CollectedAmountTC: Optional[Decimal]
+    CollectedAmountUSD: Optional[Decimal]
+    InvoicedAmountCollectedTC: Optional[Decimal]
+    InvoicedAmountCollectedUSD: Optional[Decimal]
+    PaidAmountTC: Optional[Decimal]
+    PaidAmountUSD: Optional[Decimal]
+    InvoicedPaidAmountTC: Optional[Decimal]
+    InvoicedPaidAmountUSD: Optional[Decimal]
+    CollectPendingAmountTC: Optional[Decimal]
+    CollectPendingAmountUSD: Optional[Decimal]
+    PayPendingAmountTC: Optional[Decimal]
+    PayPendingAmountUSD: Optional[Decimal]
+    InvoiceNumber: Optional[str]
+    StreetDays: Optional[Decimal]
+    RotationDays: Optional[Decimal]
+    PaymentMethod: Optional[Decimal]
+    Account: Optional[str]
+    Area: Optional[str]
+    Market: Optional[str]
+    Check: Optional[str]
+    Category: Optional[str]
+    InvoiceType: Optional[str]
+    IdCompany: Optional[int]
+    _KeyBudget: Optional[str]
+    IdBank: Optional[Decimal]
+    BankName: Optional[str]
+    BalanceTC: Optional[Decimal]
+    BalanceUSD: Optional[Decimal]
+    AccountPlan: Optional[str]
+
+class Dev_dwh_NAV_FINANCE_FACT_ANTType:
+    IdSupplier: Optional[str]
+    IdCustomer: Optional[str]
+    IdDate: Optional[Any]
+    Reference: Optional[str]
+    DueDate: Optional[date]
+    InvoiceDate: Optional[date]
+    TotalAmountTC: Optional[str]
+    TotalAmountUSD: Optional[Decimal]
+    CollectedAmountTC: Optional[Decimal]
+    CollectedAmountUSD: Optional[Decimal]
+    InvoicedAmountCollectedTC: Optional[Decimal]
+    InvoicedAmountCollectedUSD: Optional[Decimal]
+    PaidAmountTC: Optional[Decimal]
+    PaidAmountUSD: Optional[Decimal]
+    InvoicedPaidAmountTC: Optional[Decimal]
+    InvoicedPaidAmountUSD: Optional[Decimal]
+    PendingAmountTC: Optional[Decimal]
+    PendingAmountUSD: Optional[Decimal]
+    InvoiceNumber: Optional[str]
+    StreetDays: Optional[int]
+    RotationDays: Optional[int]
+    PaymentMethod: Optional[str]
+    Account: Optional[str]
+    Check: Optional[str]
+    Category: Optional[str]
+    InvoiceType: Optional[str]
+    IdCompany: Optional[str]
+    _KeyBudget: Optional[str]
+
+class Dev_dwh_NAV_FINANCE_GOALSType:
+    id_sales_manager: Optional[int]
+    period: Optional[date]
+    amount: Optional[Decimal]
+    marketgoal: Optional[str]
+
+class Dev_dwh_NAV_INVOICEDType:
+    IdDate: Optional[date]
+    IdService: Optional[int]
+    IdAdvertiser: Optional[int]
+    IdCurrency: Optional[str]
+    BillAmountUSD: Optional[Decimal]
+
+class Dev_dwh_NAV_SPENT_ADXType:
+    SpentType: Optional[str]
+    IdCampaign: Optional[int]
+    IdDate: Optional[date]
+    IdService: Optional[int]
+    IdCurrency: Optional[str]
+    SpentAmountTC: Optional[Decimal]
+    Goals: Optional[int]
+    RevenueTC: Optional[Decimal]
+    Impressions: Optional[int]
+    Views: Optional[int]
+    Clicks: Optional[int]
+
+class Dev_dwh_NAV_SPENT_DCOType:
+    SpentType: Optional[str]
+    IdCampaign: Optional[int]
+    IdDate: Optional[date]
+    IdService: Optional[int]
+    IdCurrency: Optional[str]
+    SpentAmountTC: Optional[Decimal]
+    Goals: Optional[Decimal]
+    RevenueTC: Optional[Decimal]
+    Impressions: Optional[Decimal]
+    Views: Optional[Decimal]
+    Clicks: Optional[Decimal]
+
+class Dev_dwh_NAV_SPENT_SHOPType:
+    SpentType: Optional[str]
+    IdCampaign: Optional[int]
+    IdDate: Optional[date]
+    IdService: Optional[int]
+    IdCurrency: Optional[str]
+    SpentAmountTC: Optional[Decimal]
+    Goals: Optional[Decimal]
+    RevenueTC: Optional[Decimal]
+    Impressions: Optional[Decimal]
+    Views: Optional[Decimal]
+    Clicks: Optional[Decimal]
+
+class Dev_dwh_SchemaClient(SchemaClient):
+    AUX_CAMPAIGNS_BUDGETS: 'Table[Dev_dwh_AUX_CAMPAIGNS_BUDGETSType]'
+    CAT_ADVERTISERS: 'Table[Dev_dwh_CAT_ADVERTISERSType]'
+    CAT_BALANCES: 'Table[Dev_dwh_CAT_BALANCESType]'
+    CAT_BANKS: 'Table[Dev_dwh_CAT_BANKSType]'
+    CAT_CALENDAR: 'Table[Dev_dwh_CAT_CALENDARType]'
+    CAT_COMPANIES: 'Table[Dev_dwh_CAT_COMPANIESType]'
+    CAT_COUNTRIES: 'Table[Dev_dwh_CAT_COUNTRIESType]'
+    CAT_CURRENCIES: 'Table[Dev_dwh_CAT_CURRENCIESType]'
+    CAT_CUSTOMERS: 'Table[Dev_dwh_CAT_CUSTOMERSType]'
+    CAT_SERVICES: 'Table[Dev_dwh_CAT_SERVICESType]'
+    CAT_SUPPLIERS: 'Table[Dev_dwh_CAT_SUPPLIERSType]'
+    NAV_BUDGETS: 'Table[Dev_dwh_NAV_BUDGETSType]'
+    NAV_CAMPAIGNS: 'Table[Dev_dwh_NAV_CAMPAIGNSType]'
+    NAV_CURRENCY_RATES: 'Table[Dev_dwh_NAV_CURRENCY_RATESType]'
+    NAV_DIRECT_COSTS: 'Table[Dev_dwh_NAV_DIRECT_COSTSType]'
+    NAV_FINANCE_FACT: 'Table[Dev_dwh_NAV_FINANCE_FACTType]'
+    NAV_FINANCE_FACT_ANT: 'Table[Dev_dwh_NAV_FINANCE_FACT_ANTType]'
+    NAV_FINANCE_GOALS: 'Table[Dev_dwh_NAV_FINANCE_GOALSType]'
+    NAV_INVOICED: 'Table[Dev_dwh_NAV_INVOICEDType]'
+    NAV_SPENT_ADX: 'Table[Dev_dwh_NAV_SPENT_ADXType]'
+    NAV_SPENT_DCO: 'Table[Dev_dwh_NAV_SPENT_DCOType]'
+    NAV_SPENT_SHOP: 'Table[Dev_dwh_NAV_SPENT_SHOPType]'
+
+class Dev_new_raw_colppy_clientesType:
+    id: int
+    id_cliente: Optional[int]
+    razon_social: Optional[str]
+    nombre_fantasia: Optional[str]
+    fecha_alta: Optional[Any]
+    dir_postal: Optional[str]
+    dir_postal_ciudad: Optional[str]
+    dir_postal_codigo_postal: Optional[str]
+    dir_postal_provincia: Optional[str]
+    dir_postal_pais: Optional[str]
+    dir_fiscal: Optional[str]
+    dir_fiscal_ciudad: Optional[str]
+    dir_fiscal_codigo_postal: Optional[str]
+    dir_fiscal_provincia: Optional[str]
+    dir_fiscal_pais: Optional[str]
+    activo: int
+    id_condicion_pago: int
+    id_condicion_iva: int
+    cuit: Optional[str]
+    producto: Optional[str]
+    porcentaje_iva: int
+    email: Optional[str]
+    country_id: Optional[int]
+    saldo: Optional[Decimal]
+
+class Dev_new_raw_colppy_comprobantes_compraType:
+    id: int
+    id_factura: Optional[int]
+    id_tipo_factura: Optional[int]
+    id_tipo_comprobante: Optional[int]
+    id_proveedor: Optional[int]
+    nro_factura: Optional[str]
+    id_moneda: Optional[int]
+    fecha_factura: Optional[str]
+    fecha_factura_doc: Optional[str]
+    fecha_pago: Optional[str]
+    id_condicion_pago: Optional[int]
+    descripcion: Optional[str]
+    id_estado_factura: Optional[str]
+    total_factura: Optional[str]
+    id_ret_ganancias: Optional[int]
+    iibb_local: Optional[str]
+    iibb_otro: Optional[str]
+    iva_105: Optional[str]
+    iva_21: Optional[str]
+    iva_27: Optional[str]
+    neto_gravado: Optional[str]
+    neto_no_gravado: Optional[str]
+    percepcion_iibb: Optional[str]
+    percepcion_iibb1: Optional[str]
+    percepcion_iibb2: Optional[str]
+    percepcion_iva: Optional[str]
+    total_iva: Optional[str]
+    valor_cambio: Optional[str]
+    total_aplicado: Optional[str]
+    razon_social: Optional[str]
+    nombre_fantasia: Optional[str]
+
+class Dev_new_raw_colppy_comprobantes_ventaType:
+    id: int
+    id_factura: Optional[int]
+    id_tipo_factura: Optional[int]
+    fecha_pago: Optional[str]
+    id_tipo_comprobante: Optional[int]
+    id_cliente: Optional[int]
+    id_orden: Optional[int]
+    nro_factura: Optional[str]
+    id_moneda: Optional[int]
+    fecha_factura: Optional[str]
+    id_condicion_pago: Optional[int]
+    descripcion: Optional[str]
+    id_estado_factura: Optional[int]
+    total_factura: Optional[str]
+    id_ret_ganancias: Optional[int]
+    iibb_local: Optional[str]
+    iibb_otro: Optional[str]
+    iva_105: Optional[str]
+    iva_21: Optional[str]
+    iva_27: Optional[str]
+    neto_gravado: Optional[str]
+    neto_no_gravado: Optional[str]
+    percepcion_iibb: Optional[str]
+    percepcion_iibb1: Optional[str]
+    percepcion_iibb2: Optional[str]
+    percepcion_iva: Optional[str]
+    total_iva: Optional[str]
+    valor_cambio: Optional[str]
+    total_aplicado: Optional[str]
+    cae: Optional[str]
+    fecha_fe: Optional[str]
+    id_currency: Optional[int]
+    rate: Optional[str]
+    record_insert_ts: Optional[str]
+    record_update_ts: Optional[str]
+    is_mobile: Optional[str]
+    razon_social: Optional[str]
+    nombre_fantasia: Optional[str]
+
+class Dev_new_raw_colppy_empresasType:
+    id: int
+    id_empresa: Optional[int]
+    razon_social: str
+    nombre: str
+    activa: int
+    cuit: str
+
+class Dev_new_raw_colppy_movimientosType:
+    id: int
+    id_empresa: Optional[int]
+    id_tabla: Optional[int]
+    id_elemento: Optional[int]
+    id_diario: Optional[int]
+    id_elemento_contacto: Optional[int]
+    id_objeto_contacto: Optional[int]
+    fecha_contabilizado: Optional[Any]
+    fecha_contable: Optional[date]
+    id_plan_cuenta: Optional[int]
+    id_subdiario: Optional[int]
+    debito_credito: Optional[str]
+    importe: Optional[Decimal]
+    id_tabla_aplicado: Optional[int]
+    id_elemento_aplicado: Optional[int]
+    id_item: int
+    id_item_aplicado: int
+    ccosto1: Optional[int]
+    ccosto2: Optional[int]
+    conciliado: Optional[str]
+    batch: Optional[str]
+    id_tercero: Optional[int]
+    is_niif: int
+    item_id: Optional[int]
+
+class Dev_new_raw_colppy_proveedoresType:
+    id: int
+    id_proveedor: Optional[int]
+    razon_social: Optional[str]
+    nombre_fantasia: Optional[str]
+
+class Dev_new_raw_colppy_SchemaClient(SchemaClient):
+    clientes: 'Table[Dev_new_raw_colppy_clientesType]'
+    comprobantes_compra: 'Table[Dev_new_raw_colppy_comprobantes_compraType]'
+    comprobantes_venta: 'Table[Dev_new_raw_colppy_comprobantes_ventaType]'
+    empresas: 'Table[Dev_new_raw_colppy_empresasType]'
+    movimientos: 'Table[Dev_new_raw_colppy_movimientosType]'
+    proveedores: 'Table[Dev_new_raw_colppy_proveedoresType]'
+
+class Dev_norm_colppy_clientesType:
+    id: int
+    id_colppy: Optional[str]
+    razon_social: Optional[str]
+    nombre_fantasia: Optional[str]
+    fecha_alta: Optional[Any]
+    dir_postal: Optional[str]
+    dir_postal_ciudad: Optional[str]
+    dir_postal_codigo_postal: Optional[str]
+    dir_postal_provincia: Optional[str]
+    dir_postal_pais: Optional[str]
+    dir_fiscal: Optional[str]
+    dir_fiscal_ciudad: Optional[str]
+    dir_fiscal_codigo_postal: Optional[str]
+    dir_fiscal_provincia: Optional[str]
+    dir_fiscal_pais: Optional[str]
+    id_condicion_pago: Optional[int]
+    id_condicion_iva: Optional[int]
+    cuit: Optional[str]
+    producto: Optional[str]
+    porcentaje_iva: Optional[float]
+    email: Optional[str]
+    country_id: Optional[str]
+    saldo: Optional[float]
+    activo: Optional[bool]
+    fecha_grabacion: Optional[Any]
+    ult_modificado: Optional[Any]
+
+class Dev_norm_colppy_cobro_facturaType:
+    id: int
+    activo: Optional[bool]
+    fecha_grabacion: Optional[Any]
+    ult_modificado: Optional[Any]
+    id_empresa: Optional[str]
+    id_tabla: Optional[str]
+    id_elemento: Optional[str]
+    id_diario: Optional[str]
+    id_elemento_contacto: Optional[str]
+    id_objeto_contacto: Optional[str]
+    fecha_contabilizado: Optional[str]
+    fecha_contable: Optional[str]
+    id_plan_cuenta: Optional[str]
+    id_subdiario: Optional[str]
+    debito_credito: Optional[str]
+    importe: Optional[str]
+    id_tabla_aplicado: Optional[str]
+    id_elemento_aplicado: Optional[str]
+    id_item: Optional[str]
+    id_item_aplicado: Optional[str]
+    ccosto1: Optional[str]
+    ccosto2: Optional[str]
+    conciliado: Optional[str]
+    batch: Optional[str]
+    id_tercero: Optional[str]
+    is_niif: Optional[str]
+    item_id: Optional[str]
+    id_cobro: Optional[str]
+    nro_recibo: Optional[str]
+    id_cliente: Optional[str]
+    fecha_cobro: Optional[str]
+    valor_cambio: Optional[str]
+    total_cobro: Optional[str]
+    id_estado_cobro: Optional[str]
+    anticipo: Optional[str]
+    descuentos: Optional[str]
+    intereses: Optional[str]
+    ret_ganancias: Optional[str]
+    ret_iva: Optional[str]
+    ret_suss: Optional[str]
+    retencion_iibb: Optional[str]
+    retencion_iibb1: Optional[str]
+    retencion_iibb2: Optional[str]
+    iibb_local: Optional[str]
+    iibb_otro: Optional[str]
+    total_cobrado: Optional[str]
+    retencion_otras: Optional[str]
+    descripcion: Optional[str]
+    este_cobro: Optional[str]
+    diferencia_tipo_cambio: Optional[str]
+
+class Dev_norm_colppy_compra_pagoType:
+    id: int
+    activo: Optional[bool]
+    fecha_grabacion: Optional[Any]
+    ult_modificado: Optional[Any]
+    id_empresa: Optional[int]
+    id_pago: Optional[int]
+    id_proveedor: Optional[int]
+    fecha_pago: Optional[Any]
+    valor_cambio: Optional[float]
+    total_pagado: Optional[float]
+    retencion_iibb: Optional[float]
+    id_estado_pago: Optional[str]
+    anticipo: Optional[float]
+    total_facturas: Optional[float]
+    descuentos: Optional[float]
+    intereses: Optional[float]
+    ret_ganancias1: Optional[float]
+    ret_ganancias2: Optional[float]
+    id_ret_ganancias1: Optional[int]
+    id_ret_ganancias2: Optional[int]
+    nro_pago: Optional[str]
+    base_calculo1: Optional[float]
+    base_calculo2: Optional[float]
+    descripcion: Optional[str]
+    retenciones_renta: Optional[float]
+    retenciones_renta_label: Optional[str]
+    nro_pago1: Optional[str]
+    nro_pago2: Optional[str]
+    total_a_pagar: Optional[float]
+    total_aplicado: Optional[float]
+    aplicado_a_este_pago: Optional[float]
+
+class Dev_norm_colppy_comprobante_itemType:
+    id: int
+    id_item: int
+    id_comprobante: int
+    cantidad: Optional[int]
+    activo: Optional[bool]
+    fecha_grabacion: Optional[Any]
+    ult_modificado: Optional[Any]
+
+class Dev_norm_colppy_comprobantesType:
+    id: int
+    id_colppy: Optional[int]
+    activo: Optional[bool]
+    fecha_grabacion: Optional[Any]
+    ult_modificado: Optional[Any]
+    descripcion: Optional[str]
+    fecha_factura: Optional[Any]
+    fecha_pago: Optional[Any]
+    id_condicion_pago: Optional[str]
+    id_estado_factura: Optional[str]
+    id_moneda: Optional[str]
+    id_ret_ganancias: Optional[str]
+    id_tipo_comprobante: Optional[str]
+    id_tipo_factura: Optional[str]
+    iibb_local: Optional[str]
+    iibb_otro: Optional[str]
+    iva_105: Optional[str]
+    iva_21: Optional[str]
+    iva_27: Optional[str]
+    neto_gravado: Optional[float]
+    neto_no_gravado: Optional[float]
+    nro_factura: Optional[str]
+    percepcion_iibb: Optional[str]
+    percepcion_iibb1: Optional[str]
+    percepcion_iibb2: Optional[str]
+    percepcion_iva: Optional[str]
+    total_aplicado: Optional[float]
+    total_factura: Optional[float]
+    total_iva: Optional[float]
+    valor_cambio: Optional[float]
+    currency_desc: Optional[str]
+    currency_iso: Optional[str]
+    email: Optional[str]
+    has_nc: Optional[str]
+    id_condicion_iva: Optional[str]
+    id_currency: Optional[str]
+    id_empresa: Optional[str]
+    id_estado_anterior: Optional[str]
+    nro_factura1: Optional[str]
+    nro_factura2: Optional[str]
+    rate: Optional[str]
+    retefuente_id: Optional[str]
+    retencion_ica: Optional[str]
+    saldo_a_aplicar: Optional[float]
+
+class Dev_norm_colppy_comprobantes_compraType:
+    id: int
+    id_comprobante: Optional[int]
+    activo: Optional[bool]
+    fecha_grabacion: Optional[Any]
+    ult_modificado: Optional[Any]
+    cuenta_imp_gan: Optional[str]
+    fecha_factura_doc: Optional[Any]
+    id_proveedor: Optional[int]
+    rete: Optional[str]
+
+class Dev_norm_colppy_comprobantes_ventaType:
+    id: int
+    id_comprobante: Optional[int]
+    activo: Optional[bool]
+    fecha_grabacion: Optional[Any]
+    ult_modificado: Optional[Any]
+    anulacion_fce: Optional[str]
+    cae: Optional[str]
+    cbu: Optional[str]
+    condicion_cta_cte: Optional[str]
+    cree: Optional[str]
+    extra_data: Optional[str]
+    factura_remito: Optional[str]
+    id_cliente: Optional[int]
+    id_talonario: Optional[str]
+    is_fce: Optional[bool]
+    is_mobile: Optional[bool]
+    nro_remito: Optional[str]
+    nro_remito1: Optional[str]
+    nro_remito2: Optional[str]
+    nro_resolucion: Optional[str]
+    price_list_id: Optional[str]
+    rete_iva: Optional[str]
+    total_cree: Optional[str]
+    transmision_fce: Optional[str]
+
+class Dev_norm_colppy_condicion_ivaType:
+    id: int
+    codigo: Optional[str]
+    descripcion: Optional[str]
+    activo: Optional[bool]
+    fecha_grabacion: Optional[Any]
+    ult_modificado: Optional[Any]
+
+class Dev_norm_colppy_condicion_pagoType:
+    id: int
+    codigo: Optional[str]
+    descripcion: Optional[str]
+    activo: Optional[bool]
+    fecha_grabacion: Optional[Any]
+    ult_modificado: Optional[Any]
+
+class Dev_norm_colppy_empresasType:
+    id: int
+    activo: Optional[bool]
+    fecha_grabacion: Optional[Any]
+    ult_modificado: Optional[Any]
+    id_colppy: Optional[str]
+    razon_social: Optional[str]
+    nombre: Optional[str]
+    cuit: Optional[str]
+
+class Dev_norm_colppy_itemsType:
+    id: int
+    activo: Optional[bool]
+    fecha_grabacion: Optional[Any]
+    ult_modificado: Optional[Any]
+    ccosto1: Optional[float]
+    ccosto2: Optional[float]
+    descripcion: Optional[str]
+    id_almacen: Optional[str]
+    id_colppy: Optional[int]
+    id_plan_cuenta: Optional[str]
+    importe_unitario: Optional[float]
+    iva: Optional[float]
+    porc_desc: Optional[float]
+    unidad_medida: Optional[str]
+
+class Dev_norm_colppy_items_compraType:
+    id: int
+    activo: Optional[bool]
+    fecha_grabacion: Optional[Any]
+    ult_modificado: Optional[Any]
+    id_item: Optional[int]
+    codigo: Optional[str]
+    comentario: Optional[str]
+    id_colppy: Optional[int]
+    id_empresa: Optional[int]
+    id_factura: Optional[int]
+    item_id: Optional[str]
+    nro: Optional[str]
+
+class Dev_norm_colppy_items_ventaType:
+    id: int
+    activo: Optional[bool]
+    fecha_grabacion: Optional[Any]
+    ult_modificado: Optional[Any]
+    id_item: Optional[int]
+    codigo: Optional[str]
+    comentario: Optional[str]
+    id_colppy: Optional[str]
+    id_empresa: Optional[int]
+    id_factura: Optional[str]
+    item_id: Optional[str]
+    nro: Optional[str]
+
+class Dev_norm_colppy_movimientosType:
+    id: int
+    activo: Optional[bool]
+    fecha_grabacion: Optional[Any]
+    ult_modificado: Optional[Any]
+    id_empresa: Optional[int]
+    id_tabla: Optional[int]
+    id_elemento: Optional[int]
+    id_diario: Optional[int]
+    id_elemento_contacto: Optional[int]
+    id_objeto_contacto: Optional[int]
+    fecha_contabilizado: Optional[Any]
+    fecha_contable: Optional[Any]
+    id_plan_cuenta: Optional[int]
+    id_subdiario: Optional[int]
+    debito_credito: Optional[str]
+    importe: Optional[float]
+    id_tabla_aplicado: Optional[int]
+    id_elemento_aplicado: Optional[int]
+    id_item: Optional[int]
+    id_item_aplicado: Optional[int]
+    ccosto1: Optional[str]
+    ccosto2: Optional[str]
+    conciliado: Optional[str]
+    batch: Optional[str]
+    id_tercero: Optional[int]
+    is_niif: Optional[str]
+    item_id: Optional[int]
+
+class Dev_norm_colppy_proveedoresType:
+    id: int
+    activo: Optional[bool]
+    fecha_grabacion: Optional[Any]
+    ult_modificado: Optional[Any]
+    id_colppy: Optional[str]
+    razon_social: Optional[str]
+    nombre_fantasia: Optional[str]
+
+class Dev_norm_colppy_SchemaClient(SchemaClient):
+    clientes: 'Table[Dev_norm_colppy_clientesType]'
+    cobro_factura: 'Table[Dev_norm_colppy_cobro_facturaType]'
+    compra_pago: 'Table[Dev_norm_colppy_compra_pagoType]'
+    comprobante_item: 'Table[Dev_norm_colppy_comprobante_itemType]'
+    comprobantes: 'Table[Dev_norm_colppy_comprobantesType]'
+    comprobantes_compra: 'Table[Dev_norm_colppy_comprobantes_compraType]'
+    comprobantes_venta: 'Table[Dev_norm_colppy_comprobantes_ventaType]'
+    condicion_iva: 'Table[Dev_norm_colppy_condicion_ivaType]'
+    condicion_pago: 'Table[Dev_norm_colppy_condicion_pagoType]'
+    empresas: 'Table[Dev_norm_colppy_empresasType]'
+    items: 'Table[Dev_norm_colppy_itemsType]'
+    items_compra: 'Table[Dev_norm_colppy_items_compraType]'
+    items_venta: 'Table[Dev_norm_colppy_items_ventaType]'
+    movimientos: 'Table[Dev_norm_colppy_movimientosType]'
+    proveedores: 'Table[Dev_norm_colppy_proveedoresType]'
+
+class Dev_public_contacts_dealsType:
+    hs_object_id: int
+    deal_id: int
+
+class Dev_public_contacts_emailsType:
+    hs_object_id: int
+    email_id: int
+
+class Dev_public_contacts_meetingsType:
+    hs_object_id: int
+    meeting_id: int
+
+class Dev_public_contacts_notesType:
+    hs_object_id: int
+    note_id: int
+
+class Dev_public_contacts_tasksType:
+    hs_object_id: int
+    task_id: int
+
+class Dev_public_contacts_ticketsType:
+    hs_object_id: int
+    ticket_id: int
+
+class Dev_public_empresasType:
+    id_empresa: int
+    razon_social: Optional[str]
+    nombre: Optional[str]
+    id_plan: Optional[str]
+    tipo: Optional[str]
+    es_administrador: Optional[str]
+    logo_path: Optional[str]
+    activa: Optional[int]
+    fecha_vencimiento: Optional[str]
+    ultimo_login: Optional[str]
+    cuit: Optional[str]
+    fecha_cierre_impuesto: Optional[str]
+    actividad_economica: Optional[str]
+
+class Dev_public_migrationsType:
+    version: str
+    description: Optional[str]
+    status: Optional[str]
+    applied_at: Optional[Any]
+    error: Optional[str]
+
+class Dev_public_operation_logType:
+    log_id: int
+    tablename: Optional[str]
+    operation_type: Optional[str]
+    operation_timestamp: Optional[Any]
+    username: Optional[str]
+    client_ip: Optional[str]
+
+class Dev_public_postsType:
+    id: int
+    title: Optional[str]
+    content: Optional[str]
+    user_id: Optional[int]
+
+class Dev_public_sampleType:
+    id: int
+    name: Optional[str]
+
+class Dev_public_test_tableType:
+    id: int
+    name: Optional[str]
+    active: Optional[bool]
+    data: Optional[Dict[str, Any]]
+
+class Dev_public_usersType:
+    id: int
+    name: Optional[str]
+    email: Optional[str]
+
+class Dev_public_SchemaClient(SchemaClient):
+    contacts_deals: 'Table[Dev_public_contacts_dealsType]'
+    contacts_emails: 'Table[Dev_public_contacts_emailsType]'
+    contacts_meetings: 'Table[Dev_public_contacts_meetingsType]'
+    contacts_notes: 'Table[Dev_public_contacts_notesType]'
+    contacts_tasks: 'Table[Dev_public_contacts_tasksType]'
+    contacts_tickets: 'Table[Dev_public_contacts_ticketsType]'
+    empresas: 'Table[Dev_public_empresasType]'
+    migrations: 'Table[Dev_public_migrationsType]'
+    operation_log: 'Table[Dev_public_operation_logType]'
+    posts: 'Table[Dev_public_postsType]'
+    sample: 'Table[Dev_public_sampleType]'
+    test_table: 'Table[Dev_public_test_tableType]'
+    users: 'Table[Dev_public_usersType]'
+
+class Dev_raw_colppy_clientesType:
+    id_cliente: int
+    razon_social: Optional[str]
+    nombre_fantasia: Optional[str]
+    fecha_alta: Optional[Any]
+    dir_postal: Optional[str]
+    dir_postal_ciudad: Optional[str]
+    dir_postal_codigo_postal: Optional[str]
+    dir_postal_provincia: Optional[str]
+    dir_postal_pais: Optional[str]
+    dir_fiscal: Optional[str]
+    dir_fiscal_ciudad: Optional[str]
+    dir_fiscal_codigo_postal: Optional[str]
+    dir_fiscal_provincia: Optional[str]
+    dir_fiscal_pais: Optional[str]
+    activo: Optional[int]
+    id_condicion_pago: Optional[int]
+    id_condicion_iva: Optional[int]
+    producto: Optional[str]
+    porcentaje_iva: Optional[Decimal]
+    email: Optional[str]
+    country_id: Optional[int]
+    saldo: Optional[Decimal]
+    id_empresa: Optional[int]
+    tax_id: Optional[str]
+    cuit: Optional[str]
+
+class Dev_raw_colppy_cobranzasType:
+    id_cliente: Optional[int]
+    comprobante_factura: Optional[str]
+    comprobante_recibo: Optional[str]
+    importe: Optional[Decimal]
+    fecha_cobro: Optional[date]
+    fecha_factura: Optional[date]
+    fecha_vencimiento: Optional[date]
+    id_empresa: Optional[int]
+
+class Dev_raw_colppy_empresasType:
+    id_empresa: int
+    razon_social: str
+    nombre: Optional[str]
+    cuit: Optional[str]
+    activa: Optional[int]
+
+class Dev_raw_colppy_facturas_a_cobrarType:
+    id_cliente: Optional[int]
+    id_factura_colppy: Optional[int]
+    comprobante: Optional[str]
+    descripcion: Optional[str]
+    tipo_comprobante: Optional[str]
+    fecha: Optional[date]
+    vencimiento: Optional[date]
+    id_plan_cuenta: Optional[str]
+    iva: Optional[Decimal]
+    subtotal: Optional[Decimal]
+    centro_costo_1: Optional[str]
+    centro_costo_2: Optional[str]
+    total: Optional[Decimal]
+    id_empresa: Optional[int]
+    id_estado_factura: Optional[int]
+
+class Dev_raw_colppy_facturas_a_pagarType:
+    id_proveedor: Optional[int]
+    id_factura_colppy: Optional[int]
+    comprobante: Optional[str]
+    descripcion: Optional[str]
+    tipo_comprobante: Optional[str]
+    fecha: Optional[date]
+    vencimiento: Optional[date]
+    id_plan_cuenta: Optional[str]
+    iva: Optional[Decimal]
+    subtotal: Optional[Decimal]
+    centro_costo_1: Optional[str]
+    centro_costo_2: Optional[str]
+    total: Optional[Decimal]
+    id_empresa: Optional[int]
+    id_estado_factura: Optional[int]
+
+class Dev_raw_colppy_movimientosType:
+    id_empresa: Optional[int]
+    id_banco: Optional[int]
+    fecha: Optional[date]
+    cliente_proveedor: Optional[str]
+    tipo: Optional[str]
+    comprobante: Optional[str]
+    descripcion: Optional[str]
+    ingresos: Optional[Decimal]
+    egresos: Optional[Decimal]
+    saldo: Optional[Decimal]
+    nro_registro: Optional[int]
+
+class Dev_raw_colppy_pagosType:
+    id_proveedor: Optional[int]
+    comprobante_factura: Optional[str]
+    comprobante_pago: Optional[str]
+    importe: Optional[Decimal]
+    fecha_pago: Optional[date]
+    fecha_factura: Optional[date]
+    fecha_vencimiento: Optional[date]
+    id_empresa: Optional[int]
+    tipo_comprobante_pago: Optional[str]
+    centro_costo_1: Optional[str]
+    centro_costo_2: Optional[str]
+    descripcion: Optional[str]
+
+class Dev_raw_colppy_proveedoresType:
+    id_empresa: Optional[int]
+    id_proveedor: Optional[int]
+    razon_social: Optional[str]
+    nombre_fantasia: Optional[str]
+
+class Dev_raw_colppy_tesoreriaType:
+    id_empresa: Optional[int]
+    id_banco: Optional[int]
+    nro_cuenta: Optional[int]
+    id_plan_cuenta: Optional[str]
+    id_tipo: Optional[str]
+    nombre: Optional[str]
+    moneda: Optional[str]
+
+class Dev_raw_colppy_test_pinaType:
+    dato_test: Optional[int]
+
+class Dev_raw_colppy_SchemaClient(SchemaClient):
+    clientes: 'Table[Dev_raw_colppy_clientesType]'
+    cobranzas: 'Table[Dev_raw_colppy_cobranzasType]'
+    empresas: 'Table[Dev_raw_colppy_empresasType]'
+    facturas_a_cobrar: 'Table[Dev_raw_colppy_facturas_a_cobrarType]'
+    facturas_a_pagar: 'Table[Dev_raw_colppy_facturas_a_pagarType]'
+    movimientos: 'Table[Dev_raw_colppy_movimientosType]'
+    pagos: 'Table[Dev_raw_colppy_pagosType]'
+    proveedores: 'Table[Dev_raw_colppy_proveedoresType]'
+    tesoreria: 'Table[Dev_raw_colppy_tesoreriaType]'
+    test_pina: 'Table[Dev_raw_colppy_test_pinaType]'
+
+class Dev_raw_colppy_dev_clientesType:
+    id_cliente: Optional[int]
+    razon_social: Optional[str]
+    nombre_fantasia: Optional[str]
+    fecha_alta: Optional[Any]
+    dir_postal: Optional[str]
+    dir_postal_ciudad: Optional[str]
+    dir_postal_codigo_postal: Optional[str]
+    dir_postal_provincia: Optional[str]
+    dir_postal_pais: Optional[str]
+    dir_fiscal: Optional[str]
+    dir_fiscal_ciudad: Optional[str]
+    dir_fiscal_codigo_postal: Optional[str]
+    dir_fiscal_provincia: Optional[str]
+    dir_fiscal_pais: Optional[str]
+    activo: Optional[int]
+    id_condicion_pago: Optional[int]
+    id_condicion_iva: Optional[int]
+    producto: Optional[str]
+    porcentaje_iva: Optional[Decimal]
+    email: Optional[str]
+    country_id: Optional[int]
+    saldo: Optional[Decimal]
+    id_empresa: Optional[int]
+    tax_id: Optional[str]
+    cuit: Optional[str]
+
+class Dev_raw_colppy_dev_cobranzasType:
+    id_cliente: Optional[int]
+    comprobante_factura: Optional[str]
+    comprobante_recibo: Optional[str]
+    importe: Optional[Decimal]
+    fecha_cobro: Optional[date]
+    fecha_factura: Optional[date]
+    fecha_vencimiento: Optional[date]
+    id_empresa: Optional[int]
+
+class Dev_raw_colppy_dev_cobranzas_prod_backupType:
+    id_cliente: Optional[int]
+    comprobante_factura: Optional[str]
+    comprobante_recibo: Optional[str]
+    importe: Optional[Decimal]
+    fecha_cobro: Optional[date]
+    fecha_factura: Optional[date]
+    fecha_vencimiento: Optional[date]
+    id_empresa: Optional[int]
+
+class Dev_raw_colppy_dev_empresasType:
+    id_empresa: Optional[int]
+    razon_social: Optional[str]
+    nombre: Optional[str]
+    cuit: Optional[str]
+    activa: Optional[int]
+
+class Dev_raw_colppy_dev_facturas_a_cobrarType:
+    id_cliente: Optional[int]
+    id_factura_colppy: Optional[int]
+    comprobante: Optional[str]
+    descripcion: Optional[str]
+    tipo_comprobante: Optional[str]
+    fecha: Optional[date]
+    vencimiento: Optional[date]
+    id_plan_cuenta: Optional[str]
+    iva: Optional[Decimal]
+    subtotal: Optional[Decimal]
+    centro_costo_1: Optional[str]
+    centro_costo_2: Optional[str]
+    total: Optional[Decimal]
+    id_empresa: Optional[int]
+    id_estado_factura: Optional[int]
+
+class Dev_raw_colppy_dev_facturas_a_pagarType:
+    id_proveedor: Optional[int]
+    id_factura_colppy: Optional[int]
+    comprobante: Optional[str]
+    descripcion: Optional[str]
+    tipo_comprobante: Optional[str]
+    fecha: Optional[date]
+    vencimiento: Optional[date]
+    id_plan_cuenta: Optional[str]
+    iva: Optional[Decimal]
+    subtotal: Optional[Decimal]
+    centro_costo_1: Optional[str]
+    centro_costo_2: Optional[str]
+    total: Optional[Decimal]
+    id_empresa: Optional[int]
+    id_estado_factura: Optional[int]
+
+class Dev_raw_colppy_dev_movimientosType:
+    id_empresa: Optional[int]
+    id_banco: Optional[int]
+    fecha: Optional[date]
+    cliente_proveedor: Optional[str]
+    tipo: Optional[str]
+    comprobante: Optional[str]
+    descripcion: Optional[str]
+    ingresos: Optional[Decimal]
+    egresos: Optional[Decimal]
+    saldo: Optional[Decimal]
+    nro_registro: Optional[int]
+
+class Dev_raw_colppy_dev_pagosType:
+    id_proveedor: Optional[int]
+    comprobante_factura: Optional[str]
+    comprobante_pago: Optional[str]
+    importe: Optional[Decimal]
+    fecha_pago: Optional[date]
+    fecha_factura: Optional[date]
+    fecha_vencimiento: Optional[date]
+    id_empresa: Optional[int]
+    tipo_comprobante_pago: Optional[str]
+    centro_costo_1: Optional[str]
+    centro_costo_2: Optional[str]
+    descripcion: Optional[str]
+
+class Dev_raw_colppy_dev_proveedoresType:
+    id_empresa: Optional[int]
+    id_proveedor: Optional[int]
+    razon_social: Optional[str]
+    nombre_fantasia: Optional[str]
+
+class Dev_raw_colppy_dev_tesoreriaType:
+    id_empresa: Optional[int]
+    id_banco: Optional[int]
+    nro_cuenta: Optional[int]
+    id_plan_cuenta: Optional[str]
+    id_tipo: Optional[str]
+    nombre: Optional[str]
+    moneda: Optional[str]
+
+class Dev_raw_colppy_dev_SchemaClient(SchemaClient):
+    clientes: 'Table[Dev_raw_colppy_dev_clientesType]'
+    cobranzas: 'Table[Dev_raw_colppy_dev_cobranzasType]'
+    cobranzas_prod_backup: 'Table[Dev_raw_colppy_dev_cobranzas_prod_backupType]'
+    empresas: 'Table[Dev_raw_colppy_dev_empresasType]'
+    facturas_a_cobrar: 'Table[Dev_raw_colppy_dev_facturas_a_cobrarType]'
+    facturas_a_pagar: 'Table[Dev_raw_colppy_dev_facturas_a_pagarType]'
+    movimientos: 'Table[Dev_raw_colppy_dev_movimientosType]'
+    pagos: 'Table[Dev_raw_colppy_dev_pagosType]'
+    proveedores: 'Table[Dev_raw_colppy_dev_proveedoresType]'
+    tesoreria: 'Table[Dev_raw_colppy_dev_tesoreriaType]'
+
+class Dev_raw_hubspot_association_deal_companyType:
+    deal_id: int
+    company_id: int
+
+class Dev_raw_hubspot_companiesType:
+    city: Optional[str]
+    createdate: Optional[Any]
+    domain: Optional[str]
+    hs_lastmodifieddate: Optional[Any]
+    company_id: int
+    industry: Optional[str]
+    name: Optional[str]
+    phone: Optional[str]
+    state: Optional[str]
+
+class Dev_raw_hubspot_companies_contactsType:
+    company_id: int
+    contact_id: int
+
+class Dev_raw_hubspot_companies_dealsType:
+    company_id: int
+    deal_id: int
+
+class Dev_raw_hubspot_companies_emailsType:
+    company_id: int
+    email_id: int
+
+class Dev_raw_hubspot_companies_meetingsType:
+    company_id: int
+    meeting_id: int
+
+class Dev_raw_hubspot_companies_notesType:
+    company_id: int
+    note_id: int
+
+class Dev_raw_hubspot_companies_tasksType:
+    company_id: int
+    task_id: int
+
+class Dev_raw_hubspot_companies_ticketsType:
+    company_id: int
+    ticket_id: int
+
+class Dev_raw_hubspot_contactsType:
+    contact_id: int
+    email: Optional[Any]
+    firstname: Optional[Any]
+    lastname: Optional[Any]
+    createdate: Optional[Any]
+    lastmodifieddate: Optional[Any]
+
+class Dev_raw_hubspot_contacts_dealsType:
+    contact_id: int
+    deal_id: int
+
+class Dev_raw_hubspot_contacts_emailsType:
+    contact_id: int
+    email_id: int
+
+class Dev_raw_hubspot_contacts_meetingsType:
+    contact_id: int
+    meeting_id: int
+
+class Dev_raw_hubspot_contacts_notesType:
+    contact_id: int
+    note_id: int
+
+class Dev_raw_hubspot_contacts_tasksType:
+    contact_id: int
+    task_id: int
+
+class Dev_raw_hubspot_contacts_ticketsType:
+    contact_id: int
+    ticket_id: int
+
+class Dev_raw_hubspot_dealsType:
+    deal_id: int
+    amount: Optional[int]
+    closedate: Optional[Any]
+    createdate: Optional[Any]
+    dealname: Optional[str]
+    dealstage: Optional[str]
+    hs_lastmodifieddate: Optional[Any]
+    pipeline: Optional[str]
+
+class Dev_raw_hubspot_deals_emailsType:
+    deal_id: int
+    email_id: int
+
+class Dev_raw_hubspot_deals_meetingsType:
+    deal_id: int
+    meeting_id: int
+
+class Dev_raw_hubspot_deals_notesType:
+    deal_id: int
+    note_id: int
+
+class Dev_raw_hubspot_deals_tasksType:
+    hs_object_is: int
+    task_id: int
+
+class Dev_raw_hubspot_deals_ticketsType:
+    deal_id: int
+    ticket_id: int
+
+class Dev_raw_hubspot_SchemaClient(SchemaClient):
+    association_deal_company: 'Table[Dev_raw_hubspot_association_deal_companyType]'
+    companies: 'Table[Dev_raw_hubspot_companiesType]'
+    companies_contacts: 'Table[Dev_raw_hubspot_companies_contactsType]'
+    companies_deals: 'Table[Dev_raw_hubspot_companies_dealsType]'
+    companies_emails: 'Table[Dev_raw_hubspot_companies_emailsType]'
+    companies_meetings: 'Table[Dev_raw_hubspot_companies_meetingsType]'
+    companies_notes: 'Table[Dev_raw_hubspot_companies_notesType]'
+    companies_tasks: 'Table[Dev_raw_hubspot_companies_tasksType]'
+    companies_tickets: 'Table[Dev_raw_hubspot_companies_ticketsType]'
+    contacts: 'Table[Dev_raw_hubspot_contactsType]'
+    contacts_deals: 'Table[Dev_raw_hubspot_contacts_dealsType]'
+    contacts_emails: 'Table[Dev_raw_hubspot_contacts_emailsType]'
+    contacts_meetings: 'Table[Dev_raw_hubspot_contacts_meetingsType]'
+    contacts_notes: 'Table[Dev_raw_hubspot_contacts_notesType]'
+    contacts_tasks: 'Table[Dev_raw_hubspot_contacts_tasksType]'
+    contacts_tickets: 'Table[Dev_raw_hubspot_contacts_ticketsType]'
+    deals: 'Table[Dev_raw_hubspot_dealsType]'
+    deals_emails: 'Table[Dev_raw_hubspot_deals_emailsType]'
+    deals_meetings: 'Table[Dev_raw_hubspot_deals_meetingsType]'
+    deals_notes: 'Table[Dev_raw_hubspot_deals_notesType]'
+    deals_tasks: 'Table[Dev_raw_hubspot_deals_tasksType]'
+    deals_tickets: 'Table[Dev_raw_hubspot_deals_ticketsType]'
+
+class Dev_raw_panel_aux_campaign_budgetsType:
+    id_budget: int
+    id_campaign: int
+    date_from: Optional[Any]
+    date_to: Optional[Any]
+    id_currency: Optional[str]
+
+class Dev_raw_panel_cat_advertisersType:
+    id_advertiser: int
+    advertiser: Optional[str]
+    register_date: Optional[Any]
+    advertiser_details: Optional[str]
+    smb_client: Optional[int]
+    status: Optional[str]
+    dco_score: Optional[Decimal]
+    retargeting_pixel: Optional[int]
+    goal_pixel: Optional[int]
+
+class Dev_raw_panel_cat_countriesType:
+    country: Optional[str]
+    country_currency: Optional[str]
+    id_country: str
+
+class Dev_raw_panel_cat_currencyType:
+    currency: Optional[str]
+    id_currency: str
+
+class Dev_raw_panel_cat_servicesType:
+    id_service: int
+    service: Optional[str]
+    service_type: Optional[str]
+    content_type: Optional[str]
+    medium: Optional[str]
+    id_device: int
+    device: Optional[str]
+    channel: Optional[str]
+
+class Dev_raw_panel_nav_budgetsType:
+    id_budget: int
+    id_advertiser: Optional[int]
+    budget: Optional[str]
+    date_from: Optional[Any]
+    date_to: Optional[Any]
+    amount: Optional[Decimal]
+    invoice_amount: Optional[Decimal]
+    id_purchase_order: Optional[str]
+    id_kpi: Optional[int]
+    kpi: Optional[str]
+    kpi_value: Optional[Decimal]
+    external: Optional[int]
+    id_purchase_settings: Optional[int]
+    purchase_type: Optional[str]
+    purchase_value: Optional[str]
+    purchase_external: Optional[int]
+
+class Dev_raw_panel_nav_campaignsType:
+    status: Optional[int]
+    id_advertiser: Optional[int]
+    id_country: Optional[str]
+    campaign: Optional[str]
+    id_campaign: int
+    audiences: Optional[str]
+    id_service: Optional[int]
+    campaign_type: Optional[str]
+
+class Dev_raw_panel_nav_client_detailsType:
+    id_client: int
+    client_name: Optional[str]
+    id_billing_company: Optional[int]
+    billing_company: Optional[str]
+    id_business: Optional[int]
+    business: Optional[str]
+    currency: Optional[str]
+    currency_description: Optional[str]
+    business_country_code: Optional[str]
+    business_country: Optional[str]
+    id_local_agency: Optional[int]
+    local_agency: Optional[str]
+    id_regional_agency: Optional[int]
+    regional_agency: Optional[str]
+    id_business_group: Optional[int]
+    business_group: Optional[str]
+    withholdings: Optional[str]
+    commissions_to_pay: Optional[str]
+    id_vertical: Optional[int]
+    vertical: Optional[str]
+    id_head_of_implementations: Optional[int]
+    head_of_implementations: Optional[str]
+    head_of_implementations_email: Optional[str]
+    id_head_of_programmatic: Optional[int]
+    head_of_programmatic: Optional[str]
+    head_of_programmatic_email: Optional[str]
+    id_sales_manager: Optional[int]
+    sales_manager: Optional[str]
+    sales_manager_email: Optional[str]
+    tax_id: Optional[str]
+    advertiser_country: Optional[str]
+
+class Dev_raw_panel_nav_currency_ratesType:
+    id_currency: str
+    date: date
+    rate: Optional[Decimal]
+
+class Dev_raw_panel_nav_direct_costsType:
+    id_provider: str
+    id_campaign: int
+    date: date
+    amount: Optional[Decimal]
+    id_currency: str
+    cpc: Optional[Decimal]
+
+class Dev_raw_panel_nav_spent_adxType:
+    spent: Optional[Decimal]
+    id_currency: Optional[str]
+    id_campaign: int
+    hstdate: date
+    id_service: int
+
+class Dev_raw_panel_nav_spent_adx_goalsType:
+    goals: Optional[int]
+    revenue: Optional[Decimal]
+    id_campaign: int
+    hstdate: date
+    id_service: int
+
+class Dev_raw_panel_nav_spent_adx_impsType:
+    impressions: Optional[int]
+    views: Optional[int]
+    clicks: Optional[int]
+    id_campaign: int
+    hstdate: date
+    id_service: int
+
+class Dev_raw_panel_nav_spent_dcoType:
+    id_campaign: int
+    hstdate: date
+    id_service: int
+    spent: Optional[Decimal]
+    id_currency: Optional[str]
+
+class Dev_raw_panel_nav_spent_dco_goalsType:
+    id_campaign: int
+    hstdate: date
+    id_service: int
+    goals: Optional[Decimal]
+    revenue: Optional[Decimal]
+
+class Dev_raw_panel_nav_spent_dco_impsType:
+    id_campaign: int
+    hstdate: date
+    id_service: int
+    impressions: Optional[Decimal]
+    views: Optional[Decimal]
+    clicks: Optional[Decimal]
+
+class Dev_raw_panel_nav_spent_shopType:
+    id_campaign: int
+    hstdate: date
+    id_service: int
+    spent: Optional[Decimal]
+    id_currency: Optional[str]
+
+class Dev_raw_panel_nav_spent_shop_goalsType:
+    id_campaign: int
+    hstdate: date
+    id_service: int
+    goals: Optional[Decimal]
+    revenue: Optional[Decimal]
+
+class Dev_raw_panel_nav_spent_shop_impsType:
+    id_campaign: int
+    hstdate: date
+    id_service: int
+    impressions: Optional[Decimal]
+    views: Optional[Decimal]
+    clicks: Optional[Decimal]
+
+class Dev_raw_panel_SchemaClient(SchemaClient):
+    aux_campaign_budgets: 'Table[Dev_raw_panel_aux_campaign_budgetsType]'
+    cat_advertisers: 'Table[Dev_raw_panel_cat_advertisersType]'
+    cat_countries: 'Table[Dev_raw_panel_cat_countriesType]'
+    cat_currency: 'Table[Dev_raw_panel_cat_currencyType]'
+    cat_services: 'Table[Dev_raw_panel_cat_servicesType]'
+    nav_budgets: 'Table[Dev_raw_panel_nav_budgetsType]'
+    nav_campaigns: 'Table[Dev_raw_panel_nav_campaignsType]'
+    nav_client_details: 'Table[Dev_raw_panel_nav_client_detailsType]'
+    nav_currency_rates: 'Table[Dev_raw_panel_nav_currency_ratesType]'
+    nav_direct_costs: 'Table[Dev_raw_panel_nav_direct_costsType]'
+    nav_spent_adx: 'Table[Dev_raw_panel_nav_spent_adxType]'
+    nav_spent_adx_goals: 'Table[Dev_raw_panel_nav_spent_adx_goalsType]'
+    nav_spent_adx_imps: 'Table[Dev_raw_panel_nav_spent_adx_impsType]'
+    nav_spent_dco: 'Table[Dev_raw_panel_nav_spent_dcoType]'
+    nav_spent_dco_goals: 'Table[Dev_raw_panel_nav_spent_dco_goalsType]'
+    nav_spent_dco_imps: 'Table[Dev_raw_panel_nav_spent_dco_impsType]'
+    nav_spent_shop: 'Table[Dev_raw_panel_nav_spent_shopType]'
+    nav_spent_shop_goals: 'Table[Dev_raw_panel_nav_spent_shop_goalsType]'
+    nav_spent_shop_imps: 'Table[Dev_raw_panel_nav_spent_shop_impsType]'
+
+class Dev_raw_panel_backup_script_taskflow_aux_campaign_budgetsType:
+    id_budget: int
+    id_campaign: int
+    date_from: Optional[Any]
+    date_to: Optional[Any]
+    id_currency: Optional[str]
+
+class Dev_raw_panel_backup_script_taskflow_cat_advertisersType:
+    id_advertiser: int
+    advertiser: Optional[str]
+    register_date: Optional[Any]
+    advertiser_details: Optional[str]
+    smb_client: Optional[int]
+    status: Optional[str]
+    dco_score: Optional[Decimal]
+    retargeting_pixel: Optional[int]
+    goal_pixel: Optional[int]
+
+class Dev_raw_panel_backup_script_taskflow_cat_countriesType:
+    country: Optional[str]
+    country_currency: Optional[str]
+    id_country: str
+
+class Dev_raw_panel_backup_script_taskflow_cat_currencyType:
+    currency: Optional[str]
+    id_currency: str
+
+class Dev_raw_panel_backup_script_taskflow_cat_servicesType:
+    id_service: int
+    service: Optional[str]
+    service_type: Optional[str]
+    content_type: Optional[str]
+    medium: Optional[str]
+    id_device: int
+    device: Optional[str]
+    channel: Optional[str]
+
+class Dev_raw_panel_backup_script_taskflow_nav_budgetsType:
+    id_budget: int
+    id_advertiser: Optional[int]
+    budget: Optional[str]
+    date_from: Optional[Any]
+    date_to: Optional[Any]
+    amount: Optional[Decimal]
+    invoice_amount: Optional[Decimal]
+    id_purchase_order: Optional[str]
+    id_kpi: Optional[int]
+    kpi: Optional[str]
+    kpi_value: Optional[Decimal]
+    external: Optional[int]
+    id_purchase_settings: Optional[int]
+    purchase_type: Optional[str]
+    purchase_value: Optional[str]
+    purchase_external: Optional[int]
+
+class Dev_raw_panel_backup_script_taskflow_nav_campaignsType:
+    status: Optional[int]
+    id_advertiser: Optional[int]
+    id_country: Optional[str]
+    campaign: Optional[str]
+    id_campaign: int
+    audiences: Optional[str]
+    id_service: Optional[int]
+    campaign_type: Optional[str]
+
+class Dev_raw_panel_backup_script_taskflow_nav_client_detailsType:
+    id_client: int
+    client_name: Optional[str]
+    id_billing_company: Optional[int]
+    billing_company: Optional[str]
+    id_business: Optional[int]
+    business: Optional[str]
+    currency: Optional[str]
+    currency_description: Optional[str]
+    business_country_code: Optional[str]
+    business_country: Optional[str]
+    id_local_agency: Optional[int]
+    local_agency: Optional[str]
+    id_regional_agency: Optional[int]
+    regional_agency: Optional[str]
+    id_business_group: Optional[int]
+    business_group: Optional[str]
+    withholdings: Optional[str]
+    commissions_to_pay: Optional[str]
+    id_vertical: Optional[int]
+    vertical: Optional[str]
+    id_head_of_implementations: Optional[int]
+    head_of_implementations: Optional[str]
+    head_of_implementations_email: Optional[str]
+    id_head_of_programmatic: Optional[int]
+    head_of_programmatic: Optional[str]
+    head_of_programmatic_email: Optional[str]
+    id_sales_manager: Optional[int]
+    sales_manager: Optional[str]
+    sales_manager_email: Optional[str]
+    tax_id: Optional[str]
+    advertiser_country: Optional[str]
+
+class Dev_raw_panel_backup_script_taskflow_nav_currency_ratesType:
+    id_currency: str
+    date: date
+    rate: Optional[Decimal]
+
+class Dev_raw_panel_backup_script_taskflow_nav_direct_costsType:
+    id_provider: str
+    id_campaign: int
+    date: date
+    amount: Optional[Decimal]
+    id_currency: str
+    cpc: Optional[Decimal]
+
+class Dev_raw_panel_backup_script_taskflow_nav_spent_adxType:
+    spent: Optional[Decimal]
+    id_currency: Optional[str]
+    id_campaign: int
+    hstdate: date
+    id_service: int
+
+class Dev_raw_panel_backup_script_taskflow_nav_spent_adx_goalsType:
+    goals: Optional[int]
+    revenue: Optional[Decimal]
+    id_campaign: int
+    hstdate: date
+    id_service: int
+
+class Dev_raw_panel_backup_script_taskflow_nav_spent_adx_impsType:
+    impressions: Optional[int]
+    views: Optional[int]
+    clicks: Optional[int]
+    id_campaign: int
+    hstdate: date
+    id_service: int
+
+class Dev_raw_panel_backup_script_taskflow_nav_spent_dcoType:
+    id_campaign: int
+    hstdate: date
+    id_service: int
+    spent: Optional[Decimal]
+    id_currency: Optional[str]
+
+class Dev_raw_panel_backup_script_taskflow_nav_spent_dco_goalsType:
+    id_campaign: int
+    hstdate: date
+    id_service: int
+    goals: Optional[Decimal]
+    revenue: Optional[Decimal]
+
+class Dev_raw_panel_backup_script_taskflow_nav_spent_dco_impsType:
+    id_campaign: int
+    hstdate: date
+    id_service: int
+    impressions: Optional[Decimal]
+    views: Optional[Decimal]
+    clicks: Optional[Decimal]
+
+class Dev_raw_panel_backup_script_taskflow_nav_spent_shopType:
+    id_campaign: int
+    hstdate: date
+    id_service: int
+    spent: Optional[Decimal]
+    id_currency: Optional[str]
+
+class Dev_raw_panel_backup_script_taskflow_nav_spent_shop_goalsType:
+    id_campaign: int
+    hstdate: date
+    id_service: int
+    goals: Optional[Decimal]
+    revenue: Optional[Decimal]
+
+class Dev_raw_panel_backup_script_taskflow_nav_spent_shop_impsType:
+    id_campaign: int
+    hstdate: date
+    id_service: int
+    impressions: Optional[Decimal]
+    views: Optional[Decimal]
+    clicks: Optional[Decimal]
+
+class Dev_raw_panel_backup_script_taskflow_SchemaClient(SchemaClient):
+    aux_campaign_budgets: 'Table[Dev_raw_panel_backup_script_taskflow_aux_campaign_budgetsType]'
+    cat_advertisers: 'Table[Dev_raw_panel_backup_script_taskflow_cat_advertisersType]'
+    cat_countries: 'Table[Dev_raw_panel_backup_script_taskflow_cat_countriesType]'
+    cat_currency: 'Table[Dev_raw_panel_backup_script_taskflow_cat_currencyType]'
+    cat_services: 'Table[Dev_raw_panel_backup_script_taskflow_cat_servicesType]'
+    nav_budgets: 'Table[Dev_raw_panel_backup_script_taskflow_nav_budgetsType]'
+    nav_campaigns: 'Table[Dev_raw_panel_backup_script_taskflow_nav_campaignsType]'
+    nav_client_details: 'Table[Dev_raw_panel_backup_script_taskflow_nav_client_detailsType]'
+    nav_currency_rates: 'Table[Dev_raw_panel_backup_script_taskflow_nav_currency_ratesType]'
+    nav_direct_costs: 'Table[Dev_raw_panel_backup_script_taskflow_nav_direct_costsType]'
+    nav_spent_adx: 'Table[Dev_raw_panel_backup_script_taskflow_nav_spent_adxType]'
+    nav_spent_adx_goals: 'Table[Dev_raw_panel_backup_script_taskflow_nav_spent_adx_goalsType]'
+    nav_spent_adx_imps: 'Table[Dev_raw_panel_backup_script_taskflow_nav_spent_adx_impsType]'
+    nav_spent_dco: 'Table[Dev_raw_panel_backup_script_taskflow_nav_spent_dcoType]'
+    nav_spent_dco_goals: 'Table[Dev_raw_panel_backup_script_taskflow_nav_spent_dco_goalsType]'
+    nav_spent_dco_imps: 'Table[Dev_raw_panel_backup_script_taskflow_nav_spent_dco_impsType]'
+    nav_spent_shop: 'Table[Dev_raw_panel_backup_script_taskflow_nav_spent_shopType]'
+    nav_spent_shop_goals: 'Table[Dev_raw_panel_backup_script_taskflow_nav_spent_shop_goalsType]'
+    nav_spent_shop_imps: 'Table[Dev_raw_panel_backup_script_taskflow_nav_spent_shop_impsType]'
+
+class Dev_raw_sheets_backup_key_accounts_goalsType:
+    id_client: Optional[int]
+    id_service: Optional[int]
+    period: Optional[str]
+    amount: Optional[Decimal]
+
+class Dev_raw_sheets_backup_new_clients_goalsType:
+    quantity_advertisers: Optional[int]
+    id_service: Optional[int]
+    id_agency: Optional[int]
+    id_client_category: Optional[int]
+    id_sales_manager: Optional[int]
+    id_country: Optional[str]
+    period: Optional[str]
+    amount: Optional[Decimal]
+
+class Dev_raw_sheets_colppy_countriesType:
+    country_id: Optional[int]
+    country_name: Optional[str]
+
+class Dev_raw_sheets_facturadoType:
+    period: Optional[str]
+    id_client: Optional[int]
+    id_service: Optional[int]
+    bill_amount_usd: Optional[Decimal]
+
+class Dev_raw_sheets_key_accounts_goalsType:
+    id_client: Optional[int]
+    id_service: Optional[int]
+    period: Optional[str]
+    amount: Optional[Decimal]
+
+class Dev_raw_sheets_new_clients_goalsType:
+    quantity_advertisers: Optional[int]
+    id_service: Optional[int]
+    id_agency: Optional[int]
+    id_client_category: Optional[int]
+    id_sales_manager: Optional[int]
+    id_country: Optional[str]
+    period: Optional[str]
+    amount: Optional[Decimal]
+
+class Dev_raw_sheets_presupuestosType:
+    fecha: Optional[str]
+    area: Optional[str]
+    mercado: Optional[str]
+    presupuesto: Optional[Decimal]
+
+class Dev_raw_sheets_test_tableType:
+    id: int
+    name: str
+
+class Dev_raw_sheets_SchemaClient(SchemaClient):
+    backup_key_accounts_goals: 'Table[Dev_raw_sheets_backup_key_accounts_goalsType]'
+    backup_new_clients_goals: 'Table[Dev_raw_sheets_backup_new_clients_goalsType]'
+    colppy_countries: 'Table[Dev_raw_sheets_colppy_countriesType]'
+    facturado: 'Table[Dev_raw_sheets_facturadoType]'
+    key_accounts_goals: 'Table[Dev_raw_sheets_key_accounts_goalsType]'
+    new_clients_goals: 'Table[Dev_raw_sheets_new_clients_goalsType]'
+    presupuestos: 'Table[Dev_raw_sheets_presupuestosType]'
+    test_table: 'Table[Dev_raw_sheets_test_tableType]'
+
+class Dev_stg_int_panel_nav_budgets_no_spentType:
+    IdCampaign: Optional[int]
+    IdDate: Optional[Any]
+
+class Dev_stg_int_panel_nav_direct_costsType:
+    id_provider: Optional[str]
+    id_campaign: Optional[int]
+    hstdate: Optional[date]
+    amount: Optional[Decimal]
+    id_currency: Optional[str]
+    cpc: Optional[Decimal]
+
+class Dev_stg_int_panel_nav_spent_adxType:
+    id_campaign: Optional[int]
+    hstdate: Optional[date]
+    id_service: Optional[int]
+    spent: Optional[Decimal]
+    id_currency: Optional[str]
+
+class Dev_stg_int_panel_nav_spent_adx_goalsType:
+    id_campaign: Optional[int]
+    hstdate: Optional[date]
+    id_service: Optional[int]
+    goals: Optional[int]
+    revenue: Optional[Decimal]
+
+class Dev_stg_int_panel_nav_spent_adx_impsType:
+    id_campaign: Optional[int]
+    hstdate: Optional[date]
+    id_service: Optional[int]
+    impressions: Optional[int]
+    views: Optional[int]
+    clicks: Optional[int]
+
+class Dev_stg_int_panel_nav_spent_dcoType:
+    id_campaign: Optional[int]
+    hstdate: Optional[date]
+    id_service: Optional[int]
+    spent: Optional[Decimal]
+    id_currency: Optional[str]
+
+class Dev_stg_int_panel_nav_spent_dco_goalsType:
+    id_campaign: Optional[int]
+    hstdate: Optional[date]
+    id_service: Optional[int]
+    goals: Optional[Decimal]
+    revenue: Optional[Decimal]
+
+class Dev_stg_int_panel_nav_spent_dco_impsType:
+    id_campaign: Optional[int]
+    hstdate: Optional[date]
+    id_service: Optional[int]
+    impressions: Optional[Decimal]
+    views: Optional[Decimal]
+    clicks: Optional[Decimal]
+
+class Dev_stg_int_panel_nav_spent_shopType:
+    id_campaign: Optional[int]
+    hstdate: Optional[date]
+    id_service: Optional[int]
+    spent: Optional[Decimal]
+    id_currency: Optional[str]
+
+class Dev_stg_int_panel_nav_spent_shop_goalsType:
+    id_campaign: Optional[int]
+    hstdate: Optional[date]
+    id_service: Optional[int]
+    goals: Optional[Decimal]
+    revenue: Optional[Decimal]
+
+class Dev_stg_int_panel_nav_spent_shop_impsType:
+    id_campaign: Optional[int]
+    hstdate: Optional[date]
+    id_service: Optional[int]
+    impressions: Optional[Decimal]
+    views: Optional[Decimal]
+    clicks: Optional[Decimal]
+
+class Dev_stg_my_first_dbt_modelType:
+    id: Optional[int]
+
+class Dev_stg_SchemaClient(SchemaClient):
+    int_panel__nav_budgets_no_spent: 'Table[Dev_stg_int_panel_nav_budgets_no_spentType]'
+    int_panel__nav_direct_costs: 'Table[Dev_stg_int_panel_nav_direct_costsType]'
+    int_panel__nav_spent_adx: 'Table[Dev_stg_int_panel_nav_spent_adxType]'
+    int_panel__nav_spent_adx_goals: 'Table[Dev_stg_int_panel_nav_spent_adx_goalsType]'
+    int_panel__nav_spent_adx_imps: 'Table[Dev_stg_int_panel_nav_spent_adx_impsType]'
+    int_panel__nav_spent_dco: 'Table[Dev_stg_int_panel_nav_spent_dcoType]'
+    int_panel__nav_spent_dco_goals: 'Table[Dev_stg_int_panel_nav_spent_dco_goalsType]'
+    int_panel__nav_spent_dco_imps: 'Table[Dev_stg_int_panel_nav_spent_dco_impsType]'
+    int_panel__nav_spent_shop: 'Table[Dev_stg_int_panel_nav_spent_shopType]'
+    int_panel__nav_spent_shop_goals: 'Table[Dev_stg_int_panel_nav_spent_shop_goalsType]'
+    int_panel__nav_spent_shop_imps: 'Table[Dev_stg_int_panel_nav_spent_shop_impsType]'
+    my_first_dbt_model: 'Table[Dev_stg_my_first_dbt_modelType]'
+
+class Prod_DatabaseClient(DatabaseClient):
+    dwh: Prod_dwh_SchemaClient
+    public: Prod_public_SchemaClient
+    raw_colppy: Prod_raw_colppy_SchemaClient
+    raw_hubspot: Prod_raw_hubspot_SchemaClient
+    raw_panel: Prod_raw_panel_SchemaClient
+    raw_sheets: Prod_raw_sheets_SchemaClient
+    stg: Prod_stg_SchemaClient
+
+class Dev_DatabaseClient(DatabaseClient):
+    dwh: Dev_dwh_SchemaClient
+    new_raw_colppy: Dev_new_raw_colppy_SchemaClient
+    norm_colppy: Dev_norm_colppy_SchemaClient
+    public: Dev_public_SchemaClient
+    raw_colppy: Dev_raw_colppy_SchemaClient
+    raw_colppy_dev: Dev_raw_colppy_dev_SchemaClient
+    raw_hubspot: Dev_raw_hubspot_SchemaClient
+    raw_panel: Dev_raw_panel_SchemaClient
+    raw_panel_backup_script_taskflow: Dev_raw_panel_backup_script_taskflow_SchemaClient
+    raw_sheets: Dev_raw_sheets_SchemaClient
+    stg: Dev_stg_SchemaClient
+
+class GeneratedClient(Client):
+    prod: 'Prod_DatabaseClient'
+    dev: 'Dev_DatabaseClient'
