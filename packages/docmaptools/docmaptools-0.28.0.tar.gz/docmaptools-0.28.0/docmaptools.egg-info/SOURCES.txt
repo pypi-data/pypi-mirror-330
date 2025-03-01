@@ -1,0 +1,16 @@
+LICENSE
+MANIFEST.in
+README.md
+requirements.txt
+setup.py
+docmaptools/__init__.py
+docmaptools/convert.py
+docmaptools/parse.py
+docmaptools.egg-info/PKG-INFO
+docmaptools.egg-info/SOURCES.txt
+docmaptools.egg-info/dependency_links.txt
+docmaptools.egg-info/requires.txt
+docmaptools.egg-info/top_level.txt
+tests/test_convert.py
+tests/test_init.py
+tests/test_parse.py

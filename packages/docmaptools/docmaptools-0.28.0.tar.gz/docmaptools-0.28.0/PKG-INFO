@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: docmaptools
+Version: 0.28.0
+Summary: Use DocMap content, generate JATS XML from it, and other utility functions.
+Home-page: https://github.com/elifesciences/docmap-tools
+Maintainer: eLife Sciences Publications Ltd.
+Maintainer-email: tech-team@elifesciences.org
+License: MIT
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: elifetools
+Requires-Dist: requests
+
+# docmap-tools
+Use DocMap content, generate JATS XML from it, and other utility functions
