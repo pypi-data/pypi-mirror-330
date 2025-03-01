@@ -1,0 +1,14 @@
+[project]
+name = "heinlein_cfht"
+version = "0.3.2"
+description = ""
+authors = [{name = "Patrick Wells", email = "patrick@astropatty.com"}]
+readme = "README.md"
+requires-python = ">=3.11"
+
+[tool.poetry.group.heinlein.dependencies]
+heinlein = "^0.10.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
