@@ -1,0 +1,8 @@
+**/__pycache__/
+
+.venv/
+dist/
+.idea/
+.coverage
+
+examples/output-*.vcd
