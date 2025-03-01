@@ -1,0 +1,3 @@
+[console_scripts]
+nv2avsh = nv2a_vsh:run_assemble
+nv2avshd = nv2a_vsh:run_disassemble
