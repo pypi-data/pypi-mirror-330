@@ -1,0 +1,54 @@
+Metadata-Version: 2.2
+Name: elora
+Version: 0.0.2
+Summary: eLoRA: Efficient Rank Allocation for Budget-Constrained Fine-Tuning 🧮💰⚙️🎛️
+Author-email: Mohsen Hariri <mohsen.hariri@case.edu>
+License: GPL-3.0 License
+Keywords: Large Language Models,Fine-Tuning,LoRA
+Classifier: Programming Language :: Python :: 3.10
+Classifier: License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.10
+Description-Content-Type: text/x-rst
+License-File: LICENSE
+Requires-Dist: importlib-metadata; python_version < "3.8"
+
+==============
+eLoRA
+==============
+
+eLoRA: Efficient Rank Allocation for Budget-Constrained Fine-Tuning 🧮💰⚙️🎛️
+
+
+Installation
+------------
+
+To install the package, use pip:
+
+.. code-block:: bash
+
+    pip install elora
+
+
+Usage
+-----
+
+To use the package, import it in your Python code:
+
+.. code-block:: python
+
+    import elora
+
+    rank_pattern = elora.rank_pattern(model, base_rank)
+
+
+Models.
+
+.. code-block:: python
+
+    import elora
+
+    # Under development
+
+
+GitHub repository: https://github.com/mohsenhariri/eLoRA
