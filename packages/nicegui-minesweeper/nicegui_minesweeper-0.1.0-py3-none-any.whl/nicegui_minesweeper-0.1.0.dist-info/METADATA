@@ -1,0 +1,34 @@
+Metadata-Version: 2.4
+Name: nicegui-minesweeper
+Version: 0.1.0
+Summary: Minesweeper
+Project-URL: homepage, https://github.com/SaitoTsutomu/nicegui-minesweeper
+Author-email: Saito Tsutomu <tsutomu.saito@moai-lab.jp>
+License-File: LICENSE
+Classifier: Development Status :: 1 - Planning
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Software Development
+Requires-Python: >=3.12
+Requires-Dist: fire>=0.7.0
+Requires-Dist: nicegui>=2.11.1
+Requires-Dist: numpy>=2.2.3
+Description-Content-Type: text/markdown
+
+# NiceGUI Minesweeper
+
+NiceGUI Minesweeper is a Minesweeper that runs on NiceGUI.
+
+## Usage
+
+```
+% pip install nicegui-minesweeper
+% minesweeper
+```
+
+or
+
+```
+% uv run --with nicegui-minesweeper minesweeper
+```
