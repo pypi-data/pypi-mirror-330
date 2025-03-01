@@ -1,0 +1,63 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    xmlns:zcml="http://namespaces.zope.org/zcml"
+    i18n_domain="collective.feedback"
+    >
+
+  <plone:service
+      method="POST"
+      factory=".add.FeedbackAdd"
+      for="plone.app.layout.navigation.interfaces.INavigationRoot"
+      permission="zope2.View"
+      layer="collective.feedback.interfaces.ICollectiveFeedbackLayer"
+      name="@feedback-add"
+      />
+  <plone:service
+      method="GET"
+      factory=".get.FeedbackGet"
+      for="plone.app.layout.navigation.interfaces.INavigationRoot"
+      permission="collective.feedback.FeedbacksOverview"
+      layer="collective.feedback.interfaces.ICollectiveFeedbackLayer"
+      name="@feedback"
+      />
+  <plone:service
+      method="GET"
+      factory=".get.FeedbackGetCSV"
+      for="plone.app.layout.navigation.interfaces.INavigationRoot"
+      permission="collective.feedback.FeedbacksOverview"
+      layer="collective.feedback.interfaces.ICollectiveFeedbackLayer"
+      name="@feedback-csv"
+      />
+  <plone:service
+      method="DELETE"
+      factory=".delete.FeedbackDelete"
+      for="plone.app.layout.navigation.interfaces.INavigationRoot"
+      permission="collective.feedback.DeleteFeedbacks"
+      layer="collective.feedback.interfaces.ICollectiveFeedbackLayer"
+      name="@feedback-delete"
+      />
+  <plone:service
+      method="PATCH"
+      factory=".update.FeedbackUpdate"
+      for="plone.app.layout.navigation.interfaces.INavigationRoot"
+      permission="collective.feedback.FeedbacksOverview"
+      layer="collective.feedback.interfaces.ICollectiveFeedbackLayer"
+      name="@feedback"
+      />
+  <plone:service
+      method="PATCH"
+      factory=".list_update.FeedbacListkUpdate"
+      for="plone.app.layout.navigation.interfaces.INavigationRoot"
+      permission="collective.feedback.FeedbacksOverview"
+      layer="collective.feedback.interfaces.ICollectiveFeedbackLayer"
+      name="@feedback-list"
+      />
+
+  <adapter
+      factory=".controlpanels.CollectiveFeedbackSettings"
+      provides="collective.feedback.controlpanels.settings.ICollectiveFeedbackSettingsControlpanel"
+      name="collective-feedback-settings"
+      />
+
+</configure>

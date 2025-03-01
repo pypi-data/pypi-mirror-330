@@ -1,0 +1,8 @@
+graft src/collective
+graft docs
+include *.rst
+exclude tox.ini
+exclude *.txt
+exclude .gitlab-ci.yml
+exclude .pre-commit-config.yaml
+global-exclude *.pyc

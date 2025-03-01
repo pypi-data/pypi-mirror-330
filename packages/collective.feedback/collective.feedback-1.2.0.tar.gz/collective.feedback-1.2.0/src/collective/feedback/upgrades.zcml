@@ -1,0 +1,64 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    >
+
+  <genericsetup:upgradeSteps
+      profile="collective.feedback:default"
+      source="1000"
+      destination="1100"
+      >
+    <genericsetup:upgradeStep
+        title="Update rolemap"
+        handler=".upgrades.update_rolemap"
+        />
+    <genericsetup:upgradeStep
+        title="Install dependencies"
+        handler=".upgrades.to_1100"
+        />
+  </genericsetup:upgradeSteps>
+  <genericsetup:upgradeSteps
+      profile="collective.feedback:default"
+      source="1100"
+      destination="1200"
+      >
+    <genericsetup:upgradeStep
+        title="Add user action"
+        handler=".upgrades.update_actions"
+        />
+  </genericsetup:upgradeSteps>
+  <genericsetup:upgradeSteps
+      profile="collective.feedback:default"
+      source="1200"
+      destination="1201"
+      >
+    <genericsetup:upgradeStep
+        title="Fix typo in permission"
+        handler=".upgrades.update_actions"
+        />
+  </genericsetup:upgradeSteps>
+  <genericsetup:upgradeSteps
+      profile="collective.feedback:default"
+      source="1201"
+      destination="1202"
+      >
+    <genericsetup:upgradeStep
+        title="Add feedback update permission"
+        handler=".upgrades.update_rolemap"
+        />
+  </genericsetup:upgradeSteps>
+  <genericsetup:upgradeSteps
+      profile="collective.feedback:default"
+      source="1202"
+      destination="1203"
+      >
+    <genericsetup:upgradeStep
+        title="Add feedback controlpanel"
+        handler=".upgrades.update_registry"
+        />
+    <genericsetup:upgradeStep
+        title="Update feedback controlpanel"
+        handler=".upgrades.update_controlpanel"
+        />
+  </genericsetup:upgradeSteps>
+</configure>
