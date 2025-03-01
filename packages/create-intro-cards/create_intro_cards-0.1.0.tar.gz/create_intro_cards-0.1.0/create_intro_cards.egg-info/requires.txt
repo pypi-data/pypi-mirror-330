@@ -1,0 +1,11 @@
+numpy>=1.26.1
+pandas>=2.1.2
+matplotlib>=3.8.1
+Pillow>=10.1.0
+ipykernel>=6.29.5
+
+[dev]
+black
+docformatter>=1.7.5
+Sphinx>=7.2.6
+pypdf>=5
