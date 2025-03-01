@@ -1,0 +1,114 @@
+Metadata-Version: 2.3
+Name: galadriel
+Version: 0.0.11
+Summary: 
+Author: Kaspar Peterson
+Author-email: kaspar@galadriel.com
+Requires-Python: >=3.10,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Provides-Extra: dev
+Requires-Dist: aiofiles (>=22.0.0,<23.0.0)
+Requires-Dist: aiohttp (>=3.10.5,<4.0.0)
+Requires-Dist: anchorpy (>=0.20.0,<0.21.0)
+Requires-Dist: audioop-lts (>=0.2.1,<0.3.0) ; python_version >= "3.13" and python_version < "4.0"
+Requires-Dist: boto3 (>=1.35.0,<2.0.0)
+Requires-Dist: build (>=1.2.2,<2.0.0) ; extra == "dev"
+Requires-Dist: click (>=8.1.7,<9.0.0)
+Requires-Dist: composio-langchain (>=0.6.19,<0.7.0)
+Requires-Dist: dextools-python (>=0.3.2,<0.4.0)
+Requires-Dist: discord.py (>=2.4.0,<3.0.0)
+Requires-Dist: faiss-cpu (>=1.10.0,<2.0.0)
+Requires-Dist: gradio (>=5.15.0,<6.0.0)
+Requires-Dist: langchain-community (>=0.3.16,<0.4.0)
+Requires-Dist: langchain-openai (>=0.3.6,<0.4.0)
+Requires-Dist: litellm (>=1.58.2,<2.0.0)
+Requires-Dist: mypy (>=1.11.2,<2.0.0) ; extra == "dev"
+Requires-Dist: openai (>=1.55.3,<2.0.0)
+Requires-Dist: py (>=1.11.0,<2.0.0) ; extra == "dev"
+Requires-Dist: pyTelegramBotAPI (>=4.26.0,<5.0.0)
+Requires-Dist: pynacl (>=1.5.0,<2.0.0)
+Requires-Dist: pytest (>=8.3.2,<9.0.0) ; extra == "dev"
+Requires-Dist: pytest-asyncio (==0.24.0) ; extra == "dev"
+Requires-Dist: pytest-mock (>=3.14.0,<4.0.0) ; extra == "dev"
+Requires-Dist: pytest-xprocess (>=0.18.0,<0.19.0) ; extra == "dev"
+Requires-Dist: python-dotenv (>=1.0.1,<2.0.0)
+Requires-Dist: python-json-logger (>=2.0.7,<3.0.0)
+Requires-Dist: requests (==2.32.3)
+Requires-Dist: requests-oauthlib (>=2.0.0,<3.0.0)
+Requires-Dist: rich (>=13.9.4,<14.0.0)
+Requires-Dist: ruff (>=0.9.6,<0.10.0) ; extra == "dev"
+Requires-Dist: smolagents (>=1.9.2,<2.0.0)
+Requires-Dist: solana (>=0.35.0,<0.36.0)
+Requires-Dist: solders (>=0.21.0,<0.22.0)
+Requires-Dist: twine (>=5.1.1,<6.0.0) ; extra == "dev"
+Requires-Dist: types-aiofiles (>=24.1.0.20241221,<25.0.0.0)
+Requires-Dist: types-requests (>=2.32.0.20241016,<3.0.0.0) ; extra == "dev"
+Description-Content-Type: text/markdown
+
+# Galadriel
+
+Galadriel is a Python framework for building autonomous, economically useful AI Agents.
+
+## Quickstart
+Note: you should setup local env for this. In terminal
+```shell
+python3 -m venv venv
+source venv/bin/activate
+```
+
+And then, install `galadriel` package.
+```shell
+pip install galadriel
+```
+
+Now, create a new python file and copy the code below to create sample agent.
+It uses `TestClient` which sends 2 messages sequentially to the agent and prints the result of agent execution.
+
+```python
+import asyncio
+from galadriel import AgentRuntime, CodeAgent, LiteLLMModel
+from galadriel.clients import SimpleMessageClient
+from galadriel.tools import DuckDuckGoSearchTool
+
+model = LiteLLMModel(model_id="gpt-4o", api_key="<ADD YOUR OPENAI KEY HERE>")
+
+agent = CodeAgent(
+    model=model,
+    tools=[DuckDuckGoSearchTool()]
+)
+
+client = SimpleMessageClient("Explain the concept of blockchain")
+
+runtime = AgentRuntime(
+    agent=agent,
+    inputs=[client],
+    outputs=[client],
+)
+asyncio.run(runtime.run())
+```
+
+## Components
+
+### Clients  
+Clients serve as the bridge between agents and external data sources, handling both input and output operations. An input client (`AgentInput`) supplies messages to the agent, while an output client (`AgentOutput`) delivers the agent’s responses to their intended destination. This modular design allows seamless integration with a variety of sources, from scheduled jobs (like cron tasks) to interactive applications (such as Discord bots).
+
+### Tools  
+Tools extend an agent’s capabilities by providing predefined functions that enable interaction with external APIs, data sources, and systems. These tools empower agents to perform tasks such as fetching real-time weather updates or submitting blockchain transactions. Each tool defines its name, purpose, input requirements, and output format, ensuring structured and meaningful interactions. Galadriel supports any tool from HuggingFace, Composio and Langchain out-of-the-box.
+
+### Agents  
+Agents are the core intelligence behind the system, capable of reasoning, processing inputs, and generating informed responses. Our framework supports ToolCallingAgent and CodeAgent, which build upon Hugging Face’s [Smolagents](https://github.com/huggingface/smolagents) while introducing enhancements for improved integration with the runtime. Agents leverage ReAct-based reasoning and can access a wide variety of LLMs via [LiteLLM](https://www.litellm.ai/). Additionally, they can be configured with custom personalities and interact with powerful tools to enhance their decision-making capabilities.
+
+### Runtime  
+The Agent Runtime ensures continuous and autonomous agent execution. It manages the lifecycle of agent interactions, efficiently processing incoming requests while maintaining agent state. The runtime follows a structured execution loop:
+
+1. **Receive a Message** – An input client sends a message to the runtime.
+2. **Process the Message** – The agent receives and handles the request.
+3. **Send the Response** – The agent's output is forwarded to the appropriate client.
+4. **Repeat** – The runtime continuously handles incoming messages in a loop.
+
+This architecture enables real-time, scalable, and efficient agent operations across diverse environments.
+
