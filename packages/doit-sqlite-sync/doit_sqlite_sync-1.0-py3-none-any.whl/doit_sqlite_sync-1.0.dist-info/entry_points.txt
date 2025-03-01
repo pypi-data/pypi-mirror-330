@@ -1,0 +1,2 @@
+[doit.BACKEND]
+sqlite3sync = doit_sqlite_sync:SqliteDBSync
