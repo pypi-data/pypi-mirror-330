@@ -1,0 +1,17 @@
+tailestim/__about__.py,sha256=D0LeMN-kWcVou_yzbN6h0GbY761AZP1fF7dDHeWTV_M,106
+tailestim/__init__.py,sha256=V_EuHsvxue8iItgI0dSkxBqFBKvRO87BAYrQqe16Cek,592
+tailestim/datasets.py,sha256=UZUHrj9LWK7lZDaL9E3X2p1ujuHz5GlQxcLZOUOGrsg,1237
+tailestim/data/CAIDA_KONECT.dat,sha256=-WYiE_143fxh01XrUlwIRDm7pGIQ66CwgErv-bARXF8,1224
+tailestim/data/Libimseti_in_KONECT.dat,sha256=vO92zwtpB70acAzIrQlBOrFpocigop33mwRUW049LuA,22279
+tailestim/data/Pareto.dat,sha256=X181GtUq-wZcYKX3dkj-WFLdFaiAYZ0GxymnegyZ0cE,103071
+tailestim/estimators/base.py,sha256=n384abeIjkG3mOifk04UKRY0XCSI5tIlInI8whnF76M,3145
+tailestim/estimators/hill.py,sha256=oUTe4codRStLuCD5o0-otRVN2LOAICHznTmOzAYHQQ0,5474
+tailestim/estimators/kernel.py,sha256=nLVQ27tT0mdrn3INw7vMbF2AehPSFL4tRGA9WN4V1g4,6143
+tailestim/estimators/moments.py,sha256=gNUBHfzFg84bTSWuSzsVmxpeMPhWYcKdzu2uklXyrcA,5682
+tailestim/estimators/pickands.py,sha256=i6Y5Iufy8s3fBGau1AqSkSVDrrvH6ocma8gOqAHDK-8,2648
+tailestim/estimators/smooth_hill.py,sha256=iKmeaEwH-nn2lEdAbO4dPjIAPQR7w8gbLYJ6dNOuj14,2907
+tailestim/estimators/tail_methods.py,sha256=gpBKLjf-85cpR-zOEWwr6ews-jWTxReksa-fG0DbQp8,45845
+tailestim-0.1.1.dist-info/METADATA,sha256=U-AmFX4XRdzt2eH99BhmvVcFXQX-AMq7os59dVOwAmI,5738
+tailestim-0.1.1.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+tailestim-0.1.1.dist-info/licenses/LICENSE.txt,sha256=00nqkOzAVYw83p_tcNHrqsd88S5vYFrV8qIqCc3Uqk0,1102
+tailestim-0.1.1.dist-info/RECORD,,
