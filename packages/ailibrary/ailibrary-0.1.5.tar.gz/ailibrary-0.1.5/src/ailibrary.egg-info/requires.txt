@@ -1,0 +1,14 @@
+pydantic==2.10.6
+Requests==2.32.3
+
+[dev]
+black
+flake8
+mypy
+
+[test]
+pytest>=8.3.4
+pytest-cov
+pytest-mock
+pytest-order
+python-dotenv>=1.0.1
