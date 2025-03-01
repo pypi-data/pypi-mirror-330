@@ -1,0 +1,44 @@
+    <article id="cover">
+      <div id="title" class="title">
+        <h1>
+          {{{title}}}
+        </h1>
+        <h2>
+        {{#subheading}}
+          {{subheading}}
+        {{/subheading}}
+        </h2>
+      </div>
+      <div id="labels" class="title">
+        {{#label}}
+          <h3><b>{{label}}</b></h3>
+        {{/label}}
+      </div>
+
+      <div id="who">
+        <div class="title prefloat">
+          {{#group}}
+            <h3>{{group}}</h3>
+          {{/group}}
+          {{#version}}
+            <h3>{{version}}</h3>
+          {{/version}}
+        </div>
+        <div class="who">
+        <div style="width: 40%;">
+          <p>
+          {{#authors}}
+            {{name}}<br>
+          {{/authors}}
+          </p>
+        </div>
+        <div style="width: 40%;">
+          <p>
+          {{#authors}}
+            {{email}}<br>
+          {{/authors}}
+          </p>
+        </div>
+        </div>
+      </div>
+    </article>
