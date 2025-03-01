@@ -1,0 +1,29 @@
+Metadata-Version: 2.1
+Name: agentsjson
+Version: 0.1.12
+Summary: Agents.json Python Implementation with Core and Integrations
+Author: Wildcard AI
+Author-email: info@wildcard.ai
+Requires-Python: >=3.9
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Dist: google-api-python-client (>=2.0.0)
+Requires-Dist: hubspot-api-client (>=8.1.0)
+Requires-Dist: linkup-sdk (>=0.2.3)
+Requires-Dist: pydantic (>=2.0.0)
+Requires-Dist: python-benedict (>=0.33.0)
+Requires-Dist: pyyaml (>=6.0.0)
+Requires-Dist: requests (>=2.0.0)
+Requires-Dist: setuptools (>=65.0.0)
+Requires-Dist: six (>=1.16.0)
+Requires-Dist: slack_sdk (>=3.34.0)
+Requires-Dist: stripe (>=7.11.0)
+Requires-Dist: tweepy (>=4.0.0)
+Requires-Dist: typing-extensions (>=4.0.0)
+Description-Content-Type: text/markdown
+
+
