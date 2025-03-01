@@ -1,0 +1,2 @@
+recursive-include nchess/core/src *.h
+recursive-include c-nchess/nchess *.h
