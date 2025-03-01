@@ -1,0 +1,3 @@
+[console_scripts]
+hostfactory = hostfactory.cli.hf:run
+hostfactory-admin = hostfactory.cli.hfadmin:run
