@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: gardener-cicd-cfg-mgmt
+Version: 1.2604.0
+Summary: Gardener CI/CD Config Management
+Requires-Python: >=3.12
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: gardener-cicd-libs
+Requires-Dist: aliyun-python-sdk-core
+Requires-Dist: aliyun-python-sdk-ecs
+Requires-Dist: aliyun-python-sdk-ram
+Requires-Dist: boto3
+Requires-Dist: google-api-core<3
+Requires-Dist: google-api-python-client<3
+Requires-Dist: google-auth
+Requires-Dist: google-cloud-storage<3
+Requires-Dist: google-crc32c>1.1.4
+Requires-Dist: kubernetes>=26.0.0
+Requires-Dist: msal<2
+Requires-Dist: openstacksdk
+Requires-Dist: oss2
+
+Gardener CI/CD Config Management
