@@ -1,0 +1,57 @@
+Metadata-Version: 2.1
+Name: mango
+Version: 0.3.0a5
+Summary: Library with a collection of usefull classes and methods to DRY
+Author-email: baobab soluciones <mango@baobabsoluciones.es>
+License: Apache Software License
+Project-URL: repository, https://github.com/baobabsoluciones/mango
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Development Status :: 4 - Beta
+Requires-Python: >=3.8
+Description-Content-Type: text/x-rst
+License-File: LICENSE
+Requires-Dist: certifi<2024.0.0,>=2023.7.22
+Requires-Dist: charset-normalizer<4.0.0,>=3.3.0
+Requires-Dist: et-xmlfile<2.0.0,>=1.1.0
+Requires-Dist: fastjsonschema<3.0.0,>=2.18.1
+Requires-Dist: idna<4.0.0,>=3.4
+Requires-Dist: numpy<2.0.0,>=1.24.4
+Requires-Dist: openpyxl<4.0.0,>=3.1.2
+Requires-Dist: pydantic<3.0.0,>=2.4.2
+Requires-Dist: python-dateutil<3.0.0,>=2.8.2
+Requires-Dist: pytups<1.0.0,>=0.86.2
+Requires-Dist: pytz<2024.0.0,>=2023.3.post1
+Requires-Dist: requests<3.0.0,>=2.31.0
+Requires-Dist: six<2.0.0,>=1.16.0
+Requires-Dist: tqdm<5.0.0,>=4.66.1
+Requires-Dist: urllib3<3.0.0,>=2.0.7
+Requires-Dist: XlsxWriter<4.0.0,>=3.1.9
+Provides-Extra: cli
+Requires-Dist: click<9.0.0,>=8.1.7; extra == "cli"
+Provides-Extra: data
+Requires-Dist: pandas<3.0.0,>=2.0.3; extra == "data"
+Requires-Dist: holidays<1.0.0,>=0.35.0; extra == "data"
+Requires-Dist: pycountry<23.0.0,>=22.3.5; extra == "data"
+Requires-Dist: unidecode<2.0.0,>=1.3.7; extra == "data"
+Requires-Dist: tabulate<1.0.0,>=0.9.0; extra == "data"
+Provides-Extra: dashboard
+Requires-Dist: streamlit<2.0.0,>=1.28.1; extra == "dashboard"
+Requires-Dist: pandas<3.0.0,>=2.0.3; extra == "dashboard"
+Requires-Dist: plotly<6.0.0,>=5.17.0; extra == "dashboard"
+Provides-Extra: gcloud
+Requires-Dist: google-cloud-storage<3.0.0,>=2.12.0; extra == "gcloud"
+Provides-Extra: models
+Requires-Dist: pyomo<7.0.0,>=6.6.2; extra == "models"
+Provides-Extra: plot
+Requires-Dist: beautifulsoup4<5.0.0,>=4.12.2; extra == "plot"
+Requires-Dist: pandas<3.0.0,>=2.0.3; extra == "plot"
+Requires-Dist: plotly<6.0.0,>=5.17.0; extra == "plot"
+Provides-Extra: shap
+Requires-Dist: shap[plots]==0.43.0; extra == "shap"
+
+Mango
+------
+
+Base mango README
