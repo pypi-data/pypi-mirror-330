@@ -1,0 +1,21 @@
+[build-system]
+requires = [ "setuptools>=61.0",]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "python-project-manager"
+description = "A Python package."
+authors = []
+readme = "README.md"
+keywords = []
+version = "3.0.3"
+dynamic = [ "dependencies",]
+
+[project.scripts]
+ppm = "python_project_manager.cli_commands:cli"
+ppm-fix = "python_project_manager.dev_only:fix"
+ppm-builtin-exe-setup = "python_project_manager.builtin_setups.builtin_exe:exe_setup"
+ppm-builtin-package-setup = "python_project_manager.builtin_setups.builtin_package:package_setup"
+
+[tool.setuptools.dynamic.dependencies]
+file = [ "requirements.txt",]

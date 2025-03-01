@@ -1,0 +1,321 @@
+Metadata-Version: 2.2
+Name: python-project-manager
+Version: 3.0.3
+Summary: A Python package.
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+Requires-Dist: python-dotenv~=1.0.1
+Requires-Dist: click~=8.1.7
+
+# Python Project Manager (PPM)
+
+This project aims to provide a simple tool for managing Python projects efficiently. Whether you are a beginner or an experienced developer, this tool will help you streamline your workflow and keep your projects organized.
+
+## Available Commands
+
+Here is a list of available commands for the Python Project Manager:
+
+- `init`: Initialize a new Python project.
+    - `<project_name>` The name of the project.
+    - `--froce, -f` Force the initialization project, even if the directory is not empty.
+- `install` Install project dependencies.
+    - `[args]` Uses pip to install packages in the virtual environment. Args will be passed directly to pip.
+    - `--dev, -d` Adds the dependencies to the `requirements-dev.txt` instead of `requirements.txt`.
+    - `--not_required, -n` Dependencies are not added to either `requirements.txt` or `requirements-dev.txt`.
+- `list` List all current installed dependencies.
+    - No arguments.
+- `run` Run scripts defined in the `scripts` section of the `.proj.config` file.
+    - `<script_name>` The name of the script located in the `scripts` section of the `.proj.config` file.
+    - `--local, -l` Run the script in the local environment NOT in the virtual environment.
+    - `--python, -p` Run as a Python script or file.
+- `venv` Manage the virtual environment for the project.
+    - `--reset, -r` Reinitalize the virtual environment.
+    - `--install, -i` Installs dependencies in the virtual environment after initialization.
+- `version`: Manage the project version.
+    - `<actions>` The action to perform on the project version. ['inc', 'show', 'set'] default: 'show'.
+    - `--major, -M` Major version.
+    - `--minor, -m` Minor version.
+    - `--patch, -p` Patch version.
+    - `--alpha, -a` Alpha version.
+    - `--beta, -b` Beta version.
+    - `--rc, -r` Release Candidate version.
+    - `--local, -l` Local version.
+    - `--timestamp, -t` Preset: add the current timestamp to the local version.
+
+Each command comes with its own set of options and arguments. Use `--help` with any command to see more details.
+
+## Initialize a New Python Project
+
+To initialize a new Python project, run the following command:
+
+```ppm init <project_name>```
+
+## Installing and Managing Packages and Dependencies
+
+`ppm install` uses pip as a backend to install packages in the virtual environment. Any arguments passed to `ppm install` will be passed directly to pip unless its one of the specific options for `ppm install`.
+
+#### Installing a Package
+
+To install a package, run the following command:
+
+```ppm install <package_name> [<package_name> ...]```
+
+#### Listing Installed Packages
+
+To list all installed packages, run the following command:
+
+```ppm list```
+
+Installed packages will be added to the `requirements.txt` file unless the `--dev` or `--not_required` options are used.
+
+#### Installing Dependencies
+
+To install dependencies from a `requirements.txt` and `requirements-dev.txt` file, run the following command:
+
+```ppm install```
+
+#### Pip not found
+
+If you encounter an error saying `pip` is not found, you can use the following command to install it:
+
+```ppm install pip```
+
+## Scripts
+
+You can define custom scripts in the `.proj.config` file under the `scripts` section. These scripts can be run using the `ppm run` command.
+
+`ppm run` will execute the script in the virtual environment unless the `--local` option is used. It can also run Python scripts or files using the `--python` option.
+
+#### Referencing Values
+
+You can reference values from the `.proj.config` useing the following syntax: `%dot.key%`.
+
+PPM will dot walk the keys to find the value.
+
+```json
+{
+    "src_dir": "path/to/src",
+    "test_dir": "path/to/test",
+    "test_files": {
+        "file1": "test_file1"
+    },
+    "scripts": {
+        "start": "python %src_dir%/main.py",
+        "test": "python %test_dir%/%test_files.file1%.py"
+    }
+}
+```
+
+PPM will replace `%src_dir%` with `path/to/src` and `%test_dir%` with `path/to/test`. It will also replace `%test_files.file1%` with `test_file1`.
+
+```json
+{
+    "src_dir": "path/to/src",
+    "test_dir": "path/to/test",
+    "test_files": {
+        "file1": "test_file1"
+    },
+    "scripts": {
+        "start": "python path/to/src/main.py",
+        "test": "python path/to/test/test_file1.py"
+    }
+}
+```
+
+You can also use `%env:key%` to reference environment variables. PPM will look for the environment variable in a `.env` file in the project root directory.
+
+## Initalization Templates and Creating Your Own
+
+PPM comes with two built in templates for initializing.
+`ppm-builtin-package-setup` and `ppm-builtin-exe-setup`.
+
+### `ppm-builtin-package-setup`
+
+> Uses `build` and `twine` to create a distributable package from a Python package.
+
+Your source code will be in the directory with the same name as the project. for example, if the project name is `my-project`, the source code will be in the `my_project` directory. There is also a `tests` directory for test files and a default script called `playground.py` which can be used to test parts of your code.
+
+`.env` is created by default and has placeholders for `pypi_username` and `pypi_password`. This file is ignored by `.gitignore` and will not be included in the repository.
+
+##### Built-in Scripts
+
+`ppm run install:local` will install the package in the local environment, not the virtual environment.
+
+`ppm run install:uninstall` will uninstall the package from the local environment.
+
+`ppm run publish` will build the package and publish. By default, it will publish to the test pypi repository. Change the script `"_publish": "twine upload -u %twine.username% -p %twine.password% -r testpypi dist/*"` line in the `.proj.config` to point to `pypi` instead of `testpypi` to publish to the pypi repository.
+
+`ppm run playgound` will run the `playground.py` script. Use this script to test parts of your code.
+
+___
+
+### `ppm-builtin-exe-setup`
+
+> Uses pyinstaller to create an executable application from a Python script.
+
+<span style="color: red; font-size: 14px">
+<strong>Warning:</strong> .app.env is not ignored by .gitignore and will be included in the repository. Be sure to remove any sensitive information before pushing to a public repository. Recommended to use the .env that will not be included in the repository instead.
+</span>
+
+Start by adding your code to the `main.py` file in `src` directory using `def main()` as the entry point. The `Application.py` handles launching the application and calls `main()` from the `main.py` file.
+
+`.app.env` is created in the `src/resources` and is used to set environment variables for the executable and is included in the build and saved in git repositories. Will override any environment variables set in the `.env` file.
+
+`.env` is not created by default. But it will be loaded if it exists in the project root directory.
+
+`APP_NAME` and `APP_VERSION` are required.
+
+`APP_AUTO_RETRY` is optional and will automatically restart the application if it crashes. Default is `true`.
+
+##### Built-in Scripts
+
+`ppm run start` will start the application. The application creates directory `__Local__` to simulate the `C:\Users\user\AppData\Local` when not running as an executable.
+
+`ppm run build` will build the application. The build will be saved in the `dist` directory.
+
+___
+
+### Creating Your Own Template
+
+#### Interacting with the `python_project_manager` Package
+
+Use `import python_project_manager` to access the `python_project_manager` package.
+
+#### `python_project_manager.Initializer()`
+
+```python
+class Initializer:
+    def __init__(self) -> None:
+        '''
+        Tracks the configuration values, files and folders to be created for the project
+        '''
+
+    def AddConfigValue(self, key: str, value: str) -> None:
+        '''
+        Adds a configuration value to the project
+
+        Args:
+            key (str): The key of the configuration value.
+                Key is a dot-separated string that represents the path to the configuration value.
+                For example: 'scripts.start' is equivalent to ['scripts']['start'].
+            value (any): The value of the configuration value.
+        '''
+        
+    def AddFile(self, path: str, content: str) -> None:
+        '''
+        Adds a file to the project
+
+        Args:
+            path (str): The path of the file to be created.
+                Converted to an absolute path before being added.
+            content (str): The content of the file.
+                None = Empty file.
+        '''
+
+    def AddFolder(self, path: str) -> None:
+        '''
+        Adds a folder to the project
+
+        Args:
+            path (str): The path of the folder to be created.
+                Converted to an absolute path before being added.
+        '''
+
+    def Initialize(self) -> None:
+        '''
+        Saves the configuration values to the project and creates the files and folders.
+        '''
+```
+
+The main tool for creating your own template is the `python_project_manager.Initializer()` class. This class is used to setup the project template.
+
+`AddConfigValue` adds a value to the `.proj.config` file by dot walking the key. In this example, `parent.child` will be added to the `.proj.config` file with the value `my_project`.
+
+`AddFolder` adds a folder to the project.
+
+`AddFile` adds a file to the project with the content provided.
+
+`Initialize` creates the directories and files in the project and saves the configuration values to the `.proj.config` file.
+
+```python
+import python_project_manager
+
+initializer = python_project_manager.Initializer()
+initializer.AddConfigValue('parent.child', 'my_project')
+initializer.AddFolder('src')
+initializer.AddFolder('test')
+initializer.AddFile('src/file.py', '<content>')
+initializer.Initialize()
+```
+```json
+{
+    "parent": {
+        "child": "my_project"
+    }
+}
+```
+```bash
+Only showing created directories and files.
+Project/
+├── src/
+│   └── file.py
+└── test/
+```
+
+#### `RunCommand`
+
+```python
+def run_command(command: str, *, use_venv: bool) -> None:
+    '''
+    Runs a command in the shell.
+
+    Args:
+        command (str): The command to run.
+        use_venv (bool): If True, the command will be run in the virtual environment.
+    '''
+```
+
+This function is used to run commands while initializing the project. It can be used to install packages and run other PPM commands.
+
+> If you want to install packages, use `RunCommand('python -m venv venv', use_venv=False)` then `RunCommand('ppm install <package_name> [<package_name>]')` instead of `pip install <package_name>`. So the packages are installed in the virtual environment and added to the `requirements.txt` files.
+
+```python
+import python_project_manager
+
+python_project_manager.RunCommand('python -m venv venv', use_venv=False)
+python_project_manager.RunCommand('ppm install click')
+```
+
+### Creating a Template
+
+The best way to create your own template is distribution package with scripts defined in the `pyproject.toml` file.
+
+```toml
+[project.scripts]
+<command> = "<dot.path>:<function>"
+```
+
+In your script you can access the `python_project_manager.Initializer()` class to setup your project template.
+
+In this example, the template is using the `click` package to create a command line interface, checking if the directory is empty, and initializing the project.
+
+```python
+import os
+import click
+import python_project_manager
+
+@click.command()
+@click.argument('project_name', type=str, required=True)
+def template_setup(project_name):
+    if len(os.listdir(os.getcwd())) != 0:
+        print('Project already initialized')
+        return
+    
+    initializer = python_project_manager.Initializer()
+    initializer.AddConfigValue('project_name', project_name)
+    initializer.AddFolder('path/to/dir')
+    initializer.AddFile('path/to/file', '<content>')
+
+    initializer.Initialize()
+    print(f'Project {project_name} created')
+```
