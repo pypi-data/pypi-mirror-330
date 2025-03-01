@@ -1,0 +1,39 @@
+[project]
+name = "sweatstack"
+version = "0.14.1"
+description = "The official Python client for SweatStack"
+readme = "README.md"
+authors = [
+    { name = "Aart Goossens", email = "aart@gssns.io" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "httpx>=0.28.1",
+    "pandas>=2.2.3",
+    "pyarrow>=19.0.0",
+    "pydantic>=2.10.5",
+]
+
+[project.optional-dependencies]
+jupyterlab = [
+    "ipython>=8.31.0",
+    "jupyterlab>=4.3.4",
+    "matplotlib",
+]
+streamlit = [
+    "streamlit>=1.42.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "datamodel-code-generator>=0.26.5",
+]
+
+[project.scripts]
+generate-response-models = "sweatstack.cli:generate_response_models"
+sweatshell = "sweatstack.sweatshell:run_ipython"
+sweatlab = "sweatstack.jupyterlab_oauth2_startup:start_jupyterlab_with_oauth"
