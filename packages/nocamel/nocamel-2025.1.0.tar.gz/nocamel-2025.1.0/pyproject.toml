@@ -1,0 +1,50 @@
+[project]
+name = "nocamel"
+dynamic = ["version"]
+description = "Born from a hatred of camel case manuscript titles."
+readme = "README.md"
+authors = [
+    { name = "Jesse Charlton", email = "57236497+jchar32@users.noreply.github.com" }
+]
+classifiers = ["Development Status :: 3 - Alpha", "Programming Language :: Python :: 3.10"]
+keywords = ["camel case", "snake case", "title case", "string converter"]
+license = "MIT"
+license-files = ["LICEN(CS)E.*"]
+requires-python = ">=3.10"
+dependencies = [
+    "click",
+    "pyperclip>=1.9.0",
+]
+
+[dependency-groups]
+dev=["pytest", "pytest-cov", "ruff"]
+
+[tool.ruff]
+fix=true
+indent-width = 4
+line-length = 88
+src = ["src"]
+target-version = 'py310'
+
+[project.scripts]
+nocamel = "nocamel:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.version]
+path = "src/nocamel/__init__.py"
+
+[tool.hatch.build.targets.sdist]
+exclude = [
+  "/.github",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/nocamel"]
+
+[[tool.uv.index]]
+name = "testpypi"
+url = "https://test.pypi.org/nocamel/"
+publish-url = "https://test.pypi.org/nocamel/"
