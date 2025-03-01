@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gscrew"
+authors = [
+	{name="Antoine Royer"},
+	{name="Loris Delafosse"}
+]
+description = "A Python module to manipulate generalized Screws and Coscrews in Geometric Algebra (real Clifford algebra)."
+readme = {file = "README.md", content-type = "text/markdown"}
+requires-python = ">=3.7"
+classifiers = [
+	"Programming Language :: Python :: 3",
+	"License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+	"Development Status :: 4 - Beta"
+]
+dynamic = [
+	"version",
+	"dependencies"
+]
+
+[tool.setuptools]
+license-files = [
+    "LICENSE",
+]
+
+[project.optional-dependencies]
+doc = [
+    "sphinx>=7.0.1",
+    "sphinx-rtd-theme",
+    "sphinx-autodocgen",
+]
+
+[tool.setuptools.dynamic.version]
+attr = "gscrew.__init__.__version__"
+
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}
+
+[project.urls]
+Homepage = "https://github.com/GenScrew/GScrew"
+Documentation = "http://gscrew.readthedocs.io/"
