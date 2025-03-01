@@ -1,0 +1,62 @@
+Metadata-Version: 2.2
+Name: jaxopensimplexnoise
+Version: 0.1.0
+Summary: OpenSimplex noise implemented in JAX
+Author-email: Jack Saunders <SaundersJE97@gmail.com>
+License: The MIT License (MIT)
+        
+        Copyright (c) Feross Aboukhadijeh
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy of
+        this software and associated documentation files (the "Software"), to deal in
+        the Software without restriction, including without limitation the rights to
+        use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+        the Software, and to permit persons to whom the Software is furnished to do so,
+        subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+        FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+        COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+        IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+        CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+Project-URL: Homepage, https://github.com/SaundersJE97/JaxOpenSimplexNoise
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: jax>=0.4.0
+Requires-Dist: numpy
+
+# JaxOpenSimplex
+OpenSimplex Written in Jax
+
+# Usage
+```python
+
+```
+
+# Installation
+## Using Pip
+```bash
+pip install JaxOpenSimplexNoise
+```
+## From Source
+```bash
+cd <dir>
+git clone https://github.com/SaundersJE97/JaxOpenSimplexNoise.git
+export PYTHONPATH = $PYTHONPATH:<dir>/JaxOpenSimplexNoise:
+```
+
+# Todo
+| Task                          | Status |
+|-------------------------------|--------|
+| Implement 1d                  | ⬜ |
+| Implement 2d                  | ⬜ |
+| Implement 3d                  | ⬜ |
+| Implement 4d                  | ✅ |
+| Add Tests and Benchmarks      | ⬜ |
+
+# Other cool JAX Libraries
