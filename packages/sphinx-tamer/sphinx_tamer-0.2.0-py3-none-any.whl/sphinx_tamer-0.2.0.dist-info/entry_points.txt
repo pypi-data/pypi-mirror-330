@@ -1,0 +1,3 @@
+[console_scripts]
+sphinx_sentence_scan = sphinx_tamer.sentence_scan:main
+sphinx_sentence_scan_single = sphinx_tamer.sentence_scan:single_main
