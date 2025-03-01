@@ -1,0 +1,13 @@
+endpoints/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+endpoints/chat.py,sha256=fuZcSuhua_ATrGFc7V2c2Ab3vtR-XDdknLiwroxYY68,3617
+endpoints/completions.py,sha256=nI75bolN6DBMcpIp3-QlrIiQyqTLTCfR5QmaUYdrC-Y,3493
+endpoints/models.py,sha256=JX81x4NWkPE9Mr0c_S8wFabtxGT4chGQVOoFH3rNeLc,1560
+tests/__init__.py,sha256=lza0su4qD8p3bioNMwdCvm9TQJgNLsq0DbEKaHIOTaA,74
+tests/test_chat.py,sha256=5xCO3VFHxYSmM6EiFlWW06jtCCxsRNZxMe1Ls6o9m44,4176
+tests/test_client.py,sha256=vF_FPMYTXS6fPhKmNMiGLC6SpsHPOE4AIbjy8kP6sos,3341
+tests/test_completions.py,sha256=ntojvVY72gShRu9DnQ0l6Kxi4DIQq5OIrDBvKwT6cTU,3781
+txtgenai-0.1.0.dist-info/LICENSE,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+txtgenai-0.1.0.dist-info/METADATA,sha256=4aLeE3MHpstntfmim1tzmkNS-mnFSdGjQ16bD9c7l4g,2703
+txtgenai-0.1.0.dist-info/WHEEL,sha256=PZUExdf71Ui_so67QXpySuHtCi3-J3wvF4ORK6k_S8U,91
+txtgenai-0.1.0.dist-info/top_level.txt,sha256=pyFkMhGCqHSfEmXpFx5Txgxrn5gBSKsJkwJyAqwKr8M,16
+txtgenai-0.1.0.dist-info/RECORD,,
