@@ -1,0 +1,5 @@
+[console_scripts]
+uphy-device = uphy.device.__main__:app
+
+[uphy.cli]
+device = uphy.device.__main__:app
