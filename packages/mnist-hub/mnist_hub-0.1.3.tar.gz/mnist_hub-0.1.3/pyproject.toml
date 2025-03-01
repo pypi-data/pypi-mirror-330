@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=64.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mnist-hub"
+dynamic = ["version"]
+readme = "README.md"
+authors = [
+    {name = "Istvan Albert"},
+]
+requires-python = ">=3.10"
+dependencies = [
+    "numpy<2.0.0",
+    "scikit-learn",
+    "click",
+    "scipy",
+    "Pillow",
+]
+
+[project.scripts]
+mnist = "mnist.cli:cli"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+packages = ["mnist"]
+
+[tool.setuptools.package-data]
+mnist = ["data/*"]
+
+[tool.setuptools.dynamic]
+version = {attr = "mnist.__version__"} 
