@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "djangautomate"
+version = "0.1.0"
+description = "Automates Django app, model, serializer, and view generation from SQLAlchemy tables"
+authors = ["William R. Astley <william.astley@yourdomain.com>"]
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/pr1m8/djangautomate"
+homepage = "https://djangautomate.readthedocs.io"
+packages = [{ include = "djangautomate" }]
+
+
+[tool.poetry.dependencies]
+python = "^3.12"
+django = "^4.2"              # Django framework
+sqlalchemy = "^2.0"          # ORM for database interactions
+pandas = "^2.2.0"            # Data manipulation and analysis
+numpy = "^1.26.0"            # Numerical computing
+build = "^1.2.2.post1"
+twine = "^6.1.0"
+
+[tool.poetry.group.dev.dependencies]
+sphinx = "^8.2.1"
+sphinx-rtd-theme = "^3.0.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
