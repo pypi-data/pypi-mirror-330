@@ -1,0 +1,59 @@
+[project]
+name = "taolib"
+version = "0.0.4"
+description = "道可道，非恒道"
+authors = [
+    { name = "xinetzone", email = "735613050@qq.com" },
+]
+requires-python = ">=3.10"
+readme = "README.md"
+maintainers = [
+    { name = "xinetzone", email = "735613050@qq.com" },
+]
+dependencies = []
+
+[project.license]
+file = "LICENSE"
+
+[project.urls]
+Repository = "https://github.com/xinetzone/tao"
+Documentation = "https://taolib.readthedocs.io/"
+
+[project.optional-dependencies]
+doc = [
+    "xyzstyle",
+    "sphinx",
+    "ipywidgets",
+    "folium",
+    "numpy",
+    "matplotlib",
+    "sphinx-comments",
+    "myst-nb",
+    "nbclient",
+    "pandas",
+    "plotly",
+    "sphinx-design",
+    "sphinx-examples",
+    "sphinx-copybutton",
+    "sphinx-contributors",
+    "sphinx-thebe",
+    "sphinxcontrib-bibtex",
+    "sphinxext-opengraph",
+    "sphinx-sitemap",
+    "sphinx-autoapi>=3.4",
+    "graphviz",
+    "sphinx-intl",
+    "sphinx-tippy",
+]
+flows = [
+    "invoke",
+]
+
+[build-system]
+requires = [
+    "pdm-backend",
+]
+build-backend = "pdm.backend"
+
+[tool.pdm]
+distribution = true
