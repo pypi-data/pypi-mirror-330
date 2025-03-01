@@ -1,0 +1,63 @@
+[tool.poetry]
+name = "langchainer"
+version = "0.0.5"
+description = "Best of 4 worlds [LangChain, LiteLLM, Instructor, Rich] in 1 helper + 1 client with easy debugging."
+authors = ["Pavel Mironov <mironov.pv@gmail.com>"]
+readme = "README.md"
+license = "MIT"
+homepage = "https://github.com/saintd/langchainer"
+repository = "https://github.com/saintd/langchainer"
+keywords = [
+    "llm", "langchain", "litellm", "instructor", "rich", "ai",
+    "machine-learning", "debugging", "openai", "mistral", "together",
+    "anthropic", "openrouter", "google_genai"
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Operating System :: OS Independent"
+]
+packages = [{ include = "langchainer" }]
+
+[tool.poetry.dependencies]
+python = ">=3.10,<4.0"
+pydantic = ">=2.10.4"
+langchain = ">=0.3.13"
+langchain-core = ">=0.3.28"
+
+[tool.poetry.group.rich.dependencies]
+rich = ">=13.9.4"
+pygments = ">=2.18.0"
+pydantic_settings = ">=2.5.0"
+
+[tool.poetry.group.mistral.dependencies]
+langchain-mistralai = ">=0.2.4"
+
+[tool.poetry.group.google_genai.dependencies]
+langchain-google-genai = ">=0.0.8"
+
+[tool.poetry.group.openrouter.dependencies]
+langchain-openrouter = ">=0.0.1"
+
+[tool.poetry.group.anthropic.dependencies]
+langchain-anthropic = ">=0.1.7"
+
+[tool.poetry.group.together.dependencies]
+langchain-together = ">=0.0.4"
+
+[tool.poetry.group.openai.dependencies]
+langchain-openai = ">=0.0.5"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.4"
+python-dotenv = "^1.0.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
