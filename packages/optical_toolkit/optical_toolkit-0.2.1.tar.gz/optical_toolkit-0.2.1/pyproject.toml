@@ -1,0 +1,48 @@
+[tool.poetry]
+name = "optical_toolkit"
+version = "0.2.1"
+description = "An API for streamlining unsupervised ML ops such as visualizations, clustering, CNN insights, etc."
+authors = ["Kennette Basco <kmaddela@nyit.edu>"]
+license = "MIT License"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+matplotlib = "^3.10.1"
+numpy = "^2.2.3"
+opencv-python-headless = "^4.11.0.86"
+scikit-learn = "^1.6.1"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^25.1.0"
+flake8 = "^7.1.2"
+isort = "^6.0.1"
+pytest = "^8.3.4"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+exclude = '''
+/(
+    \.eggs
+  | \.git
+  | \.venv
+  | \.env
+  | build
+  | dist
+  | \.mypy_cache
+)\
+'''
+
+[tool.poetry.scripts]
+application = "application:main"
+
+[tool.commitizen]
+version = "0.2.1"
+tag_format = "v$version"
+version_files = [
+  "pyproject.toml:version",
+  "application/__version__.py"
+]

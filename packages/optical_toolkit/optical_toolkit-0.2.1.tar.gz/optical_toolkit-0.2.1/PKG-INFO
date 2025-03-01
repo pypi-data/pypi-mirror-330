@@ -1,0 +1,18 @@
+Metadata-Version: 2.3
+Name: optical_toolkit
+Version: 0.2.1
+Summary: An API for streamlining unsupervised ML ops such as visualizations, clustering, CNN insights, etc.
+License: MIT
+Author: Kennette Basco
+Author-email: kmaddela@nyit.edu
+Requires-Python: >=3.10,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Dist: matplotlib (>=3.10.1,<4.0.0)
+Requires-Dist: numpy (>=2.2.3,<3.0.0)
+Requires-Dist: opencv-python-headless (>=4.11.0.86,<5.0.0.0)
+Requires-Dist: scikit-learn (>=1.6.1,<2.0.0)
