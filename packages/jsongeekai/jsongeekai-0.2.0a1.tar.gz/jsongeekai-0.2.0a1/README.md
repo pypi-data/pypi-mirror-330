@@ -1,0 +1,251 @@
+# JsonGeekAI
+
+JsonGeekAI是一个智能JSON解析和优化框架，现已集成DeepSeek AI能力，提供更智能的JSON处理和优化建议。
+
+## 🌟 特性
+
+- 🧠 **AI驱动的优化**：集成DeepSeek-Coder模型，提供智能的JSON优化建议
+- ⚡ **SIMD加速**：自动识别和建议SIMD优化机会
+- 🎯 **智能缓存**：优化建议的智能缓存，提高响应速度
+- 🔍 **深度分析**：深入分析JSON结构，识别优化机会
+- 🛠️ **易于集成**：简单的API设计，易于集成到现有项目
+
+## 📦 安装
+
+```bash
+pip install jsongeekai
+```
+
+## 🚀 快速开始
+
+```python
+from jsongeekai.ai.optimizers import SimdAdvisor
+from jsongeekai.ai.model_manager import ModelLoader
+
+# 初始化模型和优化器
+model = ModelLoader()
+advisor = SimdAdvisor(model_manager=model)
+
+# 分析JSON并获取优化建议
+json_data = {
+    "arrays": {
+        "numbers": list(range(1000)),
+        "floats": [float(x) for x in range(500)]
+    }
+}
+
+suggestions = advisor.get_optimization_suggestions(json_data)
+
+# 打印优化建议
+for suggestion in suggestions:
+    print(f"目标模式: {suggestion.target_pattern}")
+    print(f"建议指令: {suggestion.simd_instruction}")
+    print(f"预期加速: {suggestion.estimated_speedup}x")
+    print(f"示例代码:\n{suggestion.code_example}")
+    print("-" * 50)
+```
+
+## 🏗️ 项目结构
+
+```
+jsongeekai/
+├── ai/
+│   ├── model_manager/
+│   │   ├── __init__.py
+│   │   ├── loader.py        # 模型加载和管理
+│   │   └── tokenizer.py     # 分词和预处理
+│   ├── optimizers/
+│   │   ├── __init__.py
+│   │   ├── json_analyzer.py # JSON结构分析
+│   │   └── simd_advisor.py  # SIMD优化建议
+│   └── inference/
+│       ├── __init__.py
+│       ├── engine.py        # 推理引擎
+│       └── cache.py         # 优化缓存
+└── tests/
+    └── ai/
+        ├── test_deepseek_integration.py
+        └── test_performance.py
+```
+
+## 📊 性能基准
+
+| 数据大小 | 推理时间 | GPU内存使用 |
+|---------|---------|------------|
+| 小型    | <2s     | ~100MB     |
+| 中型    | <5s     | ~200MB     |
+| 大型    | <10s    | ~500MB     |
+
+## 🔧 配置
+
+### 模型配置
+
+```python
+from jsongeekai.ai.model_manager import ModelLoader
+
+# 配置模型加载器
+model = ModelLoader(
+    model_name="deepseek-ai/deepseek-coder-1.3b-base",
+    device="cuda",  # 或 "cpu"
+    half_precision=True  # 使用FP16以减少内存使用
+)
+```
+
+### 缓存配置
+
+```python
+from jsongeekai.ai.inference import OptimizationCache
+
+# 配置缓存
+cache = OptimizationCache(
+    cache_dir="~/.jsongeekai/cache",
+    max_size=1000,  # 最大缓存条目数
+    ttl=86400      # 缓存有效期（秒）
+)
+```
+
+## 📝 API文档
+
+### SimdAdvisor
+
+```python
+class SimdAdvisor:
+    """SIMD优化顾问"""
+    
+    def get_optimization_suggestions(self, json_data: Any) -> List[SimdOptimizationSuggestion]:
+        """获取SIMD优化建议"""
+        
+    def analyze_json_structure(self, json_data: Any) -> Dict[str, Any]:
+        """分析JSON结构"""
+```
+
+### InferenceEngine
+
+```python
+class InferenceEngine:
+    """AI推理引擎"""
+    
+    def infer(self, context: Dict[str, Any], max_suggestions: int = 5) -> InferenceResult:
+        """执行推理"""
+```
+
+## 🤝 贡献
+
+欢迎提交Issue和Pull Request！
+
+## 📄 许可证
+
+MIT License
+
+# JsonGeekAI
+
+[![PyPI version](https://img.shields.io/pypi/v/jsongeekai.svg)](https://pypi.org/project/jsongeekai/)
+[![Python Versions](https://img.shields.io/pypi/pyversions/jsongeekai.svg)](https://pypi.org/project/jsongeekai/)
+[![Downloads](https://img.shields.io/pypi/dm/jsongeekai.svg)](https://pypi.org/project/jsongeekai/)
+[![Tests](https://img.shields.io/github/workflow/status/zhanghongping/jsongeekai/Tests)](https://github.com/zhanghongping/jsongeekai/actions)
+[![Coverage Status](https://coveralls.io/repos/github/zhanghongping/jsongeekai/badge.svg?branch=main)](https://coveralls.io/github/zhanghongping/jsongeekai?branch=main)
+[![License](https://img.shields.io/pypi/l/jsongeekai.svg)](https://github.com/zhanghongping/jsongeekai/blob/main/LICENSE)
+
+A high-performance JSON parser with AI-driven optimizations and multi-format support.
+
+## Quick Start
+
+```python
+import jsongeekai
+
+# 基本用法 - 从字符串解析
+json_str = '{"name": "JsonGeekAI", "type": "parser"}'
+data = jsongeekai.parse(json_str)
+print(data)  # {'name': 'JsonGeekAI', 'type': 'parser'}
+
+# 从文件解析
+with open('large_file.json', 'rb') as f:
+    data = jsongeekai.parse_file(f)
+
+# 流式处理大文件
+for item in jsongeekai.parse_stream('large_file.json'):
+    print(item)
+
+# 自动检测并处理不同格式
+data = jsongeekai.parse_auto('data.jsonl')  # 自动检测JSONL格式
+
+# 启用SIMD优化
+jsongeekai.enable_simd()
+data = jsongeekai.parse(json_str)  # 现在使用SIMD加速
+
+# 内存效率配置
+jsongeekai.set_memory_limit('2GB')  # 限制内存使用
+```
+
+## Features
+
+- **SIMD Optimizations**: Utilizes SIMD instructions for faster parsing when available
+- **Multi-format Support**: Handles JSON, JSON5, YAML, MessagePack, and JSONL formats
+- **Memory Efficient**: Smart memory management with configurable limits
+- **Format Auto-detection**: Automatically detects and handles different formats
+- **Rich Error Handling**: Detailed error messages with context and documentation
+- **Compression Support**: Built-in compression for JSONL format
+- **Extensible**: Easy to add new formats and optimizations
+- **Streaming Support**: Streaming support for large files
+
+## Installation
+
+### Using pip
+
+```bash
+pip install jsongeekai
+```
+
+### Using Docker
+
+```bash
+# Pull the latest image
+docker pull zhanghongping/jsongeekai:latest
+
+# Run tests in container
+docker run zhanghongping/jsongeekai:latest
+
+# Run Python with JsonGeekAI
+docker run -it zhanghongping/jsongeekai:latest python
+```
+
+### Using Conda
+
+```bash
+# Install from conda-forge
+conda install -c conda-forge jsongeekai
+
+# Or create a new environment
+conda create -n jsongeekai-env -c conda-forge jsongeekai
+conda activate jsongeekai-env
+```
+
+## Version Compatibility
+
+JsonGeekAI requires Python 3.8 or later and is tested on:
+- Python 3.8
+- Python 3.9
+- Python 3.10
+- Python 3.11
+- Python 3.12
+
+## Performance
+
+JsonGeekAI is designed for performance:
+
+- SIMD acceleration when available
+- Efficient memory usage
+- Format-specific optimizations
+- Streaming support for large files
+
+## Documentation
+
+Full documentation is available at [jsongeekai.readthedocs.io](https://jsongeekai.readthedocs.io/)
+
+## Contributing
+
+We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
+
+## License
+
+JsonGeekAI is released under the MIT License. See the [LICENSE](LICENSE) file for details.
