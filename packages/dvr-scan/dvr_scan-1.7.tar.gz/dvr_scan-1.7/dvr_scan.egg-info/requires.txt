@@ -1,0 +1,12 @@
+numpy
+platformdirs
+scenedetect
+screeninfo
+tqdm
+
+[opencv]
+opencv-python
+pillow
+
+[opencv-headless]
+opencv-python-headless
