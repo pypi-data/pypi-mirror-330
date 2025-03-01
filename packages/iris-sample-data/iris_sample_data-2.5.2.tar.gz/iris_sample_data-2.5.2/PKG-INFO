@@ -1,0 +1,52 @@
+Metadata-Version: 2.2
+Name: iris-sample-data
+Version: 2.5.2
+Summary: Iris sample data
+Home-page: https://github.com/SciTools/iris-sample-data
+Download-URL: https://github.com/SciTools/iris-sample-data
+Author: SciTools Developers
+Author-email: scitools-iris-dev@googlegroups.com
+License: Open Government
+Project-URL: Code, https://github.com/SciTools/iris-sample-data
+Project-URL: Issues, https://github.com/SciTools/iris-sample-data/issues
+Keywords: cf-metadata,earth-science,grib,netcdf,meteorology,oceanography,ugrid
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: Freely Distributable
+Classifier: Operating System :: MacOS
+Classifier: Operating System :: POSIX
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Operating System :: Unix
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Scientific/Engineering :: Atmospheric Science
+Requires-Python: >=3.7
+Description-Content-Type: text/x-rst
+Dynamic: download-url
+
+This repository is a store for the data used in the iris examples.
+
+See the iris repository's INSTALL file for instructions of installation.
+
+
+.. |copy|   unicode:: U+000A9 .. COPYRIGHT SIGN
+
+Data found in this repository are licensed under the UK's Open Government Licence:
+
+Documentation, example and data license
+---------------------------------------
+
+    |copy| British Crown copyright, 2018.
+
+    You may use and re-use the information featured in this repository (not including logos) free of
+    charge in any format or medium, under the terms of the
+    `Open Government Licence <http://www.nationalarchives.gov.uk/doc/open-government-licence>`_.
+    We encourage users to establish hypertext links to this website.
+
+    Any email enquiries regarding the use and re-use of this information resource should be
+    sent to: psi@nationalarchives.gsi.gov.uk.
+
