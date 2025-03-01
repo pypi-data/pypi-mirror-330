@@ -1,0 +1,6 @@
+[console_scripts]
+zetic=zetic.cli:main
+
+[poetry.run]
+zetic=zetic.cli:main
+
