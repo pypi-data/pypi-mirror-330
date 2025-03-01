@@ -1,0 +1,86 @@
+Metadata-Version: 2.2
+Name: elle
+Version: 0.0.3
+Summary: A namespace for finite element libraries targeted at research into neural network architectures.
+Author: Claudio M. Perez
+Project-URL: Changelog, https://github.com/claudioperez/elle/blob/master/CHANGELOG.md
+Project-URL: Issue Tracker, https://github.com/claudioperez/elle/issues
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: Unix
+Classifier: Operating System :: POSIX
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Classifier: Topic :: Utilities
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+License-File: AUTHORS.md
+Requires-Dist: opensees
+Requires-Dist: veux
+Provides-Extra: shellcomplete
+Requires-Dist: click_completion; extra == "shellcomplete"
+Provides-Extra: tensorflow
+Requires-Dist: tensorflow~=2.0; extra == "tensorflow"
+Requires-Dist: tensorflow-probability~=0.10; extra == "tensorflow"
+Provides-Extra: jax
+Requires-Dist: jax>0.1.72,~=0.1; extra == "jax"
+Requires-Dist: jaxlib>0.1.51,~=0.1; extra == "jax"
+Provides-Extra: backends
+Requires-Dist: jaxlib>0.1.51,~=0.1; extra == "backends"
+Requires-Dist: jax>0.1.72,~=0.1; extra == "backends"
+Requires-Dist: tensorflow-probability~=0.10; extra == "backends"
+Requires-Dist: tensorflow~=2.0; extra == "backends"
+Dynamic: author
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: project-url
+Dynamic: provides-extra
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+
+
+A namespace for finite element libraries targeted at research into neural network architectures.
+
+
+<!--
+
+---------------------------
+
+
+[![Commits since latest release][gh-image]][gh-link]
+
+[pypi-v-image]: https://img.shields.io/pypi/v/elle.svg
+[pypi-v-link]: https://pypi.org/project/elle/
+
+[travis-image]: https://api.travis-ci.org/claudioperez/elle.svg?branch=master
+[travis-link]: https://travis-ci.org/claudioperez/elle
+
+[gh-link]: https://github.com/claudioperez/elle/compare/v0.0.0...master
+[gh-image]: https://img.shields.io/github/commits-since/claudioperez/elle/v0.0.0.svg
+[![Documentation](https://img.shields.io/badge/documentation-blue)](https://www.claudioperez.xyz/pkgs/elle)
+
+## Installation
+
+`elle` is a namespace that contains several packages which can be installed independently
+
+
+## Packages
+
+```{rst}
+.. rendre:: gallery
+   :verbose:
+
+```
+
+-->
+
