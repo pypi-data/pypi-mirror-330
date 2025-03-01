@@ -1,0 +1,63 @@
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+name = "kuPyLTSpice"
+version = "1.0.0"
+description = "A modified version of PyLTSpice tools to Automate LTSpice simulations"
+authors = ["Ryota Kobayashi <s.woods.m.29@gmail.com>", "Nuno Brum <me@nunobrum.com>"]
+license = "GPL-3.0-only"
+readme = "README.md"
+repository = "https://github.com/RK0429/kuPyLTSpice"
+homepage = "https://github.com/RK0429/kuPyLTSpice"
+keywords = ["ltspice", "simulation", "automation", "kupyltspice"]
+
+[tool.poetry.dependencies]
+python = ">=3.10,<4.0"
+spicelib = ">=1.4.1"
+kupicelib = "^1.0.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^7.0.0"
+
+[tool.poetry.urls]
+"Bug Tracker" = "https://github.com/RK0429/kuPyLTSpice/issues"
+"Author" = "https://www.ryota.com/"
+"Original Project" = "https://github.com/nunobrum/PyLTSpice"
+
+# Keeping setuptools configuration for compatibility
+[project]
+name = "kuPyLTSpice"
+version = "1.0.0"
+authors = [
+  { name="Ryota Kobayashi", email="s.woods.m.29@gmail.com" },
+  { name="Nuno Brum", email="me@nunobrum.com" },
+]
+description = "A modified version of PyLTSpice tools to Automate LTSpice simulations"
+readme = "README.md"
+license = { file="LICENSE" }
+requires-python = ">=3.10,<4.0"
+dependencies = [
+    "spicelib>=1.4.1",
+    "kupicelib>=1.0.0",
+]
+classifiers=[
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "Operating System :: OS Independent",
+]
+
+[tool.setuptools.packages.find]
+# All the following settings are optional:
+where = ["."]  # ["."] by default
+include = ["*"]  # ["*"] by default
+exclude = [".idea", "doc", "doc_build", ".vscode", ".git"]  # empty by default
+namespaces = true  # true by default
+
+[project.urls]
+"Homepage" = "https://github.com/RK0429/kuPyLTSpice"
+"Bug Tracker" = "https://github.com/RK0429/kuPyLTSpice/issues"
+"Repository" = "https://github.com/RK0429/kuPyLTSpice.git"
+"Author" = "https://github.com/RK0429"
+"Original Project" = "https://github.com/nunobrum/PyLTSpice"
