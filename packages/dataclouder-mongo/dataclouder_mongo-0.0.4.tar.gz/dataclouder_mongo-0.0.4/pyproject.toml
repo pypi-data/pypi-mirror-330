@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "dataclouder-mongo"
+version = "0.0.4"
+description = "A library to improve mongo methods"
+authors = [
+    "adamo figueroa <adamo@dataclouder.com>"
+]
+readme = "README.md"
+packages = [{include = "dataclouder_mongo", from = "src"}]
+
+
+[tool.poetry.dependencies]
+python = ">=3.11"
+
+[tool.poetry.group.dev.dependencies]
+build = ">=1.0.0"
+twine = ">=6.1.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
