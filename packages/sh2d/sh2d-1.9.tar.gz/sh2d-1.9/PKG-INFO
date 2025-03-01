@@ -1,0 +1,37 @@
+Metadata-Version: 2.2
+Name: sh2d
+Version: 1.9
+Home-page: https://github.com/
+Author: sh2d
+Author-email: xx@qq.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+Requires-Dist: requests
+Requires-Dist: dnspython
+Requires-Dist: paramiko
+Requires-Dist: pymysql
+Requires-Dist: xlrd==1.2.0
+Requires-Dist: xlsxwriter
+Requires-Dist: zmail
+Requires-Dist: xlwt
+Requires-Dist: openpyxl
+Requires-Dist: python-docx
+Requires-Dist: docxtpl
+Requires-Dist: pycryptodome
+Requires-Dist: ddddocr
+Requires-Dist: ruamel.yaml
+Requires-Dist: pyzipper
+Requires-Dist: pywin32
+Requires-Dist: xlwings
+Requires-Dist: python-whois
+Requires-Dist: pyttsx3
+Requires-Dist: colorlog
+Requires-Dist: pyyaml
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-dist
