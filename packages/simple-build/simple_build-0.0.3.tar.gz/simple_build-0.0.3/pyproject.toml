@@ -1,0 +1,114 @@
+[build-system]
+requires = ["packaging>=22"]
+backend-path = ["src"]
+build-backend = "simple_build.backend"
+
+[project]
+name = "simple_build"
+dynamic = ["version", "description", "authors"]
+license = { file = "LICENSE" }
+readme = "README.md"
+urls.Code = "https://github.com/chrisjsewell/simple-build"
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+]
+requires-python = ">=3.11"
+dependencies = ["packaging>=22"]
+
+[tool.ruff.lint]
+extend-select = [
+    "B",   # flake8-bugbear
+    "C4",  # flake8-comprehensions
+    "FURB",# refurb (modernising code)
+    "I",   # isort
+    "ICN", # flake8-import-conventions
+    "ISC", # flake8-implicit-str-concat
+    "N",   # pep8-naming
+    "PERF",# perflint (performance anti-patterns)
+    "PGH", # pygrep-hooks
+    "PIE", # flake8-pie
+    "PL",  # pylint
+    "PTH", # flake8-use-pathlib
+    "RUF", # Ruff-specific rules
+    "SIM", # flake8-simplify
+    "UP",  # pyupgrade
+    "T20", # flake8-print
+]
+extend-ignore = [
+    "ISC001",    # implicit-str-concat
+]
+
+[tool.ruff.lint.isort]
+split-on-trailing-comma = false
+force-sort-within-sections = true
+
+[tool.mypy]
+exclude = [".tests/"]
+show_error_codes = true
+warn_unused_ignores = true
+warn_redundant_casts = true
+strict = true
+# disallow dynamic typing
+disallow_any_unimported = true
+disallow_any_expr = false
+# disallow_any_decorated = true
+disallow_any_explicit = true
+disallow_any_generics = true
+disallow_subclassing_any = true
+# dissallow untyped definitions and calls
+disallow_untyped_calls = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+disallow_untyped_decorators = true
+
+[tool.tox]
+requires = ["tox>=4.19"]
+env_list = ["3.11"]
+
+[tool.tox.env_run_base]
+description = "Run tests in editable mode under Python {base_python}"
+labels = ["all", "editable"]
+package = "editable"
+deps = ["pytest", "syrupy"]
+commands = [["pytest", { replace = "posargs", default=["tests"], extend = true }]]
+
+[tool.tox.env.wheel-py311]
+description = "Run tests in wheel mode under Python {base_python}"
+labels = ["all", "wheel"]
+package = "wheel"
+
+[tool.tox.env.wheel-py312]
+description = "Run tests in wheel mode under Python {base_python}"
+labels = ["all", "wheel"]
+package = "wheel"
+
+[tool.tox.env.wheel-py313]
+description = "Run tests in wheel mode under Python {base_python}"
+labels = ["all", "wheel"]
+package = "wheel"
+
+[tool.tox.env.sdist-py311]
+description = "Run tests in sdist mode under Python {base_python}"
+labels = ["all", "sdist"]
+package = "sdist"
+
+[tool.tox.env.sdist-py312]
+description = "Run tests in sdist mode under Python {base_python}"
+labels = ["all", "sdist"]
+package = "sdist"
+
+[tool.tox.env.sdist-py313]
+description = "Run tests in sdist mode under Python {base_python}"
+labels = ["all", "sdist"]
+package = "sdist"
+
+[tool.tox.env.mypy]
+description = "Run mypy"
+labels = ["all"]
+basepython = ["python3.11"]
+deps = ["mypy"]
+commands = [["mypy", "src"]]
