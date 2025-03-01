@@ -1,0 +1,37 @@
+Metadata-Version: 2.2
+Name: PyCockByEmir
+Version: 0.1.0
+Summary: Boy ve ayak uzunluğu hesaplamaları için bir Python kütüphanesi
+Home-page: https://github.com/EmirKcky/PyCockByEmir
+Author: Emir
+Author-email: celalinko@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-python
+Dynamic: summary
+
+# PyCockByEmir
+
+Bu kütüphane, boy uzunluğu ve ayak uzunluğu oranını hesaplar. :D
+
+## Kullanım
+
+Python'da bu kütüphaneyi kullanarak boy uzunluğu ve ayak uzunluğu oranını hesaplayabilirsiniz.
+
+### Örnek Kullanım:
+
+```python
+from PyCockByEmir import calculate_ratio
+
+sonuc = calculate_ratio(180, 25)
+print(sonuc)
