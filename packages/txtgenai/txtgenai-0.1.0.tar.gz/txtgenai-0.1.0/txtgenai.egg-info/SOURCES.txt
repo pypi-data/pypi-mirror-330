@@ -1,0 +1,16 @@
+LICENSE
+README.md
+setup.py
+endpoints/__init__.py
+endpoints/chat.py
+endpoints/completions.py
+endpoints/models.py
+tests/__init__.py
+tests/test_chat.py
+tests/test_client.py
+tests/test_completions.py
+txtgenai.egg-info/PKG-INFO
+txtgenai.egg-info/SOURCES.txt
+txtgenai.egg-info/dependency_links.txt
+txtgenai.egg-info/requires.txt
+txtgenai.egg-info/top_level.txt
