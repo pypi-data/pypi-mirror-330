@@ -1,0 +1,15 @@
+Metadata-Version: 2.2
+Name: hnt_jira_library
+Version: 0.0.1
+Summary: Lib to download from Jira attachments
+Author: Pepe
+Maintainer: Pepe
+License: MIT License
+Keywords: jira
+Requires-Dist: requests
+Dynamic: author
+Dynamic: keywords
+Dynamic: license
+Dynamic: maintainer
+Dynamic: requires-dist
+Dynamic: summary
