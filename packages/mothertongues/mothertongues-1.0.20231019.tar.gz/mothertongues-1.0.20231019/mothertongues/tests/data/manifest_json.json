@@ -1,0 +1,34 @@
+{
+    "file_type": "json",
+    "name": "words",
+    "transducers": [{
+        "input_field": "word",
+        "output_field": "sort_form",
+        "lower": true
+    }],
+    "targets": {
+        "entryID": "entryID",
+        "definition": "definition",
+        "word": "word",
+        "audio": {
+            "listof": "audio",
+            "value": {
+                "description": "speaker",
+                "filename": "filename"
+            }
+        },
+        "example_sentence": [
+            "example_sentence_1",
+            "example_sentence_2"
+        ],
+        "example_sentence_definition": [
+            "example_sentence_definition_1",
+            "example_sentence_definition_2"
+        ],
+
+        "theme": "theme",
+        "optional": {
+            "Part of Speech": "optional.\"Part of Speech\""
+        }
+    }
+}
