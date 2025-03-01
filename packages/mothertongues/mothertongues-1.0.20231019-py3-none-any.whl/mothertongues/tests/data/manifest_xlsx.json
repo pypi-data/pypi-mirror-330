@@ -1,0 +1,22 @@
+{
+    "file_type": "xlsx",
+    "name": "words",
+    "transducers": [{
+        "input_field": "word",
+        "output_field": "sort_form",
+        "lower": true
+    }],
+    "targets": {
+        "entryID": "A",
+        "definition": "B",
+        "word": "C",
+        "audio": [{
+            "description": "D",
+            "filename": "E"
+        }],
+        "theme": "F",
+        "optional": {
+            "Part of Speech": "G"
+        }
+    }
+}

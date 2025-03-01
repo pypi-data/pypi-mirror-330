@@ -1,0 +1,9 @@
+{
+    "file_type": "custom",
+    "name": "words",
+    "transducers": [{
+        "input_field": "word",
+        "output_field": "sort_form",
+        "lower": true
+    }]
+}

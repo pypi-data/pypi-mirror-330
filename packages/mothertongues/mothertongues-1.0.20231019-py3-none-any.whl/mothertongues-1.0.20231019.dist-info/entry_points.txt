@@ -1,0 +1,4 @@
+[console_scripts]
+mothertongues=mothertongues.cli:app
+mtd=mothertongues.cli:app
+
