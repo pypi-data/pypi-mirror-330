@@ -1,0 +1,39 @@
+Metadata-Version: 2.1
+Name: pincell-moment-utils
+Version: 0.0.2
+Summary: A tool for postprocessing and calculating flux moments for a pincell model
+License: MIT
+Author: Matthew Louis
+Author-email: matthewlouis31@gmail.com
+Requires-Python: >=3.8,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: matplotlib
+Requires-Dist: mpi4py
+Requires-Dist: numpy
+Requires-Dist: openmc
+Requires-Dist: pandas
+Requires-Dist: py7zr
+Requires-Dist: pyprojroot
+Requires-Dist: scipy
+Requires-Dist: shutil
+Requires-Dist: subprocess
+Requires-Dist: typing
+Project-URL: Documentation, https://mlouis9.github.io/pincell_moment_utils
+Project-URL: Homepage, https://github.com/mlouis9/pincell_moment_utils
+Project-URL: Issues, https://github.com/mlouis9/pincell_moment_utils/issues
+Description-Content-Type: text/markdown
+
+# Introduction
+This project primarily serves as a reference to the methods used to generate a moment dataset for parameterizing the incident and outgoing fluxes, as well as the local multiplication factor and the pin flux distribution for training a machine learning model to implement the incident flux response method. Included is also a utility package which was used to postprocess moment and mesh tallies and perform flux reconstruction from these moments following the theory described in `TODO`.
+
+# Installation and Setup
+This package is [published on PyPI](https://pypi.org/project/pincell_moment_utils/), and so can be installed (along with all of the necessary dependencies) via `pip`
+```
+pip install pincell_moment_utils
+```
+Note some of the features require the ability to run transport simulations with OpenMC, which require a valid set of cross sections, which can be installed using the scripts [here](https://github.com/openmc-dev/data).
