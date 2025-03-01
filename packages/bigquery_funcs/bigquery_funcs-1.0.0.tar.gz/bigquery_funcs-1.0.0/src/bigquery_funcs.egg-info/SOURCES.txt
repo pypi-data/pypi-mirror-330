@@ -1,0 +1,12 @@
+README.md
+pyproject.toml
+src/bigquery_funcs/__init__.py
+src/bigquery_funcs/_types.py
+src/bigquery_funcs/auth.py
+src/bigquery_funcs/models.py
+src/bigquery_funcs/queries.py
+src/bigquery_funcs.egg-info/PKG-INFO
+src/bigquery_funcs.egg-info/SOURCES.txt
+src/bigquery_funcs.egg-info/dependency_links.txt
+src/bigquery_funcs.egg-info/requires.txt
+src/bigquery_funcs.egg-info/top_level.txt
