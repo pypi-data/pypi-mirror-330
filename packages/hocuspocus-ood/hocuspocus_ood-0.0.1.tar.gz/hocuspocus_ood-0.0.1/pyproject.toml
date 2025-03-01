@@ -1,0 +1,37 @@
+[project]
+name = "hocuspocus_ood"
+version = "0.0.1"
+authors = [
+  { name="Stanley Hua", email="stanley.z.hua@gmail.com" },
+]
+description = "HocusPOCUS: An out-of-distribution (OOD) detection dataset for point-of-care ultrasound"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+  "fire==0.6.0",
+  "joblib",
+  "numpy>=1.19.2",
+  "torch>=1.7.1",
+  "torchvision>=0.8.2",
+  "ultraml",
+  "tqdm",
+  "opencv_python_headless>=4.10.0.84"
+]
+
+[project.urls]
+Homepage = "https://github.com/stan-hua/hocuspocus"
+Issues = "https://github.com/stan-hua/hocuspocus/issues"
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["hocuspocus_ood"]
+include = ["hocuspocus*"]
+exclude = ["examples", "slurm"]
