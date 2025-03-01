@@ -1,0 +1,3 @@
+[console_scripts]
+braidacq_exec = braidpy.__main__:hook
+
