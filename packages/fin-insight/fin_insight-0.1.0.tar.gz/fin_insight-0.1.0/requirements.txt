@@ -1,0 +1,11 @@
+yfinance==0.2.38
+requests==2.31.0
+vaderSentiment==3.3.2
+pandas==2.2.1
+argparse==1.4.0  # Part of Python standard library, but included for clarity
+
+# Development dependencies
+pytest==7.4.4
+twine==4.0.2
+wheel==0.42.0
+setuptools==69.2.0

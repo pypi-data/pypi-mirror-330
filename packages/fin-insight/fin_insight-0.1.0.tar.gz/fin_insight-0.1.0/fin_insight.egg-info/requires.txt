@@ -1,0 +1,8 @@
+yfinance>=0.2.38
+requests>=2.31.0
+vaderSentiment>=3.3.2
+pandas>=2.2.1
+
+[dev]
+pytest>=7.4.4
+twine>=4.0.2
