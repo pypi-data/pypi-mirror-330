@@ -1,0 +1,3 @@
+[console_scripts]
+openai-structured-refresh=openai_structured.scripts.update_registry:main
+
