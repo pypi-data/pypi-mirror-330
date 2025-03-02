@@ -1,0 +1,2 @@
+[console_scripts]
+terratalk = terratalk.__main__:cli
