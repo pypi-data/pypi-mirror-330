@@ -1,0 +1,12 @@
+on: [push, pull_request]
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v3
+        with:
+          python-version: "3.12"
+      - uses: taiki-e/install-action@just
+      - run: pip install -r requirements.txt
+      - run: just check

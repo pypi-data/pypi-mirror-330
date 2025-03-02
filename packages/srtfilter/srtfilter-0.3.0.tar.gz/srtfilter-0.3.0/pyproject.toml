@@ -1,0 +1,27 @@
+[project]
+name = "srtfilter"
+version = "0.3.0"
+authors = [
+    { name="Arjun Satarkar", email="me@arjunsatarkar.net" },
+]
+requires-python = ">=3.12"
+readme = "README.md"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "click==8.1.*"
+]
+
+[project.scripts]
+srtfilter = "srtfilter.srtfilter_cli:main"
+
+[project.urls]
+Homepage = "https://github.com/arjunsatarkar/srtfilter"
+Issues = "https://github.com/arjunsatarkar/srtfilter/issues"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
