@@ -1,0 +1,3 @@
+[console_scripts]
+hcbench = hcsim.bin.hcbench_main:main
+hcsim = hcsim.bin.hcsim_main:main
