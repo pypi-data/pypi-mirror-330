@@ -1,0 +1,61 @@
+Metadata-Version: 2.3
+Name: arcstack-django-api
+Version: 0.2.0
+Summary: Create APIs in Django way
+License: MIT
+Keywords: api,django,rest,framework,api-framework,class-based-views
+Author: Gokhan Ozturk
+Author-email: me@gokhan.org.tr
+Requires-Python: >=3.10
+Classifier: Intended Audience :: Information Technology
+Classifier: Intended Audience :: System Administrators
+Classifier: Operating System :: OS Independent
+Classifier: Development Status :: 3 - Alpha
+Classifier: Topic :: Internet
+Classifier: Topic :: Software Development :: Libraries :: Application Frameworks
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Software Development
+Classifier: Typing :: Typed
+Classifier: Environment :: Web Environment
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Framework :: Django
+Classifier: Framework :: Django :: 3.1
+Classifier: Framework :: Django :: 3.2
+Classifier: Framework :: Django :: 4.1
+Classifier: Framework :: Django :: 4.2
+Classifier: Framework :: Django :: 5.0
+Classifier: Framework :: Django :: 5.1
+Classifier: Topic :: Internet :: WWW/HTTP :: HTTP Servers
+Classifier: Topic :: Internet :: WWW/HTTP
+Requires-Dist: django (>=3.1,<6.0.0)
+Requires-Dist: django-appconf (>=1.1.0,<2.0.0)
+Requires-Dist: pydantic (>=2.10.6,<3.0.0)
+Project-URL: Bug Tracker, https://github.com/gwainor/arcstack-django-api/issues
+Project-URL: Documentation, https://gwainor.github.io/arcstack-django-api/
+Project-URL: Homepage, https://gwainor.github.io/arcstack-django-api/
+Project-URL: Repository, https://github.com/gwainor/arcstack-django-api
+Description-Content-Type: text/markdown
+
+# ArcStack Django API Framework
+
+[![Tests](https://github.com/gwainor/arcstack-django-api/actions/workflows/test.yml/badge.svg?branch=master&event=push)](https://github.com/gwainor/arcstack-django-api/actions/workflows/test.yml)
+
+This is a simple API framework for Django. It is designed to be simple and follow
+the Django way of doing things with class-based views.
+
+## FAQ
+
+### Why another API framework? Isn't there already a lot of them?
+
+Yes, there are a lot of API frameworks for Django. Some of them also using `pydantic`
+to validate the request data like `django-ninja`. But all of them have high and steep
+learning curve.
+
+I just want a simple API framework that is easy to learn and use.
+
