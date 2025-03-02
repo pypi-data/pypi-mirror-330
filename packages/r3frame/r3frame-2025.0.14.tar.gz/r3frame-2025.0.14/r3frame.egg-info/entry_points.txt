@@ -1,0 +1,3 @@
+[console_scripts]
+r3frame-play-fixed = r3frame.scripts.playground_fixed:playground
+r3frame-play-quad = r3frame.scripts.playground_quad:playground
