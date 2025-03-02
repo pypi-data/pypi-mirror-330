@@ -1,0 +1,38 @@
+Metadata-Version: 2.4
+Name: mudder
+Version: 0.3.0
+Summary: Python port of mudderjs
+Project-URL: Homepage, https://github.com/fellowinsights/mudder-py
+Project-URL: Repository, https://github.com/fellowinsights/mudder-py
+Author-email: Patrick Gingras <775.pg.12@gmail.com>
+License: BSD-3-Clause
+License-File: LICENSE.md
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+
+# mudder-py
+
+This library is a port of [fasiha/mudderjs][1] to Python.
+
+From the original readme:
+
+> Generate lexicographically-spaced strings between two strings from pre-defined
+> alphabets.
+
+This technique is also known as
+[_fractional indexing_](https://observablehq.com/@dgreensp/implementing-fractional-indexing).
+
+[1]: https://github.com/fasiha/mudderjs
+
+## Example
+
+Usage is nearly identical to the original:
+
+```python
+from mudder import SymbolTable
+
+hex_ = SymbolTable('0123456789abcdef')
+hexstrings = hex_.mudder('ffff', 'fe0f', num_strings=3)
+print(hexstrings)
+# ['ff8', 'ff', 'fe8']
+```
