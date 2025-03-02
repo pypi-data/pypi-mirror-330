@@ -1,0 +1,98 @@
+[tool.poetry]
+name = "mongodb-odm"
+version = "1.0.2"
+description = "MongoDB-ODM, NOSQL databases in Python, designed for simplicity, compatibility, and robustness."
+authors = ["Nayan Biswas <nayan32biswas@gmail.com>"]
+readme = "README.md"
+license = "MIT"
+# homepage = "https://github.com/nayan32biswas/mongodb-odm"
+documentation = "https://mongodb-odm.readthedocs.io"
+repository = "https://github.com/nayan32biswas/mongodb-odm"
+# include = ["mongodb_odm"]
+# exclude = []
+
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Framework :: AsyncIO",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: System Administrators",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Database",
+    "Topic :: Database :: Database Engines/Servers",
+    "Topic :: Internet",
+    "Topic :: Internet :: WWW/HTTP :: HTTP Servers",
+    "Topic :: Internet :: WWW/HTTP",
+    "Typing :: Typed",
+]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+pymongo = { version = "^4.3.3", extras = ["srv"] }
+pydantic = "^2.4.2"
+
+[tool.poetry.group.dev.dependencies]
+# Formatter and linters
+black = "^23.9.0"
+mypy = "1.5.0"
+ruff = "^0.1.14"
+# Test
+coverage = { extras = ["toml"], version = "^7.2.2" }
+pytest = "^7.2.2"
+# Doc generators
+mdx-include = "^1.4.2"
+mkdocs = "^1.4.2"
+mkdocs-material = "^9.1.4"
+# Others
+pre-commit = "^3.3.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry-version-plugin]
+source = "init"
+
+[tool.coverage.run]
+parallel = true
+source = ["docs_src", "mongodb_odm"]
+context = '${CONTEXT}'
+
+[tool.coverage.report]
+exclude_lines = ['if __name__ == "__main__":']
+# omit = ["tests/*.py"]
+
+[tool.mypy]
+strict = true
+
+[[tool.mypy.overrides]]
+module = ""
+warn_unused_ignores = false
+
+[[tool.mypy.overrides]]
+module = "docs_src.*"
+disallow_incomplete_defs = false
+disallow_untyped_defs = false
+disallow_untyped_calls = false
+
+[tool.ruff]
+line-length = 88
+select = ["E", "W", "F", "I", "C", "B", "UP"]
+ignore = ["E501", "B008", "C901", "W191"]
+
+[tool.ruff.per-file-ignores]
+# "__init__.py" = ["F401"]
+
+[tool.ruff.isort]
+known-third-party = ["mongodb_odm", "pymongo", "pydantic"]
+
+[tool.ruff.pyupgrade]
+# Preserve types, even if a file imports `from __future__ import annotations`.
+keep-runtime-typing = true
