@@ -1,0 +1,32 @@
+Metadata-Version: 2.4
+Name: cmip_ref_metrics_example
+Version: 0.2.0
+Summary: Example metrics provider for the CMIP Rapid Evaluation Framework
+Author-email: Jared Lewis <jared.lewis@climate-resource.com>
+License: Apache-2.0
+License-File: LICENCE
+License-File: NOTICE
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Topic :: Scientific/Engineering
+Requires-Python: >=3.10
+Requires-Dist: cmip-ref-core
+Requires-Dist: dask>=2024.10.0
+Requires-Dist: netcdf4>=1.5.0
+Requires-Dist: xarray>=2022
+Description-Content-Type: text/markdown
+
+# ref-metrics-example
+
+An example of a basic REF metrics provider.
+
+This package provides an example of how to implement a REF metrics provider,
+that exposes a single metric, `example_metric`, which is a simple counter.
