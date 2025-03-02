@@ -1,0 +1,25 @@
+Metadata-Version: 2.4
+Name: pi-fan-controller
+Version: 0.1.0
+Summary: Add your description here
+Author-email: Jakob Guldberg Aaes <jakob1379@gmail.com>
+Requires-Python: >=3.12
+Requires-Dist: gpiozero>=2.0.1
+Requires-Dist: rich>=13.9.4
+Requires-Dist: rpi-gpio>=0.7.1
+Requires-Dist: sane-rich-logging>=1.0.1
+Requires-Dist: typer>=0.12.5
+Description-Content-Type: text/markdown
+
+# Pi Fan Controller
+
+Raspberry Pi fan controller.
+
+## Description
+
+This repository provides a CLI that can be run on the Raspberry Pi to
+monitor the core temperature and start the fan when the temperature reaches
+a defined threshold.
+
+To use this code, you'll have to install a fan. The full instructions can be
+found on this guide: [Control Your Raspberry Pi Fan (and Temperature) with Python](https://howchoo.com/g/ote2mjkzzta/control-raspberry-pi-fan-temperature-python). However, other ways that enable a fan to be turned on or off with a single pin should work too.

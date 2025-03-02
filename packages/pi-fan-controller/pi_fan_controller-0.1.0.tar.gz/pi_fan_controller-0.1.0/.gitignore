@@ -1,0 +1,8 @@
+*.dat
+.direnv
+__pycache__
+*.log
+/flake.lock
+uv.lock
+*~
+/.envrc

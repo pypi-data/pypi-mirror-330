@@ -1,0 +1,52 @@
+[project]
+name = "pi-fan-controller"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Jakob Guldberg Aaes", email = "jakob1379@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "gpiozero>=2.0.1",
+    "rich>=13.9.4",
+    "rpi-gpio>=0.7.1",
+    "sane-rich-logging>=1.0.1",
+    "typer>=0.12.5",
+]
+
+[project.scripts]
+pi-fan = "pi_fan_controller:app"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "pre-commit>=4.0.1",
+    "python-language-server>=0.36.2",
+    "ruff>=0.6.9",
+]
+
+[tool.ruff]
+# Exclude specific files and directories
+exclude = [
+    ".git",
+    ".mypy_cache",
+    ".pytest_cache",
+    "__pycache__",
+    "build",
+    "dist",
+]
+
+# Enforce Black compatibility
+line-length = 100  # Match Black's default line length
+
+src = ["src"]
+
+[tool.ruff.lint]
+# Enable specific rules
+select = ["E", "F", "I", "B", "A", "UP"]  # E: pycodestyle, F: pyflakes, I: import, B: flake8-bugbear, A: flake8-annotations
+extend-select = ["B", "A"]  # Additional rules to enable (like flake8-bugbear or annotations)
+ignore = [ "B008" ]  # Ignore "trailing whitespace" and "function call in argument defaults"
