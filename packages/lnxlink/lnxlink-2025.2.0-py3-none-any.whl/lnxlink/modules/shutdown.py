@@ -1,0 +1,47 @@
+"""Shutdown the system"""
+import logging
+from shutil import which
+from lnxlink.modules.scripts.helpers import import_install_package, syscommand
+
+logger = logging.getLogger("lnxlink")
+
+
+class Addon:
+    """Addon module"""
+
+    def __init__(self, lnxlink):
+        """Setup addon"""
+        self.name = "Shutdown"
+        self.lnxlink = lnxlink
+        if which("systemctl") is None and which("shutdown") is None:
+            self.dbus = import_install_package("dasbus", ">=1.7", "dasbus.connection")
+
+    def start_control(self, topic, data):
+        """Control system"""
+        self.lnxlink.temp_connection_callback(True)
+        returncode = None
+        if which("systemctl") is not None and returncode != 0:
+            _, _, returncode = syscommand("systemctl poweroff")
+        if which("shutdown") is not None and returncode != 0:
+            _, _, returncode = syscommand("shutdown now")
+        if returncode != 0:
+            try:
+                bus = self.dbus.connection.SystemMessageBus()
+                proxy = bus.get_proxy(
+                    service_name="org.freedesktop.login1",
+                    object_path="/org/freedesktop/login1",
+                )
+                proxy.PowerOff(True)
+            except Exception:
+                returncode = -1
+        if returncode != 0:
+            self.lnxlink.temp_connection_callback(False)
+
+    def exposed_controls(self):
+        """Exposes to home assistant"""
+        return {
+            "Shutdown": {
+                "type": "button",
+                "icon": "mdi:power",
+            }
+        }
