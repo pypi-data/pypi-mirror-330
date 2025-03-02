@@ -1,0 +1,5 @@
+[console_scripts]
+pols = pols:cli.cli
+
+[gui_scripts]
+
