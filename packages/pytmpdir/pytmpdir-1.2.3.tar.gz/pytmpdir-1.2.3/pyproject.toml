@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=61.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pytmpdir"
+version = "1.2.3"
+authors = [{name = "Synerty", email = "support@synerty.com"}]
+description = "A class representing a file system directory, that deletes on garbage collect."
+keywords = [
+    "directory",
+    "scan",
+    "interrogate",
+    "create",
+    "open",
+    "Python",
+    "Synerty",
+]
+classifiers = ["Programming Language :: Python :: 3.5"]
+dependencies = ["sphinx_rtd_theme", "sphinx"]
+
+[project.urls]
+Homepage = "https://github.com/Synerty/pytmpdir"
+Download = "https://github.com/Synerty/pytmpdir/tarball/1.0.5"
+
+[tool.setuptools]
+include-package-data = false
+
+[tool.setuptools.packages.find]
+exclude = ["*.tests"] # *.tests.*; tests.*; tests
+namespaces = false
