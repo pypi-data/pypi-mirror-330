@@ -1,0 +1,15 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+CadVance.egg-info/PKG-INFO
+CadVance.egg-info/SOURCES.txt
+CadVance.egg-info/dependency_links.txt
+CadVance.egg-info/entry_points.txt
+CadVance.egg-info/requires.txt
+CadVance.egg-info/top_level.txt
+cadvance/__init__.py
+cadvance/__main__.py
+cadvance/automation.py
+cadvance/core.py
+cadvance/utils.py
