@@ -1,0 +1,9 @@
+
+[paths]
+default = https://github.com/erikbrinkman/homeotopy.git
+
+[remotenames]
+publicheads = remote/main,remote/master
+
+[github]
+preferred_submit_command = pr

@@ -1,0 +1,20 @@
+# SL changeset patch
+# User Erik Brinkman <erik.brinkman@gmail.com>
+# Date 1740625055 18000
+#      Wed Feb 26 21:57:35 2025 -0500
+# Node ID 744b17140f278aafe4b47a1e1652cab78a3fcac7
+# Parent  0523e8a4f3a073b0dbc50f298d1da92c06d0b4cd
+shelve changes to: update readme
+
+diff --git a/.gitignore b/.gitignore
+--- a/.gitignore
++++ b/.gitignore
+@@ -1,4 +1,5 @@
+ __pycache__
+ out
+ dist
+-homeotopy.egg-info
+\ No newline at end of file
++homeotopy.egg-info
++.coverage
+\ No newline at end of file
