@@ -1,0 +1,15 @@
+numpy
+soundfile
+librosa
+torch
+torchaudio
+transformers
+huggingface-hub
+tqdm
+speech-articulatory-coding
+typeguard>=4.0.1
+torchode==1.0.0
+torchdiffeq==0.2.4
+beartype==0.19.0
+gateloop-transformer==0.2.5
+vector-quantize-pytorch==1.18.5
