@@ -1,0 +1,38 @@
+package:
+  name: fezrs
+  version: "{{ version }}"  # Placeholder for version to be replaced dynamically
+
+source:
+  url: https://pypi.io/packages/source/f/fezrs/fezrs-{{ version }}.tar.gz
+  sha256: "{{ sha256_placeholder }}"  # This will be updated by your script
+
+build:
+  number: 1
+  noarch: python
+  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir"
+
+requirements:
+  host:
+    - python >=3.8
+    - pip
+    - setuptools
+  run:
+    - python >=3.8
+    - numpy
+    - matplotlib
+    - scikit-image
+    - scikit-learn
+    - fastapi
+    - opencv
+
+test:
+  imports:
+    - fezrs  # Replace this with actual module names you're testing
+  commands:
+    - pytest  # Or any other test commands you want to run
+
+about:
+  home: https://github.com/your-username/fezrs  # Change to your repo URL
+  license: MIT  # Specify the license
+  license_file: LICENSE  # If you have a LICENSE file
+  summary: "Your package description here."
