@@ -1,0 +1,3 @@
+[console_scripts]
+dpkg-inspect=pydpkg.dpkg_inspect:main
+
