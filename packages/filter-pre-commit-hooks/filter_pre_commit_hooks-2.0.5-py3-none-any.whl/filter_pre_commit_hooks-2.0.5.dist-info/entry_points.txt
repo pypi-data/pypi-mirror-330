@@ -1,0 +1,2 @@
+[console_scripts]
+filter-pre-commit-hooks = filter_pre_commit_hooks.filter_pre_commit_hooks:filter_pre_commit_hooks
