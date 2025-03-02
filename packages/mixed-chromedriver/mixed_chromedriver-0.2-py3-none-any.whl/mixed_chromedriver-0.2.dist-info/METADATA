@@ -1,0 +1,140 @@
+Metadata-Version: 2.1
+Name: mixed-chromedriver
+Version: 0.2
+Summary: mixed_chromedriver is a flexible Chrome driver wrapper that extends Selenium, Selenium Wire, and Undetected Chromedriver, offering handy automation methods and an easy-to-use Selector for element selection.
+Home-page: https://github.com/tranngocminhhieu/mixed-chromedriver
+Author: Tran Ngoc Minh Hieu
+Author-email: tnmhieu@gmail.com
+Description-Content-Type: text/markdown
+Requires-Dist: selenium
+Requires-Dist: selenium-wire
+Requires-Dist: undetected-chromedriver
+
+# Mixed Chromedriver
+
+`mixed_chromedriver` is a flexible Chrome driver wrapper that extends Selenium, Selenium Wire, and Undetected Chromedriver. It enhances browser automation by providing convenient methods for common interactions and a Selector object that simplifies element selection for users unfamiliar with CSS selectors and XPath.
+
+## Features
+
+### 🖥️ Flexible Chrome Driver Initialization
+
+Supports multiple driver types:
+- Original (Standard Selenium WebDriver)
+- Wire (Selenium Wire for capturing and modifying network requests)
+- Undetected (Bypasses bot detection mechanisms)
+- Wire & Undetected (Combines both for advanced use cases)
+- Pre-configured with helpful arguments for better performance and stability
+
+### ⚡ Enhanced Automation Methods
+
+Convenient functions for interacting with web elements:
+- `wait_element` – Waits for an element to appear
+- `click` – Clicks on an element
+- `send_keys` – Sends keystrokes to an input field
+- `select_option` – Selects an option from a dropdown
+- `keystroke` – Simulates keyboard input
+
+### 🏷️ CSS & XPath Selector Generator
+
+Easily generate selectors using the `Selector` object:
+- CSS – Automatically construct valid CSS selectors
+- XPath – Generate precise XPath expressions
+
+## Installation
+
+Install the package using pip:
+
+PyPI:
+```commandline
+pip install mixed-chromedriver
+```
+
+GitHub:
+```commandline
+pip install git+https://github.com/tranngocminhhieu/mixed-chromedriver.git
+```
+
+## User Manual
+
+### 🚀 Quick Start
+
+```python
+from mixed_chromedriver import Chrome, Selector
+from selenium.webdriver.common.keys import Keys
+
+driver = Chrome(undetected=True)
+
+driver.get('https://getbootstrap.com/') # Open URL
+driver.click(Selector(tag='span', contains='Search')) # Click the search bar with `contains`
+driver.send_keys(Selector(Id='docsearch-input'), value='select') # Type "select"
+driver.wait_element(Selector(tag='div', class_='DocSearch-Hit-source'), visibility=True) # Wait results
+driver.keystroke(Keys.CONTROL, Keys.ENTER) # Ctrl Enter: Open the first result in new tab
+driver.switch_to.window(driver.window_handles[-1]) # Switch to the new tab
+
+# Test select_option
+default_select = Selector(tag='select', attrs={'aria-label': 'Default select example'}) # Create selector for reuse
+driver.select_option(default_select, option='One')
+driver.select_option(default_select, option='2', method='value')
+driver.select_option(default_select, option=3, method='index')
+```
+
+---
+
+### 🌐 Chrome Driver Usage
+
+```python
+from mixed_chromedriver import Chrome
+
+driver = Chrome(headless=False, wire=False, undetected=False, options=None, service=None, user_data_dir=None, profile_directory=None)
+```
+
+Chrome Initialization Parameters:
+- `headless`: Use headless browser.
+- `wire`: Use selenium-wire to work with requests.
+- `undetected`: Use undetected-chromedriver to avoid anti bot.
+- `options`: Options object.
+- `service`: Service object.
+- `user_data_dir`: User data directory.
+- `profile_directory`: Profile directory.
+
+
+### 🔍 Selector Object
+
+The Selector object simplifies element selection by auto-generating CSS and XPath selectors.
+
+Example Usage:
+
+```python
+from mixed_chromedriver import Selector
+
+selector = Selector(tag='input', attrs={'name':'email'})
+print(selector.css)   # Output: input[name="email"]
+print(selector.xpath) # Output: //input[@name="email"]
+```
+
+Selector Parameters:
+- `tag`: The HTML tag to select (default is `"*"`).
+- `Id`: The ID attribute of the element.
+- `class_`: The class name to match.
+- `not_class`: Excludes elements with this class.
+- `contains`: Matches elements containing this text.
+- `attrs`: Dictionary of attributes to match (e.g., `{"name": "value"}`).
+- `not_attrs`: List of attributes that must not be present.
+- `starts_with`: Dictionary of attributes that must start with a value.
+- `ends_with`: Dictionary of attributes that must end with a value.
+- `nth_child`: Selects the nth child of its parent.
+- `last_child`: If True, selects only the last child.
+- `direct_parent`: Selects elements with this direct parent.
+- `any_parent`: Selects elements with this parent at any level.
+
+
+## The Birth of `mixed_chromedriver`
+
+For a while, I enjoyed using SeleniumBase—a powerful library that extends Selenium Wire and Undetected Chromedriver, offering many convenient methods for browser interaction. However, I soon encountered several challenges that were difficult to overcome:
+- **Limited customization** – Adjusting driver options beyond the predefined keyword arguments was cumbersome.
+- **Connection issues** – Certain websites triggered an _ERR_CONNECTION_RESET_ error, even when using the `uc` or `wire` arguments, while running `selenium-wire` or `undetected_chromedriver` directly worked just fine.
+- **Missing essential methods** – Some key functionalities I needed were not available within the library.
+
+Given my specific needs, I realized that I didn’t require a bulky framework like SeleniumBase. Instead, I decided to build a lightweight, highly customizable library with additional methods to simplify fundamental browser interactions.
+
+Thus, mixed_chromedriver was born—a flexible solution for effortless browser automation. 🚀
