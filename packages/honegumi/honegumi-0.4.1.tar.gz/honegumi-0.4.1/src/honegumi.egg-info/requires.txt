@@ -1,0 +1,23 @@
+numpy
+scipy
+pandas
+tqdm
+click
+Jinja2
+ax-platform
+black
+pytest
+jupytext
+pydantic
+
+[:python_version < "3.8"]
+importlib-metadata
+
+[dev]
+setuptools
+pytest-cov
+black[jupyter]
+mypy
+pydocstyle
+pre-commit
+pytest-xdist
