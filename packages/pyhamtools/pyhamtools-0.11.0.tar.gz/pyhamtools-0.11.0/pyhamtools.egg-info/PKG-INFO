@@ -1,0 +1,18 @@
+Metadata-Version: 2.2
+Name: pyhamtools
+Version: 0.11.0
+Summary: Collection of Tools for Amateur Radio developers
+Home-page: http://github.com/dh1tw/pyhamtools
+Author: Tobias Wellnitz, DH1TW
+Author-email: Tobias@dh1tw.de
+License-File: LICENSE
+Requires-Dist: requests>=2.21.0
+Requires-Dist: ephem>=4.1.3
+Requires-Dist: beautifulsoup4>=4.7.1
+Requires-Dist: lxml>=5.0.0
+Requires-Dist: redis>=2.10.6
+Dynamic: author
+Dynamic: author-email
+Dynamic: home-page
+Dynamic: requires-dist
+Dynamic: summary
