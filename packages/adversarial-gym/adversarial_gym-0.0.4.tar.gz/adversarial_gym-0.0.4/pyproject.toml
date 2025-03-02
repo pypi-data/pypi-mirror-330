@@ -1,0 +1,24 @@
+[project]
+name = "adversarial_gym"
+version = "0.0.4"
+license = { text = "MIT License" }
+authors = [
+  { name = "Keith Gordon", email = "keith.gordon9@gmail.com" },
+  { name = "Dawson Horvath", email = "horvath.dawson@gmail.com" },
+]
+description = "OpenAI Gym environments for adversarial games for the operation beat ourselves organisation."
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/OperationBeatMeChess/adversarial-gym"
+"Bug Tracker" = "https://github.com/OperationBeatMeChess/adversarial-gym/issues"
+
+[build-system]
+requires = ["setuptools>=68.2.2"]
+build-backend = "setuptools.build_meta"

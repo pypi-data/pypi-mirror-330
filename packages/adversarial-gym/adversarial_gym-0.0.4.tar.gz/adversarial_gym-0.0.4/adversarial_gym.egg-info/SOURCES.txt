@@ -1,0 +1,12 @@
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+adversarial_gym/__init__.py
+adversarial_gym/adversarial.py
+adversarial_gym/chess_env.py
+adversarial_gym/tictactoe_env.py
+adversarial_gym.egg-info/PKG-INFO
+adversarial_gym.egg-info/SOURCES.txt
+adversarial_gym.egg-info/dependency_links.txt
+adversarial_gym.egg-info/top_level.txt
