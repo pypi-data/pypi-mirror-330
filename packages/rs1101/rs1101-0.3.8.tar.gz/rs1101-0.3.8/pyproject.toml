@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools >= 70"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rs1101"
+version = "0.3.8"
+# dynamic = ["vers5on"]
+requires-python = ">=3.6"
+authors = [{ name = "Tom", email = "huqh1101@gmail.com" }]
+maintainers = [{ name = "Tom", email = "huqh1101@gmail.com" }]
+dependencies = ['click==8.1.7', 'cloup==3.0.5']
+description = "Generate secrect random strings. Convert random strings with integers."
+keywords = ["key", "random string"]
+# readme = { file = "./rs1101/README.md", content-type = "text/markdown" }
+readme = { file = "README.md", content-type = "text/markdown" }
+# readme = { file = "README.rst", content-type = "text/x-rst" }
+license = { text = "MIT License" }
+classifiers = [
+    # How mature is this project? Common values are
+    #   3 - Alpha
+    #   4 - Beta
+    #   5 - Production/Stable
+    "Development Status :: 3 - Alpha",
+
+    # Indicate who your project is intended for
+    "Intended Audience :: Developers",
+    "Topic :: Software Development",
+
+    # Pick your license as you wish (see also "license" above)
+    "License :: OSI Approved :: MIT License",
+
+    # Specify the Python versions you support here.
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+]
+
+[project.optional-dependencies]
+test = ["unittest"]
+
+[project.scripts]
+rs = "rs1101.cli:cli"
+
+[tool.setuptools]
+packages = ['rs1101']
+
+# [tool.setuptools.package-dir]
+# rs1101 = './'
+# [tool.setuptools.packages.find]
+# exclude = ['venv', 'venv.*']
