@@ -1,0 +1,27 @@
+[project]
+name = "samgis-lisa"
+version = "1.0.10"
+description = "SamGIS LISA"
+authors = [
+    {name = "alessandro trinca tornidor",email = "alessandro@trinca.tornidor.com"}
+]
+license = "MIT"
+readme = "README.md"
+requires-python = ">=3.10,<3.12"
+dependencies = [
+    "gradio (>=5.20.0,<6.0.0)",
+    "lisa-on-cuda (==1.4.14)",
+    "samgis-web (==1.0.22)",
+]
+
+[tool.poetry.group.test]
+optional = true
+
+[tool.poetry.group.test.dependencies]
+pytest = "^8.3.4"
+pytest-cov = "^6.0.0"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+

@@ -1,0 +1,25 @@
+Metadata-Version: 2.3
+Name: samgis-lisa
+Version: 1.0.10
+Summary: SamGIS LISA
+License: MIT
+Author: alessandro trinca tornidor
+Author-email: alessandro@trinca.tornidor.com
+Requires-Python: >=3.10,<3.12
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: gradio (>=5.20.0,<6.0.0)
+Requires-Dist: lisa-on-cuda (==1.4.14)
+Requires-Dist: samgis-web (==1.0.22)
+Description-Content-Type: text/markdown
+
+# Samgis LISA
+
+LISA modules for [SamGIS](https://trinca.tornidor.com/projects/lisa-adapted-for-samgis) project.
+
+See also:
+- [samgis-core](https://pypi.org/project/samgis_core/)
+- [samgis-web](https://pypi.org/project/samgis_web/)
+
