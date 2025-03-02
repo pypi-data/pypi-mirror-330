@@ -1,0 +1,43 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: check-added-large-files
+        alias: check-added-large-files (check, task)
+        name: Check large files
+
+      - id: check-merge-conflict
+        alias: check-merge-conflict (check, task)
+        name: Check merge conflicts
+
+      - id: end-of-file-fixer
+        alias: end-of-file-fixer ()
+        name: Fix end of files
+
+      - id: fix-byte-order-marker
+        alias: fix-byte-order-marker (fix, task)
+        name: Fix byte order markers
+
+  - repo: https://github.com/google/yamlfmt
+    rev: v0.15.0
+    hooks:
+      - id: yamlfmt
+        alias: yamlfmt (fix, task)
+        name: Format YAML files with yamlfmt
+
+  - repo: local
+    hooks:
+      - id: shfmt
+        name: Run shfmt
+        language: system
+        require_serial: true
+        entry: shfmt --write
+        types: [bash, sh]
+
+      - id: shellcheck
+        alias: shellcheck (check)
+        name: Run ShellCheck
+        require_serial: true
+        language: system
+        entry: shellcheck
+        types: [bash, sh]

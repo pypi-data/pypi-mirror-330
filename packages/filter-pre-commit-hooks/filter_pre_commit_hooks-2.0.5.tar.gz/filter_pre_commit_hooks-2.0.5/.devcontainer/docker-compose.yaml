@@ -1,0 +1,24 @@
+services:
+  vscode:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    environment:
+      # Hardlinking (which is the default on Linux) not possible
+      # as uv cache lives on a different drive in this configuration.
+      UV_LINK_MODE: symlink
+
+    command: sleep infinity
+
+    volumes:
+      # Workspace itself.
+      - ..:/workspaces/filter-pre-commit-hooks:cached
+      # Virtual environment.
+      - venv:/workspaces/filter-pre-commit-hooks/.venv
+      # Workspace cache.
+      - cache:/workspaces/filter-pre-commit-hooks/.cache
+
+volumes:
+  venv: # Virtual environment.
+  cache: # Workspace cache.
