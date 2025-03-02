@@ -1,0 +1,25 @@
+Metadata-Version: 2.2
+Name: byeprint
+Version: 0.1.1
+Summary: Say goodbye to print()
+Project-URL: homepage, https://github.com/1qh/byeprint
+Project-URL: github, https://github.com/1qh/byeprint
+Description-Content-Type: text/markdown
+Requires-Dist: executing
+Requires-Dist: pygments
+Requires-Dist: asttokens
+
+# `pip install byeprint`
+
+```python
+from byeprint import p
+```
+
+From now just use `p()` and say bye to `print()` !
+
+<details>
+<summary>Acknowledgements</summary>
+
+> [devtools](https://github.com/samuelcolvin/python-devtools)
+
+</details>
