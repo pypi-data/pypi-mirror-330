@@ -1,0 +1,19 @@
+[project]
+dynamic = ["version"]
+name = "montagne"
+authors = [
+    {name = "Ali Chaayb", email = "achaaybdev@gmail.com"},
+]
+description = "Montagne frontend framework that speaks fluent Python."
+license = { text = "MIT" }
+readme = "README.md"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["montagne*"]
+
+[tool.setuptools.dynamic]
+version = {attr = "montagne.__version__"}
+
+[project.urls]
+repository = "https://github.com/achaayb/montagne"
