@@ -1,0 +1,17 @@
+MANIFEST.in
+README.md
+pyproject.toml
+setup.py
+get_locator/__init__.py
+get_locator/create_setup.py
+get_locator/inspector.py
+get_locator/locators.py
+get_locator/run_inspector.py
+get_locator/run_text.txt
+get_locator/utils.py
+get_locator.egg-info/PKG-INFO
+get_locator.egg-info/SOURCES.txt
+get_locator.egg-info/dependency_links.txt
+get_locator.egg-info/entry_points.txt
+get_locator.egg-info/requires.txt
+get_locator.egg-info/top_level.txt
