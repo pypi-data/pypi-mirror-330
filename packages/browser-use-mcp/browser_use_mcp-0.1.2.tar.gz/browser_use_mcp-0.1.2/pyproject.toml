@@ -1,0 +1,21 @@
+[project]
+name = "browser-use-mcp"
+version = "0.1.2"
+description = "Browser MCP Server."
+readme = "README-FOR-PYPI.md"
+requires-python = ">=3.11.7"
+dependencies = [
+    "browser-use>=0.1.24",
+    "cryptography>=44.0.1",
+    "dotenv>=0.9.9",
+    "langchain-community>=0.3.18",
+    "langchain-core>=0.3.40",
+    "langchain-ollama>=0.2.3",
+    "langchain-openai>=0.3.7",
+    "mcp[cli]>=1.3.0",
+    "pypdf>=5.3.0",
+    "requests>=2.32.3",
+]
+
+[tool.uv.workspace]
+members = ["browser_use_mcp"]
