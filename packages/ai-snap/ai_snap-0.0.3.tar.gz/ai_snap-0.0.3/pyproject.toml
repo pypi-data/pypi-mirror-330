@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=65.5.0", "wheel", "setuptools-pipfile>=0.7.0"]
+build-backend = "setuptools.build_meta"
+
+[tools]
+setuptools-pipfile = "Pipfile"
+
+[project]
+name = "ai-snap"
+version = "0.0.3"
+description = "CLI utility that creates a project snapshot for ChatGPT, DeepSeek etc."
+readme = "README.md"
+authors = [{ name = "amesk", email = "alexei.eskenazi@gmail.com" }]
+dynamic = ["dependencies"]
+
+[tool.poetry]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "License :: OSI Approved :: MIT License"
+]
+
+platforms = [
+    "macosx_10_9_x86_64",
+    "manylinux2014_x86_64",
+    "win_amd64",
+]
+
+[project.scripts]
+ai-snap = "ai_snap:cli"
+
+[tool.setuptools]
+py-modules = []
+
+[project.urls]
+Homepage = "https://github.com/amesk/ai-snap"
+Issues = "https://github.com/amesk/ai-snap/issues"
