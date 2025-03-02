@@ -1,0 +1,14 @@
+LICENSE
+README.md
+setup.py
+xcomposite/__init__.py
+xcomposite/core.py
+xcomposite/decorators.py
+xcomposite.egg-info/PKG-INFO
+xcomposite.egg-info/SOURCES.txt
+xcomposite.egg-info/dependency_links.txt
+xcomposite.egg-info/top_level.txt
+xcomposite/tests/__init__.py
+xcomposite/tests/classes.py
+xcomposite/tests/test_composition.py
+xcomposite/tests/test_decorators.py
