@@ -1,0 +1,14 @@
+Hello {{ receiver.get_short_name }},
+
+This is in reference to your {{ org_name }} project:
+
+-------------------------------------------------------------
+  {{ project }}.
+-------------------------------------------------------------
+
+This project will expire in {{ project.days_until_expiration }} days.
+Please renew the project by following the link:
+
+{{ url }}
+
+{% include "karaage/emails/email_footer.txt" %}
