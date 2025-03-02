@@ -1,0 +1,48 @@
+Metadata-Version: 2.2
+Name: authring
+Version: 0.0.1
+Summary: Authring is an MCP-driven guardrails system that evaluates code modification proposals based on historical impact, contributor expertise, and production risk assessment. The system utilizes: Astra DB for historical data storage, Unstructured.io for document parsing, Langflow for AI-driven decision-making, Twilio for real-time human validation, and GitHub CLI (gh) for managing patch review links.
+Author-email: Chris McKenzie <hello@noblox.pro>
+License: MIT License
+        
+        Copyright (c) 2025 noblox
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE.
+Project-URL: Bug Tracker, https://github.com/nblx-org/authring
+Project-URL: Homepage, https://authring.org
+Project-URL: Repository, https://github.com/nblx-org/authring
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3 :: Only
+License-File: LICENSE
+Requires-Dist: astra-db
+Requires-Dist: cassandra-driver
+Requires-Dist: cassio
+Requires-Dist: fastmcp
+Requires-Dist: gitpython
+Requires-Dist: radon
+Requires-Dist: tree-sitter
+Requires-Dist: unstructured
