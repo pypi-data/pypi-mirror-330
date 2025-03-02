@@ -1,0 +1,103 @@
+\input{cv_header.tex}
+
+\title{Faculty Activity Report}
+\author{}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\ifthenelse{\boolean{Journal}}{
+\IfFileExists{Tables_web/journal.tex} {
+\section{JOURNAL ARTICLES}
+\input{Tables_web/journal.tex}
+}}{}
+
+\ifthenelse{\boolean{Refereed}}{
+\IfFileExists{Tables_web/refereed.tex} {
+\section{REFEREED CONFERENCE PAPERS}
+\input{Tables_web/refereed.tex}
+}}{}
+
+\ifthenelse{\boolean{Book}}{
+\IfFileExists{Tables_web/book.tex} {
+\section{BOOK CHAPTERS}
+\input{Tables_web/book.tex}
+}}{}
+
+\ifthenelse{\boolean{Conference}}{
+\IfFileExists{Tables_web/conference.tex} {
+\section{CONFERENCES}
+\input{Tables_web/conference.tex}
+}}{}
+
+\ifthenelse{\boolean{Patent}}{
+\IfFileExists{Tables_web/patent.tex} {
+\section{PATENTS}
+\input{Tables_web/patent.tex}
+}}{}
+
+\ifthenelse{\boolean{Invited}}{
+\IfFileExists{Tables_web/invited.tex} {
+\section{INVITED TALKS}
+\input{Tables_web/invited.tex}
+}}{}
+
+
+\ifthenelse{\boolean{PersonalAwards}}{
+\IfFileExists{Tables_web/personal_awards.tex} {
+\section{PERSONAL AWARDS}
+\input{Tables_web/personal_awards.tex}
+}}{}
+
+\ifthenelse{\boolean{StudentAwards}}{
+\IfFileExists{Tables_web/student_awards.tex} {
+\section{STUDENT AWARDS}
+\input{Tables_web/student_awards.tex}
+}}{}
+
+\ifthenelse{\boolean{Service}}{
+\IfFileExists{Tables_web/service.tex} {
+\section{SERVICE}
+\input{Tables_web/service.tex}
+}}{}
+
+\ifthenelse{\boolean{Reviews}}{
+\IfFileExists{Tables_web/reviews.tex} {
+\section{REVIEWING}
+\input{Tables_web/reviews.tex}
+}}{}
+
+\ifthenelse{\boolean{GradAdvisees}}{
+\IfFileExists{Tables_web/thesis.tex} {
+\section{GRADUATE ADVISEES}
+\input{Tables_web/thesis.tex}
+}}{}
+
+\ifthenelse{\boolean{UndergradResearch}}{
+\IfFileExists{Tables_web/undergraduate_research.tex} {
+\section{UNDERGRADUATE RESEARCH}
+\input{Tables_web/undergraduate_research.tex}
+}}{}
+
+\ifthenelse{\boolean{Teaching}}{
+\IfFileExists{Tables_web/teaching.tex} {
+\section{TEACHING}
+This table includes all classes taught that had reported teaching evaluations.  Question 19 is ``Overall, how would you rate this instructor?''  Question 20 is ``Overall, how would you rate this course?''. The scores are out of 5 and the University average evaluation is approximately 4.1. 
+\input{Tables_web/teaching.tex}
+}}{}
+
+\ifthenelse{\boolean{Grants}}{
+\IfFileExists{Tables_web/grants.tex} {
+\section{GRANTS}
+\input{Tables_web/grants.tex}
+}}{}
+
+\ifthenelse{\boolean{Proposals}}{
+\IfFileExists{Tables_web/proposals.tex} {
+\section{PROPOSALS}
+\input{Tables_web/proposals.tex}
+}}{}
+
+\end{document}
+
