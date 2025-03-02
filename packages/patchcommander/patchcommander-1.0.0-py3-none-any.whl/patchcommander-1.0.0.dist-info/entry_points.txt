@@ -1,0 +1,3 @@
+[console_scripts]
+patchcommander = __init__:cli_legacy
+pcmd = __init__:cli
