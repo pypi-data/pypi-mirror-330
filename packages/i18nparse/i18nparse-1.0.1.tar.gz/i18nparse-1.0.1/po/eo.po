@@ -1,0 +1,221 @@
+# Esperanto translations for Python's `argparse` module.
+# This file is published under the MIT License.
+#
+# “A true Janian reply! Good angels be my guard!”
+#
+# Benno Schulenberg <vertaling@coevern.nl>, 2025.
+msgid ""
+msgstr ""
+"Project-Id-Version: i18nparse 1.0.0-pre4\n"
+"Report-Msgid-Bugs-To: s-ball@laposte.net\n"
+"POT-Creation-Date: 2025-02-17 14:45+0100\n"
+"PO-Revision-Date: 2025-02-22 09:02+0100\n"
+"Last-Translator: Benno Schulenberg <vertaling@coevern.nl>\n"
+"Language-Team: Esperanto <translation-team-eo@lists.sourceforge.net>\n"
+"Language: eo\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Bugs: Report translation errors to the Language-Team address.\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: argparse.py:226
+#, python-format
+msgid "%(heading)s:"
+msgstr "%(heading)s:"
+
+#: argparse.py:297
+msgid "usage: "
+msgstr "Uzmaniero:  "
+
+#: argparse.py:673
+#, python-format
+msgid " (default: %(default)s)"
+msgstr " (defaŭlto: %(default)s)"
+
+#: argparse.py:735
+#, python-format
+msgid "argument %(argument_name)s: %(message)s"
+msgstr "argumento %(argument_name)s: %(message)s"
+
+#: argparse.py:844
+msgid ".__call__() not defined"
+msgstr ".__call__() ne difinitas"
+
+#: argparse.py:1135
+msgid "show program's version number and exit"
+msgstr "montri programversion kaj fini"
+
+#: argparse.py:1198
+#, python-format
+msgid "conflicting subparser: %s"
+msgstr "konfliktanta subanalizilo: %s"
+
+#: argparse.py:1202
+#, python-format
+msgid "conflicting subparser alias: %s"
+msgstr "konfliktanta alinomo de subanalizilo: %s"
+
+#: argparse.py:1241
+#, python-format
+msgid "unknown parser %(parser_name)r (choices: %(choices)s)"
+msgstr "nekonata subanalizilo %(parser_name)r (elektoj estas: %(choices)s)"
+
+#: argparse.py:1245
+#, python-format
+msgid "command '%(parser_name)s' is deprecated"
+msgstr "komando «%(parser_name)s» evitindas"
+
+#: argparse.py:1306
+#, python-format
+msgid "argument \"-\" with mode %r"
+msgstr "argumento «-» kun moduso %r"
+
+#: argparse.py:1315
+#, python-format
+msgid "can't open '%(filename)s': %(error)s"
+msgstr "ne eblas malfermi «%(filename)s»: %(error)s"
+
+#: argparse.py:1526
+#, python-format
+msgid "cannot merge actions - two groups are named %r"
+msgstr "ne eblas kunfandi agoj – du grupoj nomiĝas %r"
+
+#: argparse.py:1568
+msgid "'required' is an invalid argument for positionals"
+msgstr "«required» estas nevalida argumento por lokdependa opcio"
+
+#: argparse.py:1589
+#, python-format
+msgid "invalid option string %(option)r: must start with a character %(prefix_chars)r"
+msgstr "nevalida opciĉeno %(option)r: ĝi devas komenciĝi kun signo el %(prefix_chars)r"
+
+#: argparse.py:1607
+#, python-format
+msgid "dest= is required for options like %r"
+msgstr "«dest=» nepras je opcioj kiel %r"
+
+#: argparse.py:1624
+#, python-format
+msgid "invalid conflict_resolution value: %r"
+msgstr "nevalida valoro por konfliktsolvo: %r"
+
+#: argparse.py:1642
+#, python-format
+msgid "conflicting option string: %s"
+msgid_plural "conflicting option strings: %s"
+msgstr[0] "konfliktanta opciĉeno: %s"
+msgstr[1] "konfliktantaj opciĉenoj: %s"
+
+#: argparse.py:1717
+msgid "mutually exclusive arguments must be optional"
+msgstr "nekombineblaj argumentoj devas esti nedevigaj"
+
+#: argparse.py:1794
+msgid "positional arguments"
+msgstr "lokdependaj argumentoj"
+
+#: argparse.py:1795
+msgid "options"
+msgstr "Opcioj"
+
+#: argparse.py:1810
+msgid "show this help message and exit"
+msgstr "montri ĉi tiun helptekston kaj fini"
+
+#: argparse.py:1839
+msgid "cannot have multiple subparser arguments"
+msgstr "pluraj subanalizilaj argumentoj ne eblas"
+
+#: argparse.py:1845
+msgid "subcommands"
+msgstr "subkomandoj"
+
+#: argparse.py:1891 argparse.py:2454
+#, python-format
+msgid "unrecognized arguments: %s"
+msgstr "nerekonataj argumentoj: %s"
+
+#: argparse.py:1997
+#, python-format
+msgid "not allowed with argument %s"
+msgstr "ne permesiĝas kun argumento %s"
+
+#: argparse.py:2016
+#, python-format
+msgid "ambiguous option: %(option)s could match %(matches)s"
+msgstr "plursenca opcio: %(option)s povus esti %(matches)s"
+
+#: argparse.py:2048 argparse.py:2080
+#, python-format
+msgid "ignored explicit argument %r"
+msgstr "ignoriĝas eksplicita argumento %r"
+
+#: argparse.py:2100
+#, python-format
+msgid "option '%(option)s' is deprecated"
+msgstr "opcio «%(option)s» evitindas"
+
+#: argparse.py:2132
+#, python-format
+msgid "argument '%(argument_name)s' is deprecated"
+msgstr "argumento «%(argument_name)s» evitindas"
+
+#: argparse.py:2225
+#, python-format
+msgid "the following arguments are required: %s"
+msgstr "jenaj argumentoj nepras: %s"
+
+#: argparse.py:2240
+#, python-format
+msgid "one of the arguments %s is required"
+msgstr "nepras unu el argumentoj %s"
+
+#: argparse.py:2284
+msgid "expected one argument"
+msgstr "atendatas unu argumento"
+
+#: argparse.py:2285
+msgid "expected at most one argument"
+msgstr "pleje unu argumento eblas"
+
+#: argparse.py:2286
+msgid "expected at least one argument"
+msgstr "almenaŭ unu argumento atendatas"
+
+#: argparse.py:2290
+#, python-format
+msgid "expected %s argument"
+msgid_plural "expected %s arguments"
+msgstr[0] "%s argumento atendatas"
+msgstr[1] "%s argumentoj atendatas"
+
+#: argparse.py:2400
+#, python-format
+msgid "unexpected option string: %s"
+msgstr "neatendita opciĉeno: %s"
+
+#: argparse.py:2536
+#, python-format
+msgid "%r is not callable"
+msgstr "%r ne alvokeblas"
+
+#: argparse.py:2552
+#, python-format
+msgid "invalid %(type)s value: %(value)r"
+msgstr "nevalida valoro de %(type)s: %(value)r"
+
+#: argparse.py:2567
+#, python-format
+msgid "invalid choice: %(value)r (choose from %(choices)s)"
+msgstr "nevalida elekto: %(value)r (elektu el: %(choices)s)"
+
+#: argparse.py:2645
+#, python-format
+msgid "%(prog)s: error: %(message)s\n"
+msgstr "%(prog)s: eraro: %(message)s\n"
+
+#: argparse.py:2649
+#, python-format
+msgid "%(prog)s: warning: %(message)s\n"
+msgstr "%(prog)s: averto: %(message)s\n"
