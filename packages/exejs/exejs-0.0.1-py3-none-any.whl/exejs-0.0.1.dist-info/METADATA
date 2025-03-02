@@ -1,0 +1,45 @@
+Metadata-Version: 2.2
+Name: exejs
+Version: 0.0.1
+Summary: Run JavaScript code by Python.
+Home-page: https://github.com/uliontse/exejs
+Author: UlionTse
+Author-email: uliontse@outlook.com
+License: Apache-2.0
+Project-URL: Source, https://github.com/UlionTse/exejs
+Project-URL: Changelog, https://github.com/UlionTse/exejs/blob/main/change_log.txt
+Project-URL: Documentation, https://github.com/UlionTse/exejs/blob/main/README.md
+Keywords: JavaScript
+Classifier: Development Status :: 1 - Planning
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: JavaScript
+Classifier: Topic :: Software Development
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Provides-Extra: pypi
+Requires-Dist: build>=1.2.2; extra == "pypi"
+Requires-Dist: twine>=6.0.1; extra == "pypi"
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: license
+Dynamic: project-url
+Dynamic: provides-extra
+Dynamic: requires-python
+Dynamic: summary
+
+# exejs
