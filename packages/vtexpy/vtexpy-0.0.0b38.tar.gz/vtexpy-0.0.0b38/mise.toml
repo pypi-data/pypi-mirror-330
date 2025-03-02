@@ -1,0 +1,9 @@
+[tools]
+pre-commit = "latest"
+python = "latest"
+ruff = "latest"
+uv = "latest"
+
+[settings]
+experimental = true
+python.uv_venv_auto = true
