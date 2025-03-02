@@ -1,0 +1,30 @@
+socrun --flow sim --test e0_fsm/pixie_fw_dev_oper_test_e2_BLE5.cfg --seed 0
+socrun --flow sim --test e0_fsm/pixie_fw_dev_oper_test_e2_fsm_real_timing.cfg --seed 0
+socrun --flow sim --build Debug --test e0_fsm/pixie_fw_dev_oper_test_e3_BLE5_2mhz.cfg --seed 0
+socrun --flow sim --build Debug --test e0_fsm/pixie_fw_dev_oper_test_e3_fsm_real_timing.cfg --seed 982584192
+socrun --flow sim --build Debug --test e0_fsm/pixie_fw_dev_oper_test_e4_fsm_real_timing.cfg --seed 0
+socrun --flow sim --build WaferSortDebug --test pixie_dft_voltage_calib_test.cfg --seed 0
+socrun --flow sim --build VerifDebug --test pixie_e0_basic_rtc_measure_test.cfg --seed 0
+socrun --flow sim --test pixie_e0_fw_basic_test_e0_oper_basic.cfg --seed 0
+socrun --flow sim --build VerifDebug --test pixie_fw_func_test_jump256.cfg --seed 817009153
+socrun --flow sim --test upf/pixie_fw_dev_oper_test_first_boot_real_timing_upf.cfg --seed 0
+socrun --flow sim --build VerifDebug --test fll/e0_phase2/pixie_fll_from_file_test_E0_phase2_aux_test_0.cfg --seed 0
+socrun --flow sim --build VerifDebug --test fll/e0_phase2/pixie_fll_from_file_test_E0_phase2_aux_test_10.cfg --seed 0
+socrun --flow sim --build VerifDebug --test fll/e0_phase2/pixie_fll_from_file_test_E0_phase2_aux_test_11.cfg --seed 0
+socrun --flow sim --build VerifDebug --test fll/e0_phase2/pixie_fll_from_file_test_E0_phase2_aux_test_12.cfg --seed 0
+socrun --flow sim --build VerifDebug --test fll/e0_phase2/pixie_fll_from_file_test_E0_phase2_aux_test_13.cfg --seed 0
+socrun --flow sim --build VerifDebug --test fll/e0_phase2/pixie_fll_from_file_test_E0_phase2_aux_test_14.cfg --seed 0
+socrun --flow sim --build VerifDebug --test fll/e0_phase2/pixie_fll_from_file_test_E0_phase2_aux_test_15.cfg --seed 0
+socrun --flow sim --build VerifDebug --test fll/e0_phase2/pixie_fll_from_file_test_E0_phase2_aux_test_16.cfg --seed 0
+socrun --flow sim --build VerifDebug --test fll/e0_phase2/pixie_fll_from_file_test_E0_phase2_aux_test_17.cfg --seed 0
+socrun --flow sim --build VerifDebug --test fll/e0_phase2/pixie_fll_from_file_test_E0_phase2_aux_test_18.cfg --seed 0
+socrun --flow sim --build VerifDebug --test fll/e0_phase2/pixie_fll_from_file_test_E0_phase2_aux_test_19.cfg --seed 0
+socrun --flow sim --build VerifDebug --test fll/e0_phase2/pixie_fll_from_file_test_E0_phase2_aux_test_1.cfg --seed 0
+socrun --flow sim --build VerifDebug --test fll/e0_phase2/pixie_fll_from_file_test_E0_phase2_aux_test_20.cfg --seed 0
+socrun --flow sim --build VerifDebug --test fll/e0_phase2/pixie_fll_from_file_test_E0_phase2_aux_test_21.cfg --seed 0
+socrun --flow sim --build VerifDebug --test fll/e0_phase2/pixie_fll_from_file_test_E0_phase2_aux_test_22.cfg --seed 0
+socrun --flow sim --build VerifDebug --test fll/e0_phase2/pixie_fll_from_file_test_E0_phase2_aux_test_23.cfg --seed 0
+socrun --flow sim --build VerifDebug --test fll/e0_phase2/pixie_fll_from_file_test_E0_phase2_aux_test_24.cfg --seed 0
+socrun --flow sim --build VerifDebug --test fll/e0_phase2/pixie_fll_from_file_test_E0_phase2_aux_test_25.cfg --seed 0
+socrun --flow sim --build VerifDebug --test fll/e0_phase2/pixie_fll_from_file_test_E0_phase2_aux_test_26.cfg --seed 0
+socrun --flow sim --build VerifDebug --test fll/e0_phase2/pixie_fll_from_file_test_E0_phase2_aux_test_27.cfg --seed 0

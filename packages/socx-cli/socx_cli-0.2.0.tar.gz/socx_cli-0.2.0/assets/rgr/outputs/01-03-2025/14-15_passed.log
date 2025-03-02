@@ -1,0 +1,5 @@
+socrun --flow sim --test vbat/pixie_fll_fw_basic_test_symclb_vbat.cfg --seed 533510332
+socrun --flow sim --test vbat/pixie_fw_func_test_dma_vbat.cfg --seed 23688557
+socrun --flow sim --test vbat/pixie_fw_func_test_hws_basic_branch_vbat.cfg --seed 1033297733
+socrun --flow sim --test vbat/pixie_fw_func_test_hws_basic_vbat.cfg --seed 732274191
+socrun --flow sim --test vbat/pixie_fw_radio_test_vbat.cfg --seed 824307247
