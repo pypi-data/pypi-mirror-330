@@ -1,0 +1,75 @@
+Metadata-Version: 2.2
+Name: jgdv
+Version: 1.0.0
+Author-email: John Grey <jgrey.n.plus.one+jgdv@gmail.com>
+License: * ACAB License
+        
+        © 2024-03-04 John Grey
+        
+        To the maximum extent applicable by law, and any licenses of components of this work:
+        
+        ** Permissions:
+           Except as prohibited below, any individual, group, organization, charity, business entity or university
+           may use, modify, and distribute source code and software utilising this work.
+        
+           Users may extend this license, so long as these initial conditions remain in force.
+        
+        ** Obligations:
+           Users of this work are obligated to freely provide public access to AI scripts written to be used by this work.
+        
+        
+        ** Prohibitions:
+           No Law Enforcement, Carceral Institutions, or Immigration enforcement entities may use the work or products of the work.
+           For any reason, be it for simulation, production of propaganda, or otherwise.
+        
+           No business entity where the ratio of pay (salaried, freelance, stocks, or other benefits)
+           between the highest and lowest individual in the entity is greater than 50 : 1
+           may use the work for any reason.
+        
+           Business entities with boards/management comprising less than 1/2 POC may not use the work for any reason.
+        
+           No individual or entity may use this work for racist or bigoted purposes.
+        
+           Users must not remove this license from the work.
+        
+        
+        ** Sanction
+           Users recognise breach of the above terms may be sanctioned to the maximum extent applicable by law.
+        
+        ** Warranty
+           No warranty, liability, or fitness for purpose is implied.
+        
+Project-URL: homepage, https://github.com/jgrey4296/jgdv
+Project-URL: documentation, https://jgdv.readthedocs.io/en/latest
+Project-URL: repository, https://github.com/jgrey4296/jgdv
+Project-URL: changelog, https://github.com/jgrey4296/jgdv/blob/master/CHANGELOG.md
+Classifier: Programming Language :: Python
+Requires-Python: >=3.12
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pyparsing
+Requires-Dist: networkx
+Requires-Dist: pydantic>=2.9.0
+Requires-Dist: python-statemachine>=2.5.0
+Requires-Dist: sh>=2.1.0
+Requires-Dist: stackprinter>=0.2.0
+Requires-Dist: sty>=1.0.6
+Provides-Extra: docs
+Requires-Dist: Sphinx>=8.1.0; extra == "docs"
+Requires-Dist: sphinx-rtd-theme>=3.0.0; extra == "docs"
+Requires-Dist: sphinx-autoapi>=3.5.0; extra == "docs"
+Requires-Dist: myst_parser>=4.0.0; extra == "docs"
+Provides-Extra: test
+Requires-Dist: pytest>=8.3.0; extra == "test"
+Requires-Dist: pytest-cov>=6.0.0; extra == "test"
+Requires-Dist: pytest-mock>=3.14.0; extra == "test"
+
+# Deja Vu
+
+Author: John Grey
+Date  : 2024-03-04
+
+## Overview
+I've Written This Before
+
+## Examples
