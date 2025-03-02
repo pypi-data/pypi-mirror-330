@@ -1,0 +1,29 @@
+Metadata-Version: 2.2
+Name: cellsepi
+Version: 0.1
+Summary: Microscope segmentation and data analysis pipeline with a graphical interface, based on Cellpose.
+Home-page: https://github.com/PraiseTheDarkFlo/CellSePi
+Author: Jenna Ahlvers, Santosh Chhetri Thapa, Nike Dratt, Pascal Heß, Florian Hock
+License: Apache License 2.0
+License-File: LICENSE
+Requires-Dist: numpy==1.26.4
+Requires-Dist: pillow
+Requires-Dist: pandas
+Requires-Dist: openpyxl
+Requires-Dist: cellpose==3.1.1.1
+Requires-Dist: flet==0.25.2
+Requires-Dist: flet-desktop==0.25.2
+Requires-Dist: flet-runtime==0.24.1
+Requires-Dist: bioio==1.2.0
+Requires-Dist: numba==0.61.0
+Requires-Dist: matplotlib
+Requires-Dist: pytest
+Requires-Dist: pyqt5
+Requires-Dist: flet_contrib
+Requires-Dist: flet_core==0.24.1
+Requires-Dist: bioio-lif
+Dynamic: author
+Dynamic: home-page
+Dynamic: license
+Dynamic: requires-dist
+Dynamic: summary
