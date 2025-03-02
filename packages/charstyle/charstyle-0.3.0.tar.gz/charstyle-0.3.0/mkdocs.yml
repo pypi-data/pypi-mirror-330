@@ -1,0 +1,46 @@
+site_name: charstyle Documentation
+site_description: A Python library for styling terminal text
+site_author: charstyle Team
+
+theme:
+  name: material
+  palette:
+    primary: indigo
+    accent: indigo
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.expand
+    - navigation.indexes
+    - content.code.copy
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed:
+      alternate_style: true
+  - admonition
+  - pymdownx.details
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+nav:
+  - Home: index.md
+  - Getting Started: getting-started.md
+  - Usage Guide:
+    - Basic Usage: usage/basic.md
+    - Text Alignment: usage/alignment.md
+    - Table Formatting: usage/tables.md
+    - Advanced Usage: usage/advanced.md
+    - Styling Options: usage/styling-options.md
+  - API Reference:
+    - Core API: api/core.md
+    - Style Objects: api/style-objects.md
+    - Complex Styling: api/complex-styling.md
+  - Examples:
+    - Basic Examples: examples/basic.md
+    - Alignment Examples: examples/alignment.md
+    - Complex Examples: examples/complex.md
+  - Contributing: contributing.md

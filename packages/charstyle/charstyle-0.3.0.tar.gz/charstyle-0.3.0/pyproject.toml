@@ -1,0 +1,163 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "charstyle"
+version = "0.3.0"
+description = "A library for styling terminal text with ANSI escape sequences"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [
+    { name = "João Pinto", email = "lamego.pinto@gmail.com" }
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/joaompinto/charstyle"
+Repository = "https://github.com/joaompinto/charstyle"
+Issues = "https://github.com/joaompinto/charstyle/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["charstyle"]
+
+# Set uv as the default installer for all environments
+[tool.hatch.env]
+requires = ["hatch-uv"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
+python_classes = "Test*"
+python_functions = "test_*"
+norecursedirs = ["tools", "docs", "examples"]
+
+# Default environment - minimal dependencies needed for users
+[tool.hatch.envs.default]
+installer = "uv"
+dependencies = []
+
+# Development environment - all tools needed for development
+[tool.hatch.envs.dev]
+installer = "uv"
+dependencies = [
+    "ruff>=0.1.6",
+    "coverage>=7.6.12",
+    "mypy>=1.15.0",
+    "pdoc>=15.0.1",
+    "pre-commit>=3.5.0",
+]
+
+# Make the dev environment extend the default one
+[tool.hatch.envs.dev.overrides]
+inherit = ["default"]
+
+# Scripts for development tasks
+[tool.hatch.envs.dev.scripts]
+# Linting and formatting
+lint = "ruff check --fix ."
+lint-check = "ruff check ."
+lint-all = "ruff check --fix --unsafe-fixes ."
+format = "ruff format ."
+format-check = "ruff format --check ."
+fmt = "ruff check --fix . && ruff format ."
+
+# Testing
+test = "python -m unittest discover -s tests"
+coverage-report = "coverage run -m unittest discover && coverage report"
+coverage-html = "coverage run -m unittest discover && coverage html"
+
+# Type checking
+typecheck = "mypy charstyle"
+
+# Building and publishing
+build = "hatch build"
+publish = "hatch publish"
+publish-test = "hatch publish -r test"
+
+# Combined tasks
+check-all = "format-check && lint-check && test"
+pre-commit = "fmt && test"
+
+# Pre-commit
+pre-commit-install = "pre-commit install"
+pre-commit-run = "pre-commit run"
+
+# uv integration
+uv-install = "{env:HATCH_UV} pip install {args}"
+uv-sync = "{env:HATCH_UV} pip sync requirements.txt"
+uv-export = "{env:HATCH_UV} pip freeze > requirements.txt"
+
+# Documentation
+docs = "pdoc --html --output-dir docs/ charstyle"
+
+# Utilities
+clean = "rm -rf **/__pycache__ **/*.pyc **/*.pyo **/*.pyd .coverage .pytest_cache htmlcov dist build docs"
+examples = "for f in examples/*.py; do [ \"$f\" != 'examples/__pycache__' ] && echo \"\\n=== Running: $f ===\\n\" && python \"$f\"; done"
+example = "python examples/{args}"
+
+[tool.ruff]
+# Same as Black
+line-length = 100
+# Target Python version
+target-version = "py311"
+
+[tool.ruff.lint]
+# Enable specific rules
+select = [
+    "E",   # pycodestyle errors
+    "F",   # pyflakes
+    "I",   # isort
+    "C4",  # flake8-comprehensions
+    "B",   # flake8-bugbear
+    "UP",  # pyupgrade
+]
+# Ignore specific rules
+ignore = [
+    "E501",  # line too long
+]
+# Allow autofix for all enabled rules
+fixable = ["ALL"]
+unfixable = []
+# Exclude a variety of commonly ignored directories
+exclude = [
+    ".git",
+    ".github",
+    ".venv",
+    "__pycache__",
+    "build",
+    "dist",
+]
+
+[tool.ruff.lint.isort]
+known-first-party = ["charstyle"]
+
+[tool.ruff.lint.flake8-quotes]
+docstring-quotes = "double"
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "auto"
+skip-magic-trailing-comma = false
+
+[tool.mypy]
+python_version = "3.11"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+disallow_untyped_decorators = true
+no_implicit_optional = true
+strict_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_no_return = true
+warn_unreachable = true
+
+[[tool.mypy.overrides]]
+module = "tests.*"
+disallow_untyped_defs = false
+disallow_incomplete_defs = false

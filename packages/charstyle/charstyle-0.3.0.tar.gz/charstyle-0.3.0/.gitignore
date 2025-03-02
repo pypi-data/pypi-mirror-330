@@ -1,0 +1,41 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# IDE specific files
+.idea/
+# Allow .vscode directory for project settings
+# .vscode/
+*.swp
+*.swo
+
+# PDM
+.pdm-python
+__pypackages__/
+.pdm-build/
+pdm.lock
+
+# Ruff
+.ruff_cache/
