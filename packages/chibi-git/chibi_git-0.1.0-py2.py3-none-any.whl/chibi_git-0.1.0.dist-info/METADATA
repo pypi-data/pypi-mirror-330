@@ -1,0 +1,71 @@
+Metadata-Version: 2.2
+Name: chibi_git
+Version: 0.1.0
+Summary: wrapper to use git in python
+Home-page: https://github.com/dem4ply/chibi_git
+Author: dem4ply
+Author-email: dem4ply@gmail.com
+License: WTFPL
+Keywords: chibi_git
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: Public Domain
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+License-File: LICENSE
+License-File: AUTHORS.rst
+Requires-Dist: chibi>=0.14.0
+Requires-Dist: chibi_atlas>=1.1.0
+Requires-Dist: chibi_command>=1.1.2
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: license
+Dynamic: requires-dist
+Dynamic: summary
+
+=========
+Chibi_git
+=========
+
+
+.. image:: https://img.shields.io/pypi/v/chibi_git.svg
+        :target: https://pypi.python.org/pypi/chibi_git
+
+.. image:: https://readthedocs.org/projects/chibi-git/badge/?version=latest
+        :target: https://chibi-git.readthedocs.io/en/latest/?badge=latest
+        :alt: Documentation Status
+
+
+
+
+wrapper to use git in python
+
+
+* Free software: WTFPL
+* Documentation: https://chibi-git.readthedocs.io.
+
+
+Features
+--------
+
+* TODO
+
+
+=======
+History
+=======
+
+0.1.0 (2025-03-01)
+------------------
+
+* funciones agregar remote
+
+0.0.1 (2025-01-22)
+------------------
+
+* First release on PyPI.
