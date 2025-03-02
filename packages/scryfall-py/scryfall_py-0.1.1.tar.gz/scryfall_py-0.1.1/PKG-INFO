@@ -1,0 +1,26 @@
+Metadata-Version: 2.4
+Name: scryfall-py
+Version: 0.1.1
+Summary: An async Scryfall API wrapper
+Project-URL: Homepage, https://github.com/zevaryx/scryfall-py
+Project-URL: Repository, https://github.com/zevaryx/scryfall-py
+Project-URL: Issues, https://github.com/zevaryx/scryfall-py/issues
+Author-email: zevaryx <zevaryx@gmail.com>
+License: MIT License
+Classifier: Development Status :: 4 - Beta
+Classifier: Framework :: Hatch
+Classifier: Framework :: Sphinx
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Utilities
+Requires-Python: >=3.13
+Requires-Dist: httpx>=0.28.1
+Requires-Dist: pydantic>=2.10.6
+Description-Content-Type: text/markdown
+
+# Scryfall-py
+
+An async Scryfall API wrapper written in Python
