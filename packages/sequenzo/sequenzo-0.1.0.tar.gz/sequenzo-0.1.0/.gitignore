@@ -1,0 +1,37 @@
+.idea
+.vscode
+.DS_Store
+
+# Python build artifacts
+build/
+dist/
+# MacOS built-in
+*.egg-info/
+
+# Ignore compiled Python files
+**/__pycache__/
+# Ignore the topic branch's .pyc files *.pyc
+**/*.pyo
+# Ignore all
+**/*.pyc
+
+# Intermediate files or system-specific binary files generated during compilation
+
+# Shared object (.so) files are Python extension modules on Linux/macOS
+**/*.so
+
+# Python dynamic library (.pyd) files are Python extension modules on Windows,
+# similar to Windows DLL files but specifically for Python
+**/*.pyd
+
+# Windows dynamic link library (.dll)
+**/*.dll
+
+# Intermediate object files, which are later linked to generate the final .so shared library.
+# These files are usually intermediate products of the compilation process and are not directly used by Python.
+**/*.o
+
+# Static library files on Linux/macOS, used for statically linking C/C++ code
+**/*.a
+
+raw_requirements.txt
