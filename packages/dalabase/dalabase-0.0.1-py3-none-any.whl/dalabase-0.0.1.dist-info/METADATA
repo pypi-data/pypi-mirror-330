@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: dalabase
+Version: 0.0.1
+Summary: Tame the LLMs interface
+Home-page: https://langbase.com/
+License: Proprietary
+Keywords: llm,langbase,dalabase
+Author: Ahmad Awais
+Author-email: me@AhmadAwais.com
+Requires-Python: >=3.11,<4.0
+Classifier: License :: Other/Proprietary License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Description-Content-Type: text/markdown
+
+# Dalabase
+
+SDK for language processing and generation by Dalabase.
+
+Check https://langbase.com/docs for details.
+
