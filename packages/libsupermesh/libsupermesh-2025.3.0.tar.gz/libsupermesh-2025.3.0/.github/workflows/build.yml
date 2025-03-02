@@ -1,0 +1,111 @@
+name: Install and test libsupermesh
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
+jobs:
+  build:
+    name: Build libsupermesh with Ubuntu spatialindex
+    runs-on: [self-hosted, Linux]
+    container:
+      image: firedrakeproject/firedrake-env:latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: mpi4py/setup-mpi@v1
+        with:
+            mpi: openmpi
+
+      - name: Install build dependencies
+        run: |
+          sudo apt-get -y update
+          sudo apt-get -y install build-essential cmake libspatialindex-dev
+
+      - name: Install libsupermesh
+        run: |
+          cd build
+          cmake .. \
+            -DBUILD_SHARED_LIBS=ON \
+            -DMPI_C_COMPILER=mpicc \
+            -DMPI_CXX_COMPILER=mpicxx \
+            -DMPI_Fortran_COMPILER=mpif90 \
+            -DCMAKE_C_COMPILER=mpicc \
+            -DCMAKE_CXX_COMPILER=mpicxx \
+            -DCMAKE_Fortran_COMPILER=mpif90
+          make
+
+      - name: Run tests
+        run: make -C build test
+
+  build_rtree:
+    name: Build libsupermesh with Rtree spatialindex
+    runs-on: [self-hosted, Linux]
+    container:
+      image: firedrakeproject/firedrake-env:latest
+
+    steps:
+      - name: Install build dependencies
+        run: |
+          sudo apt-get -y update
+          sudo apt-get -y install build-essential cmake libopenmpi-dev
+
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - uses: actions/checkout@v4
+
+      - name: Create virtual environment
+        run: python3 -m venv venv-libsupermesh
+
+      - name: Install Rtree
+        run: |
+          . venv-libsupermesh/bin/activate
+          pip install 'rtree>=1.2'
+
+      - name: Install libsupermesh
+        run: |
+          . venv-libsupermesh/bin/activate
+          unset pythonLocation
+          unset Python_ROOT_DIR
+          unset Python2_ROOT_DIR
+          unset Python3_ROOT_DIR
+          cd build
+          cmake .. \
+            -DBUILD_SHARED_LIBS=ON \
+            -DMPI_C_COMPILER=/usr/bin/mpicc \
+            -DMPI_CXX_COMPILER=/usr/bin/mpicxx \
+            -DMPI_Fortran_COMPILER=/usr/bin/mpif90 \
+            -DCMAKE_C_COMPILER=/usr/bin/mpicc \
+            -DCMAKE_CXX_COMPILER=/usr/bin/mpicxx \
+            -DCMAKE_Fortran_COMPILER=/usr/bin/mpif90 \
+            -DMPIEXEC_EXECUTABLE=/usr/bin/mpiexec
+          make
+
+      - name: Run tests
+        run: make -C build test
+
+  # NOTE: The pip-installed version of libsupermesh does not include any tests, so only check
+  # that it builds.
+  build_pip:
+    name: Build libsupermesh with pip
+    runs-on: [self-hosted, Linux]
+    container:
+      image: firedrakeproject/firedrake-env:latest
+    steps:
+      - name: Install build dependencies
+        run: |
+          sudo apt-get -y update
+          sudo apt-get -y install build-essential cmake libopenmpi-dev
+
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install libsupermesh
+        run: python3 -m pip install --break-system-packages .
