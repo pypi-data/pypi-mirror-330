@@ -1,0 +1,95 @@
+Metadata-Version: 2.2
+Name: quant_analytics
+Version: 1.0.7
+Summary: A financial performance and risk analysis library for quantitative research and backtesting.
+Author-email: Anthony Baxter <anthony_baxter819@gmail.com>
+License: Apache-2.0
+Keywords: quantitative research,backtesting,finance,risk analysis,performance
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: arch==7.0.0
+Requires-Dist: Brotli==1.1.0
+Requires-Dist: cffi==1.17.1
+Requires-Dist: contourpy==1.2.1
+Requires-Dist: cramjam==2.8.3
+Requires-Dist: cssselect2==0.7.0
+Requires-Dist: cycler==0.12.1
+Requires-Dist: fastparquet==2024.5.0
+Requires-Dist: fonttools==4.51.0
+Requires-Dist: fsspec==2024.9.0
+Requires-Dist: html5lib==1.1
+Requires-Dist: joblib==1.4.2
+Requires-Dist: kiwisolver==1.4.5
+Requires-Dist: matplotlib==3.9.0
+Requires-Dist: numpy==1.26.4
+Requires-Dist: packaging==24.1
+Requires-Dist: pandas==2.2.2
+Requires-Dist: patsy==0.5.6
+Requires-Dist: pillow==10.3.0
+Requires-Dist: pyarrow==17.0.0
+Requires-Dist: pycparser==2.22
+Requires-Dist: pydyf==0.10.0
+Requires-Dist: pyparsing==3.1.2
+Requires-Dist: pyphen==0.15.0
+Requires-Dist: python-dateutil==2.9.0.post0
+Requires-Dist: pytz==2024.1
+Requires-Dist: scikit-learn==1.4.2
+Requires-Dist: scipy==1.13.0
+Requires-Dist: seaborn==0.13.2
+Requires-Dist: six==1.16.0
+Requires-Dist: statsmodels==0.14.2
+Requires-Dist: threadpoolctl==3.5.0
+Requires-Dist: tinycss2==1.3.0
+Requires-Dist: tzdata==2024.1
+Requires-Dist: weasyprint==62.1
+Requires-Dist: webencodings==0.5.1
+Requires-Dist: XlsxWriter==3.2.0
+Requires-Dist: zopfli==0.2.3
+
+# QuantAnalytics
+
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
+[![pypi-version](https://img.shields.io/pypi/v/quant-analytics.svg)](https://pypi.org/project/quant-analytics/)
+
+`QuantAnalytics` is a library designed for researching quantitative trading strategies and analyzing statistical relationships. It provides a seamless interface for performing statistical research, backtesting strategies, and generating comprehensive reports.
+
+## Features
+
+- **Statistical Research**: Offers tools for conducting basic statistical research, exploring quantitative relationships, and performing in-depth data analysis.
+- **Backtesting**: Includes a vectorized backtesting engine to test strategies efficiently on large datasets.
+- **Report Generation**: Generates PDF reports with detailed charts, tables, and results from research and backtests.
+- **Wrappers for Statistical Libraries**: Provides user-friendly outputs for commonly used statistical libraries, improving usability.
+- **End-to-End Workflow**: Streamline the process from research to strategy validation and reporting.
+
+## Use Cases
+
+- Developing and testing quantitative trading strategies.
+- Exploring statistical relationships in market data.
+- Generating detailed reports for data analysis and strategy validation.
+- Automating backtests and result visualizations for systematic research.
+
+## Installation
+
+You can install `quant-analytics` directly from [PyPI](https://pypi.org/project/quant-analytics/):
+
+```bash
+pip install quant-analytics
+```
+
+## Documentation
+
+Comprehensive documentation, including tutorials and API references, is coming soon!
+
+## Contributing
+
+Contributions are welcome! Feel free to open issues or submit pull requests to enhance the library.
+
+## License
+
+This project is licensed under the [Apache-2.0 License](LICENSE).
