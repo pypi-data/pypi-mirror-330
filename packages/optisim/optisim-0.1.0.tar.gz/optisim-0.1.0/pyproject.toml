@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+#[tool.setuptools]
+#packages = ["optisim", "optisim.model"]  # Ensure only "optisim" is included
+
+[tool.setuptools.packages.find]
+include = ["optisim*"]  # Includes all subpackages inside optisim/
+
+[tool.setuptools.package-dir]
+optisim = "optisim"
+
+
+[project]
+name = "optisim"
+version = "0.1.0"
+authors = [
+    { name = "NIkita", email = "nikita@digantara.co.in" }
+]
+description = "This library can be used to assess the performance of an optical sensor for SSA."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "colorama>=0.4.6",
+    "numpy>=2.2.2",
+    "pandas>=2.2.3",
+    "python-dateutil>=2.9.0.post0",
+    "pytz>=2025.1",
+    "scipy>=1.15.1",
+    "setuptools>=75.8.0",
+    "six>=1.17.0",
+    "tzdata>=2025.1",
+    "wheel>=0.45.1",
+    "xlsxwriter>=3.2.2"
+
+]
+license = { text = "MIT" }
+
+[project.urls]
+Homepage = "https://git.digantara.dev/SMD/optisim.git"
