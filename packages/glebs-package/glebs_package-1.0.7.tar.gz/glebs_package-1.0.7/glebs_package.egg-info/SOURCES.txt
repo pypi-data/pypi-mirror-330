@@ -1,0 +1,12 @@
+README.md
+pyproject.toml
+glebs_package/__init__.py
+glebs_package.egg-info/PKG-INFO
+glebs_package.egg-info/SOURCES.txt
+glebs_package.egg-info/dependency_links.txt
+glebs_package.egg-info/requires.txt
+glebs_package.egg-info/top_level.txt
+glebs_package/langident/__init__.py
+glebs_package/langident/langident_pipeline.py
+glebs_package/ocrqa/__init__.py
+glebs_package/ocrqa/ocrqa_pipeline.py
