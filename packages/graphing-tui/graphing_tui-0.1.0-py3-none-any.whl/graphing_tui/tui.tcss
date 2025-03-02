@@ -1,0 +1,39 @@
+GraphingApp {
+    Parameter {
+        height: auto;
+
+        Label {
+            width: 1fr;
+            height: 3;
+            text-style: bold;
+            content-align: left middle;
+        }
+
+        Input {
+            width: 15;
+        }
+    }
+
+    PlotWidget {
+        width: 1fr;
+    }
+
+    Vertical {
+        width: 35;
+        margin: 2 0 0 2;
+        border: round $primary;
+
+        Label {
+            margin-left: 1;
+        }
+    }
+
+    #expression {
+        &.-valid {
+            border: tall $success 60%;
+        }
+        &.-valid:focus {
+            border: tall $success;
+        }
+    }
+}
