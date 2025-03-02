@@ -1,0 +1,107 @@
+Metadata-Version: 2.2
+Name: pyclimonitor
+Version: 1.1
+Summary: PyCliMonitor: A python command line tool that monitoring current system's CPU, GPU, RAM, SSD and Networks.
+Home-page: http://blog.cycleuser.org
+Author: cycleuser
+Author-email: cycleuser@cycleuser.org
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: psutil
+Requires-Dist: distro
+Requires-Dist: GPUtil
+Requires-Dist: colorama
+Requires-Dist: tabulate
+Dynamic: author
+Dynamic: author-email
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-dist
+Dynamic: summary
+
+# PyCliMonitor
+A python command line tool that monitoring current system's CPU, GPU, RAM, SSD and Networks.
+
+# PyCliMonitor - System Resource Monitor for Command Line
+
+PyCliMonitor is a powerful command-line tool for monitoring your system's resources in real-time, including CPU, GPU, RAM, disk usage, and network activity. It provides a clean, colorful interface directly in your terminal.
+
+## Features
+
+- Real-time monitoring of:
+  - CPU usage (per core) with frequency information
+  - GPU usage, memory, and temperature
+  - Memory and swap usage
+  - Disk usage and I/O activity
+  - Network interface activity with upload/download speeds
+- Multi-language support (English and Chinese)
+- Color-coded display based on resource usage levels
+- Clean, non-flickering interface using ANSI escape sequences
+
+## Installation
+
+### Option 1: Install via pip
+
+```bash
+pip install pyclimonitor
+```
+
+### Option 2: Clone the repository
+
+```bash
+git clone https://github.com/EasyCam/PyCliMonitor.git
+cd PyCliMonitor
+pip install -e .  # Install in development mode
+```
+
+## Usage
+
+After installation, you can run PyCliMonitor directly from the command line:
+
+### English Interface (default)
+
+```bash
+python -m pyclimonitor
+```
+
+### Chinese Interface
+
+```bash
+python -m pyclimonitor cn
+```
+
+You can also run it directly from Python:
+
+```python
+from pyclimonitor import monitor
+
+# For English interface
+monitor("en")
+
+# For Chinese interface
+monitor("cn")
+```
+
+## Requirements
+
+PyCliMonitor automatically installs its dependencies, which include:
+- psutil
+- GPUtil
+- tabulate
+
+## Controls
+
+- Press `Ctrl+C` to exit the monitor
+
+## Screenshots
+
+### English Interface
+![English Interface](./images/en.png)
+
+### Chinese Interface
+![Chinese Interface](./images/cn.png)
+
+## License
+
+GNU General Public License v3.0 (GPLv3)
