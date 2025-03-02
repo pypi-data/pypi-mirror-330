@@ -1,0 +1,125 @@
+Metadata-Version: 2.2
+Name: grok-api
+Version: 0.1.1
+Summary: A simple Python wrapper for interacting with the unofficial Grok API.
+Home-page: https://github.com/savasoglu/grok-api
+Author: K
+Author-email: 109984658+savasoglu@users.noreply.github.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Requires-Dist: requests
+Requires-Dist: curl_cffi
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# 🪐 Grok Unofficial API Wrapper
+
+A simple Python wrapper for interacting with Grok's unofficial API, providing easy access to creating conversations, sending follow-up messages, and checking rate limits.
+
+## Requirements
+
+-   Python 3.x
+
+## Installation
+
+```bash
+pip3 install grok-api
+```
+
+### Authentication Setup
+
+You can initialize authentication either through a cookie dictionary or a cookie string.
+
+**Note:** The `sso` cookie is always required. Other cookies (`x-anonuserid`, `x-challenge`, `x-signature`) may also be required depending on your authentication state.
+
+**(EASIEST) Using a Cookie String:**
+
+```python
+from grok_api import GrokAPI, GrokAPIAuth
+
+COOKIE_STRING = "[INSERT_COOKIE_STRING_HERE]"
+
+auth = GrokAPIAuth(cookie_string=COOKIE_STRING)
+api = GrokAPI(auth)
+```
+
+To locate your cookie string using a browser, ensure you're logged in to Grok. Locate the `Network` tab, filter for `models`, refresh your page. There should be a `models` entry -- click on that, and scroll down until you find the `Cookie` Request Header (shown below):
+
+<img src="cookiestring.png" alt="cookiestring.png" width="500">
+
+
+**Using a Cookie Dictionary:**
+
+```python
+from grok_api import GrokAPI, GrokAPIAuth
+
+COOKIES = {
+    "sso":             "[INSERT_SSO_HERE]",
+    "x-anonuserid":    "[INSERT_X_ANONUSERID_HERE]",  # not always required
+    "x-challenge":     "[INSERT_X_CHALLENGE_HERE]",   # ...
+    "x-signature":     "[INSERT_X_SIGNATURE_HERE]",   # not always required
+}
+
+auth = GrokAPIAuth(cookies=COOKIES)
+api = GrokAPI(auth)
+```
+
+### Creating a Conversation
+
+Initiate a new conversation and stream response tokens:
+
+```python
+prompt = "Explain quantum computing."
+
+for tok in api.create_conversation(prompt):
+    print(tok, end='', sep='')
+```
+
+### Sending a Follow-up Message
+
+Continue an existing conversation:
+
+```python
+followup_message = "Can you simplify that explanation?"
+
+for tok in api.send_followup(followup_message):
+    print(tok, end='', sep='')
+```
+
+### Fetching Rate Limits
+
+Check your current API usage and limits:
+
+```python
+import json
+
+limits = api.fetch_rate_limits()
+print(json.dumps(limits, indent=4))
+```
+
+## SuperGrok Usage Limits
+
+| Request Type    | Limit                      |
+| --------------- | -------------------------- |
+| Grok 3 Base     | 100 messages every 2 hours |
+| Grok 3 Thinking | 30 messages every 2 hours  |
+
+## Important Notes
+
+-   Replace placeholders like `[INSERT_SSO_HERE]` with your actual cookies.
+-   Keep your cookies secure and never expose them publicly.
+-   Ensure cookie strings are valid and contain all necessary authentication components.
+
+## License
+
+This project is provided as-is without warranty. Use responsibly and adhere to Grok's Terms of Service.
