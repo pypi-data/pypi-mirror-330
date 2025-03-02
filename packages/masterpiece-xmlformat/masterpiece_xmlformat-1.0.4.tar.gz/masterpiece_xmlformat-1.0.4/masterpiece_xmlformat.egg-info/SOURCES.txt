@@ -1,0 +1,14 @@
+LICENSE.rst
+MANIFEST.in
+README.rst
+pyproject.toml
+masterpiece_xmlformat/__init__.py
+masterpiece_xmlformat/xmlformat.py
+masterpiece_xmlformat.egg-info/PKG-INFO
+masterpiece_xmlformat.egg-info/SOURCES.txt
+masterpiece_xmlformat.egg-info/dependency_links.txt
+masterpiece_xmlformat.egg-info/entry_points.txt
+masterpiece_xmlformat.egg-info/requires.txt
+masterpiece_xmlformat.egg-info/top_level.txt
+tests/__init__.py
+tests/test_xmlformat.py
