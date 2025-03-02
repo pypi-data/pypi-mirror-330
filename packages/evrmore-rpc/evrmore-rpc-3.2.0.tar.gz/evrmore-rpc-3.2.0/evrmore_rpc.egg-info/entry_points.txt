@@ -1,0 +1,3 @@
+[console_scripts]
+evrmore-rpc-stress = evrmore_rpc.stress_test:main
+
