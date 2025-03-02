@@ -1,0 +1,65 @@
+{
+    "creation_metadata": {
+        "local_time": "2025-02-21T12:16:42",
+        "utc_time": "2025-02-21T12:16:42+00:00",
+        "creator": "TDDA 2.2.06",
+        "rdbms": "sqlite::None:elements92.sqlite3",
+        "source": "elements92_strict",
+        "host": "gardot.local",
+        "user": "njr",
+        "dataset": "elements92_strict",
+        "n_records": 0,
+        "n_selected": 0,
+        "tddafile": "elements92-strict-sqlite.tdda"
+    },
+    "fields": {
+        "Z": {
+            "type": "int"
+        },
+        "Name": {
+            "type": "string"
+        },
+        "Symbol": {
+            "type": "string"
+        },
+        "Period": {
+            "type": "int"
+        },
+        "Group": {
+            "type": "real"
+        },
+        "ChemicalSeries": {
+            "type": "string"
+        },
+        "AtomicWeight": {
+            "type": "real"
+        },
+        "Etymology": {
+            "type": "string"
+        },
+        "RelativeAtomicMass": {
+            "type": "real"
+        },
+        "MeltingPointC": {
+            "type": "real"
+        },
+        "MeltingPointKelvin": {
+            "type": "real"
+        },
+        "BoilingPointC": {
+            "type": "real"
+        },
+        "BoilingPointF": {
+            "type": "real"
+        },
+        "Density": {
+            "type": "real"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "Colour": {
+            "type": "string"
+        }
+    }
+}
