@@ -1,0 +1,13 @@
+Metadata-Version: 2.2
+Name: basswood-av
+Version: 14.0.0rc1
+Summary: Auto-Editor: Effort free video editing!
+Author-email: WyattBlue <wyattblue@auto-editor.com>
+License: Unlicense
+Project-URL: Bug Tracker, https://github.com/WyattBlue/auto-editor/issues
+Project-URL: Source Code, https://github.com/WyattBlue/auto-editor
+Project-URL: homepage, https://auto-editor.com
+Keywords: video,audio,media,editor,editing,processing,nonlinear,automatic,silence-detect,silence-removal,silence-speedup,motion-detection
+Requires-Python: <3.14,>=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: numpy<3.0,>=1.24
