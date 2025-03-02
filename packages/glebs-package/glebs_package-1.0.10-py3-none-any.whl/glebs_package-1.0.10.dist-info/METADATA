@@ -1,0 +1,10 @@
+Metadata-Version: 2.2
+Name: glebs_package
+Version: 1.0.10
+Summary: A custom package for language identification subpackage and ocr QA score calculation subpackage
+Author-email: Glebs Vinarskis <gleb.vinarskis@gmail.com>
+Requires-Python: >=3.7
+Requires-Dist: cython
+Requires-Dist: pybloomfiltermmap3
+Requires-Dist: huggingface_hub
+Requires-Dist: floret
