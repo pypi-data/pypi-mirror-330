@@ -1,0 +1,27 @@
+# -*- mode:toml; -*-
+doot_version = "0.13"
+
+# reminders:
+# action = [{do= "basic", args=[]}]
+# cli    = [{}]
+
+[[state]] # global state updates
+
+
+[[locations]] # Location keys
+src     = "src"
+codegen = "_codegen"
+temp    = ".temp"
+build   = "build"
+docs    = "docs"
+data    = "data"
+
+[tasks]
+
+[[tasks.group]]
+name        = ""
+print_level = "INFO"
+ctor        = "task"
+doc         = []
+depends-on  = []
+actions     = []
