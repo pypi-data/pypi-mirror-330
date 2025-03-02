@@ -1,0 +1,34 @@
+{% load i18n %}
+
+{% if motd_enabled %}
+<div id="motd" style="display: none;" role="region"
+     aria-labelledby="motd-message">
+ <h2 id="motd-message">{{motd_message|safe}}</h2>
+ <a href="#" id="motd-close" class="ink-i-close" role="button"
+    tabindex="0"
+    aria-label="{% trans "Dismiss" %}"
+    title="{% trans "Dismiss" %}"></a>
+</div>
+
+<script>
+    $(document).ready(function() {
+        var $motd = $('#motd');
+
+        $('#motd-close').click(function() {
+            $.cookie('{{motd_cookie}}', '{{motd_close_value}}', {
+                path: SITE_ROOT
+            });
+
+            $motd.remove();
+
+            return false;
+        });
+
+        if ($.cookie('{{motd_cookie}}') !== '{{motd_close_value}}') {
+            $motd.show();
+        } else {
+            $motd.remove();
+        }
+    });
+</script>
+{% endif %}
