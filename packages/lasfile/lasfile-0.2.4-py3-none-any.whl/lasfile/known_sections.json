@@ -1,0 +1,203 @@
+{
+    "1.2":
+    {
+        "version":
+        {
+            "type": "header",
+            "titles": ["v", "V"],
+            "required": true
+        },
+        "well":
+        {
+            "type": "header",
+            "titles": ["w", "W"],
+            "required": true
+        },
+        "parameters":
+        {
+            "type": "header",
+            "titles": ["p", "P"],
+            "required": false
+        },
+        "curves":
+        {
+            "type": "header",
+            "titles": ["c", "C"],
+            "required": true
+        },
+        "data":
+        {
+            "type": "data",
+            "titles": ["a", "A"],
+            "required": true
+        },
+        "other":
+        {
+            "type": "header",
+            "titles": ["o", "O"],
+            "required": false
+        }
+    },
+    "2.0":
+    {
+        "version":
+        {
+            "type": "header",
+            "titles": ["v", "V"],
+            "required": true
+        },
+        "well":
+        {
+            "type": "header",
+            "titles": ["w", "W"],
+            "required": true
+        },
+        "parameters":
+        {
+            "type": "header",
+            "titles": ["p", "P"],
+            "required": false
+        },
+        "curves":
+        {
+            "type": "header",
+            "titles": ["c", "C"],
+            "required": true
+        },
+        "data":
+        {
+            "type": "data",
+            "titles": ["a", "A"],
+            "required": true
+        },
+        "other":
+        {
+            "type": "header",
+            "titles": ["o", "O"],
+            "required": false
+        }
+    },
+    "3.0":
+    {
+        "version":
+        {
+            "type": "header",
+            "titles": ["version"],
+            "required": true
+        },
+        "well":
+        {
+            "type": "header",
+            "titles": ["well"],
+            "required": true
+        },
+        "parameters":
+        {
+            "type": "header",
+            "titles": ["parameter", "log_parameter"],
+            "required": false
+        },
+        "curves":
+        {
+            "type": "header",
+            "titles": ["curves", "curve", "curve_definition", "log_definition"],
+            "required": true
+        },
+        "data":
+        {
+            "type": "data",
+            "titles": ["log_data", "ascii", "data"],
+            "required": true
+        },
+        "core_parameters":
+        {
+            "type": "header",
+            "titles": ["core_parameters"],
+            "required": false
+        },
+        "core_definition":
+        {
+            "type": "header",
+            "titles": ["core_definition"],
+            "required": false
+        },
+        "core_data":
+        {
+            "type": "data",
+            "titles": ["core_data"],
+            "required": false
+        },
+        "inclinometry_parameters":
+        {
+            "type": "header",
+            "titles": ["inclinometry_parameters"],
+            "required": false
+        },
+        "inclinometry_definition":
+        {
+            "type": "header",
+            "titles": ["inclinometry_definition"],
+            "required": false
+        },
+        "inclinometry_data":
+        {
+            "type": "data",
+            "titles": ["inclinometry_data"],
+            "required": false
+        },
+        "drill_parameters":
+        {
+            "type": "header",
+            "titles": ["drill_parameters"],
+            "required": false
+        },
+        "drill_definition":
+        {
+            "type": "header",
+            "titles": ["drill_definition"],
+            "required": false
+        },
+        "drill_data":
+        {
+            "type": "data",
+            "titles": ["drill_data"],
+            "required": false
+        },
+        "tops_parameters":
+        {
+            "type": "header",
+            "titles": ["tops_parameters"],
+            "required": false
+        },
+        "tops_definition":
+        {
+            "type": "header",
+            "titles": ["tops_definition"],
+            "required": false
+        },
+        "tops_data":
+        {
+            "type": "data",
+            "titles": ["tops_data"],
+            "required": false
+        },
+        "test_parameters":
+        {
+            "type": "header",
+            "titles": ["test_parameters"],
+            "required": false
+        },
+        "test_definition":
+        {
+            "type": "header",
+            "titles": ["test_definition"],
+            "required": false
+        },
+        "test_data":
+        {
+            "type": "data",
+            "titles": ["test_data"],
+            "required": false
+        }
+    }
+}
