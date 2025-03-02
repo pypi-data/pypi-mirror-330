@@ -1,0 +1,14 @@
+global-exclude *_local.py
+
+recursive-exclude api *
+recursive-exclude *_local *
+recursive-exclude scripts *
+recursive-exclude * tests
+
+include VERSION
+
+recursive-include elora *.py
+
+recursive-include data/scores *.json
+recursive-include elora/data/scores *.json
+
