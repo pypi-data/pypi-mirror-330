@@ -1,0 +1,22 @@
+Metadata-Version: 2.2
+Name: better-namespaces
+Version: 1.1.1
+Summary: Python utility to group imports or defined objects under similar namespaces
+Author: Dhairya Gupta
+Project-URL: Homepage, https://github.com/dhairyagupta2603/better-namespaces
+Keywords: namespace,context-manager,utility
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Operating System :: OS Independent
+Classifier: Natural Language :: English
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+Provides-Extra: dev
+Requires-Dist: pytest>=7.4.4; extra == "dev"
+Requires-Dist: matplotlib; extra == "dev"
+Requires-Dist: pandas; extra == "dev"
+Requires-Dist: twine>=6.1.0; extra == "dev"
+
+## Better Namespaces: for a better python experience
+
+

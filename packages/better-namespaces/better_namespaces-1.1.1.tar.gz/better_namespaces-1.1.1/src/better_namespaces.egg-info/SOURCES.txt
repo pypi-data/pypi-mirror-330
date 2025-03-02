@@ -1,0 +1,16 @@
+.gitignore
+LICENCE
+MANIFEST.in
+README.md
+main.py
+pyproject.toml
+src/better_namespaces/__init__.py
+src/better_namespaces/context_group.py
+src/better_namespaces.egg-info/PKG-INFO
+src/better_namespaces.egg-info/SOURCES.txt
+src/better_namespaces.egg-info/dependency_links.txt
+src/better_namespaces.egg-info/requires.txt
+src/better_namespaces.egg-info/top_level.txt
+tests/__init__.py
+tests/test_imported.py
+tests/test_ud.py

@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "better-namespaces"
+version = "1.1.1"
+authors = [
+  { name="Dhairya Gupta" },
+]
+description = "Python utility to group imports or defined objects under similar namespaces"
+readme = "README.md"
+requires-python = ">=3.11"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "Operating System :: OS Independent",
+    "Natural Language :: English",
+]
+keywords = ['namespace', 'context-manager', 'utility']
+
+[project.optional-dependencies]
+dev = ['pytest>=7.4.4', 'matplotlib', 'pandas', "twine>=6.1.0"]
+
+[project.urls]
+Homepage = 'https://github.com/dhairyagupta2603/better-namespaces'
+
+[tool.setuptools]
+license-files = ["LICENSE"]
+
