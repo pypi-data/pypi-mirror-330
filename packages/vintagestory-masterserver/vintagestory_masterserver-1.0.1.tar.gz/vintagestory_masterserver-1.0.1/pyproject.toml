@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=61.0.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vintagestory-masterserver"
+version = "1.0.1"
+description="A homemade reproduction of the VintageStory Master Server as a Django app."
+authors=[{name = "CDWimmer"}]
+readme = "README.md"
+license = {file = "LICENCE"}
+
+classifiers = [
+    "Environment :: Web Environment",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Libraries :: Application Frameworks",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+requires-python = ">=3.12"
+dependencies = [
+    "Django>=5.0",
+]
+
+[project.urls]
+Repository = "https://github.com/CDWimmer/VintageStoryMasterServer"
+
+[project.optional-dependencies]
+dev = [
+    "build==1.2.1",
+    "nox==2024.4.15",
+    "twine==5.1.1",
+]
