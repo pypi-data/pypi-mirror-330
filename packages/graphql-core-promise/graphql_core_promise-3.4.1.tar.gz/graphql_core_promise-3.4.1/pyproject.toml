@@ -1,0 +1,45 @@
+[project]
+name = "graphql-core-promise"
+dynamic = ["version"]
+description = "Add support for promise-based dataloaders and resolvers to graphql-core v3+"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+    { name = "Samuel Cormier-Iijima", email = "sam@fellow.co" },
+    { name = "Shen Li", email = "dustet@gmail.com" },
+]
+license = { text = "BSD-3-Clause" }
+dependencies = ["graphql-core>=3.2", "promise>=2.3"]
+
+[dependency-groups]
+dev = ["pyright>=1.1.396", "pytest~=8.2", "pytest-benchmark~=4.0", "ruff~=0.4"]
+
+[build-system]
+requires = ["hatchling", "hatch-vcs"]
+build-backend = "hatchling.build"
+
+[tool.hatch.version]
+source = "vcs"
+
+[tool.ruff.lint]
+select = [
+    "B",
+    "COM",
+    "E",
+    "EM",
+    "F",
+    "I",
+    "I",
+    "N",
+    "PT",
+    "RSE",
+    "RUF",
+    "SIM",
+    "UP",
+    "W",
+]
+ignore = ["COM812"]
+preview = true
+
+[tool.ruff.format]
+preview = true
