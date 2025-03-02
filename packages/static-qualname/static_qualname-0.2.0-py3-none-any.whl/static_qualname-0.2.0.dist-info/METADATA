@@ -1,0 +1,36 @@
+Metadata-Version: 2.2
+Name: static-qualname
+Version: 0.2.0
+Summary: Import name analysis for Python
+Home-page: https://github.com/advice-animal/static-qualname/
+Author: Tim Hatch
+Author-email: tim@timhatch.com
+License: MIT
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: filelock
+Provides-Extra: dev
+Requires-Dist: ruff==0.9.6; extra == "dev"
+Provides-Extra: docs
+Requires-Dist: sphinx==8.1.3; extra == "docs"
+Requires-Dist: sphinx-mdinclude==0.6.2; extra == "docs"
+Provides-Extra: test
+Requires-Dist: pytest-cov; extra == "test"
+Requires-Dist: pytest==8.*; extra == "test"
+
+# Simple use
+
+```py
+>>> from static_qualname import Env
+>>> e = Env()
+>>> e.add_site_packages(Path("/usr/lib/python3.13"))
+>>> e.real_qualname("http.server.HTTPStatus")
+"http.HTTPStatus"
+```
+
+or
+
+```sh
+python -m static_qualname http.server.HTTPStatus
+```
