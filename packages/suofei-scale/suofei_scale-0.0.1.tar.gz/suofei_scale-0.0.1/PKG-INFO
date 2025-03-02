@@ -1,0 +1,39 @@
+Metadata-Version: 2.1
+Name: suofei-scale
+Version: 0.0.1
+Summary: SUOFEI POSTAL SCALE DRIVER
+Author: AFraczkowski
+Requires-Python: >=3.8,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: maho-mqtt (==2.1.0)
+Requires-Dist: pyserial (==3.5)
+Description-Content-Type: text/markdown
+
+if you want to do MAN IN THE MIDDLE - START SUOFEI SCALE APPLICATION AND INSTALL com0com - virtual serial port
+
+BAUD: 9600
+NO FLOW CONTROL
+
+Works with HERCULES SERIAL PORT
+
+PROTOCOL:
+
+EXAMPLE FRAME:
+
+
+
+5F0400028FD6 6,55 kg
+{5F}{04}{00}{00}{1E}{45} 0,30 kg
+{5F}{04}{00}{00}{23}{78} 0,35 kg
+{5F}{04}{00}{02}{D0}{89} 7,2 kg
+
+PRZYKŁADOWA ODPOWIEDŹ MQTT
+
+0x5F 0x04 0x00 0x05 0x3C 0x62
+
+{5F}{44}{00}{02}{8F}{D6}  -6,55 kg - the second byte is changed to 44 instead of 04

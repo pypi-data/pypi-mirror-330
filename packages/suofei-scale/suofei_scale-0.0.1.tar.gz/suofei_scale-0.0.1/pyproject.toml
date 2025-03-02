@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "suofei-scale"
+version = "0.0.1"
+description = "SUOFEI POSTAL SCALE DRIVER"
+authors = ["AFraczkowski"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+pyserial = "3.5"
+maho-mqtt = "2.1.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
