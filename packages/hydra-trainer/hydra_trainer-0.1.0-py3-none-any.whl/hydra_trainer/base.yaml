@@ -1,0 +1,84 @@
+seed: 42
+checkpoint_path: null
+resume_from_checkpoint: null
+do_hyperoptim: false
+early_stopping_patience: 3
+
+dataset: null # should override the dataset in concrete config or define it here
+
+model: # example usage - define your own model parameters here
+  d_model: 128
+  n_layers: 12
+  n_heads: 16
+  d_ff: 512
+
+trainer:
+  # _target_: transformers.TrainingArguments
+  seed: ${seed}
+  num_train_epochs: 3
+  eval_strategy: steps
+  eval_steps: 50
+  logging_steps: 5
+  logging_strategy: steps
+  output_dir: training_output
+  overwrite_output_dir: false
+  save_strategy: steps
+  save_steps: 50
+  save_total_limit: 10
+  warmup_ratio: 0.02
+  per_device_train_batch_size: 2
+  per_device_eval_batch_size: 4096
+  report_to: wandb
+  run_name: test
+  dataloader_num_workers: 8
+  dataloader_prefetch_factor: 2
+  dataloader_pin_memory: true
+  lr_scheduler_type: constant_with_warmup
+  learning_rate: 5e-3
+  weight_decay: 0.0
+  gradient_accumulation_steps: 16
+  optim: adamw
+  fp16: true
+  fp16_full_eval: true
+  torch_compile: true
+
+hyperopt: # currently only optuna is supported
+  n_trials: 128
+  patience: 2
+  persistence: true # set to false to use in memory storage instead of db storage
+  load_if_exists: true
+  storage_url: postgresql://postgres:password@127.0.0.1:5432/postgres
+  storage_heartbeat_interval: 15
+  storage_engine_kwargs:
+    pool_size: 5
+    connect_args:
+      keepalives: 1
+  hp_space:
+    training:
+      - name: warmup_ratio
+        type: float
+        low: 0.0
+        high: 0.1
+        step: 0.01
+      - name: per_device_train_batch_size
+        type: int
+        low: 1024
+        high: 4096
+        step: 512
+      - name: learning_rate
+        type: float
+        low: 5e-5
+        high: 5e-3
+        step: 1e-5
+      - name: gradient_accumulation_steps
+        type: int
+        low: 4
+        high: 16
+        step: 4
+    model:
+      - name: d_model
+        type: int
+        low: 128
+        high: 512
+        step: 128
+        log: true
