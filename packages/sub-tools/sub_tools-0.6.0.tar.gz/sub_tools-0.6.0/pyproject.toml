@@ -1,0 +1,26 @@
+[project]
+name = "sub-tools"
+version = "0.6.0"
+description = "A robust Python toolkit powered by Google's Gemini API for converting video content into accurate, multilingual subtitles."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "audioop-lts>=0.2.1; python_version >= '3.13'",
+    "google-genai>=0.3.0",
+    "pycountry>=24.6.1",
+    "pydub>=0.25.1",
+    "pysrt>=1.1.2",
+    "pytest>=8.3.4",
+    "pytest-asyncio>=0.23.5",
+    "python-ffmpeg>=2.0.12",
+    "rich>=13.9.4",
+    "silero-vad>=5.1.2",
+    "soundfile>=0.13.1",
+]
+
+[project.scripts]
+sub-tools = "sub_tools:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
