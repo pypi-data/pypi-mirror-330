@@ -1,0 +1,63 @@
+Metadata-Version: 2.2
+Name: automated-data-analysis
+Version: 1.1.1
+Summary: Automated Data Analysis Pipeline
+Home-page: https://github.com/vinith-15
+Author: Vinith kabilar
+Author-email: vinithkabilar@gmail.com
+Keywords: data-analysis automation data-cleaning pandas
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pandas>=1.0.0
+Requires-Dist: numpy>=1.18.0
+Requires-Dist: openpyxl>=3.0.0
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# automated_data_analysis
+
+An automated data analysis pipeline package for efficient data processing and cleaning.
+
+## Features
+
+- Automated data loading (CSV/Excel)
+- Duplicate removal
+- Smart missing value handling
+- Data format validation
+- Statistical analysis
+- Data accuracy checks
+- Comprehensive terminal reporting
+
+Check out the [example script](examples/example_usage.py) for more details.
+
+## Usage Parameters
+analyze_data() :
+- file_path : Path to CSV/Excel file
+
+- fill_strategy (optional) : Dictionary specifying filling strategies for columns
+
+- stats_columns (optional) : List of columns for statistical analysis
+
+- stats (optional)  : List of statistics to calculate (default: ['mean', 'median', 'std', 'min', 'max'])
+## Dependency :
+- pandas>=1.0.0
+- numpy>=1.18.0
+- openpyxl>=3.0.0
+
+## Installation
+
+```bash
+
+pip install automated_data_analysis
