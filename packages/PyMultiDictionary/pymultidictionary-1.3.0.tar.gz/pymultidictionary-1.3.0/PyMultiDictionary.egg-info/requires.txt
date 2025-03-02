@@ -1,0 +1,12 @@
+bs4
+iso639-lang
+requests
+
+[docs]
+sphinx<7
+sphinx-autodoc-typehints>=1.2.0
+sphinx-rtd-theme
+
+[test]
+nose2[coverage_plugin]
+pytest

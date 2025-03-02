@@ -1,0 +1,16 @@
+LICENSE
+MANIFEST.in
+README.rst
+requirements.txt
+setup.py
+PyMultiDictionary/__init__.py
+PyMultiDictionary/_dictionary.py
+PyMultiDictionary/_goslate.py
+PyMultiDictionary/_tokenizer.py
+PyMultiDictionary/_utils.py
+PyMultiDictionary/version.py
+PyMultiDictionary.egg-info/PKG-INFO
+PyMultiDictionary.egg-info/SOURCES.txt
+PyMultiDictionary.egg-info/dependency_links.txt
+PyMultiDictionary.egg-info/requires.txt
+PyMultiDictionary.egg-info/top_level.txt
