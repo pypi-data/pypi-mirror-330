@@ -1,0 +1,11 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+lil_buff_writer/__init__.py
+lil_buff_writer.egg-info/PKG-INFO
+lil_buff_writer.egg-info/SOURCES.txt
+lil_buff_writer.egg-info/dependency_links.txt
+lil_buff_writer.egg-info/requires.txt
+lil_buff_writer.egg-info/top_level.txt
+tests/test_simple.py
