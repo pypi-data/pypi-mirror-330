@@ -1,0 +1,4 @@
+
+[:python_version < "3.12"]
+typing-extensions
+importlib_metadata>=6.5
