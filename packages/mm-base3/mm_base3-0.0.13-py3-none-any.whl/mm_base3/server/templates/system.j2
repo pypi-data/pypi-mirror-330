@@ -1,0 +1,90 @@
+{% extends "inc/base.j2" %}
+{% block content %}
+  <h3>system</h3>
+  <div class="grid">
+    <section>
+      <table>
+        <tr>
+          <td>api</td>
+          <td></td>
+          <td><a href="/schema/swagger">view</a></td>
+        </tr>
+        <tr>
+          <td title="stands for Dynamic Config">dconfig</td>
+          <td></td>
+          <td><a href="/system/dconfig">view</a></td>
+        </tr>
+        <tr>
+          <td title="stands for Dynamic Value">dvalue</td>
+          <td></td>
+          <td><a href="/system/dvalue">view</a></td>
+        </tr>
+        <tr>
+          <td title="stands for Data Log">dlog</td>
+          <td>{{ stats.system_log }}</td>
+          <td><a href="/system/dlogs">view</a></td>
+        </tr>
+        <tr>
+          <td>logfile</td>
+          <td>{{ stats.logfile | filesizeformat }}</td>
+          <td>
+            <nav>
+              <ul>
+                <li><a href="/api/system/logfile">view</a></li>
+                <li><a href="/api-delete/system/logfile" {{ confirm }}>clean</a></li>
+              </ul>
+            </nav>
+          </td>
+        </tr>
+      </table>
+    </section>
+    <section>
+      <table>
+        <caption>db / {{ stats.db | length }}</caption>
+        {% for k,v in stats.db.items() %}
+          <tr>
+            <td>{{ k }}</td>
+            <td>{{ v }}</td>
+          </tr>
+        {% endfor %}
+      </table>
+      <br>
+
+      <table>
+        <caption>scheduler jobs / {{ stats.scheduler_jobs | length }}</caption>
+        <tr>
+          <th>func</th>
+          <th>interval</th>
+          <th>last_at</th>
+          <th>is_running</th>
+        </tr>
+        {% for j in stats.scheduler_jobs %}
+          <tr>
+            <td>{{ j.func.__qualname__ }}</td>
+            <td>{{ j.interval }}</td>
+            <td>{{ j.last_at | dt }}</td>
+            <td>{{ j.is_running | yes_no }}</td>
+          </tr>
+        {% endfor %}
+      </table>
+      <br>
+
+      <table>
+        <caption>threads / {{ stats.threads | length }}</caption>
+        <tr>
+          <th>name</th>
+          <th>daemon</th>
+          <th>func</th>
+        </tr>
+        {% for t in stats.threads %}
+          <tr>
+            <td>{{ t.name }}</td>
+            <td>{{ t.daemon | yes_no }}</td>
+            <td>{{ t.func_name | empty }}</td>
+          </tr>
+        {% endfor %}
+      </table>
+    </section>
+  </div>
+
+{% endblock %}
