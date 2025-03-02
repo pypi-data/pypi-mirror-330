@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "student-bluebook"
+version = "0.2.1"
+description = ""
+authors = ["Ilya Smut <ilya.smut.off.g@gmail.com>"]
+readme = "README.md"
+packages = [{include = "bluebook"}]
+
+[tool.poetry.dependencies]
+python = ">=3.10"
+google-genai = ">=1.2.0,<2.0.0"
+ipykernel = ">=6.29.5,<7.0.0"
+flask = ">=3.1.0,<4.0.0"
+click = ">=8.1.8,<9.0.0"
+pydantic = "^2.10.6"
+
+[tool.poetry.scripts]
+bluebook = "bluebook.fl:bluebook"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
