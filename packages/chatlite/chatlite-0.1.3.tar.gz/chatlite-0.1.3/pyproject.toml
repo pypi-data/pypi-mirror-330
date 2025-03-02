@@ -1,0 +1,23 @@
+[build-system]
+requires = [ "poetry-core",]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+name = "chatlite"
+version = "0.1.3"
+description = "ai powered chatapp for browsing and search"
+authors = [ "Kammari Santhosh",]
+readme = "README.md"
+license = "MIT License"
+repository = "https://github.com/santhosh/"
+keywords = [ "",]
+include = []
+[[tool.poetry.packages]]
+include = "chatlite"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "^0.115.6"
+openai = "^1.58.1"
+
+[tool.poetry.dev-dependencies]
