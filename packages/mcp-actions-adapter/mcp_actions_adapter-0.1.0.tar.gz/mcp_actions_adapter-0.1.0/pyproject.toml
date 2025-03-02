@@ -1,0 +1,23 @@
+[project]
+name = "mcp-actions-adapter"
+version = "0.1.0"
+description = "A simple adapter to convert a MCP server to a GPT actions compatible API"
+readme = "README.md"
+authors = [
+    { name = "TerminalMan", email = "84923604+SecretiveShell@users.noreply.github.com" }
+]
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.115.10",
+    "loguru>=0.7.3",
+    "mcp==1.0.0",
+    "pydantic>=2.10.6",
+    "uvicorn>=0.34.0",
+]
+
+[project.scripts]
+mcp-actions-adapter = "mcp_actions_adapter:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
