@@ -1,0 +1,9 @@
+python-dateutil<3.0.0,>=2.7.2
+requests<3.0.0,>=2.18.4
+meza<0.48.0,>=0.47.0
+
+[test]
+pygogo<2.0.0,>=0.13.2
+pytest
+pytest-enabler
+pytest-ruff
