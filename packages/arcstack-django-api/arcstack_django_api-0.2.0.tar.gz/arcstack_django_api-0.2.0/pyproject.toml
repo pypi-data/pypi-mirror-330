@@ -1,0 +1,157 @@
+[project]
+name = "arcstack-django-api"
+dynamic = []
+description = "Create APIs in Django way"
+authors = [
+    {name = "Gokhan Ozturk",email = "me@gokhan.org.tr"}
+]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.10"
+keywords = ["api", "django", "rest", "framework", "api-framework", "class-based-views"]
+dependencies = [
+    "django (>=3.1,<6.0.0)",
+    "pydantic (>=2.10.6,<3.0.0)",
+    "django-appconf (>=1.1.0,<2.0.0)"
+]
+classifiers = [
+    "Intended Audience :: Information Technology",
+    "Intended Audience :: System Administrators",
+    "Operating System :: OS Independent",
+    "Development Status :: 3 - Alpha",
+    "Topic :: Internet",
+    "Topic :: Software Development :: Libraries :: Application Frameworks",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Software Development",
+    "Typing :: Typed",
+    "Environment :: Web Environment",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3 :: Only",
+    "Framework :: Django",
+    "Framework :: Django :: 3.1",
+    "Framework :: Django :: 3.2",
+    "Framework :: Django :: 4.1",
+    "Framework :: Django :: 4.2",
+    "Framework :: Django :: 5.0",
+    "Framework :: Django :: 5.1",
+    "Topic :: Internet :: WWW/HTTP :: HTTP Servers",
+    "Topic :: Internet :: WWW/HTTP",
+]
+version = "0.2.0"
+
+
+[project.urls]
+homepage = "https://gwainor.github.io/arcstack-django-api/"
+repository = "https://github.com/gwainor/arcstack-django-api"
+documentation = "https://gwainor.github.io/arcstack-django-api/"
+"Bug Tracker" = "https://github.com/gwainor/arcstack-django-api/issues"
+
+
+[build-system]
+requires = ["poetry-core>=1.0.0", "poetry-dynamic-versioning>=1.0.0,<2.0.0"]
+build-backend = "poetry_dynamic_versioning.backend"
+
+
+[tool.poetry]
+packages = [
+    {include = "arcstack_api", from = "."}
+]
+exclude = ["tests", "docs"]
+
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.9.6"
+django-stubs = "^5.1.3"
+
+[tool.poetry.group.test.dependencies]
+pytest = "^8.3.4"
+pytest-django = "^4.10.0"
+pytest-cov = "^6.0.0"
+
+
+[tool.poetry.group.docs.dependencies]
+mkdocs-material = "^9.6.5"
+
+[tool.poetry.requires-plugins]
+poetry-dynamic-versioning = { version = ">=1.0.0,<2.0.0", extras = ["plugin"] }
+
+
+[tool.ruff]
+line-length = 88
+indent-width = 4
+fix = true
+include = ["pyproject.toml", "arcstack_api/**/*.py"]
+
+target-version = "py310"
+
+[tool.ruff.lint]
+select = [
+    "B",    # flake8-bugbear
+    "C",    # flake8-comprehensions
+    "E",    # pycodestyle errors
+    "F",    # pyflakes
+    "FURB", # refurb
+    "I",    # isort
+    "PTH",  # flake8-use-pathlib
+    "UP",   # pyupgrade
+    "W",    # pycodestyle warnings
+]
+ignore = [
+    "E501", # line too long, handled by black
+    "B008", # do not perform function calls in argument defaults
+    "C901", # too complex
+]
+
+# Allow fix for all enabled rules (when `--fix`) is provided.
+fixable = ["ALL"]
+unfixable = []
+
+[tool.ruff.format]
+quote-style = "single"
+indent-style = "space"
+
+# Like Black, respect magic trailing commas.
+skip-magic-trailing-comma = false
+
+# Like Black, automatically detect the appropriate line ending.
+line-ending = "auto"
+
+# Enable auto-formatting of code examples in docstrings. Markdown,
+# reStructuredText code/literal blocks and doctests are all supported.
+#
+# This is currently disabled by default, but it is planned for this
+# to be opt-out in the future.
+docstring-code-format = true
+
+# Set the line length limit used when formatting code snippets in
+# docstrings.
+#
+# This only has an effect when the `docstring-code-format` setting is
+# enabled.
+docstring-code-line-length = "dynamic"
+
+[tool.ruff.lint.isort]
+lines-after-imports = 2
+
+
+[tool.pytest.ini_options]
+testpaths = [
+    "tests",
+]
+
+[tool.coverage.report]
+exclude_also = [
+    # 1. Exclude an except clause of a specific form:
+    'except ValueError:\n\s*assume\(False\)',
+    # 2. Comments to turn coverage on and off:
+    'no cover: start(?s:.)*?no cover: stop',
+    # 3. A pragma comment that excludes an entire file:
+    '\A(?s:.*# pragma: exclude file.*)\Z',
+]
+[tool.poetry-dynamic-versioning]
+enable = false
