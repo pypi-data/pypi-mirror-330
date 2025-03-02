@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "glebs_package"
+version = "1.0.9"
+description = "A custom package for language identification subpackage and ocr QA score calculation subpackage"
+authors = [{ name = "Glebs Vinarskis", email = "gleb.vinarskis@gmail.com" }]
+requires-python = ">=3.7"
+dependencies = ["cython",
+      "pybloomfiltermmap3",
+      "huggingface_hub",
+      "floret"]
