@@ -1,0 +1,17 @@
+IPython>=7.9.0
+thermosteam<0.52.0,>=0.51.0
+graphviz>=0.17
+chaospy>=3.3.9
+pyyaml
+
+[dev]
+biorefineries>=2.31.0
+sympy
+sphinx
+sphinx_multitoc_numbering
+pydata_sphinx_theme
+sphinx_design
+pyyaml
+pytest-cov
+coveralls
+SALib
