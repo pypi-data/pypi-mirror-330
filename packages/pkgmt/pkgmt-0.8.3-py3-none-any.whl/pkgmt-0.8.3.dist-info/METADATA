@@ -1,0 +1,31 @@
+Metadata-Version: 2.1
+Name: pkgmt
+Version: 0.8.3
+Classifier: License :: OSI Approved :: MIT License
+License-File: LICENSE
+Requires-Dist: toml
+Requires-Dist: pyyaml
+Requires-Dist: requests
+Requires-Dist: click
+Requires-Dist: invoke
+Requires-Dist: black
+Requires-Dist: nbqa
+Requires-Dist: flake8
+Requires-Dist: jupytext
+Requires-Dist: ipython
+Requires-Dist: ipython<=8.12.0; python_version <= "3.8"
+Provides-Extra: all
+Requires-Dist: nbclient; extra == "all"
+Requires-Dist: jupytext; extra == "all"
+Requires-Dist: ipykernel; extra == "all"
+Provides-Extra: check
+Requires-Dist: mistune>=3.1.0; extra == "check"
+Provides-Extra: dev
+Requires-Dist: pytest; extra == "dev"
+Requires-Dist: twine; extra == "dev"
+Requires-Dist: structlog; extra == "dev"
+Requires-Dist: jupytext; extra == "dev"
+Requires-Dist: nbclient; extra == "dev"
+Requires-Dist: ipykernel; extra == "dev"
+Requires-Dist: mistune>=3.1.0; extra == "dev"
+
