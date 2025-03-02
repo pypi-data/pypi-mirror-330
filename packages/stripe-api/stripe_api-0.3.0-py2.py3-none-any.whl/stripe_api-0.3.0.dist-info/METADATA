@@ -1,0 +1,44 @@
+Metadata-Version: 2.1
+Name: stripe-api
+Version: 0.3.0
+Summary: Stripe API Client
+Home-page: http://stripe-api.hive.pt
+Author: Hive Solutions Lda.
+Author-email: development@hive.pt
+License: Apache License, Version 2.0
+Keywords: Stripe api
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Topic :: Utilities
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.0
+Classifier: Programming Language :: Python :: 3.1
+Classifier: Programming Language :: Python :: 3.2
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Description-Content-Type: text/markdown
+Requires-Dist: appier
+
+# [Stripe API](http://stripe-api.hive.pt)
+
+Python API client for the [Stripe](https://stripe.com/) service.
+
+## License
+
+Stripe API is currently licensed under the [Apache License, Version 2.0](http://www.apache.org/licenses/).
+
+## Build Automation
+
+[![Build Status](https://github.com/hivesolutions/stripe-api/workflows/Main%20Workflow/badge.svg)](https://github.com/hivesolutions/stripe-api/actions)
+[![Coverage Status](https://coveralls.io/repos/hivesolutions/stripe-api/badge.svg?branch=master)](https://coveralls.io/r/hivesolutions/stripe-api?branch=master)
+[![PyPi Status](https://img.shields.io/pypi/v/stripe-api.svg)](https://pypi.python.org/pypi/stripe-api)
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://www.apache.org/licenses/)
+
+
