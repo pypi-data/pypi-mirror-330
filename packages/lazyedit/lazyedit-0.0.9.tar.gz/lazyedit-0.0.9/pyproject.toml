@@ -1,0 +1,83 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "lazyedit"
+dynamic = ["version"]
+description = 'A textual-based lazy editing tool'
+readme = "README.md"
+requires-python = ">=3.8"
+license = { file = "LICENSE.txt" }
+keywords = []
+authors = [
+  { name = "Robbe", email = "robbe.vanherpe04@yahoo.com" },
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Programming Language :: Python :: Implementation :: PyPy",
+  "Operating System :: Microsoft :: Windows",
+]
+dependencies = [
+  "textual==0.47.1",
+  "rich>=13.0.0",
+  "keyboard>=0.13.5"
+]
+
+[project.urls]
+Documentation = "https://github.com/Robbevanherpe1/lazyedit#readme"
+Issues = "https://github.com/Robbevanherpe1/lazyedit/issues"
+Source = "https://github.com/Robbevanherpe1/lazyedit"
+
+[project.scripts]
+lazyedit = "lazyedit.gui:run"
+
+[tool.hatch.version]
+path = "src/lazyedit/__about__.py"
+
+[tool.hatch.envs.types]
+extra-dependencies = [
+  "mypy>=1.0.0",
+]
+[tool.hatch.envs.types.scripts]
+check = "mypy --install-types --non-interactive {args:src/lazyedit tests}"
+
+[tool.coverage.run]
+source_pkgs = ["lazyedit", "tests"]
+branch = true
+parallel = true
+omit = [
+  "src/lazyedit/__about__.py",
+]
+
+[tool.coverage.paths]
+lazyedit = ["src/lazyedit", "*/lazyedit/src/lazyedit"]
+tests = ["tests", "*/lazyedit/tests"]
+
+[tool.coverage.report]
+exclude_lines = [
+  "no cov",
+  "if __name__ == .__main__.:",
+  "if TYPE_CHECKING:",
+]
+[tool.hatch.envs.default.scripts]
+post-install = """
+import os
+import sys
+import shutil
+import subprocess
+
+# Only install LazyGit on Windows
+if sys.platform.startswith('win'):
+    if shutil.which("lazygit") is None:
+        print("⏳ Installing LazyGit using pip...")
+        try:
+            subprocess.run([sys.executable, "-m", "pip", "install", "lazygit"], check=True)
+            print("✅ LazyGit installed successfully!")
+        except Exception as e:
+            print(f"⚠️ LazyGit installation failed: {e}. Please install manually using:")
+            print("   pip install lazygit")
+"""
