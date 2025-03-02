@@ -1,0 +1,48 @@
+[build-system]
+requires = ["hatchling", "hatch-vcs"]
+build-backend = "hatchling.build"
+
+[tool.hatch.version]
+source = "vcs"
+
+[project]
+name = "mudder"
+dynamic = ["version"]
+description = "Python port of mudderjs"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "Patrick Gingras", email = "775.pg.12@gmail.com" }]
+license = { text = "BSD-3-Clause" }
+
+[project.urls]
+Homepage = "https://github.com/fellowinsights/mudder-py"
+Repository = "https://github.com/fellowinsights/mudder-py"
+
+[dependency-groups]
+dev = ["pyright>=1.1.396", "pytest~=8.1", "ruff~=0.4"]
+
+[tool.setuptools_scm]
+
+[tool.ruff.lint]
+select = [
+    "ANN",
+    "B",
+    "COM",
+    "E",
+    "EM",
+    "F",
+    "I",
+    "I",
+    "N",
+    "PT",
+    "RSE",
+    "RUF",
+    "SIM",
+    "UP",
+    "W",
+]
+ignore = ["COM812"]
+preview = true
+
+[tool.ruff.format]
+preview = true
