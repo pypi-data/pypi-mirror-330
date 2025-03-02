@@ -1,0 +1,6 @@
+include README.rst
+graft filedata
+graft tests
+graft requirements
+global-exclude *.pyc
+global-exclude *.pyo
