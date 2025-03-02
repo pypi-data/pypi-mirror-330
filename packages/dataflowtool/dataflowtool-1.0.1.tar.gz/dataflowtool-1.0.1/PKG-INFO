@@ -1,0 +1,111 @@
+Metadata-Version: 2.2
+Name: dataflowtool
+Version: 1.0.1
+Summary: A modern data lineage visualization tool with column-level dependency tracking
+Home-page: https://github.com/yourusername/dataflowtool
+Author: Anirudh
+Author-email: isanirudhonline@gmail.com
+Keywords: data lineage,dbt,visualization,data dependencies,column lineage
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Information Technology
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Database :: Database Engines/Servers
+Classifier: Topic :: Scientific/Engineering :: Visualization
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Framework :: Flask
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: flask>=2.0.0
+Requires-Dist: dbt-core>=1.4.0
+Requires-Dist: networkx>=2.6.0
+Requires-Dist: pydantic>=1.8.0
+Requires-Dist: click>=8.0.0
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# Data Flow Tool
+
+A modern data lineage visualization tool that helps you understand column-level dependencies between your data tables.
+
+## Features
+
+- Interactive visualization of data lineage
+- Column-level dependency tracking
+- Support for DBT projects
+- Dark/Light mode
+- Interactive column highlighting
+- Draggable nodes
+- Detailed tooltips with metadata
+
+## Installation
+
+```bash
+pip install dataflowtool
+```
+
+## Usage
+
+1. From the command line:
+```bash
+dataflowtool
+```
+This will start the server and open the visualization in your default web browser.
+
+2. As a Python module:
+```python
+from dataflowtool.dataflowtool.server import run_server
+
+run_server()
+```
+
+## DBT Integration
+
+The tool automatically detects DBT projects in the current directory or its parents. If a DBT project is found, it will use the manifest.json and catalog.json files to generate the lineage visualization.
+
+If no DBT project is found, the tool will use sample data to demonstrate its functionality.
+
+## Development
+
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/dataflowtool.git
+cd dataflowtool
+```
+
+2. Install dependencies:
+```bash
+pip install -e .
+cd frontend
+npm install
+```
+
+3. Build the frontend:
+```bash
+npm run build
+```
+
+4. Run the development server:
+```bash
+python dataflowtool/server.py
+```
+
+## License
+
+MIT License 

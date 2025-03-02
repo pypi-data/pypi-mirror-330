@@ -1,0 +1,5 @@
+flask>=2.0.0
+dbt-core>=1.4.0
+networkx>=2.6.0
+pydantic>=1.8.0
+click>=8.0.0
