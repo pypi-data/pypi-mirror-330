@@ -1,0 +1,18 @@
+[project]
+name = "runpod_ariadne"
+version = "0.1.0"
+description = "A third-party RunPod GraphQL client in Python generated using Ariadne."
+readme = "README.md"
+requires-python = ">=3.10"
+
+[project.optional-dependencies]
+dev = [
+    "ariadne-codegen[subscriptions]>=0.14.0",
+    "dotenv>=0.9.9",
+]
+
+[tool.ariadne-codegen]
+schema_path = "runpod.schema"
+target_package_name = "runpod_ariadne"
+enable_custom_operations = true
+plugins = ["ariadne_codegen.contrib.extract_operations.ExtractOperationsPlugin"]
