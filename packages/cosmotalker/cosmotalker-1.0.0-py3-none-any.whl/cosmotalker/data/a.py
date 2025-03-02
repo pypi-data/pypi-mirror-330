@@ -1,0 +1,9 @@
+data={
+    "authour":'''Bhuvanesh M is a passionate software developer with a strong foundation in Python, MySQL, C, HTML5, and CSS. He has worked on projects like CosmoTalker, an interactive space exploration platform, and SheetSmart, a CSV-driven product display system. A Linux & UNIX practitioner, Bhuvanesh is always eager to learn, collaborate, and innovate.  
+
+Explore his work at bhuvaneshm.in or connect on LinkedIn linkedin.com/in/bhuvaneshm-developer ''',
+    "author":'''Bhuvanesh M is a passionate software developer with a strong foundation in Python, MySQL, C, HTML5, and CSS. He has worked on projects like CosmoTalker, an interactive space exploration platform, and SheetSmart, a CSV-driven product display system. A Linux & UNIX practitioner, Bhuvanesh is always eager to learn, collaborate, and innovate.  
+
+Explore his work at bhuvaneshm.in or connect on LinkedIn linkedin.com/in/bhuvaneshm-developer ''',
+    "ariel":'''Ariel, one of Uranus’ largest moons, is the brightest and most geologically active of its major satellites, with a surface that shows evidence of past tectonic and possibly cryovolcanic activity. Unlike its darker counterparts, Umbriel and Oberon, Ariel's surface is relatively smooth in many areas, with fewer impact craters, suggesting that geological processes have reshaped it over time. Its terrain features deep valleys, fault lines, and long canyons, likely formed by past tectonic activity as the moon’s interior cooled and expanded. Ariel is composed of a mixture of water ice and rock, and some scientists speculate that a subsurface ocean may exist beneath its crust. The Voyager 2 spacecraft provided the only close-up images of Ariel in 1986, but much remains unknown about this intriguing moon. Future missions could help determine whether it has retained any internal heat and explore the possibility of liquid water beneath its surface, making it a compelling target for further study.'''
+}

@@ -1,0 +1,3 @@
+data={
+    "io":'''Io, the innermost of the four Galilean moons of Jupiter, is the most volcanically active body in the solar system. Its surface is covered with hundreds of active volcanoes, constantly reshaped by lava flows and sulfur deposits, giving it a striking yellow-orange appearance. This extreme volcanic activity is caused by the immense tidal forces exerted by Jupiter’s gravity, along with interactions with Europa and Ganymede, which generate internal friction and heat within Io. The moon has a thin atmosphere primarily composed of sulfur dioxide and lacks significant water, unlike its neighboring moons. Scientists study Io to understand planetary volcanism and its role in shaping celestial bodies.'''
+}
