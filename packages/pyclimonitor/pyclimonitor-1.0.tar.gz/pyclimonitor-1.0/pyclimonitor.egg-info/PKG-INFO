@@ -1,0 +1,23 @@
+Metadata-Version: 2.2
+Name: pyclimonitor
+Version: 1.0
+Summary: PyCliMonitor: A python command line tool that monitoring current system's CPU, GPU, RAM, SSD and Networks.
+Home-page: http://blog.cycleuser.org
+Author: cycleuser
+Author-email: cycleuser@cycleuser.org
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: psutil
+Requires-Dist: distro
+Requires-Dist: GPUtil
+Requires-Dist: colorama
+Dynamic: author
+Dynamic: author-email
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-dist
+Dynamic: summary
+
+# PyCliMonitor
+A python command line tool that monitoring current system's CPU, GPU, RAM, SSD and Networks.
