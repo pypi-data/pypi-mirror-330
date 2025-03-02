@@ -1,0 +1,32 @@
+Metadata-Version: 2.2
+Name: pynetbox-api
+Version: 0.0.1
+Summary: pynetbox API
+Requires-Python: >=3.12
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: aiohttp>=3.11.11
+Requires-Dist: fastapi[standard]
+Requires-Dist: pydantic>=2.10.6
+Requires-Dist: pynetbox>=7.4.1
+Requires-Dist: python-dotenv>=1.0.1
+Requires-Dist: requests>=2.32.3
+Requires-Dist: sqlmodel>=0.0.22
+Requires-Dist: typer>=0.15.1
+
+# pynetbox-api
+FastAPI layer above pynetbox lib.
+
+## Install (Dev Mode Only)
+
+Before installing, you must provide environment variables at `./pynetbox_api/env.py`.
+
+The project supports only dev-mode package installation currently, as it is on beta stage.
+
+```
+python3 -m venv venv
+source venv/bin/activate
+python3 -m pip install -r requirements.txt
+python3 -m pip install -e .
+uv run fastapi dev
+```
