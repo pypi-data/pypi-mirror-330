@@ -1,0 +1,29 @@
+Metadata-Version: 2.2
+Name: blackjack-noob
+Version: 0.1.1
+Summary: A Python package for playing Blackjack.
+Home-page: https://github.com/Snapout2/blackjack.git
+Author: Adarsh V H
+Author-email: Adarsh V H <adarshvh2005@gmail.com>
+License: MIT
+Project-URL: Homepage, https://github.com/Snapout2/blackjack.git
+Project-URL: Bug Tracker, https://github.com/Snapout2/blackjack.git
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: author
+Dynamic: home-page
+Dynamic: requires-python
+
+# Blackjack - A Simple Python Blackjack Game
+
+## 🃏 About
+Blackjack is a simple command-line game where you play against the dealer.  
+Try to get as close to **21** as possible without going over!  
+The dealer follows standard rules, and you can choose to **hit** (take a new card) or **stand** (keep your hand).  
+
+## 🔧 Installation
+First, clone the repository and navigate into the project directory:
+```sh
+git clone https://github.com/sanpout2/blackjack.git
+cd blackjack
