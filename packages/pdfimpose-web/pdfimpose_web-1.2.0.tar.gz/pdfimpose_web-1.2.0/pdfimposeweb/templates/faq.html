@@ -1,0 +1,88 @@
+{# Copyright 2024 Louis Paternault
+
+This file is part of pdfimpose-web.
+
+Pdfimpose-web is free software: you can redistribute it and/or modify it
+under the terms of the GNU Affero General Public License as published by the
+Free Software Foundation, either version 3 of the License, or (at your
+option) any later version.
+
+Pdfimpose-web is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+details.
+
+You should have received a copy of the GNU Affero General Public License
+along with pdfimpose-web. If not, see <https://www.gnu.org/licenses/>.
+-#}
+
+<section>
+    <h1 id="faq">{% trans %}FAQ{% endtrans %}</h1>
+
+    <div class="accordion">
+    {% call details(_("What data are you storing about me?")) %}
+    {% trans -%}
+    The data we store are:
+    <ul>
+      <li>the PDF files you upload (for an hour; see next question);</li>
+      <li>anonymous daily statistics (such as <em>today, XXX files have been processed, totalizing XXX Mb.</em>.</li>
+    </ul>
+    That's all. Nothing more.
+    {%- endtrans %}
+    {% endcall %}
+    {% call details(_("So you don't use cookies?")) %}
+    {% trans -%}
+    We do use cookies, but not to track you. The cookies are only used to remember your prefered language, if set by choosing it in the top menu.
+    {%- endtrans %}
+    {% endcall %}
+    {% call details(_("Who have access to the files I upload here?")) %}
+    {% trans -%}
+    <ul>
+      <li>Short answer: Do not upload here anything you would not want to be public. </li>
+      <li>Long answer: Nobody will look to the files you upload. However:
+      <ul>
+        <li>technically, I (the author and maintainer of this website) have access to everything you upload (but I won't bother reading it); </li>
+        <li>although I did my best, there might be security issues, and your files might be publicly accessible without my knowledge;</li>
+        <li>malicious hackers might try and gain access to the server.</li>
+      </ul>
+      If you are not happy with it, you can use this software locally (see next question).
+      </li>
+    </ul>
+    {%- endtrans %}
+    {% endcall %}
+    {% call details(_("How can I use this tool locally?")) %}
+    {% trans -%}
+    You can either:
+    <ul>
+      <li><a href="https://framagit.org/spalax/pdfimpose-web">install this webserver locally</a> and run it from your computer;</li>
+      <li>locally install the underlying tools (<a href="https://framagit.org/spalax/pdfimpose">pdfimpose</a> and <a href="https://framagit.org/spalax/pdfautonup">pdfautonup</a>). However, as far as I know, no one bothered to build a graphical user interface to them, so you will need to know a bit of command line to use them.</li>
+    </ul>
+    Both solutions require a bit of technical knowledge…
+    {%- endtrans %}
+    {% endcall %}
+    {% call details(_("I found a bug. How do I report it?")) %}
+    {% trans -%}
+    You can either open an issue on <a href="https://framagit.org/spalax/pdfimpose-web/-/issues">Framagit</a> or send me an email: <a href="mailto:contact(at)pdfimpose(dot)it">contact(at)pdfimpose(dot)it</a>.
+    {%- endtrans %}
+    {% endcall %}
+    {% call details(_("And if I don't speak English?")) %}
+    {% trans -%}
+    French-speaking users can contact us at the very same address: <a href="mailto:contact(at)pdfimpose(dot)it">contact(at)pdfimpose(dot)it</a>. Other languages? Sorry…
+    {%- endtrans %}
+    {% endcall %}
+    {% call details(_("I have an idea to improve the user experience: we might just…")) %}
+    {% trans -%}
+    <ul>
+      <li>Short answer: NO!</li>
+      <li>Long answer: I suck at designing easy-to-use applications. I spent ages coding this website, and I would spend hours to implement a tiny improvement. So I probably won't do it. However, if <em>you</em> can do it, I will be happy to merge your pull-request.</li>
+    </ul>
+    {%- endtrans %}
+    {% endcall %}
+    {% call details(_("Images are barely readable. Wouldn't videos be far more explanatories to explain the different layouts?")) %}
+    {% trans -%}
+    I wholly agree. But if I were to make them, I would spend hours for deplorable results. But I will be happy to include your videos!
+    {%- endtrans %}
+    {% endcall %}
+    </div>
+</section>
+

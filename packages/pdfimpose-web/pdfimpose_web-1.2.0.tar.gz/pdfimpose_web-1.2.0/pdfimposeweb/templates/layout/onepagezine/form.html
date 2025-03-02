@@ -1,0 +1,53 @@
+{# Copyright 2024 Louis Paternault
+
+This file is part of pdfimpose-web.
+
+Pdfimpose-web is free software: you can redistribute it and/or modify it
+under the terms of the GNU Affero General Public License as published by the
+Free Software Foundation, either version 3 of the License, or (at your
+option) any later version.
+
+Pdfimpose-web is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+details.
+
+You should have received a copy of the GNU Affero General Public License
+along with pdfimpose-web. If not, see <https://www.gnu.org/licenses/>.
+-#}
+
+{% from "forms.html" import input_bind, input_number, input_length, input_resize with context %}
+
+{% call details(_("More options…")) %}
+ <fieldset>
+   <legend>{% trans %}Resize input pages{% endtrans %}</legend>
+   {% trans %}If set, input pages will be resized before being imposed.{% endtrans %}
+     {{ input_resize(nameprefix="form-onepagezine") }}
+ </fieldset>
+
+  <fieldset>
+    <legend>{% trans %}Binding edge{% endtrans %}</legend>
+      {{ input_bind(nameprefix="form-onepagezine") }}
+  </fieldset>
+
+  <fieldset>
+    <legend>{% trans %}Last pages{% endtrans %}</legend>
+      {% trans %}Number of pages to keep as last pages. Useful to keep the back cover as a back cover.{% endtrans %}
+      {{ input_number(_("Last pages"), name="form-onepagezine-last", value="0", minimum="0") }}
+  </fieldset>
+
+  <fieldset>
+    <legend>{% trans %}Margins{% endtrans %}</legend>
+    {{ input_length(_("Output margin"), nameprefix="form-onepagezine-omargin") }}
+  </fieldset>
+
+  <fieldset>
+    <legend>{% trans %}Add marks?{% endtrans %}</legend>
+      <div class="form-check form-switch">
+          <label class="form-check-label" >
+            {% trans %}Crop marks{% endtrans %}
+              <input class="form-check-input" type="checkbox" role="switch" name="form-onepagezine-marks-crop">
+          </label>
+      </div>
+  </fieldset>
+{% endcall %}

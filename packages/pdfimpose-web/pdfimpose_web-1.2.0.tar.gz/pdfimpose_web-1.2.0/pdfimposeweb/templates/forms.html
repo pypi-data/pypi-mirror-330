@@ -1,0 +1,212 @@
+{# Copyright 2024 Louis Paternault
+
+This file is part of pdfimpose-web.
+
+Pdfimpose-web is free software: you can redistribute it and/or modify it
+under the terms of the GNU Affero General Public License as published by the
+Free Software Foundation, either version 3 of the License, or (at your
+option) any later version.
+
+Pdfimpose-web is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+details.
+
+You should have received a copy of the GNU Affero General Public License
+along with pdfimpose-web. If not, see <https://www.gnu.org/licenses/>.
+-#}
+
+{% macro input_length(text, nameprefix, defaultvalue=0, defaultunit="cm", arialabel="") -%}
+<div class="input-group mb-3">
+    <span class="input-group-text" >{{ text }}</span>
+    <input
+        type="number"
+        value="{{ defaultvalue }}"
+        min="0"
+        step="any"
+        name="{{ nameprefix }}-value"
+        class="form-control w-75"
+        onfocus="checkparentradio(this)"
+        {% if arialabel %}aria-label="{{ arialabel }}"{% endif %}
+    >
+    <select class="form-select w-auto" onfocus="checkparentradio(this)" name="{{ nameprefix }}-unit" aria-label="Unit">
+        {% for key, value in UNITS.items() %}
+            <option value="{{ key }}" {% if defaultunit==key %}selected{% endif %}>{{ value }}</option>
+        {% endfor %}
+    </select>
+</div>
+{%- endmacro %}
+
+{% macro input_format(nameprefix, choices, default="standard") -%}
+{% if "standard" in choices %}
+<div class="form-check">
+    <label class="form-check-label" >
+        {% trans %}Output size (standard sizes):{% endtrans %}
+        <input
+            class="form-check-input"
+            type="radio"
+            name="{{ nameprefix }}-format"
+            value="standard"
+            {% if default == "standard" %}checked="checked"{% endif %}
+        >
+    </label>
+        {% trans %}Put as much source pages into the destination page of the given size (note that margins are ignored when computing this; if margins are set (see below), the resulting file might be larger than the required format).{% endtrans %}
+        <select class="form-select" name="{{ nameprefix }}-format-standard" aria-label="Select output paper size" onfocus="checkparentradio(this)" >
+            {% for key, value in SIZES.items() %}
+            <option value="{{ key }}" {% if key == _("A4") %}selected{% endif %}>{{ key }} ({{ value }})</option>
+            {% endfor %}
+        </select>
+</div>
+{% endif %}
+{% if "custom" in choices %}
+<div class="form-check">
+    <label class="form-check-label" >
+        {% trans %}Output format (custom sizes):{% endtrans %}
+        <input
+            class="form-check-input"
+            type="radio"
+            name="{{ nameprefix }}-format"
+            value="custom"
+            {% if default == "custom" %}checked="checked"{% endif %}
+        >
+    </label>
+        {% trans %}Same as above, but with custom paper size.{% endtrans %}
+        <div class="input-group mb-3">{{ input_length(_("Width"), nameprefix=nameprefix + "-format-custom-width", defaultvalue=21, defaultunit="cm") }}</div>
+        <div class="input-group mb-3">{{ input_length(_("Height"), nameprefix=nameprefix + "-format-custom-height", defaultvalue=29.7, defaultunit="cm") }}</div>
+</div>
+{% endif %}
+{% if "signature" in choices %}
+<div class="form-check">
+    <label class="form-check-label" >
+        {% trans %}Signature:{% endtrans %}
+        <input
+            class="form-check-input"
+            type="radio"
+            name="{{ nameprefix }}-format"
+            value="signature"
+            {% if default == "signature" %}checked="checked"{% endif %}
+        >
+    </label>
+    {% trans %}Size of the destination pages (e.g. 2x3): this represents the number of sheets you will get after having cut each printed sheet.{% endtrans %}
+    <div class="input-group mb-3">
+        <span class="input-group-text">{% trans %}Width{% endtrans %}</span>
+        <input type="number" min="1" value="1" name="{{ nameprefix }}-format-signature-width" class="form-control" aria-label="{{ arialabel }}" onfocus="checkparentradio(this)" >
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text">{% trans %}Height{% endtrans %}</span>
+        <input type="number" min="1" value="1" name="{{ nameprefix }}-format-signature-height" class="form-control" aria-label="{{ arialabel }}" onfocus="checkparentradio(this)" >
+    </div>
+</div>
+{% endif %}
+{% endmacro %}
+
+{% macro input_number(title, name, value, minimum="", maximum="", step="", moreargs="") %}
+<div class="input-group mb-3">
+    <span class="input-group-text" >{{ title }}</span>
+    <input
+      type="number"
+      value="{{ value }}"
+      name="{{ name }}"
+      class="form-control"
+      {% if minimum %}min="{{ minimum }}"{% endif %}
+      {% if maximum %}max="{{ maximum }}"{% endif %}
+      {% if step %}step="{{ step }}"{% endif %}
+      {% if arialabel %}aria-label="{{ arialabel }}"{% endif %}
+      {% autoescape false %}{{ moreargs }}{% endautoescape %}
+    >
+</div>
+{%- endmacro %}
+
+{% macro input_bind(nameprefix) %}
+<div class="input-group mb-3">
+  <span class="input-group-text" >{% trans %}Bind{% endtrans %}</span>
+    <select class="form-select w-auto" name="{{ nameprefix }}-bind" aria-label="Unit">
+        <option value="left" selected >{% trans %}left{% endtrans %}</option>
+        <option value="right" >{% trans %}right{% endtrans %}</option>
+        <option value="top" >{% trans %}top{% endtrans %}</option>
+        <option value="bottom" >{% trans %}bottom{% endtrans %}</option>
+    </select>
+</div>
+{%- endmacro %}
+
+{% macro input_group(nameprefix, default) %}
+<div class="form-check">
+    <label class="form-check-label" >
+        {% trans %}Don't group sheets.{% endtrans %}
+        <input class="form-check-input" type="radio" name="{{ nameprefix }}-group" value="no" {% if default=="no" %}checked{% endif %}>
+    </label>
+</div>
+<div class="form-check">
+    <label class="form-check-label" >
+        {% trans %}Group some sheets.{% endtrans %}
+        <input class="form-check-input" type="radio" name="{{ nameprefix }}-group" value="some" {% if default=="some" %}checked{% endif %}>
+    </label>
+        <div class="input-group mb-3">
+            <span class="input-group-text" >{% trans %}Sheets{% endtrans %}</span>
+            <input type="number" value="2" min="2" name="{{ nameprefix }}-group-value" class="form-control" {% if arialabel %}aria-label="{{ arialabel }}"{% endif %} onfocus="checkparentradio(this)" >
+        </div>
+</div>
+<div class="form-check">
+    <label class="form-check-label" >
+        {% trans %}Group all sheets.{% endtrans %}
+        <input class="form-check-input" type="radio" name="{{ nameprefix }}-group" value="all" {% if default=="all" %}checked{% endif %}>
+    </label>
+</div>
+{% endmacro %}
+
+{% macro input_resize(nameprefix) %}
+<div class="form-check">
+    <label class="form-check-label" >
+        {% trans %}Do not resize.{% endtrans %}
+        <input
+            class="form-check-input"
+            type="radio"
+            name="{{ nameprefix }}-resize"
+            value="dont"
+            checked="checked"
+        >
+    </label>
+</div>
+<div class="form-check">
+    <label class="form-check-label" >
+        {% trans %}Resize to standard size:{% endtrans %}
+        <input
+            class="form-check-input"
+            type="radio"
+            name="{{ nameprefix }}-resize"
+            value="standard"
+        >
+    </label>
+        <select class="form-select" name="{{ nameprefix }}-resize-standard" aria-label="Select paper size" onfocus="checkparentradio(this)" >
+            {% for key, value in SIZES.items() %}
+            <option value="{{ key }}" {% if key == _("A5") %}selected{% endif %}>{{ key }} ({{ value }})</option>
+            {% endfor %}
+        </select>
+</div>
+<div class="form-check">
+    <label class="form-check-label" >
+        {% trans %}Resize to custom size:{% endtrans %}
+        <input
+            class="form-check-input"
+            type="radio"
+            name="{{ nameprefix }}-resize"
+            value="custom"
+        >
+    </label>
+        {% trans %}Same as above, but with custom paper size.{% endtrans %}
+        <div class="input-group mb-3">{{ input_length(_("Width"), nameprefix=nameprefix + "-resize-custom-width", defaultvalue=21, defaultunit="cm") }}</div>
+        <div class="input-group mb-3">{{ input_length(_("Height"), nameprefix=nameprefix + "-resize-custom-height", defaultvalue=29.7, defaultunit="cm") }}</div>
+</div>
+<div class="form-check">
+    <label class="form-check-label" >
+        {% trans %}Scale by factor:{% endtrans %}
+        <input
+            class="form-check-input"
+            type="radio"
+            name="{{ nameprefix }}-resize"
+            value="scale"
+        >
+    </label>
+        <div class="input-group mb-3">{{ input_number(_("Scale"), name=nameprefix + "-resize-scale", value="0.5", minimum="0", step="any", moreargs='onfocus="checkparentradio(this)"') }}</div>
+</div>
+{% endmacro %}

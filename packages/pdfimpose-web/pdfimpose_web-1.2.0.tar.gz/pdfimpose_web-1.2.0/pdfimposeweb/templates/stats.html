@@ -1,0 +1,116 @@
+{# Copyright 2024 Louis Paternault
+
+This file is part of pdfimpose-web.
+
+Pdfimpose-web is free software: you can redistribute it and/or modify it
+under the terms of the GNU Affero General Public License as published by the
+Free Software Foundation, either version 3 of the License, or (at your
+option) any later version.
+
+Pdfimpose-web is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+details.
+
+You should have received a copy of the GNU Affero General Public License
+along with pdfimpose-web. If not, see <https://www.gnu.org/licenses/>.
+-#}
+
+{% extends "base.html" %}
+
+{% block description %}{% trans %}Statistics about pdfimpose.it{% endtrans %}{% endblock %}
+{% block title %}{% trans %}pdfimpose.it — Statistics{% endtrans %}{% endblock %}
+{% block body %}
+<main class="px-2 py-2 mx-md-5">
+    <h1>Statistics</h1>
+
+    <h2>Day</h2>
+    <div style="width: 800px;"><canvas id="stats-day"></canvas></div>
+
+    <h2>Week</h2>
+    <div style="width: 800px;"><canvas id="stats-week"></canvas></div>
+
+    <h2>Month</h2>
+    <div style="width: 800px;"><canvas id="stats-month"></canvas></div>
+
+    <h2>Year</h2>
+    <div style="width: 800px;"><canvas id="stats-year"></canvas></div>
+
+</main>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+
+{% macro chart(period, data) %}
+<script>
+    (async function() {
+        const data = {
+            labels: [{% autoescape false %}{{ data[0]|join(", ") }}{% endautoescape %}],
+            datasets: [
+                {
+                    label: 'Files',
+                    data: [{{ data[1]|join(", ") }}],
+                    yAxisID: 'y',
+                },
+                {
+                    label: 'Size (bytes)',
+                    data: [{{ data[2]|join(", ") }}],
+                    yAxisID: 'y1',
+                }
+            ]
+        };
+
+        new Chart(
+            document.getElementById('stats-{{ period }}'),
+            {
+                type: 'line',
+                data: data,
+                options: {
+                    responsive: true,
+                    interaction: {
+                        mode: 'index',
+                        intersect: false,
+                    },
+                    stacked: false,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Files and size processed each {{ period }}'
+                        }
+                    },
+                    scales: {
+                        x: {
+                            type: 'time',
+                            min: {% autoescape false %}{{ data[0]|min }}{% endautoescape %},
+                            time: {
+                                unit: "{{ period }}"
+                            }
+                        },
+                        y: {
+                            type: 'linear',
+                            display: true,
+                            position: 'left',
+                            min: 0,
+                        },
+                        y1: {
+                            type: 'linear',
+                            display: true,
+                            position: 'right',
+                            min: 0,
+                            grid: {
+                                drawOnChartArea: false, // only want the grid lines for one axis to show up
+                            },
+                        },
+                    }
+                },
+            }
+        );
+    })();
+</script>
+{% endmacro %}
+
+{{ chart("day", dataday) }}
+{{ chart("week", dataweek) }}
+{{ chart("month", datamonth) }}
+{{ chart("year", datayear) }}
+
+{% endblock %}
