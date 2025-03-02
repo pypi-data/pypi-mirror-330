@@ -1,0 +1,28 @@
+Metadata-Version: 2.1
+Name: vwalila
+Version: 3.16.3
+Summary: vwalila - Awesome tookit for internal
+Home-page: UNKNOWN
+Author: xiaohui.chang
+Author-email: cxh@dobechina.com
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Dist: pyfiglet
+Requires-Dist: pymongo
+Requires-Dist: blinker
+Requires-Dist: PyYaml
+Requires-Dist: pytest
+Requires-Dist: celery
+Requires-Dist: redis
+Requires-Dist: librabbitmq
+Requires-Dist: hiredis
+Requires-Dist: requests
+Requires-Dist: twisted
+Requires-Dist: paho-mqtt
+Requires-Dist: click
+Requires-Dist: python-dateutil
+Requires-Dist: pytz
+
+UNKNOWN
+
+
