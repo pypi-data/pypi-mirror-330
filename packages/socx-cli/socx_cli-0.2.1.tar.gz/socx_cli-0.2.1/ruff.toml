@@ -1,0 +1,40 @@
+src = ["src", "tests"]
+fix = true
+line-length = 79
+cache-dir = "~/.cache/ruff"
+indent-width = 4
+target-version = "py312"
+respect-gitignore = true
+exclude = [
+    ".git",
+    ".venv",
+    "*.pyi",
+    "*.eggs",
+    ".ruff_cache",
+    ".pytest_cache",
+    ".gitignore",
+]
+
+[format]
+line-ending = "auto"
+quote-style = "double"
+indent-style = "space"
+docstring-code-format = true
+skip-magic-trailing-comma = false
+docstring-code-line-length = "dynamic"
+
+[lint]
+select = [
+    "A", "B", "C4", "D", "E", "F", "N", "W",
+    "DJ", "PT", "EM", "UP",
+    "NPY", "ISC", "ICN", "SIM", "RUF",
+    "PERF", "ASYNC",
+]
+ignore = [
+    "C408",
+    "D100", "D101", "D102", "D103", "D104", "D105", "D205",
+    "RUF022", "UP031",
+]
+
+[lint.pydocstyle]
+convention = "numpy"

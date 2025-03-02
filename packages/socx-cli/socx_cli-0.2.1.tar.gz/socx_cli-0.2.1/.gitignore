@@ -1,0 +1,37 @@
+# Exclude All
+
+*
+
+# Unexclude relevant files/directories
+
+!*/
+
+!/bin/*
+
+!/src/*.py
+!/src/socx/**/*.py
+!/src/patches/*.py
+!/src/socx_plugins/**/*.py
+!/src/socx/static/**/*
+!/src/socx/template/**/*
+
+!/tests/**/*.py
+
+!/assets/**/inputs/**/*
+!/assets/**/reference/**/*
+
+# Unexclude common files
+
+!/.gitignore
+!/.python-version
+!/LICENSE
+!/README.md
+!/Dockerfile
+
+# Unexclude configurations
+
+!/.env
+!/uv.toml
+!/ruff.toml
+!/pyproject.toml
+
