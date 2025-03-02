@@ -1,0 +1,16 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+src/cnmf/__init__.py
+src/cnmf/cnmf.py
+src/cnmf/preprocess.py
+src/cnmf/version.py
+src/cnmf.egg-info/PKG-INFO
+src/cnmf.egg-info/SOURCES.txt
+src/cnmf.egg-info/dependency_links.txt
+src/cnmf.egg-info/entry_points.txt
+src/cnmf.egg-info/requires.txt
+src/cnmf.egg-info/top_level.txt
+tests/test_prepare.py
+tests/test_reproducibility.py
