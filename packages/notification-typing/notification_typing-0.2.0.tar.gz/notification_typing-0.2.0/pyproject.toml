@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "notification-typing"
+version = "0.2.0"
+authors = [
+    { name = "Tommy Pang", email = "tommypang04@gmail.com" }
+]
+description = "A shared typing module for notification services."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = []  # Add dependencies if needed
+
+[tool.setuptools.packages.find]
+where = ["."]
