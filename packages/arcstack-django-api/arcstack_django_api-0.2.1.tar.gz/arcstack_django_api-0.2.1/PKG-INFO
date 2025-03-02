@@ -1,0 +1,136 @@
+Metadata-Version: 2.3
+Name: arcstack-django-api
+Version: 0.2.1
+Summary: Create APIs in Django way
+License: MIT
+Keywords: api,django,rest,framework,api-framework,class-based-views
+Author: Gokhan Ozturk
+Author-email: me@gokhan.org.tr
+Requires-Python: >=3.10
+Classifier: Intended Audience :: Information Technology
+Classifier: Intended Audience :: System Administrators
+Classifier: Operating System :: OS Independent
+Classifier: Development Status :: 3 - Alpha
+Classifier: Topic :: Internet
+Classifier: Topic :: Software Development :: Libraries :: Application Frameworks
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Software Development
+Classifier: Typing :: Typed
+Classifier: Environment :: Web Environment
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Framework :: Django
+Classifier: Framework :: Django :: 3.1
+Classifier: Framework :: Django :: 3.2
+Classifier: Framework :: Django :: 4.1
+Classifier: Framework :: Django :: 4.2
+Classifier: Framework :: Django :: 5.0
+Classifier: Framework :: Django :: 5.1
+Classifier: Topic :: Internet :: WWW/HTTP :: HTTP Servers
+Classifier: Topic :: Internet :: WWW/HTTP
+Provides-Extra: pydantic
+Requires-Dist: django (>=3.1,<6.0.0)
+Requires-Dist: django-appconf (>=1.1.0,<2.0.0)
+Requires-Dist: pydantic (>=2.10.6,<3.0.0) ; extra == "pydantic"
+Project-URL: Bug Tracker, https://github.com/gwainor/arcstack-django-api/issues
+Project-URL: Documentation, https://gwainor.github.io/arcstack-django-api/
+Project-URL: Homepage, https://gwainor.github.io/arcstack-django-api/
+Project-URL: Repository, https://github.com/gwainor/arcstack-django-api
+Description-Content-Type: text/markdown
+
+# ArcStack Django API Framework
+
+[![Tests](https://github.com/gwainor/arcstack-django-api/actions/workflows/test.yml/badge.svg?branch=master&event=push)](https://github.com/gwainor/arcstack-django-api/actions/workflows/test.yml)
+
+This is a simple yet extensible API framework for Django that you can create API
+endpoints Django way.
+
+Check out [Documentation](https://gwainor.github.io/arcstack-django-api/) for
+more info.
+
+
+## Sponsoring
+
+Maintaining an open-source project requires attention and time. If you like this
+project and want it to be developed further, you might want to consider giving
+me a support.
+
+If you are using ArcStack API in your project, please give me your feedback at
+[me@gokhan.tr](mailto:me@gokhan.tr).
+
+
+## Installation
+
+```sh
+pip install arcstack-django-api
+```
+
+
+## Usage
+
+ArcStack Django API comes with `CommonMiddleware` enabled. This middleware
+can convert your endpoint results to `HttpResponse`, handle exceptions and
+check for logged in users.
+
+Usage with class-based views:
+
+```python
+from arcstack_api import Endpoint, APIError
+
+class StatusOk(Endpoint):
+    # By default all defined enpoints do not require logged in user
+    # You can change this behavior with this class constant.
+    LOGIN_REQUIRED = True
+
+    def get(self, request, a: str | None = None):
+        if a == "something_invalid":
+            # This `dict` will be converted to `JSON` and `HttpResponse`
+            # will be generated
+            raise APIError(
+                {"error": "you have passed invalid argument"}
+                # The default status_code is `400` but it can be changed to
+                # anything you want.
+                status_code=480
+            )
+
+        # ArcStack API will serialize this to JSON and generate
+        # a `HttpResponse` for you.
+        return {"status": "OK"}
+```
+
+Usage with function views:
+
+```python
+from arcstack_api import api_endpoint, Endpoint, APIError
+
+@api_endpoint(login_required=True)
+def statusOk(request, a: str | None = None):
+    if a == "something_invalid":
+        raise APIError(
+            {"error": "you have passed invalid argument"}
+            status_code=480
+        )
+
+    return {"status": "OK"}
+```
+
+In `urls.py`
+
+```python
+from django.urls import path
+
+from . import endpoints
+
+urlpatterns = [
+    # For class-based views:
+    path("api", endpoints.StatusOk.as_endpoint()),
+    # For function views:
+    path("api", endpoints.statusOk),
+]
+```
+
