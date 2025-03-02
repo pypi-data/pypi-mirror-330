@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "phun"
+version = "0.1.2"
+description = "Physics Aware Functions"
+authors = ["Chi-kwan Chan <chanc@arizona.edu>"]
+readme = "README.rst"
+packages = [{include="phun", from="mod"}]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+numpy = "^1.22"
+astropy = "^6.0"
+
+[tool.poetry.group.docs]
+optional = true
+
+[tool.poetry.group.docs.dependencies]
+sphinx = "^4.4.0"
+
+[tool.poetry.group.test]
+optional = true
+
+[tool.poetry.group.test.dependencies]
+pytest = "^7.2.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
