@@ -1,0 +1,24 @@
+Metadata-Version: 2.1
+Name: clt_requirements
+Version: 1.8
+Summary: Helper module for Cloud Language Tools, additional dependencies
+Home-page: https://github.com/Language-Tools/cloud-language-tools-core
+Author: Luc
+Author-email: languagetools@mailc.net
+License: GPL
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Text Processing :: Linguistic
+Requires-Dist: azure-cognitiveservices-speech
+Requires-Dist: requests
+Requires-Dist: google-cloud-texttospeech
+Requires-Dist: google-cloud-translate
+Requires-Dist: boto3
+Requires-Dist: jieba
+Requires-Dist: cryptography
+Requires-Dist: pydub
+Requires-Dist: openai>=1.7.2
+Requires-Dist: pydantic
+Requires-Dist: cachetools
+Requires-Dist: clt_wenlin
+Requires-Dist: pinyin_jyutping
+Requires-Dist: StrEnum
