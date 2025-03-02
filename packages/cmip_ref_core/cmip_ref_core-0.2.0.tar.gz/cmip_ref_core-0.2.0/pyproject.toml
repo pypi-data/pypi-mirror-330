@@ -1,0 +1,39 @@
+[project]
+name = "cmip_ref_core"
+version = "0.2.0"
+description = "Core library for the CMIP Rapid Evaluation Framework"
+readme = "README.md"
+authors = [
+    { name = "Jared Lewis", email = "jared.lewis@climate-resource.com" }
+]
+requires-python = ">=3.10"
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering",
+]
+dependencies = [
+    "attrs>=22.1.0",
+    "pydantic>=2.10.6",
+    "typing_extensions",
+]
+
+[project.license]
+text = "Apache-2.0"
+
+[tool.uv]
+dev-dependencies = [
+
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

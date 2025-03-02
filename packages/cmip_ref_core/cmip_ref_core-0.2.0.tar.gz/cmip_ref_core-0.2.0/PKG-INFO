@@ -1,0 +1,29 @@
+Metadata-Version: 2.4
+Name: cmip_ref_core
+Version: 0.2.0
+Summary: Core library for the CMIP Rapid Evaluation Framework
+Author-email: Jared Lewis <jared.lewis@climate-resource.com>
+License: Apache-2.0
+License-File: LICENCE
+License-File: NOTICE
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Topic :: Scientific/Engineering
+Requires-Python: >=3.10
+Requires-Dist: attrs>=22.1.0
+Requires-Dist: pydantic>=2.10.6
+Requires-Dist: typing-extensions
+Description-Content-Type: text/markdown
+
+# ref-core
+
+This package provides the core functionality for the REF.
+This package is designed to be a library so may be published and consumed by othe packages if needed.
