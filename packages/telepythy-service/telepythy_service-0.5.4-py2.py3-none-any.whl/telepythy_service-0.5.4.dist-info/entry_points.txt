@@ -1,0 +1,2 @@
+[console_scripts]
+telepythy-svc = telepythy.lib.__main__:run
