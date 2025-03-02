@@ -1,0 +1,32 @@
+Metadata-Version: 2.2
+Name: spider-api
+Version: 2.0
+Summary: my lib is power
+Home-page: https://github.com
+Author: spiderXR7
+Author-email: spiderxr7@gmail.com
+License: MIT
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license
+Dynamic: requires-python
+Dynamic: summary
+
+# API-AI
+
+use
+```
+from spider_api import WormGPT
+user_input = input("ENTER YOUR quesion: ")
+response = WormGPT(user_input)
+print(response["response"])
+```
