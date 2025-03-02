@@ -1,0 +1,24 @@
+Metadata-Version: 2.2
+Name: datahub_binary
+Version: 0.1.0
+Summary: A comprehensive Python library for data processing, integration, and management.
+Requires-Python: <3.13,>=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: SQLAlchemy>=1.0.0
+Requires-Dist: httpx[socks]>=0.28.0
+Requires-Dist: starrocks>=1.0.0
+Requires-Dist: polars-lts-cpu>=1.0.0; sys_platform == "darwin"
+Requires-Dist: polars>=1.0.0; sys_platform != "darwin"
+Requires-Dist: loguru>=0.7.3
+Requires-Dist: numpy>=2.2.2
+Requires-Dist: protobuf>=5.29.3
+Requires-Dist: redis>=5.2.1
+Requires-Dist: psycopg2-binary>=2.9.10
+
+```shell
+uv build --wheel
+uv publish --publish-url https://packages.aliyun.com/67ac370259270b500346f530/pypi/repo-eclfx -u 67ac3a2b02260a3bc4fcfafa -p w6_eeH5D7ZRQ
+
+uv build --wheel --config-file pyproject_nuitka.toml
+uv publish -t pypi-AgEIcHlwaS5vcmcCJDBhN2YwYzdhLTBkZmEtNDE0Ny1iZTJjLWRkMDFmMmQyZmI5NAACJXsicGVybWlzc2lvbnMiOiAidXNlciIsICJ2ZXJzaW9uIjogMX0AAAYgvxJwx4e0T10PCuFVsJgFaWn8bi0MovlEvB5DomjlugA
+```
