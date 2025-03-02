@@ -1,0 +1,12 @@
+filelock
+
+[dev]
+ruff==0.9.6
+
+[docs]
+sphinx==8.1.3
+sphinx-mdinclude==0.6.2
+
+[test]
+pytest-cov
+pytest==8.*
