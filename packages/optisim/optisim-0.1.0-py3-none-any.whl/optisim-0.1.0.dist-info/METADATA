@@ -1,0 +1,20 @@
+Metadata-Version: 2.2
+Name: optisim
+Version: 0.1.0
+Summary: This library can be used to assess the performance of an optical sensor for SSA.
+Author-email: NIkita <nikita@digantara.co.in>
+License: MIT
+Project-URL: Homepage, https://git.digantara.dev/SMD/optisim.git
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: colorama>=0.4.6
+Requires-Dist: numpy>=2.2.2
+Requires-Dist: pandas>=2.2.3
+Requires-Dist: python-dateutil>=2.9.0.post0
+Requires-Dist: pytz>=2025.1
+Requires-Dist: scipy>=1.15.1
+Requires-Dist: setuptools>=75.8.0
+Requires-Dist: six>=1.17.0
+Requires-Dist: tzdata>=2025.1
+Requires-Dist: wheel>=0.45.1
+Requires-Dist: xlsxwriter>=3.2.2
