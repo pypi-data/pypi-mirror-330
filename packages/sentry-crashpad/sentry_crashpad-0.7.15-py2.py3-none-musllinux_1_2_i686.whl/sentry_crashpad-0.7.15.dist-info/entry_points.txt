@@ -1,0 +1,3 @@
+[console_scripts]
+crashpad_handler = sentry_crashpad:crashpad_handler
+
