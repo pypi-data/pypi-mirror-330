@@ -1,0 +1,29 @@
+name: Manual tox test
+
+on:
+  workflow_dispatch:
+    inputs:
+      pyver:
+        type: choice
+        description: Python version
+        options:
+        - '3.8'
+        - '3.9'
+        - '3.10'
+        - '3.11'
+        - '3.12'
+        - '3.13'
+
+jobs:
+  tox:
+    strategy:
+      matrix:
+        os:
+        - 'ubuntu-24.04'
+        - 'windows-2022'
+        - 'macos-14'
+    uses: ./.github/workflows/tox_inc.yml
+    with:
+      gitref: ${{ github.ref }}
+      os: ${{ matrix.os }}
+      pyver: ${{ github.event.inputs.pyver }}

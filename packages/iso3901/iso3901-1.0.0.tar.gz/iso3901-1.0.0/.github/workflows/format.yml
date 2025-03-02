@@ -1,0 +1,15 @@
+name: Formatting
+
+on:
+  schedule:
+    - cron: "48 4 13 * *"
+  workflow_dispatch:
+
+jobs:
+  do_format:
+    uses: ./.github/workflows/format_inc.yml
+    with:
+      gitref: ${{ github.ref }}
+    permissions:
+      contents: write
+      pull-requests: write

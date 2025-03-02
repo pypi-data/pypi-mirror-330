@@ -1,0 +1,81 @@
+name: Publish package
+
+on:
+  workflow_dispatch:
+    inputs:
+      is_forced:
+        type: choice
+        description: Force a new release
+        required: true
+        options:
+        - yes
+        - no
+        default: no
+      ver_part:
+        type: choice
+        description: Which version part is bumped
+        required: true
+        options:
+        - major
+        - minor
+        - patch
+        default: 'patch'
+
+jobs:
+  check:
+    uses: ./.github/workflows/full_check_inc.yml
+    with:
+      gitref: ${{ github.ref }}
+
+  deploy:
+    needs: check
+    concurrency: deploy
+    permissions:
+      id-token: write
+      contents: write
+      attestations: write
+    runs-on: ubuntu-24.04
+    environment: pypi
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        ref: ${{ github.ref }}
+        fetch-depth: 0
+
+    # setup must be done inside docker action
+
+    - name: Version bump is forced
+      uses: python-semantic-release/python-semantic-release@v9.21.0
+      if: inputs.is_forced == 'true'
+      id: forced
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        git_committer_name: 'github-actions[bot]'
+        git_committer_email: '41898282+github-actions[bot]@users.noreply.github.com'
+        force: ${{ inputs.ver_part }}
+        changelog: 'false'
+
+    - name: Version bump is not forced
+      uses: python-semantic-release/python-semantic-release@v9.21.0
+      if: inputs.is_forced == 'false'
+      id: unforced
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        git_committer_name: 'github-actions[bot]'
+        git_committer_email: '41898282+github-actions[bot]@users.noreply.github.com'
+        changelog: 'false'
+
+    - uses: pypa/gh-action-pypi-publish@v1.12.4
+      id: pypi_publish
+      if: >-
+        (steps.forced.conclusion == 'success' && steps.forced.outputs.released == 'true') ||
+        (steps.unforced.conclusion == 'success' && steps.unforced.outputs.released == 'true')
+
+    - uses: actions/attest-build-provenance@v2
+      if: steps.pypi_publish.conclusion == 'success'
+      with:
+        subject-path: "dist/*"
+
+    - uses: python-semantic-release/upload-to-gh-release@main
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
