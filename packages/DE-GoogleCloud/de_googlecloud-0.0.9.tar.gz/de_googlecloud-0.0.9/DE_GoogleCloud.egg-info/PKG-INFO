@@ -1,0 +1,25 @@
+Metadata-Version: 2.2
+Name: DE_GoogleCloud
+Version: 0.0.9
+Summary: Pacote de funcionalidades para o GCP
+Home-page: https://github.com/DE-DataEng/DE_GoogleCloud.git
+Author: Almir J Gomes
+Author-email: almir.jg@hotmail.com
+Keywords: Cloud,Google,DataEng,GCP,Pacote GCP python,Almir J Gomes,almir.jg@hotmail.com
+Classifier: Programming Language :: Python :: 3.9
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENCE.txt
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: requires-python
+Dynamic: summary
+
+Versão estavel. Efetuas novas consistencias em Upload e Downloads para verificação de pastas e arquivos existem, e tambem o timeout=60 para upload e download
