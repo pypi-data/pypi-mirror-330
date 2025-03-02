@@ -1,0 +1,453 @@
+# File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
+
+from __future__ import annotations
+
+from typing import Dict, List, Union, Iterable, Optional
+from datetime import datetime
+
+import httpx
+
+from ..types import ingest_units_params
+from .._types import NOT_GIVEN, Body, Query, Headers, NotGiven
+from .._utils import (
+    maybe_transform,
+    strip_not_given,
+    async_maybe_transform,
+)
+from .._compat import cached_property
+from .._resource import SyncAPIResource, AsyncAPIResource
+from .._response import (
+    to_raw_response_wrapper,
+    to_streamed_response_wrapper,
+    async_to_raw_response_wrapper,
+    async_to_streamed_response_wrapper,
+)
+from .._base_client import make_request_options
+from ..types.ingest_response import IngestResponse
+from ..types.ingest_event_param import IngestEventParam
+from ..types.bulk_ingest_response import BulkIngestResponse
+from ..types.pay_i_common_models_api_router_header_info_param import PayICommonModelsAPIRouterHeaderInfoParam
+
+__all__ = ["IngestResource", "AsyncIngestResource"]
+
+
+class IngestResource(SyncAPIResource):
+    @cached_property
+    def with_raw_response(self) -> IngestResourceWithRawResponse:
+        """
+        This property can be used as a prefix for any HTTP method call to return
+        the raw response object instead of the parsed content.
+
+        For more information, see https://www.github.com/Pay-i/pay-i-python#accessing-raw-response-data-eg-headers
+        """
+        return IngestResourceWithRawResponse(self)
+
+    @cached_property
+    def with_streaming_response(self) -> IngestResourceWithStreamingResponse:
+        """
+        An alternative to `.with_raw_response` that doesn't eagerly read the response body.
+
+        For more information, see https://www.github.com/Pay-i/pay-i-python#with_streaming_response
+        """
+        return IngestResourceWithStreamingResponse(self)
+
+    def bulk(
+        self,
+        *,
+        events: Iterable[IngestEventParam] | NotGiven = NOT_GIVEN,
+        # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
+        # The extra values given here take precedence over values defined on the client or passed to this method.
+        extra_headers: Headers | None = None,
+        extra_query: Query | None = None,
+        extra_body: Body | None = None,
+        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+    ) -> BulkIngestResponse:
+        """
+        Bulk Ingest
+
+        Args:
+          extra_headers: Send extra headers
+
+          extra_query: Add additional query parameters to the request
+
+          extra_body: Add additional JSON properties to the request
+
+          timeout: Override the client-level default timeout for this request, in seconds
+        """
+        return self._post(
+            "/api/v1/ingest/bulk",
+            body=maybe_transform(events, Iterable[IngestEventParam]),
+            options=make_request_options(
+                extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
+            ),
+            cast_to=BulkIngestResponse,
+        )
+
+    def units(
+        self,
+        *,
+        category: str,
+        resource: str,
+        units: Dict[str, ingest_units_params.Units],
+        end_to_end_latency_ms: Optional[int] | NotGiven = NOT_GIVEN,
+        event_timestamp: Union[str, datetime, None] | NotGiven = NOT_GIVEN,
+        experience_properties: Optional[Dict[str, str]] | NotGiven = NOT_GIVEN,
+        http_status_code: Optional[int] | NotGiven = NOT_GIVEN,
+        properties: Optional[Dict[str, str]] | NotGiven = NOT_GIVEN,
+        provider_request_headers: Optional[Iterable[PayICommonModelsAPIRouterHeaderInfoParam]] | NotGiven = NOT_GIVEN,
+        provider_request_json: Optional[str] | NotGiven = NOT_GIVEN,
+        provider_response_headers: Optional[Iterable[PayICommonModelsAPIRouterHeaderInfoParam]] | NotGiven = NOT_GIVEN,
+        provider_response_id: Optional[str] | NotGiven = NOT_GIVEN,
+        provider_response_json: Union[str, List[str], None] | NotGiven = NOT_GIVEN,
+        provider_uri: Optional[str] | NotGiven = NOT_GIVEN,
+        time_to_first_token_ms: Optional[int] | NotGiven = NOT_GIVEN,
+        limit_ids: Optional[list[str]] | NotGiven = NOT_GIVEN,
+        request_tags: Optional[list[str]] | NotGiven = NOT_GIVEN,
+        experience_id: Optional[str] | NotGiven = NOT_GIVEN,
+        experience_name: Optional[str] | NotGiven = NOT_GIVEN,
+        user_id: Optional[str] | NotGiven = NOT_GIVEN,
+        resource_scope: Optional[str] | NotGiven = NOT_GIVEN,
+        # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
+        # The extra values given here take precedence over values defined on the client or passed to this method.
+        extra_headers: Headers | None = None,
+        extra_query: Query | None = None,
+        extra_body: Body | None = None,
+        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+    ) -> IngestResponse:
+        """
+        Ingest an Event
+
+        Args:
+          category (str): The name of the category
+
+          resource (str): The name of the resource
+
+          input (int): The number of input units
+
+          output (int): The number of output units
+
+          event_timestamp: (str, datetime, None): The timestamp of the event. Defaults to None.
+
+          limit_ids (list[str], optional): The limit IDs to associate with the request. Defaults to None.
+
+          request_tags (list[str], optional): The request tags to associate with the request. Defaults to None.
+
+          experience_name (str, optional): The experience name
+
+          experience_id (str, optional): The experience instance id
+
+          user_id (str, optional): The user id
+          
+          resource_scope(str, optional): The scope of the resource
+
+          extra_headers (Dict[str, str], optional): Additional headers for the request. Defaults to None.
+
+          extra_query (Dict[str, str], optional): Additional query parameters. Defaults to None.
+
+          extra_body (Dict[str, Any], optional): Additional body parameters. Defaults to None.
+
+          timeout (Union[float, None], optional): The timeout for the request in seconds. Defaults to None.
+        """
+        valid_ids_str: str | NotGiven = NOT_GIVEN
+        valid_tags_str: str | NotGiven = NOT_GIVEN
+
+        if limit_ids is None or isinstance(limit_ids, NotGiven):
+            valid_ids_str = NOT_GIVEN
+        elif not isinstance(limit_ids, list):  # type: ignore
+            raise TypeError("limit_ids must be a list")
+        else:
+            # Proceed with the list comprehension if limit_ids is not NotGiven
+            valid_ids = [id.strip() for id in limit_ids if id.strip()]
+            valid_ids_str = ",".join(valid_ids) if valid_ids else NOT_GIVEN
+
+        if request_tags is None or isinstance(request_tags, NotGiven):
+            valid_tags_str = NOT_GIVEN
+        elif not isinstance(request_tags, list):  # type: ignore
+            raise TypeError("request_tags must be a list")
+        else:
+            # Proceed with the list comprehension if request_tags is not NotGiven
+            valid_tags = [tag.strip() for tag in request_tags if tag.strip()]
+            valid_tags_str = ",".join(valid_tags) if valid_tags else NOT_GIVEN
+
+        if experience_name is None or isinstance(experience_name, NotGiven):
+            experience_name = NOT_GIVEN
+
+        if experience_id is None or isinstance(experience_id, NotGiven):
+            experience_id = NOT_GIVEN
+
+        if user_id is None or isinstance(user_id, NotGiven):
+            user_id = NOT_GIVEN
+
+        extra_headers = {
+            **{key: value for key, value in strip_not_given({
+                "xProxy-Limit-IDs": valid_ids_str,
+                "xProxy-Request-Tags": valid_tags_str,
+                "xProxy-Experience-Name": experience_name,
+                "xProxy-Experience-Id": experience_id,
+                "xProxy-User-ID": user_id,
+                "xProxy-Resource-Scope": resource_scope,
+            }).items() if value is not None},  # Ensure no 'None' values are included
+            **(extra_headers or {}),
+        }
+
+        return self._post(
+            "/api/v1/ingest",
+            body=maybe_transform(
+                {
+                    "category": category,
+                    "resource": resource,
+                    "units": units,
+                    "end_to_end_latency_ms": end_to_end_latency_ms,
+                    "event_timestamp": event_timestamp,
+                    "experience_properties": experience_properties,
+                    "http_status_code": http_status_code,
+                    "properties": properties,
+                    "provider_request_headers": provider_request_headers,
+                    "provider_request_json": provider_request_json,
+                    "provider_response_headers": provider_response_headers,
+                    "provider_response_id": provider_response_id,
+                    "provider_response_json": provider_response_json,
+                    "provider_uri": provider_uri,
+                    "time_to_first_token_ms": time_to_first_token_ms,
+                },
+                ingest_units_params.IngestUnitsParams,
+            ),
+            options=make_request_options(
+                extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
+            ),
+            cast_to=IngestResponse,
+        )
+
+
+class AsyncIngestResource(AsyncAPIResource):
+    @cached_property
+    def with_raw_response(self) -> AsyncIngestResourceWithRawResponse:
+        """
+        This property can be used as a prefix for any HTTP method call to return
+        the raw response object instead of the parsed content.
+
+        For more information, see https://www.github.com/Pay-i/pay-i-python#accessing-raw-response-data-eg-headers
+        """
+        return AsyncIngestResourceWithRawResponse(self)
+
+    @cached_property
+    def with_streaming_response(self) -> AsyncIngestResourceWithStreamingResponse:
+        """
+        An alternative to `.with_raw_response` that doesn't eagerly read the response body.
+
+        For more information, see https://www.github.com/Pay-i/pay-i-python#with_streaming_response
+        """
+        return AsyncIngestResourceWithStreamingResponse(self)
+
+    async def bulk(
+        self,
+        *,
+        events: Iterable[IngestEventParam] | NotGiven = NOT_GIVEN,
+        # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
+        # The extra values given here take precedence over values defined on the client or passed to this method.
+        extra_headers: Headers | None = None,
+        extra_query: Query | None = None,
+        extra_body: Body | None = None,
+        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+    ) -> BulkIngestResponse:
+        """
+        Bulk Ingest
+
+        Args:
+          extra_headers: Send extra headers
+
+          extra_query: Add additional query parameters to the request
+
+          extra_body: Add additional JSON properties to the request
+
+          timeout: Override the client-level default timeout for this request, in seconds
+        """
+        return await self._post(
+            "/api/v1/ingest/bulk",
+            body=await async_maybe_transform(events, Iterable[IngestEventParam]),
+            options=make_request_options(
+                extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
+            ),
+            cast_to=BulkIngestResponse,
+        )
+
+    async def units(
+        self,
+        *,
+        category: str,
+        resource: str,
+        units: Dict[str, ingest_units_params.Units],
+        end_to_end_latency_ms: Optional[int] | NotGiven = NOT_GIVEN,
+        event_timestamp: Union[str, datetime, None] | NotGiven = NOT_GIVEN,
+        experience_properties: Optional[Dict[str, str]] | NotGiven = NOT_GIVEN,
+        http_status_code: Optional[int] | NotGiven = NOT_GIVEN,
+        properties: Optional[Dict[str, str]] | NotGiven = NOT_GIVEN,
+        provider_request_headers: Optional[Iterable[PayICommonModelsAPIRouterHeaderInfoParam]] | NotGiven = NOT_GIVEN,
+        provider_request_json: Optional[str] | NotGiven = NOT_GIVEN,
+        provider_response_headers: Optional[Iterable[PayICommonModelsAPIRouterHeaderInfoParam]] | NotGiven = NOT_GIVEN,
+        provider_response_id: Optional[str] | NotGiven = NOT_GIVEN,
+        provider_response_json: Union[str, List[str], None] | NotGiven = NOT_GIVEN,
+        provider_uri: Optional[str] | NotGiven = NOT_GIVEN,
+        time_to_first_token_ms: Optional[int] | NotGiven = NOT_GIVEN,
+        limit_ids: Optional[list[str]] | NotGiven = NOT_GIVEN,
+        request_tags: Optional[list[str]] | NotGiven = NOT_GIVEN,
+        experience_name: Optional[str] | NotGiven = NOT_GIVEN,
+        experience_id: Optional[str] | NotGiven = NOT_GIVEN,
+        user_id: Optional[str] | NotGiven = NOT_GIVEN,
+        resource_scope: Union[str, None] | NotGiven = NOT_GIVEN,
+        # The extra values given here take precedence over values defined on the client or passed to this method.
+        extra_headers: Headers | None = None,
+        extra_query: Query | None = None,
+        extra_body: Body | None = None,
+        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+    ) -> IngestResponse:
+        """
+        Ingest an Event
+
+        Args:
+          category (str): The name of the category
+
+          resource (str): The name of the resource
+
+          input (int): The number of input units
+
+          output (int): The number of output units
+
+          event_timestamp: (datetime, None): The timestamp of the event. Defaults to None.
+
+          limit_ids (list[str], optional): The limit IDs to associate with the request. Defaults to None.
+
+          request_tags (list[str], optional): The request tags to associate with the request. Defaults to None.
+
+          experience_name (str, optional): The experience name
+
+          experience_id (str, optional): The experience instance id
+
+          user_id (str, optional): The user id
+          
+          resource_scope (str, optional): The scope of the resource
+
+          extra_headers (Dict[str, str], optional): Additional headers for the request. Defaults to None.
+
+          extra_query (Dict[str, str], optional): Additional query parameters. Defaults to None.
+
+          extra_body (Dict[str, Any], optional): Additional body parameters. Defaults to None.
+
+          timeout (Union[float, None], optional): The timeout for the request in seconds. Defaults to None.
+        """
+        valid_ids_str: str | NotGiven = NOT_GIVEN
+        valid_tags_str: str | NotGiven = NOT_GIVEN
+
+        if limit_ids is None or isinstance(limit_ids, NotGiven):
+            valid_ids_str = NOT_GIVEN
+        elif not isinstance(limit_ids, list):  # type: ignore
+            raise TypeError("limit_ids must be a list")
+        else:
+            # Proceed with the list comprehension if limit_ids is not NotGiven
+            valid_ids = [id.strip() for id in limit_ids if id.strip()]
+            valid_ids_str = ",".join(valid_ids) if valid_ids else NOT_GIVEN
+
+        if request_tags is None or isinstance(request_tags, NotGiven):
+            valid_tags_str = NOT_GIVEN
+        elif not isinstance(request_tags, list):  # type: ignore
+            raise TypeError("request_tags must be a list")
+        else:
+            # Proceed with the list comprehension if request_tags is not NotGiven
+            valid_tags = [tag.strip() for tag in request_tags if tag.strip()]
+            valid_tags_str = ",".join(valid_tags) if valid_tags else NOT_GIVEN
+
+        if experience_name is None or isinstance(experience_name, NotGiven):
+            experience_name = NOT_GIVEN
+
+        if experience_id is None or isinstance(experience_id, NotGiven):
+            experience_id = NOT_GIVEN
+
+        if user_id is None or isinstance(user_id, NotGiven):
+            user_id = NOT_GIVEN
+
+        extra_headers = {
+            **{key: value for key, value in strip_not_given({
+                "xProxy-Limit-IDs": valid_ids_str,
+                "xProxy-Request-Tags": valid_tags_str,
+                "xProxy-Experience-Name": experience_name,
+                "xProxy-Experience-Id": experience_id,
+                "xProxy-User-ID": user_id,
+                "xProxy-Resource-Scope": resource_scope,
+            }).items() if value is not None},  # Ensure no 'None' values are included
+            **(extra_headers or {}),
+        }
+        return await self._post(
+            "/api/v1/ingest",
+            body=await async_maybe_transform(
+                {
+                    "category": category,
+                    "resource": resource,
+                    "units": units,
+                    "end_to_end_latency_ms": end_to_end_latency_ms,
+                    "event_timestamp": event_timestamp,
+                    "experience_properties": experience_properties,
+                    "http_status_code": http_status_code,
+                    "properties": properties,
+                    "provider_request_headers": provider_request_headers,
+                    "provider_request_json": provider_request_json,
+                    "provider_response_headers": provider_response_headers,
+                    "provider_response_id": provider_response_id,
+                    "provider_response_json": provider_response_json,
+                    "provider_uri": provider_uri,
+                    "time_to_first_token_ms": time_to_first_token_ms,
+                },
+                ingest_units_params.IngestUnitsParams,
+            ),
+            options=make_request_options(
+                extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
+            ),
+            cast_to=IngestResponse,
+        )
+
+
+class IngestResourceWithRawResponse:
+    def __init__(self, ingest: IngestResource) -> None:
+        self._ingest = ingest
+
+        self.bulk = to_raw_response_wrapper(
+            ingest.bulk,
+        )
+        self.units = to_raw_response_wrapper(
+            ingest.units,
+        )
+
+
+class AsyncIngestResourceWithRawResponse:
+    def __init__(self, ingest: AsyncIngestResource) -> None:
+        self._ingest = ingest
+
+        self.bulk = async_to_raw_response_wrapper(
+            ingest.bulk,
+        )
+        self.units = async_to_raw_response_wrapper(
+            ingest.units,
+        )
+
+
+class IngestResourceWithStreamingResponse:
+    def __init__(self, ingest: IngestResource) -> None:
+        self._ingest = ingest
+
+        self.bulk = to_streamed_response_wrapper(
+            ingest.bulk,
+        )
+        self.units = to_streamed_response_wrapper(
+            ingest.units,
+        )
+
+
+class AsyncIngestResourceWithStreamingResponse:
+    def __init__(self, ingest: AsyncIngestResource) -> None:
+        self._ingest = ingest
+
+        self.bulk = async_to_streamed_response_wrapper(
+            ingest.bulk,
+        )
+        self.units = async_to_streamed_response_wrapper(
+            ingest.units,
+        )
