@@ -1,0 +1,9 @@
+Metadata-Version: 2.4
+Name: unlock-pdf
+Version: 0.2.0
+Summary: Unlocks editing permissions of PDFs that don't have a password
+Project-URL: Homepage, https://github.com/elvishcm/unlock_pdf
+Author-email: Elvis Mak <elvishcmak@gmail.com>
+License-File: LICENSE
+Requires-Python: >=3.9
+Requires-Dist: pikepdf>=9.5.2
