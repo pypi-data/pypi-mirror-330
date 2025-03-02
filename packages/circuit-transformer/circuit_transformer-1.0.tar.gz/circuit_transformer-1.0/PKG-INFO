@@ -1,0 +1,22 @@
+Metadata-Version: 2.2
+Name: circuit-transformer
+Version: 1.0
+Summary: An end-to-end Transformer model that efficiently produces logic circuits strictly equivalent to given Boolean functions.
+Home-page: https://github.com/snowkylin/circuit-transformer
+Author: Xihan Li (snowkylin)
+Author-email: xihan.li@cs.ucl.ac.uk
+License: MIT
+Requires-Dist: tensorflow[and-cuda]
+Requires-Dist: tf_keras
+Requires-Dist: tf-models-official
+Requires-Dist: npn
+Requires-Dist: graphviz
+Requires-Dist: nvidia-ml-py
+Requires-Dist: bitarray
+Requires-Dist: huggingface_hub
+Dynamic: author
+Dynamic: author-email
+Dynamic: home-page
+Dynamic: license
+Dynamic: requires-dist
+Dynamic: summary
