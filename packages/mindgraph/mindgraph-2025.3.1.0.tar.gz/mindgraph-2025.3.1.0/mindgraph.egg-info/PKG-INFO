@@ -1,0 +1,53 @@
+Metadata-Version: 2.2
+Name: mindgraph
+Version: 2025.3.1.0
+Summary: A Python package for modeling knowledge as graphs
+Home-page: https://github.com/idin/mindgraph
+Author: Idin K
+Author-email: python@idin.net
+License: Conditional Freedom License (CFL-1.0)
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: Other/Proprietary License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Requires-Dist: pandas>=2.0.0
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# MindGraph 🧠
+
+
+## Overview
+
+
+## Contributing
+
+We welcome contributions to the Atlantis framework. Please refer to the contributing guidelines for more information.
+
+## License
+
+This project is licensed under the **Conditional Freedom License (CFL-1.0)**. 
+
+### Usage Restrictions
+
+This software **may NOT** be used, modified, or distributed by:
+
+- Entities opposing women's reproductive rights.
+- Entities opposing LGBTQ+ rights.
+- Organizations advocating for tariffs and sanctions against Canada.
+- Political parties, think tanks, and advocacy groups that support authoritarianism, white supremacy, or fascism.
+- Individuals and businesses affiliated with Donald Trump or his political organizations.
+- Companies and organizations that deny or obstruct climate science or promote climate disinformation.
+- Media outlets that propagate hate speech, conspiracy theories, or extreme political propaganda.
+- Companies profiting from war, mass surveillance, and militarization.
+
+For more details, please refer to the LICENSE file.
