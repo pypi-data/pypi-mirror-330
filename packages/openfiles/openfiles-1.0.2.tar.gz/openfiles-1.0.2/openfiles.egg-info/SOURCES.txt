@@ -1,0 +1,14 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+requirements.txt
+setup.py
+openfiles/__init__.py
+openfiles/client.py
+openfiles/models.py
+openfiles.egg-info/PKG-INFO
+openfiles.egg-info/SOURCES.txt
+openfiles.egg-info/dependency_links.txt
+openfiles.egg-info/requires.txt
+openfiles.egg-info/top_level.txt
