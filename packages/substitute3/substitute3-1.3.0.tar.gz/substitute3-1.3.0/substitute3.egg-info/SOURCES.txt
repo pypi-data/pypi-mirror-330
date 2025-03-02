@@ -1,0 +1,17 @@
+LICENSE
+README.md
+setup.py
+substitute/__init__.py
+substitute/complaint.py
+substitute/messages.py
+substitute/substitute.py
+substitute3.egg-info/PKG-INFO
+substitute3.egg-info/SOURCES.txt
+substitute3.egg-info/dependency_links.txt
+substitute3.egg-info/top_level.txt
+test/test_exercise_providing_data.py
+test/test_setup.py
+test/test_verify_calls.py
+test/test_verify_calls_with_arguments.py
+test/test_verify_calls_with_keyword_arguments.py
+test/test_verify_calls_with_mixed_arguments.py
