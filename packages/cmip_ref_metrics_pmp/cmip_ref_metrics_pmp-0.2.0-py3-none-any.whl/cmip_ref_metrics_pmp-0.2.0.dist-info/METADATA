@@ -1,0 +1,29 @@
+Metadata-Version: 2.4
+Name: cmip_ref_metrics_pmp
+Version: 0.2.0
+Summary: PMP metrics provider for the CMIP Rapid Evaluation Framework
+Author-email: Jiwoo Lee <jwlee@llnl.gov>
+License: Apache-2.0
+License-File: LICENCE
+License-File: NOTICE
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Topic :: Scientific/Engineering
+Requires-Python: >=3.10
+Requires-Dist: cmip-ref-core
+Requires-Dist: pcmdi-metrics
+Description-Content-Type: text/markdown
+
+# ref-metrics-pmp
+
+Use [PCMDI Metrics Package (PMP)](https://github.com/PCMDI/pcmdi_metrics) as a REF metrics provider. See [http://pcmdi.github.io/pcmdi_metrics/](http://pcmdi.github.io/pcmdi_metrics/) for more information on project goals and resources.
+
+See [running-metrics-locally](https://cmip-ref.readthedocs.io/en/latest/how-to-guides/running-metrics-locally/) for usage instructions.
