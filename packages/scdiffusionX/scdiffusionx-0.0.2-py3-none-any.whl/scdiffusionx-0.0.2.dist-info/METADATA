@@ -1,0 +1,146 @@
+Metadata-Version: 2.4
+Name: scdiffusionX
+Version: 0.0.2
+Summary: scDiffusion-X: Diffusion Model for Single-Cell Multiome Data Generation and Analysis
+Project-URL: Homepage, https://github.com/EperLuo/scDiffusion-X
+Project-URL: Issues, https://github.com/EperLuo/scDiffusion-X/issues
+Author-email: Erpai Luo <lep23@mails.tsinghua.edu.cn>
+License: BSD 3-Clause License
+        
+        Copyright (c) 2024, Erpai Luo
+        
+        Redistribution and use in source and binary forms, with or without
+        modification, are permitted provided that the following conditions are met:
+        
+        1. Redistributions of source code must retain the above copyright notice, this
+           list of conditions and the following disclaimer.
+        
+        2. Redistributions in binary form must reproduce the above copyright notice,
+           this list of conditions and the following disclaimer in the documentation
+           and/or other materials provided with the distribution.
+        
+        3. Neither the name of the copyright holder nor the names of its
+           contributors may be used to endorse or promote products derived from
+           this software without specific prior written permission.
+        
+        THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+        AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+        IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+        DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+        FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+        DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+        SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+        CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+        OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+        OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+License-File: LICENSE
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.8
+Requires-Dist: blobfile>=2.0.0
+Requires-Dist: click>=8.1.7
+Requires-Dist: einops>=0.8.0
+Requires-Dist: hydra-core>=1.3.2
+Requires-Dist: hydra-optuna-sweeper>=1.2.0
+Requires-Dist: hydra-submitit-launcher>=1.2.0
+Requires-Dist: multiprocess>=0.70
+Requires-Dist: muon>=0.1.6
+Requires-Dist: numpy>=1.22.4
+Requires-Dist: omegaconf>=2.3.0
+Requires-Dist: pytorch-lightning<1.9.0
+Requires-Dist: pyyaml>=6.0.2
+Requires-Dist: rich>=13.9.4
+Requires-Dist: scanpy>=1.9.1
+Requires-Dist: scikit-learn>=1.2.2
+Requires-Dist: scipy>=1.10.1
+Requires-Dist: scvi-tools<=1.0.0
+Requires-Dist: tensorboard>=2.12.0
+Requires-Dist: torch>=2.1.2
+Requires-Dist: torchvision>=0.14.0
+Requires-Dist: tqdm>=4.64.1
+Requires-Dist: wandb>=0.16.1
+Description-Content-Type: text/markdown
+
+## scDiffusion-X: Diffusion Model for Single-Cell Multiome Data Generation and Analysis
+
+Welcome! This is the official implement of scDiffusion-X.
+
+TODO: introduction to scDiffusion-X
+<!-- ![image](FIG1.png) -->
+<div align="center">  
+    <img src="FIG1.png" width="650">  
+</div>  
+
+# Installation
+<!-- Use conda create:
+```
+conda create --name scmuldiff --file requirements.txt python=3.8
+```
+Use setup.py:
+
+First clone this repository into your local path. Then run:
+```
+cd scDiffusion-X
+pip install -e .
+```
+TODO: Pipy package construction -->
+```
+conda create --name scmuldiff python=3.8
+pip install -r requirements.txt
+pip install scdiffusionX
+conda install mpi4py
+```
+
+
+# User guidance
+
+**Step1: Train the Autoencoder**
+```
+cd script/training_autoencoder
+bash train_autoencoder_multimodal.sbatch
+```
+Adjust the data path to your local path. The dataset config file is in script/training_autoencoder/configs/dataset, see the comments in openproblem.yaml for details. The checkpoint will be saved in script/training_autoencoder/outputs/checkpoints and the log file will be saved in script/training_autoencoder/outputs/logs. The autoencoder config file is in script/training_autoencoder/configs/encoder, see the comments in encoder_multimodal.yaml for details. 
+
+We recommand to use encoder_multimodal for most of dataset. If the genes and peaks are more than 50,000 and 200,000, we recommand a larger autoencoder in encoder_multimodal_large. If the genes and peaks are less than 5,000 and 15,000, we recommand a smaller autoencoder in encoder_multimodal_small. The `norm_type` in the encoder config yaml control the normalization type. For data generation task, we recommend batch_norm, and for translation task, we recommend layer_norm since it has better generalization for OOD data.
+
+**Step2: Train the Diffusion Backbone**
+
+```
+cd script/training_diffusion
+sh ssh_scripts/multimodal_train.sh
+```
+Again, adjust the data path and output path to your own, and also change the ae_path&encoder_config to the autoencoder you tarined in step 1. When training with condition (like the cell type condition), set the `num_class` to the number of unique labels. The training is unconditional when the `num_class` is not set.
+
+TODO: Explain more about each attribution
+
+**Step3: Generate new data**
+
+```
+cd script/training_diffusion
+sh ssh_scripts/multimodal_sample.sh
+```
+Change the MULTIMODAL_MODEL_PATH to the checkpoint path in step 2, and the DATA_DIR to your local data path.
+
+The experiments results in the paper can be reproduce through `evaluate_script/inference_multi_diff.ipynb`
+
+TODO: More details about the hyperpara, conditional and unconditional
+
+**Founction: Modality translation**
+
+For this task, we recommend you use `layer_norm` instead of `batch_norm` since it fit more for the OOD data. And if your source modality doesn't have a condition label overlap with the training data (like a external dataset), you can use unconditional training to train the model. If so, use a clustering method like leiden to get the cluster label as the covariate_keys for encoder (to get the size factor).
+```
+cd script/training_diffusion
+sh ssh_scripts/multimodal_train_translation.sh
+sh ssh_scripts/multimodal_translation.sh
+```
+You need to change the file path in both bash file to your local path. The `GEN_MODE` is the target modality (either "rna" or "atac" for current model). The training logic is the same for the multimodal_train_translation.sh and multimodal_train.sh except the dataset and other hyperparameters.
+
+The experiments results in the paper can be reproduce through `evaluate_script/translation_multi_diff.ipynb`
+
+TODO: change the format of input data file. More explaination about the hyperparameters and setting.
+
+**Founction: Gene-Peak regulatory analysis**
+
+You need to first complete the step1 and step2. The detail implement can be found in ``evaluate_script/regulatory_multi_diff.ipynb``
+
+<!-- Acknowledge: the code of this project is based on CFGen:https://github.com/theislab/CFGen and MM-diffusion: https://github.com/researchmm/MM-Diffusion. -->
