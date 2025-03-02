@@ -1,0 +1,37 @@
+[build-system]
+requires = ["poetry"]
+build-backend = "poetry.masonry.api"
+
+[tool.poetry]
+name = "sansio-lsp-client"
+version = "0.13.0"
+description = """
+An implementation of the client side of the LSP protocol, useful for \
+embedding easily in your editor.\
+"""
+authors = ["Purple Myst <PurpleMyst@users.noreply.github.com>"]
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/PurpleMyst/sansio-lsp-client"
+keywords = ["sansio", "languageserver"]
+include = ["sansio_lsp_client/py.typed"]
+
+[tool.poetry.dependencies]
+python = ">=3.10"
+dataclasses = { version = "^0.8", python = ">=3.6,<3.7" }
+black = "^24.4.2"
+mypy = "^1.10.0"
+pydantic = ">=2.0.0,<3.0.0"
+
+[tool.poetry.group.dev.dependencies]
+python-lsp-server = "^1.9.0"
+pytest = "^7.4.4"
+pytest-cov = "^4.1.0"
+lxml = "^5.1.0"
+pyflakes = "^3.2.0"
+
+[tool.black]
+line-length = 88
+target-version = ["py310"]
+# TODO: what's the purpose of specifying exclude here?
+exclude = 'build/|buck-out/|dist/|_build/|\.git/|\.hg/|\.mypy_cache/|\.tox/|\.venv/|/playground.py'
