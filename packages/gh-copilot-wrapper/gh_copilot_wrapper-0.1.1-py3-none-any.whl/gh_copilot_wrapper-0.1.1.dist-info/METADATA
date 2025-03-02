@@ -1,0 +1,8 @@
+Metadata-Version: 2.4
+Name: gh-copilot-wrapper
+Version: 0.1.1
+Summary: Github Copilot CLI Wrapper
+Author-email: Trond Hindenes <trond@hindenes.com>
+Requires-Python: >=3.12
+Requires-Dist: pyperclip>=1.9.0
+Requires-Dist: rich>=13.9.4
