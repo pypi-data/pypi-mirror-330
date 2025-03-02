@@ -1,0 +1,15 @@
+Metadata-Version: 2.2
+Name: epypen
+Version: 0.1.0b0
+Summary: Lightweight translation decorator between Python objects
+License: GPL-3.0
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: pydantic
+Requires-Dist: typing-extensions>=4.12.2
+
+# epypen
+Lightweight translation decorator between Python objects,
+commonly used as a mapper between Pydantic types and raw Pyton objects
+
+
