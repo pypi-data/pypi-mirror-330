@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "langchain-roleplay"
+version = "0.0.3"
+description = "A utility for reading configurations from a YAML file to run Langchain."
+authors = [{ name = "maye76", email = "hi@maye.run" }]
+readme = "README.md"
+license = { text = "MIT" }
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+]
+dependencies = [
+    "langchain>=0.3.19",
+    "pydantic>=2.10.6",
+    "PyYAML>=6.0.2",
+    "langchain-openai>=0.3.7",
+]
