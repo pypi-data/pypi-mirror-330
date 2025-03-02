@@ -1,0 +1,16 @@
+include LICENSE
+include README.md
+include requirements.txt
+recursive-include videoinstruct/prompts *.md
+recursive-include videoinstruct/prompts *.txt
+recursive-include videoinstruct/prompts *.json
+recursive-exclude * __pycache__
+recursive-exclude * *.py[cod]
+recursive-exclude * *~
+recursive-exclude * .git
+recursive-exclude * .DS_Store
+recursive-exclude venv *
+recursive-exclude .cursor *
+recursive-exclude output *
+recursive-exclude data *
+recursive-exclude temp * 
