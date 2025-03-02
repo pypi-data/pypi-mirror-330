@@ -1,0 +1,153 @@
+[project]
+name = "pytest-broadcaster"
+description = "Pytest plugin to broadcast pytest output to various destinations"
+authors = [{ name = "Guillaume Charbonnier", email = "gu.charbon@gmail.com" }]
+urls = { "Source" = "https://github.com/charbonnierg/pytest-broadcaster", "Tracker" = "https://github.com/charbonnierg/pytest-broadcaster/issues" }
+readme = "README.md"
+requires-python = ">= 3.9"
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Framework :: Pytest",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Testing",
+]
+dynamic = ["version"]
+dependencies = ["pytest", 'tomli>=1; python_version < "3.11"']
+
+[dependency-groups]
+dev = [
+    "datamodel-code-generator>=0.25.5",
+    "coverage>=7.4.4",
+    "flask>=3.0.2",
+    "mkdocs-gen-files",
+    "mkdocs-literate-nav",
+    "mkdocs-material",
+    "mkdocs-section-index",
+    "mkdocstrings[python]",
+    "pymdown-extensions",
+    "termynal",
+    "mike>=2.0.0",
+    "ruff>=0.9.9",
+    "hatch>=1.14.0",
+    "mypy>=1.15.0",
+]
+
+
+[project.entry-points.pytest11]
+pytest_broadcaster = "pytest_broadcaster.plugin"
+
+[tool.pytest.ini_options]
+markers = [
+    "basic",
+    "filetree",
+    "suites",
+    "markers",
+    "parametrization",
+    "buildmeta",
+]
+testpaths = ["tests"]
+
+[tool.coverage.run]
+source = ["src/pytest_broadcaster"]
+branch = true
+
+[tool.coverage.report]
+# Regexes for lines to exclude from consideration
+exclude_also = [
+    # Don't complain about missing debug-only code:
+    "if TYPE_CHECKING:",
+
+    # Don't complain if non-runnable code isn't run:
+    "if __name__ == .__main__.:",
+
+    # Don't complain about abstract methods, they aren't run:
+    "@(abc\\.)?abstractmethod",
+]
+
+[tool.coverage.html]
+directory = "coverage-report"
+
+[tool.mypy]
+strict = true
+
+[[tool.mypy.overrides]]
+module = "tests.*"
+disallow_untyped_defs = false
+warn_return_any = false
+
+[[tool.mypy.overrides]]
+module = "_testing.*"
+disallow_untyped_defs = false
+warn_return_any = false
+
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = [
+    "D203",   # incompatible with D211
+    "D213",   # incompatible with D212
+    "D413",   # allow multi-docsrings to end without additional empty line
+    "COM812", # ruff recommends to disable this rule when formatter is used
+]
+[tool.ruff.lint.per-file-ignores]
+"src/pytest_broadcaster/_internal/**/*.py" = [
+    "S101",   # allow assertions
+    "ARG002", # allow unused args
+]
+"src/pytest_broadcaster/plugin.py" = [
+    "E501",   # allow longer lines, we still run formatter anyway
+    "ARG002", # allow unused arguments to implement pytest plugin API
+]
+"src/pytest_broadcaster/models/*.py" = [
+    "ERA001", # allow commented code
+    "D100",   # generated  __init__ methods are not required to be documented
+    "D101",   # generated classes are not required to be documented
+    "D104",   # generated modules are not required to be documented
+    "E501",   # generated code may have longer lines, we still run formatter anyway
+    "A005",   # generated code may shadow standard library modules
+]
+"src/_testing/**/*.py" = [
+    "S101", # test code must use assert
+]
+"tests/**/*.py" = [
+    "D100",    # tests __init__ modules are not required to be documented
+    "D101",    # tests classes are not required to be documented
+    "D102",    # tests classes public method are not required to be documented
+    "D103",    # tests functions are not required to be documented
+    "D104",    # tests packages are not required to be documented 
+    "D107",    # tests classes are not required to document __init__ methods
+    "S101",    # test code must use assert
+    "PLR0913", # tests functions may accept any number of arguments
+    "PLR2004", # tests expectations may use literal values in comparisons
+    "SLF001",  # allow private attribute usage in tests
+    "ANN201",  # allow untyped defs
+]
+"scripts/**/*.py" = ["INP001"]
+
+[build-system]
+requires = ["hatchling", "hatch-vcs"]
+build-backend = "hatchling.build"
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/pytest_broadcaster"]
+
+[tool.hatch.version]
+source = "vcs"
+fallback-version = "v0.0.0-dev"
+
+[tool.hatch.build.hooks.vcs]
+version-file = "src/pytest_broadcaster/__about__.py"
+template = """# file generated with command: 'rye run version'
+# don't change, don't track in version control
+__version__ = version = {version!r}
+__version_tuple__ = version_tuple = {version_tuple!r}"""

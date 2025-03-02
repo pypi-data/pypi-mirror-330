@@ -1,0 +1,25 @@
+name: PyPi Release
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - 'v[0-9]+.[0-9]+.[0-9]+-[a-zA-Z]*'
+      - 'v[0-9]+.[0-9]+.[0-9]'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+
+      - name: Build and publish the packag on pypi
+        run: |
+          uv build
+          uv publish --token ${{ secrets.PYPI_TOKEN }}
