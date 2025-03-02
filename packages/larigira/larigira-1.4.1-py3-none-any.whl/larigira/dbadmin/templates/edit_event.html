@@ -1,0 +1,90 @@
+{% extends "dbadmin_base.html" %}
+{%block styles %}
+{{super()}}
+<style>
+#selected { 
+	margin: 5px;
+	padding: 5px;
+	border: 2px dashed #999;
+}
+#available-actions {
+	max-height: 50vw;
+	overflow-y: scroll;
+}
+</style>
+{%endblock styles%}
+{%block scripts %}
+{{super()}}
+</script>
+<script type="text/javascript">
+var my_id = {{alarm.eid}};
+$(function() {
+	$('.avail').draggable({
+		connectToSortable: '#selected',
+		helper: 'clone',
+	}).droppable({
+		drop: function(evt, ui) { 
+			$(ui.draggable).remove();
+		},
+	});
+	$('#selected').sortable({
+	})
+	$('ul, li').disableSelection();
+	$('button').button().click(function(evt) {
+		var ids = $('#selected li').map(function(i, li) {
+			return $(li).data('id');
+		});
+		jQuery.post(
+			'{{routeprefix}}/db/api/alarm/' + my_id + '/actions',
+			{"actions[]": ids.toArray()},
+			function onSuccess(data, textStatus, xhr) {
+				window.location.href = "{{routeprefix}}/db/list";
+			}
+			);
+	});
+});
+</script>
+{%endblock scripts %}
+{% block title %}Larigira - edit event {%endblock%}
+
+{% block content %}
+<div class="container-fluid">
+	{% if alarm: %}
+	You are currently editing: <code>{{alarm|tojson}}</code>
+	{% endif %}
+	<h2>Change actions</h2>
+	<div class="row">
+		<div id="available-actions" class="col-md-8">
+			Available actions:
+			<ul>
+				{% for a in all_actions %}
+				<li title="{{a.kind}}"
+						data-nick="{{a.nick}}"
+						data-id="{{a.eid}}"
+						class="avail ui-state-highlight">{% if a.nick %} {{a.nick}} {% else %} {{a.eid}} {%endif%}</li>
+				{% endfor %}
+			</ul>
+		</div>
+		<div class="col-md-4">
+			<div class="row">
+				<div class="col-md-12">
+					Actions currently added:
+					<ul id="selected">
+						{% for a in actions %}
+						<li title="{{a.kind}}"
+								data-nick="{{a.nick}}"
+								data-id="{{a.eid}}"
+								class="ui-state-default">{% if a.nick %} {{a.nick}} {% else %} {{a.eid}} {%endif%}</li>
+						{% endfor %}
+					</ul>
+				</div><!-- .col-md-12 -->
+				<div class="col-md-12">
+					<button>Save</button>
+				</div><!-- .col-md-12 -->
+			</div><!-- .row -->
+		</div><!-- .col-md-4 -->
+	</div><!-- .row -->
+{% endblock content %}
+{# vim: set ts=2 sw=2 noet: #}
+
+

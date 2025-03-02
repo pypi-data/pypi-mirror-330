@@ -1,0 +1,50 @@
+{% extends "dbadmin_base.html" %}
+{%block scripts%}
+{{super()}}
+<script type="text/javascript">
+$(function() {
+	$('.button').button({
+		icons: {
+			primary: 'ui-icon-pencil'
+		}
+	});
+});
+</script>
+{%endblock%}
+
+{% block title %}Larigira - DB list{%endblock%}
+
+{% block content %}
+<div class="container-fluid">
+<button data-target=".option-table,.event h3" class="btn btn-default"
+		aria-expanded="false" type="button"
+		data-toggle="collapse">Expand/collapse everything</button>
+	{% for e, actions in events %}
+	<div class="event row" id="event-{{e.eid}}">
+			<h2>Event {{e.eid}} <small>{{e.nick if 'nick'}}</small> </h2>
+		<div class="col-md-8 event-time">
+			<h3 class="collapse">Time</h3>
+			<a class="button" href="{{url_for('db.edit_time', alarmid=e.eid)}}">
+				Change time for this event</a>
+		{{dict_table(e, ['nick', 'actions'])}}
+
+		</div>
+		<div class="actions col-md-4 event-audio">
+			<h3 class="collapse">Audio</h3>
+			<a class="button" href="{{url_for('db.edit_event', alarmid=e.eid)}}">
+				Change audios for this event</a>
+			<ol>
+				{% for a in actions %}
+				<li>
+					<strong> {{a.nick}} </strong>
+					<small><a class="button" href="{{url_for('db.edit_audio', actionid=a.eid)}}">Edit</a></small>
+					{{dict_table(a, ['nick'])}}
+				</li>
+				{% endfor %}
+			</ol>
+		</div>{# actions #}
+	</div>{# event #}
+	{% endfor %}
+</div>
+{% endblock content %}
+{# vim: set ts=2 sw=2 noet: #}

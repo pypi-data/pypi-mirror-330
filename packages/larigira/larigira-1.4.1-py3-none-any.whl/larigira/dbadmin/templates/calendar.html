@@ -1,0 +1,63 @@
+{% extends "dbadmin_base.html" %}
+{%block scripts%}
+{{super()}}
+<script type="text/javascript" src="{{url_for('static', filename='calendar.js')}}"></script>
+
+{%endblock%}
+{% block styles%}
+{{super()}}
+<style>
+.soft-highlight { background-color: rgba(230, 230, 118, 0.36); }
+.alarm-highlight { background-color: #e1fe84; }
+time { transition: background-color 500ms; font-weight: bold; }
+li.alarm .alarm-actions { display: none; }
+</style>
+{% endblock %}
+
+
+{% block title %}Larigira - Calendar{%endblock%}
+
+{% block content %}
+<div class="container-fluid">
+	<div class="row">
+	{% if not show_all %}
+	<a href="{{url_for('db.events_calendar')}}?all=1"
+		class="btn btn-sm  btn-default state-collapsed pull-right">
+		<span class="glyphicon glyphicon-resize-full"></span>
+		Mostra tutti gli eventi</a>
+	{% else %}
+	<a href="{{url_for('db.events_calendar')}}?all=0"
+		class="btn btn-sm btn-default state-collapsed pull-right">
+		<span class="glyphicon glyphicon-resize-small"></span>
+		Nascondi gli eventi troppo frequenti</a>
+	{% endif %}
+	</div>
+	{% for week, weekdays in weeks|dictsort %}
+	<div class="week row" id="week-{{week[0]}}-{{week[1]}}">
+	{% for day in weeks[week] %}
+	<div class="day col-lg-2 col-md-3 col-sm-6 col-xs-12">
+		<h2><time datetime="{{day}}">{{day|dateformat(config.UI_CALENDAR_DATE_FMT)}}</time></h2>
+		{% for t in days[day]|sort %}
+		<div>
+		<ul>
+		{% for alarm, actions in days[day][t] %}
+			<li class="alarm {% if alarm.eid|string == request.args.get('highlight')%}alarm-highlight{%endif%}" data-alarmid="{{alarm.eid}}" data-actions="{{alarm.actions|join(',')}}">
+				<time>{{t.time()}}</time>
+				{{alarm.nick}}
+				<div class="alarm-actions">
+					{% for a in actions %}{{a.nick}}{%endfor%}
+				</div>
+		</li>
+		{% endfor %}
+		</ul>
+		</div>
+		{%endfor %}
+		</div><!-- day {{day}} -->
+		{% endfor %}
+	</div><!-- week {{week}} -->
+	<hr/>
+		{%endfor %}
+	</div><!-- container -->
+
+{% endblock content %}
+{# vim: set ts=2 sw=2 noet: #}

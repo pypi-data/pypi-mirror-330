@@ -1,0 +1,49 @@
+[console_scripts]
+larigira = larigira.main:main
+larigira-audiogen = larigira.audiogen:main
+larigira-dbmanage = larigira.event_manage:main
+larigira-timegen = larigira.timegen:main
+
+[larigira.audioform_create]
+http = larigira.audioform_http:AudioForm
+mostrecent = larigira.audioform_mostrecent:AudioForm
+podcast = larigira.audioform_podcast:AudioForm
+randomdir = larigira.audioform_randomdir:Form
+script = larigira.audioform_script:ScriptAudioForm
+static = larigira.audioform_static:StaticAudioForm
+
+[larigira.audioform_receive]
+http = larigira.audioform_http:audio_receive
+mostrecent = larigira.audioform_mostrecent:audio_receive
+podcast = larigira.audioform_podcast:audio_receive
+randomdir = larigira.audioform_randomdir:receive
+script = larigira.audioform_script:scriptaudio_receive
+static = larigira.audioform_static:staticaudio_receive
+
+[larigira.audiogenerators]
+http = larigira.audiogen_http:generate
+mostrecent = larigira.audiogen_mostrecent:generate
+mpd = larigira.audiogen_mpdrandom:generate_by_artist
+podcast = larigira.audiogen_podcast:generate
+randomdir = larigira.audiogen_randomdir:generate
+script = larigira.audiogen_script:generate
+static = larigira.audiogen_static:generate
+
+[larigira.eventfilter]
+maxwait = larigira.filters:maxwait
+percentwait = larigira.filters:percentwait
+
+[larigira.timeform_create]
+cron = larigira.timeform_cron:CronAlarmForm
+frequency = larigira.timeform_base:FrequencyAlarmForm
+single = larigira.timeform_base:SingleAlarmForm
+
+[larigira.timeform_receive]
+cron = larigira.timeform_cron:CronAlarmForm.form_receive
+frequency = larigira.timeform_base:FrequencyAlarmForm.form_receive
+single = larigira.timeform_base:SingleAlarmForm.form_receive
+
+[larigira.timegenerators]
+cron = larigira.timegen_cron:CronAlarm
+frequency = larigira.timegen_every:FrequencyAlarm
+single = larigira.timegen_every:SingleAlarm
