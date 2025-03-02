@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: SANNO
+Version: 0.1
+Summary: An automated cell type annotation algorithm for unmatched spatial transcriptomics data
+Home-page: https://github.com/yourusername/yourproject
+Author: Billy Chen
+Author-email: your.email@example.com
+Requires-Python: >=3.6
+Requires-Dist: anndata
+Requires-Dist: easydl (==2.2.0)
+Requires-Dist: faiss-cpu (==1.7.4)
+Requires-Dist: matplotlib (==3.5.1)
+Requires-Dist: numpy (==1.21.5)
+Requires-Dist: pandas (==1.3.5)
+Requires-Dist: POT (==0.8.1.0)
+Requires-Dist: scanpy
+Requires-Dist: scikit-learn (==1.0.2)
+Requires-Dist: scipy (==1.7.3)
+Requires-Dist: tensorboardX (==2.6.2.2)
+Requires-Dist: tqdm (==4.32.1)
+
