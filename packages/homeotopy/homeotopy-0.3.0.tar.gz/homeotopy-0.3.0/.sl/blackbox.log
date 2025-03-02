@@ -1,0 +1,815 @@
+2025/01/22 19:04:20 erk @(unknown) (43263) [visibility]> read 0 heads: 
+2025/01/22 19:04:21 erk @(unknown) (43263) [visibility]> read 0 heads: 
+2025/01/22 19:04:21 erk @(unknown) (43263) [visibility]> read 0 heads: 
+2025/01/22 19:04:22 erk @(unknown) (43263) [command_finish]> clone 'https://github.com/erikbrinkman/homeotopy.git' exited 0 after 1.20 seconds
+2025/01/22 19:06:48 erk @(unknown) (43975) [command]> blame /Users/erk/projects/homeotopy/pyproject.toml -Tjson --change --rev b528e6e769f1ffd2839a9c75a3c51c8f69200558 --noninteractive
+2025/01/22 19:06:48 erk @b528e6e769f1ffd2839a9c75a3c51c8f69200558 (43975) [command_finish]> blame /Users/erk/projects/homeotopy/pyproject.toml -Tjson --change --rev b528e6e769f1ffd2839a9c75a3c51c8f69200558 --noninteractive exited 0 after 0.09 seconds
+2025/01/22 19:07:04 erk @(unknown) (44040) [command]> blame /Users/erk/projects/homeotopy/homeotopy/__init__.py -Tjson --change --rev b528e6e769f1ffd2839a9c75a3c51c8f69200558 --noninteractive
+2025/01/22 19:07:04 erk @b528e6e769f1ffd2839a9c75a3c51c8f69200558 (44040) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/__init__.py -Tjson --change --rev b528e6e769f1ffd2839a9c75a3c51c8f69200558 --noninteractive exited 0 after 0.07 seconds
+2025/01/22 19:09:25 erk @(unknown) (44160) [command]> blame /Users/erk/projects/homeotopy/homeotopy/sphere/__init__.py -Tjson --change --rev b528e6e769f1ffd2839a9c75a3c51c8f69200558 --noninteractive
+2025/01/22 19:09:25 erk @b528e6e769f1ffd2839a9c75a3c51c8f69200558 (44160) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/sphere/__init__.py -Tjson --change --rev b528e6e769f1ffd2839a9c75a3c51c8f69200558 --noninteractive exited 0 after 0.07 seconds
+2025/01/22 19:09:31 erk @(unknown) (44212) [command]> debugcommitmessage isl --noninteractive
+2025/01/22 19:09:32 erk @b528e6e769f1ffd2839a9c75a3c51c8f69200558 (44212) [visibility]> read 0 heads: 
+2025/01/22 19:09:32 erk @b528e6e769f1ffd2839a9c75a3c51c8f69200558 (44212) [command_finish]> debugcommitmessage isl --noninteractive exited 0 after 0.27 seconds
+2025/01/22 19:09:39 erk @(unknown) (44435) [command]> commit --addremove --message 'working
+
+
+Summary: 
+
+Test Plan: 
+
+
+' --noninteractive
+2025/01/22 19:09:39 erk @b528e6e769f1ffd2839a9c75a3c51c8f69200558 (44435) [visibility]> read 0 heads: 
+2025/01/22 19:09:39 erk @b528e6e769f1ffd2839a9c75a3c51c8f69200558 (44435) [visibility]> read 0 heads: 
+2025/01/22 19:09:39 erk @b528e6e769f1ffd2839a9c75a3c51c8f69200558 (44435) [visibility]> removed 0 heads []; added 1 heads [d06cfe17bf7e]
+2025/01/22 19:09:39 erk @d06cfe17bf7ed84f69a104f334f77d93d6d76abd (44435) [visibility]> wrote 1 heads: d06cfe17bf7e
+2025/01/22 19:09:39 erk @d06cfe17bf7ed84f69a104f334f77d93d6d76abd (44435) [command_finish]> commit --addremove --message 'working
+
+
+Summary: 
+
+Test Plan: 
+
+
+' --noninteractive exited 0 after 0.23 seconds
+2025/01/22 19:11:33 erk @(unknown) (44870) [command]> blame /Users/erk/projects/homeotopy/homeotopy/__init__.py -Tjson --change --rev d06cfe17bf7ed84f69a104f334f77d93d6d76abd --noninteractive
+2025/01/22 19:11:33 erk @d06cfe17bf7ed84f69a104f334f77d93d6d76abd (44870) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/__init__.py -Tjson --change --rev d06cfe17bf7ed84f69a104f334f77d93d6d76abd --noninteractive exited 0 after 0.07 seconds
+2025/01/22 19:17:56 erk @(unknown) (45432) [command]> blame /Users/erk/projects/homeotopy/homeotopy/ball/__init__.py -Tjson --change --rev d06cfe17bf7ed84f69a104f334f77d93d6d76abd --noninteractive
+2025/01/22 19:17:56 erk @d06cfe17bf7ed84f69a104f334f77d93d6d76abd (45432) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/ball/__init__.py -Tjson --change --rev d06cfe17bf7ed84f69a104f334f77d93d6d76abd --noninteractive exited 0 after 0.07 seconds
+2025/01/22 22:17:29 erk @(unknown) (49305) [command]> blame /Users/erk/projects/homeotopy/homeotopy/sphere/__init__.py -Tjson --change --rev d06cfe17bf7ed84f69a104f334f77d93d6d76abd --noninteractive
+2025/01/22 22:17:29 erk @d06cfe17bf7ed84f69a104f334f77d93d6d76abd (49305) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/sphere/__init__.py -Tjson --change --rev d06cfe17bf7ed84f69a104f334f77d93d6d76abd --noninteractive exited 0 after 0.07 seconds
+2025/01/22 22:19:25 erk @(unknown) (49592) [command]> blame /Users/erk/projects/homeotopy/homeotopy/hypercube/_simplex.py -Tjson --change --rev d06cfe17bf7ed84f69a104f334f77d93d6d76abd --noninteractive
+2025/01/22 22:19:25 erk @d06cfe17bf7ed84f69a104f334f77d93d6d76abd (49592) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/hypercube/_simplex.py -Tjson --change --rev d06cfe17bf7ed84f69a104f334f77d93d6d76abd --noninteractive exited 0 after 0.07 seconds
+2025/01/22 22:19:38 erk @(unknown) (49684) [command]> blame /Users/erk/projects/homeotopy/README.md -Tjson --change --rev d06cfe17bf7ed84f69a104f334f77d93d6d76abd --noninteractive
+2025/01/22 22:19:38 erk @d06cfe17bf7ed84f69a104f334f77d93d6d76abd (49684) [command_finish]> blame /Users/erk/projects/homeotopy/README.md -Tjson --change --rev d06cfe17bf7ed84f69a104f334f77d93d6d76abd --noninteractive exited 0 after 0.07 seconds
+2025/01/22 22:19:53 erk @(unknown) (49829) [command]> blame /Users/erk/projects/homeotopy/typings/numba/__init__.py -Tjson --change --rev d06cfe17bf7ed84f69a104f334f77d93d6d76abd --noninteractive
+2025/01/22 22:19:53 erk @d06cfe17bf7ed84f69a104f334f77d93d6d76abd (49829) [command_finish]> blame /Users/erk/projects/homeotopy/typings/numba/__init__.py -Tjson --change --rev d06cfe17bf7ed84f69a104f334f77d93d6d76abd --noninteractive exited 0 after 0.09 seconds
+2025/01/22 22:20:20 erk @(unknown) (50004) [command]> blame /Users/erk/projects/homeotopy/poetry.lock -Tjson --change --rev d06cfe17bf7ed84f69a104f334f77d93d6d76abd --noninteractive
+2025/01/22 22:20:20 erk @d06cfe17bf7ed84f69a104f334f77d93d6d76abd (50004) [command_finish]> blame /Users/erk/projects/homeotopy/poetry.lock -Tjson --change --rev d06cfe17bf7ed84f69a104f334f77d93d6d76abd --noninteractive exited 0 after 0.08 seconds
+2025/01/22 22:20:22 erk @(unknown) (50033) [command]> blame /Users/erk/projects/homeotopy/pyproject.toml -Tjson --change --rev d06cfe17bf7ed84f69a104f334f77d93d6d76abd --noninteractive
+2025/01/22 22:20:22 erk @d06cfe17bf7ed84f69a104f334f77d93d6d76abd (50033) [command_finish]> blame /Users/erk/projects/homeotopy/pyproject.toml -Tjson --change --rev d06cfe17bf7ed84f69a104f334f77d93d6d76abd --noninteractive exited 0 after 0.07 seconds
+2025/01/22 22:25:13 erk @(unknown) (50717) [command]> blame /Users/erk/projects/homeotopy/homeotopy/hypercube/__init__.py -Tjson --change --rev d06cfe17bf7ed84f69a104f334f77d93d6d76abd --noninteractive
+2025/01/22 22:25:13 erk @d06cfe17bf7ed84f69a104f334f77d93d6d76abd (50717) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/hypercube/__init__.py -Tjson --change --rev d06cfe17bf7ed84f69a104f334f77d93d6d76abd --noninteractive exited 0 after 0.07 seconds
+2025/01/22 22:26:25 erk @(unknown) (51162) [command]> blame /Users/erk/projects/homeotopy/homeotopy/simplex/__init__.py -Tjson --change --rev d06cfe17bf7ed84f69a104f334f77d93d6d76abd --noninteractive
+2025/01/22 22:26:25 erk @d06cfe17bf7ed84f69a104f334f77d93d6d76abd (51162) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/simplex/__init__.py -Tjson --change --rev d06cfe17bf7ed84f69a104f334f77d93d6d76abd --noninteractive exited 0 after 0.08 seconds
+2025/01/22 22:31:34 erk @(unknown) (51917) [command]> blame /Users/erk/projects/homeotopy/homeotopy/sphere/_plane.py -Tjson --change --rev d06cfe17bf7ed84f69a104f334f77d93d6d76abd --noninteractive
+2025/01/22 22:31:34 erk @d06cfe17bf7ed84f69a104f334f77d93d6d76abd (51917) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/sphere/_plane.py -Tjson --change --rev d06cfe17bf7ed84f69a104f334f77d93d6d76abd --noninteractive exited 0 after 0.07 seconds
+2025/01/22 22:32:29 erk @(unknown) (52183) [command]> blame /Users/erk/projects/homeotopy/homeotopy/cube/_simplex.py -Tjson --change --rev d06cfe17bf7ed84f69a104f334f77d93d6d76abd --noninteractive
+2025/01/22 22:32:29 erk @d06cfe17bf7ed84f69a104f334f77d93d6d76abd (52183) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/cube/_simplex.py -Tjson --change --rev d06cfe17bf7ed84f69a104f334f77d93d6d76abd --noninteractive exited 0 after 0.07 seconds
+2025/01/22 22:32:37 erk @(unknown) (52288) [command]> blame /Users/erk/projects/homeotopy/homeotopy/cube/__init__.py -Tjson --change --rev d06cfe17bf7ed84f69a104f334f77d93d6d76abd --noninteractive
+2025/01/22 22:32:37 erk @d06cfe17bf7ed84f69a104f334f77d93d6d76abd (52288) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/cube/__init__.py -Tjson --change --rev d06cfe17bf7ed84f69a104f334f77d93d6d76abd --noninteractive exited 0 after 0.07 seconds
+2025/01/22 22:37:40 erk @(unknown) (53223) [command]> blame /Users/erk/projects/homeotopy/homeotopy/plane/__init__.py -Tjson --change --rev d06cfe17bf7ed84f69a104f334f77d93d6d76abd --noninteractive
+2025/01/22 22:37:40 erk @d06cfe17bf7ed84f69a104f334f77d93d6d76abd (53223) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/plane/__init__.py -Tjson --change --rev d06cfe17bf7ed84f69a104f334f77d93d6d76abd --noninteractive exited 0 after 0.08 seconds
+2025/01/22 22:50:36 erk @(unknown) (53868) [command]> blame /Users/erk/projects/homeotopy/homeotopy/plane/_cube.py -Tjson --change --rev d06cfe17bf7ed84f69a104f334f77d93d6d76abd --noninteractive
+2025/01/22 22:50:36 erk @d06cfe17bf7ed84f69a104f334f77d93d6d76abd (53868) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/plane/_cube.py -Tjson --change --rev d06cfe17bf7ed84f69a104f334f77d93d6d76abd --noninteractive exited 0 after 0.07 seconds
+2025/01/22 22:56:59 erk @(unknown) (54590) [command]> blame /Users/erk/projects/homeotopy/homeotopy/ball/_cube -Tjson --change --rev d06cfe17bf7ed84f69a104f334f77d93d6d76abd --noninteractive
+2025/01/22 22:56:59 erk @d06cfe17bf7ed84f69a104f334f77d93d6d76abd (54590) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/ball/_cube -Tjson --change --rev d06cfe17bf7ed84f69a104f334f77d93d6d76abd --noninteractive exited 0 after 0.07 seconds
+2025/01/22 22:57:05 erk @(unknown) (54724) [command]> blame /Users/erk/projects/homeotopy/homeotopy/ball/_cube.py -Tjson --change --rev d06cfe17bf7ed84f69a104f334f77d93d6d76abd --noninteractive
+2025/01/22 22:57:05 erk @d06cfe17bf7ed84f69a104f334f77d93d6d76abd (54724) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/ball/_cube.py -Tjson --change --rev d06cfe17bf7ed84f69a104f334f77d93d6d76abd --noninteractive exited 0 after 0.06 seconds
+2025/01/22 23:07:40 erk @(unknown) (56481) [command]> blame /Users/erk/projects/homeotopy/homeotopy/ball/_cube.py -Tjson --change --rev d06cfe17bf7ed84f69a104f334f77d93d6d76abd --noninteractive
+2025/01/22 23:07:40 erk @d06cfe17bf7ed84f69a104f334f77d93d6d76abd (56481) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/ball/_cube.py -Tjson --change --rev d06cfe17bf7ed84f69a104f334f77d93d6d76abd --noninteractive exited 0 after 0.07 seconds
+2025/01/22 23:08:40 erk @(unknown) (56526) [command]> blame /Users/erk/projects/homeotopy/homeotopy/ball/__init__.py -Tjson --change --rev d06cfe17bf7ed84f69a104f334f77d93d6d76abd --noninteractive
+2025/01/22 23:08:40 erk @d06cfe17bf7ed84f69a104f334f77d93d6d76abd (56526) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/ball/__init__.py -Tjson --change --rev d06cfe17bf7ed84f69a104f334f77d93d6d76abd --noninteractive exited 0 after 0.08 seconds
+2025/01/22 23:09:01 erk @(unknown) (56583) [command]> blame /Users/erk/projects/homeotopy/homeotopy/ball/_ball.py -Tjson --change --rev d06cfe17bf7ed84f69a104f334f77d93d6d76abd --noninteractive
+2025/01/22 23:09:01 erk @d06cfe17bf7ed84f69a104f334f77d93d6d76abd (56583) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/ball/_ball.py -Tjson --change --rev d06cfe17bf7ed84f69a104f334f77d93d6d76abd --noninteractive exited 0 after 0.07 seconds
+2025/01/22 23:11:45 erk @(unknown) (56878) [command]> debugcommitmessage isl --noninteractive
+2025/01/22 23:11:45 erk @d06cfe17bf7ed84f69a104f334f77d93d6d76abd (56878) [visibility]> read 1 heads: d06cfe17bf7e
+2025/01/22 23:11:45 erk @d06cfe17bf7ed84f69a104f334f77d93d6d76abd (56878) [command_finish]> debugcommitmessage isl --noninteractive exited 0 after 0.53 seconds
+2025/01/22 23:11:51 erk @(unknown) (57186) [command]> --config 'amend.autorestack=always' amend --addremove --noninteractive
+2025/01/22 23:11:51 erk @d06cfe17bf7ed84f69a104f334f77d93d6d76abd (57186) [visibility]> read 1 heads: d06cfe17bf7e
+2025/01/22 23:11:51 erk @d06cfe17bf7ed84f69a104f334f77d93d6d76abd (57186) [visibility]> read 1 heads: d06cfe17bf7e
+2025/01/22 23:11:51 erk @d06cfe17bf7ed84f69a104f334f77d93d6d76abd (57186) [visibility]> removed 0 heads []; added 1 heads [298ce367ca77]
+2025/01/22 23:11:51 erk @298ce367ca7758bb6a704de57dc3c47632e845e4 (57186) [visibility]> removed 1 heads [d06cfe17bf7e]; added 0 heads []
+2025/01/22 23:11:51 erk @298ce367ca7758bb6a704de57dc3c47632e845e4 (57186) [visibility]> wrote 1 heads: 298ce367ca77
+2025/01/22 23:11:52 erk @298ce367ca7758bb6a704de57dc3c47632e845e4 (57186) [command_finish]> --config 'amend.autorestack=always' amend --addremove --noninteractive exited 0 after 0.25 seconds
+2025/01/22 23:11:59 erk @(unknown) (57467) [command]> blame /Users/erk/projects/homeotopy/homeotopy/__init__.py -Tjson --change --rev 298ce367ca7758bb6a704de57dc3c47632e845e4 --noninteractive
+2025/01/22 23:11:59 erk @298ce367ca7758bb6a704de57dc3c47632e845e4 (57467) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/__init__.py -Tjson --change --rev 298ce367ca7758bb6a704de57dc3c47632e845e4 --noninteractive exited 0 after 0.07 seconds
+2025/01/22 23:14:22 erk @(unknown) (57765) [command]> blame /Users/erk/projects/homeotopy/homeotopy/cube/__init__.py -Tjson --change --rev 298ce367ca7758bb6a704de57dc3c47632e845e4 --noninteractive
+2025/01/22 23:14:22 erk @298ce367ca7758bb6a704de57dc3c47632e845e4 (57765) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/cube/__init__.py -Tjson --change --rev 298ce367ca7758bb6a704de57dc3c47632e845e4 --noninteractive exited 0 after 0.11 seconds
+2025/01/22 23:26:53 erk @(unknown) (58361) [command]> blame /Users/erk/projects/homeotopy/homeotopy/ball/_cube.py -Tjson --change --rev 298ce367ca7758bb6a704de57dc3c47632e845e4 --noninteractive
+2025/01/22 23:26:53 erk @298ce367ca7758bb6a704de57dc3c47632e845e4 (58361) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/ball/_cube.py -Tjson --change --rev 298ce367ca7758bb6a704de57dc3c47632e845e4 --noninteractive exited 0 after 0.09 seconds
+2025/01/22 23:28:22 erk @(unknown) (58537) [command]> blame /Users/erk/projects/homeotopy/homeotopy/simplex/__init__.py -Tjson --change --rev 298ce367ca7758bb6a704de57dc3c47632e845e4 --noninteractive
+2025/01/22 23:28:22 erk @298ce367ca7758bb6a704de57dc3c47632e845e4 (58537) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/simplex/__init__.py -Tjson --change --rev 298ce367ca7758bb6a704de57dc3c47632e845e4 --noninteractive exited 0 after 0.07 seconds
+2025/01/22 23:28:26 erk @(unknown) (58551) [command]> blame /Users/erk/projects/homeotopy/homeotopy/cube/_simplex.py -Tjson --change --rev 298ce367ca7758bb6a704de57dc3c47632e845e4 --noninteractive
+2025/01/22 23:28:26 erk @298ce367ca7758bb6a704de57dc3c47632e845e4 (58551) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/cube/_simplex.py -Tjson --change --rev 298ce367ca7758bb6a704de57dc3c47632e845e4 --noninteractive exited 0 after 0.08 seconds
+2025/01/22 23:30:57 erk @(unknown) (58764) [command]> blame /Users/erk/projects/homeotopy/homeotopy/simplex/_utils.py -Tjson --change --rev 298ce367ca7758bb6a704de57dc3c47632e845e4 --noninteractive
+2025/01/22 23:30:57 erk @298ce367ca7758bb6a704de57dc3c47632e845e4 (58764) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/simplex/_utils.py -Tjson --change --rev 298ce367ca7758bb6a704de57dc3c47632e845e4 --noninteractive exited 0 after 0.08 seconds
+2025/01/22 23:31:12 erk @(unknown) (58976) [command]> blame /Users/erk/projects/homeotopy/homeotopy/simplex/_simplex.py -Tjson --change --rev 298ce367ca7758bb6a704de57dc3c47632e845e4 --noninteractive
+2025/01/22 23:31:12 erk @298ce367ca7758bb6a704de57dc3c47632e845e4 (58976) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/simplex/_simplex.py -Tjson --change --rev 298ce367ca7758bb6a704de57dc3c47632e845e4 --noninteractive exited 0 after 0.06 seconds
+2025/01/22 23:31:21 erk @(unknown) (59108) [command]> blame /Users/erk/projects/homeotopy/homeotopy/simplex/_cube.py -Tjson --change --rev 298ce367ca7758bb6a704de57dc3c47632e845e4 --noninteractive
+2025/01/22 23:31:21 erk @298ce367ca7758bb6a704de57dc3c47632e845e4 (59108) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/simplex/_cube.py -Tjson --change --rev 298ce367ca7758bb6a704de57dc3c47632e845e4 --noninteractive exited 0 after 0.08 seconds
+2025/01/22 23:36:07 erk @(unknown) (59675) [command]> --config 'amend.autorestack=always' amend --addremove --noninteractive
+2025/01/22 23:36:07 erk @298ce367ca7758bb6a704de57dc3c47632e845e4 (59675) [visibility]> read 1 heads: 298ce367ca77
+2025/01/22 23:36:07 erk @298ce367ca7758bb6a704de57dc3c47632e845e4 (59675) [visibility]> read 1 heads: 298ce367ca77
+2025/01/22 23:36:07 erk @298ce367ca7758bb6a704de57dc3c47632e845e4 (59675) [visibility]> removed 0 heads []; added 1 heads [3218b1975a61]
+2025/01/22 23:36:07 erk @3218b1975a61efb788762943f155941d4bbf5140 (59675) [visibility]> removed 1 heads [298ce367ca77]; added 0 heads []
+2025/01/22 23:36:07 erk @3218b1975a61efb788762943f155941d4bbf5140 (59675) [visibility]> wrote 1 heads: 3218b1975a61
+2025/01/22 23:36:07 erk @3218b1975a61efb788762943f155941d4bbf5140 (59675) [command_finish]> --config 'amend.autorestack=always' amend --addremove --noninteractive exited 0 after 0.23 seconds
+2025/01/22 23:37:42 erk @(unknown) (60239) [command]> blame /Users/erk/projects/homeotopy/homeotopy/ball/_plane.py -Tjson --change --rev 3218b1975a61efb788762943f155941d4bbf5140 --noninteractive
+2025/01/22 23:37:42 erk @3218b1975a61efb788762943f155941d4bbf5140 (60239) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/ball/_plane.py -Tjson --change --rev 3218b1975a61efb788762943f155941d4bbf5140 --noninteractive exited 0 after 0.07 seconds
+2025/01/22 23:37:48 erk @(unknown) (60266) [command]> blame /Users/erk/projects/homeotopy/homeotopy/ball/_cube.py -Tjson --change --rev 3218b1975a61efb788762943f155941d4bbf5140 --noninteractive
+2025/01/22 23:37:48 erk @3218b1975a61efb788762943f155941d4bbf5140 (60266) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/ball/_cube.py -Tjson --change --rev 3218b1975a61efb788762943f155941d4bbf5140 --noninteractive exited 0 after 0.07 seconds
+2025/01/22 23:39:13 erk @(unknown) (60445) [command]> blame /Users/erk/projects/homeotopy/homeotopy/ball/_ball.py -Tjson --change --rev 3218b1975a61efb788762943f155941d4bbf5140 --noninteractive
+2025/01/22 23:39:13 erk @3218b1975a61efb788762943f155941d4bbf5140 (60445) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/ball/_ball.py -Tjson --change --rev 3218b1975a61efb788762943f155941d4bbf5140 --noninteractive exited 0 after 0.08 seconds
+2025/01/22 23:39:58 erk @(unknown) (60619) [command]> blame /Users/erk/projects/homeotopy/homeotopy/plane/_cube.py -Tjson --change --rev 3218b1975a61efb788762943f155941d4bbf5140 --noninteractive
+2025/01/22 23:39:58 erk @3218b1975a61efb788762943f155941d4bbf5140 (60619) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/plane/_cube.py -Tjson --change --rev 3218b1975a61efb788762943f155941d4bbf5140 --noninteractive exited 0 after 0.07 seconds
+2025/01/22 23:43:19 erk @(unknown) (61230) [command]> blame /Users/erk/projects/homeotopy/homeotopy/ball/__init__.py -Tjson --change --rev 3218b1975a61efb788762943f155941d4bbf5140 --noninteractive
+2025/01/22 23:43:19 erk @3218b1975a61efb788762943f155941d4bbf5140 (61230) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/ball/__init__.py -Tjson --change --rev 3218b1975a61efb788762943f155941d4bbf5140 --noninteractive exited 0 after 0.08 seconds
+2025/01/22 23:43:42 erk @(unknown) (61403) [command]> blame /Users/erk/projects/homeotopy/homeotopy/plane/__init__.py -Tjson --change --rev 3218b1975a61efb788762943f155941d4bbf5140 --noninteractive
+2025/01/22 23:43:42 erk @3218b1975a61efb788762943f155941d4bbf5140 (61403) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/plane/__init__.py -Tjson --change --rev 3218b1975a61efb788762943f155941d4bbf5140 --noninteractive exited 0 after 0.07 seconds
+2025/01/22 23:44:22 erk @(unknown) (61562) [command]> --config 'amend.autorestack=always' amend --addremove --noninteractive
+2025/01/22 23:44:22 erk @3218b1975a61efb788762943f155941d4bbf5140 (61562) [visibility]> read 1 heads: 3218b1975a61
+2025/01/22 23:44:22 erk @3218b1975a61efb788762943f155941d4bbf5140 (61562) [visibility]> read 1 heads: 3218b1975a61
+2025/01/22 23:44:22 erk @3218b1975a61efb788762943f155941d4bbf5140 (61562) [visibility]> removed 0 heads []; added 1 heads [bfef2817cd75]
+2025/01/22 23:44:22 erk @bfef2817cd75d341c71e38444a04e4fd1fc7acd9 (61562) [visibility]> removed 1 heads [3218b1975a61]; added 0 heads []
+2025/01/22 23:44:22 erk @bfef2817cd75d341c71e38444a04e4fd1fc7acd9 (61562) [visibility]> wrote 1 heads: bfef2817cd75
+2025/01/22 23:44:22 erk @bfef2817cd75d341c71e38444a04e4fd1fc7acd9 (61562) [command_finish]> --config 'amend.autorestack=always' amend --addremove --noninteractive exited 0 after 0.28 seconds
+2025/01/22 23:48:07 erk @(unknown) (63261) [command]> blame /Users/erk/projects/homeotopy/homeotopy/ball/__init__.py -Tjson --change --rev bfef2817cd75d341c71e38444a04e4fd1fc7acd9 --noninteractive
+2025/01/22 23:48:07 erk @bfef2817cd75d341c71e38444a04e4fd1fc7acd9 (63261) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/ball/__init__.py -Tjson --change --rev bfef2817cd75d341c71e38444a04e4fd1fc7acd9 --noninteractive exited 0 after 0.07 seconds
+2025/01/22 23:48:16 erk @(unknown) (63302) [command]> blame /Users/erk/projects/homeotopy/homeotopy/ball/_ball.py -Tjson --change --rev bfef2817cd75d341c71e38444a04e4fd1fc7acd9 --noninteractive
+2025/01/22 23:48:16 erk @bfef2817cd75d341c71e38444a04e4fd1fc7acd9 (63302) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/ball/_ball.py -Tjson --change --rev bfef2817cd75d341c71e38444a04e4fd1fc7acd9 --noninteractive exited 0 after 0.07 seconds
+2025/01/22 23:48:35 erk @(unknown) (63435) [command]> blame /Users/erk/projects/homeotopy/homeotopy/ball/_simplex.py -Tjson --change --rev bfef2817cd75d341c71e38444a04e4fd1fc7acd9 --noninteractive
+2025/01/22 23:48:35 erk @bfef2817cd75d341c71e38444a04e4fd1fc7acd9 (63435) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/ball/_simplex.py -Tjson --change --rev bfef2817cd75d341c71e38444a04e4fd1fc7acd9 --noninteractive exited 0 after 0.07 seconds
+2025/01/22 23:48:42 erk @(unknown) (63567) [command]> blame /Users/erk/projects/homeotopy/homeotopy/ball/_sphere.py -Tjson --change --rev bfef2817cd75d341c71e38444a04e4fd1fc7acd9 --noninteractive
+2025/01/22 23:48:42 erk @bfef2817cd75d341c71e38444a04e4fd1fc7acd9 (63567) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/ball/_sphere.py -Tjson --change --rev bfef2817cd75d341c71e38444a04e4fd1fc7acd9 --noninteractive exited 0 after 0.07 seconds
+2025/01/22 23:51:38 erk @(unknown) (63703) [command]> blame /Users/erk/projects/homeotopy/homeotopy/_homeomorphism.py -Tjson --change --rev bfef2817cd75d341c71e38444a04e4fd1fc7acd9 --noninteractive
+2025/01/22 23:51:38 erk @bfef2817cd75d341c71e38444a04e4fd1fc7acd9 (63703) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/_homeomorphism.py -Tjson --change --rev bfef2817cd75d341c71e38444a04e4fd1fc7acd9 --noninteractive exited 0 after 0.07 seconds
+2025/01/22 23:58:45 erk @(unknown) (64651) [command]> blame /Users/erk/projects/homeotopy/homeotopy/__init__.py -Tjson --change --rev bfef2817cd75d341c71e38444a04e4fd1fc7acd9 --noninteractive
+2025/01/22 23:58:45 erk @bfef2817cd75d341c71e38444a04e4fd1fc7acd9 (64651) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/__init__.py -Tjson --change --rev bfef2817cd75d341c71e38444a04e4fd1fc7acd9 --noninteractive exited 0 after 0.07 seconds
+2025/01/23 00:00:20 erk @(unknown) (65145) [command]> blame /Users/erk/projects/homeotopy/homeotopy/_ball.py -Tjson --change --rev bfef2817cd75d341c71e38444a04e4fd1fc7acd9 --noninteractive
+2025/01/23 00:00:20 erk @bfef2817cd75d341c71e38444a04e4fd1fc7acd9 (65145) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/_ball.py -Tjson --change --rev bfef2817cd75d341c71e38444a04e4fd1fc7acd9 --noninteractive exited 0 after 0.07 seconds
+2025/01/23 00:03:34 erk @(unknown) (65627) [command]> blame /Users/erk/projects/homeotopy/homeotopy/_simplex.py -Tjson --change --rev bfef2817cd75d341c71e38444a04e4fd1fc7acd9 --noninteractive
+2025/01/23 00:03:34 erk @bfef2817cd75d341c71e38444a04e4fd1fc7acd9 (65627) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/_simplex.py -Tjson --change --rev bfef2817cd75d341c71e38444a04e4fd1fc7acd9 --noninteractive exited 0 after 0.07 seconds
+2025/01/23 00:03:38 erk @(unknown) (65759) [command]> blame /Users/erk/projects/homeotopy/homeotopy/_cube.py -Tjson --change --rev bfef2817cd75d341c71e38444a04e4fd1fc7acd9 --noninteractive
+2025/01/23 00:03:38 erk @bfef2817cd75d341c71e38444a04e4fd1fc7acd9 (65759) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/_cube.py -Tjson --change --rev bfef2817cd75d341c71e38444a04e4fd1fc7acd9 --noninteractive exited 0 after 0.07 seconds
+2025/01/23 00:03:42 erk @(unknown) (65891) [command]> blame /Users/erk/projects/homeotopy/homeotopy/_sphere.py -Tjson --change --rev bfef2817cd75d341c71e38444a04e4fd1fc7acd9 --noninteractive
+2025/01/23 00:03:42 erk @bfef2817cd75d341c71e38444a04e4fd1fc7acd9 (65891) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/_sphere.py -Tjson --change --rev bfef2817cd75d341c71e38444a04e4fd1fc7acd9 --noninteractive exited 0 after 0.07 seconds
+2025/01/23 00:03:47 erk @(unknown) (66023) [command]> blame /Users/erk/projects/homeotopy/homeotopy/_simplotope.py -Tjson --change --rev bfef2817cd75d341c71e38444a04e4fd1fc7acd9 --noninteractive
+2025/01/23 00:03:47 erk @bfef2817cd75d341c71e38444a04e4fd1fc7acd9 (66023) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/_simplotope.py -Tjson --change --rev bfef2817cd75d341c71e38444a04e4fd1fc7acd9 --noninteractive exited 0 after 0.07 seconds
+2025/01/23 00:03:57 erk @(unknown) (66155) [command]> blame /Users/erk/projects/homeotopy/homeotopy/_plane.py -Tjson --change --rev bfef2817cd75d341c71e38444a04e4fd1fc7acd9 --noninteractive
+2025/01/23 00:03:57 erk @bfef2817cd75d341c71e38444a04e4fd1fc7acd9 (66155) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/_plane.py -Tjson --change --rev bfef2817cd75d341c71e38444a04e4fd1fc7acd9 --noninteractive exited 0 after 0.07 seconds
+2025/01/23 00:04:03 erk @(unknown) (66168) [command]> --config 'amend.autorestack=always' amend --addremove --noninteractive
+2025/01/23 00:04:03 erk @bfef2817cd75d341c71e38444a04e4fd1fc7acd9 (66168) [visibility]> read 1 heads: bfef2817cd75
+2025/01/23 00:04:03 erk @bfef2817cd75d341c71e38444a04e4fd1fc7acd9 (66168) [visibility]> read 1 heads: bfef2817cd75
+2025/01/23 00:04:03 erk @bfef2817cd75d341c71e38444a04e4fd1fc7acd9 (66168) [visibility]> removed 0 heads []; added 1 heads [3039450b5d1f]
+2025/01/23 00:04:03 erk @3039450b5d1f23cebd92c50e112440511fa34514 (66168) [visibility]> removed 1 heads [bfef2817cd75]; added 0 heads []
+2025/01/23 00:04:03 erk @3039450b5d1f23cebd92c50e112440511fa34514 (66168) [visibility]> wrote 1 heads: 3039450b5d1f
+2025/01/23 00:04:03 erk @3039450b5d1f23cebd92c50e112440511fa34514 (66168) [command_finish]> --config 'amend.autorestack=always' amend --addremove --noninteractive exited 0 after 0.24 seconds
+2025/01/23 00:08:33 erk @(unknown) (67377) [command]> blame /Users/erk/projects/homeotopy/homeotopy/_homeomorphism.py -Tjson --change --rev 3039450b5d1f23cebd92c50e112440511fa34514 --noninteractive
+2025/01/23 00:08:33 erk @3039450b5d1f23cebd92c50e112440511fa34514 (67377) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/_homeomorphism.py -Tjson --change --rev 3039450b5d1f23cebd92c50e112440511fa34514 --noninteractive exited 0 after 0.07 seconds
+2025/01/23 00:08:48 erk @(unknown) (67579) [command]> blame /Users/erk/projects/homeotopy/homeotopy/_ball.py -Tjson --change --rev 3039450b5d1f23cebd92c50e112440511fa34514 --noninteractive
+2025/01/23 00:08:48 erk @3039450b5d1f23cebd92c50e112440511fa34514 (67579) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/_ball.py -Tjson --change --rev 3039450b5d1f23cebd92c50e112440511fa34514 --noninteractive exited 0 after 0.07 seconds
+2025/01/23 00:08:58 erk @(unknown) (67750) [command]> blame /Users/erk/projects/homeotopy/homeotopy/_plane.py -Tjson --change --rev 3039450b5d1f23cebd92c50e112440511fa34514 --noninteractive
+2025/01/23 00:08:58 erk @3039450b5d1f23cebd92c50e112440511fa34514 (67750) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/_plane.py -Tjson --change --rev 3039450b5d1f23cebd92c50e112440511fa34514 --noninteractive exited 0 after 0.06 seconds
+2025/01/23 00:09:58 erk @(unknown) (67922) [command]> blame /Users/erk/projects/homeotopy/homeotopy/__init__.py -Tjson --change --rev 3039450b5d1f23cebd92c50e112440511fa34514 --noninteractive
+2025/01/23 00:09:58 erk @3039450b5d1f23cebd92c50e112440511fa34514 (67922) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/__init__.py -Tjson --change --rev 3039450b5d1f23cebd92c50e112440511fa34514 --noninteractive exited 0 after 0.08 seconds
+2025/01/23 00:10:25 erk @(unknown) (68109) [command]> blame /Users/erk/projects/homeotopy/homeotopy/_sphere.py -Tjson --change --rev 3039450b5d1f23cebd92c50e112440511fa34514 --noninteractive
+2025/01/23 00:10:25 erk @3039450b5d1f23cebd92c50e112440511fa34514 (68109) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/_sphere.py -Tjson --change --rev 3039450b5d1f23cebd92c50e112440511fa34514 --noninteractive exited 0 after 0.07 seconds
+2025/01/23 00:10:30 erk @(unknown) (68123) [command]> blame /Users/erk/projects/homeotopy/homeotopy/_cube.py -Tjson --change --rev 3039450b5d1f23cebd92c50e112440511fa34514 --noninteractive
+2025/01/23 00:10:30 erk @3039450b5d1f23cebd92c50e112440511fa34514 (68123) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/_cube.py -Tjson --change --rev 3039450b5d1f23cebd92c50e112440511fa34514 --noninteractive exited 0 after 0.07 seconds
+2025/01/23 00:13:20 erk @(unknown) (68922) [command]> blame /Users/erk/projects/homeotopy/homeotopy/sphere/_plane.py -Tjson --change --rev 3039450b5d1f23cebd92c50e112440511fa34514 --noninteractive
+2025/01/23 00:13:20 erk @3039450b5d1f23cebd92c50e112440511fa34514 (68922) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/sphere/_plane.py -Tjson --change --rev 3039450b5d1f23cebd92c50e112440511fa34514 --noninteractive exited 0 after 0.07 seconds
+2025/01/23 00:16:03 erk @(unknown) (69473) [command]> blame /Users/erk/projects/homeotopy/homeotopy/simplex/_utils.py -Tjson --change --rev 3039450b5d1f23cebd92c50e112440511fa34514 --noninteractive
+2025/01/23 00:16:03 erk @3039450b5d1f23cebd92c50e112440511fa34514 (69473) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/simplex/_utils.py -Tjson --change --rev 3039450b5d1f23cebd92c50e112440511fa34514 --noninteractive exited 0 after 0.08 seconds
+2025/01/23 00:16:06 erk @(unknown) (69487) [command]> blame /Users/erk/projects/homeotopy/homeotopy/_simplex.py -Tjson --change --rev 3039450b5d1f23cebd92c50e112440511fa34514 --noninteractive
+2025/01/23 00:16:06 erk @3039450b5d1f23cebd92c50e112440511fa34514 (69487) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/_simplex.py -Tjson --change --rev 3039450b5d1f23cebd92c50e112440511fa34514 --noninteractive exited 0 after 0.10 seconds
+2025/01/23 00:16:23 erk @(unknown) (69659) [command]> blame /Users/erk/projects/homeotopy/homeotopy/simplex/_cube.py -Tjson --change --rev 3039450b5d1f23cebd92c50e112440511fa34514 --noninteractive
+2025/01/23 00:16:23 erk @3039450b5d1f23cebd92c50e112440511fa34514 (69659) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/simplex/_cube.py -Tjson --change --rev 3039450b5d1f23cebd92c50e112440511fa34514 --noninteractive exited 0 after 0.07 seconds
+2025/01/23 00:19:15 erk @(unknown) (70097) [command]> blame /Users/erk/projects/homeotopy/homeotopy/_simplotope.py -Tjson --change --rev 3039450b5d1f23cebd92c50e112440511fa34514 --noninteractive
+2025/01/23 00:19:15 erk @3039450b5d1f23cebd92c50e112440511fa34514 (70097) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/_simplotope.py -Tjson --change --rev 3039450b5d1f23cebd92c50e112440511fa34514 --noninteractive exited 0 after 0.07 seconds
+2025/01/23 00:20:36 erk @(unknown) (70329) [command]> blame /Users/erk/projects/homeotopy/homeotopy/ball/_sphere.py -Tjson --change --rev 3039450b5d1f23cebd92c50e112440511fa34514 --noninteractive
+2025/01/23 00:20:36 erk @3039450b5d1f23cebd92c50e112440511fa34514 (70329) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/ball/_sphere.py -Tjson --change --rev 3039450b5d1f23cebd92c50e112440511fa34514 --noninteractive exited 0 after 0.07 seconds
+2025/01/23 00:20:38 erk @(unknown) (70370) [command]> blame /Users/erk/projects/homeotopy/homeotopy/plane/__init__.py -Tjson --change --rev 3039450b5d1f23cebd92c50e112440511fa34514 --noninteractive
+2025/01/23 00:20:38 erk @3039450b5d1f23cebd92c50e112440511fa34514 (70370) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/plane/__init__.py -Tjson --change --rev 3039450b5d1f23cebd92c50e112440511fa34514 --noninteractive exited 0 after 0.07 seconds
+2025/01/23 22:45:22 erk @(unknown) (79507) [command]> blame /Users/erk/projects/homeotopy/poetry.lock -Tjson --change --rev 3039450b5d1f23cebd92c50e112440511fa34514 --noninteractive
+2025/01/23 22:45:22 erk @3039450b5d1f23cebd92c50e112440511fa34514 (79507) [command_finish]> blame /Users/erk/projects/homeotopy/poetry.lock -Tjson --change --rev 3039450b5d1f23cebd92c50e112440511fa34514 --noninteractive exited 0 after 0.08 seconds
+2025/01/23 22:47:08 erk @(unknown) (79722) [command]> blame /Users/erk/projects/homeotopy/tests/test_ball.py -Tjson --change --rev 3039450b5d1f23cebd92c50e112440511fa34514 --noninteractive
+2025/01/23 22:47:08 erk @3039450b5d1f23cebd92c50e112440511fa34514 (79722) [command_finish]> blame /Users/erk/projects/homeotopy/tests/test_ball.py -Tjson --change --rev 3039450b5d1f23cebd92c50e112440511fa34514 --noninteractive exited 0 after 0.07 seconds
+2025/01/23 22:47:41 erk @(unknown) (80032) [command]> blame /Users/erk/projects/homeotopy/pyproject.toml -Tjson --change --rev 3039450b5d1f23cebd92c50e112440511fa34514 --noninteractive
+2025/01/23 22:47:41 erk @3039450b5d1f23cebd92c50e112440511fa34514 (80032) [command_finish]> blame /Users/erk/projects/homeotopy/pyproject.toml -Tjson --change --rev 3039450b5d1f23cebd92c50e112440511fa34514 --noninteractive exited 0 after 0.07 seconds
+2025/01/23 22:50:36 erk @(unknown) (80691) [command]> blame /Users/erk/projects/homeotopy/tests/test_cube.py -Tjson --change --rev 3039450b5d1f23cebd92c50e112440511fa34514 --noninteractive
+2025/01/23 22:50:36 erk @3039450b5d1f23cebd92c50e112440511fa34514 (80691) [command_finish]> blame /Users/erk/projects/homeotopy/tests/test_cube.py -Tjson --change --rev 3039450b5d1f23cebd92c50e112440511fa34514 --noninteractive exited 0 after 0.07 seconds
+2025/01/24 19:40:41 erk @(unknown) (91581) [command]> blame /Users/erk/projects/homeotopy/README.md -Tjson --change --rev 3039450b5d1f23cebd92c50e112440511fa34514 --noninteractive
+2025/01/24 19:40:41 erk @3039450b5d1f23cebd92c50e112440511fa34514 (91581) [command_finish]> blame /Users/erk/projects/homeotopy/README.md -Tjson --change --rev 3039450b5d1f23cebd92c50e112440511fa34514 --noninteractive exited 0 after 0.07 seconds
+2025/01/24 19:40:47 erk @(unknown) (91728) [command]> blame /Users/erk/projects/homeotopy/.gitignore -Tjson --change --rev 3039450b5d1f23cebd92c50e112440511fa34514 --noninteractive
+2025/01/24 19:40:47 erk @3039450b5d1f23cebd92c50e112440511fa34514 (91728) [command_finish]> blame /Users/erk/projects/homeotopy/.gitignore -Tjson --change --rev 3039450b5d1f23cebd92c50e112440511fa34514 --noninteractive exited 0 after 0.07 seconds
+2025/01/24 19:41:00 erk @(unknown) (91849) [command]> --config 'amend.autorestack=always' amend --addremove --noninteractive
+2025/01/24 19:41:00 erk @3039450b5d1f23cebd92c50e112440511fa34514 (91849) [visibility]> read 1 heads: 3039450b5d1f
+2025/01/24 19:41:00 erk @3039450b5d1f23cebd92c50e112440511fa34514 (91849) [visibility]> read 1 heads: 3039450b5d1f
+2025/01/24 19:41:00 erk @3039450b5d1f23cebd92c50e112440511fa34514 (91849) [visibility]> removed 0 heads []; added 1 heads [c0ee15c11c6e]
+2025/01/24 19:41:00 erk @c0ee15c11c6e754e09ae1c4a082295b608ec6a26 (91849) [visibility]> removed 1 heads [3039450b5d1f]; added 0 heads []
+2025/01/24 19:41:00 erk @c0ee15c11c6e754e09ae1c4a082295b608ec6a26 (91849) [visibility]> wrote 1 heads: c0ee15c11c6e
+2025/01/24 19:41:00 erk @c0ee15c11c6e754e09ae1c4a082295b608ec6a26 (91849) [command_finish]> --config 'amend.autorestack=always' amend --addremove --noninteractive exited 0 after 0.24 seconds
+2025/01/24 19:41:03 erk @(unknown) (92141) [command]> blame /Users/erk/projects/homeotopy/README.md -Tjson --change --rev c0ee15c11c6e754e09ae1c4a082295b608ec6a26 --noninteractive
+2025/01/24 19:41:03 erk @c0ee15c11c6e754e09ae1c4a082295b608ec6a26 (92141) [command_finish]> blame /Users/erk/projects/homeotopy/README.md -Tjson --change --rev c0ee15c11c6e754e09ae1c4a082295b608ec6a26 --noninteractive exited 0 after 0.07 seconds
+2025/01/24 19:41:07 erk @(unknown) (92259) [command]> --config 'amend.autorestack=always' amend --addremove --noninteractive
+2025/01/24 19:41:07 erk @c0ee15c11c6e754e09ae1c4a082295b608ec6a26 (92259) [visibility]> read 1 heads: c0ee15c11c6e
+2025/01/24 19:41:07 erk @c0ee15c11c6e754e09ae1c4a082295b608ec6a26 (92259) [visibility]> read 1 heads: c0ee15c11c6e
+2025/01/24 19:41:07 erk @c0ee15c11c6e754e09ae1c4a082295b608ec6a26 (92259) [visibility]> removed 0 heads []; added 1 heads [652e88e605e5]
+2025/01/24 19:41:07 erk @652e88e605e5df314e1e8e14d37b971792bc7b43 (92259) [visibility]> removed 1 heads [c0ee15c11c6e]; added 0 heads []
+2025/01/24 19:41:07 erk @652e88e605e5df314e1e8e14d37b971792bc7b43 (92259) [visibility]> wrote 1 heads: 652e88e605e5
+2025/01/24 19:41:07 erk @652e88e605e5df314e1e8e14d37b971792bc7b43 (92259) [command_finish]> --config 'amend.autorestack=always' amend --addremove --noninteractive exited 0 after 0.23 seconds
+2025/01/24 19:55:58 erk @(unknown) (92860) [command]> blame /Users/erk/projects/homeotopy/homeotopy/_ball.py -Tjson --change --rev 652e88e605e5df314e1e8e14d37b971792bc7b43 --noninteractive
+2025/01/24 19:55:58 erk @652e88e605e5df314e1e8e14d37b971792bc7b43 (92860) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/_ball.py -Tjson --change --rev 652e88e605e5df314e1e8e14d37b971792bc7b43 --noninteractive exited 0 after 0.08 seconds
+2025/01/24 20:09:25 erk @(unknown) (93547) [command]> blame /Users/erk/projects/homeotopy/tests/test_ball.py -Tjson --change --rev 652e88e605e5df314e1e8e14d37b971792bc7b43 --noninteractive
+2025/01/24 20:09:25 erk @652e88e605e5df314e1e8e14d37b971792bc7b43 (93547) [command_finish]> blame /Users/erk/projects/homeotopy/tests/test_ball.py -Tjson --change --rev 652e88e605e5df314e1e8e14d37b971792bc7b43 --noninteractive exited 0 after 0.08 seconds
+2025/01/24 20:47:15 erk @(unknown) (97083) [command]> blame /Users/erk/projects/homeotopy/tests/test_cube.py -Tjson --change --rev 652e88e605e5df314e1e8e14d37b971792bc7b43 --noninteractive
+2025/01/24 20:47:15 erk @652e88e605e5df314e1e8e14d37b971792bc7b43 (97083) [command_finish]> blame /Users/erk/projects/homeotopy/tests/test_cube.py -Tjson --change --rev 652e88e605e5df314e1e8e14d37b971792bc7b43 --noninteractive exited 0 after 0.07 seconds
+2025/01/24 20:47:18 erk @(unknown) (97110) [command]> blame /Users/erk/projects/homeotopy/homeotopy/_cube.py -Tjson --change --rev 652e88e605e5df314e1e8e14d37b971792bc7b43 --noninteractive
+2025/01/24 20:47:18 erk @652e88e605e5df314e1e8e14d37b971792bc7b43 (97110) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/_cube.py -Tjson --change --rev 652e88e605e5df314e1e8e14d37b971792bc7b43 --noninteractive exited 0 after 0.07 seconds
+2025/01/24 22:57:29 erk @(unknown) (99302) [command]> blame /Users/erk/projects/homeotopy/tests/test_plane.py -Tjson --change --rev 652e88e605e5df314e1e8e14d37b971792bc7b43 --noninteractive
+2025/01/24 22:57:29 erk @652e88e605e5df314e1e8e14d37b971792bc7b43 (99302) [command_finish]> blame /Users/erk/projects/homeotopy/tests/test_plane.py -Tjson --change --rev 652e88e605e5df314e1e8e14d37b971792bc7b43 --noninteractive exited 0 after 0.08 seconds
+2025/01/24 23:07:00 erk @(unknown) (160) [command]> blame /Users/erk/projects/homeotopy/homeotopy/_plane.py -Tjson --change --rev 652e88e605e5df314e1e8e14d37b971792bc7b43 --noninteractive
+2025/01/24 23:07:00 erk @652e88e605e5df314e1e8e14d37b971792bc7b43 (160) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/_plane.py -Tjson --change --rev 652e88e605e5df314e1e8e14d37b971792bc7b43 --noninteractive exited 0 after 0.07 seconds
+2025/01/24 23:08:49 erk @(unknown) (227) [command]> blame /Users/erk/projects/homeotopy/homeotopy/_homeomorphism.py -Tjson --change --rev 652e88e605e5df314e1e8e14d37b971792bc7b43 --noninteractive
+2025/01/24 23:08:49 erk @652e88e605e5df314e1e8e14d37b971792bc7b43 (227) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/_homeomorphism.py -Tjson --change --rev 652e88e605e5df314e1e8e14d37b971792bc7b43 --noninteractive exited 0 after 0.07 seconds
+2025/01/24 23:11:33 erk @(unknown) (1060) [command]> blame /Users/erk/projects/homeotopy/homeotopy/_simplex.py -Tjson --change --rev 652e88e605e5df314e1e8e14d37b971792bc7b43 --noninteractive
+2025/01/24 23:11:33 erk @652e88e605e5df314e1e8e14d37b971792bc7b43 (1060) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/_simplex.py -Tjson --change --rev 652e88e605e5df314e1e8e14d37b971792bc7b43 --noninteractive exited 0 after 0.08 seconds
+2025/01/24 23:11:57 erk @(unknown) (1179) [command]> blame /Users/erk/projects/homeotopy/homeotopy/_sphere.py -Tjson --change --rev 652e88e605e5df314e1e8e14d37b971792bc7b43 --noninteractive
+2025/01/24 23:11:57 erk @652e88e605e5df314e1e8e14d37b971792bc7b43 (1179) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/_sphere.py -Tjson --change --rev 652e88e605e5df314e1e8e14d37b971792bc7b43 --noninteractive exited 0 after 0.07 seconds
+2025/01/24 23:26:04 erk @(unknown) (2705) [command]> blame /Users/erk/projects/homeotopy/tests/test_simplex.py -Tjson --change --rev 652e88e605e5df314e1e8e14d37b971792bc7b43 --noninteractive
+2025/01/24 23:26:04 erk @652e88e605e5df314e1e8e14d37b971792bc7b43 (2705) [command_finish]> blame /Users/erk/projects/homeotopy/tests/test_simplex.py -Tjson --change --rev 652e88e605e5df314e1e8e14d37b971792bc7b43 --noninteractive exited 0 after 0.07 seconds
+2025/01/25 00:23:16 erk @(unknown) (8322) [command]> blame /Users/erk/projects/homeotopy/homeotopy/__init__.py -Tjson --change --rev 652e88e605e5df314e1e8e14d37b971792bc7b43 --noninteractive
+2025/01/25 00:23:16 erk @652e88e605e5df314e1e8e14d37b971792bc7b43 (8322) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/__init__.py -Tjson --change --rev 652e88e605e5df314e1e8e14d37b971792bc7b43 --noninteractive exited 0 after 0.14 seconds
+2025/01/25 00:23:31 erk @(unknown) (8458) [command]> blame /Users/erk/projects/homeotopy/tests/test_sphere.py -Tjson --change --rev 652e88e605e5df314e1e8e14d37b971792bc7b43 --noninteractive
+2025/01/25 00:23:31 erk @652e88e605e5df314e1e8e14d37b971792bc7b43 (8458) [command_finish]> blame /Users/erk/projects/homeotopy/tests/test_sphere.py -Tjson --change --rev 652e88e605e5df314e1e8e14d37b971792bc7b43 --noninteractive exited 0 after 0.07 seconds
+2025/01/25 00:33:17 erk @(unknown) (9983) [command]> --config 'amend.autorestack=always' amend --addremove --noninteractive
+2025/01/25 00:33:17 erk @652e88e605e5df314e1e8e14d37b971792bc7b43 (9983) [visibility]> read 1 heads: 652e88e605e5
+2025/01/25 00:33:17 erk @652e88e605e5df314e1e8e14d37b971792bc7b43 (9983) [visibility]> read 1 heads: 652e88e605e5
+2025/01/25 00:33:17 erk @652e88e605e5df314e1e8e14d37b971792bc7b43 (9983) [visibility]> removed 0 heads []; added 1 heads [0c5b207db738]
+2025/01/25 00:33:17 erk @0c5b207db7389362d1d603c0b031e4f6dd4a6e75 (9983) [visibility]> removed 1 heads [652e88e605e5]; added 0 heads []
+2025/01/25 00:33:17 erk @0c5b207db7389362d1d603c0b031e4f6dd4a6e75 (9983) [visibility]> wrote 1 heads: 0c5b207db738
+2025/01/25 00:33:17 erk @0c5b207db7389362d1d603c0b031e4f6dd4a6e75 (9983) [command_finish]> --config 'amend.autorestack=always' amend --addremove --noninteractive exited 0 after 0.25 seconds
+2025/01/25 19:17:01 erk @(unknown) (18723) [command]> blame /Users/erk/projects/homeotopy/homeotopy/_sphere.py -Tjson --change --rev 0c5b207db7389362d1d603c0b031e4f6dd4a6e75 --noninteractive
+2025/01/25 19:17:01 erk @0c5b207db7389362d1d603c0b031e4f6dd4a6e75 (18723) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/_sphere.py -Tjson --change --rev 0c5b207db7389362d1d603c0b031e4f6dd4a6e75 --noninteractive exited 0 after 0.08 seconds
+2025/01/25 19:18:43 erk @(unknown) (18766) [command]> blame /Users/erk/projects/homeotopy/homeotopy/__init__.py -Tjson --change --rev 0c5b207db7389362d1d603c0b031e4f6dd4a6e75 --noninteractive
+2025/01/25 19:18:43 erk @0c5b207db7389362d1d603c0b031e4f6dd4a6e75 (18766) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/__init__.py -Tjson --change --rev 0c5b207db7389362d1d603c0b031e4f6dd4a6e75 --noninteractive exited 0 after 0.07 seconds
+2025/01/25 19:23:03 erk @(unknown) (19156) [command]> blame /Users/erk/projects/homeotopy/homeotopy/_simplex.py -Tjson --change --rev 0c5b207db7389362d1d603c0b031e4f6dd4a6e75 --noninteractive
+2025/01/25 19:23:03 erk @0c5b207db7389362d1d603c0b031e4f6dd4a6e75 (19156) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/_simplex.py -Tjson --change --rev 0c5b207db7389362d1d603c0b031e4f6dd4a6e75 --noninteractive exited 0 after 0.07 seconds
+2025/01/25 19:23:16 erk @(unknown) (19289) [command]> blame /Users/erk/projects/homeotopy/homeotopy/_plane.py -Tjson --change --rev 0c5b207db7389362d1d603c0b031e4f6dd4a6e75 --noninteractive
+2025/01/25 19:23:16 erk @0c5b207db7389362d1d603c0b031e4f6dd4a6e75 (19289) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/_plane.py -Tjson --change --rev 0c5b207db7389362d1d603c0b031e4f6dd4a6e75 --noninteractive exited 0 after 0.07 seconds
+2025/01/25 19:23:18 erk @(unknown) (19316) [command]> blame /Users/erk/projects/homeotopy/homeotopy/_cube.py -Tjson --change --rev 0c5b207db7389362d1d603c0b031e4f6dd4a6e75 --noninteractive
+2025/01/25 19:23:18 erk @0c5b207db7389362d1d603c0b031e4f6dd4a6e75 (19316) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/_cube.py -Tjson --change --rev 0c5b207db7389362d1d603c0b031e4f6dd4a6e75 --noninteractive exited 0 after 0.14 seconds
+2025/01/25 19:23:19 erk @(unknown) (19343) [command]> blame /Users/erk/projects/homeotopy/homeotopy/_ball.py -Tjson --change --rev 0c5b207db7389362d1d603c0b031e4f6dd4a6e75 --noninteractive
+2025/01/25 19:23:19 erk @0c5b207db7389362d1d603c0b031e4f6dd4a6e75 (19343) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/_ball.py -Tjson --change --rev 0c5b207db7389362d1d603c0b031e4f6dd4a6e75 --noninteractive exited 0 after 0.07 seconds
+2025/01/26 20:28:08 erk @(unknown) (32130) [command]> blame /Users/erk/projects/homeotopy/tests/test_sphere.py -Tjson --change --rev 0c5b207db7389362d1d603c0b031e4f6dd4a6e75 --noninteractive
+2025/01/26 20:28:08 erk @0c5b207db7389362d1d603c0b031e4f6dd4a6e75 (32130) [command_finish]> blame /Users/erk/projects/homeotopy/tests/test_sphere.py -Tjson --change --rev 0c5b207db7389362d1d603c0b031e4f6dd4a6e75 --noninteractive exited 0 after 0.07 seconds
+2025/01/26 20:42:14 erk @(unknown) (33985) [command]> blame /Users/erk/projects/homeotopy/homeotopy/_homeomorphism.py -Tjson --change --rev 0c5b207db7389362d1d603c0b031e4f6dd4a6e75 --noninteractive
+2025/01/26 20:42:14 erk @0c5b207db7389362d1d603c0b031e4f6dd4a6e75 (33985) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/_homeomorphism.py -Tjson --change --rev 0c5b207db7389362d1d603c0b031e4f6dd4a6e75 --noninteractive exited 0 after 0.07 seconds
+2025/01/26 20:47:12 erk @(unknown) (35314) [command]> blame /Users/erk/projects/homeotopy/tests/test_plane.py -Tjson --change --rev 0c5b207db7389362d1d603c0b031e4f6dd4a6e75 --noninteractive
+2025/01/26 20:47:12 erk @0c5b207db7389362d1d603c0b031e4f6dd4a6e75 (35314) [command_finish]> blame /Users/erk/projects/homeotopy/tests/test_plane.py -Tjson --change --rev 0c5b207db7389362d1d603c0b031e4f6dd4a6e75 --noninteractive exited 0 after 0.07 seconds
+2025/01/26 20:47:23 erk @(unknown) (35427) [command]> --config 'amend.autorestack=always' amend --addremove --noninteractive
+2025/01/26 20:47:23 erk @0c5b207db7389362d1d603c0b031e4f6dd4a6e75 (35427) [visibility]> read 1 heads: 0c5b207db738
+2025/01/26 20:47:23 erk @0c5b207db7389362d1d603c0b031e4f6dd4a6e75 (35427) [visibility]> read 1 heads: 0c5b207db738
+2025/01/26 20:47:23 erk @0c5b207db7389362d1d603c0b031e4f6dd4a6e75 (35427) [visibility]> removed 0 heads []; added 1 heads [f7de164b8983]
+2025/01/26 20:47:23 erk @f7de164b8983f9fc9f75ee8341bc16f0c82fb2aa (35427) [visibility]> removed 1 heads [0c5b207db738]; added 0 heads []
+2025/01/26 20:47:23 erk @f7de164b8983f9fc9f75ee8341bc16f0c82fb2aa (35427) [visibility]> wrote 1 heads: f7de164b8983
+2025/01/26 20:47:23 erk @f7de164b8983f9fc9f75ee8341bc16f0c82fb2aa (35427) [command_finish]> --config 'amend.autorestack=always' amend --addremove --noninteractive exited 0 after 0.23 seconds
+2025/01/26 21:34:17 erk @(unknown) (36549) [command]> blame /Users/erk/projects/homeotopy/homeotopy/__init__.py -Tjson --change --rev f7de164b8983f9fc9f75ee8341bc16f0c82fb2aa --noninteractive
+2025/01/26 21:34:17 erk @f7de164b8983f9fc9f75ee8341bc16f0c82fb2aa (36549) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/__init__.py -Tjson --change --rev f7de164b8983f9fc9f75ee8341bc16f0c82fb2aa --noninteractive exited 0 after 0.07 seconds
+2025/01/26 21:36:24 erk @(unknown) (36711) [command]> blame /Users/erk/projects/homeotopy/homeotopy/_homeomorphism.py -Tjson --change --rev f7de164b8983f9fc9f75ee8341bc16f0c82fb2aa --noninteractive
+2025/01/26 21:36:24 erk @f7de164b8983f9fc9f75ee8341bc16f0c82fb2aa (36711) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/_homeomorphism.py -Tjson --change --rev f7de164b8983f9fc9f75ee8341bc16f0c82fb2aa --noninteractive exited 0 after 0.07 seconds
+2025/01/26 21:42:09 erk @(unknown) (37314) [command]> blame /Users/erk/projects/homeotopy/homeotopy/_ball.py -Tjson --change --rev f7de164b8983f9fc9f75ee8341bc16f0c82fb2aa --noninteractive
+2025/01/26 21:42:09 erk @f7de164b8983f9fc9f75ee8341bc16f0c82fb2aa (37314) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/_ball.py -Tjson --change --rev f7de164b8983f9fc9f75ee8341bc16f0c82fb2aa --noninteractive exited 0 after 0.07 seconds
+2025/01/26 21:44:33 erk @(unknown) (37759) [command]> blame /Users/erk/projects/homeotopy/homeotopy/_cube.py -Tjson --change --rev f7de164b8983f9fc9f75ee8341bc16f0c82fb2aa --noninteractive
+2025/01/26 21:44:33 erk @f7de164b8983f9fc9f75ee8341bc16f0c82fb2aa (37759) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/_cube.py -Tjson --change --rev f7de164b8983f9fc9f75ee8341bc16f0c82fb2aa --noninteractive exited 0 after 0.07 seconds
+2025/01/26 22:20:28 erk @(unknown) (39253) [command]> blame /Users/erk/projects/homeotopy/homeotopy/_plane.py -Tjson --change --rev f7de164b8983f9fc9f75ee8341bc16f0c82fb2aa --noninteractive
+2025/01/26 22:20:28 erk @f7de164b8983f9fc9f75ee8341bc16f0c82fb2aa (39253) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/_plane.py -Tjson --change --rev f7de164b8983f9fc9f75ee8341bc16f0c82fb2aa --noninteractive exited 0 after 0.12 seconds
+2025/01/26 22:22:31 erk @(unknown) (39432) [command]> blame /Users/erk/projects/homeotopy/homeotopy/_simplex.py -Tjson --change --rev f7de164b8983f9fc9f75ee8341bc16f0c82fb2aa --noninteractive
+2025/01/26 22:22:31 erk @f7de164b8983f9fc9f75ee8341bc16f0c82fb2aa (39432) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/_simplex.py -Tjson --change --rev f7de164b8983f9fc9f75ee8341bc16f0c82fb2aa --noninteractive exited 0 after 0.07 seconds
+2025/01/26 22:23:21 erk @(unknown) (39674) [command]> blame /Users/erk/projects/homeotopy/homeotopy/_sphere.py -Tjson --change --rev f7de164b8983f9fc9f75ee8341bc16f0c82fb2aa --noninteractive
+2025/01/26 22:23:21 erk @f7de164b8983f9fc9f75ee8341bc16f0c82fb2aa (39674) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/_sphere.py -Tjson --change --rev f7de164b8983f9fc9f75ee8341bc16f0c82fb2aa --noninteractive exited 0 after 0.07 seconds
+2025/01/26 22:28:21 erk @(unknown) (40210) [command]> --config 'amend.autorestack=always' amend --addremove --noninteractive
+2025/01/26 22:28:21 erk @f7de164b8983f9fc9f75ee8341bc16f0c82fb2aa (40210) [visibility]> read 1 heads: f7de164b8983
+2025/01/26 22:28:21 erk @f7de164b8983f9fc9f75ee8341bc16f0c82fb2aa (40210) [visibility]> read 1 heads: f7de164b8983
+2025/01/26 22:28:21 erk @f7de164b8983f9fc9f75ee8341bc16f0c82fb2aa (40210) [visibility]> removed 0 heads []; added 1 heads [84871dc39993]
+2025/01/26 22:28:21 erk @84871dc39993fa7622b7e9b5b49d9d5cfd8c7d88 (40210) [visibility]> removed 1 heads [f7de164b8983]; added 0 heads []
+2025/01/26 22:28:21 erk @84871dc39993fa7622b7e9b5b49d9d5cfd8c7d88 (40210) [visibility]> wrote 1 heads: 84871dc39993
+2025/01/26 22:28:21 erk @84871dc39993fa7622b7e9b5b49d9d5cfd8c7d88 (40210) [command_finish]> --config 'amend.autorestack=always' amend --addremove --noninteractive exited 0 after 0.23 seconds
+2025/01/26 22:29:54 erk @(unknown) (41419) [command]> blame /Users/erk/projects/homeotopy/README.md -Tjson --change --rev 84871dc39993fa7622b7e9b5b49d9d5cfd8c7d88 --noninteractive
+2025/01/26 22:29:54 erk @84871dc39993fa7622b7e9b5b49d9d5cfd8c7d88 (41419) [command_finish]> blame /Users/erk/projects/homeotopy/README.md -Tjson --change --rev 84871dc39993fa7622b7e9b5b49d9d5cfd8c7d88 --noninteractive exited 0 after 0.07 seconds
+2025/01/26 22:30:29 erk @(unknown) (41695) [command]> blame /Users/erk/projects/homeotopy/pyproject.toml -Tjson --change --rev 84871dc39993fa7622b7e9b5b49d9d5cfd8c7d88 --noninteractive
+2025/01/26 22:30:29 erk @84871dc39993fa7622b7e9b5b49d9d5cfd8c7d88 (41695) [command_finish]> blame /Users/erk/projects/homeotopy/pyproject.toml -Tjson --change --rev 84871dc39993fa7622b7e9b5b49d9d5cfd8c7d88 --noninteractive exited 0 after 0.07 seconds
+2025/01/26 22:31:06 erk @(unknown) (42029) [command]> blame /Users/erk/projects/homeotopy/docs/conf.py -Tjson --change --rev 84871dc39993fa7622b7e9b5b49d9d5cfd8c7d88 --noninteractive
+2025/01/26 22:31:06 erk @84871dc39993fa7622b7e9b5b49d9d5cfd8c7d88 (42029) [command_finish]> blame /Users/erk/projects/homeotopy/docs/conf.py -Tjson --change --rev 84871dc39993fa7622b7e9b5b49d9d5cfd8c7d88 --noninteractive exited 0 after 0.07 seconds
+2025/01/26 22:31:12 erk @(unknown) (42161) [command]> blame /Users/erk/projects/homeotopy/docs/index.rst -Tjson --change --rev 84871dc39993fa7622b7e9b5b49d9d5cfd8c7d88 --noninteractive
+2025/01/26 22:31:12 erk @84871dc39993fa7622b7e9b5b49d9d5cfd8c7d88 (42161) [command_finish]> blame /Users/erk/projects/homeotopy/docs/index.rst -Tjson --change --rev 84871dc39993fa7622b7e9b5b49d9d5cfd8c7d88 --noninteractive exited 0 after 0.07 seconds
+2025/01/26 22:33:44 erk @(unknown) (43092) [command]> blame /Users/erk/projects/homeotopy/homeotopy/__init__.py -Tjson --change --rev 84871dc39993fa7622b7e9b5b49d9d5cfd8c7d88 --noninteractive
+2025/01/26 22:33:44 erk @84871dc39993fa7622b7e9b5b49d9d5cfd8c7d88 (43092) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/__init__.py -Tjson --change --rev 84871dc39993fa7622b7e9b5b49d9d5cfd8c7d88 --noninteractive exited 0 after 0.08 seconds
+2025/01/26 22:35:16 erk @(unknown) (43602) [command]> blame /Users/erk/projects/homeotopy/.gitignore -Tjson --change --rev 84871dc39993fa7622b7e9b5b49d9d5cfd8c7d88 --noninteractive
+2025/01/26 22:35:16 erk @84871dc39993fa7622b7e9b5b49d9d5cfd8c7d88 (43602) [command_finish]> blame /Users/erk/projects/homeotopy/.gitignore -Tjson --change --rev 84871dc39993fa7622b7e9b5b49d9d5cfd8c7d88 --noninteractive exited 0 after 0.07 seconds
+2025/01/26 22:35:31 erk @(unknown) (43721) [command]> --config 'amend.autorestack=always' amend --addremove --noninteractive
+2025/01/26 22:35:31 erk @84871dc39993fa7622b7e9b5b49d9d5cfd8c7d88 (43721) [visibility]> read 1 heads: 84871dc39993
+2025/01/26 22:35:31 erk @84871dc39993fa7622b7e9b5b49d9d5cfd8c7d88 (43721) [visibility]> read 1 heads: 84871dc39993
+2025/01/26 22:35:31 erk @84871dc39993fa7622b7e9b5b49d9d5cfd8c7d88 (43721) [visibility]> removed 0 heads []; added 1 heads [4204d74abe18]
+2025/01/26 22:35:31 erk @4204d74abe18e551b5943281bef5ff4a1d263bf6 (43721) [visibility]> removed 1 heads [84871dc39993]; added 0 heads []
+2025/01/26 22:35:31 erk @4204d74abe18e551b5943281bef5ff4a1d263bf6 (43721) [visibility]> wrote 1 heads: 4204d74abe18
+2025/01/26 22:35:31 erk @4204d74abe18e551b5943281bef5ff4a1d263bf6 (43721) [command_finish]> --config 'amend.autorestack=always' amend --addremove --noninteractive exited 0 after 0.24 seconds
+2025/01/26 22:35:34 erk @(unknown) (43948) [command]> blame /Users/erk/projects/homeotopy/README.md -Tjson --change --rev 4204d74abe18e551b5943281bef5ff4a1d263bf6 --noninteractive
+2025/01/26 22:35:34 erk @4204d74abe18e551b5943281bef5ff4a1d263bf6 (43948) [command_finish]> blame /Users/erk/projects/homeotopy/README.md -Tjson --change --rev 4204d74abe18e551b5943281bef5ff4a1d263bf6 --noninteractive exited 0 after 0.07 seconds
+2025/01/26 22:38:06 erk @(unknown) (44165) [command]> --config 'amend.autorestack=always' amend --addremove --noninteractive
+2025/01/26 22:38:06 erk @4204d74abe18e551b5943281bef5ff4a1d263bf6 (44165) [visibility]> read 1 heads: 4204d74abe18
+2025/01/26 22:38:07 erk @4204d74abe18e551b5943281bef5ff4a1d263bf6 (44165) [visibility]> read 1 heads: 4204d74abe18
+2025/01/26 22:38:07 erk @4204d74abe18e551b5943281bef5ff4a1d263bf6 (44165) [visibility]> removed 0 heads []; added 1 heads [ffebfe4f75c4]
+2025/01/26 22:38:07 erk @ffebfe4f75c4ef4d490014a87b8ea075ee9adff5 (44165) [visibility]> removed 1 heads [4204d74abe18]; added 0 heads []
+2025/01/26 22:38:07 erk @ffebfe4f75c4ef4d490014a87b8ea075ee9adff5 (44165) [visibility]> wrote 1 heads: ffebfe4f75c4
+2025/01/26 22:38:07 erk @ffebfe4f75c4ef4d490014a87b8ea075ee9adff5 (44165) [command_finish]> --config 'amend.autorestack=always' amend --addremove --noninteractive exited 0 after 0.31 seconds
+2025/01/26 22:39:57 erk @(unknown) (44561) [command]> metaedit --rev 'max(successors(ffebfe4f75c4ef4d490014a87b8ea075ee9adff5))' --message 'First working version' --noninteractive
+2025/01/26 22:39:57 erk @ffebfe4f75c4ef4d490014a87b8ea075ee9adff5 (44561) [visibility]> read 1 heads: ffebfe4f75c4
+2025/01/26 22:39:57 erk @ffebfe4f75c4ef4d490014a87b8ea075ee9adff5 (44561) [visibility]> removed 0 heads []; added 1 heads [8ef4ce0075e2]
+2025/01/26 22:39:57 erk @8ef4ce0075e285c17a6e62ec100bac1acb0985a0 (44561) [visibility]> removed 1 heads [ffebfe4f75c4]; added 0 heads []
+2025/01/26 22:39:57 erk @8ef4ce0075e285c17a6e62ec100bac1acb0985a0 (44561) [visibility]> wrote 1 heads: 8ef4ce0075e2
+2025/01/26 22:39:57 erk @8ef4ce0075e285c17a6e62ec100bac1acb0985a0 (44561) [command_finish]> metaedit --rev 'max(successors(ffebfe4f75c4ef4d490014a87b8ea075ee9adff5))' --message 'First working version' --noninteractive exited 0 after 0.16 seconds
+2025/01/26 22:40:54 erk @(unknown) (44901) [command]> pr submit --noninteractive
+2025/01/26 22:40:54 erk @8ef4ce0075e285c17a6e62ec100bac1acb0985a0 (44901) [visibility]> read 1 heads: 8ef4ce0075e2
+2025/01/26 22:40:56 erk @8ef4ce0075e285c17a6e62ec100bac1acb0985a0 (44901) [visibility]> read 1 heads: 8ef4ce0075e2
+2025/01/26 22:40:57 erk @8ef4ce0075e285c17a6e62ec100bac1acb0985a0 (44901) [command_finish]> pr submit --noninteractive exited 0 after 3.10 seconds
+2025/01/26 22:53:34 erk @(unknown) (45838) [command]> pull --noninteractive
+2025/01/26 22:53:34 erk @8ef4ce0075e285c17a6e62ec100bac1acb0985a0 (45838) [visibility]> read 1 heads: 8ef4ce0075e2
+2025/01/26 22:53:34 erk @8ef4ce0075e285c17a6e62ec100bac1acb0985a0 (45838) [visibility]> read 1 heads: 8ef4ce0075e2
+2025/01/26 22:53:35 erk @8ef4ce0075e285c17a6e62ec100bac1acb0985a0 (45838) [visibility]> read 1 heads: 8ef4ce0075e2
+2025/01/26 22:53:35 erk @8ef4ce0075e285c17a6e62ec100bac1acb0985a0 (45838) [visibility]> removed 1 heads [8ef4ce0075e2]; added 0 heads []
+2025/01/26 22:53:35 erk @8ef4ce0075e285c17a6e62ec100bac1acb0985a0 (45838) [visibility]> wrote 0 heads: 
+2025/01/26 22:53:35 erk @8ef4ce0075e285c17a6e62ec100bac1acb0985a0 (45838) [pythonhook]> pythonhook-post-pull: sapling.ext.github.pr_marker.cleanup_landed_pr_hook finished in 0.29 seconds
+2025/01/26 22:53:35 erk @8ef4ce0075e285c17a6e62ec100bac1acb0985a0 (45838) [command_finish]> pull --noninteractive exited 0 after 0.80 seconds
+2025/01/26 22:53:36 erk @(unknown) (45950) [command]> goto --rev 'max(successors(remote/main))' --noninteractive
+2025/01/26 22:53:36 erk @(unknown) (45950) [pythonhook]> pythonhook-pre-update: sapling.ext.morestatus.saveupdateargs finished in 0.00 seconds
+2025/01/26 22:53:36 erk @8ef4ce0075e285c17a6e62ec100bac1acb0985a0 (45950) [visibility]> read 0 heads: 
+2025/01/26 22:53:36 erk @cfc75ee15af42a453cac99f91edc986dd3468f53 (45950) [pythonhook]> pythonhook-post-update: sapling.ext.morestatus.cleanupdateargs finished in 0.00 seconds
+2025/01/26 22:53:36 erk @cfc75ee15af42a453cac99f91edc986dd3468f53 (45950) [command_finish]> goto --rev 'max(successors(remote/main))' --noninteractive exited 0 after 0.16 seconds
+2025/01/26 22:54:02 erk @(unknown) (46443) [command]> blame /Users/erk/projects/homeotopy/.gitignore -Tjson --change --rev cfc75ee15af42a453cac99f91edc986dd3468f53 --noninteractive
+2025/01/26 22:54:02 erk @cfc75ee15af42a453cac99f91edc986dd3468f53 (46443) [command_finish]> blame /Users/erk/projects/homeotopy/.gitignore -Tjson --change --rev cfc75ee15af42a453cac99f91edc986dd3468f53 --noninteractive exited 0 after 0.07 seconds
+2025/01/26 22:54:11 erk @(unknown) (46575) [command]> pull --noninteractive
+2025/01/26 22:54:11 erk @cfc75ee15af42a453cac99f91edc986dd3468f53 (46575) [visibility]> read 0 heads: 
+2025/01/26 22:54:11 erk @cfc75ee15af42a453cac99f91edc986dd3468f53 (46575) [visibility]> read 0 heads: 
+2025/01/26 22:54:11 erk @cfc75ee15af42a453cac99f91edc986dd3468f53 (46575) [pythonhook]> pythonhook-post-pull: sapling.ext.github.pr_marker.cleanup_landed_pr_hook finished in 0.00 seconds
+2025/01/26 22:54:11 erk @cfc75ee15af42a453cac99f91edc986dd3468f53 (46575) [command_finish]> pull --noninteractive exited 0 after 0.32 seconds
+2025/01/26 22:54:39 erk @(unknown) (46760) [command]> commit --addremove --message 'add dist to gitignore
+
+
+Summary: 
+
+Test Plan: 
+
+
+' --noninteractive
+2025/01/26 22:54:39 erk @cfc75ee15af42a453cac99f91edc986dd3468f53 (46760) [visibility]> read 0 heads: 
+2025/01/26 22:54:39 erk @cfc75ee15af42a453cac99f91edc986dd3468f53 (46760) [visibility]> read 0 heads: 
+2025/01/26 22:54:39 erk @cfc75ee15af42a453cac99f91edc986dd3468f53 (46760) [visibility]> removed 0 heads []; added 1 heads [79375f05bbb7]
+2025/01/26 22:54:39 erk @79375f05bbb75666f0c8cc3a9d6765d3c6f293cd (46760) [visibility]> wrote 1 heads: 79375f05bbb7
+2025/01/26 22:54:39 erk @79375f05bbb75666f0c8cc3a9d6765d3c6f293cd (46760) [command_finish]> commit --addremove --message 'add dist to gitignore
+
+
+Summary: 
+
+Test Plan: 
+
+
+' --noninteractive exited 0 after 0.22 seconds
+2025/01/26 22:54:47 erk @(unknown) (46986) [command]> pr submit --noninteractive
+2025/01/26 22:54:47 erk @79375f05bbb75666f0c8cc3a9d6765d3c6f293cd (46986) [visibility]> read 1 heads: 79375f05bbb7
+2025/01/26 22:54:49 erk @79375f05bbb75666f0c8cc3a9d6765d3c6f293cd (46986) [visibility]> read 1 heads: 79375f05bbb7
+2025/01/26 22:54:51 erk @79375f05bbb75666f0c8cc3a9d6765d3c6f293cd (46986) [command_finish]> pr submit --noninteractive exited 0 after 4.30 seconds
+2025/01/26 22:57:42 erk @(unknown) (47377) [command]> pull --noninteractive
+2025/01/26 22:57:42 erk @79375f05bbb75666f0c8cc3a9d6765d3c6f293cd (47377) [visibility]> read 1 heads: 79375f05bbb7
+2025/01/26 22:57:43 erk @79375f05bbb75666f0c8cc3a9d6765d3c6f293cd (47377) [visibility]> read 1 heads: 79375f05bbb7
+2025/01/26 22:57:43 erk @79375f05bbb75666f0c8cc3a9d6765d3c6f293cd (47377) [visibility]> read 1 heads: 79375f05bbb7
+2025/01/26 22:57:43 erk @79375f05bbb75666f0c8cc3a9d6765d3c6f293cd (47377) [visibility]> removed 1 heads [79375f05bbb7]; added 0 heads []
+2025/01/26 22:57:43 erk @79375f05bbb75666f0c8cc3a9d6765d3c6f293cd (47377) [visibility]> wrote 0 heads: 
+2025/01/26 22:57:43 erk @79375f05bbb75666f0c8cc3a9d6765d3c6f293cd (47377) [pythonhook]> pythonhook-post-pull: sapling.ext.github.pr_marker.cleanup_landed_pr_hook finished in 0.32 seconds
+2025/01/26 22:57:43 erk @79375f05bbb75666f0c8cc3a9d6765d3c6f293cd (47377) [command_finish]> pull --noninteractive exited 0 after 0.78 seconds
+2025/01/26 22:57:45 erk @(unknown) (47485) [command]> goto --rev 'max(successors(remote/main))' --noninteractive
+2025/01/26 22:57:45 erk @(unknown) (47485) [pythonhook]> pythonhook-pre-update: sapling.ext.morestatus.saveupdateargs finished in 0.00 seconds
+2025/01/26 22:57:45 erk @79375f05bbb75666f0c8cc3a9d6765d3c6f293cd (47485) [visibility]> read 0 heads: 
+2025/01/26 22:57:45 erk @49829141b086e7618578b2c62050f9b00533410d (47485) [pythonhook]> pythonhook-post-update: sapling.ext.morestatus.cleanupdateargs finished in 0.00 seconds
+2025/01/26 22:57:45 erk @49829141b086e7618578b2c62050f9b00533410d (47485) [command_finish]> goto --rev 'max(successors(remote/main))' --noninteractive exited 0 after 0.16 seconds
+2025/01/27 22:16:09 erk @(unknown) (56534) [command]> debugcommitmessage isl --noninteractive
+2025/01/27 22:16:10 erk @49829141b086e7618578b2c62050f9b00533410d (56534) [visibility]> read 0 heads: 
+2025/01/27 22:16:10 erk @49829141b086e7618578b2c62050f9b00533410d (56534) [command_finish]> debugcommitmessage isl --noninteractive exited 0 after 1.01 seconds
+2025/01/27 22:16:48 erk @(unknown) (57706) [command]> pull --noninteractive
+2025/01/27 22:16:48 erk @49829141b086e7618578b2c62050f9b00533410d (57706) [visibility]> read 0 heads: 
+2025/01/27 22:16:48 erk @49829141b086e7618578b2c62050f9b00533410d (57706) [visibility]> read 0 heads: 
+2025/01/27 22:16:48 erk @49829141b086e7618578b2c62050f9b00533410d (57706) [pythonhook]> pythonhook-post-pull: sapling.ext.github.pr_marker.cleanup_landed_pr_hook finished in 0.00 seconds
+2025/01/27 22:16:48 erk @49829141b086e7618578b2c62050f9b00533410d (57706) [command_finish]> pull --noninteractive exited 0 after 0.31 seconds
+2025/01/27 22:16:53 erk @(unknown) (57794) [command]> commit --addremove --message 'add stub
+
+
+Summary: 
+
+Test Plan: 
+
+
+' --noninteractive
+2025/01/27 22:16:53 erk @49829141b086e7618578b2c62050f9b00533410d (57794) [visibility]> read 0 heads: 
+2025/01/27 22:16:53 erk @49829141b086e7618578b2c62050f9b00533410d (57794) [visibility]> read 0 heads: 
+2025/01/27 22:16:53 erk @49829141b086e7618578b2c62050f9b00533410d (57794) [visibility]> removed 0 heads []; added 1 heads [3ed0a3a12ed9]
+2025/01/27 22:16:53 erk @3ed0a3a12ed97195617c3770c360fe3f97fe7b77 (57794) [visibility]> wrote 1 heads: 3ed0a3a12ed9
+2025/01/27 22:16:53 erk @3ed0a3a12ed97195617c3770c360fe3f97fe7b77 (57794) [command_finish]> commit --addremove --message 'add stub
+
+
+Summary: 
+
+Test Plan: 
+
+
+' --noninteractive exited 0 after 0.23 seconds
+2025/01/27 22:16:56 erk @(unknown) (58021) [command]> pr submit --noninteractive
+2025/01/27 22:16:56 erk @3ed0a3a12ed97195617c3770c360fe3f97fe7b77 (58021) [visibility]> read 1 heads: 3ed0a3a12ed9
+2025/01/27 22:16:58 erk @3ed0a3a12ed97195617c3770c360fe3f97fe7b77 (58021) [visibility]> read 1 heads: 3ed0a3a12ed9
+2025/01/27 22:16:59 erk @3ed0a3a12ed97195617c3770c360fe3f97fe7b77 (58021) [command_finish]> pr submit --noninteractive exited 0 after 3.29 seconds
+2025/01/27 22:17:24 erk @(unknown) (58216) [command]> pull --noninteractive
+2025/01/27 22:17:24 erk @3ed0a3a12ed97195617c3770c360fe3f97fe7b77 (58216) [visibility]> read 1 heads: 3ed0a3a12ed9
+2025/01/27 22:17:25 erk @3ed0a3a12ed97195617c3770c360fe3f97fe7b77 (58216) [visibility]> read 1 heads: 3ed0a3a12ed9
+2025/01/27 22:17:25 erk @3ed0a3a12ed97195617c3770c360fe3f97fe7b77 (58216) [visibility]> read 1 heads: 3ed0a3a12ed9
+2025/01/27 22:17:25 erk @3ed0a3a12ed97195617c3770c360fe3f97fe7b77 (58216) [visibility]> removed 1 heads [3ed0a3a12ed9]; added 0 heads []
+2025/01/27 22:17:25 erk @3ed0a3a12ed97195617c3770c360fe3f97fe7b77 (58216) [visibility]> wrote 0 heads: 
+2025/01/27 22:17:25 erk @3ed0a3a12ed97195617c3770c360fe3f97fe7b77 (58216) [pythonhook]> pythonhook-post-pull: sapling.ext.github.pr_marker.cleanup_landed_pr_hook finished in 0.27 seconds
+2025/01/27 22:17:25 erk @3ed0a3a12ed97195617c3770c360fe3f97fe7b77 (58216) [command_finish]> pull --noninteractive exited 0 after 0.70 seconds
+2025/01/27 22:17:26 erk @(unknown) (58324) [command]> goto --rev 'max(successors(remote/main))' --noninteractive
+2025/01/27 22:17:26 erk @(unknown) (58324) [pythonhook]> pythonhook-pre-update: sapling.ext.morestatus.saveupdateargs finished in 0.00 seconds
+2025/01/27 22:17:26 erk @3ed0a3a12ed97195617c3770c360fe3f97fe7b77 (58324) [visibility]> read 0 heads: 
+2025/01/27 22:17:26 erk @4ed78f932639c0f2ed0ab691881010662c175f42 (58324) [pythonhook]> pythonhook-post-update: sapling.ext.morestatus.cleanupdateargs finished in 0.00 seconds
+2025/01/27 22:17:26 erk @4ed78f932639c0f2ed0ab691881010662c175f42 (58324) [command_finish]> goto --rev 'max(successors(remote/main))' --noninteractive exited 0 after 0.16 seconds
+2025/01/27 22:17:32 erk @(unknown) (58514) [command]> blame /Users/erk/projects/homeotopy/pyproject.toml -Tjson --change --rev 4ed78f932639c0f2ed0ab691881010662c175f42 --noninteractive
+2025/01/27 22:17:32 erk @4ed78f932639c0f2ed0ab691881010662c175f42 (58514) [command_finish]> blame /Users/erk/projects/homeotopy/pyproject.toml -Tjson --change --rev 4ed78f932639c0f2ed0ab691881010662c175f42 --noninteractive exited 0 after 0.10 seconds
+2025/01/27 22:17:54 erk @(unknown) (58837) [command]> commit --addremove --message 'v0.2.0
+
+
+Summary: 
+
+Test Plan: 
+
+
+' --noninteractive
+2025/01/27 22:17:54 erk @4ed78f932639c0f2ed0ab691881010662c175f42 (58837) [visibility]> read 0 heads: 
+2025/01/27 22:17:54 erk @4ed78f932639c0f2ed0ab691881010662c175f42 (58837) [visibility]> read 0 heads: 
+2025/01/27 22:17:54 erk @4ed78f932639c0f2ed0ab691881010662c175f42 (58837) [visibility]> removed 0 heads []; added 1 heads [cfb2b04296ae]
+2025/01/27 22:17:54 erk @cfb2b04296ae112cbd0fb607a5a53cee6dc52aee (58837) [visibility]> wrote 1 heads: cfb2b04296ae
+2025/01/27 22:17:54 erk @cfb2b04296ae112cbd0fb607a5a53cee6dc52aee (58837) [command_finish]> commit --addremove --message 'v0.2.0
+
+
+Summary: 
+
+Test Plan: 
+
+
+' --noninteractive exited 0 after 0.23 seconds
+2025/01/27 22:17:59 erk @(unknown) (59063) [command]> pr submit --noninteractive
+2025/01/27 22:17:59 erk @cfb2b04296ae112cbd0fb607a5a53cee6dc52aee (59063) [visibility]> read 1 heads: cfb2b04296ae
+2025/01/27 22:18:01 erk @cfb2b04296ae112cbd0fb607a5a53cee6dc52aee (59063) [visibility]> read 1 heads: cfb2b04296ae
+2025/01/27 22:18:03 erk @cfb2b04296ae112cbd0fb607a5a53cee6dc52aee (59063) [command_finish]> pr submit --noninteractive exited 0 after 3.27 seconds
+2025/01/27 22:20:56 erk @(unknown) (59632) [command]> pull --noninteractive
+2025/01/27 22:20:56 erk @cfb2b04296ae112cbd0fb607a5a53cee6dc52aee (59632) [visibility]> read 1 heads: cfb2b04296ae
+2025/01/27 22:20:57 erk @cfb2b04296ae112cbd0fb607a5a53cee6dc52aee (59632) [visibility]> read 1 heads: cfb2b04296ae
+2025/01/27 22:20:57 erk @cfb2b04296ae112cbd0fb607a5a53cee6dc52aee (59632) [visibility]> read 1 heads: cfb2b04296ae
+2025/01/27 22:20:57 erk @cfb2b04296ae112cbd0fb607a5a53cee6dc52aee (59632) [visibility]> removed 1 heads [cfb2b04296ae]; added 0 heads []
+2025/01/27 22:20:57 erk @cfb2b04296ae112cbd0fb607a5a53cee6dc52aee (59632) [visibility]> wrote 0 heads: 
+2025/01/27 22:20:57 erk @cfb2b04296ae112cbd0fb607a5a53cee6dc52aee (59632) [pythonhook]> pythonhook-post-pull: sapling.ext.github.pr_marker.cleanup_landed_pr_hook finished in 0.27 seconds
+2025/01/27 22:20:57 erk @cfb2b04296ae112cbd0fb607a5a53cee6dc52aee (59632) [command_finish]> pull --noninteractive exited 0 after 0.73 seconds
+2025/01/27 22:20:58 erk @(unknown) (59747) [command]> goto --rev 'max(successors(remote/main))' --noninteractive
+2025/01/27 22:20:58 erk @(unknown) (59747) [pythonhook]> pythonhook-pre-update: sapling.ext.morestatus.saveupdateargs finished in 0.00 seconds
+2025/01/27 22:20:58 erk @cfb2b04296ae112cbd0fb607a5a53cee6dc52aee (59747) [visibility]> read 0 heads: 
+2025/01/27 22:20:58 erk @e9e36a6d1e06ba13142f9f98f6bd050e5befee7a (59747) [pythonhook]> pythonhook-post-update: sapling.ext.morestatus.cleanupdateargs finished in 0.00 seconds
+2025/01/27 22:20:58 erk @e9e36a6d1e06ba13142f9f98f6bd050e5befee7a (59747) [command_finish]> goto --rev 'max(successors(remote/main))' --noninteractive exited 0 after 0.16 seconds
+2025/01/31 22:54:48 erk @(unknown) (84651) [command]> debugcommitmessage isl --noninteractive
+2025/01/31 22:54:49 erk @e9e36a6d1e06ba13142f9f98f6bd050e5befee7a (84651) [visibility]> read 0 heads: 
+2025/01/31 22:54:49 erk @e9e36a6d1e06ba13142f9f98f6bd050e5befee7a (84651) [command_finish]> debugcommitmessage isl --noninteractive exited 0 after 1.33 seconds
+2025/01/31 22:54:51 erk @(unknown) (85061) [command]> blame /Users/erk/projects/homeotopy/homeotopy/_simplex.py -Tjson --change --rev e9e36a6d1e06ba13142f9f98f6bd050e5befee7a --noninteractive
+2025/01/31 22:54:51 erk @e9e36a6d1e06ba13142f9f98f6bd050e5befee7a (85061) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/_simplex.py -Tjson --change --rev e9e36a6d1e06ba13142f9f98f6bd050e5befee7a --noninteractive exited 0 after 0.08 seconds
+2025/02/05 21:14:51 erk @(unknown) (61660) [command]> debugcommitmessage isl --noninteractive
+2025/02/05 21:14:51 erk @e9e36a6d1e06ba13142f9f98f6bd050e5befee7a (61660) [visibility]> read 0 heads: 
+2025/02/05 21:14:51 erk @e9e36a6d1e06ba13142f9f98f6bd050e5befee7a (61660) [command_finish]> debugcommitmessage isl --noninteractive exited 0 after 1.35 seconds
+2025/02/05 21:16:27 erk @(unknown) (62702) [command]> debugcommitmessage isl --noninteractive
+2025/02/05 21:16:27 erk @e9e36a6d1e06ba13142f9f98f6bd050e5befee7a (62702) [visibility]> read 0 heads: 
+2025/02/05 21:16:27 erk @e9e36a6d1e06ba13142f9f98f6bd050e5befee7a (62702) [command_finish]> debugcommitmessage isl --noninteractive exited 0 after 0.42 seconds
+2025/02/05 22:01:26 erk @(unknown) (71565) [command]> blame /Users/erk/projects/homeotopy/pyproject.toml -Tjson --change --rev e9e36a6d1e06ba13142f9f98f6bd050e5befee7a --noninteractive
+2025/02/05 22:01:26 erk @e9e36a6d1e06ba13142f9f98f6bd050e5befee7a (71565) [command_finish]> blame /Users/erk/projects/homeotopy/pyproject.toml -Tjson --change --rev e9e36a6d1e06ba13142f9f98f6bd050e5befee7a --noninteractive exited 0 after 0.07 seconds
+2025/02/05 22:01:31 erk @(unknown) (71725) [command]> blame /Users/erk/projects/homeotopy/pyproject.bak.toml -Tjson --change --rev e9e36a6d1e06ba13142f9f98f6bd050e5befee7a --noninteractive
+2025/02/05 22:01:31 erk @e9e36a6d1e06ba13142f9f98f6bd050e5befee7a (71725) [command_finish]> blame /Users/erk/projects/homeotopy/pyproject.bak.toml -Tjson --change --rev e9e36a6d1e06ba13142f9f98f6bd050e5befee7a --noninteractive exited 0 after 0.07 seconds
+2025/02/05 22:01:34 erk @(unknown) (71752) [command]> blame /Users/erk/projects/homeotopy/poetry.lock -Tjson --change --rev e9e36a6d1e06ba13142f9f98f6bd050e5befee7a --noninteractive
+2025/02/05 22:01:34 erk @e9e36a6d1e06ba13142f9f98f6bd050e5befee7a (71752) [command_finish]> blame /Users/erk/projects/homeotopy/poetry.lock -Tjson --change --rev e9e36a6d1e06ba13142f9f98f6bd050e5befee7a --noninteractive exited 0 after 0.08 seconds
+2025/02/05 22:01:48 erk @(unknown) (72023) [command]> blame /Users/erk/projects/homeotopy/LICENSE -Tjson --change --rev e9e36a6d1e06ba13142f9f98f6bd050e5befee7a --noninteractive
+2025/02/05 22:01:48 erk @e9e36a6d1e06ba13142f9f98f6bd050e5befee7a (72023) [command_finish]> blame /Users/erk/projects/homeotopy/LICENSE -Tjson --change --rev e9e36a6d1e06ba13142f9f98f6bd050e5befee7a --noninteractive exited 0 after 0.07 seconds
+2025/02/05 22:03:59 erk @(unknown) (73031) [command]> blame /Users/erk/projects/homeotopy/.python-version -Tjson --change --rev e9e36a6d1e06ba13142f9f98f6bd050e5befee7a --noninteractive
+2025/02/05 22:03:59 erk @e9e36a6d1e06ba13142f9f98f6bd050e5befee7a (73031) [command_finish]> blame /Users/erk/projects/homeotopy/.python-version -Tjson --change --rev e9e36a6d1e06ba13142f9f98f6bd050e5befee7a --noninteractive exited 0 after 0.07 seconds
+2025/02/05 22:04:06 erk @(unknown) (73211) [command]> blame /Users/erk/projects/homeotopy/hello.py -Tjson --change --rev e9e36a6d1e06ba13142f9f98f6bd050e5befee7a --noninteractive
+2025/02/05 22:04:06 erk @e9e36a6d1e06ba13142f9f98f6bd050e5befee7a (73211) [command_finish]> blame /Users/erk/projects/homeotopy/hello.py -Tjson --change --rev e9e36a6d1e06ba13142f9f98f6bd050e5befee7a --noninteractive exited 0 after 0.07 seconds
+2025/02/05 22:04:29 erk @(unknown) (73442) [command]> blame /Users/erk/projects/homeotopy/.gitignore -Tjson --change --rev e9e36a6d1e06ba13142f9f98f6bd050e5befee7a --noninteractive
+2025/02/05 22:04:29 erk @e9e36a6d1e06ba13142f9f98f6bd050e5befee7a (73442) [command_finish]> blame /Users/erk/projects/homeotopy/.gitignore -Tjson --change --rev e9e36a6d1e06ba13142f9f98f6bd050e5befee7a --noninteractive exited 0 after 0.07 seconds
+2025/02/05 22:04:41 erk @(unknown) (73589) [command]> blame /Users/erk/projects/homeotopy/.github/workflows/python-package.yml -Tjson --change --rev e9e36a6d1e06ba13142f9f98f6bd050e5befee7a --noninteractive
+2025/02/05 22:04:41 erk @e9e36a6d1e06ba13142f9f98f6bd050e5befee7a (73589) [command_finish]> blame /Users/erk/projects/homeotopy/.github/workflows/python-package.yml -Tjson --change --rev e9e36a6d1e06ba13142f9f98f6bd050e5befee7a --noninteractive exited 0 after 0.07 seconds
+2025/02/05 22:05:45 erk @(unknown) (74465) [command]> blame /Users/erk/projects/homeotopy/tests/__init__.py -Tjson --change --rev e9e36a6d1e06ba13142f9f98f6bd050e5befee7a --noninteractive
+2025/02/05 22:05:45 erk @e9e36a6d1e06ba13142f9f98f6bd050e5befee7a (74465) [command_finish]> blame /Users/erk/projects/homeotopy/tests/__init__.py -Tjson --change --rev e9e36a6d1e06ba13142f9f98f6bd050e5befee7a --noninteractive exited 0 after 0.07 seconds
+2025/02/05 22:37:31 erk @(unknown) (78351) [command]> blame /Users/erk/projects/homeotopy/.github/workflows/static.yml -Tjson --change --rev e9e36a6d1e06ba13142f9f98f6bd050e5befee7a --noninteractive
+2025/02/05 22:37:31 erk @e9e36a6d1e06ba13142f9f98f6bd050e5befee7a (78351) [command_finish]> blame /Users/erk/projects/homeotopy/.github/workflows/static.yml -Tjson --change --rev e9e36a6d1e06ba13142f9f98f6bd050e5befee7a --noninteractive exited 0 after 0.07 seconds
+2025/02/05 22:37:45 erk @(unknown) (78391) [command]> blame /Users/erk/projects/homeotopy/docs/conf.py -Tjson --change --rev e9e36a6d1e06ba13142f9f98f6bd050e5befee7a --noninteractive
+2025/02/05 22:37:45 erk @e9e36a6d1e06ba13142f9f98f6bd050e5befee7a (78391) [command_finish]> blame /Users/erk/projects/homeotopy/docs/conf.py -Tjson --change --rev e9e36a6d1e06ba13142f9f98f6bd050e5befee7a --noninteractive exited 0 after 0.07 seconds
+2025/02/05 22:50:32 erk @(unknown) (80097) [command]> commit --addremove --message 'migrate to uv
+
+
+Summary: 
+
+Test Plan: 
+
+
+' --noninteractive
+2025/02/05 22:50:32 erk @e9e36a6d1e06ba13142f9f98f6bd050e5befee7a (80097) [visibility]> read 0 heads: 
+2025/02/05 22:50:32 erk @e9e36a6d1e06ba13142f9f98f6bd050e5befee7a (80097) [visibility]> read 0 heads: 
+2025/02/05 22:50:32 erk @e9e36a6d1e06ba13142f9f98f6bd050e5befee7a (80097) [visibility]> removed 0 heads []; added 1 heads [fb99acf0e821]
+2025/02/05 22:50:32 erk @fb99acf0e8218bcde0324945a5d75835af51a861 (80097) [visibility]> wrote 1 heads: fb99acf0e821
+2025/02/05 22:50:32 erk @fb99acf0e8218bcde0324945a5d75835af51a861 (80097) [command_finish]> commit --addremove --message 'migrate to uv
+
+
+Summary: 
+
+Test Plan: 
+
+
+' --noninteractive exited 0 after 0.25 seconds
+2025/02/05 22:50:52 erk @(unknown) (80666) [command]> pr submit --draft --noninteractive
+2025/02/05 22:50:52 erk @fb99acf0e8218bcde0324945a5d75835af51a861 (80666) [visibility]> read 1 heads: fb99acf0e821
+2025/02/05 22:50:55 erk @fb99acf0e8218bcde0324945a5d75835af51a861 (80666) [visibility]> read 1 heads: fb99acf0e821
+2025/02/05 22:50:56 erk @fb99acf0e8218bcde0324945a5d75835af51a861 (80666) [command_finish]> pr submit --draft --noninteractive exited 0 after 3.98 seconds
+2025/02/05 23:25:37 erk @(unknown) (7191) [command]> pull --noninteractive
+2025/02/05 23:25:37 erk @fb99acf0e8218bcde0324945a5d75835af51a861 (7191) [visibility]> read 1 heads: fb99acf0e821
+2025/02/05 23:25:37 erk @fb99acf0e8218bcde0324945a5d75835af51a861 (7191) [visibility]> read 1 heads: fb99acf0e821
+2025/02/05 23:25:37 erk @fb99acf0e8218bcde0324945a5d75835af51a861 (7191) [visibility]> read 1 heads: fb99acf0e821
+2025/02/05 23:25:37 erk @fb99acf0e8218bcde0324945a5d75835af51a861 (7191) [visibility]> removed 1 heads [fb99acf0e821]; added 0 heads []
+2025/02/05 23:25:37 erk @fb99acf0e8218bcde0324945a5d75835af51a861 (7191) [visibility]> wrote 0 heads: 
+2025/02/05 23:25:37 erk @fb99acf0e8218bcde0324945a5d75835af51a861 (7191) [pythonhook]> pythonhook-post-pull: sapling.ext.github.pr_marker.cleanup_landed_pr_hook finished in 0.26 seconds
+2025/02/05 23:25:37 erk @fb99acf0e8218bcde0324945a5d75835af51a861 (7191) [command_finish]> pull --noninteractive exited 0 after 0.81 seconds
+2025/02/05 23:25:39 erk @(unknown) (7312) [command]> goto --rev 'max(successors(remote/main))' --noninteractive
+2025/02/05 23:25:39 erk @(unknown) (7312) [pythonhook]> pythonhook-pre-update: sapling.ext.morestatus.saveupdateargs finished in 0.00 seconds
+2025/02/05 23:25:39 erk @fb99acf0e8218bcde0324945a5d75835af51a861 (7312) [visibility]> read 0 heads: 
+2025/02/05 23:25:39 erk @eabf628433f64aa97af9a8c7fcd02f80715fd6ac (7312) [pythonhook]> pythonhook-post-update: sapling.ext.morestatus.cleanupdateargs finished in 0.00 seconds
+2025/02/05 23:25:39 erk @eabf628433f64aa97af9a8c7fcd02f80715fd6ac (7312) [command_finish]> goto --rev 'max(successors(remote/main))' --noninteractive exited 0 after 0.19 seconds
+2025/02/26 21:41:24 erk @(unknown) (38094) [command]> debugcommitmessage isl --noninteractive
+2025/02/26 21:41:25 erk @eabf628433f64aa97af9a8c7fcd02f80715fd6ac (38094) [visibility]> read 0 heads: 
+2025/02/26 21:41:25 erk @eabf628433f64aa97af9a8c7fcd02f80715fd6ac (38094) [command_finish]> debugcommitmessage isl --noninteractive exited 0 after 1.34 seconds
+2025/02/26 21:41:43 erk @(unknown) (38485) [command]> blame /Users/erk/projects/homeotopy/homeotopy/_plane.py -Tjson --change --rev eabf628433f64aa97af9a8c7fcd02f80715fd6ac --noninteractive
+2025/02/26 21:41:43 erk @eabf628433f64aa97af9a8c7fcd02f80715fd6ac (38485) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/_plane.py -Tjson --change --rev eabf628433f64aa97af9a8c7fcd02f80715fd6ac --noninteractive exited 0 after 0.07 seconds
+2025/02/26 21:49:44 erk @(unknown) (39693) [command]> commit --addremove --message 'update plane to be simpler
+
+
+Summary: 
+
+Test Plan: 
+
+
+' --noninteractive
+2025/02/26 21:49:44 erk @eabf628433f64aa97af9a8c7fcd02f80715fd6ac (39693) [visibility]> read 0 heads: 
+2025/02/26 21:49:44 erk @eabf628433f64aa97af9a8c7fcd02f80715fd6ac (39693) [visibility]> read 0 heads: 
+2025/02/26 21:49:44 erk @eabf628433f64aa97af9a8c7fcd02f80715fd6ac (39693) [visibility]> removed 0 heads []; added 1 heads [9e7d5f48f486]
+2025/02/26 21:49:44 erk @9e7d5f48f4866879fbf58b3f99579856779ff447 (39693) [visibility]> wrote 1 heads: 9e7d5f48f486
+2025/02/26 21:49:44 erk @9e7d5f48f4866879fbf58b3f99579856779ff447 (39693) [command_finish]> commit --addremove --message 'update plane to be simpler
+
+
+Summary: 
+
+Test Plan: 
+
+
+' --noninteractive exited 0 after 0.33 seconds
+2025/02/26 21:49:49 erk @(unknown) (39910) [command]> blame /Users/erk/projects/homeotopy/tests/test_plane.py -Tjson --change --rev 9e7d5f48f4866879fbf58b3f99579856779ff447 --noninteractive
+2025/02/26 21:49:49 erk @9e7d5f48f4866879fbf58b3f99579856779ff447 (39910) [command_finish]> blame /Users/erk/projects/homeotopy/tests/test_plane.py -Tjson --change --rev 9e7d5f48f4866879fbf58b3f99579856779ff447 --noninteractive exited 0 after 0.09 seconds
+2025/02/26 21:50:01 erk @(unknown) (39997) [command]> blame /Users/erk/projects/homeotopy/homeotopy/_plane.py -Tjson --change --rev 9e7d5f48f4866879fbf58b3f99579856779ff447 --noninteractive
+2025/02/26 21:50:01 erk @9e7d5f48f4866879fbf58b3f99579856779ff447 (39997) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/_plane.py -Tjson --change --rev 9e7d5f48f4866879fbf58b3f99579856779ff447 --noninteractive exited 0 after 0.07 seconds
+2025/02/26 21:52:30 erk @(unknown) (40577) [command]> --config 'amend.autorestack=always' amend --addremove --noninteractive
+2025/02/26 21:52:30 erk @9e7d5f48f4866879fbf58b3f99579856779ff447 (40577) [visibility]> read 1 heads: 9e7d5f48f486
+2025/02/26 21:52:30 erk @9e7d5f48f4866879fbf58b3f99579856779ff447 (40577) [visibility]> read 1 heads: 9e7d5f48f486
+2025/02/26 21:52:30 erk @9e7d5f48f4866879fbf58b3f99579856779ff447 (40577) [visibility]> removed 0 heads []; added 1 heads [5b9994f79337]
+2025/02/26 21:52:30 erk @5b9994f79337c124d1d22aea905c5c65cc4baad6 (40577) [visibility]> removed 1 heads [9e7d5f48f486]; added 0 heads []
+2025/02/26 21:52:30 erk @5b9994f79337c124d1d22aea905c5c65cc4baad6 (40577) [visibility]> wrote 1 heads: 5b9994f79337
+2025/02/26 21:52:30 erk @5b9994f79337c124d1d22aea905c5c65cc4baad6 (40577) [command_finish]> --config 'amend.autorestack=always' amend --addremove --noninteractive exited 0 after 0.29 seconds
+2025/02/26 21:52:52 erk @(unknown) (40855) [command]> pr submit --draft --noninteractive
+2025/02/26 21:52:52 erk @5b9994f79337c124d1d22aea905c5c65cc4baad6 (40855) [visibility]> read 1 heads: 5b9994f79337
+2025/02/26 21:52:54 erk @5b9994f79337c124d1d22aea905c5c65cc4baad6 (40855) [visibility]> read 1 heads: 5b9994f79337
+2025/02/26 21:52:55 erk @5b9994f79337c124d1d22aea905c5c65cc4baad6 (40855) [command_finish]> pr submit --draft --noninteractive exited 0 after 3.46 seconds
+2025/02/26 21:53:25 erk @(unknown) (41006) [command]> blame /Users/erk/projects/homeotopy/pyproject.toml -Tjson --change --rev 5b9994f79337c124d1d22aea905c5c65cc4baad6 --noninteractive
+2025/02/26 21:53:25 erk @5b9994f79337c124d1d22aea905c5c65cc4baad6 (41006) [command_finish]> blame /Users/erk/projects/homeotopy/pyproject.toml -Tjson --change --rev 5b9994f79337c124d1d22aea905c5c65cc4baad6 --noninteractive exited 0 after 0.08 seconds
+2025/02/26 21:54:05 erk @(unknown) (41190) [command]> blame /Users/erk/projects/homeotopy/README.md -Tjson --change --rev 5b9994f79337c124d1d22aea905c5c65cc4baad6 --noninteractive
+2025/02/26 21:54:05 erk @5b9994f79337c124d1d22aea905c5c65cc4baad6 (41190) [command_finish]> blame /Users/erk/projects/homeotopy/README.md -Tjson --change --rev 5b9994f79337c124d1d22aea905c5c65cc4baad6 --noninteractive exited 0 after 0.08 seconds
+2025/02/26 21:55:56 erk @(unknown) (41801) [command]> blame /Users/erk/projects/homeotopy/.github/workflows/python-package.yml -Tjson --change --rev 5b9994f79337c124d1d22aea905c5c65cc4baad6 --noninteractive
+2025/02/26 21:55:56 erk @5b9994f79337c124d1d22aea905c5c65cc4baad6 (41801) [command_finish]> blame /Users/erk/projects/homeotopy/.github/workflows/python-package.yml -Tjson --change --rev 5b9994f79337c124d1d22aea905c5c65cc4baad6 --noninteractive exited 0 after 0.07 seconds
+2025/02/26 21:56:55 erk @(unknown) (42088) [command]> commit --addremove --message 'update readme
+
+
+Summary: 
+
+Test Plan: 
+
+
+' --noninteractive
+2025/02/26 21:56:55 erk @5b9994f79337c124d1d22aea905c5c65cc4baad6 (42088) [visibility]> read 1 heads: 5b9994f79337
+2025/02/26 21:56:55 erk @5b9994f79337c124d1d22aea905c5c65cc4baad6 (42088) [visibility]> read 1 heads: 5b9994f79337
+2025/02/26 21:56:55 erk @5b9994f79337c124d1d22aea905c5c65cc4baad6 (42088) [visibility]> removed 1 heads [5b9994f79337]; added 1 heads [d369d97dce89]
+2025/02/26 21:56:55 erk @d369d97dce8924f0c59ebe5d41056512b81f3f64 (42088) [visibility]> wrote 1 heads: d369d97dce89
+2025/02/26 21:56:55 erk @d369d97dce8924f0c59ebe5d41056512b81f3f64 (42088) [command_finish]> commit --addremove --message 'update readme
+
+
+Summary: 
+
+Test Plan: 
+
+
+' --noninteractive exited 0 after 0.24 seconds
+2025/02/26 21:56:56 erk @(unknown) (42288) [command]> pull --noninteractive
+2025/02/26 21:56:56 erk @d369d97dce8924f0c59ebe5d41056512b81f3f64 (42288) [visibility]> read 1 heads: d369d97dce89
+2025/02/26 21:56:57 erk @d369d97dce8924f0c59ebe5d41056512b81f3f64 (42288) [visibility]> read 1 heads: d369d97dce89
+2025/02/26 21:56:57 erk @d369d97dce8924f0c59ebe5d41056512b81f3f64 (42288) [visibility]> read 1 heads: d369d97dce89
+2025/02/26 21:56:57 erk @d369d97dce8924f0c59ebe5d41056512b81f3f64 (42288) [pythonhook]> pythonhook-post-pull: sapling.ext.github.pr_marker.cleanup_landed_pr_hook finished in 0.26 seconds
+2025/02/26 21:56:57 erk @d369d97dce8924f0c59ebe5d41056512b81f3f64 (42288) [command_finish]> pull --noninteractive exited 0 after 0.72 seconds
+2025/02/26 21:57:01 erk @(unknown) (42365) [command]> rebase -s 'max(successors(d369d97dce8924f0c59ebe5d41056512b81f3f64))' -d 'max(successors(remote/main))' --noninteractive
+2025/02/26 21:57:01 erk @d369d97dce8924f0c59ebe5d41056512b81f3f64 (42365) [visibility]> read 1 heads: d369d97dce89
+2025/02/26 21:57:01 erk @d369d97dce8924f0c59ebe5d41056512b81f3f64 (42365) [visibility]> removed 0 heads []; added 1 heads [0523e8a4f3a0]
+2025/02/26 21:57:01 erk @d369d97dce8924f0c59ebe5d41056512b81f3f64 (42365) [visibility]> wrote 2 heads: 0523e8a4f3a0, d369d97dce89
+2025/02/26 21:57:01 erk @0523e8a4f3a073b0dbc50f298d1da92c06d0b4cd (42365) [visibility]> removed 1 heads [d369d97dce89]; added 0 heads []
+2025/02/26 21:57:01 erk @0523e8a4f3a073b0dbc50f298d1da92c06d0b4cd (42365) [visibility]> wrote 1 heads: 0523e8a4f3a0
+2025/02/26 21:57:01 erk @0523e8a4f3a073b0dbc50f298d1da92c06d0b4cd (42365) [command_finish]> rebase -s 'max(successors(d369d97dce8924f0c59ebe5d41056512b81f3f64))' -d 'max(successors(remote/main))' --noninteractive exited 0 after 0.26 seconds
+2025/02/26 21:57:08 erk @(unknown) (42623) [command]> blame /Users/erk/projects/homeotopy/.gitignore -Tjson --change --rev 0523e8a4f3a073b0dbc50f298d1da92c06d0b4cd --noninteractive
+2025/02/26 21:57:08 erk @0523e8a4f3a073b0dbc50f298d1da92c06d0b4cd (42623) [command_finish]> blame /Users/erk/projects/homeotopy/.gitignore -Tjson --change --rev 0523e8a4f3a073b0dbc50f298d1da92c06d0b4cd --noninteractive exited 0 after 0.08 seconds
+2025/02/26 21:57:35 erk @(unknown) (42811) [command]> shelve --unknown --noninteractive
+2025/02/26 21:57:35 erk @0523e8a4f3a073b0dbc50f298d1da92c06d0b4cd (42811) [visibility]> read 1 heads: 0523e8a4f3a0
+2025/02/26 21:57:35 erk @0523e8a4f3a073b0dbc50f298d1da92c06d0b4cd (42811) [visibility]> removed 1 heads [0523e8a4f3a0]; added 1 heads [744b17140f27]
+2025/02/26 21:57:35 erk @744b17140f278aafe4b47a1e1652cab78a3fcac7 (42811) [visibility]> removed 1 heads [744b17140f27]; added 1 heads [0523e8a4f3a0]
+2025/02/26 21:57:35 erk @744b17140f278aafe4b47a1e1652cab78a3fcac7 (42811) [visibility]> wrote 1 heads: 0523e8a4f3a0
+2025/02/26 21:57:35 erk @0523e8a4f3a073b0dbc50f298d1da92c06d0b4cd (42811) [command_finish]> shelve --unknown --noninteractive exited 0 after 0.29 seconds
+2025/02/26 21:57:51 erk @(unknown) (43253) [command]> debugexportstack -r 0523e8a4f3a073b0dbc50f298d1da92c06d0b4cd --noninteractive
+2025/02/26 21:57:51 erk @0523e8a4f3a073b0dbc50f298d1da92c06d0b4cd (43253) [visibility]> read 1 heads: 0523e8a4f3a0
+2025/02/26 21:57:51 erk @0523e8a4f3a073b0dbc50f298d1da92c06d0b4cd (43253) [command_finish]> debugexportstack -r 0523e8a4f3a073b0dbc50f298d1da92c06d0b4cd --noninteractive exited 0 after 0.09 seconds
+2025/02/26 21:57:58 erk @(unknown) (43281) [command]> debugimportstack --noninteractive
+2025/02/26 21:57:58 erk @0523e8a4f3a073b0dbc50f298d1da92c06d0b4cd (43281) [visibility]> read 1 heads: 0523e8a4f3a0
+2025/02/26 21:57:58 erk @0523e8a4f3a073b0dbc50f298d1da92c06d0b4cd (43281) [visibility]> removed 0 heads []; added 1 heads [f294a462914c]
+2025/02/26 21:57:58 erk @0523e8a4f3a073b0dbc50f298d1da92c06d0b4cd (43281) [visibility]> removed 1 heads [f294a462914c]; added 1 heads [4c9feab5a9c8]
+2025/02/26 21:57:58 erk @0523e8a4f3a073b0dbc50f298d1da92c06d0b4cd (43281) [visibility]> removed 1 heads [0523e8a4f3a0]; added 0 heads []
+2025/02/26 21:57:58 erk @4c9feab5a9c8b645a5c6cf0d7763b474f3063b61 (43281) [visibility]> wrote 1 heads: 4c9feab5a9c8
+2025/02/26 21:57:58 erk @4c9feab5a9c8b645a5c6cf0d7763b474f3063b61 (43281) [command_finish]> debugimportstack --noninteractive exited 0 after 0.23 seconds
+2025/02/26 21:58:00 erk @(unknown) (43481) [command]> goto --rev 'max(successors(f294a462914c2667d3278c01e41e4421c5e669d7))' --noninteractive
+2025/02/26 21:58:00 erk @(unknown) (43481) [pythonhook]> pythonhook-pre-update: sapling.ext.morestatus.saveupdateargs finished in 0.00 seconds
+2025/02/26 21:58:00 erk @4c9feab5a9c8b645a5c6cf0d7763b474f3063b61 (43481) [visibility]> read 1 heads: 4c9feab5a9c8
+2025/02/26 21:58:00 erk @f294a462914c2667d3278c01e41e4421c5e669d7 (43481) [pythonhook]> pythonhook-post-update: sapling.ext.morestatus.cleanupdateargs finished in 0.00 seconds
+2025/02/26 21:58:00 erk @f294a462914c2667d3278c01e41e4421c5e669d7 (43481) [command_finish]> goto --rev 'max(successors(f294a462914c2667d3278c01e41e4421c5e669d7))' --noninteractive exited 0 after 0.16 seconds
+2025/02/26 21:58:03 erk @(unknown) (43676) [command]> hide --rev 'max(successors(4c9feab5a9c8b645a5c6cf0d7763b474f3063b61))' --noninteractive
+2025/02/26 21:58:03 erk @f294a462914c2667d3278c01e41e4421c5e669d7 (43676) [visibility]> read 1 heads: 4c9feab5a9c8
+2025/02/26 21:58:03 erk @f294a462914c2667d3278c01e41e4421c5e669d7 (43676) [visibility]> removed 1 heads [4c9feab5a9c8]; added 1 heads [f294a462914c]
+2025/02/26 21:58:03 erk @f294a462914c2667d3278c01e41e4421c5e669d7 (43676) [visibility]> wrote 1 heads: f294a462914c
+2025/02/26 21:58:03 erk @f294a462914c2667d3278c01e41e4421c5e669d7 (43676) [command_finish]> hide --rev 'max(successors(4c9feab5a9c8b645a5c6cf0d7763b474f3063b61))' --noninteractive exited 0 after 0.09 seconds
+2025/02/26 21:58:10 erk @(unknown) (43798) [command]> unshelve --name default --noninteractive
+2025/02/26 21:58:10 erk @f294a462914c2667d3278c01e41e4421c5e669d7 (43798) [visibility]> read 1 heads: f294a462914c
+2025/02/26 21:58:10 erk @f294a462914c2667d3278c01e41e4421c5e669d7 (43798) [visibility]> removed 1 heads [f294a462914c]; added 1 heads [34c33059f7c5]
+2025/02/26 21:58:10 erk @f294a462914c2667d3278c01e41e4421c5e669d7 (43798) [visibility]> removed 1 heads [34c33059f7c5]; added 1 heads [f294a462914c]
+2025/02/26 21:58:10 erk @f294a462914c2667d3278c01e41e4421c5e669d7 (43798) [visibility]> wrote 1 heads: f294a462914c
+2025/02/26 21:58:10 erk @f294a462914c2667d3278c01e41e4421c5e669d7 (43798) [command_finish]> unshelve --name default --noninteractive exited 0 after 0.32 seconds
+2025/02/26 21:58:13 erk @(unknown) (44138) [command]> --config 'amend.autorestack=always' amend --addremove --noninteractive
+2025/02/26 21:58:13 erk @f294a462914c2667d3278c01e41e4421c5e669d7 (44138) [visibility]> read 1 heads: f294a462914c
+2025/02/26 21:58:13 erk @f294a462914c2667d3278c01e41e4421c5e669d7 (44138) [visibility]> read 1 heads: f294a462914c
+2025/02/26 21:58:13 erk @f294a462914c2667d3278c01e41e4421c5e669d7 (44138) [visibility]> removed 0 heads []; added 1 heads [d190769cb098]
+2025/02/26 21:58:13 erk @d190769cb098e889cd2646507b30373ebb81cbdf (44138) [visibility]> removed 1 heads [f294a462914c]; added 0 heads []
+2025/02/26 21:58:13 erk @d190769cb098e889cd2646507b30373ebb81cbdf (44138) [visibility]> wrote 1 heads: d190769cb098
+2025/02/26 21:58:13 erk @d190769cb098e889cd2646507b30373ebb81cbdf (44138) [command_finish]> --config 'amend.autorestack=always' amend --addremove --noninteractive exited 0 after 0.22 seconds
+2025/02/26 21:58:25 erk @(unknown) (44353) [command]> pr submit --draft --noninteractive
+2025/02/26 21:58:25 erk @d190769cb098e889cd2646507b30373ebb81cbdf (44353) [visibility]> read 1 heads: d190769cb098
+2025/02/26 21:58:27 erk @d190769cb098e889cd2646507b30373ebb81cbdf (44353) [visibility]> read 1 heads: d190769cb098
+2025/02/26 21:58:28 erk @d190769cb098e889cd2646507b30373ebb81cbdf (44353) [command_finish]> pr submit --draft --noninteractive exited 0 after 3.22 seconds
+2025/02/26 22:02:47 erk @(unknown) (45220) [command]> blame /Users/erk/projects/homeotopy/.mypy_cache/3.13/unittest/main.meta.json -Tjson --change --rev d190769cb098e889cd2646507b30373ebb81cbdf --noninteractive
+2025/02/26 22:02:47 erk @d190769cb098e889cd2646507b30373ebb81cbdf (45220) [command_finish]> blame /Users/erk/projects/homeotopy/.mypy_cache/3.13/unittest/main.meta.json -Tjson --change --rev d190769cb098e889cd2646507b30373ebb81cbdf --noninteractive exited 0 after 0.07 seconds
+2025/02/26 22:03:16 erk @(unknown) (45383) [command]> commit --addremove --message 'add mypy
+
+
+Summary: 
+
+Test Plan: 
+
+
+' --noninteractive
+2025/02/26 22:03:16 erk @d190769cb098e889cd2646507b30373ebb81cbdf (45383) [visibility]> read 1 heads: d190769cb098
+2025/02/26 22:03:16 erk @d190769cb098e889cd2646507b30373ebb81cbdf (45383) [visibility]> read 1 heads: d190769cb098
+2025/02/26 22:03:16 erk @d190769cb098e889cd2646507b30373ebb81cbdf (45383) [visibility]> removed 1 heads [d190769cb098]; added 1 heads [a62fef0e525d]
+2025/02/26 22:03:16 erk @a62fef0e525dea745cec773edea3025d33624cb2 (45383) [visibility]> wrote 1 heads: a62fef0e525d
+2025/02/26 22:03:16 erk @a62fef0e525dea745cec773edea3025d33624cb2 (45383) [command_finish]> commit --addremove --message 'add mypy
+
+
+Summary: 
+
+Test Plan: 
+
+
+' --noninteractive exited 0 after 0.22 seconds
+2025/02/26 22:03:17 erk @(unknown) (45583) [command]> pull --noninteractive
+2025/02/26 22:03:18 erk @a62fef0e525dea745cec773edea3025d33624cb2 (45583) [visibility]> read 1 heads: a62fef0e525d
+2025/02/26 22:03:18 erk @a62fef0e525dea745cec773edea3025d33624cb2 (45583) [visibility]> read 1 heads: a62fef0e525d
+2025/02/26 22:03:18 erk @a62fef0e525dea745cec773edea3025d33624cb2 (45583) [visibility]> read 1 heads: a62fef0e525d
+2025/02/26 22:03:18 erk @a62fef0e525dea745cec773edea3025d33624cb2 (45583) [pythonhook]> pythonhook-post-pull: sapling.ext.github.pr_marker.cleanup_landed_pr_hook finished in 0.29 seconds
+2025/02/26 22:03:18 erk @a62fef0e525dea745cec773edea3025d33624cb2 (45583) [command_finish]> pull --noninteractive exited 0 after 0.79 seconds
+2025/02/26 22:03:21 erk @(unknown) (45660) [command]> rebase -s 'max(successors(a62fef0e525dea745cec773edea3025d33624cb2))' -d 'max(successors(remote/main))' --noninteractive
+2025/02/26 22:03:21 erk @a62fef0e525dea745cec773edea3025d33624cb2 (45660) [visibility]> read 1 heads: a62fef0e525d
+2025/02/26 22:03:21 erk @a62fef0e525dea745cec773edea3025d33624cb2 (45660) [visibility]> removed 0 heads []; added 1 heads [6b137e4e0a4c]
+2025/02/26 22:03:21 erk @a62fef0e525dea745cec773edea3025d33624cb2 (45660) [visibility]> wrote 2 heads: 6b137e4e0a4c, a62fef0e525d
+2025/02/26 22:03:21 erk @6b137e4e0a4cedc81b25a3a2cfa63c9ebfa29e4f (45660) [visibility]> removed 1 heads [a62fef0e525d]; added 0 heads []
+2025/02/26 22:03:21 erk @6b137e4e0a4cedc81b25a3a2cfa63c9ebfa29e4f (45660) [visibility]> wrote 1 heads: 6b137e4e0a4c
+2025/02/26 22:03:21 erk @6b137e4e0a4cedc81b25a3a2cfa63c9ebfa29e4f (45660) [command_finish]> rebase -s 'max(successors(a62fef0e525dea745cec773edea3025d33624cb2))' -d 'max(successors(remote/main))' --noninteractive exited 0 after 0.24 seconds
+2025/02/26 22:03:51 erk @(unknown) (45986) [command]> blame /Users/erk/projects/homeotopy/pyproject.toml -Tjson --change --rev 6b137e4e0a4cedc81b25a3a2cfa63c9ebfa29e4f --noninteractive
+2025/02/26 22:03:51 erk @6b137e4e0a4cedc81b25a3a2cfa63c9ebfa29e4f (45986) [command_finish]> blame /Users/erk/projects/homeotopy/pyproject.toml -Tjson --change --rev 6b137e4e0a4cedc81b25a3a2cfa63c9ebfa29e4f --noninteractive exited 0 after 0.07 seconds
+2025/02/26 22:05:11 erk @(unknown) (46286) [command]> blame /Users/erk/projects/homeotopy/typings/numba/__init__.py -Tjson --change --rev 6b137e4e0a4cedc81b25a3a2cfa63c9ebfa29e4f --noninteractive
+2025/02/26 22:05:11 erk @6b137e4e0a4cedc81b25a3a2cfa63c9ebfa29e4f (46286) [command_finish]> blame /Users/erk/projects/homeotopy/typings/numba/__init__.py -Tjson --change --rev 6b137e4e0a4cedc81b25a3a2cfa63c9ebfa29e4f --noninteractive exited 0 after 0.07 seconds
+2025/02/26 22:05:57 erk @(unknown) (46428) [command]> blame /Users/erk/projects/homeotopy/typings/numba/__init__.pyi -Tjson --change --rev 6b137e4e0a4cedc81b25a3a2cfa63c9ebfa29e4f --noninteractive
+2025/02/26 22:05:57 erk @6b137e4e0a4cedc81b25a3a2cfa63c9ebfa29e4f (46428) [command_finish]> blame /Users/erk/projects/homeotopy/typings/numba/__init__.pyi -Tjson --change --rev 6b137e4e0a4cedc81b25a3a2cfa63c9ebfa29e4f --noninteractive exited 0 after 0.09 seconds
+2025/02/26 22:06:22 erk @(unknown) (46854) [command]> blame /Users/erk/projects/homeotopy/homeotopy/_simplex.py -Tjson --change --rev 6b137e4e0a4cedc81b25a3a2cfa63c9ebfa29e4f --noninteractive
+2025/02/26 22:06:22 erk @6b137e4e0a4cedc81b25a3a2cfa63c9ebfa29e4f (46854) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/_simplex.py -Tjson --change --rev 6b137e4e0a4cedc81b25a3a2cfa63c9ebfa29e4f --noninteractive exited 0 after 0.07 seconds
+2025/02/26 22:06:55 erk @(unknown) (47054) [command]> blame /Users/erk/projects/homeotopy/homeotopy/_ball.py -Tjson --change --rev 6b137e4e0a4cedc81b25a3a2cfa63c9ebfa29e4f --noninteractive
+2025/02/26 22:06:55 erk @6b137e4e0a4cedc81b25a3a2cfa63c9ebfa29e4f (47054) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/_ball.py -Tjson --change --rev 6b137e4e0a4cedc81b25a3a2cfa63c9ebfa29e4f --noninteractive exited 0 after 0.07 seconds
+2025/02/26 22:07:52 erk @(unknown) (47293) [command]> blame /Users/erk/projects/homeotopy/README.md -Tjson --change --rev 6b137e4e0a4cedc81b25a3a2cfa63c9ebfa29e4f --noninteractive
+2025/02/26 22:07:52 erk @6b137e4e0a4cedc81b25a3a2cfa63c9ebfa29e4f (47293) [command_finish]> blame /Users/erk/projects/homeotopy/README.md -Tjson --change --rev 6b137e4e0a4cedc81b25a3a2cfa63c9ebfa29e4f --noninteractive exited 0 after 0.08 seconds
+2025/02/26 22:08:00 erk @(unknown) (47438) [command]> blame /Users/erk/projects/homeotopy/.github/workflows/python-package.yml -Tjson --change --rev 6b137e4e0a4cedc81b25a3a2cfa63c9ebfa29e4f --noninteractive
+2025/02/26 22:08:00 erk @6b137e4e0a4cedc81b25a3a2cfa63c9ebfa29e4f (47438) [command_finish]> blame /Users/erk/projects/homeotopy/.github/workflows/python-package.yml -Tjson --change --rev 6b137e4e0a4cedc81b25a3a2cfa63c9ebfa29e4f --noninteractive exited 0 after 0.07 seconds
+2025/02/26 22:08:33 erk @(unknown) (47606) [command]> --config 'amend.autorestack=always' amend --addremove --noninteractive
+2025/02/26 22:08:33 erk @6b137e4e0a4cedc81b25a3a2cfa63c9ebfa29e4f (47606) [visibility]> read 1 heads: 6b137e4e0a4c
+2025/02/26 22:08:33 erk @6b137e4e0a4cedc81b25a3a2cfa63c9ebfa29e4f (47606) [visibility]> read 1 heads: 6b137e4e0a4c
+2025/02/26 22:08:33 erk @6b137e4e0a4cedc81b25a3a2cfa63c9ebfa29e4f (47606) [visibility]> removed 0 heads []; added 1 heads [e9ffb2abfd47]
+2025/02/26 22:08:33 erk @e9ffb2abfd47877676dd9f2fdbb311e6d047783f (47606) [visibility]> removed 1 heads [6b137e4e0a4c]; added 0 heads []
+2025/02/26 22:08:33 erk @e9ffb2abfd47877676dd9f2fdbb311e6d047783f (47606) [visibility]> wrote 1 heads: e9ffb2abfd47
+2025/02/26 22:08:33 erk @e9ffb2abfd47877676dd9f2fdbb311e6d047783f (47606) [command_finish]> --config 'amend.autorestack=always' amend --addremove --noninteractive exited 0 after 0.34 seconds
+2025/02/26 22:08:37 erk @(unknown) (47871) [command]> pr submit --draft --noninteractive
+2025/02/26 22:08:37 erk @e9ffb2abfd47877676dd9f2fdbb311e6d047783f (47871) [visibility]> read 1 heads: e9ffb2abfd47
+2025/02/26 22:08:39 erk @e9ffb2abfd47877676dd9f2fdbb311e6d047783f (47871) [visibility]> read 1 heads: e9ffb2abfd47
+2025/02/26 22:08:41 erk @e9ffb2abfd47877676dd9f2fdbb311e6d047783f (47871) [command_finish]> pr submit --draft --noninteractive exited 0 after 4.28 seconds
+2025/02/26 22:35:15 erk @(unknown) (49042) [command]> pull --noninteractive
+2025/02/26 22:35:15 erk @e9ffb2abfd47877676dd9f2fdbb311e6d047783f (49042) [visibility]> read 1 heads: e9ffb2abfd47
+2025/02/26 22:35:16 erk @e9ffb2abfd47877676dd9f2fdbb311e6d047783f (49042) [visibility]> read 1 heads: e9ffb2abfd47
+2025/02/26 22:35:16 erk @e9ffb2abfd47877676dd9f2fdbb311e6d047783f (49042) [visibility]> read 1 heads: e9ffb2abfd47
+2025/02/26 22:35:16 erk @e9ffb2abfd47877676dd9f2fdbb311e6d047783f (49042) [visibility]> removed 1 heads [e9ffb2abfd47]; added 0 heads []
+2025/02/26 22:35:16 erk @e9ffb2abfd47877676dd9f2fdbb311e6d047783f (49042) [visibility]> wrote 0 heads: 
+2025/02/26 22:35:16 erk @e9ffb2abfd47877676dd9f2fdbb311e6d047783f (49042) [pythonhook]> pythonhook-post-pull: sapling.ext.github.pr_marker.cleanup_landed_pr_hook finished in 0.28 seconds
+2025/02/26 22:35:16 erk @e9ffb2abfd47877676dd9f2fdbb311e6d047783f (49042) [command_finish]> pull --noninteractive exited 0 after 0.74 seconds
+2025/02/26 22:35:18 erk @(unknown) (49150) [command]> goto --rev 'max(successors(remote/main))' --noninteractive
+2025/02/26 22:35:18 erk @(unknown) (49150) [pythonhook]> pythonhook-pre-update: sapling.ext.morestatus.saveupdateargs finished in 0.00 seconds
+2025/02/26 22:35:18 erk @e9ffb2abfd47877676dd9f2fdbb311e6d047783f (49150) [visibility]> read 0 heads: 
+2025/02/26 22:35:18 erk @51c99d6b3606bd688378da9bd469aa4513dbdd23 (49150) [pythonhook]> pythonhook-post-update: sapling.ext.morestatus.cleanupdateargs finished in 0.00 seconds
+2025/02/26 22:35:18 erk @51c99d6b3606bd688378da9bd469aa4513dbdd23 (49150) [command_finish]> goto --rev 'max(successors(remote/main))' --noninteractive exited 0 after 0.17 seconds
+2025/02/26 22:35:34 erk @(unknown) (49461) [command]> commit --addremove --message 'v0.3.0
+
+
+Summary: 
+
+Test Plan: 
+
+
+' --noninteractive
+2025/02/26 22:35:34 erk @51c99d6b3606bd688378da9bd469aa4513dbdd23 (49461) [visibility]> read 0 heads: 
+2025/02/26 22:35:34 erk @51c99d6b3606bd688378da9bd469aa4513dbdd23 (49461) [visibility]> read 0 heads: 
+2025/02/26 22:35:34 erk @51c99d6b3606bd688378da9bd469aa4513dbdd23 (49461) [visibility]> removed 0 heads []; added 1 heads [a3b3849af2b6]
+2025/02/26 22:35:34 erk @a3b3849af2b660929b6822c36e1e061e143252ef (49461) [visibility]> wrote 1 heads: a3b3849af2b6
+2025/02/26 22:35:34 erk @a3b3849af2b660929b6822c36e1e061e143252ef (49461) [command_finish]> commit --addremove --message 'v0.3.0
+
+
+Summary: 
+
+Test Plan: 
+
+
+' --noninteractive exited 0 after 0.23 seconds
+2025/02/27 00:03:28 erk @(unknown) (52296) [command]> blame /Users/erk/projects/homeotopy/pyproject.toml -Tjson --change --rev a3b3849af2b660929b6822c36e1e061e143252ef --noninteractive
+2025/02/27 00:03:28 erk @a3b3849af2b660929b6822c36e1e061e143252ef (52296) [command_finish]> blame /Users/erk/projects/homeotopy/pyproject.toml -Tjson --change --rev a3b3849af2b660929b6822c36e1e061e143252ef --noninteractive exited 0 after 0.08 seconds
+2025/03/01 09:09:01 erk @(unknown) (4261) [command]> blame /Users/erk/projects/homeotopy/.gitignore -Tjson --change --rev a3b3849af2b660929b6822c36e1e061e143252ef --noninteractive
+2025/03/01 09:09:01 erk @a3b3849af2b660929b6822c36e1e061e143252ef (4261) [command_finish]> blame /Users/erk/projects/homeotopy/.gitignore -Tjson --change --rev a3b3849af2b660929b6822c36e1e061e143252ef --noninteractive exited 0 after 0.08 seconds
+2025/03/01 10:17:58 erk @(unknown) (12875) [command]> --config 'amend.autorestack=always' amend --addremove --noninteractive
+2025/03/01 10:17:58 erk @a3b3849af2b660929b6822c36e1e061e143252ef (12875) [visibility]> read 1 heads: a3b3849af2b6
+2025/03/01 10:17:58 erk @a3b3849af2b660929b6822c36e1e061e143252ef (12875) [visibility]> read 1 heads: a3b3849af2b6
+2025/03/01 10:17:58 erk @a3b3849af2b660929b6822c36e1e061e143252ef (12875) [visibility]> removed 0 heads []; added 1 heads [9a260a08a292]
+2025/03/01 10:17:58 erk @9a260a08a292a78edf936db402aea066d0494075 (12875) [visibility]> removed 1 heads [a3b3849af2b6]; added 0 heads []
+2025/03/01 10:17:58 erk @9a260a08a292a78edf936db402aea066d0494075 (12875) [visibility]> wrote 1 heads: 9a260a08a292
+2025/03/01 10:17:58 erk @9a260a08a292a78edf936db402aea066d0494075 (12875) [command_finish]> --config 'amend.autorestack=always' amend --addremove --noninteractive exited 0 after 0.25 seconds
+2025/03/01 10:18:48 erk @(unknown) (13174) [command]> blame /Users/erk/projects/homeotopy/.github/workflows/python-package.yml -Tjson --change --rev 9a260a08a292a78edf936db402aea066d0494075 --noninteractive
+2025/03/01 10:18:48 erk @9a260a08a292a78edf936db402aea066d0494075 (13174) [command_finish]> blame /Users/erk/projects/homeotopy/.github/workflows/python-package.yml -Tjson --change --rev 9a260a08a292a78edf936db402aea066d0494075 --noninteractive exited 0 after 0.09 seconds
+2025/03/01 10:18:53 erk @(unknown) (13202) [command]> blame /Users/erk/projects/homeotopy/pyproject.toml -Tjson --change --rev 9a260a08a292a78edf936db402aea066d0494075 --noninteractive
+2025/03/01 10:18:53 erk @9a260a08a292a78edf936db402aea066d0494075 (13202) [command_finish]> blame /Users/erk/projects/homeotopy/pyproject.toml -Tjson --change --rev 9a260a08a292a78edf936db402aea066d0494075 --noninteractive exited 0 after 0.07 seconds
+2025/03/01 10:21:51 erk @(unknown) (13591) [command]> --config 'amend.autorestack=always' amend --addremove --noninteractive
+2025/03/01 10:21:51 erk @9a260a08a292a78edf936db402aea066d0494075 (13591) [visibility]> read 1 heads: 9a260a08a292
+2025/03/01 10:21:51 erk @9a260a08a292a78edf936db402aea066d0494075 (13591) [visibility]> read 1 heads: 9a260a08a292
+2025/03/01 10:21:51 erk @9a260a08a292a78edf936db402aea066d0494075 (13591) [visibility]> removed 0 heads []; added 1 heads [08dec63e916d]
+2025/03/01 10:21:51 erk @08dec63e916d1b568702afc95ec8c631ecd9524c (13591) [visibility]> removed 1 heads [9a260a08a292]; added 0 heads []
+2025/03/01 10:21:51 erk @08dec63e916d1b568702afc95ec8c631ecd9524c (13591) [visibility]> wrote 1 heads: 08dec63e916d
+2025/03/01 10:21:51 erk @08dec63e916d1b568702afc95ec8c631ecd9524c (13591) [command_finish]> --config 'amend.autorestack=always' amend --addremove --noninteractive exited 0 after 0.23 seconds
+2025/03/01 10:22:10 erk @(unknown) (13898) [command]> blame /Users/erk/projects/homeotopy/homeotopy/__init__.py -Tjson --change --rev 08dec63e916d1b568702afc95ec8c631ecd9524c --noninteractive
+2025/03/01 10:22:10 erk @08dec63e916d1b568702afc95ec8c631ecd9524c (13898) [command_finish]> blame /Users/erk/projects/homeotopy/homeotopy/__init__.py -Tjson --change --rev 08dec63e916d1b568702afc95ec8c631ecd9524c --noninteractive exited 0 after 0.08 seconds
+2025/03/01 10:22:18 erk @(unknown) (13995) [command]> blame /Users/erk/projects/homeotopy/pyproject.toml -Tjson --change --rev 08dec63e916d1b568702afc95ec8c631ecd9524c --noninteractive
+2025/03/01 10:22:18 erk @08dec63e916d1b568702afc95ec8c631ecd9524c (13995) [command_finish]> blame /Users/erk/projects/homeotopy/pyproject.toml -Tjson --change --rev 08dec63e916d1b568702afc95ec8c631ecd9524c --noninteractive exited 0 after 0.08 seconds
+2025/03/01 10:28:40 erk @(unknown) (14575) [command]> --config 'amend.autorestack=always' amend --addremove --noninteractive
+2025/03/01 10:28:40 erk @08dec63e916d1b568702afc95ec8c631ecd9524c (14575) [visibility]> read 1 heads: 08dec63e916d
+2025/03/01 10:28:40 erk @08dec63e916d1b568702afc95ec8c631ecd9524c (14575) [visibility]> read 1 heads: 08dec63e916d
+2025/03/01 10:28:40 erk @08dec63e916d1b568702afc95ec8c631ecd9524c (14575) [visibility]> removed 0 heads []; added 1 heads [d66db05d2b2f]
+2025/03/01 10:28:40 erk @d66db05d2b2f5348d7156651701b2ca06b812cba (14575) [visibility]> removed 1 heads [08dec63e916d]; added 0 heads []
+2025/03/01 10:28:40 erk @d66db05d2b2f5348d7156651701b2ca06b812cba (14575) [visibility]> wrote 1 heads: d66db05d2b2f
+2025/03/01 10:28:40 erk @d66db05d2b2f5348d7156651701b2ca06b812cba (14575) [command_finish]> --config 'amend.autorestack=always' amend --addremove --noninteractive exited 0 after 0.24 seconds
+2025/03/01 10:28:43 erk @(unknown) (14803) [command]> blame /Users/erk/projects/homeotopy/pyproject.toml -Tjson --change --rev d66db05d2b2f5348d7156651701b2ca06b812cba --noninteractive
+2025/03/01 10:28:43 erk @d66db05d2b2f5348d7156651701b2ca06b812cba (14803) [command_finish]> blame /Users/erk/projects/homeotopy/pyproject.toml -Tjson --change --rev d66db05d2b2f5348d7156651701b2ca06b812cba --noninteractive exited 0 after 0.07 seconds
+2025/03/01 10:29:03 erk @(unknown) (15132) [command]> --config 'amend.autorestack=always' amend --addremove --noninteractive
+2025/03/01 10:29:03 erk @d66db05d2b2f5348d7156651701b2ca06b812cba (15132) [visibility]> read 1 heads: d66db05d2b2f
+2025/03/01 10:29:03 erk @d66db05d2b2f5348d7156651701b2ca06b812cba (15132) [visibility]> read 1 heads: d66db05d2b2f
+2025/03/01 10:29:03 erk @d66db05d2b2f5348d7156651701b2ca06b812cba (15132) [visibility]> removed 0 heads []; added 1 heads [a0dff39c8388]
+2025/03/01 10:29:03 erk @a0dff39c8388b2f904939beabac5c4523722c58e (15132) [visibility]> removed 1 heads [d66db05d2b2f]; added 0 heads []
+2025/03/01 10:29:03 erk @a0dff39c8388b2f904939beabac5c4523722c58e (15132) [visibility]> wrote 1 heads: a0dff39c8388
+2025/03/01 10:29:03 erk @a0dff39c8388b2f904939beabac5c4523722c58e (15132) [command_finish]> --config 'amend.autorestack=always' amend --addremove --noninteractive exited 0 after 0.22 seconds
+2025/03/01 10:30:58 erk @(unknown) (15524) [command]> blame /Users/erk/projects/homeotopy/README.md -Tjson --change --rev a0dff39c8388b2f904939beabac5c4523722c58e --noninteractive
+2025/03/01 10:30:58 erk @a0dff39c8388b2f904939beabac5c4523722c58e (15524) [command_finish]> blame /Users/erk/projects/homeotopy/README.md -Tjson --change --rev a0dff39c8388b2f904939beabac5c4523722c58e --noninteractive exited 0 after 0.07 seconds
