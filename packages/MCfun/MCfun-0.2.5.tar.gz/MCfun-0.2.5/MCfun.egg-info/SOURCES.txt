@@ -1,0 +1,13 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+MCfun.egg-info/PKG-INFO
+MCfun.egg-info/SOURCES.txt
+MCfun.egg-info/dependency_links.txt
+MCfun.egg-info/requires.txt
+MCfun.egg-info/top_level.txt
+mcfun/LebedevGrid.py
+mcfun/__init__.py
+mcfun/eval_xc.py
+tests/test_eval_xc.py
