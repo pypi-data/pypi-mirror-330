@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=75.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aevolo"
+version = "0.1.1"
+authors = [
+    { name = "Ruta", email = "rutatangpersonal@gmail.com" },
+]
+description = "An Evolutionary Algoirthm Framework"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.12"
+keywords = ["evolutionary-algorithm"]
+#classifiers = [
+#    "Development Status :: 4 - Beta",
+#    "Intended Audience :: Science/Research",
+#    "License :: OSI Approved :: MIT License",
+#    "Programming Language :: Python :: 3.8",
+#]
+dependencies = [
+]
