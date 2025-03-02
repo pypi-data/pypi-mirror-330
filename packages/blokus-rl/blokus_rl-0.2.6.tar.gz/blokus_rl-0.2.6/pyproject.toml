@@ -1,0 +1,19 @@
+[build-system]
+requires = ["maturin>=1.4,<2.0"]
+build-backend = "maturin"
+
+[project]
+name = "blokus-rl"
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Rust",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python :: Implementation :: PyPy",
+]
+dynamic = ["version"]
+dependencies = ["pettingzoo==1.24.2", "pygame==2.5.2"]
+
+[tool.maturin]
+features = ["pyo3/extension-module"]
+module-name = "blokus_rl._blokus"
+python-source = "python"
