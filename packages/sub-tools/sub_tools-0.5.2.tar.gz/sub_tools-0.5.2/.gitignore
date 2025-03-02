@@ -1,0 +1,22 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+.idea/
+output/
+
+.DS_Store
+*.srt
+*.log
+*.mp3
+*.mp4
+*.shazamsignature
+!tests/data/sample.mp3
+.vscode/
