@@ -1,0 +1,2 @@
+[console_scripts]
+pyweber = pyweber.pyweber_cli.pyweber_cli:app
