@@ -1,0 +1,26 @@
+{
+	"description": "Simple neuron that just spikes with a certain probability (after a random draw in each timestep)",
+	"process_name": "ProbSpiker",
+	"ode": [
+		"rnd = rand() : 1 (constant over dt)",
+		"p_spike : 1"
+	],
+	"conditions": {
+		"th" : "rnd < p_spike",
+		"rs" : ""
+	},
+	"latex": [
+		"\\mathrm{threshold} : \\mathrm{rnd} < p_\\mathrm{spike}"
+	],
+	"variables": [
+		{ "name": "rnd", "description": "multivariate random variable to determine spiking", "unit": "1" },
+		{ "name": "p_spike", "description": "probability of a spike in one timestep", "unit": "1" }
+	],
+	"parameters": [
+	],
+	"refractory_period" : "False",
+	"msb_align_prob": ["p_spike", "rnd"],
+	"f2f_exceptions" : ["rnd", "p_spike"],
+	"loihi_2_learning_support": false,
+	"ucode_extensions": {"file": ".dasm", "template": "----"}
+}

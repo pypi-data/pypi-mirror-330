@@ -1,0 +1,29 @@
+{# USES_VARIABLES {} #}
+{% extends 'common_group.py_' %}
+{#  This template is generated as an extension to the synapses template to incorporate the learning
+    behavior in the lava 'run_lrn' method, which is called at the end of each timestep. This is to make 
+    sure that synaptic variables are modified only after all the spikes have been sent around for this timestep. 
+    If this template is created, the learn guard function 'lrn_guard' will be set to return True at every timestep. #}
+
+{% block maincode %}
+
+    # constants
+    {% for c in constants %}
+    {{ c }}
+    {% endfor%}
+
+    # Read which of the synapses have spiked in this timestep
+    _spiking_synapses = np.nonzero({{spiking_synapses}})[0]
+
+    if len(_spiking_synapses):
+        # scalar code
+        {# Note that we don't write to scalar variables conditionally. The scalar code
+            should therefore only include the calculation of scalar expressions
+            that are used below for writing to a vector variable #}
+        {{scalar_code|autoindent}}
+
+        _idx = _spiking_synapses
+
+        {{vector_code|autoindent}}
+        
+{% endblock %}

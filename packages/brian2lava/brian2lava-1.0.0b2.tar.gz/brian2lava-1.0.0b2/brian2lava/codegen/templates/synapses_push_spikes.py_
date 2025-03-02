@@ -1,0 +1,15 @@
+{% extends 'common_group.py_' %}
+
+{% block before_code %}
+    {# TODO: for now this is not implemented
+    #self.initialise_queue()
+    pass #}
+{% endblock %}
+
+{% block maincode %}
+    {# This is currently not implemented because pushing spikes to the spike queue is handled differently
+    # Possibly in the future we'll implement this so I'll keep this here for now.
+    {% set _eventspace = get_array_name(eventspace_variable) %}
+    #self.s_out.send({{_eventspace}})
+    pass #}
+{% endblock %}
