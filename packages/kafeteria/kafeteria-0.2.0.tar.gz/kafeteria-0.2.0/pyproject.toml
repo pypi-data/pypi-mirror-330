@@ -1,0 +1,110 @@
+[project]
+name = "kafeteria"
+version = "0.2.0"
+description = "Asynchronously access the menu of the cafeterias at KAIST."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "aiohttp>=3.11.11",
+]
+
+[project.optional-dependencies]
+slack = [
+    "slack-sdk>=3.34.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "commitizen>=4.1.0",
+    "ipykernel>=6.29.5",
+    "nest-asyncio>=1.6.0",
+    "pytest>=8.3.4",
+    "pytest-asyncio>=0.25.1",
+    "ruff>=0.8.4",
+]
+
+[tool.ruff]
+line-length = 88
+indent-width = 4
+
+[tool.ruff.lint]
+select = [
+    "F",
+    "E",
+    "W",
+    "I",
+    "D",
+    "UP",
+    "YTT",
+    "ASYNC",
+    "S",
+    "FBT",
+    "B",
+    "A",
+    "C4",
+    "FA",
+    "ICN",
+    "LOG",
+    "G",
+    "PIE",
+    "T20",
+    "PYI",
+    "PT",
+    "Q",
+    "RSE",
+    "RET",
+    "SIM",
+    "TID",
+    "TC",
+    "INT",
+    "ARG",
+    "PTH",
+    "FIX",
+    "PLE",
+    "PLW",
+    "TRY",
+    "FLY",
+    "NPY",
+    "PERF",
+    "FURB",
+    "RUF",
+]
+ignore = [
+    "S101", # assert
+    "D100", # missing docstring in public module
+    "D103", # missing docstring in public function
+]
+extend-select = []
+
+[tool.ruff.lint.pydocstyle]
+convention = "numpy"
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
+docstring-code-format = true
+docstring-code-line-length = "dynamic"
+
+[tool.commitizen]
+major_version_zero = true
+version_provider = "pep621"
+update_changelog_on_bump = true
+
+[tool.pytest.ini_options]
+addopts = [
+    "-ra",
+    "--strict-config",
+    "--strict-markers",
+    "--import-mode=importlib",
+]
+testpaths = "tests"
+minversion = "8.3"
+log_cli_level = "INFO"
+xfail_strict = true
+filterwarnings = ["always"]
