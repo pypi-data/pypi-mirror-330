@@ -1,0 +1,47 @@
+[build-system]
+requires = ['setuptools==68.0.0']
+build-backend = 'setuptools.build_meta'
+
+[project]
+name = 'displayhooks'
+version = '0.0.3'
+authors = [
+  { name='Evgeniy Blinov', email='zheni-b@yandex.ru' },
+]
+description = 'Extend the capabilities of the standard displayhook in Python'
+readme = 'README.md'
+requires-python = '>=3.8'
+dependencies = [
+    'typing_extensions ; python_version <= "3.9"',
+]
+classifiers = [
+  'Operating System :: MacOS :: MacOS X',
+  'Operating System :: Microsoft :: Windows',
+  'Operating System :: POSIX',
+  'Operating System :: POSIX :: Linux',
+  'Programming Language :: Python :: 3.8',
+  'Programming Language :: Python :: 3.9',
+  'Programming Language :: Python :: 3.10',
+  'Programming Language :: Python :: 3.11',
+  'Programming Language :: Python :: 3.12',
+  'Programming Language :: Python :: 3.13',
+  'License :: OSI Approved :: MIT License',
+  'Topic :: Software Development :: Libraries',
+  'Intended Audience :: Developers',
+  'Typing :: Typed',
+]
+keywords = [
+    'REPL',
+    'printing',
+]
+
+[tool.setuptools.package-data]
+"displayhooks" = ["py.typed"]
+
+[tool.mutmut]
+paths_to_mutate="displayhooks"
+runner="pytest"
+
+[project.urls]
+'Source' = 'https://github.com/pomponchik/displayhooks'
+'Tracker' = 'https://github.com/pomponchik/displayhooks/issues'
