@@ -1,0 +1,14 @@
+[project]
+name = "tabaka-core"
+version = "0.0.1"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Yagiz Degirmenci", email = "yagizdeg@gmail.com" }
+]
+requires-python = ">=3.13"
+dependencies = []
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
