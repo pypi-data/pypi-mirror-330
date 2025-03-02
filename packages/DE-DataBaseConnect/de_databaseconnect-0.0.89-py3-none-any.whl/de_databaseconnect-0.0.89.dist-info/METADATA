@@ -1,0 +1,57 @@
+Metadata-Version: 2.2
+Name: DE_DataBaseConnect
+Version: 0.0.89
+Summary: Conector com varias base de dados
+Home-page: https://github.com/DE-DataEng/DE_DataBaseConnect.git
+Author: Almir J Gomes
+Author-email: almir.jg@hotmail.com
+Classifier: Programming Language :: Python :: 3.9
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: Licence.txt
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-python
+Dynamic: summary
+
+# DE_DataBaseConnect
+ConexÃ£o com os mais variados banco de dados.
+De forma simples estabeleÃ§a uma conexÃ£o com sua base de dados.
+
+Oracle
+Mysql
+SQLite
+PostGres
+
+######Obtenha tambÃ©m o metadados para uma tabela especifica, independente da base de dados onde esta localizada
+
+#### Dependencias
+Python: 3.9 (recomendado) [python.org](https://www.python.org/)
+setuptools, wheel e twine [PyPI](https://pypi.org)
+mysql.connector
+psycopg2
+cx_Oracle
+sqlite3
+pandas
+```
+pip install setuptools
+pip install wheel
+pip install twine
+pip install mysql.connector
+pip install psycopg2
+pip install cx_Oracle
+pip install sqlite3
+pip install pandas
+```
+#### InstalaÃ§Ã£o
+Para clonar este repositorio em sua maquina local use:
+```
+git clone https://github.com/almirjgomes/DE_DataBaseConnect.git
+- License MIT
+```
