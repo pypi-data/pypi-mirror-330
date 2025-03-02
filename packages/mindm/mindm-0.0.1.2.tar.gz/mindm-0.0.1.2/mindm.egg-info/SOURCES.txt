@@ -1,0 +1,16 @@
+LICENSE
+README.md
+pyproject.toml
+mindm/__init__.py
+mindm/mindmanager.py
+mindm/mindmanager_mac.py
+mindm/mindmanager_win.py
+mindm/mindmap_helper.py
+mindm.egg-info/PKG-INFO
+mindm.egg-info/SOURCES.txt
+mindm.egg-info/dependency_links.txt
+mindm.egg-info/requires.txt
+mindm.egg-info/top_level.txt
+tests/test_mindmap_creation.py
+tests/test_mindmap_helper.py
+tests/test_mindmap_relationships.py

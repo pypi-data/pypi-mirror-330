@@ -1,0 +1,8 @@
+regex
+markdown
+
+[:platform_system == "Windows"]
+pywin32
+
+[:sys_platform == "darwin"]
+appscript
