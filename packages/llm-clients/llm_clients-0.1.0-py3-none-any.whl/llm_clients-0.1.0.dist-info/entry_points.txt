@@ -1,0 +1,6 @@
+[console_scripts]
+llm = llm_cli.cli:main
+llm-execute = llm_cli.execute:main
+llm-md-render = llm_cli.utils.markdown_renderer:main
+llm-prompt = llm_cli.prompt:main
+llm-query = llm_cli.query:main
