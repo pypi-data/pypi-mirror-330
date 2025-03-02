@@ -1,0 +1,28 @@
+{% set version = environ.get('FEZRS_VERSION', '0.4.10') %}
+
+package:
+  name: fezrs
+  version: {{ version }}
+
+source:
+  url: https://pypi.io/packages/source/f/fezrs/fezrs-{{ version }}.tar.gz
+  sha256: 5e6881632966fbf10d97d0077952c031784b25353807a404421b412029625d78  # Update with the correct checksum
+
+build:
+  number: 1
+  noarch: python
+  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir"
+
+requirements:
+  host:
+    - python >=3.8
+    - pip
+    - setuptools
+  run:
+    - python >=3.8
+    - numpy
+    - matplotlib
+    - scikit-image
+    - scikit-learn
+    - fastapi
+    - opencv
