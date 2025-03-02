@@ -1,0 +1,13 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+requirements.txt
+setup.py
+an_envfilemanager/__init__.py
+an_envfilemanager/envfilemanager.py
+an_envfilemanager.egg-info/PKG-INFO
+an_envfilemanager.egg-info/SOURCES.txt
+an_envfilemanager.egg-info/dependency_links.txt
+an_envfilemanager.egg-info/requires.txt
+an_envfilemanager.egg-info/top_level.txt
