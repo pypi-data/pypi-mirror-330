@@ -1,0 +1,2 @@
+class LogprobsParserException(Exception):
+    pass

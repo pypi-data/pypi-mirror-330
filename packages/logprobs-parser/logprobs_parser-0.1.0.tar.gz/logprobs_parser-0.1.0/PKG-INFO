@@ -1,0 +1,20 @@
+Metadata-Version: 2.2
+Name: logprobs-parser
+Version: 0.1.0
+Summary: Parses LLM logprobs
+Project-URL: Repository, https://github.com/martinxsliu/logprobs-parser
+Classifier: Typing :: Typed
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Operating System :: OS Independent
+Classifier: Operating System :: POSIX
+Classifier: Operating System :: MacOS
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: ijson>=3.3.0
+Requires-Dist: pydantic>=2.10.6

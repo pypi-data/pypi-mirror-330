@@ -1,0 +1,38 @@
+[project]
+name = "logprobs-parser"
+version = "0.1.0"
+description = "Parses LLM logprobs"
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+  "Typing :: Typed",
+  "Intended Audience :: Developers",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Operating System :: OS Independent",
+  "Operating System :: POSIX",
+  "Operating System :: MacOS",
+  "Operating System :: POSIX :: Linux",
+  "Operating System :: Microsoft :: Windows",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+]
+dependencies = ["ijson>=3.3.0", "pydantic>=2.10.6"]
+
+[project.urls]
+Repository = "https://github.com/martinxsliu/logprobs-parser"
+
+[dependency-groups]
+dev = [
+  "google-genai>=1.2.0",
+  "openai>=1.64.0",
+  "pytest>=8.3.4",
+  "ruff>=0.9.9",
+  "together>=1.4.1",
+]
+
+[tool.uv]
+package = true
+
+[tool.ruff]
+line-length = 120
