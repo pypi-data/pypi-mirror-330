@@ -1,0 +1,13 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+currency_to_words/__init__.py
+currency_to_words.egg-info/PKG-INFO
+currency_to_words.egg-info/SOURCES.txt
+currency_to_words.egg-info/dependency_links.txt
+currency_to_words.egg-info/top_level.txt
+currency_to_words/utils/assets.py
+currency_to_words/utils/methods.py
+currency_to_words/utils/__pycache__/assets.cpython-313.pyc
+currency_to_words/utils/__pycache__/methods.cpython-313.pyc
