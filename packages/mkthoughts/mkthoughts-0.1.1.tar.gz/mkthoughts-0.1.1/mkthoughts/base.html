@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% if config.site_description %}<meta name="description" content="{{ config.site_description }}">{% endif %}
+    {% if config.site_author %}<meta name="author" content="{{ config.site_author }}">{% endif %}
+    {% if page.canonical_url %}<link rel="canonical" href="{{ page.canonical_url }}">{% endif %}
+    <link rel="shortcut icon" href="{{ 'img/favicon.ico'|url }}">
+
+    {% block htmltitle %}
+    <title>{% if page.title %}{{ page.title }} - {% endif %}{{ config.site_name }}</title>
+    {% endblock %}
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5.0.0-beta.8/daisyui.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5.0.0-beta.8/themes.css" rel="stylesheet" type="text/css" />
+    <link href="{{ config.resource_prefix }}/css/custom.css" rel="stylesheet" type="text/css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet"
+    />
+    <script  type="text/javascript"  src="{{ config.resource_prefix }}/js/quickchat.js" ></script>
+    <link rel="stylesheet" href="https://unpkg.com/quikchat/dist/quikchat.css" />
+    <script  type="text/javascript"  src="{{ config.resource_prefix }}/js/utils.js" ></script>
+    <script  type="text/javascript"  src="{{ config.resource_prefix }}/js/chat.js" ></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/default.min.css">
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
+
+
+    <script>hljs.highlightAll();</script>
+
+    {%- for path in config['extra_css'] %}
+    <link href="{{ path|url }}" rel="stylesheet">
+    {%- endfor %}
+
+
+    {% block extrahead %} {% endblock %}
+</head>
+
+<body{% if page and page.is_homepage %} class="homepage" {% endif %}>
+
+    {% include "header.html" %}
+
+    <div class="grid grid-cols-12 gap-4 h-dvh">
+        <div class="col-span-2 col-start-1">
+            {% include "navbar.html" %}
+        </div>
+        <div class="col-span-8 col-start-3">
+            {% include "content.html" %}
+        </div>
+        <div class="col-span-1">
+            <div class="drawer drawer-end">
+              <input id="my-drawer-4" type="checkbox" class="drawer-toggle" />
+              <div class="drawer-content">
+                <label for="my-drawer-4" class="drawer-button btn btn-primary">Ask Pupu?</label>
+              </div>
+              <div class="drawer-side">
+
+                <label for="my-drawer-4" aria-label="close sidebar" class="drawer-overlay"></label>
+                <div data-theme="dark" class="w-120 bg-base-200 text-base-content">
+                    <div>
+                        <select class="select select-neutral w-120" >
+                            <option>DeepSeek-R1-Full-Reasoning</option>
+                        </select>
+                    </div>
+                    <div>
+                        <input id="keySelect" type="password" placeholder="Type here" class="input input-bordered max-w-xs w-120" />
+                        <script>
+                            document.getElementById('keySelect').value = localStorage.getItem('keySelect');
+                        </script>
+                    </div>
+                    <div>
+                        <div id="chat-container" class="w-120 bg-base-200 text-base-content" style="height: 600px"></div>
+                        <div id="response"></div>
+                    </div>
+                </div>
+                <!-- <div>
+                    <label for="my-drawer-4" aria-label="close sidebar" class="drawer-overlay"></label>
+                    <div id="chat-container" class="h-3/4 w-120 bg-base-200 text-base-content"></div>
+                    <div id="response"></div>
+                </div> -->
+
+              </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        const context = `{{ page.content }}`;
+        const systemPrompt =
+'You are a cute little girl whos name is Pupu.\n'+
+'[file content begin]\n'+
+context +'\n'+
+'[file content end]\n'+
+'You will answer the user\'s question based on the context above. Dot not make up any answers if you don\'t know what the user is asking about.\n'
+        const streamingChat = new quikchat(
+            '#chat-container',
+            // getOllamaStreamingCallback,
+            getDeepSeekStreamingCallback,
+            {
+                theme: 'quikchat-theme-dark',
+                titleArea: { title: 'Hello, my friend!', show: true, align: 'left' },
+                systemPrompt: systemPrompt
+            }
+        );
+        streamingChat._meta.messages = [
+            { role: "system", content: systemPrompt }
+        ]
+        streamingChat.messageAddNew('How can I help? ', 'Pupu:', 'left', role='assistant');
+    </script>
+
+    </body>
+
+</html>
+<!-- {% if page and page.is_homepage %} -->
+<!--
+MkDocs version : {{ mkdocs_version }}
+Build Date UTC : {{ build_date_utc }}
+-->
+<!-- {% endif %} -->
