@@ -1,0 +1,48 @@
+Metadata-Version: 2.1
+Name: pen2png
+Version: 0.2.0
+Summary: A tool to convert pen drawings to transparent PNGs.
+Home-page: https://github.com/hentity/pen2png
+Author: Henry Hamer
+Author-email: hhame4@gmail.com
+License: MIT
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Requires-Dist: numpy
+Requires-Dist: opencv-python
+Requires-Dist: Pillow
+Requires-Dist: pillow-heif
+
+# pen2png
+
+`pen2png` is a command-line tool that converts pen drawings on paper into transparent PNGs with smooth black ink lines.
+
+- Supports HEIC, JPG, PNG, and other common formats.
+- Removes background and makes paper transparent.
+
+## Installation
+
+You can install the package via pip:
+
+```sh
+pip install pen2png
+```
+
+## Usage
+
+To convert an image:
+
+```sh
+pen2png <input_filepath> <output_filepath>
+```
+
+Example:
+
+```sh
+pen2png my_drawing.jpg drawing.png
+```
+
+**Note:** For best results, crop your image _before_ conversion and avoid using pencils/non-black pens.
