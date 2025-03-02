@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+dashuta/__init__.py
+dashuta/version.py
+dashuta.egg-info/PKG-INFO
+dashuta.egg-info/SOURCES.txt
+dashuta.egg-info/dependency_links.txt
+dashuta.egg-info/top_level.txt
+tests/test_simple.py

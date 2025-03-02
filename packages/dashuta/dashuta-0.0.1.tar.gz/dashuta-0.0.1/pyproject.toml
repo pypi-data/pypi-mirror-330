@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=42", "wheel", "twine"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dashuta"
+dynamic = ["version", "description", "readme"]
+authors = [
+  { name = "Igor Tarlinskiy", email = "itarlinskiy@gmail.com" },
+  { name = "Eldar Khayarov", email = "eldarhacks@gmail.com"}
+]
+license = { file = "LICENSE" }
+requires-python = ">=3.7"
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent"
+]
+dependencies = []
+
+[project.urls]
+"Home" = "https://github.com/atomicai/dashuta"
+"Source" = "https://github.com/atomicai/dashuta"
+"Tracker" = "https://github.com/atomicai/dashuta/issues"
+
+[tool.ruff]
+line-length = 132
+select = ["E", "F", "I", "W"]
