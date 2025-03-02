@@ -1,0 +1,34 @@
+Metadata-Version: 2.4
+Name: cmip_ref_metrics_esmvaltool
+Version: 0.2.0
+Summary: ESMValTool metrics provider for the CMIP Rapid Evaluation Framework
+Author-email: ESMValTool development team <esmvaltool-dev@listserv.dfn.de>
+License: Apache-2.0
+License-File: LICENCE
+License-File: NOTICE
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Topic :: Scientific/Engineering
+Requires-Python: >=3.10
+Requires-Dist: cmip-ref-core
+Requires-Dist: pooch>=1.8
+Requires-Dist: ruamel-yaml>=0.18
+Requires-Dist: xarray>=2022
+Description-Content-Type: text/markdown
+
+# ref-metrics-esmvaltool
+
+Use [ESMValTool](https://esmvaltool.org/) as a REF metrics provider.
+
+To use this, install ESMValTool and then install the REF into the same conda
+environment.
+
+See [running-metrics-locally](https://cmip-ref.readthedocs.io/en/latest/how-to-guides/running-metrics-locally/) for usage instructions.
