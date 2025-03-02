@@ -1,0 +1,46 @@
+Metadata-Version: 2.1
+Name: sftkit
+Version: 0.3.1
+Maintainer-Email: =?utf-8?q?Michael_Loipf=C3=BChrer?= <milo@sft.lol>
+License: MIT
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Project-URL: Source, https://github.com/SFTTech/sftkit
+Requires-Python: >=3.11
+Requires-Dist: fastapi>=0.115.10
+Requires-Dist: typer>=0.15.2
+Requires-Dist: uvicorn>=0.34.0
+Requires-Dist: asyncpg>=0.30.0
+Requires-Dist: pydantic[email]>=2.10.6
+Description-Content-Type: text/markdown
+
+# SFTKit
+
+A general purpose collection of base building blocks and utilities to make building 
+python applications on the basis of postgresql (asyncpg) + fastapi a breeze.
+
+To get started simply run
+
+```bash
+pip install sftkit
+```
+
+## Usage
+
+
+### Dev CLI
+
+Configure sftkit in your `pyproject.toml`
+
+```toml
+[tool.sftkit]
+db_code_dir = "<path-to-your-sql-code-folder>"
+db_migrations_dir = "<path-to-your-sql-data-migrations>"
+```
+
+Create new migrations via
+
+```bash
+sftkit create-migration <name>
+```
