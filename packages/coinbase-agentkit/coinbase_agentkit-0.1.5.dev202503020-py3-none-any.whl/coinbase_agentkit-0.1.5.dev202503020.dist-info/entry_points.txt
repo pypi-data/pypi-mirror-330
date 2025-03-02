@@ -1,0 +1,3 @@
+[console_scripts]
+generate-action-provider=scripts.generate_action_provider.main:main
+
