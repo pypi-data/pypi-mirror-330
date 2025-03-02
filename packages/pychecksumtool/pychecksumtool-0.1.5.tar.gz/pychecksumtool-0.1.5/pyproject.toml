@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "pychecksumtool"
+version = "0.1.5"
+description = "A generalised efficient checksum library for python hashlib"
+authors = ["Joe Drumgoole <joe@joedrumgoole.com>"]
+license = "Apache-2.0"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+pytest = "^8.3.4"
+typer = "^0.15.2"
+
+[tool.poetry.scripts]
+clichecksum = "pychecksumtool.scripts.clichecksum:main"
+
+[tool.poetry.group.dev.dependencies]
+invoke = "^2.2.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
