@@ -1,0 +1,62 @@
+Metadata-Version: 2.2
+Name: moro
+Version: 0.3.0.dev0
+Summary: Python library for kinematic and dynamic modeling of robots
+Home-page: https://github.com/JorgeDeLosSantos/moro
+Author: Pedro Jorge De Los Santos
+Author-email: delossantosmfq@gmail.com
+Keywords: Robotics,Kinematics,Dynamics
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Education
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+Requires-Dist: sympy
+Requires-Dist: matplotlib
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: requires-dist
+Dynamic: summary
+
+# moro
+
+A Python library for kinematic and dynamic (symbolic) modeling of robots.
+
+# Installation
+
+Using `pip` to install latest version in PyPI:
+
+```
+pip install moro
+```
+
+Or from this repo:
+
+```
+pip install git+https://github.com/JorgeDeLosSantos/moro.git
+```
+
+# Documentation and examples
+
+Documentation is available in [https://jorgedelossantos.github.io/moro/](https://jorgedelossantos.github.io/moro/). 
+
+Also, Jupyter Notebooks are available in: [https://nbviewer.jupyter.org/github/jorgedelossantos/moro/tree/master/examples/nbooks/](https://nbviewer.jupyter.org/github/jorgedelossantos/moro/tree/master/examples/nbooks/)
+
+
+# Bugs
+
+Please report any bugs that you find, use the issue tracker: [https://github.com/jorgedelossantos/moro/issues](https://github.com/jorgedelossantos/moro/issues)
+
+# Roadmap
+
+Roadmap of moro: https://github.com/jorgedelossantos/moro/wiki/Roadmap
