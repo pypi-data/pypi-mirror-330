@@ -1,0 +1,10 @@
+*.sh
+.pytest_cache
+ts_features_sculptor.egg-info
+__pycache__
+DEV.md
+*.py[cod]
+*$py.class
+*.so
+.Python
+src/ts_features_sculptor/_version.py
