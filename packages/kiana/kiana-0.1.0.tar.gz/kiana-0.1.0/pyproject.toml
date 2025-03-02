@@ -1,0 +1,17 @@
+[project]
+name = "kiana"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Xiaohua Zhang", email = "xiaohua.dev@gmail.com" }
+]
+requires-python = ">=3.13"
+dependencies = []
+
+[project.scripts]
+kiana = "kiana:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
