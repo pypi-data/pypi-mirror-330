@@ -1,0 +1,13 @@
+[project]
+name = "funtecplot"
+version = "1.0.2"
+description = "funtecplot"
+readme = "README.md"
+requires-python = ">=3.7"
+dependencies = []
+[[project.authors]]
+name = "niuliangtao"
+email = "farfarfun@qq.com"
+
+[tool.setuptools]
+license-files = []
