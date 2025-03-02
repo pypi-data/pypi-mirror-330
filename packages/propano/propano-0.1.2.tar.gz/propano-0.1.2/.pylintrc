@@ -1,0 +1,10 @@
+[MASTER]
+ignore=CVS
+persistent=yes
+load-plugins=
+
+[MESSAGES CONTROL]
+disable=C0111,C0103,C0303,W0311,C0301,W0621
+
+[FORMAT]
+max-line-length=100

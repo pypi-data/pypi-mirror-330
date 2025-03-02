@@ -1,0 +1,14 @@
+pandas
+numpy
+prophet
+matplotlib
+plotly
+scikit-learn
+
+# Add all other dependencies your project needs
+pytest
+pytest-cov
+black
+flake8
+pylint
+pre-commit
