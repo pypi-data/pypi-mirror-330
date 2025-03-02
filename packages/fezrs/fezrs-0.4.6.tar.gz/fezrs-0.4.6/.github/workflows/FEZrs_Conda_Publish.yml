@@ -1,0 +1,18 @@
+name: fezrs-env
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.8
+  - numpy
+  - matplotlib
+  - scikit-image
+  - scikit-learn
+  - fastapi
+  - opencv
+  - pip
+  - setuptools
+  - conda-build
+  - anaconda-client
+  - pip:
+    - fezrs

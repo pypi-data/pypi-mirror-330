@@ -1,0 +1,40 @@
+{% set version = environ.get('FEZRS_VERSION') %}
+
+package:
+  name: fezrs
+  version: {{ version }}
+
+source:
+  # If you're fetching from PyPI, you can still use the tarball URL.
+  # Alternatively, you can point to a GitHub release or a local source
+  url: https://pypi.io/packages/source/f/fezrs/fezrs-{{ version }}.tar.gz
+  sha256: 5114c07ab6dd3c7c9a2050a4a07d971be52ea5d18db4ab484283a7f48f62b03c
+
+build:
+  number: 1
+  noarch: python
+  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir"
+
+requirements:
+  host:
+    - python >=3.8
+    - pip
+    - setuptools
+  run:
+    - python >=3.8
+    - numpy
+    - matplotlib
+    - scikit-image
+    - scikit-learn
+    - fastapi
+    - opencv
+
+test:
+  imports:
+    - fezrs
+
+about:
+  home: https://github.com/FEZtool-team/FEZrs
+  license: Apache 2.0
+  license_file: LICENSE
+  summary: Feature Extraction and Zoning for Remote Sensing (FEZrs)
