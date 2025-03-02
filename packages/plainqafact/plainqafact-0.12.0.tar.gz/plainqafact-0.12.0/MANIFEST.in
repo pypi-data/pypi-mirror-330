@@ -1,0 +1,8 @@
+include README.md
+include LICENSE
+include requirements.txt
+include plainqafact/plainqafact/transformers_old_tokenizer-3.1.0-py3-none-any.whl
+recursive-include plainqafact/plainqafact *.py
+recursive-include models *
+recursive-include qaeval *
+recursive-include src * 
