@@ -1,0 +1,77 @@
+from .._internal import is_package_installed
+
+if not is_package_installed("fastapi"):
+    raise ImportError("Install `fastapi` to use `compose.fastapi` package")
+
+from .depends import CommandUpdater, UserInjector, create_with_user
+from .endpoint import health_check
+from .exception_handler import (
+    ExceptionHandler,
+    ExceptionHandlerInfo,
+    create_exception_handler,
+)
+from .openapi import (
+    OpenAPIDoc,
+    OpenAPIJson,
+    RedocHTML,
+    SwaggerUIHTML,
+    add_doc_routes,
+    additional_responses,
+    openapi_tags,
+)
+from .param import as_query, to_query, with_depends
+from .response import NoContentResponse, ZipStreamingResponse
+from .routing import APIRouter
+from .security import APIKeyHeader, CookieAuth, HTTPBasicAuth, HTTPBearer, unauthorized_error
+from .wiring import auto_wired
+
+__all__ = [
+    "APIKeyHeader",
+    "APIRouter",
+    "CommandUpdater",
+    "CookieAuth",
+    "ExceptionHandler",
+    "ExceptionHandlerInfo",
+    "HTTPBasicAuth",
+    "HTTPBearer",
+    "NoContentResponse",
+    "OpenAPIDoc",
+    "OpenAPIJson",
+    "RedocHTML",
+    "SwaggerUIHTML",
+    "UserInjector",
+    "ZipStreamingResponse",
+    "add_doc_routes",
+    "additional_responses",
+    "as_query",
+    "auto_wired",
+    "create_exception_handler",
+    "create_with_user",
+    "health_check",
+    "openapi_tags",
+    "to_query",
+    "unauthorized_error",
+    "with_depends",
+]
+
+
+try:
+    from .utils import (  # noqa: F401
+        ErrorEvent,
+        Level,
+        capture_error,
+        create_before_send_hook,
+        init_sentry,
+    )
+
+    __all__.extend(
+        [
+            "ErrorEvent",
+            "Level",
+            "capture_error",
+            "create_before_send_hook",
+            "init_sentry",
+        ]
+    )
+except ImportError:
+    pass
