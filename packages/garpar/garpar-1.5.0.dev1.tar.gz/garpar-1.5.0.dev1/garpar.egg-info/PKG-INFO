@@ -1,0 +1,118 @@
+Metadata-Version: 2.2
+Name: garpar
+Version: 1.5.0.dev1
+Summary: Generation and Analysis of Real and Artificial Portfolio Returns
+Author-email: Diego N Gimenez Irusta <d.gimenez0101@unc.edu.ar>, Nadia A Luczywo <nadia.luczywo@unc.edu.ar>, Juan B Cabral <jbcabral@unc.edu.ar>
+License: MIT License
+        
+        Copyright (c) 2021 Nadia Luczywo
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+        
+Project-URL: Homepage, https://garpar.quatrope.org/
+Project-URL: Repository, https://github.com/quatrope/garpar
+Keywords: market simulation,informational efficiency,portfolio optimization
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Education
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Office/Business :: Financial
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+Requires-Dist: attrs>=23.2.0
+Requires-Dist: build>=1.2.1
+Requires-Dist: h5py>=3.11.0
+Requires-Dist: importlib_metadata
+Requires-Dist: numpy>=2.2.0
+Requires-Dist: pyportfolioopt>=1.5.0
+Requires-Dist: scikit-learn>=1.6.0
+Requires-Dist: seaborn>=0.13.0
+Requires-Dist: pandas>=2.2.0
+
+# Welcome to GARPAR
+
+![logo](res/logo_bw.png)
+
+
+> _Generación y análisis de retornos de portafolios artificiales y reales_
+>
+> Generation and analysis of artificial and real portfolio returns
+
+-------------------------------------------
+
+<!-- BODY -->
+
+[![Build](https://github.com/quatrope/garpar/actions/workflows/CI.yml/badge.svg)](https://github.com/quatrope/garpar/actions/workflows/CI.yml)
+[![Docs](https://readthedocs.org/projects/garpar/badge/?version=latest&style=flat)](https://garpar.readthedocs.io/en/latest/)
+
+## Introduction
+
+Generation and analysis of artificial and real portfolio returns.
+
+A comprehensive toolset for analyzing and managing financial portfolios/markets
+through the StocksSet class. Provides functionality for portfolio/market
+optimization, risk assessment, and performance analysis.
+
+Key Features:
+
+- Portfolio/market construction and rebalancing
+- Risk metrics calculation (variance, VaR, etc.)
+- Expected returns estimation
+- Correlation and covariance analysis
+- Diversification metrics
+- Portfolio/market visualization tools
+- Market data handling and validation
+- Entropy-based analysis
+
+
+## Contact
+
+**You can contact me at:**
+
+- <diego.gimenez@unc.edu.ar>
+- <jbcabral@unc.edu.ar>
+
+## Support
+
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/leliel12)
+
+
+## Code Repository & Issues
+
+<https://github.com/quatrope/garpar>
+
+## License
+
+Garpar is under
+[MIT License](https://raw.githubusercontent.com/quatrope/garpar/master/LICENSE.txt)
+
+This license allows unlimited redistribution for any purpose as long as
+its copyright notices and the license's disclaimers of warranty are
+maintained.
+
+## Citation
+
+If you are using Garpar in your research, please cite:
+
+> Nothing yet
+
+Bibtex entry:
+
+
+```bibtex
+    Nothing yet
+```
+
+**Full Publication:**

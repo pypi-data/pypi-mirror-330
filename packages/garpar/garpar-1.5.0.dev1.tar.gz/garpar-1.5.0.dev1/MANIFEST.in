@@ -1,0 +1,20 @@
+include LICENSE
+include README.md
+include CHANGELOG.md
+include pyproject.toml
+include setup.py
+
+recursive-include garpar *.csv
+
+exclude tox.ini
+exclude .header-template
+exclude requirements.txt
+exclude requirements_dev.txt
+exclude .readthedocs.yml
+
+recursive-exclude tests *
+recursive-exclude assets *
+recursive-exclude draft *
+recursive-exclude tools *
+recursive-exclude res   *
+recursive-exclude docs   *
