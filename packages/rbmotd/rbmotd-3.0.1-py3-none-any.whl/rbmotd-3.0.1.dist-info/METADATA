@@ -1,0 +1,90 @@
+Metadata-Version: 2.1
+Name: rbmotd
+Version: 3.0.1
+Summary: Message of the Day support for Review Board
+Home-page: https://www.reviewboard.org/
+Author: Beanbag, Inc.
+Author-email: support@beanbaginc.com
+Maintainer: Beanbag, Inc.
+Maintainer-email: support@beanbaginc.com
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Review Board
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+License-File: AUTHORS
+
+Message of the Day for Review Board
+===================================
+
+[![Review Board 7](https://img.shields.io/badge/7.x-d0e6ff?label=Review%20Board)](https://www.reviewboard.org)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+
+The Message of the Day extension for
+[Review Board](https://www.reviewboard.org/) helps administrators communicate
+important updates to users on the server. This can be used to announce upcoming
+downtime, maintenance, an details on a new upgrade.
+
+Messages are shown at the top of the page and may include basic HTML
+formatting, including links to more detailed notices.
+
+Users can dismiss a message they've already seen if they no longer want to
+see it.
+
+
+Requirements
+============
+
+This requires [Review Board 7](https://www.reviewboard.org/) or higher.
+
+
+Installation
+============
+
+Installation is easy. Just follow these steps:
+
+1. Install the extension:
+
+   ```shell
+   $ rb-site manage /path/to/sitedir pip install rbmotd
+   ```
+
+2. Log into Review Board as an administrator.
+
+3. Visit **Admin UI -> Extensions** and click **Reload Extensions**
+
+4. Click **Enable** next to the extension.
+
+5. To configure a message, click **Configure**.
+
+
+Getting Support
+===============
+
+We can help you get going with Review Board and the Message of the Day
+extension, and diagnose any issues that may come up.
+
+We provide more [dedicated, private
+support](https://www.reviewboard.org/support/) for your organization through a
+support contract, offering:
+
+* Same-day responses (generally within a few hours, if not sooner)
+* Confidential communications
+* Installation/upgrade assistance
+* Emergency database repair
+* Video/chat meetings (by appointment)
+* Priority fixes for urgent bugs
+* Backports of urgent fixes to older releases (when possible)
