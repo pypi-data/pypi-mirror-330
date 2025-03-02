@@ -1,0 +1,16 @@
+LICENSE
+README.md
+setup.py
+amdgpu_fan/__init__.py
+amdgpu_fan/controller.py
+amdgpu_fan.egg-info/PKG-INFO
+amdgpu_fan.egg-info/SOURCES.txt
+amdgpu_fan.egg-info/dependency_links.txt
+amdgpu_fan.egg-info/entry_points.txt
+amdgpu_fan.egg-info/requires.txt
+amdgpu_fan.egg-info/top_level.txt
+amdgpu_fan/lib/__init__.py
+amdgpu_fan/lib/amdgpu.py
+amdgpu_fan/lib/curve.py
+tests/test_card.py
+tests/test_curve.py
