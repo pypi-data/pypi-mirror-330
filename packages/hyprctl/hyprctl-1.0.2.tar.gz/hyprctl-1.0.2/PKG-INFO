@@ -1,0 +1,12 @@
+Metadata-Version: 2.2
+Name: hyprctl
+Version: 1.0.2
+Summary: API wrapper for Hyprland WM
+Author-email: MoxForever <moxforever10@gmail.com>
+Project-URL: Homepage, https://github.com/MoxForever/totp_auth
+Project-URL: Issues, https://github.com/MoxForever/totp_auth/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: pydantic>=2.10.6

@@ -1,0 +1,20 @@
+[project]
+name = "hyprctl"
+version = "1.0.2"
+authors = [
+    { name="MoxForever", email="moxforever10@gmail.com" },
+]
+description = "API wrapper for Hyprland WM"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+]
+dependencies = [
+    "pydantic>=2.10.6"
+]
+
+[project.urls]
+Homepage = "https://github.com/MoxForever/totp_auth"
+Issues = "https://github.com/MoxForever/totp_auth/issues"
