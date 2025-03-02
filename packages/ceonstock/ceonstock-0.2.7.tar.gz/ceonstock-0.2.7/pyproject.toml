@@ -1,0 +1,9 @@
+[project]
+name = "ceonstock"
+version = "0.2.7"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "ceon-render>=0.2.1",
+]

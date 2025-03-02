@@ -1,0 +1,12 @@
+Metadata-Version: 2.2
+Name: ceonstock
+Version: 0.2.7
+Summary: Add your description here
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+Requires-Dist: ceon-render>=0.2.1
+
+# cstock_python
+Must function with python 3.11 to be compatible with Hou and other apps
+
+[![Python application](https://github.com/Ceonsamea/cstock_python/actions/workflows/python-app.yml/badge.svg?branch=main)](https://github.com/Ceonsamea/cstock_python/actions/workflows/python-app.yml)
