@@ -1,0 +1,16 @@
+LICENSE
+README.md
+pyproject.toml
+displayhooks/__init__.py
+displayhooks/autorestore.py
+displayhooks/converter.py
+displayhooks/not_display.py
+displayhooks/py.typed
+displayhooks.egg-info/PKG-INFO
+displayhooks.egg-info/SOURCES.txt
+displayhooks.egg-info/dependency_links.txt
+displayhooks.egg-info/requires.txt
+displayhooks.egg-info/top_level.txt
+tests/test_autorestore.py
+tests/test_converter.py
+tests/test_not_display.py
