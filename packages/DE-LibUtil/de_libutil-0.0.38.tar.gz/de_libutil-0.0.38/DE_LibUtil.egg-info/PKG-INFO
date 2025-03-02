@@ -1,0 +1,56 @@
+Metadata-Version: 2.2
+Name: DE_LibUtil
+Version: 0.0.38
+Summary: Conector com varias base de dados
+Home-page: https://github.com/DE-DataEng/DE_LibUtil.git
+Author: Almir J Gomes
+Author-email: almir.jg@hotmail.com
+Classifier: Programming Language :: Python :: 3.9
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: Licence.txt
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-python
+Dynamic: summary
+
+# LibUtil
+LibUtil - Biblioteca de utilidades para Python
+## Dependencias
+VocÃª ira precisa do d Python 3.9 ou superior para usar este pacote.
+
+Este pacote esta disponibilizado no [PyPI](https://pypi.org).
+
+Voce precisa tambem dos seguinte pacotes: setuptools, wheel and twine, que estÃ£o disponiveis em [PyPI](https://pypi.org). 
+
+Se vpcÃª tiver o pip, execute assim:
+```
+pip install setuptools
+pip install wheel
+pip install twine
+```
+## Dependencias para esta versÃ£o:
+###pacotes:
+```
+ras>=4.8
+cryptography>=36.0.2
+pandas>=1.4.1
+
+*   A biblioteca foi construida com estas versÃµes de pacotes. 
+    Para versÃµes diferentes cabe mais testes
+```
+
+#### Installation
+Para efetuar um CLONE deste repositorio em sua maquina use o cÃ³digo abaixo:
+```
+git clone https://github.com/caiocarneloz/pacotepypi.git
+```## Features
+- File structure for PyPI packages
+- Setup with package informations
+- License example
