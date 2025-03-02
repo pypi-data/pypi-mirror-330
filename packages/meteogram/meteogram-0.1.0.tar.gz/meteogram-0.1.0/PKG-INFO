@@ -1,0 +1,36 @@
+Metadata-Version: 2.2
+Name: meteogram
+Version: 0.1.0
+Summary: Create meteogram based on data from met.no
+Author-email: Martin Høy <martin@hoy.priv.no>
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: loguru>=0.7.3
+Requires-Dist: pandas>=2.2.3
+Requires-Dist: pydantic>=2.10.6
+Requires-Dist: pydantic-settings>=2.8.1
+Requires-Dist: python-dotenv>=1.0.1
+Requires-Dist: requests>=2.32.3
+Requires-Dist: requests-cache>=1.2.1
+Requires-Dist: scipy>=1.15.2
+Requires-Dist: matplotlib>=3.10.1
+Requires-Dist: fastapi>=0.115.10
+Requires-Dist: uvicorn>=0.34.0
+
+# meteogram
+
+!["Docs build"](https://readthedocs.org/projects/meteogram/badge/)
+!["Latest version"](https://img.shields.io/pypi/v/meteogram)
+![Supported Python versions](https://img.shields.io/python/required-version-toml?tomlFilePath=https%3A%2F%2Fraw.githubusercontent.com%2Fmarhoy%2Fmeteogram%2Frefs%2Fheads%2Fmain%2Fpyproject.toml)
+
+Create a meteogram based on data from met.no.
+
+Documentation is available on [Read the Docs](https://meteogram.readthedocs.io/).
+
+Examples:
+
+![Example 1](https://raw.githubusercontent.com/marhoy/meteogram/main/docs/images/example_meteogram.png)
+
+![Example 2](https://raw.githubusercontent.com/marhoy/meteogram/main/docs/images/example_meteogram_warm.png)
+
+![Example 3](https://raw.githubusercontent.com/marhoy/meteogram/main/docs/images/example_meteogram_default.png)
