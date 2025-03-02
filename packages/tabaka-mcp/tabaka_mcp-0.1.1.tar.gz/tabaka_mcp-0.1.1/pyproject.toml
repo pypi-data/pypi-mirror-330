@@ -1,0 +1,16 @@
+[project]
+name = "tabaka-mcp"
+version = "0.1.1"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "httpx>=0.28.1",
+    "mcp[cli]>=1.3.0",
+    "tabaka-core>=0.0.1",
+]
+
+
+[project.scripts]
+tabaka = "tabaka:cli"
+
