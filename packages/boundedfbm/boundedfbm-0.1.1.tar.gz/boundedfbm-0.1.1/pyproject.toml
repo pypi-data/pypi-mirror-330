@@ -1,0 +1,32 @@
+[project]
+name = "boundedfbm"
+dynamic = ["version"]
+description = "Generate bounded factional Brownian motion in up to 3 dimensions using Pyvista models for shapes."
+readme = "README.md"
+requires-python = ">=3.12"
+authors = [
+	{ name = "Baljyot Singh Parmar", email = "baljyotparmar@hotmail.com" },
+]
+
+maintainers = [
+	{ name = "Baljyot Singh Parmar", email = "baljyotparmar@hotmail.com" },
+]
+dependencies = [
+    "numpy>=2.2.3",
+    "pyvista>=0.44.2",
+    "scipy>=1.15.2",
+    "typing-extensions>=4.12.2",
+]
+[project.urls]
+Documentation = "https://joemans3.github.io/boundedfbm/"
+"Source code" = "https://github.com/joemans3/boundedfbm"
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+[tool.hatch.version]
+path = "src/boundedfbm/__init__.py"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3.4",
+]
