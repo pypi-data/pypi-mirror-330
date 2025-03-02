@@ -1,0 +1,3 @@
+[console_scripts]
+rexpy = tdda.rexpy.rexpy:main
+tdda = tdda.constraints.console:main
