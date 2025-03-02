@@ -1,0 +1,1 @@
+from ..._agg import _OfGlr as find_license_and_validate,_VKVlf as License,_XhyCO as install_license_file,_BvS8r as yield_installed_licenses
