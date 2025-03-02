@@ -1,0 +1,25 @@
+[project]
+name = "kwargify-cli"
+version = "0.1.1"
+description = "A CLI to help build AI Agents or AI Workflows with the same DX as dbt."
+authors = [
+    {name = "lalit.gehani",email = "lalit.gehani@yahoo.co.in"}
+]
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.12"
+dependencies = [
+]
+
+[tool.poetry]
+packages = [{include = "kwargify_cli", from = "src"}]
+
+[tool.poetry.dependencies]
+python = ">=3.12"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+kwargify-cli = "kwargify_cli.cli:main"
