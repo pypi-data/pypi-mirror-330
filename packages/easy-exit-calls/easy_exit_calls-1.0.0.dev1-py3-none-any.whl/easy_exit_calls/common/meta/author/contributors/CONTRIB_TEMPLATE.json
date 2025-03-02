@@ -1,0 +1,52 @@
+{
+  "contributor": {
+    "preferred_name": "Example S. Developer",
+    "email_addresses": [
+      {
+        "user_handle": "example.s.developer",
+        "domain": "example.com"
+      }
+    ],
+    "code_social": {
+      "github": [
+        {
+          "user_handle": "example_coder",
+          "on_behalf_of": [
+            {
+              "group_name": "Software Developer Inc.",
+              "group_handle": "software_developer_inc"
+            }
+          ]
+        }
+      ],
+      "gitlab": [
+        {
+          "user_handle": "example_dev",
+          "on_behalf_of": []
+        }
+      ],
+      "bitbucket": [
+        {
+          "user_handle": "example_bb",
+          "on_behalf_of": []
+        }
+      ]
+    },
+    "roles": [
+      "Developer",
+      "Maintainer",
+      "Contributor"
+    ],
+    "contributions": {
+      "code": true,
+      "documentation": true,
+      "design": false,
+      "testing": true,
+      "bug_reports": true,
+      "community_support": false
+    },
+    "preferred_contact_method": "email",
+    "timezone": "America/Chicago",
+    "additional_notes": "Happy to contribute to open-source projects!"
+  }
+}
