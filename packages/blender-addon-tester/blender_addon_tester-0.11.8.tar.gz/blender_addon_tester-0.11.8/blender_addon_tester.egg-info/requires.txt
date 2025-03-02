@@ -1,0 +1,9 @@
+bs4
+dmglib
+exceptiongroup
+flake8
+iniconfig
+requests
+
+[test]
+pytest
