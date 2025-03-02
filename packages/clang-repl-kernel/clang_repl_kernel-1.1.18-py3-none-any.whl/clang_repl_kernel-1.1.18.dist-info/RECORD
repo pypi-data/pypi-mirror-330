@@ -1,0 +1,16 @@
+clang_repl_kernel/.gitattributes,sha256=EX_puJoDt-2IaNq__jE5y2xeG4kSYYshT1viT7NAwvw,45
+clang_repl_kernel/__init__.py,sha256=9fv2gbLlwv0zZ4U5yHMy531YC01uROwv0UU6NU_bdQk,245
+clang_repl_kernel/__main__.py,sha256=vt6MLu9fgXRlf9lEUn8uSw_D7VUy1Ac22yEw-j45moE,175
+clang_repl_kernel/check_script.sh,sha256=r0xgULeCBagMqVCaYr8_KpSbqenrxMQmCegeMwLah8g,1018
+clang_repl_kernel/downloader.py,sha256=vXYc8UwX23nWX9q4l6tvYW0mmPiJFpQp2I9HyaGkYW8,2237
+clang_repl_kernel/install.py,sha256=o6_vuXchyjZdrNdkCENTjCJrhPU3WqREqaKhO5aqcas,6311
+clang_repl_kernel/kernel.py,sha256=yeEA5AinYMHuElIG-mnyggwcX3vTDdVXEcQgXTPJBIc,19501
+clang_repl_kernel/test_kernel.py,sha256=3d8dWhjD6Z9X3hR-WuLtu8cU5RiVXSPers-8fLidb2I,7332
+clang_repl_kernel-1.1.18.data/data/share/jupyter/kernels/clang_repl_cpp14/kernel.json,sha256=9ZBNMNERnyqsysyBeQDovLSULbyLpNFWgLgyRpDVwfE,3250
+clang_repl_kernel-1.1.18.data/data/share/jupyter/kernels/clang_repl_cpp17/kernel.json,sha256=QrmjYM-nQDzO49Y245XjCfwDRyg9ltS6o-T37vElS3o,3265
+clang_repl_kernel-1.1.18.data/data/share/jupyter/kernels/clang_repl_cpp20/kernel.json,sha256=ncyDJ_xrcKVeCAGTQaPXHAAFCPnBNvWxd9S_xGB1024,3280
+clang_repl_kernel-1.1.18.data/data/share/jupyter/kernels/clang_repl_cpp23/kernel.json,sha256=2MKakIAf0W7tNo-h16DM-ORl5bMbdhxhp5n6v04nZwc,3295
+clang_repl_kernel-1.1.18.dist-info/METADATA,sha256=wXEHZ8XSEUfEo7vEXuAhNyCb9ZWZxkwuFhZCf2KxAUo,16931
+clang_repl_kernel-1.1.18.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+clang_repl_kernel-1.1.18.dist-info/licenses/LICENSE,sha256=R7K3N1MYxXTvRNDe8eKNKW6LrFlA0k0mlPXZnnBTt4A,11560
+clang_repl_kernel-1.1.18.dist-info/RECORD,,
