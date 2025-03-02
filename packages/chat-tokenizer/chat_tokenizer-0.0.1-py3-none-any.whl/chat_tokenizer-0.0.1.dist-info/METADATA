@@ -1,0 +1,38 @@
+Metadata-Version: 2.2
+Name: chat-tokenizer
+Version: 0.0.1
+Summary: Chat Tokenizer
+Home-page: https://github.com/pengzhendong/chat-tokenizer
+Author: Zhendong Peng
+Author-email: pzd17@tsinghua.org.cn
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Scientific/Engineering
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: torch
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-dist
+Dynamic: summary
+
+# chat-tokenizer
+
+## Usage
+
+```python
+from chat_tokenizer import ChatTokenizer
+from transformers import AutoTokenizer
+
+
+tokenizer = ChatTokenizer(AutoTokenizer.from_pretrained("qwen/Qwen2.5-0.5B-Instruct"))
+
+audio_lens = [[4, 2], 3]
+labels = [["今天天气不错", "哈哈"], "你好啊"]
+label_ids, input_ids = tokenizer.batch_tokenize(audio_lens, labels)
+input_ids = tokenizer.fill_labels(label_ids, input_ids)
+```
