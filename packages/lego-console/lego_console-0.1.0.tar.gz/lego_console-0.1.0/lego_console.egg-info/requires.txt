@@ -1,0 +1,15 @@
+adafruit-ampy
+click
+console-menu
+crashvb-logging-utilities>=0.1.1
+pyserial
+pyyaml
+
+[dev]
+black
+coveralls
+pylint
+pytest
+pytest-cov
+twine
+wheel
