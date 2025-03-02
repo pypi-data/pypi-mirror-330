@@ -1,0 +1,7 @@
+ipython
+ipytest
+nbformat>=5.10.4
+pytest
+
+[:python_version < "3.11"]
+typing-extensions
