@@ -1,0 +1,168 @@
+Metadata-Version: 2.3
+Name: hlmagix
+Version: 0.4.2
+Summary: HLMagix toolset including calculator, models and utilities
+License: MIT
+Author: yangfan_hailv
+Author-email: fan.yang@elestyle.jp
+Requires-Python: >=3.12,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Project-URL: Repository, https://github.com/hailv/hlmagix
+Description-Content-Type: text/markdown
+
+# HLMagix
+
+一个功能丰富的 Python 工具集，包含命令行计算器、业务模型和通用工具库。
+
+## 组件
+
+- **命令行计算器**: 提供强大的计算功能 (`hlmagix.hlcalculator`)
+- **业务模型**: 数据结构和业务逻辑 (`hlmagix.models`)
+- **工具库**: 通用数学和字符串操作 (`hlmagix.utils`)
+
+## 功能特性
+
+- 基础算术运算:
+  - 加法 (+)
+  - 减法 (-)
+  - 乘法 (*)
+  - 除法 (/)
+  - 幂运算 (^)
+
+- 科学计算:
+  - 平方根 (sqrt)
+  - 对数 (log)
+  - 三角函数 (sin, cos, tan)
+  - 阶乘
+
+- 数学常数:
+  - π (pi)
+  - e
+  - τ (tau)
+
+## 安装
+
+使用 pip:
+```bash
+pip install hlmagix
+```
+
+使用 Poetry:
+```bash
+poetry add hlmagix
+```
+
+## 使用方法
+
+### 命令行计算器
+
+```bash
+hlcal calc 5 + 3         # 加法: 8.0
+hlcal calc 10 - 4        # 减法: 6.0
+hlcal calc 3 '*' 4       # 乘法: 12.0 (注意: * 需要引号)
+hlcal calc 15 / 3        # 除法: 5.0
+hlcal calc 2 ^ 3         # 幂运算: 8.0
+
+# 科学计算
+hlcal calc 16 sqrt       # 平方根: 4.0
+hlcal calc 100 log 10    # 对数: 2.0
+hlcal calc 0.5 sin       # 正弦: 0.479
+
+# 数学常数
+hlcal const pi           # π: 3.141592653589793
+hlcal const e            # e: 2.718281828459045
+```
+
+### 使用模型和工具库
+
+```python
+# 使用工具函数
+from hlmagix.utils.math_utils import calculate_factorial
+from hlmagix.utils.string_utils import format_number
+
+result = calculate_factorial(5)
+formatted = format_number(result)
+
+# 使用模型
+from hlmagix.models.product import Product
+from hlmagix.models.user import User
+
+product = Product(name="Example", price=100)
+user = User(name="John Doe")
+
+# 或者使用导入包
+import hlmagix
+
+result = hlmagix.utils.math_utils.calculate_factorial(5)
+product = hlmagix.models.product.Product(name="Example", price=100)
+```
+
+## 项目结构
+
+```
+hlmagix/
+├── __init__.py      # 包初始化，导出所有子模块
+├── hlcalculator/    # 命令行计算器实现
+│   ├── __init__.py
+│   ├── cli.py       # 命令行接口
+│   ├── calculator.py
+│   └── parser.py
+├── models/          # 业务模型
+│   ├── __init__.py
+│   ├── product.py
+│   └── user.py
+└── utils/          # 工具函数
+    ├── __init__.py
+    ├── math_utils.py
+    └── string_utils.py
+```
+
+## 开发指南
+
+### 环境要求
+
+- Python 3.12 或更高版本
+- Poetry 依赖管理工具
+
+### 设置开发环境
+
+1. 克隆仓库
+```bash
+git clone https://github.com/hailv/hlmagix.git
+cd hlmagix
+```
+
+2. 安装依赖
+```bash
+poetry install
+```
+
+3. 激活虚拟环境
+```bash
+poetry shell
+```
+
+### 代码质量工具
+
+项目使用多个代码质量工具：
+
+- black: 代码格式化
+- flake8: 代码风格检查
+- mypy: 静态类型检查
+- isort: 导入排序
+
+运行所有检查:
+```bash
+poetry run black .
+poetry run flake8 .
+poetry run mypy .
+poetry run isort .
+```
+
+## 许可证
+
+本项目基于 MIT 许可证 - 详见 LICENSE 文件
+

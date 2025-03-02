@@ -1,0 +1,41 @@
+[tool.poetry]
+name = "hlmagix"
+version = "0.4.2"
+description = "HLMagix toolset including calculator, models and utilities"
+authors = ["yangfan_hailv <fan.yang@elestyle.jp>"]
+readme = "README.md"
+license = "MIT"
+repository = "https://github.com/hailv/hlmagix"
+packages = [{ include = "hlmagix" }]
+
+[tool.poetry.scripts]
+hlcal = "hlmagix.hlcalculator.cli:main"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+
+[tool.poetry.group.dev.dependencies]
+black = "^24.1.1"
+flake8 = "^7.0.0"
+mypy = "^1.8.0"
+isort = "^5.13.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 88
+target-version = ['py312']
+include = '\.pyi?$'
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+line_length = 88
+
+[tool.mypy]
+python_version = "3.12"
+warn_return_any = true
+warn_unused_configs = true
+check_untyped_defs = true
