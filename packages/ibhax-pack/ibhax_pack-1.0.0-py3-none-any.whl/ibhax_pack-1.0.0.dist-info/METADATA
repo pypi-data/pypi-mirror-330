@@ -1,0 +1,11 @@
+Metadata-Version: 2.2
+Name: ibhax_pack
+Version: 1.0.0
+Summary: Simplified auto packaging solution
+Author: Albin Anthony
+Requires-Dist: cookiecutter
+Requires-Dist: pyyaml
+Requires-Dist: twine
+Dynamic: author
+Dynamic: requires-dist
+Dynamic: summary
