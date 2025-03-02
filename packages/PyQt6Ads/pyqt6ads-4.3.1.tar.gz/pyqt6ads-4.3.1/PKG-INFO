@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: PyQt6Ads
+Version: 4.3.1
+Requires-Python: >=3.9
+Summary: Python bindings for Qt Advanced Docking System
+License: LGPL v2.1
+Description-Content-Type: text/markdown
+Requires-Dist: PyQt6>=6.5.3,!=6.6
+Project-Url: Upstream, https://github.com/githubuser0xFFFF/Qt-Advanced-Docking-System/
+Project-Url: Homepage, https://github.com/tlambert03/PyQt6Ads
+
+# PyQt6Ads
+
+PyQt6 Bindings for (the amazing) [Qt-Advanced-Docking-System](https://github.com/githubuser0xFFFF/Qt-Advanced-Docking-System)
+
+[![Video Advanced Docking](https://github.com/githubuser0xFFFF/Qt-Advanced-Docking-System/blob/483bb7354ace8f07b76f483ec167e84467ac3977/doc/advanced-docking_video.png)](https://www.youtube.com/watch?v=7pdNfafg3Qc)
