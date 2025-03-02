@@ -1,0 +1,22 @@
+#motd {
+  background: var(--ink-p-accent-warning-bg);
+  border-bottom: 1px var(--ink-p-accent-warning-border-color) solid;
+  display: flex;
+  padding: 5px;
+  padding-left: 76px;
+}
+#motd a {
+  color: var(--ink-p-link-fg-on-light);
+  font-weight: bold;
+}
+#motd-close {
+  color: var(--ink-p-fg-on-light);
+}
+#motd-message {
+  color: var(--ink-p-fg-on-light);
+  flex-grow: 1;
+  font-size: 110%;
+  margin: 0;
+  padding: 0;
+}
+/*# sourceMappingURL=motd.css.map */

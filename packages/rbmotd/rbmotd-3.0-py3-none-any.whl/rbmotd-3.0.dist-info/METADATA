@@ -1,0 +1,28 @@
+Metadata-Version: 2.1
+Name: rbmotd
+Version: 3.0
+Summary: Message of the Day support for Review Board
+Home-page: https://www.reviewboard.org/
+Author: Beanbag, Inc.
+Author-email: support@beanbaginc.com
+Maintainer: Beanbag, Inc.
+Maintainer-email: support@beanbaginc.com
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Review Board
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Python: >=3.8
+License-File: LICENSE
+License-File: AUTHORS
+
