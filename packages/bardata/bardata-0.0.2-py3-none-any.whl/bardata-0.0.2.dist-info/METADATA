@@ -1,0 +1,48 @@
+Metadata-Version: 2.4
+Name: bardata
+Version: 0.0.2
+Summary: Bar data manipulation utilities
+Author-email: Furechan <furechan@xsmail.com>
+License-Expression: MIT
+License-File: LICENSE.txt
+Keywords: data,finance
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.9
+Requires-Dist: importlib-metadata; python_version < '3.10'
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: python-dateutil
+Requires-Dist: requests
+Description-Content-Type: text/markdown
+
+# Bar data utilities in Python
+
+This package includes utilities and a plugin model to fetch and manipulate bar data
+for stocks from vairous providers. This is work in progress.
+
+Bar data is represented as a datafrane with a `date` or `datetime` index
+and `open`, `high`, `low`, `close`, `volume` columns all in lower case.
+Data for stocks prices is assumed adjusted by default.
+
+The main conventions are:
+- data sources are referenced by a single `source` parameter
+- all sources accept similar frequencies with the `freq` parameter
+- maximum number of bars is indicated with the `max_bars` parameter
+- both `start_date` and `end_date` parameters are optional
+
+## Typical Usage
+
+```python
+from bardata import get_prices
+
+TICKER = "AAPL" 
+SOURCE = 'sample'
+FREQ = 'daily'
+
+prices = get_prices(ticker, freq=FREQ, source=SOURCE)
+```
+
+## Related Projects & Resources
+
+- [findatapy](https://github.com/cuemacro/findatapy) Python library to download
+market data via Bloomberg, Eikon, Quandl, Yahoo etc.
