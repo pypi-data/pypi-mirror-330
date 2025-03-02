@@ -1,0 +1,31 @@
+[project]
+name = "layx"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "t3tra-dev", email = "admin@t3tra.net" }
+]
+requires-python = ">=3.12"
+dependencies = []
+
+[project.optional-dependencies]
+pyqt6 = [
+    "pyqt6>=6.8.1",
+]
+pyqt5 = [
+    "pyqt5>=5.15.11",
+]
+pyside6 = [
+    "pyside6>=6.8.2.1",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "black>=25.1.0",
+    "isort>=6.0.1",
+]

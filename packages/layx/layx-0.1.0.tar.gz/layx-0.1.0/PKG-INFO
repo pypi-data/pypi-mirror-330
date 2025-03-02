@@ -1,0 +1,15 @@
+Metadata-Version: 2.4
+Name: layx
+Version: 0.1.0
+Summary: Add your description here
+Author-email: t3tra-dev <admin@t3tra.net>
+Requires-Python: >=3.12
+Provides-Extra: pyqt5
+Requires-Dist: pyqt5>=5.15.11; extra == 'pyqt5'
+Provides-Extra: pyqt6
+Requires-Dist: pyqt6>=6.8.1; extra == 'pyqt6'
+Provides-Extra: pyside6
+Requires-Dist: pyside6>=6.8.2.1; extra == 'pyside6'
+Description-Content-Type: text/markdown
+
+# LayX - Layout various GUIs in XML
