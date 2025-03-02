@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+git_semantic_similarity.egg-info/PKG-INFO
+git_semantic_similarity.egg-info/SOURCES.txt
+git_semantic_similarity.egg-info/dependency_links.txt
+git_semantic_similarity.egg-info/entry_points.txt
+git_semantic_similarity.egg-info/requires.txt
+git_semantic_similarity.egg-info/top_level.txt
+src/__init__.py
+src/cli.py
+src/embeddings.py
