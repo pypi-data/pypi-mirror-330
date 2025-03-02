@@ -1,0 +1,15 @@
+[project]
+name = "metacompany-sphinx-theme"
+version = "0"
+license = { text = "MetaCompany" }
+description = "MetaCompany Sphinx Theme"
+requires-python = ">=3.9"
+authors = [
+    { name = "Nate Skulic" },
+    { name = "MetaCompany" },
+]
+dependencies = [
+    "sphinx",
+]
+
+
