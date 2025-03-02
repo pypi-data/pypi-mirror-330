@@ -1,0 +1,28 @@
+Metadata-Version: 2.2
+Name: somali_number_converter
+Version: 0.0.1
+Summary: A package to convert numbers in PDFs to Somali words.
+Home-page: https://github.com/abdoltd/somali_number_converter
+Author: ABDOL
+Author-email: abdoldevtra@gmail.com
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pdfplumber
+Dynamic: author
+Dynamic: author-email
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-dist
+Dynamic: summary
+
+# Somali Number Converter
+
+This Python package allows you to convert numbers in a PDF file into Somali words.
+
+## Installation
+
+You can install the package using pip:
+
+```bash
+pip install somali_number_converter
