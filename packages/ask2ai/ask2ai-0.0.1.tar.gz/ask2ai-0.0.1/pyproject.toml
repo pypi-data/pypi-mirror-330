@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ask2ai"
+version = "0.0.1"
+description = "temporary empty package"
+authors = [{ name = "Hamza Ferrahoglu", email = "fhamz4@proton.me" }]
+license = { text = "MIT" }
+readme = "README.md"
+dependencies = [
+    "requests",
+]
