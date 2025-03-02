@@ -1,0 +1,155 @@
+Metadata-Version: 2.2
+Name: harmoniapy
+Version: 1.2.0
+Summary: Fast and accurate Python spell checker, a powerful alternative to pyspellchecker
+Author-email: Dušan Jolović <jolovic@pm.me>
+License: MIT License
+        
+        Copyright (c) 2025 Dušan Jolović
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE.
+Project-URL: Homepage, https://github.com/jolovicdev/harmonia
+Keywords: spell,checker,spelling,correction,nlp
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Text Processing :: Linguistic
+Classifier: Topic :: Text Processing :: Filters
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: requests>=2.25.0
+Requires-Dist: typing-extensions>=4.0.0
+Requires-Dist: importlib-metadata>=1.0.0; python_version < "3.8"
+
+# Harmonia Spell Checker
+
+![Version](https://img.shields.io/badge/version-1.2.0-blue.svg) 
+![Python](https://img.shields.io/badge/python-3.8%2B-green.svg)
+![License](https://img.shields.io/badge/license-MIT-lightgrey.svg)
+
+A **fast**, **accurate**, and **feature-rich** Python spell checker - a powerful alternative to pyspellchecker with advanced features and optimized performance.
+
+## 🚀 Features
+
+- **High Performance**: Optimized dictionary loading and word lookup algorithms
+- **Accurate Suggestions**: Advanced algorithms for spelling suggestions:
+  - Levenshtein distance with optimized implementation
+  - Phonetic matching with Soundex algorithm
+  - Context-aware weighted suggestions
+- **Flexible Word Handling**:
+  - Support for hyphenated words
+  - Contractions and possessives detection
+  - Automatically derived word forms
+- **Robust Output Options**:
+  - Interactive command-line interface
+  - Detailed HTML reports with hover suggestions
+  - Markdown report generation
+  - Customizable output formats
+- **Developer-Friendly**:
+  - Clean, well-documented API
+  - Highly customizable settings
+  - Comprehensive error handling
+  - Memory-efficient implementation
+
+## 📦 Installation
+
+```bash
+pip install harmoniapy
+```
+
+## 🖥️ CLI Usage
+
+Check a file for spelling errors:
+
+```bash
+# Basic usage
+harmonia check myfile.txt
+
+# Show suggestions for each error
+harmonia check myfile.txt --suggest
+
+# Generate HTML report with hover suggestions
+harmonia check myfile.txt --suggest --html report.html
+
+# Generate Markdown report
+harmonia check myfile.txt --suggest --markdown report.md
+
+# Ignore specific words
+harmonia check myfile.txt --ignore ignored-words.txt
+
+# Show version information
+harmonia --version
+```
+
+## 💻 Python API Usage
+
+```python
+from harmonia import Dictionary, check_file
+
+# Initialize dictionary (loads automatically)
+dictionary = Dictionary()
+
+# Check file with suggestions
+errors = check_file("myfile.txt", dictionary, suggest=True)
+
+# Process errors
+for error in errors:
+    print(f"Error: {error['word']} at line {error['line']}")
+    if error['suggestions']:
+        print(f"Suggestions: {', '.join(error['suggestions'])}")
+
+# Generate HTML report
+from harmonia.formatters import generate_html_report
+with open("myfile.txt") as f:
+    text = f.read()
+html_report = generate_html_report(text, errors)
+with open("report.html", "w") as f:
+    f.write(html_report)
+```
+
+## 📊 HTML Report
+
+The HTML report shows the text with red underlines for misspelled words. Hover over any underlined word to see spelling suggestions.
+
+## 🔄 Comparison with pyspellchecker
+
+| Feature | Harmonia | pyspellchecker |
+|---------|----------|---------------|
+| Suggestion algorithm | Multi-algorithm hybrid | Primarily edit distance |
+| Phonetic matching | ✅ Soundex | ❌ Not included |
+| Word frequency | ✅ Wikipedia-based | ✅ Basic frequency |
+| HTML reports | ✅ Interactive | ❌ Not included |
+| Misspellings DB | ✅ Extensive | ✅ Limited |
+| Performance | ✅ Highly optimized | ⚠️ Standard |
+| Custom dictionaries | ✅ Supported | ✅ Supported |
+| Hyphenated words | ✅ Advanced handling | ⚠️ Basic support |
+| Derived word forms | ✅ Automatic | ❌ Not included |
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## 📄 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
