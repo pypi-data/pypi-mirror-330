@@ -1,0 +1,12 @@
+Metadata-Version: 2.2
+Name: kubeanno
+Version: 0.0.2
+Summary: Self-Annotate Kubernetes Pods
+Author-email: Sean MacAvaney <sean.macavaney@glasgow.ac.uk>
+Maintainer-email: Sean MacAvaney <sean.macavaney@glasgow.ac.uk>
+Project-URL: Repository, https://github.com/seanmacavaney/kubeanno
+Project-URL: Bug Tracker, https://github.com/seanmacavaney/kubeanno/issues
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+
+# kubeanno
