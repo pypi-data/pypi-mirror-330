@@ -1,0 +1,38 @@
+Metadata-Version: 2.2
+Name: DE_LogEventos
+Version: 0.0.12
+Summary: Log de eventos em processos
+Home-page: https://github.com/DE-DataEng/DE_LogEventos.git
+Author: Almri J Gomes
+Author-email: almir.jg@hotmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: Licence.txt
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-python
+Dynamic: summary
+
+# DE_LogEventos
+Pacote de funcionalidades para geraÃ§Ã£o de Log de monitoramento de processos
+#### Dependencias
+Python: 3.9 (recomendado) [python.org](https://www.python.org/)
+setutools, wheel e twine [PyPI](https://pypi.org)
+```
+pip install setuptools
+pip install wheel
+pip install twine
+```
+#### InstalaÃ§Ã£o
+Para clonar este repositorio em sua maquina local use:
+```
+git clone https://github.com/almirjgomes/DE_LogEventos.git
+- License MIT
+```
