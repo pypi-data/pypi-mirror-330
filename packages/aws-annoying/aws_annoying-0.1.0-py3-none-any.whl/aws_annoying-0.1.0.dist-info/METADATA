@@ -1,0 +1,21 @@
+Metadata-Version: 2.4
+Name: aws-annoying
+Version: 0.1.0
+Summary: Utils to handle some annoying AWS tasks.
+Author-email: Yuchan Lee <lasuillard@gmail.com>
+License-Expression: MIT
+License-File: LICENSE
+Requires-Python: <4.0,>=3.9
+Requires-Dist: boto3>=1.37.1
+Requires-Dist: typer>=0.15.1
+Provides-Extra: dev
+Requires-Dist: boto3-stubs[ecs,secretsmanager,ssm]>=1.37.1; extra == 'dev'
+Requires-Dist: mypy~=1.15.0; extra == 'dev'
+Requires-Dist: ruff~=0.9.9; extra == 'dev'
+Provides-Extra: test
+Requires-Dist: coverage~=7.6.0; extra == 'test'
+Requires-Dist: moto[ecs,secretsmanager,server,ssm]; extra == 'test'
+Requires-Dist: pytest-cov~=6.0.0; extra == 'test'
+Requires-Dist: pytest-env~=1.1.1; extra == 'test'
+Requires-Dist: pytest-sugar~=1.0.0; extra == 'test'
+Requires-Dist: pytest~=8.3.2; extra == 'test'
