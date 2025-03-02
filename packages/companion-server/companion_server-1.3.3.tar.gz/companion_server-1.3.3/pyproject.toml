@@ -1,0 +1,39 @@
+[project]
+name = "companion-server"
+license = { file = "LICENSE" }
+readme = "README.md"
+description = "a basic http 1.0 server implemented in python"
+authors = [
+    {name = "dankrzeminski32",email = "dankrzeminski32@gmail.com"}
+]
+requires-python = ">=3.11, <4"
+dependencies = [
+]
+dynamic = []
+version = "1.3.3"
+
+[project.urls]
+repository = "https://github.com/dankrzeminski32/companion"
+
+[tool.poetry]
+packages = [{include = "companion"}]
+
+[project.scripts]
+companion-server = "companion.server:cli"
+
+
+[tool.poetry-dynamic-versioning]
+enable = false
+vcs = "git"
+style = "semver"
+metadata = false
+
+[build-system]
+requires = ["poetry-core>=1.0.0", "poetry-dynamic-versioning>=1.0.0,<2.0.0"]
+build-backend = "poetry_dynamic_versioning.backend"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.4"
+
+[tool.poetry.requires-plugins]
+poetry-dynamic-versioning = { version = ">=1.0.0,<2.0.0", extras = ["plugin"] }
