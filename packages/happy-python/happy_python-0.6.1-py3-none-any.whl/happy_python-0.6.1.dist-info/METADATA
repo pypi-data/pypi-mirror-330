@@ -1,0 +1,52 @@
+Metadata-Version: 2.3
+Name: happy-python
+Version: 0.6.1
+Summary: Happy-Python是一个简单易用的Python库，让编程轻松愉快
+License: MIT
+Author: Chengdu Geek Camp
+Author-email: info@cdgeekcamp.com
+Requires-Python: >=3.10.12,<4.0.0
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Dist: pure-eval (>=0.2.3,<0.3.0)
+Requires-Dist: varname (>=0.13.5,<0.14.0)
+Project-URL: Documentation, https://github.com/geekcampchina/happy-python
+Project-URL: Homepage, https://github.com/geekcampchina/happy-python
+Project-URL: Repository, https://github.com/geekcampchina/happy-python
+Description-Content-Type: text/markdown
+
+# happy-python
+
+Happy-Python是一个简单易用的Python库，让编程轻松愉快
+
+## 安装开发依赖
+
+`pip install poetry pytest`
+
+## 单元测试
+
+运行单元测试：
+
+`poetry run pytest`
+
+## 安装happy-python
+
+### Pip安装
+
+`pip install happy-python`
+
+## 本地安装
+
+```bash
+rm -rf dist/
+poetry build -f wheel
+pip install -U --user dist/happy_python-*-py3-none-any.whl
+```
+
