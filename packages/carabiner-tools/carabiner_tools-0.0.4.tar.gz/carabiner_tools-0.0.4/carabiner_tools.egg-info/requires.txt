@@ -1,0 +1,16 @@
+tqdm
+
+[all]
+carabiner-tools[deep,mpl,pd]
+
+[deep]
+tensorflow
+
+[mpl]
+carabiner-tools[pd]
+matplotlib
+numpy
+
+[pd]
+pandas
+openpyxl==3.1.0
