@@ -1,0 +1,5 @@
+[console_scripts]
+duty = duty.cli:main
+
+[gui_scripts]
+
