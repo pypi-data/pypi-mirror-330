@@ -1,0 +1,56 @@
+Metadata-Version: 2.3
+Name: student-bluebook
+Version: 0.2.1
+Summary: 
+Author: Ilya Smut
+Author-email: ilya.smut.off.g@gmail.com
+Requires-Python: >=3.10
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Dist: click (>=8.1.8,<9.0.0)
+Requires-Dist: flask (>=3.1.0,<4.0.0)
+Requires-Dist: google-genai (>=1.2.0,<2.0.0)
+Requires-Dist: ipykernel (>=6.29.5,<7.0.0)
+Requires-Dist: pydantic (>=2.10.6,<3.0.0)
+Description-Content-Type: text/markdown
+
+<img src="https://github.com/ilya-smut/blue-book/blob/main/bluebook/static/images/book.svg" alt="blue book" width="170" height="115"/>
+
+# Blue Book
+
+Blue Book is an application that generates multiple-choice questions for CompTIA Security+ preparation at the press of a button. It uses the Gemini API to generate questions and provides instant feedback on answers.
+
+## Features
+- Generate CompTIA Security+ multiple-choice questions.
+- Submit answers and receive immediate feedback.
+- Explanation of correct and incorrect answers to enhance learning.
+
+## Installation
+
+You can install bluebook with pip:
+   ```sh
+   pip install student-bluebook
+   ```
+
+## Usage
+
+Please see bluebook's interface and capabilities on this wiki page [wiki page](https://github.com/ilya-smut/blue-book/wiki/What-to-expect-from-Blue-Book-0.1.0%3F):
+
+To start the application, use the following command:
+```sh
+bluebook start
+```
+
+## Contributing
+If you’d like to contribute to Blue Book, feel free to submit a pull request or open an issue.
+
+## License
+This project is licensed under the GPLv3
+
+## Contact
+For any questions or feedback, feel free to reach out.
+
+
