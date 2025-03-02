@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scalar-docs"
+version = "0.1.0"
+description = "A Python wrapper for the Scalar API documentation library."
+authors = [
+    { name = "Oscar Rivas", email = "80918302+OscarRG@noreply.users.github.com" }
+]
+readme = "README.md"
+license = { file = "LICENSE" }
+dependencies = [
+    "requests"
+]
+
+[project.optional-dependencies]
+django_example = ["django"]
+fastapi_example = ["fastapi"]
+flask_example = ["flask"]
+
+[project.urls]
+Homepage = "https://github.com/OscarRG/scalar-py"
+Documentation = "https://github.com/OscarRG/scalar-py"
+Repository = "https://github.com/OscarRG/scalar-py"
