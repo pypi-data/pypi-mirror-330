@@ -1,0 +1,2 @@
+[console_scripts]
+erlang_changes = erlang_changes.cli:execute_from_commandline
