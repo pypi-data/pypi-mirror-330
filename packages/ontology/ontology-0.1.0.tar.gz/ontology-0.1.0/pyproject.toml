@@ -1,0 +1,13 @@
+[project]
+name = "ontology"
+version = "0.1.0"
+description = "Ontology Library"
+authors = [
+    { name = "Kevin", email = "kevinqz@gmail.com" }
+]
+requires-python = ">=3.11"
+dependencies = []
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
