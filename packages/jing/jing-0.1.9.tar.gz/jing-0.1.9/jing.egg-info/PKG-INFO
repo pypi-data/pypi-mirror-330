@@ -1,0 +1,13 @@
+Metadata-Version: 2.2
+Name: jing
+Version: 0.1.9
+Summary: Download stock data and perform data analisys
+Author-email: sai <sai@gmail.com>
+License: MIT
+Keywords: jing,sai,stock
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+Requires-Dist: requests
+Requires-Dist: importlib-metadata; python_version < "3.10"
