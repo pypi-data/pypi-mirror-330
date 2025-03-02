@@ -1,0 +1,33 @@
+Metadata-Version: 2.1
+Name: hikti
+Version: 0.1
+Summary: A simple example package
+Home-page: https://github.com/fanxy/hikit
+Author: LiWei
+Author-email: 937508331@qq.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# My Package
+
+This is a simple example package that provides a greeting function.
+
+## Installation
+
+You can install the package using pip:
+
+```bash
+pip install my_package
+```
+
+
+##  Usage
+```bash
+from my_package import my_module
+
+print(my_module.greet("World"))
+```
