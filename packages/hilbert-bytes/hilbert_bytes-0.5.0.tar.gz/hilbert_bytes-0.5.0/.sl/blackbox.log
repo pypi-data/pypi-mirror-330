@@ -1,0 +1,891 @@
+2025/01/17 21:33:00 erk @(unknown) (12779) [visibility]> read 0 heads: 
+2025/01/17 21:33:02 erk @(unknown) (12779) [visibility]> read 0 heads: 
+2025/01/17 21:33:02 erk @(unknown) (12779) [visibility]> read 0 heads: 
+2025/01/17 21:33:02 erk @(unknown) (12779) [command_finish]> clone 'https://github.com/erikbrinkman/hilbert-bytes.git' exited 0 after 1.89 seconds
+2025/01/17 21:36:53 erk @(unknown) (13825) [command]> blame /Users/erk/projects/hilbert-bytes/hilbert-bytes/__init__.py -Tjson --change --rev aa6c6cdd7a969b3bc42c5e7b272dfe22758b0142 --noninteractive
+2025/01/17 21:36:53 erk @aa6c6cdd7a969b3bc42c5e7b272dfe22758b0142 (13825) [command_finish]> blame /Users/erk/projects/hilbert-bytes/hilbert-bytes/__init__.py -Tjson --change --rev aa6c6cdd7a969b3bc42c5e7b272dfe22758b0142 --noninteractive exited 0 after 0.42 seconds
+2025/01/17 21:37:38 erk @(unknown) (13978) [command]> debugcommitmessage isl --noninteractive
+2025/01/17 21:37:48 erk @(unknown) (14129) [command]> blame /Users/erk/projects/hilbert-bytes/pyproject.toml -Tjson --change --rev aa6c6cdd7a969b3bc42c5e7b272dfe22758b0142 --noninteractive
+2025/01/17 21:37:48 erk @aa6c6cdd7a969b3bc42c5e7b272dfe22758b0142 (14129) [command_finish]> blame /Users/erk/projects/hilbert-bytes/pyproject.toml -Tjson --change --rev aa6c6cdd7a969b3bc42c5e7b272dfe22758b0142 --noninteractive exited 0 after 0.24 seconds
+2025/01/17 21:37:55 erk @(unknown) (14168) [command]> blame /Users/erk/projects/hilbert-bytes/README.md -Tjson --change --rev aa6c6cdd7a969b3bc42c5e7b272dfe22758b0142 --noninteractive
+2025/01/17 21:37:55 erk @aa6c6cdd7a969b3bc42c5e7b272dfe22758b0142 (14168) [command_finish]> blame /Users/erk/projects/hilbert-bytes/README.md -Tjson --change --rev aa6c6cdd7a969b3bc42c5e7b272dfe22758b0142 --noninteractive exited 0 after 0.22 seconds
+2025/01/17 21:38:32 erk @aa6c6cdd7a969b3bc42c5e7b272dfe22758b0142 (13978) [visibility]> read 0 heads: 
+2025/01/17 21:38:32 erk @aa6c6cdd7a969b3bc42c5e7b272dfe22758b0142 (13978) [command_finish]> debugcommitmessage isl --noninteractive exited 0 after 54.53 seconds
+2025/01/17 21:53:20 erk @(unknown) (15965) [command]> blame /Users/erk/projects/hilbert-bytes/hilbert-bytes/_hilbert.py -Tjson --change --rev aa6c6cdd7a969b3bc42c5e7b272dfe22758b0142 --noninteractive
+2025/01/17 21:53:20 erk @aa6c6cdd7a969b3bc42c5e7b272dfe22758b0142 (15965) [command_finish]> blame /Users/erk/projects/hilbert-bytes/hilbert-bytes/_hilbert.py -Tjson --change --rev aa6c6cdd7a969b3bc42c5e7b272dfe22758b0142 --noninteractive exited 0 after 0.10 seconds
+2025/01/18 08:41:45 erk @(unknown) (32588) [command]> blame /Users/erk/projects/hilbert-bytes/tests/test_hilbert.py -Tjson --change --rev aa6c6cdd7a969b3bc42c5e7b272dfe22758b0142 --noninteractive
+2025/01/18 08:41:45 erk @aa6c6cdd7a969b3bc42c5e7b272dfe22758b0142 (32588) [command_finish]> blame /Users/erk/projects/hilbert-bytes/tests/test_hilbert.py -Tjson --change --rev aa6c6cdd7a969b3bc42c5e7b272dfe22758b0142 --noninteractive exited 0 after 0.12 seconds
+2025/01/18 08:49:00 erk @(unknown) (33249) [command]> blame /Users/erk/projects/hilbert-bytes/typings/hilbert/decode.pyi -Tjson --change --rev aa6c6cdd7a969b3bc42c5e7b272dfe22758b0142 --noninteractive
+2025/01/18 08:49:00 erk @aa6c6cdd7a969b3bc42c5e7b272dfe22758b0142 (33249) [command_finish]> blame /Users/erk/projects/hilbert-bytes/typings/hilbert/decode.pyi -Tjson --change --rev aa6c6cdd7a969b3bc42c5e7b272dfe22758b0142 --noninteractive exited 0 after 0.11 seconds
+2025/01/18 08:49:10 erk @(unknown) (33277) [command]> blame /Users/erk/projects/hilbert-bytes/typings/hilbert/__init__.pyi -Tjson --change --rev aa6c6cdd7a969b3bc42c5e7b272dfe22758b0142 --noninteractive
+2025/01/18 08:49:10 erk @aa6c6cdd7a969b3bc42c5e7b272dfe22758b0142 (33277) [command_finish]> blame /Users/erk/projects/hilbert-bytes/typings/hilbert/__init__.pyi -Tjson --change --rev aa6c6cdd7a969b3bc42c5e7b272dfe22758b0142 --noninteractive exited 0 after 0.14 seconds
+2025/01/18 08:49:19 erk @(unknown) (33304) [command]> blame /Users/erk/projects/hilbert-bytes/typings/hilbert/encode.pyi -Tjson --change --rev aa6c6cdd7a969b3bc42c5e7b272dfe22758b0142 --noninteractive
+2025/01/18 08:49:19 erk @aa6c6cdd7a969b3bc42c5e7b272dfe22758b0142 (33304) [command_finish]> blame /Users/erk/projects/hilbert-bytes/typings/hilbert/encode.pyi -Tjson --change --rev aa6c6cdd7a969b3bc42c5e7b272dfe22758b0142 --noninteractive exited 0 after 0.11 seconds
+2025/01/18 08:50:48 erk @(unknown) (33342) [command]> blame /Users/erk/projects/hilbert-bytes/tests/test_hilbert.py -Tjson --change --rev aa6c6cdd7a969b3bc42c5e7b272dfe22758b0142 --noninteractive
+2025/01/18 08:50:48 erk @aa6c6cdd7a969b3bc42c5e7b272dfe22758b0142 (33342) [command_finish]> blame /Users/erk/projects/hilbert-bytes/tests/test_hilbert.py -Tjson --change --rev aa6c6cdd7a969b3bc42c5e7b272dfe22758b0142 --noninteractive exited 0 after 0.23 seconds
+2025/01/18 08:50:58 erk @(unknown) (33372) [command]> blame /Users/erk/projects/hilbert-bytes/poetry.lock -Tjson --change --rev aa6c6cdd7a969b3bc42c5e7b272dfe22758b0142 --noninteractive
+2025/01/18 08:50:58 erk @aa6c6cdd7a969b3bc42c5e7b272dfe22758b0142 (33372) [command_finish]> blame /Users/erk/projects/hilbert-bytes/poetry.lock -Tjson --change --rev aa6c6cdd7a969b3bc42c5e7b272dfe22758b0142 --noninteractive exited 0 after 0.13 seconds
+2025/01/18 08:51:01 erk @(unknown) (33401) [command]> blame /Users/erk/projects/hilbert-bytes/pyproject.toml -Tjson --change --rev aa6c6cdd7a969b3bc42c5e7b272dfe22758b0142 --noninteractive
+2025/01/18 08:51:01 erk @aa6c6cdd7a969b3bc42c5e7b272dfe22758b0142 (33401) [command_finish]> blame /Users/erk/projects/hilbert-bytes/pyproject.toml -Tjson --change --rev aa6c6cdd7a969b3bc42c5e7b272dfe22758b0142 --noninteractive exited 0 after 0.22 seconds
+2025/01/18 08:51:24 erk @(unknown) (33447) [command]> blame /Users/erk/projects/hilbert-bytes/hilbert-bytes/_hilbert.py -Tjson --change --rev aa6c6cdd7a969b3bc42c5e7b272dfe22758b0142 --noninteractive
+2025/01/18 08:51:24 erk @aa6c6cdd7a969b3bc42c5e7b272dfe22758b0142 (33447) [command_finish]> blame /Users/erk/projects/hilbert-bytes/hilbert-bytes/_hilbert.py -Tjson --change --rev aa6c6cdd7a969b3bc42c5e7b272dfe22758b0142 --noninteractive exited 0 after 0.14 seconds
+2025/01/18 09:00:51 erk @(unknown) (33888) [command]> blame /Users/erk/projects/hilbert-bytes/hilbert_bytes/_hilbert.py -Tjson --change --rev aa6c6cdd7a969b3bc42c5e7b272dfe22758b0142 --noninteractive
+2025/01/18 09:00:51 erk @aa6c6cdd7a969b3bc42c5e7b272dfe22758b0142 (33888) [command_finish]> blame /Users/erk/projects/hilbert-bytes/hilbert_bytes/_hilbert.py -Tjson --change --rev aa6c6cdd7a969b3bc42c5e7b272dfe22758b0142 --noninteractive exited 0 after 0.16 seconds
+2025/01/18 09:32:20 erk @(unknown) (34545) [command]> debugcommitmessage isl --noninteractive
+2025/01/18 09:32:42 erk @(unknown) (34745) [command]> purge --files 'listfile0:-' --noninteractive
+2025/01/18 09:33:00 erk @aa6c6cdd7a969b3bc42c5e7b272dfe22758b0142 (34545) [visibility]> read 0 heads: 
+2025/01/18 09:33:00 erk @aa6c6cdd7a969b3bc42c5e7b272dfe22758b0142 (34545) [command_finish]> debugcommitmessage isl --noninteractive exited 0 after 39.65 seconds
+2025/01/18 09:33:24 erk @aa6c6cdd7a969b3bc42c5e7b272dfe22758b0142 (34745) [command_finish]> purge --files 'listfile0:-' --noninteractive exited 0 after 42.15 seconds
+2025/01/18 09:33:25 erk @(unknown) (34905) [command]> purge --files 'listfile0:-' --noninteractive
+2025/01/18 09:33:38 erk @(unknown) (34988) [command]> blame /Users/erk/projects/hilbert-bytes/README.md -Tjson --change --rev aa6c6cdd7a969b3bc42c5e7b272dfe22758b0142 --noninteractive
+2025/01/18 09:33:38 erk @aa6c6cdd7a969b3bc42c5e7b272dfe22758b0142 (34988) [command_finish]> blame /Users/erk/projects/hilbert-bytes/README.md -Tjson --change --rev aa6c6cdd7a969b3bc42c5e7b272dfe22758b0142 --noninteractive exited 0 after 0.14 seconds
+2025/01/18 09:33:43 erk @(unknown) (35068) [command]> blame /Users/erk/projects/hilbert-bytes/.gitignore -Tjson --change --rev aa6c6cdd7a969b3bc42c5e7b272dfe22758b0142 --noninteractive
+2025/01/18 09:33:43 erk @aa6c6cdd7a969b3bc42c5e7b272dfe22758b0142 (35068) [command_finish]> blame /Users/erk/projects/hilbert-bytes/.gitignore -Tjson --change --rev aa6c6cdd7a969b3bc42c5e7b272dfe22758b0142 --noninteractive exited 0 after 0.11 seconds
+2025/01/18 09:34:15 erk @aa6c6cdd7a969b3bc42c5e7b272dfe22758b0142 (34905) [command_finish]> purge --files 'listfile0:-' --noninteractive exited 0 after 50.80 seconds
+2025/01/18 09:34:16 erk @(unknown) (35192) [command]> purge --files 'listfile0:-' --noninteractive
+2025/01/18 09:35:20 erk @(unknown) (35632) [command]> debugcommitmessage isl --noninteractive
+2025/01/18 09:35:45 erk @(unknown) (36042) [command]> sl
+2025/01/18 09:35:45 erk @aa6c6cdd7a969b3bc42c5e7b272dfe22758b0142 (36042) [visibility]> read 0 heads: 
+2025/01/18 09:35:45 erk @aa6c6cdd7a969b3bc42c5e7b272dfe22758b0142 (36042) [command_finish]> sl exited 0 after 0.14 seconds
+2025/01/18 09:35:52 erk @(unknown) (36086) [command]> blame /Users/erk/projects/hilbert-bytes/hilbert_bytes/_hilbert.py -Tjson --change --rev aa6c6cdd7a969b3bc42c5e7b272dfe22758b0142 --noninteractive
+2025/01/18 09:35:52 erk @aa6c6cdd7a969b3bc42c5e7b272dfe22758b0142 (36086) [command_finish]> blame /Users/erk/projects/hilbert-bytes/hilbert_bytes/_hilbert.py -Tjson --change --rev aa6c6cdd7a969b3bc42c5e7b272dfe22758b0142 --noninteractive exited 0 after 0.20 seconds
+2025/01/18 09:35:58 erk @(unknown) (36119) [command]> sl
+2025/01/18 09:35:58 erk @aa6c6cdd7a969b3bc42c5e7b272dfe22758b0142 (36119) [visibility]> read 0 heads: 
+2025/01/18 09:35:58 erk @aa6c6cdd7a969b3bc42c5e7b272dfe22758b0142 (36119) [command_finish]> sl exited 0 after 0.13 seconds
+2025/01/18 09:36:10 erk @aa6c6cdd7a969b3bc42c5e7b272dfe22758b0142 (35632) [visibility]> read 0 heads: 
+2025/01/18 09:36:10 erk @aa6c6cdd7a969b3bc42c5e7b272dfe22758b0142 (35632) [command_finish]> debugcommitmessage isl --noninteractive exited 0 after 50.88 seconds
+2025/01/18 09:37:03 erk @(unknown) (36335) [command]> commit --addremove --message 'working
+
+
+Summary: 
+
+Test Plan: 
+
+
+' --noninteractive
+2025/01/18 09:37:51 erk @aa6c6cdd7a969b3bc42c5e7b272dfe22758b0142 (36335) [visibility]> read 0 heads: 
+2025/01/18 09:38:15 erk @(unknown) (36614) [command]> sl
+2025/01/18 09:38:15 erk @aa6c6cdd7a969b3bc42c5e7b272dfe22758b0142 (36614) [visibility]> read 0 heads: 
+2025/01/18 09:38:15 erk @aa6c6cdd7a969b3bc42c5e7b272dfe22758b0142 (36614) [command_finish]> sl exited 0 after 0.13 seconds
+2025/01/18 09:39:38 erk @(unknown) (36914) [command]> sl
+2025/01/18 09:39:38 erk @aa6c6cdd7a969b3bc42c5e7b272dfe22758b0142 (36914) [visibility]> read 0 heads: 
+2025/01/18 09:39:38 erk @aa6c6cdd7a969b3bc42c5e7b272dfe22758b0142 (36914) [command_finish]> sl exited 0 after 0.13 seconds
+2025/01/18 09:39:50 erk @(unknown) (37030) [command]> debugcommitmessage isl --noninteractive
+2025/01/18 09:39:52 erk @aa6c6cdd7a969b3bc42c5e7b272dfe22758b0142 (36335) [visibility]> read 0 heads: 
+2025/01/18 09:39:52 erk @aa6c6cdd7a969b3bc42c5e7b272dfe22758b0142 (36335) [visibility]> removed 0 heads []; added 1 heads [d6c1ac61d257]
+2025/01/18 09:39:52 erk @d6c1ac61d25796f6659963096c33ee83c080c797 (36335) [visibility]> wrote 1 heads: d6c1ac61d257
+2025/01/18 09:39:52 erk @d6c1ac61d25796f6659963096c33ee83c080c797 (36335) [command_finish]> commit --addremove --message 'working
+
+
+Summary: 
+
+Test Plan: 
+
+
+' --noninteractive exited 0 after 169.61 seconds
+2025/01/18 09:39:57 erk @(unknown) (37139) [command]> commit --addremove --message update --noninteractive
+2025/01/18 09:40:25 erk @aa6c6cdd7a969b3bc42c5e7b272dfe22758b0142 (37030) [visibility]> read 0 heads: 
+2025/01/18 09:40:25 erk @aa6c6cdd7a969b3bc42c5e7b272dfe22758b0142 (37030) [command_finish]> debugcommitmessage isl --noninteractive exited 0 after 35.31 seconds
+2025/01/18 09:40:35 erk @d6c1ac61d25796f6659963096c33ee83c080c797 (37139) [visibility]> read 1 heads: d6c1ac61d257
+2025/01/18 09:41:35 erk @(unknown) (37423) [command]> web
+2025/01/18 09:41:36 erk @(unknown) (37423) [command_finish]> web exited 0 after 0.50 seconds
+2025/01/18 09:41:37 erk @(unknown) (37469) [command]> debugcommitmessage isl --noninteractive
+2025/01/18 09:41:47 erk @(unknown) (37641) [command]> blame /Users/erk/projects/hilbert-bytes/hilbert_bytes/_hilbert.py -Tjson --change --rev d6c1ac61d25796f6659963096c33ee83c080c797 --noninteractive
+2025/01/18 09:41:47 erk @d6c1ac61d25796f6659963096c33ee83c080c797 (37641) [command_finish]> blame /Users/erk/projects/hilbert-bytes/hilbert_bytes/_hilbert.py -Tjson --change --rev d6c1ac61d25796f6659963096c33ee83c080c797 --noninteractive exited 0 after 0.13 seconds
+2025/01/18 09:41:49 erk @(unknown) (37693) [command]> debugcommitmessage isl --noninteractive
+2025/01/18 09:41:57 erk @(unknown) (37812) [command]> blame /Users/erk/projects/hilbert-bytes/README.md -Tjson --change --rev d6c1ac61d25796f6659963096c33ee83c080c797 --noninteractive
+2025/01/18 09:41:57 erk @d6c1ac61d25796f6659963096c33ee83c080c797 (37812) [command_finish]> blame /Users/erk/projects/hilbert-bytes/README.md -Tjson --change --rev d6c1ac61d25796f6659963096c33ee83c080c797 --noninteractive exited 0 after 0.13 seconds
+2025/01/18 09:42:04 erk @(unknown) (37854) [command]> blame /Users/erk/projects/hilbert-bytes/hilbert_bytes/__init__.py -Tjson --change --rev d6c1ac61d25796f6659963096c33ee83c080c797 --noninteractive
+2025/01/18 09:42:04 erk @d6c1ac61d25796f6659963096c33ee83c080c797 (37854) [command_finish]> blame /Users/erk/projects/hilbert-bytes/hilbert_bytes/__init__.py -Tjson --change --rev d6c1ac61d25796f6659963096c33ee83c080c797 --noninteractive exited 0 after 0.11 seconds
+2025/01/18 09:42:20 erk @d6c1ac61d25796f6659963096c33ee83c080c797 (37469) [visibility]> read 1 heads: d6c1ac61d257
+2025/01/18 09:42:20 erk @d6c1ac61d25796f6659963096c33ee83c080c797 (37469) [command_finish]> debugcommitmessage isl --noninteractive exited 0 after 43.46 seconds
+2025/01/18 09:49:07 erk @(unknown) (38457) [command]> web
+2025/01/18 09:49:07 erk @(unknown) (38457) [command_finish]> web exited 0 after 0.57 seconds
+2025/01/18 09:49:09 erk @(unknown) (38504) [command]> debugcommitmessage isl --noninteractive
+2025/01/18 09:49:49 erk @d6c1ac61d25796f6659963096c33ee83c080c797 (38504) [visibility]> read 1 heads: d6c1ac61d257
+2025/01/18 09:49:49 erk @d6c1ac61d25796f6659963096c33ee83c080c797 (38504) [command_finish]> debugcommitmessage isl --noninteractive exited 0 after 40.36 seconds
+2025/01/18 09:50:04 erk @(unknown) (38684) [command]> web
+2025/01/18 09:50:04 erk @(unknown) (38684) [command_finish]> web exited 0 after 0.48 seconds
+2025/01/18 09:50:05 erk @(unknown) (38731) [command]> debugcommitmessage isl --noninteractive
+2025/01/18 09:50:19 erk @(unknown) (38881) [command]> debugcommitmessage isl --noninteractive
+2025/01/18 09:50:28 erk @(unknown) (39053) [command]> blame /Users/erk/projects/hilbert-bytes/hilbert_bytes/_hilbert.py -Tjson --change --rev d6c1ac61d25796f6659963096c33ee83c080c797 --noninteractive
+2025/01/18 09:50:28 erk @d6c1ac61d25796f6659963096c33ee83c080c797 (39053) [command_finish]> blame /Users/erk/projects/hilbert-bytes/hilbert_bytes/_hilbert.py -Tjson --change --rev d6c1ac61d25796f6659963096c33ee83c080c797 --noninteractive exited 0 after 0.12 seconds
+2025/01/18 09:50:30 erk @(unknown) (39068) [command]> amend
+2025/01/18 09:50:42 erk @d6c1ac61d25796f6659963096c33ee83c080c797 (38731) [visibility]> read 1 heads: d6c1ac61d257
+2025/01/18 09:50:42 erk @d6c1ac61d25796f6659963096c33ee83c080c797 (38731) [command_finish]> debugcommitmessage isl --noninteractive exited -1 after 36.87 seconds
+2025/01/18 09:51:00 erk @d6c1ac61d25796f6659963096c33ee83c080c797 (38881) [visibility]> read 1 heads: d6c1ac61d257
+2025/01/18 09:51:00 erk @d6c1ac61d25796f6659963096c33ee83c080c797 (38881) [command_finish]> debugcommitmessage isl --noninteractive exited 0 after 41.19 seconds
+2025/01/18 09:51:09 erk @d6c1ac61d25796f6659963096c33ee83c080c797 (39068) [visibility]> read 1 heads: d6c1ac61d257
+2025/01/18 09:52:09 erk @d6c1ac61d25796f6659963096c33ee83c080c797 (39068) [visibility]> read 1 heads: d6c1ac61d257
+2025/01/18 09:52:09 erk @d6c1ac61d25796f6659963096c33ee83c080c797 (39068) [visibility]> removed 0 heads []; added 1 heads [908cc28aeea4]
+2025/01/18 09:52:09 erk @908cc28aeea4f004d5881187e3ced84c504ddfcb (39068) [visibility]> removed 1 heads [d6c1ac61d257]; added 0 heads []
+2025/01/18 09:52:09 erk @908cc28aeea4f004d5881187e3ced84c504ddfcb (39068) [visibility]> wrote 1 heads: 908cc28aeea4
+2025/01/18 09:52:09 erk @908cc28aeea4f004d5881187e3ced84c504ddfcb (39068) [command_finish]> amend exited 0 after 99.57 seconds
+2025/01/18 09:55:20 erk @(unknown) (39455) [command]> blame /Users/erk/projects/hilbert-bytes/hilbert_bytes/_hilbert.py -Tjson --change --rev 908cc28aeea4f004d5881187e3ced84c504ddfcb --noninteractive
+2025/01/18 09:55:20 erk @908cc28aeea4f004d5881187e3ced84c504ddfcb (39455) [command_finish]> blame /Users/erk/projects/hilbert-bytes/hilbert_bytes/_hilbert.py -Tjson --change --rev 908cc28aeea4f004d5881187e3ced84c504ddfcb --noninteractive exited 0 after 0.18 seconds
+2025/01/18 10:01:48 erk @(unknown) (39686) [command]> blame /Users/erk/projects/hilbert-bytes/pyproject.toml -Tjson --change --rev 908cc28aeea4f004d5881187e3ced84c504ddfcb --noninteractive
+2025/01/18 10:01:48 erk @908cc28aeea4f004d5881187e3ced84c504ddfcb (39686) [command_finish]> blame /Users/erk/projects/hilbert-bytes/pyproject.toml -Tjson --change --rev 908cc28aeea4f004d5881187e3ced84c504ddfcb --noninteractive exited 0 after 0.16 seconds
+2025/01/18 10:43:28 erk @(unknown) (41715) [command]> blame /Users/erk/projects/hilbert-bytes/typings/numba/__init__.pyi -Tjson --change --rev 908cc28aeea4f004d5881187e3ced84c504ddfcb --noninteractive
+2025/01/18 10:43:28 erk @908cc28aeea4f004d5881187e3ced84c504ddfcb (41715) [command_finish]> blame /Users/erk/projects/hilbert-bytes/typings/numba/__init__.pyi -Tjson --change --rev 908cc28aeea4f004d5881187e3ced84c504ddfcb --noninteractive exited 0 after 0.38 seconds
+2025/01/18 11:27:10 erk @(unknown) (42867) [command]> blame /Users/erk/projects/hilbert-bytes/tests/test_hilbert.py -Tjson --change --rev 908cc28aeea4f004d5881187e3ced84c504ddfcb --noninteractive
+2025/01/18 11:27:10 erk @908cc28aeea4f004d5881187e3ced84c504ddfcb (42867) [command_finish]> blame /Users/erk/projects/hilbert-bytes/tests/test_hilbert.py -Tjson --change --rev 908cc28aeea4f004d5881187e3ced84c504ddfcb --noninteractive exited 0 after 0.09 seconds
+2025/01/18 11:48:13 erk @(unknown) (43579) [command]> debugcommitmessage isl --noninteractive
+2025/01/18 11:48:18 erk @(unknown) (43710) [command]> --config 'amend.autorestack=always' amend --addremove --noninteractive
+2025/01/18 11:48:55 erk @908cc28aeea4f004d5881187e3ced84c504ddfcb (43579) [visibility]> read 1 heads: 908cc28aeea4
+2025/01/18 11:48:55 erk @908cc28aeea4f004d5881187e3ced84c504ddfcb (43579) [command_finish]> debugcommitmessage isl --noninteractive exited 0 after 42.12 seconds
+2025/01/18 11:49:05 erk @908cc28aeea4f004d5881187e3ced84c504ddfcb (43710) [visibility]> read 1 heads: 908cc28aeea4
+2025/01/18 11:50:36 erk @908cc28aeea4f004d5881187e3ced84c504ddfcb (43710) [visibility]> read 1 heads: 908cc28aeea4
+2025/01/18 11:50:36 erk @908cc28aeea4f004d5881187e3ced84c504ddfcb (43710) [visibility]> removed 0 heads []; added 1 heads [783b9ae3d96e]
+2025/01/18 11:50:36 erk @783b9ae3d96e7624d53379b5ce6ce0287f0e60c6 (43710) [visibility]> removed 1 heads [908cc28aeea4]; added 0 heads []
+2025/01/18 11:50:36 erk @783b9ae3d96e7624d53379b5ce6ce0287f0e60c6 (43710) [visibility]> wrote 1 heads: 783b9ae3d96e
+2025/01/18 11:50:36 erk @783b9ae3d96e7624d53379b5ce6ce0287f0e60c6 (43710) [command_finish]> --config 'amend.autorestack=always' amend --addremove --noninteractive exited 0 after 138.80 seconds
+2025/01/18 11:55:53 erk @(unknown) (1414) [command]> debugcommitmessage isl --noninteractive
+2025/01/18 11:56:04 erk @783b9ae3d96e7624d53379b5ce6ce0287f0e60c6 (1414) [visibility]> read 1 heads: 783b9ae3d96e
+2025/01/18 11:56:04 erk @783b9ae3d96e7624d53379b5ce6ce0287f0e60c6 (1414) [command_finish]> debugcommitmessage isl --noninteractive exited 0 after 12.70 seconds
+2025/01/18 11:57:07 erk @(unknown) (3002) [command]> debugcommitmessage isl --noninteractive
+2025/01/18 11:57:45 erk @(unknown) (4354) [command]> debugcommitmessage isl --noninteractive
+2025/01/18 11:57:47 erk @783b9ae3d96e7624d53379b5ce6ce0287f0e60c6 (4354) [visibility]> read 1 heads: 783b9ae3d96e
+2025/01/18 11:57:47 erk @783b9ae3d96e7624d53379b5ce6ce0287f0e60c6 (4354) [command_finish]> debugcommitmessage isl --noninteractive exited 0 after 3.44 seconds
+2025/01/18 11:59:48 erk @(unknown) (5854) [command]> debugcommitmessage isl --noninteractive
+2025/01/18 11:59:49 erk @783b9ae3d96e7624d53379b5ce6ce0287f0e60c6 (5854) [visibility]> read 1 heads: 783b9ae3d96e
+2025/01/18 11:59:49 erk @783b9ae3d96e7624d53379b5ce6ce0287f0e60c6 (5854) [command_finish]> debugcommitmessage isl --noninteractive exited 0 after 0.76 seconds
+2025/01/18 12:01:55 erk @(unknown) (6926) [command]> blame /Users/erk/projects/hilbert-bytes/hilbert_bytes/_hilbert.py -Tjson --change --rev 783b9ae3d96e7624d53379b5ce6ce0287f0e60c6 --noninteractive
+2025/01/18 12:01:55 erk @783b9ae3d96e7624d53379b5ce6ce0287f0e60c6 (6926) [command_finish]> blame /Users/erk/projects/hilbert-bytes/hilbert_bytes/_hilbert.py -Tjson --change --rev 783b9ae3d96e7624d53379b5ce6ce0287f0e60c6 --noninteractive exited 0 after 0.10 seconds
+2025/01/18 13:26:37 erk @(unknown) (10938) [command]> blame /Users/erk/projects/hilbert-bytes/hilbert_bytes/__init__.py -Tjson --change --rev 783b9ae3d96e7624d53379b5ce6ce0287f0e60c6 --noninteractive
+2025/01/18 13:26:37 erk @783b9ae3d96e7624d53379b5ce6ce0287f0e60c6 (10938) [command_finish]> blame /Users/erk/projects/hilbert-bytes/hilbert_bytes/__init__.py -Tjson --change --rev 783b9ae3d96e7624d53379b5ce6ce0287f0e60c6 --noninteractive exited 0 after 0.18 seconds
+2025/01/18 13:26:40 erk @(unknown) (10965) [command]> blame /Users/erk/projects/hilbert-bytes/typings/numba/__init__.pyi -Tjson --change --rev 783b9ae3d96e7624d53379b5ce6ce0287f0e60c6 --noninteractive
+2025/01/18 13:26:40 erk @783b9ae3d96e7624d53379b5ce6ce0287f0e60c6 (10965) [command_finish]> blame /Users/erk/projects/hilbert-bytes/typings/numba/__init__.pyi -Tjson --change --rev 783b9ae3d96e7624d53379b5ce6ce0287f0e60c6 --noninteractive exited 0 after 0.10 seconds
+2025/01/18 13:46:03 erk @(unknown) (12569) [command]> blame /Users/erk/projects/hilbert-bytes/typings/numba/__init__.pyi -Tjson --change --rev 783b9ae3d96e7624d53379b5ce6ce0287f0e60c6 --noninteractive
+2025/01/18 13:46:03 erk @783b9ae3d96e7624d53379b5ce6ce0287f0e60c6 (12569) [command_finish]> blame /Users/erk/projects/hilbert-bytes/typings/numba/__init__.pyi -Tjson --change --rev 783b9ae3d96e7624d53379b5ce6ce0287f0e60c6 --noninteractive exited 0 after 0.10 seconds
+2025/01/18 13:46:13 erk @(unknown) (12597) [command]> blame /Users/erk/projects/hilbert-bytes/hilbert_bytes/_hilbert.py -Tjson --change --rev 783b9ae3d96e7624d53379b5ce6ce0287f0e60c6 --noninteractive
+2025/01/18 13:46:13 erk @783b9ae3d96e7624d53379b5ce6ce0287f0e60c6 (12597) [command_finish]> blame /Users/erk/projects/hilbert-bytes/hilbert_bytes/_hilbert.py -Tjson --change --rev 783b9ae3d96e7624d53379b5ce6ce0287f0e60c6 --noninteractive exited 0 after 0.12 seconds
+2025/01/18 14:19:53 erk @(unknown) (13411) [command]> debugcommitmessage isl --noninteractive
+2025/01/18 14:19:54 erk @783b9ae3d96e7624d53379b5ce6ce0287f0e60c6 (13411) [visibility]> read 1 heads: 783b9ae3d96e
+2025/01/18 14:19:54 erk @783b9ae3d96e7624d53379b5ce6ce0287f0e60c6 (13411) [command_finish]> debugcommitmessage isl --noninteractive exited 0 after 0.48 seconds
+2025/01/18 14:19:55 erk @(unknown) (13581) [command]> --config 'amend.autorestack=always' amend --addremove --noninteractive
+2025/01/18 14:19:55 erk @783b9ae3d96e7624d53379b5ce6ce0287f0e60c6 (13581) [visibility]> read 1 heads: 783b9ae3d96e
+2025/01/18 14:19:55 erk @783b9ae3d96e7624d53379b5ce6ce0287f0e60c6 (13581) [visibility]> read 1 heads: 783b9ae3d96e
+2025/01/18 14:19:55 erk @783b9ae3d96e7624d53379b5ce6ce0287f0e60c6 (13581) [visibility]> removed 0 heads []; added 1 heads [72673607268d]
+2025/01/18 14:19:55 erk @72673607268d1c1ab4001917fa2d6c20feb62ed8 (13581) [visibility]> removed 1 heads [783b9ae3d96e]; added 0 heads []
+2025/01/18 14:19:55 erk @72673607268d1c1ab4001917fa2d6c20feb62ed8 (13581) [visibility]> wrote 1 heads: 72673607268d
+2025/01/18 14:19:55 erk @72673607268d1c1ab4001917fa2d6c20feb62ed8 (13581) [command_finish]> --config 'amend.autorestack=always' amend --addremove --noninteractive exited 0 after 0.39 seconds
+2025/01/18 14:20:01 erk @(unknown) (13808) [command]> blame /Users/erk/projects/hilbert-bytes/hilbert_bytes/_hilbert.py -Tjson --change --rev 72673607268d1c1ab4001917fa2d6c20feb62ed8 --noninteractive
+2025/01/18 14:20:01 erk @72673607268d1c1ab4001917fa2d6c20feb62ed8 (13808) [command_finish]> blame /Users/erk/projects/hilbert-bytes/hilbert_bytes/_hilbert.py -Tjson --change --rev 72673607268d1c1ab4001917fa2d6c20feb62ed8 --noninteractive exited 0 after 0.10 seconds
+2025/01/18 15:13:05 erk @(unknown) (17905) [command]> --config 'amend.autorestack=always' amend --addremove --noninteractive
+2025/01/18 15:13:05 erk @72673607268d1c1ab4001917fa2d6c20feb62ed8 (17905) [visibility]> read 1 heads: 72673607268d
+2025/01/18 15:13:05 erk @72673607268d1c1ab4001917fa2d6c20feb62ed8 (17905) [visibility]> read 1 heads: 72673607268d
+2025/01/18 15:13:05 erk @72673607268d1c1ab4001917fa2d6c20feb62ed8 (17905) [visibility]> removed 0 heads []; added 1 heads [66cb09e7f5f3]
+2025/01/18 15:13:05 erk @66cb09e7f5f3edf3e5d9d2895015bdc131600fb4 (17905) [visibility]> removed 1 heads [72673607268d]; added 0 heads []
+2025/01/18 15:13:05 erk @66cb09e7f5f3edf3e5d9d2895015bdc131600fb4 (17905) [visibility]> wrote 1 heads: 66cb09e7f5f3
+2025/01/18 15:13:05 erk @66cb09e7f5f3edf3e5d9d2895015bdc131600fb4 (17905) [command_finish]> --config 'amend.autorestack=always' amend --addremove --noninteractive exited 0 after 0.37 seconds
+2025/01/18 15:13:11 erk @(unknown) (18134) [command]> blame /Users/erk/projects/hilbert-bytes/hilbert_bytes/_hilbert.py -Tjson --change --rev 66cb09e7f5f3edf3e5d9d2895015bdc131600fb4 --noninteractive
+2025/01/18 15:13:11 erk @66cb09e7f5f3edf3e5d9d2895015bdc131600fb4 (18134) [command_finish]> blame /Users/erk/projects/hilbert-bytes/hilbert_bytes/_hilbert.py -Tjson --change --rev 66cb09e7f5f3edf3e5d9d2895015bdc131600fb4 --noninteractive exited 0 after 0.12 seconds
+2025/01/18 16:37:43 erk @(unknown) (23517) [command]> --config 'amend.autorestack=always' amend --addremove --noninteractive
+2025/01/18 16:37:44 erk @66cb09e7f5f3edf3e5d9d2895015bdc131600fb4 (23517) [visibility]> read 1 heads: 66cb09e7f5f3
+2025/01/18 16:37:44 erk @66cb09e7f5f3edf3e5d9d2895015bdc131600fb4 (23517) [visibility]> read 1 heads: 66cb09e7f5f3
+2025/01/18 16:37:44 erk @66cb09e7f5f3edf3e5d9d2895015bdc131600fb4 (23517) [visibility]> removed 0 heads []; added 1 heads [d2b05d463046]
+2025/01/18 16:37:44 erk @d2b05d463046ad6fea9a3656ac36632ab6c11837 (23517) [visibility]> removed 1 heads [66cb09e7f5f3]; added 0 heads []
+2025/01/18 16:37:44 erk @d2b05d463046ad6fea9a3656ac36632ab6c11837 (23517) [visibility]> wrote 1 heads: d2b05d463046
+2025/01/18 16:37:44 erk @d2b05d463046ad6fea9a3656ac36632ab6c11837 (23517) [command_finish]> --config 'amend.autorestack=always' amend --addremove --noninteractive exited 0 after 0.23 seconds
+2025/01/18 16:39:16 erk @(unknown) (23799) [command]> blame /Users/erk/projects/hilbert-bytes/hilbert_bytes/__init__.py -Tjson --change --rev d2b05d463046ad6fea9a3656ac36632ab6c11837 --noninteractive
+2025/01/18 16:39:16 erk @d2b05d463046ad6fea9a3656ac36632ab6c11837 (23799) [command_finish]> blame /Users/erk/projects/hilbert-bytes/hilbert_bytes/__init__.py -Tjson --change --rev d2b05d463046ad6fea9a3656ac36632ab6c11837 --noninteractive exited 0 after 0.09 seconds
+2025/01/18 16:39:22 erk @(unknown) (23839) [command]> blame /Users/erk/projects/hilbert-bytes/typings/numba/__init__.pyi -Tjson --change --rev d2b05d463046ad6fea9a3656ac36632ab6c11837 --noninteractive
+2025/01/18 16:39:22 erk @d2b05d463046ad6fea9a3656ac36632ab6c11837 (23839) [command_finish]> blame /Users/erk/projects/hilbert-bytes/typings/numba/__init__.pyi -Tjson --change --rev d2b05d463046ad6fea9a3656ac36632ab6c11837 --noninteractive exited 0 after 0.10 seconds
+2025/01/18 17:22:55 erk @(unknown) (25564) [command]> blame /Users/erk/projects/hilbert-bytes/.gitignore -Tjson --change --rev d2b05d463046ad6fea9a3656ac36632ab6c11837 --noninteractive
+2025/01/18 17:22:55 erk @d2b05d463046ad6fea9a3656ac36632ab6c11837 (25564) [command_finish]> blame /Users/erk/projects/hilbert-bytes/.gitignore -Tjson --change --rev d2b05d463046ad6fea9a3656ac36632ab6c11837 --noninteractive exited 0 after 0.11 seconds
+2025/01/18 17:45:14 erk @(unknown) (26642) [command]> blame /Users/erk/projects/hilbert-bytes/docs/index.rst -Tjson --change --rev d2b05d463046ad6fea9a3656ac36632ab6c11837 --noninteractive
+2025/01/18 17:45:14 erk @d2b05d463046ad6fea9a3656ac36632ab6c11837 (26642) [command_finish]> blame /Users/erk/projects/hilbert-bytes/docs/index.rst -Tjson --change --rev d2b05d463046ad6fea9a3656ac36632ab6c11837 --noninteractive exited 0 after 0.10 seconds
+2025/01/18 17:45:19 erk @(unknown) (26675) [command]> blame /Users/erk/projects/hilbert-bytes/docs/hilbert_bytes.rst -Tjson --change --rev d2b05d463046ad6fea9a3656ac36632ab6c11837 --noninteractive
+2025/01/18 17:45:19 erk @d2b05d463046ad6fea9a3656ac36632ab6c11837 (26675) [command_finish]> blame /Users/erk/projects/hilbert-bytes/docs/hilbert_bytes.rst -Tjson --change --rev d2b05d463046ad6fea9a3656ac36632ab6c11837 --noninteractive exited 0 after 0.10 seconds
+2025/01/18 17:45:22 erk @(unknown) (26741) [command]> blame /Users/erk/projects/hilbert-bytes/docs/conf.py -Tjson --change --rev d2b05d463046ad6fea9a3656ac36632ab6c11837 --noninteractive
+2025/01/18 17:45:22 erk @d2b05d463046ad6fea9a3656ac36632ab6c11837 (26741) [command_finish]> blame /Users/erk/projects/hilbert-bytes/docs/conf.py -Tjson --change --rev d2b05d463046ad6fea9a3656ac36632ab6c11837 --noninteractive exited 0 after 0.10 seconds
+2025/01/18 17:48:24 erk @(unknown) (27838) [command]> --config 'amend.autorestack=always' amend --addremove --noninteractive
+2025/01/18 17:48:24 erk @d2b05d463046ad6fea9a3656ac36632ab6c11837 (27838) [visibility]> read 1 heads: d2b05d463046
+2025/01/18 17:48:24 erk @d2b05d463046ad6fea9a3656ac36632ab6c11837 (27838) [visibility]> read 1 heads: d2b05d463046
+2025/01/18 17:48:24 erk @d2b05d463046ad6fea9a3656ac36632ab6c11837 (27838) [visibility]> removed 0 heads []; added 1 heads [ea3170c1296e]
+2025/01/18 17:48:24 erk @ea3170c1296e86dcf4c3c34081d7bc1926d2bbb5 (27838) [visibility]> removed 1 heads [d2b05d463046]; added 0 heads []
+2025/01/18 17:48:24 erk @ea3170c1296e86dcf4c3c34081d7bc1926d2bbb5 (27838) [visibility]> wrote 1 heads: ea3170c1296e
+2025/01/18 17:48:24 erk @ea3170c1296e86dcf4c3c34081d7bc1926d2bbb5 (27838) [command_finish]> --config 'amend.autorestack=always' amend --addremove --noninteractive exited 0 after 0.33 seconds
+2025/01/18 17:52:26 erk @(unknown) (28628) [command]> blame /Users/erk/projects/hilbert-bytes/docs/conf.py -Tjson --change --rev ea3170c1296e86dcf4c3c34081d7bc1926d2bbb5 --noninteractive
+2025/01/18 17:52:26 erk @ea3170c1296e86dcf4c3c34081d7bc1926d2bbb5 (28628) [command_finish]> blame /Users/erk/projects/hilbert-bytes/docs/conf.py -Tjson --change --rev ea3170c1296e86dcf4c3c34081d7bc1926d2bbb5 --noninteractive exited 0 after 0.07 seconds
+2025/01/18 17:59:57 erk @(unknown) (29704) [command]> blame /Users/erk/projects/hilbert-bytes/docs/modules.rst -Tjson --change --rev ea3170c1296e86dcf4c3c34081d7bc1926d2bbb5 --noninteractive
+2025/01/18 17:59:57 erk @ea3170c1296e86dcf4c3c34081d7bc1926d2bbb5 (29704) [command_finish]> blame /Users/erk/projects/hilbert-bytes/docs/modules.rst -Tjson --change --rev ea3170c1296e86dcf4c3c34081d7bc1926d2bbb5 --noninteractive exited 0 after 0.07 seconds
+2025/01/18 18:00:19 erk @(unknown) (29755) [command]> blame /Users/erk/projects/hilbert-bytes/docs/index.rst -Tjson --change --rev ea3170c1296e86dcf4c3c34081d7bc1926d2bbb5 --noninteractive
+2025/01/18 18:00:19 erk @ea3170c1296e86dcf4c3c34081d7bc1926d2bbb5 (29755) [command_finish]> blame /Users/erk/projects/hilbert-bytes/docs/index.rst -Tjson --change --rev ea3170c1296e86dcf4c3c34081d7bc1926d2bbb5 --noninteractive exited 0 after 0.07 seconds
+2025/01/18 18:00:22 erk @(unknown) (29782) [command]> blame /Users/erk/projects/hilbert-bytes/docs/hilbert_bytes.rst -Tjson --change --rev ea3170c1296e86dcf4c3c34081d7bc1926d2bbb5 --noninteractive
+2025/01/18 18:00:22 erk @ea3170c1296e86dcf4c3c34081d7bc1926d2bbb5 (29782) [command_finish]> blame /Users/erk/projects/hilbert-bytes/docs/hilbert_bytes.rst -Tjson --change --rev ea3170c1296e86dcf4c3c34081d7bc1926d2bbb5 --noninteractive exited 0 after 0.07 seconds
+2025/01/18 18:01:01 erk @(unknown) (29902) [command]> blame /Users/erk/projects/hilbert-bytes/hilbert_bytes/__init__.py -Tjson --change --rev ea3170c1296e86dcf4c3c34081d7bc1926d2bbb5 --noninteractive
+2025/01/18 18:01:01 erk @ea3170c1296e86dcf4c3c34081d7bc1926d2bbb5 (29902) [command_finish]> blame /Users/erk/projects/hilbert-bytes/hilbert_bytes/__init__.py -Tjson --change --rev ea3170c1296e86dcf4c3c34081d7bc1926d2bbb5 --noninteractive exited 0 after 0.07 seconds
+2025/01/18 18:26:59 erk @(unknown) (34040) [command]> blame /Users/erk/projects/hilbert-bytes/hilbert_bytes/_hilbert.py -Tjson --change --rev ea3170c1296e86dcf4c3c34081d7bc1926d2bbb5 --noninteractive
+2025/01/18 18:26:59 erk @ea3170c1296e86dcf4c3c34081d7bc1926d2bbb5 (34040) [command_finish]> blame /Users/erk/projects/hilbert-bytes/hilbert_bytes/_hilbert.py -Tjson --change --rev ea3170c1296e86dcf4c3c34081d7bc1926d2bbb5 --noninteractive exited 0 after 0.10 seconds
+2025/01/18 18:55:57 erk @(unknown) (38437) [command]> blame /Users/erk/projects/hilbert-bytes/tests/test_hilbert.py -Tjson --change --rev ea3170c1296e86dcf4c3c34081d7bc1926d2bbb5 --noninteractive
+2025/01/18 18:55:57 erk @ea3170c1296e86dcf4c3c34081d7bc1926d2bbb5 (38437) [command_finish]> blame /Users/erk/projects/hilbert-bytes/tests/test_hilbert.py -Tjson --change --rev ea3170c1296e86dcf4c3c34081d7bc1926d2bbb5 --noninteractive exited 0 after 0.14 seconds
+2025/01/18 19:03:26 erk @(unknown) (40185) [command]> blame /Users/erk/projects/hilbert-bytes/.gitignore -Tjson --change --rev ea3170c1296e86dcf4c3c34081d7bc1926d2bbb5 --noninteractive
+2025/01/18 19:03:26 erk @ea3170c1296e86dcf4c3c34081d7bc1926d2bbb5 (40185) [command_finish]> blame /Users/erk/projects/hilbert-bytes/.gitignore -Tjson --change --rev ea3170c1296e86dcf4c3c34081d7bc1926d2bbb5 --noninteractive exited 0 after 0.19 seconds
+2025/01/18 19:03:41 erk @(unknown) (40370) [command]> --config 'amend.autorestack=always' amend --addremove --noninteractive
+2025/01/18 19:03:41 erk @ea3170c1296e86dcf4c3c34081d7bc1926d2bbb5 (40370) [visibility]> read 1 heads: ea3170c1296e
+2025/01/18 19:03:41 erk @ea3170c1296e86dcf4c3c34081d7bc1926d2bbb5 (40370) [visibility]> read 1 heads: ea3170c1296e
+2025/01/18 19:03:41 erk @ea3170c1296e86dcf4c3c34081d7bc1926d2bbb5 (40370) [visibility]> removed 0 heads []; added 1 heads [3cbbb92f04a5]
+2025/01/18 19:03:41 erk @3cbbb92f04a5fee28fdbe4c24e6832f1096d5bb5 (40370) [visibility]> removed 1 heads [ea3170c1296e]; added 0 heads []
+2025/01/18 19:03:41 erk @3cbbb92f04a5fee28fdbe4c24e6832f1096d5bb5 (40370) [visibility]> wrote 1 heads: 3cbbb92f04a5
+2025/01/18 19:03:41 erk @3cbbb92f04a5fee28fdbe4c24e6832f1096d5bb5 (40370) [command_finish]> --config 'amend.autorestack=always' amend --addremove --noninteractive exited 0 after 0.34 seconds
+2025/01/18 19:03:45 erk @(unknown) (40597) [command]> blame /Users/erk/projects/hilbert-bytes/hilbert_bytes/__init__.py -Tjson --change --rev 3cbbb92f04a5fee28fdbe4c24e6832f1096d5bb5 --noninteractive
+2025/01/18 19:03:45 erk @3cbbb92f04a5fee28fdbe4c24e6832f1096d5bb5 (40597) [command_finish]> blame /Users/erk/projects/hilbert-bytes/hilbert_bytes/__init__.py -Tjson --change --rev 3cbbb92f04a5fee28fdbe4c24e6832f1096d5bb5 --noninteractive exited 0 after 0.14 seconds
+2025/01/18 19:03:47 erk @(unknown) (40637) [command]> blame /Users/erk/projects/hilbert-bytes/docs/index.rst -Tjson --change --rev 3cbbb92f04a5fee28fdbe4c24e6832f1096d5bb5 --noninteractive
+2025/01/18 19:03:47 erk @3cbbb92f04a5fee28fdbe4c24e6832f1096d5bb5 (40637) [command_finish]> blame /Users/erk/projects/hilbert-bytes/docs/index.rst -Tjson --change --rev 3cbbb92f04a5fee28fdbe4c24e6832f1096d5bb5 --noninteractive exited 0 after 0.13 seconds
+2025/01/18 19:04:44 erk @(unknown) (40888) [command]> blame /Users/erk/projects/hilbert-bytes/docs/conf.py -Tjson --change --rev 3cbbb92f04a5fee28fdbe4c24e6832f1096d5bb5 --noninteractive
+2025/01/18 19:04:45 erk @3cbbb92f04a5fee28fdbe4c24e6832f1096d5bb5 (40888) [command_finish]> blame /Users/erk/projects/hilbert-bytes/docs/conf.py -Tjson --change --rev 3cbbb92f04a5fee28fdbe4c24e6832f1096d5bb5 --noninteractive exited 0 after 0.11 seconds
+2025/01/18 19:05:57 erk @(unknown) (41065) [command]> blame /Users/erk/projects/hilbert-bytes/README.md -Tjson --change --rev 3cbbb92f04a5fee28fdbe4c24e6832f1096d5bb5 --noninteractive
+2025/01/18 19:05:57 erk @3cbbb92f04a5fee28fdbe4c24e6832f1096d5bb5 (41065) [command_finish]> blame /Users/erk/projects/hilbert-bytes/README.md -Tjson --change --rev 3cbbb92f04a5fee28fdbe4c24e6832f1096d5bb5 --noninteractive exited 0 after 0.22 seconds
+2025/01/18 19:10:41 erk @(unknown) (41861) [command]> blame /Users/erk/projects/hilbert-bytes/pyproject.toml -Tjson --change --rev 3cbbb92f04a5fee28fdbe4c24e6832f1096d5bb5 --noninteractive
+2025/01/18 19:10:41 erk @3cbbb92f04a5fee28fdbe4c24e6832f1096d5bb5 (41861) [command_finish]> blame /Users/erk/projects/hilbert-bytes/pyproject.toml -Tjson --change --rev 3cbbb92f04a5fee28fdbe4c24e6832f1096d5bb5 --noninteractive exited 0 after 0.11 seconds
+2025/01/18 19:30:01 erk @(unknown) (45158) [command]> blame /Users/erk/projects/hilbert-bytes/LICENSE -Tjson --change --rev 3cbbb92f04a5fee28fdbe4c24e6832f1096d5bb5 --noninteractive
+2025/01/18 19:30:01 erk @3cbbb92f04a5fee28fdbe4c24e6832f1096d5bb5 (45158) [command_finish]> blame /Users/erk/projects/hilbert-bytes/LICENSE -Tjson --change --rev 3cbbb92f04a5fee28fdbe4c24e6832f1096d5bb5 --noninteractive exited 0 after 0.08 seconds
+2025/01/18 19:30:19 erk @(unknown) (45267) [command]> --config 'amend.autorestack=always' amend --addremove --noninteractive
+2025/01/18 19:30:19 erk @3cbbb92f04a5fee28fdbe4c24e6832f1096d5bb5 (45267) [visibility]> read 1 heads: 3cbbb92f04a5
+2025/01/18 19:30:19 erk @3cbbb92f04a5fee28fdbe4c24e6832f1096d5bb5 (45267) [visibility]> read 1 heads: 3cbbb92f04a5
+2025/01/18 19:30:19 erk @3cbbb92f04a5fee28fdbe4c24e6832f1096d5bb5 (45267) [visibility]> removed 0 heads []; added 1 heads [95e300da3f55]
+2025/01/18 19:30:19 erk @95e300da3f55de56a2344fa7ef62e41e19cd6b4b (45267) [visibility]> removed 1 heads [3cbbb92f04a5]; added 0 heads []
+2025/01/18 19:30:19 erk @95e300da3f55de56a2344fa7ef62e41e19cd6b4b (45267) [visibility]> wrote 1 heads: 95e300da3f55
+2025/01/18 19:30:19 erk @95e300da3f55de56a2344fa7ef62e41e19cd6b4b (45267) [command_finish]> --config 'amend.autorestack=always' amend --addremove --noninteractive exited 0 after 0.22 seconds
+2025/01/18 19:30:48 erk @(unknown) (45690) [command]> metaedit --rev 'max(successors(95e300da3f55de56a2344fa7ef62e41e19cd6b4b))' --message 'Initial commit
+
+Working first version' --noninteractive
+2025/01/18 19:30:48 erk @95e300da3f55de56a2344fa7ef62e41e19cd6b4b (45690) [visibility]> read 1 heads: 95e300da3f55
+2025/01/18 19:30:48 erk @95e300da3f55de56a2344fa7ef62e41e19cd6b4b (45690) [visibility]> removed 0 heads []; added 1 heads [efe685aa58e6]
+2025/01/18 19:30:48 erk @efe685aa58e658ef1b5d43cb5f05555a330728a0 (45690) [visibility]> removed 1 heads [95e300da3f55]; added 0 heads []
+2025/01/18 19:30:48 erk @efe685aa58e658ef1b5d43cb5f05555a330728a0 (45690) [visibility]> wrote 1 heads: efe685aa58e6
+2025/01/18 19:30:48 erk @efe685aa58e658ef1b5d43cb5f05555a330728a0 (45690) [command_finish]> metaedit --rev 'max(successors(95e300da3f55de56a2344fa7ef62e41e19cd6b4b))' --message 'Initial commit
+
+Working first version' --noninteractive exited 0 after 0.09 seconds
+2025/01/18 19:54:01 erk @(unknown) (47653) [command]> blame /Users/erk/projects/hilbert-bytes/README.md -Tjson --change --rev efe685aa58e658ef1b5d43cb5f05555a330728a0 --noninteractive
+2025/01/18 19:54:01 erk @efe685aa58e658ef1b5d43cb5f05555a330728a0 (47653) [command_finish]> blame /Users/erk/projects/hilbert-bytes/README.md -Tjson --change --rev efe685aa58e658ef1b5d43cb5f05555a330728a0 --noninteractive exited 0 after 0.08 seconds
+2025/01/18 19:58:05 erk @(unknown) (47836) [command]> blame /Users/erk/projects/hilbert-bytes/docs/conf.py -Tjson --change --rev efe685aa58e658ef1b5d43cb5f05555a330728a0 --noninteractive
+2025/01/18 19:58:05 erk @efe685aa58e658ef1b5d43cb5f05555a330728a0 (47836) [command_finish]> blame /Users/erk/projects/hilbert-bytes/docs/conf.py -Tjson --change --rev efe685aa58e658ef1b5d43cb5f05555a330728a0 --noninteractive exited 0 after 0.08 seconds
+2025/01/18 19:59:45 erk @(unknown) (48075) [command]> blame /Users/erk/projects/hilbert-bytes/LICENSE -Tjson --change --rev efe685aa58e658ef1b5d43cb5f05555a330728a0 --noninteractive
+2025/01/18 19:59:45 erk @efe685aa58e658ef1b5d43cb5f05555a330728a0 (48075) [command_finish]> blame /Users/erk/projects/hilbert-bytes/LICENSE -Tjson --change --rev efe685aa58e658ef1b5d43cb5f05555a330728a0 --noninteractive exited 0 after 0.08 seconds
+2025/01/18 19:59:57 erk @(unknown) (48160) [command]> blame /Users/erk/projects/hilbert-bytes/docs/index.rst -Tjson --change --rev efe685aa58e658ef1b5d43cb5f05555a330728a0 --noninteractive
+2025/01/18 19:59:57 erk @efe685aa58e658ef1b5d43cb5f05555a330728a0 (48160) [command_finish]> blame /Users/erk/projects/hilbert-bytes/docs/index.rst -Tjson --change --rev efe685aa58e658ef1b5d43cb5f05555a330728a0 --noninteractive exited 0 after 0.07 seconds
+2025/01/18 20:00:58 erk @(unknown) (48257) [command]> debugcommitmessage isl --noninteractive
+2025/01/18 20:00:58 erk @efe685aa58e658ef1b5d43cb5f05555a330728a0 (48257) [visibility]> read 1 heads: efe685aa58e6
+2025/01/18 20:00:58 erk @efe685aa58e658ef1b5d43cb5f05555a330728a0 (48257) [command_finish]> debugcommitmessage isl --noninteractive exited 0 after 0.36 seconds
+2025/01/18 20:01:04 erk @(unknown) (48567) [command]> --config 'amend.autorestack=always' amend --addremove --noninteractive
+2025/01/18 20:01:04 erk @efe685aa58e658ef1b5d43cb5f05555a330728a0 (48567) [visibility]> read 1 heads: efe685aa58e6
+2025/01/18 20:01:04 erk @efe685aa58e658ef1b5d43cb5f05555a330728a0 (48567) [visibility]> read 1 heads: efe685aa58e6
+2025/01/18 20:01:04 erk @efe685aa58e658ef1b5d43cb5f05555a330728a0 (48567) [visibility]> removed 0 heads []; added 1 heads [498ba17a65ff]
+2025/01/18 20:01:04 erk @498ba17a65ff161612d2667efbaf5b77dc169bf9 (48567) [visibility]> removed 1 heads [efe685aa58e6]; added 0 heads []
+2025/01/18 20:01:04 erk @498ba17a65ff161612d2667efbaf5b77dc169bf9 (48567) [visibility]> wrote 1 heads: 498ba17a65ff
+2025/01/18 20:01:04 erk @498ba17a65ff161612d2667efbaf5b77dc169bf9 (48567) [command_finish]> --config 'amend.autorestack=always' amend --addremove --noninteractive exited 0 after 0.22 seconds
+2025/01/18 20:04:27 erk @(unknown) (49538) [command]> pr submit --noninteractive
+2025/01/18 20:04:27 erk @498ba17a65ff161612d2667efbaf5b77dc169bf9 (49538) [visibility]> read 1 heads: 498ba17a65ff
+2025/01/18 20:04:29 erk @498ba17a65ff161612d2667efbaf5b77dc169bf9 (49538) [visibility]> read 1 heads: 498ba17a65ff
+2025/01/18 20:04:30 erk @498ba17a65ff161612d2667efbaf5b77dc169bf9 (49538) [command_finish]> pr submit --noninteractive exited 0 after 3.89 seconds
+2025/01/18 20:06:35 erk @(unknown) (49761) [command]> pull --noninteractive
+2025/01/18 20:06:35 erk @498ba17a65ff161612d2667efbaf5b77dc169bf9 (49761) [visibility]> read 1 heads: 498ba17a65ff
+2025/01/18 20:06:35 erk @498ba17a65ff161612d2667efbaf5b77dc169bf9 (49761) [visibility]> read 1 heads: 498ba17a65ff
+2025/01/18 20:06:36 erk @498ba17a65ff161612d2667efbaf5b77dc169bf9 (49761) [visibility]> read 1 heads: 498ba17a65ff
+2025/01/18 20:06:36 erk @498ba17a65ff161612d2667efbaf5b77dc169bf9 (49761) [visibility]> removed 1 heads [498ba17a65ff]; added 0 heads []
+2025/01/18 20:06:36 erk @498ba17a65ff161612d2667efbaf5b77dc169bf9 (49761) [visibility]> wrote 0 heads: 
+2025/01/18 20:06:36 erk @498ba17a65ff161612d2667efbaf5b77dc169bf9 (49761) [pythonhook]> pythonhook-post-pull: sapling.ext.github.pr_marker.cleanup_landed_pr_hook finished in 0.34 seconds
+2025/01/18 20:06:36 erk @498ba17a65ff161612d2667efbaf5b77dc169bf9 (49761) [command_finish]> pull --noninteractive exited 0 after 1.18 seconds
+2025/01/18 20:06:38 erk @(unknown) (49877) [command]> goto --rev 'max(successors(remote/main))' --noninteractive
+2025/01/18 20:06:38 erk @(unknown) (49877) [pythonhook]> pythonhook-pre-update: sapling.ext.morestatus.saveupdateargs finished in 0.00 seconds
+2025/01/18 20:06:38 erk @498ba17a65ff161612d2667efbaf5b77dc169bf9 (49877) [visibility]> read 0 heads: 
+2025/01/18 20:06:38 erk @3d5381ef3fe9471ba412a19a1b3fbee9cccb2496 (49877) [pythonhook]> pythonhook-post-update: sapling.ext.morestatus.cleanupdateargs finished in 0.00 seconds
+2025/01/18 20:06:38 erk @3d5381ef3fe9471ba412a19a1b3fbee9cccb2496 (49877) [command_finish]> goto --rev 'max(successors(remote/main))' --noninteractive exited 0 after 0.16 seconds
+2025/01/18 20:10:16 erk @(unknown) (50451) [command]> blame /Users/erk/projects/hilbert-bytes/hilbert_bytes/_hilbert.py -Tjson --change --rev 3d5381ef3fe9471ba412a19a1b3fbee9cccb2496 --noninteractive
+2025/01/18 20:10:16 erk @3d5381ef3fe9471ba412a19a1b3fbee9cccb2496 (50451) [command_finish]> blame /Users/erk/projects/hilbert-bytes/hilbert_bytes/_hilbert.py -Tjson --change --rev 3d5381ef3fe9471ba412a19a1b3fbee9cccb2496 --noninteractive exited 0 after 0.07 seconds
+2025/01/18 20:10:31 erk @(unknown) (50543) [command]> goto --clean . --noninteractive
+2025/01/18 20:10:31 erk @(unknown) (50543) [pythonhook]> pythonhook-pre-update: sapling.ext.morestatus.saveupdateargs finished in 0.00 seconds
+2025/01/18 20:10:31 erk @3d5381ef3fe9471ba412a19a1b3fbee9cccb2496 (50543) [visibility]> read 0 heads: 
+2025/01/18 20:10:31 erk @3d5381ef3fe9471ba412a19a1b3fbee9cccb2496 (50543) [pythonhook]> pythonhook-post-update: sapling.ext.morestatus.cleanupdateargs finished in 0.00 seconds
+2025/01/18 20:10:31 erk @3d5381ef3fe9471ba412a19a1b3fbee9cccb2496 (50543) [command_finish]> goto --clean . --noninteractive exited 0 after 0.16 seconds
+2025/01/18 20:10:32 erk @(unknown) (50634) [command]> purge --files --noninteractive
+2025/01/18 20:10:32 erk @3d5381ef3fe9471ba412a19a1b3fbee9cccb2496 (50634) [command_finish]> purge --files --noninteractive exited 0 after 0.15 seconds
+2025/01/18 20:11:59 erk @(unknown) (50910) [command]> blame /Users/erk/projects/hilbert-bytes/poetry.lock -Tjson --change --rev 3d5381ef3fe9471ba412a19a1b3fbee9cccb2496 --noninteractive
+2025/01/18 20:11:59 erk @3d5381ef3fe9471ba412a19a1b3fbee9cccb2496 (50910) [command_finish]> blame /Users/erk/projects/hilbert-bytes/poetry.lock -Tjson --change --rev 3d5381ef3fe9471ba412a19a1b3fbee9cccb2496 --noninteractive exited 0 after 0.10 seconds
+2025/01/18 20:12:03 erk @(unknown) (50939) [command]> blame /Users/erk/projects/hilbert-bytes/pyproject.toml -Tjson --change --rev 3d5381ef3fe9471ba412a19a1b3fbee9cccb2496 --noninteractive
+2025/01/18 20:12:03 erk @3d5381ef3fe9471ba412a19a1b3fbee9cccb2496 (50939) [command_finish]> blame /Users/erk/projects/hilbert-bytes/pyproject.toml -Tjson --change --rev 3d5381ef3fe9471ba412a19a1b3fbee9cccb2496 --noninteractive exited 0 after 0.07 seconds
+2025/01/18 20:21:56 erk @(unknown) (51685) [command]> blame /Users/erk/projects/hilbert-bytes/README.md -Tjson --change --rev 3d5381ef3fe9471ba412a19a1b3fbee9cccb2496 --noninteractive
+2025/01/18 20:21:56 erk @3d5381ef3fe9471ba412a19a1b3fbee9cccb2496 (51685) [command_finish]> blame /Users/erk/projects/hilbert-bytes/README.md -Tjson --change --rev 3d5381ef3fe9471ba412a19a1b3fbee9cccb2496 --noninteractive exited 0 after 0.08 seconds
+2025/01/18 20:46:25 erk @(unknown) (52531) [command]> blame /Users/erk/projects/hilbert-bytes/.gitignore -Tjson --change --rev 3d5381ef3fe9471ba412a19a1b3fbee9cccb2496 --noninteractive
+2025/01/18 20:46:25 erk @3d5381ef3fe9471ba412a19a1b3fbee9cccb2496 (52531) [command_finish]> blame /Users/erk/projects/hilbert-bytes/.gitignore -Tjson --change --rev 3d5381ef3fe9471ba412a19a1b3fbee9cccb2496 --noninteractive exited 0 after 0.07 seconds
+2025/01/18 20:46:41 erk @(unknown) (52692) [command]> commit --addremove --message 'update .gitignore
+
+
+Summary: 
+
+Test Plan: 
+
+
+' --noninteractive
+2025/01/18 20:46:41 erk @3d5381ef3fe9471ba412a19a1b3fbee9cccb2496 (52692) [visibility]> read 0 heads: 
+2025/01/18 20:46:41 erk @3d5381ef3fe9471ba412a19a1b3fbee9cccb2496 (52692) [visibility]> read 0 heads: 
+2025/01/18 20:46:41 erk @3d5381ef3fe9471ba412a19a1b3fbee9cccb2496 (52692) [visibility]> removed 0 heads []; added 1 heads [c33fbf060729]
+2025/01/18 20:46:41 erk @c33fbf060729f55bcb55c38339ee94336ba81a62 (52692) [visibility]> wrote 1 heads: c33fbf060729
+2025/01/18 20:46:41 erk @c33fbf060729f55bcb55c38339ee94336ba81a62 (52692) [command_finish]> commit --addremove --message 'update .gitignore
+
+
+Summary: 
+
+Test Plan: 
+
+
+' --noninteractive exited 0 after 0.22 seconds
+2025/01/18 20:46:42 erk @(unknown) (52918) [command]> pull --noninteractive
+2025/01/18 20:46:42 erk @c33fbf060729f55bcb55c38339ee94336ba81a62 (52918) [visibility]> read 1 heads: c33fbf060729
+2025/01/18 20:46:43 erk @c33fbf060729f55bcb55c38339ee94336ba81a62 (52918) [visibility]> read 1 heads: c33fbf060729
+2025/01/18 20:46:43 erk @c33fbf060729f55bcb55c38339ee94336ba81a62 (52918) [pythonhook]> pythonhook-post-pull: sapling.ext.github.pr_marker.cleanup_landed_pr_hook finished in 0.00 seconds
+2025/01/18 20:46:43 erk @c33fbf060729f55bcb55c38339ee94336ba81a62 (52918) [command_finish]> pull --noninteractive exited 0 after 0.48 seconds
+2025/01/18 20:46:48 erk @(unknown) (52995) [command]> rebase -s 'max(successors(c33fbf060729f55bcb55c38339ee94336ba81a62))' -d 'max(successors(remote/main))' --noninteractive
+2025/01/18 20:46:48 erk @c33fbf060729f55bcb55c38339ee94336ba81a62 (52995) [visibility]> read 1 heads: c33fbf060729
+2025/01/18 20:46:48 erk @c33fbf060729f55bcb55c38339ee94336ba81a62 (52995) [visibility]> removed 0 heads []; added 1 heads [fc26aa43ae2a]
+2025/01/18 20:46:48 erk @c33fbf060729f55bcb55c38339ee94336ba81a62 (52995) [visibility]> wrote 2 heads: fc26aa43ae2a, c33fbf060729
+2025/01/18 20:46:48 erk @fc26aa43ae2a33cd6062e7aaef088e55009a5f11 (52995) [visibility]> removed 1 heads [c33fbf060729]; added 0 heads []
+2025/01/18 20:46:48 erk @fc26aa43ae2a33cd6062e7aaef088e55009a5f11 (52995) [visibility]> wrote 1 heads: fc26aa43ae2a
+2025/01/18 20:46:48 erk @fc26aa43ae2a33cd6062e7aaef088e55009a5f11 (52995) [command_finish]> rebase -s 'max(successors(c33fbf060729f55bcb55c38339ee94336ba81a62))' -d 'max(successors(remote/main))' --noninteractive exited 0 after 0.52 seconds
+2025/01/18 20:46:59 erk @(unknown) (53425) [command]> pr submit --noninteractive
+2025/01/18 20:46:59 erk @fc26aa43ae2a33cd6062e7aaef088e55009a5f11 (53425) [visibility]> read 1 heads: fc26aa43ae2a
+2025/01/18 20:47:02 erk @fc26aa43ae2a33cd6062e7aaef088e55009a5f11 (53425) [visibility]> read 1 heads: fc26aa43ae2a
+2025/01/18 20:47:04 erk @fc26aa43ae2a33cd6062e7aaef088e55009a5f11 (53425) [command_finish]> pr submit --noninteractive exited 0 after 4.75 seconds
+2025/01/18 20:48:36 erk @(unknown) (53702) [command]> pull --noninteractive
+2025/01/18 20:48:37 erk @fc26aa43ae2a33cd6062e7aaef088e55009a5f11 (53702) [visibility]> read 1 heads: fc26aa43ae2a
+2025/01/18 20:48:37 erk @fc26aa43ae2a33cd6062e7aaef088e55009a5f11 (53702) [visibility]> read 1 heads: fc26aa43ae2a
+2025/01/18 20:48:37 erk @fc26aa43ae2a33cd6062e7aaef088e55009a5f11 (53702) [visibility]> read 1 heads: fc26aa43ae2a
+2025/01/18 20:48:37 erk @fc26aa43ae2a33cd6062e7aaef088e55009a5f11 (53702) [visibility]> removed 1 heads [fc26aa43ae2a]; added 0 heads []
+2025/01/18 20:48:37 erk @fc26aa43ae2a33cd6062e7aaef088e55009a5f11 (53702) [visibility]> wrote 0 heads: 
+2025/01/18 20:48:37 erk @fc26aa43ae2a33cd6062e7aaef088e55009a5f11 (53702) [pythonhook]> pythonhook-post-pull: sapling.ext.github.pr_marker.cleanup_landed_pr_hook finished in 0.27 seconds
+2025/01/18 20:48:37 erk @fc26aa43ae2a33cd6062e7aaef088e55009a5f11 (53702) [command_finish]> pull --noninteractive exited 0 after 0.74 seconds
+2025/01/18 20:48:38 erk @(unknown) (53810) [command]> goto --rev 'max(successors(remote/main))' --noninteractive
+2025/01/18 20:48:38 erk @(unknown) (53810) [pythonhook]> pythonhook-pre-update: sapling.ext.morestatus.saveupdateargs finished in 0.00 seconds
+2025/01/18 20:48:38 erk @fc26aa43ae2a33cd6062e7aaef088e55009a5f11 (53810) [visibility]> read 0 heads: 
+2025/01/18 20:48:38 erk @8ba9ef6aa1f2ff2f43bdecd4bd2ccd938c2c34f8 (53810) [pythonhook]> pythonhook-post-update: sapling.ext.morestatus.cleanupdateargs finished in 0.00 seconds
+2025/01/18 20:48:38 erk @8ba9ef6aa1f2ff2f43bdecd4bd2ccd938c2c34f8 (53810) [command_finish]> goto --rev 'max(successors(remote/main))' --noninteractive exited 0 after 0.16 seconds
+2025/01/20 22:53:43 erk @(unknown) (12864) [command]> debugcommitmessage isl --noninteractive
+2025/01/20 22:53:46 erk @(unknown) (13186) [command]> blame /Users/erk/projects/hilbert-bytes/pyproject.toml -Tjson --change --rev 8ba9ef6aa1f2ff2f43bdecd4bd2ccd938c2c34f8 --noninteractive
+2025/01/20 22:53:46 erk @8ba9ef6aa1f2ff2f43bdecd4bd2ccd938c2c34f8 (13186) [command_finish]> blame /Users/erk/projects/hilbert-bytes/pyproject.toml -Tjson --change --rev 8ba9ef6aa1f2ff2f43bdecd4bd2ccd938c2c34f8 --noninteractive exited 0 after 0.10 seconds
+2025/01/20 22:53:47 erk @8ba9ef6aa1f2ff2f43bdecd4bd2ccd938c2c34f8 (12864) [visibility]> read 0 heads: 
+2025/01/20 22:53:47 erk @8ba9ef6aa1f2ff2f43bdecd4bd2ccd938c2c34f8 (12864) [command_finish]> debugcommitmessage isl --noninteractive exited 0 after 3.84 seconds
+2025/01/20 22:54:40 erk @(unknown) (13633) [command]> addremove --noninteractive
+2025/01/20 22:54:40 erk @8ba9ef6aa1f2ff2f43bdecd4bd2ccd938c2c34f8 (13633) [command_finish]> addremove --noninteractive exited 0 after 0.15 seconds
+2025/01/20 22:54:42 erk @(unknown) (13790) [command]> commit --addremove --message 'add py.typed
+
+
+Summary: 
+
+Test Plan: 
+
+
+' --noninteractive
+2025/01/20 22:54:42 erk @8ba9ef6aa1f2ff2f43bdecd4bd2ccd938c2c34f8 (13790) [visibility]> read 0 heads: 
+2025/01/20 22:54:42 erk @8ba9ef6aa1f2ff2f43bdecd4bd2ccd938c2c34f8 (13790) [visibility]> read 0 heads: 
+2025/01/20 22:54:42 erk @8ba9ef6aa1f2ff2f43bdecd4bd2ccd938c2c34f8 (13790) [visibility]> removed 0 heads []; added 1 heads [ac6b93ea7da7]
+2025/01/20 22:54:42 erk @ac6b93ea7da7ec923d44e3b31218df2593cb529e (13790) [visibility]> wrote 1 heads: ac6b93ea7da7
+2025/01/20 22:54:42 erk @ac6b93ea7da7ec923d44e3b31218df2593cb529e (13790) [command_finish]> commit --addremove --message 'add py.typed
+
+
+Summary: 
+
+Test Plan: 
+
+
+' --noninteractive exited 0 after 0.22 seconds
+2025/01/20 22:54:46 erk @(unknown) (14002) [command]> pull --noninteractive
+2025/01/20 22:54:46 erk @ac6b93ea7da7ec923d44e3b31218df2593cb529e (14002) [visibility]> read 1 heads: ac6b93ea7da7
+2025/01/20 22:54:46 erk @ac6b93ea7da7ec923d44e3b31218df2593cb529e (14002) [visibility]> read 1 heads: ac6b93ea7da7
+2025/01/20 22:54:46 erk @ac6b93ea7da7ec923d44e3b31218df2593cb529e (14002) [pythonhook]> pythonhook-post-pull: sapling.ext.github.pr_marker.cleanup_landed_pr_hook finished in 0.00 seconds
+2025/01/20 22:54:46 erk @ac6b93ea7da7ec923d44e3b31218df2593cb529e (14002) [command_finish]> pull --noninteractive exited 0 after 0.32 seconds
+2025/01/20 22:54:53 erk @(unknown) (14103) [command]> blame /Users/erk/projects/hilbert-bytes/pyproject.toml -Tjson --change --rev ac6b93ea7da7ec923d44e3b31218df2593cb529e --noninteractive
+2025/01/20 22:54:53 erk @ac6b93ea7da7ec923d44e3b31218df2593cb529e (14103) [command_finish]> blame /Users/erk/projects/hilbert-bytes/pyproject.toml -Tjson --change --rev ac6b93ea7da7ec923d44e3b31218df2593cb529e --noninteractive exited 0 after 0.07 seconds
+2025/01/20 22:55:05 erk @(unknown) (14237) [command]> commit --addremove --message 'v0.2.0
+
+
+Summary: 
+
+Test Plan: 
+
+
+' --noninteractive
+2025/01/20 22:55:05 erk @ac6b93ea7da7ec923d44e3b31218df2593cb529e (14237) [visibility]> read 1 heads: ac6b93ea7da7
+2025/01/20 22:55:05 erk @ac6b93ea7da7ec923d44e3b31218df2593cb529e (14237) [visibility]> read 1 heads: ac6b93ea7da7
+2025/01/20 22:55:05 erk @ac6b93ea7da7ec923d44e3b31218df2593cb529e (14237) [visibility]> removed 1 heads [ac6b93ea7da7]; added 1 heads [f2b75a9e3fba]
+2025/01/20 22:55:05 erk @f2b75a9e3fba98de8e40bb418331e4adbfaef478 (14237) [visibility]> wrote 1 heads: f2b75a9e3fba
+2025/01/20 22:55:05 erk @f2b75a9e3fba98de8e40bb418331e4adbfaef478 (14237) [command_finish]> commit --addremove --message 'v0.2.0
+
+
+Summary: 
+
+Test Plan: 
+
+
+' --noninteractive exited 0 after 0.24 seconds
+2025/01/20 22:57:10 erk @(unknown) (14615) [command]> pr submit --noninteractive
+2025/01/20 22:57:10 erk @f2b75a9e3fba98de8e40bb418331e4adbfaef478 (14615) [visibility]> read 1 heads: f2b75a9e3fba
+2025/01/20 22:57:12 erk @f2b75a9e3fba98de8e40bb418331e4adbfaef478 (14615) [visibility]> read 1 heads: f2b75a9e3fba
+2025/01/20 22:57:13 erk @f2b75a9e3fba98de8e40bb418331e4adbfaef478 (14615) [visibility]> read 1 heads: f2b75a9e3fba
+2025/01/20 22:57:15 erk @f2b75a9e3fba98de8e40bb418331e4adbfaef478 (14615) [command_finish]> pr submit --noninteractive exited 0 after 5.51 seconds
+2025/01/20 23:02:53 erk @(unknown) (14919) [command]> pull --noninteractive
+2025/01/20 23:02:53 erk @f2b75a9e3fba98de8e40bb418331e4adbfaef478 (14919) [visibility]> read 1 heads: f2b75a9e3fba
+2025/01/20 23:02:53 erk @f2b75a9e3fba98de8e40bb418331e4adbfaef478 (14919) [visibility]> read 1 heads: f2b75a9e3fba
+2025/01/20 23:02:53 erk @f2b75a9e3fba98de8e40bb418331e4adbfaef478 (14919) [visibility]> read 1 heads: f2b75a9e3fba
+2025/01/20 23:02:53 erk @f2b75a9e3fba98de8e40bb418331e4adbfaef478 (14919) [visibility]> removed 1 heads [f2b75a9e3fba]; added 0 heads []
+2025/01/20 23:02:53 erk @f2b75a9e3fba98de8e40bb418331e4adbfaef478 (14919) [visibility]> wrote 0 heads: 
+2025/01/20 23:02:53 erk @f2b75a9e3fba98de8e40bb418331e4adbfaef478 (14919) [pythonhook]> pythonhook-post-pull: sapling.ext.github.pr_marker.cleanup_landed_pr_hook finished in 0.55 seconds
+2025/01/20 23:02:53 erk @f2b75a9e3fba98de8e40bb418331e4adbfaef478 (14919) [command_finish]> pull --noninteractive exited 0 after 1.04 seconds
+2025/01/20 23:02:55 erk @(unknown) (15029) [command]> goto --rev 'max(successors(remote/main))' --noninteractive
+2025/01/20 23:02:55 erk @(unknown) (15029) [pythonhook]> pythonhook-pre-update: sapling.ext.morestatus.saveupdateargs finished in 0.00 seconds
+2025/01/20 23:02:55 erk @f2b75a9e3fba98de8e40bb418331e4adbfaef478 (15029) [visibility]> read 0 heads: 
+2025/01/20 23:02:55 erk @821e7156f6e032e4930c3522949cf2b7a10f2e85 (15029) [pythonhook]> pythonhook-post-update: sapling.ext.morestatus.cleanupdateargs finished in 0.00 seconds
+2025/01/20 23:02:55 erk @821e7156f6e032e4930c3522949cf2b7a10f2e85 (15029) [command_finish]> goto --rev 'max(successors(remote/main))' --noninteractive exited 0 after 0.17 seconds
+2025/01/22 18:32:57 erk @(unknown) (39326) [command]> debugcommitmessage isl --noninteractive
+2025/01/22 18:32:58 erk @821e7156f6e032e4930c3522949cf2b7a10f2e85 (39326) [visibility]> read 0 heads: 
+2025/01/22 18:32:58 erk @821e7156f6e032e4930c3522949cf2b7a10f2e85 (39326) [command_finish]> debugcommitmessage isl --noninteractive exited 0 after 1.41 seconds
+2025/01/22 18:33:09 erk @(unknown) (39707) [command]> blame /Users/erk/projects/hilbert-bytes/hilbert_bytes/_hilbert.py -Tjson --change --rev 821e7156f6e032e4930c3522949cf2b7a10f2e85 --noninteractive
+2025/01/22 18:33:10 erk @821e7156f6e032e4930c3522949cf2b7a10f2e85 (39707) [command_finish]> blame /Users/erk/projects/hilbert-bytes/hilbert_bytes/_hilbert.py -Tjson --change --rev 821e7156f6e032e4930c3522949cf2b7a10f2e85 --noninteractive exited 0 after 0.08 seconds
+2025/01/22 18:33:26 erk @(unknown) (39852) [command]> blame /Users/erk/projects/hilbert-bytes/typings/numba/__init__.pyi -Tjson --change --rev 821e7156f6e032e4930c3522949cf2b7a10f2e85 --noninteractive
+2025/01/22 18:33:26 erk @821e7156f6e032e4930c3522949cf2b7a10f2e85 (39852) [command_finish]> blame /Users/erk/projects/hilbert-bytes/typings/numba/__init__.pyi -Tjson --change --rev 821e7156f6e032e4930c3522949cf2b7a10f2e85 --noninteractive exited 0 after 0.08 seconds
+2025/01/22 18:37:32 erk @(unknown) (40377) [command]> blame /Users/erk/projects/hilbert-bytes/pyproject.toml -Tjson --change --rev 821e7156f6e032e4930c3522949cf2b7a10f2e85 --noninteractive
+2025/01/22 18:37:32 erk @821e7156f6e032e4930c3522949cf2b7a10f2e85 (40377) [command_finish]> blame /Users/erk/projects/hilbert-bytes/pyproject.toml -Tjson --change --rev 821e7156f6e032e4930c3522949cf2b7a10f2e85 --noninteractive exited 0 after 0.08 seconds
+2025/01/22 18:53:29 erk @(unknown) (42268) [command]> commit --addremove --message 'performance improvements
+
+
+Summary: 
+
+Test Plan: 
+
+
+' --noninteractive
+2025/01/22 18:53:29 erk @821e7156f6e032e4930c3522949cf2b7a10f2e85 (42268) [visibility]> read 0 heads: 
+2025/01/22 18:53:29 erk @821e7156f6e032e4930c3522949cf2b7a10f2e85 (42268) [visibility]> read 0 heads: 
+2025/01/22 18:53:29 erk @821e7156f6e032e4930c3522949cf2b7a10f2e85 (42268) [visibility]> removed 0 heads []; added 1 heads [da1f4b5ad19e]
+2025/01/22 18:53:29 erk @da1f4b5ad19ea26cd8fc68bab73bc8d2a6370cc0 (42268) [visibility]> wrote 1 heads: da1f4b5ad19e
+2025/01/22 18:53:29 erk @da1f4b5ad19ea26cd8fc68bab73bc8d2a6370cc0 (42268) [command_finish]> commit --addremove --message 'performance improvements
+
+
+Summary: 
+
+Test Plan: 
+
+
+' --noninteractive exited 0 after 0.23 seconds
+2025/01/22 22:14:49 erk @(unknown) (48732) [command]> pr submit --noninteractive
+2025/01/22 22:14:49 erk @da1f4b5ad19ea26cd8fc68bab73bc8d2a6370cc0 (48732) [visibility]> read 1 heads: da1f4b5ad19e
+2025/01/22 22:14:51 erk @da1f4b5ad19ea26cd8fc68bab73bc8d2a6370cc0 (48732) [visibility]> read 1 heads: da1f4b5ad19e
+2025/01/22 22:14:52 erk @da1f4b5ad19ea26cd8fc68bab73bc8d2a6370cc0 (48732) [command_finish]> pr submit --noninteractive exited 0 after 3.47 seconds
+2025/01/22 23:46:20 erk @(unknown) (61913) [command]> pull --noninteractive
+2025/01/22 23:46:21 erk @da1f4b5ad19ea26cd8fc68bab73bc8d2a6370cc0 (61913) [visibility]> read 1 heads: da1f4b5ad19e
+2025/01/22 23:46:21 erk @da1f4b5ad19ea26cd8fc68bab73bc8d2a6370cc0 (61913) [visibility]> read 1 heads: da1f4b5ad19e
+2025/01/22 23:46:21 erk @da1f4b5ad19ea26cd8fc68bab73bc8d2a6370cc0 (61913) [visibility]> read 1 heads: da1f4b5ad19e
+2025/01/22 23:46:21 erk @da1f4b5ad19ea26cd8fc68bab73bc8d2a6370cc0 (61913) [visibility]> removed 1 heads [da1f4b5ad19e]; added 0 heads []
+2025/01/22 23:46:21 erk @da1f4b5ad19ea26cd8fc68bab73bc8d2a6370cc0 (61913) [visibility]> wrote 0 heads: 
+2025/01/22 23:46:21 erk @da1f4b5ad19ea26cd8fc68bab73bc8d2a6370cc0 (61913) [pythonhook]> pythonhook-post-pull: sapling.ext.github.pr_marker.cleanup_landed_pr_hook finished in 0.28 seconds
+2025/01/22 23:46:21 erk @da1f4b5ad19ea26cd8fc68bab73bc8d2a6370cc0 (61913) [command_finish]> pull --noninteractive exited 0 after 0.74 seconds
+2025/01/22 23:46:22 erk @(unknown) (62021) [command]> goto --rev 'max(successors(remote/main))' --noninteractive
+2025/01/22 23:46:22 erk @(unknown) (62021) [pythonhook]> pythonhook-pre-update: sapling.ext.morestatus.saveupdateargs finished in 0.00 seconds
+2025/01/22 23:46:22 erk @da1f4b5ad19ea26cd8fc68bab73bc8d2a6370cc0 (62021) [visibility]> read 0 heads: 
+2025/01/22 23:46:23 erk @d8e6c4294995afbf82aabae9e11463e66567e1f1 (62021) [pythonhook]> pythonhook-post-update: sapling.ext.morestatus.cleanupdateargs finished in 0.00 seconds
+2025/01/22 23:46:23 erk @d8e6c4294995afbf82aabae9e11463e66567e1f1 (62021) [command_finish]> goto --rev 'max(successors(remote/main))' --noninteractive exited 0 after 0.18 seconds
+2025/01/22 23:46:28 erk @(unknown) (62191) [command]> blame /Users/erk/projects/hilbert-bytes/poetry.lock -Tjson --change --rev d8e6c4294995afbf82aabae9e11463e66567e1f1 --noninteractive
+2025/01/22 23:46:28 erk @d8e6c4294995afbf82aabae9e11463e66567e1f1 (62191) [command_finish]> blame /Users/erk/projects/hilbert-bytes/poetry.lock -Tjson --change --rev d8e6c4294995afbf82aabae9e11463e66567e1f1 --noninteractive exited 0 after 0.09 seconds
+2025/01/22 23:46:32 erk @(unknown) (62220) [command]> blame /Users/erk/projects/hilbert-bytes/pyproject.toml -Tjson --change --rev d8e6c4294995afbf82aabae9e11463e66567e1f1 --noninteractive
+2025/01/22 23:46:32 erk @d8e6c4294995afbf82aabae9e11463e66567e1f1 (62220) [command_finish]> blame /Users/erk/projects/hilbert-bytes/pyproject.toml -Tjson --change --rev d8e6c4294995afbf82aabae9e11463e66567e1f1 --noninteractive exited 0 after 0.07 seconds
+2025/01/22 23:47:44 erk @(unknown) (62832) [command]> commit --addremove --message 'v0.3.0
+
+
+Summary: 
+
+Test Plan: 
+
+
+' --noninteractive
+2025/01/22 23:47:44 erk @d8e6c4294995afbf82aabae9e11463e66567e1f1 (62832) [visibility]> read 0 heads: 
+2025/01/22 23:47:44 erk @d8e6c4294995afbf82aabae9e11463e66567e1f1 (62832) [visibility]> read 0 heads: 
+2025/01/22 23:47:44 erk @d8e6c4294995afbf82aabae9e11463e66567e1f1 (62832) [visibility]> removed 0 heads []; added 1 heads [9135d6c00287]
+2025/01/22 23:47:44 erk @9135d6c0028773f69112aa66d855384e257d7e80 (62832) [visibility]> wrote 1 heads: 9135d6c00287
+2025/01/22 23:47:44 erk @9135d6c0028773f69112aa66d855384e257d7e80 (62832) [command_finish]> commit --addremove --message 'v0.3.0
+
+
+Summary: 
+
+Test Plan: 
+
+
+' --noninteractive exited 0 after 0.22 seconds
+2025/01/22 23:47:50 erk @(unknown) (63058) [command]> pr submit --noninteractive
+2025/01/22 23:47:50 erk @9135d6c0028773f69112aa66d855384e257d7e80 (63058) [visibility]> read 1 heads: 9135d6c00287
+2025/01/22 23:47:52 erk @9135d6c0028773f69112aa66d855384e257d7e80 (63058) [visibility]> read 1 heads: 9135d6c00287
+2025/01/22 23:47:53 erk @9135d6c0028773f69112aa66d855384e257d7e80 (63058) [command_finish]> pr submit --noninteractive exited 0 after 3.97 seconds
+2025/01/23 00:04:20 erk @(unknown) (66584) [command]> pull --noninteractive
+2025/01/23 00:04:20 erk @9135d6c0028773f69112aa66d855384e257d7e80 (66584) [visibility]> read 1 heads: 9135d6c00287
+2025/01/23 00:04:20 erk @9135d6c0028773f69112aa66d855384e257d7e80 (66584) [visibility]> read 1 heads: 9135d6c00287
+2025/01/23 00:04:20 erk @9135d6c0028773f69112aa66d855384e257d7e80 (66584) [visibility]> read 1 heads: 9135d6c00287
+2025/01/23 00:04:20 erk @9135d6c0028773f69112aa66d855384e257d7e80 (66584) [visibility]> removed 1 heads [9135d6c00287]; added 0 heads []
+2025/01/23 00:04:20 erk @9135d6c0028773f69112aa66d855384e257d7e80 (66584) [visibility]> wrote 0 heads: 
+2025/01/23 00:04:20 erk @9135d6c0028773f69112aa66d855384e257d7e80 (66584) [pythonhook]> pythonhook-post-pull: sapling.ext.github.pr_marker.cleanup_landed_pr_hook finished in 0.28 seconds
+2025/01/23 00:04:20 erk @9135d6c0028773f69112aa66d855384e257d7e80 (66584) [command_finish]> pull --noninteractive exited 0 after 0.74 seconds
+2025/01/23 00:04:22 erk @(unknown) (66678) [command]> goto --rev 'max(successors(remote/main))' --noninteractive
+2025/01/23 00:04:22 erk @(unknown) (66678) [pythonhook]> pythonhook-pre-update: sapling.ext.morestatus.saveupdateargs finished in 0.00 seconds
+2025/01/23 00:04:22 erk @9135d6c0028773f69112aa66d855384e257d7e80 (66678) [visibility]> read 0 heads: 
+2025/01/23 00:04:22 erk @cc8427008a24c6cb409fd389cc77479ac95d950b (66678) [pythonhook]> pythonhook-post-update: sapling.ext.morestatus.cleanupdateargs finished in 0.00 seconds
+2025/01/23 00:04:22 erk @cc8427008a24c6cb409fd389cc77479ac95d950b (66678) [command_finish]> goto --rev 'max(successors(remote/main))' --noninteractive exited 0 after 0.20 seconds
+2025/01/26 22:28:38 erk @(unknown) (40624) [command]> debugcommitmessage isl --noninteractive
+2025/01/26 22:28:39 erk @cc8427008a24c6cb409fd389cc77479ac95d950b (40624) [visibility]> read 0 heads: 
+2025/01/26 22:28:39 erk @cc8427008a24c6cb409fd389cc77479ac95d950b (40624) [command_finish]> debugcommitmessage isl --noninteractive exited 0 after 1.48 seconds
+2025/01/26 22:28:40 erk @(unknown) (40982) [command]> blame /Users/erk/projects/hilbert-bytes/poetry.lock -Tjson --change --rev cc8427008a24c6cb409fd389cc77479ac95d950b --noninteractive
+2025/01/26 22:28:40 erk @cc8427008a24c6cb409fd389cc77479ac95d950b (40982) [command_finish]> blame /Users/erk/projects/hilbert-bytes/poetry.lock -Tjson --change --rev cc8427008a24c6cb409fd389cc77479ac95d950b --noninteractive exited 0 after 0.32 seconds
+2025/01/26 22:28:42 erk @(unknown) (41027) [command]> blame /Users/erk/projects/hilbert-bytes/pyproject.toml -Tjson --change --rev cc8427008a24c6cb409fd389cc77479ac95d950b --noninteractive
+2025/01/26 22:28:42 erk @cc8427008a24c6cb409fd389cc77479ac95d950b (41027) [command_finish]> blame /Users/erk/projects/hilbert-bytes/pyproject.toml -Tjson --change --rev cc8427008a24c6cb409fd389cc77479ac95d950b --noninteractive exited 0 after 0.07 seconds
+2025/01/26 22:31:14 erk @(unknown) (42219) [command]> blame /Users/erk/projects/hilbert-bytes/docs/conf.py -Tjson --change --rev cc8427008a24c6cb409fd389cc77479ac95d950b --noninteractive
+2025/01/26 22:31:14 erk @cc8427008a24c6cb409fd389cc77479ac95d950b (42219) [command_finish]> blame /Users/erk/projects/hilbert-bytes/docs/conf.py -Tjson --change --rev cc8427008a24c6cb409fd389cc77479ac95d950b --noninteractive exited 0 after 0.07 seconds
+2025/01/26 22:31:33 erk @(unknown) (42356) [command]> blame /Users/erk/projects/hilbert-bytes/docs/index.rst -Tjson --change --rev cc8427008a24c6cb409fd389cc77479ac95d950b --noninteractive
+2025/01/26 22:31:33 erk @cc8427008a24c6cb409fd389cc77479ac95d950b (42356) [command_finish]> blame /Users/erk/projects/hilbert-bytes/docs/index.rst -Tjson --change --rev cc8427008a24c6cb409fd389cc77479ac95d950b --noninteractive exited 0 after 0.07 seconds
+2025/01/26 22:32:09 erk @(unknown) (42541) [command]> blame /Users/erk/projects/hilbert-bytes/.github/workflows/static.yml -Tjson --change --rev cc8427008a24c6cb409fd389cc77479ac95d950b --noninteractive
+2025/01/26 22:32:09 erk @cc8427008a24c6cb409fd389cc77479ac95d950b (42541) [command_finish]> blame /Users/erk/projects/hilbert-bytes/.github/workflows/static.yml -Tjson --change --rev cc8427008a24c6cb409fd389cc77479ac95d950b --noninteractive exited 0 after 0.08 seconds
+2025/01/26 22:41:59 erk @(unknown) (45197) [command]> blame /Users/erk/projects/hilbert-bytes/.github/workflows/python-package.yml -Tjson --change --rev cc8427008a24c6cb409fd389cc77479ac95d950b --noninteractive
+2025/01/26 22:41:59 erk @cc8427008a24c6cb409fd389cc77479ac95d950b (45197) [command_finish]> blame /Users/erk/projects/hilbert-bytes/.github/workflows/python-package.yml -Tjson --change --rev cc8427008a24c6cb409fd389cc77479ac95d950b --noninteractive exited 0 after 0.07 seconds
+2025/01/26 22:56:13 erk @(unknown) (47274) [command]> blame /Users/erk/projects/hilbert-bytes/README.md -Tjson --change --rev cc8427008a24c6cb409fd389cc77479ac95d950b --noninteractive
+2025/01/26 22:56:13 erk @cc8427008a24c6cb409fd389cc77479ac95d950b (47274) [command_finish]> blame /Users/erk/projects/hilbert-bytes/README.md -Tjson --change --rev cc8427008a24c6cb409fd389cc77479ac95d950b --noninteractive exited 0 after 0.07 seconds
+2025/01/26 23:01:48 erk @(unknown) (48375) [command]> blame /Users/erk/projects/hilbert-bytes/pyproject.toml -Tjson --change --rev cc8427008a24c6cb409fd389cc77479ac95d950b --noninteractive
+2025/01/26 23:01:48 erk @cc8427008a24c6cb409fd389cc77479ac95d950b (48375) [command_finish]> blame /Users/erk/projects/hilbert-bytes/pyproject.toml -Tjson --change --rev cc8427008a24c6cb409fd389cc77479ac95d950b --noninteractive exited 0 after 0.09 seconds
+2025/01/26 23:02:16 erk @(unknown) (48474) [command]> debugcommitmessage isl --noninteractive
+2025/01/26 23:02:16 erk @cc8427008a24c6cb409fd389cc77479ac95d950b (48474) [visibility]> read 0 heads: 
+2025/01/26 23:02:16 erk @cc8427008a24c6cb409fd389cc77479ac95d950b (48474) [command_finish]> debugcommitmessage isl --noninteractive exited 0 after 0.27 seconds
+2025/01/26 23:02:24 erk @(unknown) (48683) [command]> commit --addremove --message 'update numba
+
+
+Summary: 
+
+Test Plan: 
+
+
+' --noninteractive
+2025/01/26 23:02:24 erk @cc8427008a24c6cb409fd389cc77479ac95d950b (48683) [visibility]> read 0 heads: 
+2025/01/26 23:02:24 erk @cc8427008a24c6cb409fd389cc77479ac95d950b (48683) [visibility]> read 0 heads: 
+2025/01/26 23:02:24 erk @cc8427008a24c6cb409fd389cc77479ac95d950b (48683) [visibility]> removed 0 heads []; added 1 heads [ef010e33c80d]
+2025/01/26 23:02:24 erk @ef010e33c80dacc06b173bb988c9ab956ecb5f75 (48683) [visibility]> wrote 1 heads: ef010e33c80d
+2025/01/26 23:02:24 erk @ef010e33c80dacc06b173bb988c9ab956ecb5f75 (48683) [command_finish]> commit --addremove --message 'update numba
+
+
+Summary: 
+
+Test Plan: 
+
+
+' --noninteractive exited 0 after 0.22 seconds
+2025/01/26 23:02:28 erk @(unknown) (48909) [command]> pr submit --noninteractive
+2025/01/26 23:02:28 erk @ef010e33c80dacc06b173bb988c9ab956ecb5f75 (48909) [visibility]> read 1 heads: ef010e33c80d
+2025/01/26 23:02:30 erk @ef010e33c80dacc06b173bb988c9ab956ecb5f75 (48909) [visibility]> read 1 heads: ef010e33c80d
+2025/01/26 23:02:31 erk @ef010e33c80dacc06b173bb988c9ab956ecb5f75 (48909) [command_finish]> pr submit --noninteractive exited 0 after 3.29 seconds
+2025/01/26 23:04:29 erk @(unknown) (49222) [command]> pull --noninteractive
+2025/01/26 23:04:29 erk @ef010e33c80dacc06b173bb988c9ab956ecb5f75 (49222) [visibility]> read 1 heads: ef010e33c80d
+2025/01/26 23:04:29 erk @ef010e33c80dacc06b173bb988c9ab956ecb5f75 (49222) [visibility]> read 1 heads: ef010e33c80d
+2025/01/26 23:04:29 erk @ef010e33c80dacc06b173bb988c9ab956ecb5f75 (49222) [visibility]> read 1 heads: ef010e33c80d
+2025/01/26 23:04:29 erk @ef010e33c80dacc06b173bb988c9ab956ecb5f75 (49222) [visibility]> removed 1 heads [ef010e33c80d]; added 0 heads []
+2025/01/26 23:04:29 erk @ef010e33c80dacc06b173bb988c9ab956ecb5f75 (49222) [visibility]> wrote 0 heads: 
+2025/01/26 23:04:29 erk @ef010e33c80dacc06b173bb988c9ab956ecb5f75 (49222) [pythonhook]> pythonhook-post-pull: sapling.ext.github.pr_marker.cleanup_landed_pr_hook finished in 0.27 seconds
+2025/01/26 23:04:29 erk @ef010e33c80dacc06b173bb988c9ab956ecb5f75 (49222) [command_finish]> pull --noninteractive exited 0 after 0.70 seconds
+2025/01/26 23:04:31 erk @(unknown) (49330) [command]> goto --rev 'max(successors(remote/main))' --noninteractive
+2025/01/26 23:04:31 erk @(unknown) (49330) [pythonhook]> pythonhook-pre-update: sapling.ext.morestatus.saveupdateargs finished in 0.00 seconds
+2025/01/26 23:04:31 erk @ef010e33c80dacc06b173bb988c9ab956ecb5f75 (49330) [visibility]> read 0 heads: 
+2025/01/26 23:04:31 erk @995183b9ad187b7915d9e548bb7b5a8b2025548a (49330) [pythonhook]> pythonhook-post-update: sapling.ext.morestatus.cleanupdateargs finished in 0.00 seconds
+2025/01/26 23:04:31 erk @995183b9ad187b7915d9e548bb7b5a8b2025548a (49330) [command_finish]> goto --rev 'max(successors(remote/main))' --noninteractive exited 0 after 0.16 seconds
+2025/01/26 23:04:44 erk @(unknown) (49596) [command]> blame /Users/erk/projects/hilbert-bytes/pyproject.toml -Tjson --change --rev 995183b9ad187b7915d9e548bb7b5a8b2025548a --noninteractive
+2025/01/26 23:04:44 erk @995183b9ad187b7915d9e548bb7b5a8b2025548a (49596) [command_finish]> blame /Users/erk/projects/hilbert-bytes/pyproject.toml -Tjson --change --rev 995183b9ad187b7915d9e548bb7b5a8b2025548a --noninteractive exited 0 after 0.07 seconds
+2025/01/26 23:05:21 erk @(unknown) (49897) [command]> commit --addremove --message 'v0.4.0
+
+
+Summary: 
+
+Test Plan: 
+
+
+' --noninteractive
+2025/01/26 23:05:21 erk @995183b9ad187b7915d9e548bb7b5a8b2025548a (49897) [visibility]> read 0 heads: 
+2025/01/26 23:05:21 erk @995183b9ad187b7915d9e548bb7b5a8b2025548a (49897) [visibility]> read 0 heads: 
+2025/01/26 23:05:21 erk @995183b9ad187b7915d9e548bb7b5a8b2025548a (49897) [visibility]> removed 0 heads []; added 1 heads [3e2a673100c9]
+2025/01/26 23:05:21 erk @3e2a673100c965cd9daa32ca4553263d073e8f34 (49897) [visibility]> wrote 1 heads: 3e2a673100c9
+2025/01/26 23:05:21 erk @3e2a673100c965cd9daa32ca4553263d073e8f34 (49897) [command_finish]> commit --addremove --message 'v0.4.0
+
+
+Summary: 
+
+Test Plan: 
+
+
+' --noninteractive exited 0 after 0.21 seconds
+2025/01/26 23:05:26 erk @(unknown) (50123) [command]> metaedit --rev 'max(successors(3e2a673100c965cd9daa32ca4553263d073e8f34))' --message v0.4.0 --noninteractive
+2025/01/26 23:05:26 erk @3e2a673100c965cd9daa32ca4553263d073e8f34 (50123) [visibility]> read 1 heads: 3e2a673100c9
+2025/01/26 23:05:26 erk @3e2a673100c965cd9daa32ca4553263d073e8f34 (50123) [visibility]> removed 0 heads []; added 1 heads [5414aa9e142b]
+2025/01/26 23:05:26 erk @5414aa9e142bfa4f3122c2c83c8d4f1c04a49651 (50123) [visibility]> removed 1 heads [3e2a673100c9]; added 0 heads []
+2025/01/26 23:05:26 erk @5414aa9e142bfa4f3122c2c83c8d4f1c04a49651 (50123) [visibility]> wrote 1 heads: 5414aa9e142b
+2025/01/26 23:05:26 erk @5414aa9e142bfa4f3122c2c83c8d4f1c04a49651 (50123) [command_finish]> metaedit --rev 'max(successors(3e2a673100c965cd9daa32ca4553263d073e8f34))' --message v0.4.0 --noninteractive exited 0 after 0.09 seconds
+2025/01/26 23:05:46 erk @(unknown) (50345) [command]> pr submit --noninteractive
+2025/01/26 23:05:46 erk @5414aa9e142bfa4f3122c2c83c8d4f1c04a49651 (50345) [visibility]> read 1 heads: 5414aa9e142b
+2025/01/26 23:05:48 erk @5414aa9e142bfa4f3122c2c83c8d4f1c04a49651 (50345) [visibility]> read 1 heads: 5414aa9e142b
+2025/01/26 23:05:49 erk @5414aa9e142bfa4f3122c2c83c8d4f1c04a49651 (50345) [command_finish]> pr submit --noninteractive exited 0 after 3.25 seconds
+2025/01/26 23:07:41 erk @(unknown) (50742) [command]> pull --noninteractive
+2025/01/26 23:07:42 erk @5414aa9e142bfa4f3122c2c83c8d4f1c04a49651 (50742) [visibility]> read 1 heads: 5414aa9e142b
+2025/01/26 23:07:42 erk @5414aa9e142bfa4f3122c2c83c8d4f1c04a49651 (50742) [visibility]> read 1 heads: 5414aa9e142b
+2025/01/26 23:07:42 erk @5414aa9e142bfa4f3122c2c83c8d4f1c04a49651 (50742) [visibility]> read 1 heads: 5414aa9e142b
+2025/01/26 23:07:42 erk @5414aa9e142bfa4f3122c2c83c8d4f1c04a49651 (50742) [visibility]> removed 1 heads [5414aa9e142b]; added 0 heads []
+2025/01/26 23:07:42 erk @5414aa9e142bfa4f3122c2c83c8d4f1c04a49651 (50742) [visibility]> wrote 0 heads: 
+2025/01/26 23:07:42 erk @5414aa9e142bfa4f3122c2c83c8d4f1c04a49651 (50742) [pythonhook]> pythonhook-post-pull: sapling.ext.github.pr_marker.cleanup_landed_pr_hook finished in 0.25 seconds
+2025/01/26 23:07:42 erk @5414aa9e142bfa4f3122c2c83c8d4f1c04a49651 (50742) [command_finish]> pull --noninteractive exited 0 after 0.70 seconds
+2025/01/26 23:07:43 erk @(unknown) (50836) [command]> goto --rev 'max(successors(remote/main))' --noninteractive
+2025/01/26 23:07:43 erk @(unknown) (50836) [pythonhook]> pythonhook-pre-update: sapling.ext.morestatus.saveupdateargs finished in 0.00 seconds
+2025/01/26 23:07:43 erk @5414aa9e142bfa4f3122c2c83c8d4f1c04a49651 (50836) [visibility]> read 0 heads: 
+2025/01/26 23:07:43 erk @7f68bb7d11034bc7dc5076f8f3855cece2527c5d (50836) [pythonhook]> pythonhook-post-update: sapling.ext.morestatus.cleanupdateargs finished in 0.00 seconds
+2025/01/26 23:07:43 erk @7f68bb7d11034bc7dc5076f8f3855cece2527c5d (50836) [command_finish]> goto --rev 'max(successors(remote/main))' --noninteractive exited 0 after 0.16 seconds
+2025/01/27 22:16:17 erk @(unknown) (57020) [command]> debugcommitmessage isl --noninteractive
+2025/01/27 22:16:18 erk @7f68bb7d11034bc7dc5076f8f3855cece2527c5d (57020) [visibility]> read 0 heads: 
+2025/01/27 22:16:18 erk @7f68bb7d11034bc7dc5076f8f3855cece2527c5d (57020) [command_finish]> debugcommitmessage isl --noninteractive exited 0 after 0.92 seconds
+2025/01/27 22:16:21 erk @(unknown) (57384) [command]> blame /Users/erk/projects/hilbert-bytes/pyproject.toml -Tjson --change --rev 7f68bb7d11034bc7dc5076f8f3855cece2527c5d --noninteractive
+2025/01/27 22:16:21 erk @7f68bb7d11034bc7dc5076f8f3855cece2527c5d (57384) [command_finish]> blame /Users/erk/projects/hilbert-bytes/pyproject.toml -Tjson --change --rev 7f68bb7d11034bc7dc5076f8f3855cece2527c5d --noninteractive exited 0 after 0.07 seconds
+2025/01/27 22:16:33 erk @(unknown) (57434) [command]> blame /Users/erk/projects/hilbert-bytes/hilbert_bytes/py.typed -Tjson --change --rev 7f68bb7d11034bc7dc5076f8f3855cece2527c5d --noninteractive
+2025/01/27 22:16:33 erk @7f68bb7d11034bc7dc5076f8f3855cece2527c5d (57434) [command_finish]> blame /Users/erk/projects/hilbert-bytes/hilbert_bytes/py.typed -Tjson --change --rev 7f68bb7d11034bc7dc5076f8f3855cece2527c5d --noninteractive exited 0 after 0.09 seconds
+2025/02/05 21:16:20 erk @(unknown) (62504) [command]> blame /Users/erk/projects/hilbert-bytes/hilbert_bytes/py.typed -Tjson --change --rev 7f68bb7d11034bc7dc5076f8f3855cece2527c5d --noninteractive
+2025/02/05 21:16:20 erk @7f68bb7d11034bc7dc5076f8f3855cece2527c5d (62504) [command_finish]> blame /Users/erk/projects/hilbert-bytes/hilbert_bytes/py.typed -Tjson --change --rev 7f68bb7d11034bc7dc5076f8f3855cece2527c5d --noninteractive exited 0 after 0.18 seconds
+2025/02/05 21:17:28 erk @(unknown) (63147) [command]> blame /Users/erk/projects/hilbert-bytes/pyproject.toml -Tjson --change --rev 7f68bb7d11034bc7dc5076f8f3855cece2527c5d --noninteractive
+2025/02/05 21:17:28 erk @7f68bb7d11034bc7dc5076f8f3855cece2527c5d (63147) [command_finish]> blame /Users/erk/projects/hilbert-bytes/pyproject.toml -Tjson --change --rev 7f68bb7d11034bc7dc5076f8f3855cece2527c5d --noninteractive exited 0 after 0.08 seconds
+2025/02/05 21:19:39 erk @(unknown) (63257) [command]> blame /Users/erk/projects/hilbert-bytes/poetry.lock -Tjson --change --rev 7f68bb7d11034bc7dc5076f8f3855cece2527c5d --noninteractive
+2025/02/05 21:19:39 erk @7f68bb7d11034bc7dc5076f8f3855cece2527c5d (63257) [command_finish]> blame /Users/erk/projects/hilbert-bytes/poetry.lock -Tjson --change --rev 7f68bb7d11034bc7dc5076f8f3855cece2527c5d --noninteractive exited 0 after 0.09 seconds
+2025/02/05 21:19:42 erk @(unknown) (63308) [command]> blame /Users/erk/projects/hilbert-bytes/README.md -Tjson --change --rev 7f68bb7d11034bc7dc5076f8f3855cece2527c5d --noninteractive
+2025/02/05 21:19:42 erk @7f68bb7d11034bc7dc5076f8f3855cece2527c5d (63308) [command_finish]> blame /Users/erk/projects/hilbert-bytes/README.md -Tjson --change --rev 7f68bb7d11034bc7dc5076f8f3855cece2527c5d --noninteractive exited 0 after 0.07 seconds
+2025/02/05 21:19:59 erk @(unknown) (63358) [command]> blame /Users/erk/projects/hilbert-bytes/pyproject.bak.toml -Tjson --change --rev 7f68bb7d11034bc7dc5076f8f3855cece2527c5d --noninteractive
+2025/02/05 21:19:59 erk @7f68bb7d11034bc7dc5076f8f3855cece2527c5d (63358) [command_finish]> blame /Users/erk/projects/hilbert-bytes/pyproject.bak.toml -Tjson --change --rev 7f68bb7d11034bc7dc5076f8f3855cece2527c5d --noninteractive exited 0 after 0.18 seconds
+2025/02/05 21:34:12 erk @(unknown) (63938) [command]> debugcommitmessage isl --noninteractive
+2025/02/05 21:34:12 erk @7f68bb7d11034bc7dc5076f8f3855cece2527c5d (63938) [visibility]> read 0 heads: 
+2025/02/05 21:34:12 erk @7f68bb7d11034bc7dc5076f8f3855cece2527c5d (63938) [command_finish]> debugcommitmessage isl --noninteractive exited 0 after 0.42 seconds
+2025/02/05 21:34:19 erk @(unknown) (64176) [command]> blame /Users/erk/projects/hilbert-bytes/hilbert_bytes.egg-info/top_level.txt -Tjson --change --rev 7f68bb7d11034bc7dc5076f8f3855cece2527c5d --noninteractive
+2025/02/05 21:34:19 erk @7f68bb7d11034bc7dc5076f8f3855cece2527c5d (64176) [command_finish]> blame /Users/erk/projects/hilbert-bytes/hilbert_bytes.egg-info/top_level.txt -Tjson --change --rev 7f68bb7d11034bc7dc5076f8f3855cece2527c5d --noninteractive exited 0 after 0.06 seconds
+2025/02/05 21:34:31 erk @(unknown) (64271) [command]> blame /Users/erk/projects/hilbert-bytes/.gitignore -Tjson --change --rev 7f68bb7d11034bc7dc5076f8f3855cece2527c5d --noninteractive
+2025/02/05 21:34:31 erk @7f68bb7d11034bc7dc5076f8f3855cece2527c5d (64271) [command_finish]> blame /Users/erk/projects/hilbert-bytes/.gitignore -Tjson --change --rev 7f68bb7d11034bc7dc5076f8f3855cece2527c5d --noninteractive exited 0 after 0.07 seconds
+2025/02/05 21:34:39 erk @(unknown) (64417) [command]> blame /Users/erk/projects/hilbert-bytes/hilbert_bytes.egg-info/SOURCES.txt -Tjson --change --rev 7f68bb7d11034bc7dc5076f8f3855cece2527c5d --noninteractive
+2025/02/05 21:34:39 erk @7f68bb7d11034bc7dc5076f8f3855cece2527c5d (64417) [command_finish]> blame /Users/erk/projects/hilbert-bytes/hilbert_bytes.egg-info/SOURCES.txt -Tjson --change --rev 7f68bb7d11034bc7dc5076f8f3855cece2527c5d --noninteractive exited 0 after 0.07 seconds
+2025/02/05 21:34:55 erk @(unknown) (64623) [command]> blame /Users/erk/projects/hilbert-bytes/hello.py -Tjson --change --rev 7f68bb7d11034bc7dc5076f8f3855cece2527c5d --noninteractive
+2025/02/05 21:34:55 erk @7f68bb7d11034bc7dc5076f8f3855cece2527c5d (64623) [command_finish]> blame /Users/erk/projects/hilbert-bytes/hello.py -Tjson --change --rev 7f68bb7d11034bc7dc5076f8f3855cece2527c5d --noninteractive exited 0 after 0.07 seconds
+2025/02/05 21:35:10 erk @(unknown) (64759) [command]> blame /Users/erk/projects/hilbert-bytes/.python-version -Tjson --change --rev 7f68bb7d11034bc7dc5076f8f3855cece2527c5d --noninteractive
+2025/02/05 21:35:10 erk @7f68bb7d11034bc7dc5076f8f3855cece2527c5d (64759) [command_finish]> blame /Users/erk/projects/hilbert-bytes/.python-version -Tjson --change --rev 7f68bb7d11034bc7dc5076f8f3855cece2527c5d --noninteractive exited 0 after 0.07 seconds
+2025/02/05 21:36:42 erk @(unknown) (65530) [command]> blame /Users/erk/projects/hilbert-bytes/.mypy_cache/3.13/__future__.data.json -Tjson --change --rev 7f68bb7d11034bc7dc5076f8f3855cece2527c5d --noninteractive
+2025/02/05 21:36:42 erk @7f68bb7d11034bc7dc5076f8f3855cece2527c5d (65530) [command_finish]> blame /Users/erk/projects/hilbert-bytes/.mypy_cache/3.13/__future__.data.json -Tjson --change --rev 7f68bb7d11034bc7dc5076f8f3855cece2527c5d --noninteractive exited 0 after 0.07 seconds
+2025/02/05 21:37:11 erk @(unknown) (65709) [command]> blame /Users/erk/projects/hilbert-bytes/.github/workflows/python-package.yml -Tjson --change --rev 7f68bb7d11034bc7dc5076f8f3855cece2527c5d --noninteractive
+2025/02/05 21:37:11 erk @7f68bb7d11034bc7dc5076f8f3855cece2527c5d (65709) [command_finish]> blame /Users/erk/projects/hilbert-bytes/.github/workflows/python-package.yml -Tjson --change --rev 7f68bb7d11034bc7dc5076f8f3855cece2527c5d --noninteractive exited 0 after 0.08 seconds
+2025/02/05 21:39:06 erk @(unknown) (66147) [command]> blame /Users/erk/projects/hilbert-bytes/tests/__init__.py -Tjson --change --rev 7f68bb7d11034bc7dc5076f8f3855cece2527c5d --noninteractive
+2025/02/05 21:39:06 erk @7f68bb7d11034bc7dc5076f8f3855cece2527c5d (66147) [command_finish]> blame /Users/erk/projects/hilbert-bytes/tests/__init__.py -Tjson --change --rev 7f68bb7d11034bc7dc5076f8f3855cece2527c5d --noninteractive exited 0 after 0.08 seconds
+2025/02/05 21:39:21 erk @(unknown) (66470) [command]> blame /Users/erk/projects/hilbert-bytes/tests/test_hilbert.py -Tjson --change --rev 7f68bb7d11034bc7dc5076f8f3855cece2527c5d --noninteractive
+2025/02/05 21:39:21 erk @7f68bb7d11034bc7dc5076f8f3855cece2527c5d (66470) [command_finish]> blame /Users/erk/projects/hilbert-bytes/tests/test_hilbert.py -Tjson --change --rev 7f68bb7d11034bc7dc5076f8f3855cece2527c5d --noninteractive exited 0 after 0.07 seconds
+2025/02/05 21:40:52 erk @(unknown) (67230) [command]> blame /Users/erk/projects/hilbert-bytes/tests/__init__.py -Tjson --change --rev 7f68bb7d11034bc7dc5076f8f3855cece2527c5d --noninteractive
+2025/02/05 21:40:52 erk @7f68bb7d11034bc7dc5076f8f3855cece2527c5d (67230) [command_finish]> blame /Users/erk/projects/hilbert-bytes/tests/__init__.py -Tjson --change --rev 7f68bb7d11034bc7dc5076f8f3855cece2527c5d --noninteractive exited 0 after 0.07 seconds
+2025/02/05 21:40:55 erk @(unknown) (67257) [command]> blame /Users/erk/projects/hilbert-bytes/.github/workflows/python-package.yml -Tjson --change --rev 7f68bb7d11034bc7dc5076f8f3855cece2527c5d --noninteractive
+2025/02/05 21:40:55 erk @7f68bb7d11034bc7dc5076f8f3855cece2527c5d (67257) [command_finish]> blame /Users/erk/projects/hilbert-bytes/.github/workflows/python-package.yml -Tjson --change --rev 7f68bb7d11034bc7dc5076f8f3855cece2527c5d --noninteractive exited 0 after 0.07 seconds
+2025/02/05 21:42:20 erk @(unknown) (67353) [command]> blame /Users/erk/projects/hilbert-bytes/.github/workflows/static.yml -Tjson --change --rev 7f68bb7d11034bc7dc5076f8f3855cece2527c5d --noninteractive
+2025/02/05 21:42:20 erk @7f68bb7d11034bc7dc5076f8f3855cece2527c5d (67353) [command_finish]> blame /Users/erk/projects/hilbert-bytes/.github/workflows/static.yml -Tjson --change --rev 7f68bb7d11034bc7dc5076f8f3855cece2527c5d --noninteractive exited 0 after 0.08 seconds
+2025/02/05 21:42:51 erk @(unknown) (67411) [command]> blame /Users/erk/projects/hilbert-bytes/docs/conf.py -Tjson --change --rev 7f68bb7d11034bc7dc5076f8f3855cece2527c5d --noninteractive
+2025/02/05 21:42:51 erk @7f68bb7d11034bc7dc5076f8f3855cece2527c5d (67411) [command_finish]> blame /Users/erk/projects/hilbert-bytes/docs/conf.py -Tjson --change --rev 7f68bb7d11034bc7dc5076f8f3855cece2527c5d --noninteractive exited 0 after 0.07 seconds
+2025/02/05 21:43:14 erk @(unknown) (67459) [command]> blame /Users/erk/projects/hilbert-bytes/pyproject.toml -Tjson --change --rev 7f68bb7d11034bc7dc5076f8f3855cece2527c5d --noninteractive
+2025/02/05 21:43:14 erk @7f68bb7d11034bc7dc5076f8f3855cece2527c5d (67459) [command_finish]> blame /Users/erk/projects/hilbert-bytes/pyproject.toml -Tjson --change --rev 7f68bb7d11034bc7dc5076f8f3855cece2527c5d --noninteractive exited 0 after 0.08 seconds
+2025/02/05 21:43:20 erk @(unknown) (67489) [command]> blame /Users/erk/projects/hilbert-bytes/tests/test_hilbert.py -Tjson --change --rev 7f68bb7d11034bc7dc5076f8f3855cece2527c5d --noninteractive
+2025/02/05 21:43:20 erk @7f68bb7d11034bc7dc5076f8f3855cece2527c5d (67489) [command_finish]> blame /Users/erk/projects/hilbert-bytes/tests/test_hilbert.py -Tjson --change --rev 7f68bb7d11034bc7dc5076f8f3855cece2527c5d --noninteractive exited 0 after 0.07 seconds
+2025/02/05 21:46:23 erk @(unknown) (68248) [command]> blame /Users/erk/projects/hilbert-bytes/.github/workflows/python-package.yml -Tjson --change --rev 7f68bb7d11034bc7dc5076f8f3855cece2527c5d --noninteractive
+2025/02/05 21:46:23 erk @7f68bb7d11034bc7dc5076f8f3855cece2527c5d (68248) [command_finish]> blame /Users/erk/projects/hilbert-bytes/.github/workflows/python-package.yml -Tjson --change --rev 7f68bb7d11034bc7dc5076f8f3855cece2527c5d --noninteractive exited 0 after 0.07 seconds
+2025/02/05 21:46:32 erk @(unknown) (68580) [command]> blame /Users/erk/projects/hilbert-bytes/tests/test_hilbert.py -Tjson --change --rev 7f68bb7d11034bc7dc5076f8f3855cece2527c5d --noninteractive
+2025/02/05 21:46:32 erk @7f68bb7d11034bc7dc5076f8f3855cece2527c5d (68580) [command_finish]> blame /Users/erk/projects/hilbert-bytes/tests/test_hilbert.py -Tjson --change --rev 7f68bb7d11034bc7dc5076f8f3855cece2527c5d --noninteractive exited 0 after 0.07 seconds
+2025/02/05 21:47:52 erk @(unknown) (69036) [command]> blame /Users/erk/projects/hilbert-bytes/tests/test_hilbert.py -Tjson --change --rev 7f68bb7d11034bc7dc5076f8f3855cece2527c5d --noninteractive
+2025/02/05 21:47:53 erk @7f68bb7d11034bc7dc5076f8f3855cece2527c5d (69036) [command_finish]> blame /Users/erk/projects/hilbert-bytes/tests/test_hilbert.py -Tjson --change --rev 7f68bb7d11034bc7dc5076f8f3855cece2527c5d --noninteractive exited 0 after 0.58 seconds
+2025/02/05 21:49:11 erk @(unknown) (69749) [command]> blame /Users/erk/projects/hilbert-bytes/tests/test_hilbert.py -Tjson --change --rev 7f68bb7d11034bc7dc5076f8f3855cece2527c5d --noninteractive
+2025/02/05 21:49:11 erk @7f68bb7d11034bc7dc5076f8f3855cece2527c5d (69749) [command_finish]> blame /Users/erk/projects/hilbert-bytes/tests/test_hilbert.py -Tjson --change --rev 7f68bb7d11034bc7dc5076f8f3855cece2527c5d --noninteractive exited 0 after 0.07 seconds
+2025/02/05 21:50:17 erk @(unknown) (69925) [command]> blame /Users/erk/projects/hilbert-bytes/.github/workflows/python-package.yml -Tjson --change --rev 7f68bb7d11034bc7dc5076f8f3855cece2527c5d --noninteractive
+2025/02/05 21:50:17 erk @7f68bb7d11034bc7dc5076f8f3855cece2527c5d (69925) [command_finish]> blame /Users/erk/projects/hilbert-bytes/.github/workflows/python-package.yml -Tjson --change --rev 7f68bb7d11034bc7dc5076f8f3855cece2527c5d --noninteractive exited 0 after 0.08 seconds
+2025/02/05 21:50:38 erk @(unknown) (69975) [command]> blame /Users/erk/projects/hilbert-bytes/docs/__init__.py -Tjson --change --rev 7f68bb7d11034bc7dc5076f8f3855cece2527c5d --noninteractive
+2025/02/05 21:50:38 erk @7f68bb7d11034bc7dc5076f8f3855cece2527c5d (69975) [command_finish]> blame /Users/erk/projects/hilbert-bytes/docs/__init__.py -Tjson --change --rev 7f68bb7d11034bc7dc5076f8f3855cece2527c5d --noninteractive exited 0 after 0.07 seconds
+2025/02/05 21:51:16 erk @(unknown) (70047) [command]> blame /Users/erk/projects/hilbert-bytes/out/html/index.html -Tjson --change --rev 7f68bb7d11034bc7dc5076f8f3855cece2527c5d --noninteractive
+2025/02/05 21:51:16 erk @7f68bb7d11034bc7dc5076f8f3855cece2527c5d (70047) [command_finish]> blame /Users/erk/projects/hilbert-bytes/out/html/index.html -Tjson --change --rev 7f68bb7d11034bc7dc5076f8f3855cece2527c5d --noninteractive exited 0 after 0.07 seconds
+2025/02/05 21:52:46 erk @(unknown) (70167) [command]> blame /Users/erk/projects/hilbert-bytes/docs/conf.py -Tjson --change --rev 7f68bb7d11034bc7dc5076f8f3855cece2527c5d --noninteractive
+2025/02/05 21:52:46 erk @7f68bb7d11034bc7dc5076f8f3855cece2527c5d (70167) [command_finish]> blame /Users/erk/projects/hilbert-bytes/docs/conf.py -Tjson --change --rev 7f68bb7d11034bc7dc5076f8f3855cece2527c5d --noninteractive exited 0 after 0.08 seconds
+2025/02/05 21:54:11 erk @(unknown) (70274) [command]> blame /Users/erk/projects/hilbert-bytes/docs/index.rst -Tjson --change --rev 7f68bb7d11034bc7dc5076f8f3855cece2527c5d --noninteractive
+2025/02/05 21:54:11 erk @7f68bb7d11034bc7dc5076f8f3855cece2527c5d (70274) [command_finish]> blame /Users/erk/projects/hilbert-bytes/docs/index.rst -Tjson --change --rev 7f68bb7d11034bc7dc5076f8f3855cece2527c5d --noninteractive exited 0 after 0.08 seconds
+2025/02/05 22:00:16 erk @(unknown) (70603) [command]> blame /Users/erk/projects/hilbert-bytes/pyproject.toml -Tjson --change --rev 7f68bb7d11034bc7dc5076f8f3855cece2527c5d --noninteractive
+2025/02/05 22:00:16 erk @7f68bb7d11034bc7dc5076f8f3855cece2527c5d (70603) [command_finish]> blame /Users/erk/projects/hilbert-bytes/pyproject.toml -Tjson --change --rev 7f68bb7d11034bc7dc5076f8f3855cece2527c5d --noninteractive exited 0 after 0.08 seconds
+2025/02/05 22:00:21 erk @(unknown) (70645) [command]> blame /Users/erk/projects/hilbert-bytes/tests/__init__.py -Tjson --change --rev 7f68bb7d11034bc7dc5076f8f3855cece2527c5d --noninteractive
+2025/02/05 22:00:21 erk @7f68bb7d11034bc7dc5076f8f3855cece2527c5d (70645) [command_finish]> blame /Users/erk/projects/hilbert-bytes/tests/__init__.py -Tjson --change --rev 7f68bb7d11034bc7dc5076f8f3855cece2527c5d --noninteractive exited 0 after 0.33 seconds
+2025/02/05 22:00:23 erk @(unknown) (70675) [command]> blame /Users/erk/projects/hilbert-bytes/README.md -Tjson --change --rev 7f68bb7d11034bc7dc5076f8f3855cece2527c5d --noninteractive
+2025/02/05 22:00:23 erk @7f68bb7d11034bc7dc5076f8f3855cece2527c5d (70675) [command_finish]> blame /Users/erk/projects/hilbert-bytes/README.md -Tjson --change --rev 7f68bb7d11034bc7dc5076f8f3855cece2527c5d --noninteractive exited 0 after 0.07 seconds
+2025/02/05 22:00:42 erk @(unknown) (70726) [command]> blame /Users/erk/projects/hilbert-bytes/.gitignore -Tjson --change --rev 7f68bb7d11034bc7dc5076f8f3855cece2527c5d --noninteractive
+2025/02/05 22:00:42 erk @7f68bb7d11034bc7dc5076f8f3855cece2527c5d (70726) [command_finish]> blame /Users/erk/projects/hilbert-bytes/.gitignore -Tjson --change --rev 7f68bb7d11034bc7dc5076f8f3855cece2527c5d --noninteractive exited 0 after 0.07 seconds
+2025/02/05 22:00:44 erk @(unknown) (70794) [command]> blame /Users/erk/projects/hilbert-bytes/hilbert_bytes/__init__.py -Tjson --change --rev 7f68bb7d11034bc7dc5076f8f3855cece2527c5d --noninteractive
+2025/02/05 22:00:44 erk @7f68bb7d11034bc7dc5076f8f3855cece2527c5d (70794) [command_finish]> blame /Users/erk/projects/hilbert-bytes/hilbert_bytes/__init__.py -Tjson --change --rev 7f68bb7d11034bc7dc5076f8f3855cece2527c5d --noninteractive exited 0 after 0.07 seconds
+2025/02/05 22:00:46 erk @(unknown) (70846) [command]> debugcommitmessage isl --noninteractive
+2025/02/05 22:00:46 erk @7f68bb7d11034bc7dc5076f8f3855cece2527c5d (70846) [visibility]> read 0 heads: 
+2025/02/05 22:00:46 erk @7f68bb7d11034bc7dc5076f8f3855cece2527c5d (70846) [command_finish]> debugcommitmessage isl --noninteractive exited 0 after 0.20 seconds
+2025/02/05 22:01:00 erk @(unknown) (71069) [command]> commit --addremove --message 'switch to uv
+
+
+Summary: 
+
+Test Plan: 
+
+
+' --noninteractive
+2025/02/05 22:01:00 erk @7f68bb7d11034bc7dc5076f8f3855cece2527c5d (71069) [visibility]> read 0 heads: 
+2025/02/05 22:01:00 erk @7f68bb7d11034bc7dc5076f8f3855cece2527c5d (71069) [visibility]> read 0 heads: 
+2025/02/05 22:01:00 erk @7f68bb7d11034bc7dc5076f8f3855cece2527c5d (71069) [visibility]> removed 0 heads []; added 1 heads [ea0b0c4920c2]
+2025/02/05 22:01:00 erk @ea0b0c4920c2a29deb776f0e86569b561aa3427b (71069) [visibility]> wrote 1 heads: ea0b0c4920c2
+2025/02/05 22:01:00 erk @ea0b0c4920c2a29deb776f0e86569b561aa3427b (71069) [command_finish]> commit --addremove --message 'switch to uv
+
+
+Summary: 
+
+Test Plan: 
+
+
+' --noninteractive exited 0 after 0.33 seconds
+2025/02/05 22:01:05 erk @(unknown) (71308) [command]> pr submit --draft --noninteractive
+2025/02/05 22:01:05 erk @ea0b0c4920c2a29deb776f0e86569b561aa3427b (71308) [visibility]> read 1 heads: ea0b0c4920c2
+2025/02/05 22:01:07 erk @ea0b0c4920c2a29deb776f0e86569b561aa3427b (71308) [visibility]> read 1 heads: ea0b0c4920c2
+2025/02/05 22:01:08 erk @ea0b0c4920c2a29deb776f0e86569b561aa3427b (71308) [command_finish]> pr submit --draft --noninteractive exited 0 after 3.33 seconds
+2025/02/05 22:03:30 erk @(unknown) (72567) [command]> blame /Users/erk/projects/hilbert-bytes/pyproject.toml -Tjson --change --rev ea0b0c4920c2a29deb776f0e86569b561aa3427b --noninteractive
+2025/02/05 22:03:30 erk @ea0b0c4920c2a29deb776f0e86569b561aa3427b (72567) [command_finish]> blame /Users/erk/projects/hilbert-bytes/pyproject.toml -Tjson --change --rev ea0b0c4920c2a29deb776f0e86569b561aa3427b --noninteractive exited 0 after 0.08 seconds
+2025/02/05 22:06:09 erk @(unknown) (74560) [command]> pull --noninteractive
+2025/02/05 22:06:09 erk @ea0b0c4920c2a29deb776f0e86569b561aa3427b (74560) [visibility]> read 1 heads: ea0b0c4920c2
+2025/02/05 22:06:09 erk @ea0b0c4920c2a29deb776f0e86569b561aa3427b (74560) [visibility]> read 1 heads: ea0b0c4920c2
+2025/02/05 22:06:10 erk @ea0b0c4920c2a29deb776f0e86569b561aa3427b (74560) [visibility]> read 1 heads: ea0b0c4920c2
+2025/02/05 22:06:10 erk @ea0b0c4920c2a29deb776f0e86569b561aa3427b (74560) [visibility]> removed 1 heads [ea0b0c4920c2]; added 0 heads []
+2025/02/05 22:06:10 erk @ea0b0c4920c2a29deb776f0e86569b561aa3427b (74560) [visibility]> wrote 0 heads: 
+2025/02/05 22:06:10 erk @ea0b0c4920c2a29deb776f0e86569b561aa3427b (74560) [pythonhook]> pythonhook-post-pull: sapling.ext.github.pr_marker.cleanup_landed_pr_hook finished in 0.30 seconds
+2025/02/05 22:06:10 erk @ea0b0c4920c2a29deb776f0e86569b561aa3427b (74560) [command_finish]> pull --noninteractive exited 0 after 0.78 seconds
+2025/02/05 22:06:12 erk @(unknown) (74669) [command]> goto --rev 'max(successors(remote/main))' --noninteractive
+2025/02/05 22:06:12 erk @(unknown) (74669) [pythonhook]> pythonhook-pre-update: sapling.ext.morestatus.saveupdateargs finished in 0.00 seconds
+2025/02/05 22:06:12 erk @ea0b0c4920c2a29deb776f0e86569b561aa3427b (74669) [visibility]> read 0 heads: 
+2025/02/05 22:06:12 erk @8e170da6c839f5efa32d82905dd521d6d5a2a6e8 (74669) [pythonhook]> pythonhook-post-update: sapling.ext.morestatus.cleanupdateargs finished in 0.00 seconds
+2025/02/05 22:06:12 erk @8e170da6c839f5efa32d82905dd521d6d5a2a6e8 (74669) [command_finish]> goto --rev 'max(successors(remote/main))' --noninteractive exited 0 after 0.17 seconds
+2025/02/05 22:10:47 erk @(unknown) (75837) [command]> blame /Users/erk/projects/hilbert-bytes/examples.py -Tjson --change --rev 8e170da6c839f5efa32d82905dd521d6d5a2a6e8 --noninteractive
+2025/02/05 22:10:47 erk @8e170da6c839f5efa32d82905dd521d6d5a2a6e8 (75837) [command_finish]> blame /Users/erk/projects/hilbert-bytes/examples.py -Tjson --change --rev 8e170da6c839f5efa32d82905dd521d6d5a2a6e8 --noninteractive exited 0 after 0.07 seconds
+2025/02/05 22:37:00 erk @(unknown) (77883) [command]> commit --addremove --message 'add examples notebook
+
+
+Summary: 
+
+Test Plan: 
+
+
+' --noninteractive
+2025/02/05 22:37:00 erk @8e170da6c839f5efa32d82905dd521d6d5a2a6e8 (77883) [visibility]> read 0 heads: 
+2025/02/05 22:37:00 erk @8e170da6c839f5efa32d82905dd521d6d5a2a6e8 (77883) [visibility]> read 0 heads: 
+2025/02/05 22:37:00 erk @8e170da6c839f5efa32d82905dd521d6d5a2a6e8 (77883) [visibility]> removed 0 heads []; added 1 heads [97486f0fde0c]
+2025/02/05 22:37:00 erk @97486f0fde0c0d716453007b44b780d66824c364 (77883) [visibility]> wrote 1 heads: 97486f0fde0c
+2025/02/05 22:37:00 erk @97486f0fde0c0d716453007b44b780d66824c364 (77883) [command_finish]> commit --addremove --message 'add examples notebook
+
+
+Summary: 
+
+Test Plan: 
+
+
+' --noninteractive exited 0 after 0.32 seconds
+2025/02/05 22:37:02 erk @(unknown) (78109) [command]> pr submit --draft --noninteractive
+2025/02/05 22:37:02 erk @97486f0fde0c0d716453007b44b780d66824c364 (78109) [visibility]> read 1 heads: 97486f0fde0c
+2025/02/05 22:37:05 erk @97486f0fde0c0d716453007b44b780d66824c364 (78109) [visibility]> read 1 heads: 97486f0fde0c
+2025/02/05 22:37:06 erk @97486f0fde0c0d716453007b44b780d66824c364 (78109) [command_finish]> pr submit --draft --noninteractive exited 0 after 3.67 seconds
+2025/02/05 22:50:04 erk @(unknown) (79513) [command]> pull --noninteractive
+2025/02/05 22:50:04 erk @97486f0fde0c0d716453007b44b780d66824c364 (79513) [visibility]> read 1 heads: 97486f0fde0c
+2025/02/05 22:50:04 erk @97486f0fde0c0d716453007b44b780d66824c364 (79513) [visibility]> read 1 heads: 97486f0fde0c
+2025/02/05 22:50:04 erk @97486f0fde0c0d716453007b44b780d66824c364 (79513) [visibility]> read 1 heads: 97486f0fde0c
+2025/02/05 22:50:04 erk @97486f0fde0c0d716453007b44b780d66824c364 (79513) [visibility]> removed 1 heads [97486f0fde0c]; added 0 heads []
+2025/02/05 22:50:04 erk @97486f0fde0c0d716453007b44b780d66824c364 (79513) [visibility]> wrote 0 heads: 
+2025/02/05 22:50:04 erk @97486f0fde0c0d716453007b44b780d66824c364 (79513) [pythonhook]> pythonhook-post-pull: sapling.ext.github.pr_marker.cleanup_landed_pr_hook finished in 0.29 seconds
+2025/02/05 22:50:04 erk @97486f0fde0c0d716453007b44b780d66824c364 (79513) [command_finish]> pull --noninteractive exited 0 after 0.77 seconds
+2025/02/05 22:50:06 erk @(unknown) (79625) [command]> goto --rev 'max(successors(remote/main))' --noninteractive
+2025/02/05 22:50:06 erk @(unknown) (79625) [pythonhook]> pythonhook-pre-update: sapling.ext.morestatus.saveupdateargs finished in 0.00 seconds
+2025/02/05 22:50:06 erk @97486f0fde0c0d716453007b44b780d66824c364 (79625) [visibility]> read 0 heads: 
+2025/02/05 22:50:06 erk @4828adccf0d5e92f878f900f7bbf00b30b626d1e (79625) [pythonhook]> pythonhook-post-update: sapling.ext.morestatus.cleanupdateargs finished in 0.00 seconds
+2025/02/05 22:50:06 erk @4828adccf0d5e92f878f900f7bbf00b30b626d1e (79625) [command_finish]> goto --rev 'max(successors(remote/main))' --noninteractive exited 0 after 0.17 seconds
+2025/03/01 15:00:56 erk @(unknown) (86729) [command]> debugcommitmessage isl --noninteractive
+2025/03/01 15:00:57 erk @4828adccf0d5e92f878f900f7bbf00b30b626d1e (86729) [visibility]> read 0 heads: 
+2025/03/01 15:00:57 erk @4828adccf0d5e92f878f900f7bbf00b30b626d1e (86729) [command_finish]> debugcommitmessage isl --noninteractive exited 0 after 1.30 seconds
+2025/03/01 15:01:05 erk @(unknown) (87155) [command]> blame /Users/erk/projects/hilbert-bytes/pyproject.toml -Tjson --change --rev 4828adccf0d5e92f878f900f7bbf00b30b626d1e --noninteractive
+2025/03/01 15:01:05 erk @4828adccf0d5e92f878f900f7bbf00b30b626d1e (87155) [command_finish]> blame /Users/erk/projects/hilbert-bytes/pyproject.toml -Tjson --change --rev 4828adccf0d5e92f878f900f7bbf00b30b626d1e --noninteractive exited 0 after 0.09 seconds
+2025/03/01 15:03:53 erk @(unknown) (89815) [command]> blame /Users/erk/projects/hilbert-bytes/.github/workflows/python-package.yml -Tjson --change --rev 4828adccf0d5e92f878f900f7bbf00b30b626d1e --noninteractive
+2025/03/01 15:03:53 erk @4828adccf0d5e92f878f900f7bbf00b30b626d1e (89815) [command_finish]> blame /Users/erk/projects/hilbert-bytes/.github/workflows/python-package.yml -Tjson --change --rev 4828adccf0d5e92f878f900f7bbf00b30b626d1e --noninteractive exited 0 after 0.07 seconds
+2025/03/01 15:05:05 erk @(unknown) (90392) [command]> blame /Users/erk/projects/hilbert-bytes/tests/test_hilbert.py -Tjson --change --rev 4828adccf0d5e92f878f900f7bbf00b30b626d1e --noninteractive
+2025/03/01 15:05:05 erk @4828adccf0d5e92f878f900f7bbf00b30b626d1e (90392) [command_finish]> blame /Users/erk/projects/hilbert-bytes/tests/test_hilbert.py -Tjson --change --rev 4828adccf0d5e92f878f900f7bbf00b30b626d1e --noninteractive exited 0 after 0.08 seconds
+2025/03/01 15:05:48 erk @(unknown) (90651) [command]> blame /Users/erk/projects/hilbert-bytes/docs/index.rst -Tjson --change --rev 4828adccf0d5e92f878f900f7bbf00b30b626d1e --noninteractive
+2025/03/01 15:05:48 erk @4828adccf0d5e92f878f900f7bbf00b30b626d1e (90651) [command_finish]> blame /Users/erk/projects/hilbert-bytes/docs/index.rst -Tjson --change --rev 4828adccf0d5e92f878f900f7bbf00b30b626d1e --noninteractive exited 0 after 0.07 seconds
+2025/03/01 15:06:01 erk @(unknown) (90693) [command]> blame /Users/erk/projects/hilbert-bytes/docs/conf.py -Tjson --change --rev 4828adccf0d5e92f878f900f7bbf00b30b626d1e --noninteractive
+2025/03/01 15:06:01 erk @4828adccf0d5e92f878f900f7bbf00b30b626d1e (90693) [command_finish]> blame /Users/erk/projects/hilbert-bytes/docs/conf.py -Tjson --change --rev 4828adccf0d5e92f878f900f7bbf00b30b626d1e --noninteractive exited 0 after 0.07 seconds
+2025/03/01 15:07:12 erk @(unknown) (91083) [command]> blame /Users/erk/projects/hilbert-bytes/hilbert_bytes/_hilbert.py -Tjson --change --rev 4828adccf0d5e92f878f900f7bbf00b30b626d1e --noninteractive
+2025/03/01 15:07:12 erk @4828adccf0d5e92f878f900f7bbf00b30b626d1e (91083) [command_finish]> blame /Users/erk/projects/hilbert-bytes/hilbert_bytes/_hilbert.py -Tjson --change --rev 4828adccf0d5e92f878f900f7bbf00b30b626d1e --noninteractive exited 0 after 0.07 seconds
+2025/03/01 15:10:48 erk @(unknown) (91701) [command]> blame /Users/erk/projects/hilbert-bytes/tests/__init__.py -Tjson --change --rev 4828adccf0d5e92f878f900f7bbf00b30b626d1e --noninteractive
+2025/03/01 15:10:48 erk @4828adccf0d5e92f878f900f7bbf00b30b626d1e (91701) [command_finish]> blame /Users/erk/projects/hilbert-bytes/tests/__init__.py -Tjson --change --rev 4828adccf0d5e92f878f900f7bbf00b30b626d1e --noninteractive exited 0 after 0.08 seconds
+2025/03/01 15:10:55 erk @(unknown) (91835) [command]> blame /Users/erk/projects/hilbert-bytes/hilbert_bytes/__init__.py -Tjson --change --rev 4828adccf0d5e92f878f900f7bbf00b30b626d1e --noninteractive
+2025/03/01 15:10:55 erk @4828adccf0d5e92f878f900f7bbf00b30b626d1e (91835) [command_finish]> blame /Users/erk/projects/hilbert-bytes/hilbert_bytes/__init__.py -Tjson --change --rev 4828adccf0d5e92f878f900f7bbf00b30b626d1e --noninteractive exited 0 after 0.07 seconds
+2025/03/01 15:11:17 erk @(unknown) (91889) [command]> blame /Users/erk/projects/hilbert-bytes/README.md -Tjson --change --rev 4828adccf0d5e92f878f900f7bbf00b30b626d1e --noninteractive
+2025/03/01 15:11:17 erk @4828adccf0d5e92f878f900f7bbf00b30b626d1e (91889) [command_finish]> blame /Users/erk/projects/hilbert-bytes/README.md -Tjson --change --rev 4828adccf0d5e92f878f900f7bbf00b30b626d1e --noninteractive exited 0 after 0.08 seconds
+2025/03/01 15:18:48 erk @(unknown) (94291) [command]> commit --addremove --message 'update style
+
+
+Summary: 
+
+Test Plan: 
+
+
+' --noninteractive
+2025/03/01 15:18:48 erk @4828adccf0d5e92f878f900f7bbf00b30b626d1e (94291) [visibility]> read 0 heads: 
+2025/03/01 15:18:48 erk @4828adccf0d5e92f878f900f7bbf00b30b626d1e (94291) [visibility]> read 0 heads: 
+2025/03/01 15:18:48 erk @4828adccf0d5e92f878f900f7bbf00b30b626d1e (94291) [visibility]> removed 0 heads []; added 1 heads [8d9011ac7771]
+2025/03/01 15:18:48 erk @8d9011ac7771c70d81a2e63ca20312eb8c7b19d6 (94291) [visibility]> wrote 1 heads: 8d9011ac7771
+2025/03/01 15:18:48 erk @8d9011ac7771c70d81a2e63ca20312eb8c7b19d6 (94291) [command_finish]> commit --addremove --message 'update style
+
+
+Summary: 
+
+Test Plan: 
+
+
+' --noninteractive exited 0 after 0.24 seconds
+2025/03/01 15:18:50 erk @(unknown) (94518) [command]> pr submit --draft --noninteractive
+2025/03/01 15:18:50 erk @8d9011ac7771c70d81a2e63ca20312eb8c7b19d6 (94518) [visibility]> read 1 heads: 8d9011ac7771
+2025/03/01 15:18:52 erk @8d9011ac7771c70d81a2e63ca20312eb8c7b19d6 (94518) [visibility]> read 1 heads: 8d9011ac7771
+2025/03/01 15:18:54 erk @8d9011ac7771c70d81a2e63ca20312eb8c7b19d6 (94518) [command_finish]> pr submit --draft --noninteractive exited 0 after 4.07 seconds
+2025/03/01 17:15:40 erk @(unknown) (1523) [command]> pull --noninteractive
+2025/03/01 17:15:41 erk @8d9011ac7771c70d81a2e63ca20312eb8c7b19d6 (1523) [visibility]> read 1 heads: 8d9011ac7771
+2025/03/01 17:15:41 erk @8d9011ac7771c70d81a2e63ca20312eb8c7b19d6 (1523) [visibility]> read 1 heads: 8d9011ac7771
+2025/03/01 17:15:41 erk @8d9011ac7771c70d81a2e63ca20312eb8c7b19d6 (1523) [visibility]> read 1 heads: 8d9011ac7771
+2025/03/01 17:15:41 erk @8d9011ac7771c70d81a2e63ca20312eb8c7b19d6 (1523) [visibility]> removed 1 heads [8d9011ac7771]; added 0 heads []
+2025/03/01 17:15:41 erk @8d9011ac7771c70d81a2e63ca20312eb8c7b19d6 (1523) [visibility]> wrote 0 heads: 
+2025/03/01 17:15:41 erk @8d9011ac7771c70d81a2e63ca20312eb8c7b19d6 (1523) [pythonhook]> pythonhook-post-pull: sapling.ext.github.pr_marker.cleanup_landed_pr_hook finished in 0.28 seconds
+2025/03/01 17:15:41 erk @8d9011ac7771c70d81a2e63ca20312eb8c7b19d6 (1523) [command_finish]> pull --noninteractive exited 0 after 0.81 seconds
+2025/03/01 17:15:43 erk @(unknown) (1631) [command]> goto --rev 'max(successors(remote/main))' --noninteractive
+2025/03/01 17:15:43 erk @(unknown) (1631) [pythonhook]> pythonhook-pre-update: sapling.ext.morestatus.saveupdateargs finished in 0.00 seconds
+2025/03/01 17:15:43 erk @8d9011ac7771c70d81a2e63ca20312eb8c7b19d6 (1631) [visibility]> read 0 heads: 
+2025/03/01 17:15:43 erk @602bc31f67ea951c2b849f82aceb60d73640fd2c (1631) [pythonhook]> pythonhook-post-update: sapling.ext.morestatus.cleanupdateargs finished in 0.00 seconds
+2025/03/01 17:15:43 erk @602bc31f67ea951c2b849f82aceb60d73640fd2c (1631) [command_finish]> goto --rev 'max(successors(remote/main))' --noninteractive exited 0 after 0.19 seconds
+2025/03/01 17:16:23 erk @(unknown) (2193) [command]> debugcommitmessage isl --noninteractive
+2025/03/01 17:16:24 erk @602bc31f67ea951c2b849f82aceb60d73640fd2c (2193) [visibility]> read 0 heads: 
+2025/03/01 17:16:24 erk @602bc31f67ea951c2b849f82aceb60d73640fd2c (2193) [command_finish]> debugcommitmessage isl --noninteractive exited 0 after 0.38 seconds
+2025/03/01 17:16:36 erk @(unknown) (2511) [command]> show
+2025/03/01 17:16:36 erk @602bc31f67ea951c2b849f82aceb60d73640fd2c (2511) [visibility]> read 0 heads: 
+2025/03/01 17:16:36 erk @602bc31f67ea951c2b849f82aceb60d73640fd2c (2511) [command_finish]> show exited 0 after 0.08 seconds
+2025/03/01 17:16:50 erk @(unknown) (2558) [command]> blame /Users/erk/projects/hilbert-bytes/pyproject.toml -Tjson --change --rev 602bc31f67ea951c2b849f82aceb60d73640fd2c --noninteractive
+2025/03/01 17:16:50 erk @602bc31f67ea951c2b849f82aceb60d73640fd2c (2558) [command_finish]> blame /Users/erk/projects/hilbert-bytes/pyproject.toml -Tjson --change --rev 602bc31f67ea951c2b849f82aceb60d73640fd2c --noninteractive exited 0 after 0.07 seconds
+2025/03/01 17:17:01 erk @(unknown) (2696) [command]> commit --addremove --message 'v0.5.0
+
+
+Summary: 
+
+Test Plan: 
+
+
+' --noninteractive
+2025/03/01 17:17:01 erk @602bc31f67ea951c2b849f82aceb60d73640fd2c (2696) [visibility]> read 0 heads: 
+2025/03/01 17:17:01 erk @602bc31f67ea951c2b849f82aceb60d73640fd2c (2696) [visibility]> read 0 heads: 
+2025/03/01 17:17:01 erk @602bc31f67ea951c2b849f82aceb60d73640fd2c (2696) [visibility]> removed 0 heads []; added 1 heads [3e55aa19e626]
+2025/03/01 17:17:01 erk @3e55aa19e626a9f81e2de1922c03e88d1372ed11 (2696) [visibility]> wrote 1 heads: 3e55aa19e626
+2025/03/01 17:17:01 erk @3e55aa19e626a9f81e2de1922c03e88d1372ed11 (2696) [command_finish]> commit --addremove --message 'v0.5.0
+
+
+Summary: 
+
+Test Plan: 
+
+
+' --noninteractive exited 0 after 0.22 seconds
