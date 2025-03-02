@@ -1,0 +1,43 @@
+Metadata-Version: 2.4
+Name: mur
+Version: 0.0.6
+Summary: Mur CLI for packaging and publishing agents and tools.
+Project-URL: Repository, https://github.com/murmur-nexus/mur
+Author-email: "E.W. de Graaff" <hi@murmur.nexus>
+License-Expression: MIT
+License-File: LICENSE
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: MacOS X
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Information Technology
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.9
+Requires-Dist: build>=1.2.2.post1
+Requires-Dist: click>=8.1.8
+Requires-Dist: keyring>=25.5.0
+Requires-Dist: packaging>=24.2
+Requires-Dist: requests>=2.32.3
+Requires-Dist: ruamel-yaml>=0.18.6
+Requires-Dist: tqdm>=4.67.1
+Requires-Dist: twine>=6.0.1
+Description-Content-Type: text/markdown
+
+# mur
+
+```bash
+pip install mur 
+```
+
+This CLI allows you to manage your AI agents and tools in combindation with the [murmur](https://murmur-nexus.github.io/murmur/) package.
+
+To get started quickly, follow our [Getting Started with the Examples](https://murmur-nexus.github.io/murmur/tutorial/getting-started-with-examples/) tutorial.
