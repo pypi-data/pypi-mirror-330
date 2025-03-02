@@ -1,0 +1,83 @@
+Metadata-Version: 2.1
+Name: lapidary
+Version: 0.12.3
+Summary: Python async OpenAPI client library
+Home-page: https://github.com/python-lapidary/lapidary
+License: MIT
+Author: Raphael Krupinski
+Author-email: rafalkrupinski@users.noreply.github.com
+Requires-Python: >=3.9,<4.0
+Classifier: Development Status :: 3 - Alpha
+Classifier: Framework :: AsyncIO
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Information Technology
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Topic :: Internet
+Classifier: Topic :: Internet :: WWW/HTTP
+Classifier: Topic :: Software Development
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Typing :: Typed
+Requires-Dist: httpx-auth (>=0.22,<0.23)
+Requires-Dist: httpx[http2] (>=0.27,<0.28)
+Requires-Dist: pydantic (>=2,<3)
+Requires-Dist: python-mimeparse (>=2,<3)
+Requires-Dist: typing-extensions (>=4.9,<5.0)
+Project-URL: Repository, https://github.com/python-lapidary/lapidary
+Description-Content-Type: text/markdown
+
+# Lapidary
+
+[![test](https://github.com/python-lapidary/lapidary/actions/workflows/test_publish.yaml/badge.svg)](https://github.com/python-lapidary/lapidary/actions/workflows/test_publsh.yaml)
+
+Python DSL for Web API clients.
+
+http://lapidary.dev/
+
+## Why
+
+DRY. Web API clients follow a relatively small set of patterns and writing them is rather repetitive task. Encoding these patterns in form of a DSL library frees its users from implementing the same patterns over and over again.
+
+## How
+
+Lapidary is an internal DSL made of decorators and annotations, that can be used to describe Web APIs similarly to OpenAPI
+([lapidary-render](https://github.com/python-lapidary/lapidary-render/) can convert a large subset of OpenAPI 3.0 to Lapidary).
+
+At runtime, the library interprets user-provided function declarations (without bodies), and makes them behave as declared. If a function accepts parameter of type `X` and returns `Y`, Lapidary will try to convert `X` to HTTP request and the response to `Y`.
+
+### Example:
+
+```python
+class CatClient(ClientBase):
+    """This class is a working API client"""
+
+    def __init__(self):
+        super().__init__(
+            base_url='https://example.com/api',
+        )
+
+    @get('/cat')
+    async def list_cats(self: Self) -> Annotated[
+        tuple[list[Cat], CatListMeta],
+        Responses({
+            '2XX': Response(
+                Body({
+                    'application/json': list[Cat],
+                }),
+                CatListMeta
+            ),
+        })
+    ]:
+       pass
+
+client = CatClient()
+cats_body, cats_meta = await client.list_cats()
+```
+
