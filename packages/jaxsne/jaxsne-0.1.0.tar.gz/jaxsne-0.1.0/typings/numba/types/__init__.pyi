@@ -1,0 +1,19 @@
+from __future__ import annotations
+
+class Signature: ...
+class FunctionSignature(Signature): ...
+
+class Type(Signature):
+    def __call__(self, *_: Type) -> FunctionSignature: ...
+
+class Scalar(Type):
+    def __getitem__(self, val: slice | tuple[slice, ...]) -> Type: ...
+
+int64: Scalar
+float64: Scalar
+
+class Tuple(Type):
+    def __init__(self, arg: tuple[Type, ...], /) -> None: ...
+
+class FunctionType(Type):
+    def __init__(self, arg: FunctionSignature, /) -> None: ...
