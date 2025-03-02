@@ -1,0 +1,26 @@
+Metadata-Version: 2.3
+Name: reader-vl
+Version: 0.1.0
+Summary: Go beyond simple parsing. Our SDK and CLI empower you to build intelligent applications by converting diverse document formats (PDF, DOCX, HTML, and others) into a unified structure. Critically, we leverage multimodal LLMs to enrich the parsed content, adding layers of meaning and context essential for maximizing the performance of your generative AI pipelines.
+License: MIT
+Author: Hansen
+Author-email: ruliciohansen@gmail.com
+Requires-Python: >=3.10,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Dist: auto_mix_prep (==0.2.0)
+Requires-Dist: docx2pdf (==0.1.8)
+Requires-Dist: httpx (==0.28.1)
+Requires-Dist: huggingface_hub (==0.28.1)
+Requires-Dist: numpy (==2.1.1)
+Requires-Dist: opencv_python (==4.11.0.86)
+Requires-Dist: pdf2image (==1.17.0)
+Requires-Dist: pydantic (==2.10.6)
+Requires-Dist: pytesseract (==0.3.13)
+Requires-Dist: requests (==2.32.3)
+Requires-Dist: tqdm (==4.67.1)
+Requires-Dist: ultralytics (==8.3.74)
