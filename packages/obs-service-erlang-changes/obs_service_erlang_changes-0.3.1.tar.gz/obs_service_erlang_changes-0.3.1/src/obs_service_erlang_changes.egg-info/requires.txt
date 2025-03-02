@@ -1,0 +1,8 @@
+lxml
+mistune>=3
+requests
+rpm
+
+[dev]
+freezegun
+pytest
