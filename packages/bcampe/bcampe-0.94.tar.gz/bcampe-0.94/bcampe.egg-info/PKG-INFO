@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: bcampe
+Version: 0.94
+Summary: Funções, estilos e gráficos utilizados na construção de soluções de BI
+Home-page: https://gitlab.cge.rj.gov.br/bi/biblioteca
+Author: brunocampello
+Author-email: alancampiello@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Description-Content-Type: text/markdown
+Requires-Dist: wheel
+Requires-Dist: setuptools
+Requires-Dist: streamlit
+Requires-Dist: plotly
+Requires-Dist: matplotlib
+Requires-Dist: pandas
