@@ -1,0 +1,19 @@
+[project]
+name = "holytools"
+version = "0.9.15"
+authors = [{name = "Daniel Hollarek", email = "daniel.hollarek@googlemail.com"}]
+description = "Collection of very general python utilities "
+readme = "readme.md"
+dependencies = ["requests", "pathvalidate", "psutil", "pympler",
+    "dill", "orjson", "mss", "screeninfo", "pynput", "pillow", "progressbar2", "tabulate",
+    "cryptoalgos", "secretstorage"]
+urls = { "repository" = "https://github.com/Somerandomguy10111/holytools" }
+
+[tool.setuptools.package-data]
+"holytools.fileIO.examples" = ["*"]
+
+[project.optional-dependencies]
+test = ["flask"]
+
+[project.scripts]
+cred = "holytools.configs.cred:main"

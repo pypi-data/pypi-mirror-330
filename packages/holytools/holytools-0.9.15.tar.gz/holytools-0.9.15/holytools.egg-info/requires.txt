@@ -1,0 +1,17 @@
+requests
+pathvalidate
+psutil
+pympler
+dill
+orjson
+mss
+screeninfo
+pynput
+pillow
+progressbar2
+tabulate
+cryptoalgos
+secretstorage
+
+[test]
+flask
