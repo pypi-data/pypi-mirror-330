@@ -1,0 +1,14 @@
+LICENSE
+README.md
+pyproject.toml
+src/jserpy/__init__.py
+src/jserpy/json_handler.py
+src/jserpy/json_handler_utils.py
+src/jserpy/json_typing.py
+src/jserpy/jsonable.py
+src/jserpy.egg-info/PKG-INFO
+src/jserpy.egg-info/SOURCES.txt
+src/jserpy.egg-info/dependency_links.txt
+src/jserpy.egg-info/requires.txt
+src/jserpy.egg-info/top_level.txt
+src/tests/test_jserpy.py
