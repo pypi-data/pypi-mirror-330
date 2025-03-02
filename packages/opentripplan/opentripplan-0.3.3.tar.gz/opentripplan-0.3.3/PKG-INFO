@@ -1,0 +1,42 @@
+Metadata-Version: 2.2
+Name: opentripplan
+Version: 0.3.3
+Summary: A tool to plan your next trip
+Author-email: "Gaël de Chalendar (aka Kleag)" <kleagg@gmail.com>
+License: AGPL
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: folium>=0.19.5
+Requires-Dist: geopy>=2.4.1
+Requires-Dist: lxml>=5.3.1
+Requires-Dist: nc-py-api>=0.19.0
+Requires-Dist: numpy>=2.2.3
+Requires-Dist: pyside6>=6.8.2.1
+Provides-Extra: dev
+Requires-Dist: pytest; extra == "dev"
+Requires-Dist: black; extra == "dev"
+Requires-Dist: ruff; extra == "dev"
+Requires-Dist: mypy; extra == "dev"
+Provides-Extra: build
+Requires-Dist: bumpver; extra == "build"
+Provides-Extra: deploy
+Requires-Dist: uv; extra == "deploy"
+
+# Open Trip Plan
+
+Open Trip Plan allows to plan a trip by adding markers on a map (using the Folium library to display an OpenStreetMap map) associated with a note.
+
+Open Trip Plan is on PyPi. To install it, run:
+
+```sh
+pip install opentripplan
+```
+
+Tested on Linux. Should work on any platform.
+
+Open Trip Plan is already usable but would be better with a lot of other features. Some ara listed here:
+https://github.com/kleag/opentripplan/issues
+
+Don't hesitate to create a new issue if you think at other features. And contribute them if you can!
+
+
