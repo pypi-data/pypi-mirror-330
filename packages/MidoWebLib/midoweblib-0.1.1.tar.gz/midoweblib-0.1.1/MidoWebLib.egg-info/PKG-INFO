@@ -1,0 +1,60 @@
+Metadata-Version: 2.2
+Name: MidoWebLib
+Version: 0.1.1
+Summary: MidoWebLib's library for Mido Web Website
+Home-page: https://midoghanam2.pythonanywhere.com/
+Author: Mohammed Ahmed Ghanam
+Author-email: mghanam883@outlook.com
+License: MIT
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+Requires-Dist: requests
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# MidoWebLib 🚀  
+
+![PyPI - Version](https://img.shields.io/pypi/v/MidoWebGaps?color=blue&label=version)  
+![Python](https://img.shields.io/badge/python-3.7%2B-blue)
+![License](https://img.shields.io/badge/license-MIT-green)  
+![Status](https://img.shields.io/badge/status-active-success)  
+
+**MidoWebLib** هي مكتبة Python مصممة لتسهيل التعامل مع **APIs موقع Mido Web**.  
+بدلاً من كتابة كود API يدويًا في كل مرة، توفر المكتبة **واجهة سهلة ومباشرة** لتنفيذ الطلبات وإدارة البيانات.  
+
+---
+
+## 📌 المميزات  
+
+✅ **سهولة الاستخدام** – كتابة كود بسيط وواضح  
+✅ **توفير الوقت** – لا حاجة لكتابة `requests` يدويًا  
+✅ **متوافقة مع Python 3.6+**  
+✅ **مرونة عالية** – دعم للطلبات GET و POST  
+✅ **تحديثات مستمرة** – تحسينات وأداء أقوى  
+
+---
+## ⚙️ المتطلبات  
+
+- **Python 3.7 أو أعلى**  
+- مكتبة `requests` (تُثبت تلقائيًا)
+
+---
+
+## 📦 التثبيت  
+
+لتثبيت المكتبة مباشرة من PyPi، استخدم:  
+
+```sh
+pip install MidoWebLib
