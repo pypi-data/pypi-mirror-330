@@ -1,0 +1,18 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "debugpy",
+      "request": "launch",
+      "name": "Debug run_test_function_batch_cached",
+      "program": "/Users/s22625/repos/injected_utils/.venv/lib/python3.12/site-packages/pinjected/run_config_utils.py",
+      "args": [
+        "run_injected",
+        "get",
+        "injected_utils.batched_cache.run_test_function_batch_cached",
+        "pinjected.EmptyDesign"
+      ],
+      "env": {}
+    }
+  ]
+}

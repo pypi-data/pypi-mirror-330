@@ -1,0 +1,39 @@
+[project]
+name = "injected-utils"
+version = "0.1.32"
+description = "Utility functions for pinjected stuff"
+authors = [
+    { name = "proboscis", email = "nameissoap@gmail.com" }
+]
+dependencies = [
+    "sqlitedict",
+    "loguru",
+    "filelock>=3.16.1",
+    "tqdm",
+    "returns",
+    "pinjected>=0.2.186",
+    "pandas>=2.2.3",
+    "aiosqlite>=0.21.0",
+]
+readme = "README.md"
+requires-python = ">= 3.10"
+
+[build-system]
+requires = ["hatchling==1.26.3"]  # Without a version spec, hatchling==1.27.0 is used which fails to publish
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = [
+    "pytest>=8.3.4",
+    "pytest-asyncio>=0.25.3",
+]
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["injected_utils"]
+
+[tool.ruff]
+ignore = ["F403", "F405", "F401"]

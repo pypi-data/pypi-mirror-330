@@ -1,0 +1,14 @@
+Metadata-Version: 2.3
+Name: injected-utils
+Version: 0.1.32
+Summary: Utility functions for pinjected stuff
+Author-email: proboscis <nameissoap@gmail.com>
+Requires-Python: >=3.10
+Requires-Dist: aiosqlite>=0.21.0
+Requires-Dist: filelock>=3.16.1
+Requires-Dist: loguru
+Requires-Dist: pandas>=2.2.3
+Requires-Dist: pinjected>=0.2.186
+Requires-Dist: returns
+Requires-Dist: sqlitedict
+Requires-Dist: tqdm

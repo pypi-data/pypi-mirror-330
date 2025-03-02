@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="75143575-a48d-4a0e-b304-68682145d958" name="Changes" comment="commit before updating async_cached signature" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FlaskConsoleOptions" custom-start-script="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))">
+    <envs>
+      <env key="FLASK_APP" value="app" />
+    </envs>
+    <option name="myCustomStartScript" value="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))" />
+    <option name="myEnvs">
+      <map>
+        <entry key="FLASK_APP" value="app" />
+      </map>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="cqkfc5kg" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2Slye3vHYwkt9LhAfsjVioUiO1S" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.a_test_func(EmptyDesign).executor&quot;: &quot;Run&quot;,
+    &quot;Python.run_test_function_batch_cached(EmptyDesign).executor&quot;: &quot;Run&quot;,
+    &quot;Python.test_a_test_func(EmptyDesign).executor&quot;: &quot;Run&quot;,
+    &quot;Python.test_call_a_test_func(EmptyDesign).executor&quot;: &quot;Run&quot;,
+    &quot;Python.test_lzma_sqlite(EmptyDesign).executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;true&quot;,
+    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/s22625/repos/injected-utils&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;org.rust.cargo.project.model.impl.CargoExternalSystemProjectAware.subscribe.first.balloon&quot;: &quot;&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/pyproject.toml.poetry" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.test_a_test_func(EmptyDesign)">
+    <configuration name="a_test_func(EmptyDesign)" type="PythonConfigurationType" factoryName="Python">
+      <module name="injected_utils" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="PYTHONPATH" value="$PROJECT_DIR$/../injected-utils:$PROJECT_DIR$" />
+      </envs>
+      <option name="SDK_HOME" value="$PROJECT_DIR$/.venv/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/.venv/lib/python3.12/site-packages/pinjected/run_config_utils.py" />
+      <option name="PARAMETERS" value="run_injected get injected_utils.async_caching.decorators.a_test_func pinjected.EmptyDesign" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="true" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="run_test_function_batch_cached(EmptyDesign)" type="PythonConfigurationType" factoryName="Python">
+      <module name="injected_utils" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="PYTHONPATH" value="$PROJECT_DIR$/../injected_utils:$PROJECT_DIR$" />
+      </envs>
+      <option name="SDK_HOME" value="$PROJECT_DIR$/.venv/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/.venv/lib/python3.12/site-packages/pinjected/run_config_utils.py" />
+      <option name="PARAMETERS" value="run_injected get injected_utils.injected_cache_utils.run_test_function_batch_cached pinjected.EmptyDesign" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="true" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test_a_test_func(EmptyDesign)" type="PythonConfigurationType" factoryName="Python">
+      <module name="injected_utils" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="PYTHONPATH" value="$PROJECT_DIR$/../injected-utils:$PROJECT_DIR$" />
+      </envs>
+      <option name="SDK_HOME" value="$PROJECT_DIR$/.venv/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/.venv/lib/python3.12/site-packages/pinjected/run_config_utils.py" />
+      <option name="PARAMETERS" value="run_injected get injected_utils.async_caching.decorators.test_a_test_func pinjected.EmptyDesign" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="true" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test_call_a_test_func(EmptyDesign)" type="PythonConfigurationType" factoryName="Python">
+      <module name="injected_utils" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="PYTHONPATH" value="$PROJECT_DIR$/../injected-utils:$PROJECT_DIR$" />
+      </envs>
+      <option name="SDK_HOME" value="$PROJECT_DIR$/.venv/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/.venv/lib/python3.12/site-packages/pinjected/run_config_utils.py" />
+      <option name="PARAMETERS" value="run_injected get injected_utils.async_caching.decorators.test_call_a_test_func pinjected.EmptyDesign" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="true" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test_lzma_sqlite(EmptyDesign)" type="PythonConfigurationType" factoryName="Python">
+      <module name="injected_utils" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="PYTHONPATH" value="$PROJECT_DIR$/../injected-utils:$PROJECT_DIR$" />
+      </envs>
+      <option name="SDK_HOME" value="$PROJECT_DIR$/.venv/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/.venv/lib/python3.12/site-packages/pinjected/run_config_utils.py" />
+      <option name="PARAMETERS" value="run_injected get injected_utils.async_caching.async_cache.test_lzma_sqlite pinjected.EmptyDesign" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="true" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-PY-241.19416.19" />
+        <option value="bundled-python-sdk-337b0a7a993a-2767605e8bc2-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-241.19416.19" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="75143575-a48d-4a0e-b304-68682145d958" name="Changes" comment="" />
+      <created>1689735553719</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1689735553719</updated>
+      <workItem from="1689735555043" duration="8000" />
+      <workItem from="1689736958037" duration="677000" />
+      <workItem from="1705981872326" duration="1832000" />
+      <workItem from="1706083907597" duration="1815000" />
+      <workItem from="1706167496360" duration="1211000" />
+      <workItem from="1712111212195" duration="3423000" />
+      <workItem from="1712131805805" duration="235000" />
+      <workItem from="1712132077038" duration="3664000" />
+      <workItem from="1713256760363" duration="592000" />
+      <workItem from="1715850800241" duration="1235000" />
+      <workItem from="1716531924426" duration="595000" />
+      <workItem from="1717127105520" duration="452000" />
+      <workItem from="1717127616560" duration="599000" />
+      <workItem from="1717377143376" duration="729000" />
+      <workItem from="1717393912382" duration="283000" />
+      <workItem from="1717394241876" duration="599000" />
+      <workItem from="1717396150626" duration="593000" />
+      <workItem from="1717492335313" duration="11000" />
+      <workItem from="1717731770153" duration="3537000" />
+      <workItem from="1718086828233" duration="1504000" />
+      <workItem from="1718161998325" duration="595000" />
+      <workItem from="1718248163982" duration="905000" />
+      <workItem from="1718251951228" duration="597000" />
+      <workItem from="1718597637209" duration="593000" />
+      <workItem from="1718779666143" duration="175000" />
+      <workItem from="1718938078315" duration="2231000" />
+      <workItem from="1719222854115" duration="595000" />
+      <workItem from="1719237559236" duration="594000" />
+      <workItem from="1719298876081" duration="593000" />
+      <workItem from="1719315384101" duration="590000" />
+      <workItem from="1719321920836" duration="593000" />
+      <workItem from="1719326439786" duration="595000" />
+      <workItem from="1719543780886" duration="594000" />
+      <workItem from="1719558791026" duration="3794000" />
+      <workItem from="1719810034051" duration="1716000" />
+      <workItem from="1720507114242" duration="1878000" />
+      <workItem from="1720780990560" duration="80000" />
+      <workItem from="1720871382163" duration="690000" />
+      <workItem from="1720875113299" duration="1075000" />
+      <workItem from="1721034870731" duration="1355000" />
+      <workItem from="1721314123481" duration="589000" />
+      <workItem from="1721645986644" duration="286000" />
+      <workItem from="1722246962879" duration="1304000" />
+      <workItem from="1723796803185" duration="744000" />
+      <workItem from="1723799004665" duration="1188000" />
+      <workItem from="1723991270155" duration="44000" />
+      <workItem from="1724391560970" duration="15000" />
+      <workItem from="1726052678206" duration="1393000" />
+      <workItem from="1726659503377" duration="823000" />
+      <workItem from="1731293397307" duration="634000" />
+      <workItem from="1731299015345" duration="662000" />
+      <workItem from="1731512347928" duration="18000" />
+      <workItem from="1731515445628" duration="5969000" />
+      <workItem from="1732701732741" duration="1052000" />
+      <workItem from="1732769409682" duration="2347000" />
+      <workItem from="1737702926438" duration="1060000" />
+      <workItem from="1737704006632" duration="3387000" />
+      <workItem from="1738829711466" duration="748000" />
+      <workItem from="1739082689146" duration="2029000" />
+      <workItem from="1739243903090" duration="1679000" />
+      <workItem from="1739422541672" duration="17608000" />
+      <workItem from="1739863235069" duration="2450000" />
+      <workItem from="1739899642742" duration="587000" />
+      <workItem from="1739937568878" duration="1235000" />
+      <workItem from="1740640534864" duration="2378000" />
+    </task>
+    <task id="LOCAL-00001" summary="commit before updating async_cached signature">
+      <option name="closed" value="true" />
+      <created>1726659534092</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1726659534092</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="commit before updating async_cached signature" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit before updating async_cached signature" />
+  </component>
+  <component name="VgoProject">
+    <settings-migrated>true</settings-migrated>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/injected_utils$test_a_test_func_EmptyDesign_.coverage" NAME="test_a_test_func(EmptyDesign) Coverage Results" MODIFIED="1739435315996" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/injected_utils$run_test_function_batch_cached_EmptyDesign_.coverage" NAME="run_test_function_batch_cached(EmptyDesign) Coverage Results" MODIFIED="1737703741839" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/injected_utils$test_lzma_sqlite_EmptyDesign_.coverage" NAME="test_lzma_sqlite(EmptyDesign) Coverage Results" MODIFIED="1739434363059" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/injected_utils$a_test_func_EmptyDesign_.coverage" NAME="a_test_func(EmptyDesign) Coverage Results" MODIFIED="1739429810861" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/injected_utils$test_call_a_test_func_EmptyDesign_.coverage" NAME="test_call_a_test_func(EmptyDesign) Coverage Results" MODIFIED="1739435299420" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>
