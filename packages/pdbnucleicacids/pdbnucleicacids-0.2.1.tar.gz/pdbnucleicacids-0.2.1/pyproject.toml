@@ -1,0 +1,175 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pdbnucleicacids"
+version = "0.2.1"
+description = "A Biopython based package that constructs and represent all nucleic acids in a PDB structure, with a special focus on base-pair representation."
+readme = "README.rst"
+authors = [
+  {name = "Alessandro Pandolfi", email = "alessandro.pandolfi@protonmail.com"}
+]
+maintainers = [
+  {name = "Alessandro Pandolfi", email = "alessandro.pandolfi@protonmail.com"}
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+]
+license = {text = "MIT license"}
+requires-python = ">=3.10"
+dependencies = [
+    "numpy",
+    "pandas",
+    "biopython"
+]
+
+[project.optional-dependencies]
+dev = [
+    "coverage",  # testing
+    "pytest",  # testing
+    "mypy",  # linting
+    "ruff"  # linting
+]
+
+[project.urls]
+bugs = "https://gitlab.com/MorfeoRenai/pdbnucleicacids/-/issues"
+changelog = "https://gitlab.com/MorfeoRenai/pdbnucleicacids/-/blob/main/HISTORY.rst"
+homepage = "https://gitlab.com/MorfeoRenai/pdbnucleicacids"
+
+[tool.setuptools]
+packages = ["PDBNucleicAcids"]
+
+[tool.setuptools.package-data]
+"*" = ["*.*"]
+
+
+
+# Mypy
+# ----
+
+[tool.mypy]
+files = "."
+
+# Use strict defaultst = true
+strict = true
+warn_unreachable = true
+warn_no_return = true
+
+[[tool.mypy.overrides]]
+# Don't require test functions to include types
+module = "tests.*"
+allow_untyped_defs = true
+disable_error_code = "attr-defined"
+
+
+
+# pytest
+# ----
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-rA"
+testpaths = [
+    "tests"
+]
+
+
+
+# bump-my-version
+# ----
+
+[tool.bumpversion]
+current_version = "0.2.1"
+parse = "(?P<major>\\d+)\\.(?P<minor>\\d+)\\.(?P<patch>\\d+)"
+serialize = ["{major}.{minor}.{patch}"]
+search = "{current_version}"
+replace = "{new_version}"
+regex = false
+ignore_missing_version = false
+ignore_missing_files = false
+tag = false
+sign_tags = false
+tag_name = "v{new_version}"
+tag_message = "Bump version: {current_version} → {new_version}"
+allow_dirty = false
+commit = true
+message = "Bump version: {current_version} → {new_version}"
+commit_args = ""
+setup_hooks = []
+pre_commit_hooks = []
+post_commit_hooks = []
+
+[[tool.bumpversion.files]]
+filename = "PDBNucleicAcids/__init__.py"
+search = "{current_version}"
+replace = "{new_version}"
+
+[[tool.bumpversion.files]]
+filename = "pyproject.toml"
+search = "{current_version}"
+replace = "{new_version}"
+
+
+
+# ruff
+# ----
+
+[tool.ruff]
+# Set the maximum line length to 79.
+line-length = 79
+show-fixes = true
+
+[tool.ruff.lint]
+# Add the `line-too-long` rule to the enforced rule set. By default, Ruff omits rules that
+# overlap with the use of a formatter, like Black, but we can override this behavior by
+# explicitly adding the rule.
+extend-select = ["E501"]
+
+
+
+# tox
+# ----
+
+[tool.tox]
+#requires = ["tox>=4.19"]
+requires = ["tox"]
+# Elenco delle versioni di Python con cui testare
+envlist = ["py38", "py39", "py310", "py311", "py312", "py313"]
+
+[tool.tox.env_run_base]  # Configurazione generale per tutti gli ambienti di test
+description = "Run the tests with pytest"
+deps = [
+    #"pytest-cov",  # Esempio di dipendenza per la coverage dei test
+    "-r requirements-dev.txt"  # Se hai un file requirements per lo sviluppo
+]
+commands = [["pytest"]]
+
+#[tool.tox.env.type]
+#description = "run type check on code base"
+#deps = ["mypy==1.11.2", "types-cachetools>=5.5.0.20240820", "types-chardet>=5.0.4.6"]
+#commands = [["mypy", "src{/}tox"], ["mypy", "tests"]]
+
+[tool.tox.env.py38]
+description = "Run the tests on Python 3.8"
+
+[tool.tox.env.py39]
+description = "Run the tests on Python 3.9"
+
+[tool.tox.env.py310]
+description = "Run the tests on Python 3.10"
+
+[tool.tox.env.py311]
+description = "Run the tests on Python 3.11"
+
+[tool.tox.env.py312]
+description = "Run the tests on Python 3.12"
+
+[tool.tox.env.py313]
+description = "Run the tests on Python 3.13"
+
+# Esempio di configurazione per l'analisi statica del codice (opzionale)
+#[tool.tox.env.lint]
+#description = "Run linting"
+#deps = ["flake8"]
+#commands = ["flake8 src tests"]
