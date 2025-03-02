@@ -1,0 +1,58 @@
+[build-system]
+requires = ["setuptools>=65.5.1", "setuptools-scm", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rclone_api"
+readme = "README.md"
+description = "rclone api in python"
+requires-python = ">=3.10"
+keywords = ["template-python-cmd"]
+license = { text = "BSD 3-Clause License" }
+classifiers = ["Programming Language :: Python :: 3"]
+dependencies = [
+    "pyright>=1.1.393",
+    "python-dotenv>=1.0.0",
+    "certifi>=2025.1.31",
+    "psutil",
+
+    # BOTO3 Library needs to be pinned to a specific version
+    # BackBlaze S3 fails with checksum header which it doesn't support after 1.35.99
+    # The 1.20.1 was the earliest one I checked that worked and is not the true lower bound.
+    "boto3>=1.20.1,<=1.35.99",
+]
+
+# Change this with the version number bump.
+version = "1.1.76"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.ruff]
+line-length = 200
+
+[tool.pylint."MESSAGES CONTROL"]
+good-names = [
+    "c",
+    "i",
+    "ok",
+    "id",
+    "e",
+    "f"
+]
+disable = [
+    "missing-function-docstring",
+    "missing-module-docstring"
+]
+
+[tool.isort]
+profile = "black"
+
+[tool.mypy]
+ignore_missing_imports = true
+disable_error_code = ["import-untyped"]
+
+[project.scripts]
+rclone-api-listfiles = "rclone_api.cmd.list_files:main"
+rclone-api-copylarge-s3 = "rclone_api.cmd.copy_large_s3:main"
+rclone-api-profile-mount = "rclone_api.profile.mount_copy_bytes:main"
