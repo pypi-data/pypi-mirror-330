@@ -1,0 +1,75 @@
+Metadata-Version: 2.4
+Name: pdfimpose-web
+Version: 1.2.0
+Summary: The code powering https://pdfimpose.it
+Project-URL: Homepage, https://pdfimpose.it
+Project-URL: Issues, https://framagit.org/spalax/pdfimpose-web/issues
+Author-email: Louis Paternault <spalax@gresille.org>
+License-File: AUTHORS
+License-File: LICENSE
+Keywords: imposition,pdf,print,web
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Framework :: Flask
+Classifier: License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Topic :: Printing
+Requires-Python: >=3.10
+Requires-Dist: flask-babel>=4
+Requires-Dist: flask-basicauth
+Requires-Dist: flask-limiter
+Requires-Dist: flask-sqlalchemy
+Requires-Dist: flask>=3
+Requires-Dist: papersize>=1.5
+Requires-Dist: pdfautonup>=1.9
+Requires-Dist: pdfimpose>=2.5
+Requires-Dist: pymupdf>=1.24.3
+Description-Content-Type: text/markdown
+
+# pdfimpose-web 📕 The code powering https://pdfimpose.it
+
+## Installation
+
+```sh
+python3 -m pip install pdfimpose-web
+```
+
+## Run the application
+
+Run the application using the following command.
+
+```sh
+python3 -m flask --app pdfimposeweb run
+```
+
+You can now use pdfimpose-web at: http://localhost:5000.
+
+Note that you might want to configure the application using the settings described in the following section.
+
+## Settings
+
+This application can be run with default settings (but with default settings, data might be reset if you restart it).
+
+To configure it:
+
+- download file [`pdfimposeweb/settings/default.py`](https://framagit.org/spalax/pdfimpose-web/-/raw/main/pdfimposeweb/settings/default.py?inline=false) to your disk,
+- change it (it is self-documented),
+- tell `pdfimpose-web` to use it:
+
+  ```sh
+  export PDFIMPOSEWEB_SETTINGS=/path/to/settings.py
+  python3 -m flask --app pdfimposeweb run
+  ```
+
+## Cleaning
+
+Files uploaded by users are stored during one hour by default. This can be changed in the setting file.
+
+A thread is launched at startup to clean those files. This can be disabled in the setting file. If disabled, the script ``pdfimposeweb.clean`` can be run periodically (e.g. in a crontab) to remove old uploaded PDF files. Note that the very same configuration used to run the application must be used to run this script:
+
+```sh
+export PDFIMPOSEWEB_SETTINGS=/path/to/settings.py
+python3 -m pdfimposeweb.clean
+```

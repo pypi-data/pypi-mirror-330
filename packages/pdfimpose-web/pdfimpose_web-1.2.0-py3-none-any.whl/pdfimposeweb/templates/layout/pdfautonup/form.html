@@ -1,0 +1,120 @@
+{# Copyright 2024 Louis Paternault
+
+This file is part of pdfimpose-web.
+
+Pdfimpose-web is free software: you can redistribute it and/or modify it
+under the terms of the GNU Affero General Public License as published by the
+Free Software Foundation, either version 3 of the License, or (at your
+option) any later version.
+
+Pdfimpose-web is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+details.
+
+You should have received a copy of the GNU Affero General Public License
+along with pdfimpose-web. If not, see <https://www.gnu.org/licenses/>.
+-#}
+
+{% from "forms.html" import input_length, input_format, input_number, input_resize with context %}
+
+<fieldset>
+  <legend>{% trans %}Output format{% endtrans %}</legend>
+    {{ input_format(nameprefix="form-pdfautonup", choices=("standard", "custom")) }}
+</fieldset>
+
+{% call details(_("More options…")) %}
+  <fieldset>
+    <legend>{% trans %}Resize input pages{% endtrans %}</legend>
+    {% trans %}If set, input pages will be resized before being imposed.{% endtrans %}
+      {{ input_resize(nameprefix="form-pdfautonup") }}
+  </fieldset>
+
+  <fieldset>
+    <legend>{% trans %}Repeat input file{% endtrans %}</legend>
+      {% trans %}Set this to more than one to repeat input file.{% endtrans %}
+      <div class="form-check">
+          <label class="form-check-label" >
+            {% trans %}Automatic{% endtrans %}
+              <input
+                  class="form-check-input"
+                  type="radio"
+                  name="form-pdfautonup-repeat"
+                  value="auto"
+                  checked="checked"
+              >
+          </label>
+              {% trans %}If file has one page, equivalent to <em>fit</em> (see below). If file has more than one page, do not repeat (equivalent to <em>repeat once</em> below).{% endtrans %}
+      </div>
+      <div class="form-check">
+          <label class="form-check-label" >
+            {% trans %}Repeat number{% endtrans %}
+              <input
+                  class="form-check-input"
+                  type="radio"
+                  name="form-pdfautonup-repeat"
+                  value="number"
+              >
+          </label>
+              {% trans %}Repeat a fixed number of times.{% endtrans %}
+              {{ input_number(_("Repeat"), name="form-pdfautonup-repeat-value", value="1", minimum="1", maximum=config.MAX_FILE_REPEAT) }}
+      </div>
+      <div class="form-check">
+          <label class="form-check-label" >
+            {% trans %}Fit{% endtrans %}
+              <input
+                  class="form-check-input"
+                  type="radio"
+                  name="form-pdfautonup-repeat"
+                  value="fit"
+              >
+          </label>
+              {% trans %}Repeat as many times as necessary so that there is no empty cell.{% endtrans %}
+      </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>{% trans %}Orientation{% endtrans %}</legend>
+    {% trans %}If <em>automatic</em>, use the orientation that fits the more input pages.{% endtrans %}
+      <div class="input-group mb-3">
+          <span class="input-group-text" >Orientation</span>
+          <select class="form-select w-auto" name="form-pdfautonup-orientation" aria-label="Unit">
+              <option value="auto" selected>{% trans %}automatic{% endtrans %}</option>
+              <option value="portrait" >portrait</option>
+              <option value="landscape" >landscape</option>
+          </select>
+      </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>{% trans %}Algorithm{% endtrans %}</legend>
+      {% trans %}Algorithm used to arrange source documents into destination documents. This program tries to put as many copies of the source document into the destination document, with the following constraint.{% endtrans %}
+      <div class="form-check">
+          <label class="form-check-label" >
+            {% trans %}Fuzzy{% endtrans %}
+              <input
+                  class="form-check-input"
+                  type="radio"
+                  name="form-pdfautonup-algo"
+                  value="fuzzy"
+                  checked="checked"
+              >
+          </label>
+              {% trans %}documents can overlap (a bit), or leave blank spaces between them, but as little as possible.{% endtrans %}
+      </div>
+      <div class="form-check">
+          <label class="form-check-label" >
+            {% trans %}Panel{% endtrans %}
+              <input
+                  class="form-check-input"
+                  type="radio"
+                  name="form-pdfautonup-algo"
+                  value="panel"
+              >
+          </label>
+              {% trans %}the gap length between documents is fixed, and a minimum destination margin is respected.{% endtrans %}
+              {{ input_length(_("Output margin"), nameprefix="form-pdfautonup-panel-margin") }}
+              {{ input_length(_("Gap"), nameprefix="form-pdfautonup-panel-gap") }}
+      </div>
+  </fieldset>
+{% endcall %}

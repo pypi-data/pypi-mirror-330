@@ -1,0 +1,165 @@
+{# Copyright 2024 Louis Paternault
+
+This file is part of pdfimpose-web.
+
+Pdfimpose-web is free software: you can redistribute it and/or modify it
+under the terms of the GNU Affero General Public License as published by the
+Free Software Foundation, either version 3 of the License, or (at your
+option) any later version.
+
+Pdfimpose-web is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+details.
+
+You should have received a copy of the GNU Affero General Public License
+along with pdfimpose-web. If not, see <https://www.gnu.org/licenses/>.
+-#}
+
+{% extends "base.html" %}
+
+{% block title %}pdfimpose.it — Noscript version{% endblock %}
+
+{% macro messages_placeholder(category, classes="") -%}
+    {% with messages = get_flashed_messages(category_filter=[category]) %}
+        <div class="row justify-content-center" {% if not messages %}hidden{% endif %} >
+            <div class="alert alert-dismissible alert-danger {{ classes }}">
+                {% if messages|length == 1 %}
+                    {{ messages[0] }}
+                {% else %}
+                <ul>{% for message in messages %}
+                    <li>{{ message }}</li>
+                    {% endfor %}</ul>
+                {% endif %}
+            </div>
+        </div>
+    {% endwith %}
+{% endmacro %}
+
+{% macro details(summary) %}
+    <details><summary>{{ summary }}</summary>
+        {{ caller () }}
+    </details>
+{% endmacro %}
+
+{% block body %}
+    <main class="px-2 py-2 mx-md-5">
+        <figure class="">
+            <blockquote class="blockquote">
+                <p>{% trans -%}
+                Imposition is one of the fundamental steps in the prepress printing process. It consists of the arrangement of the printed product's pages on the printer's sheet, in order to obtain faster printing, simplify binding and reduce paper waste. 
+                {%- endtrans %}</p>
+            </blockquote>
+            <figcaption class="blockquote-footer">
+                <cite><a href="{% trans %}https://en.wikipedia.org/wiki/Imposition{% endtrans %}">{% trans %}Wikipedia{% endtrans %}</a></cite>
+            </figcaption>
+        </figure>
+
+        {{ messages_placeholder("impose") }}
+
+            <div class="alert alert-info">
+                <h2 class="alert-heading">{% trans %}Information{% endtrans %}</h2>
+                {% trans %}You are consulting a dumbed-down page that does not use Javascript. If your browser supports it, you might want to use <a href="/">this version</a>.{% endtrans %}
+            </div>
+
+            <section>
+                <h1 id="step-layout">{% trans num=1%}Step {{ num }}: Choose an imposition layout{% endtrans %}</h1>
+                <p>{% trans -%}
+                All layouts assume that your are printing a PDF files with pages much smaller than your actual paper (that is, at least two pages will be printed on each paper page).
+                Choose a layout depending on what you indend to do with this file, or how you would like to bind it.
+                {%- endtrans %}</p>
+                <input id="layout" type="text" hidden> <!-- Hidden input. Updated with Javascript when user selects a layout. -->
+                <div id="cards" class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
+                    {% for key in LAYOUTS | sort %}
+                    {% if request.args.layout in LAYOUTS and request.args.layout != key %}
+                    {% continue %}
+                    {% endif %}
+                        <div class="col" id="layout-card-{{ key }}" >
+                            <div class="card h-100">
+                                <div class="card-header bg-transparent border-success">
+                                    <p>
+                                        <a class="link-underline link-underline-opacity-0 link-offset-3 link-underline-opacity-100-hover" title="{% trans %}Permalink to this layout.{% endtrans %}" href="?layout={{ key }}">🔗</a>
+                                        <span class="fw-bold">{% include "layout/%s/name.html" % key %}{% trans %}:{% endtrans %}</span> {% include "layout/%s/description.html" % key %}
+                                    </p>
+                                </div>
+                                <details>
+                                    <summary>{% trans %}Show illustration…{% endtrans %}</summary>
+                                    <img
+                                      src="{{ url_for('static', filename='layout/%s/%s-vertical.svg' % (key, key) ) }}"
+                                      class="card-img-top"
+                                      alt="{% trans layout=key %}Short explaination of layout {{ layout }}.{% endtrans %}"
+                                    >
+                                </details>
+                                <div class="card-footer bg-transparent border-success text-center">
+                                    {% if request.args.layout %}
+                                    <a id="layout-button-unselect-{{ key }}" class="btn btn-primary" href="?noscript">{% trans %}Choose another layout{% endtrans %}</a>
+                                    {% else %}
+                                    <a href="?noscript&layout={{ key }}#step-file" id="layout-button-select-{{ key }}" class="btn btn-primary" onclick="layout_select('{{ key }}')">{% trans %}Choose this layout{% endtrans %}</a>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </section>
+
+        {% if request.args.layout %}
+        <form name="upload" method="post" enctype="multipart/form-data" action="/?{{ request.query_string.decode() }}" >
+            <section>
+                <h1 id="step-file">{% trans num=2 %}Step {{ num }}: Select a PDF file{% endtrans %}</h1>
+                <div class="container">
+                    <div class="row text-center justify-content-center">
+                            <input class="form-control form-control-lg w-lg-50" name="file" id="upload-input" type="file" onchange="cleanmessages(['impose', 'files'])" required >
+                    </div>
+                    {{ messages_placeholder("files", classes="col-lg-6") }}
+                </div>
+            </section>
+
+
+            <section>
+                <h1 id="step-customize">{% trans num=3 %}Step {{ num }}: Customize{% endtrans %}</h1>
+                {% trans %}For simple tasks, you might be happy with default values and skip to the <a href="#step-go">next step</a>.{% endtrans %}
+                <div id="form">
+                    {% for key in LAYOUTS | sort %}
+                    {% if request.args.layout in LAYOUTS and request.args.layout != key %}
+                    {% continue %}
+                    {% endif %}
+                        <div id="form-{{ key }}">
+                            <input type="text" name="layout" value="{{ key }}" hidden>
+                            {% include "layout/" + key + "/form.html" with context %}
+                        </div>
+                    {% endfor %}
+                </div>
+            </section>
+
+            <section>
+                <h1 id="step-go">{% trans num=4 %}Step {{ num }}: Go!{% endtrans %}</h1>
+                <input id="submit" value="{% trans %}Impose{% endtrans %}" class="btn btn-primary" type="submit">
+            </section>
+
+        </form>
+
+        <section>
+            <h1 id="step-print">{% trans num=5 %}Step {{ num }}: Print, fold, bind…{% endtrans %}</h1>
+
+          {% for key in LAYOUTS | sort %}
+              {% if request.args.layout in LAYOUTS and request.args.layout != key %}
+              {% continue %}
+              {% endif %}
+              <div class="" id="layout-description-{{ key }}" >
+                   <img
+                     src="{{ url_for('static', filename='layout/%s/%s-horizontal.svg' % (key, key) ) }}"
+                     class="img-fluid col-lg-6"
+                     alt="{% trans layout=key %}How-to process resulting PDF with {{ layout }}.{% endtrans %}"
+                   >
+                  {% include "layout/%s/howto.html" % key %}
+              </div>
+          {% endfor %}
+        </section>
+
+        {% endif %}
+
+        {% include "faq.html" %}
+        {% include "about.html" %}
+    </main>
+{% endblock %}

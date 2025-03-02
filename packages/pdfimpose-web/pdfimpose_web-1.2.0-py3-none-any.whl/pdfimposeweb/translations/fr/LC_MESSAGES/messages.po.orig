@@ -1,0 +1,1153 @@
+# French translations for pdfimpose-web.
+# Copyright (C) 2024-2025 Louis Paternault
+# This file is distributed under the same license as the pdfimpose-web
+# project.
+# Louis Paternault <louis@pdfimpose.it>, 2024-2025
+#
+msgid ""
+msgstr ""
+"Project-Id-Version:  1.0\n"
+"Report-Msgid-Bugs-To: contact@pdfimpose.it\n"
+"POT-Creation-Date: 2025-02-26 12:25+0100\n"
+"PO-Revision-Date: 2024-01-03 09:46+0100\n"
+"Last-Translator: Louis Paternault <louis@pdfimpose.it>\n"
+"Language: fr\n"
+"Language-Team: fr <contact@pdfimpose.it>\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: pdfimposeweb/__init__.py:211
+#, python-format
+msgid "Error: The maximum number of repetitions is %s."
+msgstr "Erreur : Le nombre de répétitions maximum est %s."
+
+#: pdfimposeweb/__init__.py:236
+msgid "Error: No file."
+msgstr "Erreur : Aucun fichier fourni."
+
+#: pdfimposeweb/__init__.py:239
+msgid "Error: Invalid filename."
+msgstr "Erreur : Nom de fichier invalide."
+
+#: pdfimposeweb/__init__.py:248
+msgid "No valid PDF files found. Try uploading a valid PDF file."
+msgstr "Aucun fichier PDF trouvé. Essayez de soumettre un fichier PDF valide."
+
+#: pdfimposeweb/__init__.py:268
+#, python-format
+msgid "Error while imposing files: %s"
+msgstr "Erreur lors de l'imposition: %s"
+
+#: pdfimposeweb/__init__.py:307
+#, python-format
+msgid "Error: File is too big: maximum size is %s."
+msgstr "Erreur : Le fichier est trop grand: la taille maximale acceptée est %s."
+
+#: pdfimposeweb/database.py:100
+msgctxt "unit"
+msgid "b"
+msgstr "o"
+
+#: pdfimposeweb/database.py:101
+msgctxt "unit"
+msgid "kb"
+msgstr "ko"
+
+#: pdfimposeweb/database.py:102
+msgctxt "unit"
+msgid "Mb"
+msgstr "Mo"
+
+#: pdfimposeweb/database.py:103
+msgctxt "unit"
+msgid "Gb"
+msgstr "Go"
+
+#: pdfimposeweb/database.py:104
+msgctxt "unit"
+msgid "Tb"
+msgstr "To"
+
+#: pdfimposeweb/database.py:105
+msgctxt "unit"
+msgid "Pb"
+msgstr "Po"
+
+#: pdfimposeweb/database.py:132
+#, python-format
+msgctxt "unit"
+msgid "%(size)s %(unit)s"
+msgstr "%(size)s %(unit)s"
+
+#: pdfimposeweb/templates/about.html:20 pdfimposeweb/templates/base.html:62
+msgid "About"
+msgstr "À propos"
+
+#: pdfimposeweb/templates/about.html:22
+msgid ""
+"This website is a free software, distributed under the <a "
+"href=\"https://www.gnu.org/licenses/agpl-3.0\">GNU Affero General Public "
+"licence</a>, version 3 or any later version. You can download the code "
+"powering it at <a href=\"https://framagit.org/spalax/pdfimpose-"
+"web\">Framagit</a> to review it, study it, change it, download it, run "
+"it…"
+msgstr ""
+"Ce site web est un logiciel libre, distribué sous la licence <a "
+"href=\"https://www.gnu.org/licenses/agpl-3.0\">GNU Affero General Public "
+"licence</a>, version 3 ou supérieure. Vous pouvez télécharger le code qui"
+" le propulse chez <a href=\"https://framagit.org/spalax/pdfimpose-"
+"web\">Framagit</a> pour le vérifier, l'étudier, le modifier, le "
+"télécharger, le lancer"
+
+#: pdfimposeweb/templates/about.html:28
+msgid ""
+"This website is built on top of <a "
+"href=\"https://framagit.org/spalax/pdfimpose\">pdfimpose</a> and <a "
+"href=\"https://framagit.org/spalax/pdfautonup\">pdfautonup</a>, which can"
+" be used offline."
+msgstr ""
+"Ce site web repose sur les outils <a "
+"href=\"https://framagit.org/spalax/pdfimpose\">pdfimpose</a> et <a "
+"href=\"https://framagit.org/spalax/pdfautonup\">pdfautonup</a>, qui "
+"peuvent être utilisés hors-ligne."
+
+#: pdfimposeweb/templates/about.html:34
+msgid ""
+"Contact: <a "
+"href=\"mailto:contact(at)pdfimpose(dot)it\">contact(at)pdfimpose(dot)it</a>."
+msgstr ""
+"Contact: <a "
+"href=\"mailto:contact(chez)pdfimpose(point)it\">contact(chez)pdfimpose(point)it</a>."
+
+#: pdfimposeweb/templates/base.html:24
+msgid "pdfimpose.it — Impose your PDF files!"
+msgstr "pdfimpose.it — Imposez vos fichiers PDF !"
+
+#: pdfimposeweb/templates/base.html:27
+msgid "Impose your PDFs online for free!"
+msgstr "Imposez gratuitement vos fichiers PDF en ligne !"
+
+#: pdfimposeweb/templates/base.html:59 pdfimposeweb/templates/faq.html:20
+msgid "FAQ"
+msgstr "FAQ"
+
+#: pdfimposeweb/templates/base.html:67
+msgid "Select language"
+msgstr "Choisir une langue"
+
+#: pdfimposeweb/templates/base.html:91
+msgid "louis(at)pdfimpose(dot)it"
+msgstr "louis(chez)pdfimpose(point)it"
+
+#: pdfimposeweb/templates/base.html:91
+msgid "Follow us on Mastodon!"
+msgstr "Suivez-nous sur Mastodon !"
+
+#: pdfimposeweb/templates/base.html:94
+#, python-format
+msgid "More than %(files)s files (%(size)s) imposed since %(year)s!"
+msgstr "Plus de %(files)s fichiers (%(size)s) imposés depuis %(year)s !"
+
+#: pdfimposeweb/templates/base.html:97
+msgid ""
+"Built with <a href=\"https://flask.palletsprojects.com\">Flask</a>, with "
+"<a href=\"https://getbootstrap.com\">Bootstrap</a>, and hosted at <a "
+"href=\"https://www.pythonanywhere.com\">pythonanywhere</a>."
+msgstr ""
+"Construit avec <a href=\"https://flask.palletsprojects.com\">Flask</a> et"
+" <a href=\"https://getbootstrap.com\">Bootstrap</a>, et hébergé par <a "
+"href=\"https://www.pythonanywhere.com\">pythonanywhere</a>."
+
+#: pdfimposeweb/templates/faq.html:23
+msgid "What data are you storing about me?"
+msgstr "Quelles donneés stockez-vous ?"
+
+#: pdfimposeweb/templates/faq.html:24
+msgid ""
+"The data we store are:\n"
+"    <ul>\n"
+"      <li>the PDF files you upload (for an hour; see next question);</li>"
+"\n"
+"      <li>anonymous daily statistics (such as <em>today, XXX files have "
+"been processed, totalizing XXX Mb.</em>.</li>\n"
+"    </ul>\n"
+"    That's all. Nothing more."
+msgstr ""
+"Les données que nous sauvegardons sont :\n"
+"    <ul>\n"
+"      <li>les fichiers que vous téléversez (pendant une heure seulement ;"
+" voir question suivante) ;</li>\n"
+<<<<<<< HEAD
+"      <li>des données statistiques anonymes (de la forme <em>« Aujourd'hui, XXX fichiers ont été traités, pour un total de XXX Mo. »</em>).</li>\n"
+=======
+"      <li>des données statistiques anonymes (de la forme <em>« "
+"Aujourd'hui, XXX fichiers ont été traités, pour un total de XXX Mo. "
+"»</em>).</li>\n"
+>>>>>>> main
+"    </ul>\n"
+"    Et c'est tout. Rien de plus."
+
+#: pdfimposeweb/templates/faq.html:33
+msgid "So you don't use cookies?"
+msgstr "Vous n'utilisez donc pas de cookies?"
+
+#: pdfimposeweb/templates/faq.html:34
+msgid ""
+"We do use cookies, but not to track you. The cookies are only used to "
+"remember your prefered language, if set by choosing it in the top menu."
+msgstr ""
+"Si, mais pas pour vous pister. Les cookies ne sont utilisés que pour se "
+"souvenir de votre langue préférée, si vous l'avez définies dans le menu "
+"du haut."
+
+#: pdfimposeweb/templates/faq.html:38
+msgid "Who have access to the files I upload here?"
+msgstr "Qui peut lire les fichiers que je téléverse sur ce site web ?"
+
+#: pdfimposeweb/templates/faq.html:39
+msgid ""
+"<ul>\n"
+"      <li>Short answer: Do not upload here anything you would not want to"
+" be public. </li>\n"
+"      <li>Long answer: Nobody will look to the files you upload. However:"
+"\n"
+"      <ul>\n"
+"        <li>technically, I (the author and maintainer of this website) "
+"have access to everything you upload (but I won't bother reading it); "
+"</li>\n"
+"        <li>although I did my best, there might be security issues, and "
+"your files might be publicly accessible without my knowledge;</li>\n"
+"        <li>malicious hackers might try and gain access to the "
+"server.</li>\n"
+"      </ul>\n"
+"      If you are not happy with it, you can use this software locally "
+"(see next question).\n"
+"      </li>\n"
+"    </ul>"
+msgstr ""
+"<ul>\n"
+"      <li>Réponse rapide : Ne téléversez rien que vous ne voudriez pas "
+"voir rendu public. </li>\n"
+"      <li>Réponse longue : Personne ne regardera vos fichiers. Cependant "
+":\n"
+"      <ul>\n"
+"        <li>techniquement, en tant que mainteneur de ce site web, j'ai "
+"accès à tout ce que vous téléversez (mais je ne vais pas m'embêter à "
+"regarder)</li>\n"
+"        <li>même si j'ai fait de mon mieux, il est tout à fait possible "
+"qu'il y ait des failles de sécurité, et que vos fichiers soient "
+"accessible publiquement à mon insu ;</li>\n"
+"        <li>des informaticiens malveillants pourraient essayer et réussir"
+" d'accéder au serveur et à vos fichiers.</li>\n"
+"      </ul>\n"
+"      Si cela ne vous convient pas, vous pouvez utiliser ce logiciel en "
+"local (voir question suivante).\n"
+"      </li>\n"
+"    </ul>"
+
+#: pdfimposeweb/templates/faq.html:53
+msgid "How can I use this tool locally?"
+msgstr "Comment puis-je utiliser cet outil sur mon ordinateur ?"
+
+#: pdfimposeweb/templates/faq.html:54
+msgid ""
+"You can either:\n"
+"    <ul>\n"
+"      <li><a href=\"https://framagit.org/spalax/pdfimpose-web\">install "
+"this webserver locally</a> and run it from your computer;</li>\n"
+"      <li>locally install the underlying tools (<a "
+"href=\"https://framagit.org/spalax/pdfimpose\">pdfimpose</a> and <a "
+"href=\"https://framagit.org/spalax/pdfautonup\">pdfautonup</a>). However,"
+" as far as I know, no one bothered to build a graphical user interface to"
+" them, so you will need to know a bit of command line to use them.</li>\n"
+"    </ul>\n"
+"    Both solutions require a bit of technical knowledge…"
+msgstr ""
+"Vous pouvez :\n"
+"    <ul>\n"
+"      <li><a href=\"https://framagit.org/spalax/pdfimpose-web\">installer"
+" ce serveur web localement</a> et l'exécuter sur votre ordinateur ;</li>"
+"\n"
+"      <li>installer localement les fichiers sur lesquels il repose (<a "
+"href=\"https://framagit.org/spalax/pdfimpose\">pdfimpose</a> et <a "
+"href=\"https://framagit.org/spalax/pdfautonup\">pdfautonup</a>). "
+"Cependant, sauf erreur de ma part, personne n'a pris la peine de leur "
+"construire une interface graphique, donc vous aller devoir utiliser la "
+"ligne de commande pour les utiliser.</li>\n"
+"    </ul>\n"
+"    Un peu de connaissances techniques sont nécessaires dans les deux cas…"
+
+#: pdfimposeweb/templates/faq.html:63
+msgid "I found a bug. How do I report it?"
+msgstr "J'ai trouvé une erreur. À qui dois-je le signaler ?"
+
+#: pdfimposeweb/templates/faq.html:64
+msgid ""
+"You can either open an issue on <a href=\"https://framagit.org/spalax"
+"/pdfimpose-web/-/issues\">Framagit</a> or send me an email: <a "
+"href=\"mailto:contact(at)pdfimpose(dot)it\">contact(at)pdfimpose(dot)it</a>."
+msgstr ""
+"Vous pouvez déclarer un incident sur <a "
+"href=\"https://framagit.org/spalax/pdfimpose-web/-/issues\">Framagit</a> "
+"ou m'envoyer un courriel à l'adresse : <a "
+"href=\"mailto:contact(chez)pdfimpose(point)it\">contact(chez)pdfimpose(point)it</a>."
+
+#: pdfimposeweb/templates/faq.html:68
+msgid "And if I don't speak English?"
+msgstr "Et si je ne parle pas anglais ?"
+
+#: pdfimposeweb/templates/faq.html:69
+msgid ""
+"French-speaking users can contact us at the very same address: <a "
+"href=\"mailto:contact(at)pdfimpose(dot)it\">contact(at)pdfimpose(dot)it</a>."
+" Other languages? Sorry…"
+msgstr ""
+"Les francophones peuvent nous contacter à la même adresse : <a "
+"href=\"mailto:contact(chez)pdfimpose(point)it\">contact(chez)pdfimpose(point)it</a>."
+" Pour les autres langues ? Désolé…"
+
+#: pdfimposeweb/templates/faq.html:73
+msgid "I have an idea to improve the user experience: we might just…"
+msgstr ""
+"J'ai une idée pour améliorer l'expérience utilisateur: vous pourriez "
+"simplement…"
+
+#: pdfimposeweb/templates/faq.html:74
+msgid ""
+"<ul>\n"
+"      <li>Short answer: NO!</li>\n"
+"      <li>Long answer: I suck at designing easy-to-use applications. I "
+"spent ages coding this website, and I would spend hours to implement a "
+"tiny improvement. So I probably won't do it. However, if <em>you</em> can"
+" do it, I will be happy to merge your pull-request.</li>\n"
+"    </ul>"
+msgstr ""
+"<ul>\n"
+"      <li>Réponse courte : NON !</li>\n"
+"      <li>Réponse longue : Je nul en conception de sites webs "
+"ergonomiques. J'ai passé des heures à faire celui-ci, et mettre en œuvre "
+"une minuscule amélioration me prendrait des heures. Donc je ne vais "
+"probablement pas le faire. Cependant, si <em>vous</em> pouvez améliorer "
+"le site web, je serai ravis d'intégrer vos modifications.</li>\n"
+"    </ul>"
+
+#: pdfimposeweb/templates/faq.html:81
+msgid ""
+"Images are barely readable. Wouldn't videos be far more explanatories to "
+"explain the different layouts?"
+msgstr ""
+"Les images sont à peine lisibles. Des vidéos ne seraient-elles pas plus "
+"claires pour expliquer les différentes dispositions ?"
+
+#: pdfimposeweb/templates/faq.html:82
+msgid ""
+"I wholly agree. But if I were to make them, I would spend hours for "
+"deplorable results. But I will be happy to include your videos!"
+msgstr ""
+"Je suis totalement d'accord. Mais si je les faisait, j'y passerais des "
+"heures pour un résultat déplorable. Mais je serai ravis d'inclure les "
+"vôtres !"
+
+#: pdfimposeweb/templates/forms.html:44
+msgid "Output size (standard sizes):"
+msgstr "Format de sortie (tailles standards) :"
+
+#: pdfimposeweb/templates/forms.html:53
+msgid ""
+"Put as much source pages into the destination page of the given size "
+"(note that margins are ignored when computing this; if margins are set "
+"(see below), the resulting file might be larger than the required "
+"format)."
+msgstr ""
+"Place sur la page de destination autant de pages de la source que "
+"possible (en remarquant que, si les marges sont définies — voir plus bas "
+"— ces dernières sont ignorées pour ce calcul : le format de sortie "
+"pourrait alors être plus grand que le format demandé)."
+
+#: pdfimposeweb/templates/forms.html:56
+msgid "A4"
+msgstr "A4"
+
+#: pdfimposeweb/templates/forms.html:64
+msgid "Output format (custom sizes):"
+msgstr "Format de sortie (personnalisé) :"
+
+#: pdfimposeweb/templates/forms.html:73 pdfimposeweb/templates/forms.html:196
+msgid "Same as above, but with custom paper size."
+msgstr "Idem, mais avec une taille de papier personnalisée."
+
+#: pdfimposeweb/templates/forms.html:74 pdfimposeweb/templates/forms.html:92
+#: pdfimposeweb/templates/forms.html:197
+msgid "Width"
+msgstr "Largeur"
+
+#: pdfimposeweb/templates/forms.html:75 pdfimposeweb/templates/forms.html:96
+#: pdfimposeweb/templates/forms.html:198
+msgid "Height"
+msgstr "Hauteur"
+
+#: pdfimposeweb/templates/forms.html:81
+msgid "Signature:"
+msgstr "Signature :"
+
+#: pdfimposeweb/templates/forms.html:90
+msgid ""
+"Size of the destination pages (e.g. 2x3): this represents the number of "
+"sheets you will get after having cut each printed sheet."
+msgstr ""
+"Format de papier en sortie, en fonction du format d'entrée (par exemple "
+"2x3)."
+
+#: pdfimposeweb/templates/forms.html:122
+msgid "Bind"
+msgstr "Reliure"
+
+#: pdfimposeweb/templates/forms.html:124
+msgid "left"
+msgstr "gauche"
+
+#: pdfimposeweb/templates/forms.html:125
+msgid "right"
+msgstr "droite"
+
+#: pdfimposeweb/templates/forms.html:126
+msgid "top"
+msgstr "haut"
+
+#: pdfimposeweb/templates/forms.html:127
+msgid "bottom"
+msgstr "bas"
+
+#: pdfimposeweb/templates/forms.html:135
+msgid "Don't group sheets."
+msgstr "Ne groupe pas les feuilles."
+
+#: pdfimposeweb/templates/forms.html:141
+msgid "Group some sheets."
+msgstr "Groupe des feuilles"
+
+#: pdfimposeweb/templates/forms.html:145
+msgid "Sheets"
+msgstr "Feuilles"
+
+#: pdfimposeweb/templates/forms.html:151
+msgid "Group all sheets."
+msgstr "Groupe toutes les feuilles"
+
+#: pdfimposeweb/templates/forms.html:160
+msgid "Do not resize."
+msgstr "Ne pas reformater."
+
+#: pdfimposeweb/templates/forms.html:172
+msgid "Resize to standard size:"
+msgstr "Reformate (tailles standards) :"
+
+#: pdfimposeweb/templates/forms.html:182
+msgid "A5"
+msgstr "A5"
+
+#: pdfimposeweb/templates/forms.html:188
+msgid "Resize to custom size:"
+msgstr "Reformater en une taille personnalisée :"
+
+#: pdfimposeweb/templates/forms.html:202
+msgid "Scale by factor:"
+msgstr "Étendre (ou diminuer) par un facteur :"
+
+#: pdfimposeweb/templates/forms.html:210
+msgid "Scale"
+msgstr "Facteur"
+
+#: pdfimposeweb/templates/index.html:21
+msgid "pdfimpose.it — Free online imposition"
+msgstr "pdfimpose.it — Imposition en ligne gratuite"
+
+#: pdfimposeweb/templates/index.html:62
+msgid ""
+"Imposition is one of the fundamental steps in the prepress printing "
+"process. It consists of the arrangement of the printed product's pages on"
+" the printer's sheet, in order to obtain faster printing, simplify "
+"binding and reduce paper waste."
+msgstr ""
+"En imprimerie, l'imposition est une des étapes de prépresse. Elle "
+"consiste à placer sur une grande feuille (la forme) les pages d'un "
+"ouvrage afin d'obtenir un cahier lors de son pliage."
+
+#: pdfimposeweb/templates/index.html:67
+msgid "https://en.wikipedia.org/wiki/Imposition"
+msgstr "https://fr.wikipedia.org/wiki/Imposition_(imprimerie)"
+
+#: pdfimposeweb/templates/index.html:67
+msgid "Wikipedia"
+msgstr "Wikipédia"
+
+#: pdfimposeweb/templates/index.html:73
+msgid "Warning!"
+msgstr "Attention !"
+
+#: pdfimposeweb/templates/index.html:74
+msgid ""
+"This page requires Javascript to run properly. You may enable Javascript,"
+" or use <a href=\"/?noscript\">this version</a> which works without it."
+msgstr ""
+"This page nécessite Javascript pour fonctionner correctement. Vous pouvez"
+" activer Javascript, ou utiliser <a href=\"/?noscript\">cette version</a>"
+" qui fonctionne sans."
+
+#: pdfimposeweb/templates/index.html:82
+#, python-format
+msgid "Step %(num)s: Select a PDF file"
+msgstr "Étape %(num)s : Choisissez un fichier PDF"
+
+#: pdfimposeweb/templates/index.html:86
+msgid "Drop file here"
+msgstr "Déposez votre fichier ici"
+
+#: pdfimposeweb/templates/index.html:87
+msgid "or"
+msgstr "ou"
+
+#: pdfimposeweb/templates/index.html:96
+#, python-format
+msgid "Step %(num)s: Choose an imposition layout"
+msgstr "Étape %(num)s : Choisissez une disposition"
+
+#: pdfimposeweb/templates/index.html:97
+msgid ""
+"All layouts assume that your are printing a PDF files with pages much "
+"smaller than your actual paper (that is, at least two pages will be "
+"printed on each paper page).\n"
+"                Choose a layout depending on what you indend to do with "
+"this file, or how you would like to bind it."
+msgstr ""
+"Toutes les dispositions supposent que vous imprimer un fichier PDF avec "
+"des pages bien plus petites que la taille de votre papier (c'est-à-dire "
+"qu'au moins deux pages vous être imprimées sur chaque face des feuilles)."
+"\n"
+"Choisssez une disposition selon ce que vous voulez faire du fichier, ou "
+"selon la manière dont vous souhaitez le relier."
+
+#: pdfimposeweb/templates/index.html:108
+msgid "Permalink to this layout."
+msgstr "Lien permanent vers cette disposition."
+
+#: pdfimposeweb/templates/index.html:109
+msgid ":"
+msgstr " :"
+
+#: pdfimposeweb/templates/index.html:116
+msgid "Show illustration…"
+msgstr "Montrer l'illustration…"
+
+#: pdfimposeweb/templates/index.html:124
+#, python-format
+msgid "Short explaination of layout %(layout)s."
+msgstr "Explication cours de la disposition %(layout)s."
+
+#: pdfimposeweb/templates/index.html:131
+msgid "Choose this layout"
+msgstr "Choisir cette disposition"
+
+#: pdfimposeweb/templates/index.html:132
+msgid "Choose another layout"
+msgstr "Choisir une autre disposition"
+
+#: pdfimposeweb/templates/index.html:141
+#, python-format
+msgid "Step %(num)s: Customize"
+msgstr "Étape %(num)s : Personnalisez"
+
+#: pdfimposeweb/templates/index.html:143 pdfimposeweb/templates/index.html:167
+msgid "Choose a layout first…"
+msgstr "Choisissez d'abord une disposition…"
+
+#: pdfimposeweb/templates/index.html:145
+msgid ""
+"For simple tasks, you might be happy with default values and skip to the "
+"<a href=\"#step-go\">next step</a>."
+msgstr ""
+"Pour les travaux simples, il est possible que les valeurs par défaut "
+"conviennent, auquel cas vous pouvez passer à <a href=\"#step-go\">l'étape"
+" suivante</a>."
+
+#: pdfimposeweb/templates/index.html:157
+#, python-format
+msgid "Step %(num)s: Go!"
+msgstr "Étape %(num)s : C'est parti !"
+
+#: pdfimposeweb/templates/index.html:158
+msgid "Impose"
+msgstr "Imposer"
+
+#: pdfimposeweb/templates/index.html:164
+#, python-format
+msgid "Step %(num)s: Print, fold, bind…"
+msgstr "Étape %(num)s : Imprimez, pliez, reliez…"
+
+#: pdfimposeweb/templates/index.html:175
+#, python-format
+msgid "How-to process resulting PDF with %(layout)s."
+msgstr "Que faire du PDF obtenu avec %(layout)s."
+
+#: pdfimposeweb/templates/index.html:193
+msgid "Error"
+msgstr "Erreur"
+
+#: pdfimposeweb/templates/index.html:194
+msgid "file"
+msgstr "fichier"
+
+#: pdfimposeweb/templates/index.html:195
+msgid "File name must end with <code>.pdf</code>."
+msgstr "Le nom de fichier doit se terminer par <code>.pdf</code>."
+
+#: pdfimposeweb/templates/index.html:196
+#, python-format
+msgid "File is too big (maximum size is %(max_size)s)."
+msgstr "Le fichier est trop grand (la taille maximale est %(max_size)s)."
+
+#: pdfimposeweb/templates/index.html:197
+msgid "Pages have different sizes. Result might be unexpected."
+msgstr "Les pages sont de tailles différentes. Le résultat peut être inattendu."
+
+#: pdfimposeweb/templates/index.html:198
+msgid "Warning"
+msgstr "Attention"
+
+#: pdfimposeweb/templates/stats.html:21
+msgid "Statistics about pdfimpose.it"
+msgstr "Statistiques à propos de pdfimpose.it"
+
+#: pdfimposeweb/templates/stats.html:22
+msgid "pdfimpose.it — Statistics"
+msgstr "pdfimpose.it — Statistiques"
+
+#: pdfimposeweb/templates/layout/cards/description.html:19
+msgid "Question on front, answer on back."
+msgstr "Question au recto, réponse au verso."
+
+#: pdfimposeweb/templates/layout/cards/form.html:22
+#: pdfimposeweb/templates/layout/copycutfold/form.html:22
+#: pdfimposeweb/templates/layout/cutstackfold/form.html:22
+#: pdfimposeweb/templates/layout/hardcover/form.html:22
+#: pdfimposeweb/templates/layout/pdfautonup/form.html:22
+#: pdfimposeweb/templates/layout/saddle/form.html:22
+#: pdfimposeweb/templates/layout/wire/form.html:22
+msgid "Output format"
+msgstr "Format de sortie"
+
+#: pdfimposeweb/templates/layout/cards/form.html:23
+#: pdfimposeweb/templates/layout/copycutfold/form.html:23
+#: pdfimposeweb/templates/layout/cutstackfold/form.html:23
+#: pdfimposeweb/templates/layout/hardcover/form.html:23
+#: pdfimposeweb/templates/layout/saddle/form.html:23
+#: pdfimposeweb/templates/layout/wire/form.html:23
+msgid ""
+"Output format can be set by defining the output format (the signature is "
+"then computed to fit this output format), or by setting the signature "
+"(output format is then computed)."
+msgstr ""
+"Le format de sortie peut être défini de manière absolue (la signature est"
+" alors calculée pour tenir sur ce format de sortie), ou en choisissant la"
+" signature (le format de sortie est alors calculé en fonction)."
+
+#: pdfimposeweb/templates/layout/cards/form.html:27
+#: pdfimposeweb/templates/layout/copycutfold/form.html:27
+#: pdfimposeweb/templates/layout/cutstackfold/form.html:27
+#: pdfimposeweb/templates/layout/hardcover/form.html:27
+#: pdfimposeweb/templates/layout/onepagezine/form.html:21
+#: pdfimposeweb/templates/layout/pdfautonup/form.html:26
+#: pdfimposeweb/templates/layout/saddle/form.html:27
+#: pdfimposeweb/templates/layout/wire/form.html:27
+msgid "More options…"
+msgstr "Plus d'options…"
+
+#: pdfimposeweb/templates/layout/cards/form.html:29
+#: pdfimposeweb/templates/layout/copycutfold/form.html:29
+#: pdfimposeweb/templates/layout/cutstackfold/form.html:29
+#: pdfimposeweb/templates/layout/hardcover/form.html:29
+#: pdfimposeweb/templates/layout/onepagezine/form.html:23
+#: pdfimposeweb/templates/layout/pdfautonup/form.html:28
+#: pdfimposeweb/templates/layout/saddle/form.html:29
+#: pdfimposeweb/templates/layout/wire/form.html:29
+msgid "Resize input pages"
+msgstr "Reformater les pages d'entrée"
+
+#: pdfimposeweb/templates/layout/cards/form.html:30
+#: pdfimposeweb/templates/layout/copycutfold/form.html:30
+#: pdfimposeweb/templates/layout/cutstackfold/form.html:30
+#: pdfimposeweb/templates/layout/hardcover/form.html:30
+#: pdfimposeweb/templates/layout/onepagezine/form.html:24
+#: pdfimposeweb/templates/layout/pdfautonup/form.html:29
+#: pdfimposeweb/templates/layout/saddle/form.html:30
+#: pdfimposeweb/templates/layout/wire/form.html:30
+msgid "If set, input pages will be resized before being imposed."
+msgstr ""
+"Si cette option est définie, les pages d'entrée seront reformatée avant "
+"d'être imposées."
+
+#: pdfimposeweb/templates/layout/cards/form.html:35
+#: pdfimposeweb/templates/layout/copycutfold/form.html:35
+#: pdfimposeweb/templates/layout/cutstackfold/form.html:35
+#: pdfimposeweb/templates/layout/hardcover/form.html:35
+#: pdfimposeweb/templates/layout/pdfautonup/form.html:34
+#: pdfimposeweb/templates/layout/saddle/form.html:35
+#: pdfimposeweb/templates/layout/wire/form.html:35
+msgid "Repeat input file"
+msgstr "Répéter le fichier source"
+
+#: pdfimposeweb/templates/layout/cards/form.html:36
+#: pdfimposeweb/templates/layout/copycutfold/form.html:36
+#: pdfimposeweb/templates/layout/cutstackfold/form.html:36
+#: pdfimposeweb/templates/layout/hardcover/form.html:36
+#: pdfimposeweb/templates/layout/saddle/form.html:36
+#: pdfimposeweb/templates/layout/wire/form.html:36
+msgid ""
+"Set this to act as if your file was repeated several times. It might be "
+"useful with some layouts, or useless with others…"
+msgstr ""
+"Utilisez cette option pour répéter le fichier d'entrée (cela peut être "
+"utile pour certaines dispositions, et absurde pour d'autres)."
+
+#: pdfimposeweb/templates/layout/cards/form.html:37
+#: pdfimposeweb/templates/layout/copycutfold/form.html:37
+#: pdfimposeweb/templates/layout/cutstackfold/form.html:37
+#: pdfimposeweb/templates/layout/hardcover/form.html:37
+#: pdfimposeweb/templates/layout/pdfautonup/form.html:60
+#: pdfimposeweb/templates/layout/saddle/form.html:37
+#: pdfimposeweb/templates/layout/wire/form.html:37
+msgid "Repeat"
+msgstr "Répétitions"
+
+#: pdfimposeweb/templates/layout/cards/form.html:41
+#: pdfimposeweb/templates/layout/copycutfold/form.html:58
+#: pdfimposeweb/templates/layout/cutstackfold/form.html:59
+#: pdfimposeweb/templates/layout/hardcover/form.html:58
+#: pdfimposeweb/templates/layout/onepagezine/form.html:40
+#: pdfimposeweb/templates/layout/saddle/form.html:58
+#: pdfimposeweb/templates/layout/wire/form.html:47
+msgid "Margins"
+msgstr "Marges"
+
+#: pdfimposeweb/templates/layout/cards/form.html:42
+#: pdfimposeweb/templates/layout/copycutfold/form.html:59
+#: pdfimposeweb/templates/layout/cutstackfold/form.html:60
+#: pdfimposeweb/templates/layout/hardcover/form.html:59
+#: pdfimposeweb/templates/layout/saddle/form.html:59
+#: pdfimposeweb/templates/layout/wire/form.html:48
+msgid "Input margin"
+msgstr "Marge d'entrée"
+
+#: pdfimposeweb/templates/layout/cards/form.html:43
+#: pdfimposeweb/templates/layout/copycutfold/form.html:60
+#: pdfimposeweb/templates/layout/cutstackfold/form.html:61
+#: pdfimposeweb/templates/layout/hardcover/form.html:60
+#: pdfimposeweb/templates/layout/onepagezine/form.html:41
+#: pdfimposeweb/templates/layout/pdfautonup/form.html:116
+#: pdfimposeweb/templates/layout/saddle/form.html:60
+#: pdfimposeweb/templates/layout/wire/form.html:49
+msgid "Output margin"
+msgstr "Marge de sortie"
+
+#: pdfimposeweb/templates/layout/cards/form.html:47
+#: pdfimposeweb/templates/layout/copycutfold/form.html:64
+#: pdfimposeweb/templates/layout/cutstackfold/form.html:65
+#: pdfimposeweb/templates/layout/hardcover/form.html:64
+#: pdfimposeweb/templates/layout/onepagezine/form.html:45
+#: pdfimposeweb/templates/layout/saddle/form.html:64
+#: pdfimposeweb/templates/layout/wire/form.html:53
+msgid "Add marks?"
+msgstr "Ajouter des marques ?"
+
+#: pdfimposeweb/templates/layout/cards/form.html:50
+#: pdfimposeweb/templates/layout/copycutfold/form.html:67
+#: pdfimposeweb/templates/layout/cutstackfold/form.html:68
+#: pdfimposeweb/templates/layout/hardcover/form.html:67
+#: pdfimposeweb/templates/layout/saddle/form.html:67
+#: pdfimposeweb/templates/layout/wire/form.html:56
+msgid "Bind marks"
+msgstr "Marques de pli"
+
+#: pdfimposeweb/templates/layout/cards/form.html:56
+#: pdfimposeweb/templates/layout/copycutfold/form.html:73
+#: pdfimposeweb/templates/layout/cutstackfold/form.html:74
+#: pdfimposeweb/templates/layout/hardcover/form.html:73
+#: pdfimposeweb/templates/layout/onepagezine/form.html:48
+#: pdfimposeweb/templates/layout/saddle/form.html:73
+#: pdfimposeweb/templates/layout/wire/form.html:62
+msgid "Crop marks"
+msgstr "Marques de découpe"
+
+#: pdfimposeweb/templates/layout/cards/howto.html:20
+#: pdfimposeweb/templates/layout/copycutfold/howto.html:20
+#: pdfimposeweb/templates/layout/cutstackfold/howto.html:20
+#: pdfimposeweb/templates/layout/hardcover/howto.html:20
+#: pdfimposeweb/templates/layout/saddle/howto.html:20
+#: pdfimposeweb/templates/layout/wire/howto.html:20
+msgid "Print the resulting PDF two-sided (binding on the left)."
+msgstr ""
+"Imprimez le fichier PDF obtenu en recto-verso (en le retournant sur la "
+"gauche)."
+
+#: pdfimposeweb/templates/layout/cards/howto.html:23
+msgid "Cut the cards."
+msgstr "Coupez les cartes"
+
+#: pdfimposeweb/templates/layout/cards/name.html:19
+msgid "Flash cards"
+msgstr "Cartes"
+
+#: pdfimposeweb/templates/layout/copycutfold/description.html:19
+msgid "Produce several copies of the same book."
+msgstr "Produit plusieurs copies du même livre."
+
+#: pdfimposeweb/templates/layout/copycutfold/form.html:41
+#: pdfimposeweb/templates/layout/cutstackfold/form.html:41
+#: pdfimposeweb/templates/layout/hardcover/form.html:41
+#: pdfimposeweb/templates/layout/onepagezine/form.html:29
+#: pdfimposeweb/templates/layout/saddle/form.html:41
+msgid "Binding edge"
+msgstr "Orientation de la reliure"
+
+#: pdfimposeweb/templates/layout/copycutfold/form.html:46
+#: pdfimposeweb/templates/layout/copycutfold/form.html:48
+#: pdfimposeweb/templates/layout/cutstackfold/form.html:46
+#: pdfimposeweb/templates/layout/cutstackfold/form.html:48
+#: pdfimposeweb/templates/layout/hardcover/form.html:46
+#: pdfimposeweb/templates/layout/hardcover/form.html:48
+#: pdfimposeweb/templates/layout/onepagezine/form.html:34
+#: pdfimposeweb/templates/layout/onepagezine/form.html:36
+#: pdfimposeweb/templates/layout/saddle/form.html:46
+#: pdfimposeweb/templates/layout/saddle/form.html:48
+#: pdfimposeweb/templates/layout/wire/form.html:41
+#: pdfimposeweb/templates/layout/wire/form.html:43
+msgid "Last pages"
+msgstr "Dernières pages"
+
+#: pdfimposeweb/templates/layout/copycutfold/form.html:47
+#: pdfimposeweb/templates/layout/cutstackfold/form.html:47
+#: pdfimposeweb/templates/layout/hardcover/form.html:47
+#: pdfimposeweb/templates/layout/onepagezine/form.html:35
+#: pdfimposeweb/templates/layout/saddle/form.html:47
+#: pdfimposeweb/templates/layout/wire/form.html:42
+msgid ""
+"Number of pages to keep as last pages. Useful to keep the back cover as a"
+" back cover."
+msgstr ""
+"Nombre de pages à conserver à la fin (utile pour conserver le quatrième "
+"de couverture en quatrième de couverture)."
+
+#: pdfimposeweb/templates/layout/copycutfold/form.html:52
+#: pdfimposeweb/templates/layout/cutstackfold/form.html:52
+#: pdfimposeweb/templates/layout/hardcover/form.html:52
+#: pdfimposeweb/templates/layout/saddle/form.html:52
+msgid "Group paper sheets"
+msgstr "Groupe les feuilles"
+
+#: pdfimposeweb/templates/layout/copycutfold/form.html:53
+#: pdfimposeweb/templates/layout/hardcover/form.html:53
+#: pdfimposeweb/templates/layout/saddle/form.html:53
+msgid ""
+"If set, repeat the cutting-folding instructions above for every group of "
+"sheets. You get several sections, that you have to bind together to get a"
+" proper book."
+msgstr ""
+"Si cette option est définie, répétez les instructions précédentes de "
+"découpe et reliure pour chacun des groupes de feuilles. Vous obvener "
+"plusieurs cahiers, que vous devez relier ensemble pour obtenir votre "
+"livre."
+
+#: pdfimposeweb/templates/layout/copycutfold/howto.html:23
+#: pdfimposeweb/templates/layout/cutstackfold/howto.html:23
+msgid "Cut the stack of paper, to get several stacks."
+msgstr "Coupez la pile de papier, pour obtenir plusieurs piles."
+
+#: pdfimposeweb/templates/layout/copycutfold/howto.html:26
+msgid "Fold each stack of paper (once)."
+msgstr "Pliez une fois chaque pile de papier."
+
+#: pdfimposeweb/templates/layout/copycutfold/howto.html:29
+msgid "Bind each stack of paper you got, separately."
+msgstr "Reliez séparément chacune des piles de papier obtenues."
+
+#: pdfimposeweb/templates/layout/copycutfold/howto.html:34
+msgid ""
+"If option <em>group</em> is set, follow the steps above, but at step 3, "
+"instead of folding each stack of paper at once, fold as many pages as "
+"specified by the <em>group</em> option. Then, at step 4, bind the quires "
+"together, like a hardcover book."
+msgstr ""
+"Si l'option <em>grouper</em> a été définie, suivez les instructions ci-"
+"dessous, masi à l'étape 3, au lieu de plier séparément chaque pile de "
+"papier en une seule fois, pliez autant de feuilles que défini par "
+"l'option <em>grouper</em>. Puis, à l'étape 4, reliez les cahiers "
+"ensemble, en utilisant la reliure à la française."
+
+#: pdfimposeweb/templates/layout/copycutfold/name.html:19
+msgid "Copy-cut-fold"
+msgstr "Copier-couper-plier"
+
+#: pdfimposeweb/templates/layout/cutstackfold/description.html:19
+msgid "Bind a book by stapling together one single stack of paper."
+msgstr "Relie un livre en agrafant une unique pile de papier."
+
+#: pdfimposeweb/templates/layout/cutstackfold/form.html:53
+msgid ""
+"If set, repeat the cutting-folding instructions above for every group of "
+"the given number of sheets. You get several sections, that you have to "
+"bind together to get a proper book."
+msgstr ""
+"Si cette option est définie, répétez les instructions précédentes de "
+"découpe et reliure pour chacun des groupes de feuilles. Vous obvener "
+"plusieurs cahiers, que vous devez relier ensemble pour obtenir votre "
+"livre."
+
+#: pdfimposeweb/templates/layout/cutstackfold/howto.html:26
+msgid ""
+"Stack the several stacks you got on top of each other (take care to keep "
+"the pages in the right order)."
+msgstr ""
+"Empilez les différentes piles obtenues (attention à ce que les pages "
+"soient dans le bon ordre)."
+
+#: pdfimposeweb/templates/layout/cutstackfold/howto.html:29
+msgid "Fold the big stack of paper sheets."
+msgstr "Pliez une fois la pile de papier obtenue."
+
+#: pdfimposeweb/templates/layout/cutstackfold/howto.html:32
+#: pdfimposeweb/templates/layout/wire/howto.html:29
+msgid "Bind it."
+msgstr "Reliez-la."
+
+#: pdfimposeweb/templates/layout/cutstackfold/howto.html:37
+msgid ""
+"If option <em>group</em> is set, at step 3, instead of stacking "
+"<em>all</em> the paper sheets together, stack as many sheets as specified"
+" by the <em>group</em> option. Then, at step 5, bind the quires together,"
+" like a hardcover book."
+msgstr ""
+"Si l'option <em>grouper</em> a été définie, suivez les instructions ci-"
+"dessous, masi à l'étape 3, au lieu d'empiler ensemble toutes les feuil, "
+"empilez-les en formant des groupes du nombre de feuilles défini par "
+"l'option <em>grouper</em>. Puis, à l'étape 4, reliez les cahiers "
+"ensemble, en utilisant la reliure à la française."
+
+#: pdfimposeweb/templates/layout/cutstackfold/name.html:19
+msgid "Cut-stack-fold"
+msgstr "Couper-empiler-plier"
+
+#: pdfimposeweb/templates/layout/hardcover/description.html:19
+msgid "Bind a book by sewing the quires together."
+msgstr "Relie un livre en cousant les cahiers."
+
+#: pdfimposeweb/templates/layout/hardcover/howto.html:23
+msgid "Separately fold each sheet of paper, and stack them."
+msgstr "Pliez séparément chacune des feuilles de papier, puis empilez-les."
+
+#: pdfimposeweb/templates/layout/hardcover/howto.html:26
+#: pdfimposeweb/templates/layout/saddle/howto.html:29
+msgid "Bind them."
+msgstr "Reliez-les."
+
+#: pdfimposeweb/templates/layout/hardcover/howto.html:31
+#: pdfimposeweb/templates/layout/saddle/howto.html:34
+msgid ""
+"If option <em>group</em> is set, follow the steps above, but at step 2, "
+"instead of <em>separately</em> folding each stack of paper, fold together"
+" as many sheets as specified by the <em>group</em> option."
+msgstr ""
+"Si l'option <em>grouper</em> a été définie, suivez les instructions ci-"
+"dessous, masi à l'étape 2, au lieu de plier <em>séparément</em> chacune "
+"des feuilles, pliez-les en formant des groupes du nombre de feuilles "
+"défini par l'option <em>grouper</em>."
+
+#: pdfimposeweb/templates/layout/hardcover/name.html:19
+msgid "Hardcover"
+msgstr "Reliure à la française"
+
+#: pdfimposeweb/templates/layout/onepagezine/description.html:19
+msgid "A one-page fanzine, with a poster on the back."
+msgstr "Un fanzine à imprimer sur une feuille, avec une affiche au verso."
+
+#: pdfimposeweb/templates/layout/onepagezine/howto.html:19
+msgid ""
+"This command only perform imposition of the front of your fanzine. It is "
+"your job to print the poster on the back."
+msgstr ""
+"Cette disposition n'impose que le recto de votre fanzine. C'est à vous "
+"d'imprimer l'affiche au verso."
+
+#: pdfimposeweb/templates/layout/onepagezine/howto.html:24
+msgid "Print the resulting PDF one-sided."
+msgstr "Imprimez le PDF obtenu sur une seule face."
+
+#: pdfimposeweb/templates/layout/onepagezine/howto.html:27
+msgid "Cut the paper between the medium pages, as shown above."
+msgstr "Coupez le papier entre les pages médianes, comme montré ci-dessus."
+
+#: pdfimposeweb/templates/layout/onepagezine/howto.html:30
+msgid ""
+"Fold the paper by (1) placing pages 1 and 2 back to back, and (2) placing"
+" each even page against the next one."
+msgstr ""
+"Pliez la feuille (1) en commençant par placer les pages 1 et 2 dos-à-dos,"
+" puis (2) en plaçant chaque page paire face-à-face contre la suivante."
+
+#: pdfimposeweb/templates/layout/onepagezine/name.html:19
+msgid "One-page zine"
+msgstr "Fanzine sur une feuille"
+
+#: pdfimposeweb/templates/layout/pdfautonup/description.html:19
+msgid "Put several input pages on each output page."
+msgstr "Place plusieurs pages d'entrée par page de sortie."
+
+#: pdfimposeweb/templates/layout/pdfautonup/form.html:35
+msgid "Set this to more than one to repeat input file."
+msgstr "Utilisez cette option pour répéter le fichier d'entrée."
+
+#: pdfimposeweb/templates/layout/pdfautonup/form.html:38
+msgid "Automatic"
+msgstr "Automatique"
+
+#: pdfimposeweb/templates/layout/pdfautonup/form.html:47
+msgid ""
+"If file has one page, equivalent to <em>fit</em> (see below). If file has"
+" more than one page, do not repeat (equivalent to <em>repeat once</em> "
+"below)."
+msgstr ""
+"Si le fichier a une page, cette option est équivalente à <em>remplir</em>"
+" (voir plus bas). Si le fichier a plusieurs pages, ne répète pas "
+"(équivalent à <em>ne pas répéter</em> en dessous)."
+
+#: pdfimposeweb/templates/layout/pdfautonup/form.html:51
+msgid "Repeat number"
+msgstr "Nombre de répétitions"
+
+#: pdfimposeweb/templates/layout/pdfautonup/form.html:59
+msgid "Repeat a fixed number of times."
+msgstr "Répèter un nombre de fois défini"
+
+#: pdfimposeweb/templates/layout/pdfautonup/form.html:64
+msgid "Fit"
+msgstr "Remplir"
+
+#: pdfimposeweb/templates/layout/pdfautonup/form.html:72
+msgid "Repeat as many times as necessary so that there is no empty cell."
+msgstr "Répéter autant que possible pour remplir chacune des pages de sortie."
+
+#: pdfimposeweb/templates/layout/pdfautonup/form.html:77
+msgid "Orientation"
+msgstr "Orientation"
+
+#: pdfimposeweb/templates/layout/pdfautonup/form.html:78
+msgid "If <em>automatic</em>, use the orientation that fits the more input pages."
+msgstr ""
+"Si l'orientation choisie est <em>automatique</em>, utilise l'orientation "
+"qui permet d'accueillir le plus de pages d'entrée."
+
+#: pdfimposeweb/templates/layout/pdfautonup/form.html:82
+msgid "automatic"
+msgstr "automatique"
+
+#: pdfimposeweb/templates/layout/pdfautonup/form.html:90
+msgid "Algorithm"
+msgstr "Algorithme"
+
+#: pdfimposeweb/templates/layout/pdfautonup/form.html:91
+msgid ""
+"Algorithm used to arrange source documents into destination documents. "
+"This program tries to put as many copies of the source document into the "
+"destination document, with the following constraint."
+msgstr ""
+"Algorithme utilisé pour disposer les pages d'entrée dans les pages de "
+"sortie. Cette application essaye de placer autant de pages d'entrée que "
+"possible sur chaque page de sortie, avec des contraintes différentes."
+
+#: pdfimposeweb/templates/layout/pdfautonup/form.html:94
+msgid "Fuzzy"
+msgstr "Souple"
+
+#: pdfimposeweb/templates/layout/pdfautonup/form.html:103
+msgid ""
+"documents can overlap (a bit), or leave blank spaces between them, but as"
+" little as possible."
+msgstr ""
+"les documents peuvent se chevaucher (un peu), ou laisser un espace entre "
+"eux, mais aussi peu que possible."
+
+#: pdfimposeweb/templates/layout/pdfautonup/form.html:107
+msgid "Panel"
+msgstr "Vignettes"
+
+#: pdfimposeweb/templates/layout/pdfautonup/form.html:115
+msgid ""
+"the gap length between documents is fixed, and a minimum destination "
+"margin is respected."
+msgstr ""
+"L'espace entre les pages d'entrée est défini de manière exacte, et une "
+"marge minimale est respectée."
+
+#: pdfimposeweb/templates/layout/pdfautonup/form.html:117
+msgid "Gap"
+msgstr "Gouttière"
+
+#: pdfimposeweb/templates/layout/pdfautonup/howto.html:20
+msgid ""
+"Print the resulting PDF, one-sided or two-sided, cut it or don't cut it, "
+"and so on, depending on what you had in mind."
+msgstr ""
+"Imprimez le fichier PDF obtenu, recto ou recto-verso, coupez-le ou non, "
+"etc., selon ce que vous avez en tête."
+
+#: pdfimposeweb/templates/layout/pdfautonup/name.html:19
+msgid "N-up"
+msgstr "Côte à côte"
+
+#: pdfimposeweb/templates/layout/saddle/description.html:19
+msgid "Bind a book by stapling through the bend line."
+msgstr "Relie un livre en agrafant sur la ligne de pliage."
+
+#: pdfimposeweb/templates/layout/saddle/howto.html:23
+msgid ""
+"<ul>\n"
+"      <li>if there is two source pages on each destination page, fold all"
+" your sheets at once;</li>\n"
+"      <li>otherwise, separately fold each sheet of paper, and insert them"
+" into each other;</li>\n"
+"    </ul>"
+msgstr ""
+"<ul>\n"
+"      <li>s'il n'y a que deux pages d'entrée par page de sortie, pliez "
+"toutes vos feuilles en une seule fois ;</li>\n"
+"      <li>sinon, pliez séparément chaque feuille de papier (ou chaque "
+"groupe de feuilles avec l'option <em>grouper</em>), puis insérez les "
+"cahiers obtenus les uns dans les autres.</li>\n"
+"    </ul>"
+
+#: pdfimposeweb/templates/layout/saddle/name.html:19
+msgid "Saddle stitch"
+msgstr "Piqûre à cheval"
+
+#: pdfimposeweb/templates/layout/wire/description.html:19
+msgid "Bind book using a C-shaped spine."
+msgstr "Imprime un livre pour une reliure à spirale."
+
+#: pdfimposeweb/templates/layout/wire/howto.html:23
+msgid "Cut the stack of paper."
+msgstr "Coupez la pile de papier."
+
+#: pdfimposeweb/templates/layout/wire/howto.html:26
+msgid ""
+"Stack the different stacks onto each other (be careful to the page "
+"numbers)."
+msgstr ""
+"Empilez les piles les unes sur les autres (attention à respecter l'ordre "
+"des pages)."
+
+#: pdfimposeweb/templates/layout/wire/name.html:19
+msgid "Wire"
+msgstr "Reliure spirale"
+

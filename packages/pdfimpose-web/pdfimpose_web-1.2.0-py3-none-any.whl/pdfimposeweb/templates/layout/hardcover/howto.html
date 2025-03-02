@@ -1,0 +1,33 @@
+{# Copyright 2024 Louis Paternault
+
+This file is part of pdfimpose-web.
+
+Pdfimpose-web is free software: you can redistribute it and/or modify it
+under the terms of the GNU Affero General Public License as published by the
+Free Software Foundation, either version 3 of the License, or (at your
+option) any later version.
+
+Pdfimpose-web is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+details.
+
+You should have received a copy of the GNU Affero General Public License
+along with pdfimpose-web. If not, see <https://www.gnu.org/licenses/>.
+-#}
+
+<ol>
+  <li>{% trans -%}
+    Print the resulting PDF two-sided (binding on the left).
+  {%- endtrans %}</li>
+  <li>{% trans -%}
+    Separately fold each sheet of paper, and stack them.
+  {%- endtrans %}</li>
+  <li>{% trans -%}
+    Bind them.
+  {%- endtrans %}</li>
+</ol>
+
+<p>{% trans -%}
+If option <em>group</em> is set, follow the steps above, but at step 2, instead of <em>separately</em> folding each stack of paper, fold together as many sheets as specified by the <em>group</em> option.
+{%- endtrans %}</p>

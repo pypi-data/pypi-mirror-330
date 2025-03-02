@@ -1,0 +1,210 @@
+{# Copyright 2024-2025 Louis Paternault
+
+This file is part of pdfimpose-web.
+
+Pdfimpose-web is free software: you can redistribute it and/or modify it
+under the terms of the GNU Affero General Public License as published by the
+Free Software Foundation, either version 3 of the License, or (at your
+option) any later version.
+
+Pdfimpose-web is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+details.
+
+You should have received a copy of the GNU Affero General Public License
+along with pdfimpose-web. If not, see <https://www.gnu.org/licenses/>.
+-#}
+
+{% extends "base.html" %}
+
+{% block title %}{% trans %}pdfimpose.it — Free online imposition{% endtrans %}{% endblock %}
+
+{% macro messages_placeholder(category, classes="") -%}
+    {% with messages = get_flashed_messages(category_filter=[category]) %}
+        <div class="row justify-content-center" {% if not messages %}hidden{% endif %} >
+            <div class="alert alert-dismissible alert-danger {{ classes }}">
+                {% if messages|length == 1 %}
+                    {{ messages[0] }}
+                {% else %}
+                <ul>{% for message in messages %}
+                    <li>{{ message }}</li>
+                    {% endfor %}</ul>
+                {% endif %}
+            </div>
+        </div>
+    {% endwith %}
+{% endmacro %}
+
+{% set key = namespace(number=0) %}
+{% macro details(summary) %}
+    {% set key.number = key.number + 1 %}
+    <div class="accordion">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="panelsStayOpen-heading-{{ key.number }}">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse-{{ key.number }}" aria-expanded="false" aria-controls="panelsStayOpen-collapse-{{ key.number }}">
+                    {{ summary }}
+                </button>
+            </h2>
+            <div id="panelsStayOpen-collapse-{{ key.number }}" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-heading-{{ key.number }}">
+                <div class="accordion-body">
+                    {{ caller() }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endmacro %}
+
+{% block body %}
+    <main class="px-2 py-2 mx-md-5">
+        <figure class="">
+            <blockquote class="blockquote">
+                <p>{% trans -%}
+                Imposition is one of the fundamental steps in the prepress printing process. It consists of the arrangement of the printed product's pages on the printer's sheet, in order to obtain faster printing, simplify binding and reduce paper waste. 
+                {%- endtrans %}</p>
+            </blockquote>
+            <figcaption class="blockquote-footer">
+                <cite><a href="{% trans %}https://en.wikipedia.org/wiki/Imposition{% endtrans %}">{% trans %}Wikipedia{% endtrans %}</a></cite>
+            </figcaption>
+        </figure>
+
+        <noscript>
+            <div class="alert alert-danger">
+                <h2 class="alert-heading">{% trans %}Warning!{% endtrans %}</h2>
+                {% trans %}This page requires Javascript to run properly. You may enable Javascript, or use <a href="/?noscript">this version</a> which works without it.{% endtrans %}
+            </div>
+        </noscript>
+
+        {{ messages_placeholder("impose") }}
+
+        <form name="upload" method="post" enctype="multipart/form-data" action="/" >
+            <section>
+                <h1>{% trans num=1 %}Step {{ num }}: Select a PDF file{% endtrans %}</h1>
+                <div class="container">
+                    <div class="row text-center justify-content-center">
+                        <label id="upload-label" for="upload-input" class="form-label col-lg-6 p-5 border-primary border-5 rounded-5">
+                            <span class="fs-4 fw-bold">{% trans %}Drop file here{% endtrans %}</span>
+                            <span class="my-2">{% trans %}or{% endtrans %}</span>
+                            <input class="form-control form-control-lg w-lg-50" name="file" id="upload-input" type="file" onchange="cleanmessages(['impose', 'files'])" required >
+                        </label>
+                    </div>
+                    {{ messages_placeholder("files", classes="col-lg-6") }}
+                </div>
+            </section>
+
+            <section>
+                <h1 id="step-layout">{% trans num=2 %}Step {{ num }}: Choose an imposition layout{% endtrans %}</h1>
+                <p>{% trans -%}
+                All layouts assume that your are printing a PDF files with pages much smaller than your actual paper (that is, at least two pages will be printed on each paper page).
+                Choose a layout depending on what you indend to do with this file, or how you would like to bind it.
+                {%- endtrans %}</p>
+                <input id="layout" type="text" hidden> <!-- Hidden input. Updated with Javascript when user selects a layout. -->
+                <div id="cards" class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
+                    {% for key in LAYOUTS | sort %}
+                        <div class="col" id="layout-card-{{ key }}" >
+                            <div class="card h-100">
+                                <div class="card-header bg-transparent border-success">
+                                    <p>
+                                        <a class="link-underline link-underline-opacity-0 link-offset-3 link-underline-opacity-100-hover" title="{% trans %}Permalink to this layout.{% endtrans %}" href="?layout={{ key }}">🔗</a>
+                                        <span class="fw-bold">{% include "layout/%s/name.html" % key %}{% trans %}:{% endtrans %}</span> {% include "layout/%s/description.html" % key %}
+                                    </p>
+                                </div>
+                                    <div class="accordion" >
+                                        <div class="accordion-item">
+                                          <h2 class="accordion-header" id="accordion-illustration-heading-{{ key }}">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-illustration-collapse-{{ key }}" aria-expanded="false" aria-controls="accordion-illustration-collapse-{{ key }}">
+                                                  {% trans %}Show illustration…{% endtrans %}
+                                                </button>
+                                            </h2>
+                                            <div id="accordion-illustration-collapse-{{ key }}" class="accordion-collapse collapse" aria-labelledby="accordion-illustration-heading-{{ key }}">
+                                                <div class="accordion-body">
+                                                    <img
+                                                      src="{{ url_for('static', filename='layout/%s/%s-vertical.svg' % (key, key) ) }}"
+                                                      class="card-img-top"
+                                                      alt="{% trans layout=key %}Short explaination of layout {{ layout }}.{% endtrans %}"
+                                                    >
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <div class="card-footer bg-transparent border-success text-center">
+                                    <a href="#step-customize" id="layout-button-select-{{ key }}" class="btn btn-primary" onclick="layout_select('{{ key }}')">{% trans %}Choose this layout{% endtrans %}</a>
+                                    <a id="layout-button-unselect-{{ key }}" class="btn btn-primary" onclick="layout_unselect('{{ key }}')" hidden>{% trans %}Choose another layout{% endtrans %}</a>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </section>
+
+            <section>
+                <h1 id="step-customize">{% trans num=3 %}Step {{ num }}: Customize{% endtrans %}</h1>
+                <div id="no-layout-form">
+                    <p><a href="#step-layout">{% trans %}Choose a layout first…{% endtrans %}</a></p>
+                </div>
+                {% trans %}For simple tasks, you might be happy with default values and skip to the <a href="#step-go">next step</a>.{% endtrans %}
+                <div id="form">
+                    {% for key in LAYOUTS | sort %}
+                        <div id="form-{{ key }}">
+                            <input type="text" name="layout" value="{{ key }}" hidden>
+                            {% include "layout/" + key + "/form.html" with context %}
+                        </div>
+                    {% endfor %}
+                </div>
+            </section>
+
+            <section>
+                <h1 id="step-go">{% trans num=4 %}Step {{ num }}: Go!{% endtrans %}</h1>
+                <input id="submit" value="{% trans %}Impose{% endtrans %}" class="btn btn-primary" type="submit" disabled>
+            </section>
+
+        </form>
+
+        <section>
+            <h1 id="step-print">{% trans num=5 %}Step {{ num }}: Print, fold, bind…{% endtrans %}</h1>
+
+          <div id="no-layout-description">
+              <p><a href="#step-layout">{% trans %}Choose a layout first…{% endtrans %}</a></p>
+          </div>
+
+          {% for key in LAYOUTS | sort %}
+              <div class="" id="layout-description-{{ key }}" hidden>
+                   <img
+                     src="{{ url_for('static', filename='layout/%s/%s-horizontal.svg' % (key, key) ) }}"
+                     class="img-fluid col-lg-6"
+                     alt="{% trans layout=key %}How-to process resulting PDF with {{ layout }}.{% endtrans %}"
+                   >
+                  {% include "layout/%s/howto.html" % key %}
+              </div>
+          {% endfor %}
+        </section>
+
+        {% include "faq.html" %}
+        {% include "about.html" %}
+    </main>
+
+        <script>
+            var layouts = [{% for key in LAYOUTS %}
+                "{{ key }}",
+                {% endfor %}];
+
+            // Poor man's gettext
+            var gettext = {
+              ERROR: "{% trans %}Error{% endtrans %}",
+              FILE: "{% trans %}file{% endtrans %}",
+              FILE_DOES_NOT_END_WITH_PDF: "{% trans %}File name must end with <code>.pdf</code>.{% endtrans %}",
+              FILE_TOO_BIG: "{% trans %}File is too big (maximum size is {{ max_size }}).{% endtrans %}",
+              PAGES_HAVE_DIFFERENT_SIZES: "{% trans %}Pages have different sizes. Result might be unexpected.{% endtrans %}",
+              WARNING: "{% trans %}Warning{% endtrans %}",
+            };
+
+            var max_size = {{ config.MAX_CONTENT_LENGTH }};
+        </script>
+        <script src="https://unpkg.com/pdf-lib"></script>
+        <script src="{{ url_for('static', filename='upload.js') }}"></script>
+        {% if request.args.layout in LAYOUTS %}
+        <script>
+            layout_select("{{ request.args.layout }}");
+        </script>
+        {% endif %}
+{% endblock %}

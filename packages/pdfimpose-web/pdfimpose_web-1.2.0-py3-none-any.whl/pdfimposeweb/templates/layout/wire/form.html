@@ -1,0 +1,67 @@
+{# Copyright 2024 Louis Paternault
+
+This file is part of pdfimpose-web.
+
+Pdfimpose-web is free software: you can redistribute it and/or modify it
+under the terms of the GNU Affero General Public License as published by the
+Free Software Foundation, either version 3 of the License, or (at your
+option) any later version.
+
+Pdfimpose-web is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
+details.
+
+You should have received a copy of the GNU Affero General Public License
+along with pdfimpose-web. If not, see <https://www.gnu.org/licenses/>.
+-#}
+
+{% from "forms.html" import input_length, input_format, input_number, input_resize with context %}
+
+<fieldset>
+  <legend>{% trans %}Output format{% endtrans %}</legend>
+  {% trans %}Output format can be set by defining the output format (the signature is then computed to fit this output format), or by setting the signature (output format is then computed).{% endtrans %}
+    {{ input_format(nameprefix="form-wire", choices=("standard", "custom", "signature")) }}
+</fieldset>
+
+{% call details(_("More options…")) %}
+  <fieldset>
+    <legend>{% trans %}Resize input pages{% endtrans %}</legend>
+    {% trans %}If set, input pages will be resized before being imposed.{% endtrans %}
+      {{ input_resize(nameprefix="form-wire") }}
+  </fieldset>
+
+  <fieldset>
+    <legend>{% trans %}Repeat input file{% endtrans %}</legend>
+    {% trans %}Set this to act as if your file was repeated several times. It might be useful with some layouts, or useless with others…{% endtrans %}
+    {{ input_number(_("Repeat"), name="form-wire-repeat", value="1", minimum="1", maximum=config.MAX_FILE_REPEAT) }}
+  </fieldset>
+
+  <fieldset>
+    <legend>{% trans %}Last pages{% endtrans %}</legend>
+    {% trans %}Number of pages to keep as last pages. Useful to keep the back cover as a back cover.{% endtrans %}
+    {{ input_number(_("Last pages"), name="form-wire-last", value="0", minimum="0") }}
+  </fieldset>
+
+  <fieldset>
+    <legend>{% trans %}Margins{% endtrans %}</legend>
+    {{ input_length(_("Input margin"), nameprefix="form-wire-imargin") }}
+    {{ input_length(_("Output margin"), nameprefix="form-wire-omargin") }}
+  </fieldset>
+
+  <fieldset>
+    <legend>{% trans %}Add marks?{% endtrans %}</legend>
+      <div class="form-check form-switch form-check-inline">
+          <label class="form-check-label" >
+            {% trans %}Bind marks{% endtrans %}
+              <input class="form-check-input" type="checkbox" role="switch" name="form-wire-marks-bind">
+          </label>
+      </div>
+      <div class="form-check form-switch">
+          <label class="form-check-label" >
+            {% trans %}Crop marks{% endtrans %}
+              <input class="form-check-input" type="checkbox" role="switch" name="form-wire-marks-crop">
+          </label>
+      </div>
+  </fieldset>
+{% endcall %}
