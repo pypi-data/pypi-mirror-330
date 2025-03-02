@@ -1,0 +1,35 @@
+[project]
+name = "easy-exit-calls"
+version = "1.0.0-dev.1"
+description = "A Python library for managing exit handlers with enhanced features like decorators, UUID tracking, and LIFO execution."
+authors = [
+    {name = "Taylor B.",email = "tayjaybabee@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.12,<4.0"
+dependencies = [
+    "inspyre-toolbox (>=1.6.0-dev22)",
+    "inspy-logger (==3.2.3)",
+    "pytz (>=2025.1,<2026.0)"
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Utilities",
+    "Typing :: Typed"
+]
+
+[[tool.poetry.source]]
+name = "test-pypi"
+url = "https://test.pypi.org/simple/"
+priority = "explicit"
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
