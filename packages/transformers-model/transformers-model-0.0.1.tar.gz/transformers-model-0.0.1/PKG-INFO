@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: transformers-model
+Version: 0.0.1
+Summary: Model hub for transformers.
+Home-page: https://gitee.com/summry/torch-model-hub
+Author: summy
+Author-email: fkfkfk2024@2925.com
+License: UNKNOWN
+Keywords: Pytorch,AI,Machine learning,Deep learning,Bert,llm,transformers
+Platform: UNKNOWN
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+
+Usage Sample
+''''''''''''
+
+.. code:: python
+
+        from transformers_model import AutoCNNTokenClassifier
+
+
