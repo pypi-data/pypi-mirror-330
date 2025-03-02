@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+rst2gfm/__init__.py
+rst2gfm/main.py
+rst2gfm.egg-info/PKG-INFO
+rst2gfm.egg-info/SOURCES.txt
+rst2gfm.egg-info/dependency_links.txt
+rst2gfm.egg-info/entry_points.txt
+rst2gfm.egg-info/requires.txt
+rst2gfm.egg-info/top_level.txt
+tests/test_main.py
