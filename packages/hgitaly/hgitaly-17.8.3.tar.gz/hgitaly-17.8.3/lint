@@ -1,0 +1,3 @@
+#!/bin/sh
+
+exec flake8 --exclude stub hgitaly hgext3rd tests_with_gitaly setup.py

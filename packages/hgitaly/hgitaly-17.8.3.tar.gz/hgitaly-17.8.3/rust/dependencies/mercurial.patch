@@ -1,0 +1,48 @@
+diff -r 028dc3f92dbd rust/hg-core/src/requirements.rs
+--- a/rust/hg-core/src/requirements.rs	Mon May 06 17:51:21 2024 +0200
++++ b/rust/hg-core/src/requirements.rs	Thu Jul 04 13:28:53 2024 +0200
+@@ -80,6 +80,7 @@
+     GENERALDELTA_REQUIREMENT,
+     SHARED_REQUIREMENT,
+     SHARESAFE_REQUIREMENT,
++    LARGEFILES_REQUIREMENT,
+     SPARSEREVLOG_REQUIREMENT,
+     RELATIVE_SHARED_REQUIREMENT,
+     REVLOG_COMPRESSION_ZSTD,
+@@ -172,6 +173,14 @@
+ #[allow(unused)]
+ pub const RELATIVE_SHARED_REQUIREMENT: &str = "relshared";
+ 
++/// Denotes that current repository contains files managed with the
++/// `largefiles` extension. In the context of hg-core it is not a promise
++/// that largefiles are implemented in Rust, rather that they will not harm
++/// and that downstream code such as `RHGitaly are expected to do the right
++/// thing, even if that means fallbacking to a Python implementation.
++#[allow(unused)]
++pub const LARGEFILES_REQUIREMENT: &str = "largefiles";
++
+ /// A repository with share implemented safely. The repository has different
+ /// store and working copy requirements i.e. both `.hg/requires` and
+ /// `.hg/store/requires` are present.
+diff -r 028dc3f92dbd rust/hg-core/src/revlog/changelog.rs
+--- a/rust/hg-core/src/revlog/changelog.rs	Mon May 06 17:51:21 2024 +0200
++++ b/rust/hg-core/src/revlog/changelog.rs	Thu Jul 04 13:28:53 2024 +0200
+@@ -8,6 +8,7 @@
+ use itertools::{Either, Itertools};
+ 
+ use crate::errors::HgError;
++use crate::revlog::Index;
+ use crate::revlog::Revision;
+ use crate::revlog::{Node, NodePrefix};
+ use crate::revlog::{Revlog, RevlogEntry, RevlogError};
+@@ -81,6 +82,10 @@
+     ) -> Result<Revision, RevlogError> {
+         self.revlog.rev_from_node(node)
+     }
++
++    pub fn get_index(&self) -> &Index {
++        &self.revlog.index
++    }
+ }
+ 
+ impl Graph for Changelog {
