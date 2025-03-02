@@ -1,0 +1,12 @@
+.gitignore
+README.md
+example.py
+pyproject.toml
+.github/workflows/release.yml
+hydra_trainer/__init__.py
+hydra_trainer/base.yaml
+hydra_trainer.egg-info/PKG-INFO
+hydra_trainer.egg-info/SOURCES.txt
+hydra_trainer.egg-info/dependency_links.txt
+hydra_trainer.egg-info/requires.txt
+hydra_trainer.egg-info/top_level.txt
