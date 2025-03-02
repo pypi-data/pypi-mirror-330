@@ -1,0 +1,45 @@
+Metadata-Version: 2.3
+Name: trad
+Version: 0.1.4
+Summary: Composable Radiative Transfer
+Author: Chi-kwan Chan
+Author-email: chanc@arizona.edu
+Requires-Python: >=3.9,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Dist: astropy (>=6.0,<7.0)
+Requires-Dist: numpy (>=1.22,<2.0)
+Requires-Dist: phun (>=0.1.2,<0.2.0)
+Requires-Dist: scipy (>=1.8,<2.0)
+Description-Content-Type: text/x-rst
+
+|LT| |Docs| |PyPI|
+
+.. |LT| image:: https://github.com/adxsrc/trad/actions/workflows/python-package.yml/badge.svg
+   :target: https://github.com/adxsrc/trad/actions/workflows/python-package.yml
+
+.. |Docs| image:: https://github.com/adxsrc/trad/actions/workflows/sphinx-pages.yml/badge.svg
+   :target: https://github.com/adxsrc/trad/actions/workflows/sphinx-pages.yml
+
+.. |PyPI| image:: https://github.com/adxsrc/trad/actions/workflows/python-publish.yml/badge.svg
+   :target: https://pypi.org/project/trad/
+
+
+|Trad|_: Composable Radiative Transfer
+======================================
+
+|Trad|_ is a radiative transfer package written in python.
+It uses Google's |JAX|_ package for composbility, performance, and
+GPU-acceleration.
+
+
+.. |JAX|  replace:: ``JAX``
+.. |Trad| replace:: ``Trad``
+
+.. _JAX:  https://github.com/google/jax
+.. _Trad: https://github.com/adxsrc/trad
+
