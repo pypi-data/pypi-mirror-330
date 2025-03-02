@@ -1,0 +1,15 @@
+item_matching/README.md,sha256=HTGYRffpf1REIIJO_E8H1HnlVNIvMVpjFl5E-gdML9c,1752
+item_matching/__init__.py,sha256=CAv-Xj6KccTQ7aq0FyrpBoZwnd2u53Ud5DMRp4XrbeQ,241
+item_matching/main_match.py,sha256=AHtB0wbWajtXSjLPbhdGqE2spCb1LR8nEbHwUA_w798,6236
+item_matching/func/check_brand.py,sha256=_RTsE3c9mBtmdL8Fc3YQSpsBF1bpH2TfEQgwJ_a3c5s,1006
+item_matching/func/function_image.py,sha256=yQ-ER6cwFEs0Qn8Dq8m-f9nl30-zlj2rLZPfhv0ftu0,2270
+item_matching/func/function_text.py,sha256=4HKKkZgp4r_KiUo3GauxLgTMLR0aFkTvZFqh32GJ2h0,654
+item_matching/func/post_processing.py,sha256=Nv9fqtO6Z1lWOnmIG7hN54kl99Z1wQKiaI2FMN1UVWs,2543
+item_matching/model/model.py,sha256=ii1-xlcd1thmg4D0gDDxWNOHd6lr2oafh1dikFqGbgs,1945
+item_matching/pipeline/build_index_and_query.py,sha256=z7jwtdUy1OHy30MKA8DOkSI7nkXX9CAHrOWfyBk-QE0,7670
+item_matching/pipeline/data_loading.py,sha256=ePe7YBMVe8KC_v_h3iiybYpClx8I3vCXxT57wlpak6w,4124
+item_matching/pipeline/rerank.py,sha256=a3c9RFenvn8TmCQ0I2mOw33cUgVYFyTWT6ztyRiuuc0,3872
+item_matching-0.0.91.dist-info/METADATA,sha256=diGWbEb3eJDnbqCOH41-lErKFMnFCyvsqwq1GOCN19M,2356
+item_matching-0.0.91.dist-info/WHEEL,sha256=qtCwoSJWgHk21S1Kb4ihdzI2rlJ1ZKaIurTj_ngOhyQ,87
+item_matching-0.0.91.dist-info/licenses/LICENSE,sha256=e52nUM7JfwNPEdg6TvBFl07OHaXfeQqSdQSsDPyRssE,1054
+item_matching-0.0.91.dist-info/RECORD,,
