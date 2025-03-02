@@ -1,0 +1,36 @@
+Metadata-Version: 2.1
+Name: cat-readme
+Version: 0.1.0
+Summary: A command-line tool to display markdown files with rich formatting.
+Home-page: https://github.com/AnalyticAce/cat-readme
+Author: DOSSEH Shalom
+Author-email: dossehdosseh14@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+
+# cat-readme
+
+A command-line tool to display markdown files with rich formatting.
+
+## Installation
+
+```bash
+pip install cat-readme
+```
+
+## Usage
+
+```bash
+python cli.py [README_FILE]
+```
+
+### Arguments
+- `README_FILE`: Path to the markdown file you want to display
+
+## Features
+- Rich text formatting in the terminal
+- Supports standard markdown syntax
+- Simple and intuitive command-line interface
