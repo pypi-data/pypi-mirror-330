@@ -1,0 +1,50 @@
+Metadata-Version: 2.2
+Name: thuner
+Version: 0.0.11
+Summary: Thunderstorm event reconnaissance
+Author-email: Ewan Short <ewan.short@unimelb.edu.au>, Mark Picel <mhpicel@gmail.com>, Bhupendra Raut <braut@anl.gov>
+License: BSD-3-Clause
+Project-URL: Homepage, https://github.com/THUNER-project/THUNER/tree/main
+Project-URL: Issues, https://github.com/THUNER-project/THUNER/issues
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Science/Research
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Natural Language :: English
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Scientific/Engineering :: Atmospheric Science
+License-File: LICENSE.txt
+Requires-Dist: numpy
+Requires-Dist: numba
+Requires-Dist: scipy
+Requires-Dist: scikit-image
+Requires-Dist: pandas
+Requires-Dist: matplotlib
+Requires-Dist: xarray
+Requires-Dist: cartopy
+Requires-Dist: typing_extensions
+Requires-Dist: pre-commit
+Requires-Dist: black
+Requires-Dist: pytest
+Requires-Dist: pytest-cov
+Requires-Dist: codecov
+Requires-Dist: ipykernel
+Requires-Dist: netcdf4
+Requires-Dist: h5netcdf
+Requires-Dist: requests
+Requires-Dist: arm_pyart
+Requires-Dist: tqdm
+Requires-Dist: cdsapi
+Requires-Dist: xesmf
+Requires-Dist: opencv-python
+Requires-Dist: tables
+Requires-Dist: pydantic
+Requires-Dist: zarr
+Requires-Dist: windrose
+Requires-Dist: pydot
+Requires-Dist: graphviz
+Requires-Dist: metpy
+Requires-Dist: nbconvert
