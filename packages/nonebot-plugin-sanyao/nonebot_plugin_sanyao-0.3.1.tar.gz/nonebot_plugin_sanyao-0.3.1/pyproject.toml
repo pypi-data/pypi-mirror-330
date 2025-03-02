@@ -1,0 +1,60 @@
+[project]
+name = "nonebot-plugin-sanyao"
+dynamic = []
+authors = [
+    { name = "afterow", email = "afterow@163.com" },
+]
+description = "三爻易数排盘"
+readme = "README.md"
+requires-python = ">=3.10, <4.0"
+dependencies = [
+    "cnlunar",
+    "nonebot2",
+]
+classifiers = [
+    "Framework :: Pydantic",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Natural Language :: Chinese (Simplified)",
+]
+version = "0.3.1"
+
+[project.license]
+text = "MIT License"
+
+[project.urls]
+Homepage = "https://github.com/afterow/nonebot-plugin-sanyao"
+"Bug Tracker" = "https://github.com/afterow/nonebot-plugin-sanyao/issues"
+
+[tool.nonebot]
+adapters = [
+    { name = "OneBot V11", module_name = "nonebot.adapters.onebot.v11" },
+]
+plugins = [
+    "nonebot_plugin_sanyao",
+]
+plugin_dirs = [
+    "nonebot_plugin_sanyao",
+]
+builtin_plugins = [
+    "echo",
+]
+
+[tool.setuptools.packages.find]
+where = [
+    "nonebot_plugin_sanyao",
+]
+include = []
+
+[tool.pdm.version]
+source = "file"
+path = "nonebot_plugin_sanyao/__init__.py"
+
+[build-system]
+requires = [
+    "pdm-backend",
+]
+build-backend = "pdm.backend"
