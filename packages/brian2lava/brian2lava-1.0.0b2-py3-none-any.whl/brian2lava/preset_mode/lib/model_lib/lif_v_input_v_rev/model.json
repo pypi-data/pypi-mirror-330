@@ -1,0 +1,37 @@
+{
+	"description": "Leaky Integrate-and-Fire neuron with refractory period, exponentially decaying voltage input, and specified reversal potential",
+	"process_name": "LIF_v_input_v_rev",
+	"ode": [
+		"dv_psp/dt = -v_psp/tau_psp : volt",
+		"dv/dt = (v_rev - v + v_psp + bias)/tau_v : volt",
+		"bias : volt"
+	],
+	"conditions": {
+		"th" : "v > v_th",
+		"rs" : "v = v_rs"
+	},
+	"latex": [
+		"\\frac{dv_\\mathrm{psp}(t)}{dt} = -v_\\mathrm{psp}(t) \\cdot \\tau_\\mathrm{psp}^{-1} + w\\cdot\\sum_i \\delta(t - t_{\\mathrm{spike},i})",
+		"\\frac{dv}{dt} = (v_\\mathrm{rev} - v(t) + v_\\mathrm{psp}(t) + \\mathrm{bias}(t)) \\cdot \\tau_v^{-1}",
+		"\\mathrm{threshold} : v(t) > v_\\mathrm{th}",
+		"\\mathrm{reset} : v(t) = v_\\mathrm{rs}"
+	],
+	"variables": [
+		{ "name": "v_psp", "description": "postsynaptic potential", "unit": "V" },
+		{ "name": "v", "description": "voltage", "unit": "V" },
+		{ "name": "bias", "description": "voltage bias input" , "unit": "V"}
+	],
+	"parameters": [
+		{ "name": "tau_psp", "description": "synaptic time constant", "unit": "s" },
+		{ "name": "tau_v", "description": "voltage time constant" , "unit": "s"},
+		{ "name": "v_th", "description": "threshold voltage", "unit": "V" },
+		{ "name": "v_rs", "description": "reset voltage", "unit": "V" },
+		{ "name": "v_rev", "description": "reversal voltage", "unit": "V" },
+		{ "name": "w", "description": "synaptic weight", "unit": "V" }
+
+	],
+	"refractory_period" : "False",
+	"msb_align_decay":  ["delta_psp", "delta_v"],
+	"f2f_exceptions" : ["delta_psp", "delta_v"],
+	"ucode_extensions": {"file": ".dasm", "template": "----"}
+}

@@ -1,0 +1,30 @@
+{
+	"ode": [
+		"dj/dt = -j/tau_j : volt/second",
+		"dv/dt = -v/tau_v + j + bias : volt (unless refractory)"
+	],
+	"conditions": {
+		"th" : "v > v_th",
+		"rs" : "v = v_rs"
+	},
+	"latex": [
+		"\\frac{dj}{dt} = -j(t) \\cdot \\tau_j^{-1}",
+		"\\frac{dv}{dt} = -v(t) \\cdot \\tau_v^{-1} + j(t) + \\mathrm{bias}(t)",
+		"\\mathrm{threshold} : v(t) > v_\\mathrm{th}",
+		"\\mathrm{reset} : v(t) = v_\\mathrm{rs}"
+	],
+	"variables": [
+		{ "name": "j", "description": "current (red.)", "unit": "V/s" },
+		{ "name": "v", "description": "voltage", "unit": "V" }
+	],
+	"parameters": [
+		{ "name": "tau_j", "description": "current time constant", "unit": "s" },
+		{ "name": "tau_v", "description": "voltage time constant" , "unit": "s"},
+		{ "name": "bias", "description": "bias current (red.)" , "unit": "V/s"},
+		{ "name": "v_th", "description": "threshold voltage", "unit": "V" },
+		{ "name": "v_rs", "description": "reset voltage", "unit": "V" }
+
+	],
+	"process_name": "LIF",
+	"ucode_extensions": {"file": ".dasm", "template": "----"}
+}

@@ -1,0 +1,35 @@
+{# USES_VARIABLES {N} #}
+{% extends 'common_group.py_' %}
+
+{% block maincode %}
+
+    # constants
+    {% for c in constants %}
+    {{ c }}
+    {% endfor%}
+
+    # Collect all the incoming variables from the synapses
+    # We could have multiple inputs depending on the synaptic model:
+    # e.g. if we have v += w + g*I and both w and g are synaptic variables, but I is a neuronal variable.
+    # This allows for more generalizable models. 
+    # NOTE: In order to reduce the number of required ports one could calculate the result of the expression above
+    # and send only that part, but that requires making sure that the calculation can be handled by synapses alone 
+    # (i.e. no neuron vars on the right of the equation).
+    {% for var in read_port_input %}
+    {{var}}
+    {% endfor %}
+
+    # We assume there is always at least one InPort in the NeuronGroup
+    # To check which indices to use we check for our "nan equivalent": {{nan}}
+    _activation_indices = np.where({{neur_input_vars[0]}}!= {{nan}})[0]
+
+    # scalar code
+    _vectorisation_idx = 1
+    {{scalar_code|autoindent}}
+
+    # vector code
+    _idx = _activation_indices
+    _vectorisation_idx = _idx
+    {{vector_code|autoindent}}
+
+{% endblock %}

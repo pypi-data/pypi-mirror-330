@@ -1,0 +1,35 @@
+import logging
+import numpy as np
+import typing as ty
+{% for imp in required_imports %}
+{{ imp }}
+{% endfor %}
+
+from lava.magma.core.process.process import AbstractProcess, LogConfig
+from lava.magma.core.process.variable import Var
+from lava.magma.core.process.ports.ports import InPort, OutPort
+
+class {{name}}_P(AbstractProcess):
+
+    def __init__(self, **kwargs):
+        #super().__init__(log_config=LogConfig(level=logging.DEBUG), **kwargs)
+        super().__init__(**kwargs)
+        
+        # Initialize variables using numpy expressions
+        {% for va in variables_init %}
+        {{ va }}
+        {% endfor %}
+
+        # Call the methods required for variable initialization
+        {% for c in init_calls %}
+        {{c}}
+        {% endfor %}
+
+        # Initialize variables using lava expressions
+        {% for va in variables_lava %}
+        {{ va }}
+        {% endfor %}
+
+    {% for m in init_methods %}
+    {{ m }}
+    {% endfor%}

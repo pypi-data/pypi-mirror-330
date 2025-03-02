@@ -1,0 +1,71 @@
+from lava.magma.core.sync.protocols.loihi_protocol import LoihiProtocol
+from lava.magma.core.model.py.ports import PyInPort, PyOutPort
+from lava.magma.core.model.py.type import LavaPyType
+from lava.magma.core.resources import CPU
+from lava.magma.core.decorator import implements, requires, tag
+from lava.magma.core.model.py.model import PyLoihiProcessModel
+
+{% if proc_model_initialization_code|length >= 1 %}
+# NOTE: This could easily go in the required imports codeword, but for now I'll just put it here
+# So I don't have to make that method into a device method.
+from brian2.synapses.spikequeue import SpikeQueue
+{% endif %}
+
+@implements(proc={{name}}_P, protocol=LoihiProtocol)
+@requires(CPU)
+@tag('floating_pt')
+class {{name}}_PM(PyLoihiProcessModel):
+
+    {% for va in variables %}
+    {{ va }}
+    {% endfor %}
+
+    def __init__(self, proc_params: ty.Optional["ProcessParameters"] = None):
+        super().__init__(proc_params=proc_params)
+
+        self.spike_queue_initialized = False
+
+
+    def run_spk(self):
+        {% if proc_model_initialization_code|length >= 1 %}
+        if not self.spike_queue_initialized:
+            # Here we add variable initialization code when required (currently only for the spike queue)
+            {% for init_line in proc_model_initialization_code %}
+            {{init_line}}
+            {% endfor %}
+            self.spike_queue_initialized = True
+        {% endif %}
+
+        # Additional code lines are added at the beginning of each timestep
+        {% for add_line in additional_code %}
+        {{add_line}}
+        {% endfor %}
+        # Calling the methods that are executed in every time step
+        {% for rf in run_functions %}
+        {{ rf }}
+        {% endfor %}
+
+    {% if  'synapses' in name  and lrn_functions|length >= 1 %}
+
+    def lrn_guard(self) -> bool:
+        {% for line in lrn_guard_code %}
+        {{line}}
+        {% endfor %}
+        
+
+    def run_lrn(self):
+        {%for lf in lrn_functions %}
+        {{ lf }}
+        {% endfor %}
+
+    {% endif %}
+    
+
+
+    
+    {% for m in methods %}
+    {{ m }}
+    {% endfor%}
+
+
+

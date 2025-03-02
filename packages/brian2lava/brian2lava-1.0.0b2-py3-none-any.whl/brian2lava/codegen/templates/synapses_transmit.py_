@@ -1,0 +1,43 @@
+{# USES_VARIABLES {} #}
+{% extends 'common_group.py_' %}
+
+{% block maincode %}
+
+    # constants
+    {% for c in constants %}
+    {{ c }}
+    {% endfor%}
+
+    # Read the spiking synapses received at this timestep
+    _spiking_synapses = {{read_spikes}}
+
+    # scalar code
+    {# Note that we don't write to scalar variables conditionally. The scalar code
+    should therefore only include the calculation of scalar expressions
+    that are used below for writing to a vector variable #}
+    {{scalar_code|autoindent}}
+
+    # vector code
+    _idx = _spiking_synapses
+    _vectorisation_idx = _idx
+    
+    # Read the synaptic variables to send out
+    {% for read_var in read_syn_vars%}
+    {{read_var}}
+    {% endfor %}
+
+    # Send out the needed variables, non-stimulated synapses will be encoded by kwds['nan'] = {{nan}}
+    # TODO This is not very elegant at the moment..
+    {% for a_out,port in zip(syn_output_vars,syn_output_ports) %}
+    {{a_out}}_array = _numpy.ones({{get_array_name(pathway.synapse_sources)}}.shape, dtype = {{a_out}}.dtype) * {{nan}}
+    {{a_out}}_array[_idx] = {{a_out}}
+    self.{{port}}_out.send({{a_out}}_array)
+    {% endfor %}
+
+    # Write the spiking synapses to an attribute in case we need it for learning
+    # This is required because in the next line we advance the spike queue!
+    {{spiking_synapses}} = np.array(_spiking_synapses)
+
+    # Advance the spike queue 
+    {{advance_queue}}
+{% endblock %}
