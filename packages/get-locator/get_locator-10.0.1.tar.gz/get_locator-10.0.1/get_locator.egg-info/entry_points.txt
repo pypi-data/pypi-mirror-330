@@ -1,0 +1,6 @@
+[console_scripts]
+create-setup = get_locator.create_setup:main
+run-inspector = get_locator.run_inspector:main
+
+[pytest11]
+get_locator = get_locator.plugin
