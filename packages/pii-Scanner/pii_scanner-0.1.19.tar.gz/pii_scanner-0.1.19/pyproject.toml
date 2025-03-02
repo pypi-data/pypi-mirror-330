@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "pii-Scanner"
+version = "0.1.16"  # incremented version number
+description = "A Python library designed for text processing using SpaCy and custom regex pattern matching. This library is capable of processing a variety of text data formats, such as lists, plain text, PDFs, JSON, CSV, and XLSX files"
+authors = ["Ankit Gupta"]
+
+
+[tool.poetry.dependencies]
+python = "^3.10"  # specify your Python version
+unstructured = "0.15.5"
+openpyxl="3.1.5"
+presidio-analyzer="2.2.32"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

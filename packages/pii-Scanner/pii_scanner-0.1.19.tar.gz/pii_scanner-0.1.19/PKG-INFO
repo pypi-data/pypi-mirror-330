@@ -1,0 +1,91 @@
+Metadata-Version: 2.1
+Name: pii-Scanner
+Version: 0.1.19
+Summary: A library for scanning Personally Identifiable Information (PII).
+Home-page: https://github.com/devankit01/pii_scanner
+Author: Ankit Gupta
+Author-email: devankitgupta01@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: presidio-analyzer==2.2.32
+Requires-Dist: openpyxl==3.1.5
+Requires-Dist: pydantic==2.10.3
+Requires-Dist: numpy==2.0.2
+Requires-Dist: unstructured[docx,pptx]
+Requires-Dist: unstructured[pdf]
+Requires-Dist: python-stdnum==1.20
+Requires-Dist: pytesseract==0.3.13
+Requires-Dist: PyPDF2==3.0.1
+Requires-Dist: xmltodict==0.14.2
+Requires-Dist: scikit-image==0.25.1
+Requires-Dist: deskew==1.5.1
+
+# PII Scanner
+
+A Python library designed for text processing using SpaCy and custom regex pattern matching. This library is capable of processing a variety of text data formats, such as lists, plain text, PDFs, JSON, CSV, and XLSX files
+
+## Installation
+
+```bash
+pip install pii_scanner
+```
+
+## Usage 
+
+```bash
+import asyncio
+from pii_scanner.scanner import PIIScanner
+from pii_scanner.constants.patterns_countries import Regions
+
+async def run_scan():
+    # Start the timer
+    start_time = time.time()
+
+    pii_scanner = PIIScanner()
+    # file_path = 'dummy-pii/test.json' 
+    file_path = 'dummy-pii/test.xlsx' 
+
+    data = ['Ankit Gupta', '+919140562125', 'Indian']
+    results_list_data = await pii_scanner.scan(data=, sample_size=0.005, region=Regions.IN)
+    # results_file_data = await pii_scanner.scan(file_path=file_path, sample_size=0.005, region=Regions.IN)
+
+    print("Results:", results_list_data, results_list_data)
+
+# Run the asynchronous scan
+asyncio.run(run_scan())
+
+
+```
+
+
+## Output 
+
+```bash
+[
+    {
+        "text": "Ankit Gupta",
+        "entity_detected": [
+            {"type": "PERSON", "start": 0, "end": 11, "score": 0.85}
+        ]
+    },
+    {
+        "text": "+919140562195",
+        "entity_detected": [
+            {"type": "PHONE_NUMBER", "start": 0, "end": 13, "score": 0.85}
+        ]
+    },
+    {
+        "text": "Indian",
+        "entity_detected": [
+            {"type": "NATIONALITY", "start": 0, "end": 6, "score": 0.9}
+        ]
+    }
+]
+
+
+```
+
+
