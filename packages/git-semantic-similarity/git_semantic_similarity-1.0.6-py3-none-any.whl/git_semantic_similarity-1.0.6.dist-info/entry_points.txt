@@ -1,0 +1,2 @@
+[console_scripts]
+gitsem = src.cli:main
