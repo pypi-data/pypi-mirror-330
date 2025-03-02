@@ -1,0 +1,84 @@
+[tool.poetry]
+name = "nonebot-plugin-localstore"
+version = "0.7.4"
+description = "Local Storage Support for NoneBot2"
+authors = ["yanyongyu <yyy@nonebot.dev>"]
+license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/nonebot/plugin-localstore"
+repository = "https://github.com/nonebot/plugin-localstore"
+documentation = "https://github.com/nonebot/plugin-localstore#readme"
+keywords = ["nonebot2", "qq", "plugin"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+nonebot2 = "^2.3.0"
+nonestorage = "^0.1.0"
+typing-extensions = "^4.0.0"
+pydantic = ">=1.10.0,<3.0.0,!=2.5.0,!=2.5.1"
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.9.0"
+nonebug = "^0.4.3"
+nonemoji = "^0.1.2"
+pre-commit = "^4.0.0"
+pytest-cov = "^6.0.0"
+pytest-xdist = "^3.6.1"
+
+[tool.poetry.plugins.nb_scripts]
+localstore = "nonebot_plugin_localstore.script:main"
+
+[tool.pytest.ini_options]
+addopts = "--cov=./nonebot_plugin_localstore --cov-report=term-missing"
+
+[tool.ruff]
+line-length = 88
+target-version = "py39"
+
+[tool.ruff.format]
+line-ending = "lf"
+
+[tool.ruff.lint]
+select = [
+  "F",     # Pyflakes
+  "W",     # pycodestyle warnings
+  "E",     # pycodestyle errors
+  "I",     # isort
+  "UP",    # pyupgrade
+  "ASYNC", # flake8-async
+  "C4",    # flake8-comprehensions
+  "T10",   # flake8-debugger
+  "T20",   # flake8-print
+  "PYI",   # flake8-pyi
+  "PT",    # flake8-pytest-style
+  "Q",     # flake8-quotes
+  "TID",   # flake8-tidy-imports
+  "RUF",   # Ruff-specific rules
+]
+ignore = [
+  "E402",   # module-import-not-at-top-of-file
+  "UP037",  # quoted-annotation
+  "RUF001", # ambiguous-unicode-character-string
+  "RUF002", # ambiguous-unicode-character-docstring
+  "RUF003", # ambiguous-unicode-character-comment
+]
+
+[tool.ruff.lint.flake8-pytest-style]
+fixture-parentheses = false
+mark-parentheses = false
+
+[tool.ruff.lint.per-file-ignores]
+"nonebot_plugin_localstore/script.py" = ["T201"]
+"nonebot_plugin_localstore/utils.py" = ["T201"]
+
+[tool.pyright]
+pythonVersion = "3.9"
+pythonPlatform = "All"
+
+typeCheckingMode = "standard"
+reportShadowedImports = false
+disableBytesTypePromotions = true
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
