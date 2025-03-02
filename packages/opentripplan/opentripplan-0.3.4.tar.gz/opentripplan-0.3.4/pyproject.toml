@@ -1,0 +1,40 @@
+[project]
+name = "opentripplan"
+version = "0.3.4"
+description = "A tool to plan your next trip"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "folium>=0.19.5",
+    "geopy>=2.4.1",
+    "lxml>=5.3.1",
+    "nc-py-api>=0.19.0",
+    "numpy>=2.2.3",
+    "pyside6>=6.8.2.1",
+]
+authors = [{ name = "Gaël de Chalendar (aka Kleag)", email = "kleagg@gmail.com" }]
+license = { text = "AGPL" }
+
+[project.scripts]
+opentripplan = "opentripplan.main:main"
+
+[project.optional-dependencies]
+dev = ["pytest", "black", "ruff", "mypy"]   # Development tools
+build = ["bumpver"]                   # For packaging and uploading
+deploy = ["uv"]                               # Add tools needed for deployment
+
+[bumpver]
+current_version = "0.3.4"
+version_pattern = "MAJOR.MINOR.PATCH"
+commit = true
+tag = true
+push = true  # Set to true if you want to push automatically
+
+[bumpver.file_patterns]
+"pyproject.toml" = [
+    'version = "{version}"',
+]
+"src/opentripplan/__init__.py" = [
+    '__version__ = "{version}"',
+]
+
