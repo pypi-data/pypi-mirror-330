@@ -1,0 +1,5 @@
+[console_scripts]
+wcgw_agent = wcgw:listen
+wcgw_agent_local = wcgw_cli:app
+wcgw_agent_mcp = wcgw:mcp_server
+wcgw_agent_relay = wcgw.relay.serve:run
