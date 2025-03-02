@@ -1,0 +1,47 @@
+Metadata-Version: 2.4
+Name: synnax-lab-sdk
+Version: 2.1.0
+Summary: Synnax Lab SDK for downloading training data and uploading predictions
+Project-URL: Homepage, https://synnax.ai
+Keywords: synnax
+Requires-Python: >=3.8
+Requires-Dist: inflect
+Requires-Dist: python-dateutil
+Requires-Dist: requests
+Requires-Dist: tqdm
+Provides-Extra: all
+Requires-Dist: black; extra == 'all'
+Requires-Dist: mypy; extra == 'all'
+Requires-Dist: types-python-dateutil; extra == 'all'
+Requires-Dist: types-requests; extra == 'all'
+Requires-Dist: types-tqdm; extra == 'all'
+Provides-Extra: dev
+Requires-Dist: black; extra == 'dev'
+Requires-Dist: mypy; extra == 'dev'
+Requires-Dist: types-python-dateutil; extra == 'dev'
+Requires-Dist: types-requests; extra == 'dev'
+Requires-Dist: types-tqdm; extra == 'dev'
+Description-Content-Type: text/markdown
+
+# Synnax Lab SDK
+
+## Installation
+
+```Shell
+> pip install synnax-lab-sdk
+```
+
+## Usage
+
+```Python
+from synnax_lab_sdk.client import SynnaxLabClient
+
+synnax_lab_client = SynnaxLabClient(api_key="your_api_key")
+files = synnax_lab_client.get_datasets(with_macro_data=False)
+# Train your model and generate predictions
+synnax_lab_client.submit_predictions(files["dataset_date"], submissions_path)
+```
+
+SDK usage sample file also [available here](https://github.com/synnax-ai/synnax-lab-sdk/blob/master/samples/main.py)
+
+Synnax Lab onboarding manual, including steps to register, download data and make a submission is [available here](https://github.com/synnax-ai/synnax-lab-sdk/blob/master/tutorials/onboarding_manual.ipynb)
