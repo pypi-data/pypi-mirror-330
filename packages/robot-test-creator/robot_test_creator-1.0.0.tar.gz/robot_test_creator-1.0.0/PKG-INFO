@@ -1,0 +1,19 @@
+Metadata-Version: 2.3
+Name: robot-test-creator
+Version: 1.0.0
+Summary: 
+License: MIT
+Keywords: robotframework,tool
+Author: Mika Hänninen
+Author-email: mika.hanninen@gmail.com
+Requires-Python: >=3.9,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Dist: click (>=8.1.2,<9.0.0)
+Requires-Dist: rpaframework (>=28.0.0)
+Project-URL: Repository, https://github.com/mikahanninen/robot-test-creator
