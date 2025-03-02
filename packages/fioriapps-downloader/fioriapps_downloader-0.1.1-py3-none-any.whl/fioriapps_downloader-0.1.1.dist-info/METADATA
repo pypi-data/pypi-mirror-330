@@ -1,0 +1,21 @@
+Metadata-Version: 2.4
+Name: fioriapps-downloader
+Version: 0.1.1
+Summary: Download list of Fiori apps from the SAP Fiori Apps Reference Library.
+Project-URL: Home Page, https://github.com/pstekl/fioriapps_downloader
+Author-email: Philipp Stekl <philipp.stekl@gmail.com>
+License-Expression: Apache-2.0
+License-File: LICENSE
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.12
+Requires-Dist: pandas>=2.2.3
+Requires-Dist: requests>=2.32.3
+Requires-Dist: tqdm>=4.67.1
+Description-Content-Type: text/markdown
+
+# fioriapps_downloader.py
+Download list of fiori apps from the SAP Fiori Apps Reference Library.
