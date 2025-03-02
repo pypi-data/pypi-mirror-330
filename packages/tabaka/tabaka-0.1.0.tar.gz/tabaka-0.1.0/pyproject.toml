@@ -1,0 +1,18 @@
+[project]
+name = "tabaka"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "docker>=7.1.0",
+    "tabaka-core",
+    "pydantic>=2.10.6",
+]
+
+
+[tool.uv.sources]
+tabaka-core = { workspace = true }
+
+[tool.uv.workspace]
+members = ["tabaka-core", "tabaka-mcp", "tabaka-agent"]
