@@ -1,0 +1,340 @@
+Metadata-Version: 2.4
+Name: autovox
+Version: 0.0.1
+Summary: Voice Connector middleware for LangGraph agents
+Project-URL: Homepage, https://github.com/mjunaidca/autovox
+Project-URL: Issues, https://github.com/mjunaidca/autovox/issues
+Project-URL: Documentation, https://github.com/mjunaidca/autovox#readme
+Author-email: Muhammad Junaid <mr.junaidshaukat@gmail.com>
+License: MIT
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.11
+Requires-Dist: elevenlabs>=1.0.0
+Requires-Dist: google-genai>=1.3.0
+Requires-Dist: google-generativeai>=0.8.0
+Requires-Dist: langgraph>=0.3.2
+Requires-Dist: numpy>=2.2.3
+Requires-Dist: openai>=1.0.0
+Requires-Dist: pyaudio>=0.2.14
+Requires-Dist: pydantic>=2.0.0
+Requires-Dist: python-dotenv>=1.0.0
+Requires-Dist: typing-extensions>=4.0.0
+Requires-Dist: websockets>=12.0
+Provides-Extra: audio
+Requires-Dist: numpy>=1.24.0; extra == 'audio'
+Requires-Dist: pyaudio>=0.2.13; extra == 'audio'
+Provides-Extra: dev
+Requires-Dist: black>=23.0.0; extra == 'dev'
+Requires-Dist: isort>=5.0.0; extra == 'dev'
+Requires-Dist: pytest>=7.0.0; extra == 'dev'
+Requires-Dist: ruff>=0.0.1; extra == 'dev'
+Description-Content-Type: text/markdown
+
+# AutoVox: Voice Connector for LangGraph Agents
+
+AutoVox is a middleware package that enables real-time voice conversations with LangGraph agents by connecting voice engines (OpenAI, Gemini) to your AI workflows, providing a streamlined interface for bidirectional audio communication.
+
+## Features
+
+- 🎙️ **Real-Time Conversations**: True bidirectional voice conversations with streaming audio
+- 🔊 **Multiple Voice Engines**: Support for OpenAI and Google Gemini real-time voice APIs
+- 🧠 **LangGraph Integration**: Connect any LangGraph agent or multi-agent supervisor to voice capabilities
+- 🖥️ **Web Interface**: Browser-based UI for voice interactions with no coding required
+- 📱 **Cross-Platform**: Run on desktop or integrate into web applications
+- 🛠️ **Easy Customization**: Configure voices, models, and system instructions
+
+## Examples
+
+| Example                  | Description                                              | File                                 |
+| ------------------------ | -------------------------------------------------------- | ------------------------------------ |
+| Basic Voice Conversation | Simple real-time conversation with a voice engine        | `examples/realtime_conversation.py`  |
+| Simple LangGraph Agent   | Connect a basic LangGraph agent to voice                 | `examples/simple_langgraph.py`       |
+| LangGraph Conversation   | Advanced conversation with a LangGraph agent             | `examples/langgraph_conversation.py` |
+| LangGraph Supervisor     | Connect a multi-agent supervisor to voice                | `examples/langgraph_supervisor.py`   |
+| Web Interface            | Browser-based voice interface with LangGraph integration | `examples/web/`                      |
+
+## Installation
+
+```bash
+pip install autovox
+```
+
+## Quick Start: Real-Time Voice Conversation
+
+Here's how to create a real-time voice conversation with a basic voice engine:
+
+```python
+import asyncio
+import os
+from autovox.engines.openai_realtime import OpenAIRealTime
+from autovox.core.protocol import VoiceSession, StreamSettings
+
+async def main():
+    # Create and initialize the voice engine
+    engine = OpenAIRealTime()
+    await engine.initialize(os.environ["OPENAI_API_KEY"])
+
+    # Create a voice session with callbacks
+    session = VoiceSession(
+        engine=engine,
+        on_transcription=lambda text: print(f"User: {text}"),
+        on_response_chunk=lambda content: print_response(content),
+        on_error=lambda error: print(f"Error: {error}")
+    )
+
+    # Configure and start the session
+    settings = StreamSettings(
+        voice="alloy",    # Voice for the AI assistant
+        model="gpt-4o"    # Model for processing
+    )
+    await session.start(settings)
+
+    print("Voice session started. Speak into your microphone...")
+
+    # Keep the session running
+    try:
+        while True:
+            await asyncio.sleep(1)
+    except KeyboardInterrupt:
+        print("Ending session...")
+    finally:
+        await session.stop()
+
+def print_response(content):
+    if isinstance(content, str):
+        print(f"AI: {content}", end="", flush=True)
+
+if __name__ == "__main__":
+    asyncio.run(main())
+```
+
+## Voice Engines
+
+AutoVox supports the following real-time voice engines:
+
+### OpenAI RealTime
+
+Enables bidirectional real-time conversations using OpenAI's WebSocket API:
+
+```python
+from autovox.engines.openai_realtime import OpenAIRealTime
+
+engine = OpenAIRealTime()
+await engine.initialize(api_key)
+```
+
+Features:
+
+- Bidirectional real-time conversations
+- Full-duplex communication
+- Voice interruptions
+- Streaming transcriptions
+- Multiple voice options
+
+### Gemini RealTime
+
+Leverages Google's Gemini model for real-time voice interactions:
+
+```python
+from autovox.engines.gemini_realtime import GeminiRealTime
+
+engine = GeminiRealTime()
+await engine.initialize(api_key)
+```
+
+Features:
+
+- Real-time bidirectional audio streaming
+- Multiple voice options
+- Integrated with Gemini's multimodal capabilities
+
+## LangGraph Integration
+
+AutoVox's core functionality is its seamless integration with LangGraph, making it easy to connect any LangGraph agent to real-time voice capabilities:
+
+```python
+import asyncio
+import os
+from langchain_openai import ChatOpenAI
+from langgraph.graph import StateGraph
+from autovox.core.protocol import ConnectionType, EngineConfig
+from autovox.agents.langgraph import LangGraphConnector, VoiceSessionConfig
+
+async def main():
+    # 1. Create a LangGraph agent with tools
+    # ... your LangGraph agent code here ...
+    agent = create_your_langgraph_agent()
+
+    # 2. Configure the voice engine
+    engine_config = EngineConfig(
+        engine_type="openai",
+        api_key=os.environ["OPENAI_API_KEY"],
+        connection_type=ConnectionType.WEBSOCKET,
+        settings={"model": "gpt-4o"}
+    )
+
+    # 3. Connect the agent to the voice engine
+    connector = await LangGraphConnector.create(engine_config, agent)
+
+    # 4. Configure the voice session
+    config = VoiceSessionConfig(
+        voice="alloy",
+        model="gpt-4o",
+        system_prompt="You are a helpful voice assistant who responds concisely."
+    )
+
+    # 5. Set up callbacks
+    callbacks = {
+        "on_transcription": lambda text: print(f"User: {text}"),
+        "on_thinking": lambda thought: print(f"Thinking: {thought}"),
+        "on_response_start": lambda: print("AI: ", end=""),
+        "on_response_chunk": lambda content: print(content if isinstance(content, str) else "", end="", flush=True),
+        "on_response_end": lambda: print("\n"),
+        "on_error": lambda error: print(f"Error: {error}")
+    }
+
+    # 6. Start a real-time voice session
+    session = await connector.start_voice_session(config, callbacks)
+
+    # 7. Keep the session running
+    try:
+        print("Voice session started. Speak into your microphone...")
+        while True:
+            await asyncio.sleep(1)
+    except KeyboardInterrupt:
+        print("Ending session...")
+    finally:
+        await session.stop()
+
+if __name__ == "__main__":
+    asyncio.run(main())
+```
+
+Key features of LangGraph integration:
+
+- Use the full power of LangGraph with voice interactions
+- Access agent "thinking" steps for visibility into reasoning
+- Support for LangGraph Supervisors with multi-agent orchestration
+- Customizable voice settings per session
+- Works with all supported voice engines
+
+## Multi-Agent Supervisor Integration
+
+AutoVox provides special integration with LangGraph's Multi-Agent Supervisor for orchestrating complex agent workflows:
+
+```python
+from autovox.agents.langgraph import SupervisorConnector
+
+# After creating your multi-agent supervisor...
+supervisor = create_multi_agent_supervisor()
+
+# Connect it to voice
+connector = await SupervisorConnector.create(engine_config, supervisor)
+
+# Start a voice session
+session = await connector.start_voice_session(config, callbacks)
+```
+
+This allows users to create powerful voice interfaces to multi-agent systems that can:
+
+- Decompose complex tasks across specialized agents
+- Coordinate multiple experts to solve problems
+- Track reasoning across different agent roles
+- Provide unified responses through voice
+
+## Web Interface
+
+The package includes a web-based interface for voice conversations:
+
+```bash
+# Set your API keys in .env file first (create a .env file in examples/web)
+OPENAI_API_KEY=your_openai_key_here
+GEMINI_API_KEY=your_gemini_key_here
+```
+
+### Running the Web Interface
+
+#### Unix/Linux/macOS
+
+```bash
+# Navigate to the web example directory
+cd examples/web
+
+# Make the script executable (if needed)
+chmod +x run.sh
+
+# Run the server
+./run.sh
+```
+
+#### Windows
+
+```bash
+# Navigate to the web example directory
+cd examples\web
+
+# Run the server
+run.bat
+```
+
+#### Manual Setup
+
+```bash
+# Install required dependencies
+pip install fastapi uvicorn websockets python-dotenv autovox
+
+# Run the web server
+python examples/web/server.py
+```
+
+Then open your browser to http://localhost:8000 to interact with the voice assistant.
+
+Features:
+
+- Browser-based UI for voice conversations
+- Support for both OpenAI and Gemini engines
+- No coding required to use
+- Real-time audio streaming and responses
+
+## License
+
+MIT
+
+## Acknowledgements
+
+The AutoVox project was inspired by:
+
+- OpenAI's real-time voice API
+- Google's Gemini API
+- LangGraph for agent orchestration
+
+## Voice Interaction Basics
+
+AutoVox provides a simple, unified interface for voice interactions:
+
+```python
+from autovox.core.protocol import VoiceSession
+
+# Create a session with callbacks
+session = VoiceSession(
+    engine=engine,
+    on_transcription=lambda text: print(f"User said: {text}"),
+    on_response_chunk=lambda chunk: print(f"AI: {chunk}", end=""),
+    on_error=lambda error: print(f"Error: {error}")
+)
+
+# Start the session
+await session.start()
+
+# Send audio data
+await session.send_audio(audio_bytes)
+
+# Stop the session when done
+await session.stop()
+```
