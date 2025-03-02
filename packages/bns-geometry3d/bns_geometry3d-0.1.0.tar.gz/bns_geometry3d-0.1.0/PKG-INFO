@@ -1,0 +1,27 @@
+Metadata-Version: 2.2
+Name: bns_geometry3d
+Version: 0.1.0
+Summary: A Python package for calculating surface areas of 3D shapes
+Author: Bholay Nath Singh
+Author-email: bholaynathsingh335619@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: requires-python
+Dynamic: summary
+
+# geometry3d
+
+A Python package to calculate the surface areas of 3D shapes.
+
+## Installation
+```bash
+pip install bns_geometry3d
