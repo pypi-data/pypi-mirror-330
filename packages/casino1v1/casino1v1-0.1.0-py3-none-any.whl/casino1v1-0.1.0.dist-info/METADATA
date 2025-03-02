@@ -1,0 +1,48 @@
+Metadata-Version: 2.2
+Name: casino1v1
+Version: 0.1.0
+Summary: A humorous command-line Blackjack game.
+Home-page: https://github.com/Snapout2/casino1v1.git
+Author: Adarsh V H
+Author-email: adarshvh2005@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-python
+Dynamic: summary
+
+# Casino1v1 - The Blackjack Game That Will Destroy Your Ego  
+
+## About  
+So, you think you're good at Blackjack? Cute. Welcome to **Casino1v1**, 
+where you'll battle the dealer in a game of luck, strategy, and pure frustration.  
+Try to hit **21** without going over, but letâ€™s be realâ€”youâ€™ll probably bust and blame bad luck.  
+
+## Installation  
+You can install this disasterpiece like any other Python package:  
+
+Why Play This?
+1. You like pain.
+2. You enjoy being mocked by a Python script.
+3. You think you can outsmart a few lines of code (you canâ€™t).
+4. You just want to rage-quit after losing to a virtual dealer.
+||||||
+How to Play
+1. You and the dealer get two cards each.
+2. You decide to hit (draw another card) or stand (keep what you have).
+3. If you go over 21, congratulationsâ€”you lose.
+4. The dealer follows mysterious rules that somehow always work against you.
+5. Either you win, or the dealer reminds you why casinos make billions.
+
+----------Spoiler: Youâ€™ll Probably Lose----------------
+```sh
+pip install casino1v1
