@@ -1,0 +1,6 @@
+Metadata-Version: 2.2
+Name: compsci399-grpc
+Version: 1.0.6
+Requires-Dist: grpcio>=1.44.0
+Requires-Dist: protobuf>=3.19.0
+Dynamic: requires-dist
