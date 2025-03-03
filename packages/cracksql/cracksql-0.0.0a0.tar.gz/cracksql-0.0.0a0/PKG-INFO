@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: cracksql
+Version: 0.0.0a0
+Summary: Seamless translation over multiple dialect by large language model (LLM).
+Home-page: https://github.com/code4DB/CrackSQL
+Author: code4DB
+Author-email: weizhoudb@gmail.com
+License: MIT
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+
+Seamless translation over multiple dialect by large language model (LLM).
