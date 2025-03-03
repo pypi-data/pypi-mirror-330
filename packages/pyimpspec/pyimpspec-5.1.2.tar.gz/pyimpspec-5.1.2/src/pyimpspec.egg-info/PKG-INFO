@@ -1,0 +1,138 @@
+Metadata-Version: 2.2
+Name: pyimpspec
+Version: 5.1.2
+Summary: A package for parsing, validating, analyzing, and simulating impedance spectra.
+Home-page: https://vyrjana.github.io/pyimpspec
+Author: pyimpspec developers
+License: GPLv3
+Project-URL: Documentation, https://vyrjana.github.io/pyimpspec/api/
+Project-URL: Source Code, https://github.com/vyrjana/pyimpspec
+Project-URL: Bug Tracker, https://github.com/vyrjana/pyimpspec/issues
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Operating System :: MacOS
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Topic :: Scientific/Engineering :: Chemistry
+Classifier: Topic :: Scientific/Engineering :: Physics
+Classifier: Topic :: Scientific/Engineering
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: Jinja2~=3.1
+Requires-Dist: lmfit~=1.3
+Requires-Dist: matplotlib~=3.10
+Requires-Dist: numdifftools~=0.9
+Requires-Dist: numpy~=2.2
+Requires-Dist: odfpy~=1.4
+Requires-Dist: openpyxl~=3.1
+Requires-Dist: pandas~=2.2
+Requires-Dist: schemdraw~=0.19
+Requires-Dist: scipy~=1.15
+Requires-Dist: statsmodels~=0.14
+Requires-Dist: sympy~=1.13
+Requires-Dist: tabulate~=0.9
+Requires-Dist: xdg~=6.0
+Provides-Extra: cvxopt
+Requires-Dist: cvxopt~=1.3; extra == "cvxopt"
+Provides-Extra: kvxopt
+Requires-Dist: kvxopt~=1.3; extra == "kvxopt"
+Provides-Extra: dev
+Requires-Dist: build~=1.2; extra == "dev"
+Requires-Dist: flake8~=7.1; extra == "dev"
+Requires-Dist: setuptools~=75.8; extra == "dev"
+Requires-Dist: sphinx~=8.2; extra == "dev"
+Requires-Dist: sphinx-rtd-theme~=3.0; extra == "dev"
+Dynamic: author
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license
+Dynamic: project-url
+Dynamic: provides-extra
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# pyimpspec
+
+A package for parsing, validating, analyzing, and simulating impedance spectra.
+
+[![tests](https://github.com/vyrjana/pyimpspec/actions/workflows/test-package.yml/badge.svg)](https://github.com/vyrjana/pyimpspec/actions/workflows/test-package.yml)
+[![build](https://github.com/vyrjana/pyimpspec/actions/workflows/test-wheel.yml/badge.svg)](https://github.com/vyrjana/pyimpspec/actions/workflows/test-wheel.yml)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/pyimpspec)
+[![GitHub](https://img.shields.io/github/license/vyrjana/pyimpspec)](https://www.gnu.org/licenses/gpl-3.0.html)
+[![PyPI](https://img.shields.io/pypi/v/pyimpspec)](https://pypi.org/project/pyimpspec/)
+
+
+## Table of contents
+
+- [About](#about)
+- [Contributing](#contributing)
+- [License](#license)
+- [Changelog](#changelog)
+
+
+## About
+
+Pyimpspec is a Python package that provides an application programming interface (API) and a command-line interface (CLI) for working with impedance spectra.
+The target audience is researchers who use electrochemical impedance spectroscopy (EIS) though the program may also be useful in educational settings.
+Those looking for a program with a graphical user interface may wish to instead use [DearEIS](https://github.com/vyrjana/DearEIS), which is based on pyimpspec.
+
+The interfaces of pyimpspec implement features such as:
+
+- reading certain data formats and parsing the experimental data contained within
+- validation of impedance spectra using linear Kramers-Kronig tests or the Z-HIT algorithm
+- construction of circuits by, e.g., parsing circuit description codes (CDC)
+- support for user-defined circuit elements
+- estimation of the distribution of relaxation times (DRT)
+- complex non-linear least squares fitting of equivalent circuits
+- simulation of the impedance spectra of circuits
+- visualization of impedance spectra and various analysis results
+
+See the [official documentation](https://vyrjana.github.io/pyimpspec/) for instructions on how to install pyimpspec, examples of how to use the API, and the API reference.
+
+
+## Changelog
+
+See [CHANGELOG.md](CHANGELOG.md) for details.
+
+
+## Contributing
+
+If you wish to contribute to the further development of pyimpspec, then there are several options available to you depending on your ability and the amount of time that you can spare.
+
+If you find bugs, wish some feature was added, or find the documentation to be lacking, then please open an issue on [GitHub](https://github.com/vyrjana/pyimpspec/issues).
+
+If you wish to contribute code, then start by cloning the repository:
+
+`git clone https://github.com/vyrjana/pyimpspec.git`
+
+The development dependencies can be installed from within the repository directory using pip:
+
+`pip install -r ./dev-requirements.txt`
+
+Create a new branch based on either the `main` branch or the most recent development branch (e.g., `dev-*`), and submit your changes as a pull request.
+
+Code contributions should, if it is applicable, also include unit tests, which should be implemented in files placed in the `tests` folder found in the root of the repository along with any assets required by the tests.
+It should be possible to run the tests by executing the `run_tests.sh` script, which uses the test discovery process built into the `unittest` module that is included with Python.
+
+If it is possible, then delay the importing of dependencies until they are needed in order to reduce the overhead associated with just importing pyimpspec.
+Ignoring this guideline may, e.g., make using the CLI slower than it needs to be.
+
+See [CONTRIBUTORS](CONTRIBUTORS) for a list of people who have contributed to the pyimpspec project.
+
+
+## License
+
+Copyright 2025 pyimpspec developers
+
+Pyimpspec is licensed under the [GPLv3 or later](https://www.gnu.org/licenses/gpl-3.0.html).
+
+The licenses of pyimpspec's dependencies and/or sources of portions of code are included in the LICENSES folder.
