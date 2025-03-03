@@ -1,0 +1,8 @@
+[tools]
+python = "3"
+ruff = "latest"
+uv = "latest"
+
+[tasks.dev]
+run = "uv run indiepixel examples/cli"
+
