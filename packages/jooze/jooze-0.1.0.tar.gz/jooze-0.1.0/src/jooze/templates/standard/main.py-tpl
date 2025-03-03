@@ -1,0 +1,3 @@
+from jooze import create_app
+
+app = create_app(name="{{ project_name }}")
