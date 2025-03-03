@@ -1,0 +1,15 @@
+# otaro
+
+## Examples
+
+See `./examples`
+
+## Deploy API
+
+Run `otaro` to deploy a config file as an API.
+
+```
+$ otaro examples/poet.yml
+```
+
+Navigate to "https://localhost:8000" to view and test the API documentation.
