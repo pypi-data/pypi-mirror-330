@@ -1,0 +1,41 @@
+{% extends "base.j2" -%}
+
+{% block content -%}
+
+  <section class="one-column well">
+
+    {% if request.shop %}
+
+    <b>{{ request.shop.name }}</b>
+
+    <br/>
+    <br/>
+    <a href="/c/new" class="shop-new-button mps-button">&#65291; New Content</a>
+
+    {% if request.user in request.shop.owners %}
+    <br/>
+    <br/>
+    <a href="/coupon/new" class="shop-new-button mps-button">&#65291; New Coupon</a>
+    {% endif %}
+
+    <br/>
+    <br/>
+    <a href="/p/new" class="shop-new-button mps-button">&#65291; New Product</a>
+
+    {% if request.user in request.shop.owners %}
+    <br/>
+    <br/>
+    <a href="/s/locations/new" class="shop-new-button mps-button">&#65291; New Shop Location</a>
+    {% endif %}
+
+    {% if request.is_saas_domain %}
+    <br />
+    <br />
+    <a href="/s/new" class="shop-new-button mps-button mps-button">&#65291; New Shop</a>
+    {% endif %}
+
+    {% endif %}
+
+  </section>
+
+{%- endblock -%}

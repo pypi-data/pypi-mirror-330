@@ -1,0 +1,85 @@
+{% extends "base.j2" -%}
+
+{%- block append_to_head_tag_section %}
+  <link rel="canonical" href="{{ product.absolute_url(request) }}" />
+  <title>{{ product.title }}</title>
+  <meta property="og:title" content="{{ product.title }}" />
+  <meta name="description" content="{{ product.description }}">
+  <meta property="og:description" content="{{ product.description }}" />
+  <meta property="og:type" content="article" />
+  {%- if "thumbnail1" in product.extensions %}
+  <meta property="og:image" content="{{ request.app["bucket.secure_uploads.get_endpoint"] }}/{{ product.s3_path }}/thumbnail1?ts={{ product.updated_timestamp }}" />
+  {%- endif %}
+  <!--
+  <meta name="keywords" content="HTML, CSS, meta, data, metadata, link, unfurling, link unfurling">
+  <meta name="author" content="Captain Susan">
+  -->
+{%- endblock append_to_head_tag_section -%}
+
+
+{%- block call_to_action -%}
+{% if request.user.can_edit_shop(request.shop) %}
+<a href="{{ product.absolute_edit_url(request) }}" class="product-edit-button mps-button mps-button-small">&#9998; Edit</a>
+{% endif %}
+{%- endblock call_to_action -%}
+
+
+{% block content -%}
+
+<section class="two-column">
+
+  <section class="product-left">
+
+    {% if "thumbnail1" in product.extensions %}
+    {% if product.extensions["product"] in ["mp3", "mp4", "wav", "flac", "aac", "ogg", "wma", "m4a", "avi", "mov", "wmv", "flv", "mkv", "webm", "m4v"] %}
+    <div>
+    <a target="_blank" href="{{ request.app["bucket.secure_uploads.get_endpoint"] }}/{{ product.s3_path }}/product?ts={{ product.updated_timestamp }}">
+    <br>
+    </div>
+    <img src="{{ request.app["bucket.secure_uploads.get_endpoint"] }}/{{ product.s3_path }}/thumbnail1?ts={{ product.updated_timestamp }}" class="product-main" />
+    <div class="play-button">click &#9654; to play!</div>
+    </a>
+    </div>
+    {% else %}
+    <img src="{{ request.app["bucket.secure_uploads.get_endpoint"] }}/{{ product.s3_path }}/thumbnail1?ts={{ product.updated_timestamp }}" class="product-main" />
+    {% endif %}
+    <br/>
+    {% endif %}   
+
+    <h1>{{ product.title }}</h1>
+    <h3>
+    uploaded to <a href="{{ product.shop.absolute_about_url(request) }}" rel="nofollow">{{ product.shop.name }}</a>
+    </h3>
+
+  <br/>
+
+  <b>Description</b>
+  <section>{{ product.description_html | safe }}</section>
+
+  <br/>
+  <br/>
+
+  {% if product.has_product_file %}
+    <b>File Type</b>
+    <br/>
+    {{ product.get_content_type("product") }} {{ product_size }}
+    <br/>
+  {% endif %}
+
+  </section>
+
+  <section class="product-right">
+
+  {% if product.has_product_file %}
+  <div class="well">
+    {% if signed_get_object_url is not none %}
+      <a href="{{ signed_get_object_url }}" class="product-download-button mps-button" target="_blank" download>&#11123 Download</a>
+    {% endif %}
+  <div>
+  {% endif %}
+
+  </section>
+
+</section>
+
+{%- endblock -%}

@@ -1,0 +1,35 @@
+{% extends "base.j2" %}
+
+{% block content %}
+  <h1>Invoice Identifier<br>{{ invoice.id }}</h1>
+  <p><strong>Customer Name:</strong> {{ invoice.user.name }}</p>
+  <p><strong>Date:</strong> {{ invoice.human_created_timestamp }}</p>
+  <p><strong>Total:</strong> ${{ '%0.2f' % invoice.total }}</p>
+  <p><strong>Shipping/Pickup:</strong> {{ invoice.handling_option }}</p>
+  <p><strong>Handling Cost:</strong> ${{ '%0.2f' % ((invoice.handling_cost_in_cents or 0) / 100) }}</p>
+  {% if invoice.delivery_address %}
+    <p><strong>Delivery Address:</strong> {{ invoice.delivery_address }}</p>
+  {% endif %}
+
+  <h2>Line Items</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in invoice.line_items %}
+        <tr>
+          <td><a href="/p/{{ item.product.id }}">{{ item.product.title }}</a></td>
+          <td>{{ item.quantity }}</td>
+          <td>${{ '%0.2f' % (item.price.price_in_cents / 100) }}</td>
+          <td>${{ '%0.2f' % ((item.price.price_in_cents * item.quantity) / 100) }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
