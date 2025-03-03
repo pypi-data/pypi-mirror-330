@@ -1,0 +1,38 @@
+import requests
+import bs4
+import pandas as pd
+from bs4 import BeautifulSoup
+
+class RecipeScraper:
+    def __init__(self)-> None:
+        self.soup = None
+        self.data_frame = None
+
+    def scrape_url(self, url:str):
+        respons = requests.get(url)
+        respons.encoding = 'utf-8'
+        self.soup = BeautifulSoup(respons.text, 'html.parser')
+
+    def get_tables_data(self) -> pd.DataFrame:
+        tables = self.soup.find_all('table')[1:]
+        headers = self.soup.find_all('h2')
+        data_tables = []
+        for i, table in enumerate(tables):
+            table_rows = table.find_all('tr')[1:]
+            data_tables.append({'table_name': headers[i].text,
+                                'table_data': []
+                                })
+        for row in table_rows:
+            cells = row.find_all('td')
+            data_tables[i]['table_data'].append({
+                'name' : cells[0].text,
+                'ingredients': cells[1].text,
+                'image' : cells[2].find('img')['src'],
+                'desc' : cells[3].text
+            })
+        self.data_frame = pd.DataFrame(data_tables)
+        return self.data_frame
+
+# rs = RecipeScraper()
+# rs.scrape_url("https://www.minecraftcrafting.info/")
+# print(rs.get_tables_data())
