@@ -1,0 +1,7 @@
+include catdog/models/*.pth
+include catdog/*.py
+include catdog/__init__.py
+include catdog/model.py
+include catdog/classifier.py
+include catdog/version.py
+include README.md 
