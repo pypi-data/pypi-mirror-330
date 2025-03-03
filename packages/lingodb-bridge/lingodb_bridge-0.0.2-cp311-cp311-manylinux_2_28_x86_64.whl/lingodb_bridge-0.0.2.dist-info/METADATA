@@ -1,0 +1,5 @@
+Metadata-Version: 2.2
+Name: lingodb-bridge
+Version: 0.0.2
+Requires-Dist: numpy===1.26.4
+Requires-Dist: pyarrow===14.0.1
