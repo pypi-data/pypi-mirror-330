@@ -1,0 +1,2 @@
+[console_scripts]
+holobit-transpiler = transpiler.machine_code_transpiler:main
