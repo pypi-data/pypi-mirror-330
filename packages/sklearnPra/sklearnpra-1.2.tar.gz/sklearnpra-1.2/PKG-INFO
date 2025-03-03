@@ -1,0 +1,25 @@
+Metadata-Version: 2.2
+Name: sklearnPra
+Version: 1.2
+Summary: A package that pastes predefined Python code into the current file
+Home-page: https://pypi.org/project/sklearnPra/
+Author: Your Name
+Author-email: your.email@example.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-python
+Dynamic: summary
+
+# sklearnPra
+
+This is a sample Python package.
