@@ -1,0 +1,12 @@
+cachetools>=5.5.0
+dotenv>=0.9.9
+httpx>=0.28.0
+ipykernel>=6.29.5
+pytest>=8.3.4
+pytest-mock>=3.14.0
+twine>=6.1.0
+
+[dev]
+pytest
+black
+ruff
