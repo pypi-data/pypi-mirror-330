@@ -1,0 +1,6 @@
+[console_scripts]
+docs-build=quantalogic.docs_cli:build_docs
+docs-deploy=quantalogic.docs_cli:deploy_docs
+docs-serve=quantalogic.docs_cli:serve_docs
+quantalogic=quantalogic.main:cli
+
