@@ -1,0 +1,18 @@
+[project]
+name = "MineScrapingCraftCode"
+version = "0.0.1"
+authors = [
+  { name="Kazumii", email="Konstant.ber@gmail.com" },
+]
+description = "Код для скрепінгу сторінки"
+
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+
+license = {file = "LICENSE.txt"}
+dependencies = [
+    "requests>=2.32.2", "pandas>=2.2.3", "beautifulsoup4>=4.13.3"
+]
