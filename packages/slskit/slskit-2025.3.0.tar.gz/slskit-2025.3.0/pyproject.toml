@@ -1,0 +1,33 @@
+[tool.poetry]
+name = "slskit"
+version = "2025.3.0"
+authors = ["Gediminas Zlatkus <gediminas.zlatkus@gmail.com>"]
+description = "Tools for checking Salt state validity"
+readme = "README.md"
+homepage = "https://github.com/gediminasz/slskit"
+repository = "https://github.com/gediminasz/slskit"
+keywords = ["salt", "saltstack", "sls"]
+classifiers = ["Topic :: Software Development :: Quality Assurance"]
+
+[tool.poetry.dependencies]
+python = ">=3.9.2, <3.13"
+click = "*"
+colorlog = "*"
+funcy = "*"
+jsonschema = "*"
+salt = ">=3006.0"
+
+[tool.poetry.group.dev.dependencies]
+black = "*"
+gitpython = "*"
+mypy = "*"
+pytest = "*"
+pytest-snapshot = "*"
+types-pyyaml = "*"
+
+[tool.poetry.scripts]
+slskit = 'slskit:run_module'
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
