@@ -1,0 +1,1 @@
+from .dict_sourcer import reduce_dict
