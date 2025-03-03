@@ -1,0 +1,99 @@
+Metadata-Version: 2.2
+Name: clipboard_text_correction
+Version: 0.1.1
+Summary: Program that collects text from the clipboard and improves text writing
+Home-page: https://github.com/trucomanx/ClipboardTextCorrection
+Author: Fernando Pujaico Rivera
+Author-email: fernando.pujaico.rivera@gmail.com
+Maintainer: Fernando Pujaico Rivera
+Maintainer-email: fernando.pujaico.rivera@gmail.com
+Project-URL: Bug Reports, https://github.com/trucomanx/ClipboardTextCorrection/issues
+Project-URL: Funding, https://trucomanx.github.io/en/funding.html
+Project-URL: Source, https://github.com/trucomanx/ClipboardTextCorrection/
+Keywords: writing,spelling
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: PyQt5
+Requires-Dist: deep-consultation
+Requires-Dist: PyGObject
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: maintainer
+Dynamic: maintainer-email
+Dynamic: project-url
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# clipboard-text-correction
+
+Program that improves text writing.
+
+## 1. Dependencies
+
+This program requires **Meld** to be installed on your system to function correctly. **Meld** is a graphical tool for comparing files and directories.
+
+How to install **Meld**:
+
+- **Ubuntu/Debian**:
+
+```bash
+sudo apt-get install meld
+```
+- **Windows**: You can download the Meld installer at [http://meldmerge.org](http://meldmerge.org).
+
+
+## 2. Installing
+
+### 2.1. Install the package with pip
+
+To install the package from `PyPI`, follow the instructions below:
+
+
+```bash
+pip install clipboard-text-correction
+```
+
+Execute `which clipboard-text-correction` to see where it was installed, probably in `/home/USERNAME/.local/bin/clipboard-text-correction`.
+
+#### Using
+
+If the program was not added to the Linux start session, then to start, use the command below:
+
+```bash
+clipboard-text-correction-indicator
+```
+
+
+### 2.2. Install from PYPI and add to Linux start session
+Install `clipboard-text-correction` from `pypi` and add the program to the bar indicator on Linux startup session.
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/trucomanx/ClipboardTextCorrection/main/install_linux_indicator_session.sh | sh
+```
+
+## 3. LLM
+The program needs an API_KEY to be used. This can be obtained from
+https://deepinfra.com/dash/api_keys
+
+Place the obtained API_KEY in the program menu under `Open config file`.
+
+## 4. Buy me a coffee
+
+If you find this tool useful and would like to support its development, you can buy me a coffee!  
+Your donations help keep the project running and improve future updates.  
+
+[☕ Buy me a coffee](https://ko-fi.com/trucomanx) 
+
+## 5. License
+
+This project is licensed under the GPL license. See the `LICENSE` file for more details.
