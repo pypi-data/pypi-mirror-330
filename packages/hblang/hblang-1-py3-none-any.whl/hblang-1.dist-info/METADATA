@@ -1,0 +1,13 @@
+Metadata-Version: 2.2
+Name: hblang
+Version: 1
+Summary: Интерпретатор для языка .hb
+Home-page: https://github.com/Hosarov
+Author: hosarov
+Author-email: CndCrime@proton.me
+Requires-Dist: requests
+Dynamic: author
+Dynamic: author-email
+Dynamic: home-page
+Dynamic: requires-dist
+Dynamic: summary
