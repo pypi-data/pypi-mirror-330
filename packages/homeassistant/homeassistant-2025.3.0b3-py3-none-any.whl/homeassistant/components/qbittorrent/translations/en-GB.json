@@ -1,0 +1,41 @@
+{
+    "entity": {
+        "sensor": {
+            "active_torrents": {
+                "unit_of_measurement": "torrents"
+            },
+            "all_torrents": {
+                "unit_of_measurement": "torrents"
+            },
+            "alltime_download": {
+                "name": "All-time download"
+            },
+            "alltime_upload": {
+                "name": "All-time upload"
+            },
+            "connection_status": {
+                "name": "Connection status",
+                "state": {
+                    "connected": "Connected",
+                    "disconnected": "Disconnected",
+                    "firewalled": "Firewalled"
+                }
+            },
+            "download_speed_limit": {
+                "name": "Download speed limit"
+            },
+            "global_ratio": {
+                "name": "Global ratio"
+            },
+            "inactive_torrents": {
+                "unit_of_measurement": "torrents"
+            },
+            "paused_torrents": {
+                "unit_of_measurement": "torrents"
+            },
+            "upload_speed_limit": {
+                "name": "Upload speed limit"
+            }
+        }
+    }
+}

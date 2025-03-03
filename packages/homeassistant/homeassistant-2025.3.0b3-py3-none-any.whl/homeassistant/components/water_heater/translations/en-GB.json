@@ -1,0 +1,11 @@
+{
+    "services": {
+        "turn_off": {
+            "description": "Turns water heater off."
+        },
+        "turn_on": {
+            "description": "Turns water heater on."
+        }
+    },
+    "title": "Water heater"
+}

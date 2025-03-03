@@ -1,0 +1,78 @@
+{
+    "entity": {
+        "sensor": {
+            "apparmor_version": {
+                "name": "Apparmor version"
+            }
+        }
+    },
+    "issues": {
+        "unsupported_apparmor": {
+            "description": "System is unsupported because AppArmor is working incorrectly and add-ons are running in an unprotected and insecure way. Use the link to learn more and how to fix this.",
+            "title": "Unsupported system - AppArmor issues"
+        }
+    },
+    "services": {
+        "addon_restart": {
+            "description": "Restarts an add-on.",
+            "fields": {
+                "addon": {
+                    "name": "Add-on"
+                }
+            }
+        },
+        "addon_start": {
+            "description": "Starts an add-on.",
+            "fields": {
+                "addon": {
+                    "name": "Add-on"
+                }
+            },
+            "name": "Start add-on"
+        },
+        "addon_stdin": {
+            "fields": {
+                "addon": {
+                    "name": "Add-on"
+                }
+            }
+        },
+        "addon_stop": {
+            "description": "Stops an add-on.",
+            "fields": {
+                "addon": {
+                    "name": "Add-on"
+                }
+            }
+        },
+        "addon_update": {
+            "fields": {
+                "addon": {
+                    "name": "Add-on"
+                }
+            }
+        },
+        "backup_full": {
+            "description": "Creates a full backup.",
+            "fields": {
+                "compressed": {
+                    "description": "Compresses the backup files.",
+                    "name": "Compressed"
+                },
+                "location": {
+                    "description": "Name of a backup network storage to host backups."
+                },
+                "name": {
+                    "description": "Optional (default = current date and time)."
+                }
+            }
+        },
+        "restore_partial": {
+            "fields": {
+                "homeassistant": {
+                    "description": "Restores Home Assistant."
+                }
+            }
+        }
+    }
+}

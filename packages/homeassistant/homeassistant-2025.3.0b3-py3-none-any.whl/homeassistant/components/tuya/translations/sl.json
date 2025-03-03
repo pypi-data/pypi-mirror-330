@@ -1,0 +1,340 @@
+{
+    "config": {
+        "abort": {
+            "reauth_successful": "Ponovna avtentikacija je bila uspe\u0161na"
+        },
+        "error": {
+            "invalid_auth": "Neveljavna avtentikacija",
+            "login_error": "Napaka pri prijavi ({code}): {msg}"
+        },
+        "step": {
+            "reauth_user_code": {
+                "data": {
+                    "user_code": "Uporabni\u0161ka koda"
+                },
+                "description": "Integracija Tuya zdaj uporablja izbolj\u0161an na\u010din prijave. Za ponovno avtentikacijo s svojim ra\u010dunom Smart Life ali Tuya Smart morate vnesti svojo uporabni\u0161ko kodo.\n\nTo kodo najdete v aplikaciji Smart Life ali aplikaciji Tuya Smart na zaslonu **Nastavitve** > **Ra\u010dun in varnost** in vnesite kodo, prikazano v polju **Uporabni\u0161ka koda**. Uporabni\u0161ka koda razlikuje med velikimi in malimi \u010drkami, zato jo vnesite to\u010dno tako, kot je prikazano v aplikaciji."
+            },
+            "scan": {
+                "description": "Za dokon\u010danje prijave uporabite aplikacijo Smart Life ali aplikacijo Tuya Smart, da skenirate naslednjo kodo QR.\n\nKo kon\u010date ta korak v aplikaciji, nadaljujte z naslednjim korakom."
+            },
+            "user": {
+                "data": {
+                    "user_code": "Uporabni\u0161ka koda"
+                },
+                "description": "Vnesite svojo uporabni\u0161ko kodo Smart Life ali Tuya Smart.\n\nTo kodo najdete v aplikaciji Smart Life ali aplikaciji Tuya Smart na zaslonu **Nastavitve** > **Ra\u010dun in varnost** in vnesite kodo, prikazano v polju **Uporabni\u0161ka koda**. Uporabni\u0161ka koda razlikuje med velikimi in malimi \u010drkami, zato jo vnesite to\u010dno tako, kot je prikazano v aplikaciji."
+            }
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "formaldehyde": {
+                "name": "Formaldehid"
+            },
+            "methane": {
+                "name": "Metan"
+            }
+        },
+        "number": {
+            "move_down": {
+                "name": "Premakni dol"
+            },
+            "move_up": {
+                "name": "Premakni gor"
+            },
+            "sensitivity": {
+                "name": "Ob\u010dutljivost"
+            },
+            "temperature": {
+                "name": "Temperatura"
+            }
+        },
+        "select": {
+            "basic_nightvision": {
+                "name": "No\u010dni vid",
+                "state": {
+                    "0": "Samodejno",
+                    "1": "Izklopljeno",
+                    "2": "Vklopljeno"
+                }
+            },
+            "brightness": {
+                "name": "Svetlost"
+            },
+            "concentration": {
+                "name": "Koncentracija"
+            },
+            "countdown": {
+                "name": "Od\u0161tevanje"
+            },
+            "curtain_mode": {
+                "name": "Na\u010din",
+                "state": {
+                    "night": "No\u010d"
+                }
+            },
+            "decibel_sensitivity": {
+                "name": "Ob\u010dutljivost zaznavanja zvoka",
+                "state": {
+                    "0": "Nizka ob\u010dutljivost",
+                    "1": "Visoka ob\u010dutljivost"
+                }
+            },
+            "fingerbot_mode": {
+                "name": "Na\u010din"
+            },
+            "horizontal_fan_angle": {
+                "state": {
+                    "30": "30\u00b0",
+                    "60": "60\u00b0",
+                    "90": "90\u00b0"
+                }
+            },
+            "humidifier_spray_mode": {
+                "state": {
+                    "auto": "Samodejno"
+                }
+            },
+            "led_type": {
+                "name": "Vrsta vira svetlobe",
+                "state": {
+                    "halogen": "Halogenska \u017earnica",
+                    "incandescent": "\u017darnica z \u017earilno nitko",
+                    "led": "LED"
+                }
+            },
+            "led_type_2": {
+                "name": "Vrsta vira svetlobe 2",
+                "state": {
+                    "halogen": "Halogenska \u017earnica",
+                    "incandescent": "\u017darnica z \u017earilno nitko",
+                    "led": "LED"
+                }
+            },
+            "led_type_3": {
+                "name": "Vrsta vira svetlobe 2",
+                "state": {
+                    "halogen": "Halogenska \u017earnica",
+                    "incandescent": "\u017darnica z \u017earilno nitko",
+                    "led": "LED"
+                }
+            },
+            "light_mode": {
+                "name": "Na\u010din delovanja indikatorske lu\u010dke",
+                "state": {
+                    "none": "Izklju\u010deno"
+                }
+            },
+            "mode": {
+                "name": "Na\u010din"
+            },
+            "motion_sensitivity": {
+                "name": "Ob\u010dutljivost zaznavanja gibanja",
+                "state": {
+                    "0": "Nizka ob\u010dutljivost",
+                    "1": "Srednja ob\u010dutljivost",
+                    "2": "Visoka ob\u010dutljivost"
+                }
+            },
+            "record_mode": {
+                "name": "Na\u010din snemanja",
+                "state": {
+                    "1": "Samo snemanje dogodkov",
+                    "2": "Neprekinjeno snemanje"
+                }
+            },
+            "relay_status": {
+                "name": "Obna\u0161anje pri vklopu",
+                "state": {
+                    "off": "Izklju\u010deno",
+                    "on": "Vklopljeno",
+                    "power_off": "Izkl.",
+                    "power_on": "Vkl."
+                }
+            },
+            "vacuum_mode": {
+                "name": "Na\u010din"
+            },
+            "vertical_fan_angle": {
+                "state": {
+                    "30": "30\u00b0",
+                    "60": "60\u00b0",
+                    "90": "90\u00b0"
+                }
+            }
+        },
+        "sensor": {
+            "air_quality": {
+                "name": "Kakovost zraka"
+            },
+            "air_quality_index": {
+                "name": "Indeks kakovosti zraka"
+            },
+            "battery": {
+                "name": "Baterija"
+            },
+            "battery_state": {
+                "name": "Stanje baterije"
+            },
+            "carbon_dioxide": {
+                "name": "Ogljikov dioksid"
+            },
+            "carbon_monoxide": {
+                "name": "Ogljikov monoksid"
+            },
+            "concentration_carbon_dioxide": {
+                "name": "Koncentracija ogljikovega dioksida"
+            },
+            "current": {
+                "name": "Elektri\u010dni tok"
+            },
+            "current_temperature": {
+                "name": "Trenutna temperatura"
+            },
+            "formaldehyde": {
+                "name": "Formaldehid"
+            },
+            "gas": {
+                "name": "Plin"
+            },
+            "humidity": {
+                "name": "Vla\u017enost"
+            },
+            "illuminance": {
+                "name": "Osvetljenost"
+            },
+            "luminosity": {
+                "name": "Svetilnost"
+            },
+            "methane": {
+                "name": "Metan"
+            },
+            "pm1": {
+                "name": "PM1"
+            },
+            "pm10": {
+                "name": "PM10"
+            },
+            "pm25": {
+                "name": "PM2.5"
+            },
+            "power": {
+                "name": "Mo\u010d"
+            },
+            "remaining_time": {
+                "name": "Preostali \u010das"
+            },
+            "sous_vide_status": {
+                "state": {
+                    "standby": "V pripravljenosti"
+                }
+            },
+            "temperature": {
+                "name": "Temperatura"
+            },
+            "voc": {
+                "name": "Hlapne organske spojine"
+            },
+            "voltage": {
+                "name": "Napetost"
+            },
+            "water_level": {
+                "name": "Nivo vode"
+            }
+        },
+        "switch": {
+            "child_lock": {
+                "name": "Otro\u0161ka klju\u010davnica"
+            },
+            "flip": {
+                "name": "Obrni sliko"
+            },
+            "motion_alarm": {
+                "name": "Alarm gibanja"
+            },
+            "motion_recording": {
+                "name": "Snemanje gibanja"
+            },
+            "privacy_mode": {
+                "name": "Zasebni na\u010din"
+            },
+            "pump": {
+                "name": "\u010crpalka"
+            },
+            "socket": {
+                "name": "Vti\u010dnica"
+            },
+            "socket_1": {
+                "name": "Vti\u010dnica 1"
+            },
+            "socket_2": {
+                "name": "Vti\u010dnica 2"
+            },
+            "socket_3": {
+                "name": "Vti\u010dnica 3"
+            },
+            "socket_4": {
+                "name": "Vti\u010dnica 4"
+            },
+            "socket_5": {
+                "name": "Vti\u010dnica 5"
+            },
+            "socket_6": {
+                "name": "Vti\u010dnica 6"
+            },
+            "sound": {
+                "name": "Zvok"
+            },
+            "sound_detection": {
+                "name": "Zaznavanje zvoka"
+            },
+            "sterilization": {
+                "name": "Sterilizacija"
+            },
+            "switch": {
+                "name": "Stikalo"
+            },
+            "switch_1": {
+                "name": "Stikalo 1"
+            },
+            "switch_2": {
+                "name": "Stikalo 2"
+            },
+            "switch_3": {
+                "name": "Stikalo 3"
+            },
+            "switch_4": {
+                "name": "Stikalo 4"
+            },
+            "switch_5": {
+                "name": "Stikalo 5"
+            },
+            "switch_6": {
+                "name": "Stikalo 6"
+            },
+            "switch_7": {
+                "name": "Stikalo 7"
+            },
+            "switch_8": {
+                "name": "Stikalo 8"
+            },
+            "uv_sterilization": {
+                "name": "UV sterilizacija"
+            },
+            "video_recording": {
+                "name": "Snemanje videa"
+            },
+            "voice": {
+                "name": "Glas"
+            },
+            "water": {
+                "name": "Voda"
+            },
+            "water_pump_reset": {
+                "name": "Ponastavitev vodne \u010drpalke"
+            },
+            "wide_dynamic_range": {
+                "name": "\u0160irok dinami\u010dni razpon"
+            }
+        }
+    }
+}

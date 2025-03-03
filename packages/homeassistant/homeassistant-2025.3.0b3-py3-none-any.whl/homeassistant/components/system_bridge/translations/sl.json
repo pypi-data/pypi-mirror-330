@@ -1,0 +1,53 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Naprava je \u017ee konfigurirana",
+            "reauth_successful": "Ponovna avtentikacija je bila uspe\u0161na",
+            "unknown": "Nepri\u010dakovana napaka"
+        },
+        "error": {
+            "cannot_connect": "Povezava ni uspela",
+            "invalid_auth": "Neveljavna avtentikacija",
+            "unknown": "Nepri\u010dakovana napaka"
+        },
+        "step": {
+            "authenticate": {
+                "data": {
+                    "token": "API \u017eeton"
+                }
+            },
+            "user": {
+                "data": {
+                    "host": "Gostitelj",
+                    "port": "Vrata"
+                }
+            }
+        }
+    },
+    "entity": {
+        "sensor": {
+            "os": {
+                "name": "Operacijski sistem"
+            },
+            "version_latest": {
+                "name": "Zadnja verzija"
+            }
+        }
+    },
+    "services": {
+        "open_path": {
+            "fields": {
+                "path": {
+                    "name": "Pot"
+                }
+            }
+        },
+        "open_url": {
+            "fields": {
+                "url": {
+                    "name": "URL"
+                }
+            }
+        }
+    }
+}

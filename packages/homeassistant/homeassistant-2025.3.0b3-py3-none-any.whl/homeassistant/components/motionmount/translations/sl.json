@@ -1,0 +1,23 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Naprava je \u017ee konfigurirana",
+            "already_in_progress": "Konfiguriranje \u017ee poteka",
+            "cannot_connect": "Povezava ni uspela",
+            "reauth_successful": "Ponovna avtentikacija je bila uspe\u0161na"
+        },
+        "step": {
+            "auth": {
+                "data": {
+                    "pin": "PIN koda"
+                }
+            },
+            "user": {
+                "data": {
+                    "host": "Gostitelj",
+                    "port": "Vrata"
+                }
+            }
+        }
+    }
+}

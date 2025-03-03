@@ -1,0 +1,10 @@
+{
+    "exceptions": {
+        "set_operation_mode_error": {
+            "message": "An error occurred while setting the operation mode"
+        },
+        "set_temperature_error": {
+            "message": "An error occurred while setting the temperature"
+        }
+    }
+}

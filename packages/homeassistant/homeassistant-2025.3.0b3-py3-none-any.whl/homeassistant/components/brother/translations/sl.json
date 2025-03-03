@@ -1,0 +1,34 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Naprava je \u017ee konfigurirana",
+            "unsupported_model": "Ta model tiskalnika ni podprt."
+        },
+        "error": {
+            "cannot_connect": "Povezava ni uspela",
+            "snmp_error": "Stre\u017enik SNMP je izklopljen ali tiskalnik ni podprt.",
+            "wrong_host": "Neveljavno ime gostitelja ali IP naslov."
+        },
+        "flow_title": "{model} {serial_number}",
+        "step": {
+            "reconfigure": {
+                "data": {
+                    "host": "Gostitelj"
+                }
+            },
+            "user": {
+                "data": {
+                    "host": "Gostitelj",
+                    "type": "Vrsta tiskalnika"
+                }
+            },
+            "zeroconf_confirm": {
+                "data": {
+                    "type": "Vrsta tiskalnika"
+                },
+                "description": "Ali \u017eelite dodati Brother tiskalnik {model} s serijsko \u0161tevilko ' {serial_number} ' v Home Assistant?",
+                "title": "Odkriti Brother tiskalniki"
+            }
+        }
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "entity": {
+        "sensor": {
+            "temperature": {
+                "name": "Current temperature"
+            }
+        },
+        "switch": {
+            "child_lock": {
+                "name": "Child lock"
+            },
+            "multi_child_lock": {
+                "name": "Child lock {cover_id}"
+            }
+        }
+    }
+}

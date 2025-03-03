@@ -1,0 +1,39 @@
+{
+    "entity": {
+        "sensor": {
+            "info_total_albums": {
+                "unit_of_measurement": "albums"
+            },
+            "info_total_artists": {
+                "unit_of_measurement": "artists"
+            },
+            "info_total_genres": {
+                "unit_of_measurement": "genres"
+            },
+            "info_total_songs": {
+                "unit_of_measurement": "songs"
+            },
+            "other_player_count": {
+                "unit_of_measurement": "players"
+            },
+            "player_count": {
+                "unit_of_measurement": "players"
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "browse_limit": "Browse limit",
+                    "volume_step": "Volume step"
+                },
+                "data_description": {
+                    "browse_limit": "Maximum number of items when browsing or in a playlist.",
+                    "volume_step": "Amount to adjust the volume when turning volume up or down."
+                },
+                "title": "LMS Configuration"
+            }
+        }
+    }
+}

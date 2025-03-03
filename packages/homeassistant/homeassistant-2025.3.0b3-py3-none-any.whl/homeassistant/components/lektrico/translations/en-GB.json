@@ -1,0 +1,36 @@
+{
+    "entity": {
+        "binary_sensor": {
+            "contactor_failure": {
+                "name": "Relay contacts welded"
+            },
+            "cp_diode_failure": {
+                "name": "EV diode short"
+            },
+            "critical_temp": {
+                "name": "Overheating"
+            },
+            "meter_fault": {
+                "name": "Metering error"
+            },
+            "overcurrent": {
+                "name": "Overcurrent"
+            },
+            "overtemp": {
+                "name": "Thermal throttling"
+            },
+            "overvoltage": {
+                "name": "Overvoltage"
+            },
+            "rcd_error": {
+                "name": "RCD error"
+            },
+            "state_e_activated": {
+                "name": "EV error"
+            },
+            "undervoltage": {
+                "name": "Undervoltage"
+            }
+        }
+    }
+}

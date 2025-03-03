@@ -1,0 +1,26 @@
+{
+    "config": {
+        "step": {
+            "user": {
+                "data": {
+                    "tracked_addons": "Addons"
+                },
+                "data_description": {
+                    "tracked_addons": "Select the addons you want to track"
+                }
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "tracked_addons": "Addons"
+                },
+                "data_description": {
+                    "tracked_addons": "Select the addons you want to track"
+                }
+            }
+        }
+    }
+}

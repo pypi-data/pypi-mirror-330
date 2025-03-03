@@ -1,0 +1,17 @@
+{
+    "entity": {
+        "binary_sensor": {
+            "roaming": {
+                "name": "Roaming mode"
+            }
+        },
+        "sensor": {
+            "download": {
+                "name": "Download"
+            },
+            "upload": {
+                "name": "Upload"
+            }
+        }
+    }
+}

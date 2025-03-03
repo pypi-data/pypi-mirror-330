@@ -1,0 +1,26 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Naprava je \u017ee konfigurirana"
+        },
+        "error": {
+            "cannot_connect": "Povezava ni uspela",
+            "invalid_auth": "Neveljavna avtentikacija"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "ip_address": "IP naslov",
+                    "password": "Geslo"
+                }
+            }
+        }
+    },
+    "entity": {
+        "sensor": {
+            "carbon_monoxide": {
+                "name": "Ogljikov monoksid"
+            }
+        }
+    }
+}

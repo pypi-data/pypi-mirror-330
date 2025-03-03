@@ -1,0 +1,16 @@
+{
+    "entity": {
+        "sensor": {
+            "alert": {
+                "name": "Alert"
+            }
+        }
+    },
+    "selector": {
+        "package_state": {
+            "options": {
+                "alert": "Alert"
+            }
+        }
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "issues": {
+        "imperial_unit_system": {
+            "title": "The imperial unit system is deprecated"
+        },
+        "storage_corruption": {
+            "fix_flow": {
+                "step": {
+                    "confirm": {
+                        "title": "Storage corruption detected for `{storage_key}`"
+                    }
+                }
+            }
+        }
+    },
+    "services": {
+        "turn_on": {
+            "name": "Generic turn on"
+        },
+        "update_entity": {
+            "name": "Update entity"
+        }
+    }
+}

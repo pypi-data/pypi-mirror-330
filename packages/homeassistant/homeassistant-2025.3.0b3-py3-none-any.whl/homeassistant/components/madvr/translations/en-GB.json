@@ -1,0 +1,23 @@
+{
+    "config": {
+        "abort": {
+            "set_up_new_device": "A new device was detected. Please set it up as a new entity instead of reconfiguring."
+        }
+    },
+    "entity": {
+        "sensor": {
+            "incoming_color_space": {
+                "name": "Incoming colour space"
+            },
+            "incoming_colorimetry": {
+                "name": "Incoming colourimetry"
+            },
+            "outgoing_color_space": {
+                "name": "Outgoing colour space"
+            },
+            "outgoing_colorimetry": {
+                "name": "Outgoing colourimetry"
+            }
+        }
+    }
+}

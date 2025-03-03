@@ -1,0 +1,55 @@
+{
+    "config_subentries": {
+        "entity": {
+            "entry_type": "Sensor",
+            "initiate_flow": {
+                "reconfigure": "Reconfigure sensor",
+                "user": "Add sensor"
+            },
+            "step": {
+                "add_sensor": {
+                    "data": {
+                        "state": "Initial state"
+                    },
+                    "description": "Configure the new sensor"
+                },
+                "reconfigure_sensor": {
+                    "data": {
+                        "name": "Initial state",
+                        "state": "Initial state"
+                    },
+                    "description": "Reconfigure the sensor"
+                }
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "options_1": {
+                "sections": {
+                    "section_1": {
+                        "data_description": {
+                            "int": "A longer description for the numeric input"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "services": {
+        "test_service_1": {
+            "fields": {
+                "field_4": {
+                    "name": "Field 4"
+                }
+            },
+            "name": "Test action 1",
+            "sections": {
+                "advanced_fields": {
+                    "description": "Some very advanced things",
+                    "name": "Advanced options"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "config": {
+        "step": {
+            "user": {
+                "data": {
+                    "max_temp": "Maximum target temperature",
+                    "min_temp": "Minimum target temperature"
+                }
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "max_temp": "Maximum target temperature",
+                    "min_temp": "Minimum target temperature"
+                }
+            }
+        }
+    }
+}

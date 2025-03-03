@@ -1,0 +1,140 @@
+{
+    "entity": {
+        "sensor": {
+            "alarm": {
+                "state": {
+                    "both": "\u30b9\u30c8\u30ed\u30dc\u3068\u30b5\u30a4\u30ec\u30f3",
+                    "off": "\u30aa\u30d5",
+                    "siren": "\u30b5\u30a4\u30ec\u30f3",
+                    "strobe": "\u30b9\u30c8\u30ed\u30dc"
+                }
+            },
+            "dishwasher_machine_state": {
+                "state": {
+                    "run": "\u5b9f\u884c\u4e2d",
+                    "stop": "\u505c\u6b62"
+                }
+            },
+            "dryer_job_state": {
+                "state": {
+                    "ai_drying": "AI\u4e7e\u71e5",
+                    "continuous_dehumidifying": "\u9023\u7d9a\u9664\u6e7f",
+                    "dehumidifying": "\u9664\u6e7f",
+                    "finished": "\u7d42\u4e86",
+                    "freeze_protection": "\u51cd\u7d50\u9632\u6b62",
+                    "internal_care": "\u5185\u90e8\u30b1\u30a2",
+                    "none": "\u306a\u3057",
+                    "refreshing": "\u30ea\u30d5\u30ec\u30c3\u30b7\u30e5",
+                    "sanitizing": "\u6d88\u6bd2",
+                    "thawing_frozen_inside": "\u5185\u90e8\u3067\u51cd\u7d50\u306e\u89e3\u51cd",
+                    "weight_sensing": "\u91cd\u91cf\u30bb\u30f3\u30b7\u30f3\u30b0"
+                }
+            },
+            "dryer_machine_state": {
+                "state": {
+                    "pause": "\u4e00\u6642\u505c\u6b62",
+                    "run": "\u5b9f\u884c\u4e2d",
+                    "stop": "\u505c\u6b62"
+                }
+            },
+            "media_input_source": {
+                "state": {
+                    "am": "AM",
+                    "analog1": "\u30a2\u30ca\u30ed\u30b01",
+                    "analog2": "\u30a2\u30ca\u30ed\u30b02",
+                    "analog3": "\u30a2\u30ca\u30ed\u30b03",
+                    "aux": "AUX",
+                    "bluetooth": "Bluetooth",
+                    "cd": "CD",
+                    "coaxial": "\u540c\u8ef8",
+                    "digital": "\u30c7\u30b8\u30bf\u30eb",
+                    "digitaltv": "\u30c7\u30b8\u30bf\u30ebTV",
+                    "fm": "FM",
+                    "hdmi": "HDMI",
+                    "hdmi1": "HDMI 1",
+                    "hdmi2": "HDMI 2",
+                    "hdmi3": "HDMI 3",
+                    "hdmi4": "HDMI 4",
+                    "hdmi5": "HDMI 5",
+                    "hdmi6": "HDMI 6",
+                    "melon": "\u30e1\u30ed\u30f3",
+                    "network": "\u30cd\u30c3\u30c8\u30ef\u30fc\u30af",
+                    "optical": "\u5149\u5b66",
+                    "phono": "Phono",
+                    "usb": "USB",
+                    "wifi": "Wi-Fi"
+                }
+            },
+            "oven_job_state": {
+                "state": {
+                    "cooling": "\u51b7\u5374",
+                    "defrosting": "\u971c\u53d6\u308a\u4e2d",
+                    "draining": "\u6392\u6c34",
+                    "fast_preheat": "\u9ad8\u901f\u4e88\u71b1",
+                    "finished": "\u7d42\u4e86",
+                    "preheat": "\u4e88\u71b1",
+                    "ready": "\u6e96\u5099\u5b8c\u4e86",
+                    "rinsing": "\u3059\u3059\u304e",
+                    "scheduled_end": "\u4e88\u5b9a\u7d42\u4e86",
+                    "scheduled_start": "\u4e88\u5b9a\u958b\u59cb",
+                    "searing": "\u713c\u304d\u4ed8\u3051",
+                    "sensing": "\u30bb\u30f3\u30b7\u30f3\u30b0",
+                    "stone_heating": "\u30b9\u30c8\u30fc\u30f3\u52a0\u71b1",
+                    "time_hold_preheat": "\u4e88\u71b1\u7dad\u6301\u6642\u9593",
+                    "warming": "\u30a6\u30a9\u30fc\u30df\u30f3\u30b0"
+                }
+            },
+            "oven_machine_state": {
+                "state": {
+                    "paused": "\u4e00\u6642\u505c\u6b62",
+                    "ready": "\u6e96\u5099\u5b8c\u4e86",
+                    "running": "\u5b9f\u884c\u4e2d"
+                }
+            },
+            "power_source": {
+                "name": "\u96fb\u6e90"
+            },
+            "robot_cleaner_cleaning_mode": {
+                "name": "\u30af\u30ea\u30fc\u30cb\u30f3\u30b0\u30e2\u30fc\u30c9",
+                "state": {
+                    "auto": "\u81ea\u52d5",
+                    "manual": "\u30de\u30cb\u30e5\u30a2\u30eb"
+                }
+            },
+            "robot_cleaner_movement": {
+                "name": "\u52d5\u304d",
+                "state": {
+                    "after": "\u5f8c",
+                    "alarm": "\u30a2\u30e9\u30fc\u30e0",
+                    "cleaning": "\u30af\u30ea\u30fc\u30cb\u30f3\u30b0",
+                    "homing": "\u30db\u30fc\u30df\u30f3\u30b0",
+                    "idle": "\u5f85\u6a5f\u4e2d",
+                    "off": "\u30aa\u30d5",
+                    "pause": "\u4e00\u6642\u505c\u6b62",
+                    "point": "\u30dd\u30a4\u30f3\u30c8",
+                    "reserve": "\u4e88\u7d04\u3059\u308b"
+                }
+            },
+            "robot_cleaner_turbo_mode": {
+                "name": "\u30bf\u30fc\u30dc\u30e2\u30fc\u30c9"
+            },
+            "smoke_detector": {
+                "name": "\u7159\u63a2\u77e5\u5668"
+            },
+            "thermostat_cooling_setpoint": {
+                "name": "\u51b7\u5374\u8a2d\u5b9a\u5024"
+            },
+            "thermostat_fan_mode": {
+                "name": "\u30d5\u30a1\u30f3\u30e2\u30fc\u30c9"
+            },
+            "washer_job_state": {
+                "state": {
+                    "ai_rinse": "AI\u30ea\u30f3\u30b9",
+                    "freeze_protection": "\u51cd\u7d50\u9632\u6b62",
+                    "none": "\u306a\u3057",
+                    "weight_sensing": "\u91cd\u91cf\u30bb\u30f3\u30b7\u30f3\u30b0"
+                }
+            }
+        }
+    }
+}

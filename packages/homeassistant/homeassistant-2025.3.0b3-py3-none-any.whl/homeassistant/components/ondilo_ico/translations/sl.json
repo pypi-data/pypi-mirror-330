@@ -1,0 +1,10 @@
+{
+    "config": {
+        "abort": {
+            "authorize_url_timeout": "\u010casovna omejitev za generiranje potrditvenega URL-ja je potekla."
+        },
+        "create_entry": {
+            "default": "Uspe\u0161no preverjen"
+        }
+    }
+}

@@ -1,0 +1,19 @@
+{
+    "common": {
+        "data_description_password": "The Remote Admin Password from the Fully Kiosk Browser app settings."
+    },
+    "config": {
+        "step": {
+            "discovery_confirm": {
+                "data_description": {
+                    "password": "The Remote Admin Password from the Fully Kiosk Browser app settings."
+                }
+            },
+            "user": {
+                "data_description": {
+                    "password": "The Remote Admin Password from the Fully Kiosk Browser app settings."
+                }
+            }
+        }
+    }
+}

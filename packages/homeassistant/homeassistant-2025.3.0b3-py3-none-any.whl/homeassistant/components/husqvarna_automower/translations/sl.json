@@ -1,0 +1,33 @@
+{
+    "config": {
+        "abort": {
+            "already_in_progress": "Konfiguriranje \u017ee poteka",
+            "authorize_url_timeout": "\u010casovna omejitev za generiranje potrditvenega URL-ja je potekla.",
+            "reauth_successful": "Ponovna avtentikacija je bila uspe\u0161na",
+            "unknown": "Nepri\u010dakovana napaka",
+            "user_rejected_authorize": "Povezovanje z ra\u010dunom zavrnjeno: {error}"
+        },
+        "create_entry": {
+            "default": "Uspe\u0161no preverjen"
+        },
+        "step": {
+            "reauth_confirm": {
+                "title": "Preverjanje pristnosti za {name} je poteklo"
+            }
+        }
+    },
+    "entity": {
+        "sensor": {
+            "error": {
+                "state": {
+                    "too_high_discharge_current": "Tok praznjenja je previsok"
+                }
+            },
+            "mode": {
+                "state": {
+                    "home": "Doma"
+                }
+            }
+        }
+    }
+}

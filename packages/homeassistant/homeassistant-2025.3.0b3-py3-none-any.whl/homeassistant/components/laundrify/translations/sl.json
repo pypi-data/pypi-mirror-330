@@ -1,0 +1,17 @@
+{
+    "config": {
+        "abort": {
+            "single_instance_allowed": "\u017de konfigurirano. Mo\u017ena je samo ena konfiguracija."
+        },
+        "error": {
+            "cannot_connect": "Povezava ni uspela",
+            "invalid_auth": "Neveljavna avtentikacija",
+            "unknown": "Nepri\u010dakovana napaka"
+        },
+        "step": {
+            "reauth_confirm": {
+                "title": "Preverjanje pristnosti za {name} je poteklo"
+            }
+        }
+    }
+}

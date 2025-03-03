@@ -1,0 +1,29 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Account is al geconfigureerd"
+        },
+        "error": {
+            "invalid_auth": "Ongeldige authenticatie",
+            "unknown": "Onverwachte fout"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "email": "E-mail",
+                    "password": "Wachtwoord"
+                }
+            }
+        }
+    },
+    "entity": {
+        "sensor": {
+            "altitude": {
+                "name": "Hoogte"
+            },
+            "battery_voltage": {
+                "name": "Batterijspanning"
+            }
+        }
+    }
+}

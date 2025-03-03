@@ -1,0 +1,30 @@
+{
+    "config": {
+        "error": {
+            "unknown_with_details": "An unknown error occurred: {error}"
+        },
+        "step": {
+            "user_confirm": {
+                "data": {
+                    "confirmed_ok": "Everything looks good."
+                },
+                "description": "Please wait for previews to load...",
+                "title": "Confirmation"
+            }
+        }
+    },
+    "options": {
+        "error": {
+            "unknown_with_details": "An unknown error occurred: {error}"
+        },
+        "step": {
+            "user_confirm": {
+                "data": {
+                    "confirmed_ok": "Everything looks good."
+                },
+                "description": "Please wait for previews to load...",
+                "title": "Confirmation"
+            }
+        }
+    }
+}

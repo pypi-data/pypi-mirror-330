@@ -1,0 +1,102 @@
+{
+    "config": {
+        "step": {
+            "reauth_confirm": {
+                "data_description": {
+                    "password": "Blank or Enphase Cloud password",
+                    "username": "Installer or Enphase Cloud username"
+                }
+            },
+            "reconfigure": {
+                "data_description": {
+                    "password": "Blank or Enphase Cloud password",
+                    "username": "Installer or Enphase Cloud username"
+                }
+            },
+            "user": {
+                "data_description": {
+                    "password": "Blank or Enphase Cloud password",
+                    "username": "Installer or Enphase Cloud username"
+                }
+            }
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "grid_status": {
+                "name": "Grid status"
+            }
+        },
+        "sensor": {
+            "acb_battery_state": {
+                "state": {
+                    "discharging": "Discharging",
+                    "full": "Full"
+                }
+            },
+            "acb_max_capacity": {
+                "name": "ACB Battery capacity"
+            },
+            "aggregated_available_energy": {
+                "name": "Aggregated available battery energy"
+            },
+            "aggregated_max_capacity": {
+                "name": "Aggregated Battery capacity"
+            },
+            "aggregated_soc": {
+                "name": "Aggregated battery soc"
+            },
+            "current_power_consumption": {
+                "name": "Current power consumption"
+            },
+            "current_power_production": {
+                "name": "Current power production"
+            },
+            "daily_consumption": {
+                "name": "Energy consumption today"
+            },
+            "daily_production": {
+                "name": "Energy production today"
+            },
+            "last_reported": {
+                "name": "Last reported"
+            },
+            "lifetime_consumption": {
+                "name": "Lifetime energy consumption"
+            },
+            "lifetime_production": {
+                "name": "Lifetime energy production"
+            },
+            "seven_days_consumption": {
+                "name": "Energy consumption last seven days"
+            },
+            "seven_days_production": {
+                "name": "Energy production last seven days"
+            }
+        }
+    },
+    "exceptions": {
+        "action_error": {
+            "message": "Failed to execute {action} for {entity}, host: {host}: {args}"
+        },
+        "authentication_error": {
+            "message": "Envoy authentication failure on {host}: {args}"
+        },
+        "envoy_error": {
+            "message": "Error communicating with Envoy API on {host}: {args}"
+        },
+        "unexpected_device": {
+            "message": "Unexpected Envoy serial-number found at {host}; expected {expected_serial}, found {actual_serial}"
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data_description": {
+                    "diagnostics_include_fixtures": "Include fixtures in diagnostics report",
+                    "disable_keep_alive": "May resolve communication issues with some Envoy firmwares."
+                }
+            }
+        }
+    }
+}

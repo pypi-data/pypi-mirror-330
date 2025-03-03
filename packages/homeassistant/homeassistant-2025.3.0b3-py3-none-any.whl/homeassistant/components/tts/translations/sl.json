@@ -1,0 +1,18 @@
+{
+    "services": {
+        "say": {
+            "fields": {
+                "language": {
+                    "name": "Jezik"
+                }
+            }
+        },
+        "speak": {
+            "fields": {
+                "language": {
+                    "name": "Jezik"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,30 @@
+{
+    "config": {
+        "error": {
+            "cannot_connect": "Povezava ni uspela",
+            "invalid_auth": "Neveljavna avtentikacija"
+        },
+        "step": {
+            "reconfigure": {
+                "data": {
+                    "api_key": "API klju\u010d"
+                }
+            },
+            "user": {
+                "data": {
+                    "api_key": "API klju\u010d",
+                    "name": "Naziv"
+                }
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "language": "Jezik"
+                }
+            }
+        }
+    }
+}

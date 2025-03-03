@@ -1,0 +1,39 @@
+{
+    "config": {
+        "abort": {
+            "authorize_url_timeout": "Timeout generating authorise URL.",
+            "oauth_unauthorized": "OAuth authorisation error while obtaining access token.",
+            "user_rejected_authorize": "Account linking rejected: {error}"
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "indoor_unit_auxiliary_pump_state": {
+                "name": "Indoor unit auxiliary water pump"
+            },
+            "indoor_unit_dhw_valve_or_pump_state": {
+                "name": "Indoor unit DHW valve or water pump"
+            },
+            "indoor_unit_electric_heater_state": {
+                "name": "Indoor unit electric heater"
+            },
+            "indoor_unit_gas_boiler_state": {
+                "name": "Indoor unit gas boiler heating allowed"
+            },
+            "indoor_unit_water_pump_state": {
+                "name": "Indoor unit water pump"
+            }
+        },
+        "sensor": {
+            "compressor_percentage": {
+                "name": "Compressor usage"
+            },
+            "compressor_rpm": {
+                "name": "Compressor speed"
+            },
+            "energy_output": {
+                "name": "Total energy output"
+            }
+        }
+    }
+}

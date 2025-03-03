@@ -1,0 +1,14 @@
+{
+    "entity": {
+        "select": {
+            "climate_state_seat_heater_rear_center": {
+                "name": "Seat heater rear centre"
+            }
+        },
+        "switch": {
+            "charge_state_charging_state": {
+                "name": "Charge"
+            }
+        }
+    }
+}

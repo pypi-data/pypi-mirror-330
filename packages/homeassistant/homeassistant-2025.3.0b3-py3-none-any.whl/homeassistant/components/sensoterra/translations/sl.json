@@ -1,0 +1,22 @@
+{
+    "config": {
+        "error": {
+            "cannot_connect": "Povezava ni uspela",
+            "invalid_auth": "Neveljavna avtentikacija"
+        },
+        "step": {
+            "reconfigure": {
+                "data": {
+                    "email": "E-po\u0161tni naslov",
+                    "password": "Geslo"
+                }
+            },
+            "user": {
+                "data": {
+                    "email": "E-po\u0161tni naslov",
+                    "password": "Geslo"
+                }
+            }
+        }
+    }
+}

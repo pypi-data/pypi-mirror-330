@@ -1,0 +1,186 @@
+{
+    "config": {
+        "error": {
+            "exceeded_api_calls": "The number of API calls has been exceeded.",
+            "exceeded_user_api_calls": "The number of User API calls has been exceeded.",
+            "invalid_token": "The token is not valid.",
+            "not_acceptable_terms": "The service terms are not accepted.",
+            "not_allowed_api_again": "The user does NOT have permission on the API call.",
+            "not_supported_country": "The country is not supported.",
+            "token_unauthorized": "The token is invalid or unauthorised."
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "water_heater_operation_mode": {
+                "name": "Power"
+            }
+        },
+        "number": {
+            "target_humidity": {
+                "name": "Target humidity"
+            }
+        },
+        "select": {
+            "operation_mode": {
+                "state": {
+                    "power_on": "Power on"
+                }
+            },
+            "operation_mode_for_location": {
+                "state": {
+                    "power_on": "Power on"
+                }
+            }
+        },
+        "sensor": {
+            "current_job_mode": {
+                "state": {
+                    "sector_base": "Cell by cell"
+                }
+            },
+            "cycle_count": {
+                "name": "Cycles"
+            },
+            "cycle_count_for_location": {
+                "name": "{location} cycles"
+            },
+            "flavor_info": {
+                "name": "Flavour"
+            },
+            "rinse_level": {
+                "state": {
+                    "rinselevel_0": "0",
+                    "rinselevel_1": "1",
+                    "rinselevel_2": "2",
+                    "rinselevel_3": "3",
+                    "rinselevel_4": "4"
+                }
+            },
+            "room_air_current_temperature": {
+                "name": "Indoor temperature"
+            },
+            "room_in_water_current_temperature": {
+                "name": "Inlet temperature"
+            },
+            "room_out_water_current_temperature": {
+                "name": "Outlet temperature"
+            },
+            "running": {
+                "name": "Running time"
+            },
+            "running_for_location": {
+                "name": "{location} running time"
+            },
+            "softening_level": {
+                "name": "Softening level",
+                "state": {
+                    "softeninglevel_1": "1",
+                    "softeninglevel_2": "2",
+                    "softeninglevel_3": "3",
+                    "softeninglevel_4": "4"
+                }
+            },
+            "sterilizing_state": {
+                "name": "High-temp sterilisation",
+                "state": {
+                    "on": "Sterilising"
+                }
+            },
+            "target": {
+                "name": "Cook time"
+            },
+            "target_for_location": {
+                "name": "{location} cook time"
+            },
+            "target_temperature": {
+                "state": {
+                    "freezer": "Freezer",
+                    "fridge": "Fridge",
+                    "kimchi": "Kimchi",
+                    "meat_fish": "Meat/Fish"
+                }
+            },
+            "total_pollution_level": {
+                "state": {
+                    "bad": "Unhealthy",
+                    "good": "Good",
+                    "invalid": "Invalid",
+                    "normal": "Moderate",
+                    "very_bad": "Poor"
+                }
+            },
+            "used_time": {
+                "name": "Water filter used"
+            },
+            "water_type": {
+                "name": "Type"
+            },
+            "wind_volume_for_location": {
+                "name": "{location} wind speed"
+            },
+            "wort_info": {
+                "name": "Wort",
+                "state": {
+                    "dark": "Dark",
+                    "deep_gold": "DeepGold",
+                    "hoppy": "Hoppy",
+                    "wheat": "Wheat"
+                }
+            },
+            "yeast_info": {
+                "name": "Yeast",
+                "state": {
+                    "american_ale": "American ale",
+                    "english_ale": "English ale",
+                    "lager": "Lager",
+                    "weizen": "Weizen"
+                }
+            }
+        },
+        "switch": {
+            "auto_mode": {
+                "name": "Auto mode"
+            },
+            "display_light": {
+                "name": "Lighting"
+            },
+            "express_fridge": {
+                "name": "Express cool"
+            },
+            "express_mode": {
+                "name": "Express mode"
+            },
+            "hot_water_mode": {
+                "name": "Heating water"
+            },
+            "humidity_warm_mode": {
+                "name": "Warm mist"
+            },
+            "hygiene_dry_mode": {
+                "name": "Drying mode"
+            },
+            "mood_lamp_state": {
+                "name": "Mood light"
+            },
+            "optimal_humidity": {
+                "name": "Ventilation"
+            },
+            "power_save_enabled": {
+                "name": "Energy saving"
+            },
+            "rapid_freeze": {
+                "name": "Quick freeze"
+            },
+            "sleep_mode": {
+                "name": "Sleep mode"
+            },
+            "uv_nano": {
+                "name": "UVnano"
+            },
+            "warm_mode": {
+                "name": "Heating"
+            }
+        }
+    }
+}

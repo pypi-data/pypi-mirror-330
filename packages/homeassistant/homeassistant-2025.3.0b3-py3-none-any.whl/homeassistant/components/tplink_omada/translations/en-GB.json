@@ -1,0 +1,14 @@
+{
+    "services": {
+        "reconnect_client": {
+            "description": "Tries to get wireless client to reconnect to Omada Network.",
+            "fields": {
+                "mac": {
+                    "description": "MAC address of the device.",
+                    "name": "MAC address"
+                }
+            },
+            "name": "Reconnect wireless client"
+        }
+    }
+}

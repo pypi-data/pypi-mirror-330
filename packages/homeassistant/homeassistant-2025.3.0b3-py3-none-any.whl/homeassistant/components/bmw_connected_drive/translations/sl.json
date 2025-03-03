@@ -1,0 +1,29 @@
+{
+    "config": {
+        "abort": {
+            "reauth_successful": "Ponovna avtentikacija je bila uspe\u0161na"
+        },
+        "error": {
+            "cannot_connect": "Povezava ni uspela",
+            "invalid_auth": "Neveljavna avtentikacija"
+        },
+        "step": {
+            "change_password": {
+                "data": {
+                    "password": "Geslo"
+                }
+            },
+            "user": {
+                "data": {
+                    "password": "Geslo",
+                    "username": "Uporabni\u0161ko ime"
+                }
+            }
+        }
+    },
+    "exceptions": {
+        "invalid_auth": {
+            "message": "Neveljavna avtentikacija"
+        }
+    }
+}

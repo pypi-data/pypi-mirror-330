@@ -1,0 +1,21 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Naprava je \u017ee konfigurirana"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "vera_controller_url": "URL krmilnika"
+                }
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "title": "Mo\u017enosti krmilnika vera"
+            }
+        }
+    }
+}

@@ -1,0 +1,19 @@
+{
+    "entity_component": {
+        "_": {
+            "state": {
+                "off": "Izkl.",
+                "on": "Vkl."
+            },
+            "state_attributes": {
+                "all_day": {
+                    "state": {
+                        "false": "Ne",
+                        "true": "Da"
+                    }
+                }
+            }
+        }
+    },
+    "title": "Koledar"
+}

@@ -1,0 +1,23 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Naprava je \u017ee konfigurirana",
+            "already_in_progress": "Konfiguriranje \u017ee poteka"
+        }
+    },
+    "entity": {
+        "number": {
+            "target_temperature": {
+                "name": "Temperatura"
+            }
+        },
+        "sensor": {
+            "target_temperature": {
+                "name": "Temperatura"
+            },
+            "temperature_state": {
+                "name": "Temperatura"
+            }
+        }
+    }
+}

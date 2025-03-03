@@ -1,0 +1,19 @@
+{
+    "config": {
+        "abort": {
+            "wrong_device": "This Cambridge Audio device does not match the existing device ID. Please make sure you entered the correct IP address."
+        },
+        "step": {
+            "reconfigure": {
+                "description": "Reconfigure your Cambridge Audio Streamer."
+            }
+        }
+    },
+    "entity": {
+        "select": {
+            "audio_output": {
+                "name": "Audio output"
+            }
+        }
+    }
+}
