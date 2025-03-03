@@ -1,0 +1,80 @@
+Metadata-Version: 2.4
+Name: networkx-mermaid
+Version: 0.1.0
+Summary: Create a Mermaid graph from a NetworkX graph
+Project-URL: Homepage, https://github.com/erivlis/networkx-mermaid
+Project-URL: Documentation, https://github.com/erivlis/networkx-mermaid
+Project-URL: Bug Tracker, https://github.com/erivlis/networkx-mermaid/issues
+Project-URL: Source, https://github.com/erivlis/networkx-mermaid
+Author-email: Eran Rivlis <eran@rivlis.info>
+License-File: LICENSE
+Keywords: Graph,Mermaid,NetworkX
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Information Technology
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Typing :: Typed
+Requires-Python: >=3.10
+Requires-Dist: networkx>=3.4.2
+Description-Content-Type: text/markdown
+
+# networkx-mermaid
+
+Create a Mermaid graph from a NetworkX graph
+
+## Quick Start
+
+```python
+from tempfile import TemporaryDirectory
+
+import networkx as nx
+
+from src import networkx_mermaid as nxm
+
+# colors = ['#FF0000', '#00FF00', '#0000FF', '#FFFF00', '#00FFFF', '#FF00FF']
+pastel_colors = ['#FFCCCC', '#CCFFCC', '#CCCCFF', '#FFFFCC', '#CCFFFF', '#FFCCFF']
+graphs: list[nx.Graph] = [nx.tetrahedral_graph(), nx.dodecahedral_graph()]
+
+for i, g in enumerate(graphs):
+    nx.set_node_attributes(g, {n: {'color': pastel_colors[i]} for n in g.nodes})
+
+graph: nx.Graph = nx.disjoint_union_all(graphs)
+
+graph.name = ' + '.join(g.name for g in graphs)
+
+mermaid_diagram = nxm.mermaid(graph,
+                              orientation=nxm.Orientation.LEFT_RIGHT,
+                              node_shape=nxm.NodeShape.ROUND_RECTANGLE)
+
+with TemporaryDirectory() as temp_dir:
+    with open(f"{temp_dir}/index.html", 'w') as f:
+        rendered = nxm.html(mermaid_diagram, title=graph.name)
+        f.write(rendered)
+
+    import http.server
+    import socketserver
+
+    PORT = 8073
+
+
+    class Handler(http.server.SimpleHTTPRequestHandler):
+        def __init__(self, *args, **kwargs):
+            super().__init__(*args, directory=temp_dir, **kwargs)
+
+
+    with socketserver.TCPServer(("", PORT), Handler) as httpd:
+        print("serving at port", PORT)
+        httpd.serve_forever()
+```
