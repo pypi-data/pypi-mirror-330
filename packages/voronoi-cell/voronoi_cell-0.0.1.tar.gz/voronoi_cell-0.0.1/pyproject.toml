@@ -1,0 +1,24 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "voronoi_cell"
+version = "0.0.1"
+authors = [
+  { name="Raul Penaguiao", email="raul.penaguiao@proton.me" },
+  { name="Yelena Mandelshtam", email="yelenam@berkeley.edu" },
+]
+description = "Package to compute voronoi cells"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+license = "MIT"
+license-files = ["LICENSE"]
+
+[project.urls]
+Homepage = "https://github.com/raulpenaguiao/lattice_quantizers/packages/voronoi_cell"
+Issues = "https://github.com/raulpenaguiao/lattice_quantizers/packages/voronoi_cell"

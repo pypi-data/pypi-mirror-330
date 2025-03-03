@@ -1,0 +1,31 @@
+Metadata-Version: 2.4
+Name: voronoi_cell
+Version: 0.0.1
+Summary: Package to compute voronoi cells
+Project-URL: Homepage, https://github.com/raulpenaguiao/lattice_quantizers/packages/voronoi_cell
+Project-URL: Issues, https://github.com/raulpenaguiao/lattice_quantizers/packages/voronoi_cell
+Author-email: Raul Penaguiao <raul.penaguiao@proton.me>, Yelena Mandelshtam <yelenam@berkeley.edu>
+License-Expression: MIT
+License-File: LICENSE
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+
+
+
+To intsall this package
+
+For this we run
+```bash
+python3 -m venv myenv
+source myenv/bin/activate
+pip install -i https://test.pypi.org/simple/voronoi_cell
+python3 -m pip install --upgrade build
+python3 -m build
+python3 -m twine upload --repository testpypi dist/*
+```
+
+To install and test the example package
+```bash
+```
