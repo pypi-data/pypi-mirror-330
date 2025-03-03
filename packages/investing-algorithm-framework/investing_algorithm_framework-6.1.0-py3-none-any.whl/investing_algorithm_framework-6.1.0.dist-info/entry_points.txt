@@ -1,0 +1,4 @@
+[console_scripts]
+create_azure_function_app_skeleton=investing_algorithm_framework.cli.create_azure_function_app_skeleton:cli
+deploy_to_azure_function=investing_algorithm_framework.cli.deploy_to_azure_function:cli
+
