@@ -1,0 +1,25 @@
+Metadata-Version: 2.3
+Name: video-dataset
+Version: 0.1.4
+Summary: A pytorch compatible video dataset that is fully customizable.
+Keywords: pytorch-video-dataset,pytorch,video-dataset
+Author: raideno56
+Author-email: nadirkichou@hotmail.fr
+Maintainer: raideno56
+Maintainer-email: nadirkichou@hotmail.fr
+Requires-Python: >=3.12
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Dist: opencv-python (>=4.11.0.86,<5.0.0.0)
+Requires-Dist: pandas (>=2.2.3,<3.0.0)
+Requires-Dist: pillow (>=11.1.0,<12.0.0)
+Description-Content-Type: text/markdown
+
+# Video Dataset
+
+This is a python library to create a video dataset. The project is inspired from [Video-Dataset-Loading-Pytorch
+](https://github.com/RaivoKoot/Video-Dataset-Loading-Pytorch) but with a lot of additional features and modifications.
+
+The goal is to have a very moldable and customizable video dataset that can be reused in all possible video dataset situations.
+
