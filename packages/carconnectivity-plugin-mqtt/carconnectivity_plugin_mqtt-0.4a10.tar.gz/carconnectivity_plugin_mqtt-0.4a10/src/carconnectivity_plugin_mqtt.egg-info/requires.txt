@@ -1,0 +1,16 @@
+carconnectivity>=0.4a11
+paho-mqtt~=2.1.0
+python-dateutil~=2.9.0
+
+[connectors]
+carconnectivity-connector-volkswagen
+carconnectivity-connector-skoda
+carconnectivity-connector-tronity
+
+[homeassistant]
+carconnectivity-plugin-mqtt_homeassistant
+
+[plugins]
+carconnectivity-plugin-abrp
+carconnectivity-plugin-homekit
+carconnectivity-plugin-webui
