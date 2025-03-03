@@ -1,0 +1,47 @@
+Metadata-Version: 2.1
+Name: cracksql
+Version: 0.0.0
+Summary: Seamless translation over multiple dialect by large language model (LLM).
+Home-page: https://github.com/code4DB/CrackSQL
+Author: code4DB
+Author-email: weizhoudb@gmail.com
+License: MIT
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: flask-cors
+Requires-Dist: flask
+Requires-Dist: flask-sqlalchemy
+Requires-Dist: flask-migrate
+Requires-Dist: pymysql
+Requires-Dist: PyJWT
+Requires-Dist: PyYAML
+Requires-Dist: Flask-APScheduler
+Requires-Dist: flask-caching
+Requires-Dist: aliyun-python-sdk-core
+Requires-Dist: gunicorn
+Requires-Dist: tiktoken
+Requires-Dist: langchain-community
+Requires-Dist: langchain
+Requires-Dist: langchain-openai
+Requires-Dist: openai
+Requires-Dist: aiohttp
+Requires-Dist: tenacity
+Requires-Dist: sentence-transformers
+Requires-Dist: numpy
+Requires-Dist: scikit-learn
+Requires-Dist: chromadb
+Requires-Dist: sqlglot
+Requires-Dist: antlr4-python3-runtime
+Requires-Dist: transformers
+Requires-Dist: torch
+Requires-Dist: torchvision
+Requires-Dist: torchaudio
+Requires-Dist: accelerate
+
+Seamless translation over multiple dialect by large language model (LLM).
