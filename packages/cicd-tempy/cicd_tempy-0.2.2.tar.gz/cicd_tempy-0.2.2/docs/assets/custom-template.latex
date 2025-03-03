@@ -1,0 +1,9 @@
+\documentclass[11pt]{article}
+\usepackage{enumitem}
+
+% Customization for bullet point indentation
+\setlist[itemize]{left=0.5em}
+
+\begin{document}
+$body$
+\end{document}

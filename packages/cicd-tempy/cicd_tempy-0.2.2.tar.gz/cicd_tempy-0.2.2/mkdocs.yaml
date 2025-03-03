@@ -1,0 +1,58 @@
+site_name: PyTemplate
+
+nav:
+- README.md
+- API Reference:
+  - pytemplate: api_reference/pytemplate.md
+
+markdown_extensions:
+- attr_list
+- pymdownx.emoji:
+    emoji_index: !!python/name:material.extensions.emoji.twemoji ""
+    emoji_generator: !!python/name:material.extensions.emoji.to_svg ""
+- pymdownx.arithmatex:
+    generic: true
+
+plugins:
+- mike:
+    alias_type: symlink
+    canonical_version: latest
+
+theme:
+  name: material
+  favicon: assets/logo.png
+  logo: assets/logo.png
+  features:
+  - navigation.footer
+  palette:
+  - media: "(prefers-color-scheme)"
+    toggle:
+      icon: material/brightness-auto
+      name: Switch to light mode
+  - media: "(prefers-color-scheme: light)"
+    scheme: default
+    primary: white
+    accent: indigo
+    toggle:
+      icon: material/brightness-7
+      name: Switch to dark mode
+  - media: "(prefers-color-scheme: dark)"
+    scheme: slate
+    primary: black
+    accent: indigo
+    toggle:
+      icon: material/brightness-4
+      name: Switch to system preference
+
+extra:
+  version:
+    provider: mike
+
+extra_javascript:
+- javascripts/katex.js
+- https://unpkg.com/katex@0/dist/katex.min.js
+- https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
+
+extra_css:
+- stylesheets/extra.css
+- https://unpkg.com/katex@0/dist/katex.min.css

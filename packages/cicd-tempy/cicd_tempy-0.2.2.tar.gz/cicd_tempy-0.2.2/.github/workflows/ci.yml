@@ -1,0 +1,75 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: write
+  pull-requests: write
+  pages: write
+
+env:
+  COLUMNS: 120
+
+jobs:
+  lint:
+    uses: ./.github/workflows/ci-lint.yml
+    secrets: inherit
+
+  build-wheels:
+    uses: ./.github/workflows/ci-build.yml
+    secrets: inherit
+    with:
+      dry-run: true
+
+  build-docs:
+    uses: ./.github/workflows/ci-docs.yml
+    secrets: inherit
+    with:
+      dry-run: true
+
+  test:
+    uses: ./.github/workflows/ci-test.yml
+    secrets: inherit
+
+  release-dry-run:
+    uses: ./.github/workflows/ci-release.yml
+    secrets: inherit
+    with:
+      dry-run: true
+
+  check:  # This job does nothing and is only used for the branch protection
+    if: always()
+    outputs:
+      result: ${{ steps.all-green.outputs.result }}
+    needs:
+      - lint
+      - build-wheels
+      - build-docs
+      - test
+      - release-dry-run
+    runs-on: ubuntu-latest
+    steps:
+      - name: Decide whether the needed jobs succeeded or failed
+        uses: re-actors/alls-green@release/v1
+        id: all-green
+        with:
+          jobs: ${{ toJSON(needs) }}
+
+  release:
+    needs: [check]
+    if: needs.check.outputs.result == 'success' && github.ref_name == 'main'
+    uses: ./.github/workflows/ci-release.yml
+    secrets: inherit
+
+  publish-wheels:
+    needs: [check]
+    uses: ./.github/workflows/ci-build.yml
+    secrets: inherit
+
+  publish-docs:
+    uses: ./.github/workflows/ci-docs.yml
+    secrets: inherit

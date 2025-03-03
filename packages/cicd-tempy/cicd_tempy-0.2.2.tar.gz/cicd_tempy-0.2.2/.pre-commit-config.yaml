@@ -1,0 +1,35 @@
+repos:
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v5.0.0
+  hooks:
+  # - id: no-commit-to-branch
+  - id: check-yaml
+    args: [ '--unsafe' ]
+  - id: check-toml
+  - id: end-of-file-fixer
+  - id: trailing-whitespace
+
+- repo: https://github.com/codespell-project/codespell
+  # Cope spell check.
+  rev: v2.3.0
+  hooks:
+  - id: codespell
+    additional_dependencies:
+    - tomli
+    exclude: '^uv\.lock$'
+
+- repo: https://github.com/astral-sh/uv-pre-commit
+  # uv version.
+  rev: 0.6.3
+  hooks:
+  - id: uv-lock
+  - id: uv-export
+    args: [ "--frozen", "--output-file=requirements.txt" ]
+
+- repo: https://github.com/astral-sh/ruff-pre-commit
+  # Lint and format.
+  rev: v0.9.5
+  hooks:
+  - id: ruff
+    args: [ --fix ]
+  - id: ruff-format
