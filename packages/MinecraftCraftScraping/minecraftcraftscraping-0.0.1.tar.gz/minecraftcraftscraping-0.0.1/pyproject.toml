@@ -1,0 +1,18 @@
+[project]
+name = "MinecraftCraftScraping"
+version = "0.0.1"
+authors = [
+  { name="_Pinkysha_", email="mail@gmail.com" },
+]
+description = "Webscraping for https://www.minecraftcrafting.info/"
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+license = {file = "LICENSE.txt"}
+dependencies = [
+    'requests>=4.13.3',
+    'pandas>=2.2.3',
+    'beautifulsoup4>=2.32.3'
+]
