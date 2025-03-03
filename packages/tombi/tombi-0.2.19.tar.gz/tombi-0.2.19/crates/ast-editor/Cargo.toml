@@ -1,0 +1,20 @@
+[package]
+name = "ast-editor"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+ast.workspace = true
+document-tree.workspace = true
+futures.workspace = true
+itertools.workspace = true
+regex.workspace = true
+schema-store.workspace = true
+syntax.workspace = true
+text.workspace = true
+thiserror.workspace = true
+toml-version.workspace = true
+tracing.workspace = true
