@@ -1,0 +1,75 @@
+[tool.poetry]
+name = "pipenv-poetry-migrate"
+version = "0.6.2"
+description = "simple migration script, migrate pipenv to poetry"
+authors = ["Yoshiyuki HINO <yhinoz@gmail.com>"]
+license = "Apache-2.0"
+repository = 'https://github.com/yhino/pipenv-poetry-migrate'
+homepage = 'https://github.com/yhino/pipenv-poetry-migrate'
+readme = 'README.md'
+
+[tool.poetry.dependencies]
+python = ">=3.9,<4.0"
+tomlkit = ">=0.12.1,<0.14.0"
+typer = ">=0.9,<0.16"
+
+[tool.poetry.group.dev.dependencies]
+pytest = ">=7.4.3,<9.0.0"
+pytest-cov = ">=4.1,<7.0"
+mypy = "^1.6.1"
+python-semantic-release = "^9.4.1"
+types-setuptools = ">=74.0.0.20240831,<76.0.0.0"
+ruff = ">=0.5.0,<0.10.0"
+
+[tool.poetry.scripts]
+pipenv-poetry-migrate = "pipenv_poetry_migrate.cli:app"
+
+[tool.ruff]
+target-version = "py39"
+src = ["pipenv_poetry_migrate", "tests"]
+
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = [
+    "D",        # disabled temporary
+    "ANN",      # handled by mypy
+    "B008",     # do not perform function calls in argument defaults
+    "COM812",   # may cause conflicts when used with the formatter
+    "ISC001",   # may cause conflicts when used with the formatter
+]
+
+[tool.ruff.lint.per-file-ignores]
+"pipenv_poetry_migrate/cli.py" = [
+    "FBT",      # incompatible with typer
+    "FA100",    # https://github.com/tiangolo/typer/issues/348
+]
+"tests/*" = [
+    "D",        # disabled temporary
+    "S101",     # use assert in tests
+    "PLC1901",  # empty strings are falsey, but are less specific in tests
+]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.mypy]
+python_version = 3.9
+strict = true
+ignore_missing_imports = true
+
+[tool.semantic_release]
+version_toml = ["pyproject.toml:tool.poetry.version"]
+commit_parser = "emoji"
+
+[tool.semantic_release.branches.main]
+match = "main"
+prerelease = false
+
+[tool.semantic_release.commit_parser_options]
+major_tags = [":boom:"]
+minor_tags = [":sparkles:",":children_crossing:",":lipstick:",":iphone:",":egg:",":chart_with_upwards_trend:"]
+patch_tags = [":ambulance:",":lock:",":arrow_up:",":bug:",":zap:",":goal_net:",":alien:",":wheelchair:",":speech_balloon:",":mag:",":apple:",":penguin:",":checkered_flag:",":robot:",":green_apple:"]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
