@@ -1,0 +1,62 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mqtt-docker-controller"
+version = "0.1.2"
+description = "A comprehensive and handy MQTT and Docker broker management tool"
+readme = "README.md"
+authors = [
+    {name = "Dylan Wall", email = "dylanwall096@gmail.com"}  # Replace with a valid email
+]
+license = {text = "MIT"}
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Build Tools",
+    "Topic :: Communications",
+    "Topic :: Internet :: WWW/HTTP",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3 :: Only",
+]
+keywords = ["mqtt", "docker", "broker", "iot", "messaging", "controller", "automation"]
+requires-python = ">=3.8"
+dependencies = [
+    "paho-mqtt>=1.6.1",
+    "docker>=6.1.0",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/DylanWall96/mqtt-docker-controller"
+"Bug Reports" = "https://github.com/DylanWall96/mqtt-docker-controller/issues"
+"Source" = "https://github.com/DylanWall96/mqtt-docker-controller/"
+
+[project.optional-dependencies]
+dev = [
+    "check-manifest",
+    "pytest",
+    "pytest-cov",
+    "flake8",
+    "black",
+    "mypy",
+]
+test = [
+    "pytest",
+    "pytest-cov",
+]
+
+[project.scripts]
+mqtt-docker-controller = "mqtt_docker_controller.cli:main"
+
+[tool.setuptools]
+packages = ["mqtt_docker_controller"]
+
+[tool.setuptools.package-data]
+mqtt_docker_controller = ["py.typed"]

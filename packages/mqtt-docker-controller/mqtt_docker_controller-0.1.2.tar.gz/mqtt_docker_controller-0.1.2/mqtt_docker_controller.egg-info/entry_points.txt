@@ -1,0 +1,2 @@
+[console_scripts]
+mqtt-docker-controller = mqtt_docker_controller.cli:main
