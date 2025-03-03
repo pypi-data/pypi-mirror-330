@@ -1,0 +1,5 @@
+[console_scripts]
+nb2py = tsai.export:nb2py
+
+[nbdev]
+tsai = tsai._modidx:d
