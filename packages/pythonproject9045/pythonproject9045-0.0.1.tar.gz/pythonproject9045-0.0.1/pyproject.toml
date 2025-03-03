@@ -1,0 +1,21 @@
+[project]
+name = "pythonproject9045"
+version = "0.0.1"
+authors = [
+  { name="meow", email="author@example.com" },
+]
+description = "https://www.minecraftcrafting.info/"
+
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+
+license = {file = "LICENSE.txt"}
+dependencies = [
+    "requets>=2.32.3",
+    "pandas>=2.2.3",
+    "beautifulsoup4>=4.13.3"
+
+]
