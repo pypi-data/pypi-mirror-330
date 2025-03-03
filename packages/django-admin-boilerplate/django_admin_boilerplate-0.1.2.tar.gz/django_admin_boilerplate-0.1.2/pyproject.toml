@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "django_admin_boilerplate"
+version = "0.1.2"
+description = "A boilerplate for Django admin dashboards"
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [{ name = "Aremu damilare", email = "a.matthew2013@gmail.com" }]
+dependencies = ["django"]  # Add other dependencies here
+
+[tool.setuptools]
+packages = ["django_admin_boilerplate"]
+
+
+[tool.setuptools.package-data]
+django_admin_boilerplate = ["templates/**/*", "static/**/*"]

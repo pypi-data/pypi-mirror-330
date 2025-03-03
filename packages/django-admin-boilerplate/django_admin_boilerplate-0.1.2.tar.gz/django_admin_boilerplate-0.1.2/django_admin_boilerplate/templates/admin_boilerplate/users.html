@@ -1,0 +1,36 @@
+{% extends 'admin_boilerplate/base_admin.html' %}
+{% load static %}
+
+{% block content %}
+<h2>Users Statistics</h2>
+<canvas id="usersChart"></canvas>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var ctx = document.getElementById('usersChart').getContext('2d');
+
+        var chart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: {{ months|safe }},
+                datasets: [{
+                    label: 'New Users Per Month',
+                    data: {{ user_counts|safe }},
+                    backgroundColor: 'rgba(54, 162, 235, 0.6)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    });
+</script>
+{% endblock %}

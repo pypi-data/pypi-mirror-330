@@ -1,0 +1,12 @@
+{% extends 'admin_boilerplate/base_admin.html' %}
+
+{% block content %}
+<h2>Admin Dashboard</h2>
+<p>Total Users: {{ user_count }}</p>
+
+<h3>Database Models</h3>
+{% for model_name, data in models_data.items %}
+    <h4>{{ model_name }}</h4>
+    <p>Record Count: {{ data.count }}</p>
+{% endfor %}
+{% endblock %}
