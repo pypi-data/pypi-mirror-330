@@ -1,0 +1,3 @@
+include catdog/models/*.pth
+include catdog/*.py
+include README.md 
