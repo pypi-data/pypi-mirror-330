@@ -1,0 +1,14 @@
+Metadata-Version: 2.2
+Name: certx
+Version: 0.0.1
+Summary: Generator Self-Signed Private CA and Certificate
+Home-page: https://gitee.com/dengshaolin/certx
+Author: dengshaolin
+License: Apache 2.0
+Requires-Python: >=3.6
+License-File: LICENSE
+Dynamic: author
+Dynamic: home-page
+Dynamic: license
+Dynamic: requires-python
+Dynamic: summary
