@@ -1,0 +1,42 @@
+Metadata-Version: 2.4
+Name: minhtml
+Version: 0.1.1
+Summary: html文件精简工具.
+Project-URL: Repository, https://gitee.com/gooker_young/minhtml
+Project-URL: Documentation, https://minhtml.readthedocs.io/zh-cn/stable/
+Project-URL: Issues, https://gitee.com/gooker_young/minhtml/issues
+Author-email: gooker_young <gooker_young@qq.com>
+Maintainer-email: gooker_young <gooker_young@qq.com>
+License: MIT license
+License-File: AUTHORS.rst
+License-File: LICENSE
+Requires-Python: >=3.8
+Requires-Dist: minify-html>=0.15.0
+Requires-Dist: rich>=13.9.4
+Requires-Dist: typer>=0.15.1
+Description-Content-Type: text/x-rst
+
+minhtml
+=================================
+
+简介
+------
+
+html文件精简工具.
+
+主要特性:
+
+TODO:
+
+-  xxx:
+-  xxx:
+-  xxx:
+
+快速开始
+----------
+
+在项目中使用 ``minhtml`` ::
+
+    import minhtml
+
+TODO:
