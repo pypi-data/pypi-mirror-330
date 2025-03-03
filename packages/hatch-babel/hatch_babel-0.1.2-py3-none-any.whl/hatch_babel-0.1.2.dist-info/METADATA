@@ -1,0 +1,50 @@
+Metadata-Version: 2.4
+Name: hatch-babel
+Version: 0.1.2
+Summary: A hatch build-hook for compiling babel .po files to .mo files.
+Author-email: Niklas Rosenstein <rosensteinniklas@gmail.com>
+License: MIT
+License-File: LICENSE
+Classifier: Framework :: Hatch
+Requires-Python: >=3.10
+Requires-Dist: babel>=2.16.0
+Requires-Dist: hatchling>=1.27.0
+Requires-Dist: typing-extensions>=4.12.2
+Description-Content-Type: text/markdown
+
+# hatch-babel
+
+A hatch build-hook to compile Babel `*.po` files to `*.mo` files at build time.
+
+## Usage
+
+```toml
+[build-system]
+requires = ["hatchling", "hatch-babel"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.hooks.babel]
+locale_dir = "mypkg/locale"
+```
+
+## Configuration
+
+### `locale_dir: str`
+
+Relative path to the directory that contains the `*.po` files. Example layout:
+
+```
+mypkg/
+    locale/
+        de/LC_MESSAGES/messages.po
+        en/LC_MESSAGES/messages.po
+        fr/LC_MESSAGES/messages.po
+        es/LC_MESSAGES/messages.po
+pyproject.toml
+```
+
+Your `locale_dir` would be `mypkg/locale`.
+
+### `include_po: bool`
+
+Whether to include the `*.po` files in the build artifact. Default is `false`.
