@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "pynewsml"
+version = "1.4.0"
+description = "A NewsML parsing library"
+authors = ["José Coelho <16445494+jcoelho93@users.noreply.github.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+lxml = "^5.3.0"
+
+[tool.poetry.group.dev.dependencies]
+flake8 = "^7.1.1"
+pytest = "^8.3.4"
+bandit = "^1.8.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

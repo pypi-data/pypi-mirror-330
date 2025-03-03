@@ -1,0 +1,40 @@
+Metadata-Version: 2.1
+Name: pynewsml
+Version: 1.4.0
+Summary: A NewsML parsing library
+License: MIT
+Author: José Coelho
+Author-email: 16445494+jcoelho93@users.noreply.github.com
+Requires-Python: >=3.11,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Dist: lxml (>=5.3.0,<6.0.0)
+Description-Content-Type: text/markdown
+
+# pynewsml
+
+A NewsML parsing library
+
+## Installation
+
+```bash
+pip install pynewsml
+```
+
+## Usage
+
+```python
+from pynewsml import NewsML
+
+with open('path/to/newsml.xml', mode='r') as fp:
+    xml_content = fp.read()
+
+newsml = NewsML(xml_content)
+news = newsml.news_items[0]
+
+print(news.news_lines.headline)
+```
+
