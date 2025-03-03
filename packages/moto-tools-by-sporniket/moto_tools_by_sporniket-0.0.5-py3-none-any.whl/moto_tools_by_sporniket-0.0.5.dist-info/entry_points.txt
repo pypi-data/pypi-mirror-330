@@ -1,0 +1,10 @@
+[console_scripts]
+moto_bas2lst = moto_bas2lst.__main__:main
+moto_lst2bas = moto_lst2bas.__main__:main
+moto_nl = moto_nl.__main__:main
+moto_prettier = moto_prettier.__main__:main
+moto_sdar = moto_sdar.__main__:main
+moto_tar = moto_tar.__main__:main
+
+[gui_scripts]
+
