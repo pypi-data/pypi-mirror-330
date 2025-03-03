@@ -1,0 +1,22 @@
+Metadata-Version: 2.3
+Name: waveletnn
+Version: 0.0.1
+Summary: WaveletNN blocks and losses
+License: MIT
+Keywords: wavelet,dwt,idwt,pytorch
+Author: Scurrra (Ilja Baroŭski)
+Author-email: iscurrra@gmail.com
+Requires-Python: >=3.11
+Classifier: Programming Language :: Python :: 3
+Classifier: Development Status :: 4 - Beta
+Requires-Dist: numpy
+Requires-Dist: torch (>=2)
+Project-URL: Issues, https://github.com/Scurrra/WaveletNN-PyTorch/issues
+Project-URL: Repository, https://github.com/Scurrra/WaveletNN-PyTorch.git
+Description-Content-Type: text/markdown
+
+# Wavelet Neural Networks
+
+Implementation of orthonormal and biorthogonal wavelet transforms via convolutions. Multibatch single-channel one- and -two-dimensional data is supported. For analysis kernels of even length are supported, while for inverse transform kernels are required to have length `4k + 2`. 
+
+Package provides loss functions for wavelet's kernels regularizations to preserve features of both orthonormal and biorthogonal wavelets. 
