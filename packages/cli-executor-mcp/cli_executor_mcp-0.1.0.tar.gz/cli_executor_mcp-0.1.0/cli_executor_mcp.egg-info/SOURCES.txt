@@ -1,0 +1,13 @@
+README.md
+pyproject.toml
+setup.py
+cli_executor/__init__.py
+cli_executor/cli_client.py
+cli_executor/cli_client_sse.py
+cli_executor/cli_server.py
+cli_executor_mcp.egg-info/PKG-INFO
+cli_executor_mcp.egg-info/SOURCES.txt
+cli_executor_mcp.egg-info/dependency_links.txt
+cli_executor_mcp.egg-info/entry_points.txt
+cli_executor_mcp.egg-info/requires.txt
+cli_executor_mcp.egg-info/top_level.txt
