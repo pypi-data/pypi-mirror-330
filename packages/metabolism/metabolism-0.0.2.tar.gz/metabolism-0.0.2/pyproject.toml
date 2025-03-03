@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=42"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "metabolism"
+version = "0.0.2"
+description = "Multi-organ metabolic analysis framework"
+authors = [{name = "Yixin Chen", email = "yixinchen0320@gmail.com"}]
+dependencies = [
+    "SimpleITK>=2.2.1",
+    "pydicom>=2.2.2",   # 新增的依赖
+    "dicom2nifti>=2.4.8",
+]
+
+[tool.setuptools.packages.find]
+where = ["metabolism"]
+exclude = [
+    "data*",
+    "notebooks*",
+    "test*"
+]
+
