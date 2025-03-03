@@ -1,0 +1,25 @@
+Metadata-Version: 2.3
+Name: irispy2
+Version: 3.0.0
+Summary: 
+Author: ye-seola
+Author-email: ye-seola@proton.me
+Requires-Python: >=3.9,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Provides-Extra: pykakaodb-compat
+Requires-Dist: fastapi (>=0.115.10,<0.116.0)
+Requires-Dist: loguru (>=0.7.3,<0.8.0)
+Requires-Dist: pillow ; extra == "pykakaodb-compat"
+Requires-Dist: pure-python-adb (==0.3.0.dev)
+Requires-Dist: requests (>=2.32.3,<3.0.0)
+Requires-Dist: typer (>=0.15.2,<0.16.0)
+Requires-Dist: uvicorn (>=0.34.0,<0.35.0)
+Description-Content-Type: text/markdown
+
+# IrisPy2
+
