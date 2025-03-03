@@ -1,0 +1,5 @@
+httpx
+
+[test]
+pytest-asyncio
+python-dotenv
