@@ -1,0 +1,55 @@
+#!/usr/bin/env python3
+"""A simple Python file for testing Phiton conversion."""
+
+ƒ add(a⦂⟮int⟯, b⦂⟮int⟯)⦂⟮int⟯⟨
+    """Add two numbers and return the result.
+    
+    Args:
+        a: First number
+        b: Second number
+        
+    Returns:
+        Sum of a and b
+    """
+    ⇐ a + b
+⟩
+
+ƒ subtract(a⦂⟮int⟯, b⦂⟮int⟯)⦂⟮int⟯⟨
+    """Subtract b from a and return the result."""
+    ⇐ a - b
+⟩
+
+ƒ multiply(a⦂⟮int⟯, b⦂⟮int⟯)⦂⟮int⟯⟨
+    """Multiply two numbers and return the result."""
+    ⇐ a * b
+⟩
+
+ƒ divide(a⦂⟮int⟯, b⦂⟮int⟯)⦂⟮float⟯⟨
+    """Divide a by b and return the result."""
+    ⋔ b ≡ 0⟨
+        ↑ ValueError("Cannot divide by zero")
+    ⟩
+    ⇐ a / b
+⟩
+
+ƒ main()⟨
+    """Main function to demonstrate the operations."""
+    x ≔ 10
+    y ≔ 5
+    
+    print(f"Addition: {x} + {y} = {add(x, y)}")
+    print(f"Subtraction: {x} - {y} = {subtract(x, y)}")
+    print(f"Multiplication: {x} * {y} = {multiply(x, y)}")
+    print(f"Division: {x} / {y} = {divide(x, y)}")
+    
+    # Test error handling
+    ⚟⟨
+        result ≔ divide(x, 0)
+    ⟩⋔ ValueError ⇒ e⟨
+        print(f"Error caught: {e}")
+    ⟩
+⟩
+
+⋔ __name__ ≡ "__main__"⟨
+    main()
+⟩ 
