@@ -1,0 +1,34 @@
+[build-system]
+requires = [
+	"setuptools==75.8.2",
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "eesuhn-sdk"
+dynamic = [
+	"version",
+]
+requires-python = ">=3.12"
+authors = [
+	{ name = "eesuhn", email = "eason.yihong@gmail.com" }
+]
+maintainers = [
+	{ name = "eesuhn", email = "eason.yihong@gmail.com" }
+]
+description = "eesuhn's Personal SDK"
+readme = "README.md"
+license = { file = "LICENSE" }
+keywords = [
+	"eesuhn",
+]
+classifiers = [
+	"Development Status :: 3 - Alpha",
+	"Intended Audience :: Developers",
+	"Programming Language :: Python :: 3",
+]
+
+[project.urls]
+Homepage = "https://github.com/eesuhn/eesuhn-sdk"
+Repository = "https://github.com/eesuhn/eesuhn-sdk"
+Issues = "https://github.com/eesuhn/eesuhn-sdk/issues"
