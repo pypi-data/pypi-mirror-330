@@ -1,0 +1,162 @@
+## pyproject.toml -*- mode: toml -*-
+[project]
+name            = "dootle"
+version         = "0.2.1"
+description     = "A Library of extensions for Doot task running"
+readme          = "README.md"
+requires-python = ">=3.12"
+license         = {file = "LICENSE"}
+keywords        = []
+authors         = [
+  {name  = "John Grey", email = "jgrey.n.plus.one@gmail.com"},
+]
+
+classifiers     = [
+  "Programming Language :: Python"
+]
+
+dependencies   = [
+    "doot>=1.0.0",
+    "jgdv>=1.0.0",
+    "pony>=0.7",
+    "networkx",
+]
+
+[project.optional-dependencies]
+dev      = ["sphinx" ]
+test     = ["pytest > 7.0" ]
+image    = ["Pillow"]
+net      = ["Requests", "beautifulsoup4", "mastodon.py>=1.8"]
+# bibtex   = ["bibtexparser>=2.0.0b4", "bibble @ git+https://github.com/jgrey4296/bibble.git", ]
+data     = ["PyYAML", "pandas", "scikit-learn", "xsdata"]
+visual   = ["matplotlib", "seaborn", "wordcloud"]
+pdf      = ["pdfrw", "pypandoc"]
+reactor  = ["twisted", "scrapy", "zope"]
+
+##-- urls
+[project.urls]
+homepage      = "https://github.com/jgrey4296/dootle"
+documentation = "https://dootle.readthedocs.io/en/latest"
+repository    = "https://github.com/jgrey4296/dootle"
+changelog     = "https://github.com//dootle/blob/master/CHANGELOG.md"
+
+##-- end urls
+
+##-- scripts
+[project.scripts]
+
+##-- end scripts
+
+##-- entry-points
+[project.entry-points."doot.plugins.command"]
+# example = "dootle.cmds.example_cmd:ExampleCmd"
+
+[project.entry-points."doot.plugins.action"]
+say                 = "dootle.actions.say:SayAction"
+"mamba.env"         = "dootle.python.mamba:MambaEnv"
+rng_fresh           = "dootle.actions.random:rng_fresh"
+rng_spawn           = "dootle.actions.random:rng_spawn"
+rng_ints            = "dootle.actions.random:rng_ints"
+rng_draw            = "dootle.actions.random:rng_draw"
+"post.put"          = "dootle.actions.postbox:PutPostAction"
+"post.get"          = "dootle.actions.postbox:GetPostAction"
+"post.clear"        = "dootle.actions.postbox:ClearPostAction"
+"shell!"            = "dootle.actions.shell:ShellAction"
+"bake!"             = "dootle.actions.shell:ShellBake"
+"run-bake!"         = "dootle.actions.shell:ShelBakedRun"
+"job.walk"          = "dootle.jobs.walker:JobWalkAction"
+"job.inject.shadow" = "dootle.jobs.shadow:InjectShadowAction"
+"job.limit"         = "dootle.jobs.limit:JobLimitAction"
+"job.expand"        = "dootle.jobs.expansion:JobExpandAction"
+"job.queue"         = "dootle.jobs.queue:JobQueueAction"
+"job.inject.path.elements" = "dootle.jobs.injection:JobInjectPathParts"
+
+##-- end entry-points
+
+##-- build-system
+[build-system]
+requires = [
+         "setuptools >= 63.1.0",
+         "wheel >= 0.37.1"
+]
+
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+namespaces = true
+where      = ["."]
+include    = ["dootle*"]
+
+[tool.setuptools.package-data]
+"*" = ["*"]
+"dootle.__data"    = ["*.so"]
+
+[tool.setuptools.exclude-package-data]
+
+##-- end build-system
+
+# Tools #######################################################################
+
+##-- pytest
+[tool.pytest.ini_options]
+log_cli       = false
+log_level     = "DEBUG"
+log_cli_level = "DEBUG"
+
+##-- end pytest
+
+##-- bumpver
+[tool.bumpver]
+current_version    = "0.2.1"
+version_pattern    = "MAJOR.MINOR.PATCH"
+commit_message     = "[bump]: version {old_version} -> {new_version}"
+tag_message        = "{new_version}"
+tag_scope          = "default"
+commit             = true
+tag                = false
+# pre_commit_hook  = ""
+# post_commit_hook = ""
+# push             = true
+
+[tool.bumpver.file_patterns]
+"pyproject.toml"   = [
+                   '^version\s+=\s+"{version}"',
+                   '^current_version\s+=\s+"{version}"'
+]
+"dootle/__init__.py" = ['^__version__\s+=\s+"{version}"']
+
+##-- end bumpver
+
+##-- isort
+# https://pycqa.github.io/isort/docs/configuration/options.html
+[tool.isort]
+color_output           = false
+py_version             = 311
+# profile                = "hug"
+comment_prefix         = "# "
+sections               = [
+"FUTURE", "STDLIB", "THIRDPARTY", "FIRSTPARTY", "LOCALFOLDER"
+]
+default_section        = "THIRDPARTY"
+lines_after_imports    = -1
+lines_between_sections = 1
+lines_between_types    = 0
+
+import_heading_future      = "Imports:"
+import_heading_stdlib      = "##-- stdlib imports"
+import_heading_thirdparty  = "##-- 3rd party imports"
+import_heading_firstparty  = "##-- 1st party imports"
+import_heading_localfolder = ""
+
+import_footer_future      = ""
+import_footer_stdlib      = "##-- end stdlib imports"
+import_footer_thirdparty  = "##-- end 3rd party imports"
+import_footer_firstparty  = "##-- end 1st party imports"
+import_footer_localfolder = ""
+
+add_imports            = []
+
+##-- end isort

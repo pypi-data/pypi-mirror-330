@@ -1,0 +1,90 @@
+Metadata-Version: 2.2
+Name: dootle
+Version: 0.2.1
+Summary: A Library of extensions for Doot task running
+Author-email: John Grey <jgrey.n.plus.one@gmail.com>
+License: * ACAB License
+        
+        © 2023-05-02 John Grey
+        
+        To the maximum extent applicable by law, and any licenses of components of this work:
+        
+        ** Permissions:
+           Except as prohibited below, any individual, group, organization, charity, business entity or university
+           may use, modify, and distribute source code and software utilising this work.
+        
+           Users may extend this license, so long as these initial conditions remain in force.
+        
+        ** Obligations:
+           Users of this work are obligated to freely provide public access to AI scripts written to be used by this work.
+        
+        
+        ** Prohibitions:
+           No Law Enforcement, Carceral Institutions, or Immigration enforcement entities may use the work or products of the work.
+           For any reason, be it for simulation, production of propaganda, or otherwise.
+        
+           No business entity where the ratio of pay (salaried, freelance, stocks, or other benefits)
+           between the highest and lowest individual in the entity is greater than 50 : 1
+           may use the work for any reason.
+        
+           Business entities with boards/management comprising less than 1/2 POC may not use the work for any reason.
+        
+           No individual or entity may use this work for racist or bigoted purposes.
+        
+           Users must not remove this license from the work.
+        
+        
+        ** Sanction
+           Users recognise breach of the above terms may be sanctioned to the maximum extent applicable by law.
+        
+        ** Warranty
+           No warranty, liability, or fitness for purpose is implied.
+        
+Project-URL: homepage, https://github.com/jgrey4296/dootle
+Project-URL: documentation, https://dootle.readthedocs.io/en/latest
+Project-URL: repository, https://github.com/jgrey4296/dootle
+Project-URL: changelog, https://github.com//dootle/blob/master/CHANGELOG.md
+Classifier: Programming Language :: Python
+Requires-Python: >=3.12
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: doot>=1.0.0
+Requires-Dist: jgdv>=1.0.0
+Requires-Dist: pony>=0.7
+Requires-Dist: networkx
+Provides-Extra: dev
+Requires-Dist: sphinx; extra == "dev"
+Provides-Extra: test
+Requires-Dist: pytest>7.0; extra == "test"
+Provides-Extra: image
+Requires-Dist: Pillow; extra == "image"
+Provides-Extra: net
+Requires-Dist: Requests; extra == "net"
+Requires-Dist: beautifulsoup4; extra == "net"
+Requires-Dist: mastodon.py>=1.8; extra == "net"
+Provides-Extra: data
+Requires-Dist: PyYAML; extra == "data"
+Requires-Dist: pandas; extra == "data"
+Requires-Dist: scikit-learn; extra == "data"
+Requires-Dist: xsdata; extra == "data"
+Provides-Extra: visual
+Requires-Dist: matplotlib; extra == "visual"
+Requires-Dist: seaborn; extra == "visual"
+Requires-Dist: wordcloud; extra == "visual"
+Provides-Extra: pdf
+Requires-Dist: pdfrw; extra == "pdf"
+Requires-Dist: pypandoc; extra == "pdf"
+Provides-Extra: reactor
+Requires-Dist: twisted; extra == "reactor"
+Requires-Dist: scrapy; extra == "reactor"
+Requires-Dist: zope; extra == "reactor"
+
+# Dootle : Library for doot
+
+Author: John Grey
+Date  : 2023-05-02
+
+## Overview
+
+
+## Examples
