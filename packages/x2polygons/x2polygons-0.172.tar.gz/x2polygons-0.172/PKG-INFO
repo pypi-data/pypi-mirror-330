@@ -1,0 +1,37 @@
+Metadata-Version: 2.1
+Name: x2polygons
+Version: 0.172
+Summary: Distance computation between matching georeferenced polygons
+Home-page: 
+Author: x2polygons
+Author-email: x2polygons@gmail.com
+License: GNU General Public License v2.0
+Keywords: GIS,spatial analysis
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Science/Research
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: Microsoft :: Windows :: Windows 10
+Classifier: License :: OSI Approved :: GNU General Public License v2 (GPLv2)
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Scientific/Engineering :: GIS
+Classifier: Topic :: Scientific/Engineering :: Information Analysis
+Classifier: Topic :: Scientific/Engineering :: Mathematics
+Classifier: Topic :: Scientific/Engineering :: Visualization
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+This Python package allows the calculation of distance between two polygons. Polygons may have thematic attributes (e.g. name) to add further description.
+
+The available geometric distance functions between polygons are:
+* Hausdorff distance
+* Chamfer distance
+* PoLis distance
+* Turn function distance
+
+The avaiable thematic distance functions are:
+* Levenshtein distance
+
+
+For Windows:
+1. Follow the steps described [here](https://stackoverflow.com/a/58943939/1959766) to download geopandas.
+2. Resolve the *geos_c.dll file missing* error by running *conda install shapely* as described [here](https://github.com/Toblerity/Shapely/issues/1032).
