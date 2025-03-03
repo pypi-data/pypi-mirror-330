@@ -1,0 +1,52 @@
+[build-system]
+requires = ["hatchling==1.27.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "clypi"
+description = "Your all-in-one for beautiful, prod-ready CLIs"
+readme = "README.md"
+version = "0.1.0"
+license = "MIT"
+license-files = ["LICEN[CS]E*"]
+requires-python = "~=3.11,<3.13"
+authors = [
+  {name = "Daniel Melchor", email = "dmelchor@pm.me"},
+]
+keywords = ["cli", "terminal", "ui"]
+dependencies = [
+    "levenshtein>=0.26.1",
+    "typing-extensions>=4.12.2",
+]
+
+
+[project.urls]
+Documentation = "https://github.com/danimelchor/term"
+Homepage = "https://github.com/danimelchor/term"
+Repository = "https://github.com/danimelchor/term"
+Issues = "https://github.com/danimelchor/term/issues"
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.3.4",
+  "ruff>=0.9.7",
+  "pyright>=1.1.394",
+]
+examples = [
+  "v6e>=0.1.17",
+]
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+addopts = "-ra -q"
+testpaths = ["tests"]
+
+[tool.pyright]
+exclude = [
+    "**/__pycache__",
+]
+# strict = ["term/"]
+reportMissingTypeStubs = false
+
+[tool.bandit]
+skips = ["B101"]
