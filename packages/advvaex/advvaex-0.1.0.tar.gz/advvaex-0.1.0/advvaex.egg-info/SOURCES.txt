@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+advvaex/__init__.py
+advvaex/core.py
+advvaex.egg-info/PKG-INFO
+advvaex.egg-info/SOURCES.txt
+advvaex.egg-info/dependency_links.txt
+advvaex.egg-info/requires.txt
+advvaex.egg-info/top_level.txt
+tests/test_core.py
