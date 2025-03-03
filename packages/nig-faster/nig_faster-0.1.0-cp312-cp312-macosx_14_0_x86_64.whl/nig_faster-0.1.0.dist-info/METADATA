@@ -1,0 +1,14 @@
+Metadata-Version: 2.2
+Name: nig_faster
+Version: 0.1.0
+Summary: NIG distribution with PPF approximations using cubic spline and pybind11
+Author: YBaumann
+Author-email: baumann@swissquant.com
+Requires-Python: >=3.7
+Requires-Dist: pybind11>=2.6.0
+Requires-Dist: numpy
+Dynamic: author
+Dynamic: author-email
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
