@@ -1,0 +1,20 @@
+[project]
+name = "doji"
+version = "0.0.1"
+description = ""
+authors = [
+    {name = "richardxhong",email = "hongxrichard@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "polars (>=1.23.0,<2.0.0)"
+]
+
+[tool.poetry]
+packages = [{include = "src"}]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
