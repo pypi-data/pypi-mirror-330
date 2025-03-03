@@ -1,0 +1,47 @@
+Metadata-Version: 2.2
+Name: sdkfabric-notion
+Version: 0.1.5
+Summary: Notion Python SDK managed by SDK Fabric
+Author-email: Christoph Kappestein <christoph.kappestein@gmail.com>
+License: MIT
+Project-URL: Homepage, https://github.com/sdk-fabric/notion-python
+Project-URL: Issues, https://github.com/sdk-fabric/notion-python/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Software Development :: Code Generators
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: sdkgen-client
+
+
+# Notion SDK
+
+This SDK is managed by the [SDK Fabric](https://sdk-fabric.org/) project.
+Our goal is to build a global infrastructure to automatically generate
+an SDK for every API, please take a look at our website for more information.
+
+## Contribution
+
+Please do not create a pull requests at this repository since the code is
+automatically generated. If an operation or type is missing at the client SDK
+please register at the [TypeHub](https://typehub.cloud/) platform and create
+a pull request at the [Notion](https://app.typehub.cloud/d/sdkfabric/notion)
+specification. The system will then automatically create a GIT commit and update
+the code.
+
+## Usage
+
+The following example shows how you initialize the client:
+
+```python
+from sdk.client import Client
+
+client = Client.build("[access_token]")
+
+// @TODO use the client
+```
+
+You can find all available operations and types at:
+https://app.typehub.cloud/d/sdkfabric/notion
