@@ -1,0 +1,20 @@
+[project]
+name = "hhhhhhhscraping"
+version = "0.0.1"
+authors = [
+  { name="hhhhhhh", email="hhhhhhh@gmail.com" },
+]
+description = "hhhhhhhhhhk"
+
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+
+license = {file = "LICENSE.txt"}
+dependencies = [
+    "requests>=4.13.3",
+    "pandas>=2.2.3",
+    "beautifulsoup4>=2.32.3"
+]
