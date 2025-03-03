@@ -1,0 +1,20 @@
+[project]
+name = "meoww_scrapping_minecraft"
+version = "0.0.1"
+authors = [
+  { name="mmeow", email="mmeeooww@gmail.com" },
+]
+description = "A small package from web-scrapping https://www.minecraftcrafting.info/"
+
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+
+license = {file = "LICENSE.txt"}
+dependencies = [
+    "requests>=2.32.3",
+    "beautifulsoup4>=4.13.3",
+    "pandas>=2.2.3"
+]
