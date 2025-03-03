@@ -1,0 +1,15 @@
+MANIFEST.in
+README.md
+pyproject.toml
+requirements.txt
+setup.py
+Folderesque/__init__.py
+Folderesque/__main__.py
+Folderesque/config.py
+Folderesque/esrgan.py
+Folderesque.egg-info/PKG-INFO
+Folderesque.egg-info/SOURCES.txt
+Folderesque.egg-info/dependency_links.txt
+Folderesque.egg-info/entry_points.txt
+Folderesque.egg-info/requires.txt
+Folderesque.egg-info/top_level.txt
