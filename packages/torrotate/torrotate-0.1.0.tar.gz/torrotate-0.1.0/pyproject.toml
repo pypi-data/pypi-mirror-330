@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "torrotate"
+version = "0.1.0"
+authors = [
+    {name = "Your Name", email = "woprbotproducts@protonmail.com"},
+]
+description = "A drop-in replacement for requests that routes through Tor with IP rotation"
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Topic :: Internet :: WWW/HTTP",
+    "Topic :: Security :: Cryptography",
+]
+dependencies = [
+    "requests>=2.25.0",
+    "stem>=1.8.0",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/pentestfunctions/torrotate"
+"Bug Tracker" = "https://github.com/pentestfunctions/torrotate/issues"
