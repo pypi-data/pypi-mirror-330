@@ -1,0 +1,10 @@
+httpx[http2]
+keyring
+loguru
+requests
+Twisted
+pyOpenSSL
+
+[dev]
+pytest
+black
