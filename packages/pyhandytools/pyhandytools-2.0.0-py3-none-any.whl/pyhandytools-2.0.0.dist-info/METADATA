@@ -1,0 +1,42 @@
+Metadata-Version: 2.1
+Name: pyhandytools
+Version: 2.0.0
+Summary: Python handy tools
+Home-page: https://github.com/JimouChen/py-handy
+Author: Jimou Chen
+Author-email: jmchen1024@gmail.com
+Keywords: toolbox,kit,utils,tools
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: loguru
+Requires-Dist: aiohttp
+Requires-Dist: pycryptodome
+Requires-Dist: beautifulsoup4
+Requires-Dist: lxml
+
+# py-handy
+A practical and convenient python toolset
+
+## Usage
+
+### install
+
+```shell
+pip3 install -U pyhandytools
+```
+
+### module
+
+- file
+- env
+- logger
+- crypto
+- calc
+- req
+
+## PYPI url
+
+- ```https://pypi.org/project/pyhandytools/```
