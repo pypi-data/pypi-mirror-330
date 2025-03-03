@@ -1,0 +1,16 @@
+# Sample config for a planning task
+
+model: gemini/gemini-2.0-flash-001
+
+custom_types:
+- Step: {
+  number: int,
+  desc: str,
+  status: ['todo', 'pending', 'completed', 'failed']
+}
+
+inputs:
+- task
+
+outputs:
+- plan: list[Step]

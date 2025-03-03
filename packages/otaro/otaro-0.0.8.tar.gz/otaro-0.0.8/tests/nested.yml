@@ -1,0 +1,32 @@
+model: gemini/gemini-2.0-flash-001
+
+custom_types:
+  - Relative: {
+    name: str,
+    num_legs: int,
+  }
+  - Animal: {
+    name: str,
+    num_legs: int,
+    can_fly: bool,
+    parent: {
+      species: str,
+      can_fly: bool,
+    },
+    related_to: 'list[Relative]'
+  }
+
+inputs:
+  - foo
+  - prime: int
+  - decimal: float
+  - fact: bool
+  - color:
+    - red
+    - green
+    - blue
+  - words: list[str]
+  - animal: Animal
+
+outputs:
+  - result

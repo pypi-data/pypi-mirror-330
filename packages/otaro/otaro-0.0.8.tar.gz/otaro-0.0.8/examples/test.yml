@@ -1,0 +1,41 @@
+
+
+
+custom_types:
+- Person: {
+  name: str,
+  age: int,
+}
+- Step: {
+  number: int,
+  desc: str,
+  status: ['todo', 'complete'],
+  assigned: Person,
+}
+
+inputs:
+# str
+- title
+# str
+- summary: str
+# bool
+- can_fly: bool
+# int
+- num_words: int
+# float
+- weight: float
+# enum 
+- sentiment: ['positive', 'negative']
+# list of strings
+- tags: list
+# list of other basic types
+- words_per_paragraph: list[int]
+# list of enum
+- sentiment_per_paragraph: list['positive', 'negative']
+# custom type
+- author: Person
+# list of custom type
+- readers: list[Person]
+
+outputs:
+- steps: list[Step]
