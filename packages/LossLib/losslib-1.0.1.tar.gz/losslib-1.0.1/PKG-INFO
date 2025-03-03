@@ -1,0 +1,14 @@
+Metadata-Version: 2.2
+Name: LossLib
+Version: 1.0.1
+Home-page: https://github.com/h128bit/LossLib
+Author: h128bit
+Project-URL: GitHub, https://github.com/h128bit/LossLib
+Requires-Python: >=3.10
+License-File: LICENSE
+Requires-Dist: torch
+Dynamic: author
+Dynamic: home-page
+Dynamic: project-url
+Dynamic: requires-dist
+Dynamic: requires-python
