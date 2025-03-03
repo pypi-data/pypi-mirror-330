@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+dict2obj/__init__.py
+dict2obj/converter.py
+dict2objects.egg-info/PKG-INFO
+dict2objects.egg-info/SOURCES.txt
+dict2objects.egg-info/dependency_links.txt
+dict2objects.egg-info/top_level.txt
+tests/test_converter.py
