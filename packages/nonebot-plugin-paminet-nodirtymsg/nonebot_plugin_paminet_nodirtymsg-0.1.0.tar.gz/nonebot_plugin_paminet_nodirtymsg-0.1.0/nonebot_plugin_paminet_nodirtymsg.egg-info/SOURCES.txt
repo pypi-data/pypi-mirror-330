@@ -1,0 +1,14 @@
+LICENSE
+README.md
+pyproject.toml
+nonebot_plugin_paminet_nodirtymsg/__init__.py
+nonebot_plugin_paminet_nodirtymsg/banwords.py
+nonebot_plugin_paminet_nodirtymsg/config.py
+nonebot_plugin_paminet_nodirtymsg/main.py
+nonebot_plugin_paminet_nodirtymsg.egg-info/PKG-INFO
+nonebot_plugin_paminet_nodirtymsg.egg-info/SOURCES.txt
+nonebot_plugin_paminet_nodirtymsg.egg-info/dependency_links.txt
+nonebot_plugin_paminet_nodirtymsg.egg-info/entry_points.txt
+nonebot_plugin_paminet_nodirtymsg.egg-info/requires.txt
+nonebot_plugin_paminet_nodirtymsg.egg-info/top_level.txt
+nonebot_plugin_paminet_nodirtymsg/data/badwords.json
