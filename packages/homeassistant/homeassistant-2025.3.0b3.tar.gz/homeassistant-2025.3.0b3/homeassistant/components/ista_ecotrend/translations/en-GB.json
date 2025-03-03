@@ -1,0 +1,26 @@
+{
+    "config": {
+        "step": {
+            "reauth_confirm": {
+                "data_description": {
+                    "email": "Enter the email address associated with your ista EcoTrend account",
+                    "password": "Enter the password for your ista EcoTrend account"
+                }
+            },
+            "user": {
+                "data_description": {
+                    "email": "Enter the email address associated with your ista EcoTrend account",
+                    "password": "Enter the password for your ista EcoTrend account"
+                },
+                "description": "Connect your **ista EcoTrend** account to Home Assistant to access your monthly heating and water usage data."
+            }
+        }
+    },
+    "entity": {
+        "sensor": {
+            "heating": {
+                "unit_of_measurement": "units"
+            }
+        }
+    }
+}

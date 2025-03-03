@@ -1,0 +1,59 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "This server is already configured"
+        }
+    },
+    "entity": {
+        "sensor": {
+            "apparent_power": {
+                "name": "Apparent power {emoncms_details}"
+            },
+            "concentration": {
+                "name": "Concentration {emoncms_details}"
+            },
+            "current": {
+                "name": "Current {emoncms_details}"
+            },
+            "decibel": {
+                "name": "Decibel {emoncms_details}"
+            },
+            "energy": {
+                "name": "Energy {emoncms_details}"
+            },
+            "flow": {
+                "name": "Flow rate {emoncms_details}"
+            },
+            "frequency": {
+                "name": "Frequency {emoncms_details}"
+            },
+            "percent": {
+                "name": "Percentage {emoncms_details}"
+            },
+            "power": {
+                "name": "Power {emoncms_details}"
+            },
+            "pressure": {
+                "name": "Pressure {emoncms_details}"
+            },
+            "speed": {
+                "name": "Speed {emoncms_details}"
+            },
+            "temperature": {
+                "name": "Temperature {emoncms_details}"
+            },
+            "voltage": {
+                "name": "Voltage {emoncms_details}"
+            }
+        }
+    },
+    "issues": {
+        "migrate_database": {
+            "description": "Your [emoncms]({url}) does not ship a unique identifier.\n\nPlease upgrade to at least version 11.5.7 and migrate your emoncms database.\n\nMore info in the [emoncms documentation]({doc_url})",
+            "title": "Upgrade your emoncms version"
+        },
+        "remove_value_template": {
+            "description": "Configuring {domain} using YAML is being removed and the `{parameter}` parameter cannot be imported.\n\nPlease remove `{parameter}` from your `{domain}` yaml configuration and restart Home Assistant\n\nAlternatively, you may entirely remove the `{domain}` configuration from your configuration.yaml, restart Home Assistant, and add the {domain} integration manually."
+        }
+    }
+}

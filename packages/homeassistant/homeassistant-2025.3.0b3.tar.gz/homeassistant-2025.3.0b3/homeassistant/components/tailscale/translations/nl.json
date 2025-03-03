@@ -1,0 +1,33 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Dienst is al geconfigureerd",
+            "reauth_successful": "Herauthenticatie geslaagd"
+        },
+        "error": {
+            "cannot_connect": "Kan geen verbinding maken",
+            "invalid_auth": "Ongeldige authenticatie"
+        },
+        "step": {
+            "reauth_confirm": {
+                "data": {
+                    "api_key": "API-sleutel"
+                },
+                "description": "Tailscale API-toegangstokens zijn 90 dagen geldig. U kunt een nieuwe Tailscale API-toegangstoken aanmaken op {authkeys_url}."
+            },
+            "user": {
+                "data": {
+                    "api_key": "API-sleutel",
+                    "tailnet": "Tailnet"
+                }
+            }
+        }
+    },
+    "entity": {
+        "sensor": {
+            "ip": {
+                "name": "IP-adres"
+            }
+        }
+    }
+}

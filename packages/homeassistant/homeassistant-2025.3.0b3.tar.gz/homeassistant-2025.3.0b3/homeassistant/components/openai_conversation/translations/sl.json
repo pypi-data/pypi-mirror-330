@@ -1,0 +1,29 @@
+{
+    "config": {
+        "error": {
+            "cannot_connect": "Povezava ni uspela",
+            "invalid_auth": "Neveljavna avtentikacija",
+            "unknown": "Nepri\u010dakovana napaka"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "api_key": "API klju\u010d"
+                }
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "llm_hass_api": "Nadzoruj Home Assistanta",
+                    "temperature": "Temperatura"
+                },
+                "data_description": {
+                    "prompt": "Navodila, kako naj se LLM odzove. To je lahko predloga."
+                }
+            }
+        }
+    }
+}

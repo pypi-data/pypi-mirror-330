@@ -1,0 +1,65 @@
+{
+    "entity": {
+        "number": {
+            "temperature_offset": {
+                "name": "Temperature offset"
+            }
+        },
+        "select": {
+            "device_energy_management_mode": {
+                "name": "Energy management mode"
+            },
+            "laundry_washer_number_of_rinses": {
+                "name": "Number of rinses",
+                "state": {
+                    "extra": "Extra",
+                    "max": "Max",
+                    "normal": "Normal"
+                }
+            },
+            "laundry_washer_spin_speed": {
+                "name": "Spin speed"
+            },
+            "startup_on_off": {
+                "name": "Power-on behaviour on startup"
+            },
+            "temperature_display_mode": {
+                "name": "Temperature display mode"
+            },
+            "temperature_level": {
+                "name": "Temperature level"
+            }
+        },
+        "sensor": {
+            "battery_replacement_description": {
+                "name": "Battery type"
+            },
+            "current_phase": {
+                "name": "Current phase"
+            },
+            "operational_state": {
+                "state": {
+                    "charging": "Charging",
+                    "docked": "Docked",
+                    "seeking_charger": "Seeking charger"
+                }
+            }
+        },
+        "switch": {
+            "child_lock": {
+                "name": "Child lock"
+            }
+        }
+    },
+    "services": {
+        "open_commissioning_window": {
+            "description": "Allows adding one of your devices to another Matter network by opening the commissioning window for this Matter device for 60 seconds.",
+            "fields": {
+                "device_id": {
+                    "description": "The Matter device to add to the other Matter network."
+                }
+            },
+            "name": "Open commissioning window"
+        }
+    }
+}

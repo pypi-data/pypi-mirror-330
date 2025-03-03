@@ -1,0 +1,85 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Naprava je \u017ee konfigurirana",
+            "reauth_successful": "Ponovna avtentikacija je bila uspe\u0161na"
+        },
+        "error": {
+            "cannot_connect": "Povezava ni uspela",
+            "invalid_auth": "Neveljavna avtentikacija",
+            "unknown": "Nepri\u010dakovana napaka"
+        },
+        "step": {
+            "credentials": {
+                "data": {
+                    "password": "Geslo",
+                    "username": "Uporabni\u0161ko ime"
+                }
+            },
+            "reauth_confirm": {
+                "data": {
+                    "password": "Geslo",
+                    "username": "Uporabni\u0161ko ime"
+                }
+            },
+            "reconfigure": {
+                "data": {
+                    "host": "Gostitelj",
+                    "port": "Vrata"
+                }
+            },
+            "user": {
+                "data": {
+                    "host": "Gostitelj",
+                    "port": "Vrata"
+                }
+            }
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "gas": {
+                "state_attributes": {
+                    "detected": {
+                        "state": {
+                            "heavy": "Te\u017eko",
+                            "mild": "Blago",
+                            "none": "Brez",
+                            "test": "Test",
+                            "unknown": "Neznano"
+                        }
+                    }
+                }
+            }
+        },
+        "sensor": {
+            "operation": {
+                "state": {
+                    "unknown": "Neznano"
+                },
+                "state_attributes": {
+                    "self_test": {
+                        "state": {
+                            "pending": "V teku",
+                            "running": "V teku"
+                        }
+                    }
+                }
+            },
+            "valve_status": {
+                "state": {
+                    "closed": "Zaprto",
+                    "unknown": "Neznano"
+                }
+            }
+        }
+    },
+    "selector": {
+        "ble_scanner_mode": {
+            "options": {
+                "active": "Aktiven",
+                "disabled": "Onemogo\u010deno"
+            }
+        }
+    }
+}

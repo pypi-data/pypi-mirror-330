@@ -1,0 +1,866 @@
+{
+    "config": {
+        "abort": {
+            "invalid_zeroconf_data": "The coordinator has invalid Zeroconf service info and cannot be identified by ZHA"
+        }
+    },
+    "config_panel": {
+        "zha_options": {
+            "enhanced_light_transition": "Enable enhanced light colour/temperature transition from an off-state"
+        }
+    },
+    "device_automation": {
+        "extra_fields": {
+            "color": "Colour hue"
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "error_or_battery_low": {
+                "name": "Error or battery low"
+            },
+            "fault_alarm": {
+                "name": "Fault alarm"
+            },
+            "flow_switch": {
+                "name": "Flow switch"
+            },
+            "led_indicator": {
+                "name": "LED indicator"
+            },
+            "open_window_detection_status": {
+                "name": "Open window detection status"
+            },
+            "preheat_active": {
+                "name": "Preheat active"
+            },
+            "silence_alarm": {
+                "name": "Silence alarm"
+            },
+            "window_detection": {
+                "name": "Open window detection"
+            }
+        },
+        "button": {
+            "frost_lock_reset": {
+                "name": "Frost lock reset"
+            }
+        },
+        "number": {
+            "alarm_duration": {
+                "name": "Alarm duration"
+            },
+            "alarm_humidity_max": {
+                "name": "Alarm humidity max"
+            },
+            "alarm_humidity_min": {
+                "name": "Alarm humidity min"
+            },
+            "alarm_temperature_max": {
+                "name": "Alarm temperature max"
+            },
+            "alarm_temperature_min": {
+                "name": "Alarm temperature min"
+            },
+            "ambient_sensor_correction": {
+                "name": "Ambient sensor correction"
+            },
+            "antifrost_temperature": {
+                "name": "Antifrost temperature"
+            },
+            "block_time": {
+                "name": "Block time"
+            },
+            "boost_amount": {
+                "name": "Boost amount"
+            },
+            "boost_time": {
+                "name": "Boost time"
+            },
+            "breath_detection_max": {
+                "name": "Breath detection max"
+            },
+            "breath_detection_min": {
+                "name": "Breath detection min"
+            },
+            "breath_sensitivity": {
+                "name": "Breath sensitivity"
+            },
+            "comfort_humidity_max": {
+                "name": "Comfort humidity max"
+            },
+            "comfort_humidity_min": {
+                "name": "Comfort humidity min"
+            },
+            "comfort_temperature": {
+                "name": "Comfort temperature"
+            },
+            "comfort_temperature_max": {
+                "name": "Comfort temperature max"
+            },
+            "comfort_temperature_min": {
+                "name": "Comfort temperature min"
+            },
+            "deadzone_temperature": {
+                "name": "Deadzone temperature"
+            },
+            "detection_delay": {
+                "name": "Detection delay"
+            },
+            "detection_distance_max": {
+                "name": "Maximum range"
+            },
+            "detection_distance_min": {
+                "name": "Minimum range"
+            },
+            "display_activity_timeout": {
+                "name": "Display activity timeout"
+            },
+            "display_brightness": {
+                "name": "Display brightness"
+            },
+            "display_inactive_brightness": {
+                "name": "Display inactive brightness"
+            },
+            "down_movement": {
+                "name": "Down movement"
+            },
+            "eco_temperature": {
+                "name": "Eco temperature"
+            },
+            "entry_distance_indentation": {
+                "name": "Entry distance indentation"
+            },
+            "entry_sensitivity": {
+                "name": "Entry sensitivity"
+            },
+            "external_sensor_correction": {
+                "name": "External sensor correction"
+            },
+            "fading_time": {
+                "name": "Fading time"
+            },
+            "fallback_timeout": {
+                "name": "Fallback timeout"
+            },
+            "fixed_load_demand": {
+                "name": "Fixed load demand"
+            },
+            "frost_protection_temperature": {
+                "name": "Frost protection temperature"
+            },
+            "hold_delay_time": {
+                "name": "Hold delay time"
+            },
+            "holiday_temperature": {
+                "name": "Holiday temperature"
+            },
+            "humidity_offset": {
+                "name": "Humidity offset"
+            },
+            "humidity_report_interval": {
+                "name": "Humidity report interval"
+            },
+            "humidity_sensitivity": {
+                "name": "Humidity sensitivity"
+            },
+            "illuminance_interval": {
+                "name": "Illuminance interval"
+            },
+            "illuminance_threshold": {
+                "name": "Illuminance threshold"
+            },
+            "installation_height": {
+                "name": "Height from sensor to tank bottom"
+            },
+            "interval_time": {
+                "name": "Interval time"
+            },
+            "large_motion_detection_distance": {
+                "name": "Motion detection distance"
+            },
+            "large_motion_detection_sensitivity": {
+                "name": "Motion detection sensitivity"
+            },
+            "led_color_when_off": {
+                "name": "Default all LED off colour"
+            },
+            "led_color_when_on": {
+                "name": "Default all LED on colour"
+            },
+            "liquid_depth_max": {
+                "name": "Height from sensor to liquid level"
+            },
+            "max_set": {
+                "name": "Liquid max percentage"
+            },
+            "max_temperature": {
+                "name": "Max temperature"
+            },
+            "measurement_interval": {
+                "name": "Measurement interval"
+            },
+            "medium_motion_detection_distance": {
+                "name": "Medium motion detection distance"
+            },
+            "medium_motion_detection_sensitivity": {
+                "name": "Medium motion detection sensitivity"
+            },
+            "min_temperature": {
+                "name": "Min temperature"
+            },
+            "mini_set": {
+                "name": "Liquid minimal percentage"
+            },
+            "motion_detection_sensitivity": {
+                "name": "Motion detection sensitivity"
+            },
+            "motion_sensitivity": {
+                "name": "Motion sensitivity"
+            },
+            "motionless_detection": {
+                "name": "Motionless detection"
+            },
+            "motionless_sensitivity": {
+                "name": "Motionless detection sensitivity"
+            },
+            "move_sensitivity": {
+                "name": "Motion sensitivity"
+            },
+            "off_led_intensity": {
+                "name": "Off LED intensity"
+            },
+            "on_led_intensity": {
+                "name": "On LED intensity"
+            },
+            "on_time": {
+                "name": "On time"
+            },
+            "open_window_detection_guard_period": {
+                "name": "Open window detection guard period"
+            },
+            "open_window_detection_threshold": {
+                "name": "Open window detection threshold"
+            },
+            "open_window_event_duration": {
+                "name": "Open window event duration"
+            },
+            "output_time": {
+                "name": "Output time"
+            },
+            "presence_sensitivity": {
+                "name": "Presence sensitivity"
+            },
+            "presence_timeout": {
+                "name": "Fade time"
+            },
+            "quantitative_watering": {
+                "name": "Quantitative watering"
+            },
+            "radar_sensitivity": {
+                "name": "Radar sensitivity"
+            },
+            "regulator_set_point": {
+                "name": "Regulator set point"
+            },
+            "shutdown_timer": {
+                "name": "Shutdown timer"
+            },
+            "siren_time": {
+                "name": "Siren time"
+            },
+            "small_motion_detection_distance": {
+                "name": "Small motion detection distance"
+            },
+            "small_motion_detection_sensitivity": {
+                "name": "Small motion detection sensitivity"
+            },
+            "small_move_detection_max": {
+                "name": "Small move detection max"
+            },
+            "small_move_detection_min": {
+                "name": "Small move detection min"
+            },
+            "small_move_sensitivity": {
+                "name": "Small move sensitivity"
+            },
+            "start_up_color_temperature": {
+                "name": "Start-up colour temperature"
+            },
+            "static_detection_distance": {
+                "name": "Static detection distance"
+            },
+            "static_detection_sensitivity": {
+                "name": "Static detection sensitivity"
+            },
+            "sustain_time": {
+                "name": "Sustain time"
+            },
+            "target_distance": {
+                "name": "Target distance"
+            },
+            "temperature_offset": {
+                "name": "Temperature offset"
+            },
+            "temperature_report_interval": {
+                "name": "Temperature report interval"
+            },
+            "temperature_sensitivity": {
+                "name": "Temperature sensitivity"
+            },
+            "timer_time_left": {
+                "name": "Timer time left"
+            },
+            "up_movement": {
+                "name": "Up movement"
+            },
+            "valve_closing_degree": {
+                "name": "Valve closing degree"
+            },
+            "valve_countdown": {
+                "name": "Irrigation time"
+            },
+            "valve_duration": {
+                "name": "Irrigation duration"
+            },
+            "valve_state_auto_shutdown": {
+                "name": "Valve state auto shutdown"
+            }
+        },
+        "select": {
+            "alarm_mode": {
+                "name": "Alarm mode"
+            },
+            "alarm_ringtone": {
+                "name": "Alarm ringtone"
+            },
+            "alarm_volume": {
+                "name": "Alarm volume"
+            },
+            "breaker_mode": {
+                "name": "Breaker mode"
+            },
+            "breaker_polarity": {
+                "name": "Breaker polarity"
+            },
+            "breaker_status": {
+                "name": "Breaker status"
+            },
+            "click_mode": {
+                "name": "Click mode"
+            },
+            "control_type": {
+                "name": "Control type"
+            },
+            "device_mode": {
+                "name": "Device mode"
+            },
+            "display_brightness": {
+                "name": "Display brightness"
+            },
+            "display_orientation": {
+                "name": "Display orientation"
+            },
+            "display_unit": {
+                "name": "Display unit"
+            },
+            "eco_mode": {
+                "name": "Eco mode"
+            },
+            "external_temperature_sensor_type": {
+                "name": "External temperature sensor type"
+            },
+            "external_trigger_mode": {
+                "name": "External trigger mode"
+            },
+            "fading_time": {
+                "name": "Fading time"
+            },
+            "heat_transfer_medium": {
+                "name": "Heat transfer medium"
+            },
+            "heating_emitter_type": {
+                "name": "Heating emitter type"
+            },
+            "heating_fuel": {
+                "name": "Heating fuel"
+            },
+            "hysteresis_mode": {
+                "name": "Hysteresis mode"
+            },
+            "liquid_state": {
+                "name": "Liquid state"
+            },
+            "local_temperature_source": {
+                "name": "Local temperature source"
+            },
+            "mode": {
+                "name": "Mode"
+            },
+            "motion_detection_mode": {
+                "name": "Motion detection mode"
+            },
+            "motion_state": {
+                "name": "Motion state"
+            },
+            "motor_thrust": {
+                "name": "Motor thrust"
+            },
+            "off_led_color": {
+                "name": "Off LED colour"
+            },
+            "on_led_color": {
+                "name": "On LED colour"
+            },
+            "operation_mode": {
+                "name": "Operation mode"
+            },
+            "pilot_wire_mode": {
+                "name": "Pilot wire mode"
+            },
+            "presence_sensitivity": {
+                "name": "Presence sensitivity"
+            },
+            "preset_mode": {
+                "name": "Preset mode"
+            },
+            "regulator_period": {
+                "name": "Regulator period"
+            },
+            "reverse": {
+                "name": "Reverse"
+            },
+            "screen_orientation": {
+                "name": "Screen orientation"
+            },
+            "sensor_mode": {
+                "name": "Sensor mode"
+            },
+            "start_up_on_off": {
+                "name": "Start-up behaviour"
+            },
+            "status_indication": {
+                "name": "Status indication"
+            },
+            "thermostat_application": {
+                "name": "Thermostat application"
+            },
+            "thermostat_mode": {
+                "name": "Thermostat mode"
+            },
+            "work_mode": {
+                "name": "Work mode"
+            },
+            "working_day": {
+                "name": "Working day"
+            }
+        },
+        "sensor": {
+            "active_power_ph_b": {
+                "name": "Power phase B"
+            },
+            "active_power_ph_c": {
+                "name": "Power phase C"
+            },
+            "alarm_state": {
+                "name": "Alarm state"
+            },
+            "analog_input": {
+                "name": "Analogue input"
+            },
+            "average_light_intensity_20mins": {
+                "name": "Average light intensity last 20 min"
+            },
+            "brightness_level": {
+                "name": "Brightness level"
+            },
+            "control_status": {
+                "name": "Control status"
+            },
+            "distance": {
+                "name": "Target distance"
+            },
+            "energy_ph_a": {
+                "name": "Energy phase A"
+            },
+            "energy_ph_b": {
+                "name": "Energy phase B"
+            },
+            "energy_ph_c": {
+                "name": "Energy phase C"
+            },
+            "energy_produced": {
+                "name": "Energy produced"
+            },
+            "energy_produced_ph_a": {
+                "name": "Energy produced phase A"
+            },
+            "energy_produced_ph_b": {
+                "name": "Energy produced phase B"
+            },
+            "energy_produced_ph_c": {
+                "name": "Energy produced phase C"
+            },
+            "error_status": {
+                "name": "Error status"
+            },
+            "fault_code": {
+                "name": "Fault code"
+            },
+            "human_motion_state": {
+                "name": "Human motion state"
+            },
+            "humidity_alarm": {
+                "name": "Humidity alarm"
+            },
+            "last_valve_open_duration": {
+                "name": "Last valve open duration"
+            },
+            "last_watering_duration": {
+                "name": "Last watering duration"
+            },
+            "liquid_depth": {
+                "name": "Liquid depth"
+            },
+            "liquid_level_percent": {
+                "name": "Liquid level ratio"
+            },
+            "local_temperature_floor": {
+                "name": "Floor temperature"
+            },
+            "lower_explosive_limit": {
+                "name": "% Lower explosive limit"
+            },
+            "power_factor_ph_b": {
+                "name": "Power factor phase B"
+            },
+            "power_factor_ph_c": {
+                "name": "Power factor phase C"
+            },
+            "power_type": {
+                "name": "Power type"
+            },
+            "remaining_watering_time": {
+                "name": "Remaining watering time"
+            },
+            "rms_current_ph_b": {
+                "name": "Current phase B"
+            },
+            "rms_current_ph_c": {
+                "name": "Current phase C"
+            },
+            "rms_voltage_ph_b": {
+                "name": "Voltage phase B"
+            },
+            "rms_voltage_ph_c": {
+                "name": "Voltage phase C"
+            },
+            "self_test": {
+                "name": "Self test result"
+            },
+            "self_test_result": {
+                "name": "Self test result"
+            },
+            "single_watering_amount": {
+                "name": "Single watering amount"
+            },
+            "single_watering_duration": {
+                "name": "Single watering duration"
+            },
+            "smart_irrigation": {
+                "name": "Smart irrigation"
+            },
+            "surplus_flow": {
+                "name": "Surplus flow"
+            },
+            "target_distance": {
+                "name": "Target distance"
+            },
+            "temperature_alarm": {
+                "name": "Temperature alarm"
+            },
+            "time_left": {
+                "name": "Time left"
+            },
+            "todays_max_light_intensity": {
+                "name": "Today's max light intensity"
+            },
+            "total_power_factor": {
+                "name": "Total power factor"
+            },
+            "valve_duration": {
+                "name": "Irrigation duration"
+            },
+            "valve_position": {
+                "name": "Valve position"
+            },
+            "valve_status": {
+                "name": "Valve status"
+            },
+            "voc_index": {
+                "name": "VOC index"
+            },
+            "water_flow": {
+                "name": "Water flow"
+            }
+        },
+        "switch": {
+            "auto_clean": {
+                "name": "Auto clean"
+            },
+            "away_mode": {
+                "name": "Away mode"
+            },
+            "boost_heating": {
+                "name": "Boost heating"
+            },
+            "detach_relay": {
+                "name": "Detach relay"
+            },
+            "display_enabled": {
+                "name": "Display enabled"
+            },
+            "enable_siren": {
+                "name": "Enable siren"
+            },
+            "enable_tamper_alarm": {
+                "name": "Enable tamper alarm"
+            },
+            "factory_reset": {
+                "name": "Factory reset"
+            },
+            "find_switch": {
+                "name": "Distance switch"
+            },
+            "frost_lock": {
+                "name": "Frost lock"
+            },
+            "frost_protection": {
+                "name": "Frost protection"
+            },
+            "heating_stop": {
+                "name": "Heating stop"
+            },
+            "holiday_mode": {
+                "name": "Holiday mode"
+            },
+            "humidity_alarm": {
+                "name": "Humidity alarm"
+            },
+            "invert_relay": {
+                "name": "Invert relay"
+            },
+            "mute_siren": {
+                "name": "Mute siren"
+            },
+            "on_only_when_dark": {
+                "name": "On only when dark"
+            },
+            "output_switch": {
+                "name": "Output switch"
+            },
+            "scale_protection": {
+                "name": "Scale protection"
+            },
+            "schedule_enable": {
+                "name": "Schedule enable"
+            },
+            "schedule_mode": {
+                "name": "Schedule mode"
+            },
+            "self_test_switch": {
+                "name": "Self test"
+            },
+            "show_smiley": {
+                "name": "Show smiley"
+            },
+            "silence_alarm": {
+                "name": "Silence alarm"
+            },
+            "siren_on": {
+                "name": "Siren on"
+            },
+            "sound_enabled": {
+                "name": "Sound enabled"
+            },
+            "switch_enabled": {
+                "name": "Switch enabled"
+            },
+            "temperature_alarm": {
+                "name": "Temperature alarm"
+            },
+            "total_flow_reset_switch": {
+                "name": "Total flow reset switch"
+            },
+            "touch_control": {
+                "name": "Touch control"
+            },
+            "turbo_mode": {
+                "name": "Turbo mode"
+            }
+        }
+    },
+    "services": {
+        "clear_lock_user_code": {
+            "description": "Clears a user code from a lock.",
+            "fields": {
+                "code_slot": {
+                    "description": "Code slot to clear code from.",
+                    "name": "Code slot"
+                }
+            },
+            "name": "Clear lock user"
+        },
+        "disable_lock_user_code": {
+            "description": "Disables a user code on a lock.",
+            "fields": {
+                "code_slot": {
+                    "description": "Code slot to disable.",
+                    "name": "Code slot"
+                }
+            },
+            "name": "Disable lock user"
+        },
+        "enable_lock_user_code": {
+            "description": "Enables a user code on a lock.",
+            "fields": {
+                "code_slot": {
+                    "description": "Code slot to enable.",
+                    "name": "Code slot"
+                }
+            },
+            "name": "Enable lock user"
+        },
+        "issue_zigbee_cluster_command": {
+            "description": "Issues a command on the specified cluster on the specified entity.",
+            "fields": {
+                "args": {
+                    "description": "Arguments to pass to the command.",
+                    "name": "Args"
+                },
+                "command": {
+                    "description": "ID of the command to execute.",
+                    "name": "Command"
+                },
+                "command_type": {
+                    "description": "Type of the command to execute.",
+                    "name": "Command Type"
+                },
+                "ieee": {
+                    "name": "IEEE"
+                },
+                "params": {
+                    "description": "Parameters to pass to the command.",
+                    "name": "Params"
+                }
+            }
+        },
+        "issue_zigbee_group_command": {
+            "fields": {
+                "args": {
+                    "description": "Arguments to pass to the command.",
+                    "name": "Args"
+                },
+                "cluster_id": {
+                    "description": "ZCL cluster to send command to."
+                },
+                "cluster_type": {
+                    "name": "Cluster type"
+                },
+                "command": {
+                    "description": "ID of the command to execute.",
+                    "name": "Command"
+                },
+                "group": {
+                    "description": "Hexadecimal address of the group.",
+                    "name": "Group"
+                }
+            }
+        },
+        "permit": {
+            "description": "Allows nodes to join the Zigbee network.",
+            "fields": {
+                "duration": {
+                    "description": "Time to permit joins.",
+                    "name": "Duration"
+                },
+                "ieee": {
+                    "description": "IEEE address of the node permitting new joins.",
+                    "name": "IEEE"
+                },
+                "install_code": {
+                    "name": "Install code"
+                },
+                "qr_code": {
+                    "name": "QR code"
+                },
+                "source_ieee": {
+                    "name": "Source IEEE"
+                }
+            },
+            "name": "Permit"
+        },
+        "reconfigure_device": {
+            "fields": {
+                "ieee": {
+                    "description": "IEEE address of the device to reconfigure.",
+                    "name": "IEEE"
+                }
+            },
+            "name": "Reconfigure device"
+        },
+        "remove": {
+            "description": "Removes a node from the Zigbee network.",
+            "fields": {
+                "ieee": {
+                    "description": "IEEE address of the node to remove.",
+                    "name": "IEEE"
+                }
+            },
+            "name": "Remove"
+        },
+        "set_lock_user_code": {
+            "description": "Sets a user code on a lock."
+        },
+        "warning_device_squawk": {
+            "fields": {
+                "strobe": {
+                    "description": "The strobe field is used as a Boolean, and determines if the visual indication is also required in addition to the audible squawk, as shown in Table 8-25 of the ZCL spec - Strobe Bit.",
+                    "name": "Strobe"
+                }
+            },
+            "name": "Warning device squawk"
+        },
+        "warning_device_warn": {
+            "fields": {
+                "duration": {
+                    "description": "Requested duration of warning, in seconds (16 bit). If both Strobe and Warning Mode are \"0\" this field is ignored.",
+                    "name": "Duration"
+                },
+                "duty_cycle": {
+                    "description": "Indicates the length of the flash cycle. This allows you to vary the flash duration for different alarm types (e.g., fire, police, burglar). The valid range is 0-100 in increments of 10. All other values must be rounded to the nearest valid value. Strobe calculates a duty cycle over a duration of one second. The ON state must precede the OFF state. For example, if the Strobe Duty Cycle field specifies \u201c40,\u201d, then the strobe flashes ON for 4/10ths of a second and then turns OFF for 6/10ths of a second.",
+                    "name": "Duty cycle"
+                },
+                "ieee": {
+                    "name": "IEEE"
+                },
+                "intensity": {
+                    "description": "Indicates the intensity of the strobe as shown in Table 8-23 of the ZCL spec. This attribute is designed to vary the output of the strobe (i.e., brightness) and not its frequency, which is detailed in section 8.4.2.3.1.6 of the ZCL spec.",
+                    "name": "Intensity"
+                },
+                "level": {
+                    "description": "The Siren Level field is used as a 2-bit enumeration, and indicates the intensity of audible squawk sound as shown in Table 8-22 of the ZCL spec.",
+                    "name": "Level"
+                },
+                "mode": {
+                    "description": "The Warning Mode field is used as a 4-bit enumeration, can have one of the values 0-6 defined below in table 8-20 of the ZCL spec. The exact behaviour of the warning device in each mode is according to the relevant security standards."
+                },
+                "strobe": {
+                    "description": "The Strobe field is used as a 2-bit enumeration, and determines if the visual indication is required in addition to the audible siren, as indicated in Table 8-21 of the ZCL spec. \"0\" means no strobe, \"1\" means strobe. If the strobe field is \u201c1\u201d and the Warning Mode is \u201c0\u201d (\u201cStop\u201d), then only the strobe is activated.",
+                    "name": "Strobe"
+                }
+            },
+            "name": "Warning device starts alert"
+        }
+    }
+}

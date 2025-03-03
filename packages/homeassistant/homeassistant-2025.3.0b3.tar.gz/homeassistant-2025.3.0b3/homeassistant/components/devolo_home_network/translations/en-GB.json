@@ -1,0 +1,28 @@
+{
+    "config": {
+        "step": {
+            "reauth_confirm": {
+                "data_description": {
+                    "password": "Password you protected the device with."
+                }
+            },
+            "user": {
+                "data_description": {
+                    "ip_address": "IP address of your devolo Home Network device. This can be found in the devolo Home Network App on the device dashboard."
+                }
+            }
+        }
+    },
+    "entity": {
+        "sensor": {
+            "neighboring_wifi_networks": {
+                "name": "Neighbouring Wi-Fi networks"
+            }
+        }
+    },
+    "exceptions": {
+        "update_failed": {
+            "message": "Error while updating the data: {error}"
+        }
+    }
+}

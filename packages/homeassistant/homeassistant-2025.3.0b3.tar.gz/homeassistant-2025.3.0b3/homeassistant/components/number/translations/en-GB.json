@@ -1,0 +1,16 @@
+{
+    "entity_component": {
+        "area": {
+            "name": "Area"
+        },
+        "blood_glucose_concentration": {
+            "name": "Blood glucose concentration"
+        },
+        "ph": {
+            "name": "pH"
+        },
+        "wind_direction": {
+            "name": "Wind direction"
+        }
+    }
+}

@@ -1,0 +1,23 @@
+{
+    "config": {
+        "error": {
+            "counter_not_found": "Could not find meter ID automatically"
+        },
+        "step": {
+            "user": {
+                "data_description": {
+                    "counter_id": "Enter your meter id (ex: 12345678). Should be found automatically during setup, if not see integration documentation for more information",
+                    "username": "Enter your login associated with your {tout_sur_mon_eau} account"
+                },
+                "description": "Connect your suez water {tout_sur_mon_eau} account to retrieve your water consumption"
+            }
+        }
+    },
+    "entity": {
+        "sensor": {
+            "water_price": {
+                "name": "Water price"
+            }
+        }
+    }
+}

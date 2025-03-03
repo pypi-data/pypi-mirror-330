@@ -1,0 +1,19 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Naprava je \u017ee konfigurirana",
+            "single_instance_allowed": "\u017de konfigurirano. Mo\u017ena je samo ena konfiguracija."
+        },
+        "error": {
+            "cannot_connect": "Povezava ni uspela",
+            "unknown": "Nepri\u010dakovana napaka"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "device": "Naprava"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,30 @@
+{
+    "config": {
+        "step": {
+            "user": {
+                "data_description": {
+                    "search": "The IMAP search command which is `UnSeen UnDeleted` by default.",
+                    "server": "The IMAP server.",
+                    "ssl_cipher_list": "If the IMAP service only supports legacy encryption, try to change this.",
+                    "username": "The IMAP username.",
+                    "verify_ssl": "Recommended, to ensure the server certificate is valid. Turn off, if the server certificate is not trusted (e.g. self-signed)."
+                }
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "enable_push": "Enable Push-IMAP if the server supports it. Turn off if Push-IMAP updates are unreliable."
+                },
+                "data_description": {
+                    "custom_event_data_template": "This template is evaluated when a new message was received, and the result is added to the `custom` attribute of the event data.",
+                    "enable_push": "Using Push-IMAP is recommended. Polling will increase the time to respond.",
+                    "max_message_size": "Limit the maximum size of the event. Instead of passing the (whole) text message, using a template is a better option.",
+                    "search": "The IMAP search command which is `UnSeen UnDeleted` by default."
+                }
+            }
+        }
+    }
+}

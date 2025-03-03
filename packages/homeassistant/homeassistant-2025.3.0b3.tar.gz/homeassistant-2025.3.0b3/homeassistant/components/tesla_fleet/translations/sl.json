@@ -1,0 +1,13 @@
+{
+    "config": {
+        "abort": {
+            "authorize_url_timeout": "\u010casovna omejitev za generiranje potrditvenega URL-ja je potekla.",
+            "reauth_successful": "Ponovna avtentikacija je bila uspe\u0161na"
+        },
+        "step": {
+            "reauth_confirm": {
+                "title": "Preverjanje pristnosti za {name} je poteklo"
+            }
+        }
+    }
+}

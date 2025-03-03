@@ -1,0 +1,47 @@
+{
+    "entity": {
+        "number": {
+            "scale_target_key": {
+                "name": "Brew by weight target {key}"
+            }
+        },
+        "select": {
+            "active_bbw": {
+                "name": "Active brew by weight recipe",
+                "state": {
+                    "a": "Recipe A",
+                    "b": "Recipe B"
+                }
+            }
+        },
+        "sensor": {
+            "drink_stats_coffee": {
+                "unit_of_measurement": "coffees"
+            },
+            "drink_stats_coffee_key": {
+                "name": "Coffees made Key {key}",
+                "unit_of_measurement": "coffees"
+            },
+            "drink_stats_flushing": {
+                "unit_of_measurement": "flushes"
+            }
+        }
+    },
+    "exceptions": {
+        "api_error": {
+            "message": "Error while communicating with the API"
+        },
+        "authentication_failed": {
+            "message": "Authentication failed"
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data_description": {
+                    "use_bluetooth": "Should the integration try to use Bluetooth to control the machine?"
+                }
+            }
+        }
+    }
+}

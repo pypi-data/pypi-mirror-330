@@ -1,0 +1,35 @@
+{
+    "device_automation": {
+        "condition_type": {
+            "is_area": "Current {entity_name} area",
+            "is_blood_glucose_concentration": "Current {entity_name} blood glucose concentration",
+            "is_energy_distance": "Current {entity_name} energy per distance",
+            "is_ph": "Current {entity_name} pH level",
+            "is_wind_direction": "Current {entity_name} wind direction"
+        },
+        "trigger_type": {
+            "area": "{entity_name} area changes",
+            "blood_glucose_concentration": "{entity_name} blood glucose concentration changes",
+            "energy_distance": "{entity_name} energy per distance changes",
+            "ph": "{entity_name} pH level changes",
+            "wind_direction": "{entity_name} wind direction changes"
+        }
+    },
+    "entity_component": {
+        "area": {
+            "name": "Area"
+        },
+        "blood_glucose_concentration": {
+            "name": "Blood glucose concentration"
+        },
+        "energy_distance": {
+            "name": "Energy per distance"
+        },
+        "ph": {
+            "name": "pH"
+        },
+        "wind_direction": {
+            "name": "Wind direction"
+        }
+    }
+}

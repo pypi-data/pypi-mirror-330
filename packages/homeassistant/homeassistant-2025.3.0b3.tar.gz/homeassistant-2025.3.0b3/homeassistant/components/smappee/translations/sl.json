@@ -1,0 +1,17 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Naprava je \u017ee konfigurirana",
+            "already_configured_device": "Naprava je \u017ee konfigurirana",
+            "authorize_url_timeout": "\u010casovna omejitev za generiranje potrditvenega URL-ja je potekla.",
+            "cannot_connect": "Povezava ni uspela"
+        },
+        "step": {
+            "local": {
+                "data": {
+                    "host": "Gostitelj"
+                }
+            }
+        }
+    }
+}

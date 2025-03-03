@@ -1,0 +1,46 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Naprava je \u017ee konfigurirana"
+        },
+        "error": {
+            "cannot_connect": "Povezava ni uspela",
+            "invalid_auth": "Neveljavna avtentikacija",
+            "unknown": "Nepri\u010dakovana napaka"
+        },
+        "step": {
+            "reconfigure": {
+                "data": {
+                    "password": "Geslo"
+                }
+            },
+            "user": {
+                "data": {
+                    "password": "Geslo",
+                    "username": "Uporabni\u0161ko ime"
+                },
+                "title": "Pove\u017eite se s svojim ra\u010dunom Tado"
+            }
+        }
+    },
+    "entity": {
+        "climate": {
+            "tado": {
+                "state_attributes": {
+                    "preset_mode": {
+                        "state": {
+                            "auto": "Samodejno"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "title": "Prilagodite Tado mo\u017enosti."
+            }
+        }
+    }
+}

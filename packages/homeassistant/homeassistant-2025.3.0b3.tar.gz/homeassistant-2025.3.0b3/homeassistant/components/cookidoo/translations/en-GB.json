@@ -1,0 +1,46 @@
+{
+    "config": {
+        "abort": {
+            "unique_id_mismatch": "The user identifier does not match the previous identifier"
+        },
+        "step": {
+            "language": {
+                "data_description": {
+                    "language": "Pick your language for the {cookidoo} content."
+                }
+            },
+            "reauth_confirm": {
+                "description": "Please log in to {cookidoo} again to continue using this integration.",
+                "title": "Log in again to {cookidoo}"
+            }
+        }
+    },
+    "entity": {
+        "button": {
+            "todo_clear": {
+                "name": "Clear shopping list and additional purchases"
+            }
+        },
+        "sensor": {
+            "expires": {
+                "name": "Subscription expiration date"
+            },
+            "subscription": {
+                "name": "Subscription",
+                "state": {
+                    "free": "Free",
+                    "premium": "Premium",
+                    "trial": "Trial"
+                }
+            }
+        }
+    },
+    "exceptions": {
+        "button_clear_todo_failed": {
+            "message": "Failed to clear all items from the Cookidoo shopping list"
+        },
+        "update_exception": {
+            "message": "Unable to connect and retrieve data from cookidoo"
+        }
+    }
+}

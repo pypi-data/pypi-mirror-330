@@ -1,0 +1,421 @@
+{
+    "common": {
+        "alias_description": "A task alias can be used instead of the name or task ID. Only dashes, underscores, and alphanumeric characters are supported. The task alias must be unique among all your tasks.",
+        "alias_name": "Task alias",
+        "config_entry_description": "Select the Habitica account to update a task.",
+        "config_entry_name": "Select character",
+        "dailies": "Dailies",
+        "developer_options_description": "Additional features available in developer mode.",
+        "developer_options_name": "Advanced settings",
+        "notes_description": "The new notes for the Habitica task.",
+        "notes_name": "Update notes",
+        "remove_tag_description": "Remove tags from the Habitica task.",
+        "remove_tag_name": "Remove tags",
+        "rename_description": "The new title for the Habitica task.",
+        "rename_name": "Rename",
+        "tag_description": "Add tags to the Habitica task. If a tag does not already exist, a new one will be created.",
+        "tag_name": "Add tags",
+        "tag_options_description": "Add or remove tags from a task.",
+        "tag_options_name": "Tags",
+        "task_description": "The name (or task ID) of the task you want to update.",
+        "task_name": "Task name",
+        "todos": "To-Dos",
+        "unit_experience_points": "XP",
+        "unit_health_points": "HP",
+        "unit_mana_points": "MP",
+        "unit_tasks": "tasks"
+    },
+    "config": {
+        "abort": {
+            "unique_id_mismatch": "Hmm, those login details are correct, but they're not for this adventurer. Got another account to try?"
+        },
+        "error": {
+            "invalid_credentials": "Input is incomplete. You must provide either your login details or an API token"
+        },
+        "step": {
+            "advanced": {
+                "data_description": {
+                    "verify_ssl": "Enable SSL certificate verification for secure connections. Disable only if connecting to a Habitica instance using a self-signed certificate"
+                }
+            },
+            "reauth_confirm": {
+                "description": "![Habiticans]({habiticans}) It seems your API token for **{name}** has been reset. To re-authorise the integration, you can either log in with your username or email, and password, or directly provide your new API token.",
+                "sections": {
+                    "reauth_api_key": {
+                        "description": "Enter your new API token below. You can find it in Habitica under 'Settings -> Site Data'",
+                        "name": "Re-authorise via API Token"
+                    },
+                    "reauth_login": {
+                        "description": "Enter your login details below to re-authorise the Home Assistant integration with Habitica",
+                        "name": "Re-authorise via login"
+                    }
+                },
+                "title": "Re-authorise {name} with Habitica"
+            },
+            "reconfigure": {
+                "description": "![Habiticans]({habiticans})\n\nEnter your new API token below. You can find it in Habitica under [**Settings -> Site Data**]({site_data})",
+                "sections": {
+                    "danger_zone": {
+                        "data_description": {
+                            "url": "URL of the Habitica instance",
+                            "verify_ssl": "Enable SSL certificate verification for secure connections. Disable only if connecting to a Habitica instance using a self-signed certificate"
+                        },
+                        "description": "These settings impact core functionality. Modifications are unnecessary if connected to the official Habitica instance and may disrupt the integration. Proceed with caution.",
+                        "name": "Critical configuration options"
+                    }
+                },
+                "title": "Update Habitica configuration"
+            }
+        }
+    },
+    "entity": {
+        "calendar": {
+            "daily_reminders": {
+                "name": "Daily reminders"
+            },
+            "dailys": {
+                "name": "Dailies",
+                "state_attributes": {
+                    "yesterdaily": {
+                        "name": "Yester-Daily"
+                    }
+                }
+            },
+            "todo_reminders": {
+                "name": "To-do reminders"
+            },
+            "todos": {
+                "name": "To-Dos"
+            }
+        },
+        "image": {
+            "avatar": {
+                "name": "Avatar"
+            }
+        },
+        "sensor": {
+            "display_name": {
+                "state_attributes": {
+                    "blurb": {
+                        "name": "About"
+                    },
+                    "joined": {
+                        "name": "Joined"
+                    },
+                    "last_login": {
+                        "name": "Last login"
+                    },
+                    "total_logins": {
+                        "name": "Total logins"
+                    }
+                }
+            },
+            "eggs_total": {
+                "name": "Eggs",
+                "unit_of_measurement": "eggs"
+            },
+            "experience": {
+                "unit_of_measurement": "XP"
+            },
+            "experience_max": {
+                "unit_of_measurement": "XP"
+            },
+            "food_total": {
+                "name": "Pet food",
+                "unit_of_measurement": "foods"
+            },
+            "gems": {
+                "unit_of_measurement": "gems"
+            },
+            "gold": {
+                "unit_of_measurement": "GP"
+            },
+            "habits": {
+                "unit_of_measurement": "tasks"
+            },
+            "hatching_potions_total": {
+                "name": "Hatching potions",
+                "unit_of_measurement": "potions"
+            },
+            "health": {
+                "unit_of_measurement": "HP"
+            },
+            "health_max": {
+                "unit_of_measurement": "HP"
+            },
+            "intelligence": {
+                "name": "Intelligence",
+                "state_attributes": {
+                    "allocated": {
+                        "name": "Allocated attribute points"
+                    },
+                    "buffs": {
+                        "name": "Buffs"
+                    },
+                    "class": {
+                        "name": "Class equip bonus"
+                    },
+                    "equipment": {
+                        "name": "Battle gear"
+                    }
+                }
+            },
+            "mana": {
+                "unit_of_measurement": "MP"
+            },
+            "mana_max": {
+                "unit_of_measurement": "MP"
+            },
+            "perception": {
+                "name": "Perception",
+                "state_attributes": {
+                    "allocated": {
+                        "name": "Allocated attribute points"
+                    },
+                    "buffs": {
+                        "name": "Buffs"
+                    },
+                    "class": {
+                        "name": "Class equip bonus"
+                    },
+                    "equipment": {
+                        "name": "Battle gear"
+                    }
+                }
+            },
+            "quest_scrolls": {
+                "name": "Quest scrolls",
+                "unit_of_measurement": "scrolls"
+            },
+            "rewards": {
+                "unit_of_measurement": "tasks"
+            },
+            "saddle": {
+                "name": "Saddles",
+                "unit_of_measurement": "saddles"
+            },
+            "strength": {
+                "name": "Strength",
+                "state_attributes": {
+                    "allocated": {
+                        "name": "Allocated attribute points"
+                    },
+                    "buffs": {
+                        "name": "Buffs"
+                    },
+                    "class": {
+                        "name": "Class equip bonus"
+                    },
+                    "equipment": {
+                        "name": "Battle gear"
+                    }
+                }
+            }
+        }
+    },
+    "exceptions": {
+        "authentication_failed": {
+            "message": "Authentication failed. It looks like your API token has been reset. Please re-authenticate using your new token"
+        },
+        "frequency_not_monthly": {
+            "message": "Unable to update task, monthly repeat settings apply only to monthly recurring dailies."
+        },
+        "frequency_not_weekly": {
+            "message": "Unable to update task, weekly repeat settings apply only to weekly recurring dailies."
+        },
+        "item_not_found": {
+            "message": "Unable to use {item}, you don't own this item."
+        },
+        "party_not_found": {
+            "message": "Unable to find target, you are currently not in a party. You can only target yourself."
+        },
+        "quest_action_unallowed": {
+            "message": "Action not allowed, only quest leader or group leader can perform this action"
+        },
+        "quest_not_found": {
+            "message": "Unable to complete action, quest or group not found"
+        },
+        "target_not_found": {
+            "message": "Unable to find target {target} in your party"
+        }
+    },
+    "issues": {
+        "deprecated_api_call": {
+            "description": "The Habitica action `habitica.api_call` is deprecated and will be removed in Home Assistant 2025.5.0.\n\nPlease update your automations and scripts to use other Habitica actions and entities.",
+            "title": "The Habitica action habitica.api_call is deprecated"
+        },
+        "deprecated_entity": {
+            "description": "The Habitica entity `{entity}` is deprecated and will be removed in a future release.\nPlease update your automations and scripts, disable `{entity}` and reload the integration/restart Home Assistant to fix this issue.",
+            "title": "The Habitica {name} entity is deprecated"
+        }
+    },
+    "selector": {
+        "priority": {
+            "options": {
+                "easy": "Easy",
+                "hard": "Hard",
+                "medium": "Medium",
+                "trivial": "Trivial"
+            }
+        },
+        "transformation_item_select": {
+            "options": {
+                "seafoam": "Seafoam",
+                "shiny_seed": "Shiny seed",
+                "snowball": "Snowball",
+                "spooky_sparkles": "Spooky sparkles"
+            }
+        },
+        "type": {
+            "options": {
+                "daily": "Daily",
+                "habit": "Habit",
+                "reward": "Reward",
+                "todo": "To-do"
+            }
+        }
+    },
+    "services": {
+        "abort_quest": {
+            "description": "Terminates your party's ongoing quest. All progress will be lost and the quest roll returned to the owner's inventory. Only quest leader or group leader can perform this action.",
+            "fields": {
+                "config_entry": {
+                    "name": "Select character"
+                }
+            },
+            "name": "Abort an active quest"
+        },
+        "accept_quest": {
+            "description": "Accepts a pending invitation to a quest."
+        },
+        "api_call": {
+            "description": "Calls Habitica API.",
+            "fields": {
+                "args": {
+                    "description": "Any additional JSON or URL parameter arguments. See apidoc mentioned for path. Example uses same API endpoint.",
+                    "name": "Args"
+                },
+                "name": {
+                    "description": "Habitica's username to call for."
+                },
+                "path": {
+                    "description": "Items from API URL in form of an array with method attached at the end. Consult https://habitica.com/apidoc/. Example uses https://habitica.com/apidoc/#api-Task-CreateUserTasks."
+                }
+            },
+            "name": "API name"
+        },
+        "cancel_quest": {
+            "description": "Cancels a quest that has not yet started. All accepted and pending invitations will be cancelled and the quest roll returned to the owner's inventory. Only quest leader or group leader can perform this action."
+        },
+        "get_tasks": {
+            "description": "Retrieves tasks from your Habitica character.",
+            "fields": {
+                "config_entry": {
+                    "description": "Choose the Habitica character to retrieve tasks from.",
+                    "name": "Select character"
+                },
+                "keyword": {
+                    "description": "Filter tasks by keyword, searching across titles, notes, and checklists.",
+                    "name": "Keyword"
+                },
+                "priority": {
+                    "description": "Filter tasks by difficulty.",
+                    "name": "Difficulty"
+                },
+                "tag": {
+                    "description": "Filter tasks that have one or more of the selected tags.",
+                    "name": "Tag"
+                },
+                "task": {
+                    "description": "Select tasks by matching their name (or task ID).",
+                    "name": "Task name"
+                },
+                "type": {
+                    "description": "Filter tasks by type.",
+                    "name": "Task type"
+                }
+            },
+            "name": "Get tasks",
+            "sections": {
+                "filter": {
+                    "description": "Use the optional filters to narrow the returned tasks.",
+                    "name": "Filter options"
+                }
+            }
+        },
+        "score_reward": {
+            "fields": {
+                "task": {
+                    "description": "The name (or task ID) of the custom reward.",
+                    "name": "Reward name"
+                }
+            },
+            "name": "Buy a reward"
+        },
+        "transformation": {
+            "description": "Uses a transformation item from your Habitica character's inventory on a member of your party or yourself.",
+            "fields": {
+                "config_entry": {
+                    "description": "Choose the Habitica character to use the transformation item.",
+                    "name": "Select character"
+                },
+                "item": {
+                    "description": "Select the transformation item you want to use. Item must be in the characters inventory.",
+                    "name": "Transformation item"
+                },
+                "target": {
+                    "description": "The name of the character you want to use the transformation item on. You can also specify the players username or user ID.",
+                    "name": "Target character"
+                }
+            },
+            "name": "Use a transformation item"
+        },
+        "update_reward": {
+            "description": "Updates a specific reward for the selected Habitica character",
+            "fields": {
+                "alias": {
+                    "description": "A task alias can be used instead of the name or task ID. Only dashes, underscores, and alphanumeric characters are supported. The task alias must be unique among all your tasks.",
+                    "name": "Task alias"
+                },
+                "config_entry": {
+                    "description": "Select the Habitica account to update a reward.",
+                    "name": "Select character"
+                },
+                "cost": {
+                    "description": "Update the cost of a reward."
+                },
+                "notes": {
+                    "description": "The new notes for the Habitica task.",
+                    "name": "Update notes"
+                },
+                "remove_tag": {
+                    "description": "Remove tags from the Habitica task.",
+                    "name": "Remove tags"
+                },
+                "rename": {
+                    "description": "The new title for the Habitica task.",
+                    "name": "Rename"
+                },
+                "tag": {
+                    "description": "Add tags to the Habitica task. If a tag does not already exist, a new one will be created.",
+                    "name": "Add tags"
+                },
+                "task": {
+                    "description": "The name (or task ID) of the task you want to update.",
+                    "name": "Task name"
+                }
+            },
+            "name": "Update a reward",
+            "sections": {
+                "developer_options": {
+                    "description": "Additional features available in developer mode.",
+                    "name": "Advanced settings"
+                },
+                "tag_options": {
+                    "description": "Add or remove tags from a task.",
+                    "name": "Tags"
+                }
+            }
+        }
+    }
+}

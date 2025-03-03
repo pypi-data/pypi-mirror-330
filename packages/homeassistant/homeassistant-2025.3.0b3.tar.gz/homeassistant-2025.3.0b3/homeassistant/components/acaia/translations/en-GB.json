@@ -1,0 +1,23 @@
+{
+    "config": {
+        "abort": {
+            "unsupported_device": "This device is not supported."
+        },
+        "error": {
+            "device_not_found": "Device could not be found."
+        },
+        "flow_title": "{name}"
+    },
+    "entity": {
+        "binary_sensor": {
+            "timer_running": {
+                "name": "Timer running"
+            }
+        },
+        "button": {
+            "reset_timer": {
+                "name": "Reset timer"
+            }
+        }
+    }
+}

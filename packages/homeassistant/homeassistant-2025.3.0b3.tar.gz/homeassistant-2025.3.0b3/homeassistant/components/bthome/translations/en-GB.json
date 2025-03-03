@@ -1,0 +1,20 @@
+{
+    "device_automation": {
+        "trigger_subtype": {
+            "hold_press": "Hold Press"
+        }
+    },
+    "entity": {
+        "event": {
+            "button": {
+                "state_attributes": {
+                    "event_type": {
+                        "state": {
+                            "hold_press": "Hold press"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

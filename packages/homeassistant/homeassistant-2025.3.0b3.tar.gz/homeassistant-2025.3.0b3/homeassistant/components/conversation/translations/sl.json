@@ -1,0 +1,18 @@
+{
+    "services": {
+        "process": {
+            "fields": {
+                "language": {
+                    "name": "Jezik"
+                }
+            }
+        },
+        "reload": {
+            "fields": {
+                "language": {
+                    "name": "Jezik"
+                }
+            }
+        }
+    }
+}

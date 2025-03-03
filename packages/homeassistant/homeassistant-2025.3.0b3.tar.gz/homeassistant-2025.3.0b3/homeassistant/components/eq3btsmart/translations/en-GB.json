@@ -1,0 +1,28 @@
+{
+    "entity": {
+        "binary_sensor": {
+            "dst": {
+                "name": "Daylight saving time"
+            }
+        },
+        "sensor": {
+            "away_until": {
+                "name": "Away until"
+            },
+            "valve": {
+                "name": "Valve"
+            }
+        },
+        "switch": {
+            "away": {
+                "name": "Away"
+            },
+            "boost": {
+                "name": "Boost"
+            },
+            "lock": {
+                "name": "Lock"
+            }
+        }
+    }
+}

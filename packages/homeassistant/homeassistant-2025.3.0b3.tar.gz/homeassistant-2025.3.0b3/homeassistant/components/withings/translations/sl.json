@@ -1,0 +1,27 @@
+{
+    "config": {
+        "abort": {
+            "authorize_url_timeout": "\u010casovna omejitev za generiranje potrditvenega URL-ja je potekla.",
+            "missing_configuration": "Komponenta ni konfigurirana. Prosimo, upo\u0161tevajte dokumentacijo.",
+            "reauth_successful": "Ponovna avtentikacija je bila uspe\u0161na"
+        },
+        "create_entry": {
+            "default": "Uspe\u0161no overjen z Withings."
+        },
+        "step": {
+            "pick_implementation": {
+                "title": "Izberite na\u010din preverjanja pristnosti"
+            },
+            "reauth_confirm": {
+                "title": "Preverjanje pristnosti za {name} je poteklo"
+            }
+        }
+    },
+    "entity": {
+        "sensor": {
+            "battery": {
+                "name": "Baterija"
+            }
+        }
+    }
+}

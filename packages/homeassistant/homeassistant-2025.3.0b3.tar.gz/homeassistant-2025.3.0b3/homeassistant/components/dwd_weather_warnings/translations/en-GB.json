@@ -1,0 +1,12 @@
+{
+    "config": {
+        "step": {
+            "user": {
+                "data": {
+                    "region_identifier": "Warncell ID or name"
+                },
+                "description": "To identify the desired region, either the warncell ID / name or device tracker is required. The provided device tracker has to contain the attributes 'latitude' and 'longitude'."
+            }
+        }
+    }
+}

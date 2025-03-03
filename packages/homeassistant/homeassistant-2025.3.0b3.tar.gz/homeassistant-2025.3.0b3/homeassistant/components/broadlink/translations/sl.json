@@ -1,0 +1,34 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Naprava je \u017ee konfigurirana",
+            "already_in_progress": "Konfiguriranje \u017ee poteka",
+            "cannot_connect": "Povezava ni uspela",
+            "unknown": "Nepri\u010dakovana napaka"
+        },
+        "error": {
+            "cannot_connect": "Povezava ni uspela",
+            "invalid_auth": "Neveljavna avtentikacija",
+            "unknown": "Nepri\u010dakovana napaka"
+        },
+        "step": {
+            "finish": {
+                "data": {
+                    "name": "Naziv"
+                }
+            },
+            "user": {
+                "data": {
+                    "host": "Gostitelj"
+                }
+            }
+        }
+    },
+    "entity": {
+        "sensor": {
+            "light": {
+                "name": "Osvetljenost"
+            }
+        }
+    }
+}

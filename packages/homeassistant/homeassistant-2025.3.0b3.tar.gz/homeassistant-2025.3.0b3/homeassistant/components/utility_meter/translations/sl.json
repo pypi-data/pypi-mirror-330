@@ -1,0 +1,19 @@
+{
+    "config": {
+        "step": {
+            "user": {
+                "data": {
+                    "name": "Naziv"
+                }
+            }
+        }
+    },
+    "selector": {
+        "cycle": {
+            "options": {
+                "daily": "Dnevno",
+                "hourly": "Vsako uro"
+            }
+        }
+    }
+}

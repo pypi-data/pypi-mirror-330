@@ -1,0 +1,17 @@
+{
+    "config": {
+        "abort": {
+            "already_in_progress": "Konfiguriranje \u017ee poteka",
+            "authorize_url_timeout": "\u010casovna omejitev za generiranje potrditvenega URL-ja je potekla.",
+            "reauth_successful": "Ponovna avtentikacija je bila uspe\u0161na"
+        },
+        "create_entry": {
+            "default": "Uspe\u0161no preverjen"
+        },
+        "step": {
+            "reauth_confirm": {
+                "title": "Preverjanje pristnosti za {name} je poteklo"
+            }
+        }
+    }
+}

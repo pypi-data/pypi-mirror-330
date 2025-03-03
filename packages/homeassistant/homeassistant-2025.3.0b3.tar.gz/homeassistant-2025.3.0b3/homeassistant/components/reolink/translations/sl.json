@@ -1,0 +1,32 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Naprava je \u017ee konfigurirana",
+            "reauth_successful": "Ponovna avtentikacija je bila uspe\u0161na"
+        },
+        "error": {
+            "invalid_auth": "Neveljavna avtentikacija",
+            "unknown": "Nepri\u010dakovana napaka"
+        },
+        "flow_title": "{hostname} ({ip_address})",
+        "step": {
+            "user": {
+                "data": {
+                    "host": "Gostitelj",
+                    "password": "Geslo",
+                    "port": "Vrata",
+                    "username": "Uporabni\u0161ko ime"
+                }
+            }
+        }
+    },
+    "entity": {
+        "select": {
+            "day_night_mode": {
+                "state": {
+                    "auto": "Samodejno"
+                }
+            }
+        }
+    }
+}

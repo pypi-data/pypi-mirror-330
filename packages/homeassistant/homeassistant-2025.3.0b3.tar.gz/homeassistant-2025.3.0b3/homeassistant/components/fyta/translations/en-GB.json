@@ -1,0 +1,49 @@
+{
+    "entity": {
+        "binary_sensor": {
+            "notification_light": {
+                "name": "Light notification"
+            },
+            "notification_nutrition": {
+                "name": "Nutrition notification"
+            },
+            "notification_temperature": {
+                "name": "Temperature notification"
+            },
+            "notification_water": {
+                "name": "Water notification"
+            },
+            "productive_plant": {
+                "name": "Productive plant"
+            },
+            "repotted": {
+                "name": "Repotted"
+            },
+            "sensor_update_available": {
+                "name": "Sensor update available"
+            }
+        },
+        "sensor": {
+            "last_fertilised": {
+                "name": "Last fertilised"
+            },
+            "next_fertilisation": {
+                "name": "Next fertilisation"
+            },
+            "nutrients_status": {
+                "name": "Nutrients state"
+            }
+        }
+    },
+    "exceptions": {
+        "auth_failed": {
+            "message": "Error while logging in to the API."
+        },
+        "config_entry_not_ready": {
+            "message": "Error while loading the config entry."
+        },
+        "update_error": {
+            "message": "Error while updating data from the API."
+        }
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "config": {
+        "abort": {
+            "reauth_successful": "Ponovna avtentikacija je bila uspe\u0161na"
+        },
+        "error": {
+            "cannot_connect": "Povezava ni uspela",
+            "incorrect_api_key": "Neveljaven API klju\u010d za izbrani ra\u010dun",
+            "invalid_auth": "Neveljavna avtentikacija"
+        },
+        "step": {
+            "initial": {
+                "data": {
+                    "api_key": "API klju\u010d"
+                }
+            },
+            "reauth_confirm": {
+                "data": {
+                    "api_key": "API klju\u010d"
+                }
+            }
+        }
+    }
+}

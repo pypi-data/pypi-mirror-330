@@ -1,0 +1,8 @@
+{
+    "config": {
+        "abort": {
+            "oauth_unauthorized": "OAuth authorisation error while obtaining access token.",
+            "user_rejected_authorize": "Account linking rejected: {error}"
+        }
+    }
+}

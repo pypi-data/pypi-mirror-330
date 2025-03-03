@@ -1,0 +1,9 @@
+{
+    "config": {
+        "step": {
+            "reauth_confirm": {
+                "description": "The password for {email} is no longer valid."
+            }
+        }
+    }
+}

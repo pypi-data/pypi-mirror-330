@@ -1,0 +1,22 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Naprava je \u017ee konfigurirana"
+        },
+        "step": {
+            "reconfigure": {
+                "data": {
+                    "host": "Gostitelj",
+                    "port": "Vrata"
+                }
+            },
+            "user": {
+                "data": {
+                    "host": "Gostitelj",
+                    "name": "Naziv",
+                    "port": "Vrata"
+                }
+            }
+        }
+    }
+}

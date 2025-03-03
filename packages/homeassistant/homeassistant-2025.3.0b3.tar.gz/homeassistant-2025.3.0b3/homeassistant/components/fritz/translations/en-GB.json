@@ -1,0 +1,7 @@
+{
+    "exceptions": {
+        "update_failed": {
+            "message": "Error while uptaing the data: {error}"
+        }
+    }
+}
