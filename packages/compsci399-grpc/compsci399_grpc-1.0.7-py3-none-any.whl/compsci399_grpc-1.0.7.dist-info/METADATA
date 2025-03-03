@@ -1,0 +1,8 @@
+Metadata-Version: 2.2
+Name: compsci399-grpc
+Version: 1.0.7
+Summary: Generated gRPC Python stubs for my service
+Requires-Dist: grpcio>=1.44.0
+Requires-Dist: protobuf>=3.19.0
+Dynamic: requires-dist
+Dynamic: summary
