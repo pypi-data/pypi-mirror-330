@@ -1,0 +1,9 @@
+.vscode/
+data/*
+dist/
+.venv/
+viseca.egg-info/
+__pycache__/
+*.csv
+*.ipynb
+.env
