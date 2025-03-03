@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "holobit-sdk"
+version = "1.0.0"
+description = "SDK para la transpilación y ejecución de código holográfico cuántico."
+readme = "README.md"
+authors = [{ name = "Adolfo González Hernández", email = "adolfogonzal@gmail.com" }]
+license = { file = "LICENSE" }
+dependencies = [
+    "setuptools",
+    "wheel",
+    "twine"
+]
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent"
+]
+
+[project.urls]
+"Homepage" = "https://github.com/Alphonsus411/holobit_SDK"
+"Bug Tracker" = "https://github.com/Alphonsus411/holobit_SDK/issues"
+
+[project.scripts]
+holobit-transpiler = "transpiler.machine_code_transpiler:main"
+
+[tool.setuptools]
+packages = ["holobit_sdk"]
+
+[tool.setuptools.package-data]
+holobit_sdk = ["*.md", "docs/*", "examples/*"]
