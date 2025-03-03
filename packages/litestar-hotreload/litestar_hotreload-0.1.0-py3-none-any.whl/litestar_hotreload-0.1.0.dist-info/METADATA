@@ -1,0 +1,8 @@
+Metadata-Version: 2.4
+Name: litestar-hotreload
+Version: 0.1.0
+Summary: Hot reload for Litestar development
+Author-email: euri10 <benoit.barthelet@gmail.com>
+Requires-Python: >=3.10
+Requires-Dist: litestar>=2.15.0
+Requires-Dist: watchfiles>=1.0.4
