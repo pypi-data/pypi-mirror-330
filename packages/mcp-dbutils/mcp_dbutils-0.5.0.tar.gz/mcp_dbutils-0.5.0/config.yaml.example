@@ -1,0 +1,40 @@
+databases:
+  # SQLite configuration examples
+  # SQLite with standard configuration
+  dev-db:
+    type: sqlite
+    path: /path/to/dev.db
+    password: 
+
+  # SQLite with JDBC URL configuration
+  # jdbc:sqlite: URL supports query parameters:
+  # - mode=ro: Read-only mode
+  # - cache=shared: Shared cache mode
+  # Note: Password must be provided separately
+  prod-sqlite:
+    type: sqlite
+    jdbc_url: jdbc:sqlite:/path/to/prod.db?mode=ro
+    password: optional_password    # Provided separately for security
+
+  # PostgreSQL configuration examples
+  # Standard configuration
+  test-db:
+    type: postgres
+    host: postgres.example.com
+    port: 5432
+    dbname: test_db
+    user: test_user
+    password: test_pass
+
+  # JDBC URL configuration
+  # Note: When using JDBC URL in code, provide credentials separately:
+  # PostgresConfig.from_jdbc_url(
+  #   "jdbc:postgresql://prod.example.com:5432/prod_db",
+  #   user="prod_user",
+  #   password="your@special#password"
+  # )
+  prod-db:
+    type: postgres
+    jdbc_url: jdbc:postgresql://postgres.example.com:5432/prod-db
+    user: prod_user
+    password: prod_pass

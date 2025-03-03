@@ -1,0 +1,51 @@
+[project]
+name = "mcp-dbutils"
+version = "0.5.0"
+description = "MCP Database Utilities Service"
+readme = "README.md"
+license = "MIT"
+authors = [
+    {name = "Dong Hao"}
+]
+dependencies = [
+    "mcp>=1.2.1",
+    "psycopg2-binary>=2.9.10",
+    "python-dotenv>=1.0.1",
+    "pyyaml>=6.0.2",
+]
+requires-python = ">=3.10"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project.scripts]
+mcp-dbutils = "mcp_dbutils:main"
+
+[tool.semantic_release]
+version_variables = [
+    "pyproject.toml:project.version"
+]
+version_toml = [
+    "pyproject.toml:project.version"
+]
+commit_parser = "conventional"
+major_on_zero = false
+branch = "main"
+changelog_components = "semantic_release.changelog.changelog"
+build_command = "uv build"
+
+[project.optional-dependencies]
+test = [
+    "pytest>=7.0.0",
+    "pytest-asyncio>=0.23.0",
+    "pytest-docker>=2.0.0",
+    "docker>=7.0.0",
+    "aiosqlite>=0.19.0",
+    "testcontainers>=3.7.0",
+    "pytest-cov>=4.1.0"
+]
+
+[tool.pytest.ini_options]
+asyncio_mode = "strict"
+asyncio_default_fixture_loop_scope = "function"
