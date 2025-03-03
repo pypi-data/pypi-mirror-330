@@ -1,0 +1,96 @@
+# -----------------------------------------------------------------------------
+# Build System Configurations
+# -----------------------------------------------------------------------------
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/socx", "src/socx_plugins", "src/socx_patches"]
+
+# -----------------------------------------------------------------------------
+# Project Configurations
+# -----------------------------------------------------------------------------
+#
+[project]
+name = "socx-cli"
+version = "0.2.4"
+readme = "README.md"
+license = "Apache-2.0 OR MIT"
+authors = [ { name = "Sagi Kimhi", email = "sagi.kim5@gmail.com" } ]
+maintainers = [ { name = "Sagi Kimhi", email = "sagi.kim5@gmail.com" } ]
+description = "System on chip verification and tooling infrastructure."
+dependencies = [
+    "click>=8.1.8",
+    "python-dotenv[cli]>=1.0.1",
+    "dynaconf>=3.2.7",
+    "jinja2>=3.1.5",
+    "platformdirs>=4.3.6",
+    "trogon>=0.6.0",
+    "textual-serve>=1.1.1",
+    "textual-web>=0.4.2",
+    "pyarrow>=19.0.0",
+    "psutil>=7.0.0",
+    "numpy>=2.2.3",
+    "rich-click>=1.8.6",
+    "pip>=25.0.1",
+    "setuptools>=75.8.2",
+    "build>=1.2.2.post1",
+    "importlib>=1.0.4",
+    "importlib-metadata>=8.6.1",
+]
+license-files = ["LICENSE"]
+requires-python = ">=3.12"
+
+[project.scripts]
+socx='socx.__main__:main'
+
+[project.entry-points."uvx.run"]
+socx = "socx.__main__:main"
+
+[project.entry-points."pipx.run"]
+socx = "socx.__main__:main"
+
+[dependency-groups]
+dev = [
+    "mypy",
+    "ruff",
+    "pytest",
+    "pytest-cov",
+    "pyupgrade",
+    "pydocstyle",
+    "pycodestyle",
+    "flake8-bugbear",
+    "flake8-simplify",
+    "debugpy>=1.8.12",
+    "pre-commit>=4.1.0",
+    "textual-dev>=1.7.0",
+    "textual[dev]>=2.0.4",
+    "textual-terminal>=0.3.0",
+    "twine>=6.1.0",
+    "hatch>=1.14.0",
+    "hatchling>=1.27.0",
+    "importlib-metadata>=8.6.1",
+    "build>=1.2.2.post1",
+]
+
+[project.urls]
+Homepage = "https://github.com/runsonmymachine/socx"
+Issues = "https://github.com/runsonmymachine/socx/issues"
+
+# -----------------------------------------------------------------------------
+# Developer Configurations
+# -----------------------------------------------------------------------------
+
+[tool.uv]
+package = true
+
+[tool.mypy]
+files = [ "src" ]
+python_version = "3.12"
+pretty = true
+strict = true
+color_output = true
+show_error_codes = true
+warn_unreachable = true
