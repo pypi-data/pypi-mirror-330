@@ -1,0 +1,33 @@
+Metadata-Version: 2.2
+Name: pyshell-bash
+Version: 0.1.0a2
+Summary: An interactive bash/sh shell in Python
+Author: SteveGaming62
+Author-email: anon@dev.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: requires-python
+Dynamic: summary
+
+# PyShell
+
+PyShell is an interactive bash/sh shell written in Python, currently in the alpha phase.
+
+## Features
+- Runs shell commands in python
+
+## Installation
+Use pip to install the package:
+`pip install pyshell`
+
+## Disclaimer
+PyShell is in the alpha phase, so expect some bugs. Use it responsibly and feel free to report issues.
