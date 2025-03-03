@@ -1,0 +1,28 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "otvertka"
+version = "0.1.15"
+description = "Набор простых функций для работы с данными"
+readme = "README.md"
+authors = [{name="Stas Dikansky"}]
+license = {file="LICENSE"}
+requires-python = ">=3.7"
+dependencies = [
+    "clickhouse-connect>=0.6.8",
+    "pandas>=2.0.0",
+    "pendulum>=2.1.2",
+    "pingouin>=0.5.3",
+    "numpy>=1.26.0",
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/stasdikansky/otvertka"
+"Bug Tracker" = "https://github.com/stasdikansky/otvertka/issues" 
