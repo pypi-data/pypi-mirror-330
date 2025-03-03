@@ -1,0 +1,24 @@
+[project]
+name = "normie-alternatives"
+version = "0.2.0"
+description = "Alternative implementations of normal distribution functions"
+authors = [
+    {name = "Jack Grahl",email = "jack.grahl@gmail.com"}
+]
+license = {text = "MIT"}
+requires-python = ">=3.9"
+dependencies = [
+]
+
+
+[tool.poetry]
+homepage = "https://github.com/jwg4/normie"
+repository = "https://github.com/jwg4/normie"
+packages = [
+    { include = "normie_alternatives" }
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
