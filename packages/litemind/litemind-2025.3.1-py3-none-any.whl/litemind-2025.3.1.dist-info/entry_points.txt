@@ -1,0 +1,2 @@
+[console_scripts]
+readmegen = litemind.tools.readme_generator.readme_generator:main
