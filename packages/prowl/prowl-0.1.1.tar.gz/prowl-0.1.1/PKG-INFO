@@ -1,0 +1,50 @@
+Metadata-Version: 2.3
+Name: prowl
+Version: 0.1.1
+Summary: Generate caracal/caracat/saimiris probes and build awesome probing tools.
+Author: matthieugouel
+Author-email: matthieu.gouel@protonmail.com
+Requires-Python: >=3.12,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Dist: pygfc (>=1.1.0,<2.0.0)
+Description-Content-Type: text/markdown
+
+# Prowl
+
+[![Tests Status](https://img.shields.io/github/actions/workflow/status/nxthdr/prowl/tests.yml?logo=github&label=tests)](https://github.com/nxthdr/prowl/actions/workflows/tests.yml)
+[![PyPI](https://img.shields.io/pypi/v/prowl?color=blue&logo=pypi&logoColor=white)](https://pypi.org/project/prowl/)
+
+> [!WARNING]
+> Currently in early-stage development.
+
+Library to generate [caracal](https://github.com/dioptra-io/caracal) / [caracat](https://github.com/maxmouchet/caracat) probes. Also intended to be used with [saimiris](https://github.com/nxthdr/saimiris).
+
+```bash
+pip install prowl
+```
+
+## Development
+
+First create a virtual environment with [poetry](https://python-poetry.org/).
+
+```bash
+poetry shell
+```
+
+Then install Prowl.
+
+```bash
+poetry install
+```
+
+## Examples
+
+You can find examples in the `examples` directory.
+
+```bash
+python examples/ping.py
+python examples/traceroute.py
+```
+

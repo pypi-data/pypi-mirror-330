@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "prowl"
+version = "0.1.1"
+description = "Generate caracal/caracat/saimiris probes and build awesome probing tools."
+authors = ["matthieugouel <matthieu.gouel@protonmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+pygfc = "^1.1.0"
+
+
+[tool.poetry.group.dev.dependencies]
+bump-my-version = "^0.32.2"
+pytest = "^8.3.4"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
