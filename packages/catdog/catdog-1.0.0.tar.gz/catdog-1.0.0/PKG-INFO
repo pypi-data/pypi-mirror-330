@@ -1,0 +1,52 @@
+Metadata-Version: 2.2
+Name: catdog
+Version: 1.0.0
+Summary: A simple library for cat and dog image classification
+Home-page: https://github.com/BogdanSuchko/catdog
+Author: Julfy
+Author-email: bahdan.suchko@yandex.by
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+Requires-Dist: torch
+Requires-Dist: torchvision
+Requires-Dist: Pillow
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-dist
+Dynamic: summary
+
+# CatDog
+
+Простая библиотека для определения кошек и собак на изображениях.
+
+## Установка
+
+Установка через pip:
+
+    pip install catdog
+
+## Использование
+
+Простой способ:
+
+    import catdog
+    result = catdog.predict("path/to/image.jpg")
+    print(result)  # "cat" или "dog"
+
+Расширенный способ:
+
+    image = catdog.CatDogImage("path/to/image.jpg")
+    print(image.is_cat)  # True/False
+    print(image.is_dog)  # True/False
+    print(image.confidence)  # Уверенность в процентах
+    print(image)  # Полное описание
+
+## Лицензия
+
+MIT
