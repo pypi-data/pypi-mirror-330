@@ -1,0 +1,19 @@
+Metadata-Version: 2.4
+Name: scllm
+Version: 0.1.1
+Summary: Add your description here
+Project-URL: Homepage, https://github.com/sagar87/scllm
+Project-URL: Documentation, https://haraldvohringer.com/scllm/
+Project-URL: Repository, https://github.com/sagar87/scllm
+Project-URL: Bug Tracker, https://github.com/sagar87/scllm/issues
+Author-email: Harald Vohringer <harald.voeh@gmail.com>
+License: MIT
+Keywords: bioinformatics,llm,single-cell
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Scientific/Engineering :: Bio-Informatics
+Requires-Python: >=3.10
+Requires-Dist: scanpy>=1.11.0
