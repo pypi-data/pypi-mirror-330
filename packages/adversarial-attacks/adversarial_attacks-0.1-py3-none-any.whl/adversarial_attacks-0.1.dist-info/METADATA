@@ -1,0 +1,15 @@
+Metadata-Version: 2.2
+Name: adversarial-attacks
+Version: 0.1
+Summary: A lightweight adversarial attack library for PyTorch
+Home-page: https://github.com/yourgithub/adversarial-attacks
+Author: Santhoshkumar
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Requires-Dist: torch
+Requires-Dist: numpy
+Dynamic: author
+Dynamic: classifier
+Dynamic: home-page
+Dynamic: requires-dist
+Dynamic: summary
