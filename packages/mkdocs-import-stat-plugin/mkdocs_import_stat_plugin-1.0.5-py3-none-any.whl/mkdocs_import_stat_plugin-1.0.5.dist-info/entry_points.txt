@@ -1,0 +1,3 @@
+[mkdocs.plugins]
+import-stat=mkdocs_import_stat_plugin:ImportStatPlugin
+
