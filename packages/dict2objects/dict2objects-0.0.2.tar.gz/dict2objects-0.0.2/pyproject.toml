@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dict2objects"
+version = "0.0.2"
+description = "Convert dictionaries into objects with attribute-style access"
+authors = [{ name = "Janardhan Singh", email = "janardhansingh1998@gmail.com" },]
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/JanardhanSingh98/dict2obj"
+Issues = "https://github.com/JanardhanSingh98/dict2obj/issues"
