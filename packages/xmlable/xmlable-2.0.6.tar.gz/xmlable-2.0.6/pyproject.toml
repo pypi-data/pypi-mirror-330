@@ -1,0 +1,84 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "xmlable"
+dynamic = ["version"]
+authors = [
+    { name = "Oliver Killane", email = "oliverkillane.business@gmail.com" },
+]
+description = "A decorator for generating xsd, xml and parsers from dataclasses"
+readme = "README.md"
+license = { file = "LICENSE" }
+keywords = ["xml", "xmlschema", "xsd", "lxml"]
+requires-python = ">=3.11"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "lxml==5.3.1",
+    "lxml-stubs==0.5.1",
+    "termcolor==2.5.0",
+    "pyhumps==3.8.0",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/OliverKillane/xmlable"
+"Bug Tracker" = "https://github.com/OliverKillane/xmlable/issues"
+"Source" = "https://github.com/OliverKillane/xmlable"
+
+[project.optional-dependencies]
+dev = ["black==25.1.0", "mypy==1.15.0", "pytest==8.3.4"]
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -q"
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.mypy]
+python_version = "3.11"
+warn_return_any = true
+warn_unused_configs = true
+packages = ['src', 'tests']
+
+[tool.black]
+line-length = 80
+target-version = ['py311']
+exclude = '''(
+    /(
+        \.eggs
+      | \.git
+      | \.hg
+      | \.mypy_cache
+      | \.tox
+      | \.venv
+      | _build
+      | buck-out
+      | build
+      | dist
+    )/
+    | /__pycache__/
+    | /\.pytest_cache/
+)'''
+
+[tool.hatch.version]
+path = "src/xmlable/__init__.py"
+
+[tool.hatch.envs.check]
+features = ["dev"]
+
+[tool.hatch.envs.auto]
+features = ["dev"]
+
+[tool.hatch.envs.check.scripts]
+test = "pytest"
+lint = "black . --check"
+typecheck = "mypy src --exclude examples/ && for f in examples/*/main.py; do mypy $f; done"
+
+[tool.hatch.envs.auto.scripts]
+examplegen = "for f in examples/*/main.py; do python $f; done"
+lint = "black ."

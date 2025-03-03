@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xmlSchema:schema xmlns:xmlSchema="http://www.w3.org/2001/XMLSchema" id="Config" elementFormDefault="qualified">
+  <xmlSchema:complexType name="Config">
+    <xmlSchema:sequence>
+      <xmlSchema:element name="Date" type="xmlSchema:string"/>
+      <xmlSchema:element name="NumberOfCores" type="xmlSchema:integer"/>
+      <xmlSchema:element name="Codes">
+        <xmlSchema:complexType>
+          <!--This is a List-->
+          <xmlSchema:sequence>
+            <xmlSchema:element name="Int" type="xmlSchema:integer" minOccurs="0" maxOccurs="unbounded"/>
+          </xmlSchema:sequence>
+        </xmlSchema:complexType>
+      </xmlSchema:element>
+      <xmlSchema:element name="ShowLogs" type="xmlSchema:boolean"/>
+    </xmlSchema:sequence>
+  </xmlSchema:complexType>
+  <xmlSchema:element name="Config" type="Config"/>
+</xmlSchema:schema>

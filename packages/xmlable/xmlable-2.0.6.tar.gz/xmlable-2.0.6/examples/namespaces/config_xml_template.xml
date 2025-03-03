@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Config>
+  <Date>Fill me with an string</Date>
+  <NumberOfCores>Fill me with an integer</NumberOfCores>
+  <Codes>
+    <!--This is a List-->
+    <Int>Fill me with an integer</Int>
+  </Codes>
+  <ShowLogs>Fill me with an boolean</ShowLogs>
+</Config>

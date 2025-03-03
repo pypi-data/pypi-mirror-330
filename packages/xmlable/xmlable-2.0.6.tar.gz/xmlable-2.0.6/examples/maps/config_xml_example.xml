@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<BigConfig>
+  <MachineIds>
+    <Item>
+      <Key>
+        <Location>apac</Location>
+        <ServName>abacus</ServName>
+      </Key>
+      <Val>
+        <Ip>71.35.186.234</Ip>
+        <Cores>24</Cores>
+        <OrgOwner>
+          <Int>2</Int>
+        </OrgOwner>
+      </Val>
+    </Item>
+    <Item>
+      <Key>
+        <Location>apac</Location>
+        <ServName>goat</ServName>
+      </Key>
+      <Val>
+        <Ip>75.174.245.110</Ip>
+        <Cores>34</Cores>
+        <OrgOwner>
+          <Int>2</Int>
+        </OrgOwner>
+      </Val>
+    </Item>
+    <Item>
+      <Key>
+        <Location>fr</Location>
+        <ServName>palm</ServName>
+      </Key>
+      <Val>
+        <Ip>58.175.90.125</Ip>
+        <Cores>78</Cores>
+        <OrgOwner>
+          <NoneType>
+            <!--This is None-->
+          </NoneType>
+        </OrgOwner>
+      </Val>
+    </Item>
+  </MachineIds>
+  <ShowLogs>true</ShowLogs>
+</BigConfig>

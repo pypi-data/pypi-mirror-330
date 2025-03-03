@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Complex>
+  <A>
+    <Item>
+      <Key>
+        <Item-1>3</Item-1>
+        <Item-2>hello</Item-2>
+      </Key>
+      <Val>
+        <Tuple>
+          <Item-1>
+            <Item>
+              <Key>3</Key>
+              <Val>
+                <Float>0.4</Float>
+              </Val>
+            </Item>
+          </Item-1>
+          <Item-2>
+            <Bool>false</Bool>
+            <Bool>true</Bool>
+          </Item-2>
+        </Tuple>
+        <Tuple>
+          <Item-1>
+            <Item>
+              <Key>2</Key>
+              <Val>
+                <Str>str</Str>
+              </Val>
+            </Item>
+          </Item-1>
+          <Item-2>
+            <Bool>false</Bool>
+          </Item-2>
+        </Tuple>
+      </Val>
+    </Item>
+  </A>
+</Complex>

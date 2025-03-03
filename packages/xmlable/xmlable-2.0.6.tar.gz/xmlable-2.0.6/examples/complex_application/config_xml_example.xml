@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<MyPythonApp>
+  <Mainconf>
+    <DebugLogs>false</DebugLogs>
+    <MetricsUrl>http://metricsapi.corp.org</MetricsUrl>
+    <ControlTimeout>23</ControlTimeout>
+    <ControlPort>5788</ControlPort>
+  </Mainconf>
+  <NamedSessions>
+    <Item>
+      <Key>sess_123</Key>
+      <Val>
+        <Id>12334</Id>
+        <AppName>myotherapp-1.26.2</AppName>
+        <Conn>tcp:1.1.1.23:2307</Conn>
+      </Val>
+    </Item>
+    <Item>
+      <Key>sess_124</Key>
+      <Val>
+        <Id>12334</Id>
+        <AppName>myotherapp-1.26.2</AppName>
+        <Conn>tcp:1.1.1.24:2308</Conn>
+      </Val>
+    </Item>
+  </NamedSessions>
+  <ExtraSessions>
+    <SessionConfig>
+      <Id>12335</Id>
+      <AppName>extra_app-3.15.1</AppName>
+      <Conn>quic:1.1.1.25:2307</Conn>
+    </SessionConfig>
+    <SessionConfig>
+      <Id>14435</Id>
+      <AppName>extra_app-3.15.1</AppName>
+      <Conn>quic:1.1.1.26:2307</Conn>
+    </SessionConfig>
+  </ExtraSessions>
+  <NameToUser>
+    <Item>
+      <Key>peter bread</Key>
+      <Val>
+        <Int>1233</Int>
+      </Val>
+    </Item>
+    <Item>
+      <Key>mike rofone</Key>
+      <Val>
+        <UserConfig>
+          <Name>mike_rofone_12</Name>
+          <AuthToken>1224**AAUID</AuthToken>
+        </UserConfig>
+      </Val>
+    </Item>
+    <Item>
+      <Key>authur eight</Key>
+      <Val>
+        <UserConfig>
+          <Name>authur_124</Name>
+          <AuthToken>1223**AAUID</AuthToken>
+        </UserConfig>
+      </Val>
+    </Item>
+  </NameToUser>
+</MyPythonApp>
