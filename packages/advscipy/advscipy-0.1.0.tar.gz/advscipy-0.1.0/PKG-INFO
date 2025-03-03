@@ -1,0 +1,47 @@
+Metadata-Version: 2.2
+Name: advscipy
+Version: 0.1.0
+Summary: An advanced extension of the SciPy library.
+Home-page: https://github.com/Sumedh1599/advscipy
+Author: Sumedh Patil
+Author-email: your-email@example.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: scipy>=1.0.0
+Requires-Dist: numpy>=1.15.0
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# AdvSciPy
+
+AdvSciPy is an advanced extension of the popular SciPy library, providing enhanced functionality for scientific computing.
+
+## Installation
+
+```bash
+pip install advscipy
+```
+
+USAGE
+from advscipy import advanced_minimize
+
+# Define a simple quadratic function: f(x) = (x - 3)^2
+
+def objective_function(x):
+return (x - 3) \*\* 2
+
+# Perform optimization
+
+result = advanced_minimize(objective_function, x0=[0], method='BFGS')
+print(result)

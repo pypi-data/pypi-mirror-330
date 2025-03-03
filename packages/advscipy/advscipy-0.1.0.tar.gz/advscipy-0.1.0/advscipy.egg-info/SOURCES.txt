@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+advscipy/__init__.py
+advscipy/core.py
+advscipy.egg-info/PKG-INFO
+advscipy.egg-info/SOURCES.txt
+advscipy.egg-info/dependency_links.txt
+advscipy.egg-info/requires.txt
+advscipy.egg-info/top_level.txt
+tests/test_core.py
