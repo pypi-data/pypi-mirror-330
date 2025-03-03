@@ -1,0 +1,63 @@
+Metadata-Version: 2.2
+Name: portakal
+Version: 0.0.4
+Description-Content-Type: text/markdown
+Dynamic: description
+Dynamic: description-content-type
+
+  
+
+
+# 🍊 Portakal - Eğlenceli Portakal Sıkma Paketi!  
+
+**Portakal**, terminal üzerinden portakal sıkabileceğiniz ve toplamda ne kadar portakal suyu elde ettiğinizi takip edebileceğiniz eğlenceli bir Python paketidir.  
+
+## 🚀 Kurulum  
+
+Paketi yüklemek için aşağıdaki komutu kullanabilirsiniz:  
+
+```sh
+pip install portakal
+```
+
+Eğer kaynak koddan kurmak istiyorsanız:  
+
+```sh
+git clone https://github.com/kullaniciadi/portakal.git
+cd portakal
+pip install .
+```
+
+## 🔥 Kullanım  
+
+Paketi kullanmak için terminalde şu komutu çalıştırabilirsiniz:  
+
+```sh
+portakal
+```
+
+Ya da Python içinde:  
+
+```python
+from portakal.juicer import OrangeJuicer
+
+juicer = OrangeJuicer()
+
+# Portakal sıkma
+juicer.squeeze()
+juicer.squeeze()
+
+# Toplam sıkılan suyu öğrenme
+juicer.get_total_juice()
+
+# Toplam kaç portakal sıkıldığını öğrenme
+juicer.get_total_oranges()
+```
+
+## 🛠 Özellikler  
+
+✅ **Rastgele portakal suyu çıkışı** (30-80ml arası)  
+✅ **Her portakalın 3 ila 5 kez sıkılabilmesi**  
+✅ **Her sıkma sonrası kalan hakları gösterme**  
+✅ **Tamamen sıkılan portakaldan sonra yeni bir portakal getirme**  
+✅ **Toplam sıkılmış portakal suyu ve sıkılan portakal sayısını takip etme**  
