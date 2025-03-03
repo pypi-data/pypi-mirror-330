@@ -1,0 +1,78 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - DUMMY
+      Connection:
+      - keep-alive
+      User-Agent:
+      - mastodonpy
+    method: GET
+    uri: https://mastodon.social/api/v2/filters
+  response:
+    body:
+      string: '[{"id": "202", "title": "animes", "context": ["home"], "expires_at":
+        null, "filter_action": "warn", "keywords": [{"id": "202", "keyword": "animes",
+        "whole_word": false}], "statuses": [{"id": "5980", "status_id": "110446223051565765"}]}]'
+    headers:
+      Connection:
+      - keep-alive
+      Date:
+      - Sat, 15 Feb 2025 19:55:31 GMT
+      Strict-Transport-Security:
+      - max-age=31557600
+      Vary:
+      - Authorization, Origin, Accept-Encoding
+      X-Cache:
+      - MISS, MISS, MISS
+      X-Cache-Hits:
+      - 0, 0, 0
+      X-Served-By:
+      - cache-fra-eddf8230082-FRA, cache-fra-eddf8230022-FRA, cache-hel1410022-HEL
+      X-Timer:
+      - S1739649331.043302,VS0,VE102
+      accept-ranges:
+      - none
+      alt-svc:
+      - h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+      cache-control:
+      - private, no-store
+      content-length:
+      - '215'
+      content-security-policy:
+      - default-src 'none'; frame-ancestors 'none'; form-action 'none'
+      content-type:
+      - application/json; charset=utf-8
+      etag:
+      - W/"6fa9430258aa6544bfb53d5f1c900c33"
+      referrer-policy:
+      - same-origin
+      transfer-encoding:
+      - chunked
+      via:
+      - 1.1 varnish, 1.1 varnish, 1.1 varnish
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - DENY
+      x-ratelimit-limit:
+      - '300'
+      x-ratelimit-remaining:
+      - '298'
+      x-ratelimit-reset:
+      - '2025-02-15T20:00:00.107725Z'
+      x-request-id:
+      - 30efe8262fc52f47943232a9688ef296
+      x-runtime:
+      - '0.034800'
+      x-xss-protection:
+      - '0'
+    status:
+      code: 200
+      message: OK
+version: 1

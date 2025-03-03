@@ -1,0 +1,78 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - DUMMY
+      Connection:
+      - keep-alive
+      User-Agent:
+      - mastodonpy
+    method: GET
+    uri: https://mastodon.social/api/v2/notifications/policy
+  response:
+    body:
+      string: '{"for_not_following": "accept", "for_not_followers": "accept", "for_new_accounts":
+        "accept", "for_private_mentions": "accept", "for_limited_accounts": "filter",
+        "summary": {"pending_requests_count": 0, "pending_notifications_count": 0}}'
+    headers:
+      Connection:
+      - keep-alive
+      Date:
+      - Sat, 15 Feb 2025 20:01:05 GMT
+      Strict-Transport-Security:
+      - max-age=31557600
+      Vary:
+      - Authorization, Origin, Accept-Encoding
+      X-Cache:
+      - MISS, MISS, MISS
+      X-Cache-Hits:
+      - 0, 0, 0
+      X-Served-By:
+      - cache-fra-eddf8230052-FRA, cache-fra-etou8220161-FRA, cache-hel1410031-HEL
+      X-Timer:
+      - S1739649665.014981,VS0,VE234
+      accept-ranges:
+      - none
+      alt-svc:
+      - h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+      cache-control:
+      - private, no-store
+      content-length:
+      - '222'
+      content-security-policy:
+      - default-src 'none'; frame-ancestors 'none'; form-action 'none'
+      content-type:
+      - application/json; charset=utf-8
+      etag:
+      - W/"29586df4e9cf1e205686f64eb490e29e"
+      referrer-policy:
+      - same-origin
+      transfer-encoding:
+      - chunked
+      via:
+      - 1.1 varnish, 1.1 varnish, 1.1 varnish
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - DENY
+      x-ratelimit-limit:
+      - '300'
+      x-ratelimit-remaining:
+      - '297'
+      x-ratelimit-reset:
+      - '2025-02-15T20:05:00.183771Z'
+      x-request-id:
+      - 4fa7d4be8aa8a212f35ee5e86581d36b
+      x-runtime:
+      - '0.160602'
+      x-xss-protection:
+      - '0'
+    status:
+      code: 200
+      message: OK
+version: 1

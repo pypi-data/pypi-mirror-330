@@ -1,0 +1,183 @@
+interactions:
+- request:
+    body: subscription%5Bendpoint%5D=https%3A%2F%2Fexample.com&subscription%5Bkeys%5D%5Bp256dh%5D=BEoERZQLAPKdsw0y9BgXHp7vbex%2FyYLHo9lV3DyRSXWIcWIMBObPj8qwZnttrtbB%2BELtXz7NUc31xGxha7ujkog%3D&subscription%5Bkeys%5D%5Bauth%5D=k9kx%2FK%2BAp04pkrjyVWXjmw%3D%3D&policy=all
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer __MASTODON_PY_TEST_ACCESS_TOKEN
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '259'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - tests/v311
+    method: POST
+    uri: http://localhost:3000/api/v1/push/subscription
+  response:
+    body:
+      string: '{"id":3,"endpoint":"https://example.com","alerts":{},"server_key":"BE1WVtJ4TtrCv7gVo33aa4Hgc6mtg2W6yJlGGOdj2si5BlgCm8HpmqkdaX5y5ZiPyWcBBb3V0sDOa4GI2r6EylU=","policy":"all"}'
+    headers:
+      Cache-Control:
+      - private, no-store
+      Content-Length:
+      - '172'
+      Content-Security-Policy:
+      - default-src 'none'; frame-ancestors 'none'; form-action 'none'
+      Content-Type:
+      - application/json; charset=utf-8
+      ETag:
+      - W/"328c6a0f68148e947de9a44cfe7bde1b"
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Server-Timing:
+      - cache_read.active_support;dur=0.03, sql.active_record;dur=7.49, cache_generate.active_support;dur=1.42,
+        cache_write.active_support;dur=0.09, instantiation.active_record;dur=0.41,
+        start_processing.action_controller;dur=0.00, transaction.active_record;dur=6.03,
+        render.active_model_serializers;dur=0.21, process_action.action_controller;dur=31.12
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-RateLimit-Limit:
+      - '300'
+      X-RateLimit-Remaining:
+      - '299'
+      X-RateLimit-Reset:
+      - '2025-02-13T22:00:00.675907Z'
+      X-Request-Id:
+      - 11eaab67-aaae-41ab-853a-62018fdf7298
+      X-Runtime:
+      - '0.047712'
+      X-XSS-Protection:
+      - '0'
+      vary:
+      - Authorization, Origin
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer __MASTODON_PY_TEST_ACCESS_TOKEN
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      User-Agent:
+      - tests/v311
+    method: DELETE
+    uri: http://localhost:3000/api/v1/push/subscription
+  response:
+    body:
+      string: '{}'
+    headers:
+      Cache-Control:
+      - private, no-store
+      Content-Length:
+      - '2'
+      Content-Security-Policy:
+      - default-src 'none'; frame-ancestors 'none'; form-action 'none'
+      Content-Type:
+      - application/json; charset=utf-8
+      ETag:
+      - W/"44136fa355b3678a1146ad16f7e8649e"
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Server-Timing:
+      - cache_read.active_support;dur=0.02, sql.active_record;dur=3.58, cache_generate.active_support;dur=1.08,
+        cache_write.active_support;dur=0.09, instantiation.active_record;dur=0.39,
+        start_processing.action_controller;dur=0.00, transaction.active_record;dur=2.76,
+        render.active_model_serializers;dur=0.03, process_action.action_controller;dur=25.26
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-RateLimit-Limit:
+      - '300'
+      X-RateLimit-Remaining:
+      - '299'
+      X-RateLimit-Reset:
+      - '2025-02-13T22:00:00.728051Z'
+      X-Request-Id:
+      - 1c2c9bb2-1443-4c09-ba71-f3043e4bfe82
+      X-Runtime:
+      - '0.040378'
+      X-XSS-Protection:
+      - '0'
+      vary:
+      - Authorization, Origin
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Authorization:
+      - Bearer __MASTODON_PY_TEST_ACCESS_TOKEN
+      Connection:
+      - keep-alive
+      User-Agent:
+      - tests/v311
+    method: GET
+    uri: http://localhost:3000/api/v1/push/subscription
+  response:
+    body:
+      string: '{"error":"Not Found"}'
+    headers:
+      Cache-Control:
+      - private, no-store
+      Content-Length:
+      - '21'
+      Content-Security-Policy:
+      - default-src 'none'; frame-ancestors 'none'; form-action 'none'
+      Content-Type:
+      - application/json; charset=utf-8
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Server-Timing:
+      - cache_read.active_support;dur=0.02, sql.active_record;dur=1.03, cache_generate.active_support;dur=1.04,
+        cache_write.active_support;dur=0.09, instantiation.active_record;dur=0.26,
+        start_processing.action_controller;dur=0.00, render.active_model_serializers;dur=0.03,
+        halted_callback.action_controller;dur=0.00, process_action.action_controller;dur=20.45
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-RateLimit-Limit:
+      - '300'
+      X-RateLimit-Remaining:
+      - '299'
+      X-RateLimit-Reset:
+      - '2025-02-13T22:00:00.771378Z'
+      X-Request-Id:
+      - af27e23e-696c-461f-a999-6e40bf931fd6
+      X-Runtime:
+      - '0.035136'
+      X-XSS-Protection:
+      - '0'
+      vary:
+      - Authorization, Origin
+    status:
+      code: 404
+      message: Not Found
+version: 1
