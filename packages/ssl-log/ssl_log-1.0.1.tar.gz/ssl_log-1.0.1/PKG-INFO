@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: ssl_log
+Version: 1.0.1
+Summary: A CLI tool to automate logging tasks from Bitbucket to Jira.
+Home-page: https://github.com/AscEmon/SSLlog
+Author: Abu Sayed Chowdhury
+Author-email: sayem227@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+
+# SSL Log CLI Tool
+
+## Configuration
+
+Upon installation, a default configuration file is created at:
+
+- **Linux/macOS**: `~/.ssl_log/config.json`
+- **Windows**: `C:\Users\<Username>\.ssl_log\config.json`
+
+
+
