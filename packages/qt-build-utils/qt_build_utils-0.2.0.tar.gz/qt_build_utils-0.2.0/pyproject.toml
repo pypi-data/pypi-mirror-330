@@ -1,0 +1,34 @@
+[project]
+name = "qt-build-utils"
+version = "0.2.0"
+description = "An utility to facilitate the building of Qt based projects"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "click>=8.1.8",
+    "setuptools>=75.8.2",
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.9.9",
+]
+
+[tool.ruff.lint]
+select = ["E", "F"]
+ignore = ["E402"]
+
+[tool.ruff]
+line-length = 120
+exclude = ["**.pyi", "**/.venv/**"]
+include = ["src/**.py", "test/**.py"]
+
+[tool.pyright]
+ignore = ["**.pyi", "**/.venv/**"]
+
+[project.scripts]
+qt-build-utils = "qt_build_utils:cli"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
