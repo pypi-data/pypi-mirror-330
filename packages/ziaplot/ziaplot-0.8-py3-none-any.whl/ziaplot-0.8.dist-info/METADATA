@@ -1,0 +1,49 @@
+Metadata-Version: 2.2
+Name: ziaplot
+Version: 0.8
+Summary: Draw light-weight plots, graphs, and charts
+Home-page: https://ziaplot.readthedocs.io
+Author: Collin J. Delker
+Author-email: ziaplot@collindelker.com
+License: MIT
+Project-URL: Documentation, https://ziaplot.readthedocs.io
+Project-URL: Source Code, https://github.com/cdelker/ziaplot
+Keywords: plot,chart,graph,smith chart,bar,pie
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Intended Audience :: Education
+Classifier: Intended Audience :: Science/Research
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Scientific/Engineering :: Mathematics
+Classifier: Topic :: Scientific/Engineering :: Visualization
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+Provides-Extra: cairo
+Requires-Dist: cairosvg; extra == "cairo"
+Provides-Extra: math
+Requires-Dist: ziafont>=0.10; extra == "math"
+Requires-Dist: ziamath>=0.12; extra == "math"
+Requires-Dist: latex2mathml; extra == "math"
+
+# ziaplot
+
+Ziaplot is for easy, lightweight, and Pythonic plotting of geometric diagrams and discrete data in SVG format.
+
+In ziaplot, a diagram is made from one or more elements added to a Graph.
+Below, a PolyLine is added to a Graph.
+
+        import ziaplot as zp
+        with zp.Graph():
+            zp.PolyLine([1, 2, 3], [1, 4, 9])
+
+Ziaplot can plot discrete XY data, geometric diagrams, callable functions, histograms, pie charts, and bar charts.
+Data can also be displayed in polar form or on a Smith Chart.
