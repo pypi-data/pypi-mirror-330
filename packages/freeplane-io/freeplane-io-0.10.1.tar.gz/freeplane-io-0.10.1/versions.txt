@@ -1,0 +1,132 @@
+package versions
+
+
+v0.10.1
+ 02.03.2025
+
+  - FIX: re-work logging functionality in a way that the freeplane module
+         will use an existing logging configuration provided by the calling
+         application if possible. otherwise it will create its own. the
+         calling application should use the built-in logging package and
+         configure a handler[0] to report to the command line.
+
+  - FIX: node's set_image method now respects specific protocols
+
+
+v0.10.0
+ 27.10.2024
+
+  - NEW: there are new attributes and methods for the <node> object concerning
+         the use of arrowlinks:
+
+         - <node>.arrowlinks       will return a list of nodes connected
+                                   with outgoing arrowlinks
+
+         - <node>.arrowlinked      will return a list of nodes which connect
+                                   to the <node> arrowlinks (incoming)
+
+         - <node>.del_arrowlink()  will remove one of <node>'s outgoing
+                                   arrowlinks
+
+         the method <node>.add_arrowlink() was implemented already.
+
+
+v0.9.0
+ 26.09.2024
+
+  - NEW: the attribute <node>.notes might be used to get and set a plaintext
+         value to the node's notes. analogous to the details attribute.
+         consequently, the keyword argument "notes" can be used within the
+         methods <mindmap>.find_nodes(), <node>.find_nodes() and
+         <node>.find_children() to look for appropriate nodes.
+
+  - NEW: the keyword argument "caseinsensitive=True" can be used in addition
+         to the argument "exact=True" within the methods <mindmap>.find_nodes(),
+         <node>.find_nodes() and <node>.find_children() to ensure that all
+         textual comparisons will be performed in a case-insensitive way,
+         although the text is expected to be exact. this setting will be
+         relevant for checking the attributes core, link, details and notes.
+
+
+v0.8.0
+ 09.07.2023
+
+  - FIX: prevent from necessity to insert version multiple times (deployment)
+  - NEW: method <node>.is_descendant_of() determines if a given node element
+         is located within a direct line of parents up towards the mindmap root
+  - FIX: correct and stabilize set_image() function
+
+
+v0.7.2
+ 20.05.2023
+
+  - FIX: creation of own styles now correct
+  - FIX: proper HTML format for multi-lined details
+
+v0.7.1
+ 20.12.2023
+
+  - FIX: determination of mindmap's encoding via try / except
+  - FIX: workaround to neutralize invalid XML usage concerning NBSP
+
+v0.7.0
+ 13.12.2022
+ 
+  - NEW: handle in-line images
+  - FIX: add lxml dependency in setup.py (to get installed automatically)
+  - FIX: some bug fixes (see commit history)
+  
+  
+v0.6.0
+ 29.09.2022
+
+  - MOD: re-work API for mindmap and node objects
+  - FIX: last preparations for PyPi and GitHub deployment
+
+
+v0.5.1 (old v1.2.1)
+ 12.06.2022
+
+  - FIX: some bug fixes (see commit history)
+  
+v0.5.0 (old v1.2.0)
+ 12.06.2022
+
+  - NEW: management of creation and modification dates
+  - FIX: some bug fixes (see commit history)
+  
+
+v0.4.0 (old v1.1.0)
+ 02.12.2021
+
+  - NEW: determination of "descendants index chain"
+  - NEW: check for node type (e.g. root node)
+  - NEW: delete / remove node from map
+  - NEW: set and management of node's attributes
+  - NEW: management of styles for arrow links
+  - FIX: some bug fixes (see commit history)
+  
+
+v0.3.0 (old v1.0)
+ 26.01.2021
+
+  - NEW: creation and management of "detached" nodes
+  - NEW: creation and management of proper node ids
+  - NEW: manage arrow links between nodes
+  - NEW: distinguish between different freeplane versions
+  - NEW: manage node's style
+  - NEW: create mindmap file, in addition to changing existing ones
+  - FIX: some bug fixes (see commit history)
+  
+
+v0.2.0 (old v0.9)
+ 10.10.2020
+
+  - NEW: manage single attributes for a node
+  - FIX: some bug fixes (see commit history)
+
+
+v0.1.0 (old v0.8)
+ 17.06.2020
+
+  - NEW: first operational version used "professionally" within own applications
