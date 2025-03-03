@@ -1,0 +1,5 @@
+[console_scripts]
+certx-server = certx.server:start
+
+[oslo.config.opts]
+certx = certx.conf.opts:list_opts
