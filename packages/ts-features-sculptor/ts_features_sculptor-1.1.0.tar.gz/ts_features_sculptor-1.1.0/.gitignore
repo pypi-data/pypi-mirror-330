@@ -1,0 +1,5 @@
+*.sh
+.pytest_cache
+ts_features_sculptor.egg-info
+__pycache__
+_version.py
