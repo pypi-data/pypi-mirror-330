@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "siges-sdk"
+version = "0.1.0"
+description = "SDK para plugins de SIGES"
+readme = "README.md"
+authors = [
+    {name = "SIGES Team"}
+]
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "fastapi>=0.100.0",
+    "httpx>=0.24.0",
+    "pydantic>=2.0.0",
+    "PyYAML>=6.0",
+    "uvicorn>=0.22.0",
+    "redis>=5.0.0"
+]
+
+[project.urls]
+"Homepage" = "https://github.com/yourusername/siges-sdk"
+"Bug Tracker" = "https://github.com/yourusername/siges-sdk/issues"
+
+[tool.setuptools]
+packages = ["siges_sdk"] 
