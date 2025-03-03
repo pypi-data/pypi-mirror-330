@@ -1,0 +1,38 @@
+Metadata-Version: 2.2
+Name: fastapi-pundra
+Version: 0.0.12
+Summary: Pundra: Your FastAPI Companion for Productivity
+Home-page: https://github.com/code4mk/fastapi-pundra
+Author: Mostafa Kamal
+Author-email: hiremostafa@gmail.com
+License: MIT
+Project-URL: Source, https://github.com/code4mk/fastapi-pundra
+Project-URL: Changelog, https://github.com/code4mk/fastapi-pundra/blob/main/CHANGELOG.md
+Keywords: python,fastapi,rest_api,pundra,strawberry,graphql,code4mk
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Framework :: FastAPI
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Requires-Dist: requests
+Requires-Dist: python-dotenv
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: license
+Dynamic: project-url
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# fastapi-pundra
+Pundra: Your FastAPI Companion for Productivity
