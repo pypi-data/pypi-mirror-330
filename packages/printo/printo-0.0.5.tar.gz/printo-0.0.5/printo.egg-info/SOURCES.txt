@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+printo/__init__.py
+printo/descript.py
+printo/py.typed
+printo.egg-info/PKG-INFO
+printo.egg-info/SOURCES.txt
+printo.egg-info/dependency_links.txt
+printo.egg-info/top_level.txt
+tests/test_descript.py
