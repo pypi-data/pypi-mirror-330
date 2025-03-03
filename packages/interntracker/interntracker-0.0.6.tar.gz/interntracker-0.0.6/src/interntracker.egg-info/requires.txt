@@ -1,0 +1,12 @@
+httpx<1,>=0.23.0
+pydantic<3,>=1.9.0
+typing-extensions<5,>=4.11
+python-dotenv>=1.0.1
+python-jenkins>=1.8.2
+anyio<5,>=3.5.0
+sniffio
+tqdm>4
+gql[all]
+
+[:python_version < "3.8"]
+cached-property

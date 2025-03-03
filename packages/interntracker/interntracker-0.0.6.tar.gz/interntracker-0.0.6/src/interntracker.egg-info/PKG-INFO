@@ -1,0 +1,32 @@
+Metadata-Version: 2.1
+Name: interntracker
+Version: 0.0.6
+Summary: a python library wrapping http request submission for interntrack
+Home-page: https://github.com/MCplayerFromPRC/tracker-python
+Author: MCplayerFromPRC
+Author-email: 1953414760@qq.com
+License: Apache License 2.0
+Keywords: interntrack request submission
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# tracker-python
+
+## release
+
+### 生成分发文件
+`python setup.py sdist bdist_wheel`
+
+### 保存 ~/.pypirc
+```
+[distutils]
+index-servers =
+    pypi
+
+[pypi]
+  username = __token__
+  password = pypi-AgEIcHxxxxx
+```
+
+### 上传到 PyPI
+`twine upload dist/*`
