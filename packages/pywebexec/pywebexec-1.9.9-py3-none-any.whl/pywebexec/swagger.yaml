@@ -1,0 +1,221 @@
+swagger: "2.0"
+info:
+  title: PyWebExec API
+  version: "1.0"
+paths:
+  /commands:
+    get:
+      summary: "List commands status"
+      tags:
+        - commands
+      responses:
+        "200":
+          description: "List of all commands status"
+          schema:
+            type: object
+            properties:
+              commands:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    command_id:
+                      type: string
+                    command:
+                      type: string
+                    status:
+                      type: string
+                    start_time:
+                      type: string
+                      format: date-time
+                    end_time:
+                      type: string
+                      format: date-time
+                    exit_code:
+                      type: integer
+                    last_output_line:
+                      type: string
+                    user:
+                      type: string
+    post:
+      summary: "Run a command"
+      tags:
+        - commands
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: commandRequest
+          schema:
+            type: object
+            properties:
+              command:
+                type: string
+                # Enum will be added dynamically by the APIs
+                default: commandName
+              params:
+                type: array
+                items:
+                  type: string
+                default: []
+              rows:
+                type: integer
+                default: 24
+              cols:
+                type: integer
+                default: 125
+            required:
+              - command
+      responses:
+        "200":
+          description: "Command started"
+          schema:
+            type: object
+            properties:
+              command_id:
+                type: string
+              message:
+                type: string
+  /commands/{command_id}:
+    get:
+      summary: "Get command status"
+      tags:
+        - commands
+      parameters:
+        - in: path
+          name: command_id
+          required: true
+          type: string
+      responses:
+        "200":
+          description: "Command status returned"
+          schema:
+            type: object
+            properties:
+              command_id:
+                type: string
+              command:
+                type: string
+              params:
+                type: array
+                items:
+                  type: string
+              status:
+                type: string
+              start_time:
+                type: string
+                format: date-time
+              end_time:
+                type: string
+                format: date-time
+              exit_code:
+                type: integer
+              last_output_line:
+                type: string
+              cols:
+                type: integer
+              rows:
+                type: integer
+              user:
+                type: string
+              from:
+                type: string
+              pid:
+                type: integer
+
+  /commands/{command_id}/output:
+    get:
+      summary: "Get command output"
+      tags:
+        - commands
+      parameters:
+        - in: path
+          name: command_id
+          required: true
+          type: string
+        - in: query
+          name: offset
+          type: integer
+          default: 0
+        - in: query
+          name: maxsize
+          type: integer
+          default: 10485760
+        - in: query
+          name: maxlines
+          type: integer
+          default: 5000
+      consumes:
+        - application/json
+      produces:
+        - application/json
+        - text/plain
+      responses:
+        "200":
+          description: "Command output returned"
+          schema:
+            type: object
+            properties:
+              output:
+                type: string
+              status:
+                type: string
+              rows:
+                type: integer
+              cols:
+                type: integer
+              links:
+                type: object
+                properties:
+                  next:
+                    type: string
+                    format: uri
+  /commands/{command_id}/stop:
+    patch:
+      summary: "Stop a running command"
+      tags:
+        - commands
+      parameters:
+        - in: path
+          name: command_id
+          required: true
+          type: string
+      responses:
+        "200":
+          description: "Command stopped successfully"
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+  /commands/exposed:
+    get:
+      summary: "List available executable commands"
+      tags:
+        - commands
+      produces:
+        - application/json
+      responses:
+        "200":
+          description: "List of commands with markdown help"
+          schema:
+            type: object
+            properties:
+              commands:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    command:
+                      type: string
+                    help:
+                      type: string
+          examples:
+            application/json:
+              commands:
+                - command: ls
+                  help: "List directory contents \n**params**:\n* `<ls_params>`"
+                - command: cat
+                  help: "Concatenate and display files \n**params**:\n* `<cat_params>`"
