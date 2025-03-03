@@ -1,0 +1,88 @@
+Metadata-Version: 2.1
+Name: TerraHarmonize
+Version: 0.1.3
+Summary: A powerful and efficient package designed for the SatSure Sage GIS team, enabling precise and seamless POC matching and D1-D2 matching across all states.
+License: GPLv3
+Keywords: SatSure,TerraHarmonize,Sage,POC
+Author: chandramohan
+Author-email: chandramohan@satsure.co
+Requires-Python: >=3.9,<3.11
+Classifier: License :: Other/Proprietary License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Requires-Dist: fuzzywuzzy (==0.18.0)
+Requires-Dist: numpy (==1.26.0)
+Requires-Dist: pandas (==2.1.1)
+Project-URL: Documentation, https://terraharmonize-docs.readthedocs.io/en/latest/index.html
+Description-Content-Type: text/markdown
+
+TerraHarmonize 🌍
+🚀 Seamless & Accurate POC and D1-D2 Matching for All States
+
+This package was built for SatSure SAGE 🛰️ to effortlessly match client data with internal datasets for proof-of-concept (POC) validation.
+Whether you're working with geospatial surveys, land records, or administrative data, TerraHarmonize ensures precision, efficiency, and scalability across all states.
+
+✨ Key Features:
+✅ Fast & accurate POC matching 🏹
+✅ Handles diverse data formats 📊
+✅ Designed for scalability & performance ⚡
+
+### Installation
+```sh
+pip install TerraHarmonize
+```
+### Examples
+
+For changing regional character to English.
+```python
+from TerraHarmonize import TextFormatters,SurveyMatching
+
+>>> string = '12/अ/1'
+>>> print(TextFormatters.regional_to_english_village(string,'Hi'))
+    '12/A/1'
+```
+For getting the index of the best match.
+
+```python
+from TerraHarmonize import TextFormatters,SurveyMatching
+
+>>> string = '13/A1'
+>>> comparing_list = ['13/A1','14/A/1','12/A/1','13/అ','13-అ/1']
+    #correct matching is [0,3,4] index i.e. '13/A1','13/అ','13-అ/1' 
+>>> print(SurveyMatching(string,comparing_list).poc_matching_simple(split_pattern= r"\/|\-"))
+    [0]
+>>> print(SurveyMatching(string,comparing_list).poc_matching(include='both',state='AP'))
+    [0, 3, 4]
+
+```
+Adding **/** inbetween a number and an alphabet.
+
+```python
+from TerraHarmonize import TextFormatters,SurveyMatching
+
+>>> data = '13/1AA/BB1/E'
+>>> updated_data = TextFormatters.normalize_alpha_num_slash(data,'En')
+>>> print(updated_data)
+    '13/1/AA/BB/1/E'
+
+```
+```python
+
+>>> data = {
+            "district": ["District A", "District B", "District C"],
+            "tehsil": ["Tehsil X", "Tehsil Y", "Tehsil Z"],
+            "village": ["Village 1", "Village 2", "Village 3"],
+            "survey_number_client": ["13/1/अ", "23/2A", "789/1"],
+            "survey_number_satsure": [["13/1", "13/1/A", "13/2/1"], ["456A", "23/2", "23/2/अ"], ["324/1", "121/2"]],
+            "survey_id": [["ID_1", "ID_2", "ID_3"], ["ID_4", "ID_5", "ID_6"], ["ID_7", "ID_8"]]
+            }
+
+>>> df = pd.DataFrame(data)
+>>> matching = SurveyMatching.poc_matching_dataframe(df,'survey_number_client',
+                                          'survey_number_satsure','survey_id',
+                                          include='both',
+                                          state='MH').fillna('missing')
+
+```
+📖 **More Examples & Usage** https://github.com/CM-SS155/TerraHarmonize-Docs
