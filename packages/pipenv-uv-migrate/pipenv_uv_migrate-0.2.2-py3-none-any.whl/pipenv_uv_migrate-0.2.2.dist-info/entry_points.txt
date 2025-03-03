@@ -1,0 +1,2 @@
+[console_scripts]
+pipenv-uv-migrate = pipenv_uv_migrate.__main__:app
