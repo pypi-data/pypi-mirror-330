@@ -1,0 +1,85 @@
+dynaconf_merge = true
+
+# -----------------------------------------------------------------------------
+# Regression
+# -----------------------------------------------------------------------------
+
+[regression]
+path = "@path @format /space/users/ci_wiliot/vw_e0_nightly_regression/regressions"
+max_runs_in_parallel = 10
+
+[regression.report] 
+path = "@path @format {env[RAREA]}/socx/regression/reports"
+
+# -----------------------------------------------------------------------------
+# Rerun Failure History
+# -----------------------------------------------------------------------------
+
+[regression.rerun_failure_history.input]
+name = "@format {this.regression.logs.files.failure_history.name}"
+filename = "@format {this.regression.logs.files.failure_history.filename}"
+directory = "@path @format {this.regression.logs.files.failure_history.directory}"
+description = ""
+
+[regression.rerun_failure_history.output]
+name = "failure_history_rerun"
+filename = "failure_history.log"
+directory = "@path @format {this.regression.logs.rerun_failures}"
+description = ""
+
+# -----------------------------------------------------------------------------
+# Logs
+# -----------------------------------------------------------------------------
+
+[regression.logs]
+path = "@path @format {this.regression.path}/logs"
+prev = "@path @format {this.regression.logs.path}/prev"
+latest = "@path @format {this.regression.logs.path}/latest"
+rerun_failures = "@path @format {env[TOP_VERIF]}/scripts/socx/assets/rgr/rerun_failures"
+
+# -----------------------------------------------------------------------------
+# Logs - Files
+# -----------------------------------------------------------------------------
+
+[regression.logs.files.failure_history]
+name = "failure_history"
+filename = "failed_tests_history.log"
+directory = "@path @format {this.regression.logs.latest}"
+description = ""
+
+
+[regression.logs.files.rerun_list]
+name = "rerun_list"
+filename = "rerun_list.cfg"
+directory = "@path @format {this.regression.logs.latest}"
+description = ""
+
+
+[regression.logs.files.regression_summary]
+name = "regression_summary"
+filename =  "regression_summary.log"
+directory = "@path @format {this.regression.logs.latest}"
+description = ""
+
+
+[regression.logs.files.errors_summary]
+name = "errors_smmary"
+filename = "errors_summary.log"
+directory = "@path @format {this.regression.logs.latest}"
+description = ""
+
+
+# -----------------------------------------------------------------------------
+# Runtime
+# -----------------------------------------------------------------------------
+
+[regression.runtime]
+path = "@path @format {this.regression.path}/nightly"
+
+# -----------------------------------------------------------------------------
+# Runtime - Files
+# -----------------------------------------------------------------------------
+
+[[regression.runtime.files]]
+name = "soc_rgr_db_pickled"
+filename="socRgrDB.pyclass"
