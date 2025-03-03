@@ -1,0 +1,9 @@
+Metadata-Version: 2.4
+Name: fcst
+Version: 0.0.1
+Summary: Forecasting utilities, time-series preprocessing, rolling back-test and ensemble forecasting from model selection
+Author-email: Anupong Wannakrairot <anuponwa@scg.com>
+Requires-Python: >=3.10
+Requires-Dist: pandas>=2.2.3
+Requires-Dist: sktime>=0.36.0
+Requires-Dist: statsmodels>=0.14.4
