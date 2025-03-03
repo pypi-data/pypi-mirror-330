@@ -1,0 +1,3 @@
+[console_scripts]
+neuraltrack-plot-gradient = neuraltrack.visualization.gradient_plot:main
+neuraltrack-plot-loss = neuraltrack.visualization.loss_plot:main
