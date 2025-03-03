@@ -1,0 +1,15 @@
+hyperspy>=2.3.0
+ipywidgets>=8.0
+link_traits
+ipympl
+
+[dev]
+black
+hyperspy-gui-ipywidgets[doc]
+hyperspy-gui-ipywidgets[tests]
+
+[tests]
+pytest
+pytest-cov
+pytest-rerunfailures
+setuptools-scm
