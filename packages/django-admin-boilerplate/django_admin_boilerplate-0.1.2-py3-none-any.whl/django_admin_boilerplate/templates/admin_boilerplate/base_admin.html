@@ -1,0 +1,35 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Admin Panel{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'admin_boilerplate/css/' %}{{ user_theme }}.css">
+</head>
+<body>
+   
+    <div class="sidebar">
+        <nav>
+            <a href="{% url 'change_theme' 'default' %}">Default</a>
+            <a href="{% url 'change_theme' 'blue' %}">Blue</a>
+            <a href="{% url 'change_theme' 'green' %}">Green</a>
+            <a href="{% url 'change_theme' 'dark' %}">Dark Mode</a>
+        </nav>
+        <h3>Admin Menu</h3>
+        <ul>
+            <!-- add user link -->
+            <li><a href="{% url 'admin_dashboard' %}">Dashboard</a></li>
+            <li><a href="{% url 'users_page' %}">Users</a></li>
+            <li><a href="{% url 'admin_logout' %}">Logout</a></li>        
+        </ul>
+    </div>
+    <div class="main-content">
+        {% block content %}{% endblock %}
+    </div>
+    <div class="footer">
+        <p>Powered by django-admin-boilerplate</p>
+    </div>
+</body>
+</html>

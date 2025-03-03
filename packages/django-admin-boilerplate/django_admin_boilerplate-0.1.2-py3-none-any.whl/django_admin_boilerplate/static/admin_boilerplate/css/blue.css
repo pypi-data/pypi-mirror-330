@@ -1,0 +1,45 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    background: #e3f2fd;
+    color: #0d47a1;
+}
+
+.sidebar {
+    width: 250px;
+    background: #0d47a1;
+    color: white;
+    padding: 20px;
+    height: 100vh;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    margin: 10px 0;
+}
+
+.sidebar a {
+    color: white;
+    text-decoration: none;
+}
+
+.main-content {
+    padding: 20px;
+    flex: 1;
+    background: #bbdefb;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background: #90caf9;
+    position: fixed;
+    bottom: 0;
+    /* width: 100%; */
+}
