@@ -1,0 +1,60 @@
+Metadata-Version: 2.4
+Name: oe-python-template
+Version: 0.2.1
+Summary: 🧠 Copier template to scaffold Python projects compliant with best practices and modern tooling.
+Project-URL: Homepage, https://oe-python-template.readthedocs.io/en/latest/
+Project-URL: Documentation, https://oe-python-template.readthedocs.io/en/latest/
+Project-URL: Source, https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template
+Project-URL: Changelog, https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/releases
+Project-URL: Issues, https://github.com/helmut-hoffer-von-ankershoffen/oe-python-template/issues
+Author-email: Helmut Hoffer von Ankershoffen <helmuthva@gmail.com>
+License: MIT License
+        
+        Copyright (c) [2025] [Helmut Hoffer von Ankershoffen (helmuthva@gmail.com)]
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE.
+License-File: LICENSE
+Keywords: codecov,docker,oe-python-template,pydantic,python,ruff,typer,uv
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Framework :: Pydantic
+Classifier: Framework :: Pytest
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Typing :: Typed
+Requires-Python: <4.0,>=3.11
+Requires-Dist: pydantic>=2.10.6
+Requires-Dist: python-dotenv>=1.0.1
+Requires-Dist: typer>=0.15.1
+Provides-Extra: examples
+Requires-Dist: jupyter>=1.1.1; extra == 'examples'
+Requires-Dist: marimo>=0.11.13; extra == 'examples'
+Requires-Dist: streamlit>=1.42.2; extra == 'examples'
+Description-Content-Type: text/markdown
+
+Will be generated from readme_*.md partials.
