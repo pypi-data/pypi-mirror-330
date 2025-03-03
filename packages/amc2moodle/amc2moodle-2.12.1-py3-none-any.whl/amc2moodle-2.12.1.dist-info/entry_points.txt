@@ -1,0 +1,3 @@
+[console_scripts]
+amc2moodle = amc2moodle.amc2moodle.bin.amc2moodle:run
+moodle2amc = amc2moodle.moodle2amc.bin.moodle2amc:run
