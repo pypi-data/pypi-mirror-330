@@ -1,0 +1,10 @@
+socrun --flow sim --build Debug --test e0_fsm/pixie_fw_dev_oper_test_e3_fsm_real_timing.cfg --seed 982584192
+socrun --flow sim --build Debug --test pixie_dft_voltage_calib_test.cfg --seed 0
+socrun --flow sim --build Debug --test e0_fsm/pixie_fw_dev_oper_test_e3_fsm_real_timing.cfg --seed 830019170
+socrun --flow sim --build Debug --test e0_fsm/pixie_fw_dev_oper_test_e3_BLE5_2mhz.cfg --seed 0
+socrun --flow sim --build Debug --test e0_fsm/pixie_fw_dev_oper_test_e2_fsm_real_timing.cfg --seed 0
+socrun --flow sim --build Debug --test e0_fsm/pixie_fw_dev_oper_test_e4_fsm_real_timing.cfg --seed 0
+socrun --flow sim --build Debug --test e0_fsm/pixie_fw_dev_oper_test_e2_BLE5.cfg --seed 0
+socrun --flow sim --build Debug --test e0_fsm/pixie_fw_dev_oper_test_e3_fsm_real_timing.cfg --seed 384153643
+socrun --flow sim --build Debug --test e0_fsm/pixie_fw_dev_oper_test_e3_fsm_real_timing.cfg --seed 1055908634
+socrun --flow sim --build Debug --test e0_fsm/pixie_fw_dev_oper_test_e3_fsm_real_timing.cfg --seed 0
