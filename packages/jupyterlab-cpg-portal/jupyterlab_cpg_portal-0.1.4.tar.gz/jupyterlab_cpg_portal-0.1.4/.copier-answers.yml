@@ -1,0 +1,14 @@
+# Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
+_commit: v4.3.8
+_src_path: https://github.com/jupyterlab/extension-template
+author_email: wytamma.wirth@unimelb.edu.au
+author_name: jupyterlab-cpg-portal
+has_binder: false
+has_settings: true
+kind: frontend
+labextension_name: jupyterlab_cpg_portal
+project_short_description: Access file in CPG Portal
+python_name: jupyterlab_cpg_portal
+repository: ''
+test: false
+
