@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "thuner"
+version = "0.0.15"
+description = "Multifeature tracking and analysis of meteorological events"
+readme = "README.rst"
+keywords = ["meteorology", "tracking", "analysis", "radar", "convection", "storm"]
+authors = [
+    {name = "Ewan Short", email = "ewan.short@unimelb.edu.au"},
+    {name = "Mark Picel", email = "mhpicel@gmail.com"},
+    {name = "Bhupendra Raut", email = "braut@anl.gov"},
+]
+dynamic = ["dependencies"]
+license = {text = "BSD-3-Clause"}
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: BSD License",
+    "Natural Language :: English",
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: MacOS :: MacOS X",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Atmospheric Science",
+]
+
+[project.urls]
+Homepage = "https://github.com/THUNER-project/THUNER"
+Issues = "https://github.com/THUNER-project/THUNER/issues"
+Documentation = "https://thuner.readthedocs.io/en/latest/"
+
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["thuner"]
+exclude = ["thuner/test"]
