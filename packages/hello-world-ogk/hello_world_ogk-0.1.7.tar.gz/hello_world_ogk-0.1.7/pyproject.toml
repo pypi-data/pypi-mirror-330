@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hello-world-ogk"
+dynamic = ["version"]  # バージョンは動的に取得
+description = "A hello-world package for GitHub"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "Kenta Ogawa", email = "gakenshizu1199@gmail.com" }]
+dependencies = [
+]
+
+[tool.setuptools.dynamic]
+version = {attr = "hello_world_ogk.__version__"}
+
+[tool.setuptools.packages.find]
+include = ["hello_world_ogk*"]
+
+[project.urls]
+"Homepage" = "https://github.com/ogaken1104/hello-world"
+"Repository" = "https://github.com/ogaken1104/hello-world.git"
