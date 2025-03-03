@@ -1,0 +1,42 @@
+Metadata-Version: 2.3
+Name: jaxlem
+Version: 0.1.8
+Summary: LEM slope stability analysis using JAX
+License: Proprietary
+Author: amavrits
+Author-email: amavrist@gmail.com
+Requires-Python: >=3.10,<4.0
+Classifier: License :: Other/Proprietary License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Dist: chex (>=0.1.86,<0.2.0)
+Requires-Dist: distrax (>=0.1.5,<0.2.0)
+Requires-Dist: flashbax (>=0.1.2,<0.2.0)
+Requires-Dist: flax (>=0.8.4,<0.9.0)
+Requires-Dist: gymnax (>=0.0.6,<0.0.7)
+Requires-Dist: jax-tqdm (>=0.2.1,<0.3.0)
+Requires-Dist: jax[cpu] (==0.4.28) ; sys_platform == "win32"
+Requires-Dist: jax[cuda] (>=0.4.28,<0.5.0) ; sys_platform == "linux"
+Requires-Dist: jaxopt (>=0.8,<0.9)
+Requires-Dist: jaxtyping (>=0.2.29,<0.3.0)
+Requires-Dist: optax (>=0.2.2,<0.3.0)
+Requires-Dist: orbax (>=0.1.9,<0.2.0)
+Description-Content-Type: text/markdown
+
+# jaxlem
+
+jaxlem is a Python implementation of LEM slope stability built upon JAX.
+
+## Content
+
+So far, the project includes the following features:
+* Slope stability analysis with undrained shear strength.
+* Calculation of the FoS using vmap over potential failure circles.
+* Calculation of the FoS using Gradient Descent.
+* Reliability analysis with Random Fields using Monte Carlo via vmap.
+* Reliability analysis with Random Fields using FORM.
+
+
