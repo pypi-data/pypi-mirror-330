@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "MidoWebLib"
+version = "0.1.3"
+description = "A Python library for Mido Web interactions"
+readme = "README.md"
+requires-python = ">=3.7"
+license = {text = "MIT"}
+authors = [
+  {name = "Mohamed Ahmed Ghanam", email = "mghanam883@outlook.com"}
+]
+dependencies = [
+  "requests"
+]
+
+[project.urls]
+Homepage = "https://midoghanam2.pythonanywhere.com/"
+TelegramChannel = "https://t.me/mido_team"
+TelegramAccount = "https://t.me/midoghanam"
+Whatsapp = "https://wa.me/201101023681"
