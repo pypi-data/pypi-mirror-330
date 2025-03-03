@@ -1,0 +1,31 @@
+Metadata-Version: 2.2
+Name: copr.py
+Version: 0.0.1
+Summary: A library to access the Corpus of Place Representations (COPR)
+Home-page: https://gitea.franz-benjamin.net/copr/copr-api
+Author: Franz-Benjamin Mocnik
+Author-email: mail@space-and-place.net
+License: CC-BY-SA-4.0
+Keywords: corpus,place,space,representation,media
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Programming Language :: Python :: 3
+Description-Content-Type: text/markdown
+Requires-Dist: jmespath
+Provides-Extra: publish
+Requires-Dist: twine; extra == "publish"
+Provides-Extra: test
+Requires-Dist: pytest; extra == "test"
+Requires-Dist: pytest-sugar; extra == "test"
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: license
+Dynamic: provides-extra
+Dynamic: requires-dist
+Dynamic: summary
+
+file: README.md

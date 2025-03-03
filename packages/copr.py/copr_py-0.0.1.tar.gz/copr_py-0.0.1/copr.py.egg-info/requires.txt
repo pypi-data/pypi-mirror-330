@@ -1,0 +1,8 @@
+jmespath
+
+[publish]
+twine
+
+[test]
+pytest
+pytest-sugar
