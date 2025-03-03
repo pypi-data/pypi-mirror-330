@@ -1,0 +1,20 @@
+Metadata-Version: 2.2
+Name: goblinfish-testing-pact
+Version: 0.0.3
+Summary: Unit-testing extensions that prescribe active contract testing.
+Author-email: Brian Allbee <brian.allbee+goblinfish.pact@gmail.com>
+Maintainer-email: Brian Allbee <brian.allbee+goblinfish.pact@gmail.com>
+Keywords: testing,unittest,pytest
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Software Development :: Testing
+Classifier: Topic :: Software Development :: Testing :: Unit
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
