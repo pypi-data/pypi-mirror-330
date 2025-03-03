@@ -1,0 +1,31 @@
+Metadata-Version: 2.2
+Name: vedro-openapi-testgen
+Version: 0.0.1
+Summary: Vedro Openapi basic tests generator
+Home-page: https://github.com/Lolimpo/vedro-openapi-testgen
+Author: Nikita Mikheev
+Author-email: thelol1mpo@gmail.com
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Typing :: Typed
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: vedro<2.0.0,>=1.0.0
+Requires-Dist: schemax<3.0.0,>=2.0.0
+Requires-Dist: pyyaml<7.0.0,>=6.0.1
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# Vedro OpenAPI TestGen
+
+Vedro plugin for base tests generation for given OpenAPI specification.
