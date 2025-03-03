@@ -1,0 +1,57 @@
+openapi: 3.0.3
+info:
+  version: 2.0.0
+  title: my-tax:mytax-income-tax-documents-health
+  contact:
+    name: Steuern Online Support
+    url: https://go/oses
+    email: steuern-online-entwicklung@datev.de
+  description: API to check the health status.
+  x-datev-shortdescription: API to check the health status.
+  x-ibm-name: datev-my-tax-mytax-income-tax-documents-health
+security:
+  - client_id: []
+    client_secret: []
+servers:
+  - url: https://mytax-income-tax-documents.api.datev.de/platform
+  - url: https://mytax-income-tax-documents.api.datev.de/platform-sandbox
+tags:
+  - name: Health
+paths:
+  /actuator/health:
+    get:
+      tags:
+        - Health
+      summary: Actuator web endpoint 'health'
+      operationId: health
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: object
+components:
+  securitySchemes:
+    client_id:
+      type: apiKey
+      name: X-Datev-Client-ID
+      in: header
+      x-key-type: client_id
+    client_secret:
+      type: apiKey
+      name: X-Datev-Client-Secret
+      in: header
+      x-key-type: client_secret
+x-ibm-configuration:
+  type: rest
+  phase: realized
+  enforced: true
+  testable: true
+  application-authentication:
+    certificate: false
+  cors:
+    enabled: false
+x-ibm-endpoints:
+  - url: https://mytax-income-tax-documents.api.datev.de/platform
+  - url: https://mytax-income-tax-documents.api.datev.de/platform-sandbox

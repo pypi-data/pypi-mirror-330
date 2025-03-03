@@ -1,0 +1,3834 @@
+openapi: 3.0.1
+info:
+  title: smarttransfer:inbound
+  description: >-
+    Specifications for the RESTful TRAFFIQX® API. This API is provided by
+    b4value.net GmbH as partner of DATEV eG. The first level support is provided
+    by DATEV eG. See contact information. To use the b4value.net TRAFFIQX® API
+    for DATEV SmartTransfer it is necessary to get a SmartTransfer account
+    created. Please contact herefore smarttransfer-vertrieb@datev.de. Please
+    notice that a TRAFFIQX® API Key has to be created. For further instructions
+    see
+    https://smarttransfer-pilot.datev.de/portalv3/onlinehelp/private/um/en/2_supportonly_traffiqxapi.html
+  contact:
+    name: DATEV eG
+    url: https://www.datev.de
+    email: smarttransfer-vertrieb@datev.de
+  x-ibm-name: smarttransferinbound
+  version: '1.2'
+servers:
+  - url: https://b4value-smarttransfer-inbound.api.datev.de/platform/v1.2
+    description: Datev-ApiManager (e.q. RZ20)
+paths:
+  /Documents/Inbox:
+    get:
+      tags:
+        - Documents
+      summary: Retrieves all inbox documents for the authorized user and its client.
+      description: >-
+        <div style="display:flex; flex-direction:row;
+        align-items:center;font-size:14px;border-radius: 4px; padding: 4px;
+        background-color: rgb(157,181,205,0.3)">  <div style="border-radius:
+        4px; padding: 4px; background-color: #000000; margin-right:12px;color:
+        white;">ODATA</div>   <div>This API call supports querying and filtering
+        using OData. Following table provides description and examples of
+        possible options:</div></div><div style="display:flex;
+        flex-direction:row;
+        align-items:center;font-size:14px;margin-left:0px;margin-top:12px"> 
+        <div style="width:100%; margin-top:-4px"><table
+        style="width:100%;border-radius:4px"> <thead style="background-color:
+        rgba(0,0,0,0.05); border: 1px solid rgba(0,0,0,0.08);">     <tr>        
+        <td style="padding: 12px">Option</td>         <td style="padding:
+        12px">Description</td>         <td style="padding:
+        12px">Example</td>         <td style="padding:
+        12px">Documentation</td>     </tr> </thead> <tbody><tr style="border:
+        1px solid rgba(0,0,0,0.08);">    <td
+        style="padding-left:12px;padding-right:12px;">$select</td>    <td
+        style="padding-left:12px;padding-right:12px;">Limits the properties
+        returned in the result.</td>    <td
+        style="padding-left:12px;padding-right:12px;">/Documents/Inbox$select=id</td>   
+        <td style="padding-left:12px;padding-right:12px;"><a
+        href="https://docs.microsoft.com/en-us/odata/webapi/first-odata-api#select"
+        target="_blank">Documentation🡥</a></td></tr><tr style="border: 1px
+        solid rgba(0,0,0,0.08);">    <td
+        style="padding-left:12px;padding-right:12px;">$filter</td>    <td
+        style="padding-left:12px;padding-right:12px;">Restricts the set of items
+        returned.</td>    <td
+        style="padding-left:12px;padding-right:12px;">/Documents/Inbox$filter=id
+        gt 445566</td>    <td style="padding-left:12px;padding-right:12px;"><a
+        href="https://docs.microsoft.com/en-us/odata/webapi/first-odata-api#filter"
+        target="_blank">Documentation🡥</a></td></tr><tr style="border: 1px
+        solid rgba(0,0,0,0.08);">    <td
+        style="padding-left:12px;padding-right:12px;">$orderby</td>    <td
+        style="padding-left:12px;padding-right:12px;">Specifies the order in
+        which items are returned.</td>    <td
+        style="padding-left:12px;padding-right:12px;">/Documents/Inbox$orderby=id
+        desc</td>    <td style="padding-left:12px;padding-right:12px;"><a
+        href="https://docs.microsoft.com/en-us/odata/webapi/first-odata-api#orderby"
+        target="_blank">Documentation🡥</a></td></tr><tr style="border: 1px
+        solid rgba(0,0,0,0.08);">    <td
+        style="padding-left:12px;padding-right:12px;">$top</td>    <td
+        style="padding-left:12px;padding-right:12px;">Limits the number of items
+        returned from a collection.</td>    <td
+        style="padding-left:12px;padding-right:12px;">/Documents/Inbox$top=50</td>   
+        <td style="padding-left:12px;padding-right:12px;"><a
+        href="https://docs.microsoft.com/en-us/odata/client/query-options#top"
+        target="_blank">Documentation🡥</a></td></tr><tr style="border: 1px
+        solid rgba(0,0,0,0.08);">    <td
+        style="padding-left:12px;padding-right:12px;">$skip</td>    <td
+        style="padding-left:12px;padding-right:12px;">Excludes the specified
+        number of items of the queried collection from the result.</td>    <td
+        style="padding-left:12px;padding-right:12px;">/Documents/Inbox$skip=25</td>   
+        <td style="padding-left:12px;padding-right:12px;"><a
+        href="https://docs.microsoft.com/en-us/odata/webapi/first-odata-api#skip"
+        target="_blank">Documentation🡥</a></td></tr><tr style="border: 1px
+        solid rgba(0,0,0,0.08);">    <td
+        style="padding-left:12px;padding-right:12px;">$count</td>    <td
+        style="padding-left:12px;padding-right:12px;">Indicates whether the
+        total count of items within a collection are returned in the
+        result.</td>    <td
+        style="padding-left:12px;padding-right:12px;">/Documents/Inbox$count=true</td>   
+        <td style="padding-left:12px;padding-right:12px;"><a
+        href="https://docs.microsoft.com/en-us/odata/client/query-options#count"
+        target="_blank">Documentation🡥</a></td></tr></tbody></table> 
+        </div></div>
+      parameters:
+        - name: X-API-Key
+          in: header
+          description: Original API Key
+          schema:
+            type: string
+        - name: $select
+          in: query
+          description: Limits the properties returned in the result.
+          schema:
+            type: string
+            description: Limits the properties returned in the result.
+        - name: $filter
+          in: query
+          description: Restricts the set of items returned.
+          schema:
+            type: string
+            description: Restricts the set of items returned.
+        - name: $orderby
+          in: query
+          description: Specifies the order in which items are returned.
+          schema:
+            type: string
+            description: Specifies the order in which items are returned.
+        - name: $top
+          in: query
+          description: Limits the number of items returned from a collection.
+          schema:
+            type: integer
+            description: Limits the number of items returned from a collection.
+            default: 100
+        - name: $skip
+          in: query
+          description: >-
+            Excludes the specified number of items of the queried collection
+            from the result.
+          schema:
+            type: integer
+            description: >-
+              Excludes the specified number of items of the queried collection
+              from the result.
+            default: 0
+        - name: $count
+          in: query
+          description: >-
+            Indicates whether the total count of items within a collection are
+            returned in the result.
+          schema:
+            type: boolean
+            description: >-
+              Indicates whether the total count of items within a collection are
+              returned in the result.
+            default: false
+      responses:
+        '200':
+          description: Documents successfully retrieved.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InboxDocumentModelIEnumerableODataValue'
+        '401':
+          description: "The user is unauthorized to execute the action.\r\nCheck and ensure that the API key is valid.\r\nOR\r\nMake sure that the user is assigned to a client."
+    post:
+      tags:
+        - Documents
+      summary: >-
+        Uploads a PDF, dataset or dataset with PDF as view document or
+        attachment to the outbox.
+      parameters:
+        - name: X-API-Key
+          in: header
+          description: Original API Key
+          schema:
+            type: string
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                files:
+                  type: array
+                  items:
+                    type: string
+                    format: binary
+                  description: The files.
+                  nullable: true
+            encoding:
+              files:
+                contentType: '*/*'
+                style: form
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InboxDocumentModelIEnumerableODataValue'
+  /Documents/{id}:
+    get:
+      tags:
+        - Documents
+      summary: Gets the document.
+      parameters:
+        - name: X-API-Key
+          in: header
+          description: Original API Key
+          schema:
+            type: string
+        - name: id
+          in: path
+          description: The document identifier.
+          required: true
+          schema:
+            type: integer
+            description: The document identifier.
+            format: int32
+        - name: type
+          in: query
+          description: The type.
+          schema:
+            type: string
+            description: The type.
+            default: pdf
+            nullable: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InboxDocumentModelIEnumerableODataValue'
+        '401':
+          description: "The user is unauthorized to execute the action.\r\nCheck and ensure that the API key is valid.\r\nOR\r\nMake sure that the user is assigned to a client."
+  /Documents/{id}/Types:
+    get:
+      tags:
+        - Documents
+      summary: Gets the document types.
+      parameters:
+        - name: X-API-Key
+          in: header
+          description: Original API Key
+          schema:
+            type: string
+        - name: id
+          in: path
+          description: The document identifier.
+          required: true
+          schema:
+            type: integer
+            description: The document identifier.
+            format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InboxDocumentModelIEnumerableODataValue'
+  /Documents/{id}/Info:
+    get:
+      tags:
+        - Documents
+      summary: Gets the document information.
+      parameters:
+        - name: X-API-Key
+          in: header
+          description: Original API Key
+          schema:
+            type: string
+        - name: id
+          in: path
+          description: The document identifier.
+          required: true
+          schema:
+            type: integer
+            description: The document identifier.
+            format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DocumentInfo'
+  /Documents/Inbox/WaitingDocuments/Info:
+    get:
+      tags:
+        - Documents
+      summary: Gets the information about waiting documents in inbox.
+      parameters:
+        - name: X-API-Key
+          in: header
+          description: Original API Key
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InboxDocumentModelIEnumerableODataValue'
+  /Documents/Inbox/WaitingDocuments/Ids:
+    get:
+      tags:
+        - Documents
+      summary: Gets the Ids of waiting documents in inbox.
+      parameters:
+        - name: X-API-Key
+          in: header
+          description: Original API Key
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InboxDocumentModelIEnumerableODataValue'
+  /Documents/CommitInboxDownload:
+    post:
+      tags:
+        - Documents
+      summary: Commits the given documents for inbox download.
+      parameters:
+        - name: X-API-Key
+          in: header
+          description: Original API Key
+          schema:
+            type: string
+      requestBody:
+        description: The document ids.
+        content:
+          application/json;odata.metadata=minimal;odata.streaming=true:
+            schema:
+              type: array
+              items:
+                type: integer
+                format: int32
+              description: The document ids.
+              nullable: true
+          application/json;odata.metadata=minimal;odata.streaming=false:
+            schema:
+              type: array
+              items:
+                type: integer
+                format: int32
+              description: The document ids.
+              nullable: true
+          application/json;odata.metadata=minimal:
+            schema:
+              type: array
+              items:
+                type: integer
+                format: int32
+              description: The document ids.
+              nullable: true
+          application/json;odata.metadata=full;odata.streaming=true:
+            schema:
+              type: array
+              items:
+                type: integer
+                format: int32
+              description: The document ids.
+              nullable: true
+          application/json;odata.metadata=full;odata.streaming=false:
+            schema:
+              type: array
+              items:
+                type: integer
+                format: int32
+              description: The document ids.
+              nullable: true
+          application/json;odata.metadata=full:
+            schema:
+              type: array
+              items:
+                type: integer
+                format: int32
+              description: The document ids.
+              nullable: true
+          application/json;odata.metadata=none;odata.streaming=true:
+            schema:
+              type: array
+              items:
+                type: integer
+                format: int32
+              description: The document ids.
+              nullable: true
+          application/json;odata.metadata=none;odata.streaming=false:
+            schema:
+              type: array
+              items:
+                type: integer
+                format: int32
+              description: The document ids.
+              nullable: true
+          application/json;odata.metadata=none:
+            schema:
+              type: array
+              items:
+                type: integer
+                format: int32
+              description: The document ids.
+              nullable: true
+          application/json;odata.streaming=true:
+            schema:
+              type: array
+              items:
+                type: integer
+                format: int32
+              description: The document ids.
+              nullable: true
+          application/json;odata.streaming=false:
+            schema:
+              type: array
+              items:
+                type: integer
+                format: int32
+              description: The document ids.
+              nullable: true
+          application/json:
+            schema:
+              type: array
+              items:
+                type: integer
+                format: int32
+              description: The document ids.
+              nullable: true
+          application/xml:
+            schema:
+              type: array
+              items:
+                type: integer
+                format: int32
+              description: The document ids.
+              nullable: true
+          application/json; odata.metadata=full; odata.streaming=true:
+            schema:
+              type: array
+              items:
+                type: integer
+                format: int32
+              description: The document ids.
+              nullable: true
+          application/json-patch+json:
+            schema:
+              type: array
+              items:
+                type: integer
+                format: int32
+              description: The document ids.
+              nullable: true
+          text/json:
+            schema:
+              type: array
+              items:
+                type: integer
+                format: int32
+              description: The document ids.
+              nullable: true
+          application/*+json:
+            schema:
+              type: array
+              items:
+                type: integer
+                format: int32
+              description: The document ids.
+              nullable: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InboxDocumentModelIEnumerableODataValue'
+  /Documents/{id}/PrivateAttachment:
+    post:
+      tags:
+        - Documents
+      summary: Uploads private attachment for the specified document.
+      parameters:
+        - name: X-API-Key
+          in: header
+          description: Original API Key
+          schema:
+            type: string
+        - name: id
+          in: path
+          description: The document identifier.
+          required: true
+          schema:
+            type: integer
+            description: The document identifier.
+            format: int32
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                attachment:
+                  type: string
+                  description: The attachment.
+                  format: binary
+                  nullable: true
+            encoding:
+              attachment:
+                contentType: '*/*'
+                style: form
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InboxDocumentModelIEnumerableODataValue'
+    delete:
+      tags:
+        - Documents
+      summary: Deletes the private attachment of specified document.
+      parameters:
+        - name: X-API-Key
+          in: header
+          description: Original API Key
+          schema:
+            type: string
+        - name: id
+          in: path
+          description: The document identifier.
+          required: true
+          schema:
+            type: integer
+            description: The document identifier.
+            format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InboxDocumentModelIEnumerableODataValue'
+  /Documents/{id}/Release:
+    put:
+      tags:
+        - Documents
+      summary: Releases the specified document.
+      parameters:
+        - name: X-API-Key
+          in: header
+          description: Original API Key
+          schema:
+            type: string
+        - name: id
+          in: path
+          description: The document identifier.
+          required: true
+          schema:
+            type: integer
+            description: The document identifier.
+            format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json;odata.metadata=minimal;odata.streaming=true:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=minimal;odata.streaming=false:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=minimal:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=full;odata.streaming=true:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=full;odata.streaming=false:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=full:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=none;odata.streaming=true:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=none;odata.streaming=false:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=none:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.streaming=true:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.streaming=false:
+              schema:
+                type: integer
+                format: int32
+            application/json:
+              schema:
+                type: integer
+                format: int32
+            application/xml:
+              schema:
+                type: integer
+                format: int32
+            application/json; odata.metadata=full; odata.streaming=true:
+              schema:
+                type: integer
+                format: int32
+            text/plain:
+              schema:
+                type: integer
+                format: int32
+            text/json:
+              schema:
+                type: integer
+                format: int32
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+        '500':
+          description: Server Error
+  /Documents/{id}/MarkDeleted:
+    put:
+      tags:
+        - Documents
+      summary: Marks the specified document as deleted.
+      parameters:
+        - name: X-API-Key
+          in: header
+          description: Original API Key
+          schema:
+            type: string
+        - name: id
+          in: path
+          description: The document identifier.
+          required: true
+          schema:
+            type: integer
+            description: The document identifier.
+            format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json;odata.metadata=minimal;odata.streaming=true:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=minimal;odata.streaming=false:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=minimal:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=full;odata.streaming=true:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=full;odata.streaming=false:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=full:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=none;odata.streaming=true:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=none;odata.streaming=false:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=none:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.streaming=true:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.streaming=false:
+              schema:
+                type: integer
+                format: int32
+            application/json:
+              schema:
+                type: integer
+                format: int32
+            application/xml:
+              schema:
+                type: integer
+                format: int32
+            application/json; odata.metadata=full; odata.streaming=true:
+              schema:
+                type: integer
+                format: int32
+            text/plain:
+              schema:
+                type: integer
+                format: int32
+            text/json:
+              schema:
+                type: integer
+                format: int32
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+        '500':
+          description: Server Error
+  /Documents/{id}/Reprocess:
+    put:
+      tags:
+        - Documents
+      summary: Reprocesses the specified document.
+      parameters:
+        - name: X-API-Key
+          in: header
+          description: Original API Key
+          schema:
+            type: string
+        - name: id
+          in: path
+          description: The document identifier.
+          required: true
+          schema:
+            type: integer
+            description: The document identifier.
+            format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json;odata.metadata=minimal;odata.streaming=true:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=minimal;odata.streaming=false:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=minimal:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=full;odata.streaming=true:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=full;odata.streaming=false:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=full:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=none;odata.streaming=true:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=none;odata.streaming=false:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=none:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.streaming=true:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.streaming=false:
+              schema:
+                type: integer
+                format: int32
+            application/json:
+              schema:
+                type: integer
+                format: int32
+            application/xml:
+              schema:
+                type: integer
+                format: int32
+            application/json; odata.metadata=full; odata.streaming=true:
+              schema:
+                type: integer
+                format: int32
+            text/plain:
+              schema:
+                type: integer
+                format: int32
+            text/json:
+              schema:
+                type: integer
+                format: int32
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+        '500':
+          description: Server Error
+  /Documents/{id}/MoveToAllbox:
+    put:
+      tags:
+        - Documents
+      summary: Moves the specified document to all box.
+      parameters:
+        - name: X-API-Key
+          in: header
+          description: Original API Key
+          schema:
+            type: string
+        - name: id
+          in: path
+          description: The document identifier.
+          required: true
+          schema:
+            type: integer
+            description: The document identifier.
+            format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json;odata.metadata=minimal;odata.streaming=true:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=minimal;odata.streaming=false:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=minimal:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=full;odata.streaming=true:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=full;odata.streaming=false:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=full:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=none;odata.streaming=true:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=none;odata.streaming=false:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=none:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.streaming=true:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.streaming=false:
+              schema:
+                type: integer
+                format: int32
+            application/json:
+              schema:
+                type: integer
+                format: int32
+            application/xml:
+              schema:
+                type: integer
+                format: int32
+            application/json; odata.metadata=full; odata.streaming=true:
+              schema:
+                type: integer
+                format: int32
+            text/plain:
+              schema:
+                type: integer
+                format: int32
+            text/json:
+              schema:
+                type: integer
+                format: int32
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+        '500':
+          description: Server Error
+  /Documents/{id}/RestoreFromAllbox:
+    put:
+      tags:
+        - Documents
+      summary: Restores the specified document from all box.
+      parameters:
+        - name: X-API-Key
+          in: header
+          description: Original API Key
+          schema:
+            type: string
+        - name: id
+          in: path
+          description: The document identifier.
+          required: true
+          schema:
+            type: integer
+            description: The document identifier.
+            format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json;odata.metadata=minimal;odata.streaming=true:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=minimal;odata.streaming=false:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=minimal:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=full;odata.streaming=true:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=full;odata.streaming=false:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=full:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=none;odata.streaming=true:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=none;odata.streaming=false:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=none:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.streaming=true:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.streaming=false:
+              schema:
+                type: integer
+                format: int32
+            application/json:
+              schema:
+                type: integer
+                format: int32
+            application/xml:
+              schema:
+                type: integer
+                format: int32
+            application/json; odata.metadata=full; odata.streaming=true:
+              schema:
+                type: integer
+                format: int32
+            text/plain:
+              schema:
+                type: integer
+                format: int32
+            text/json:
+              schema:
+                type: integer
+                format: int32
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+        '500':
+          description: Server Error
+  /Documents/{id}/UnlockCapturing:
+    put:
+      tags:
+        - Documents
+      summary: Unlocks capturing for the specified document.
+      parameters:
+        - name: X-API-Key
+          in: header
+          description: Original API Key
+          schema:
+            type: string
+        - name: id
+          in: path
+          description: The document identifier.
+          required: true
+          schema:
+            type: integer
+            description: The document identifier.
+            format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json;odata.metadata=minimal;odata.streaming=true:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=minimal;odata.streaming=false:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=minimal:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=full;odata.streaming=true:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=full;odata.streaming=false:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=full:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=none;odata.streaming=true:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=none;odata.streaming=false:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=none:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.streaming=true:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.streaming=false:
+              schema:
+                type: integer
+                format: int32
+            application/json:
+              schema:
+                type: integer
+                format: int32
+            application/xml:
+              schema:
+                type: integer
+                format: int32
+            application/json; odata.metadata=full; odata.streaming=true:
+              schema:
+                type: integer
+                format: int32
+            text/plain:
+              schema:
+                type: integer
+                format: int32
+            text/json:
+              schema:
+                type: integer
+                format: int32
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+        '500':
+          description: Server Error
+  /Documents/{id}/DisableAutomatedAccounting:
+    put:
+      tags:
+        - Documents
+      summary: Disables the automated accounting for the specified document.
+      parameters:
+        - name: X-API-Key
+          in: header
+          description: Original API Key
+          schema:
+            type: string
+        - name: id
+          in: path
+          description: The document identifier.
+          required: true
+          schema:
+            type: integer
+            description: The document identifier.
+            format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json;odata.metadata=minimal;odata.streaming=true:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=minimal;odata.streaming=false:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=minimal:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=full;odata.streaming=true:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=full;odata.streaming=false:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=full:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=none;odata.streaming=true:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=none;odata.streaming=false:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=none:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.streaming=true:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.streaming=false:
+              schema:
+                type: integer
+                format: int32
+            application/json:
+              schema:
+                type: integer
+                format: int32
+            application/xml:
+              schema:
+                type: integer
+                format: int32
+            application/json; odata.metadata=full; odata.streaming=true:
+              schema:
+                type: integer
+                format: int32
+            text/plain:
+              schema:
+                type: integer
+                format: int32
+            text/json:
+              schema:
+                type: integer
+                format: int32
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+        '500':
+          description: Server Error
+  /Documents/{id}/DeleteInbound:
+    put:
+      tags:
+        - Documents
+      summary: Deletes the specified inbound document.
+      parameters:
+        - name: X-API-Key
+          in: header
+          description: Original API Key
+          schema:
+            type: string
+        - name: id
+          in: path
+          description: The document identifier.
+          required: true
+          schema:
+            type: integer
+            description: The document identifier.
+            format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json;odata.metadata=minimal;odata.streaming=true:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=minimal;odata.streaming=false:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=minimal:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=full;odata.streaming=true:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=full;odata.streaming=false:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=full:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=none;odata.streaming=true:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=none;odata.streaming=false:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=none:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.streaming=true:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.streaming=false:
+              schema:
+                type: integer
+                format: int32
+            application/json:
+              schema:
+                type: integer
+                format: int32
+            application/xml:
+              schema:
+                type: integer
+                format: int32
+            application/json; odata.metadata=full; odata.streaming=true:
+              schema:
+                type: integer
+                format: int32
+            text/plain:
+              schema:
+                type: integer
+                format: int32
+            text/json:
+              schema:
+                type: integer
+                format: int32
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+        '500':
+          description: Server Error
+  /Documents/{id}/ReprocessInbound:
+    put:
+      tags:
+        - Documents
+      summary: Reprocesses the specified inbound document.
+      parameters:
+        - name: X-API-Key
+          in: header
+          description: Original API Key
+          schema:
+            type: string
+        - name: id
+          in: path
+          description: The document identifier.
+          required: true
+          schema:
+            type: integer
+            description: The document identifier.
+            format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json;odata.metadata=minimal;odata.streaming=true:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=minimal;odata.streaming=false:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=minimal:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=full;odata.streaming=true:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=full;odata.streaming=false:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=full:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=none;odata.streaming=true:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=none;odata.streaming=false:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=none:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.streaming=true:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.streaming=false:
+              schema:
+                type: integer
+                format: int32
+            application/json:
+              schema:
+                type: integer
+                format: int32
+            application/xml:
+              schema:
+                type: integer
+                format: int32
+            application/json; odata.metadata=full; odata.streaming=true:
+              schema:
+                type: integer
+                format: int32
+            text/plain:
+              schema:
+                type: integer
+                format: int32
+            text/json:
+              schema:
+                type: integer
+                format: int32
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+        '500':
+          description: Server Error
+  /Documents/{id}/ReleaseInbound:
+    put:
+      tags:
+        - Documents
+      summary: Releases the specified inbound document.
+      parameters:
+        - name: X-API-Key
+          in: header
+          description: Original API Key
+          schema:
+            type: string
+        - name: id
+          in: path
+          description: The document identifier.
+          required: true
+          schema:
+            type: integer
+            description: The document identifier.
+            format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json;odata.metadata=minimal;odata.streaming=true:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=minimal;odata.streaming=false:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=minimal:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=full;odata.streaming=true:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=full;odata.streaming=false:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=full:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=none;odata.streaming=true:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=none;odata.streaming=false:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=none:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.streaming=true:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.streaming=false:
+              schema:
+                type: integer
+                format: int32
+            application/json:
+              schema:
+                type: integer
+                format: int32
+            application/xml:
+              schema:
+                type: integer
+                format: int32
+            application/json; odata.metadata=full; odata.streaming=true:
+              schema:
+                type: integer
+                format: int32
+            text/plain:
+              schema:
+                type: integer
+                format: int32
+            text/json:
+              schema:
+                type: integer
+                format: int32
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+        '500':
+          description: Server Error
+  /Documents/{id}/ResetErrorInbox:
+    put:
+      tags:
+        - Documents
+      summary: Resets the error for the specified inbox document.
+      parameters:
+        - name: id
+          in: path
+          description: The document identifier.
+          required: true
+          schema:
+            type: integer
+            format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json;odata.metadata=minimal;odata.streaming=true:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=minimal;odata.streaming=false:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=minimal:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=full;odata.streaming=true:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=full;odata.streaming=false:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=full:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=none;odata.streaming=true:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=none;odata.streaming=false:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.metadata=none:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.streaming=true:
+              schema:
+                type: integer
+                format: int32
+            application/json;odata.streaming=false:
+              schema:
+                type: integer
+                format: int32
+            application/json:
+              schema:
+                type: integer
+                format: int32
+            application/xml:
+              schema:
+                type: integer
+                format: int32
+            text/plain:
+              schema:
+                type: integer
+                format: int32
+            application/octet-stream:
+              schema:
+                type: integer
+                format: int32
+            text/json:
+              schema:
+                type: integer
+                format: int32
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+        '500':
+          description: Server Error
+  /Logs:
+    get:
+      tags:
+        - Logs
+      summary: Retrieves logs.
+      parameters:
+        - name: X-API-Key
+          in: header
+          description: Original API Key
+          schema:
+            type: string
+        - name: $select
+          in: query
+          description: Limits the properties returned in the result.
+          schema:
+            type: string
+            description: Limits the properties returned in the result.
+        - name: $filter
+          in: query
+          description: Restricts the set of items returned.
+          schema:
+            type: string
+            description: Restricts the set of items returned.
+        - name: $orderby
+          in: query
+          description: Specifies the order in which items are returned.
+          schema:
+            type: string
+            description: Specifies the order in which items are returned.
+        - name: $top
+          in: query
+          description: Limits the number of items returned from a collection.
+          schema:
+            type: integer
+            description: Limits the number of items returned from a collection.
+            default: 100
+        - name: $skip
+          in: query
+          description: >-
+            Excludes the specified number of items of the queried collection
+            from the result.
+          schema:
+            type: integer
+            description: >-
+              Excludes the specified number of items of the queried collection
+              from the result.
+            default: 0
+        - name: $count
+          in: query
+          description: >-
+            Indicates whether the total count of items within a collection are
+            returned in the result.
+          schema:
+            type: boolean
+            description: >-
+              Indicates whether the total count of items within a collection are
+              returned in the result.
+            default: false
+      responses:
+        '200':
+          description: Logs successfully retrieved.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LogModelIEnumerableODataValue'
+  /Logs/{id}:
+    get:
+      tags:
+        - Logs
+      summary: Gets a single log by id.
+      parameters:
+        - name: X-API-Key
+          in: header
+          description: Original API Key
+          schema:
+            type: string
+        - name: id
+          in: path
+          description: The log identifier.
+          required: true
+          schema:
+            type: integer
+            format: int32
+        - name: $select
+          in: query
+          description: Limits the properties returned in the result.
+          schema:
+            type: string
+            description: Limits the properties returned in the result.
+      responses:
+        '200':
+          description: The log was successfully retrieved.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LogModel'
+        '403':
+          description: Access to the log is forbidden.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ForbiddenProblemDetails'
+        '404':
+          description: The log does not exist.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundProblemDetails'
+  /Notifications:
+    get:
+      tags:
+        - Notifications
+      summary: Retrieves notifications.
+      description: >-
+        <div style="display:flex; flex-direction:row;
+        align-items:center;font-size:14px;border-radius: 4px; padding: 4px;
+        background-color: rgb(157,181,205,0.3)">  <div style="border-radius:
+        4px; padding: 4px; background-color: #000000; margin-right:12px;color:
+        white;">ODATA</div>   <div>This API call supports querying and filtering
+        using OData. Following table provides description and examples of
+        possible options:</div></div><div style="display:flex;
+        flex-direction:row;
+        align-items:center;font-size:14px;margin-left:0px;margin-top:12px"> 
+        <div style="width:100%; margin-top:-4px"><table
+        style="width:100%;border-radius:4px"> <thead style="background-color:
+        rgba(0,0,0,0.05); border: 1px solid rgba(0,0,0,0.08);">     <tr>        
+        <td style="padding: 12px">Option</td>         <td style="padding:
+        12px">Description</td>         <td style="padding:
+        12px">Example</td>         <td style="padding:
+        12px">Documentation</td>     </tr> </thead> <tbody><tr style="border:
+        1px solid rgba(0,0,0,0.08);">    <td
+        style="padding-left:12px;padding-right:12px;">$select</td>    <td
+        style="padding-left:12px;padding-right:12px;">Limits the properties
+        returned in the result.</td>    <td
+        style="padding-left:12px;padding-right:12px;">/Notifications$select=id</td>   
+        <td style="padding-left:12px;padding-right:12px;"><a
+        href="https://docs.microsoft.com/en-us/odata/webapi/first-odata-api#select"
+        target="_blank">Documentation🡥</a></td></tr><tr style="border: 1px
+        solid rgba(0,0,0,0.08);">    <td
+        style="padding-left:12px;padding-right:12px;">$filter</td>    <td
+        style="padding-left:12px;padding-right:12px;">Restricts the set of items
+        returned.</td>    <td
+        style="padding-left:12px;padding-right:12px;">/Notifications$filter=id
+        gt 445566</td>    <td style="padding-left:12px;padding-right:12px;"><a
+        href="https://docs.microsoft.com/en-us/odata/webapi/first-odata-api#filter"
+        target="_blank">Documentation🡥</a></td></tr><tr style="border: 1px
+        solid rgba(0,0,0,0.08);">    <td
+        style="padding-left:12px;padding-right:12px;">$orderby</td>    <td
+        style="padding-left:12px;padding-right:12px;">Specifies the order in
+        which items are returned.</td>    <td
+        style="padding-left:12px;padding-right:12px;">/Notifications$orderby=id
+        desc</td>    <td style="padding-left:12px;padding-right:12px;"><a
+        href="https://docs.microsoft.com/en-us/odata/webapi/first-odata-api#orderby"
+        target="_blank">Documentation🡥</a></td></tr><tr style="border: 1px
+        solid rgba(0,0,0,0.08);">    <td
+        style="padding-left:12px;padding-right:12px;">$top</td>    <td
+        style="padding-left:12px;padding-right:12px;">Limits the number of items
+        returned from a collection.</td>    <td
+        style="padding-left:12px;padding-right:12px;">/Notifications$top=50</td>   
+        <td style="padding-left:12px;padding-right:12px;"><a
+        href="https://docs.microsoft.com/en-us/odata/client/query-options#top"
+        target="_blank">Documentation🡥</a></td></tr><tr style="border: 1px
+        solid rgba(0,0,0,0.08);">    <td
+        style="padding-left:12px;padding-right:12px;">$skip</td>    <td
+        style="padding-left:12px;padding-right:12px;">Excludes the specified
+        number of items of the queried collection from the result.</td>    <td
+        style="padding-left:12px;padding-right:12px;">/Notifications$skip=25</td>   
+        <td style="padding-left:12px;padding-right:12px;"><a
+        href="https://docs.microsoft.com/en-us/odata/webapi/first-odata-api#skip"
+        target="_blank">Documentation🡥</a></td></tr><tr style="border: 1px
+        solid rgba(0,0,0,0.08);">    <td
+        style="padding-left:12px;padding-right:12px;">$count</td>    <td
+        style="padding-left:12px;padding-right:12px;">Indicates whether the
+        total count of items within a collection are returned in the
+        result.</td>    <td
+        style="padding-left:12px;padding-right:12px;">/Notifications$count=true</td>   
+        <td style="padding-left:12px;padding-right:12px;"><a
+        href="https://docs.microsoft.com/en-us/odata/client/query-options#count"
+        target="_blank">Documentation🡥</a></td></tr></tbody></table> 
+        </div></div>
+      parameters:
+        - name: X-API-Key
+          in: header
+          description: Original API Key
+          schema:
+            type: string
+        - name: $select
+          in: query
+          description: Limits the properties returned in the result.
+          schema:
+            type: string
+            description: Limits the properties returned in the result.
+        - name: $filter
+          in: query
+          description: Restricts the set of items returned.
+          schema:
+            type: string
+            description: Restricts the set of items returned.
+        - name: $orderby
+          in: query
+          description: Specifies the order in which items are returned.
+          schema:
+            type: string
+            description: Specifies the order in which items are returned.
+        - name: $top
+          in: query
+          description: Limits the number of items returned from a collection.
+          schema:
+            type: integer
+            description: Limits the number of items returned from a collection.
+            default: 100
+        - name: $skip
+          in: query
+          description: >-
+            Excludes the specified number of items of the queried collection
+            from the result.
+          schema:
+            type: integer
+            description: >-
+              Excludes the specified number of items of the queried collection
+              from the result.
+            default: 0
+        - name: $count
+          in: query
+          description: >-
+            Indicates whether the total count of items within a collection are
+            returned in the result.
+          schema:
+            type: boolean
+            description: >-
+              Indicates whether the total count of items within a collection are
+              returned in the result.
+            default: false
+      responses:
+        '200':
+          description: Notifications successfully retrieved.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotificationModelIEnumerableODataValue'
+  /Notifications/{id}:
+    get:
+      tags:
+        - Notifications
+      summary: Gets a single notification by id.
+      description: >-
+        <div style="display:flex; flex-direction:row;
+        align-items:center;font-size:14px;border-radius: 4px; padding: 4px;
+        background-color: rgb(157,181,205,0.3)">  <div style="border-radius:
+        4px; padding: 4px; background-color: #000000; margin-right:12px;color:
+        white;">ODATA</div>   <div>This API call supports querying and filtering
+        using OData. Following table provides description and examples of
+        possible options:</div></div><div style="display:flex;
+        flex-direction:row;
+        align-items:center;font-size:14px;margin-left:0px;margin-top:12px"> 
+        <div style="width:100%; margin-top:-4px"><table
+        style="width:100%;border-radius:4px"> <thead style="background-color:
+        rgba(0,0,0,0.05); border: 1px solid rgba(0,0,0,0.08);">     <tr>        
+        <td style="padding: 12px">Option</td>         <td style="padding:
+        12px">Description</td>         <td style="padding:
+        12px">Example</td>         <td style="padding:
+        12px">Documentation</td>     </tr> </thead> <tbody><tr style="border:
+        1px solid rgba(0,0,0,0.08);">    <td
+        style="padding-left:12px;padding-right:12px;">$select</td>    <td
+        style="padding-left:12px;padding-right:12px;">Limits the properties
+        returned in the result.</td>    <td
+        style="padding-left:12px;padding-right:12px;">/Notifications/{id}$select=id</td>   
+        <td style="padding-left:12px;padding-right:12px;"><a
+        href="https://docs.microsoft.com/en-us/odata/webapi/first-odata-api#select"
+        target="_blank">Documentation🡥</a></td></tr></tbody></table> 
+        </div></div>
+      parameters:
+        - name: X-API-Key
+          in: header
+          description: Original API Key
+          schema:
+            type: string
+        - name: id
+          in: path
+          description: The notification identifier.
+          required: true
+          schema:
+            type: integer
+            description: The notification identifier.
+            format: int32
+        - name: $select
+          in: query
+          description: Limits the properties returned in the result.
+          schema:
+            type: string
+            description: Limits the properties returned in the result.
+      responses:
+        '200':
+          description: The notification was successfully retrieved.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotificationModel'
+        '403':
+          description: Access to the notification is forbidden.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ForbiddenProblemDetails'
+        '404':
+          description: The notification does not exist.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundProblemDetails'
+  /Gov/Serbia/Documents/Received:
+    get:
+      tags:
+        - Serbia
+      summary: Returns the received documents.
+      parameters:
+        - name: X-API-Key
+          in: header
+          description: Original API Key
+          schema:
+            type: string
+        - name: modified
+          in: query
+          schema:
+            type: string
+            format: date-time
+            nullable: true
+        - name: matchField
+          in: query
+          schema:
+            type: string
+            nullable: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SerbiaDocumentModel'
+  /Gov/Serbia/Documents/Reject:
+    post:
+      tags:
+        - Serbia
+      summary: Rejects the list of specified documents.
+      requestBody:
+        content:
+          application/json;odata.metadata=minimal;odata.streaming=true:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/SerbiaActionModel'
+              nullable: true
+          application/json;odata.metadata=minimal;odata.streaming=false:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/SerbiaActionModel'
+              nullable: true
+          application/json;odata.metadata=minimal:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/SerbiaActionModel'
+              nullable: true
+          application/json;odata.metadata=full;odata.streaming=true:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/SerbiaActionModel'
+              nullable: true
+          application/json;odata.metadata=full;odata.streaming=false:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/SerbiaActionModel'
+              nullable: true
+          application/json;odata.metadata=full:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/SerbiaActionModel'
+              nullable: true
+          application/json;odata.metadata=none;odata.streaming=true:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/SerbiaActionModel'
+              nullable: true
+          application/json;odata.metadata=none;odata.streaming=false:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/SerbiaActionModel'
+              nullable: true
+          application/json;odata.metadata=none:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/SerbiaActionModel'
+              nullable: true
+          application/json;odata.streaming=true:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/SerbiaActionModel'
+              nullable: true
+          application/json;odata.streaming=false:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/SerbiaActionModel'
+              nullable: true
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/SerbiaActionModel'
+              nullable: true
+          application/xml:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/SerbiaActionModel'
+              nullable: true
+          application/json; odata.metadata=full; odata.streaming=true:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/SerbiaActionModel'
+              nullable: true
+          application/json-patch+json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/SerbiaActionModel'
+              nullable: true
+          text/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/SerbiaActionModel'
+              nullable: true
+          application/*+json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/SerbiaActionModel'
+              nullable: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SerbiaActionModel'
+  /Gov/Serbia/Documents/Approve:
+    post:
+      tags:
+        - Serbia
+      summary: Approves the list of specified documents.
+      requestBody:
+        content:
+          application/json;odata.metadata=minimal;odata.streaming=true:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/SerbiaActionModel'
+              nullable: true
+          application/json;odata.metadata=minimal;odata.streaming=false:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/SerbiaActionModel'
+              nullable: true
+          application/json;odata.metadata=minimal:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/SerbiaActionModel'
+              nullable: true
+          application/json;odata.metadata=full;odata.streaming=true:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/SerbiaActionModel'
+              nullable: true
+          application/json;odata.metadata=full;odata.streaming=false:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/SerbiaActionModel'
+              nullable: true
+          application/json;odata.metadata=full:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/SerbiaActionModel'
+              nullable: true
+          application/json;odata.metadata=none;odata.streaming=true:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/SerbiaActionModel'
+              nullable: true
+          application/json;odata.metadata=none;odata.streaming=false:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/SerbiaActionModel'
+              nullable: true
+          application/json;odata.metadata=none:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/SerbiaActionModel'
+              nullable: true
+          application/json;odata.streaming=true:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/SerbiaActionModel'
+              nullable: true
+          application/json;odata.streaming=false:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/SerbiaActionModel'
+              nullable: true
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/SerbiaActionModel'
+              nullable: true
+          application/xml:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/SerbiaActionModel'
+              nullable: true
+          application/json; odata.metadata=full; odata.streaming=true:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/SerbiaActionModel'
+              nullable: true
+          application/json-patch+json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/SerbiaActionModel'
+              nullable: true
+          text/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/SerbiaActionModel'
+              nullable: true
+          application/*+json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/SerbiaActionModel'
+              nullable: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SerbiaActionModel'
+  /Users:
+    get:
+      tags:
+        - Users
+      summary: Retrieves users. Requires admin role.
+      description: >-
+        <div style="display:flex; flex-direction:row;
+        align-items:center;font-size:14px;border-radius: 4px; padding: 4px;
+        background-color: rgb(157,181,205,0.3)">  <div style="border-radius:
+        4px; padding: 4px; background-color: #000000; margin-right:12px;color:
+        white;">ODATA</div>   <div>This API call supports querying and filtering
+        using OData. Following table provides description and examples of
+        possible options:</div></div><div style="display:flex;
+        flex-direction:row;
+        align-items:center;font-size:14px;margin-left:0px;margin-top:12px"> 
+        <div style="width:100%; margin-top:-4px"><table
+        style="width:100%;border-radius:4px"> <thead style="background-color:
+        rgba(0,0,0,0.05); border: 1px solid rgba(0,0,0,0.08);">     <tr>        
+        <td style="padding: 12px">Option</td>         <td style="padding:
+        12px">Description</td>         <td style="padding:
+        12px">Example</td>         <td style="padding:
+        12px">Documentation</td>     </tr> </thead> <tbody><tr style="border:
+        1px solid rgba(0,0,0,0.08);">    <td
+        style="padding-left:12px;padding-right:12px;">$select</td>    <td
+        style="padding-left:12px;padding-right:12px;">Limits the properties
+        returned in the result.</td>    <td
+        style="padding-left:12px;padding-right:12px;">/Users$select=id</td>   
+        <td style="padding-left:12px;padding-right:12px;"><a
+        href="https://docs.microsoft.com/en-us/odata/webapi/first-odata-api#select"
+        target="_blank">Documentation🡥</a></td></tr><tr style="border: 1px
+        solid rgba(0,0,0,0.08);">    <td
+        style="padding-left:12px;padding-right:12px;">$filter</td>    <td
+        style="padding-left:12px;padding-right:12px;">Restricts the set of items
+        returned.</td>    <td
+        style="padding-left:12px;padding-right:12px;">/Users$filter=id gt
+        445566</td>    <td style="padding-left:12px;padding-right:12px;"><a
+        href="https://docs.microsoft.com/en-us/odata/webapi/first-odata-api#filter"
+        target="_blank">Documentation🡥</a></td></tr><tr style="border: 1px
+        solid rgba(0,0,0,0.08);">    <td
+        style="padding-left:12px;padding-right:12px;">$orderby</td>    <td
+        style="padding-left:12px;padding-right:12px;">Specifies the order in
+        which items are returned.</td>    <td
+        style="padding-left:12px;padding-right:12px;">/Users$orderby=id
+        desc</td>    <td style="padding-left:12px;padding-right:12px;"><a
+        href="https://docs.microsoft.com/en-us/odata/webapi/first-odata-api#orderby"
+        target="_blank">Documentation🡥</a></td></tr><tr style="border: 1px
+        solid rgba(0,0,0,0.08);">    <td
+        style="padding-left:12px;padding-right:12px;">$top</td>    <td
+        style="padding-left:12px;padding-right:12px;">Limits the number of items
+        returned from a collection.</td>    <td
+        style="padding-left:12px;padding-right:12px;">/Users$top=50</td>    <td
+        style="padding-left:12px;padding-right:12px;"><a
+        href="https://docs.microsoft.com/en-us/odata/client/query-options#top"
+        target="_blank">Documentation🡥</a></td></tr><tr style="border: 1px
+        solid rgba(0,0,0,0.08);">    <td
+        style="padding-left:12px;padding-right:12px;">$skip</td>    <td
+        style="padding-left:12px;padding-right:12px;">Excludes the specified
+        number of items of the queried collection from the result.</td>    <td
+        style="padding-left:12px;padding-right:12px;">/Users$skip=25</td>    <td
+        style="padding-left:12px;padding-right:12px;"><a
+        href="https://docs.microsoft.com/en-us/odata/webapi/first-odata-api#skip"
+        target="_blank">Documentation🡥</a></td></tr><tr style="border: 1px
+        solid rgba(0,0,0,0.08);">    <td
+        style="padding-left:12px;padding-right:12px;">$count</td>    <td
+        style="padding-left:12px;padding-right:12px;">Indicates whether the
+        total count of items within a collection are returned in the
+        result.</td>    <td
+        style="padding-left:12px;padding-right:12px;">/Users$count=true</td>   
+        <td style="padding-left:12px;padding-right:12px;"><a
+        href="https://docs.microsoft.com/en-us/odata/client/query-options#count"
+        target="_blank">Documentation🡥</a></td></tr></tbody></table> 
+        </div></div>
+      parameters:
+        - name: X-API-Key
+          in: header
+          description: Original API Key
+          schema:
+            type: string
+        - name: $select
+          in: query
+          description: Limits the properties returned in the result.
+          schema:
+            type: string
+            description: Limits the properties returned in the result.
+        - name: $filter
+          in: query
+          description: Restricts the set of items returned.
+          schema:
+            type: string
+            description: Restricts the set of items returned.
+        - name: $orderby
+          in: query
+          description: Specifies the order in which items are returned.
+          schema:
+            type: string
+            description: Specifies the order in which items are returned.
+        - name: $top
+          in: query
+          description: Limits the number of items returned from a collection.
+          schema:
+            type: integer
+            description: Limits the number of items returned from a collection.
+            default: 100
+        - name: $skip
+          in: query
+          description: >-
+            Excludes the specified number of items of the queried collection
+            from the result.
+          schema:
+            type: integer
+            description: >-
+              Excludes the specified number of items of the queried collection
+              from the result.
+            default: 0
+        - name: $count
+          in: query
+          description: >-
+            Indicates whether the total count of items within a collection are
+            returned in the result.
+          schema:
+            type: boolean
+            description: >-
+              Indicates whether the total count of items within a collection are
+              returned in the result.
+            default: false
+      responses:
+        '200':
+          description: Users successfully retrieved.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserModelIEnumerableODataValue'
+  /Users/{id}:
+    get:
+      tags:
+        - Users
+      summary: Gets a single user by id. Requires admin role.
+      description: >-
+        <div style="display:flex; flex-direction:row;
+        align-items:center;font-size:14px;border-radius: 4px; padding: 4px;
+        background-color: rgb(157,181,205,0.3)">  <div style="border-radius:
+        4px; padding: 4px; background-color: #000000; margin-right:12px;color:
+        white;">ODATA</div>   <div>This API call supports querying and filtering
+        using OData. Following table provides description and examples of
+        possible options:</div></div><div style="display:flex;
+        flex-direction:row;
+        align-items:center;font-size:14px;margin-left:0px;margin-top:12px"> 
+        <div style="width:100%; margin-top:-4px"><table
+        style="width:100%;border-radius:4px"> <thead style="background-color:
+        rgba(0,0,0,0.05); border: 1px solid rgba(0,0,0,0.08);">     <tr>        
+        <td style="padding: 12px">Option</td>         <td style="padding:
+        12px">Description</td>         <td style="padding:
+        12px">Example</td>         <td style="padding:
+        12px">Documentation</td>     </tr> </thead> <tbody><tr style="border:
+        1px solid rgba(0,0,0,0.08);">    <td
+        style="padding-left:12px;padding-right:12px;">$select</td>    <td
+        style="padding-left:12px;padding-right:12px;">Limits the properties
+        returned in the result.</td>    <td
+        style="padding-left:12px;padding-right:12px;">/Users/{id}$select=id</td>   
+        <td style="padding-left:12px;padding-right:12px;"><a
+        href="https://docs.microsoft.com/en-us/odata/webapi/first-odata-api#select"
+        target="_blank">Documentation🡥</a></td></tr></tbody></table> 
+        </div></div>
+      parameters:
+        - name: X-API-Key
+          in: header
+          description: Original API Key
+          schema:
+            type: string
+        - name: id
+          in: path
+          description: The user identifier.
+          required: true
+          schema:
+            type: integer
+            description: The user identifier.
+            format: int32
+        - name: $select
+          in: query
+          description: Limits the properties returned in the result.
+          schema:
+            type: string
+            description: Limits the properties returned in the result.
+      responses:
+        '200':
+          description: The user was successfully retrieved.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserModel'
+        '403':
+          description: Access to the user is forbidden.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ForbiddenProblemDetails'
+        '404':
+          description: The user does not exist.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotFoundProblemDetails'
+  /Users/Current:
+    get:
+      tags:
+        - Users
+      summary: Gets the currently logged in user.
+      description: >-
+        <div style="display:flex; flex-direction:row;
+        align-items:center;font-size:14px;border-radius: 4px; padding: 4px;
+        background-color: rgb(157,181,205,0.3)">  <div style="border-radius:
+        4px; padding: 4px; background-color: #000000; margin-right:12px;color:
+        white;">ODATA</div>   <div>This API call supports querying and filtering
+        using OData. Following table provides description and examples of
+        possible options:</div></div><div style="display:flex;
+        flex-direction:row;
+        align-items:center;font-size:14px;margin-left:0px;margin-top:12px"> 
+        <div style="width:100%; margin-top:-4px"><table
+        style="width:100%;border-radius:4px"> <thead style="background-color:
+        rgba(0,0,0,0.05); border: 1px solid rgba(0,0,0,0.08);">     <tr>        
+        <td style="padding: 12px">Option</td>         <td style="padding:
+        12px">Description</td>         <td style="padding:
+        12px">Example</td>         <td style="padding:
+        12px">Documentation</td>     </tr> </thead> <tbody><tr style="border:
+        1px solid rgba(0,0,0,0.08);">    <td
+        style="padding-left:12px;padding-right:12px;">$select</td>    <td
+        style="padding-left:12px;padding-right:12px;">Limits the properties
+        returned in the result.</td>    <td
+        style="padding-left:12px;padding-right:12px;">/Users/Current$select=id</td>   
+        <td style="padding-left:12px;padding-right:12px;"><a
+        href="https://docs.microsoft.com/en-us/odata/webapi/first-odata-api#select"
+        target="_blank">Documentation🡥</a></td></tr></tbody></table> 
+        </div></div>
+      parameters:
+        - name: X-API-Key
+          in: header
+          description: Original API Key
+          schema:
+            type: string
+        - name: $select
+          in: query
+          description: Limits the properties returned in the result.
+          schema:
+            type: string
+            description: Limits the properties returned in the result.
+      responses:
+        '200':
+          description: The user was successfully retrieved.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserModel'
+  /Workflow/Inbound/{documentId}/State:
+    get:
+      tags:
+        - Workflow
+      summary: Gets the state of the inbound workflow.
+      parameters:
+        - name: X-API-Key
+          in: header
+          description: Original API Key
+          schema:
+            type: string
+        - name: documentId
+          in: path
+          description: The document identifier.
+          required: true
+          schema:
+            type: integer
+            description: The document identifier.
+            format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json;odata.metadata=minimal;odata.streaming=true:
+              schema:
+                $ref: '#/components/schemas/WorkflowState'
+            application/json;odata.metadata=minimal;odata.streaming=false:
+              schema:
+                $ref: '#/components/schemas/WorkflowState'
+            application/json;odata.metadata=minimal:
+              schema:
+                $ref: '#/components/schemas/WorkflowState'
+            application/json;odata.metadata=full;odata.streaming=true:
+              schema:
+                $ref: '#/components/schemas/WorkflowState'
+            application/json;odata.metadata=full;odata.streaming=false:
+              schema:
+                $ref: '#/components/schemas/WorkflowState'
+            application/json;odata.metadata=full:
+              schema:
+                $ref: '#/components/schemas/WorkflowState'
+            application/json;odata.metadata=none;odata.streaming=true:
+              schema:
+                $ref: '#/components/schemas/WorkflowState'
+            application/json;odata.metadata=none;odata.streaming=false:
+              schema:
+                $ref: '#/components/schemas/WorkflowState'
+            application/json;odata.metadata=none:
+              schema:
+                $ref: '#/components/schemas/WorkflowState'
+            application/json;odata.streaming=true:
+              schema:
+                $ref: '#/components/schemas/WorkflowState'
+            application/json;odata.streaming=false:
+              schema:
+                $ref: '#/components/schemas/WorkflowState'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WorkflowState'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/WorkflowState'
+            application/json; odata.metadata=full; odata.streaming=true:
+              schema:
+                $ref: '#/components/schemas/WorkflowState'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/WorkflowState'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/WorkflowState'
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+        '500':
+          description: Server Error
+  /Workflow/Inbound/{documentId}/State/Transitions:
+    get:
+      tags:
+        - Workflow
+      summary: Gets the inbound workflow state transitions.
+      parameters:
+        - name: X-API-Key
+          in: header
+          description: Original API Key
+          schema:
+            type: string
+        - name: documentId
+          in: path
+          description: The document identifier.
+          required: true
+          schema:
+            type: integer
+            description: The document identifier.
+            format: int32
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json;odata.metadata=minimal;odata.streaming=true:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/WorkflowTransition'
+            application/json;odata.metadata=minimal;odata.streaming=false:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/WorkflowTransition'
+            application/json;odata.metadata=minimal:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/WorkflowTransition'
+            application/json;odata.metadata=full;odata.streaming=true:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/WorkflowTransition'
+            application/json;odata.metadata=full;odata.streaming=false:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/WorkflowTransition'
+            application/json;odata.metadata=full:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/WorkflowTransition'
+            application/json;odata.metadata=none;odata.streaming=true:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/WorkflowTransition'
+            application/json;odata.metadata=none;odata.streaming=false:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/WorkflowTransition'
+            application/json;odata.metadata=none:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/WorkflowTransition'
+            application/json;odata.streaming=true:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/WorkflowTransition'
+            application/json;odata.streaming=false:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/WorkflowTransition'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/WorkflowTransition'
+            application/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/WorkflowTransition'
+            application/json; odata.metadata=full; odata.streaming=true:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/WorkflowTransition'
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/WorkflowTransition'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/WorkflowTransition'
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+        '500':
+          description: Server Error
+  /Workflow/{documentId}/Inbound/State/Transition:
+    post:
+      tags:
+        - Workflow
+      summary: Sets the inbound state transition.
+      parameters:
+        - name: X-API-Key
+          in: header
+          description: Original API Key
+          schema:
+            type: string
+        - name: documentId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: The transition.
+        content:
+          application/json;odata.metadata=minimal;odata.streaming=true:
+            schema:
+              $ref: '#/components/schemas/WorkflowTransition'
+          application/json;odata.metadata=minimal;odata.streaming=false:
+            schema:
+              $ref: '#/components/schemas/WorkflowTransition'
+          application/json;odata.metadata=minimal:
+            schema:
+              $ref: '#/components/schemas/WorkflowTransition'
+          application/json;odata.metadata=full;odata.streaming=true:
+            schema:
+              $ref: '#/components/schemas/WorkflowTransition'
+          application/json;odata.metadata=full;odata.streaming=false:
+            schema:
+              $ref: '#/components/schemas/WorkflowTransition'
+          application/json;odata.metadata=full:
+            schema:
+              $ref: '#/components/schemas/WorkflowTransition'
+          application/json;odata.metadata=none;odata.streaming=true:
+            schema:
+              $ref: '#/components/schemas/WorkflowTransition'
+          application/json;odata.metadata=none;odata.streaming=false:
+            schema:
+              $ref: '#/components/schemas/WorkflowTransition'
+          application/json;odata.metadata=none:
+            schema:
+              $ref: '#/components/schemas/WorkflowTransition'
+          application/json;odata.streaming=true:
+            schema:
+              $ref: '#/components/schemas/WorkflowTransition'
+          application/json;odata.streaming=false:
+            schema:
+              $ref: '#/components/schemas/WorkflowTransition'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WorkflowTransition'
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/WorkflowTransition'
+          application/json; odata.metadata=full; odata.streaming=true:
+            schema:
+              $ref: '#/components/schemas/WorkflowTransition'
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/WorkflowTransition'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/WorkflowTransition'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/WorkflowTransition'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json;odata.metadata=minimal;odata.streaming=true:
+              schema:
+                $ref: '#/components/schemas/WorkflowState'
+            application/json;odata.metadata=minimal;odata.streaming=false:
+              schema:
+                $ref: '#/components/schemas/WorkflowState'
+            application/json;odata.metadata=minimal:
+              schema:
+                $ref: '#/components/schemas/WorkflowState'
+            application/json;odata.metadata=full;odata.streaming=true:
+              schema:
+                $ref: '#/components/schemas/WorkflowState'
+            application/json;odata.metadata=full;odata.streaming=false:
+              schema:
+                $ref: '#/components/schemas/WorkflowState'
+            application/json;odata.metadata=full:
+              schema:
+                $ref: '#/components/schemas/WorkflowState'
+            application/json;odata.metadata=none;odata.streaming=true:
+              schema:
+                $ref: '#/components/schemas/WorkflowState'
+            application/json;odata.metadata=none;odata.streaming=false:
+              schema:
+                $ref: '#/components/schemas/WorkflowState'
+            application/json;odata.metadata=none:
+              schema:
+                $ref: '#/components/schemas/WorkflowState'
+            application/json;odata.streaming=true:
+              schema:
+                $ref: '#/components/schemas/WorkflowState'
+            application/json;odata.streaming=false:
+              schema:
+                $ref: '#/components/schemas/WorkflowState'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WorkflowState'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/WorkflowState'
+            application/json; odata.metadata=full; odata.streaming=true:
+              schema:
+                $ref: '#/components/schemas/WorkflowState'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/WorkflowState'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/WorkflowState'
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+        '500':
+          description: Server Error
+  /Workflow/{workflowName}/Tables:
+    get:
+      tags:
+        - Workflow
+      summary: Gets the workflow tables.
+      parameters:
+        - name: X-API-Key
+          in: header
+          description: Original API Key
+          schema:
+            type: string
+        - name: workflowName
+          in: path
+          description: Name of the workflow.
+          required: true
+          schema:
+            type: string
+            description: Name of the workflow.
+            nullable: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json;odata.metadata=minimal;odata.streaming=true:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TableDefinition'
+            application/json;odata.metadata=minimal;odata.streaming=false:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TableDefinition'
+            application/json;odata.metadata=minimal:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TableDefinition'
+            application/json;odata.metadata=full;odata.streaming=true:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TableDefinition'
+            application/json;odata.metadata=full;odata.streaming=false:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TableDefinition'
+            application/json;odata.metadata=full:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TableDefinition'
+            application/json;odata.metadata=none;odata.streaming=true:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TableDefinition'
+            application/json;odata.metadata=none;odata.streaming=false:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TableDefinition'
+            application/json;odata.metadata=none:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TableDefinition'
+            application/json;odata.streaming=true:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TableDefinition'
+            application/json;odata.streaming=false:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TableDefinition'
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TableDefinition'
+            application/xml:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TableDefinition'
+            application/json; odata.metadata=full; odata.streaming=true:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TableDefinition'
+            text/plain:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TableDefinition'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TableDefinition'
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+        '500':
+          description: Server Error
+  /Workflow/{documentId}/Tables/{tableName}/Contents:
+    get:
+      tags:
+        - Workflow
+      summary: Gets the content of the workflow table.
+      parameters:
+        - name: X-API-Key
+          in: header
+          description: Original API Key
+          schema:
+            type: string
+        - name: documentId
+          in: path
+          description: The document identifier.
+          required: true
+          schema:
+            type: integer
+            description: The document identifier.
+            format: int32
+        - name: tableName
+          in: path
+          description: Name of the table.
+          required: true
+          schema:
+            type: string
+            description: Name of the table.
+            nullable: true
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json;odata.metadata=minimal;odata.streaming=true:
+              schema:
+                $ref: '#/components/schemas/Table'
+            application/json;odata.metadata=minimal;odata.streaming=false:
+              schema:
+                $ref: '#/components/schemas/Table'
+            application/json;odata.metadata=minimal:
+              schema:
+                $ref: '#/components/schemas/Table'
+            application/json;odata.metadata=full;odata.streaming=true:
+              schema:
+                $ref: '#/components/schemas/Table'
+            application/json;odata.metadata=full;odata.streaming=false:
+              schema:
+                $ref: '#/components/schemas/Table'
+            application/json;odata.metadata=full:
+              schema:
+                $ref: '#/components/schemas/Table'
+            application/json;odata.metadata=none;odata.streaming=true:
+              schema:
+                $ref: '#/components/schemas/Table'
+            application/json;odata.metadata=none;odata.streaming=false:
+              schema:
+                $ref: '#/components/schemas/Table'
+            application/json;odata.metadata=none:
+              schema:
+                $ref: '#/components/schemas/Table'
+            application/json;odata.streaming=true:
+              schema:
+                $ref: '#/components/schemas/Table'
+            application/json;odata.streaming=false:
+              schema:
+                $ref: '#/components/schemas/Table'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Table'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Table'
+            application/json; odata.metadata=full; odata.streaming=true:
+              schema:
+                $ref: '#/components/schemas/Table'
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/Table'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/Table'
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized
+        '404':
+          description: Not Found
+        '500':
+          description: Server Error
+components:
+  schemas:
+    DocumentType:
+      enum:
+        - Invoice
+        - CreditNote
+        - Order
+        - DeliveryNote
+        - General
+        - Attachment
+        - PrivateAttachment
+        - Other
+      type: string
+      description: >-
+        List of document types supported by TRAFFIQX® API.<table
+        style="font-size: 12px;">  <thead style="background-color:
+        rgba(0,0,0,0.05); border:1px solid rgba(0,0,0,0.08);">    <tr>      <td
+        style="padding: 12px">Name</td>      <td style="padding:
+        12px">Description</td>    </tr>  </thead>  <tbody><tr style="border:1px
+        solid rgba(0,0,0,0.05);">  <td style="padding: 6px 12px 6px 12px;
+        font-weight: 500;">Invoice</td>  <td style="padding: 6px 12px 6px 12px;
+        font-weight: 500;">The invoice document.</td></tr> <tr style="border:1px
+        solid rgba(0,0,0,0.05);">  <td style="padding: 6px 12px 6px 12px;
+        font-weight: 500;">CreditNote</td>  <td style="padding: 6px 12px 6px
+        12px; font-weight: 500;">The credit note document.</td></tr> <tr
+        style="border:1px solid rgba(0,0,0,0.05);">  <td style="padding: 6px
+        12px 6px 12px; font-weight: 500;">Order</td>  <td style="padding: 6px
+        12px 6px 12px; font-weight: 500;">The order document.</td></tr> <tr
+        style="border:1px solid rgba(0,0,0,0.05);">  <td style="padding: 6px
+        12px 6px 12px; font-weight: 500;">DeliveryNote</td>  <td style="padding:
+        6px 12px 6px 12px; font-weight: 500;">The delivery note
+        document.</td></tr> <tr style="border:1px solid rgba(0,0,0,0.05);">  <td
+        style="padding: 6px 12px 6px 12px; font-weight: 500;">General</td>  <td
+        style="padding: 6px 12px 6px 12px; font-weight: 500;">The general
+        document.</td></tr> <tr style="border:1px solid rgba(0,0,0,0.05);">  <td
+        style="padding: 6px 12px 6px 12px; font-weight: 500;">Attachment</td> 
+        <td style="padding: 6px 12px 6px 12px; font-weight: 500;">The attachment
+        document.</td></tr> <tr style="border:1px solid rgba(0,0,0,0.05);">  <td
+        style="padding: 6px 12px 6px 12px; font-weight:
+        500;">PrivateAttachment</td>  <td style="padding: 6px 12px 6px 12px;
+        font-weight: 500;">The private attachment document.</td></tr> <tr
+        style="border:1px solid rgba(0,0,0,0.05);">  <td style="padding: 6px
+        12px 6px 12px; font-weight: 500;">Other</td>  <td style="padding: 6px
+        12px 6px 12px; font-weight: 500;">The type specifying that the document
+        other than the defined ones.</td></tr>   </tbody></table>
+    DocumentStatus:
+      enum:
+        - Unknown
+        - Initial
+        - Converting
+        - Converted
+        - Canceled
+        - Held
+        - RulesPending
+        - NoReceiver
+        - Temporary
+        - Released
+        - Processing
+        - TransferInitialization
+        - Transferring
+        - Prepared
+        - SignaturePending
+        - Ready
+        - DeliveryBusy
+        - InvitePending
+        - InvitePendingHeld
+        - Delivered
+        - WaitingForApproval
+        - WaitingForCapturing
+        - InWorkflowInbound
+        - InWorkflowOutbound
+        - WorkflowFinishedInbound
+        - InWorkflowInboundAndOutbound
+        - WorkflowFinishedOutbound
+        - WorkflowFinishedInboundAndOutbound
+        - InWorkflowInboundFinishedOutboundWF
+        - InWorkflowOutboundFinishedInboundWF
+        - Capturing
+        - ConvertingInbound
+        - ConvertedInbound
+        - ReadyForInboundProcessEngine
+        - ReadyForOutboundProcessEngine
+        - InInboundProcessEngine
+        - InOutboundProcessEngine
+        - FinishedInboundProcessEngine
+        - FinishedOutboundProcessEngine
+        - Captured
+        - SDSInitial
+        - SDSReadyForSigning
+        - SDSSigning
+        - SDSReadyForVerifying
+        - SDSVerifying
+        - SDSReadyForCompress
+        - SDSCompressing
+        - SDSReadyForDataStorage
+        - SDSDataStoring
+        - SDSReadyForArchiving
+        - SDSArchiving
+        - SDSReadyForAccounting
+        - SDSAccounting
+        - SDSReadyForMessaging
+        - SDSMessaging
+        - SDSReadyForTimestamping
+        - SDSTimestamping
+        - UploadedInbound
+        - PreparingInboundDelivery
+        - TransferDataFormatInit
+        - TransferDataFormatStarted
+        - TransferDataFormatFinished
+        - RequestForDataFormat
+        - DataFormatCreated
+        - WaitingForExternalApproval
+        - ReadyForCapturingClarifying
+        - InCapturingClarifying
+        - FinishedCapturingClarifying
+        - ReadyForClarifying
+        - InClarifying
+        - FinishedClarifying
+        - SetupCS
+        - ErrorCS
+        - Error
+        - ErrorDS
+        - ErrorSDS
+        - ErrorContent
+        - ErrorDuplicate
+        - ErrorPS
+        - ErrorDataFormat
+        - ErrorInbox
+        - ErrorConfirmed
+        - TestDocumentDeleted
+        - InitialWebEDI
+        - PendingWebEDI
+        - OZGREClassified
+      type: string
+      description: >-
+        List of possible statuses for a document.<table style="font-size:
+        12px;">  <thead style="background-color: rgba(0,0,0,0.05); border:1px
+        solid rgba(0,0,0,0.08);">    <tr>      <td style="padding:
+        12px">Name</td>      <td style="padding: 12px">Description</td>   
+        </tr>  </thead>  <tbody><tr style="border:1px solid rgba(0,0,0,0.05);"> 
+        <td style="padding: 6px 12px 6px 12px; font-weight: 500;">Unknown</td> 
+        <td style="padding: 6px 12px 6px 12px; font-weight: 500;">The unknown
+        status.</td></tr> <tr style="border:1px solid rgba(0,0,0,0.05);">  <td
+        style="padding: 6px 12px 6px 12px; font-weight: 500;">Initial</td>  <td
+        style="padding: 6px 12px 6px 12px; font-weight: 500;">The document is in
+        initial state.</td></tr> <tr style="border:1px solid
+        rgba(0,0,0,0.05);">  <td style="padding: 6px 12px 6px 12px; font-weight:
+        500;">Converting</td>  <td style="padding: 6px 12px 6px 12px;
+        font-weight: 500;">The document is currently being converted.</td></tr>
+        <tr style="border:1px solid rgba(0,0,0,0.05);">  <td style="padding: 6px
+        12px 6px 12px; font-weight: 500;">Converted</td>  <td style="padding:
+        6px 12px 6px 12px; font-weight: 500;">The document has been
+        converted.</td></tr> <tr style="border:1px solid rgba(0,0,0,0.05);"> 
+        <td style="padding: 6px 12px 6px 12px; font-weight: 500;">Canceled</td> 
+        <td style="padding: 6px 12px 6px 12px; font-weight: 500;">The document
+        has been cancelled.</td></tr> <tr style="border:1px solid
+        rgba(0,0,0,0.05);">  <td style="padding: 6px 12px 6px 12px; font-weight:
+        500;">Held</td>  <td style="padding: 6px 12px 6px 12px; font-weight:
+        500;">The document has been held.</td></tr> <tr style="border:1px solid
+        rgba(0,0,0,0.05);">  <td style="padding: 6px 12px 6px 12px; font-weight:
+        500;">RulesPending</td>  <td style="padding: 6px 12px 6px 12px;
+        font-weight: 500;">There are rules pending to be applied to the
+        document.</td></tr> <tr style="border:1px solid rgba(0,0,0,0.05);">  <td
+        style="padding: 6px 12px 6px 12px; font-weight: 500;">NoReceiver</td> 
+        <td style="padding: 6px 12px 6px 12px; font-weight: 500;">There is no
+        receiver found for the document.</td></tr> <tr style="border:1px solid
+        rgba(0,0,0,0.05);">  <td style="padding: 6px 12px 6px 12px; font-weight:
+        500;">Temporary</td>  <td style="padding: 6px 12px 6px 12px;
+        font-weight: 500;">The document is in temporary state.</td></tr> <tr
+        style="border:1px solid rgba(0,0,0,0.05);">  <td style="padding: 6px
+        12px 6px 12px; font-weight: 500;">Released</td>  <td style="padding: 6px
+        12px 6px 12px; font-weight: 500;">The document has been
+        released.</td></tr> <tr style="border:1px solid rgba(0,0,0,0.05);">  <td
+        style="padding: 6px 12px 6px 12px; font-weight: 500;">Processing</td> 
+        <td style="padding: 6px 12px 6px 12px; font-weight: 500;">The document
+        is in processing state.</td></tr> <tr style="border:1px solid
+        rgba(0,0,0,0.05);">  <td style="padding: 6px 12px 6px 12px; font-weight:
+        500;">TransferInitialization</td>  <td style="padding: 6px 12px 6px
+        12px; font-weight: 500;">The document transfer has been
+        initialized.</td></tr> <tr style="border:1px solid rgba(0,0,0,0.05);"> 
+        <td style="padding: 6px 12px 6px 12px; font-weight:
+        500;">Transferring</td>  <td style="padding: 6px 12px 6px 12px;
+        font-weight: 500;">The document is being transferred.</td></tr> <tr
+        style="border:1px solid rgba(0,0,0,0.05);">  <td style="padding: 6px
+        12px 6px 12px; font-weight: 500;">Prepared</td>  <td style="padding: 6px
+        12px 6px 12px; font-weight: 500;">The document has been
+        prepared.</td></tr> <tr style="border:1px solid rgba(0,0,0,0.05);">  <td
+        style="padding: 6px 12px 6px 12px; font-weight:
+        500;">SignaturePending</td>  <td style="padding: 6px 12px 6px 12px;
+        font-weight: 500;">The document signatures are pending.</td></tr> <tr
+        style="border:1px solid rgba(0,0,0,0.05);">  <td style="padding: 6px
+        12px 6px 12px; font-weight: 500;">Ready</td>  <td style="padding: 6px
+        12px 6px 12px; font-weight: 500;">The document is ready.</td></tr> <tr
+        style="border:1px solid rgba(0,0,0,0.05);">  <td style="padding: 6px
+        12px 6px 12px; font-weight: 500;">DeliveryBusy</td>  <td style="padding:
+        6px 12px 6px 12px; font-weight: 500;">The document delivery is
+        busy.</td></tr>   </tbody></table>
+    PartyModel:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+          nullable: true
+        name:
+          type: string
+          nullable: true
+        street:
+          type: string
+          nullable: true
+        zip:
+          type: string
+          nullable: true
+        city:
+          type: string
+          nullable: true
+        addressNameLine1:
+          type: string
+          nullable: true
+        addressNameLine2:
+          type: string
+          nullable: true
+        addressNameLine3:
+          type: string
+          nullable: true
+        eMail:
+          type: string
+          nullable: true
+        country:
+          type: string
+          nullable: true
+        vatId:
+          type: string
+          nullable: true
+        taxId:
+          type: string
+          nullable: true
+        iln:
+          type: string
+          nullable: true
+        isRegistered:
+          type: boolean
+      additionalProperties: false
+    InboxDocumentModel:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: Gets or sets the identifier.
+          format: int32
+        type:
+          $ref: '#/components/schemas/DocumentType'
+        subType:
+          type: integer
+          description: Gets or sets the type of the sub.
+          format: int32
+          nullable: true
+        status:
+          $ref: '#/components/schemas/DocumentStatus'
+        amount:
+          type: number
+          description: Gets or sets the amount.
+          format: double
+          nullable: true
+        reference:
+          type: string
+          description: Gets or sets the reference.
+          nullable: true
+        customerNumber:
+          type: string
+          description: Gets or sets the customer number.
+          nullable: true
+        docDate:
+          type: string
+          description: Gets or sets the document date.
+          format: date-time
+          nullable: true
+        matchField:
+          type: string
+          description: Gets or sets the match field.
+          nullable: true
+        customField:
+          type: string
+          description: Gets or sets the custom field.
+          nullable: true
+        created:
+          type: string
+          description: Gets or sets the created.
+          format: date-time
+        readyForApi:
+          type: string
+          description: Gets or sets the ready for API.
+          format: date-time
+          nullable: true
+        sender:
+          $ref: '#/components/schemas/PartyModel'
+        receiver:
+          $ref: '#/components/schemas/PartyModel'
+        privateCustomField1:
+          type: string
+          description: Gets or sets the private custom field1.
+          nullable: true
+        privateCustomField2:
+          type: string
+          description: Gets or sets the private custom field2.
+          nullable: true
+        workflowState:
+          type: string
+          description: Gets or sets the state of the workflow.
+          nullable: true
+        attachmentCount:
+          type: integer
+          description: Gets or sets the attachment count.
+          format: int32
+        privateAttachmentCount:
+          type: integer
+          description: Gets or sets the private attachment count.
+          format: int32
+        isDuplicate:
+          type: boolean
+          description: Gets or sets a value indicating whether this instance is duplicate.
+        archived:
+          type: boolean
+          description: >-
+            Gets or sets a value indicating whether this
+            B4.TraffiqxApi.Models.BaseDocumentModel is archived.
+        errorText:
+          type: string
+          description: Gets or sets the error text.
+          nullable: true
+      additionalProperties: false
+      description: Defines the inbox document model.
+    InboxDocumentModelIEnumerableODataValue:
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/InboxDocumentModel'
+          nullable: true
+      additionalProperties: false
+    NotificationState:
+      enum:
+        - 0
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+        - 9
+      type: integer
+      description: >-
+        <table style="font-size: 12px;">  <thead style="background-color:
+        rgba(0,0,0,0.05); border:1px solid rgba(0,0,0,0.08);">    <tr>      <td
+        style="padding: 12px">Name</td>      <td style="padding:
+        12px">Description</td>    </tr>  </thead>  <tbody>  </tbody></table>
+      format: int32
+    NotificationModel:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        clientId:
+          type: integer
+          format: int32
+          nullable: true
+        state:
+          $ref: '#/components/schemas/NotificationState'
+        language:
+          type: string
+          nullable: true
+        receiverEmail:
+          type: string
+          nullable: true
+        returnAddress:
+          type: string
+          nullable: true
+        senderEmail:
+          type: string
+          nullable: true
+        country:
+          type: string
+          nullable: true
+        type:
+          type: string
+          nullable: true
+        documentId:
+          type: integer
+          description: >-
+            Corresponds to the "MessageId" which is unknown to the outside
+            world.
+          format: int32
+          nullable: true
+        created:
+          type: string
+          format: date-time
+      additionalProperties: false
+    Party:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+          nullable: true
+        name:
+          type: string
+          nullable: true
+        street:
+          type: string
+          nullable: true
+        zip:
+          type: string
+          nullable: true
+        city:
+          type: string
+          nullable: true
+        addressNameLine1:
+          type: string
+          nullable: true
+        addressNameLine2:
+          type: string
+          nullable: true
+        addressNameLine3:
+          type: string
+          nullable: true
+        eMail:
+          type: string
+          nullable: true
+        country:
+          type: string
+          nullable: true
+        vatId:
+          type: string
+          nullable: true
+        taxId:
+          type: string
+          nullable: true
+        iln:
+          type: string
+          nullable: true
+        isRegistered:
+          type: boolean
+      additionalProperties: false
+    DocumentInfo:
+      type: object
+      properties:
+        tags:
+          type: array
+          items:
+            $ref: '#/components/schemas/NotificationModel'
+          description: Gets or sets the tags.
+          nullable: true
+        privateCustomField1:
+          type: string
+          description: Gets or sets the private custom field1.
+          nullable: true
+        privateCustomField2:
+          type: string
+          description: Gets or sets the private custom field2.
+          nullable: true
+        workflowState:
+          type: string
+          description: Gets or sets the state of the workflow.
+          nullable: true
+        publicAttachmentIds:
+          type: array
+          items:
+            type: integer
+            format: int32
+          description: Gets the public attachment ids.
+          nullable: true
+          readOnly: true
+        publicAttachmentsCount:
+          type: integer
+          description: Gets the public attachments count.
+          format: int32
+          readOnly: true
+        privateAttachmentIds:
+          type: array
+          items:
+            type: integer
+            format: int32
+          description: Gets the private attachment ids.
+          nullable: true
+          readOnly: true
+        privateAttachmentsCount:
+          type: integer
+          description: Gets the private attachments count.
+          format: int32
+          readOnly: true
+        id:
+          type: integer
+          description: Gets or sets the identifier.
+          format: int32
+        type:
+          $ref: '#/components/schemas/DocumentType'
+        status:
+          $ref: '#/components/schemas/DocumentStatus'
+        subType:
+          type: integer
+          description: Gets or sets the type of the sub.
+          format: int32
+          nullable: true
+        amount:
+          type: number
+          description: Gets or sets the amount.
+          format: double
+          nullable: true
+        reference:
+          type: string
+          description: Gets or sets the reference.
+          nullable: true
+        customerNumber:
+          type: string
+          description: Gets or sets the customer number.
+          nullable: true
+        docDate:
+          type: string
+          description: Gets or sets the document date.
+          format: date-time
+          nullable: true
+        isDuplicate:
+          type: boolean
+          description: Gets or sets a value indicating whether this instance is duplicate.
+        matchField:
+          type: string
+          description: Gets or sets the match field.
+          nullable: true
+        customField:
+          type: string
+          description: Gets or sets the custom field.
+          nullable: true
+        created:
+          type: string
+          description: Gets or sets the created.
+          format: date-time
+        readyForAPI:
+          type: string
+          description: Gets or sets the ready for API.
+          format: date-time
+          nullable: true
+        archived:
+          type: boolean
+          description: >-
+            Gets or sets a value indicating whether this
+            B4.TraffiqxApi.Models.Base.DocumentBase is archived.
+        errorText:
+          type: string
+          description: Gets or sets the error text.
+          nullable: true
+        sender:
+          $ref: '#/components/schemas/Party'
+        receiver:
+          $ref: '#/components/schemas/Party'
+      additionalProperties: false
+      description: Contains document information.
+    LogModel:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: Gets or sets the identifier.
+          format: int32
+        module:
+          type: string
+          description: Gets or sets the module.
+          nullable: true
+        severity:
+          type: integer
+          description: Gets or sets the severity.
+          format: int32
+        reference:
+          type: integer
+          description: Gets or sets the reference.
+          format: int32
+          nullable: true
+        referenceType:
+          type: integer
+          description: Gets or sets the type of the reference.
+          format: int32
+          nullable: true
+        userId:
+          type: integer
+          description: Gets or sets the user identifier.
+          format: int32
+          nullable: true
+        text:
+          type: string
+          description: Gets or sets the text.
+          nullable: true
+        action:
+          type: string
+          description: Gets or sets the action.
+          nullable: true
+        actionParameters:
+          type: string
+          description: Gets or sets the action parameters.
+          nullable: true
+        subModule:
+          type: string
+          description: Gets or sets the sub module.
+          nullable: true
+        created:
+          type: string
+          description: Gets or sets the created.
+          format: date-time
+      additionalProperties: false
+      description: Defines the log model.
+    LogModelIEnumerableODataValue:
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/LogModel'
+          nullable: true
+      additionalProperties: false
+    ForbiddenProblemDetails:
+      type: object
+      properties:
+        type:
+          type: string
+          nullable: true
+        title:
+          type: string
+          nullable: true
+        status:
+          type: integer
+          format: int32
+          nullable: true
+        detail:
+          type: string
+          nullable: true
+        instance:
+          type: string
+          nullable: true
+        extensions:
+          type: object
+          additionalProperties:
+            type: object
+            additionalProperties: false
+          nullable: true
+          readOnly: true
+      additionalProperties: false
+      description: Forbidden problem details.
+    NotFoundProblemDetails:
+      type: object
+      properties:
+        type:
+          type: string
+          nullable: true
+        title:
+          type: string
+          nullable: true
+        status:
+          type: integer
+          format: int32
+          nullable: true
+        detail:
+          type: string
+          nullable: true
+        instance:
+          type: string
+          nullable: true
+        extensions:
+          type: object
+          additionalProperties:
+            type: object
+            additionalProperties: false
+          nullable: true
+          readOnly: true
+      additionalProperties: false
+      description: Forbidden problem details.
+    NotificationModelIEnumerableODataValue:
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/NotificationModel'
+          nullable: true
+      additionalProperties: false
+    SerbiaDocumentModel:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: Gets or sets the identifier.
+          format: int32
+        type:
+          $ref: '#/components/schemas/DocumentType'
+        subType:
+          type: integer
+          description: Gets or sets the subtype.
+          format: int32
+          nullable: true
+        status:
+          $ref: '#/components/schemas/DocumentStatus'
+        reference:
+          type: string
+          description: Gets or sets the reference.
+          nullable: true
+        docDate:
+          type: string
+          description: Gets or sets the document date.
+          format: date-time
+          nullable: true
+        matchField:
+          type: string
+          description: Gets or sets the match field.
+          nullable: true
+        customField:
+          type: string
+          description: Gets or sets the custom field.
+          nullable: true
+        invoiceId:
+          type: string
+          description: Gets or sets the invoice identifier.
+          nullable: true
+        invoiceState:
+          type: string
+          description: Gets or sets the invoice state.
+          nullable: true
+        created:
+          type: string
+          description: Gets or sets the created.
+          format: date-time
+        modified:
+          type: string
+          description: Gets or sets the modified.
+          format: date-time
+          nullable: true
+        comment:
+          type: string
+          description: Gets or sets the comment.
+          nullable: true
+      additionalProperties: false
+      description: Defines the Serbia document model.
+    SerbiaActionModel:
+      required:
+        - comment
+      type: object
+      properties:
+        id:
+          type: integer
+          description: The ID of the document.
+          format: int32
+        comment:
+          minLength: 3
+          type: string
+          description: The comment or reason for the target document of the action.
+      additionalProperties: false
+      description: Defines the Serbian action model.
+    UserModel:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: Gets or sets the user identifier.
+          format: int32
+        clientId:
+          type: integer
+          description: Gets or sets the client identifier to which the user belongs.
+          format: int32
+        firstName:
+          type: string
+          description: Gets or sets the first name of the user.
+          nullable: true
+        lastName:
+          type: string
+          description: Gets or sets the last name of the user.
+          nullable: true
+        email:
+          type: string
+          description: Gets or sets the email of the user.
+          nullable: true
+      additionalProperties: false
+      description: Contains information related to a user.
+    UserModelIEnumerableODataValue:
+      type: object
+      properties:
+        value:
+          type: array
+          items:
+            $ref: '#/components/schemas/UserModel'
+          nullable: true
+      additionalProperties: false
+    WorkflowState:
+      type: object
+      properties:
+        workflow:
+          type: string
+          description: Gets or sets the workflow name.
+          nullable: true
+        state:
+          type: string
+          description: Gets or sets the workflow state.
+          nullable: true
+      additionalProperties: false
+      description: Contains information related to workflow state.
+    WorkflowTransition:
+      type: object
+      properties:
+        documentId:
+          type: integer
+          description: Gets or sets the document identifier.
+          format: int32
+        workflow:
+          type: string
+          description: Gets or sets the workflow.
+          nullable: true
+        transition:
+          type: string
+          description: Gets or sets the transition.
+          nullable: true
+      additionalProperties: false
+      description: Contains information related to workflow transition for a document.
+    TableColumn:
+      type: object
+      properties:
+        name:
+          type: string
+          nullable: true
+      additionalProperties: false
+    TableDefinition:
+      type: object
+      properties:
+        name:
+          type: string
+          nullable: true
+        columns:
+          type: array
+          items:
+            $ref: '#/components/schemas/TableColumn'
+          nullable: true
+      additionalProperties: false
+    TableCell:
+      type: object
+      properties:
+        value:
+          type: string
+          nullable: true
+      additionalProperties: false
+    TableRow:
+      type: object
+      properties:
+        cells:
+          type: array
+          items:
+            $ref: '#/components/schemas/TableCell'
+          nullable: true
+      additionalProperties: false
+    Table:
+      type: object
+      properties:
+        rows:
+          type: array
+          items:
+            $ref: '#/components/schemas/TableRow'
+          nullable: true
+        name:
+          type: string
+          nullable: true
+        columns:
+          type: array
+          items:
+            $ref: '#/components/schemas/TableColumn'
+          nullable: true
+      additionalProperties: false
+  securitySchemes:
+    client_id:
+      type: apiKey
+      name: X-Datev-Client-ID
+      in: header
+      x-key-type: client_id
+    client_secret:
+      type: apiKey
+      name: X-Datev-Client-Secret
+      in: header
+      x-key-type: client_secret
+security:
+  - client_id: []
+    client_secret: []
+x-ibm-configuration:
+  cors:
+    enabled: true
+  type: rest
+  phase: realized
+  enforced: true
+  testable: true
+  application-authentication:
+    certificate: false
+tags:
+  - name: Documents
+    description: Represents a RESTful service of documents.
+  - name: Logs
+    description: Represents a RESTful service of Logs.
+  - name: Notifications
+    description: Represents a RESTful service of notifications.
+  - name: Serbia
+    description: Represents a RESTful service of Serbian documents.
+  - name: Users
+    description: Represents a RESTful service of users.
+  - name: Workflow
+    description: Represents a RESTful service of document workflow.
+x-ibm-endpoints:
+  - url: https://b4value-smarttransfer-inbound.api.datev.de/platform/v1.2
+    description: Datev-ApiManager (e.q. RZ20)
