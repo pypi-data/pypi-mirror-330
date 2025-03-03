@@ -1,0 +1,89 @@
+[project]
+authors = [
+    {name = "Martin Boos", email = "mboos@outlook.com"},
+]
+maintainers = [
+    {name = "Martin Boos", email = "mboos@outlook.com"},
+]
+license = {text = "GNU AGPL v3"}
+requires-python = "<4.0,>=3.9"
+name = "jsonschema-default"
+version = "1.8.0"
+description = "Create default objects from a JSON schema"
+readme = "README.md"
+dependencies = [
+    "rstr==3.2.2",
+]
+
+[project.urls]
+homepage = "https://github.com/mnboos/jsonschema-default"
+repository = "https://github.com/mnboos/jsonschema-default"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "pytest==8.3.4",
+    "jsonschema==4.23.0",
+    "ruff==0.9.7",
+    "taskipy==1.14.1",
+    "coverage[toml]==7.6.12",
+]
+
+[tool.ruff]
+line-length = 120
+extend-exclude = ["**/migrations", ".venv", ".idea", "manage.py"]
+
+[tool.ruff.lint]
+#select = ["E", "F", "I", "B", "SIM", "PL", "FLY", "RUF"]
+select = ["E", "F", "I", "B", "SIM"]
+#select = ["ALL"]
+#select = ["I"]
+extend-ignore = [
+    "F401",  # unused-import
+    "E501",  # line-too-long
+    "B023",  # function-uses-loop-variable
+    "PLE1205",  # https://docs.astral.sh/ruff/rules/logging-too-many-args/#logging-too-many-args-ple1205
+
+    # the following rules are conflicting with the formatter and are therefore disabler for the linter
+    # source: https://docs.astral.sh/ruff/formatter/#conflicting-lint-rules
+    "ISC002",
+    "COM819",
+    "COM812",
+    "Q003",
+    "Q002",
+    "Q001",
+    "Q000",
+    "D300",
+    "D206",
+    "E117",
+    "E114",
+    "E111",
+    "W191",
+]
+
+# Allow fix for all enabled rules (when `--fix`) is provided.
+fixable = ["ALL"]
+unfixable = []
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "lf"
+
+[tool.taskipy.tasks]
+test = { cmd = "uv run --directory ./tests/ coverage run -m pytest && coverage html && coverage report", help = "Run the tests and measure coverage" }
+format = { cmd = "ruff check --select I --fix && ruff check --fix && ruff format", help = "Formats the code using ruff" }
+lint = { cmd = "ruff check" }
+
+[tool.coverage.run]
+data_file = "tests/.coverage"
+branch = true
+
+[tool.coverage.report]
+skip_covered = true
+fail_under = 100
+exclude_also = ["pass",]
