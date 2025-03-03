@@ -1,0 +1,40 @@
+Metadata-Version: 2.2
+Name: advpandas
+Version: 0.1.0
+Summary: An advanced extension of the Pandas library.
+Home-page: https://github.com/Sumedh1599/advpandas
+Author: Sumedh Patil
+Author-email: your-email@example.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pandas>=1.0.0
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# AdvPandas
+
+AdvPandas is an advanced extension of the popular Pandas library, providing enhanced functionality for data analysis.
+
+## Installation
+
+```bash
+pip install advpandas
+```
+
+USAGE:
+import pandas as pd
+from advpandas import advanced_head
+
+df = pd.DataFrame({"A": [1, 2, 3], "B": [4, 5, 6]})
+advanced_head(df, n=2)
