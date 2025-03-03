@@ -1,0 +1,158 @@
+[
+    {
+        "channelTypeGid": 1,
+        "description": "Air Conditioner",
+        "selectable": true,
+        "allowsBidirectional": false
+    },
+    {
+        "channelTypeGid": 3,
+        "description": "Boiler",
+        "selectable": true,
+        "allowsBidirectional": false
+    },
+    {
+        "channelTypeGid": 4,
+        "description": "Clothes Dryer",
+        "selectable": true,
+        "allowsBidirectional": false
+    },
+    {
+        "channelTypeGid": 5,
+        "description": "Clothes Washer",
+        "selectable": true,
+        "allowsBidirectional": false
+    },
+    {
+        "channelTypeGid": 6,
+        "description": "Computer/Network",
+        "selectable": true,
+        "allowsBidirectional": false
+    },
+    {
+        "channelTypeGid": 7,
+        "description": "Cooktop/Range/Oven/Stove",
+        "selectable": true,
+        "allowsBidirectional": false
+    },
+    {
+        "channelTypeGid": 8,
+        "description": "Dishwasher",
+        "selectable": true,
+        "allowsBidirectional": false
+    },
+    {
+        "channelTypeGid": 10,
+        "description": "Fridge/Freezer",
+        "selectable": true,
+        "allowsBidirectional": false
+    },
+    {
+        "channelTypeGid": 11,
+        "description": "Furnace",
+        "selectable": true,
+        "allowsBidirectional": false
+    },
+    {
+        "channelTypeGid": 14,
+        "description": "Hot Tub/Spa",
+        "selectable": true,
+        "allowsBidirectional": false
+    },
+    {
+        "channelTypeGid": 15,
+        "description": "Humidifier/Dehumidifier",
+        "selectable": true,
+        "allowsBidirectional": false
+    },
+    {
+        "channelTypeGid": 16,
+        "description": "Kitchen",
+        "selectable": true,
+        "allowsBidirectional": false
+    },
+    {
+        "channelTypeGid": 17,
+        "description": "Microwave",
+        "selectable": true,
+        "allowsBidirectional": false
+    },
+    {
+        "channelTypeGid": 19,
+        "description": "Pump",
+        "selectable": true,
+        "allowsBidirectional": false
+    },
+    {
+        "channelTypeGid": 20,
+        "description": "Room/Multi-use Circuit",
+        "selectable": true,
+        "allowsBidirectional": false
+    },
+    {
+        "channelTypeGid": 22,
+        "description": "Water Heater",
+        "selectable": true,
+        "allowsBidirectional": false
+    },
+    {
+        "channelTypeGid": 23,
+        "description": "Smart Outlet",
+        "selectable": false,
+        "allowsBidirectional": false
+    },
+    {
+        "channelTypeGid": 25,
+        "description": "EV Charger",
+        "selectable": false,
+        "allowsBidirectional": false
+    },
+    {
+        "channelTypeGid": 26,
+        "description": "Lights",
+        "selectable": true,
+        "allowsBidirectional": false
+    },
+    {
+        "channelTypeGid": 2,
+        "description": "Battery",
+        "selectable": true,
+        "allowsBidirectional": true
+    },
+    {
+        "channelTypeGid": 9,
+        "description": "Electric Vehicle/RV",
+        "selectable": true,
+        "allowsBidirectional": true
+    },
+    {
+        "channelTypeGid": 12,
+        "description": "Garage/Shop/Barn/Shed",
+        "selectable": true,
+        "allowsBidirectional": true
+    },
+    {
+        "channelTypeGid": 24,
+        "description": "Heat Pump",
+        "selectable": true,
+        "allowsBidirectional": true
+    },
+    {
+        "channelTypeGid": 18,
+        "description": "Other",
+        "selectable": true,
+        "allowsBidirectional": true
+    },
+    {
+        "channelTypeGid": 21,
+        "description": "Sub Panel",
+        "selectable": true,
+        "allowsBidirectional": true
+    },
+    {
+        "channelTypeGid": 13,
+        "description": "Solar/Generation",
+        "selectable": true,
+        "allowsBidirectional": true
+    }
+]
