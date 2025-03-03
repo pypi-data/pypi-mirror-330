@@ -1,0 +1,15 @@
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - openff-toolkit
+  - openmm
+  - openmmtools
+  - dgl
+  - python=3.11
+  - pip
+  - rdkit==2024.3.4
+  - espaloma_charge
+  - mdanalysis
+  - openbabel
+
