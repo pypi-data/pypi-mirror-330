@@ -1,0 +1,56 @@
+# Byte-code
+__pycache__/
+**/__pycache__/
+*.py[cod]
+.coverage
+.pytest_cache/
+
+# Distribution / packaging
+*.egg-info/
+build/
+dist/
+
+# tests
+output_tests/*
+covreport/*
+coverage_html_report/*
+
+# pdoc
+html/
+*.html
+*.dot
+
+# AMC
+*.amc
+
+# LaTeX
+*.spl
+*.tex.bak
+*.aux
+*.glo
+*.idx
+*.log
+*.toc
+*.ist
+*.acn
+*.acr
+*.alg
+*.bbl*
+*.blg*
+*.dvi
+*.glg
+*.gls
+*.ilg
+*.ind
+*.lof
+*.lot
+*.maf
+*.mtc
+*.mtc1
+*.out
+*.synctex*
+
+# specific amc2moodle artifacts
+**/xmlclean*
+**/*_magic.tex
+output_tests/
