@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: dense-ai-det
+Version: 0.1.1
+Summary: A common package for dense ai detection
+Author: nde
+Author-email: hubosoft@hotmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Requires-Dist: numpy
+Requires-Dist: opencv-python
+Requires-Dist: Pillow
+
+This project is used for dense AI detection object localization, to distinguish and locate the result objects from dense AI detection.
