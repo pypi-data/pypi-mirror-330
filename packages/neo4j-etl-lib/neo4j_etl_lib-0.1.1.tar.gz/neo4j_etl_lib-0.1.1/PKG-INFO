@@ -1,0 +1,54 @@
+Metadata-Version: 2.4
+Name: neo4j-etl-lib
+Version: 0.1.1
+Summary: Building blocks for ETL pipelines.
+Keywords: etl,graph,database
+Author-email: Bert Radke <bert.radke@pm.me>
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Database
+Classifier: Development Status :: 4 - Beta
+License-File: LICENSE
+Requires-Dist: pydantic>=2.10.5; python_version >= '3.8'
+Requires-Dist: neo4j>=5.27.0; python_version >= '3.7'
+Requires-Dist: python-dotenv>=1.0.1; python_version >= '3.8'
+Requires-Dist: tabulate>=0.9.0; python_version >= '3.7'
+Requires-Dist: click>=8.1.8; python_version >= '3.7'
+Requires-Dist: pytest>=8.3.0 ; extra == "dev" and ( python_version >= '3.8')
+Requires-Dist: testcontainers[neo4j]==4.9.0 ; extra == "dev" and ( python_version >= '3.9' and python_version < '4.0')
+Requires-Dist: pytest-cov ; extra == "dev"
+Requires-Dist: bumpver ; extra == "dev"
+Requires-Dist: isort ; extra == "dev"
+Requires-Dist: pip-tools ; extra == "dev"
+Requires-Dist: sphinx ; extra == "dev"
+Requires-Dist: sphinx-rtd-theme ; extra == "dev"
+Requires-Dist: pydata-sphinx-theme ; extra == "dev"
+Requires-Dist: sphinx-autodoc-typehints ; extra == "dev"
+Requires-Dist: sphinxcontrib-napoleon ; extra == "dev"
+Requires-Dist: sphinx-autoapi ; extra == "dev"
+Requires-Dist: graphdatascience>=1.13 ; extra == "gds" and ( python_version >= '3.9')
+Project-URL: Documentation, https://neo-technology-field.github.io/python-etl-lib/index.html
+Project-URL: Home, https://github.com/neo-technology-field/python-etl-lib
+Provides-Extra: dev
+Provides-Extra: gds
+
+# Neo4j ETL Toolbox
+
+A Python library of building blocks to assemble etl pipelines.
+
+Complete documentation can be found on https://neo-technology-field.github.io/python-etl-lib/index.html
+
+See https://github.com/neo-technology-field/python-etl-lib/tree/main/examples/gtfs for an example project.
+
+
+The library can be installed via 
+
+```bash
+pip install neo4j-etl-lib
+```
+
