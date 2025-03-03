@@ -1,0 +1,41 @@
+Metadata-Version: 2.3
+Name: labctl
+Version: 0.6.0
+Summary: A simple cli tool to manage your access to LaboInfra ESGI Cloud
+Keywords: labctl,laboinfra,ESGI,cloud,openstack,vpn
+Author: msterhuj
+Author-email: gabin.lanore@gmail.com
+Requires-Python: >=3.12,<4.0
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Topic :: Utilities
+Requires-Dist: colorama (>=0.4.6,<0.5.0)
+Requires-Dist: pyyaml (>=6.0.2,<7.0.0)
+Requires-Dist: requests (>=2.32.3,<3.0.0)
+Requires-Dist: typer[all] (>=0.12.5,<0.13.0)
+Requires-Dist: wgconfig (>=1.0.4,<2.0.0)
+Project-URL: Repository, https://github.com/laboinfra/labctl
+Description-Content-Type: text/markdown
+
+# labctl
+
+A simple cli tool to manage your access to LaboInfra ESGI Cloud
+
+## Installation
+
+```bash
+pip install labctl
+```
+
+## Todo Commands
+
+- auth (login | logout)
+- info (get projects summary | devices summary | quotas summary)
+- devices (manage vpn devices)
+- projects (manage openstack projects)
+- quotas (manage quotas for a project)
+
