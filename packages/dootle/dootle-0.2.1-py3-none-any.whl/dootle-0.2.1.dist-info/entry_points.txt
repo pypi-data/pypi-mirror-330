@@ -1,0 +1,19 @@
+[doot.plugins.action]
+bake! = dootle.actions.shell:ShellBake
+job.expand = dootle.jobs.expansion:JobExpandAction
+job.inject.path.elements = dootle.jobs.injection:JobInjectPathParts
+job.inject.shadow = dootle.jobs.shadow:InjectShadowAction
+job.limit = dootle.jobs.limit:JobLimitAction
+job.queue = dootle.jobs.queue:JobQueueAction
+job.walk = dootle.jobs.walker:JobWalkAction
+mamba.env = dootle.python.mamba:MambaEnv
+post.clear = dootle.actions.postbox:ClearPostAction
+post.get = dootle.actions.postbox:GetPostAction
+post.put = dootle.actions.postbox:PutPostAction
+rng_draw = dootle.actions.random:rng_draw
+rng_fresh = dootle.actions.random:rng_fresh
+rng_ints = dootle.actions.random:rng_ints
+rng_spawn = dootle.actions.random:rng_spawn
+run-bake! = dootle.actions.shell:ShelBakedRun
+say = dootle.actions.say:SayAction
+shell! = dootle.actions.shell:ShellAction
