@@ -1,0 +1,42 @@
+Metadata-Version: 2.2
+Name: gbmframework
+Version: 0.1.5
+Summary: A unified framework for Gradient Boosting Models with SHAP analysis
+Home-page: https://github.com/yourusername/gbmframework
+Author: Mark Attwood + Claude 3.7
+Author-email: attwoodanalytics@gmail.com
+Keywords: machine learning,gradient boosting,xgboost,lightgbm,catboost,shap
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Requires-Python: >=3.7
+License-File: LICENSE
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: matplotlib
+Requires-Dist: seaborn
+Requires-Dist: scikit-learn
+Requires-Dist: shap
+Provides-Extra: xgboost
+Requires-Dist: xgboost; extra == "xgboost"
+Provides-Extra: lightgbm
+Requires-Dist: lightgbm; extra == "lightgbm"
+Provides-Extra: catboost
+Requires-Dist: catboost; extra == "catboost"
+Provides-Extra: hyperopt
+Requires-Dist: hyperopt; extra == "hyperopt"
+Provides-Extra: all
+Requires-Dist: xgboost; extra == "all"
+Requires-Dist: lightgbm; extra == "all"
+Requires-Dist: catboost; extra == "all"
+Requires-Dist: hyperopt; extra == "all"
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: provides-extra
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
