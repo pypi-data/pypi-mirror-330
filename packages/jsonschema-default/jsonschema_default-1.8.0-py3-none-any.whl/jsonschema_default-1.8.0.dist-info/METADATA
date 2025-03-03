@@ -1,0 +1,50 @@
+Metadata-Version: 2.4
+Name: jsonschema-default
+Version: 1.8.0
+Summary: Create default objects from a JSON schema
+Project-URL: homepage, https://github.com/mnboos/jsonschema-default
+Project-URL: repository, https://github.com/mnboos/jsonschema-default
+Author-email: Martin Boos <mboos@outlook.com>
+Maintainer-email: Martin Boos <mboos@outlook.com>
+License: GNU AGPL v3
+License-File: LICENSE
+Requires-Python: <4.0,>=3.9
+Requires-Dist: rstr==3.2.2
+Description-Content-Type: text/markdown
+
+# jsonschema-instance
+
+A Python package that creates default objects from a JSON schema.
+
+## Note
+This is not a validator. Inputs should be valid JSON schemas. For Python you can use the [jsonschema](https://github.com/Julian/jsonschema) package to validate schemas.
+
+## Installation
+```
+pip install jsonschema-default
+```
+
+## Usage
+```python
+import jsonschema_default
+
+default_obj = jsonschema_default.create_from("<schema>")
+```
+
+## Development
+- Install and configure [Poetry](https://python-poetry.org/)
+
+```bash
+pip install --user poetry
+```
+
+See [Installation](https://python-poetry.org/docs/#installation) for the official guide.
+
+- Install the dependencies using 
+
+```bash
+# Configure poetry to create a local venv directory
+poetry config virtualenvs.in-project true
+
+poetry install
+```
