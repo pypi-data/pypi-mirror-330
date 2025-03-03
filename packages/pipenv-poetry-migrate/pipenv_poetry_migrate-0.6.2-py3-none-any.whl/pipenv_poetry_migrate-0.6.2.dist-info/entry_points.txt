@@ -1,0 +1,3 @@
+[console_scripts]
+pipenv-poetry-migrate=pipenv_poetry_migrate.cli:app
+
