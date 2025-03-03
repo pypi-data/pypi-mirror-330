@@ -1,0 +1,24 @@
+[project]
+name = "trunco-core"
+version = "0.1.1"
+description = "core modules for trunco package"
+readme = "README.md"
+authors = [
+    { name = "Ali Tavallaie", email = "a.tavallaie@gmail.com" }
+]
+license = "MIT"
+requires-python = ">=3.8"
+dependencies = []
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["trunco", "trunco.*"]
+
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
