@@ -1,0 +1,39 @@
+name: ci-docs
+description: Builds project documentation with mkdocs.
+
+on:
+  workflow_call:
+    inputs:
+      dry-run:
+        description: "Dry run only."
+        required: false
+        type: boolean
+        default: false
+
+jobs:
+  build-docs:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+
+    - uses: pdm-project/setup-pdm@v4.2
+      with:
+        python-version: '3.11'
+
+    - name: Install dependencies
+      run: pdm sync -dG docs --skip=:all
+
+    # - run: pdm run mkdocs build
+
+    - id: check-version
+      uses: samuelcolvin/check-python-version@v4.1
+      with:
+        version_file_path: 'src/tempy/__init__.py'
+        skip_env_check: true
+
+    - name: publish website
+      if: github.event_name == 'release'
+      run: |
+        git config user.name ci-bot
+        git config user.email ci-bot@example.com
+        # mike deploy ${{ steps.check-version.outputs.VERSION_MAJOR_MINOR }} latest --update-aliases --push

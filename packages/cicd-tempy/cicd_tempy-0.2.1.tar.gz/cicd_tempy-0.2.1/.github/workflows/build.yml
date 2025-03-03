@@ -1,0 +1,32 @@
+name: ci-build
+description: Builds project wheels and sdist.
+
+on:
+  workflow_call:
+    inputs:
+      dry-run:
+        description: "Dry run only."
+        required: false
+        type: boolean
+        default: false
+
+jobs:
+  buid-sdist:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pdm-project/setup-pdm@v4.2
+        with:
+          python-version: '3.11'
+      - name: build wheels
+        run: pdm build --skip=:all
+      - name: Upload built wheels and src code as artifacts
+        uses: actions/upload-artifact@v4.6.0
+        with:
+          name: artifacts
+          path: dist/*
+      - name: publish to PyPI on release
+        if: inputs.dry-run == false
+        run: |
+          pdm self add keyring
+          pdm publish

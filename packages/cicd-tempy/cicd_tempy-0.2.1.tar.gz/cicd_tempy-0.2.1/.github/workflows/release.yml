@@ -1,0 +1,33 @@
+name: ci-release
+description: Release dry run.
+
+on:
+  workflow_call:
+    inputs:
+      dry-run:
+        description: "Dry run only."
+        required: false
+        type: boolean
+        default: false
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.release.outputs.version }}
+    steps:
+      - name: Check out
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          token: "${{ secrets.GITHUB_TOKEN }}"
+      - name: Setup | Force correct release branch on workflow sha
+        run: git checkout -B ${{ github.ref_name }} ${{ github.sha }}
+      - id: Release
+        name: Create bump and changelog (or dry-run)
+        uses: python-semantic-release/python-semantic-release@v9.18.1
+        with:
+          root_options: "-vv ${{ inputs.dry-run && '--noop' || '' }}"
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          git_committer_name: "github-actions"
+          git_committer_email: "actions@users.noreply.github.com"
