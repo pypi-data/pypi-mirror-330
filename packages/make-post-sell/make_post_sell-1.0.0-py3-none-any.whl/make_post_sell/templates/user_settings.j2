@@ -1,0 +1,81 @@
+{% extends "base.j2" -%}
+
+{% block call_to_action %}
+<a href="/log-out" class="log-out-button mps-button mps-button-small">log out</a>
+{% endblock call_to_action %}
+
+{% block content -%}
+
+<section class="one-column">
+  <section class="user-settings well">
+
+    <h3>User Settings</h3>
+    <form method="post" action="/u/settings" onsubmit="submit.disabled = true; return true;">
+  
+      <label for="name_input">Display Name (public)</label>
+      <input
+          name        = "name"
+          type        = "text"
+          id          = "name_input"
+          class       = "mps-user-name"
+          value       = "{{ name }}"
+          placeholder = "Display Name"
+          required />
+  
+      <br />
+      <br />
+  
+      <label for="name_input">Full Name (private, used for billing)</label>
+      <input
+          name        = "full_name"
+          type        = "text"
+          id          = "full_name_input"
+          class       = "mps-full-name"
+          value       = "{% if full_name %}{{ full_name }}{% endif %}"
+          placeholder = "Full Name"
+          required />
+  
+    <!-- not implemented.
+    <fieldset>
+
+    <legend>User Theme</legend>
+
+    <input type="radio" name="user_theme" id="light_mode" value="1" {% if user_theme == 1 %}checked{% endif %} />
+    <label for="user_theme" style="display: inline">Light mode</label>
+
+    <input type="radio" name="user_theme" id="visibility_unlisted" value="0" {% if user_theme == 0 %}checked{% endif %} />
+    <label for="user_theme" style="display: inline;">Dark mode</label>
+
+    </fieldset>
+    -->
+
+      <input type="submit" name="submit" class="mps-submit" value="Save Settings" />
+  
+      <br />
+
+    </form>
+  </section>
+</section>
+ 
+      <br />
+
+<section class="one-column">
+  <section class="well">
+ 
+    {% if request.is_saas_domain %}
+    <a href="/u/shops" class="product-edit-button mps-button">My Shops</a>
+    {% endif %}
+ 
+    {% if request.shop and request.shop.is_ready %}
+    <a href="/u/purchases" class="product-download-button mps-button">My Purchases</a>
+    <br/>
+    <a href="/billing" class="product-edit-button mps-button">Payment Preferences</a>
+    <br/>
+    <a href="/u/addresses" class="product-edit-button mps-button">Shipping Addresses</a>
+    {% endif %}
+    
+  </section>
+
+</section>
+
+{%- endblock -%}

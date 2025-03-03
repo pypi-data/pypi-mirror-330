@@ -1,0 +1,35 @@
+{% extends "base.j2" -%}
+
+{% block content -%}
+
+<style>
+tr { text-align: left;}
+</style>
+
+{% if products %}
+
+<table style="width=100%; max-width: 100%; table-layout : fixed;">
+ <thead>
+  <tr> <th> Sellable <th> Price <th> Visibility <th> Bundle <th> Physical <th> Ready <th> Title <th> Size
+ <tbody style="width=100%; max-width: 100%;">
+
+{% for product in products %}
+
+  <tr>
+    <td>{{ product.is_sellable }}</td>
+    <td><a href="{{ product.absolute_url(request) }}" rel="nofollow">${{ '{:,.2f}'.format(product.price) }}</a></td>
+    <td>{{ product.human_visibility }}</td>
+    <td>{{ product.is_bundle }}</td>
+    <td>{{ product.is_physical }}</td>
+    <td>{{ product.is_ready }}</td>
+    <td><b><a href="{{ product.absolute_url(request) }}">{{ product.title }}</a></b></td>
+    <td>{{ product.human_total_file_bytes }}</td>
+  </tr>
+  
+{% endfor %}
+</table>
+
+{% endif %}
+</section>
+
+{%- endblock -%}

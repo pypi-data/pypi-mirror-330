@@ -1,0 +1,883 @@
+/* * * * * *
+ *
+ * Make Post Sell (mps) is a mobile first web application. We make the pages
+ * look great on mobile & only use media queries as needed for bigger displays.
+ *
+ * We use CSS Grid. It's awesome.
+ *
+ * * * * * */
+
+
+body {
+    margin: 0px;
+    font-family: helvetica;
+}
+
+h1 {
+    font-size: 1.75em;
+    margin-top: .4em;
+    margin-bottom: .4em;
+}
+
+table {
+  width: 100%;
+}
+
+table tr:nth-child(even) {
+  /* Light gray background for even rows */
+  background-color: #f2f2f2;
+}
+
+table tr:nth-child(odd) {
+  /* White background for odd rows (optional, for contrast) */
+  background-color: #ffffff;
+}
+
+tr, th, td {
+  padding: 8px;
+  border: 0px;
+  text-align: left;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+}
+
+span.asterisk {
+    color: red;
+    font-weight: bold;
+}
+
+a {
+    text-decoration: none;
+    color: #5f6368
+}
+
+input {
+    /* keep the input inside the parents box! */
+    box-sizing: border-box;
+}
+
+section {
+   margin-bottom: 0px;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="password"],
+input[type="number"],
+input[type="date"] {
+    padding: 8px;
+    border-radius: 4px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #CCCCCC;
+}
+
+textarea {
+    /* keep the input inside the parents box! */
+    box-sizing: border-box;
+
+    padding: 8px;
+    border-radius: 4px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #CCCCCC;
+}
+
+section.shop-name-and-description {
+    display: grid;
+}
+
+input.mps-quantity {
+    max-width: 60px;
+}
+
+input.mps-submit {
+    float: right;
+}
+
+textarea.mps-billing-address,
+textarea.mps-shop-description,
+textarea.mps-bundle-data,
+textarea.mps-shop-ribbon-text
+{
+    max-width: 600px;
+    width: 100%;
+    height: 120px;
+    padding: 10px;
+}
+
+textarea.mps-shop-ribbon-text {
+    height: 60px;
+}
+
+input.mps-shop-name,
+input.mps-phone-number,
+input.mps-google-analytics-id, 
+input.mps-stripe-public-api-key, 
+input.mps-stripe-secret-api-key,
+input.mps-shop-ribbon-text-color,
+input.mps-shop-ribbon-color
+{
+    max-width: 600px;
+    width: 100%;
+}
+
+section.product-title-and-description,
+section.content-title-and-description {
+    display: grid;
+}
+
+section.product-left,
+section.content-left {
+    justify-self: right;
+    text-align: left;
+    /*max-width: 480px;*/
+}
+
+section.product-right,
+section.content-right {
+    justify-self: center;
+    text-align: center;
+}
+
+section.log-in-form {
+    justify-self: right;
+    text-align: center;
+}
+
+section.join-form {
+    justify-self: left;
+    text-align: center;
+}
+
+input.mps-product-title,
+input.mps-product-price,
+input.mps-content-title {
+    max-width: 600px;
+    width: 100%;
+}
+
+textarea.mps-product-description,
+textarea.mps-content-description {
+    max-width: 600px;
+    width: 100%;
+    height: 120px;
+    padding: 10px;
+}
+
+input.file-input {
+    width: 100%;
+}
+
+div.message-ribbon {
+    padding: 8px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+section.main {
+    /*padding: 14px;*/
+}
+
+/*
+section.grid-nav {
+    grid-column: 1/-1;
+}
+*/
+
+/* mobile first */
+/* the navbar is stacked by default. */
+section.nav {
+    background-color: #F9F9FA;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-columns: max-content;
+    grid-auto-flow: dense;
+    grid-gap: 4px;
+    padding: 4px;
+}
+
+div.message-ribbon {
+    display: none;
+}
+
+section.log-in {
+    text-align: center;
+    align-self: center;
+    font-size: .75em;
+}
+
+section.search {
+    align-self: center;
+}
+
+form.search {
+    width: 100%;
+}
+
+input.mps-keywords {
+    width: 100%;
+    text-align: center;
+}
+
+section.content {
+    background-color: #ffffff;
+    margin: 4px;
+    padding: 4px;
+}
+
+section.logo{
+    text-align: center;
+    vertical-align: middle;
+}
+
+img {
+    width: 100%;
+}
+
+img.logo {
+    width: initial;
+    max-height: 100px;
+    max-width: 94%;
+    padding: 10px;
+}
+
+img.product-cart-thumbnail {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    max-width:44px;
+    max-height:44px;
+    width: auto;
+    height: auto;
+}
+
+img.product-thumbnail {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    max-width:58px;
+    max-height:58px;
+    width: auto;
+    height: auto;
+}
+
+img.product-main {
+}
+
+.mps-button {
+    border: none;
+    border-radius: 4px;
+    color: white;
+    display: inline-block;
+    font-weight: bold;
+    min-width: 100%;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer; 
+}
+
+a.mps-button-blue {
+    background-color: #98b6fa;
+}
+
+a.mps-button-green {
+    background-color: #a3c765;
+}
+
+a.product-edit-button {
+    background-color: #98b6fa;
+}
+
+a.product-preview-button {
+    background-color: #98b6fa;
+}
+
+a.product-download-button {
+    background-color: #a3c765;
+}
+
+a.product-new-button {
+    background-color: #98b6fa;
+}
+
+a.shop-new-button {
+    background-color: #a3c765;
+}
+
+a.done-button {
+    background-color: #a3c765;
+}
+
+a.log-out-button {
+    background-color: #5871ad;
+}
+
+a.cart-checkout-button {
+    background-color: #a3c765;
+}
+
+a.cart-save-button {
+    background-color: #98b6fa;
+}
+
+a.cart-activate-button {
+    background-color: #5871ad;
+}
+
+a.cart-public-button span.lock {
+   font-size: 24px;
+}
+
+a.cart-public-button {
+    color: #666666;
+    border-color: #666666;
+    border-style: solid;
+    border-width: 1px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+a.cart-delete-button {
+    background-color: #CC6958;
+}
+
+a.shop-switch-button {
+    color: #666666;
+    border-color: #666666;
+    border-style: solid;
+    border-width: 1px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+a.user-display-name {
+    margin: 14px;
+    display: inline-block;
+}
+
+a.cart-and-count {
+    margin: 14px;
+    display: inline-block;
+}
+
+
+.coupon-apply-button {
+    background-color: #a3c765;
+}
+
+section.serp {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1.00fr));
+    grid-auto-columns: max-content;
+    grid-auto-flow: dense;
+    grid-gap: 4px;
+}
+
+div.serp-item {
+    border-radius: 4px;
+    padding: 4px;
+    grid-column: span 1;
+    grid-row: span 1;
+
+    /* The new CSS animations are off the hook. */
+    transition: background-color 800ms ease;
+
+    -webkit-transition: 600ms -webkit-filter ease;
+    -moz-transition: 600ms -moz-filter ease;
+    -moz-transition: 600ms filter ease;
+    -ms-transition: 600ms -ms-filter ease;
+    -o-transition: 600ms -o-filter ease;
+    transition: 600ms filter ease, 600ms -webkit-filter ease;
+}
+
+div.serp-item:hover {
+    background-color: #FBFBF3;
+
+    -webkit-filter: brightness(88%);
+    -moz-filter: brightness(88%);
+    filter: brightness(88%);
+}
+
+img.serp-thumbnail {
+    border-radius: 4px;
+}
+
+div.edit-page {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-gap: 20px;
+}
+
+hr {
+  color: #EEEEEE;
+}
+
+section.upload-product-and-preview {
+}
+
+section.upload-thumbnails {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-auto-columns: max-content;
+    grid-auto-flow: dense;
+    grid-gap: 14px;
+}
+
+section.windows-95-task-bar {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 4px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+section.windows-95-start-button {
+    padding: 14px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+section.call-to-action {
+    padding: 14px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+section.one-column, section.one-column-thin {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+section.one-column-thin {
+  max-width: 400px;
+}
+
+section.user-settings {
+    justify-self: right;
+}
+
+section.button-panel {
+    justify-self: left;
+    text-align: center;
+}
+
+section.existing-cards {
+    justify-self: right;
+    text-align: left;
+    margin-bottom: 40px;
+}
+
+section.new-card {
+    justify-self: left;
+    text-align: right;
+    margin-bottom: 40px;
+}
+
+div.card-details {
+    max-width: 240px;
+    margin:auto;
+}
+
+div.card-are-you-sure-buttons {
+    max-width: 300px;
+    margin:auto;
+}
+
+section.cart-left {
+    margin-bottom: 10px;
+    grid-column: 1 / span 3;
+}
+
+section.cart-left-grid {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr 4fr 1fr;
+}
+
+section.cart-right {
+    text-align: center;
+    margin-bottom: 10px;
+    grid-column: 4;
+}
+
+span.cart-left-item-title {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+section.checkout-left {
+    justify-self: right;
+    text-align: left;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+section.checkout-right {
+    justify-self: left;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.coupon {
+    /* Dotted border */
+    border-radius: 4px;
+    border: 3px dotted #bbb;
+    padding: 20px;
+}
+
+
+#email2_input {
+    display: None;
+}
+
+.StripeElement {
+    width: 90%;
+    margin: auto;
+    border-color: #bbbbbb;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 8px;
+    background-color: white;
+    padding: 12px;
+}
+
+.opacity-60 {
+    opacity: .60;
+}
+
+.well, .well2 {
+    background-color: #F9F9FA;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+
+/* markup editor css */
+
+section.markup-settings {
+    width: 100%;
+    min-height: 280px;
+}
+
+textarea.markup-editor-textarea {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+    width: 100%;
+    height: 400px;
+}
+
+.markup-editor-submit {
+  float: right;
+}
+
+.markup-preview-div {
+    width: 100%;
+}
+
+.markup-preview-div {
+  border-top: 1px dotted #bbbbbb;
+  border-bottom: 1px dotted #bbbbbb;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  margin-right: 5px;
+  margin-left: 5px;
+  line-height: 1.6;
+}
+
+.markup-preview-div p {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 1.75;
+}
+
+.preview-raw-markup {
+  display: block;
+  white-space: pre-wrap;
+  background-color: unset;
+  border-radius: unset;
+  border: unset;
+  border-width: 0px;
+
+  margin-top: 19px;
+  margin-bottom: 10px;
+}
+
+.discounted {
+  color: #a3c765;
+}
+
+@media (max-width: 800px) {
+    /* the two-column is stacked by default. */
+    section.two-column {
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* the cart-grid is stacked by default. */
+    section.cart-grid {
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* markup-editor is stacked by default. */
+    div.markup-editor {
+        display: grid;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    section.markup-rendered {
+        display: none;
+    }
+}
+
+/*************************************************************
+ *
+ * for displays bigger than 800px which are "desktop-ish".
+ *
+ *************************************************************/
+@media (min-width: 960px) {
+
+    /* The SERP page grid should have bigger items since it has more room.
+     * mobile -> desktop
+     * 140px -> 240px */
+    section.serp {
+        grid-template-columns: repeat(auto-fit, minmax(240px, .25fr));
+    }
+
+    /* We have the room to really break into 2 columns */
+    section.two-column {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-auto-columns: max-content;
+        grid-auto-flow: dense;
+        gap: 0px 60px;
+        padding-left: 60px;
+        padding-right: 60px;
+        justify-items: center;
+    }
+
+    /* if we have room, break markup-editor into 2 columns */
+    div.markup-editor {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-auto-columns: max-content;
+        grid-auto-flow: dense;
+        grid-gap: 30px;
+        padding: 14px;
+        justify-items: center;
+    }
+    section.markup-settings {
+        min-height: 400px;
+    }
+
+    /* the minimum width for "desktop-ish" screens. */
+    a.mps-button {
+        min-width: 280px;
+    }
+
+    /* really make the button small now that we have room.  */
+    a.mps-button-small {
+        min-width: 140px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    section.windows-95-task-bar {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    section.call-to-action {
+        text-align: right;
+    }
+
+    /* if we have room, break into 2 columns */
+    section.cart-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-gap: 30px;
+        padding: 14px;
+        justify-items: center;
+    }
+
+    img.product-cart-thumbnail {
+        max-width:104px;
+        max-height:104px;
+    }
+
+    section.content {
+        background-color: #ffffff;
+        margin: 4px;
+        padding: 14px;
+    }
+
+    input.mps-keywords {
+        text-align: left;
+    }
+
+    section.nav {
+        /* if we have room, break navbar into 3 columns */
+        grid-template-columns: minmax(200px, 300px) 3fr 1fr;
+        grid-gap: 30px;
+        padding: 2px;
+    }
+
+    div.message-ribbon {
+        display: block;
+    }
+
+    section.log-in {
+        text-align: right;
+    }
+
+    .well, .well2 {
+        padding: 10px;
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+    .well2 {
+        padding: 10px;
+    }
+}
+
+@media (min-width: 1200px) {
+    img.product-cart-thumbnail {
+        max-width:184px;
+        max-height:184px;
+    }
+    .well, .well2 {
+        padding: 20px;
+        padding-right: 40px;
+        padding-left: 40px;
+    }
+    .well2 {
+        padding: 20px;
+    }
+}
+div.message-ribbon {
+    color: #ffffff;
+    background-color: #5871ad;
+    background: linear-gradient(to right, #5871ad, #82A8FF);
+}
+
+.highlight {
+    text-shadow:
+      -6px 0px 6px rgba(255, 231, 13, 0.6),
+       6px 0px 6px rgba(255, 231, 13, 0.6),
+       12px 0px 12px rgba(255, 231, 13, 0.6),
+      -12px 0px 12px rgba(255, 231, 13, 0.6);
+}
+.avoid-wrap {
+    display:inline-block;
+}
+
+.vertical-text {
+    display: inline-block;
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+}
+
+.shown-on-desktop {
+  display: none;
+}
+
+.not-shown-on-desktop {
+  display: block;
+}
+
+@media screen and (min-width:800px) {
+  .shown-on-desktop {display: block}
+  .not-shown-on-desktop {display: none}
+}
+div.message-ribbon {
+    color: #ffffff;
+    background-color: #5871ad;
+    background: linear-gradient(to right, #5871ad, #82A8FF);
+}
+
+#alerts {
+    animation: fadein 2s;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+
+/* ALERT START */
+#alerts {
+  z-index: 98;
+}
+
+.alert {
+  opacity: .85;
+  display: grid;
+  grid-template-columns: 1fr 50px;
+  grid-gap: 10px;
+}
+
+.alert-message {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.alert .close {
+  text-align: right;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 15px;
+}
+
+.alert-danger, .alert-error {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+.alert-warning {
+    color: #856404;
+    background-color: #fff3cd;
+    border-color: #ffeeba;
+}
+
+.alert-info, .alert-notice {
+    color: #0c5460;
+    background-color: #98b6fa;
+    border-color: #bee5eb;
+}
+
+.alert-success {
+    color: #155724;
+    background-color: #a3c765;
+    border-color: #c3e6cb;
+}
+
+/* ALERT END */
+
+
+/* hidden control area */
+.hidden-control {
+   display: none;
+}
+
+#toggle:checked ~ .hidden-control {
+    display: block;
+}
+/* hidden control area */

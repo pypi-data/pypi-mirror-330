@@ -1,0 +1,51 @@
+{% extends "base.j2" -%}
+
+{% block content -%}
+
+  <section class="one-column well">
+
+    {% if request.shop %}
+
+    <b>{{ request.shop.name }}</b>
+
+    <br/>
+    <br/>
+    <a href="/s/{{ request.shop.id }}/{{ request.shop.slug }}" class="product-edit-button mps-button">&nbsp View Shop</a>
+
+    <br/>
+    <br/>
+    <a href="/s/{{ request.shop.id }}/products" class="product-edit-button mps-button">&nbsp View Products</a>
+
+    {% if request.user in request.shop.owners %}
+    <br/>
+    <br/>
+    <a href="/s/{{ request.shop.id }}/coupons" class="product-edit-button mps-button">&nbsp View Coupons</a>
+
+    <br/>
+    <br/>
+    <a href="/s/{{ request.shop.id }}/users" class="product-edit-button mps-button">&#128100; &nbsp Shop Users</a>
+
+    <br/>
+    <br/>
+    <a href="/s/{{ request.shop.id }}/sales" class="product-edit-button mps-button">💰 &nbsp Shop Sales</a>
+
+    <br/>
+    <br/>
+    <a href="/s/{{ request.shop.id }}/settings" class="product-edit-button mps-button">&#9881; &nbsp Shop Settings</a>
+    {% endif %}
+
+    <br/>
+    <br/>
+    <a href="/s/locations" class="product-edit-button mps-button">&#127968; &nbsp Shop Locations</a>
+
+    {% if request.is_saas_domain %}
+    <br/>
+    <br/>
+    <a href="/u/shops" class="product-edit-button mps-button">&#9974; &nbsp; Switch Shop</a>
+    {% endif %}
+
+    {% endif %}
+
+  </section>
+
+{%- endblock -%}

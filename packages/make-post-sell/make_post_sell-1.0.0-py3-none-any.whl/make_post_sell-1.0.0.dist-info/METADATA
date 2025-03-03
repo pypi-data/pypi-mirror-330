@@ -1,0 +1,237 @@
+Metadata-Version: 2.1
+Name: make-post-sell
+Version: 1.0.0
+Summary: Make Post Sell
+Home-page: https://www.makepostsell.com
+Author: Russell Ballestrini
+Author-email: russell@ballestrini.net
+License: UNKNOWN
+Keywords: make post sell web pyramid pylons ecommerce digital downloads physical goods content marketing youtube alternative
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Programming Language :: Python :: 3.14
+Classifier: Programming Language :: Python
+Classifier: Framework :: Pyramid
+Classifier: Topic :: Internet :: WWW/HTTP
+Classifier: Topic :: Internet :: WWW/HTTP :: WSGI :: Application
+Requires-Dist: SQLAlchemy
+Requires-Dist: SQLAlchemy-Utils
+Requires-Dist: ago
+Requires-Dist: alembic
+Requires-Dist: bcrypt
+Requires-Dist: beautifulsoup4
+Requires-Dist: bleach-allowlist
+Requires-Dist: bleach (>=2.1.4)
+Requires-Dist: boto3
+Requires-Dist: dkimpy
+Requires-Dist: dkimpy[ed25519]
+Requires-Dist: html5lib
+Requires-Dist: markdown
+Requires-Dist: miniuri
+Requires-Dist: plaster-pastedeploy
+Requires-Dist: pyramid
+Requires-Dist: pyramid-debugtoolbar
+Requires-Dist: pyramid-jinja2
+Requires-Dist: pyramid-retry
+Requires-Dist: pyramid-tm
+Requires-Dist: python-slugify
+Requires-Dist: six
+Requires-Dist: stripe
+Requires-Dist: transaction
+Requires-Dist: waitress
+Requires-Dist: zope.sqlalchemy
+Provides-Extra: dev
+Requires-Dist: bpython ; extra == 'dev'
+Requires-Dist: pyramid-bpython ; extra == 'dev'
+Requires-Dist: waitress ; extra == 'dev'
+Provides-Extra: prod
+Requires-Dist: psycopg2 ; extra == 'prod'
+Requires-Dist: uwsgi ; extra == 'prod'
+Provides-Extra: test
+Requires-Dist: WebTest ; extra == 'test'
+Requires-Dist: fakeredis ; extra == 'test'
+Requires-Dist: mock ; extra == 'test'
+Requires-Dist: nose ; extra == 'test'
+Requires-Dist: pytest ; extra == 'test'
+Requires-Dist: pytest-cov ; extra == 'test'
+
+Make Post Sell
+==============
+
+The `Make Post Sell <https://www.makepostsell.com>`_ monolith platform service.
+
+You can use the SaaS or self-host!
+
+Our `blog acts as our user guide <https://blog.makepostsell.com/>`_ & also uses ``make_post_sell``!
+
+
+Quick Start: Operating a Server with PyPI or Source Code
+==========================================================
+
+Before you start, navigate to the directory where you want to install ``make_post_sell`` database & files.
+
+This Makefile-based workflow lets you choose between installing ``make_post_sell`` from PyPI packages or directly from the source code (editable mode). Both flows create a virtual environment in ``./env`` and store configuration and SQLite data in the persistent ``./data`` directory.
+
+1. **Install make_post_sell**
+
+   - **PyPI Installation:**  
+     Download the Makefile and run::
+     
+         wget "https://git.unturf.com/engineering/make-post-sell/make_post_sell/-/raw/master/Makefile"
+         make install-from-pypi
+
+   - **Source Installation (Editable Mode):**  
+     Clone the repository and run::
+     
+         git clone ssh://git@git.unturf.com:2222/engineering/make-post-sell/make_post_sell.git
+         make install-from-source
+
+   - **Production Installation (Non‑Editable):**  
+     For production use (non‑editable even from source), run::
+     
+         git clone ssh://git@git.unturf.com:2222/engineering/make-post-sell/make_post_sell.git
+         make install-from-source-prod
+
+2. **Activate the Virtual Environment**
+
+   Before running any commands, activate the virtual environment::
+   
+         source env/bin/activate
+
+3. **Start the Development Server**
+
+   With the virtual environment active, start the server::
+   
+         make serve
+
+   Then browse to `http://127.0.0.1:6501/ <http://127.0.0.1:6501/>`_ to view the app.
+
+
+Running Tests
+-------------
+
+We currently use `pytest`:
+
+.. code-block:: bash
+
+ make test
+
+
+SQL Migrations
+===============
+
+If your deployment is brand new, you don't need to run any migrations.
+
+Otherwise, it should be safe to run this at anytime to catch your database up:
+
+.. code-block:: bash
+
+ alembic -c development.ini upgrade head
+
+To look at the current revision and the history run these:
+
+.. code-block:: bash
+
+ alembic -c development.ini history
+ alembic -c development.ini current
+
+If you ever want to cut a new migration script, you can run this:
+
+.. code-block:: bash
+
+ alembic -c development.ini revision -m "Added email_id column to User table."
+
+Then you can edit / modify the generated ``.py`` file with your changes.
+
+You can also autogenerate a new migration script using `--autogenerate`.
+Alembic will prepare a migration script by comparing the state of the
+database with the state of the model:
+
+.. code-block:: bash
+
+  alembic -c development.ini revision --autogenerate -m "autogenerated indicies."
+
+You should review the recommended migration script before `upgrade`.
+
+misc
+====
+
+You may source the new Python virtual environment during development:
+
+.. code-block:: bash
+
+ # source env/bin/activate.fish
+ . env/bin/activate
+
+
+Python Pyramid Shell
+==========================
+
+If you want to use an interactive Python interpreter to interact with Make Post Sell app/models & DB:
+
+.. code-block:: bash
+
+ pshell development.ini
+
+For example, we needed to migrate production data using this script:
+
+.. code-block:: python
+
+ # begin the database transaction.
+ request.tm.begin()
+
+ suses = models.stripe_user_shop.get_all_stripe_user_shop_objects(request.dbsession)
+ for sus in suses:
+     try:
+         sus.active_card_id = sus.stripe_customer_default_source.id
+         request.dbsession.add(sus)
+     except AttributeError:
+         pass
+
+ # flush / commit all changes stored the the sqlachemy session.
+ request.dbsession.flush()
+
+ # commit/close the database transaction to really make changes.
+ request.tm.commit()
+
+
+Contributing
+===================
+
+* Establish communication with Russell or another admin to bless your git.unturf.com gitlab account & put you into the proper roles.
+* Russell should see your account request but due to spam you have to ask him directly for approval via email or some other means of comms.
+* Clone repo & make commits
+* Create merge requests, we automatically run the unit & headless functional tests on each commit
+* On merge we release to the production site & see the change across users.
+
+Optionally, format your code.
+
+This is not set in stone, but if you want to use a formatter this is the path for now!
+
+**Python**
+  black (manual)
+
+**Jinja2**
+  None (not needed, neither is an HTML formatter)
+
+**JavaScript**
+  Prettier or biome (manual)
+
+**CSS**
+  Prettier or biome (manual)
+
+
+Licence
+=====================
+
+All code contributed goes into the public domain.
+
+

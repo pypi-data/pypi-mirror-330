@@ -1,0 +1,49 @@
+{% extends "base.j2" -%}
+{%- import 'snippets/stripe.j2' as stripe with context -%}
+
+{% block content -%}
+
+<section class="two-column">
+
+  <section class="existing-cards well">
+
+  <h3>Active Card</h3>
+
+  The active card will be charged during checkout.
+
+  <br/>
+  
+  {% if active_card %}
+    {{ stripe.display_card(active_card, actions=False) }}
+  {% endif %}
+
+  {% if cards |length >= 1 %}
+
+    <hr>
+    <br>
+
+    <h3>Saved Cards</h3>
+    {% for card in cards %}
+        {{ stripe.display_card(card) }}
+        <br/>
+    {% endfor %}
+    <br/>
+  {% endif %}
+
+  </section>
+
+  <section class="new-card well">
+    {{ stripe.new_card() }}
+  </section>
+
+</section>
+
+<center>
+<a href="/cart" class="product-new-button mps-button">Review Order</a>
+&nbsp;
+&nbsp;
+&nbsp;
+<a href="/cart/checkout" class="cart-checkout-button mps-button">Checkout</a>
+</center>
+
+{%- endblock -%}

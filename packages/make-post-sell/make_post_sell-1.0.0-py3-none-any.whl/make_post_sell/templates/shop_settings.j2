@@ -1,0 +1,315 @@
+{% extends "base.j2" -%}
+
+{% block content -%}
+
+<section class="one-column">
+  <section class="shop-settings well">
+
+    <h3>Shop Settings</h3>
+
+    <form method="post" action="/s/{{ request.shop.id }}/settings" onsubmit="submit.disabled = true; return true;">
+  
+      <label for="name_input">Shop Name</label>
+      <input
+          name        = "name"
+          type        = "text"
+          id          = "name_input"
+          class       = "mps-shop-name"
+          value       = "{{ name }}"
+          placeholder = "Shop Name"
+          required />
+  
+      <br />
+      <br />
+  
+  
+      <label for="phone_number_input">Phone Number</label>
+      <input
+          name        = "phone_number"
+          type        = "tel"
+          id          = "phone_number_input"
+          class       = "mps-phone-number"
+          value       = "{{ phone_number }}"
+          placeholder = "Phone Number"
+          required />
+  
+  
+      <br />
+      <br />
+  
+      <label for="billing_address_input">Billing Address</label>
+      <textarea
+          name        = "billing_address"
+          id          = "billing_address_input"
+          class       = "mps-billing-address"
+          placeholder = "Billing Address"
+          required />{{ billing_address }}</textarea>
+  
+      <br />
+      <br />
+  
+      <label for="description_input">Shop Description</label>
+      <textarea
+          name        = "description"
+          id          = "description_input"
+          class       = "mps-shop-description"
+          placeholder = "Shop Description"
+          required />{{ description }}</textarea>
+  
+      <br />
+      <br />
+
+      <input type="submit" name="submit" class="mps-submit" value="Save Settings" />
+      <br />
+      <br />
+  
+    </form>
+
+    </section>
+</section>
+
+<br />
+<br />
+
+<section class="one-column">
+  <section class="shop-settings well">
+
+    <h3>Integration Settings</h3>
+
+    <form method="post" action="/s/{{ request.shop.id }}/settings" onsubmit="submit.disabled = true; return true;">
+
+      <label for="domain_name_input">Custom Shop Domain Name</label>
+      <input
+          name        = "domain_name"
+          type        = "text"
+          id          = "domain_name_input"
+          class       = "mps-shop-name"
+          value       = "{% if domain_name %}{{ domain_name }}{% endif %}"
+          placeholder = "Domain Name"
+          />
+
+      <br />
+      <br />
+
+      <!--
+
+      <br />
+      <br />
+
+      <label for="google_analytics_id_input">Google Analytics Tracking Id (optional)</label>
+      <input
+          name        = "google_analytics_id"
+          type        = "text"
+          id          = "google_analytics_id"
+          class       = "mps-shop-name"
+          value       = "{% if google_analytics_id %}{{ google_analytics_id }}{% endif %}"
+          placeholder = "Google Analytics Id"
+          />
+
+      -->
+
+      <label for="plausible_domain_name_input">Plausible Analytics Domain Name (optional)</label>
+      <input
+          name        = "plausible_domain_name"
+          type        = "text"
+          id          = "plausible_domain_name"
+          class       = "mps-shop-name"
+          value       = "{% if plausible_domain_name %}{{ plausible_domain_name }}{% endif %}"
+          placeholder = "ex: plausible.io"
+          />
+
+      <br />
+      <br />
+      <br />
+
+      <label for="stripe_public_api_key_input">Stripe API Keys</label>
+
+      <br />
+
+      <input type="checkbox" id="toggle" style="">
+      <label for="toggle" style="display: inline;" >show values</label>
+
+      <div class="hidden-control">
+
+      <br />
+
+      <label for="stripe_public_api_key_input">Stripe Public API Key</label>
+      <input
+          name        = "stripe_public_api_key"
+          type        = "text"
+          id          = "stripe_public_api_key"
+          class       = "mps-stripe-public-api-key"
+          value       = "{% if stripe_public_api_key %}{{ stripe_public_api_key }}{% endif %}"
+          placeholder = "Stripe Public API Key (pk)"
+          />
+
+      <br />
+      <br />
+
+      <label for="stripe_secret_api_key_input">Stripe Secret API Key</label>
+      <input
+          name        = "stripe_secret_api_key"
+          type        = "text"
+          id          = "stripe_secret_api_key"
+          class       = "mps-stripe-secret-api-key"
+          value       = "{% if stripe_secret_api_key %}{{ stripe_secret_api_key }}{% endif %}"
+          placeholder = "Stripe Secret API Key (sk)"
+          />
+
+      <br />
+      <br />
+      </div>
+
+      <input type="submit" name="submit" class="mps-submit" value="Save Settings" />
+
+      <br />
+      <br />
+
+    </form>
+     
+  </section>
+</section>
+
+<br />
+<br />
+
+<section class="one-column">
+  <section class="shop-settings well">
+
+    <h3>Branding Settings</h3>
+
+    <label for="logo-banner">Banner Logo</label>
+    <a href="{{ get_endpoints["shop-logo-banner"] }}?ts={{ request.shop.updated_timestamp }}"><img src="{{ get_endpoints["shop-logo-banner"] }}?ts={{ request.shop.updated_timestamp }}" width="420px" /></a>
+    {% set signed_post = signed_posts["shop-logo-banner"] %}
+    <form method="post" action="{{ signed_post["url"] }}" enctype="multipart/form-data" onsubmit="submit.disabled = true; return true;">
+        {% for field_name, field_value in signed_post["fields"].items() %}
+        <input type="hidden" name="{{ field_name }}" value="{{ field_value }}" />
+        {% endfor %}
+        <input type="file" name="file" class="file-input" /> <br />
+        <input type="submit" name="submit" class="mps-upload" value="Upload Shop Banner" />
+    </form>
+
+    <hr />
+
+    <br />
+
+    <label for="logo-banner">favicon.ico</label>
+    <a href="{{ get_endpoints["shop-favicon"] }}?ts={{ request.shop.updated_timestamp }}"><img src="{{ get_endpoints["shop-favicon"] }}?ts={{ request.shop.updated_timestamp }}" style="width: 32px;" /></a>
+    {% set signed_post = signed_posts["shop-favicon"] %}
+    <form method="post" action="{{ signed_post["url"] }}" enctype="multipart/form-data" onsubmit="submit.disabled = true; return true;">
+        {% for field_name, field_value in signed_post["fields"].items() %}
+        <input type="hidden" name="{{ field_name }}" value="{{ field_value }}" />
+        {% endfor %}
+        <input type="file" name="file" class="file-input" /> <br />
+        <input type="submit" name="submit" class="mps-upload" value="Upload favicon.ico" />
+    </form>
+
+  </section>
+</section>
+
+<br />
+<br />
+
+<section class="one-column">
+  <section class="shop-settings well">
+
+    <form method="post" action="/s/{{ request.shop.id }}/settings" onsubmit="submit.disabled = true; return true;">
+ 
+      <h3>Announcement Ribbon Settings 🎀</h3>
+
+      <label for="ribbon_text_input">Ribbon Text</label>
+      <textarea
+          name        = "ribbon_text"
+          id          = "ribbon_text_input"
+          class       = "mps-shop-ribbon-text"
+          placeholder = "The announcement ribbon is displayed on the top of all shop pages."
+          />{{ ribbon_text }}</textarea>
+
+      <br />
+      <br />
+
+      <label for="ribbon_text_color_input">Ribbon Text Color</label>
+      <input
+          name        = "ribbon_text_color"
+          type        = "text"
+          id          = "ribbon_text_color_input"
+          class       = "mps-shop-ribbon-text-color"
+          value       = "{{ ribbon_text_color }}"
+          placeholder = "#FFFFFF"
+          />
+
+      <br />
+      <br />
+
+      <label for="ribbon_color_1_input">Ribbon Background Color 1</label>
+      <input
+          name        = "ribbon_color_1"
+          type        = "text"
+          id          = "ribbon_color_1_input"
+          class       = "mps-shop-ribbon-color"
+          value       = "{{ ribbon_color_1 }}"
+          placeholder = "#5871AD"
+          />
+
+      <br />
+      <br />
+
+      <label for="ribbon_color_2_input">Ribbon Background Color 2</label>
+      <input
+          name        = "ribbon_color_2"
+          type        = "text"
+          id          = "ribbon_color_2_input"
+          class       = "mps-shop-ribbon-color"
+          value       = "{{ ribbon_color_2 }}"
+          placeholder = "#82A8FF"
+          />
+
+      <br />
+      <br />
+
+      <input type="submit" name="submit" class="mps-submit" value="Save Settings" />
+
+      <br />
+      <br />
+
+    </form>
+
+  </section>
+</section>
+
+<br />
+<br />
+
+<section class="one-column">
+  <section class="shop-settings well">
+
+    <form method="post" action="/s/{{ request.shop.id }}/settings">
+
+    <h3>Maintenance Mode 🏗️</h3>
+
+    <input type="checkbox" name="maint-mode-checkbox" id="maint-mode-checkbox" {% if request.shop.maint_mode %}checked{% endif %}></input>
+<b>If checked, enabled maintenance mode.</b>
+
+<br />
+<br />
+
+Temporarily prevent new searches or sales on this shop.
+Existing sales honored for download buy purchasers.
+
+
+    <br />
+    <br />
+
+      <input type="submit" name="submit" class="mps-submit" value="Save Settings" />
+
+    <br />
+    <br />
+
+    </form>
+
+  </section>
+
+</section>
+
+
+{%- endblock -%}
