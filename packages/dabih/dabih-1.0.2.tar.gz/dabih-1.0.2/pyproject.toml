@@ -1,0 +1,42 @@
+[build-system]
+requires = [
+    "setuptools>=61.0",
+]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = [
+    "dabih*",
+    "dabih/dabih_client/dabih_api_client*",
+]
+
+
+[project]
+name = "dabih"
+version = "1.0.2"
+authors = [
+    { name = "Charlotte Richter", email = "hedwig-charlotte.richter@stud.uni-regensburg.de" },
+]
+description = "A package to conveniently use the dabih API"
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "click >= 8.1.3",
+    "requests >= 2.31.0",
+    "httpx >= 0.20.0, <0.28.0",
+    "attrs >= 21.3.0",
+    "python-dateutil >= 2.8.0",
+    "pyyaml >= 0.1.0",
+    "cryptography >= 44.0.0",
+]
+
+[project.scripts]
+dabih = "dabih.main:main"
+
+[project.urls]
+Homepage = "https://github.com/charlotterchtr/dabih-python-package"
