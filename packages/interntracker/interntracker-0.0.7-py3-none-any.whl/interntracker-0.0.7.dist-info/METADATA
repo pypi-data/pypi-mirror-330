@@ -1,0 +1,42 @@
+Metadata-Version: 2.1
+Name: interntracker
+Version: 0.0.7
+Summary: a python library wrapping http request submission for interntrack
+Home-page: https://github.com/MCplayerFromPRC/tracker-python
+Author: MCplayerFromPRC
+Author-email: 1953414760@qq.com
+License: Apache License 2.0
+Keywords: interntrack request submission
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: httpx <1,>=0.23.0
+Requires-Dist: pydantic <3,>=1.9.0
+Requires-Dist: typing-extensions <5,>=4.11
+Requires-Dist: python-dotenv >=1.0.1
+Requires-Dist: python-jenkins >=1.8.2
+Requires-Dist: anyio <5,>=3.5.0
+Requires-Dist: sniffio
+Requires-Dist: tqdm >4
+Requires-Dist: gql[all]
+Requires-Dist: cached-property ; python_version < "3.8"
+
+# tracker-python
+
+## release
+
+### 生成分发文件
+`python setup.py sdist bdist_wheel`
+
+### 保存 ~/.pypirc
+```
+[distutils]
+index-servers =
+    pypi
+
+[pypi]
+  username = __token__
+  password = pypi-AgEIcHxxxxx
+```
+
+### 上传到 PyPI
+`twine upload dist/*`
