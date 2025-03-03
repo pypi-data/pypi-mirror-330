@@ -1,0 +1,32 @@
+Metadata-Version: 2.2
+Name: mom_scrape
+Version: 0.0.5
+Summary: Script to parse MOM's website for report and stats updates
+Author: yxneo
+Author-email: yuxuanneo@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: requires-python
+Dynamic: summary
+
+# `mom_scrape`
+
+example usage:
+
+```
+from mom_scrape.scrapers import ReportScraper, WebScraper
+
+reportscraper=ReportScraper(filter_by='Reports',save_dir='stats/reports')
+results=reportscraper.get_info()
+```
+
+This first creates a `dates` folder then dump the dates of the various repoerts in the `mom_reports.json` file. Then, the new PDFs (these are PDFs that are not already recorded in `mom_reports.json` file) are downloaded under save_dir
