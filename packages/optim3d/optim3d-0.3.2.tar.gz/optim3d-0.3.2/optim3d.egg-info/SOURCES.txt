@@ -1,0 +1,16 @@
+COPYING
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+optim3d/__init__.py
+optim3d/main.py
+optim3d/utils.py
+optim3d.egg-info/PKG-INFO
+optim3d.egg-info/SOURCES.txt
+optim3d.egg-info/dependency_links.txt
+optim3d.egg-info/entry_points.txt
+optim3d.egg-info/requires.txt
+optim3d.egg-info/top_level.txt
+optim3d/config/reconstruct.json
+optim3d/config/reconstruct_.json
