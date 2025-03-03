@@ -1,0 +1,194 @@
+Metadata-Version: 2.4
+Name: pydatev
+Version: 0.1.0
+Summary: DATEV API Integration with FastAPI backend and Streamlit frontend
+Project-URL: Homepage, https://github.com/superpandas-ai/pydatev
+Project-URL: Repository, https://github.com/superpandas-ai/pydatev
+Author-email: Haris Jabbar <haris@superpandas.ai>
+License-Expression: MIT
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.8
+Requires-Python: >=3.8
+Requires-Dist: aiofiles>=23.2.1
+Requires-Dist: fastapi>=0.104.0
+Requires-Dist: httpx>=0.25.0
+Requires-Dist: pandas
+Requires-Dist: pydantic-settings>=2.0.3
+Requires-Dist: pydantic>=2.4.2
+Requires-Dist: python-dotenv>=1.0.0
+Requires-Dist: python-jose[cryptography]>=3.3.0
+Requires-Dist: python-multipart>=0.0.6
+Requires-Dist: streamlit
+Requires-Dist: uvicorn>=0.24.0
+Provides-Extra: dev
+Requires-Dist: black>=21.0; extra == 'dev'
+Requires-Dist: flake8>=3.9; extra == 'dev'
+Requires-Dist: pytest-asyncio>=0.14.0; extra == 'dev'
+Requires-Dist: pytest-cov>=2.10.0; extra == 'dev'
+Requires-Dist: pytest>=6.0; extra == 'dev'
+Description-Content-Type: text/markdown
+
+# PyDATEV
+
+A Python library and FastAPI/Streamlit application that provides a unified interface for interacting with DATEV's various API services. This library integrates multiple DATEV APIs including accounting, HR, payroll, and cash register services.
+
+## Features
+
+- **Authentication**: OAuth2 integration with DATEV's authentication system
+- **Client Management**: View and manage DATEV clients
+- **Document Management**: Upload and manage documents
+- **HR Services**:
+  - eAU (electronic Certificate of Incapacity for Work) management
+  - Employee data access
+  - Payroll reporting
+- **Cash Register Integration**: Manage cash register data and tenants
+- **Master Data Management**: Search and manage master client data
+- **Interactive Dashboard**: User-friendly Streamlit interface for all services
+
+## Prerequisites
+
+- Python 3.8+
+- DATEV API credentials (Client ID and Client Secret)
+- Valid DATEV account with appropriate permissions
+
+## Installation
+
+1. Clone the repository:
+```
+git clone https://github.com/superpandas-ai/pydatev.git
+cd pydatev
+```
+
+2. Create and activate a virtual environment:
+```
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
+
+3. Install the package in development mode:
+```
+pip install -e .
+```
+
+4. Create a `.env` file in the root directory with your DATEV credentials:
+```
+DATEV_CLIENT_ID=your_client_id
+DATEV_CLIENT_SECRET=your_client_secret
+DATEV_REDIRECT_URI=http://localhost:8501/callback
+```
+
+5. Create a `.streamlit/secrets.toml` file with your OAuth credentials:
+```
+[oauth]
+client_id = "your_client_id"
+client_secret = "your_client_secret"
+```
+
+## Project Structure
+
+```
+pydatev/
+├── src/
+│   └── pydatev/
+│       ├── app/
+│       │   ├── models/
+│       │   │   └── __init__.py
+│       │   └── __init__.py
+│       └── __init__.py
+├── tests/
+│   └── conftest.py
+├── setup.py
+├── pytest.ini
+├── .env
+└── README.md
+```
+
+## Running the Application
+
+1. Start the FastAPI backend:
+```
+uvicorn pydatev.app.main:app --reload
+```
+
+2. In a separate terminal, start the Streamlit frontend:
+```
+streamlit run pydatev/app/frontend.py
+```
+
+3. Access the application:
+- Frontend Dashboard: http://localhost:8501
+- API Documentation: http://localhost:8000/docs
+
+## Using the Library
+
+```python
+from pydatev import DATEVClient
+
+# Initialize the client
+client = DATEVClient(client_id="your_client_id", client_secret="your_client_secret")
+
+# Use the client to interact with DATEV APIs
+clients = client.get_clients()
+```
+
+## API Structure
+
+The application provides endpoints for various DATEV services:
+
+- `/clients/*` - Client management endpoints
+- `/documents/*` - Document management
+- `/hr/*` - HR-related services
+- `/tenants/*` - Cash register management
+- `/master-clients/*` - Master data management
+- `/payrollreports/*` - Payroll reporting
+
+For detailed API documentation, visit the Swagger UI at `/docs` when running the application.
+
+## Testing
+
+Run the tests using pytest:
+
+```
+pytest
+```
+
+## Authentication
+
+The library and application use OAuth2 for authentication with DATEV's services. Users need to:
+
+1. Log in through the Streamlit interface or initialize the client with credentials
+2. Authorize the application
+3. Handle the OAuth callback
+4. Use the received token for API requests
+
+## Error Handling
+
+The library includes comprehensive error handling for:
+
+- Authentication failures
+- API request errors
+- Invalid data submissions
+- Token expiration
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a Pull Request
+
+## License
+
+[Add your license information here]
+
+## Support
+
+For support, please [create an issue](https://github.com/superpandas-ai/pydatev/issues) in the repository.
+
+## Acknowledgments
+
+- DATEV for providing the API services
+- FastAPI and Streamlit communities
