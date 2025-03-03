@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel","flet>=0.27.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "all-of-resources"
+version = "1.10"
+description = "可以通过client.jar和.minecraft/assets下的松散文件提取Minecrafft的所有资源"
+authors = [{name = "SystemFileB"}]
+readme = "README.md"
+dependencies = ["flet>=0.27.0"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)", 
+    "Operating System :: OS Independent"
+]
+
+[project.entry-points.gui_scripts]
+aor = "aor.fletgui:main"       # Flet 无控制台版本
+aortk = "aor.tkgui:main"       # Tkinter 无控制台版本
+
+[tool.setuptools.packages]
+find = { where = ["."], include = ["aor"] }  # 注意 where 参数需要是数组
+
+[tool.setuptools.package-data]
+aor = ["*.py", "*.png"]
+
+[tool.flet]
+org = "net.systemfileb.mobile.all-of-resources"
+product = "All Of Resources"
+company = "SystemFileB"
+permissions = ["storage"]
+build_number = 110
+
+[tool.flet.app]
+path = "aor"
+
+[tool.flet.flutter.dependencies.core]
+path = "./aor/core.py"
+
+[tool.flet.splash]
+color = "#FFFF00" # --splash-color
+dark_color = "#8B8000" # --splash-dark-color
+web = false # --no-web-splash
+ios = false # --no-ios-splash
+android = false # --no-android-splash
