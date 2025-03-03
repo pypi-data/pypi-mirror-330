@@ -1,0 +1,18 @@
+Metadata-Version: 2.2
+Name: elr_lrt
+Version: 0.1
+Summary: ELR-LRT sequence analysis package
+Author: Prabin Panta
+Author-email: pantaprabin30@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: C++
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Requires-Dist: pybind11
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
