@@ -1,0 +1,99 @@
+Metadata-Version: 2.4
+Name: otvertka
+Version: 0.1.16
+Summary: Набор простых функций для работы с данными
+Project-URL: Homepage, https://github.com/stasdikansky/otvertka
+Project-URL: Bug Tracker, https://github.com/stasdikansky/otvertka/issues
+Author: Stas Dikansky
+License: MIT License
+        
+        Copyright (c) 2024 Stas Dikansky
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE. 
+License-File: LICENSE
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.7
+Requires-Dist: clickhouse-connect>=0.6.8
+Requires-Dist: numpy>=1.26.0
+Requires-Dist: pandas>=2.0.0
+Requires-Dist: pendulum>=2.1.2
+Requires-Dist: pingouin>=0.5.3
+Description-Content-Type: text/markdown
+
+# otvertka
+
+![otvertka](./assets/logo.png)
+
+Набор простых функций для работы с данными в ClickHouse.
+
+## Установка
+
+```bash
+pip install otvertka
+```
+
+## Использование
+
+```python
+from otvertka import fetch_data, generate_ab_test_data, get_dates_tuples, get_table_info, handle_outliers
+
+# Получить информацию о таблице
+get_table_info('my_table')
+
+# Выполнить SQL запрос
+df = fetch_data('SELECT * FROM my_table LIMIT 10')
+
+# Разбить временной интервал на периоды
+dates = get_dates_tuples('2024-01-01', '2024-02-01', days_interval=7)
+
+# Сгенерировать тестовые данные для A/B теста
+df = generate_ab_test_data(
+    groups=['control', 'test'],
+    num_observations_per_group=10000,
+    effect_size=0.05,
+    base_retention_prob=0.3,
+    base_impressions_mean=5,
+    base_revenue_scale=1.0
+)
+
+# Обработать выбросы в данных
+df = handle_outliers(
+    df,
+    target_column='revenue',
+    threshold_quantile=0.995,
+    handling_method='replace_threshold',
+    outlier_type='upper',
+    grouping_column='group'
+)
+```
+
+## Требования
+
+- Python 3.7+
+- Необходимые переменные окружения:
+  - `CH_USER` - пользователь ClickHouse
+  - `CH_PASSWORD` - пароль ClickHouse
+  - `CH_HOST` - хост ClickHouse (по умолчанию: localhost)
+  - `CH_PORT` - порт ClickHouse (по умолчанию: 8123)
+
+## Лицензия
+
+MIT 
