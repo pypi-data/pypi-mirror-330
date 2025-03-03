@@ -1,0 +1,304 @@
+{
+    "$schema": "uri-not-available",
+    "title": "Step Graph Definition",
+    "description": "JSON schema for defining and modifying step graphs, including step metadata and dependencies.",
+    "type": "object",
+    "properties": {
+        "graph_name": {
+            "type": "string",
+            "description": "Name of the step graph."
+        },
+        "required_inputs": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "description": "List of required input keys for the entire graph."
+        },
+        "required_outputs": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "description": "List of required output keys for the entire graph."
+        },
+        "llm_clients": {
+            "type": "object",
+            "additionalProperties": {
+                "$ref": "#/definitions/geminiClientDefinition"
+            },
+            "description": "Definitions for LLM clients used in the step graph. Key is the client name, value is the client configuration."
+        },
+        "configuration": {
+            "type": "object",
+            "properties": {
+                "steps": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/stepDefinition"
+                    },
+                    "description": "Array of step definitions in the graph."
+                },
+                "dependencies": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "List of step names that the key step depends on (dependencies are step names)."
+                    },
+                    "description": "Dependency map for steps in the graph. Key is step name, value is a list of dependency step names."
+                }
+            },
+            "required": [
+                "steps",
+                "dependencies"
+            ]
+        }
+    },
+    "definitions": {
+        "geminiClientDefinition": {
+            "type": "object",
+            "properties": {
+                "model": {
+                    "type": "string",
+                    "description": "Gemini model name (either 'gemini-2-0-pro', 'gemini-2-0-flash', or 'gemini-2-0-flash-thinking')."
+                },
+                "max_output_tokens": {
+                    "type": "integer",
+                    "description": "Maximum number of tokens the model should generate in the response."
+                },
+                "temperature": {
+                    "type": "number",
+                    "description": "Sampling temperature. Higher values mean more random outputs, lower values mean more deterministic outputs."
+                },
+                "top_p": {
+                    "type": "number",
+                    "description": "Nucleus sampling. Considers the smallest set of tokens whose probability mass exceeds top_p. Must be between 0 and 1."
+                },
+                "use_tools": {
+                    "type": "boolean",
+                    "description": "Whether to enable tool use for the Gemini client."
+                }
+            },
+            "required": [
+                "model",
+                "max_output_tokens",
+                "temperature",
+                "top_p",
+                "use_tools"
+            ],
+            "description": "Configuration for a Gemini LLM client."
+        },
+        "stepDefinition": {
+            "type": "object",
+            "properties": {
+                "step_name": {
+                    "type": "string",
+                    "description": "Unique name of the step. Used for referencing in dependencies and outputs."
+                },
+                "step_type": {
+                    "type": "string",
+                    "enum": [
+                        "Step",
+                        "FanOutStep",
+                        "ConditionalRouterStep",
+                        "StepGraph"
+                    ],
+                    "description": "Type of step to instantiate. Must be one of the supported step classes."
+                },
+                "required_inputs": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "List of input keys required by this step to run. These keys must be provided in the inputs dictionary when the step is executed."
+                },
+                "required_outputs": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "List of output keys that this step is expected to produce in its output dictionary after execution."
+                },
+                "configuration": {
+                    "type": "object",
+                    "description": "Configuration parameters specific to the step type. The properties here depend on the 'step_type'.",
+                    "oneOf": [
+                        {
+                            "title": "Step Configuration",
+                            "if": {
+                                "properties": {
+                                    "step_type": {
+                                        "const": "Step"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "properties": {
+                                    "function": {
+                                        "type": "string",
+                                        "description": "(Optional) Reference to a Python function to execute. Start with a '.' followed immediately by the function name. Mutually exclusive with 'llm_client'."
+                                    },
+                                    "llm_client": {
+                                        "type": "string",
+                                        "description": "(Optional) Reference to a configured LLM client instance. Must be a key defined in the 'llm_clients' section at the root level."
+                                    },
+                                    "end_tag": {
+                                        "type": "string",
+                                        "description": "(Optional) End tag to detect in LLM output for chat continuation steps."
+                                    },
+                                    "end_instructions": {
+                                        "type": "string",
+                                        "description": "(Optional) Instructions for the LLM on how to end its generation in chat continuation mode."
+                                    }
+                                },
+                                "required": [
+                                    "step_name",
+                                    "step_type",
+                                    "required_inputs",
+                                    "required_outputs"
+                                ]
+                            }
+                        },
+                        {
+                            "title": "FanOutStep Configuration",
+                            "if": {
+                                "properties": {
+                                    "step_type": {
+                                        "const": "FanOutStep"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "properties": {
+                                    "input_key": {
+                                        "type": "string",
+                                        "description": "Input key in the graph inputs that contains the list to iterate over for fan-out."
+                                    },
+                                    "output_key": {
+                                        "type": "string",
+                                        "default": "results",
+                                        "description": "(Optional) Output key where the list of results from fan-out operations will be stored. Defaults to 'results'."
+                                    },
+                                    "function": {
+                                        "type": "string",
+                                        "description": "(Optional) Reference to a Python function to execute for each item in the fan-out list. Start with a '.' followed immediately by the function name. Mutually exclusive with 'llm_client' and 'step_graph'."
+                                    },
+                                    "llm_client": {
+                                        "type": "string",
+                                        "description": "(Optional) Reference to a configured LLM client instance. Must be a key defined in the 'llm_clients' section at the root level."
+                                    },
+                                    "step_graph": {
+                                        "type": "string",
+                                        "description": "(Optional) Name of a StepGraph to execute for each item in the fan-out list. Mutually exclusive with 'function' and 'llm_client'."
+                                    },
+                                    "concurrency": {
+                                        "type": "integer",
+                                        "default": 5,
+                                        "description": "(Optional) Maximum concurrency for fan-out operations. Defaults to 5."
+                                    },
+                                    "batch_mode": {
+                                        "type": "boolean",
+                                        "default": true,
+                                        "description": "(Optional) Batch processing mode flag. Defaults to true."
+                                    }
+                                },
+                                "required": [
+                                    "step_name",
+                                    "step_type",
+                                    "required_inputs",
+                                    "required_outputs",
+                                    "input_key"
+                                ]
+                            }
+                        },
+                        {
+                            "title": "ConditionalRouterStep Configuration",
+                            "if": {
+                                "properties": {
+                                    "step_type": {
+                                        "const": "ConditionalRouterStep"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "properties": {
+                                    "steps": {
+                                        "type": "object",
+                                        "additionalProperties": {
+                                            "$ref": "#/definitions/stepReference"
+                                        },
+                                        "description": "Mapping of route keys (strings) to step names (string references). If a route key is present in the input, the corresponding step will be executed."
+                                    },
+                                    "default": {
+                                        "type": "string",
+                                        "description": "(Optional) Name of a default step to execute if no route keys are found in the input."
+                                    }
+                                },
+                                "required": [
+                                    "step_name",
+                                    "step_type",
+                                    "required_inputs",
+                                    "required_outputs",
+                                    "steps"
+                                ]
+                            }
+                        },
+                        {
+                            "title": "StepGraph Configuration",
+                            "if": {
+                                "properties": {
+                                    "step_type": {
+                                        "const": "StepGraph"
+                                    }
+                                }
+                            },
+                            "then": {
+                                "properties": {
+                                    "steps": {
+                                        "type": "array",
+                                        "items": {
+                                            "$ref": "#/definitions/stepDefinition"
+                                        },
+                                        "description": "Array of step definitions that constitute this subgraph."
+                                    },
+                                    "dependencies": {
+                                        "type": "object",
+                                        "additionalProperties": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "description": "Dependency map for steps within this subgraph. Keys are step names, values are lists of dependency step names."
+                                    },
+                                    "max_iterations": {
+                                        "type": "integer",
+                                        "default": 50,
+                                        "description": "(Optional) Maximum iterations allowed for this subgraph in iterative reruns. Defaults to 50."
+                                    }
+                                },
+                                "required": [
+                                    "step_name",
+                                    "step_type",
+                                    "required_inputs",
+                                    "required_outputs",
+                                    "steps",
+                                    "dependencies"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            },
+            "required": [
+                "graph_name",
+                "configuration",
+                "required_inputs",
+                "required_outputs"
+            ]
+        }
+    }
+}
