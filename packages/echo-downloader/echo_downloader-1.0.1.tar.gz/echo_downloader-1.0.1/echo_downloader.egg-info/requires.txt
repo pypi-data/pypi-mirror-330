@@ -1,0 +1,13 @@
+aiofiles
+aiohttp
+beautifulsoup4
+objectify
+platformdirs
+prompt-toolkit
+pyyaml
+requests
+wxpython
+
+[dev]
+jsonpickle
+pytest
