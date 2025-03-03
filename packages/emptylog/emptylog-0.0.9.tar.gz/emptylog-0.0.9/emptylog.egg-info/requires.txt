@@ -1,0 +1,4 @@
+printo>=0.0.5
+
+[:python_version < "3.8"]
+typing_extensions
