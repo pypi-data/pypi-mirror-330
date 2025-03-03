@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+advdask/__init__.py
+advdask/core.py
+advdask.egg-info/PKG-INFO
+advdask.egg-info/SOURCES.txt
+advdask.egg-info/dependency_links.txt
+advdask.egg-info/requires.txt
+advdask.egg-info/top_level.txt
+tests/test_core.py
