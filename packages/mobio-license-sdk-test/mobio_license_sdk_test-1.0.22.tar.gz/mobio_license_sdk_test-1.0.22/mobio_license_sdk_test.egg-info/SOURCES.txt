@@ -1,0 +1,16 @@
+README.md
+pyproject.toml
+setup.py
+mobio/sdks/license/__init__.py
+mobio/sdks/license/call_api.py
+mobio/sdks/license/config.py
+mobio/sdks/license/crypt_utils.py
+mobio/sdks/license/date_utils.py
+mobio/sdks/license/license_sdk.py
+mobio/sdks/license/package_utils.py
+mobio/sdks/license/utils.py
+mobio_license_sdk_test.egg-info/PKG-INFO
+mobio_license_sdk_test.egg-info/SOURCES.txt
+mobio_license_sdk_test.egg-info/dependency_links.txt
+mobio_license_sdk_test.egg-info/requires.txt
+mobio_license_sdk_test.egg-info/top_level.txt
