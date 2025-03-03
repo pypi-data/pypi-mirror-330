@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "mkdocs-import-stat-plugin"
+version = "1.0.4"
+description = "import stat plugin for mkdocs like Markdown Preview Enhanced import"
+authors = ["q9090960bnb3 <q9090960bnb3@163.com>"]
+readme = "README.md"
+license = "MIT"
+keywords = ["mkdocs", "markdown", "import"]
+repository = "https://github.com/q9090960bnb3/mkdocs-import-stat-plugin.git"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+mkdocs = "^1.6.1"
+
+[tool.poetry.group.dev.dependencies]
+build = "^1.2.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.plugins."mkdocs.plugins"]
+import-stat = "mkdocs_import_stat_plugin:ImportStatPlugin"
